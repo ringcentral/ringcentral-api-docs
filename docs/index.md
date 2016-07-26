@@ -2,7 +2,8 @@ This guide is intended to help developers build applications using the RingCentr
 
 **Table of Contents**
 
-* [Overview](overview.md)
+* [Using the Developer Portal](using_dev_portal.md)
+* [API Overview](overview.md)
 * [API Rate Limits](rate_limits.md)
 * [OAuth 2.0 Authentication & Authorization](oauth.md)
 * [Exploring Account & Extension Settings](account_extension.md)
