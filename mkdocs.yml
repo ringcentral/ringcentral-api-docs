@@ -8,7 +8,6 @@ extra_css: [extra.css]
 extra_javascript: [fonts.js]
 pages:
 - Preface: 'index.md'
-- 'Using the Developer Portal': 'using_dev_portal.md'
 - Overview: 'overview.md'
 - 'API Rate Limits': 'rate_limits.md'
 - 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
