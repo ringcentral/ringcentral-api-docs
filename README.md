@@ -9,7 +9,7 @@ This guide is intended to help developers build applications using the RingCentr
 * [Exploring Account & Extension Settings](docs/account_extension.md)
 * [Modifying Extension Settings](docs/modifying_extension.md)
 * [Modifying Account](docs/modifying_account.md)
-* [Call Log]:
+* Call Log:
     * [Introduction](docs/calllog_introduction.md)
     * [API Basics](docs/calllog_api-basics.md)
     * [Using Detailed Call Log Data](docs/calllog_detailed-call-logs.md)
