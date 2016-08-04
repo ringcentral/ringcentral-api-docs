@@ -97,7 +97,7 @@ Call status is generated as a combination of both call legs statuses (caller and
 
 ![RingOut Call Status](img/ringout_flow_call.png)
 	
-Caller or Callee status are separately generated for the target call party:
+Caller or Callee statuses are separately generated for the target call party:
 	
 ![RingOut Callee Status](img/ringout_flow_callee.png)
 
