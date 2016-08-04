@@ -79,6 +79,7 @@ Where:
 	
 	![RingOut Call Status](img/ringout_flow_call.png)
 	
+	
 
 -   **callerStatus**, **calleeStatus** can take the following values:
 
