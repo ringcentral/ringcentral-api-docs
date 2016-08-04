@@ -68,9 +68,45 @@ Content-Type: application/json
 
 Where:
 
--   **callStatus** can take the following values: 'Invalid' | 'Success' | 'InProgress' | 'CannotReach' | 'Error' | 'NoAnsweringMachine' | 'NoSessionFound'
+-   **callStatus** can take the following values:
 
--   **callerStatus**, **calleeStatus** can take the following values: 'Invalid' | 'Success' | 'InProgress' | 'Busy' | 'GenericError' | 'NoAnswer' | 'Rejected' | 'Finished' | 'InternationalDisabled' | 'DestinationBlocked' | 'NotEnoughFunds' | 'NoSuchUser'. In case the `callerStatus` or `calleeStatus` is set to `InternationalDisabled` or `NotEnoughFunds`, the `403 Forbidden` error is returned in response.
+    | Value              | Description                                                               |
+    | ------------------ | ------------------------------------------------------------------------- |
+    | `InProgress`         | Connection is being established                                           |
+    | `Success`            | Both legs connected (Answered)                                            |
+    | `CannotReach`        | Failure state (one or both legs are in invalid state for call connection) |
+    | `NoAnsweringMachine` | Internal server failure                                                   |
+	
+	![RingOut Call Status](img/ringout_flow_call.png)
+
+-   **callerStatus**, **calleeStatus** can take the following values:
+
+    | Value                 | Description                                                                                    |
+    | --------------------- | ---------------------------------------------------------------------------------------------- |
+    | `InProgress`            | Connection to the target leg is being established                                              |
+    | `Busy`                  | Target device is busy                                                                          |
+    | `NoAnswer`              | The call has been dropped because of timeout                                                  |
+    | `Rejected`              | <ul><li>RingOut command was canceled by user *or*</li><li>RingOut initiated, 1st leg answered, 2nd is ringing, user drops call on the 1st leg - 2nd leg gets 'Rejected'</li></ul> |
+    | `Success`               | Call party has answered the call                                                               |
+    | `Finished`              | The call was terminated (In Progress > Success > Finished)                                |
+    | `GenericError`          | <ul><li>Error code received from PSTN *or*</li><li>Internal server error</li></ul>             |
+    | `InternationalDisabled` | <ul><li>International calling disabled (Call to International number) *or*</li><li>Domestic calling disabled (Call with local Country code) *or*</li><li>Internal calling disabled (Call within one account)</li></ul>|
+    | `NoSessionFound`        | RingOut status was requested for RingOut session which does not exist (e.g was already Closed) |
+    | `Invalid`               | RingOut session state is unknown due to internal failure                                       |
+	
+	Caller or Callee status are separately generated for the target call party:
+	
+	![RingOut Callee Status](img/ringout_flow_callee.png)
+
+## RingOut Flow
+
+See how the statuses are changing during successful call on the flowchart below:
+
+![RingOut Successful Flow](img/ringout_flow_success.png)
+
+Failed call:
+
+![RingOut Failed Flow](img/ringout_flow_fail.png)
 
 ## Polling Call Status
 
