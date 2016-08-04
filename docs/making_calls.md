@@ -76,10 +76,6 @@ Where:
     | `Success`            | Both legs connected (Answered)                                            |
     | `CannotReach`        | Failure state (one or both legs are in invalid state for call connection) |
     | `NoAnsweringMachine` | Internal server failure                                                   |
-	
-	![RingOut Call Status](img/ringout_flow_call.png)
-	
-	
 
 -   **callerStatus**, **calleeStatus** can take the following values:
 
@@ -96,9 +92,14 @@ Where:
     | `NoSessionFound`        | RingOut status was requested for RingOut session which does not exist (e.g was already Closed) |
     | `Invalid`               | RingOut session state is unknown due to internal failure                                       |
 	
-	Caller or Callee status are separately generated for the target call party:
+
+Call status is generated as a combination of both call legs statuses (caller and callee):
+
+![RingOut Call Status](img/ringout_flow_call.png)
 	
-	![RingOut Callee Status](img/ringout_flow_callee.png)
+Caller or Callee status are separately generated for the target call party:
+	
+![RingOut Callee Status](img/ringout_flow_callee.png)
 
 ## RingOut Flow
 
