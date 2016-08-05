@@ -359,6 +359,7 @@ For example, you have obtained application key `YourAppKey` and application secr
     Host: platform.ringcentral.com
     Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
     Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+	
     grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
 
 Example values are:
