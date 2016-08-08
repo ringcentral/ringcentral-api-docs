@@ -44,11 +44,11 @@ Apps with 'Public' application type are not allowed to use [Password Flow](#pass
 
 You can check which flows are available for your app on your app's Setting page.
 
-* **Authorization Code** Flow — a 3-legged authorization flow and is a preferred flow for your app if it is a web, mobile or desktop application and is intended to work with multiple RingCentral user accounts.
+* **Authorization Code Flow** — a 3-legged authorization flow and is a preferred flow for your app if it is a web, mobile or desktop application and is intended to work with multiple RingCentral user accounts.
 
-* **Resource Owner Password Credentials** Flow (ROPC), further named Password Flow — a 2-legged authorization flow which is more suitable for server apps used by a single user account.
+* **Resource Owner Password Credentials Flow (ROPC)**, further named **Password Flow** — a 2-legged authorization flow which is more suitable for server apps used by a single user account.
 
-* **Refresh Token** Flow — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Authorization Code or Password flows for obtaining new access tokens.
+* **Refresh Token Flow** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Authorization Code or Password flows for obtaining new access tokens.
 
 All flows end up with your app obtaining an access token which you will need to call RingCentral APIs.
 
@@ -355,14 +355,11 @@ Each application (client) that intends to obtain an access token must be authent
 
 For example, you have obtained application key `YourAppKey` and application secret `YourAppSecret`. Combine them in a string with a colon `YourAppKey:YourAppSecret` and encode with Base64; thus you will get the following authorization token `WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0`. Put this value into your token request as shown in example below (the example represents [Password Flow](#password-flow)):
 
-```http
-POST /restapi/oauth/token HTTP/1.1  
-Host: platform.ringcentral.com
-Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
-Content-Type: application/x-www-form-urlencoded;charset=UTF-8
-
-grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
-```
+    POST /restapi/oauth/token HTTP/1.1  
+    Host: platform.ringcentral.com
+    Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
+    Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+    grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
 
 Example values are:
 
