@@ -15,3 +15,8 @@ This guide is intended to help developers build applications using the RingCentr
 Thus the companies are able to stay in touch with their customers, even if the employees are out of office. The service is flexible and provides nearly limitless possible configurations. RingCentral clients are typically small and medium size companies, or individuals who require a professional but low-cost business communications solution. These businesses have highly diverse requirements and not all of them can be met by RingCentral standard web and mobile services.
 
 **The Purpose of the RingCentral API**. RingCentral API was created to cover additional business requirements and improve customer experience. The API is a powerful yet simple interface allowing development of customized and integrated solutions including web, mobile, and desktop applications with full access to the RingCentral phone service.
+
+
+*Copyright © 2012-2016 RingCentral, Inc.*
+*All rights reserved.*
+*RingCentral is a registered trademark of RingCentral, Inc.*
