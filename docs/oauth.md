@@ -355,12 +355,14 @@ Each application (client) that intends to obtain an access token must be authent
 
 For example, you have obtained application key `YourAppKey` and application secret `YourAppSecret`. Combine them in a string with a colon `YourAppKey:YourAppSecret` and encode with Base64; thus you will get the following authorization token `WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0`. Put this value into your token request as shown in example below (the example represents [Password Flow](#password-flow)):
 
-    POST /restapi/oauth/token HTTP/1.1  
-    Host: platform.ringcentral.com
-    Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
-    Content-Type: application/x-www-form-urlencoded;charset=UTF-8
-	
-    grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
+```http
+POST /restapi/oauth/token HTTP/1.1  
+Host: platform.ringcentral.com
+Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+
+grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
+```
 
 Example values are:
 
