@@ -1,5 +1,3 @@
-# Fax
-
 Faxes are a popular communication mechanism for sending files supported by RingCentral.
 
 There are two ways send faxes, one using `multipart/form-data` and another using `multipart/mixed` described below, the choice of which may depend on your API client.

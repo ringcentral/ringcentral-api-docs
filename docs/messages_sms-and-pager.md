@@ -1,5 +1,3 @@
-# SMS and Pager Messages
-
 There are two types of short text messages supported by RingCentral: SMS and Pager.
 
 SMS messages can be received by the extension types: User and Take Messages Only (Voicemail).

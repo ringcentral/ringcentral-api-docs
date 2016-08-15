@@ -18,8 +18,6 @@ This guide is intended to help developers build applications using the RingCentr
     * [Development Concerns](docs/calllog_development-concerns.md)
 * Messages:
     * [Introduction](docs/messages_introduction.md)
-    * [Message Attributes](docs/messages_attributes.md)
-    * [Message Life Cycle](docs/messages_lifecycle.md)
     * [SMS & Pager](docs/messages_sms-and-pager.md)
     * [Faxes](docs/messages_faxes.md)
     * [Message Sync](docs/messages_sync.md)

@@ -1,5 +1,3 @@
-# Message Synchronization
-
 We have already considered Message Store which allows to send ad-hoc request to create, retrieve, update or delete messages. But in a real world it is often necessary to solve more sophisticated problems. For example, one of the typical usage scenarios in respect to messaging is synchronization of local (i.e. cached on client side) mailbox representation with the server. Let's take a look on the basic steps of such scenario.
 
 When a client application logs in for the first time, it retrieves all the messages (variant: top N most recent ones, or messages for the last day/3 days/week/etc.) from server and caches them locally. In most cases it is reasonable to transfer not all but only basic information about messages (for example, message "headers" or metadata).
