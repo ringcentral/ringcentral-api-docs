@@ -1,6 +1,6 @@
-[![RingCentral](img/logo.png)](http://www.ringcentral.com "RingCentral Virtual PBX, Phone and Internet Fax Service and Software")
+[![RingCentral](img/ringcentral-developers_1000x89.png)](hhttps://developers.ringcentral.com/)
 
-**Developer Guide**
+# RingCentral Developer Guide
 
 This guide is intended to help developers build applications using the RingCentral API. The API allows development of customized software solutions based on the RingCentral business phone service.
 
