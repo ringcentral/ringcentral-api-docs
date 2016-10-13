@@ -1,4 +1,4 @@
-[![RingCentral](img/ringcentral-developers_1000x89.png)](hhttps://developers.ringcentral.com/)
+[![RingCentral](img/ringcentral-developers_1000x89.png)](https://developers.ringcentral.com/)
 
 # RingCentral Developer Guide
 
