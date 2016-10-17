@@ -121,7 +121,7 @@ According to received notification the client application should either update l
 
 ## Subscription Renewal
 
-Created subscription should be renewed according to its expiration time by special request, otherwise it would not be sent to the client application after subscription expiration. After renewal any parameter of subscription may be changed, so it should be updated on a client side as well. To renew the subscription use the following request:
+Created subscription should be renewed, it would not be sent to the client application anymore once expired. After renewal any parameter of subscription may be changed, so it should be updated on a client side as well. To renew the subscription make a call to the following enpoint:
 
     POST /restapi/v1.0/subscription/{subscriptionId}/renew
 
@@ -133,7 +133,7 @@ It is recommended to renew a subscription around 1-2 minutes before it is expire
 
 ---
 
-## Event Filters Modification
+## Subscription Modification
 
 In order to subscribe to any other events the client application can create additional subscriptions, but it is preferable to update the already existing subscription with the new event filters. To make this subscription modification the following request should be used:
 
@@ -148,6 +148,14 @@ PUT /restapi/v1.0/subscription/{subscriptionId}
      ]
 }
 ```  
+
+---
+
+**Note**
+
+Running this request, either with filters or with an empty body, also automatically renews the existent subscription updating its expiration time.
+
+---
 
 ## Unsubscribing
 

@@ -2,7 +2,7 @@ RingCentral's Connect Platform supports oubound webhooks as a method of receivin
 
 ## Create a Webhook URL
 
-To create a webhook, you'll need webserver that listens on a specif URL for events, known as the webhook URL, that you will configure when creating the subscription. The webhook URL service must meet the following requirements:
+To create a webhook, you'll need webserver that listens on a specific URL for events, known as the webhook URL, that you will configure when creating the subscription. The webhook URL service must meet the following requirements:
 
 1. is available on the Internet
 2. has a TLS / SSL enabled*
@@ -74,13 +74,15 @@ The subscription event filter has the following format with the `threshold` and 
 | `threshold` | the threshold time (in seconds) remaining before subscription expiration when server should start to send renewal reminder notifications. This time is approximate. It cannot be less than the interval of reminder job execution. It also cannot be greater than a half of this subscription TTL. |
 | `interval` |  the interval (in seconds) between reminder notifications. This time is approximate. It cannot be less than the interval of reminder job execution. It also cannot be greater than a half of threshold value. |
 
-## Renew a Webhook
+## Update & Renew a Webhook
 
-The renew a webhook, make a `PUT` call to the webhook endpoint without a body. A body can be supplied to update event filters, but this will not renew the webhook.
+To update a webhook, make a `PUT` call to the webhook endpoint with the required event filters specified in the request body. Each `PUT` call, either sent with the event filters or with an empty body, automatically renews the subscription, updating its expiration time. 
+
+The renew a webhook, you can also make a `POST` call to the subscription renew endpoint.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `PUT` | `v1.0/subscription/{subscriptionId}` | Renew a webhook subscription |
+| `POST` | `v1.0/subscription/{subscriptionId}/renew` | Renew a webhook subscription |
 
 ## Read Webhook List
 
