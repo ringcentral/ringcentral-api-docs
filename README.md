@@ -22,7 +22,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [SMS & Pager](docs/messages_sms-and-pager.md)
     * [Faxes](docs/messages_faxes.md)
     * [Message Sync](docs/messages_sync.md)
-* Voice::
+* Voice:
     * [Making Calls](docs/making_calls.md)
     * [Conference Calling](docs/conference.md)
     * [Call Queues](docs/call_queue.md)
