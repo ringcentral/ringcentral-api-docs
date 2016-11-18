@@ -4,7 +4,7 @@ The RingOut option enables the users to make a call from any other outside numbe
 
 The user specifies a certain number under the forwarding number list, starts RingOut and enters the required called number. RingCentral makes a call to the specified forwarding number and connects the user with the called number.
 
-The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the POST, GET and DELETE methods correspondingly.
+The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the `POST`, `GET` and `DELETE` methods correspondingly.
 
 ## Making a Call
 
@@ -16,10 +16,10 @@ Content-Type: application/json
 Authorization: Bearer <access-token> 
 
 {
-	    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
-        "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
-        "callerId": {"phoneNumber": "13443334444"}, /* optional field*/ 
-        "playPrompt": true /* optional field */
+    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
+    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
+    "callerId": {"phoneNumber": "13443334444"}, /* optional field*/ 
+    "playPrompt": true /* optional field */
 }
 ```
  
@@ -55,14 +55,14 @@ The response can be as follows:
 200 OK
 Content-Type: application/json 
  
-{  
-   "id": 234343434, 
-   "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-   "status": {  
-       "callStatus": "Success",  
-       "callerStatus": "Success",  
-       "calleeStatus": "Success"   
-     }
+{
+    "id": 234343434, 
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "status": {  
+        "callStatus": "Success",  
+        "callerStatus": "Success",  
+        "calleeStatus": "Success"   
+    }
 }
 ```
 
@@ -124,13 +124,13 @@ The response will be as follows:
 Content-Type: application/json
 
 {  
-   "id": 234343434, 
-   "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-   "status": {  
-       "callStatus": "Success",  
-       "callerStatus": "Success",  
-       "calleeStatus": "Success"   
-     }
+    "id": 234343434, 
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "status": {  
+        "callStatus": "Success",  
+        "callerStatus": "Success",  
+        "calleeStatus": "Success"   
+    }
 }
 ```
 
