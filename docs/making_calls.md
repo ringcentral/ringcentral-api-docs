@@ -131,6 +131,10 @@ DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434
 204 No Content  
 ```
 
+## Caller ID
+
+RingCentral allows users to select which number to use for their Caller Id Name (`CNAM`) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://success.ringcentral.com/articles/RC_Knowledge_Article/Outbound-Caller-ID-Overview).
+
 # URI Scheme
 
 In addition to making calls via the RingOut API, if the user has the RingCentral for Desktop softphone installed, it is possible to use a URI scheme to initiate a dial out from the application.
