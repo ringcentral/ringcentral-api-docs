@@ -6,9 +6,10 @@ This guide is intended to help developers build applications using the RingCentr
 * [Overview](docs/overview.md)
 * [API Rate Limits](docs/rate_limits.md)
 * [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
-* [Exploring Account & Extension Settings](docs/account_extension.md)
-* [Modifying Extension Settings](docs/modifying_extension.md)
-* [Modifying Account](docs/modifying_account.md)
+* Account and Extensions:
+    * [Exploring Account & Extension Settings](docs/account_extension.md)
+    * [Modifying Extension Settings](docs/modifying_extension.md)
+    * [Modifying Account](docs/modifying_account.md)
 * Call Log:
     * [Introduction](docs/calllog_introduction.md)
     * [API Basics](docs/calllog_api-basics.md)
@@ -21,9 +22,10 @@ This guide is intended to help developers build applications using the RingCentr
     * [SMS & Pager](docs/messages_sms-and-pager.md)
     * [Faxes](docs/messages_faxes.md)
     * [Message Sync](docs/messages_sync.md)
-* [Making Calls](docs/making_calls.md)
-* [Conference Calling](docs/conference.md)
-* [Call Queues](docs/call_queue.md)
-* [Answering Rules](docs/answering_rules.md)
+* Voice:
+    * [Making Calls](docs/making_calls.md)
+    * [Conference Calling](docs/conference.md)
+    * [Call Queues](docs/call_queue.md)
+    * [Answering Rules](docs/answering_rules.md)
 * [Push Notifications](docs/notifications.md)
 * [Webhooks](docs/webhooks.md)
