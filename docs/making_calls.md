@@ -1,10 +1,10 @@
-#RingOut
+# RingOut
 
 The RingOut option enables the users to make a call from any other outside number (not RingCentral number) by means of the RingCentral account, when it is not convenient for them to use the RingCentral number. This feature is available for softphone, web service and mobile applications.
 
 The user specifies a certain number under the forwarding number list, starts RingOut and enters the required called number. RingCentral makes a call to the specified forwarding number and connects the user with the called number.
 
-The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the POST, GET and DELETE methods correspondingly.
+The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the `POST`, `GET` and `DELETE` methods correspondingly.
 
 ## Making a Call
 
@@ -16,10 +16,9 @@ Content-Type: application/json
 Authorization: Bearer <access-token> 
 
 {
-	    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
-        "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
-        "callerId": {"phoneNumber": "13443334444"}, /* optional field*/ 
-        "playPrompt": true /* optional field */
+    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
+    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
+    "playPrompt": true /* optional field */
 }
 ```
  
@@ -33,18 +32,6 @@ Where:
 
     Refers to the called party number. Required field. If this field is missing from the request, the 400 Bad Request error is returned. The phoneNumber attribute should comply with the E.164 standard. As a result of validation of the phoneNumber attribute the server may return the error code: 400 Bad Request - phoneNumber specified in the field is empty or invalid.
 
--   **callerId**
-
-    The number which is displayed to the called party. Optional field. If the field is specified and invalid the 403 Forbidden error code is returned. If the field is not specified in the request then it is based on the CallerId parameter specified in RingCentral application (Main phone Number/Current Location Number/Blocked).
-
-    Caller ID Validation Rules:
-
-    -   `callerId` is the same as the user's extension number;
-
-    -   Get all phone numbers associated with the mailbox. Phone is the default and `callerId` is the same as this number;
-
-    -   Get a list of all forwarded phone numbers for the user. `callerId` is the same as one of the local or toll-free numbers.
-
 -   **playPrompt**
 
     The audio prompt that the calling party hears when the call is connected. Optional field. It corresponds to the setting in the RingCentral application "Prompt me to dial 1 before connecting" (When selected, the system will ask you to press "1" on your phone's key pad before connecting to the destination number).
@@ -55,14 +42,14 @@ The response can be as follows:
 200 OK
 Content-Type: application/json 
  
-{  
-   "id": 234343434, 
-   "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-   "status": {  
-       "callStatus": "Success",  
-       "callerStatus": "Success",  
-       "calleeStatus": "Success"   
-     }
+{
+    "id": 234343434, 
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "status": {  
+        "callStatus": "Success",  
+        "callerStatus": "Success",  
+        "calleeStatus": "Success"   
+    }
 }
 ```
 
@@ -124,13 +111,13 @@ The response will be as follows:
 Content-Type: application/json
 
 {  
-   "id": 234343434, 
-   "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-   "status": {  
-       "callStatus": "Success",  
-       "callerStatus": "Success",  
-       "calleeStatus": "Success"   
-     }
+    "id": 234343434, 
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "status": {  
+        "callStatus": "Success",  
+        "callerStatus": "Success",  
+        "calleeStatus": "Success"   
+    }
 }
 ```
 
@@ -144,26 +131,43 @@ DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434
 204 No Content  
 ```
 
+## Caller ID
+
+RingCentral allows users to select which number to use for their Caller Id Name (`CNAM`) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://success.ringcentral.com/articles/RC_Knowledge_Article/Outbound-Caller-ID-Overview).
+
 # URI Scheme
+
 In addition to making calls via the RingOut API, if the user has the RingCentral for Desktop softphone installed, it is possible to use a URI scheme to initiate a dial out from the application.
 
 RingCentral supports both a custom `rcmobile` URI scheme will resolve the issue of competing applications using the same URI scheme and a standard `tel` URI scheme which is more common but subject to competing uses.
 
 ## RingCentral URI Scheme
 
-The RingCentral `rcmobile` URI Scheme is specific to RingCentral and thus has a higher probability of workign as intended.
+The RingCentral `rcmobile` URI Scheme is specific to RingCentral and thus has a higher probability of working as intended.
 
-```
-// HTML URI Scheme
+```html
+<!-- HTML URI Scheme -->
+<!-- See below for Google Chrome usage -->
 <a href="rcmobile://call?number=16501112222">1-650-111-2222</a>
 ```
 
 ## Standard URI Scheme
 
-The standard `tel` URI Scheme is also supported but since multiple applications use this URI scheme, there may be competing applications resulting in a less desirable expeirence.
+The standard `tel` URI Scheme is also supported but since multiple applications can use this URI scheme, there may be competing applications resulting in a less desirable expeirence.
 
-```
-// HTML URI Scheme
+```html
+<!-- HTML URI Scheme -->
+<!-- See below for Google Chrome usage -->
 <a href="tel:1-650-111-2222">1-650-111-2222</a>
 <a href="tel:16501112222">1-650-111-2222</a>
+```
+
+## Google Chrome Note
+
+Many browsers will support the native `rcmobile` and `tel` URI Schemes via a standard URL `href` described above, however, Google Chrome requires special handling using JavaScript. This is described in more detail [on Stack Overflow](http://stackoverflow.com/questions/2330545/is-it-possible-to-open-custom-url-scheme-with-google-chrome).
+
+```javascript
+// Use the following for Google Chrome only
+var w = (window.parent)?window.parent:window;
+w.location.assign('rcmobile://call?number=16501112222');
 ```
