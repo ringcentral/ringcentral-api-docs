@@ -1,5 +1,7 @@
 # Developing with RingCentral
 
+[![Docs][docs-readthedocs-svg]][docs-readthedocs-link]
+
 This guide is intended to help developers build applications using the RingCentral API. The API allows development of customized software solutions based on the RingCentral business phone service.
 
 ##Table of Contents
@@ -29,3 +31,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [Answering Rules](docs/answering_rules.md)
 * [Push Notifications](docs/notifications.md)
 * [Webhooks](docs/webhooks.md)
+
+ [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
+ [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
+ 
