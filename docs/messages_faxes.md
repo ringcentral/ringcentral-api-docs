@@ -133,5 +133,5 @@ Authorization: Bearer MyToken
   "originalMessageId": "12345678",
   "to": [ { "phoneNumber": "+16501112222" } ],
   "sendTime": "2016-12-01T00:00:00Z"
- }
+}
 ````
