@@ -105,7 +105,7 @@ Hello, World!
 --Boundary_1_14413901_1361871080888--
 ```
 
-## Forwarding and Resending a Faxes
+## Forwarding and Resending Faxes
 
 With RingCentral, you can forward or resend a fax that has been previously sent through the system. In this case, the RingCentral API can use the fax message already stored on our servers so there is no need to send the message again. This can be useful for the following use cases:
 
