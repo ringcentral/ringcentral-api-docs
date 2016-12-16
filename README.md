@@ -8,6 +8,7 @@ This guide is intended to help developers build applications using the RingCentr
 * [Overview](docs/overview.md)
 * [API Rate Limits](docs/rate_limits.md)
 * [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
+* [Roles and Permissions](docs/roles_and_permissions.md)
 * Account and Extensions:
     * [Exploring Account & Extension Settings](docs/account_extension.md)
     * [Modifying Extension Settings](docs/modifying_extension.md)
