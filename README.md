@@ -20,7 +20,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [Call Recordings](docs/calllog_call-recordings.md)
     * [Call Log Synchronization](docs/calllog_sync.md)
     * [Development Concerns](docs/calllog_development-concerns.md)
-* [Data Archival](docs/dataArchival.md)
+* [Data Archival](docs/data-archival.md)
 * Messages:
     * [Introduction](docs/messages_introduction.md)
     * [SMS & Pager](docs/messages_sms-and-pager.md)
