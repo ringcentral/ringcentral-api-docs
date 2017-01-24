@@ -20,6 +20,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [Call Recordings](docs/calllog_call-recordings.md)
     * [Call Log Synchronization](docs/calllog_sync.md)
     * [Development Concerns](docs/calllog_development-concerns.md)
+* [Data Archival](docs/dataArchival.md)
 * Messages:
     * [Introduction](docs/messages_introduction.md)
     * [SMS & Pager](docs/messages_sms-and-pager.md)
@@ -32,6 +33,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [Answering Rules](docs/answering_rules.md)
 * [Push Notifications](docs/notifications.md)
 * [Webhooks](docs/webhooks.md)
+* [WebRTC](docs/webRTC.md)
 
  [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
