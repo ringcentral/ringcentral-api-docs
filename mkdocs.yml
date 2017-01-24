@@ -22,6 +22,7 @@ pages:
     - 'Call Recordings': 'calllog_call-recordings.md'
     - 'Call Log Synchronization': 'calllog_sync.md'
     - 'Development Concerns': 'calllog_development-concerns.md'
+- 'Data Archival': 'data-archival.md'
 - 'Messages':
     - 'Introduction': 'messages_introduction.md'
     - 'SMS and Pager': 'messages_sms-and-pager.md'
