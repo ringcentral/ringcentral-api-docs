@@ -92,7 +92,7 @@ Message Store API Groups:
 
 ## Non-Progammatic Ways to Access Data used in Archival
 
-Frequently, while developing an application or integration, it is helpful for Developers to be able to test or invaliate data or reconcile their programmatic data against an official record. The training content contained in this document describes how Developers can use the [RingCentral API](https://developer.ringcentral.com/api-explorer) to access and view your account activitydata. You can use one of the following methods to access this data as well:
+Frequently, while developing an application or integration, it is helpful for Developers to be able to test or invalidate data or reconcile their programmatic data against an official record. The training content contained in this document describes how Developers can use the [RingCentral API](https://developer.ringcentral.com/api-explorer) to access and view your account activitydata. You can use one of the following methods to access this data as well:
 
 Ring Central Users can view their voicemail, fax messages, and call logs through the Ring Central Online Account Portal, Ring Central desktop app and Ring Central mobile app. Text Messages can be viewed through the Ring Central desktop app and mobile app.
 Here is a list of official Ring Central knowledge base articles describing the manual processes and tools available for gathering your Activity Log data.
