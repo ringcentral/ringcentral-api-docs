@@ -149,7 +149,7 @@ In this example, a developer would need to implement a data archival solution.
 
 ## RingCentral Archiver
 
-RingCentral Customers needing a turn-key solution and whom are using Dropbox can use the Ring Central Archiver available in the App Gallery using the you are el below.
+RingCentral Customers needing a turn-key solution and whom are using Dropbox can use the Ring Central Archiver available in the App Gallery using the URL below.
 It is supported by Ring Central and backs up your data as soon as you have it installed.
 
 * Available in the [RingCentral App Gallery](https://developers.ringcentral.com/app-gallery.html/app/312709020-312709020-7gufiGT3T3CCuCP37hMDaQ~4TkBPW7ETPi3SEzIj4gUXQ-1210)
