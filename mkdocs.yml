@@ -7,8 +7,6 @@ theme: readthedocs
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
 pages:
-- 'Overview': 'overview.md'
-- 'API Rate Limits': 'rate_limits.md'
 - 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
 - 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
 - 'Exploring Account & Extension Settings': 'account_extension.md'
