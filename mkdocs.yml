@@ -7,11 +7,11 @@ theme: readthedocs
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
 pages:
+- 'Preface': 'index.md'
 - 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
 - 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
 - 'Exploring Account & Extension Settings': 'account_extension.md'
 - 'Modifying Extension Settings': 'modifying_extension.md'
-- 'Modifying Account': 'modifying_account.md'
 - 'Call Log':
     - 'Introduction': 'calllog_introduction.md'
     - 'API Basics': 'calllog_api-basics.md'
@@ -25,10 +25,16 @@ pages:
     - 'SMS and Pager': 'messages_sms-and-pager.md'
     - 'Faxes': 'messages_faxes.md'
     - 'Message Sync': 'messages_sync.md'
-- 'Making Calls': 'making_calls.md'
-- 'Conference Calling': 'conference.md'
-- 'Call Queues': 'call_queue.md'
-- 'Answering Rules': 'answering_rules.md'
-- 'Push Notifications': 'notifications.md'
-- 'Webhooks': 'webhooks.md'
-- 'Developing with WebRTC': 'webRTC.md'
+- 'Making Calls': 
+    - 'RingOut': 'ring_out.md'
+    - 'URI Scheme' : 'uri_scheme'
+    - 'WebRTC' : 'webRTC.md'
+- 'Call Handling Setup'
+    - 'Call Queues' : 'call_queue.md'   
+    - 'Answering Rules' : 'answering_rules.md' 
+- 'Push Notifications': 
+    - 'Notifications and Subscriptions' : 'notifications_subscriptions.md'
+    - 'Subscription Flow' : 'subscription_flow'
+    - 'Notifications Transport' : 'notifications_transport' 
+    - 'Webhooks': 'webhooks.md'
+- 'Glip': 'glip_api.md'
