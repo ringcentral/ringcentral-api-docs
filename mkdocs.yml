@@ -27,14 +27,14 @@ pages:
     - 'Message Sync': 'messages_sync.md'
 - 'Making Calls': 
     - 'RingOut': 'ring_out.md'
-    - 'URI Scheme' : 'uri_scheme'
+    - 'URI Scheme' : 'uri_scheme.md'
     - 'WebRTC' : 'webRTC.md'
 - 'Call Handling Setup':
     - 'Call Queues' : 'call_queue.md'   
     - 'Answering Rules' : 'answering_rules.md' 
 - 'Push Notifications': 
     - 'Notifications and Subscriptions' : 'notifications_subscriptions.md'
-    - 'Subscription Flow' : 'subscription_flow'
-    - 'Notifications Transport' : 'notifications_transport' 
+    - 'Subscription Flow' : 'subscription_flow.md'
+    - 'Notifications Transport' : 'notifications_transport.md' 
     - 'Webhooks': 'webhooks.md'
 - 'Glip': 'glip_api.md'
