@@ -36,7 +36,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 4. First of all your bot app *SmartFriend* needs to know when a user sends a message, so it  
    should subscribe for Glip posts event. To subscribe for new messages arrival and content, please run the following request:
 
-   ```
+    ```
       POST/restapi/v1.0/subscription HTTP/1.1
 
       {
@@ -68,7 +68,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
        "encryptionKey" : "0mWk/6SMiSz191u2dV5drg=="
           }
       }
-  ```
+    ```
 
 5. *SmartFriend* may also need to know when a user adds it to a chat (or removes from it), to do 
     this it should subscribe for Glip groups. It may be useful if you want to send an automated hello message to those users who add your bot to a chat. To subscribe, please run the following request:
@@ -115,7 +115,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
 7. *SmartFriend* receives a notification on being added to a chat by *John Smith*.
 
-   ```
+    ```
      "timestamp": "2017-03-21T17:09:00.408+0000",
      "subscriptionId": "ed329ec1-0600-4560-b6dc-c764399e9a54",
      "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
@@ -131,17 +131,17 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
           "chatbot-01"
             ]
         }
-   ```
+    ```
 
 8. *SmartFriend* sends *John Smith* an automated hello message:
 
-   ```
+    ```
      POST /glip/v1/posts
      {
       "groupId": "1234",
       "text": "Hi John, Nice to meet you! How can I help you?"
       }
-   ```
+    ```
 
 9. *John Smith* is texting to *SmartFriend*:
    ![Send Message](img/smartfriendmessage.png)
@@ -164,7 +164,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
       creationTime": "2017-03-21T18:29:20Z",
       "lastModifiedTime": "2017-03-21T18:29:27Z"
      }
-   ```
+    ```
 
 11. Your chat bot tries to parse the message, books a flight and sends a reply by running post
     request:
