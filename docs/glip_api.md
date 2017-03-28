@@ -25,20 +25,20 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 1.  You should create a new extension for your bot in your RingCentral account. An activation 
     link for setting extension credentials (login and password) will be sent via email.
 
-    **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com.  
+    **Note:** For Sandbox please use [https://service.devtest.ringcentral.com](https://service.devtest.ringcentral.com]). Once your app is provisioned by RingCentral for production, please use [https://service.ringcentral.com](https://service.ringcentral.com).  
 
 2.  You should authorize it to Connect Platform API using the login (extension number) and       
     password.
 
     ---
     
-    **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
+    **Note:** For Sandbox please use the base URI is [https://platform.devtest.ringcentral.com](https://platform.devtest.ringcentral.com). Once your app is provisioned by RingCentral for production, please use [https://platform.ringcentral.com](https://platform.ringcentral.com).
     
     ---
 
 3.  So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
 
-    **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
+    **Note:** You can use either test glip app available at [https://glip.devtest.ringcentral.com](https://glip.devtest.ringcentral.com), or production version available at [https://glip.com](https://glip.com).
 
 
 4. First of all your bot app *SmartFriend* needs to know when a user sends a message, so it  
@@ -169,7 +169,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
             "eventType": "PostAdded",
             "id": "0000001",
             "type": "TextMessage",
-            "text": "Hi *SmartFriend*! Please book me a flight New York – San Francisco 05/  06/17, ID #5674028947"
+            "text": "Hi SmartFriend! Please book me a flight New York – San Francisco 05/  06/17, ID #5674028947"
             "creatorId": "123456789",
             "groupId": "1234",
             "creationTime": "2017-03-21T18:29:20Z",
