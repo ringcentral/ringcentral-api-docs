@@ -22,15 +22,15 @@ To develop a bot application for Glip sign in to your RingCentral account and go
 Let’s consider the scenario:  
 You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and how Glip customers can use it.
 
-1. You should create a new extension for your bot in your RingCentral account. An activation 
-   link for setting extension credentials (login and password) will be sent via email.
-   
-   **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com.
-   
-2. You should authorize it to Connect Platform API using the login (extension number) and       
-   password.
-   **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
+1.  You should create a new extension for your bot in your RingCentral account. An activation 
+    link for setting extension credentials (login and password) will be sent via email.
 
+    **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com.
+
+2.  You should authorize it to Connect Platform API using the login (extension number) and       
+    password.
+
+    **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
 
 3. So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
    **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
