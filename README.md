@@ -5,14 +5,11 @@
 This guide is intended to help developers build applications using the RingCentral API. The API allows development of customized software solutions based on the RingCentral business phone service.
 
 ##Table of Contents
-* [Overview](docs/overview.md)
-* [API Rate Limits](docs/rate_limits.md)
+* [Preface](docs/index.md)
 * [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
-* [Roles and Permissions](docs/roles_and_permissions.md)
-* Account and Extensions:
-    * [Exploring Account & Extension Settings](docs/account_extension.md)
-    * [Modifying Extension Settings](docs/modifying_extension.md)
-    * [Modifying Account](docs/modifying_account.md)
+* [Authorization Profile and Permission Invalidation](docs/authorization_profile.md)
+* [Exploring Account & Extension Settings](docs/account_extension.md)
+* [Modifying Extension Settings](docs/modifying_extension.md)
 * Call Log:
     * [Introduction](docs/calllog_introduction.md)
     * [API Basics](docs/calllog_api-basics.md)
@@ -26,14 +23,19 @@ This guide is intended to help developers build applications using the RingCentr
     * [SMS & Pager](docs/messages_sms-and-pager.md)
     * [Faxes](docs/messages_faxes.md)
     * [Message Sync](docs/messages_sync.md)
-* Voice:
-    * [Making Calls](docs/making_calls.md)
-    * [Conference Calling](docs/conference.md)
+* Making Calls:
+    * [RingOut](docs/ring_out.md)
+    * [URI Scheme](docs/uri_scheme.md)
+    * [WebRTC](docs/webRTC.md)
+* Call Handling Setup:
     * [Call Queues](docs/call_queue.md)
     * [Answering Rules](docs/answering_rules.md)
-* [Push Notifications](docs/notifications.md)
-* [Webhooks](docs/webhooks.md)
-* [WebRTC](docs/webRTC.md)
+* Push Notifications:
+    * [Notifications and Subscriptions](docs/notifications_subscriptions.md)
+    * [Subscription Flow](docs/subscription_flow.md)
+    * [Notifications Transport](docs/notifications_transport.md)
+    * [Webhooks](docs/webhooks.md)
+
 
  [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
