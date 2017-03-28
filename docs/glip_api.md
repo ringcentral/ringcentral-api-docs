@@ -30,8 +30,9 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 2.  You should authorize it to Connect Platform API using the login (extension number) and       
     password.
 
+    ---
     **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
-
+    ---
 
 3.  So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
 
