@@ -27,13 +27,16 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
     **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com.
 
+
 2.  You should authorize it to Connect Platform API using the login (extension number) and       
     password.
 
     **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
 
-3. So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
-   **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
+
+3.  So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
+
+    **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
 
 
 4. First of all your bot app *SmartFriend* needs to know when a user sends a message, so it  
