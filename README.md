@@ -4,7 +4,7 @@
 
 This guide is intended to help developers build applications using the RingCentral API. The API allows development of customized software solutions based on the RingCentral business phone service.
 
-##Table of Contents
+## Table of Contents
 * [Preface](docs/index.md)
 * [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
 * [Authorization Profile and Permission Invalidation](docs/authorization_profile.md)
