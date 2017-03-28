@@ -25,9 +25,8 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 1. You should create a new extension for your bot in your RingCentral account. An activation 
    link for setting extension credentials (login and password) will be sent via email.
    
-   **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com. 
-
-
+   **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com.
+   
 2. You should authorize it to Connect Platform API using the login (extension number) and       
    password.
    **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
