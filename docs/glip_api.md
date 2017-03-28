@@ -24,16 +24,13 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
 1. You should create a new extension for your bot in your RingCentral account. An activation 
    link for setting extension credentials (login and password) will be sent via email.
-
    **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com. 
 
 2. You should authorize it to Connect Platform API using the login (extension number) and       
    password.
-
    **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
 
 3. So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
-
    **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
 
 4. First of all your bot app *SmartFriend* needs to know when a user sends a message, so it  
@@ -41,7 +38,6 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
 
         POST/restapi/v1.0/subscription HTTP/1.1
-
         {
           "eventFilters": [
           "/restapi/v1.0/glip/posts"
@@ -53,7 +49,6 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         }
 
         HTTP/1.1 200 OK
-
         {
          "uri" : "https.../restapi/v1.0/subscription/au329ec1-0600-4560-b6dc-c764399e9a54",
           "id": "au329ec1-0600-4560-b6dc-c764399e9a54",
@@ -78,7 +73,6 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
   
     
         POST /restapi/v1.0/subscription HTTP/1.1
-
         {
          "eventFilters": [
            "/restapi/v1.0/glip/groups"
@@ -90,8 +84,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         }
 
 
-         HTTP/1.1 200 OK
-
+        HTTP/1.1 200 OK
         {
           "uri" : "https.../restapi/v1.0/subscription/ed329ec1-0600-4560-b6dc-c764399e9a54",
           "id" : "ed329ec1-0600-4560-b6dc-c764399e9a54",
@@ -113,7 +106,6 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
 6. Once *John Smith*, a Glip app user, adds *SmartFriend* to a private chat, see the picture 
    below.
-
    **Note:** Private chat is a group of 2 members only.
    ![Adding Bot](img/smartfriend.png)
 
