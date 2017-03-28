@@ -27,7 +27,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 
     ---
 
-    **Note:** For Sandbox please use [https://service.devtest.ringcentral.com](https://service.devtest.ringcentral.com]). Once your app is provisioned by RingCentral for production, please use [https://service.ringcentral.com](https://service.ringcentral.com).
+    **Note:** For Sandbox please use [https://service.devtest.ringcentral.com](https://service.devtest.ringcentral.com). Once your app is provisioned by RingCentral for production, please use [https://service.ringcentral.com](https://service.ringcentral.com).
 
     --- 
 
