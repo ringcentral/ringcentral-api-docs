@@ -26,12 +26,15 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
    link for setting extension credentials (login and password) will be sent via email.
    **Note:** For Sandbox please use https://service.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://service.ringcentral.com. 
 
+
 2. You should authorize it to Connect Platform API using the login (extension number) and       
    password.
    **Note:** For Sandbox please use the base URI is https://platform.devtest.ringcentral.com. Once your app is provisioned by RingCentral for production, please use https://platform.ringcentral.com.
 
+
 3. So your Glip bot app is now integrated with Glip client application, and users can enjoy it!
    **Note:** You can use either test glip app available at https://glip.devtest.ringcentral.com, or production version available at https://glip.com.
+
 
 4. First of all your bot app *SmartFriend* needs to know when a user sends a message, so it  
    should subscribe for Glip posts event. To subscribe for new messages arrival and content, please run the following request:
@@ -67,6 +70,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
           }
         }
     
+
 
 5. *SmartFriend* may also need to know when a user adds it to a chat (or removes from it), to do 
     this it should subscribe for Glip groups. It may be useful if you want to send an automated hello message to those users who add your bot to a chat. To subscribe, please run the following request:
@@ -104,10 +108,12 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         } 
     
 
+
 6. Once *John Smith*, a Glip app user, adds *SmartFriend* to a private chat, see the picture 
    below.
    **Note:** Private chat is a group of 2 members only.
    ![Adding Bot](img/smartfriend.png)
+
 
 7. *SmartFriend* receives a notification on being added to a chat by *John Smith*.
 
@@ -129,6 +135,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
           }
     
 
+
 8. *SmartFriend* sends *John Smith* an automated hello message:
 
     
@@ -139,8 +146,10 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         }
     
 
+
 9. *John Smith* is texting to *SmartFriend*:
    ![Send Message](img/smartfriendmessage.png)
+
 
 10. *SmartFriend* receives a notification on message receipt, the payload looks like this:
   
@@ -161,6 +170,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
           "lastModifiedTime": "2017-03-21T18:29:27Z"
            }
     
+
 
 11. Your chat bot tries to parse the message, books a flight and sends a reply by running post
     request:
