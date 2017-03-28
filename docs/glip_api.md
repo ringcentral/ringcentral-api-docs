@@ -130,8 +130,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
     **Note:** Private chat is a group of 2 members only.
 
     ---
-   
-   ![Adding Bot](img/smartfriend.png)
+    ![Adding Bot](img/smartfriend.png)
 
 
 
