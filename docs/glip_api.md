@@ -122,19 +122,20 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
     
 
 
-6. Once *John Smith*, a Glip app user, adds *SmartFriend* to a private chat, see the picture 
-   below.
+6.  Once *John Smith*, a Glip app user, adds *SmartFriend* to a private chat, see the picture
+    below.
 
-   ---
+    ---
 
-   **Note:** Private chat is a group of 2 members only.
+    **Note:** Private chat is a group of 2 members only.
 
-   ---
+    ---
    
    ![Adding Bot](img/smartfriend.png)
 
 
-7. *SmartFriend* receives a notification on being added to a chat by *John Smith*.
+
+7.  *SmartFriend* receives a notification on being added to a chat by *John Smith*.
 
     
         {
@@ -156,7 +157,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         }
 
 
-8. *SmartFriend* sends *John Smith* an automated hello message:
+8.  *SmartFriend* sends *John Smith* an automated hello message:
 
     
         POST /glip/v1/posts
@@ -171,7 +172,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
    ![Send Message](img/smartfriendmessage.png)
 
 
-10. *SmartFriend* receives a notification on message receipt, the payload looks like this:
+10.  *SmartFriend* receives a notification on message receipt, the payload looks like this:
   
       
         {
@@ -192,8 +193,8 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
         }
 
 
-11. Your chat bot tries to parse the message, books a flight and sends a reply by running post
-    request:
+11.  Your chat bot tries to parse the message, books a flight and sends a reply by running post
+     request:
 
     
         POST /glip/v1/posts
