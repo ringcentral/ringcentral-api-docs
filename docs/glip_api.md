@@ -4,13 +4,13 @@ With **Glip API** you can automate conversational communications, easily synchro
 
 Now Glip API provides you with the following functionality scope:
 
-- send messages  - *POST/restapi/v1.0/glip/posts*
-- read messages filtered by chat  - *GET/restapi/v1.0/glip/posts*
-- create chats - *POST /glip/v1.0/groups*
-- edit chat members  - *PUT /glip/v1.0/groups/groupId*
-- get chat member information - *GET/restapi/v1.0/glip/persons/personId*
-- get list of chats filtered by chat type - *GET/glip/v1.0/groups*
-- get particular chat(s) - *GET/glip/v1.0/groups/groupId*
+- send messages  - *POST /v1.0/glip/posts*
+- read messages filtered by chat  - *GET /v1.0/glip/posts*
+- create chats - *POST /v1.0/glip/groups*
+- edit chat members  - *PUT /v1.0/glip/groups/[groupId]/bilk-assign*
+- get chat member information - *GET /v1.0/glip/persons/[personId]*
+- get list of chats filtered by chat type - *GET /v1.0/glip/groups*
+- get particular chat(s) - *GET /v1.0/glip/groups/[groupId]*
 
 To learn more about the Glip API methods please view [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html). 
 On top of that Glip API features chat bots. You may need a smart companion to rent a car, broadcast weather, provide currency exchange rates, send birthday messages, or just in case.
