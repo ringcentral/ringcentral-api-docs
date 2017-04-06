@@ -174,31 +174,30 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 10.  *SmartFriend* receives a notification on message receipt, the payload looks like this:
   
       
-        {
-          "timestamp": "2017-03-21T18:29:27.408+0000",
-          "subscriptionId": "a45645-0001-cc71-9de3-674476722",
-          "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-          "event": "/restapi/v1.0/glip/posts",
-          "body": {
-            "eventType": "PostAdded",
-            "id": "0000001",
-            "type": "TextMessage",
-            "text": "Hi SmartFriend! Please book me a flight New York – San Francisco 05/  06/17, ID #5674028947"
-            "creatorId": "123456789",
-            "groupId": "1234",
-            "creationTime": "2017-03-21T18:29:20Z",
-            "lastModifiedTime": "2017-03-21T18:29:27Z"
-           }
-        }
+         {
+           "timestamp": "2017-03-21T18:29:27.408+0000",
+           "subscriptionId": "a45645-0001-cc71-9de3-674476722",
+           "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
+           "event": "/restapi/v1.0/glip/posts",
+           "body": {
+             "eventType": "PostAdded",
+             "id": "0000001",
+             "type": "TextMessage",
+             "text": "Hi SmartFriend! Please book me a flight New York – San Francisco 05/  06/17, ID #5674028947"
+             "creatorId": "123456789",
+             "groupId": "1234",
+             "creationTime": "2017-03-21T18:29:20Z",
+             "lastModifiedTime": "2017-03-21T18:29:27Z"
+            }
+         }
 
 
 11.  Your chat bot tries to parse the message, books a flight and sends a reply by running post
      request:
 
     
-        POST /restapi/v1.0/glip/posts
-        {
-         "groupId": "1234",
-         "text": "Absolutely! Your flight is booked – DL459 06MAY JFK-SFO 0805 1145, ticket number 550166377762. Have a safe trip!"
-        }
-    
+         POST /restapi/v1.0/glip/posts
+         {
+          "groupId": "1234",
+          "text": "Absolutely! Your flight is booked – DL459 06MAY JFK-SFO 0805 1145, ticket number 550166377762. Have a safe trip!"
+         }
