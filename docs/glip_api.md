@@ -7,7 +7,7 @@ Now Glip API provides you with the following functionality scope (base URL `/res
 - send messages  - `POST /glip/posts`
 - read messages filtered by chat  - `GET /glip/posts`
 - create chats - `POST /glip/groups`
-- edit chat members  - `PUT /glip/groups/[groupId]/bilk-assign`
+- edit chat members  - `PUT /glip/groups/[groupId]/bulk-assign`
 - get chat member information - `GET /glip/persons/[personId]`
 - get list of chats filtered by chat type - `GET /glip/groups`
 - get particular chat(s) - `GET /glip/groups/[groupId]`
