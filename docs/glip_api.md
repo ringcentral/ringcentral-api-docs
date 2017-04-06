@@ -2,15 +2,15 @@
 
 With **Glip API** you can automate conversational communications, easily synchronize notifications into a single location (greatly reducing email), programmatically generate Glip message post content, and you can even couple the new Glip API resources to operate with AI or Machine Learning to solve advanced use cases.
 
-Now Glip API provides you with the following functionality scope:
+Now Glip API provides you with the following functionality scope (base URL `/restapi/v1.0`):
 
-- send messages  - *POST /v1.0/glip/posts*
-- read messages filtered by chat  - *GET /v1.0/glip/posts*
-- create chats - *POST /v1.0/glip/groups*
-- edit chat members  - *PUT /v1.0/glip/groups/[groupId]/bilk-assign*
-- get chat member information - *GET /v1.0/glip/persons/[personId]*
-- get list of chats filtered by chat type - *GET /v1.0/glip/groups*
-- get particular chat(s) - *GET /v1.0/glip/groups/[groupId]*
+- send messages  - `POST /glip/posts`
+- read messages filtered by chat  - `GET /glip/posts`
+- create chats - `POST /glip/groups`
+- edit chat members  - `PUT /glip/groups/[groupId]/bilk-assign`
+- get chat member information - `GET /glip/persons/[personId]`
+- get list of chats filtered by chat type - `GET /glip/groups`
+- get particular chat(s) - `GET /glip/groups/[groupId]`
 
 To learn more about the Glip API methods please view [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html). 
 On top of that Glip API features chat bots. You may need a smart companion to rent a car, broadcast weather, provide currency exchange rates, send birthday messages, or just in case.
@@ -53,7 +53,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
    should subscribe for Glip posts event. To subscribe for new messages arrival and content, please run the following request:
 
 
-        POST/restapi/v1.0/subscription HTTP/1.1
+        POST /restapi/v1.0/subscription HTTP/1.1
         {
           "eventFilters": [
           "/restapi/v1.0/glip/posts"
@@ -159,7 +159,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
 8.  *SmartFriend* sends *John Smith* an automated hello message:
 
     
-        POST /glip/v1/posts
+        POST /restapi/v1.0/glip/posts
         {
           "groupId": "1234",
           "text": "Hi John, Nice to meet you! How can I help you?"
@@ -196,7 +196,7 @@ You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and
      request:
 
     
-        POST /glip/v1/posts
+        POST /restapi/v1.0/glip/posts
         {
          "groupId": "1234",
          "text": "Absolutely! Your flight is booked – DL459 06MAY JFK-SFO 0805 1145, ticket number 550166377762. Have a safe trip!"
