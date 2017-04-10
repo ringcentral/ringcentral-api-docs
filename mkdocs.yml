@@ -11,7 +11,6 @@ pages:
 - 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
 - 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
 - 'Exploring Account & Extension Settings': 'account_extension.md'
-- 'Modifying Extension Settings': 'modifying_extension.md'
 - 'Call Log':
     - 'Introduction': 'calllog_introduction.md'
     - 'API Basics': 'calllog_api-basics.md'

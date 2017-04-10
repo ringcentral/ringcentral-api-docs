@@ -9,7 +9,6 @@ This guide is intended to help developers build applications using the RingCentr
 * [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
 * [Authorization Profile and Permission Invalidation](docs/authorization_profile.md)
 * [Exploring Account & Extension Settings](docs/account_extension.md)
-* [Modifying Extension Settings](docs/modifying_extension.md)
 * Call Log:
     * [Introduction](docs/calllog_introduction.md)
     * [API Basics](docs/calllog_api-basics.md)
@@ -35,8 +34,8 @@ This guide is intended to help developers build applications using the RingCentr
     * [Subscription Flow](docs/subscription_flow.md)
     * [Notifications Transport](docs/notifications_transport.md)
     * [Webhooks](docs/webhooks.md)
+* [Glip](docs/glip_api.md)
 
 
  [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
- 
