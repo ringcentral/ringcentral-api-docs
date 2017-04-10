@@ -6,4 +6,4 @@ This guide presents key features of **RingCentral Connect Platform API**.
 
 We also provide [SDKs](https://developers.ringcentral.com/library/sdks.html) for quicker development.
 
-You can find [full specification](https://developers.ringcentral.com/api-docs/latest/index.html) and [code dependent tutorials](https://ringcentral.github.io/tutorials/) are available at our [Developer Portal](https://developers.ringcentral.com/api-and-docs.html).
+You can find [full specification](https://developers.ringcentral.com/api-docs/latest/index.html) and [code dependent tutorials](https://ringcentral.github.io/tutorials/) at our [Developer Portal](https://developers.ringcentral.com/api-and-docs.html).
