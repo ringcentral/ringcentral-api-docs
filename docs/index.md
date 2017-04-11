@@ -1,4 +1,7 @@
-This guide presents key features of **RingCentral Connect Platform API**. 
+
+![RC Developers Logo](img/logo.png)
+
+This guide presents key features of **RingCentral Connect Platform API**.
 
 **RingCentral** provides cloud telephony service, linked to PSTN. It can be accessed and configured online or through our mobile and desktop applications.
 
