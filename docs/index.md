@@ -1,5 +1,5 @@
 
-![RC Developers Logo](img/logo.png)
+![RC Developers Logo](img/rc-developers_logo.png)
 
 This guide presents key features of **RingCentral Connect Platform API**.
 
