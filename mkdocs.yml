@@ -10,6 +10,7 @@ pages:
 - 'Preface': 'index.md'
 - 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
 - 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
+- 'Rate Limits': 'rate_limits.md'
 - 'Exploring Account & Extension Settings': 'account_extension.md'
 - 'Call Log':
     - 'Introduction': 'calllog_introduction.md'
