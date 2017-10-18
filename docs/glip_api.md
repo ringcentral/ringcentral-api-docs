@@ -60,16 +60,21 @@ Choose your favorite code editor. We'll be using Node.js to develop our app, so 
     ```
 
 3. Create a copy of env.template file and rename it to `.env`
+
 4. Update the `.env` file with the values for `CLIENT_ID`, `CLIENT_SECRET` from the the bot creation step and the `REDIRECT_HOST` from ngrok. I would look something like this:
    ![](img/envfile.png)
+
 5. Run the following command in terminal to launch the app.
        ```
         $ npm start
        ```
+
 6. Go to the `Bot` tab of the recently created app in the developer portal. Click on the `Add to Glip` button.
     ![](img/bot_tab.png)
+
     This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url. `NOTE:` Bot provisioner will only use the first url specificed in the oAuth settings.
     ![](img/authorization.png)
+
 7. You can now exchange the authorization code for an bot token using the code below:
     ```
     //Authorization callback method.
@@ -93,8 +98,11 @@ Choose your favorite code editor. We'll be using Node.js to develop our app, so 
             })
         }
     });
+
     ```
+
     The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
+
 8. We can now subscribe to glip events using the code below:
    ```
                function subscribeToGlipEvents(token){
@@ -122,8 +130,10 @@ Choose your favorite code editor. We'll be using Node.js to develop our app, so 
                }
 
    ```
+
 9. Now login to glip.devtest.ringcentral.com with your credentials and search for the bot name. Click on the bot name and type in `Hi` to start communicating with it.
     ![](img/glip_devtest.png)
+
 10. You should now see the notification messages in the console as show below:
      ```
              {
