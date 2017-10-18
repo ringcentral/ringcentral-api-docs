@@ -15,11 +15,47 @@ Now Glip API provides you with the following functionality scope (base URL `/res
 To learn more about the Glip API methods please view [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html). 
 On top of that Glip API features chat bots. You may need a smart companion to rent a car, broadcast weather, provide currency exchange rates, send birthday messages, or just in case.
 
-**Use Case #1**: Create bot application
+**Use Case #1**: Create bot application locally using Glip
 
-To develop a bot application for Glip sign in to your RingCentral account and go to [RC Connect Platform Developer Portal](https://developers.ringcentral.com/my-account.html#/applications). For help please use our [Getting Started tutorial](https://developers.ringcentral.com/library/getting-started.html).
+To develop a bot application for Glip sign in to your RingCentral account and go to [RC Connect Platform Developer Portal](https://developers.ringcentral.com/my-account.html#/applications).
 
-Let’s consider the scenario:  
+## Installing ngrok
+
+* Go to https://ngrok.com/ and download the version that corresponds to your platform. In our case, we'll be downloading the Mac OS X 64-bit version.
+* You can extract ngrok into the folder of your preference and run ngrok from there.
+
+## Tunnel your server
+Fire up a Terminal window, navigate to the directory where you unzipped ngrok and start it by telling it which port we want to expose to the public internet. To do this,type:
+```
+./ngrok http 4390
+```
+
+If every thing goes well you should see the follow screen.
+![](/img/ngrok-running.png)
+
+Copy the ngrok https url and add the value to `REDIRECT_HOST` in .env file. The .env file will look like
+![](/img/envfile.png)
+
+## Create a Glip Bot application
+
+* Sign in to [Developer Portal](https://developer.ringcentral.com) with your account login and password. If you do not have RingCentral account, please sign up.
+* Open My Apps tab and click 'Create App' button.
+  ![](/img/create_app.png)
+* Fill in the fields of the form 'General Settings - Create App' below:
+  ![](/img/general_setting_step1.png)
+* Fill in the fields of the form 'General Settings - AppType & Platform'. Make sure the platform type is `Server/Bot` as below:
+  ![](/img/general_setting_step2.png)
+* Fill in the fields of the form 'General Settings - OAuth Settings'. Add the following permissions `Glip`, `Webhook Subscription`, `Read Accounts`. You could leave the redirect url for now. We will come back once we install `ngrok`. Click `Create` once all information are inputted.
+  ![](/img/general_setting_step3.png)
+* If everything goes well you will see the following screen. We will use the `ClientID` and `ClientSecret` generated in this step to update the `.env` file during the installation phase.
+  ![](/img/dashboard.png)
+
+## Create a Simple Nodejs application
+Let's set up a simple web server to processes all incoming HTTP requests.
+
+For this part you'll need to choose your favorite code editor. We'll be using Node.js to develop our app, so you'll need to make sure you've installed it on your machine as well.
+
+Let’s consider the scenario:
 You developed a bot app *SmartFriend*. Let’s see how it can be integrated, and how Glip customers can use it.
 
 1.  You should create a new extension for your bot in your RingCentral account. An activation 
