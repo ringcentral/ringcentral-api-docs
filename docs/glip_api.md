@@ -53,10 +53,12 @@ Let's set up a simple web server to processes all incoming HTTP requests.
 Choose your favorite code editor. We'll be using Node.js to develop our app, so you'll need to make sure you've installed it on your machine as well.
 
 1. Clone the sample application from [Github](https://github.com/pkvenu/developing-locally-with-Glip.git)
+
 2. Fire up the terminal window and change the path to the cloned applicaton directory and enter the command below:
     ```
             $ npm install
     ```
+
 3. Create a copy of env.template file and rename it to `.env`
 4. Update the `.env` file with the values for `CLIENT_ID`, `CLIENT_SECRET` from the the bot creation step and the `REDIRECT_HOST` from ngrok. I would look something like this:
    ![](img/envfile.png)
@@ -92,7 +94,7 @@ Choose your favorite code editor. We'll be using Node.js to develop our app, so 
         }
     });
     ```
-The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
+    The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
 8. We can now subscribe to glip events using the code below:
    ```
                function subscribeToGlipEvents(token){
