@@ -31,24 +31,24 @@ Fire up a Terminal window, navigate to the directory where you unzipped ngrok an
 ```
 
 If every thing goes well you should see the follow screen.
-![](/img/ngrok-running.png)
+![](img/ngrok-running.png)
 
 Copy the ngrok https url and add the value to `REDIRECT_HOST` in .env file. The .env file will look like
-![](/img/envfile.png)
+![](img/envfile.png)
 
 ## Create a Glip Bot application
 
 * Sign in to [Developer Portal](https://developer.ringcentral.com) with your account login and password. If you do not have RingCentral account, please sign up.
 * Open My Apps tab and click 'Create App' button.
-  ![](/img/create_app.png)
+  ![](img/create_app.png)
 * Fill in the fields of the form 'General Settings - Create App' below:
-  ![](/img/general_setting_step1.png)
+  ![](img/general_setting_step1.png)
 * Fill in the fields of the form 'General Settings - AppType & Platform'. Make sure the platform type is `Server/Bot` as below:
-  ![](/img/general_setting_step2.png)
+  ![](img/general_setting_step2.png)
 * Fill in the fields of the form 'General Settings - OAuth Settings'. Add the following permissions `Glip`, `Webhook Subscription`, `Read Accounts`. You could leave the redirect url for now. We will come back once we install `ngrok`. Click `Create` once all information are inputted.
-  ![](/img/general_setting_step3.png)
+  ![](img/general_setting_step3.png)
 * If everything goes well you will see the following screen. We will use the `ClientID` and `ClientSecret` generated in this step to update the `.env` file during the installation phase.
-  ![](/img/dashboard.png)
+  ![](img/dashboard.png)
 
 ## Create a Simple Nodejs application
 Let's set up a simple web server to processes all incoming HTTP requests.
