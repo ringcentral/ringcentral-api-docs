@@ -37,5 +37,6 @@ pages:
     - 'Subscription Flow' : 'subscription_flow.md'
     - 'Notifications Transport' : 'notifications_transport.md' 
     - 'Webhooks': 'webhooks.md'
-- 'Glip': 'glip_api.md'
+- 'Glip':
+    - 'Introduction': 'glip_api.md'
     - 'Glip Bots': 'glip_bots.md'
