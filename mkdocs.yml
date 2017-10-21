@@ -38,3 +38,4 @@ pages:
     - 'Notifications Transport' : 'notifications_transport.md' 
     - 'Webhooks': 'webhooks.md'
 - 'Glip': 'glip_api.md'
+    - 'Glip Bots': 'glip_bots.md'
