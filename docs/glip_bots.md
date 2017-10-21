@@ -65,7 +65,7 @@ $ npm start
 
 7. You can now exchange the authorization code for an bot token using the code below:
 
-    ```
+```
     //Authorization callback method.
     app.get('/oauth', function (req, res) {
         if(!req.query.code){
@@ -87,14 +87,13 @@ $ npm start
             })
         }
     });
-
-    ```
+```
 
     The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
 
 8. We can now subscribe to glip events using the code below:
 
-   ```
+```
                function subscribeToGlipEvents(token){
                    var requestData = {
                        "eventFilters": [
@@ -119,7 +118,7 @@ $ npm start
                    });
                }
 
-   ```
+```
 
 9. Now login to `glip.devtest.ringcentral.com` with your credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
 
@@ -127,7 +126,7 @@ $ npm start
 
 10. You should now see the notification messages in the console as show below:
 
-     ```
+```
              {
                "timestamp": "2017-03-21T18:29:27.408+0000",
                "subscriptionId": "a45645-0001-cc71-9de3-674476722",
@@ -145,4 +144,4 @@ $ npm start
                 }
              }
 
-      ```
+```
