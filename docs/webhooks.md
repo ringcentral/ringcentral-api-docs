@@ -6,7 +6,7 @@ To create a webhook, you'll need webserver that listens on a specific URL for ev
 
 1. is available on the Internet
 2. has a TLS / SSL enabled*
-3. can respond within 1000 milliseconds
+3. can respond within 1000 milliseconds with 200 OK
 4. will respond with `Validation-Token` header on subscription
 
 TLS / SSL only needs to be enabled in production. For development purposes, TLS is not necessary.
