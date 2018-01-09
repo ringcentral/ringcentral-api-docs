@@ -204,12 +204,12 @@ Glip supports a simple form of Markdown for formatting the body of incoming mess
 
 \*italics\*
 
-``**bold**``
+\*\*bold\*\*
 
-[a link](http://example.com)
+\[a link\]\(http://example.com\)
 
-> quote
+\> quote
 
-_underline_
+\_underline\_
 
-* bullet
+\* bullet
