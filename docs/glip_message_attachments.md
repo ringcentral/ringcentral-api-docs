@@ -1,4 +1,6 @@
-Glip Post Attachments allow you to attach rich content to posts with formatting and color indicators to more easily convey a large amount of information. This is available with both Inbound Webhooks and the REST API. Specifically you can:
+# Creating Rich Posts with Glip Message Attachments
+
+Glip Message Attachments allow you to attach rich content to posts with formatting and color indicators to more easily convey a large amount of information. This is available with both Inbound Webhooks and the REST API. Specifically you can:
 
 * add up to 20 attachments per post, each rendered as its own section
 * add an author, title, pretext, text to each attachment
@@ -16,13 +18,13 @@ Here is an example report using Salesforce:
 
 ![](img/glip_post_attachment_salesforce.png)
 
-# Post Attachment parameters
+## Message Attachment Parameters
 
 The post attachment has a number of properties that are displayed in the following locations for a webhook message below. The REST API has a similar layout. Both post schemas are described below.
 
 ![](img/glip_post_attachment_demo.png)
 
-## Inbound Webhook Request Example
+### Inbound Webhook Request Example
 
 Here is an example message body for an inbound webhook:
 
@@ -70,7 +72,7 @@ Here is some example code:
 
 Go: https://github.com/grokify/go-glip/tree/master/examples/test_webhook
 
-###REST API Post Message Example
+### REST API Post Message Example
 
 Here is the same message with slightly different property names for a API request:
 
@@ -123,7 +125,7 @@ Here is some example code:
 
 Go: https://github.com/grokify/go-ringcentral/tree/master/examples/glip_post_attachment
 
-## Property Descriptions
+### Property Descriptions
 
 Use these parameters to customize the appearance of a message.
 
