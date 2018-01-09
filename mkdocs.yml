@@ -39,4 +39,5 @@ pages:
     - 'Webhooks': 'webhooks.md'
 - 'Glip':
     - 'Introduction': 'glip_api.md'
+    - 'Post Attachments': 'glip_post_attachments.md'
     - 'Glip Bots': 'glip_bots.md'
