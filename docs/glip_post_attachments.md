@@ -202,9 +202,14 @@ Use these parameters to customize the appearance of a message.
 
 Glip supports a simple form of Markdown for formatting the body of incoming messages. The following are supported for post attachments in addition to post bodies.
 
-*italics*
-**bold**
+\*italics\*
+
+``**bold**``
+
 [a link](http://example.com)
+
 > quote
+
 _underline_
+
 * bullet
