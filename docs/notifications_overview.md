@@ -4,11 +4,19 @@ For example, for getting new messages the client application can periodically po
 
 The RingCentral API supports receiving push notifications for its clients of any type, including but not limited to mobile applications (smartphones and tablets running Android/iOS), desktop applications (for example, softphone for Windows/Mac), server-side applications hosted in a cloud, HTML5 applications, etc.
 
-The typical subscription flow is performed as follows:
+The RingCentral API supporst two types of push notifications:
+
+- Pub/Sub via PubNub: the client creates and maintains an open connection to receive new events. This is useful for client apps such as mobile apps and client-only web apps.
+
+- Webhooks: RingCentral will post events to a URL. Because your service needs to host and Internet accessible URL, this approach is useful for server apps. A benefit here is that there is no need to maintain a connection as RingCentral will connect to your URL as events you subscribe to appear.
+
+## Typical Subscription Flow
+
+The typical subscription flow for both PubNub and Webhooks is as follows:
 
 - A client application subscribes to the required events through the RingCentral API. In response the server provides all necessary information for the application to connect to the transport facilities that deliver the notifications: channel address; if required - credentials to access the channel, and notification payload encryption keys.
 
-- The server starts to push events to the dedicated channel after the subscription is created. The delivery mechanism PubNub queues a certain amount of notifications, awaiting a client to get them.
+- The server starts to push events to the dedicated channel after the subscription is created. For PubNub, the delivery mechanism queues a certain amount of notifications, awaiting a client to get them.
 
 - The client can unsubscribe explicitly at any time through the API. In this case the server immediately stops sending push notifications for this client.
 
