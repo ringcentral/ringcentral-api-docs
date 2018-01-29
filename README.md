@@ -30,10 +30,10 @@ This guide is intended to help developers build applications using the RingCentr
     * [Call Queues](docs/call_queue.md)
     * [Answering Rules](docs/answering_rules.md)
 * Push Notifications:
-    * [Notifications and Subscriptions](docs/notifications_subscriptions.md)
-    * [Subscription Flow](docs/subscription_flow.md)
-    * [Notifications Transport](docs/notifications_transport.md)
-    * [Webhooks](docs/webhooks.md)
+    * [Overview](docs/notifications_overview.md)
+    * [Pub/Sub - for clients](docs/notifications_pubsub.md)
+    * [Webhooks - for servers](docs/notifications_webhooks.md)
+    * [Events]
 * [Glip](docs/glip_api.md)
     * [Glip Bots](docs/glip_bots.md)
 

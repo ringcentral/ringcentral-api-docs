@@ -32,11 +32,10 @@ pages:
 - 'Call Handling Setup':
     - 'Call Queues' : 'call_queue.md'   
     - 'Answering Rules' : 'answering_rules.md' 
-- 'Push Notifications': 
-    - 'Notifications and Subscriptions' : 'notifications_subscriptions.md'
-    - 'Subscription Flow' : 'subscription_flow.md'
-    - 'Notifications Transport' : 'notifications_transport.md' 
-    - 'Webhooks': 'webhooks.md'
+- 'Push Notifications':
+    - 'Overview': 'notifications_overview.md'
+    - 'Pub/Sub (for client apps)' : 'notifications_pubsub.md'
+    - 'Webhooks (for server apps)': 'notifications_webhooks.md'
 - 'Glip':
     - 'Introduction': 'glip_api.md'
     - 'Message Attachments': 'glip_message_attachments.md'
