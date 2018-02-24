@@ -13,11 +13,11 @@ There are two upgrade approaches that can be considered:
 
 The benefit of this approach is that you can use the new REST APIs directly as they were designed.
 
-Some differences with the current legacy APIs are:
+While the REST API is a more advanced API with more capabilities and security, there are some differences with the legacy API. Specifically:
 
 * OAuth 2.0 is required to retrieve an access token which minimally requires one API call to retrieve the access token and another to use the access token, e.g. RingOut.
 * Ability to set HTTP request headers in the OAuth 2.0 protocol.
-* Ability to set JSON HTTP request body for RingOut
+* Ability to set JSON HTTP request body for RingOut. For fax, both the Legacy and REST API support `multipart/form-data` requests.
 
 To use the REST API directly, see the [Legacy API Upgrade Details](legacy_api_upgrade_details.md) page on which REST endpoints correspond to Legacy API calls.
 
