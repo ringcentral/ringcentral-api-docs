@@ -36,6 +36,9 @@ This guide is intended to help developers build applications using the RingCentr
     * [Events]
 * [Glip](docs/glip_api.md)
     * [Glip Bots](docs/glip_bots.md)
+* Upgrading from Legacy API
+    * [Overview](docs/legacy_api_upgrade_overview.md)
+    * [Details](docs/legacy_api_upgrade_details.md)
 
  [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
