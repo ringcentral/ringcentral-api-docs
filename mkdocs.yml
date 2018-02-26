@@ -40,3 +40,6 @@ pages:
     - 'Introduction': 'glip_api.md'
     - 'Message Attachments': 'glip_message_attachments.md'
     - 'Glip Bots': 'glip_bots.md'
+- 'Upgrading from Legacy API':
+    - 'Overview' : 'legacy_api_upgrade_overview.md'
+    - 'Details' : 'legacy_api_upgrade_details.md'
