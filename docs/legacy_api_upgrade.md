@@ -20,7 +20,9 @@ There are two primary approaches to upgrade your application to use the new REST
 
 ### Direct REST API calls
 
-To use the REST API directly, see the [Legacy API Upgrade Details](legacy_api_upgrade_details.md) page on which REST endpoints correspond to Legacy API calls.
+To use the REST API directly, see [Legacy API Upgrade Details](legacy_api_upgrade_details.md) which has information per-API upgrade information.
+
+### Creating an API Proxy
 
 The REST API is a more advanced API with more capabilities and security, and has some differences with the legacy API. Specifically:
 
@@ -28,15 +30,15 @@ The REST API is a more advanced API with more capabilities and security, and has
 * Ability to set HTTP request headers in the OAuth 2.0 protocol.
 * Ability to set JSON HTTP request body for RingOut. For fax, both the Legacy and REST API support `multipart/form-data` requests.
 
-If your application cannot perform the above, you can create an API proxy to handle this for you while providing an interface like the existing Legacy API for integration purposes.
-
-### Creating an API Proxy
-
-An API proxy can be an ideal way to initiate a RingOut or FaxOut API call using the REST API if your system cannot accommodate the requirements of the REST API, e.g. OAuth 2.0, HTTP request headers, HTTP request body.
+If your application cannot perform the above and needs to use a single URL GET request, you can create an API proxy to handle this for you while providing an interface like the existing Legacy API for integration purposes.
 
 To create such an API proxy, you will need to set up a server or serverless function, e.g. AWS Lambda, that will have a similar interface to the API you wish to call and then translate that into a RingCentral REST API request.
 
-#### Improvements
+#### Example API Proxy
+
+Example code for such a proxy service is available here:
+
+https://github.com/grokify/go-ringcentral/tree/master/legacy/examples/legacy2rest
 
 If you are creating a proxy, you can improve this by doing the following:
 
