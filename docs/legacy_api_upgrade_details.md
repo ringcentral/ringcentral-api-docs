@@ -18,7 +18,7 @@ More information on this API is available here:
 
 The legacy RingOut Call API performs a two-legged RingOut. To make the same call using the REST API, use the following endpoint:
 
-`PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out`
+`POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out`
 
 More information on this API is available here:
 
