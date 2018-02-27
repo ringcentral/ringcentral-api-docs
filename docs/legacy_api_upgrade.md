@@ -7,10 +7,10 @@ The Legacy APIs mentioned here are the ones at the following endpoints:
 
 Information on the RingCentral REST API is available here:
 
-* Developer Portal: https://developer.ringcentral.com/
-* Developer Guide: http://ringcentral-api-docs.readthedocs.io/
-* API Reference: https://developer.ringcentral.com/api-docs/
-* API Explorer: https://developer.ringcentral.com/api-explorer/
+* Developer Portal: [https://developer.ringcentral.com/](https://developer.ringcentral.com/)
+* Developer Guide: [http://ringcentral-api-docs.readthedocs.io/](http://ringcentral-api-docs.readthedocs.io/)
+* API Reference: [https://developer.ringcentral.com/api-docs/](https://developer.ringcentral.com/api-docs/)
+* API Explorer: [https://developer.ringcentral.com/api-explorer/](https://developer.ringcentral.com/api-explorer/)
 
 This guide provides information on how to migrate from the Legacy APIs to the REST APIs.
 
@@ -20,7 +20,7 @@ There are two primary approaches to upgrade your application to use the new REST
 
 ### Direct REST API calls
 
-To use the REST API directly, see [Legacy API Upgrade Details](legacy_api_upgrade_details.md) which has information per-API upgrade information.
+To use the REST API directly, see *[Legacy API Upgrade Details](legacy_api_upgrade_details.md)* which has information per-API upgrade information.
 
 ### Creating an API Proxy
 
@@ -38,7 +38,7 @@ To create such an API proxy, you will need to set up a server or serverless func
 
 Example code for such a proxy service is available here:
 
-https://github.com/grokify/go-ringcentral/tree/master/legacy/examples/legacy2rest
+[https://github.com/grokify/go-ringcentral/tree/master/legacy/examples/legacy2rest](https://github.com/grokify/go-ringcentral/tree/master/legacy/examples/legacy2rest)
 
 If you are creating a proxy, you can improve this by doing the following:
 
