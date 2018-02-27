@@ -1,25 +1,32 @@
-RingCentral has introduced a new RingOut and Fax REST API and will be deprecating and removing support for the Legacy APIs. The Legacy APIs mentioned here are the ones at the following endpoints:
+RingCentral has introduced a new RingOut and Fax REST API and has deprecated and will remove support for the ASP Legacy APIs. The REST API is much more comprehensive than the Legacy APIs and includes updating Caller ID settings, retrieving call logs and call recordings, managing forwarding rules, SMS/MMS, user provisioning and much more.
+
+The Legacy APIs mentioned here are the ones at the following endpoints:
 
 * https://service.ringcentral.com/ringout.asp
 * https://service.ringcentral.com/faxapi.asp
+
+Information on the RingCentral REST API is available here:
+
+* Developer Portal: https://developer.ringcentral.com/
+* Developer Guide: http://ringcentral-api-docs.readthedocs.io/
+* API Reference: https://developer.ringcentral.com/api-docs/
+* API Explorer: https://developer.ringcentral.com/api-explorer/
 
 This guide provides information on how to migrate from the Legacy APIs to the REST APIs.
 
 ## Upgrade Approaches
 
-There are two upgrade approaches that can be considered:
+There are two primary approaches to upgrade your application to use the new REST APIs depending on the capabilities of your APIs. The first is to use the REST APIs directly and the second is to deploy an API Proxy as an intermediary that uses the REST APIs but mimics the Legacy API.
 
 ### Direct REST API calls
 
-The benefit of this approach is that you can use the new REST APIs directly as they were designed.
+To use the REST API directly, see the [Legacy API Upgrade Details](legacy_api_upgrade_details.md) page on which REST endpoints correspond to Legacy API calls.
 
-While the REST API is a more advanced API with more capabilities and security, there are some differences with the legacy API. Specifically:
+The REST API is a more advanced API with more capabilities and security, and has some differences with the legacy API. Specifically:
 
 * OAuth 2.0 is required to retrieve an access token which minimally requires one API call to retrieve the access token and another to use the access token, e.g. RingOut.
 * Ability to set HTTP request headers in the OAuth 2.0 protocol.
 * Ability to set JSON HTTP request body for RingOut. For fax, both the Legacy and REST API support `multipart/form-data` requests.
-
-To use the REST API directly, see the [Legacy API Upgrade Details](legacy_api_upgrade_details.md) page on which REST endpoints correspond to Legacy API calls.
 
 If your application cannot perform the above, you can create an API proxy to handle this for you while providing an interface like the existing Legacy API for integration purposes.
 
