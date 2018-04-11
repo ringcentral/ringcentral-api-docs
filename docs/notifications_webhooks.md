@@ -22,7 +22,7 @@ Here is a minimal example using PHP:
 ```php
 <?php
 
-$v = $_SERVER['HTTP_VALIDATION_TOKEN'] || '';
+$v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
 
 if (strlen($v)>0) {
   header("Validation-Token: {$v}");
