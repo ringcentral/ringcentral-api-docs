@@ -28,7 +28,7 @@ In the wild, WebRTC is supported by several browsers, but Ring Central officiall
 * Developers gain all the additional functionalities RingCentral offers!
 * Requires Extension with a Digital Line to authenticate and use
 
-RingCentral is dog-fooding our WebRTC offering and in production we have used it with our [Google for Work Application](https://developers.ringcentral.com/app-gallery.html) (available in the RingCentral App Gallery), and within [Glip](https://glip.com)
+RingCentral is dog-fooding our WebRTC offering and in production we have used it with our [Google for Work Application](https://www.ringcentral.com/apps/) (available in the RingCentral App Gallery), and within [Glip](https://glip.com)
 
 ## RingCentral WebPhone Client Library
 
