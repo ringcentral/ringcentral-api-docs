@@ -105,7 +105,7 @@ $ npm start
                            "transportType": "WebHook",
                            "address": REDIRECT_HOST + "/callback"
                        },
-                       "expiresIn": 604799
+                       "expiresIn": 500000000
                    };
                    platform.post('/subscription', requestData)
                        .then(function (subscriptionResponse) {
