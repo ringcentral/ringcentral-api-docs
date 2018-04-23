@@ -98,14 +98,13 @@ $ npm start
                    var requestData = {
                        "eventFilters": [
                            "/restapi/v1.0/glip/posts",
-                           "/restapi/v1.0/glip/groups",
-                           "/restapi/v1.0/subscription/~?threshold=60&interval=15"
+                           "/restapi/v1.0/glip/groups"
                        ],
                        "deliveryMode": {
                            "transportType": "WebHook",
                            "address": REDIRECT_HOST + "/callback"
                        },
-                       "expiresIn": 604799
+                       "expiresIn": 500000000
                    };
                    platform.post('/subscription', requestData)
                        .then(function (subscriptionResponse) {
