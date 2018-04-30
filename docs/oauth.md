@@ -172,7 +172,7 @@ Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps.
 
 This 2-legged authorization flow used by RingCentral involves obtaining an access token from API server, and using the access token for making API calls.The general flow looks like this:
 
-![Implicit Grant Flow](img/implicit_grant_flow.png)
+![Implicit Grant Flow](img/implicit_grantflow.png)
 
 The step-by-step details of this flow are explained below.
 
