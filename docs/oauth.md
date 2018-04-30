@@ -250,11 +250,13 @@ Assumning the user grants access , the response would contain the information as
 if the user decides not to grant access to the application, the response URL contains error
 
 
-Step 3 : In this step , your WebApp extracts the access_token got as a response in the previous step and stores it locally to make sucessful API calls with the bearer token. Keep in mind, you would also need to take into account the expires_in time (3600 mili seconds). Which means before the access token expires you need to get a new access token.
+Step 3 : In this step , your WebApp extracts the access_token got as a response in the previous step and stores it locally to make sucessful API calls with the bearer token. Also it redirects the app to the redirect URI.Keep in mind, you would also need to take into account the expires_in time (3600 mili seconds). Which means before the access token expires you need to get a new access token.
 
 ** In Implicit Grant Flow there is no concept of Refresh Token **
 
 When getting a new access token before the expires_in time, you can pass a property prompt=none in the request, this will make sure that user is not presented with a login screen and a new access_token can be generated in the background without any user intervention(Provided the RingCentral Service Web Login session is still active).
+
+Step 4 : Use the access_token to make sucessful API Calls to the API Server.
 
 
 ## Password Flow
