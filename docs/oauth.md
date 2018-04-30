@@ -226,7 +226,7 @@ On this step your app’s user is redirected by the browser to a RingCentral aut
 
 ![User Consent](img/implicit_grant_userconsent.png)
 
-    After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.
+After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.
 
 Assumning the user grants access , the response would contain the information as shown below
 
