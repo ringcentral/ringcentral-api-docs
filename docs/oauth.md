@@ -220,12 +220,11 @@ Step 2 :
 User login and consent
 
 
+On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
 
-    On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
+![User Login](img/implicit_grant_userlogin.png)
 
-![](img/implicit_grant_userlogin.png)
-
-![](img/implicit_grant_userconsent.png)
+![User Consent](img/implicit_grant_userconsent.png)
 
     After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.
 
