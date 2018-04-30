@@ -168,7 +168,7 @@ The step-by-step details of this flow are explained below.
 
 ## Implicit Grant Flow
 
-Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps. If you are building a browser only app and do not have a serverside , Implicit Grant is the reccomended flow. Implicit grant ensures that your app enables your user to securely login and grant access to only those resources that they consent to and secures you app in a browser enviornment.
+Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps. If you are building a browser only app and do not have a serverside component , Implicit Grant is the reccomended flow. Implicit grant ensures that your app enables your user to securely login and grant access to only those resources that they consent to . Implicit grant secures your app in a browser enviornment.
 
 This 2-legged authorization flow used by RingCentral involves obtaining an access token from API server, and using the access token for making API calls.The general flow looks like this:
 
@@ -178,16 +178,16 @@ The step-by-step details of this flow are explained below.
 
 Lets first define the actors in the flow. The actors in the flow are
 
-1.Client or WebApp : This is the web application that you want to build.
-2.Resource Owner or User : This is your User
-3.User Agent or Browser : This is your browser
-4.Authorization Server : This is your auth server
-5.Redirection URI : Web hosted client resource 
-6.API Server : Server that serves your rest apis. (This is involved in what you do after getting your access token)
+1. Client or WebApp : This is the web application that you want to build.
+2. Resource Owner or User : This is your User
+3. User Agent or Browser : This is your browser
+4. Authorization Server : This is your auth server
+5. Redirection URI : Web hosted client resource 
+6. API Server : Server that serves your rest apis. (This is involved in what you do after getting your access token)
 
 Steps
 
-Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI to the Authorization Server. The endpoint called will be `/restapi/oauth/authorize` 
+#Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
 
  The endpoint your app will call will be https://{{RingCentral Server}}/restapi/oauth/authorize
 
@@ -254,11 +254,7 @@ Step 3 : In this step , your WebApp extracts the access_token got as a response 
 
 ** In Implicit Grant Flow there is no concept of Refresh Token **
 
-When getting a new access token before the expires_in time, you can pass a property prompt=none in the request, this will make sure that user is not presented with a login screen and a new access_token can be generated in the background(Provided the RingCentral Service Web Login session is still active).
-
-
-
-
+When getting a new access token before the expires_in time, you can pass a property prompt=none in the request, this will make sure that user is not presented with a login screen and a new access_token can be generated in the background without any user intervention(Provided the RingCentral Service Web Login session is still active).
 
 
 ## Password Flow
