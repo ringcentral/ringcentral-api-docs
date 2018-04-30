@@ -187,7 +187,7 @@ Lets first define the actors in the flow. The actors in the flow are
 
 Steps
 
-#Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
+Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
 
  The endpoint your app will call will be https://{{RingCentral Server}}/restapi/oauth/authorize
 
@@ -221,9 +221,9 @@ User login and consent
 
     On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
     
-    ![User Login](img/user_login.png)
+    ![Implicit Grant Flow]((img/user_login.png)
     
-    ![User Consent](img/user_consent.png)
+    ![Implicit Grant Flow]((img/user_consent.png)
 
     After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.
 
