@@ -20,6 +20,7 @@ The following endpoint can be called to retrieve a list of call monitoring group
 This API supports the following query parameters:
 
 | Name | Type | Location | Notes |
+|------|------|----------|-------|
 | `accountId` | `string` | path | |
 | `page` | `integer` | query string | |
 | `perPage` | `integer` | query string | | 
@@ -34,6 +35,7 @@ This API call returns a list o f
 * User Permission: `ReadExtensions`
 
 | Name | Type | Location | Notes |
+|------|------|----------|-------|
 | `accountId` | `string` | path | |
 | `page` | `integer` | query string | |
 | `perPage` | `integer` | query string | | 
@@ -48,6 +50,7 @@ The Edit Call Monitoring Group API allows modification of user members and their
 * Content-Type: `application/json`
 
 | Name | Type | Location | Notes |
+|------|------|----------|-------|
 | `accountId` | `string` | path | |
 | `groupId` | `string` | path | |
 | `addedExtensions` | `[]CallMonitoringExtensionUpdate` | JSON body |
@@ -88,9 +91,9 @@ Content-Type: `application/json`
     }
   ],
   "updatedExtensions": [
-    ]
-
-
-
+    {
+      "id": "55555555",
+      "permissions": ["Monitored", "Monitoring"]
+    }
+  ]
 }
-
