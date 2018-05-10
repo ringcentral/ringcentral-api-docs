@@ -17,7 +17,7 @@ The following endpoint can be called to retrieve a list of call monitoring group
 * Application Permission: `ReadAccounts`
 * User Permission: `ReadExtensions`
 
-This API supports the following query parameters:
+This API supports the following path and query parameters:
 
 | Name | Type | Location | Notes |
 |------|------|----------|-------|
@@ -28,11 +28,13 @@ This API supports the following query parameters:
 
 ## Get Call Monitoring Group members
 
-This API call returns a list o f
+This API call returns a list of call monitoring group members.
 
 * Endpoint: `GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members`
 * Application Permission: `ReadAccounts`
 * User Permission: `ReadExtensions`
+
+This API supports the following path and query parameters:
 
 | Name | Type | Location | Notes |
 |------|------|----------|-------|
@@ -49,6 +51,8 @@ The Edit Call Monitoring Group API allows modification of user members and their
 * User Permission: `Groups`
 * Content-Type: `application/json`
 
+This API supports the following path and body parameters:
+
 | Name | Type | Location | Notes |
 |------|------|----------|-------|
 | `accountId` | `string` | path | |
@@ -60,6 +64,7 @@ The Edit Call Monitoring Group API allows modification of user members and their
 ### CallMonitoringExtensionUpdate
 
 | Name | Type | Notes |
+|------|------|-------|
 | `id` | string | an extensionId. Only the following extension types are allowed: `User`, `DigitalUser`, `VirtualUser`, `FaxUser`, `Limited` |
 | `permissions` | `[]string` | Valid values include: `Monitoring`, `Monitored` |
 
@@ -68,7 +73,7 @@ The Edit Call Monitoring Group API allows modification of user members and their
 ```
 POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign
 Authorization: Bearer <myAccessToken>
-Content-Type: `application/json`
+Content-Type: application/json
 
 {
   "addedExtensions": [
