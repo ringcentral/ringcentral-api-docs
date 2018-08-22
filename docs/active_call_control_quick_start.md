@@ -20,7 +20,8 @@ POST /restapi/v1.0/subscription
 ```
 
 ## Presence
-Added *telephonySessionId* & *partyId* (NEW)
+Added *telephonySessionId* & *partyId* (NEW).
+
 **Limitations**: Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added *activeCalls.telephonySessionId* and *activeCalls.partyId* to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.
 
 ```
