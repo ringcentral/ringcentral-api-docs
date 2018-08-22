@@ -26,6 +26,9 @@ This guide is intended to help developers build applications using the RingCentr
     * [RingOut](docs/ring_out.md)
     * [URI Scheme](docs/uri_scheme.md)
     * [WebRTC](docs/webRTC.md)
+* Active Call Control
+      * [Overview] (docs/active_call_control_overview.md)
+      * [Quick Start] (docs/active_call_control_quick_start.md)
 * Call Handling Setup
     * [Call Queues](docs/call_queue.md)
     * [Answering Rules](docs/answering_rules.md)

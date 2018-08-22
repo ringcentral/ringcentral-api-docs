@@ -29,9 +29,6 @@ pages:
     - 'RingOut': 'ring_out.md'
     - 'URI Scheme' : 'uri_scheme.md'
     - 'WebRTC' : 'webRTC.md'
-- 'Active Call Control':
-    - 'Overview': 'active_call_control_overview.md'
-    - 'Quick Start' : 'active_call_control_quick_start.md'
 - 'Call Handling Setup':
     - 'Call Queues' : 'call_queue.md'   
     - 'Answering Rules' : 'answering_rules.md' 
