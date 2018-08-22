@@ -69,9 +69,9 @@ POST /restapi/v1.0/subscription
 
 ## Telephony/sessions aka CSN
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
--   if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
--   if a party belongs to another session (transferred call, conference, etc).
--   if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
+*   if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
+*   if a party belongs to another session (transferred call, conference, etc).
+*   if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
 
 Push Notification Example:
 ```
@@ -138,9 +138,9 @@ Push Notification Example:
 
 # How to Use Call Control API
 RC User is able to initiate a call via RC app:
--   RC Phone
--   Glip
--   RingOut via Service Site
+* RC Phone
+* Glip
+* RingOut via Service Site
 etc
 
 *NOTE*: In Release 10.3 we're planning to provide **Call Out** API to initiate a call.
@@ -229,8 +229,8 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 *NOTE*: phoneNumber in request body should be in e164 format.
 
 **Tips**:
--   You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
--   You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
+*  You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
+*  You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
 
 #### Forward to Voicemail
 To forward the incoming call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
@@ -280,7 +280,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 ```
 
 **Tips**:
--   You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html).
+* You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html).
 Keep callers informed and entertained with messages and music on hold.
 
 *NOTE*: The same limitation as for Mute/Unmute  - Hold/Unhold via REST API doesn't work with Hold/Unhold placed via RingCentral apps or HardPhone.
@@ -298,7 +298,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 }
 ```
 **Tips**:
--   There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
+* There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
 
 #### Transfer to Voicemail
 To forward the call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
@@ -342,7 +342,7 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 }
 ```
 **Tips**:
--   [How to Obtain Call Recording Metadata and Content](https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/)
+* [How to Obtain Call Recording Metadata and Content](https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/)
 
 ## Call Flip
 Call Flip if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone), Call Flip could become something you use quite often. This nifty feature enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone …you get the idea. See [How Call Flip works](https://www.ringcentral.com/office/features/call-flip/overview.html).
