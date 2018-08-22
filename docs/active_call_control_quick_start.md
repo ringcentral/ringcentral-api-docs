@@ -1,4 +1,4 @@
-### Subscribe to Telephony Notifications
+## Subscribe to Telephony Notifications
 Currently RingCentral provides a few ways to detect new or in-progress call via Push Notification mechanism:
 * *Presence*
 * *telephony/sessions* aka **CSN**. Subscriptions per extension and per account are supported (NEW).
