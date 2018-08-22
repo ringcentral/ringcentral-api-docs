@@ -1,9 +1,10 @@
 # Subscribe to Telephony Notifications
 Currently RingCentral provides a few ways to detect new or in-progress call via Push Notification mechanism:
-* *Presence*
-* *telephony/sessions* aka **CSN**. Subscriptions per extension and per account are supported (NEW).
+*Presence*
+*telephony/sessions* aka **CSN**. Subscriptions per extension and per account are supported (NEW).
 
 Subscribe using any suitable transport, e.g. PubNub:
+
 ```
 POST /restapi/v1.0/subscription
 
@@ -18,8 +19,10 @@ POST /restapi/v1.0/subscription
 }
 ```
 
-## Presence: added *telephonySessionId* & *partyId* (NEW)
+## Presence
+Added *telephonySessionId* & *partyId* (NEW)
 **Limitations**: Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added *activeCalls.telephonySessionId* and *activeCalls.partyId* to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.
+
 ```
 {
     "uuid": "1787755531108376563",
@@ -69,11 +72,12 @@ POST /restapi/v1.0/subscription
 
 ## Telephony/sessions aka CSN
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
-*   if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
-*   if a party belongs to another session (transferred call, conference, etc).
-*   if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
+* if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
+* if a party belongs to another session (transferred call, conference, etc).
+* if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
 
 Push Notification Example:
+
 ```
 {
     "uuid": "837270960869181944",
@@ -137,17 +141,14 @@ Push Notification Example:
 ```
 
 # How to Use Call Control API
-RC User is able to initiate a call via RC app:
-* RC Phone
-* Glip
-* RingOut via Service Site
-etc
+RC User is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.
 
 *NOTE*: In Release 10.3 we're planning to provide **Call Out** API to initiate a call.
 
 Once the call is initiated User can get Session details either from telephony/session Push Notification or from API response if call was started via RingOut or CallOut REST API.
 
 Session status can be retrieved via the following request:
+
 ```
 GET /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>
 Content-Type: application/json
@@ -226,14 +227,16 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 "phoneNumber":"+12059690601"
 }
 ```
+
 *NOTE*: phoneNumber in request body should be in e164 format.
 
 **Tips**:
-*  You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
-*  You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
+* You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
+* You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
 
 #### Forward to Voicemail
 To forward the incoming call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
+
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/forward
 
@@ -247,13 +250,12 @@ Using Reject API will stop the ringing on your app. It works as Ignore option on
 
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/reject
-
 ```
 
 *NOTE*: In upcoming releases we're planning to support much more features, like
--   **Answer (Replace)** - accept the incoming call.
--   **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
--   **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
+* **Answer (Replace)** - accept the incoming call.
+* **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
+* **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
 
 ... and other features, based on your feedback!
 
@@ -274,13 +276,13 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 
 ## Hold and UnHold Call
 Use **Hold** API to put the participant on hold. Use **Unhold** API otherwise:
+
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/hold
 
 ```
 
-**Tips**:
-* You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html).
+**Tips**: You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html).
 Keep callers informed and entertained with messages and music on hold.
 
 *NOTE*: The same limitation as for Mute/Unmute  - Hold/Unhold via REST API doesn't work with Hold/Unhold placed via RingCentral apps or HardPhone.
@@ -297,8 +299,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 "phoneNumber":"+12059690601"
 }
 ```
-**Tips**:
-* There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
+**Tips**: There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
 
 #### Transfer to Voicemail
 To forward the call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
@@ -341,8 +342,7 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 "active": false
 }
 ```
-**Tips**:
-* [How to Obtain Call Recording Metadata and Content](https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/)
+**Tips**: [How to Obtain Call Recording Metadata and Content](https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/)
 
 ## Call Flip
 Call Flip if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone), Call Flip could become something you use quite often. This nifty feature enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone …you get the idea. See [How Call Flip works](https://www.ringcentral.com/office/features/call-flip/overview.html).
