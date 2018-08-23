@@ -184,6 +184,10 @@
 	display: none;
 }
 
+.rst-versions.shift {
+  display: none;
+}
+
 body {
     font-size: 12px;
     font-family: "Lato",Helvetica,Arial,sans-serif;
