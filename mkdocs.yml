@@ -25,24 +25,21 @@ pages:
     - 'SMS and Pager': 'messages_sms-and-pager.md'
     - 'Faxes': 'messages_faxes.md'
     - 'Message Sync': 'messages_sync.md'
-- 'Making Calls':
+- 'Making Calls': 
     - 'RingOut': 'ring_out.md'
-    - 'URI Scheme': 'uri_scheme.md'
-    - 'WebRTC': 'webRTC.md'
-- 'Active Call Control':
-    - 'Overview': 'active_call_control_overview.md'
-    - 'Quick Start': 'active_call_control_quick_start.md'
+    - 'URI Scheme' : 'uri_scheme.md'
+    - 'WebRTC' : 'webRTC.md'
 - 'Call Handling Setup':
-    - 'Call Queues': 'call_queue.md'
-    - 'Answering Rules': 'answering_rules.md'
+    - 'Call Queues' : 'call_queue.md'   
+    - 'Answering Rules' : 'answering_rules.md' 
 - 'Push Notifications':
     - 'Overview': 'notifications_overview.md'
-    - 'Pub/Sub (for client apps)': 'notifications_pubsub.md'
+    - 'Pub/Sub (for client apps)' : 'notifications_pubsub.md'
     - 'Webhooks (for server apps)': 'notifications_webhooks.md'
 - 'Glip':
     - 'Introduction': 'glip_api.md'
     - 'Message Attachments': 'glip_message_attachments.md'
     - 'Glip Bots': 'glip_bots.md'
 - 'Upgrading from Legacy API':
-    - 'Overview': 'legacy_api_upgrade.md'
-    - 'Details': 'legacy_api_upgrade_details.md'
+    - 'Overview' : 'legacy_api_upgrade.md'
+    - 'Details' : 'legacy_api_upgrade_details.md'
