@@ -103,6 +103,10 @@
 	margin: 0 20px 0 50px;
 }
 
+.wy-menu-vertical .subnav li.current > ul li a {
+  padding-left: 0px;
+}
+
 .wy-menu-vertical span {
     line-height: 18px;
     padding: 10px 0;
