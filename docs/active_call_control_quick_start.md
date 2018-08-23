@@ -73,6 +73,7 @@ Added *telephonySessionId* & *partyId* (NEW).
 
 ## Telephony/sessions aka CSN
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
+
 * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
 * if a party belongs to another session (transferred call, conference, etc).
 * if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
@@ -232,6 +233,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 *NOTE*: phoneNumber in request body should be in e164 format.
 
 **Tips**:
+
 * You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
 * You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
 
@@ -254,6 +256,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 ```
 
 *NOTE*: In upcoming releases we're planning to support much more features, like
+
 * **Answer (Replace)** - accept the incoming call.
 * **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
 * **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
@@ -283,8 +286,9 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 ```
 
-**Tips**: You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html).
-Keep callers informed and entertained with messages and music on hold.
+**Tips**: 
+
+* You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html). Keep callers informed and entertained with messages and music on hold.
 
 *NOTE*: The same limitation as for Mute/Unmute  - Hold/Unhold via REST API doesn't work with Hold/Unhold placed via RingCentral apps or HardPhone.
 
@@ -300,7 +304,9 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 "phoneNumber":"+12059690601"
 }
 ```
-**Tips**: There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
+**Tips**: 
+
+* There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
 
 #### Transfer to Voicemail
 To forward the call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
