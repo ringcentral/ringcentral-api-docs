@@ -47,7 +47,6 @@
 	font-weight: 400;
 	padding: 10px 0px;
 	color: #585858;
-  margin-left: 20px;
 	border-bottom: 1px solid #e8e8e8;
 }
 
@@ -96,8 +95,9 @@
 }
 
 .wy-menu-vertical .subnav a {
-    padding: 10px 0;
+  padding: 10px 0;
 	color: #585858;
+  margin-left: 20px;
 }
 
 .wy-menu-vertical .subnav li.toctree-l1 {
