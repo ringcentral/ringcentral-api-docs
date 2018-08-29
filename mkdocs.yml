@@ -8,9 +8,9 @@ extra_css: [extra.css]
 extra_javascript: [fonts.js]
 pages:
 - 'Preface': 'index.md'
-- 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
-- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
+- 'Common Principles': 'overview.md'
 - 'Rate Limits': 'rate_limits.md'
+- 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
 - 'Exploring Account & Extension Settings': 'account_extension.md'
 - 'Call Log':
     - 'Introduction': 'calllog_introduction.md'
@@ -43,6 +43,7 @@ pages:
     - 'Introduction': 'glip_api.md'
     - 'Message Attachments': 'glip_message_attachments.md'
     - 'Glip Bots': 'glip_bots.md'
+- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'    
 - 'Upgrading from Legacy API':
     - 'Overview': 'legacy_api_upgrade.md'
     - 'Details': 'legacy_api_upgrade_details.md'
