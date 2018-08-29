@@ -124,6 +124,7 @@
 
 .wy-nav-content {
 	background-color: #fff;
+  max-width: 100%;
 }
 
 .wy-nav-content-wrap {
