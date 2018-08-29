@@ -3,7 +3,7 @@
 
 This guide presents key features of **RingCentral Connect Platform API**.
 
-**RingCentral** provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more|https://www.ringcentral.com/].
+**RingCentral** provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more](https://www.ringcentral.com/).
 
 **RingCentral API** is based on the Representational State Transfer (REST) architecture. REST is not a standard but an architectural style, and it uses the following standards:
 
