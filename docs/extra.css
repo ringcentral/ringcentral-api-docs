@@ -66,6 +66,11 @@
 	margin-left: 0px;
 }
 
+a.toctree-l3 {
+  margin-left: 40px;
+  font-size: 12px;
+}
+
 .wy-menu-vertical li a.toctree-l4 {
 	margin-left: 40px;
 }
