@@ -7,7 +7,7 @@
 
 *Party*  - Represents an active user in a call.
 
-## CSN - Call Session Notifications
+## CSN - Call Session Notifications (NEW)
 
 *CSN - telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
 
@@ -21,16 +21,17 @@ Based on the level where the subscription is configured,you will receive notific
 
 *partyId* : The partyId represents an active party involved in the the active call/ Telephony Session. A combination of a telephonySessionId and partyId can be used to control parts of an active call for an user, like Hold/Unhold,Start,Stop recording etc using Call Control API's. Details are described later.
 
-*Prerequisites for Using Call Control API * : The Prerequisites for using call control APIs are
+*Prerequisites for Using Call Control API* : The Prerequisites for using call control APIs are
 
                                              
-1. Advanced User Permission - Call Control APIs in Advanced API Category
-2. Access to *telephonySessionId* and *partyId* for an Active Call. The access to these 2 components can be obtained in the following ways
+1. Advanced User Permission - Call Control API is in Advanced API Category
+2. Access to *telephonySessionId* and *partyId* for an Active Call. The access to these 2 components can be obtained in the following ways :
+
               a. You can use presence endpoints to make a GET call to get active call details for a current user, including *telephonySessionId* and *partyId* , which you can then use to
               control parts of an Active Call.
 
-              b. You can user CSN Subscriptions explained in the begining and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
+			  b. You can user CSN Subscriptions explained in the begining and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
+			  
+			  c. You can also get *telephonySessionId* and *partyId*  by subscribing to Detail presence notifications(/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true).
 
-              c. You can also get *telephonySessionId* and *partyId*  by subscribing to Detail presence notifications(/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true).
-              
 *NOTE*: To access **Call Control API** please contact devsupport@ringcentral.com
