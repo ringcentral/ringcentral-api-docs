@@ -1,9 +1,9 @@
-# Subscribe to Telephony Notifications
+# Subscribe to Telephony Notifications 
 Currently RingCentral provides a few ways to detect new or in-progress call via Push Notification mechanism:
 *Presence*
 *telephony/sessions* aka **CSN**. Subscriptions per extension and per account are supported (NEW).
 
-Subscribe using any suitable transport, e.g. PubNub:
+Subscribe using any suitable transport, e.g. PubNub or Webhooks:
 
 ```
 POST /restapi/v1.0/subscription
@@ -70,6 +70,7 @@ Added *telephonySessionId* & *partyId* (NEW).
     }
   }
 ```
+You will be using the "telephonySessionId" and "partyId" to control Active calls using Call Control API.
 
 ## Telephony/sessions aka CSN
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
