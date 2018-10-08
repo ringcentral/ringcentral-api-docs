@@ -220,7 +220,7 @@ Then when a new message is received/sent your server will get a request with a p
   "event": "/restapi/v1.0/account/~/extension/230919004/message-store",
   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
   "body": {
-    "extensionId": 406149828004,
+    "extensionId": 230919004,
     "lastUpdated": "2018-10-07T12:05:00.531+0000",
     "changes": [
       {
