@@ -195,6 +195,10 @@ a.toctree-l3 {
   display: none;
 }
 
+.rst-versions .rst-badge {
+  display: none;
+}
+
 body {
     font-size: 12px;
     font-family: "Lato",Helvetica,Arial,sans-serif;

@@ -4,7 +4,7 @@ There are two ways send faxes, one using `multipart/form-data` and another using
 
 For more information on fax support, see the following resources:
 
-* [Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefFaxMessages.html)
+* [API Reference](https://developers.ringcentral.com/api-reference#Fax-sendFaxMessage)
 * [Developer FAQ](http://ringcentral-faq.readthedocs.io/en/latest/fax/)
 
 ## Send fax using multipart/form-data
