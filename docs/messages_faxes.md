@@ -197,7 +197,7 @@ Adjusting `dateFrom` and `dateTo` parameters you may get the messages for desire
 GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&dateFrom=2018-10-01&dateTo=2018-10-07
 ```
 
-If you'd like to track all new messages (including fax) in your app, you push notification feature. Subscribe using the specific message store event filter:
+If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:
 ```http
 POST /restapi/v1.0/subscription
 
