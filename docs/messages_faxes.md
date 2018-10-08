@@ -138,7 +138,7 @@ Authorization: Bearer MyToken
 
 ## Receiving Faxes
 
-In order to get the list of received faxes, use the `message-store` API endpoint with `type = Fax` query parameter:
+In order to get the list of received faxes, use the `message-store` API endpoint with `messageType = Fax` query parameter:
 
 ```http
 GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax'
