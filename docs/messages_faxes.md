@@ -141,7 +141,7 @@ Authorization: Bearer MyToken
 In order to get the list of received faxes, use the `message-store` API endpoint with `messageType = Fax` query parameter:
 
 ```http
-GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax'
+GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax
 ```
 
 The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday:
@@ -217,7 +217,7 @@ Then when a new message is received/sent your server will get a request with a p
 {
   "timestamp": "2018-10-07T12:05:00.408+0000",
   "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-  "event": "/restapi/v1.0/account/~/extension/230919004/message-store",
+  "event": "/restapi/v1.0/account/230919004/extension/230919004/message-store",
   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
   "body": {
     "extensionId": 230919004,
