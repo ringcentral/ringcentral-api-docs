@@ -39,6 +39,7 @@ This guide is intended to help developers build applications using the RingCentr
     * [Events]
 * [Glip](docs/glip_api.md)
     * [Glip Bots](docs/glip_bots.md)
+* [Publishing Your App](docs/publish_app-gallery.md)
 * Upgrading from Legacy API
     * [Overview](docs/legacy_api_upgrade.md)
     * [Details](docs/legacy_api_upgrade_details.md)
