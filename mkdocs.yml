@@ -43,7 +43,8 @@ pages:
     - 'Introduction': 'glip_api.md'
     - 'Message Attachments': 'glip_message_attachments.md'
     - 'Glip Bots': 'glip_bots.md'
-- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'    
+- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
+- 'Publishing Your App': 'publish.md'
 - 'Upgrading from Legacy API':
     - 'Overview': 'legacy_api_upgrade.md'
     - 'Details': 'legacy_api_upgrade_details.md'
