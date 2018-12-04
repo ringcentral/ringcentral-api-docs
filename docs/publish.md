@@ -4,7 +4,7 @@ Once your public app has been graduated, you can post it on our [App Gallery](ht
 
 ## Uploading Your App Gallery Profile Info
 
-To pubish your app, go to the "Publish" tab on your app configuration page as shown below. The App Gallery supports posting images and YouTube video links along with adding installation and support notes. Once you are satisified with your information, click "Submit to publish" and your profile info will be reviewed, and published if approved.
+To publish your app, go to the "Publish" tab on your app configuration page as shown below. The App Gallery supports posting images and YouTube video links along with adding installation and support notes. Once you are satisified with your information, click "Submit to publish" and your profile info will be reviewed, and published if approved.
 
 ![](img/publish_app-configuration.png)
 
