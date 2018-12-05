@@ -1,48 +1,19 @@
-# Developing with RingCentral
+# RingCentral Developer Guide Documentation
 
-[![Docs][docs-readthedocs-svg]][docs-readthedocs-link]
+This repository is the home of the RingCentral Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral platform.
 
-This guide is intended to help developers build applications using the RingCentral API. The API allows development of customized software solutions based on the RingCentral business phone service.
+This repository powers the production of two key resources:
 
-## Table of Contents
-* [Preface](docs/index.md)
-* [OAuth 2.0 Authentication & Authorization](docs/oauth.md)
-* [Authorization Profile and Permission Invalidation](docs/authorization_profile.md)
-* [Exploring Account & Extension Settings](docs/account_extension.md)
-* Call Log
-    * [Introduction](docs/calllog_introduction.md)
-    * [API Basics](docs/calllog_api-basics.md)
-    * [Using Detailed Call Log Data](docs/calllog_detailed-call-logs.md)
-    * [Call Recordings](docs/calllog_call-recordings.md)
-    * [Call Log Synchronization](docs/calllog_sync.md)
-    * [Development Concerns](docs/calllog_development-concerns.md)
-* [Data Archival](docs/data-archival.md)
-* Messages
-    * [Introduction](docs/messages_introduction.md)
-    * [SMS & Pager](docs/messages_sms-and-pager.md)
-    * [Faxes](docs/messages_faxes.md)
-    * [Message Sync](docs/messages_sync.md)
-* Making Calls
-    * [RingOut](docs/ring_out.md)
-    * [URI Scheme](docs/uri_scheme.md)
-    * [WebRTC](docs/webRTC.md)
-* Active Call Control
-    * [Overview](docs/active_call_control_overview.md)
-    * [Quick Start](docs/active_call_control_quick_start.md)
-* Call Handling Setup
-    * [Call Queues](docs/call_queue.md)
-    * [Answering Rules](docs/answering_rules.md)
-* Push Notifications
-    * [Overview](docs/notifications_overview.md)
-    * [Pub/Sub - for clients](docs/notifications_pubsub.md)
-    * [Webhooks - for servers](docs/notifications_webhooks.md)
-    * [Events]
-* [Glip](docs/glip_api.md)
-    * [Glip Bots](docs/glip_bots.md)
-* [Publishing Your App](docs/pubish.md)
-* Upgrading from Legacy API
-    * [Overview](docs/legacy_api_upgrade.md)
-    * [Details](docs/legacy_api_upgrade_details.md)
+1. RingCentral Developer Guide: [![Docs][docs-readthedocs-svg]][docs-readthedocs-link]
+2. [RingCentral Tutorials Index](https://ringcentral.github.io/tutorials/)
 
- [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
- [docs-readthedocs-link]: http://ringcentral-api-docs.readthedocs.org/
+## Inside this Repository
+
+RingCentral's [Developer Guide](https://ringcentral-api-docs.readthedocs.io/en/latest/) is powered by [Read the Docs](https://readthedocs.org/), and makes up the bulk of this repository. To contribute to this documentation effort, start by looking at `mydocs.yml` which powers the generation of the table of contents and points to the specific documents located within the `docs` directory.
+
+RingCentral's [Tutorials](https://ringcentral.github.io/tutorials/) index aggregates content found here, as well as content across the web. It is powered by `tutorials.json`.
+
+### Making Contributions
+
+If you would like to contribute to the RingCentral documentation effort, fork this repository, make your desired edits and contributions, and issue a pull request accordingly. 
+
