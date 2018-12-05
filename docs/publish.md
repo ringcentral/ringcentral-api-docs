@@ -12,4 +12,4 @@ To publish your app, go to the "Publish" tab on your app configuration page as s
 
 Organizations that publish public apps are automatically enrolled in the [RingCentral Connect Platform Partner (CP3) program](https://www.ringcentral.com/partner/isv.html) as an Authorized Partner and able to list on our [App Gallery](https://ringcentral.com/apps).
 
-Featured Apps are selected from the RingCentral Connect Platform Premier Partners as well as our own apps. To join the CP3 program as at the Premier Partner level, please fill out our [parter application form](https://www.ringcentral.com/partner/isvagentform.html). Being featured is at the discretion of our Connect Platform Partner team.
+Featured Apps are selected from the RingCentral Connect Platform Premier Partners as well as our own apps. To join the CP3 program as at the Premier Partner level, please fill out our [partner application form](https://www.ringcentral.com/partner/isvagentform.html). Being featured is at the discretion of our Connect Platform Partner team.
