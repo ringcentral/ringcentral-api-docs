@@ -279,5 +279,23 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/"
             }
         ]
+    },
+    {
+	"title": "Call Control Quick Start",
+        "description": "<p>The Call Control API allows developers to place, receive, control and monitor calls already in progress through a REST API. In this API overview and quick start, learn to receive notifications on new calls, and how forward, place on hold, transfer, record, flip and end calls.</p>",
+        "tags": [
+            "Voice"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/active_call_control_overview.md",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/active_call_control_overview.md",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/"
+            }
+        ]
     }
 ]
