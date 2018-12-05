@@ -1,0 +1,310 @@
+[
+    {
+        "title": "Getting Started with Event-Driven Subscriptions",
+        "description": "<p>Event-Driven Subscriptions enables your company to subscribe to receive real-time events about your RingCentral Activity data. In this tutorial, you will learn how to get started creating and consuming these events using Node.js.</p>",
+        "tags": [
+            "push notifications",
+            "subscriptions",
+            "Node JS"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/subscription-basics-nodejs-demo",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/subscription-basics-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/subscription-basics-nodejs-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/subscription-basics-nodejs-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Archiving Your RingCentral Activity Data",
+        "description": "<p>Data Archival is necesary for your company to store their RingCentral Activity data long-term. In this tutorial you we will learn the basics of data archival, and using PHP to offload your RingCentral Activity data into persistent data stores such as: local system files, Amazon S3, and Dropbox.</p>",
+        "tags": [
+            "data",
+            "archiving",
+            "PHP"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/data-archival-php-demo",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/data-archival-php-demo/"
+        },
+        "languages": [
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/data-archival-php-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/data-archival-php-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Getting Started with Webhooks",
+        "description": "<p>Webhooks enable your company to receive HTTP POST requests containing real-time event data about your RingCentral business communication account Activity. In this tutorial, you will learn how to get started create webhooks, and to handle the HTTP POST requests using Node.js.</p>",
+        "tags": [
+            "push notifications",
+            "webhooks",
+            "Node JS"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/webhook-basics-nodejs-demo",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/webhook-basics-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/webhook-basics-nodejs-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/webhook-basics-nodejs-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Getting Started with WebRTC",
+        "description": "<p>WebRTC allows developers to build applications which support peer-to-peer (browser to browser) based voice calls using RingCentral. In this tutorial, you will learn how to get started using WebRTC with RingCentral, and how the demo application operates using HTML5, and JavaScript.</p>",
+        "tags": [
+            "WebRTC",
+            "voice calls",
+            "JavaScript"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral/ringcentral-web-phone",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/"
+        },
+        "languages": [
+            {
+                "name": "JavaScript",
+                "githubUri": "https://github.com/ringcentral/ringcentral-web-phone",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/"
+            }
+        ]
+    },
+    {
+        "title": "OAuth in Node.js with Express",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral OAuth in Node.js with Express by a quick demo.</p>",
+        "tags": [
+            "OAuth2",
+            "Node JS",
+            "Express"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/oauth-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/oauth-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-nodejs-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Glip Bot using IBM Watson and Botkit",
+        "description": "<p>In this tutorial, you will learn how to use AI to enhance your team productivity using IBM Watson, Botkit and Glip using Node.js.</p>",
+        "tags": [
+            "GlipBot",
+            "IBM Watson",
+            "Botkit"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Call logs Analytics for iOS",
+        "description": "<p>In this tutorial, you will learn how to use the RingCentral SDK for Swift to read call-log data from a RingCentral account.</p>",
+        "tags": [
+            "Call Log",
+            "iOS",
+            "Call Data"
+        ],
+        "defaults": {
+            "githubUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
+            "tutorialUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
+        },
+        "languages": [
+            {
+                "name": "Swift",
+                "githubUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
+                "tutorialUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
+            }
+        ]
+    },
+    {
+        "title": "A2P SMS Messaging",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral SMS and Push Notification APIs to implement a SMS bot. The bot will listen for incoming text commands then reply to the sender with relevant content.</p>",
+        "tags": [
+            "SMS",
+            "push notifications",
+            "webhooks",
+            "PubNub"
+        ],
+        "defaults": {
+            "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/",
+            "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/",
+                "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/"
+            }
+        ]
+    },
+    {
+        "title": "2-Factor Authentication using RingCentral SMS API",
+        "description": "<p>Learn how to use RingCentral SMS API to implement Two-Factor Authentication for enhancing security.</p>",
+        "tags": [
+            "2FA",
+            "SMS"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa_nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Custom fax cover pages",
+        "description": "<p>With RingCentral fax, you send a variety types of renderable documents. In this tutorial, you will learn how to send fax with HTML and PDF in node.js.</p>",
+        "tags": [
+            "Fax",
+            "Node JS"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/fax-cover-page-nodejs-demo",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/index.html"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/index.html",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/index.html"
+            }
+        ]
+    },
+    {
+        "title": "OAuth in web page",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral OAuth in web page with javascript SDK by a quick demo.</p>",
+        "tags": [
+            "OAuth2",
+            "JavaScript"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/"
+        },
+        "languages": [
+            {
+                "name": "JavaScript",
+                "githubUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/"
+            }
+        ]
+    },
+    {
+        "title": "OAuth Implicit Grant Flow in web page",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral OAuth Implicit grant flow in web page with javascript SDK by a quick demo.</p>",
+        "tags": [
+            "OAuth2",
+            "JavaScript"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
+        },
+        "languages": [
+            {
+                "name": "JavaScript",
+                "githubUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Call Log Visualization",
+        "description": "<p>In this tutorial, you will learn how to access your RingCentral call log database by using the call-log API and the RingCentral Node JS SDK. You will learn how to parse the response, process the data and display the information on Google charts.</p>",
+        "tags": [
+            "Node JS"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo"
+            }
+        ]
+    },
+    {
+        "title": "SMS API Quickstart",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral SMS API. The following topics are included:</p>\n<ul>\n<li>How to send SMS</li>\n<li>How to send MMS</li>\n<li>How to track delivery status of messages</li>\n<li>How to retrieve and modify message history</li>\n<li>How to receive and reply to SMS messages</li>\n</ul>",
+        "tags": [
+            "SMS",
+            "Node JS",
+            "PHP",
+            "subscriptions"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-php-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-php-quickstart/"
+            }
+        ]
+    },
+    {
+        "title": "Call Recording Push Notification",
+        "description": "<p>This tutorial shows how to use RingCentral Company Presence Event Push Notification API to get notified when a new call recording is logged into a user call log database.</p>",
+        "tags": [
+            "Call Log",
+            "Call Recording",
+            "Presence Event",
+            "Push Notification",
+            "Node JS"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/"
+            }
+        ]
+    }
+]
