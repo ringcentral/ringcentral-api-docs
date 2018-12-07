@@ -14,7 +14,7 @@ SMS messages can be sent out to or received from the handsets operated by most m
 
 ### Sending SMS
 
-```
+```http
 POST /restapi/v1.0/account/~/extension/~/sms HTTP/1.1
 Content-Type: application/json   
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
@@ -26,7 +26,7 @@ Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 }   
 ```
 
-```
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json  
 
@@ -96,7 +96,7 @@ You can send and receive SMS messages from the main company phone number when au
 
 Pager messages are RingCentral specific types of text messages which can be sent between extensions of one account. Unlike SMS, pager messages can be sent to multiple recipients, so the API allows several extension numbers in the `to` field. Another difference from SMS is that the pager message that is sent to the department extension is automatically forwarded to all department members. This allows setting up dedicated mailing lists within the organization. The endpoint `company-pager` is designed to handle pager messages. The example below demonstrates sending new pager messages via the API.
 
-```
+```http
 POST /restapi/v1.0/account/~/extension/~/company-pager HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
@@ -110,7 +110,7 @@ Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 }
 ```
 
-```                                            
+```http                                        
 HTTP/1.1 200 OK
 Content-Type: application/json
 
