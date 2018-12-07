@@ -7,9 +7,9 @@
 
 *Party*  - Represents an active user in a call.
 
-## CSN - Call Session Notifications (NEW)
+## Telephony Sessions Notifications (NEW)
 
-*CSN - telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
+*telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
 
 The Extension Level Event Filter is : /restapi/v1.0/account/~/telephony/sessions
 
@@ -30,7 +30,7 @@ Based on the level where the subscription is configured,you will receive notific
             a. You can use presence endpoints to make a GET call to get active call details for a current user, including *telephonySessionId* and *partyId* , which you can then use to
               control parts of an Active Call.
 
-			b. You can user CSN Subscriptions explained in the begining and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
+			b. You can user Telephony Sessions Subscriptions explained in the begining and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
 
 			c. You can also get *telephonySessionId* and *partyId*  by subscribing to Detail presence notifications(/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true).
 
