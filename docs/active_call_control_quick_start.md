@@ -4,7 +4,7 @@ Currently RingCentral provides a few ways to detect new or in-progress call via 
 1. *Presence*
 
 
-2. *telephony/sessions* aka **CSN**. Subscriptions per extension and per account are supported (NEW).
+2. *Telephony Sessions*. Subscriptions per extension and per account are supported (NEW).
 
 Subscribe using any suitable transport, e.g. PubNub or Webhooks:
 

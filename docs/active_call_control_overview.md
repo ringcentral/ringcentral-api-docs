@@ -7,9 +7,9 @@
 
 *Party*  - Represents an active user in a call.
 
-## CSN - Call Session Notifications (NEW)
+## Telephony Sessions Notifications (NEW)
 
-*CSN - telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
+*telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
 
 The Extension Level Event Filter is : /restapi/v1.0/account/~/telephony/sessions
 
