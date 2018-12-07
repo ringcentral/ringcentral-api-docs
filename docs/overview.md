@@ -1,4 +1,8 @@
-# Resources and Parameters
+# Common Principles of the RingCentral API
+
+This guide describes the fundamentals of the RingCentral API and is a useful to developers wishing to understand its conventions and usage guidelines. 
+
+## Resources and Parameters
 
 Every entity in the RingCentral API is represented with a certain resource identified by a specific URI. The structure of each resource URI is similar to that of the web page URL. The URI syntax is represented by the following scheme:
 
@@ -13,13 +17,13 @@ Every entity in the RingCentral API is represented with a certain resource ident
 
 Protocol, host and port altogether constitute the main entry point to access the API.
 
-RingCentral production servers are accessible on `https://platform.ringcentral.com`. Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
+RingCentral production servers are accessible on [https://platform.ringcentral.com](https://platform.ringcentral.com). Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
 
 ---
 
 **Note** 
 
-If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via `https://platform.devtest.ringcentral.com` base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
+If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via [https://platform.devtest.ringcentral.com](https://platform.devtest.ringcentral.com) base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
 
 ---
 
@@ -49,19 +53,19 @@ Let's consider the examples below to illustrate the API resources and parameters
 
 * Get service plan information for RingCentral customer account (accountId will be automatically determined from authentication data):
 
-`/restapi/v1.0/account/~/service-info`
+    `/restapi/v1.0/account/~/service-info`
 
 * Get all SMS messages from a mailbox of account user (extensionId is specified explicitly):
 
-`/restapi/v1.0/account/~/extension/171857008/message-store?messageType=SMS`
+    `/restapi/v1.0/account/~/extension/171857008/message-store?messageType=SMS`
 
 * Get all SMS and Pager messages from a mailbox of account user:
 
-`/restapi/v1.0/account/~/extension/~/message-store?messageType=SMS&messageType=Pager`
+    `/restapi/v1.0/account/~/extension/~/message-store?messageType=SMS&messageType=Pager`
 
-# API Methods
+## API Methods
 
-## HTTP Methods
+### HTTP Methods
 
 In the RingCentral API, as in any REST API, the resources are accessible by standard HTTP methods: GET, POST, PUT and DELETE. These methods form a uniform CRUD interface expanded as "create, retrieve, update and delete".
 
@@ -98,7 +102,7 @@ Content-Type: application/json
 
 The majority of API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to API Reference.
 
-## Method Tunneling
+### Method Tunneling
 
 Sometimes, due to different technical limitations, API clients cannot issue all HTTP methods. In the most severe case a client may be restricted to `GET` and `POST` methods only. To work around this situation the RingCentral API provides a mechanism for tunneling `PUT` and `DELETE` methods through `POST`. This can be achieved in two ways:
 
@@ -123,7 +127,7 @@ If both the override header and query parameter are specified in the HTTP reques
 
 Tunneling HTTP methods should be used only when no other workaround is available. Each HTTP method has its own characteristics, such as how it is cached, which HTTP clients and intermediaries expect. When tunneling these methods through HTTP POST, those expectations can no longer be met.
 
-# Object Representation
+## Object Representation
 
 Whenever you need to send or retrieve a particular piece of data — for example, a call log record, information on an extension, etc. — it will be embedded in the HTTP request or response.
 
@@ -141,7 +145,7 @@ The API server accepts and returns all string values in UTF-8 encoding and does 
 
 ---
 
-# User Agent Identification
+## User Agent Identification
 
 It is strongly recommended that client applications provide the `User-Agent` HTTP header with every request, which should contain the key information about the requesting application, including application name, version, OS/platform name and version, etc. For browser-based (JavaScript) applications it is usually not possible to override the user agent string which is sent by browser. But other types of applications (desktop, mobile and server-side) can easily follow this recommendation.
 

@@ -1,4 +1,4 @@
-# RingCentral OAuth 2.0
+# Authorization Flows on RingCentral Using OAuth 2.0
 
 Your application and its users must be authorized by RingCentral in order to eliminate any possibility of abuse. The RingCentral API uses *OAuth 2.0* protocol for authentication and authorization, which is widely supported by the majority of cloud API providers. For more details see [OAuth 2.0 protocol specification](http://oauth.net/2/).
 
@@ -20,7 +20,7 @@ In order to prevent eavesdropping and tampering, the RingCentral API requires Tr
 
 ---
 
-# Tokens
+## Tokens
 
 Tokens are used to provide a context in each request for authorization or authentication. It is important to understand distinctions between token types:
 
@@ -36,7 +36,7 @@ Both access and refresh tokens may also be [revoked](#token-revocation) by the u
 
 If the user's credentials are changed (via RingCentral Service Web, Mobile Web or Admin Interface sites), all issued tokens are invalidated immediately, and all established sessions are terminated.
 
-# Authorization Flows
+## Authorization Flows
 
 There are several **authorization flows** you can use to get an authorized access to RingCentral API.
 
@@ -52,7 +52,7 @@ You can check which flows are available for your app on your app's Setting page.
 
 All flows end up with your app obtaining an access token which you will need to call RingCentral APIs.
 
-## Authorization Code Flow
+### Authorization Code Flow
 
 Authorization code flow protects users information and lets them control what they share with your app. You are required to use this flow if your app is a web app and will be used by more than one user.
 
@@ -166,7 +166,7 @@ The step-by-step details of this flow are explained below.
           "owner_id" : "256440016"
         }
 
-## Implicit Grant Flow
+### Implicit Grant Flow
 
 Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps. If you are building a browser only app and do not have a serverside component , Implicit Grant is the reccomended flow. Implicit grant ensures that your app enables your user to securely login and grant access to only those resources that they consent to . Implicit grant secures your app in a browser enviornment.
 
@@ -185,9 +185,9 @@ Lets first define the actors in the flow. The actors in the flow are
 5. Redirection URI : Web hosted client resource 
 6. API Server : Server that serves your rest apis. (This is involved in what you do after getting your access token)
 
-Steps
+**Steps**
 
-Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
+Step 1: First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
 
  The endpoint your app will  https://{{RingCentral Server}}/restapi/oauth/authorize
 
@@ -215,9 +215,7 @@ Step 1 : First time when the flow is initiated,the WebApp(Client) initiates the
      Host: platform.devtest.ringcentral.com
 
 
-Step 2 : 
-
-User login and consent
+Step 2: User login and consent
 
 
 On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
@@ -250,7 +248,7 @@ Assumning the user grants access , the response would contain the information as
       
 
 
-if the user decides not to grant access to the application, the response URL contains error
+If the user decides not to grant access to the application, the response URL contains error
 
 
 Step 3 : In this step , your WebApp extracts the access_token got as a response in the previous step and stores it locally to make sucessful API calls with the access token . Also it redirects the app to the redirect URI.Keep in mind, you would also need to take into account the expires_in time (3600 mili seconds). Which means before the access token expires you need to get a new access token.
@@ -262,7 +260,7 @@ When getting a new access token before the expires_in time, you can pass a prope
 Step 4 : Use the access_token to make sucessful API Calls to the API Server.
 
 
-## Password Flow
+### Password Flow
 
 Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
 
@@ -322,7 +320,6 @@ Below find the step-by-step instructions on how to perform two-legged authorizat
     | `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
     | `owner_id`                 | string  | Extension identifier |
 	
-    **Example**
     **Request example**
     
         POST /restapi/oauth/token HTTP/1.1 
@@ -345,7 +342,7 @@ Below find the step-by-step instructions on how to perform two-legged authorizat
           "owner_id" : "256440016"
         }
 
-## Client Credentials Authorization Flow
+### Client Credentials Authorization Flow
 
 This authorization flow is mostly used by RingCentral partner applications which need to create RingCentral user accounts and control their lifecycle without providing credentials of these users. This flow uses Client Credentials OAuth grant type and, in fact, unlike other described flows authorizes only the application.
 
@@ -447,7 +444,7 @@ There are two types of partner authorization sessions: initial signup session (n
 	
 	 ---
 
-# Client Authentication
+## Client Authentication
 
 Each application (client) that intends to obtain an access token must be authenticated. To authenticate the application we use **application key** (also referred as “client id” in OAuth 2.0 specification) and **application secret** (also referred as “client secret” in OAuth 2.0 specification) issued during application registration. They are passed to the token endpoint as username and password using the HTTP Basic authentication scheme.
 
@@ -473,7 +470,7 @@ Example values are:
 
 Client authentication uses the same principles for both [Password](#password-flow) flow and [Authorization Code](#authorization-code-flow) flow.
 
-# Using Access Token to Call RingCentral APIs
+## Using Access Token to Call RingCentral APIs
 
 Now your application should use the issued access token to perform the required actions. Each request must pass the access token using one of the following ways:
 
@@ -495,7 +492,7 @@ Now your application should use the issued access token to perform the required 
         Accept: application/json  
         Connection: keep-alive
 
-# Token Revocation
+## Token Revocation
 
 There are some situations when the user may want to revoke the already granted access in order to stop application activity. To revoke access/refresh token the following request is used:
 
@@ -509,7 +506,7 @@ There are some situations when the user may want to revoke the already granted a
 
 The request must contain HTTP Basic authorization string Base64 encoded and generated from client credentials: the application key ("userid" in terms of [RFC-2617](https://tools.ietf.org/html/rfc2617)) and application secret ("password" in terms of [RFC-2617](https://tools.ietf.org/html/rfc2617)). The request should contain the `token` form (preferred) or query parameter, which holds the value of an access or refresh token. The server returns `HTTP 200 OK` when the request has been successfully processed. Please note that due to security reasons (to prevent eavesdropping) successful response is returned even if revocation was not successful (for instance if a token passed was issued to another application, expired, or by other means malformed. For additional details see [RFC-7009: OAuth 2.0 Token Revocation](https://tools.ietf.org/html/rfc7009).
 
-# Application Permissions
+## Application Permissions
 
 In order to work with particular RingCentral API resources the application should have the corresponding permissions. Required API permissions are generally declared at the stage of application registration and confirmed by the user on authentication stage. The following permissions are available:
 

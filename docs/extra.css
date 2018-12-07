@@ -1,3 +1,7 @@
+li.toctree-l2:first-child,
+li.toctree-l3:first-child {
+    display: none;
+}
 .wy-nav-top {
 	background-color: #fff;
 	color: #0073ae;

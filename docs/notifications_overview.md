@@ -1,3 +1,5 @@
+# Push Notifications
+
 There are two strategies of client-service interaction providing data renewal: poll and push. Polling implies that the client periodically queries the server in order to get the updated data. Pushing implies that the server immediately sends notifications to the client on any data update. RingCentral API supports both types of data renewal. However in case of rarely changing data push notifications are evidently more effective, as they reduce client-server traffic, server load and improve user experience by notifying client applications on-the-fly with a minimal delay about important events.
 
 For example, for getting new messages the client application can periodically poll the server in order to get updates via incremental synchronization. However push notifications delivered immediately when the new messages appear are much more convenient. To start receiving push notifications the client application should subscribe for the required events; in this case, for the new messages.

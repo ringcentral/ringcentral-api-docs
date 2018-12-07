@@ -389,7 +389,7 @@
         ]
     },
     {
-	"title": "Common Principals of the RingCentral API",
+	"title": "Common Principles of the RingCentral API",
         "description": "<p>This nuts-and-bolts guide walks developers through the basics that govern all of our APIs, from our URL pragma, object represention, user agents, and more.</p>",
         "tags": [
             "Fundamentals"
@@ -590,7 +590,7 @@
         ]
     },
     {
-	"title": "Sending Messaging on RingCentral",
+	"title": "Sending Messages on RingCentral",
         "description": "<p>Voicemails, Faxes, SMS/MMSs, and Pager messages are all different message types supported by RingCentral. Learn about how to access message stores, and to send these different types of messaging via our API.</p>",
         "tags": [
             "SMS/MMS",

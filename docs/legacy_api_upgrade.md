@@ -1,3 +1,5 @@
+# Upgrading from our Legacy RingOut and SMS APIs
+
 RingCentral has introduced a new RingOut and Fax REST API and has deprecated and will remove support for the ASP Legacy APIs. The REST API is much more comprehensive than the Legacy APIs and includes updating Caller ID settings, retrieving call logs and call recordings, managing forwarding rules, SMS/MMS, user provisioning and much more.
 
 The Legacy APIs mentioned here are the ones at the following endpoints:
@@ -45,3 +47,57 @@ If you are creating a proxy, you can improve this by doing the following:
 * Keep your RingCentral credentials within the server app. There's no reason to pass it over the internet to your proxy.
 * Limit access to your proxy by IP address or other property
 * Manage your access tokens. For a private proxy you can use the OAuth 2.0 password flow (aka Resource Owner Password Credentials). The best approach is to store the access and refresh tokens for later use. You can use the access token for up to an hour and receive a new access/refresh token pair every hour using the refresh token (which expires in a week). If you cannot perform the refresh token step you can disable refresh tokens (by not selecting the grant type, or setting the refresh ttl to `-1`)
+
+## Frequently Asked Questions
+
+### How do I Upgrade the RingOut.asp List API to the REST API?
+
+The legacy RingOut List API returns a list of phone numbers to use as the `from` value in the RingOut API call. To retrieve a list of phone numbers you can use for RingOut using the REST API, call the following endpoint:
+
+`GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number`
+
+In the response, filter the phone number `records` array for the `CallForwarding` value in the `features` property. The phone numbers are in the `phoneNumber` property.
+
+More information on this API is available here:
+
+[https://developer.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html)
+
+### How do I Upgrade the RingOut.asp Call API to the REST API?
+
+The legacy RingOut Call API performs a two-legged RingOut. To make the same call using the REST API, use the following endpoint:
+
+`POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out`
+
+More information on this API is available here:
+
+[https://developer.ringcentral.com/api-docs/latest/index.html#!#RefMakeRingOut](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefMakeRingOut)
+
+### How do I Upgrade the RingOut.asp Status API to the REST API?
+
+The legacy RingOut Status API looks up the status of a RingOut. To make the same call using the REST API, use the following endpoint:
+
+`GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}`
+
+More information on this API is available here:
+
+[https://developer.ringcentral.com/api-docs/latest/index.html#!#RefGetRingOutCallStatus](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefGetRingOutCallStatus)
+
+### How do I Upgrade the RingOut.asp Cancel API to the REST API?
+
+To cancel a RingOut call using the REST API, use the following endpoint:
+
+`DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}`
+
+More information on this API is available here:
+
+[https://developer.ringcentral.com/api-docs/latest/index.html#!#RefCancelRingOut](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefCancelRingOut)
+
+### How do I Upgrade the FaxOut.asp API to the REST API?
+
+To send a fax using the REST API, use the following endpoint:
+
+`POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax`
+
+More information on this API is available here:
+
+[https://developer.ringcentral.com/api-docs/latest/index.html#!#RefCreateFaxMessage](https://developer.ringcentral.com/api-docs/latest/index.html#!#RefCreateFaxMessage)

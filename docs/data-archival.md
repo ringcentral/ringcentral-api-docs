@@ -1,3 +1,5 @@
+# Archiving Your RingCentral Activity Data
+
 Data Archival of your RingCentral account activity is a critical skill all [RingCentral Developers](https://developer.ringcentral.com) should have and maintain.
 
 Data Archival provides the capability to store your Ring Central Activity via the RingCentral API to enable rich integrations and to extend the persistent availability of your data beyond the Data Retention Policy defined by Ring Central.
@@ -111,11 +113,7 @@ The standard RingCentral Message Store and Account Data Retention Policy dictate
 * Provides specifications for development considerations with data archival
 * Has different rules for HIPAA and non-HIPAA RingCentral Accounts
 
-To see the most up-to-date version of this policy please read the following article in the RingCentral Knowledge Base:
-
-http://success.ringcentral.com/articles/en_US/RC_Knowledge_Article/2178
-
-We recommend bookmarking the above URL for your reference.
+Please consult our Knowledge Base to view our most up-to-date [Message Storage and Account Data Retention Policy](http://success.ringcentral.com/articles/en_US/RC_Knowledge_Article/2178).
 
 ## Common Use Cases
 

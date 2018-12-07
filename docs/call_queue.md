@@ -1,3 +1,5 @@
+# Call Handling: Call Queues
+
 Call queues are a poplar way to have multiple people respond to incoming calls.
 
 ## Create a Call Queue
@@ -14,7 +16,7 @@ The List Extensions endpoint can be used to retrieve a list of call queues, know
 
 **Example Request**
 
-```bash
+```http
 GET /restapi/v1.0/account/11111111/extension?type=Department
 Accept: application/json
 Content-Type: application/json
@@ -24,7 +26,7 @@ Authorization: Bearer MyToken
 
 **Example Response**
 
-```bash
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -69,7 +71,7 @@ To get the agent members of a queue, call the department members endpoint.
 
 **Example Request**
 
-```bash
+```http
 POST /restapi/v1.0/account/11111111/department/22223333/members
 Accept: application/json
 Authorization: Bearer MyToken
@@ -77,7 +79,7 @@ Authorization: Bearer MyToken
 
 **Example Response**
 
-```bash
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -110,7 +112,7 @@ Users can be added and removed as queue agents using the `account/{accountId}/de
 
 **Example Request**
 
-```bash
+```http
 POST /restapi/v1.0/account/11111111/department/bulk-assign
 Accept: application/json
 Content-Type: application/json
@@ -139,7 +141,7 @@ Authorization: Bearer MyToken
 
 **Example Response**
 
-```bash
+```http
 HTTP/1.1 204 No Content
 Content-Type: application/json
 Content-Language: en-US
@@ -162,7 +164,7 @@ A user extension's queue agent status is set by the extension presence `dndStatu
 
 **Example Request**
 
-```bash
+```http
 GET /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
 Authorization: Bearer MyToken
@@ -170,7 +172,7 @@ Authorization: Bearer MyToken
 
 **Example Response**
 
-```bash
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 530
@@ -203,7 +205,7 @@ To enable or disable an user extension's queue agent presence, update the extens
 
 **Example Request**
 
-```bash
+```http
 PUT /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
 Authorization: Bearer MyToken

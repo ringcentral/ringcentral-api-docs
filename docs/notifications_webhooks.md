@@ -1,3 +1,5 @@
+# Subscribing to and Using Webhooks
+
 RingCentral's Connect Platform supports oubound webhooks as a method of receiving push notifications.
 
 ## Create a Webhook URL
@@ -21,13 +23,10 @@ Here is a minimal example using PHP:
 
 ```php
 <?php
-
 $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
-
 if (strlen($v)>0) {
   header("Validation-Token: {$v}");
 }
-
 ?>
 ```
 
@@ -41,7 +40,7 @@ A webhook subscription can be created by making a post to the `subscription` end
 
 **Example Request**
 
-```bash
+```http
 POST /restapi/v1.0/subscription
 Accept: application/json
 Content-Type: application/json

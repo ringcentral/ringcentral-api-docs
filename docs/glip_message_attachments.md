@@ -24,11 +24,11 @@ The post attachment has a number of properties that are displayed in the followi
 
 ![](img/glip_post_attachment_demo.png)
 
-### Inbound Webhook Request Example
+### Inbound Webhook Example
 
 Here is an example message body for an inbound webhook:
 
-```
+```json
 {
   "icon": "https://example.com/post_icon.png",
   "title": "**Title of the post**",
@@ -72,11 +72,11 @@ Here is some example code:
 
 Go: https://github.com/grokify/go-glip/tree/master/examples/test_webhook
 
-### REST API Post Message Example
+### Post Message Example
 
 Here is the same message with slightly different property names for a API request:
 
-```
+```json
 {
   "text": "Body of the post",
   "attachments": [
@@ -141,7 +141,7 @@ Use these parameters to customize the appearance of a message.
 * **author_link** — Used to link the authors name. Will only work when author_name is present.
 * **author_icon** — A url to an image up to 82x82px that will display to the left of the author’s name. Will only work when author_name is present.
 
-```
+```json
 "author_name": "Author Name",
 "author_link": "https://example.com/author_link",
 "author_icon": "https://example.com/author_icon.png",
@@ -152,7 +152,7 @@ Use these parameters to customize the appearance of a message.
 * **title** — The actual title string
 * **title_link** — Used to linkify the title
 
-```
+```json
 "title": "Attachment Title",
 "title_link": “https://fexample.com/title_link",
 ```
@@ -165,8 +165,8 @@ Use these parameters to customize the appearance of a message.
 * **value** — A string that will display under the field title (Markdown)
 * **style** — An enumerated string for `Short` and `Long` to indicate the width of the message, Defaults to `Long`
 
-```
-"fields”: [
+```json
+"fields": [
   {
     "title": "Field 1",
     "value": "A short field",
@@ -194,7 +194,7 @@ Use these parameters to customize the appearance of a message.
 * **footer_icon** — A URL used to display a 32x32px icon to the left of the footer
 * **ts** — A Unix timestamp to be formatted and displayed to the right of the footer
 
-```
+```json
 "footer": "Attachment footer and timestamp",
 "footer_icon": "https://example.com/footer_icon.png",
 "ts": 1503714729

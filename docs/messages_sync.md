@@ -1,3 +1,5 @@
+# Message Synchronization
+
 We have already considered Message Store which allows to send ad-hoc request to create, retrieve, update or delete messages. But in a real world it is often necessary to solve more sophisticated problems. For example, one of the typical usage scenarios in respect to messaging is synchronization of local (i.e. cached on client side) mailbox representation with the server. Let's take a look on the basic steps of such scenario.
 
 When a client application logs in for the first time, it retrieves all the messages (variant: top N most recent ones, or messages for the last day/3 days/week/etc.) from server and caches them locally. In most cases it is reasonable to transfer not all but only basic information about messages (for example, message "headers" or metadata).
@@ -10,7 +12,7 @@ User may be allowed also to view "older" messages. In this case application down
 
 In order to simplify development of such applications RingCentral provides Message Synchronization API (or Message Sync API).
 
-## How it works
+## How It Works
 
 First of all we need to describe some basic terms.
 
@@ -24,11 +26,11 @@ First of all we need to describe some basic terms.
 
 -   **Sync Type** — type of synchronization action, one of the following:
 
-    - **Full Sync (FSYNC)** — retrieval of all messages satisfying client criteria (i.e. all incoming SMS messages within the last day). FSYNC request defines initial Sync Frame and produces first Sync Token (see below) for subsequent flow.
+    - **Full Sync (FSync)** — retrieval of all messages satisfying client criteria (i.e. all incoming SMS messages within the last day). FSYNC request defines initial Sync Frame and produces first Sync Token (see below) for subsequent flow.
 
-    - **Incremental Sync (ISYNC)** — retrieval of messages which have been changed since last Full or Incremental Sync. Client has to provide previously returned Sync Token which contains all the information about Sync Frame.
+    - **Incremental Sync (ISync)** — retrieval of messages which have been changed since last Full or Incremental Sync. Client has to provide previously returned Sync Token which contains all the information about Sync Frame.
 
--   **Sync Token** – special token which is included in FSYNC/ISYNC response and has to be included in next ISYNC request. It allows server to understand which mailbox state is currently known to the client and respond with changes accordingly. Sync Token is generated according to the following principles:
+-   **Sync Token** – special token which is included in FSync/ISync response and has to be included in next ISync request. It allows server to understand which mailbox state is currently known to the client and respond with changes accordingly. Sync Token is generated according to the following principles:
 
     - it includes the datetime of last synchronization;
 
@@ -40,13 +42,13 @@ First of all we need to describe some basic terms.
 
 Working with Message Sync API could be illustrated by the following example which can be mapped to scenario described above.
 
-1. Application sends FSYNC request to server indicating required time frame and criteria. Server responds with message data (headers) and Sync Token.
+1. Application sends FSync request to server indicating required time frame and criteria. Server responds with message data (headers) and Sync Token.
 
 2. When user wants to open, update or delete some of the messages loaded application does it through regular Message Store API using message ID(s).
 
-3. If user presses "Refresh" button, application sends ISYNC request to server (providing Sync Token returned previously) and gets back new or updated messages, as well as indicator that some messages were removed from server. Application may be also configured to poll server with ISYNC requests periodically in background.
+3. If user presses "Refresh" button, application sends ISync request to server (providing Sync Token returned previously) and gets back new or updated messages, as well as indicator that some messages were removed from server. Application may be also configured to poll server with ISync requests periodically in background.
 
-4. If user presses "More messages" button, application sends ISYNC request to server but also expands Sync Frame by providing new desired range of messages.
+4. If user presses "More messages" button, application sends ISync request to server but also expands Sync Frame by providing new desired range of messages.
 
 ---
 
@@ -62,7 +64,7 @@ Message Sync API supports only retrieval operations. Creation of new messages an
 
 ---
 
-## FSYNC Request
+## FSync Request
 
 Initial Full Sync request to retrieve all voicemail messages since Feb 25th may look as follows.
 
@@ -100,14 +102,13 @@ Due to implementation specifics, the server cannot guarantee the exact number of
 
 The corresponding response from server will be:
 
-```
+```json
 {
    "uri": "https://.../message-sync?messageType=VoiceMail&syncType=FSync&dateFrom=2012-02-25T00:00:00.000Z",
              "records":    [
       {
          "uri": "https://.../message-store/308833278010",  "id": 308833278010,
-         "to": [{"contact": {"name": "John
-            Smith"}}],
+         "to": [{"contact": {"name": "John Smith"}}],
          "from": {"contact": {"name": "Jane Smith"}},
          "type": "VoiceMail",
          "creationTime": "2012-08-08T12:17:28.000Z",
@@ -143,7 +144,7 @@ Message Sync API requests do not support paging as other APIs since it is not ap
 
 ---
 
-## ISYNC Request
+## ISync Request
 
 Incremental Sync request issued after the Full Sync one may look as follows.
 
@@ -169,7 +170,7 @@ The following parameters are generally allowed in request:
 
 - **recordCount** — modifies Sync Frame size.
 
-The response for server is quite similar as in case of FSYNC with the following differences:
+The response for server is quite similar as in case of FSync with the following differences:
 
 - Server will return ONLY new or changed messages metadata.
 

@@ -1,3 +1,5 @@
+# Using Detailed Call Log Data
+
 When the simple Call Log data does not provide enough granularity you can leverage the `Detailed` Call Log data at both the `Account` and `Extension` level.
 
 Using the following Detailed Call Log record, we can become more familiar with how the call was executed by RingCentral...
@@ -16,7 +18,7 @@ What actually happened during the call:
 
 This is not normal (and the call actually failed), but it provides an example.
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Detailed",
     "id": "CALL_LOG_RECORD_ID",

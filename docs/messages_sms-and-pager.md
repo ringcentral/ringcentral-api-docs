@@ -1,3 +1,5 @@
+# SMS and Pager Messages
+
 There are two types of short text messages supported by RingCentral: SMS and Pager.
 
 - SMS messages can be received by the extension types: User and Take Messages Only (Voicemail).
@@ -22,7 +24,9 @@ Content-Length: ACTUAL_CONTENT_LENGTH_HERE
    "from": {"phoneNumber": "16509100010"}, 
    "text": "Test SMS message"
 }   
+```
 
+```
 HTTP/1.1 200 OK
 Content-Type: application/json  
 
@@ -104,7 +108,9 @@ Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 "from": {"extensionNumber": "101"},
 "text": "Hello!"
 }
-                                            
+```
+
+```                                            
 HTTP/1.1 200 OK
 Content-Type: application/json
 

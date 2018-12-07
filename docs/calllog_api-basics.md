@@ -1,8 +1,10 @@
+# Call Log API Basics
+
 Before completing this section of the course content, please make sure you have read the [Introduction](calllog_introduction.md).
 
 The RingCentral Call Log API resource is the **tome** of knowledge about inbound and outbound actions for all users of your RingCentral account. Call Log data is segmented into four (4) data types:
 
-**Call Log Data Types**
+## Data Types
 
 Currently there are four major data types which are contained within the Call Log API resource (for the latest information, please check the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html):
 
@@ -26,7 +28,7 @@ Currently there are four major data types which are contained within the Call Lo
 
 All of Call Log data types have two levels of access, Admin (aka: Account) and User (aka: Extension). Account level access, is achieved by authenticating (obtaining an access_token) using RingCentral Admin user credentials. Account level response data will include records across an account, as compared to User/Extension level response data which is scoped ONLY to the **currently authenticated user**.
 
-# Active Calls
+## Active Calls
 
 Active Calls provides developers with time-sensitive insights into what is (or has recently) occurred in your RingCentral Account. We can perform this lookup at the Account Level or at the Extension Level depending upon the role of the user who has authenticated and obtained an access_token.
 
@@ -44,7 +46,7 @@ Query parameters are dropped if supplied and only `Simple` views of Call Log dat
 
 **Account Level Active Calls** are the Active Calls for an entire account. Requires an Admin account to authenticate and obtain the access_token used for this request.
 
-```
+```http
 GET /restapi/v1.0/account/~/active-calls HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -55,7 +57,7 @@ Cache-Control: no-cache
 
 Note: Attempting to access Account-Level Active Calls with an access_token which is not associated with an Admin account will result in the following error:
 
-```
+```json
 {
     "errorCode": "InsufficientPermissions",
     "message": "[ReadCompanyCallLog] permission required",
@@ -72,7 +74,7 @@ Note: Attempting to access Account-Level Active Calls with an access_token which
 
 **Extension Level Active Calls** are the Active Calls associated with the currently authenticated access_token user account credentials.
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/active-calls HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -85,7 +87,7 @@ Cache-Control: no-cache
 
 Each record in the response JSON will be the same for either Account-Level or Extension-Level Active Call Records.
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/extension/EXTENSION_ID/call-log/CALL_ID?view=Simple",
     "id": "CALL_LOG_ID",
@@ -112,7 +114,7 @@ Each record in the response JSON will be the same for either Account-Level or Ex
 }
 ```
 
-# Call Log Records
+## Call Log Records
 
 Developers should consider Call Logs to be the database of authority as it relates to actions (both inbound and outbound) for a RingCentral Account. The data contained can be queried in a variety of ways using filters as well as exposing deeper granualarity for all legs of a call (such as the case with a RingOut or forwarded calls).
 
@@ -124,7 +126,7 @@ Call logs can be searched across an entire account by authenticating (obtaining 
 
 **Account Level Call Log List** are the Call Logs for an entire account. Requires an Admin account to authenticate and obtain the access_token used for this request.
 
-```
+```http
 GET /restapi/v1.0/account/~/call-log HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -134,7 +136,7 @@ Authorization: Bearer REPLACE_WITH_YOUR_ACCESS_TOKEN_OBTAINED_WITH_ADMIN_CREDENT
 
 **Extension Level Call Log List** are the Call Logs associated with the currently authenticated access_token user account credentials.
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -144,7 +146,7 @@ Authorization: Bearer REPLACE_WITH_YOUR_ACCESS_TOKEN
 
 **Detailed Call Log Item (Account/Extension)** is available if you wish to obtain the details of a single call log item. This is only available for the currently authenticated user and their call logs respectively.
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/call-log/REPLACE_WITH_CALL_LOG_ID HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -179,7 +181,7 @@ There are two response formats you can receive which are indicated by the `view`
 
 **SIMPLE INBOUND RESPONSE**
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Simple",
     "id": "CALL_LOG_RECORD_ID",
@@ -205,7 +207,7 @@ There are two response formats you can receive which are indicated by the `view`
 
 Note: The following response data is for the exact same type of Simple Call Log record example shown above. But provides the call leg information about how the call was forwarded (the `legs` property of the response payload).
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Detailed",
     "id": "CALL_LOG_RECORD_ID",
@@ -295,15 +297,15 @@ Note: The following response data is for the exact same type of Simple Call Log 
 }
 ```
 
-# Batch Call Log Records
+## Batch Call Log Records
 
 Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](overview.md#batch-requests).
 
-# Call Recording Metadata and Call Recording Content
+## Call Recording Metadata and Content
 
 Call Recording data is available to developers (if call recording data exists) in both the Call Log List and the Call Log Item records as a property named `recording`. The property is a JSON object with the following schema:
 
-```
+```json
 "recording": {
     "uri": "STRING_REPRESENTING_THE_URI_TO_THE_CALL_RECORDING_METADATA_OBJECT",
     "id": "CALL_RECORDING_ID",
@@ -322,9 +324,11 @@ There is a dedicated section for call recordings later in this course.
 
 **Routes**
 
-**Call Recording Metadata** Used to obtain data about a Call Recording for the currently authenticated user
+**Call Recording Metadata**
 
-```
+Used to obtain data about a Call Recording for the currently authenticated user
+
+```http
 GET /restapi/v1.0/account/~/recording/REPLACE_WITH_CALL_RECORDING_ID HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -332,9 +336,11 @@ Accept: application/json
 Authorization: Bearer REPLACE_WITH_VALID_ACCESS_TOKEN 
 ```
 
-**Call Recording Content** Used to obtain binary data that IS the Call Recording for the currently authenticated user
+**Call Recording Content**
 
-```
+Used to obtain binary data that IS the Call Recording for the currently authenticated user
+
+```http
 GET /restapi/v1.0/account/~/recording/REPLACE_WITH_CALL_RECORDING_ID/content HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -342,9 +348,11 @@ Accept: application/json
 Authorization: Bearer REPLACE_WITH_VALID_ACCESS_TOKEN 
 ```
 
-**Response (meta data), the response for Call Recording Content is being omitted since it is just binary data**
+**Response (meta data)**
 
-```
+*The response for Call Recording Content is being omitted since it is just binary data*
+
+```json
 {
     "id": "RECORDING_ID",
     "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/ACCOUNT_ID/recording/RECORDING_ID/content",

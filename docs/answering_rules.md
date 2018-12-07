@@ -1,3 +1,5 @@
+# Call Handling: Answering Rules
+
 Answering Rules enable users to control how calls are handled when their extension is called. Users can set which phone numbers are called, in which order and after what delay, as well as configure Ring Groups.
 
 Answering rules are handled by the `account/~/extension/~/answering-rule` endpoint and associate rules with phone numbers handled by the user's forwarding number endpoint. Each user has 2 default answering rules for business hours and after hours, known as `business-hours-rule` and `after-hours-rule`, as well as custom rules.
@@ -15,7 +17,7 @@ Answering rules are handled by the `account/~/extension/~/answering-rule` endpoi
 |--------|----------|-------------|
 | `GET` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/` | Get extension rule list |
 
-```bash
+```http
 GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
@@ -57,7 +59,7 @@ Authorization: Bearer MyAccessToken
 
 **Example Request**
 
-```bash
+```http
 GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
@@ -65,7 +67,7 @@ Authorization: Bearer MyAccessToken
 
 **Example Response**
 
-```bash
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -175,7 +177,7 @@ The `ringCount` property indicates how many times the call should ring before mo
 |--------|----------|-------------|
 | `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Update a rule |
 
-```bash
+```http
 PUT /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
@@ -223,7 +225,7 @@ An update can be written as follows:
 
 **Example Request**
 
-```bash
+```http
 PUT /restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333 HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken

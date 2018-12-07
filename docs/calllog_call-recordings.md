@@ -1,4 +1,4 @@
-## Call Recordings
+# Call Recordings
 
 Developers who wish to either download/backup or create an interface for users to listen to call recordings may do so using the Call Recording Metadata and Call Recording actions of the Call Log API resource.
 
@@ -19,7 +19,7 @@ For simplicity, we are just going to step you through using the RingCentral Soft
 9. Talk to yourself for the next 35 seconds (this is always the worst part of doing this process...hearing yourself on the phone)
 10. Click the `Record` button a second time to stop recording, and then hangup the call to end it.
 
-### How to Obtain Call Recording Metadata and Content
+## Obtaining Call Recording Metadata and Content
 
 If you have followed all the steps above, you should now have at least one (more if you have done this before) call with a recording listed in the [Sandbox Online Account Portal - Call Log View](https://service.devtest.ringcentral.com/settings/calls.html#simple). If you do not see this record in the Sandbox Online Account Portal, wait a few minutes and check again...occasionally there is some latency.
 

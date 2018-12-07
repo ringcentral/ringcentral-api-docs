@@ -1,4 +1,4 @@
-# Building bot application locally using Glip
+# Building a Glip Bot Locally
 
 To develop a bot application for Glip sign in to your RingCentral account and go to [RC Connect Platform Developer Portal](https://developers.ringcentral.com/my-account.html#/applications).
 
@@ -15,6 +15,7 @@ Glip bot applications must have OAuth redirect URLs that are accessible over the
 ```
 
 If every thing goes well you should see the follow screen.
+
 ![](img/ngrok-running.png)
 
 ## Create a Glip Bot application
@@ -58,14 +59,15 @@ $ npm start
 
 6. Go to the `Bot` tab of the recently created app in the developer portal. Click on the `Add to Glip` button.
 
-    ![](img/glip_bot_tab.png)
+    ![](img/glip_bot_tab.png =300px)
 
     This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url. `NOTE:` Bot provisioner will only use the first url specificed in the oAuth settings.
+
     ![](img/authorization.png)
 
 7. You can now exchange the authorization code for an bot token using the code below:
 
-```
+```javascript
     //Authorization callback method.
     app.get('/oauth', function (req, res) {
         if(!req.query.code){
@@ -89,34 +91,33 @@ $ npm start
     });
 ```
 
-    The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
+The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.
 
 8. We can now subscribe to glip events using the code below:
 
-```
-               function subscribeToGlipEvents(token){
-                   var requestData = {
-                       "eventFilters": [
-                           "/restapi/v1.0/glip/posts",
-                           "/restapi/v1.0/glip/groups"
-                       ],
-                       "deliveryMode": {
-                           "transportType": "WebHook",
-                           "address": REDIRECT_HOST + "/callback"
-                       },
-                       "expiresIn": 500000000
-                   };
-                   platform.post('/subscription', requestData)
-                       .then(function (subscriptionResponse) {
-                           console.log('Subscription Response: ', subscriptionResponse.json());
-                           subscription = subscriptionResponse;
-                           subscriptionId = subscriptionResponse.id;
-                       }).catch(function (e) {
-                           console.error(e);
-                           throw e;
-                   });
-               }
-
+```javascript
+    function subscribeToGlipEvents(token){
+        var requestData = {
+            "eventFilters": [
+                "/restapi/v1.0/glip/posts",
+                "/restapi/v1.0/glip/groups"
+            ],
+            "deliveryMode": {
+                "transportType": "WebHook",
+                "address": REDIRECT_HOST + "/callback"
+            },
+            "expiresIn": 500000000
+        };
+        platform.post('/subscription', requestData)
+            .then(function (subscriptionResponse) {
+                console.log('Subscription Response: ', subscriptionResponse.json());
+                subscription = subscriptionResponse;
+                subscriptionId = subscriptionResponse.id;
+            }).catch(function (e) {
+                console.error(e);
+                throw e;
+            });
+    }
 ```
 
 9. Now login to `glip.devtest.ringcentral.com` with your credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
@@ -125,22 +126,21 @@ $ npm start
 
 10. You should now see the notification messages in the console as show below:
 
-```
-             {
-               "timestamp": "2017-03-21T18:29:27.408+0000",
-               "subscriptionId": "a45645-0001-cc71-9de3-674476722",
-               "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-               "event": "/restapi/v1.0/glip/posts",
-               "body": {
-                 "eventType": "PostAdded",
-                 "id": "0000001",
-                 "type": "TextMessage",
-                 "text": "Hi!"
-                 "creatorId": "123456789",
-                 "groupId": "1234",
-                 "creationTime": "2017-03-21T18:29:20Z",
-                 "lastModifiedTime": "2017-03-21T18:29:27Z"
-                }
-             }
-
+```json
+{
+    "timestamp": "2017-03-21T18:29:27.408+0000",
+    "subscriptionId": "a45645-0001-cc71-9de3-674476722",
+    "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
+    "event": "/restapi/v1.0/glip/posts",
+    "body": {
+        "eventType": "PostAdded",
+        "id": "0000001",
+        "type": "TextMessage",
+        "text": "Hi!",
+        "creatorId": "123456789",
+        "groupId": "1234",
+        "creationTime": "2017-03-21T18:29:20Z",
+        "lastModifiedTime": "2017-03-21T18:29:27Z"
+    }
+}
 ```

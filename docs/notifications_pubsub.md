@@ -1,3 +1,5 @@
+# Subscribing to Real-time Push Notifications
+
 The typical subscription flow is performed as follows:
 
 - A client application subscribes to the required events through the RingCentral API. In response the server provides all necessary information for the application to connect to the transport facilities that deliver the notifications: channel address; if required - credentials to access the channel, and notification payload encryption keys.
@@ -8,7 +10,7 @@ The typical subscription flow is performed as follows:
 
 - Each subscription has an expiration time and needs to be renewed explicitly by the client through the API call. If subscription is expired, the server silently stops sending push notifications for this client. The server may change any information it has to provide to client upon subscription renewal. Any changes are provided in the renewal response.
 
-# Subscription Flow
+## Subscription Flow
 
 To use RingCentral Push Notifications the client application can create a notifications subscription that can further be retrieved, changed or deleted by the client via the API requests. Let's consider the subscription flow step-by-step:
 
@@ -24,11 +26,11 @@ To use RingCentral Push Notifications the client application can create a notifi
 
 6. Unsubscribing
 
-## Authorization
+### Authorization
 
 When a client creates a subscription it must be authenticated and authorized to use the RingCentral API. It includes, at least, application authentication. Certain event filter requires the client to be authorized to access specific extension data, so the client needs to pass a valid access token in the request. For more details please refer to the [Authentication](oauth.md) section.
 
-## Subscription Creation
+### Subscription Creation
 
 To create a subscription the client application should send the following request:
 
@@ -58,7 +60,7 @@ Some event types provide sensitive data in the notification payload, which shoul
 
 Consider the following subscription creation request:
 
-```
+```http
 POST .../restapi/v1.0/subscription
 
 {
@@ -73,7 +75,7 @@ POST .../restapi/v1.0/subscription
 
 In response to this request the client application will get all the required information to subscribe to a certain PubNub channel (see PubNub section below to get more information about PubNub subscribing) and receive push notifications for the selected event (extension presence in this case):
 
-```
+```http
 HTTP/1.1 200 OK
 
 {
@@ -94,11 +96,11 @@ HTTP/1.1 200 OK
 }
 ```
         
-## Notifications Handling
+### Notifications Handling
 
 Push notifications will be delivered to the client application via the delivery mechanism specified in subscription. Each notification has the same common structure, which can be easily described with a simple example:
 
-```
+```json
 {
    "uuid":"ed1cf00c-0420-4bf5-a0ae-e659bb9f77e0",
    "event": "/restapi/v1.0/account/~/extension/823476228762/message-store",
@@ -111,7 +113,7 @@ Push notifications will be delivered to the client application via the delivery 
  
 According to received notification the client application should either update local data or notify user about data changes (for example, new messages received).
 
-## Subscription Renewal
+### Subscription Renewal
 
 Created subscription should be renewed, it would not be sent to the client application anymore once expired. After renewal any parameter of subscription may be changed, so it should be updated on a client side as well. To renew the subscription make a call to the following enpoint:
 
@@ -125,11 +127,11 @@ It is recommended to renew a subscription around 1-2 minutes before it is expire
 
 ---
 
-## Subscription Modification
+### Subscription Modification
 
 In order to subscribe to any other events the client application can create additional subscriptions, but it is preferable to update the already existing subscription with the new event filters. To make this subscription modification the following request should be used:
 
-```
+```http
 PUT /restapi/v1.0/subscription/{subscriptionId}
 
 {
@@ -149,11 +151,11 @@ Running this request, either with filters or with an empty body, also automatica
 
 ---
 
-## Unsubscribing
+### Unsubscribing
 
 If the application does not need to receive push notifications anymore due to some reason, it should unsubscribe from notifications through special API call. The existing subscription can be deleted as follows:
 
-```
+```http
 DELETE /restapi/v1.0/subscription/78c53776-6aa5-4089-b080-150089c097bf HTTP/1.1
 Accept: application/json
 Authorization: Bearer U0pDMDFQMDFKV1MwMnxXEhpuK23FJtRSi_rafOgPSMOorQ
@@ -163,7 +165,7 @@ The response will be the following:
 
     HTTP/1.1 204 No Content
 
-# Notifications Transport
+## Notifications Transport
 
 The system requires a certain transportation mechanism to deliver event notifications from the RingCentral service to the client application. Currently the API uses the PubNub cloud service as a transportation channel.
 

@@ -1,8 +1,11 @@
+# Making a Call Using WebRTC
+
 Being able to make and receive voice calls directly from within the browser is growing in demand by [RingCentral Developers](https://developer.ringcentral.com).
 
 This guide provides developers the foundation information needed to begin Developing with RingCentral WebRTC to enable peer-to-peer business voice communications in your browser-based applications.
 
 ## What is WebRTC?
+
 [WebRTC](https://webrtc.org) is an acronym which stands for web real time communications. WebRTC is a free, open project supported by Google, Apple, Mozilla, Opera, and other major internet companies that provides browsers and mobile applications with Real Time Communications capabilities via simple APIs. The WebRTC components have been optimized to best serve this purpose.
 
 * Acronym for: Web Real-Time Communication

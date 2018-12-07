@@ -1,15 +1,18 @@
+# Granting and Revoking User Permissions
+
 RingCentral provides developers the ability to view Authorization Profile information about user extensions. Authorization profiles define the capabilities and features within RingCentral which an extension may execute. This data concerning **Roles** and **Permissions** is presented heuristically as *Authorization Profile* data to developer applications and integrations providing useful context as it relates to a user/extension.
 
 ## Authorization Profile
 
 `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile`
 
-```
-
+```http
 GET /restapi/v1.0/account/~/extension/~/authz-profile
 Accept: application/json
 Accept-Language: en-US
-  
+```
+
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Language: en-US
@@ -45,12 +48,12 @@ As a **Best Practice**, it is highly recommended that developers building applic
 
 This can be accomplished by Checking Access to verify that a user has a specified permission and can be executed with the following API request (requires a valid `access_token` for the user):
 
-```
-
+```http
 GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
 Accept: application/json
 Accept-Language: en-US
-
+```
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Language: en-US

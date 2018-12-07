@@ -1,8 +1,10 @@
-**RingCentral Glip** is a messaging application, both web and desktop, providing built-in chat, tasks, calendar, file/screen sharing, video conferencing and other useful tools.
+# Glip Messaging
 
-With **Glip API** you can automate conversational communications, easily synchronize notifications into a single location (greatly reducing email), programmatically generate Glip message post content, and you can even couple the new Glip API resources to operate with AI or Machine Learning to solve advanced use cases.
+RingCentral Glip is a messaging application, both web and desktop, providing built-in chat, tasks, calendar, file/screen sharing, video conferencing and other useful tools.
 
-Now Glip API provides you with the following functionality scope (base URL `/restapi/v1.0`):
+With the Glip API you can automate conversational communications, easily synchronize notifications into a single location (greatly reducing email), programmatically generate Glip message post content, and you can even couple the new Glip API resources to operate with AI or Machine Learning to solve advanced use cases.
+
+The Glip API provides you with the following functionality scope (base URL `/restapi/v1.0`):
 
 - send messages  - `POST /glip/posts`
 - read messages filtered by chat  - `GET /glip/posts`

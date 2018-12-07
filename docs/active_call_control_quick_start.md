@@ -1,4 +1,7 @@
-# Subscribe to Telephony Notifications 
+# Call Control Quick Start
+
+## Subscribe to Telephony Notifications 
+
 Currently RingCentral provides a few ways to detect new or in-progress call via Push Notification mechanism:
 
 1. *Presence*
@@ -22,12 +25,13 @@ POST /restapi/v1.0/subscription
 }
 ```
 
-## Presence
+### Presence
+
 Added *telephonySessionId* & *partyId* (NEW).
 
 **Limitations**: Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added *activeCalls.telephonySessionId* and *activeCalls.partyId* to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.
 
-```
+```json
 {
     "uuid": "1787755531108376563",
     "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
@@ -73,9 +77,11 @@ Added *telephonySessionId* & *partyId* (NEW).
     }
   }
 ```
+
 You will be using the "telephonySessionId" and "partyId" to control Active calls using Call Control API.
 
-## Telephony Sessions
+### Telephony Sessions
+
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
 
 * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
@@ -84,7 +90,7 @@ You will be using the "telephonySessionId" and "partyId" to control Active calls
 
 Push Notification Example:
 
-```
+```json
 {
     "uuid": "837270960869181944",
     "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
@@ -146,7 +152,8 @@ Push Notification Example:
   }
 ```
 
-# How to Use Call Control API
+## Using the Call Control API
+
 RC User is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.
 
 *NOTE*: In Release 10.3 we're planning to provide **Call Out** API to initiate a call.
@@ -218,12 +225,16 @@ Authorization: Bearer <access-token>
 ```
 *NOTE*: There are specific scenarios when the call became splitted to multiple Sessions.
 
-# Pre-Call Control based on Call Control API
+## Pre-Call Control
+
 Pre-Call Controls are soft keys that allow you to choose an action for an incoming call. In Beta version of **Call Control** API you'll be able to use the following distribution options:
-## Forward
+
+### Forwarding Calls
+
 You can use the **Forward** API if you want to transfer the incoming call to another phone number or to voicemail, without answering the call. **Forward** API works for parties in Setup and Proceeding states only (this is the main differece with Transfer API, which works with already accepted calls). For now Forward to phone number and Vociemail are available, see below.
 
 #### Forward to phone number
+
 To forward the incoming call to another phone number take *telephonySessionId* and *partyId* from telephony/sessions notification and use them in endpoint path, see example below.
 
 ```
@@ -242,6 +253,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 * You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
 
 #### Forward to Voicemail
+
 To forward the incoming call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
 
 ```
@@ -252,7 +264,8 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 }
 ```
 
-## Reject
+### Rejecting Calls
+
 Using Reject API will stop the ringing on your app. It works as Ignore option on Ringcenrtral Desktop app, i.e. the caller will still hear ringing sounds, until picked up on another Forwarding Number, or until the caller is routed to your extension's voicemail.
 
 ```
@@ -267,7 +280,8 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 ... and other features, based on your feedback!
 
-# Active Call Control using API
+## Active Call Control
+
 When call is in progress you can manage participants, start and pause recording, transfer or park the call and much more.. And all this available via Ringcentral API now!
 
 ### Mute and Unmute participant
@@ -282,7 +296,8 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 ```
 *NOTE*: There is a known limitation for this API - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via **Call Control** API and Ringcentral Desktop app you need to unmute both endpoints to bring media back.
 
-## Hold and UnHold Call
+### Hold and UnHold Call
+
 Use **Hold** API to put the participant on hold. Use **Unhold** API otherwise:
 
 ```
@@ -296,10 +311,12 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 *NOTE*: The same limitation as for Mute/Unmute  - Hold/Unhold via REST API doesn't work with Hold/Unhold placed via RingCentral apps or HardPhone.
 
-## Call Transfer
+### Call Transfer
+
 **Transfer** API works similar to **Forward** API, except that party should accept the call. You can transfer the call to another phone number, to voicemail or to Park Location (Park Orbit feature).
 
 #### Transfer to phone number
+
 Specify the target phone number for a party transfer:
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/transfer
@@ -313,6 +330,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 * There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
 
 #### Transfer to Voicemail
+
 To forward the call to Voicemail specify **voicemail** in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/transfer
@@ -323,6 +341,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 ```
 
 #### Call Park
+
 If you are a member of any Park Location Group you could park the call via **Transfer** API. The call will be parked to specified mailbox.
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/transfer
@@ -333,7 +352,8 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 ```
 Setting up and Using Park Locations via [Service Site](https://success.ringcentral.com/articles/RC_Knowledge_Article/8355) or via [Ringcentral API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html).
 
-## Recording
+## Recording Calls
+
 To start recording use **Recordings** API. You will hear a notification that the call is being recorded.
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/recordings
@@ -356,7 +376,8 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 **Tips**: [How to Obtain Call Recording Metadata and Content](https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/)
 
 ## Call Flip
-Call Flip if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone), Call Flip could become something you use quite often. This nifty feature enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone …you get the idea. See [How Call Flip works](https://www.ringcentral.com/office/features/call-flip/overview.html).
+
+Call flipping is useful if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone) and enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone... you get the idea. See [How Call Flip works](https://www.ringcentral.com/office/features/call-flip/overview.html).
 
 [Configure your Call Flip Settings](https://success.ringcentral.com/articles/RC_Knowledge_Article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding) via Service Site or via [Ringcentral Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html).
 
@@ -368,9 +389,10 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 }
 ```
 
-## End Call
+## Ending Calls
+
 Drop the call for all participants:
+
 ```
 DELETE /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>
-
 ```

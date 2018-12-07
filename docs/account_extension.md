@@ -1,3 +1,5 @@
+# Managing Phone Numbers, Extensions and Settings
+
 The RingCentral service allows its customers to create and register an account that is usually associated with the customer's company. After registering the account with the company main number the user can create extensions of different types and functionality. The extensions can further be assigned with the phone numbers and phone devices.
 
 The account and its extensions can be configured in accordance with the user demands.
@@ -32,9 +34,9 @@ Common access control rules are based on user credentials and are enforced in AP
 
 - users with administrator rights may access all information about account and all of its extensions.
 
-# Account and Extension Information
+## Account and Extension Information
 
-## Retrieving Account Data
+### Retrieving Account Data
 
 RingCentral API allows to retrieve information about a particular account.
 
@@ -86,7 +88,7 @@ Content-Type: application/json
 }
 ```
 
-## Retrieving Extension Data
+### Retrieving Extension Data
 
 The RingCentral API allows retrieval of information on extensions that belong to a particular account. All types of extensions are supported, namely:
 
@@ -179,7 +181,7 @@ Every RingCentral account has a special system extension. The user of this exten
 
 ---
 
-# Phone Numbers
+## Phone Numbers
 
 One of the key functions of the RingCentral service is the ability to operate with phone numbers. This includes assigning them to extensions and devices and configuring them according to the requirements of the business phone system.
 
@@ -281,7 +283,7 @@ The user with administrator privileges can also retrieve the list of all phone n
 
 The result would be similar to the previous example. In addition, the server will return information about the extension each phone number is mapped to (if any).
 
-## Forwarding & Call Flip Phone Numbers
+## Call Forwarding & Call Flip
 
 Each extension can have a list of numbers for forwarding the calls. A forwarding number is any external (non-RingCentral) phone number used for redirecting incoming RingCentral calls, as well as for the RingOut feature. The user is able to specify ten forwarding numbers under the following 3 predefined labels: 'Home', 'Mobile', 'Office', and 7 customized labels (by changing the 'Other' label); they are returned in the `label` field. It is possible to forward calls to other RingCentral user phones (including extension direct numbers).
 

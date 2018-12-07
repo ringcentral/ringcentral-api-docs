@@ -1,4 +1,6 @@
-## Sync Flow
+# Call Log Synchronization
+
+## Sychronization Flow
 
 The API allows synchronizing local call log representation with the server. The implementation provides the following functionality:
 
@@ -20,7 +22,7 @@ Let's consider the basic steps of synchronization scenario:
 
 4. Sporadic resync. From time to time the server may require client to do FSync in response for ISync requires. This may happen if there are too many changes since last ISync, or some changes in ISync implementation which do not allow the server to execute ISync request as usual.
 
-## Basic Terms
+## Terminology
 
 First of all let's describe some basic terms.
 
@@ -28,9 +30,9 @@ First of all let's describe some basic terms.
 
 **Sync Type** - type of synchronization action, one of the following:
 
-**Full Sync (FSYNC)** – retrieval of all messages satisfying client criteria (i.e. all incoming SMS messages within the last day). FSYNC request defines the initial Sync Frame and produces the first Sync Token (see below) for subsequent flow.
+**Full Sync (FSync)** – retrieval of all messages satisfying client criteria (i.e. all incoming SMS messages within the last day). FSYNC request defines the initial Sync Frame and produces the first Sync Token (see below) for subsequent flow.
 
-**Incremental Sync (ISYNC)** – retrieval of messages which have been changed since last Full or Incremental Sync. Client has to provide previously returned Sync Token which contains all the information about Sync Frame.
+**Incremental Sync (ISync)** – retrieval of messages which have been changed since last Full or Incremental Sync. Client has to provide previously returned Sync Token which contains all the information about Sync Frame.
 
 **Sync Token** – special token which is included in FSYNC/ISYNC response and has to be included in next ISYNC request. It allows the server to understand which call log state is currently known to the client and respond with changes accordingly. The Sync Token is generated according to the following principles:
 
@@ -42,7 +44,7 @@ First of all let's describe some basic terms.
 
 - it is encrypted in some way to hide implementation details from the client.
 
-## Sync Strategy
+## Synchronization Strategy
 
 Let's consider the regular way to perform call log synchronization.
 
@@ -54,7 +56,7 @@ The maximum number of records that can be returned in this request is limited to
 
 If you enter the `recordCount` parameter for the ISync request, it specifies the number of records from the past (returned for the last FSync request) that will also be returned in response. The value of this parameter is limited to the 250. Please note that despite of the `recordCount` value, the entire number of records returned will not exceed 250, and the fresh records have priority over the old ones. For example, the `recordCount` value is 40, and the number of new records is 230 (between FSync and ISync), this means the server will return 230 fresh and 20 old records.
 
-## FSYNC - Initial Full Sync Request
+## Full Sync
 
 Initial synchronization is performed when the client requests FSync. The request is sent with the following parameters:
 
@@ -136,7 +138,7 @@ Content-Length: 1811
 }
 ```
   
-## ISYNC - Subsequent Sync Request
+## Incremental Sync
 
 Subsequent synchronization requests are performed when the client requests ISync. The request is sent with the following parameters:
 

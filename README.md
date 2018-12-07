@@ -4,7 +4,7 @@ This repository is the home of the RingCentral Developer Guide: a collection of 
 
 This repository powers the production of two key resources:
 
-1. RingCentral Developer Guide: [![Docs][docs-readthedocs-svg]][docs-readthedocs-link]
+1. [RingCentral Developer Guide](https://ringcentral-api-docs.readthedocs.io/en/latest/oauth/)
 2. [RingCentral Tutorials Index](https://ringcentral.github.io/tutorials/)
 
 ## Inside this Repository
@@ -13,7 +13,18 @@ RingCentral's [Developer Guide](https://ringcentral-api-docs.readthedocs.io/en/l
 
 RingCentral's [Tutorials](https://ringcentral.github.io/tutorials/) index aggregates content found here, as well as content across the web. It is powered by `tutorials.json`.
 
-### Making Contributions
+## Contributing
 
-If you would like to contribute to the RingCentral documentation effort, fork this repository, make your desired edits and contributions, and issue a pull request accordingly. 
+If you would like to contribute to the RingCentral documentation effort, fork this repository, make your desired edits and contributions, and issue a pull request accordingly.
+
+### Running ReadTheDocs Locally
+
+```
+% git clone https://github.com/ringcentral/ringcentral-api-docs.git
+% cd ringcentral-api-docs
+% pip install mkdocs
+% mkdocs serve
+```
+
+Then you should be able to load http://localhost:8000 to view the documentation.
 
