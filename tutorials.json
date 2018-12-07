@@ -3,7 +3,7 @@
         "title": "Getting Started with Event-Driven Subscriptions",
         "description": "<p>Event-Driven Subscriptions enables your company to subscribe to receive real-time events about your RingCentral Activity data. In this tutorial, you will learn how to get started creating and consuming these events using Node.js.</p>",
         "tags": [
-            "Fundamentals",
+            "Fundamentals"
         ],
         "defaults": {
             "githubUri": "https://github.com/ringcentral-tutorials/subscription-basics-nodejs-demo",
@@ -295,6 +295,316 @@
                 "name": "Learn More",
                 "githubUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/active_call_control_overview.md",
                 "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/"
+            }
+        ]
+    },
+    {
+	"title": "Authorization Flows on RingCentral",
+        "description": "<p>Applications on RingCentral have a number of ways to authorize users depending upon the modality, use case, and technical contraints of the application. This guide walks developers through each of our supported auth grant types, and how to use them.</p>",
+        "tags": [
+            "Auth"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/oauth/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/oauth/"
+            }
+        ]
+    },
+    {
+	"title": "Granting and Revoking User Permissions",
+        "description": "<p>Learn how to view the Authorization Profile for a user extensions, and to modify the permissions associated with an extension, and user account to better manage and secure your RingCentral account.</p>",
+        "tags": [
+            "Configuration"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/authorization_profile/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/authorization_profile/"
+            }
+        ]
+    },
+    {
+	"title": "Archiving Account Activity Data",
+        "description": "<p>RingCentral does not store account activity data in perpetuity. In this tutorial you will Learn how to extend the availability of your data beyond the Data Retention Policy defined by Ring Central</p>",
+        "tags": [
+            "Data"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/data-archival/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/data-archival/"
+            }
+        ]
+    },
+    {
+	"title": "Managing Phone Numbers, Extensions and Settings",
+        "description": "<p>In this guide developers will learn how to manage the phone numbers and extensions within their organization -- provisioning new ones, managing their permissions and capabilities, and forwarding calls to external phone numbers.</p>",
+        "tags": [
+            "Configuration"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/account_extension/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/account_extension/"
+            }
+        ]
+    },
+    {
+	"title": "Working with Call Logs",
+        "description": "<p>One of the most useful sources of data within RingCentral are an organizations call logs: a record of every call, SMS, fax and communication in and out, not to mention call recordings when applicable. This comprehensive guide will take developers through our APIs so that can make the most of this data.</p>",
+        "tags": [
+            "Data"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_introduction/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_introduction/"
+            }
+        ]
+    },
+    {
+	"title": "Common Principals of the RingCentral API",
+        "description": "<p>This nuts-and-bolts guide walks developers through the basics that govern all of our APIs, from our URL pragma, object represention, user agents, and more.</p>",
+        "tags": [
+            "Fundamentals"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/overview/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/overview/"
+            }
+        ]
+    },
+    {
+	"title": "Subscribing to Real-time Push Notifications",
+        "description": "<p>Learn how to deliver real-time push notifications to client applications, and mobile devices on the RingCentral platform using PubNub.</p>",
+        "tags": [
+            "Fundamentals"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_pubsub/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_pubsub/"
+            }
+        ]
+    },
+    {
+	"title": "Understanding API Rate Limits",
+        "description": "<p>RingCentral puts in place API rate limits to protect customer accounts and infrastructure from abuse. Developers should be familiar with these policies and how to work responsibily with them.</p>",
+        "tags": [
+            "Fundamentals"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/rate_limits/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/rate_limits/"
+            }
+        ]
+    },
+    {
+	"title": "Upgrading from our Legacy APIs",
+        "description": "<p>In May 2018 we announced the end-of-life of our RingOut.asp and FaxOut.asp APIs. This guide will help developers upgrade their implementations to utilize our enhanced REST APIs with zero loss of functionality.</p>",
+        "tags": [
+            "Fundamentals",
+	    "Fax",
+	    "Voice"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/legacy_api_upgrade/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/legacy_api_upgrade/"
+            }
+        ]
+    },
+    {
+	"title": "Subscribing to and Using Webhooks",
+        "description": "<p>Webhooks allow developers to receive push notifications over the web for the events within their organization that client applications and integrations care about. This guide will show you how to create, renew and terminate webhook subscriptions.</p>",
+        "tags": [
+            "Fundamentals"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_webhooks/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_webhooks/"
+            }
+        ]
+    },
+    {
+	"title": "Building Glip Bots Using Ngrok",
+        "description": "<p>Glip Bots cannot function without webhooks, which in turn requires bot apps to accessible over the Internet -- presenting challenges to developers building on their localhost. This guide will show how to use a free service called ngrok to develop Glip bots.</p>",
+        "tags": [
+            "Glip Messaging"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_bots/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_bots/"
+            }
+        ]
+    },
+    {
+	"title": "Creating Rich Posts in Glip",
+        "description": "<p>Learn how to use Glip Message Attachments to attach rich content, such as formatting, images, and color, to the messages your Glip bots post to create more compelling and effective posts.</p>",
+        "tags": [
+            "Glip Messaging"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_message_attachments/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_message_attachments/"
+            }
+        ]
+    },
+    {
+	"title": "Creating and Managing Call Queues",
+        "description": "<p>Call Queues allow multiple people to respond to incoming calls. Learn how to create and manage call queues on the fly to better respond to incoming customer calls.</p>",
+        "tags": [
+            "Voice",
+	    "Configuration"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/call_queue/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/call_queue/"
+            }
+        ]
+    },
+    {
+	"title": "Placing Calls Using RingOut",
+        "description": "<p>RingOut enables people to make a call from any non-RingCentral number by means of the RingCentral account. It works by dialing the caller, and when answered, then dialing-in and connecting the recipient. Learn how to initiate phone calls using the RingOut API.</p>",
+        "tags": [
+            "Voice"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/ring_out/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/ring_out/"
+            }
+        ]
+    },
+    {
+	"title": "Making Calls Using WebRTC",
+        "description": "<p>This guide provides developers the information needed to begin making and receiving phone calls through a web browser using WebRTC, a web standard for real-time, peer-to-peer voice communications.</p>",
+        "tags": [
+            "Voice"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/webRTC/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/webRTC/"
+            }
+        ]
+    },
+    {
+	"title": "Sending Faxes via an API",
+        "description": "<p>Learn how to send a fax using the RingCentral API. Then learn how to forward, resend and even receive faxes.</p>",
+        "tags": [
+            "Fax"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_faxes/"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_faxes/"
+            }
+        ]
+    },
+    {
+	"title": "Sending Messaging on RingCentral",
+        "description": "<p>Voicemails, Faxes, SMS/MMSs, and Pager messages are all different message types supported by RingCentral. Learn about how to access message stores, and to send these different types of messaging via our API.</p>",
+        "tags": [
+            "SMS/MMS",
+	    "Fax"
+        ],
+        "defaults": {
+            "githubUri": "",
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction"
+        },
+        "languages": [
+            {
+                "name": "Learn More",
+                "githubUri": "",
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction/"
             }
         ]
     }
