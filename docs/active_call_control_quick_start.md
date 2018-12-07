@@ -75,7 +75,7 @@ Added *telephonySessionId* & *partyId* (NEW).
 ```
 You will be using the "telephonySessionId" and "partyId" to control Active calls using Call Control API.
 
-## Telephony/sessions aka CSN
+## Telephony Sessions
 **Limitations**: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:
 
 * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
