@@ -1,18 +1,21 @@
 body {
-    padding-top: 70px;
+/*    padding-top: 70px;*/
 }
 
+#content {
+    padding-top: 30px;
+}
+
+/*
 h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
     content: "";
     display: block;
     margin-top: -75px;
     height: 75px;
 }
-
 ul.nav li.main {
     font-weight: bold;
 }
-
 div.col-md-9 {
     padding-bottom: 100px;
 }
@@ -24,6 +27,7 @@ div.source-links {
 div.col-md-9 img {
   max-width: 100%;
 }
+*/
 
 /*
  * Side navigation

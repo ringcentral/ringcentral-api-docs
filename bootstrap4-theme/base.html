@@ -64,146 +64,135 @@
     </head>
 
     <body{% if page and page.is_homepage %} class="homepage"{% endif %}>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    {%- if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    {%- endif %}
-
-                  {%- block site_name %}
-                    <a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
-                  {%- endblock %}
-                </div>
-
-                <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
-                  {%- block site_nav %}
-                    {%- if nav|length>1 %}
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                        {%- for nav_item in nav %}
-                        {%- if nav_item.children %}
-                            <li class="dropdown{% if nav_item.active %} active{% endif %}">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ nav_item.title }} <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                {%- for nav_item in nav_item.children %}
-                                    {% include "nav-sub.html" %}
-                                {%- endfor %}
-                                </ul>
-                            </li>
-                        {%- else %}
-                            <li {% if nav_item.active %}class="active"{% endif %}>
-                                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-                            </li>
-                        {%- endif %}
-                        {%- endfor %}
-                        </ul>
-                    {%- endif %}
-                  {%- endblock %}
-
-                    <ul class="nav navbar-nav navbar-right">
-                      {%- block search_button %}
-                        {%- if 'search' in config['plugins'] %}
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                        {%- endif %}
-                      {%- endblock %}
-
-                      {%- block next_prev %}
-                        {%- if page and (page.next_page or page.previous_page) %}
-                            <li {% if not page.previous_page %}class="disabled"{% endif %}>
-                                <a rel="next" {% if page.previous_page %}href="{{ page.previous_page.url|url }}"{% endif %}>
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li {% if not page.next_page %}class="disabled"{% endif %}>
-                                <a rel="prev" {% if page.next_page %}href="{{ page.next_page.url|url }}"{% endif %}>
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        {%- endif %}
-                      {%- endblock %}
-
-                      {%- block repo %}
-                        {%- if page and page.edit_url %}
-                            <li>
-                                <a href="{{ page.edit_url }}">
-                                    {%- if config.repo_name == 'GitHub' -%}
-                                        <i class="fa fa-github"></i> Edit on {{ config.repo_name }}
-                                    {%- elif config.repo_name == 'Bitbucket' -%}
-                                        <i class="fa fa-bitbucket"></i> Edit on {{ config.repo_name }}
-                                    {%- elif config.repo_name == 'GitLab' -%}
-                                        <i class="fa fa-gitlab"></i> Edit on {{ config.repo_name }}
-                                    {%- else -%}
-                                    Edit on {{ config.repo_name }}
-                                    {%- endif -%}
-                                </a>
-                            </li>
-                        {%- elif config.repo_url %}
-                            <li>
-                                <a href="{{ config.repo_url }}">
-                                    {%- if config.repo_name == 'GitHub' -%}
-                                        <i class="fa fa-github"></i> {{ config.repo_name }}
-                                    {%- elif config.repo_name == 'Bitbucket' -%}
-                                        <i class="fa fa-bitbucket"></i> {{ config.repo_name }}
-                                    {%- elif config.repo_name == 'GitLab' -%}
-                                        <i class="fa fa-gitlab"></i> {{ config.repo_name }}
-                                    {%- else -%}
-                                    {{ config.repo_name }}
-                                    {%- endif -%}
-                                </a>
-                            </li>
-                        {%- endif %}
-                      {%- endblock %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            {%- block content %}
-                <div class="col-md-3">{% include "toc.html" %}</div>
-                <div class="col-md-9" role="main">{% include "content.html" %}</div>
-            {%- endblock %}
-        </div>
-
-        <footer class="col-md-12">
-          {%- block footer %}
-            <hr>
-            {%- if config.copyright %}
-                <p>{{ config.copyright }}</p>
+      
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<div class="container">
+	{%- block site_name %}
+	<a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+	{%- endblock %}
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+	  {%- block site_nav %}
+          {%- if nav|length>1 %}
+          <!-- Main navigation -->
+          <ul class="nav navbar-nav">
+            {%- for nav_item in nav %}
+            {%- if nav_item.children %}
+            <li class="dropdown{% if nav_item.active %} active{% endif %}">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ nav_item.title }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+		{%- for nav_item in nav_item.children %}
+                {% include "nav-sub.html" %}
+		{%- endfor %}
+              </ul>
+            </li>
+            {%- else %}
+            <li {% if nav_item.active %}class="active"{% endif %}>
+              <a class="nav-link" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            </li>
             {%- endif %}
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-          {%- endblock %}
-        </footer>
-
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+	  {%- endblock %}
+	  
+          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            {%- block search_button %}
+            {%- if 'search' in config['plugins'] %}
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+		<i class="fa fa-search"></i> Search
+              </a>
+            </li>
+            {%- endif %}
+            {%- endblock %}
+	    
+            {%- block next_prev %}
+            {%- if page and (page.next_page or page.previous_page) %}
+            <li class="nav-item{% if not page.previous_page %} disabled{% endif %}">
+              <a class="nav-link" rel="next" {% if page.previous_page %}href="{{ page.previous_page.url|url }}"{% endif %}>
+		<i class="fa fa-arrow-left"></i> Previous
+              </a>
+            </li>
+            <li class="nav-item{% if not page.next_page %} disabled{% endif %}">
+              <a class="nav-link" rel="prev" {% if page.next_page %}href="{{ page.next_page.url|url }}"{% endif %}>
+		Next <i class="fa fa-arrow-right"></i>
+              </a>
+            </li>
+            {%- endif %}
+            {%- endblock %}
+	    
+            {%- block repo %}
+            {%- if page and page.edit_url %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ page.edit_url }}">
+		{%- if config.repo_name == 'GitHub' -%}
+		<i class="fa fa-github"></i> Edit on {{ config.repo_name }}
+		{%- elif config.repo_name == 'Bitbucket' -%}
+		<i class="fa fa-bitbucket"></i> Edit on {{ config.repo_name }}
+		{%- elif config.repo_name == 'GitLab' -%}
+		<i class="fa fa-gitlab"></i> Edit on {{ config.repo_name }}
+		{%- else -%}
+		Edit on {{ config.repo_name }}
+		{%- endif -%}
+              </a>
+            </li>
+            {%- elif config.repo_url %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ config.repo_url }}">
+		{%- if config.repo_name == 'GitHub' -%}
+		<i class="fa fa-github"></i> {{ config.repo_name }}
+		{%- elif config.repo_name == 'Bitbucket' -%}
+		<i class="fa fa-bitbucket"></i> {{ config.repo_name }}
+		{%- elif config.repo_name == 'GitLab' -%}
+		<i class="fa fa-gitlab"></i> {{ config.repo_name }}
+		{%- else -%}
+		{{ config.repo_name }}
+		{%- endif -%}
+              </a>
+            </li>
+            {%- endif %}
+            {%- endblock %}
+          </ul>
+	</div>
+	</div>
+      </nav>
+      
+      <div id="content" class="container">
+        <div class="row">
+	  {%- block content %}
+	  <div class="col-md-3">{% include "toc.html" %}</div>
+	  <div class="col-md-9" role="main">{% include "content.html" %}</div>
+	  {%- endblock %}
+	</div>
+      </div>
+      
+      <footer class="col-md-12">
+	{%- block footer %}
+	<hr>
+	{%- if config.copyright %}
+	<p>{{ config.copyright }}</p>
+	{%- endif %}
+	{%- endblock %}
+      </footer>
+      
       {%- block scripts %}
-        <script>
-            var base_url = {{ base_url | tojson }},
-                shortcuts = {{ config.theme.shortcuts | tojson }};
-        </script>
-        <script src="{{ 'js/base.js'|url }}" defer></script>
-        {%- for path in config['extra_javascript'] %}
-        <script src="{{ path|url }}" defer></script>
-        {%- endfor %}
+      <script>
+	var base_url = {{ base_url | tojson }},
+            shortcuts = {{ config.theme.shortcuts | tojson }};
+      </script>
+      <script src="{{ 'js/base.js'|url }}" defer></script>
+      {%- for path in config['extra_javascript'] %}
+      <script src="{{ path|url }}" defer></script>
+      {%- endfor %}
       {%- endblock %}
-
-        {% if 'search' in config['plugins'] %}{%- include "search-modal.html" %}{% endif %}
-        {%- include "keyboard-modal.html" %}
-
+      
+      {% if 'search' in config['plugins'] %}{%- include "search-modal.html" %}{% endif %}
+      {%- include "keyboard-modal.html" %}
+      
     </body>
 </html>
 {% if page and page.is_homepage %}
