@@ -12,13 +12,9 @@ In general, the steps your app needs to take to use RingCentral APIs (including 
 
 4. [Refresh](#refresh-token-flow) your access token when necessary
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 In order to prevent eavesdropping and tampering, the RingCentral API requires Transport Layer Security. This means that API resources are accessible only through HTTPS connections.
-
----
+</div>
 
 ## Tokens
 
@@ -139,9 +135,7 @@ The step-by-step details of this flow are explained below.
     | `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
     | `owner_id`                 | string  | Extension identifier |
     
-	**Example**
-	
-    **Request example**
+    **Example Request**
 
     	POST /restapi/oauth/token HTTP/1.1 
         Accept: application/json 
@@ -151,7 +145,7 @@ The step-by-step details of this flow are explained below.
         VhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tl
         qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
 	
-    **Response example**
+    **Example Response**
 
     	HTTP/1.1 200 OK
         Content-Type: application/json
@@ -187,33 +181,33 @@ Lets first define the actors in the flow. The actors in the flow are
 
 **Steps**
 
-Step 1: First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize` 
+Step 1: First time when the flow is initiated,the WebApp(Client) initiates the flow by directing the user’s browser(User Agent)to the Authorization server. The WebApp(Client) includes its identifier<ClientId>,requested scope , local state and a redirection URI . The endpoint called will be `/restapi/oauth/authorize`.
 
- The endpoint your app will  https://{{RingCentral Server}}/restapi/oauth/authorize
+The endpoint your app will  https://{{RingCentral Server}}/restapi/oauth/authorize
 
- The RingCentral Server sandbox = platform.devtest.ringcentral.com and production = platform.ringcentral.com. 
+The RingCentral Server sandbox = platform.devtest.ringcentral.com and production = platform.ringcentral.com. 
 
- The Request parameters will be : 
+The Request parameters will be : 
     
-    | Parameter       | Type   | Description |
-    | --------------- | ------ | ----------- |
-    | `response_type` | string | Must be set to `token` |
-    | `client_id`     | string | Required. Enter your application key (Production or Sandbox) here |
-    | `redirect_uri`  |URI     | Required. This is a callback URI which determines where the response will be sent to. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration. This URI can be HTTP/HTTPS address for web applications or custom scheme URI for mobile or desktop applications. |
-    | `state`         | string | Optional, recommended. An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client. The parameter should be used for preventing cross-site request forgery |
-    | `scope`         | string | Optional|
-    | `brand_id`      | string | Optional . Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US
-    | `prompt`      | string | Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. Please note: The value must be set to 'none' for all requests except for the first one. Possible values 'page' | 'popup'|'touch'|'mobile'
+| Parameter       | Type   | Description |
+| --------------- | ------ | ----------- |
+| `response_type` | string | Must be set to `token` |
+| `client_id`     | string | Required. Enter your application key (Production or Sandbox) here |
+| `redirect_uri`  |URI     | Required. This is a callback URI which determines where the response will be sent to. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration. This URI can be HTTP/HTTPS address for web applications or custom scheme URI for mobile or desktop applications. |
+| `state`         | string | Optional, recommended. An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client. The parameter should be used for preventing cross-site request forgery |
+| `scope`         | string | Optional|
+| `brand_id`      | string | Optional . Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US
+| `prompt`      | string | Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. Please note: The value must be set to 'none' for all requests except for the first one. Possible values 'page' | 'popup'|'touch'|'mobile'
 
 **Request Body**
 
-     `Content Type: text/html`
+```http
+Content Type: text/html
 
-     GET /authorize?response_type=token&client_id=s6BhdRkqt3&state=xyz
-        &redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&scope=Contacts 
-     HTTP/1.1
-     Host: platform.devtest.ringcentral.com
-
+GET /authorize?response_type=token&client_id=s6BhdRkqt3&state=xyz&redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&scope=Contacts 
+HTTP/1.1
+Host: platform.devtest.ringcentral.com
+```
 
 Step 2: User login and consent
 
@@ -228,23 +222,24 @@ After confirming the permissions, user enters his/her RingCentral credentials, a
 
 Assumning the user grants access , the response would contain the information as shown below
 
-**Response example**
+**Example Response**
 
-        HTTP/1.1 200 OK
-        Content-Type: text/html
-    
-        {
-          "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-          "token_type" : "bearer",
-          "expires_in" : 3600,
-          "endpoint_id" :"xxxxxxxx",
-          scope=Contacts
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+   
+{
+    "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+    "token_type" : "bearer",
+    "expires_in" : 3600,
+    "endpoint_id" :"xxxxxxxx",
+    "scope" : "Contacts"
+}
+```
 
-        }
+The actual #fragment response would be something like below :
 
-
-  The actual #fragment response would be something like below :
-  http://localhost:8080/callback.html#access_token=XXXXXXXXXXXX&token_type=bearer&expires_in=3600&endpoint_id=0eTdUFwhQJa98zYssI-JFA&scope=Contacts%20ReadCallLog
+http://localhost:8080/callback.html#access_token=XXXXXXXXXXXX&token_type=bearer&expires_in=3600&endpoint_id=0eTdUFwhQJa98zYssI-JFA&scope=Contacts%20ReadCallLog
       
 
 

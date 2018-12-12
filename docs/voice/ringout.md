@@ -82,21 +82,21 @@ Where:
 
 Call status is generated as a combination of both call legs statuses (caller and callee):
 
-![RingOut Call Status](img/ringout_flow_call.png)
+![RingOut Call Status](../img/ringout_flow_call.png)
 	
 Caller or Callee statuses are separately generated for the target call party:
 	
-![RingOut Callee Status](img/ringout_flow_callee.png)
+![RingOut Callee Status](../img/ringout_flow_callee.png)
 
 ## RingOut Flow
 
 See how the statuses are changing during successful call on the flowchart below:
 
-![RingOut Successful Flow](img/ringout_flow_success.png)
+![RingOut Successful Flow](../img/ringout_flow_success.png)
 
 Failed call:
 
-![RingOut Failed Flow](img/ringout_flow_fail.png)
+![RingOut Failed Flow](../img/ringout_flow_fail.png)
 
 ## Polling Call Status
 

@@ -3,48 +3,60 @@ site_url: https://github.com/ringcentral/ringcentral-api-docs
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs.git
 docs_dir: docs
-theme: readthedocs
-extra_css: [extra.css]
+theme:
+  name: null
+  custom_dir: bootstrap4-theme
+  shortcuts:
+    help: 191    # ?
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s
+#theme: bootstrap
+#extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
-- 'Preface': 'index.md'
-- 'Common Principles': 'overview.md'
-- 'Rate Limits': 'rate_limits.md'
-- 'OAuth 2.0 Authentication & Authorization': 'oauth.md'
-- 'Account & Extension Settings': 'account_extension.md'
-- 'Call Logs':
-    - 'Introduction': 'calllog_introduction.md'
-    - 'API Basics': 'calllog_api-basics.md'
-    - 'Using Detailed Call Log Data': 'calllog_detailed-call-logs.md'
-    - 'Call Recordings': 'calllog_call-recordings.md'
-    - 'Call Log Synchronization': 'calllog_sync.md'
-    - 'Development Concerns': 'calllog_development-concerns.md'
-- 'Data Archival': 'data-archival.md'
-- 'Messaging':
-    - 'Introduction': 'messages_introduction.md'
-    - 'SMS and Pager': 'messages_sms-and-pager.md'
-    - 'Faxes': 'messages_faxes.md'
-    - 'Message Synchronization': 'messages_sync.md'
-- 'Making Calls':
-    - 'RingOut': 'calls_ringout.md'
-    - 'Calling a URI': 'calls_uri-scheme.md'
-    - 'WebRTC': 'calls_webrtc.md'
-- 'Active Call Control':
-    - 'Overview': 'active_call_control_overview.md'
-    - 'Quick Start': 'active_call_control_quick_start.md'
-- 'Call Handling Setup':
-    - 'Call Queues': 'call_queue.md'
-    - 'Answering Rules': 'answering_rules.md'
-- 'Push Notifications':
-    - 'Overview': 'notifications_overview.md'
-    - 'Pub/Sub (for client apps)': 'notifications_pubsub.md'
-    - 'Webhooks (for server apps)': 'notifications_webhooks.md'
-- 'Glip Messaging':
-    - 'Overview': 'glip_api.md'
-    - 'Message Attachments': 'glip_message_attachments.md'
-    - 'Glip Bots': 'glip_bots.md'
-- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
-- 'Publishing Your App': 'publish.md'
-- 'Upgrading from Legacy API': 'legacy_api_upgrade.md'
+- 'Getting Started': 'index.md'
+- 'Development Basics': 
+  - 'Authentication': 'oauth.md'
+  - 'URIs': 'uris.md'
+  - 'Rate Limits': 'rate_limits.md'
+  - 'Notifications': 'notifications/index.md'
+  - 'Publishing Your App': 'publish.md'
+- 'Products':
+  - 'Configuration': 'index.md'
+  - 'Data': 'data-archival.md'
+  - 'Fax': 'fax/index.md'
+  - 'Glip Messaging': 'index.md'
+  - 'SMS/MMS': 'index.md'
+  - 'Voice': 'voice/index.md'
+
+#- 'Account & Extension Settings': 'account_extension.md'
+#- 'Call Logs':
+#    - 'Introduction': 'calllog_introduction.md'
+#    - 'API Basics': 'calllog_api-basics.md'
+#    - 'Using Detailed Call Log Data': 'calllog_detailed-call-logs.md'
+#    - 'Call Recordings': 'calllog_call-recordings.md'
+#    - 'Call Log Synchronization': 'calllog_sync.md'
+#    - 'Development Concerns': 'calllog_development-concerns.md'
+#- 'Messaging':
+#    - 'Introduction': 'messages_introduction.md'
+#    - 'SMS and Pager': 'messages_sms-and-pager.md'
+#    - 'Message Synchronization': 'messages_sync.md'
+#- 'Active Call Control':
+#    - 'Overview': 'active_call_control_overview.md'
+#- 'Call Handling Setup':
+#    - 'Call Queues': 'call_queue.md'
+#    - 'Answering Rules': 'answering_rules.md'
+#- 'Push Notifications':
+#    - 'Overview': 'notifications_overview.md'
+#    - 'Pub/Sub (for client apps)': 'notifications_pubsub.md'
+#    - 'Webhooks (for server apps)': 'notifications_webhooks.md'
+#- 'Glip Messaging':
+#    - 'Overview': 'glip_api.md'
+#    - 'Message Attachments': 'glip_message_attachments.md'
+#    - 'Glip Bots': 'glip_bots.md'
+#- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
+#- 'Publishing Your App': 'publish.md'
+#- 'Upgrading from Legacy API': 'legacy_api_upgrade.md'

@@ -22,7 +22,7 @@ There are two primary approaches to upgrade your application to use the new REST
 
 ### Direct REST API calls
 
-To use the REST API directly, see *[Legacy API Upgrade Details](legacy_api_upgrade_details.md)* which has information per-API upgrade information.
+Modify your existing code to call the new REST APIs directly. This is a more sustainable and recommended approach, but depending upon your codebase could also be the most disruptive and time consuming. 
 
 ### Creating an API Proxy
 

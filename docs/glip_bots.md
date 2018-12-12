@@ -59,7 +59,7 @@ $ npm start
 
 6. Go to the `Bot` tab of the recently created app in the developer portal. Click on the `Add to Glip` button.
 
-    ![](img/glip_bot_tab.png =300px)
+    ![](img/glip_bot_tab.png)
 
     This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url. `NOTE:` Bot provisioner will only use the first url specificed in the oAuth settings.
 
