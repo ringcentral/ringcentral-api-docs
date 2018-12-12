@@ -1,5 +1,28 @@
 [
     {
+        "title": "SMS API Quickstart",
+        "description": "<p>In this tutorial, you will learn how to use RingCentral SMS API. The following topics are included:</p>\n<ul>\n<li>How to send SMS</li>\n<li>How to send MMS</li>\n<li>How to track delivery status of messages</li>\n<li>How to retrieve and modify message history</li>\n<li>How to receive and reply to SMS messages</li>\n</ul>",
+        "tags": [
+            "SMS/MMS"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-php-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-php-quickstart/"
+            }
+        ]
+    },
+    {
         "title": "Getting Started with Event-Driven Subscriptions",
         "description": "<p>Event-Driven Subscriptions enables your company to subscribe to receive real-time events about your RingCentral Activity data. In this tutorial, you will learn how to get started creating and consuming these events using Node.js.</p>",
         "tags": [
@@ -93,7 +116,7 @@
         "title": "Glip Bot using IBM Watson and Botkit",
         "description": "<p>In this tutorial, you will learn how to use AI to enhance your team productivity using IBM Watson, Botkit and Glip using Node.js.</p>",
         "tags": [
-            "Glip Messaging"
+            "Glip"
         ],
         "defaults": {
             "githubUri": "https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/",
@@ -235,29 +258,6 @@
                 "name": "Node JS",
                 "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo"
-            }
-        ]
-    },
-    {
-        "title": "SMS API Quickstart",
-        "description": "<p>In this tutorial, you will learn how to use RingCentral SMS API. The following topics are included:</p>\n<ul>\n<li>How to send SMS</li>\n<li>How to send MMS</li>\n<li>How to track delivery status of messages</li>\n<li>How to retrieve and modify message history</li>\n<li>How to receive and reply to SMS messages</li>\n</ul>",
-        "tags": [
-            "SMS/MMS"
-        ],
-        "defaults": {
-            "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
-            "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
-        },
-        "languages": [
-            {
-                "name": "Node JS",
-                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-nodejs-quickstart/",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
-            },
-            {
-                "name": "PHP",
-                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-php-quickstart/",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-php-quickstart/"
             }
         ]
     },
@@ -484,7 +484,7 @@
 	"title": "Building Glip Bots Using Ngrok",
         "description": "<p>Glip Bots cannot function without webhooks, which in turn requires bot apps to accessible over the Internet -- presenting challenges to developers building on their localhost. This guide will show how to use a free service called ngrok to develop Glip bots.</p>",
         "tags": [
-            "Glip Messaging"
+            "Glip"
         ],
         "defaults": {
             "githubUri": "",
@@ -502,7 +502,7 @@
 	"title": "Creating Rich Posts in Glip",
         "description": "<p>Learn how to use Glip Message Attachments to attach rich content, such as formatting, images, and color, to the messages your Glip bots post to create more compelling and effective posts.</p>",
         "tags": [
-            "Glip Messaging"
+            "Glip"
         ],
         "defaults": {
             "githubUri": "",
@@ -543,13 +543,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/ring_out/"
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_ringout/"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/ring_out/"
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_ringout/"
             }
         ]
     },
@@ -561,13 +561,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/webRTC/"
+            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_webrtc/"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/webRTC/"
+                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_webrtc/"
             }
         ]
     },
