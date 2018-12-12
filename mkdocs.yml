@@ -1,7 +1,8 @@
 site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
 site_favicon: favicon.ico
-repo_url: https://github.com/ringcentral/ringcentral-api-docs.git
+repo_url: https://github.com/ringcentral/ringcentral-api-docs
+edit_uri: 
 docs_dir: docs
 theme:
   name: null
