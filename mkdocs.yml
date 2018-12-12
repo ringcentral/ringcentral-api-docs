@@ -19,44 +19,30 @@ google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
 - 'Getting Started': 'index.md'
 - 'Development Basics': 
-  - 'Authentication': 'oauth.md'
-  - 'URIs': 'uris.md'
-  - 'Rate Limits': 'rate_limits.md'
+  - 'Authentication': 'basics/oauth.md'
+  - 'URIs': 'basics/uris.md'
+  - 'Rate Limits': 'basics/rate-limits.md'
   - 'Notifications': 'notifications/index.md'
-  - 'Publishing Your App': 'publish.md'
+  - 'Messaging': 'basics/messaging.md'
+  - 'Publishing Your App': 'basics/publish.md'
+  - 'Upgrading from Legacy API': 'basics/legacy_api_upgrade.md'
 - 'Products':
-  - 'Configuration': 'index.md'
-  - 'Data': 'data-archival.md'
+  - 'Configuration': 'configuration/index.md'
+  - 'Data': 'data/index.md'
   - 'Fax': 'fax/index.md'
-  - 'Glip Messaging': 'index.md'
-  - 'SMS/MMS': 'index.md'
+  - 'Glip Messaging': 'glip/index.md'
+  - 'SMS/MMS': 'sms/index.md'
   - 'Voice': 'voice/index.md'
 
-#- 'Account & Extension Settings': 'account_extension.md'
 #- 'Call Logs':
-#    - 'Introduction': 'calllog_introduction.md'
 #    - 'API Basics': 'calllog_api-basics.md'
 #    - 'Using Detailed Call Log Data': 'calllog_detailed-call-logs.md'
 #    - 'Call Recordings': 'calllog_call-recordings.md'
 #    - 'Call Log Synchronization': 'calllog_sync.md'
 #    - 'Development Concerns': 'calllog_development-concerns.md'
 #- 'Messaging':
-#    - 'Introduction': 'messages_introduction.md'
-#    - 'SMS and Pager': 'messages_sms-and-pager.md'
 #    - 'Message Synchronization': 'messages_sync.md'
-#- 'Active Call Control':
-#    - 'Overview': 'active_call_control_overview.md'
-#- 'Call Handling Setup':
-#    - 'Call Queues': 'call_queue.md'
-#    - 'Answering Rules': 'answering_rules.md'
-#- 'Push Notifications':
-#    - 'Overview': 'notifications_overview.md'
-#    - 'Pub/Sub (for client apps)': 'notifications_pubsub.md'
-#    - 'Webhooks (for server apps)': 'notifications_webhooks.md'
 #- 'Glip Messaging':
 #    - 'Overview': 'glip_api.md'
 #    - 'Message Attachments': 'glip_message_attachments.md'
 #    - 'Glip Bots': 'glip_bots.md'
-#- 'Authorization Profile and Permission Invalidation': 'authorization_profile.md'
-#- 'Publishing Your App': 'publish.md'
-#- 'Upgrading from Legacy API': 'legacy_api_upgrade.md'

@@ -164,19 +164,21 @@
       <div id="content" class="container">
         <div class="row">
 	  {%- block content %}
-	  <div class="col-md-3">{% include "toc.html" %}</div>
 	  <div class="col-md-9" role="main">{% include "content.html" %}</div>
+	  <div class="col-md-3">{% include "toc.html" %}</div>
 	  {%- endblock %}
 	</div>
       </div>
       
       <footer class="col-md-12">
-	{%- block footer %}
 	<hr>
-	{%- if config.copyright %}
-	<p>{{ config.copyright }}</p>
-	{%- endif %}
-	{%- endblock %}
+	<div class="container">
+	  {%- block footer %}
+	  {%- if config.copyright %}
+	  <p>{{ config.copyright }}</p>
+	  {%- endif %}
+	  {%- endblock %}
+	</div>
       </footer>
       
       {%- block scripts %}

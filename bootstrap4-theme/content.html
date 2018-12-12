@@ -6,4 +6,20 @@
 </div>
 {% endif %}
 
+{% if page %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {% for doc in page.ancestors %}
+    {% if doc.link %}
+    <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+    {% else %}
+    <li class="breadcrumb-item">{{ doc.title }}</li>
+    {% endif %}
+    {% endfor %}
+    {% if page %}<li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>{% endif %}
+    {% endif %}
+  </ol>
+</nav>
+
+
 {{ page.content }}
