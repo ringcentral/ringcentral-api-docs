@@ -12,7 +12,7 @@ theme:
     previous: 80 # p
     search: 83   # s
 #theme: bootstrap
-#extra_css: [extra.css]
+extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
@@ -29,6 +29,8 @@ pages:
 - 'Products':
   - 'Configuration': 'configuration/index.md'
   - 'Data': 'data/index.md'
+#    - 'Overview': 'data/index.md'
+#    - 'Data Archival': 'data/archival.md'
   - 'Fax': 'fax/index.md'
   - 'Glip Messaging': 'glip/index.md'
   - 'SMS/MMS': 'sms/index.md'

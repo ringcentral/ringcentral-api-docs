@@ -9,7 +9,7 @@
 {% if page %}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    {% for doc in page.ancestors %}
+    {% for doc in page.ancestors|reverse %}
     {% if doc.link %}
     <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
     {% else %}
