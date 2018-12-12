@@ -63,7 +63,7 @@
       {%- block extrahead %} {% endblock %}
     </head>
 
-    <body{% if page and page.is_homepage %} class="homepage"{% endif %}>
+    <body class="{% if page and page.is_homepage %}homepage {% endif %}{%- if page.meta.jumbotron -%}has-jumbotron {%- endif -%}">
       
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<div class="container">
@@ -111,7 +111,7 @@
             {%- endblock %}
 	    
             {%- block next_prev %}
-            {%- if page and (page.next_page or page.previous_page) %}
+            {%- if page and (page.next_page or page.previous_page) and (not config.theme.suppress_nextprev) %}
             <li class="nav-item{% if not page.previous_page %} disabled{% endif %}">
               <a class="nav-link" rel="next" {% if page.previous_page %}href="{{ page.previous_page.url|url }}"{% endif %}>
 		<i class="fa fa-arrow-left"></i> Previous
@@ -161,14 +161,29 @@
 	</div>
       </nav>
       
-      <div id="content" class="container">
-        <div class="row">
-	  {%- block content %}
-	  <div class="col-md-9" role="main">{% include "content.html" %}</div>
-	  <div class="col-md-3">{% include "toc.html" %}</div>
-	  {%- endblock %}
-	</div>
+      {%- set main_content %}
+      <div class="row">
+        <div class="col-md-9" role="main">{% include "content.html" %}</div>
+        <div class="col-md-3">{% include "toc.html" %}</div>
       </div>
+      {%- endset %}
+
+      {%- block content %}
+      {%- if page.meta.jumbotron -%}
+      <div class="jumbotron">
+        <div class="container">
+          {{- page.meta.jumbotron_content -}}
+        </div>
+      </div>
+      <div id="content" class="container">
+        {{ main_content }}
+      </div>
+      {%- else -%}
+      <div id="content" class="container">
+        {{ main_content }}
+      </div>
+      {%- endif -%}
+      {%- endblock %}
       
       <footer class="col-md-12">
 	<hr>

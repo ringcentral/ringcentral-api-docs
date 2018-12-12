@@ -6,6 +6,19 @@ body {
     padding-top: 80px;
 }
 
+.has-jumbotron #content {
+    padding-top: 0px;
+}
+.jumbotron {
+    margin-top: 30px;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.sticky-offset {
+    top: 75px;
+}
+
 /*
 h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
     content: "";
@@ -38,7 +51,7 @@ div.col-md-9 img {
 
 /* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar.affix {
-    position: static;
+/*    position: static;*/
 }
 
 .bs-sidebar.well {
@@ -96,11 +109,11 @@ div.col-md-9 img {
         width: 213px;
     }
     .bs-sidebar.affix {
-        position: fixed; /* Undo the static from mobile first approach */
+        /*position: fixed;*/ /* Undo the static from mobile first approach */
         top: 80px;
     }
     .bs-sidebar.affix-bottom {
-        position: absolute; /* Undo the static from mobile first approach */
+        /*position: absolute;*/ /* Undo the static from mobile first approach */
     }
     .bs-sidebar.affix-bottom .bs-sidenav,
     .bs-sidebar.affix .bs-sidenav {

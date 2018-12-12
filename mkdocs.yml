@@ -6,6 +6,7 @@ docs_dir: docs
 theme:
   name: null
   custom_dir: bootstrap4-theme
+  suppress_nextprev: true
   shortcuts:
     help: 191    # ?
     next: 78     # n
