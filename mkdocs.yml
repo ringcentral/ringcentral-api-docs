@@ -8,6 +8,9 @@ theme:
   name: null
   custom_dir: bootstrap4-theme
   suppress_nextprev: true
+  highlightjs: true
+  hljs_languages:
+    - http
   shortcuts:
     help: 191    # ?
     next: 78     # n
@@ -19,7 +22,7 @@ extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
-- 'Getting Started': 'index.md'
+- 'Quick Start': 'quick-start/index.md'
 - 'Development Basics': 
   - 'Authentication': 'basics/oauth.md'
   - 'URIs': 'basics/uris.md'

@@ -23,6 +23,7 @@ code {
 	color: #111;
 }
 
+/*
 code.hljs {
 	margin: 10px 0;
 	padding: 24px;
@@ -35,7 +36,7 @@ code.hljs {
 	color: #585858;
 	font-weight: 200;
 }
-
+*/
 a {
     color: #0073ae;
 }
