@@ -21,7 +21,7 @@ extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
-nav:
+pages:
 - 'Quick Start': 'quick-start/index.md'
 - 'Development Basics': 
   - 'Authentication': 'basics/oauth.md'
