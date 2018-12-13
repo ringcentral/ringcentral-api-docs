@@ -55,8 +55,7 @@ Select your preferred language below:
 
 <p>Let's get started by created a directory to hold your project files.</p>
 
-<pre><code>
-$ mkdir ringcentral-sms-project
+<pre><code class="bash">$ mkdir ringcentral-sms-project
 $ cd ringcentral-sms-project
 </code></pre>
 
@@ -64,8 +63,7 @@ $ cd ringcentral-sms-project
 
 <p>Now, create a file called <tt>.env</tt> using the sample text below. Enter in your app's client ID and secret, and the other values called for.</p>
 
-<pre><code>
-RINGCENTRAL_CLIENTID=
+<pre><code class="bash">RINGCENTRAL_CLIENTID=
 RINGCENTRAL_CLIENTSECRET=
 RINGCENTRAL_SERVER=https://platform.devtest.ringcentral.com
 
@@ -78,8 +76,7 @@ RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
 
 <p>Create another file called <tt>package.json</tt> using the text below.</p>
 
-<pre><code>
-{
+<pre><code class="json">{
    "name": "ringcentral-sms-project",
    "version": "0.1.0",
    "description": "A test project to evaluate using RingCentral.",
@@ -103,8 +100,7 @@ RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
 
 <p>Create a file called <tt>index.js</tt>. Be sure to edit the first line with the recipient's phone number.</p>
 
-<pre><code>
-var RECIPIENT_PHONE = '&lt;ENTER YOUR PHONE NUMBER HERE>'
+<pre><code class="javascript">var RECIPIENT_PHONE = '&lt;ENTER YOUR PHONE NUMBER HERE>'
 var RingCentral = require('ringcentral-js-concise').default
 var dotenv = require('dotenv')
 dotenv.config();
@@ -131,8 +127,7 @@ client.authorize({
 
 <p>You are almost done. Now have <tt>npm</tt> install your dependencies, and then run your script.</p>
 
-<pre><code>
-$ npm install
+<pre><code class="bash">$ npm install
 $ npm index.js
 </code></pre>
 
@@ -143,31 +138,26 @@ $ npm index.js
 
 <p>Let's get started by created a directory to hold your project files.</p>
 
-<pre><code>
-$ mkdir ringcentral-sms-project
+<pre><code class="bash">$ mkdir ringcentral-sms-project
 $ cd ringcentral-sms-project
 </code></pre>
 
 <h3>Install Composer</h3>
 
-<pre><code>
-$ curl -sS https://getcomposer.org/installer | php
-</code></pre>
+<pre><code class="bash">$ curl -sS https://getcomposer.org/installer | php</code></pre>
 
 <h3>Create composer.json</h3>
 
 <p>Create another file called <tt>composer.json</tt> using the text below.</p>
 
-<pre><code>
-{
+<pre><code class="json">{
     "minimum-stability": "dev"
 }
 </code></pre>
 
 <h3>Install Prereqs</h3>
 
-<pre><code>
-$ php composer.phar require ringcentral/ringcentral-php
+<pre><code>$ php composer.phar require ringcentral/ringcentral-php
 $ php composer.phar require vlucas/phpdotenv
 </code></pre>
 
@@ -175,8 +165,7 @@ $ php composer.phar require vlucas/phpdotenv
 
 <p>Now, create a file called <tt>.env</tt> using the sample text below. Enter in your app's client ID and secret, and the other values called for.</p>
 
-<pre><code>
-RINGCENTRAL_CLIENTID=
+<pre><code class="bash">RINGCENTRAL_CLIENTID=
 RINGCENTRAL_CLIENTSECRET=
 RINGCENTRAL_SERVER=https://platform.devtest.ringcentral.com
 
@@ -189,8 +178,7 @@ RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
 
 <p>Create a file called <tt>index.php</tt>. Be sure to edit the first line with the recipient's phone number.</p>
 
-<pre><code>
-&lt;?php
+<pre><code class="php">&lt;?php
 $RECIPIENT = "&lt;ENTER RECIPIENT PHONE NUMBER>";
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -225,8 +213,7 @@ print 'Sent SMS ' . $response->json()->uri . PHP_EOL;
 
 <p>You are almost done. Now, run your script.</p>
 
-<pre><code>
-$ php index.php
+<pre><code class="bash">$ php index.php
 </code></pre>
 
   </div>

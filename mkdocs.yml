@@ -11,6 +11,7 @@ theme:
   highlightjs: true
   hljs_languages:
     - http
+  hljs_style: github
   shortcuts:
     help: 191    # ?
     next: 78     # n
