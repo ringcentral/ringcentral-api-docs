@@ -1,4 +1,4 @@
-# SMS and Pager Messages
+# SMS, MMS and Pager Messages
 
 There are two types of short text messages supported by RingCentral: SMS and Pager.
 

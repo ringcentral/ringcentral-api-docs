@@ -56,7 +56,7 @@ Frequently, while developing an application or integration, it is helpful for De
 
 Call Log data can be used as a solution for several use cases, the most common use cases for Call Log data by developers are:
 
-* **Downloading** - Call Log Data to an External Database** Since RingCentral does not store Call Log data indefinitely (see [Introduction](calllog_introduction.md) and view the **Access and Permissions** section for more information), using the Call Log API to download or transfer Call Log data into customer-owned, long-term, persistent storage has been a very common use case.
+* **Downloading** - Call Log Data to an External Database** Since RingCentral does not store Call Log data indefinitely, using the Call Log API to download or transfer Call Log data into customer-owned, long-term, persistent storage has been a very common use case.
 * **Reporting** - Developers can also achieve this use case by implementing downloaded Call Log data into their persistent storage. Application developers who do not need long-term data storage have opted to use the Call Log data to power short-term reporting pages.
 * **Dashboards** - Polling a RingCentral account Call Log data at a set interval of time (that is not real-time) can provide insights into performance of a team or call center.
 * **CRM Integration** - Developers who need to populate interaction records into history for contacts in your CRM can leverage Call Log data when not using real-time solutions.

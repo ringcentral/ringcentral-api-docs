@@ -54,7 +54,7 @@ Authorization code flow protects users information and lets them control what th
 
 3-legged authorization flow used by RingCentral involves obtaining an authorization code from API server, which is exchanged for an access token later. The general flow looks like this:
 
-![Authorization Code Flow](img/auth_code_flow.png)
+![Authorization Code Flow](../img/auth_code_flow.png)
 
 The step-by-step details of this flow are explained below.
 
@@ -73,9 +73,9 @@ The step-by-step details of this flow are explained below.
 
     On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
 	
-	![User Login](img/user_login.png)
+	![User Login](../img/user_login.png)
 	
-	![User Consent](img/user_consent.png)
+	![User Consent](../img/user_consent.png)
 
     After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request.
 
@@ -166,7 +166,7 @@ Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps.
 
 This 2-legged authorization flow used by RingCentral involves obtaining an access token from API server, and using the access token for making API calls.The general flow looks like this:
 
-![Implicit Grant Flow](img/implicit_grantflow.png)
+![Implicit Grant Flow](../img/implicit_grantflow.png)
 
 The step-by-step details of this flow are explained below.
 
@@ -214,9 +214,9 @@ Step 2: User login and consent
 
 On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
 
-![User Login](img/implicit_grant_userlogin.png)
+![User Login](../img/implicit_grant_userlogin.png)
 
-![User Consent](img/implicit_grant_userconsent.png)
+![User Consent](../img/implicit_grant_userconsent.png)
 
 After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.
 
@@ -271,7 +271,7 @@ Two steps are required for this flow:
 
 Resource Owner Password Credentials flow used by RingCentral results in obtaining an access token from API server. The general ROPC flow looks like this:
 
-![Password Flow](img/password_flow.png)
+![Password Flow](../img/password_flow.png)
 
 Below find the step-by-step instructions on how to perform two-legged authorization using the RingCentral API.
 

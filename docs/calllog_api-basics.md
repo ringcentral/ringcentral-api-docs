@@ -1,6 +1,6 @@
 # Call Log API Basics
 
-Before completing this section of the course content, please make sure you have read the [Introduction](calllog_introduction.md).
+Before completing this section of the course content, please make sure you have read the [Introduction](../data/call-logs).
 
 The RingCentral Call Log API resource is the **tome** of knowledge about inbound and outbound actions for all users of your RingCentral account. Call Log data is segmented into four (4) data types:
 
@@ -299,7 +299,7 @@ Note: The following response data is for the exact same type of Simple Call Log 
 
 ## Batch Call Log Records
 
-Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](uris.md#batch-requests).
+Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](./basics/uris.md#batch-requests).
 
 ## Call Recording Metadata and Content
 
