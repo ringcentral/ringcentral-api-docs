@@ -32,14 +32,24 @@ pages:
   - 'Publishing Your App': 'basics/publish.md'
   - 'Upgrading from Legacy API': 'basics/legacy_api_upgrade.md'
 - 'Products':
-  - 'Configuration': 'configuration/index.md'
-  - 'Data': 'data/index.md'
-#    - 'Overview': 'data/index.md'
-#    - 'Data Archival': 'data/archival.md'
+  - 'Configuration':
+    - 'Account & Extension Settings': 'configuration/account_extension.md'
+    - 'Auth Profile & Permissions': 'configuration/authorization_profile.md'
+  - 'Data': 
+    - 'Call Logs': 'data/call-logs.md'
+    - 'Data Archival': 'data/archival.md'
   - 'Fax': 'fax/index.md'
-  - 'Glip Messaging': 'glip/index.md'
+  - 'Glip Messaging':
+    - 'API': 'glip/api.md'
+    - 'Message Attachments': 'glip/attachments.md'
+    - 'Bots': 'glip/bots.md'
   - 'SMS/MMS': 'sms/index.md'
-  - 'Voice': 'voice/index.md'
+  - 'Voice':
+    - 'RingOut': 'voice/ringout.md'
+    - 'WebRTC': 'voice/webrtc.md'
+    - 'Call Queues': 'voice/call-queues.md'
+    - 'Call Control': 'voice/call-control.md'
+    - 'Answering Rules': 'voice/answering-rules.md'
 
 #- 'Call Logs':
 #    - 'API Basics': 'calllog_api-basics.md'
