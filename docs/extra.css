@@ -15,28 +15,16 @@ h3 {
 	color: #585858;
 }
 
-code {
+code.hljs {
 	font-family: "courier new",courier,monospace;
 	margin: 10px 0;
-	padding: 0;
-	border: none;
-	color: #111;
-}
-
-/*
-code.hljs {
-	margin: 10px 0;
-	padding: 24px;
-	overflow-x: auto;
+	padding: 20px;
 	border: 1px solid #e8e8e8;
 	border-radius: 4px;
-	font-size: 15px;
-	line-height: 24px;
-	font-family: "courier new",courier,monospace;
 	color: #585858;
 	font-weight: 200;
 }
-*/
+
 a {
     color: #0073ae;
 }
