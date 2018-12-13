@@ -140,12 +140,6 @@ $ npm index.js
   </div>
   <div class="tab-pane fade" id="pills-php" role="tabpanel" aria-labelledby="pills-php-tab">
 
-<h3>Install Composer</h3>
-
-<pre><code>
-$ curl -sS https://getcomposer.org/installer | php
-</code></pre>
-
 <h3>Create Project Directory</h3>
 
 <p>Let's get started by created a directory to hold your project files.</p>
@@ -155,18 +149,10 @@ $ mkdir ringcentral-sms-project
 $ cd ringcentral-sms-project
 </code></pre>
 
-<h3>Create .env</h3>
-
-<p>Now, create a file called <tt>.env</tt> using the sample text below. Enter in your app's client ID and secret, and the other values called for.</p>
+<h3>Install Composer</h3>
 
 <pre><code>
-RINGCENTRAL_CLIENTID=
-RINGCENTRAL_CLIENTSECRET=
-RINGCENTRAL_SERVER=https://platform.devtest.ringcentral.com
-
-RINGCENTRAL_USERNAME=&lt;YOUR ACCOUNT PHONE NUMBER>
-RINGCENTRAL_PASSWORD=&lt;YOUR ACCOUNT PASSWORD>
-RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
+$ curl -sS https://getcomposer.org/installer | php
 </code></pre>
 
 <h3>Create composer.json</h3>
@@ -186,6 +172,20 @@ $ php composer.phar require ringcentral/ringcentral-php
 $ php composer.phar require vlucas/phpdotenv
 </code></pre>
 
+<h3>Create .env</h3>
+
+<p>Now, create a file called <tt>.env</tt> using the sample text below. Enter in your app's client ID and secret, and the other values called for.</p>
+
+<pre><code>
+RINGCENTRAL_CLIENTID=
+RINGCENTRAL_CLIENTSECRET=
+RINGCENTRAL_SERVER=https://platform.devtest.ringcentral.com
+
+RINGCENTRAL_USERNAME=&lt;YOUR ACCOUNT PHONE NUMBER>
+RINGCENTRAL_PASSWORD=&lt;YOUR ACCOUNT PASSWORD>
+RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
+</code></pre>
+
 <h3>Create and Edit index.php</h3>
 
 <p>Create a file called <tt>index.php</tt>. Be sure to edit the first line with the recipient's phone number.</p>
@@ -194,30 +194,31 @@ $ php composer.phar require vlucas/phpdotenv
 &lt;?php
 $RECIPIENT = "&lt;ENTER RECIPIENT PHONE NUMBER>";
 
+require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
+
 use RingCentral\SDK\SDK;
-// Create SDK instance
 $rcsdk = new SDK( getenv('RINGCENTRAL_CLIENTID'),
-                  getenv['RINGCENTRAL_CLIENTSECRET'],
-		  getenv['RINGCENTRAL_SERVER'],
-		  'Demo', '1.0.0');
-$platform = $rcsdk->getPlatform();
+                  getenv('RINGCENTRAL_CLIENTSECRET'),
+                  getenv('RINGCENTRAL_SERVER'),
+                  'Demo', '1.0.0');
+$platform = $rcsdk->platform();
 // Authorize
-$platform->authorize( getenv('RINGCENTRAL_USERNAME'),
-		      getenv('RINGCENTRAL_EXTENSION'),
-		      getenv('RINGCENTRAL_PASSWORD'),
-		      true );
+$platform->login( getenv('RINGCENTRAL_USERNAME'),
+                  getenv('RINGCENTRAL_EXTENSION'),
+                  getenv('RINGCENTRAL_PASSWORD'),
+                  true );
 // Send SMS
 $response = $platform
-  ->post('/account/~/extension/~/sms', null, array(
+  ->post('/account/~/extension/~/sms', array(
             'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
             'to'   => array(
                 array('phoneNumber' => $RECIPIENT),
             ),
             'text' => 'Hello World!',
   ));
-print 'Sent SMS ' . $response->getJson()->uri . PHP_EOL;
+print 'Sent SMS ' . $response->json()->uri . PHP_EOL;
 ?>
 </code></pre>
 
