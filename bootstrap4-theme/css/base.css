@@ -14,7 +14,9 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
 }
-
+.card-deck {
+    margin-bottom: 20px;
+}
 .sticky-offset {
     top: 75px;
 }
