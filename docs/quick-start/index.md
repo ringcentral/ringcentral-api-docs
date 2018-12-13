@@ -39,9 +39,11 @@ Select your preferred language below:
   <li class="nav-item">
     <a class="nav-link" id="pills-php-tab" data-toggle="pill" href="#pills-php" role="tab" aria-controls="pills-php" aria-selected="false">PHP</a>
   </li>
+  <!--
   <li class="nav-item">
     <a class="nav-link" id="pills-python-tab" data-toggle="pill" href="#pills-python" role="tab" aria-controls="pills-python" aria-selected="false">Python</a>
   </li>
+  -->
   <li class="nav-item">
     <a class="nav-link" id="pills-explorer-tab" data-toggle="pill" href="#pills-explorer" role="tab" aria-controls="pills-explorer" aria-selected="false">API Explorer</a>
   </li>
@@ -84,7 +86,7 @@ RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
    "main": "index.js",
    "dependencies": {
       "dotenv": "^6.1.0",
-      "Express": "^4.16.4",
+      "express": "^4.16.4",
       "http": "0.0.0",
       "ringcentral-js-concise": "^0.7.1"
    },
@@ -103,26 +105,23 @@ RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
 
 <pre><code>
 var RECIPIENT_PHONE = '&lt;ENTER YOUR PHONE NUMBER HERE>'
-var RC = require('ringcentral-js-concise')
+var RingCentral = require('ringcentral-js-concise').default
 var dotenv = require('dotenv')
 dotenv.config();
 
-const client = new RC.RingCentral(process.env.RINGCENTRAL_CLIENTID,
-                                  process.env.RINGCENTRAL_CLIENTSECRET,
-                                  process.env.RINGCENTRAL_SERVER )
+const client = new RingCentral(process.env.RINGCENTRAL_CLIENTID,
+                               process.env.RINGCENTRAL_CLIENTSECRET,
+                               process.env.RINGCENTRAL_SERVER )
 client.authorize({
     username:  process.env.RINGCENTRAL_USERNAME,
     extension: process.env.RINGCENTRAL_EXTENSION,
     password:  process.env.RINGCENTRAL_PASSWORD
 }).then( function() {
-
-    //console.log("Authorized successfully: " + JSON.stringify(client.token()) );
     const r = client.post('/restapi/v1.0/account/~/extension/~/sms', {
         from: { phoneNumber: process.env.RINGCENTRAL_USERNAME },
         to:  [{ phoneNumber: RECIPIENT_PHONE }],
         text: 'Hello World!'
     });
-
 }).catch( function( error ) {
     console.log("ERROR: " + error)
 });
@@ -234,6 +233,33 @@ $ php index.php
   <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab">
   </div>
   <div class="tab-pane fade" id="pills-explorer" role="tabpanel" aria-labelledby="pills-explorer-tab">
+
+<p>The RingCentral API Explorer serves as a reference and test bench for all of RingCentral's API. This allows you to make calls with zero code. Let's get started.</p>
+
+<h3>Access the RingCentral API Explorer</h3>
+
+<p>Visit the [SMS section of the API Explorer](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS). You should see this:</p>
+
+<p><img src="../img/api-expl-sms.png" class="img-fluid"></p>
+
+<h3>Sign-in and Select App</h3>
+
+<p>Click the "Sign-in to try it out" button, and login to your developer account. When you are done, click the "Change App" button.</p>
+
+<p><img src="../img/api-expl-change.png" class="img-fluid"></p>
+
+<p>Then select the app your created in the first step.</p>
+
+<h3>Set Call Parameters</h3>
+
+<p>Now, set the API call parameters for the "from," "to" and "text" fields. For the "from" field use your account's phone number, and for the "to" field use your personal mobile phone number.</p>
+
+<p><img src="../img/api-expl-params.png" class="img-fluid"></p>
+
+<h3>Try it out</h3>
+
+<p>Click the "Try it out" button to send yourself an SMS. If it works, try doing the same thing using one of our code samples.</p>
+
   </div>
 </div>
 
