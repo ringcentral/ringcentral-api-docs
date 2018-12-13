@@ -1,6 +1,6 @@
 site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-site_favicon: favicon.ico
+#site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
 edit_uri: 
 docs_dir: docs
@@ -21,7 +21,7 @@ extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
-pages:
+nav:
 - 'Quick Start': 'quick-start/index.md'
 - 'Development Basics': 
   - 'Authentication': 'basics/oauth.md'
