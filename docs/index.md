@@ -1,24 +1,65 @@
 jumbotron:true
 no_breadcrumb:true
-jumbotron_content: <div class="jumbotron"><div class="container"><h1 class="display-3">Hello, world!</h1><p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p><p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p></div></div>
+jumbotron_content: <div class="jumbotron"><div class="container"><img src="../img/rc-developers_logo.png" class="img-fluid"><p>Welcome RingCentral Developers to our developer guide - a community supported documentation resource to help developers get started, learn more, and get the most out of the RingCentral platform.</p><p><a class="btn btn-primary btn-lg" href="./quick-start#" role="button">Quick Start &raquo;</a></p></div></div>
 
-![RC Developers Logo](img/rc-developers_logo.png)
+## Features Docs
 
-This guide presents key features of **RingCentral Connect Platform API**.
+Here are some of our most commonly accessed documentation resources:
 
-**RingCentral** provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more](https://www.ringcentral.com/).
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Get Started</h5>
+      <p class="card-text">New to RingCentral? Use our Quick Start guide to get up and running quickly sending an SMS. Then explore this guide further to go beyond SMS.</p>
+      <a href="./quick-start" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Make a Call Using RingOut</h5>
+      <p class="card-text">Use the RingCentral API to make and connect calls between any two phones.</p>
+      <a href="./voice/ringout" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
 
-**RingCentral API** is based on the Representational State Transfer (REST) architecture. REST is not a standard but an architectural style, and it uses the following standards:
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Create a Glip Bot</h5>
+      <p class="card-text">RingCentral allows teams to automate tasks, and engage people through Glip messaging bots. This tutorial will teach you how to create your own messaging bot.</p>
+      <a href="./voice/ringout" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Download and Playback Call Recordings</h5>
+      <p class="card-text">A part of a large set of APIs relating to [Call Logs](./data/call-logs), learn how to download and playback call recordings.</p>
+      <a href="./data/call-logs" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
 
-* HTTP
-* URL
-* XML/HTML/GIF/JPEG/etc. (resource representations)
-* text/xml, text/html, application/json, image/jpeg, etc. (MIME Types)
+## Resources
 
-REST allows you to access the API in the same way you would access a web server. Whenever you want to access any API service, send a standard HTTP command to a particular resource that represents the required functionality. Every API service is represented by a specific endpoint that is accessed by its own URI via sending standard requests using HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">API Explorer</h5>
+      <p class="card-text">Consult our exhausting API Reference Guide, and make API call using ZERO CODE.</p>
+      <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">SDKs</h5>
+      <p class="card-text">We offer development libraries in a number of languages (C#, Java, Python, PHP, Javascript and more) to made building apps easier.</p>
+      <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
 
-One of the key advantages of REST architecture is simplicity. You can build your application on the fly without any additional tools, development kits or specifications. If you know how to interact with a simple web server, then you are ready to use the RingCentral API.
+## About RingCentral
 
-We also provide [SDKs](https://developers.ringcentral.com/library/sdks.html) for quicker development.
+RingCentral provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more](https://www.ringcentral.com/).
 
-You can find [full specification](https://developers.ringcentral.com/api-docs/latest/index.html) and [code dependent tutorials](https://ringcentral.github.io/tutorials/) at our [Developer Portal](https://developers.ringcentral.com/api-and-docs.html).
