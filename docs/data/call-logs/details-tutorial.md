@@ -12,7 +12,7 @@ To begin, we will need to have call log data in our account.
 
 4. Now check that the call records exist in the API, first fetch an `access_token` for the User you used to initiate the above calls.
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -22,7 +22,7 @@ Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 
 We should receive response data which contains records for all the calls you have executed. If you have already created call logs previously and you would like to use those calls for this tutorial, just scope the request to the appropriate time range by adding the `dateTo` and `dateFrom` query parameters (remember, ISO 8601 formatted and URL Encoded strings).
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=STARTING_DATE_TIME&dateTo=ENDING_DATE_TIME HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -32,7 +32,7 @@ Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 
 We should now have a list of call records, if you followed steps 1 through 3, you should see a list of all these records, but the legs for multi-legged calls is missing. We can see the three different recordings, but I made one of these calls to a call group from an outside line. 
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&dateFrom=2016-06-05T23:11:00.000Z&page=1&perPage=100",
     "records": [
@@ -129,7 +129,7 @@ We should now have a list of call records, if you followed steps 1 through 3, yo
 
 5. Fetch the list of `Detailed` Call Logs so we can inspect the Detailed records. We do this by adding the `view` query paremter and setting it equal to `Detailed`.
 
-```
+```http
 GET /restapi/v1.0/account/~/extension/~/call-log?view=Detailed HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
@@ -141,7 +141,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
 (your numbers will differ, but the end result should be the similar if you have used a call group)
 
 
-```
+```json
 {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&dateFrom=2016-06-05T23:09:00.000Z&page=1&perPage=100",
     "records": [
@@ -364,6 +364,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
 6. Inspecting the `legs` property of the multi-leg call, we can see two (2) different `legType` properties, the most recent (legs[0]) was the `Accept` which occurred when I accepted the call in my SoftPhone, while the former (legs[1]) was the `PstnToSip` which occurred when the inbound call from my celluar device was pointed by RingCentral to the IVR setup within my account. The `from.name` property would not make sense if you were to neglect looking at the call legType.
 
 
+```json
 "legs": [
     {
         "startTime": "2016-06-06T23:07:20.000Z",
@@ -423,3 +424,4 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
         }
     }
 ]
+```

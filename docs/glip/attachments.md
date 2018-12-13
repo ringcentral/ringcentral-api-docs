@@ -16,13 +16,13 @@ Notes
 
 Here is an example report using Salesforce:
 
-![](img/glip_post_attachment_salesforce.png)
+<img src="../../img/glip_post_attachment_salesforce.png" class="img-fluid">
 
 ## Message Attachment Parameters
 
 The post attachment has a number of properties that are displayed in the following locations for a webhook message below. The REST API has a similar layout. Both post schemas are described below.
 
-![](img/glip_post_attachment_demo.png)
+<img src="../../img/glip_post_attachment_demo.png" class="img-fluid">
 
 ### Inbound Webhook Example
 

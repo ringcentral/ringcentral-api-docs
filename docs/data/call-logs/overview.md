@@ -1,10 +1,4 @@
-# Working with Call Logs
-
-Developing with the [RingCentral Call Log API resource](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html) is one of the most popular topics among [RingCentral Developers](https://developer.ringcentral.com).
-
-The RingCentral Call Log is the source of truth for how extensions within your [RingCentral Account](https://service.ringcentral.com) have used RingCentral for making and receiving: Voice Calls, SMS messages, and Fax messages. Every inbound and outbound call, SMS, or fax attempted using RingCentral is recorded at the **Extension** level into RingCentral data stores, and is accessible at either the **Account** level (meaning they are recorded for each user extension in your RingCentral account, and accessible specifically for a particular Extension or in aggregate at the account level by an account administrator).
-
-## Call Log Access
+# Call Log Overview
 
 There are several routes available for accessing specific types of call log data.
 

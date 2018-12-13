@@ -8,21 +8,25 @@ body {
 h1,
 h2,
 h3 {
-	font-weight: 200;
-	font-family: "Lato",Helvetica,Arial,sans-serif;
+    font-weight: 200;
+    font-family: "Lato",Helvetica,Arial,sans-serif;
+}
+h2 {
+    margin-top: 30px;
 }
 h3 {
-	color: #585858;
+    color: #585858;
+    margin-top: 30px;
 }
 
 code.hljs {
-	font-family: "courier new",courier,monospace;
-	margin: 10px 0;
-	padding: 20px;
-	border: 1px solid #e8e8e8;
-	border-radius: 4px;
-	color: #585858;
-	font-weight: 200;
+    font-family: "courier new",courier,monospace;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    color: #585858;
+    font-weight: 200;
 }
 
 a {
@@ -30,11 +34,11 @@ a {
 }
 
 a:visited {
-	color: #0073ae;
+    color: #0073ae;
 }
 
 a.icon {
-	font-weight: 200;
+    font-weight: 200;
 }
 
 ul.nav li.dropdown:hover ul.dropdown-menu{
