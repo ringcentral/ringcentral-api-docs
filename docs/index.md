@@ -1,6 +1,6 @@
 jumbotron:true
 no_breadcrumb:true
-jumbotron_content: <div class="jumbotron"><div class="container"><img src="../img/rc-developers_logo.png" class="img-fluid"><p>Welcome RingCentral Developers to our developer guide - a community supported documentation resource to help developers get started, learn more, and get the most out of the RingCentral platform.</p><p><a class="btn btn-primary btn-lg" href="./quick-start#" role="button">Quick Start &raquo;</a></p></div></div>
+jumbotron_content: <div class="jumbotron"><div class="container"><img src="./img/rc-developers_logo.png" class="img-fluid"><p>Welcome RingCentral Developers to our developer guide - a community supported documentation resource to help developers get started, learn more, and get the most out of the RingCentral platform.</p><p><a class="btn btn-primary btn-lg" href="./quick-start#" role="button">Quick Start &raquo;</a></p></div></div>
 
 ## Features Docs
 
