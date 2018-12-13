@@ -19,7 +19,7 @@ That means all the requests are characterized by their processing as *Light*, *M
 
 Rate Limits plan available for your client application is available in your RC account by clicking the 'Rate Limits' in My Apps tab, see the image below. It informs you how many requests of each API group are supported and what is the time frame in seconds for every request.
 
-![Rate Limits](../img/rate_limits.png)
+<img src="../../img/rate_limits.png" class="img-fluid">
 
 Let's consider the given rate limits. Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute. If you exceed these limitations the server returns the `429 Too Many Requests` HTTP error code. It means that the client is throttled by the server due to high request rate. The retry period in seconds, after which the requests can be sent, is specified in `Retry-After` response header.
 
