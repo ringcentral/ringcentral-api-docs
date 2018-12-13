@@ -7,6 +7,7 @@ docs_dir: docs
 theme:
   name: null
   custom_dir: bootstrap4-theme
+  extends: readthedocs
   suppress_nextprev: true
   highlightjs: true
   hljs_languages:
@@ -16,7 +17,6 @@ theme:
     next: 78     # n
     previous: 80 # p
     search: 83   # s
-#theme: bootstrap
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
