@@ -24,4 +24,10 @@ $( document ).ready( function () {
         $( '.navbar-nav li.show' ).not( $( this ).parents( "li" ) ).removeClass( "show" );
         return false;
     } );
+
+    $( '.contributors img[data-src]' ).each( function() {
+        src = $(this).attr("data-src");
+        $(this).attr('src',src);
+    });
+    $('.metadata').detach().insertAfter( '#content h1:first' );
 } );

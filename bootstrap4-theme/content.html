@@ -24,3 +24,24 @@
 {% endif %}
 
 {{ page.content }}
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">{% if last_commit %}{{ last_commit.commit.committer.date.strftime('%Y-%m-%d') }}{% endif %}</time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors">
+      {%- for user in committers -%}
+      <li><a href="{{ user.repos }}" title="{{ user.name }}" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="{{ user.avatar }}?size=32" alt="{{ user.name }}"></a></li>
+      {%- endfor -%}
+    </ul>
+  </li>
+</ul>
+
