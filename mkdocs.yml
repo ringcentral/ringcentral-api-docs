@@ -10,18 +10,11 @@ plugins:
       branch: bootstrap
       token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
 theme:
-  name: null
-  custom_dir: bootstrap4-theme
+  name: bootstrap4
   suppress_nextprev: true
   highlightjs: true
   hljs_languages:
     - http
-  hljs_style: github
-  shortcuts:
-    help: 191    # ?
-    next: 78     # n
-    previous: 80 # p
-    search: 83   # s
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
