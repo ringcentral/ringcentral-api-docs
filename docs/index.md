@@ -46,7 +46,7 @@ Here are some of our most commonly accessed documentation resources:
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">API Explorer</h5>
-      <p class="card-text">Consult our exhausting API Reference Guide, and make API call using ZERO CODE.</p>
+      <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
       <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
     </div>
   </div>
