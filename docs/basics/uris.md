@@ -19,13 +19,9 @@ Protocol, host and port altogether constitute the main entry point to access the
 
 RingCentral production servers are accessible on [https://platform.ringcentral.com](https://platform.ringcentral.com). Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
 
----
-
-**Note** 
-
-If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via [https://platform.devtest.ringcentral.com](https://platform.devtest.ringcentral.com) base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
-
----
+<div class="alert alert-info" role="alert">
+If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via <tt>https://platform.devtest.ringcentral.com</tt> base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
+</div>
 
 All of the API resources are organized in a hierarchical manner and presented in a tree-like structure. All resource paths are started from /restapi. Let's consider a typical API resource URI:
 
@@ -33,13 +29,9 @@ All of the API resources are organized in a hierarchical manner and presented in
 
 The URI in the example above contains path parameters highlighted in bold. Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are accountId and extensionId. They identify the account and extension of a RingCentral user, accordingly.
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 RingCentral users associate an account with the company main phone number and an extension with the short extension number, but both accountId and extensionId are internal identifiers.
-
----
+</div>
 
 At the same time the typical API usage scenario includes accessing particular resources on behalf of some user whose credentials (phone number, extension number and password) were passed on authentication phase. Thus in this case API enables the simplified syntax of specifying account and extension identifiers in the URI. The tilde symbol (~) can be used as a replacement for both accountId and extensionId if you are going to access data that belongs to account/extension that you are currently logged in to. Considering the example above, if the user successfully authenticated to work with account 159048008 and extension 171857008 the URI to retrieve the same resource may be written as follows:
 
@@ -106,22 +98,28 @@ The majority of API resources do not support all of the four methods. In order t
 
 Sometimes, due to different technical limitations, API clients cannot issue all HTTP methods. In the most severe case a client may be restricted to `GET` and `POST` methods only. To work around this situation the RingCentral API provides a mechanism for tunneling `PUT` and `DELETE` methods through `POST`. This can be achieved in two ways:
 
-1. **`X-HTTP-Method-Override` header**
+#### X-HTTP-Method-Override header
 
 Using X-HTTP-Method-Override the client instructs the server to override the actual value of the HTTP method by one passed in this header. For example, the following request:
 
-    DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+```
+DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+```
                  
 can be alternatively sent as:
 
-    POST /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
-    X-HTTP-Method-Override: DELETE
-                 
-2. **`_method` query parameter**
+```
+POST /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+X-HTTP-Method-Override: DELETE
+```
+
+#### _method` query parameter
 
 In really unfortunate circumstances some clients do not even support HTTP headers. The API allows overriding the method name using _method query parameter. See the example below which demonstrates this approach.
 
-    POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE HTTP/1.1
+```
+POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE HTTP/1.1
+```
                  
 If both the override header and query parameter are specified in the HTTP request and contain different values, the server returns `HTTP 400 Bad Request` error.
 
@@ -137,13 +135,9 @@ The RingCentral API allows you to explicitly define a representation format by u
 
 `Accept` header indicates desired MIME type of the response body. The server will return response data in this format (if possible) and will set the `Content-Type` response header accordingly.
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 The API server accepts and returns all string values in UTF-8 encoding and does not support other character sets. It is not required to explicitly specify charset in Content-Type and Accept HTTP headers. But a client has to implement proper encoding/decoding of character strings passed in HTTP requests/responses.
-
----
+</div>
 
 ## User Agent Identification
 
@@ -158,6 +152,7 @@ There are three main rules:
 We recommend using a short application name and version delimited by forward slash character and optionally followed by additional details about this client instance in parentheses (e.g. operating system name, version, revision number, etc.).
 
 Look at the examples below:
+
 ```
 User-Agent: RCMobile/3.6.0 (RingCentral; Android/2.6; rev.12345)
 User-Agent: RCMobile/3.6.1 (OfficeAtHand; iOS/6.0; rev.987654)

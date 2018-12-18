@@ -42,7 +42,9 @@ Query parameters are dropped if supplied and only `Simple` views of Call Log dat
 
 **Routes**
 
-**Note: All requests below are referencing the Sandbox API Base URI (https://platform.devtest.ringcentral.com) as compared to the Production API Base URI (https://platform.ringcentral.com)**
+<div class="alert alert-info" role="alert">
+All requests below are referencing the Sandbox API Base URI (https://platform.devtest.ringcentral.com) as compared to the Production API Base URI (https://platform.ringcentral.com).
+</div>
 
 **Account Level Active Calls** are the Active Calls for an entire account. Requires an Admin account to authenticate and obtain the access_token used for this request.
 

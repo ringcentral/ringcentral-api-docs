@@ -38,7 +38,9 @@ Content-Language: en-US
 * Authorization profile (fully or partially) is built every time RingCentral verifies if a certain permission is granted to the authenticated principal.
 * AuthZ Profile data is part of the Extension API resource. Each extension in your RingCentral account will have an associated AuthZ Profile
 
-**Note:** This data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the [RingCentral API Account Resource Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefAccount.html)
+<div class="alert alert-info" role="alert">
+This data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefAccount.html">RingCentral API Account Resource Reference</a>
+</div>
 
 ## User Permissions and Permission Invalidation
 

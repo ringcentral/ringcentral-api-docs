@@ -20,7 +20,9 @@ Developers typically archive their data into persistent storage solutions such a
 * Big Data (Hadoop, etc...)
 * 3rd Party Data Storage Services (Amazon S3, Dropbox, etc...)
 
-**NOTE:** Developers will need to determine their own persistent solution needs based upon their unique storage requirements
+<div class="alert alert-info" role="alert">
+Developers will need to determine their own persistent solution needs based upon their unique storage requirements.
+</div>
 
 Your business communication data is created when users make and receive phone calls, text messages, voice mail, and faxes using your Ring Central account. This data may have important immediate or future value for your organization.
 It may come as a surprise, but Ring Central does NOT store your business communication data indefinitely. If businesses wish to perform historical analysis, or maintain their business communication data, your organization will need to implement a data archival solution.

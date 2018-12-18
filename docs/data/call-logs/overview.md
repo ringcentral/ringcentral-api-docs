@@ -66,7 +66,9 @@ It is also important to understand anti-patterns of using Call Log, these are wa
 
 ## Call Log Data Aspects
 
-**Note** For the latest, and most up-to-date response specification, always refer to the RingCentral API Developer Guide.
+<div class="alert alert-info" role="alert">
+For the latest, and most up-to-date response specification, always refer to the RingCentral API Developer Guide.
+</div>
 
 Currently there are four major data types which are contained within the Call Log API resource:
 

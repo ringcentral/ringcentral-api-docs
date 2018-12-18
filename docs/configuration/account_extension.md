@@ -173,13 +173,9 @@ It is also possible to get the data about a particular extension. As well as in 
 
 Please refer to [Extension Service Feature Info](https://developers.ringcentral.com/api-docs/latest/RefExtensionInfo.html#ExtensionServiceFeatureInfo) for more details.
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 Every RingCentral account has a special system extension. The user of this extension has full administrative rights for the given account. Due to internal reasons, the ID of a system extension is always the same as the ID of account itself.
-
----
+</div>
 
 ## Phone Numbers
 
@@ -215,16 +211,15 @@ Other useful information returned for each phone number is the set of supported 
 
 - `SmsSender` — the phone number can be specified as sender number in outbound SMS messages
 
----
-
-**Important**
-
-If the user logged-in under particular account/extension is Administrator, then all the phone numbers without any limitations are returned.
-If logged-in user is **not** Administrator:
-- only Direct Numbers of other extensions are returned, even if numbers with the other usageType value are requested;
-- features set is not returned.
-
----
+<div class="alert alert-warning" role="alert">
+<p>If the user logged-in under particular account/extension is Administrator, then all the phone numbers without any limitations are returned.</p>
+<p>If logged-in user is <strong>not</strong> Administrator:
+<ul>
+<li>only Direct Numbers of other extensions are returned, even if numbers with the other usageType value are requested;</li>
+<li>features set is not returned.</li>
+</ul>
+</p>
+</div>
 
 The example below shows how to get phone numbers which can be used by a particular extension user.
 

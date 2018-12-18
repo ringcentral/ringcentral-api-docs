@@ -119,13 +119,9 @@ Created subscription should be renewed, it would not be sent to the client appli
 
     POST /restapi/v1.0/subscription/{subscriptionId}/renew
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 It is recommended to renew a subscription around 1-2 minutes before it is expired. The client should be aware that there may be strict throttling settings on subscriptions operations.
-
----
+</div>
 
 ### Subscription Modification
 
@@ -143,13 +139,9 @@ PUT /restapi/v1.0/subscription/{subscriptionId}
 }
 ```  
 
----
-
-**Note**
-
+<div class="alert alert-info" role="alert">
 Running this request, either with filters or with an empty body, also automatically renews the existent subscription updating its expiration time.
-
----
+</div>
 
 ### Unsubscribing
 
