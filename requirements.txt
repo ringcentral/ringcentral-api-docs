@@ -1,2 +1,2 @@
 mkdocs>=1.0.4
-mkdocs-bootstrap4>=0.1.0
+mkdocs-bootstrap4>=0.1.1

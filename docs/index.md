@@ -61,5 +61,5 @@ Here are some of our most commonly accessed documentation resources:
 
 ## About RingCentral
 
-RingCentral provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more](https://www.ringcentral.com/).
+RingCentral is a leading provider of global enterprise cloud communications and collaboration solutions. More flexible and cost-effective than legacy on-premises systems, RingCentral empowers modern mobile and distributed workforces to communicate, collaborate, and connect from any location, on any device and via any mode. RingCentral provides unified voice, video, team messaging and collaboration, conferencing, online meetings, digital customer engagement and integrated contact center solutions for enterprises globally. RingCentral’s open platform integrates with leading business apps and enables customers to easily customize business workflows.
 
