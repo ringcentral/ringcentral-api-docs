@@ -1,2 +1,3 @@
 mkdocs>=1.0.4
 mkdocs-bootstrap4>=0.1.2
+mkdocs-bootstrap-tables-plugin>=0.1.0
