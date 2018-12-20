@@ -39,11 +39,9 @@ Select your preferred language below:
   <li class="nav-item">
     <a class="nav-link" id="pills-php-tab" data-toggle="pill" href="#pills-php" role="tab" aria-controls="pills-php" aria-selected="false">PHP</a>
   </li>
-  <!--
   <li class="nav-item">
     <a class="nav-link" id="pills-python-tab" data-toggle="pill" href="#pills-python" role="tab" aria-controls="pills-python" aria-selected="false">Python</a>
   </li>
-  -->
   <li class="nav-item">
     <a class="nav-link" id="pills-explorer-tab" data-toggle="pill" href="#pills-explorer" role="tab" aria-controls="pills-explorer" aria-selected="false">API Explorer</a>
   </li>
@@ -218,6 +216,49 @@ print 'Sent SMS ' . $response->json()->uri . PHP_EOL;
 
   </div>
   <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab">
+<h3>Install Python Module</h3>
+
+<pre><code>pip install ringcentral
+</code></pre>
+
+<h3>Create and Edit sms.py</h3>
+
+<p>Create a file called <tt>sms.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+
+<pre><code>from ringcentral import SDK
+
+RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+
+RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+
+sdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = sdk.platform()
+platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+
+platform.post('/restapi/v1.0/account/~/extension/~/sms',
+              {
+                  'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+                  'to'   : [ {'phoneNumber': RECIPIENT} ],
+                  'text' : 'Hello World from Python'
+              },
+              None,
+              { 'Content-Type': 'application/json' } )
+</code></pre>
+
+<h3>Run Your Code</h3>
+
+<p>You are almost done. Now run your script.</p>
+
+<pre><code class="bash">$ python sms.py
+</code></pre>
+
+
   </div>
   <div class="tab-pane fade" id="pills-explorer" role="tabpanel" aria-labelledby="pills-explorer-tab">
 
