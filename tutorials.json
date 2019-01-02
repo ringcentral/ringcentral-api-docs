@@ -258,6 +258,16 @@
                 "name": "Node JS",
                 "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo"
+            },
+	    {
+                "name": "Python",
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo"
+            },
+	    {
+                "name": "PHP",
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo"
             }
         ]
     },
