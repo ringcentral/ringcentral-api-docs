@@ -183,6 +183,11 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
             },
             {
+                "name": "Python",
+                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/"
+            },
+            {
                 "name": "PHP",
                 "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/"
