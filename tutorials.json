@@ -16,6 +16,11 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
             },
             {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-python-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-python-quickstart/"
+            },
+            {
                 "name": "PHP",
                 "githubUri": "https://github.com/ringcentral-tutorials/sms-api-php-quickstart/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-php-quickstart/"
