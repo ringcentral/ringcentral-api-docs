@@ -63,7 +63,13 @@ pages:
     - 'C#': 'missing.md'
   - 'SMS API Manual': 'sms/index.md'
   - 'API Reference':
-    - 'Create SMS Message': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
+    - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
+    - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
+    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter'
+    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-loadMessage'
+    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
+    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
+    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Tutorials':
     - 'Sending Images': 'missing.md'
     - 'Valid SMS Sending Numbers': 'missing.md'
@@ -82,6 +88,22 @@ pages:
       - 'PHP': 'missing.md'
       - 'C#': 'missing.md'
   - 'Voice API Manual': 'sms/index.md'
+  - 'API Reference':
+    - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
+    - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
+    - 'Cancel Call': 'https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall'
+    - 'Call Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallSessionStatus'
+    - 'Drop Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-deleteCallSession'
+    - 'Hold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-holdCallParty'
+    - 'Unhold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-unholdCallParty'
+    - 'Reject Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-rejectParty'
+    - 'Transfer Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-transferCallParty'
+    - 'Forward Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-forwardCallParty'
+    - 'Flip Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-callFlipParty'
+    - 'Call Party Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallPartyStatus'
+    - 'Update Call Party': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty'
+    - 'Start Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording'
+    - 'Pause/Resume Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording'
   - 'Tutorials':
     - 'RingOut': 'voice/ringout.md'
     - 'WebRTC': 'voice/webrtc.md'
@@ -98,6 +120,15 @@ pages:
     - 'PHP': 'missing.md'
     - 'C#': 'missing.md'
   - 'Fax API Manual': 'fax/index.md'
+  - 'API Reference':
+    - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
+    - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
+    - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
+    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter'
+    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-loadMessage'
+    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
+    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
+    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Tutorials':
     - 'Foo': 'missing.md'
   - 'Sample Applications':
