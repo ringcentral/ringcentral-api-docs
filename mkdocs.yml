@@ -5,57 +5,132 @@ repo_url: https://github.com/ringcentral/ringcentral-api-docs
 edit_uri: 
 docs_dir: docs
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: bootstrap
-      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: bootstrap
+#      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
   - bootstrap-tables
 theme:
   name: bootstrap4
+  custom_dir: 'theme/'
   suppress_nextprev: true
   highlightjs: true
+  hljs_style: github
   hljs_languages:
     - http
+  shortcuts:
+    - foo
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
-- 'Home': 'index.md'
-- 'Quick Start': 'quick-start/index.md'
-- 'Development Basics': 
-  - 'Authentication': 'basics/oauth.md'
-  - 'URIs': 'basics/uris.md'
-  - 'Rate Limits': 'basics/rate-limits.md'
-  - 'Notifications':
-    - 'Overview': 'notifications/index.md'
+- 'The Basics':
+  - 'Using the API':
+    - 'Methods, Endpoints and Parameters': 'basics/uris.md'
+    - 'Developing in Sandbox': 'missing.md'
+    - 'Using your Phone in Development': 'missing.md'
     - 'Webhooks': 'notifications/webhooks.md'
-    - 'PubSub': 'notifications/pubsub.md'
+    - 'Mobile Push Notifications': 'notifications/pubsub.md'
+    - 'Rate Limits': 'basics/rate-limits.md'
+  - 'Application Management':
+    - 'Creating an Application': 'missing.md'
+    - 'Publishing an App to Production': 'basics/publish.md'
+    - 'App Gallery': 'missing.md'
+    - 'Using Lead Forms': 'missing.md'
+  - 'Account Management':
+    - 'Using the Developer Portal': 'missing.md'
+    - 'Account & Extension Settings': 'configuration/account_extension.md'    
+    - 'Auth Profile & Permissions': 'configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
-  - 'Publishing Your App': 'basics/publish.md'
-  - 'Upgrading from Legacy API': 'basics/legacy_api_upgrade.md'
-- 'Products':
-  - 'Configuration':
-    - 'Account & Extension Settings': 'configuration/account_extension.md'
-    - 'Auth Profile & Permissions': 'configuration/authorization_profile.md'
-  - 'Data': 
-    - 'Call Logs': 'data/call-logs/index.md'
-    - 'Data Archival': 'data/archival.md'
-  - 'Fax': 'fax/index.md'
-  - 'Glip Messaging':
-    - 'API': 'glip/api.md'
-    - 'Message Attachments': 'glip/attachments.md'
-    - 'Bots': 'glip/bots.md'
-  - 'SMS/MMS': 'sms/index.md'
-  - 'Voice':
+- 'Authentication':
+  - 'Quick Starts':
+    - 'Node.js': 'missing.md'
+    - 'Python': 'missing.md'
+    - 'PHP': 'missing.md'
+    - 'C#': 'missing.md'
+  - 'Tutorials':
+    - 'Auth Types': 'basics/oauth.md'
+  - 'Sample Applications':
+    - 'Auth Server': 'missing.md'
+- 'SMS':
+  - 'Quick Starts':
+    - 'Node.js': 'quick-start/index.md'
+    - 'Python': 'quick-start/index.md'
+    - 'PHP': 'missing.md'
+    - 'C#': 'missing.md'
+  - 'SMS API Manual': 'sms/index.md'
+  - 'API Reference':
+    - 'Create SMS Message': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
+  - 'Tutorials':
+    - 'Sending Images': 'missing.md'
+    - 'Valid SMS Sending Numbers': 'missing.md'
+    - 'Call Queues': 'missing.md'
+  - 'Sample Applications':
+    - 'Foo': 'missing.md'
+- 'Voice':
+  - 'Quick Starts':
+    - 'WebRTC':
+      - 'Web': 'missing.md'
+      - 'iOS': 'missing.md'
+      - 'Android': 'missing.md'
+    - 'RingOut': 
+      - 'Node.js': 'quick-start/index.md'
+      - 'Python': 'quick-start/index.md'
+      - 'PHP': 'missing.md'
+      - 'C#': 'missing.md'
+  - 'Voice API Manual': 'sms/index.md'
+  - 'Tutorials':
     - 'RingOut': 'voice/ringout.md'
     - 'WebRTC': 'voice/webrtc.md'
     - 'Call Queues': 'voice/call-queues.md'
     - 'Call Control': 'voice/call-control.md'
     - 'Answering Rules': 'voice/answering-rules.md'
     - 'URI Scheme': 'voice/uri-scheme.md'
+  - 'Sample Applications':
+    - 'Foo': 'missing.md'
+- 'Fax':
+  - 'Quick Starts':
+    - 'Node.js': 'quick-start/index.md'
+    - 'Python': 'quick-start/index.md'
+    - 'PHP': 'missing.md'
+    - 'C#': 'missing.md'
+  - 'Fax API Manual': 'fax/index.md'
+  - 'Tutorials':
+    - 'Foo': 'missing.md'
+  - 'Sample Applications':
+    - 'Foo': 'missing.md'
+- 'Chat':
+  - 'Quick Starts':
+    - 'Node.js': 'missing.md'
+    - 'Python': 'missing.md'
+    - 'PHP': 'missing.md'
+    - 'C#': 'missing.md'
+  - 'Chat API Manual': 'fax/index.md'
+  - 'Tutorials':
+    - 'API': 'glip/api.md'
+    - 'Message Attachments': 'glip/attachments.md'
+    - 'Bots': 'glip/bots.md'
+  - 'Sample Applications':
+    - 'Foo': 'missing.md'
+- 'Call Logs':
+  - 'Quick Starts':
+    - 'Node.js': 'missing.md'
+    - 'Python': 'missing.md'
+    - 'PHP': 'missing.md'
+    - 'C#': 'missing.md'
+  - 'Call Log API Manual': 'data/call-logs/index.md'
+  - 'Tutorials':
+    - 'Overview': 'data/call-logs/overview.md'
+    - 'Data Archival': 'data/archival.md'
+    - 'API Basics': 'data/call-logs/api.md'
+    - 'Call Recordings': 'data/call-logs/recordings.md'
+    - 'Synchronization': 'data/call-logs/sync.md'
+    - 'Detailed Call Log Data': 'data/call-logs/details.md'
+    - 'Best Practices': 'data/call-logs/best-practices.md'
+    - 'Access Control': 'data/call-logs/access.md'
+  - 'Sample Applications':
+    - 'Foo': 'missing.md'
 
-#- 'Messaging':
-#    - 'Message Synchronization': 'messages_sync.md'
