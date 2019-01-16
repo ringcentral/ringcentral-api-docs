@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# RingCentral Quick Start
+# SMS API Explorer Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today:
 
