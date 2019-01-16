@@ -57,11 +57,12 @@ pages:
     - 'Auth Server': 'missing.md'
 - 'SMS':
   - 'Quick Starts':
-    - 'Node.js': 'quick-start/index.md'
-    - 'Python': 'quick-start/index.md'
-    - 'PHP': 'missing.md'
+    - 'Node.js': 'sms/quick-start/node.md'
+    - 'Python': 'sms/quick-start/python.md'
+    - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'missing.md'
-  - 'SMS API Manual': 'sms/index.md'
+    - 'API Explorer': 'sms/quick-start/explorer.md'
+  - 'SMS API Manual': 'sms/manual.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
@@ -72,8 +73,7 @@ pages:
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Tutorials':
     - 'Sending Images': 'missing.md'
-    - 'Valid SMS Sending Numbers': 'missing.md'
-    - 'Call Queues': 'missing.md'
+    - 'Valid SMS Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
   - 'Sample Applications':
     - 'Foo': 'missing.md'
 - 'Voice':
@@ -83,10 +83,11 @@ pages:
       - 'iOS': 'missing.md'
       - 'Android': 'missing.md'
     - 'RingOut': 
-      - 'Node.js': 'quick-start/index.md'
-      - 'Python': 'quick-start/index.md'
-      - 'PHP': 'missing.md'
-      - 'C#': 'missing.md'
+      - 'Node.js': 'voice/quick-start/node.md'
+      - 'Python': 'voice/quick-start/python.md'
+      - 'PHP': 'voice/quick-start/php.md'
+      - 'C#': 'voice/quick-start/c-sharp.md'
+      - 'API Explorer': 'voice/quick-start/explorer.md'
   - 'Voice API Manual': 'sms/index.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
@@ -115,11 +116,11 @@ pages:
     - 'Foo': 'missing.md'
 - 'Fax':
   - 'Quick Starts':
-    - 'Node.js': 'quick-start/index.md'
-    - 'Python': 'quick-start/index.md'
-    - 'PHP': 'missing.md'
-    - 'C#': 'missing.md'
-  - 'Fax API Manual': 'fax/index.md'
+    - 'Node.js': 'fax/quick-start/node.md'
+    - 'Python': 'fax/quick-start/python.md'
+    - 'PHP': 'fax/quick-start/php.md'
+    - 'C#': 'fax/quick-start/c-sharp.md'
+    - 'API Explorer': 'fax/quick-start/explorer.md'
   - 'API Reference':
     - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
     - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
@@ -130,7 +131,9 @@ pages:
     - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Tutorials':
-    - 'Foo': 'missing.md'
+    - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
+    - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
+    - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
   - 'Sample Applications':
     - 'Foo': 'missing.md'
 - 'Chat':
@@ -141,9 +144,9 @@ pages:
     - 'C#': 'missing.md'
   - 'Chat API Manual': 'fax/index.md'
   - 'Tutorials':
-    - 'API': 'glip/api.md'
-    - 'Message Attachments': 'glip/attachments.md'
-    - 'Bots': 'glip/bots.md'
+    - 'API': 'chat/api.md'
+    - 'Message Attachments': 'chat/attachments.md'
+    - 'Bots': 'chat/bots.md'
   - 'Sample Applications':
     - 'Foo': 'missing.md'
 - 'Call Logs':

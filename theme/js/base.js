@@ -30,5 +30,5 @@ $( document ).ready( function () {
         $(this).attr('src',src);
     });
     $('.metadata').detach().insertAfter( '#content h1:first' );
-    $('#sidenav .active').closest('.toplevel ul').addClass('show'); 
+    $('#sidenav .active').closest('.toplevel .collapse').addClass('show'); 
 } );
