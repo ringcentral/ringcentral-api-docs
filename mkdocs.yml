@@ -28,15 +28,15 @@ pages:
 - 'The Basics':
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
-    - 'Developing in Sandbox': 'missing.md'
-    - 'Using your Phone in Development': 'missing.md'
+    - 'Developing in Sandbox': 'basics/sandbox.md'
+    - 'Using your Phone in Development': 'basics/your-rc-phone.md'
     - 'Webhooks': 'notifications/webhooks.md'
     - 'Mobile Push Notifications': 'notifications/pubsub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
-    - 'Creating an Application': 'missing.md'
-    - 'Publishing an App to Production': 'basics/publish.md'
-    - 'App Gallery': 'missing.md'
+    - 'Creating an Application': 'basics/create-app.md'
+    - 'Deploying to Production': 'basics/production.md'
+    - 'Publishing to App Gallery': 'basics/app-gallery.md'
     - 'Using Lead Forms': 'missing.md'
   - 'Account Management':
     - 'Using the Developer Portal': 'missing.md'
