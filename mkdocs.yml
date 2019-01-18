@@ -37,9 +37,9 @@ pages:
     - 'Creating an Application': 'basics/create-app.md'
     - 'Deploying to Production': 'basics/production.md'
     - 'Publishing to App Gallery': 'basics/app-gallery.md'
-    - 'Using Lead Forms': 'missing.md'
+    - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
-    - 'Using the Developer Portal': 'missing.md'
+    - 'Using the Developer Portal': 'basics/developer-portal.md'
     - 'Account & Extension Settings': 'configuration/account_extension.md'    
     - 'Auth Profile & Permissions': 'configuration/authorization_profile.md'
   - 'Messaging':
@@ -72,7 +72,7 @@ pages:
     - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Tutorials':
-    - 'Sending Images': 'missing.md'
+    - 'Sending Images': 'sms/tutorials/sending-images.md'
     - 'Valid SMS Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
   - 'Sample Applications':
     - 'Foo': 'missing.md'
