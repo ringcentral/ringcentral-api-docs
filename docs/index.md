@@ -2,12 +2,23 @@ no_breadcrumb:true
 
 ## Getting Started
 
-<p>New to RingCentral? Let us help you build your first RingCentral application in minutes. What do you want to do with the API?</p>
+<p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes.</p>
 
+<p>What do you want to do with the API?</p>
 <a class="btn btn-light" href="#">Send an SMS</a>
 <a class="btn btn-light" href="#">Send a Fax</a>
 <a class="btn btn-light" href="#">Build a chatbot</a>
 <a class="btn btn-light" href="#">Host a meeting</a>
+
+<p>What language do you prefer?</p>
+<a class="btn btn-light" href="#">Node</a>
+<a class="btn btn-light" href="#">Python</a>
+<a class="btn btn-light" href="#">PHP</a>
+<a class="btn btn-light" href="#">C#</a>
+
+<a class="btn btn-primary" href="#">Get Started</a>
+
+<p>Not a programmer? <a href="">Try out the API with no programming</a>.</p>
 
 ## Resources
 
