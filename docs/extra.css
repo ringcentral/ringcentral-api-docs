@@ -151,3 +151,18 @@ a.toctree-l3 {
   .mega-menu{width: 300px;}
 }
 /* Mega Menu END */
+
+.homepage #content {
+    padding-top: 20px;
+}
+.homepage h2 {
+    margin-top: 0;
+}
+
+.btn-light:visited {
+    color: #212529;
+}
+
+nav.navbar {
+    border-bottom: 1px solid #cdcdcd;
+}
