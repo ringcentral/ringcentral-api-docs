@@ -121,9 +121,21 @@ a.toctree-l3 {
   padding: 30px;
   font-family: "Lato",Helvetica,Arial,sans-serif;
   font-size: 13px;
+  z-index: 100000;
+  top: 48px;
+}
+#mega-menu-products.mega-menu {
+    left: -100px
 }
 #mega-menu-resources.mega-menu {
-  width: 800px; 
+    width: 800px;
+    left: -240px
+}
+#mega-menu-community.mega-menu {
+    left: -300px;
+}
+#mega-menu-support.mega-menu {
+    left: -300px;
 }
 .mega-menu a {
   text-decoration: none; 
