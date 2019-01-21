@@ -1,22 +1,29 @@
 no_breadcrumb:true
 
-## Getting Started
+# RingCentral Developer Guide
+
+## Let's Get Started
 
 <p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes.</p>
 
 <p>What do you want to do with the API?</p>
-<a class="btn btn-light" href="#">Send an SMS</a>
-<a class="btn btn-light" href="#">Send a Fax</a>
-<a class="btn btn-light" href="#">Build a chatbot</a>
-<a class="btn btn-light" href="#">Host a meeting</a>
+<div class="use-case-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="sms">Send an SMS</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="fax">Send a Fax</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="chat">Build a chatbot</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="meeting">Host a meeting</label>
+</div>
 
 <p>What language do you prefer?</p>
-<a class="btn btn-light" href="#">Node</a>
-<a class="btn btn-light" href="#">Python</a>
-<a class="btn btn-light" href="#">PHP</a>
-<a class="btn btn-light" href="#">C#</a>
+<div class="language-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="node">Node</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="python">Python</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="php">PHP</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="c#">C#</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="no-code">I don't code</label>
+</div>
 
-<a class="btn btn-primary" href="#">Get Started</a>
+<a class="btn btn-lg btn-primary" href="#">Get Started &raquo;</a>
 
 <p>Not a programmer? <a href="">Try out the API with no programming</a>.</p>
 

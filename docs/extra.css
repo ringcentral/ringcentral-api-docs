@@ -98,6 +98,18 @@ footer .footer-image-link i {
     margin-top: 0;
     padding-top: 0;
 }
+#content .btn-group {
+    margin-bottom: 15px;
+}
+#content .btn-group .btn {
+    margin-right: 15px;
+}
+#content .btn-group .focus {
+    background-color: #ccc;
+}
+#content .btn-group.language-select {
+    margin-bottom: 20px;
+}
 #sidebar-nav {
     padding-top: 20px;
     background-color: #2E72AE;
@@ -116,7 +128,7 @@ footer .footer-image-link i {
     margin-bottom: 10px;
 }
 #sidebar-nav .toplevel .section-title {
-    font-weight: bold;
+    font-weight: 400;
     text-transform: uppercase;
 }
 #sidebar-toc {
@@ -127,6 +139,7 @@ footer .footer-image-link i {
     background-color: #FFF;
     padding-top: 20px;
     padding-left: 20px;
+    padding-bottom: 40px;
 }
 
 li.toctree-l2:first-child,
