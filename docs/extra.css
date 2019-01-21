@@ -60,6 +60,41 @@ ul.nav li.dropdown:hover .dropdown-menu{
 
 .jumbotron { margin-top: 0; }
 
+#content {
+    margin-top: 0;
+    padding-top: 0;
+}
+#sidebar-nav {
+    padding-top: 20px;
+    background-color: #2E72AE;
+    color: white;
+}
+#sidebar-nav a {
+    color: white;
+}
+#sidebar-nav a.active {
+    font-weight: bold;
+}
+#sidebar-nav ul ul {
+    padding-left: 20px;
+}
+#sidebar-nav .toplevel {
+    margin-bottom: 10px;
+}
+#sidebar-nav .toplevel .section-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#sidebar-toc {
+    background-color: #FFF;
+    padding-top: 20px;
+}
+#main {
+    background-color: #FFF;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
 li.toctree-l2:first-child,
 li.toctree-l3:first-child {
     display: none;
@@ -164,9 +199,6 @@ a.toctree-l3 {
 }
 /* Mega Menu END */
 
-#content {
-    padding-top: 20px;
-}
 .homepage h2 {
     margin-top: 0;
 }
@@ -177,4 +209,5 @@ a.toctree-l3 {
 
 nav.navbar {
     border-bottom: 1px solid #cdcdcd;
+    background-color: white;
 }

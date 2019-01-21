@@ -74,9 +74,9 @@
       
       {%- set main_content %}
       <div class="row">
-        <div class="col-md-3">{% include "side-nav.html" %}</div>
-        <div class="col-md-7" role="main">{% include "content.html" %}</div>
-	<div class="col-md-2">
+        <div id="sidebar-nav" class="sidebar col-md-3">{% include "side-nav.html" %}</div>
+        <div id="main" class="col-md-7" role="main">{% include "content.html" %}</div>
+	<div id="sidebar-toc" class="sidebar col-md-2">
 	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
 	</div>
       </div>
