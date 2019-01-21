@@ -22,7 +22,7 @@ theme:
     - foo
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
-copyright: 2018, RingCentral, Inc.
+copyright: &copy; 1999-2019 RingCentral, Inc. All rights reserved.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
 - 'The Basics':

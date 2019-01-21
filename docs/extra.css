@@ -60,6 +60,40 @@ ul.nav li.dropdown:hover .dropdown-menu{
 
 .jumbotron { margin-top: 0; }
 
+footer {
+    background-color: #303030;
+    color: #797979;
+    padding-bottom: 30px;
+}
+footer .brand {
+    background: url('../img/footer_rclogo.png') no-repeat 0px 20px;
+    padding: 40px 0 10px 0;
+    font-size: 12px;
+}
+footer .row-1 {
+    border-bottom: 1px solid #414141;
+    margin-bottom: 10px
+}
+footer .row-1 .nav {
+    padding-top: 20px;
+}
+footer .nav-link:visited,
+footer .nav-link {
+    color: #d6d6d6;
+}
+footer .footer-image-link {
+    border-radius: 50%;
+    background: #797979;
+    margin-left: 9px;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    color: #333;
+    padding: 0;
+}
+footer .footer-image-link i {
+    font-size: 14px;
+}
 #content {
     margin-top: 0;
     padding-top: 0;

@@ -99,16 +99,7 @@
       {%- endif -%}
       {%- endblock %}
       
-      <footer class="col-md-12">
-	<hr>
-	<div class="container">
-	  {%- block footer %}
-	  {%- if config.copyright %}
-	  <p>{{ config.copyright }}</p>
-	  {%- endif %}
-	  {%- endblock %}
-	</div>
-      </footer>
+      {%- include "footer.html" -%}
       
       {%- block scripts %}
       <script>

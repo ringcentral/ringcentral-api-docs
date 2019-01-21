@@ -1,0 +1,37 @@
+<footer class="col-md-12">
+  {%- block footer %}
+  <nav class="container">
+    <div class="row row-1">
+      <div class="col-6">
+	<a class="brand nav-link" href="http://developer.ringcentral.com/">Back to main site</a>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li class="nav-item"><a class="nav-link" href="#">Legal</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Privacy Notice</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+	{%- if config.copyright %}
+	<p>{{ config.copyright }}</p>
+	{%- endif %}
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li><a class="nav-link footer-image-link footer-image-link-facebook" href="http://www.facebook.com/ringcentral">
+	      <i class="fa fa-facebook"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="#">
+	      <i class="fa fa-twitter"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="#">
+	      <i class="fa fa-linkedin"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="#">
+	      <i class="fa fa-youtube"></i></a></li>
+	</ul>
+      </div>
+  </nav>
+  {%- endblock %}
+</footer>
