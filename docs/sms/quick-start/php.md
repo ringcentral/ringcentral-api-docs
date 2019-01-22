@@ -2,15 +2,9 @@ no_breadcrumb:true
 
 # SMS PHP Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today:
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
 
-* [SMS and MMS](../sms)
-* [Voice](../voice)
-* [Fax](../fax)
-* [Chat/Text Messaging](../glip)
-* Online Meetings
-
-To introduce you to the platform we are going to walk you through building one of the most common use cases on our platform: sending an SMS or text message to phone. Let's get started.
+In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
 ## Create an App
 

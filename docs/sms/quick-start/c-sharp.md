@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# SMS API Explorer Quick Start
+# SMS C# Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
 
@@ -24,31 +24,16 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-<p>The RingCentral API Explorer serves as a reference and test bench for all of RingCentral's API. This allows you to make calls with zero code. Let's get started.</p>
+<h3>Create Project Directory</h3>
 
-<h3>Access the RingCentral API Explorer</h3>
+<h3>Create and Edit index.vb</h3>
 
-<p>Visit the [SMS section of the API Explorer](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS). You should see this:</p>
+<h3>Run Your App</h3>
 
-<p><img src="../img/api-expl-sms.png" class="img-fluid"></p>
+<p>You are almost done. Now, run your script.</p>
 
-<h3>Sign-in and Select App</h3>
-
-<p>Click the "Sign-in to try it out" button, and login to your developer account. When you are done, click the "Change App" button.</p>
-
-<p><img src="../img/api-expl-change.png" class="img-fluid"></p>
-
-<p>Then select the app your created in the first step.</p>
-
-<h3>Set Call Parameters</h3>
-
-<p>Now, set the API call parameters for the "from," "to" and "text" fields. For the "from" field use your account's phone number, and for the "to" field use your personal mobile phone number.</p>
-
-<p><img src="../img/api-expl-params.png" class="img-fluid"></p>
-
-<h3>Try it out</h3>
-
-<p>Click the "Try it out" button to send yourself an SMS. If it works, try doing the same thing using one of our code samples.</p>
+<pre><code class="bash">$ php index.php
+</code></pre>
 
 ## Publish Your App
 

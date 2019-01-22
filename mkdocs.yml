@@ -60,7 +60,7 @@ pages:
     - 'Node.js': 'sms/quick-start/node.md'
     - 'Python': 'sms/quick-start/python.md'
     - 'PHP': 'sms/quick-start/php.md'
-    - 'C#': 'missing.md'
+    - 'C#': 'sms/quick-start/c-sharp.md'
     - 'API Explorer': 'sms/quick-start/explorer.md'
   - 'SMS API Manual': 'sms/manual.md'
   - 'API Reference':
@@ -83,11 +83,11 @@ pages:
       - 'iOS': 'missing.md'
       - 'Android': 'missing.md'
     - 'RingOut': 
-      - 'Node.js': 'voice/quick-start/node.md'
-      - 'Python': 'voice/quick-start/python.md'
-      - 'PHP': 'voice/quick-start/php.md'
-      - 'C#': 'voice/quick-start/c-sharp.md'
-      - 'API Explorer': 'voice/quick-start/explorer.md'
+      - 'Node.js': 'voice/quick-start/ringout/node.md'
+      - 'Python': 'voice/quick-start/ringout/python.md'
+      - 'PHP': 'voice/quick-start/ringout/php.md'
+      - 'C#': 'voice/quick-start/ringout/c-sharp.md'
+      - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
   - 'Voice API Manual': 'sms/index.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
