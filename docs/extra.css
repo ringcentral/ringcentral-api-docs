@@ -204,7 +204,7 @@ a.toctree-l3 {
   font-family: "Lato",Helvetica,Arial,sans-serif;
   font-size: 13px;
   z-index: 100000;
-  top: 48px;
+  top: 39px;
 }
 #mega-menu-products.mega-menu {
     left: -100px
@@ -257,4 +257,20 @@ a.toctree-l3 {
 nav.navbar {
     border-bottom: 1px solid #cdcdcd;
     background-color: white;
+    font-size: 15px;
+    padding: 0 15px 0 15px;
 }
+.navbar .navbar-brand {
+    padding-right: 40px;
+}
+a.dropdown-toggle::after{
+    content:none;
+}
+@media (min-width: 768px) {
+.navbar-nav .main-item a.dropdown-toggle {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+}
+}
+
