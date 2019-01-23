@@ -627,5 +627,33 @@
                 "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction/"
             }
         ]
+    },
+    {
+        "title": "RingCentral Platform Authentication with Password Flow OAuth.",
+        "description": "<p>In this tutorial, you will learn how to authenticate RingCentral platform with Password Flow OAuth using RingCentral SDK</p>",
+        "tags": [
+            "OAuth, Password Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-nodejs-demo//"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-nodejs-demo//"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-php-demo//"
+            }
+        ]
     }
 ]
