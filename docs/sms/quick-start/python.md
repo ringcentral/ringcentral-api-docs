@@ -8,17 +8,31 @@ In this Quick Start, we are going to help you send your first SMS on the platfor
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. If you do not yet have RingCentral account, please [create one](https://developer.ringcentral.com/login.html#/). Once you are logged in, follow these instructions:
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-1. Go to Console/Apps and click 'Create App' button.
-2. Give your app a name and description, then click Next.
-3. On the second page of the create app wizard enter the following:
-    * Select 'Private' for Application Type.
-    * Select 'Server-only (No UI)' for Platform Type.
-4. On the third page of the create app wizard, select the following permissions:
-    * SMS
-    * Webhook Subscriptions
-5. Leave "OAuth Redirect URI" blank for now. We will come back and edit that later. 
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Give your app a name and description, then click Next.</li>
+<li>On the second page of the create app wizard enter the following:
+  <ul>
+  <li>Select 'Private' for Application Type.</li>
+  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  </ul>
+  </li>
+<li>On the third page of the create app wizard, select the following permissions:
+  <ul>
+    <li>SMS</li>
+    <li>Webhook Subscriptions</li>
+  </ul>
+  </li>
+<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+</ol>
+</div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 

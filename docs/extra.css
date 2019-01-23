@@ -274,3 +274,8 @@ a.dropdown-toggle::after{
 }
 }
 
+.btn-collapse {
+    font-size: 0.9em;
+    margin-left: 20px;
+    font-weight: normal;
+}
