@@ -62,7 +62,14 @@ pages:
     - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'sms/quick-start/c-sharp.md'
     - 'API Explorer': 'sms/quick-start/explorer.md'
-  - 'SMS API Manual': 'sms/manual.md'
+  - 'Developer Manual': 
+    - 'Valid SMS Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
+    - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
+    - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
+    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
+    - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
+    - 'Message Histories': 'sms/tutorials/message-histories.md'
+    - 'Receiving SMS': 'sms/tutorials/receiving.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
@@ -71,11 +78,10 @@ pages:
     - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
     - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
-  - 'Tutorials':
-    - 'Sending Images': 'sms/tutorials/sending-images.md'
-    - 'Valid SMS Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
   - 'Sample Applications':
-    - 'Foo': 'missing.md'
+    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
+    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+    - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
   - 'Quick Starts':
     - 'WebRTC':
