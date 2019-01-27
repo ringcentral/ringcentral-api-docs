@@ -632,7 +632,7 @@
         "title": "RingCentral Platform Authentication with Password Flow OAuth.",
         "description": "<p>In this tutorial, you will learn how to authenticate RingCentral platform with Password Flow OAuth using RingCentral SDK</p>",
         "tags": [
-            "OAuth, Password Flow"
+            "OAuth","Password Flow"
         ],
         "defaults": {
             "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-nodejs-demo/",
@@ -653,6 +653,34 @@
                 "name": "PHP",
                 "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-php-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-php-demo//"
+            }
+        ]
+    },
+    {
+        "title": "Access RingCentral platform services using native APIs",
+        "description": "<p>In this tutorial, you will learn how to authenticate RingCentral platform with Password Flow OAuth using native APIs</p>",
+        "tags": [
+            "OAuth","Password Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo//"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo//"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-php-demo//"
             }
         ]
     }
