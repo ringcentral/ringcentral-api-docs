@@ -664,13 +664,13 @@
         ],
         "defaults": {
             "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
-            "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo//"
+            "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
                 "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo//"
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo/"
             },
             {
                 "name": "Python",
@@ -680,7 +680,7 @@
             {
                 "name": "PHP",
                 "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-php-demo/",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-php-demo//"
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-php-demo/"
             }
         ]
     }
