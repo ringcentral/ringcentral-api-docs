@@ -46,17 +46,18 @@ pages:
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
 - 'Authentication':
-  - 'Quick Starts':
+  - 'Getting Started':
     - 'Node.js': 'missing.md'
     - 'Python': 'missing.md'
     - 'PHP': 'missing.md'
     - 'C#': 'missing.md'
-  - 'Tutorials':
+    - 'API Explorer': 'missing.md'
+  - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
   - 'Sample Applications':
     - 'Auth Server': 'missing.md'
 - 'SMS':
-  - 'Quick Starts':
+  - 'Getting Started':
     - 'Node.js': 'sms/quick-start/node.md'
     - 'Python': 'sms/quick-start/python.md'
     - 'PHP': 'sms/quick-start/php.md'
@@ -83,7 +84,7 @@ pages:
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
-  - 'Quick Starts':
+  - 'Getting Started':
     - 'WebRTC':
       - 'Web': 'missing.md'
       - 'iOS': 'missing.md'
@@ -94,7 +95,7 @@ pages:
       - 'PHP': 'voice/quick-start/ringout/php.md'
       - 'C#': 'voice/quick-start/ringout/c-sharp.md'
       - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
-  - 'Voice API Manual': 'sms/index.md'
+  - 'Developer Manual': 'missing.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
     - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
@@ -119,14 +120,20 @@ pages:
     - 'Answering Rules': 'voice/answering-rules.md'
     - 'URI Scheme': 'voice/uri-scheme.md'
   - 'Sample Applications':
-    - 'Foo': 'missing.md'
+    - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
+#    - 'Call Queues': 'missing.md'
+#    - 'Salesforce Dialer': 'missing.md'
 - 'Fax':
-  - 'Quick Starts':
+  - 'Getting Started':
     - 'Node.js': 'fax/quick-start/node.md'
     - 'Python': 'fax/quick-start/python.md'
     - 'PHP': 'fax/quick-start/php.md'
     - 'C#': 'fax/quick-start/c-sharp.md'
     - 'API Explorer': 'fax/quick-start/explorer.md'
+  - 'Developer Manual':
+    - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
+    - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
+    - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
   - 'API Reference':
     - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
     - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
@@ -136,41 +143,40 @@ pages:
     - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
     - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
-  - 'Tutorials':
-    - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
-    - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
-    - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
   - 'Sample Applications':
-    - 'Foo': 'missing.md'
+    - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 - 'Chat':
-  - 'Quick Starts':
-    - 'Node.js': 'missing.md'
-    - 'Python': 'missing.md'
-    - 'PHP': 'missing.md'
-    - 'C#': 'missing.md'
-  - 'Chat API Manual': 'fax/index.md'
+  - 'Getting Started':
+    - 'Node.js': 'chat/quick-start/node.md'
+    - 'Python': 'chat/quick-start/python.md'
+    - 'PHP': 'chat/quick-start/php.md'
+    - 'C#': 'chat/quick-start/c-sharp.md'
+    - 'API Explorer': 'chat/quick-start/explorer.md'
+  - 'Developer Manual':
+    - 'API Overview': 'chat/manual/api.md'
+    - 'Message Attachments': 'chat/manual/attachments.md'
   - 'Tutorials':
-    - 'API': 'chat/api.md'
-    - 'Message Attachments': 'chat/attachments.md'
-    - 'Bots': 'chat/bots.md'
+    - 'Building a Bot Locally': 'chat/tutorials/local-bots.md'
   - 'Sample Applications':
-    - 'Foo': 'missing.md'
+    - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
+    - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
 - 'Call Logs':
-  - 'Quick Starts':
-    - 'Node.js': 'missing.md'
-    - 'Python': 'missing.md'
-    - 'PHP': 'missing.md'
-    - 'C#': 'missing.md'
-  - 'Call Log API Manual': 'data/call-logs/index.md'
-  - 'Tutorials':
-    - 'Overview': 'data/call-logs/overview.md'
-    - 'Data Archival': 'data/archival.md'
-    - 'API Basics': 'data/call-logs/api.md'
-    - 'Call Recordings': 'data/call-logs/recordings.md'
-    - 'Synchronization': 'data/call-logs/sync.md'
-    - 'Detailed Call Log Data': 'data/call-logs/details.md'
-    - 'Best Practices': 'data/call-logs/best-practices.md'
-    - 'Access Control': 'data/call-logs/access.md'
+  - 'Getting Started':
+    - 'Node.js': 'call-log/quick-start/node.md'
+    - 'Python': 'call-log/quick-start/python.md'
+    - 'PHP': 'call-log/quick-start/php.md'
+    - 'C#': 'call-log/quick-start/c-sharp.md'
+    - 'API Explorer': 'call-log/quick-start/explorer.md'
+  - 'Developer Manual': 
+    - 'Overview': 'call-log/manual/overview.md'
+    - 'Data Archival': 'call-log/manual/archival.md'
+    - 'API Basics': 'call-log/manual/api.md'
+    - 'Call Recordings': 'call-log/manual/recordings.md'
+    - 'Synchronization': 'call-log/manual/sync.md'
+    - 'Detailed Call Log Data': 'call-log/manual/details.md'
+    - 'Best Practices': 'call-log/manual/best-practices.md'
+    - 'Access Control': 'call-log/manual/access.md'
   - 'Sample Applications':
-    - 'Foo': 'missing.md'
-
+    - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
+    - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
+    - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
