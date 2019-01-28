@@ -8,47 +8,61 @@ In this Quick Start, we are going to help you send your first SMS on the platfor
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. If you do not yet have RingCentral account, please [create one](https://developer.ringcentral.com/login.html#/). Once you are logged in, follow these instructions:
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-1. Go to Console/Apps and click 'Create App' button.
-2. Give your app a name and description, then click Next.
-3. On the second page of the create app wizard enter the following:
-    * Select 'Private' for Application Type.
-    * Select 'Server-only (No UI)' for Platform Type.
-4. On the third page of the create app wizard, select the following permissions:
-    * SMS
-    * Webhook Subscriptions
-5. Leave "OAuth Redirect URI" blank for now. We will come back and edit that later. 
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Give your app a name and description, then click Next.</li>
+<li>On the second page of the create app wizard enter the following:
+  <ul>
+  <li>Select 'Private' for Application Type.</li>
+  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  </ul>
+  </li>
+<li>On the third page of the create app wizard, select the following permissions:
+  <ul>
+    <li>SMS</li>
+    <li>Webhook Subscriptions</li>
+  </ul>
+  </li>
+<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+</ol>
+</div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Send an SMS
 
-<p>The RingCentral API Explorer serves as a reference and test bench for all of RingCentral's API. This allows you to make calls with zero code. Let's get started.</p>
+The RingCentral API Explorer serves as a reference and test bench for all of RingCentral's API. This allows you to make calls with zero code. Let's get started.
 
-<h3>Access the RingCentral API Explorer</h3>
+### Access the RingCentral API Explorer
 
-<p>Visit the [SMS section of the API Explorer](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS). You should see this:</p>
+Visit the [SMS section of the API Explorer](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS). You should see this:
 
-<p><img src="../img/api-expl-sms.png" class="img-fluid"></p>
+<img src="../../../img/api-expl-sms.png" class="img-fluid">
 
-<h3>Sign-in and Select App</h3>
+### Sign-in and Select App
 
-<p>Click the "Sign-in to try it out" button, and login to your developer account. When you are done, click the "Change App" button.</p>
+Click the "Sign-in to try it out" button, and login to your developer account. When you are done, click the "Change App" button.
 
-<p><img src="../img/api-expl-change.png" class="img-fluid"></p>
+<img src="../../../img/api-expl-change.png" class="img-fluid">
 
-<p>Then select the app your created in the first step.</p>
+Then select the app your created in the first step.
 
-<h3>Set Call Parameters</h3>
+### Set Call Parameters
 
-<p>Now, set the API call parameters for the "from," "to" and "text" fields. For the "from" field use your account's phone number, and for the "to" field use your personal mobile phone number.</p>
+Now, set the API call parameters for the "from," "to" and "text" fields. For the "from" field use your account's phone number, and for the "to" field use your personal mobile phone number.
 
-<p><img src="../img/api-expl-params.png" class="img-fluid"></p>
+<img src="../../../img/api-expl-params.png" class="img-fluid">
 
-<h3>Try it out</h3>
+### Try it out
 
-<p>Click the "Try it out" button to send yourself an SMS. If it works, try doing the same thing using one of our code samples.</p>
+Click the "Try it out" button to send yourself an SMS. If it works, try doing the same thing using one of our code samples.
 
 ## Publish Your App
 
