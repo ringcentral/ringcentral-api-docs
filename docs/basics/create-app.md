@@ -1,6 +1,6 @@
 # Creating an Application
 
-Create your application at [Developer Portal](https://developers.ringcentral.com/) following the steps:
+Create your application at [Developer Portal](https://developers.ringcentral.com/) following these steps:
 
 1. [Sign in](https://developers.ringcentral.com/login.html#/) to Developer Portal with your account login and password. If you do not have RingCentral account, please sign up.
 
@@ -10,9 +10,18 @@ Create your application at [Developer Portal](https://developers.ringcentral.com
 
     <img src="../../img/create-app-general-settings.png" class="img-fluid">
   
-    * **Application Name** Enter the name of your app.
-    * **Organization Name** Enter the name of your organization.
-    * **Description** Enter the text describing your app which is needed for app graduation only and will not be displayed to your app users. It should contain minimum 20 characters.
+    * **Application Name**
+            
+        Enter the name of your app.
+
+    * **Organization Name**
+            
+        Enter the name of your organization.
+
+    * **Description**
+            
+        Enter the text describing your app which is needed for app graduation only and will not be displayed to your app users. It should contain minimum 20 characters.
+    
     Continue by clicking the 'Next' button.
 
 4. Fill in the 'App Type & Platform' form:
@@ -54,7 +63,7 @@ Create your application at [Developer Portal](https://developers.ringcentral.com
 
         Continue by clicking the 'Next' button.
 
-5. Select the permissions useful for your app from the drop list. And if your app will use Authorization Code Flow, specify the OAuth Redirect URI. Click the 'Create' button.
+5. Select the permissions useful for your app from the drop-down list. And if your app will use Authorization Code Flow, specify the OAuth Redirect URI. Click the 'Create' button.
 
       <img src="../../img/create-app-oauth-settings.png" class="img-fluid">
 

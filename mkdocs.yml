@@ -29,7 +29,7 @@ pages:
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
-    - 'Using your Phone in Development': 'basics/your-rc-phone.md'
+    - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
     - 'Webhooks': 'notifications/webhooks.md'
     - 'Mobile Push Notifications': 'notifications/pubsub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
