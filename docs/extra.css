@@ -135,6 +135,9 @@ footer .footer-image-link i {
     background-color: #FFF;
     padding-top: 20px;
 }
+#toc {
+    z-index: 1;
+}
 #main {
     background-color: #FFF;
     padding-top: 20px;
@@ -206,13 +209,16 @@ a.toctree-l3 {
   z-index: 100000;
   top: 39px;
   right: 0;
+  background-color: white;
 }
-/*
+.mega-menu .mega-menu-link {
+    color: #0073ae;
+}
 #mega-menu-products.mega-menu {
     left: -100px
 }
 #mega-menu-resources.mega-menu {
-    width: 800px;
+    width: 850px;
     left: -240px
 }
 #mega-menu-community.mega-menu {
@@ -221,7 +227,6 @@ a.toctree-l3 {
 #mega-menu-support.mega-menu {
     left: -300px;
 }
-*/
 .mega-menu a {
   text-decoration: none; 
   color: #585858;
