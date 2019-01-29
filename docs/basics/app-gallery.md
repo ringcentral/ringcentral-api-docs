@@ -47,3 +47,7 @@ After you have entered all the information describing your brand new app, you ca
 Make changes as needed until everything appears correctly. Once your profile has been published, you will not be allowed to edit it again with special assistance. 
 
 When you are happy with your application's App Gallery profile, click the 'Submit to publish' button for your app publication. Your app is now published in App Gallery.
+
+## Featured Apps
+
+Featured apps are selected from the RingCentral Connect Platform Premier Partners. To join the CP3 program as a Premier Partner, please fill out our [partner application form](https://www.ringcentral.com/partner/isvagentform.html). Being featured is at the discretion of our Connect Platform Partner team.

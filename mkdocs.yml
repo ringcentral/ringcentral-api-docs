@@ -26,12 +26,13 @@ copyright: 1999-2019 RingCentral, Inc. All rights reserved.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
 - 'The Basics':
+  - 'Get Started': 'get-started.md'
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
-    - 'Webhooks': 'notifications/webhooks.md'
-    - 'Mobile Push Notifications': 'notifications/pubsub.md'
+    - 'Webhooks': 'basics/notifications/webhooks.md'
+    - 'Mobile Push Notifications': 'basics/notifications/pubsub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
     - 'Creating an Application': 'basics/create-app.md'
@@ -40,8 +41,8 @@ pages:
     - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
     - 'Using the Developer Portal': 'basics/developer-portal.md'
-    - 'Account & Extension Settings': 'configuration/account_extension.md'    
-    - 'Auth Profile & Permissions': 'configuration/authorization_profile.md'
+    - 'Account & Extension Settings': 'basics/configuration/account_extension.md'    
+    - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
@@ -64,9 +65,11 @@ pages:
     - 'C#': 'sms/quick-start/c-sharp.md'
     - 'API Explorer': 'sms/quick-start/explorer.md'
   - 'Developer Manual': 
-    - 'Valid SMS Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
+    - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
+    - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
     - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
+    - 'Pager Messages': 'sms/pager.md'
     - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'

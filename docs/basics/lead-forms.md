@@ -10,5 +10,5 @@ Upon clicking the "Contact Me" button, a dialog is launched where visitors can e
 
 ## Requesting Access
 
-Lead Forms is a feature reserved for RingCentral's Premiere Partners. If you would like to learn more, or request becoming a Premiere Partner, please visit our [Connect Platform Partner Program for ISVs](https://www.ringcentral.com/partner/isv.html). Once setup as a partner, our onboarding specialists will help configure lead forms for your organization.
+Lead Forms is a feature reserved for RingCentral's Premier Partners. If you would like to learn more, or request becoming a Premier Partner, please visit our [Connect Platform Partner Program for ISVs](https://www.ringcentral.com/partner/isv.html). Once setup as a partner, our onboarding specialists will help configure lead forms for your organization.
 
