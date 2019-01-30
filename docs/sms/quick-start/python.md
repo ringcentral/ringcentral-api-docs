@@ -38,7 +38,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-<h3>Install Python Module</h3>
+<h3>Install RingCentral Python SDK</h3>
 
 <pre><code>pip install ringcentral
 </code></pre>
@@ -59,8 +59,8 @@ RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
 
-sdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = sdk.platform()
+rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
 platform.post('/restapi/v1.0/account/~/extension/~/sms',

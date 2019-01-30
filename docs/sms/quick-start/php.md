@@ -2,110 +2,91 @@ no_breadcrumb:true
 
 # SMS PHP Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. If you do not yet have RingCentral account, please [create one](https://developer.ringcentral.com/login.html#/). Once you are logged in, follow these instructions:
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-1. Go to Console/Apps and click 'Create App' button.
-2. Give your app a name and description, then click Next.
-3. On the second page of the create app wizard enter the following:
-    * Select 'Private' for Application Type.
-    * Select 'Server-only (No UI)' for Platform Type.
-4. On the third page of the create app wizard, select the following permissions:
-    * SMS
-    * Webhook Subscriptions
-5. Leave "OAuth Redirect URI" blank for now. We will come back and edit that later. 
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Give your app a name and description, then click Next.</li>
+<li>On the second page of the create app wizard enter the following:
+  <ul>
+  <li>Select 'Private' for Application Type.</li>
+  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  </ul>
+  </li>
+<li>On the third page of the create app wizard, select the following permissions:
+  <ul>
+    <li>SMS</li>
+    <li>Webhook Subscriptions</li>
+  </ul>
+  </li>
+<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+</ol>
+</div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Send an SMS
 
-<h3>Create Project Directory</h3>
+<h3>Install RingCentral PHP SDK</h3>
 
-<p>Let's get started by created a directory to hold your project files.</p>
+<pre>
+  <code>
+    curl -sS https://getcomposer.org/installer | php
+    php composer.phar require ringcentral/ringcentral-php
+  </code>
+</pre>
 
-<pre><code class="bash">$ mkdir ringcentral-sms-project
-$ cd ringcentral-sms-project
-</code></pre>
+<h3>Create and Edit sms.php</h3>
 
-<h3>Install Composer</h3>
+<p>Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
 
-<pre><code class="bash">$ curl -sS https://getcomposer.org/installer | php</code></pre>
+<pre><code>
+&lt;?php
+require('vendor/autoload.php');
 
-<h3>Create composer.json</h3>
+$RECIPIENT = '&lt;ENTER PHONE NUMBER>'
 
-<p>Create another file called <tt>composer.json</tt> using the text below.</p>
+$RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
+$RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-<pre><code class="json">{
-    "minimum-stability": "dev"
-}
-</code></pre>
+$RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
+$RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
+$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
 
-<h3>Install Prereqs</h3>
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
-<pre><code>$ php composer.phar require ringcentral/ringcentral-php
-$ php composer.phar require vlucas/phpdotenv
-</code></pre>
-
-<h3>Create .env</h3>
-
-<p>Now, create a file called <tt>.env</tt> using the sample text below. Enter in your app's client ID and secret, and the other values called for.</p>
-
-<pre><code class="bash">RINGCENTRAL_CLIENTID=
-RINGCENTRAL_CLIENTSECRET=
-RINGCENTRAL_SERVER=https://platform.devtest.ringcentral.com
-
-RINGCENTRAL_USERNAME=&lt;YOUR ACCOUNT PHONE NUMBER>
-RINGCENTRAL_PASSWORD=&lt;YOUR ACCOUNT PASSWORD>
-RINGCENTRAL_EXTENSION=&lt;YOUR EXTENSION, PROBABLY "101">
-</code></pre>
-
-<h3>Create and Edit index.php</h3>
-
-<p>Create a file called <tt>index.php</tt>. Be sure to edit the first line with the recipient's phone number.</p>
-
-<pre><code class="php">&lt;?php
-$RECIPIENT = "&lt;ENTER RECIPIENT PHONE NUMBER>";
-
-require_once __DIR__ . '/vendor/autoload.php';
-$dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
-
-use RingCentral\SDK\SDK;
-$rcsdk = new SDK( getenv('RINGCENTRAL_CLIENTID'),
-                  getenv('RINGCENTRAL_CLIENTSECRET'),
-                  getenv('RINGCENTRAL_SERVER'),
-                  'Demo', '1.0.0');
 $platform = $rcsdk->platform();
-// Authorize
-$platform->login( getenv('RINGCENTRAL_USERNAME'),
-                  getenv('RINGCENTRAL_EXTENSION'),
-                  getenv('RINGCENTRAL_PASSWORD'),
-                  true );
-// Send SMS
-$response = $platform
-  ->post('/account/~/extension/~/sms', array(
-            'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
-            'to'   => array(
-                array('phoneNumber' => $RECIPIENT),
-            ),
-            'text' => 'Hello World!',
-  ));
-print 'Sent SMS ' . $response->json()->uri . PHP_EOL;
-?>
+$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+
+$platform->post('/account/~/extension/~/sms',
+    array(
+       'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
+       'to' => array(
+                array('phoneNumber' => $RECIPIENT)
+              ),
+       'text' => 'Hellow World from PHP'
+     ));
 </code></pre>
 
-<h3>Run Your App</h3>
+<h3>Run Your Code</h3>
 
-<p>You are almost done. Now, run your script.</p>
+<p>You are almost done. Now run your script.</p>
 
-<pre><code class="bash">$ php index.php
+<pre><code class="bash">$ php sms.php
 </code></pre>
 
 ## Publish Your App
 
-Congradulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
