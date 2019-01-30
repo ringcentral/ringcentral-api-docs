@@ -90,7 +90,7 @@ namespace Send_SMS
 
 </code></pre>
 
-<h3>Run Your Code</h3>
+<h3>Run Your App</h3>
 
 <p>You are almost done. Now run your app from Visual Studio.</p>
 

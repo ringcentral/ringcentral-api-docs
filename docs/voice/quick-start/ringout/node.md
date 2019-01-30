@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # RingOut Node.js Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you connect two people in a live phone call using our RingOut API, which dials two phone numbers, and then connects the two people when they answer. Let's get started.
 
@@ -26,11 +26,10 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>SMS</li>
-    <li>Webhook Subscriptions</li>
+    <li>RingOut</li>
   </ul>
-  </li>
-<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+</li>
+<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
 </ol>
 </div>
 
@@ -38,8 +37,59 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Place a Call
 
-TODO
+<h3>Install RingCentral PHP SDK</h3>
+
+<pre><code>npm install ringcentral --save
+</code></pre>
+
+<h3>Create and Edit ringout.js</h3>
+
+<p>Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+
+<pre><code>const RC = require('ringcentral');
+
+RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+
+RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+
+var rcsdk = new RC({
+      server: RINGCENTRAL_SERVER,
+      appKey: RINGCENTRAL_CLIENTID,
+      appSecret: RINGCENTRAL_CLIENTSECRET
+  });
+var platform = rcsdk.platform();
+platform.login({
+      username: RINGCENTRAL_USERNAME,
+      password: RINGCENTRAL_PASSWORD,
+      extension: RINGCENTRAL_EXTENSION
+      })
+      .then(function(resp) {
+          call_ringout()
+      });
+
+function call_ringout(){
+    platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
+                {
+                    'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+                    'to'   : {'phoneNumber': RECIPIENT},
+                    'playPrompt' : false
+                })
+}
+</code></pre>
+
+<h3>Run Your Code</h3>
+
+<p>You are almost done. Now run your script.</p>
+
+<pre><code class="bash">$ node ringout.js
+</code></pre>
 
 ## Publish Your App
 
-Congradulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
