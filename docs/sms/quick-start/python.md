@@ -27,10 +27,9 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
     <li>SMS</li>
-    <li>Webhook Subscriptions</li>
   </ul>
   </li>
-<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
 </ol>
 </div>
 

@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # RingOut PHP Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you connect two people in a live phone call using our RingOut API, which dials two phone numbers, and then connects the two people when they answer. Let's get started.
 
@@ -24,22 +24,64 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   <li>Select 'Server-only (No UI)' for Platform Type.</li>
   </ul>
   </li>
-<li>On the third page of the create app wizard, select the following permissions:
-  <ul>
-    <li>SMS</li>
-    <li>Webhook Subscriptions</li>
-  </ul>
-  </li>
-<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
-</ol>
-</div>
+  <li>On the third page of the create app wizard, select the following permissions:
+    <ul>
+      <li>RingOut</li>
+    </ul>
+    </li>
+  <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+  </ol>
+  </div>
 
-When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
+  When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Place a Call
+  ## Place a Call
 
-TODO
+  <h3>Install RingCentral PHP SDK</h3>
 
-## Publish Your App
+  <pre>
+    <code>
+      curl -sS https://getcomposer.org/installer | php
+      php composer.phar require ringcentral/ringcentral-php
+    </code>
+  </pre>
 
-Congradulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+  <h3>Create and Edit ringout.py</h3>
+
+  <p>Create a file called <tt>ringout.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+
+  <pre><code>from ringcentral import SDK
+
+  $RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+
+  $RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
+  $RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+  $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+  $RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
+  $RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
+  $RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+
+  $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+
+  $platform = $rcsdk->platform();
+  $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+
+  $platform->post('/account/~/extension/~/ring-out',
+      array(
+         'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
+         'to' => array('phoneNumber' => $RECIPIENT),
+         'playPrompt' => false
+       ));
+  </code></pre>
+
+  <h3>Run Your Code</h3>
+
+  <p>You are almost done. Now run your script.</p>
+
+  <pre><code class="bash">$ php ringout.php
+  </code></pre>
+
+  ## Publish Your App
+
+  Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
