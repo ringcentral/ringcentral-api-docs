@@ -49,6 +49,7 @@ $ php composer.phar require ringcentral/ringcentral-php
 Create a file called <tt>ringout.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```php
+<?php
 from ringcentral import SDK
 
 $RECIPIENT = '<ENTER PHONE NUMBER>'
@@ -72,6 +73,7 @@ $platform->post('/account/~/extension/~/ring-out',
          'to' => array('phoneNumber' => $RECIPIENT),
          'playPrompt' => false
        ));
+?>
 ```
 
 ### Run Your Code

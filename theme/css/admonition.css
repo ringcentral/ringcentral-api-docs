@@ -53,6 +53,9 @@ summary:after {
       [dir="rtl"] .admonition > .admonition-title::before, [dir="rtl"] details > .admonition-title::before, [dir="rtl"] .admonition > summary::before, [dir="rtl"] details > summary::before {
         right: 1.2rem;
         left: initial; }
+      details[open] summary {
+	  margin-bottom: 20px
+      }
   .admonition.summary, details.summary, .admonition.tldr, details.tldr, .admonition.abstract, details.abstract {
     border-left-color: #00b0ff; }
     [dir="rtl"] .admonition.summary, [dir="rtl"] details.summary, [dir="rtl"] .admonition.tldr, [dir="rtl"] details.tldr, [dir="rtl"] .admonition.abstract, [dir="rtl"] details.abstract {
