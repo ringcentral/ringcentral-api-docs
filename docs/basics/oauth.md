@@ -12,9 +12,8 @@ In general, the steps your app needs to take to use RingCentral APIs (including 
 
 4. [Refresh](#refresh-token-flow) your access token when necessary
 
-<div class="alert alert-info" role="alert">
-In order to prevent eavesdropping and tampering, the RingCentral API requires Transport Layer Security. This means that API resources are accessible only through HTTPS connections.
-</div>
+!!! alert "FYI"
+    In order to prevent eavesdropping and tampering, the RingCentral API requires Transport Layer Security. This means that API resources are accessible only through HTTPS connections.
 
 ## Tokens
 
@@ -141,9 +140,9 @@ Content Type: application/json
 | `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
 | `owner_id`                 | string  | Extension identifier |
     
-**Example Request**
+**Example**
 
-```http
+```http tab="Request"
 POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
@@ -153,10 +152,7 @@ Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDM
   qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
 ```
 
-**Example Response**
-
-
-```http
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
     
@@ -213,10 +209,8 @@ The Request parameters will be :
 **Request Body**
 
 ```http
+GET /authorize?response_type=token&client_id=s6BhdRkqt3&state=xyz&redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&scope=Contacts HTTP/1.1
 Content Type: text/html
-
-GET /authorize?response_type=token&client_id=s6BhdRkqt3&state=xyz&redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&scope=Contacts 
-HTTP/1.1
 Host: platform.devtest.ringcentral.com
 ```
 
@@ -256,9 +250,7 @@ If the user decides not to grant access to the application, the response URL con
 
 In this step your WebApp extracts the access_token got as a response in the previous step and stores it locally to make sucessful API calls with the access token . Also it redirects the app to the redirect URI.Keep in mind, you would also need to take into account the expires_in time (3600 mili seconds). Which means before the access token expires you need to get a new access token.
 
-<div class="alert alert-info" role="alert">
-In Implicit Grant Flow there is no concept of Refresh Token
-</div>
+!!! warning "In Implicit Grant Flow there is no concept of Refresh Token"
 
 When getting a new access token before the expires_in time, you can pass a property prompt=none in the request, this will make sure that user is not presented with a login screen and a new access_token can be generated in the background without any user intervention(Provided the RingCentral Unified Login session is still active).
 
@@ -330,9 +322,9 @@ Content Type: application/json
 | `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
 | `owner_id`                 | string  | Extension identifier |
 	
-**Request example**
-    
-```http
+**Example**
+
+```http tab="Request"
 POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
@@ -340,9 +332,7 @@ Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
 grant_type=password&username=18559100010&extension=101&password=121212             
 ```
 
-Response example
-
-```http
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
         
@@ -360,10 +350,10 @@ Content-Type: application/json
 
 This authorization flow is mostly used by RingCentral partner applications which need to create RingCentral user accounts and control their lifecycle without providing credentials of these users. This flow uses Client Credentials OAuth grant type and, in fact, unlike other described flows authorizes only the application.
 
-<div class="alert alert-info" role="alert">
-<p>Since no user authorization is performed this flow is allowed for use only by trusted RingCentral partner applications.</p>
-<p>There are two types of partner authorization sessions: initial signup session (not connected to any specific RingCentral user account) and account-centric session (connected to certain RingCentral user account), which are initialized differently and have some limitations. Let's consider both sessions below.</p>
-</div>
+!!! alert "FYI"
+    Since no user authorization is performed this flow is allowed for use only by trusted RingCentral partner applications.
+
+    There are two types of partner authorization sessions: initial signup session (not connected to any specific RingCentral user account) and account-centric session (connected to certain RingCentral user account), which are initialized differently and have some limitations. Let's consider both sessions below.
 
 #### Signup Session
 
@@ -398,9 +388,8 @@ Content-Type: application/json
 }
 ```
 
-<div class="alert alert-info" role="alert">
-If you try to access any account related data through API with signup session token, you'll get the `401 Unauthorized` error. In order to work with the newly created account further, the client application needs to request another access token, see the next section.
-</div>
+!!! alert "FYI"
+    If you try to access any account related data through API with signup session token, you'll get the `401 Unauthorized` error. In order to work with the newly created account further, the client application needs to request another access token, see the next section.
 	
 #### Account-Centric Session
 
@@ -409,7 +398,7 @@ Account-centric session should be established when the application user already 
 To continue working with the existing account the client application has to request another access token by passing the following parameters:
 
 -  application credentials, provided by RingCentral in Basic Authorization header;
--  `grant_type = client credentials`;
+- `grant_type = client credentials`;
 - `account_id` – RingCentral internal account id (alternatively a pair `brand_id`/`partner_account_id` can be used)
 - `brand_id` – constant value provided by RingCentral
 - `partner_account_id` – specific identifier of account designed and stored by the partner
@@ -437,9 +426,7 @@ Content-Type: application/json
 }
 ```
 
-<div class="alert alert-info" role="alert">
-Attempt to access any other account with this access token will result in the <code>401 Unauthorized</code> error message.
-</div>
+!!! warning "Attempt to access any other account with this access token will result in the `401 Unauthorized` error message."
 
 ## Client Authentication
 
