@@ -76,13 +76,13 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 
 Let's consider a simple example of a `GET` method — retrieving the version of the RingCentral REST API.
 
-```http fct_label="Request"
+```http tab="Request"
 GET /restapi/v1.0 HTTP/1.1
 Accept: application/json
 Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
 ```
 
-```http fct_label="Response"
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
 

@@ -142,7 +142,7 @@ Content Type: application/json
     
 **Example**
 
-```http fct_label="Request"
+```http tab="Request"
 POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
@@ -152,7 +152,7 @@ Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDM
   qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
 ```
 
-```http fct_label="Response"
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
     
@@ -324,7 +324,7 @@ Content Type: application/json
 	
 **Example**
 
-```http fct_label="Request"
+```http tab="Request"
 POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
@@ -332,7 +332,7 @@ Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
 grant_type=password&username=18559100010&extension=101&password=121212             
 ```
 
-```http fct_label="Response"
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
         

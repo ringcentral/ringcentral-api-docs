@@ -49,13 +49,13 @@ As a **Best Practice**, it is highly recommended that developers building applic
 
 This can be accomplished by Checking Access to verify that a user has a specified permission and can be executed with the following API request (requires a valid `access_token` for the user):
 
-```http fct_label="Request"
+```http tab="Request"
 GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
 Accept: application/json
 Accept-Language: en-US
 ```
 
-```http fct_label="Response"
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Language: en-US

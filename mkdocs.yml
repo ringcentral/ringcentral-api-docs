@@ -26,10 +26,6 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
-#  - markdown_fenced_code_tabs:
-#      single_block_as_tab: False
-#      active_class: 'active'
-#      template: 'bootstrap4'
 extra_css:
 - extra.css
 - css/code-styles.css
