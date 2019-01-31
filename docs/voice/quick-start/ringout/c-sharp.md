@@ -80,8 +80,8 @@ namespace Call_Ringout
                   parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
                   parameters.playPrompt = false;
 
-                  await rc.Restapi().Account().Extension().RingOut().Post(parameters);
-                  Console.WriteLine("Call Placed");
+                  var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
+                  Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
               }
           }
       }

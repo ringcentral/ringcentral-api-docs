@@ -67,14 +67,13 @@ $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRE
 $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-$platform->post('/account/~/extension/~/sms',
+$resp = $platform->post('/account/~/extension/~/sms',
     array(
        'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
-       'to' => array(
-                array('phoneNumber' => $RECIPIENT)
-              ),
-       'text' => 'Hellow World from PHP'
+       'to' => array(array('phoneNumber' => $RECIPIENT)),
+       'text' => 'Hello World from PHP'
      ));
+print_r ("SMS sent. Message status: " . $resp->json()->messageStatus);)
 ```
 
 ### Run Your Code

@@ -80,8 +80,8 @@ namespace Send_SMS
                 parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
                 parameters.text = "Hello World from C#";
 
-                await rc.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS Sent");
+                var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
+                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
             }
         }
     }

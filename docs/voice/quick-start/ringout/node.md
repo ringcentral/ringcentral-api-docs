@@ -81,6 +81,9 @@ function call_ringout() {
       'to'   : {'phoneNumber': RECIPIENT},
       'playPrompt' : false
     })
+    .then(function(resp){
+        console.log("Call placed. Call status: " + resp.json().status.callStatus)
+    })
 }
 ```
 

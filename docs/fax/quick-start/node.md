@@ -93,7 +93,7 @@ function send_fax() {
 
     platform.post('/account/~/extension/~/fax', formData)
     .then(function (resp) {
-        console.log("FAX sent. Current status: " + resp.json().messageStatus)
+        console.log("FAX sent. Message status: " + resp.json().messageStatus)
     })
 }
 ```

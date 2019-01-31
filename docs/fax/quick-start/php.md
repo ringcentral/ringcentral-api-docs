@@ -69,17 +69,14 @@ $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PAS
 
 $request = $rcsdk->createMultipartBuilder()
                  ->setBody(array(
-                     'to' => array(
-                         array('phoneNumber' => $RECIPIENT),
-                     ),
+                     'to' => array(array('phoneNumber' => $RECIPIENT)),
                      'faxResolution' => 'High',
-                     'coverPageText' => "This is a demo Fax page from PHP"
                  ))
                  ->add(fopen('test.jpg', 'r'))
                  ->request('/account/~/extension/~/fax');
 
-$response = $platform->sendRequest($request);
-print_r ("FAX sent. Current status: " . $response->json()->messageStatus);
+$resp = $platform->sendRequest($request);
+print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
 ```
 
 ### Run Your Code

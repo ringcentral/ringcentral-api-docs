@@ -79,10 +79,10 @@ function send_sms(){
   platform.post('/account/~/extension/~/sms', {
        from: {'phoneNumber': RINGCENTRAL_USERNAME},
        to: [{'phoneNumber': RECIPIENT}],
-       text: 'Hellow World from Node JS'
+       text: 'Hello World from Node JS'
      })
-     .then(function (response) {
-        console.log("SMS sent")
+     .then(function (resp) {
+        console.log("SMS sent. Message status: " + resp.json().messageStatus)
      });
 }      
 ```

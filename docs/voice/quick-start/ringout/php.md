@@ -50,7 +50,7 @@ Create a file called <tt>ringout.php</tt>. Be sure to edit the variables in ALL 
 
 ```php
 <?php
-from ringcentral import SDK
+require('vendor/autoload.php');
 
 $RECIPIENT = '<ENTER PHONE NUMBER>'
 
@@ -67,12 +67,14 @@ $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRE
 $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-$platform->post('/account/~/extension/~/ring-out',
-      array(
-         'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
-         'to' => array('phoneNumber' => $RECIPIENT),
-         'playPrompt' => false
-       ));
+$resp = $platform->post('/account/~/extension/~/ring-out',
+    array(
+      'from' => array('phoneNumber' => $RINGCENTRAL_USERNAME),
+      'to' => array('phoneNumber' => $RECIPIENT),
+      'playPrompt' => false
+    ));
+
+print_r ("Call placed. Call status: " . $resp->json()->status->callStatus);
 ?>
 ```
 

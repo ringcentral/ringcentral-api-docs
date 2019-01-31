@@ -76,8 +76,8 @@ builder.add(attachment)
 
 request = builder.request('/account/~/extension/~/fax')
 
-response = platform.send_request(request)
-print 'Fax sent. Current status: ' + response.json().messageStatus
+resp = platform.send_request(request)
+print 'Fax sent. Message status: ' + resp.json().messageStatus
 ```
 
 ### Run Your Code

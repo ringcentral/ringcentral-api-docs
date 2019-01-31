@@ -54,12 +54,13 @@ rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
+resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
               {
                   'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
                   'to'   : {'phoneNumber': RECIPIENT},
                   'playPrompt' : False
               })
+print "Call placed. Call status: " + resp.json().status.callStatus              
 ```
 
 ### Run Your Code
