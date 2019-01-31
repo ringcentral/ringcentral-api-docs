@@ -28,36 +28,35 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   <ul>
     <li>RingOut</li>
   </ul>
-  </li>
-  <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
-  </ol>
-  </div>
+</li>
+<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+</ol>
+</div>
 
-  When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
+When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-  ## Place a Call
+## Place a Call
 
-  <h3>Create a Visual Studio project</h3>
-  <ul>
-  <li>Choose Console Application .Net Core -> App</li>
-  <li>Select Target Framework .NET Core 2.1</li>
-  <li>Add NuGet package RingCentral.Client (3.0.0) SDK</li>
-  <li>Enter project name "Call_Ringout"</li>
-  </ul>
+### Create a Visual Studio project
 
-  <h3>Edit the file Program.cs</h3>
+* Choose Console Application .Net Core -> App
+* Select Target Framework .NET Core 2.1
+* Add NuGet package RingCentral.Client (3.0.0) SDK
+* Enter project name "Call_Ringout"
 
-  <p>Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+### Edit the file Program.cs
 
-  <pre><code>
-  using System;
-  using System.Threading.Tasks;
-  using RingCentral;
+Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-  namespace Call_Ringout
-  {
-      class Program
-      {
+```dotnet
+using System;
+using System.Threading.Tasks;
+using RingCentral;
+
+namespace Call_Ringout
+{
+    class Program
+    {
           const string RECIPIENT = "&lt;ENTER PHONE NUMBER>";
           const string RINGCENTRAL_CLIENTID = "&lt;ENTER CLIENT ID>";
           const string RINGCENTRAL_CLIENTSECRET = "&lt;ENTER CLIENT SECRET>";
@@ -86,14 +85,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
               }
           }
       }
-  }
+}
+```
 
-  </code></pre>
+### Run Your App
 
-  <h3>Run Your App</h3>
+You are almost done. Now run your app from Visual Studio.
 
-  <p>You are almost done. Now run your app from Visual Studio.</p>
+## Publish Your App
 
-  ## Publish Your App
-
-  Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

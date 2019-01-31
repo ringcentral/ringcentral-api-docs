@@ -26,7 +26,7 @@ Product | URL |
 
 Sandbox accounts are currently shared across all users within the same account. We do not currently support creating multiple **user level** Sandbox accounts within a single **RingCentral account**. Within that account, developers can easily collaborate on the applications created within that account.
 
-If you need to simulate two different users during development, you may need to create additional RingCentral accounts in order to do so. 
+If you need to simulate two different users from two different organizations during development, you may need to create additional RingCentral accounts in order to do so. 
 
 ##  Limitations
 

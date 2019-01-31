@@ -37,26 +37,28 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Place a Call
 
-<h3>Install RingCentral PHP SDK</h3>
+### Install RingCentral Node JS SDK
 
-<pre><code>npm install ringcentral --save
-</code></pre>
+```bash
+$ npm install ringcentral --save
+```
 
-<h3>Create and Edit ringout.js</h3>
+### Create and Edit ringout.js
 
-<p>Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-<pre><code>const RC = require('ringcentral');
+```javascript
+const RC = require('ringcentral');
 
-RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER PHONE NUMBER>'
 
-RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 var rcsdk = new RC({
       server: RINGCENTRAL_SERVER,
@@ -73,22 +75,22 @@ platform.login({
           call_ringout()
       });
 
-function call_ringout(){
-    platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
-                {
-                    'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-                    'to'   : {'phoneNumber': RECIPIENT},
-                    'playPrompt' : false
-                })
+function call_ringout() {
+    platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
+      'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+      'to'   : {'phoneNumber': RECIPIENT},
+      'playPrompt' : false
+    })
 }
-</code></pre>
+```
 
-<h3>Run Your Code</h3>
+### Run Your Code
 
-<p>You are almost done. Now run your script.</p>
+You are almost done. Now run your script.
 
-<pre><code class="bash">$ node ringout.js
-</code></pre>
+```bash
+$ node ringout.js
+```
 
 ## Publish Your App
 

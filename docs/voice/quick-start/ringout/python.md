@@ -37,26 +37,28 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Place a Call
 
-<h3>Install RingCentral Python SDK</h3>
+### Install RingCentral Python SDK
 
-<pre><code>pip install ringcentral
-</code></pre>
+```bash
+$ pip install ringcentral
+```
 
-<h3>Create and Edit ringout.py</h3>
+### Create and Edit ringout.py
 
-<p>Create a file called <tt>ringout.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+Create a file called <tt>ringout.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-<pre><code>from ringcentral import SDK
+```python
+from ringcentral import SDK
 
-RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER PHONE NUMBER>'
 
-RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
@@ -68,15 +70,15 @@ platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
                   'to'   : {'phoneNumber': RECIPIENT},
                   'playPrompt' : False
               })
+```
 
-</code></pre>
+### Run Your Code
 
-<h3>Run Your Code</h3>
+You are almost done. Now run your script.
 
-<p>You are almost done. Now run your script.</p>
-
-<pre><code class="bash">$ python ringout.py
-</code></pre>
+```bash
+$ python ringout.py
+```
 
 ## Publish Your App
 
