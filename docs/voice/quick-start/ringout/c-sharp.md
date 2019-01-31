@@ -57,13 +57,13 @@ namespace Call_Ringout
 {
     class Program
     {
-          const string RECIPIENT = "&lt;ENTER PHONE NUMBER>";
-          const string RINGCENTRAL_CLIENTID = "&lt;ENTER CLIENT ID>";
-          const string RINGCENTRAL_CLIENTSECRET = "&lt;ENTER CLIENT SECRET>";
+          const string RECIPIENT = "<ENTER PHONE NUMBER>";
+          const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+          const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-          const string RINGCENTRAL_USERNAME = "&lt;YOUR ACCOUNT PHONE NUMBER>";
-          const string RINGCENTRAL_PASSWORD = "&lt;YOUR ACCOUNT PASSWORD>";
-          const string RINGCENTRAL_EXTENSION = "&lt;YOUR EXTENSION, PROBABLY ";
+          const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+          const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+          const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
           static void Main(string[] args)
           {

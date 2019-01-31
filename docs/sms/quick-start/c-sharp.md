@@ -37,19 +37,18 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-<h3>Create a Visual Studio project</h3>
-<ul>
-<li>Choose Console Application .Net Core -> App</li>
-<li>Select Target Framework .NET Core 2.1</li>
-<li>Add NuGet package RingCentral.Client (3.0.0) SDK</li>
-<li>Enter project name "Send_SMS"</li>
-</ul>
+### Create a Visual Studio project
 
-<h3>Edit the file Program.cs</h3>
+* Choose Console Application .Net Core -> App
+* Select Target Framework .NET Core 2.1
+* Add NuGet package RingCentral.Client (3.0.0) SDK
+* Enter project name "Send_SMS"
 
-<p>Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+### Edit the file Program.cs
 
-<pre><code>
+Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+
+```dotnet
 using System;
 using System.Threading.Tasks;
 using RingCentral;
@@ -87,12 +86,11 @@ namespace Send_SMS
         }
     }
 }
+```
 
-</code></pre>
+### >Run Your App
 
-<h3>Run Your App</h3>
-
-<p>You are almost done. Now run your app from Visual Studio.</p>
+You are almost done. Now run your app from Visual Studio.
 
 ## Publish Your App
 

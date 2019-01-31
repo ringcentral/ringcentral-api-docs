@@ -37,32 +37,30 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-<h3>Install RingCentral PHP SDK</h3>
+### Install RingCentral PHP SDK
 
-<pre>
-  <code>
-    curl -sS https://getcomposer.org/installer | php
-    php composer.phar require ringcentral/ringcentral-php
-  </code>
-</pre>
+```php
+$ curl -sS https://getcomposer.org/installer | php
+$ php composer.phar require ringcentral/ringcentral-php
+```
 
-<h3>Create and Edit sms.php</h3>
+### Create and Edit sms.php
 
-<p>Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+Create a file called `sms.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-<pre><code>
-&lt;?php
+```
+<?php
 require('vendor/autoload.php');
 
-$RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+$RECIPIENT = '<ENTER PHONE NUMBER>'
 
-$RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-$RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
@@ -77,14 +75,15 @@ $platform->post('/account/~/extension/~/sms',
               ),
        'text' => 'Hellow World from PHP'
      ));
-</code></pre>
+```
 
-<h3>Run Your Code</h3>
+### Run Your Code
 
-<p>You are almost done. Now run your script.</p>
+You are almost done. Now run your script.
 
-<pre><code class="bash">$ php sms.php
-</code></pre>
+```bask
+$ php sms.php
+```
 
 ## Publish Your App
 
