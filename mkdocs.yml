@@ -2,39 +2,44 @@ site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
-edit_uri: 
+edit_uri: tree/bootstrap-vertical-nav/docs
 docs_dir: docs
+
 plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
       branch: bootstrap-vertical-nav
       token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
   - bootstrap-tables
+
 theme:
   name: bootstrap4
   custom_dir: 'theme/'
   suppress_nextprev: true
-  highlightjs: true
-  hljs_style: github
-  hljs_languages:
-    - http
   shortcuts:
     - foo
+
 markdown_extensions:
   - markdown.extensions.admonition
   - pymdownx.keys
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
+
 extra_css:
 - extra.css
 - css/code-styles.css
 - css/code-tabs.css
 - css/admonition.css
 - https://fonts.googleapis.com/icon?family=Material+Icons
-extra_javascript: [fonts.js]
-copyright: 1999-2019 RingCentral, Inc. All rights reserved.
+
+extra_javascript:
+- fonts.js
+
+copyright: "1999-2019 RingCentral, Inc. All rights reserved."
+
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
+
 pages:
 - 'The Basics':
   - 'Get Started': 'get-started.md'
