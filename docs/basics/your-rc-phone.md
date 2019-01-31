@@ -14,7 +14,7 @@ Every new install of the RingCentral Phone is configured to work in production. 
 
 1. Launch RingCentral Phone.
 
-2. Once logged in, press <kbd>Cntrl</kbd>+<kbd>F2</kbd> (for Mac <kbd>Fn</kbd>+<kbd>Command</kbd>+<kbd>F2</kbd>), to bring up a menu to select your preferred environment.
+2. Once logged in, press ++ctrl+f2++ (for Mac ++fn+cmd+f2++), to bring up a menu to select your preferred environment.
    
       <img src="../../img/rc-phone-toggle.png" class="img-fluid">
    

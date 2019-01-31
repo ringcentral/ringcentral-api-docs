@@ -20,7 +20,22 @@ theme:
     - http
   shortcuts:
     - foo
-extra_css: [extra.css]
+markdown_extensions:
+  - markdown.extensions.admonition
+  - pymdownx.keys
+  - pymdownx.superfences
+  - codehilite:
+      linenums: "None"
+#  - markdown_fenced_code_tabs:
+#      single_block_as_tab: False
+#      active_class: 'active'
+#      template: 'bootstrap4'
+extra_css:
+- extra.css
+- css/code-styles.css
+- css/code-tabs.css
+- css/admonition.css
+- https://fonts.googleapis.com/icon?family=Material+Icons
 extra_javascript: [fonts.js]
 copyright: 1999-2019 RingCentral, Inc. All rights reserved.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']

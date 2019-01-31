@@ -139,7 +139,7 @@ Use these parameters to customize the appearance of a message.
 
 * **author_name** — The actual author name string
 * **author_link** — Used to link the authors name. Will only work when author_name is present.
-* **author_icon** — A url to an image up to 82x82px that will display to the left of the author’s name. Will only work when author_name is present.
+* **author_icon** — A url to an image up to 82x82 px that will display to the left of the author's name. Will only work when author_name is present.
 
 ```json
 "author_name": "Author Name",
@@ -154,7 +154,7 @@ Use these parameters to customize the appearance of a message.
 
 ```json
 "title": "Attachment Title",
-"title_link": “https://fexample.com/title_link",
+"title_link": "https://fexample.com/title_link",
 ```
 
 **text** — A large string field (up to 1000 chars) to be displayed as the body of a message (markdown)
@@ -184,7 +184,7 @@ Use these parameters to customize the appearance of a message.
 ],
 ```
 
-**image_url** — A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. Glip only support “HTTPS” Url’s. If the URL is a http url we show a placeholder.
+**image_url** — A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. Glip only support "HTTPS" Urls. If the URL is a http url we show a placeholder.
 
 **thumb_url** — A string url used to display a thumbnail to the right of a message (82x82)
 

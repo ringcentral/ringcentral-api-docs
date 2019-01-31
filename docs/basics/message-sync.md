@@ -50,13 +50,11 @@ Working with Message Sync API could be illustrated by the following example whic
 
 4. If user presses "More messages" button, application sends ISync request to server but also expands Sync Frame by providing new desired range of messages.
 
-<div class="alert alert-info" role="alert">
-In order to avoid message loss all sync requests are handled with overlapping of time periods. When handling request from the client, the server has to return records from the ISync time + Delta, where Delta is 5 sec.
-</div>
+!!! alert "FYI"
+    In order to avoid message loss all sync requests are handled with overlapping of time periods. When handling request from the client, the server has to return records from the ISync time + Delta, where Delta is 5 sec.
 
-<div class="alert alert-info" role="alert">
-Message Sync API supports only retrieval operations. Creation of new messages and all updates should go through regular Message Store API.
-</div>
+!!! alert "FYI"
+    Message Sync API supports only retrieval operations. Creation of new messages and all updates should go through regular Message Store API.
 
 ## FSync Request
 
@@ -86,9 +84,8 @@ The following parameters are generally allowed in request:
 
 - **recordCount** — additionally limits the number of records to be returned (if specified, works in combination with dateFrom and dateTo).
 
-<div class="alert alert-info" role="alert">
-Due to implementation specifics, the server cannot guarantee the exact number of records that is specified in recordCount parameter. So the client application should be ready to get more records than it is requested in some rare cases.
-</div>
+!!! warning "FYI"
+    Due to implementation specifics, the server cannot guarantee the exact number of records that is specified in recordCount parameter. So the client application should be ready to get more records than it is requested in some rare cases.
 
 The corresponding response from server will be:
 
@@ -126,9 +123,8 @@ The corresponding response from server will be:
 
 Sync Token to be used in subsequent request is returned as a part of syncInfo structure (see the bottom of code example above).
 
-<div class="alert alert-info" role="alert">
-Message Sync API requests do not support paging as other APIs since it is not applicable for synchronization use cases.
-</div>
+!!! warning "FYI"
+    Message Sync API requests do not support paging as other APIs since it is not applicable for synchronization use cases.
 
 ## ISync Request
 

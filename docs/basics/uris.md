@@ -21,21 +21,19 @@ Protocol, host and port together constitute the main entry point to access the A
 
 RingCentral production servers are accessible on [https://platform.ringcentral.com](https://platform.ringcentral.com). Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
 
-<div class="alert alert-info" role="alert">
-If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via <tt>https://platform.devtest.ringcentral.com</tt> base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
-</div>
+!!! info "FYI"
+    If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via `https://platform.devtest.ringcentral.com` base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
 
 ### Path Parameters: Account and Extension IDs
 
 All of RingCentral's  API resources are organized in a hierarchical manner. All resource paths start with `/restapi` followed by the version number of the API you are accessing. Let's consider a typical API resource URI:
 
-<code>https://platform.ringcentral.com/restapi/v1.0/account/<strong>159048008</strong>/extension/<strong>171857008</strong>/call-log?dateFrom=2012-08-26</code>
+`https://platform.ringcentral.com/restapi/v1.0/account/<strong>159048008</strong>/extension/<strong>171857008</strong>/call-log?dateFrom=2012-08-26`
 
 Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are `accountId` and `extensionId`. As you might expect, they identify the account and extension of a RingCentral user, accordingly, and are bolded in the example above. 
 
-<div class="alert alert-info" role="alert">
-RingCentral users associate an account with the company main phone number and an extension with the short extension number, but both accountId and extensionId are internal identifiers.
-</div>
+!!! info "FYI"
+    RingCentral users associate an account with the company main phone number and an extension with the short extension number, but both accountId and extensionId are internal identifiers.
 
 Developers often need to access a particular resource on behalf of the user whose credentials (phone number, extension number and password) were transmitted during the authentication phase. As a shortcut, one can use the tilde symbol (~) in place of the `accountId` and/or `extensionId` to access data that belongs to the account/extension of the entity one is currently authenticated as. Considering the example above, if the user successfully authenticated to work with account "159048008" and extension "171857008" the URI to retrieve the same resource may be written as follows:
 
@@ -78,17 +76,13 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 
 Let's consider a simple example of a `GET` method — retrieving the version of the RingCentral REST API.
 
-**Request**
-
-```http
+```http fct_label="Request"
 GET /restapi/v1.0 HTTP/1.1
 Accept: application/json
 Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
 ```
 
-**Response**
-
-```http
+```http fct_label="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -105,7 +99,8 @@ Content-Type: application/json
 }
 ```
 
-<div class="alert alert-info">Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.</div>
+!!! alert "FYI"
+    Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.
 
 ### Method Tunneling
 
@@ -136,7 +131,8 @@ POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE
                  
 If both the override header and query parameter are specified in the HTTP request and contain different values, the server returns `HTTP 400 Bad Request` error.
 
-<div class="alert alert-warning"><strong>Tunneling HTTP methods should be used only when no other workaround is available.</strong> Each HTTP method has its own characteristics, such as how it is cached -- which HTTP clients and intermediaries expect. When tunneling these methods through HTTP POST, those expectations can no longer be met.</div>
+!!! warning "Tunneling HTTP methods should be used only when no other workaround is available."
+    Each HTTP method has its own characteristics, such as how it is cached -- which HTTP clients and intermediaries expect. When tunneling these methods through HTTP POST, those expectations can no longer be met.
 
 ## Object Representation
 
@@ -148,9 +144,8 @@ The RingCentral API allows you to explicitly define a representation format by u
 
 * The `Accept` header indicates the desired MIME type of the response body. The server will return response data in this format (if possible) and will set the `Content-Type` response header accordingly.
 
-<div class="alert alert-info" role="alert">
-The API server accepts and returns all string values in UTF-8 encoding and does not support other character sets. It is not required to explicitly specify charset in Content-Type and Accept HTTP headers. But a client has to implement proper encoding/decoding of character strings passed in HTTP requests/responses.
-</div>
+!!! info "FYI"
+    The API server accepts and returns all string values in UTF-8 encoding and does not support other character sets. It is not required to explicitly specify charset in Content-Type and Accept HTTP headers. But a client has to implement proper encoding/decoding of character strings passed in HTTP requests/responses.
 
 ## User Agent Identification
 
