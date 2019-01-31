@@ -37,26 +37,28 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-<h3>Install RingCentral Node JS SDK</h3>
+### Install RingCentral Node JS SDK
 
-<pre><code>npm install ringcentral --save
-</code></pre>
+```bash
+$ npm install ringcentral --save
+```
 
-<h3>Create and Edit sms.js</h3>
+### Create and Edit sms.js
 
-<p>Create a file called <tt>sms.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-<pre><code>const RC = require('ringcentral');
+```
+const RC = require('ringcentral')
 
-RECIPIENT = '&lt;ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER PHONE NUMBER>'
 
-RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET>'
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101">'
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 var rcsdk = new RC({
     server: RINGCENTRAL_SERVER,
@@ -83,14 +85,15 @@ function send_sms(){
         console.log("SMS sent")
      });
 }      
-</code></pre>
+```
 
-<h3>Run Your Code</h3>
+### Run Your Code
 
-<p>You are almost done. Now run your script.</p>
+You are almost done. Now run your script.
 
-<pre><code class="bash">$ node sms.js
-</code></pre>
+```bash
+$ node sms.js
+```
 
 ## Publish Your App
 
