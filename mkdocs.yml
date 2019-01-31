@@ -21,6 +21,7 @@ theme:
 
 markdown_extensions:
   - markdown.extensions.admonition
+  - pymdownx.details
   - pymdownx.keys
   - pymdownx.superfences
   - codehilite:
