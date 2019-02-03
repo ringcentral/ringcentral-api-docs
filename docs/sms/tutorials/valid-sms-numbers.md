@@ -12,7 +12,25 @@ Phone numbers can have different capabilties determined by the presence of the f
 
 To determine which numbers a user can use to end and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
-`/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number`
+```HTTP tab=
+GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
+```
+
+```Ruby tab=
+require 'ringcentral'
+
+rc = RingCentral.new(
+  'client_id',
+  'client_secret',
+  'https://platform.ringcentral.com')
+
+rc.authorize(
+  username:  '+16505550100',
+  extension: '',
+  password:  'my_password')
+
+res = rc.get '/restapi/v1.0/account/~/extension/~/phone-number'
+```
 
 This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
 
@@ -22,7 +40,7 @@ This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSe
   "records":[
     {
       "id":33333333,
-      "phoneNumber":"+16505551212",
+      "phoneNumber":"+16505550100",
       "paymentType":"Local",
       "type":"VoiceFax",
       "usageType":"DirectNumber",
