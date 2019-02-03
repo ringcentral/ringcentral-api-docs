@@ -1,8 +1,16 @@
-# Listing Valid SMS Sending Numbers
+# SMS Sending Numbers
 
-To determine which numbers a user can use to end and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` feature.
+RingCentral numbers have SMS and MMS capabilities depending on the account plan. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and recieve SMS from the Main Company Number. See more below on using the Main Company Number.
 
-The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
+Phone numbers can have different capabilties determined by the presence of the following values in the `features` property of the Phone Number info object:
+
+* `SmsSender`: send and receive regular texts
+* `MmsSender`: send and receive group texts and files
+* `InternationalSmsSender`: send and receive regular texts to international numbers
+
+## Listing Valid SMS Numbers
+
+To determine which numbers a user can use to end and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
 `/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number`
 
