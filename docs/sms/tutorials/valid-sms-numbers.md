@@ -14,7 +14,7 @@ To determine which numbers a user can use to end and receive SMS, retrieve the u
 
 `/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number`
 
-This example response shows the `SmsSender` feature:
+This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
 
 ```json
 {
@@ -27,8 +27,10 @@ This example response shows the `SmsSender` feature:
       "type":"VoiceFax",
       "usageType":"DirectNumber",
       "features":[
+        "CallerId",
         "SmsSender",
-        "CallerId"
+        "MmsSender",
+        "InternationalSmsSender"
       ],
       "status":"Normal",
       "country":{
