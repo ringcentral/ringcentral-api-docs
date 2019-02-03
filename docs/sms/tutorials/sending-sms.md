@@ -4,17 +4,40 @@ SMS messages can be sent out to or received from the handsets operated by most m
 
 **Sample Request**
 
-```http
+```HTTP tab=
 POST /restapi/v1.0/account/~/extension/~/sms HTTP/1.1
 Content-Type: application/json   
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 
 {
-   "to": [{"phoneNumber": "14151003732"}],
-   "from": {"phoneNumber": "16509100010"}, 
+   "to": [{"phoneNumber": "14155550100"}],
+   "from": {"phoneNumber": "16505550100"}, 
    "text": "Test SMS message"
 }   
 ```
+
+```Ruby tab=
+require 'ringcentral'
+
+rc = RingCentral.new(
+  'client_id',
+  'client_secret',
+  'https://platform.ringcentral.com')
+
+rc.authorize(
+  username:  '+16505550100',
+  extension: '',
+  password:  'my_password')
+
+res = rc.post '/restapi/v1.0/account/~/extension/sms', payload: {
+  to: [{phoneNumber: '+14155550100'}],
+  from: {phoneNumber: '+16505550100',
+  text: 'Test SMS message'}
+
+}
+```
+
+
 **Sample Response**
 
 ```http
