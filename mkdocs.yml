@@ -87,7 +87,7 @@ pages:
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
     - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
     - 'Pager Messages': 'sms/pager.md'
-    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
+#    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
     - 'Receiving SMS': 'sms/tutorials/receiving.md'

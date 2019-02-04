@@ -69,7 +69,7 @@ platform.post('/restapi/v1.0/account/~/extension/~/sms',
                   'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
                   'to'   : [ {'phoneNumber': RECIPIENT} ],
                   'text' : 'Hello World from Python'
-              }
+              })
 ```
 
 ### Run Your Code

@@ -1,26 +1,67 @@
-# Listing Valid SMS Sending Numbers
+# SMS Sending Numbers
 
-To determine which numbers a user can use to end and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` feature.
+RingCentral numbers have SMS and MMS capabilities depending on the account plan. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and recieve SMS from the Main Company Number. See more below on using the Main Company Number.
 
-The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
+Phone numbers can have different capabilties determined by the presence of the following values in the `features` property of the Phone Number info object:
 
-`/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number`
+| Feature | Description |
+|-|-|
+| `SmsSender` | send and receive regular texts |
+| `MmsSender` | send and receive group texts and files | 
+| `InternationalSmsSender` | send and receive regular texts to international numbers | 
 
-This example response shows the `SmsSender` feature:
+## Listing Valid SMS Numbers
 
-```json
+To determine which numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
+
+```HTTP tab=
+GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
+```
+
+```Ruby tab=
+require 'ringcentral'
+
+rc = RingCentral.new(
+  'client_id',
+  'client_secret',
+  'https://platform.ringcentral.com')
+
+rc.authorize(
+  username:  '+16505550100',
+  extension: '',
+  password:  'my_password')
+
+res = rc.get '/restapi/v1.0/account/~/extension/~/phone-number'
+```
+
+```Python tab=
+sdk = SDK( "client_id",
+           "client_secret",
+           "server_url" )
+platform = sdk.platform()
+platform.login( "username",
+                "extension",
+                "password" )
+response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
+```
+
+This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
+
+```json hl_lines="12 13 14",linenums="1"
 {
   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/phone-number?page=1&perPage=100",
   "records":[
     {
       "id":33333333,
-      "phoneNumber":"+16505551212",
+      "phoneNumber":"+16505550100",
       "paymentType":"Local",
       "type":"VoiceFax",
       "usageType":"DirectNumber",
       "features":[
+        "CallerId",
         "SmsSender",
-        "CallerId"
+        "MmsSender",
+        "InternationalSmsSender"
       ],
       "status":"Normal",
       "country":{
