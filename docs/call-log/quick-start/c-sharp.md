@@ -2,6 +2,8 @@ no_breadcrumb:true
 
 # Call Log .NET Quick Start
 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+
 In this Quick Start, we are going to help you access your call history using our call-log API, which reads the voice and messaging transaction history and returns essential information about the transaction. Let's get started.
 
 ## Create an App
@@ -87,7 +89,7 @@ namespace Read_CallLog
 }
 ```
 
-### >Run Your App
+### Run Your App
 
 You are almost done. Now run your app from Visual Studio.
 
