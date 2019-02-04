@@ -44,9 +44,9 @@ $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar require ringcentral/ringcentral-php
 ```
 
-### Create and Edit call_log.php
+### Create and Edit calllog.php
 
-Create a file called <tt>call_log.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>calllog.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```
 <?php
@@ -81,7 +81,7 @@ foreach ($resp->json()->records as $record) {
 You are almost done. Now run your script.
 
 ```bask
-$ php call_log.php
+$ php calllog.php
 ```
 
 ## Publish Your App

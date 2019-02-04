@@ -43,9 +43,9 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 $ pip install ringcentral
 ```
 
-### Create and Edit call_log.py
+### Create and Edit calllog.py
 
-Create a file called <tt>call_log.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>calllog.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```python
 from ringcentral import SDK
@@ -77,7 +77,7 @@ for record in resp.json().records:
 You are almost done. Now run your script.
 
 ```bash
-$ python call_log.py
+$ python calllog.py
 ```
 
 ## Publish Your App
