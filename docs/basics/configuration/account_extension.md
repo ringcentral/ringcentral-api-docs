@@ -1,6 +1,6 @@
 # Managing Phone Numbers, Extensions and Settings
 
-The RingCentral service allows its customers to create and register an account that is usually associated with the customer's company. After registering the account with the company main number the user can create extensions of different types and functionality. The extensions can further be assigned with the phone numbers and phone devices.
+RingCentral allows its customers to create and register an account that is usually associated with the customer's company. After registering the account with the company main number the user can create extensions of different types and functionality. The extensions can further be assigned with the phone numbers and phone devices.
 
 The account and its extensions can be configured in accordance with the user demands.
 
