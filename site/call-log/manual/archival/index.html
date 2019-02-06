@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/call-log/manual/archival/">
+        <link rel="shortcut icon" href="../../../favicon.ico">
+        
+        <title>Data Archival - Developing with RingCentral</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link href="../../../css/code-styles.css" rel="stylesheet">
+    <link href="../../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../../css/admonition.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/base.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body class="" data-spy="scroll" data-target="#toc">
+      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="../../..">
+      <img src="../../../logo_beta.svg" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav mr-auto mx-auto">
+        <li id="products-dropdown" class="main-item nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+          <div id="mega-menu-products" class="dropdown-menu mega-menu" role="menu" aria-labelledby="navbarDropdown">
+	    <div class="row">
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">APIs</li>
+                  <li><a href="https://developer.ringcentral.com/api-products/voice">Voice</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-products/sms">SMS</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-products/fax">Fax</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-products/team-messaging">Chat</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-products/meetings">Meetings</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-products/data">Call Log</a></li>
+<!-- TODO: Change "Configuration" to "Account"?
+                  <li><a href="https://developer.ringcentral.com/api-products/configuration">Configuration</a></li>
+-->
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">Widgets</li>
+                  <li><a href="https://developer.ringcentral.com/embeddable-voice.html">RingCentral Embeddable</a></li>
+                </ul>
+                <ul>
+                  <li class="sub-menu-heading">Bots</li>
+                  <li><a href="https://developer.ringcentral.com/library/chatbots.html">SMS Bot Framework</a></li>
+                  <li><a href="https://developer.ringcentral.com/library/chatbots.html">Chat Bot Framework</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <img src="https://images.ctfassets.net/up8h5u10ttz3/69wfSTqwkowM2ySYouo2qU/da9f91e31b1a4266552181e29e9938db/platformsignup.png" width="100%">
+              </div>
+	    </div> 
+          </div>
+        </li>
+        <li class="main-item nav-item dropdown" id="resources-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <div id="mega-menu-resources" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+	    <div class="row">
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">Docs</li>
+                  <li><a href="../../../get-started/">Getting Started</a></li>
+                  <li><a href="../../..">Developer Guide</a></li>
+                  <li><a href="http://ringcentral-api-changelog.readthedocs.io/en/latest/">Changelog</a></li>
+                </ul>
+<!--
+		<ul>
+                  <li class="sub-menu-heading">Downloads</li>
+                  <li><a href="https://developer.ringcentral.com/library/sdks.html#">SDKs</a></li>
+		</ul>
+-->
+                <ul>
+                  <li class="sub-menu-heading">Use Cases</li>
+                  <li><a href="https://www.ringcentral.com/whyringcentral/casestudies.html?integrations=API">Case Studies</a></li>
+                  <li><a href="https://www.ringcentral.com/resources/learning-center.html#whitepapers">White papers</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">API Reference</li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#Call-Log">Call Log</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#RingOut">RingOut</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS">SMS</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#Chats">Glip</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings">Meetings</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#Fax">Fax</a></li>
+		  <li></li>
+                  <li><a class="mega-menu-link" href="https://developer.ringcentral.com/api-reference">API Explorer &raquo;</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul>
+                  <li class="sub-menu-heading">SDKs</li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-csharp-client">C#</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-swift">iOS/Swift</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-js">Javascript</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-java">Java</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-php">PHP</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-python">Python</a></li>
+                  <li><a href="https://github.com/ringcentral/ringcentral-ruby">Ruby</a></li>
+		  <li></li>
+                  <li><a class="mega-menu-link" href="https://developer.ringcentral.com/library/sdks.html">All SDKs &raquo;</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <img src="https://images.ctfassets.net/up8h5u10ttz3/29HlpFhK362Y00MseE8Oek/2a401f3ca6a6fa32cdf95104cebdc728/award2.png" width="100%">
+              </div>
+	    </div> 
+          </div>
+        </li>
+        <li class="main-item nav-item dropdown" id="community-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+          <div id="mega-menu-community" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+	    <div class="row">
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">Discuss</li>
+                  <li><a href="https://devcommunity.ringcentral.com/">Developer Forum</a></li>
+                  <li><a href="http://stackoverflow.com/questions/tagged/ringcentral">Stack Overflow</a></li>
+                  <li><a href="https://developer.ringcentral.com/community.html">Glip</a></li>
+                </ul>
+                <ul>
+                  <li class="sub-menu-heading">Learn</li>
+                  <li><a href="https://medium.com/ringcentral-developers">Blog</a></li>
+                  <li><a href="https://developer.ringcentral.com/support/developer-events.html">Events</a></li>
+                  <li><a href="https://go.ringcentral.com/Developer-Webinar-Series-Registration.html">Webinars</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li class="sub-menu-heading">Partner</li>
+                  <li><a href="https://www.ringcentral.com/apps/">App Gallery</a></li>
+                  <li><a href="https://www.ringcentral.com/partner/isv.html">Partner Programs</a></li>
+                </ul>
+                <ul>
+                  <li class="sub-menu-heading">Follow</li>
+                  <li><a href="https://twitter.com/RingCentralDevs">Twitter</a></li>
+                  <li><a href="https://github.com/ringcentral/">Github</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=H4n-7dBFTEc&list=PLpfipw7KaEwagUy8S4Za25usqFg4bWiAx">YouTube</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <img src="https://images.ctfassets.net/up8h5u10ttz3/29HlpFhK362Y00MseE8Oek/2a401f3ca6a6fa32cdf95104cebdc728/award2.png" width="100%">
+              </div>
+	    </div> 
+          </div>
+        </li>
+        <li class="main-item nav-item dropdown" id="support-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+          <div id="mega-menu-support" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+	    <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li class="sub-menu-heading">Support</li>
+                  <li><a href="http://ringcentral-faq.readthedocs.io/">FAQs</a></li>
+                  <li><a href="https://devcommunity.ringcentral.com/">Developer Forum</a></li>
+                  <li><a href="#">Create a ticket</a></li>
+                  <li><a href="#">View your tickets</a></li>
+                </ul>
+                <ul>
+                  <li class="sub-menu-heading">Professional Services</li>
+                  <li><a href="https://developer.ringcentral.com/support/services.html">Let us build the perfect app for you</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <img src="https://images.ctfassets.net/up8h5u10ttz3/1nEecYNk3CeSYKCUMyWOUk/57ab94c71c56819a3ae2021a3ad75138/pro_services.png" width="100%">
+              </div>
+	    </div> 
+          </div>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/bootstrap-vertical-nav/docs/call-log/manual/archival.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav><div id="content" class="container">
+        
+      <div class="row">
+        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+  <div class="container">
+    <!-- Main navigation -->
+    <ul class="nav navbar-nav">
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#the-basics">
+        <!--<a href="#" class="nav-link">The Basics <b class="caret"></b></a>-->
+        <span class="section-title">The Basics</span>
+        <ul id="the-basics" class="collapse">
+          
+<li>
+    <a href="../../../get-started/" class="">Get Started</a>
+</li>
+          
+<li>
+  <span>Using the API</span>
+  <!--<a href="#" class="">Using the API</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/uris/" class="">Methods, Endpoints and Parameters</a>
+</li>
+    
+<li>
+    <a href="../../../basics/sandbox/" class="">Developing in Sandbox</a>
+</li>
+    
+<li>
+    <a href="../../../basics/your-rc-phone/" class="">Using Phones in Sandbox</a>
+</li>
+    
+<li>
+    <a href="../../../basics/notifications/webhooks/" class="">Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+</li>
+    
+<li>
+    <a href="../../../basics/rate-limits/" class="">Rate Limits</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Application Management</span>
+  <!--<a href="#" class="">Application Management</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/create-app/" class="">Creating an Application</a>
+</li>
+    
+<li>
+    <a href="../../../basics/production/" class="">Deploying to Production</a>
+</li>
+    
+<li>
+    <a href="../../../basics/app-gallery/" class="">Publishing to App Gallery</a>
+</li>
+    
+<li>
+    <a href="../../../basics/lead-forms/" class="">Using Lead Forms</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Account Management</span>
+  <!--<a href="#" class="">Account Management</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/developer-portal/" class="">Using the Developer Portal</a>
+</li>
+    
+<li>
+    <a href="../../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+</li>
+    
+<li>
+    <a href="../../../basics/configuration/authorization_profile/" class="">Auth Profile & Permissions</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Messaging</span>
+  <!--<a href="#" class="">Messaging</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/messaging/" class="">Sending Messages</a>
+</li>
+    
+<li>
+    <a href="../../../basics/message-sync/" class="">Message Synchronization</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#authentication">
+        <!--<a href="#" class="nav-link">Authentication <b class="caret"></b></a>-->
+        <span class="section-title">Authentication</span>
+        <ul id="authentication" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../missing/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/oauth/" class="">Auth Types</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../missing/" class="">Auth Server</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#sms">
+        <!--<a href="#" class="nav-link">SMS <b class="caret"></b></a>-->
+        <span class="section-title">SMS</span>
+        <ul id="sms" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../sms/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../sms/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../sms/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../sms/quick-start/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../sms/quick-start/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../sms/tutorials/valid-sms-numbers/" class="">Valid Sending Numbers</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/sending-sms/" class="">Sending an SMS</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
+</li>
+    
+<li>
+    <a href="../../../sms/pager/" class="">Pager Messages</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/delivery-status/" class="">Tracking Delivery Status</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/message-histories/" class="">Message Histories</a>
+</li>
+    
+<li>
+    <a href="../../../sms/tutorials/receiving/" class="">Receiving SMS</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS" class="">Send SMS</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="">Get Message List</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="">Delete Conversation</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="">Get Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="">Update Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="">Delete Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="">Get Attachment</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/" class="">SMS Sample App Walkthrough</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/" class="">Two-factor Authentication</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#voice">
+        <!--<a href="#" class="nav-link">Voice <b class="caret"></b></a>-->
+        <span class="section-title">Voice</span>
+        <ul id="voice" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+  <span>WebRTC</span>
+  <!--<a href="#" class="">WebRTC</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../missing/" class="">Web</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">iOS</a>
+</li>
+    
+<li>
+    <a href="../../../missing/" class="">Android</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>RingOut</span>
+  <!--<a href="#" class="">RingOut</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../voice/quick-start/ringout/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../voice/quick-start/ringout/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../voice/quick-start/ringout/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../voice/quick-start/ringout/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../voice/quick-start/ringout/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+          
+<li>
+    <a href="../../../missing/" class="">Developer Manual</a>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall" class="">Make Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus" class="">Get Call Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall" class="">Cancel Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallSessionStatus" class="">Call Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-deleteCallSession" class="">Drop Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-holdCallParty" class="">Hold Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-unholdCallParty" class="">Unhold Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-rejectParty" class="">Reject Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-transferCallParty" class="">Transfer Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-forwardCallParty" class="">Forward Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-callFlipParty" class="">Flip Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallPartyStatus" class="">Call Party Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty" class="">Update Call Party</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording" class="">Start Recording</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording" class="">Pause/Resume Recording</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Tutorials</span>
+  <!--<a href="#" class="">Tutorials</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../voice/ringout/" class="">RingOut</a>
+</li>
+    
+<li>
+    <a href="../../../voice/webrtc/" class="">WebRTC</a>
+</li>
+    
+<li>
+    <a href="../../../voice/call-queues/" class="">Call Queues</a>
+</li>
+    
+<li>
+    <a href="../../../voice/call-control/" class="">Call Control</a>
+</li>
+    
+<li>
+    <a href="../../../voice/answering-rules/" class="">Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../../../voice/uri-scheme/" class="">URI Scheme</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/" class="">Building a Web Phone with WebRTC</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#fax">
+        <!--<a href="#" class="nav-link">Fax <b class="caret"></b></a>-->
+        <span class="section-title">Fax</span>
+        <ul id="fax" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../fax/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../fax/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../fax/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../fax/quick-start/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../fax/quick-start/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../fax/tutorials/sending-faxes/" class="">Sending Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../fax/tutorials/receiving-faxes/" class="">Receiving Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../fax/tutorials/resending-faxes/" class="">Forwarding and Resending</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage" class="">Create Fax</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages" class="">Get Cover Pages</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="">Get Message List</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="">Delete Conversation</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="">Get Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="">Update Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="">Delete Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="">Get Attachment</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="">Custom Fax Cover Pages</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#chat">
+        <!--<a href="#" class="nav-link">Chat <b class="caret"></b></a>-->
+        <span class="section-title">Chat</span>
+        <ul id="chat" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../chat/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../chat/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../chat/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../chat/quick-start/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../chat/quick-start/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../chat/manual/api/" class="">API Overview</a>
+</li>
+    
+<li>
+    <a href="../../../chat/manual/attachments/" class="">Message Attachments</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Tutorials</span>
+  <!--<a href="#" class="">Tutorials</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../chat/tutorials/local-bots/" class="">Building a Bot Locally</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="">Glip Bot using IBM Watson and Botkit</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="">Voicemail Transcription Bot</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item active" data-toggle="collapse" data-target="#call-logs">
+        <!--<a href="#" class="nav-link">Call Logs <b class="caret"></b></a>-->
+        <span class="section-title">Call Logs</span>
+        <ul id="call-logs" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../quick-start/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../quick-start/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../overview/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="./" class=" active">Data Archival</a>
+</li>
+    
+<li>
+    <a href="../api/" class="">API Basics</a>
+</li>
+    
+<li>
+    <a href="../recordings/" class="">Call Recordings</a>
+</li>
+    
+<li>
+    <a href="../sync/" class="">Synchronization</a>
+</li>
+    
+<li>
+    <a href="../details/" class="">Detailed Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../access/" class="">Access Control</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/" class="">Call Log Analytics for iOS</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/" class="">Call Log Visualizations</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/callrecording-notification-node/" class="">Call Recording Push Notification</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+        <div id="main" class="col-md-7" role="main">
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    
+    <li class="breadcrumb-item">Call Logs</li>
+    
+    
+    
+    <li class="breadcrumb-item">Developer Manual</li>
+    
+    
+    <li class="breadcrumb-item active" aria-current="page">Data Archival</li>
+  </ol>
+</nav>
+
+
+<h1 id="archiving-your-ringcentral-activity-data">Archiving Your RingCentral Activity Data</h1>
+<p>Data Archival of your RingCentral account activity is a critical skill all <a href="https://developer.ringcentral.com">RingCentral Developers</a> should have and maintain.</p>
+<p>Data Archival provides the capability to store your Ring Central Activity via the RingCentral API to enable rich integrations and to extend the persistent availability of your data beyond the Data Retention Policy defined by Ring Central.</p>
+<p>The following data is most commonly archived by developers:</p>
+<ul>
+<li>Call Log Data (meta-data about call activity generated by your RingCentral account users)</li>
+<li>Call Recording and Call Recording Metadata (the description and associated binary audio files created when a call is recorded)</li>
+<li>Message Store Data<ul>
+<li>Fax Attachments</li>
+<li>SMS Messages</li>
+<li>Voice mail binary audio files</li>
+</ul>
+</li>
+</ul>
+<p>Developers typically archive their data into persistent storage solutions such as:</p>
+<ul>
+<li>RDBMS (MySql, MSSQL, etc...)</li>
+<li>NoSQL (MongoDB, CouchDB, etc...)</li>
+<li>Big Data (Hadoop, etc...)</li>
+<li>3rd Party Data Storage Services (Amazon S3, Dropbox, etc...)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Developers will need to determine their own persistent solution needs based upon their unique storage requirements.</p>
+</div>
+<p>Your business communication data is created when users make and receive phone calls, text messages, voice mail, and faxes using your Ring Central account. This data may have important immediate or future value for your organization.
+It may come as a surprise, but Ring Central does NOT store your business communication data indefinitely. If businesses wish to perform historical analysis, or maintain their business communication data, your organization will need to implement a data archival solution.</p>
+<p>Ring Central Online Account Portal does provide users with the tools to export some of this data, but it is time consuming and prone to human error if not done correctly.
+This is why we consider Data Archival a best practice for all of our customers.</p>
+<h2 id="data-archival-apis">Data Archival APIs</h2>
+<p>There are several routes developers will need to use depending upon the type of data you need to archive.</p>
+<p>The base route for accessing call log data is scoped to the Account Level or the Extension Level depending upon the role of the authenticated access_token user.</p>
+<h3 id="call-log-recording-meta-data-recording-binary-audio-files">Call Log, Recording Meta Data, Recording (binary audio files)</h3>
+<h4 id="account-level-call-log-data">Account-Level Call Log data</h4>
+<p>This is data for the entire account. Please note that call recording meta data and the binary audio files which are call recordings are only accessible at the account level.</p>
+<ul>
+<li>/restapi/v1.0/account/{accountId}/call-log</li>
+<li>/restapi/v1.0/account/{accountId}/call-log/{callRecordId}</li>
+<li>/restapi/v1.0/account/{accountId}/recording/{recordingId}</li>
+<li>/restapi/v1.0/account/{accountId}/recording/{recordingId}/content</li>
+</ul>
+<h4 id="extension-level-call-log-data-this-is-data-for-only-a-specific-extension-within-your-ringcentral-account">Extension-Level Call Log data (this is data for only a specific extension within your RingCentral account).</h4>
+<ul>
+<li>/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log</li>
+<li>/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}</li>
+</ul>
+<h3 id="message-store-data">Message Store Data</h3>
+<p>The Message Store API enables developers to send Fax, Pager, and SMS messages. The Message Store API also exposes development resources for retrieving data to archive, and to delete that data from RingCentral.</p>
+<p>Developers will need to obtain the list of messages from an extension mailbox first (unless you already have a specific messageId on-hand):
+See the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefGetMessageList">API Reference</a> for complete information about the various query parameters which can be used to filter the data returned in the list.</p>
+<ul>
+<li>/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store</li>
+</ul>
+<p>Then iterate the records returned from the message-store list to return individual message record(s) by the given message ID(s). The length of inbound messages is unlimited and batch requests are supported.</p>
+<ul>
+<li>/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</li>
+</ul>
+<p>Optionally, developers may then choose to have attachment data (sent as a media stream) returned about a particular message by using the <code>attachmentId</code> of a specific message record.</p>
+<ul>
+<li>/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}</li>
+</ul>
+<h2 id="data-archival-api-permissions">Data Archival API Permissions</h2>
+<p>There are various API Permissions applications must be granted depending upon the type data developers need to archive from the RingCentral API:</p>
+<p>Account level Call Log Records, and Extension level Call Log Records require the <em>ReadCallLog</em> API permission</p>
+<ul>
+<li>Call Recording Metadata and Call Recording Content require the <em>ReadCallRecording</em> API Permission</li>
+<li>Message Store Data (List, Message, Attachment) all require the <em>ReadMessages</em> API Permission</li>
+</ul>
+<h2 id="api-groups-and-rate-limits">API Groups and Rate Limits</h2>
+<p>In a standard basic usage plan, <strong>Heavy</strong> API Group rate limits to: 10 requests / 60 seconds.
+In a standard basic usage plan, <strong>Medium</strong> API Group rate limits to: 40 requests / 60 seconds.
+In a standard basic usage plan, <strong>Light</strong> API Group rate limits to: 50 requests / 60 seconds.</p>
+<p>Call Log API Groups are all <strong>Heavy</strong></p>
+<p>Message Store API Groups:</p>
+<ul>
+<li>Get Message List: <strong>Light</strong></li>
+<li>Get Message by ID: <strong>Light</strong></li>
+<li>Get Message Attachment: <strong>Medium</strong></li>
+</ul>
+<p><a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RateLimitDetails.html">Read API Developer Guide - API Rate Limits</a> to understand the rate limits for the Usage Plan assigned to your organization, and the limitations code must address.</p>
+<h2 id="non-progammatic-ways-to-access-data-used-in-archival">Non-Progammatic Ways to Access Data used in Archival</h2>
+<p>Frequently, while developing an application or integration, it is helpful for Developers to be able to test or invalidate data or reconcile their programmatic data against an official record. The training content contained in this document describes how Developers can use the <a href="https://developer.ringcentral.com/api-explorer">RingCentral API</a> to access and view your account activity data. You can use one of the following methods to access this data as well:</p>
+<p>Ring Central Users can view their voicemail, fax messages, and call logs through the Ring Central Online Account Portal, Ring Central desktop app and Ring Central mobile app. Text Messages can be viewed through the Ring Central desktop app and mobile app.
+Here is a list of official Ring Central knowledge base articles describing the manual processes and tools available for gathering your Activity Log data.</p>
+<ul>
+<li><a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/Activity-Log-Overview">Activity Log Overview</a></li>
+<li><a href="https://www.ringcentral.com/office/features/call-metrics-reporting/overview.html">Phone System Reports</a></li>
+<li><a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/Activity-Log-Overview">Downloading Your Call Log</a></li>
+</ul>
+<p>Now we will take a moment to review the Ring Central Data Retention Policy further since it highlights important information as it relates to your Data Archival system architecture.</p>
+<h2 id="call-log-data-retention-policies">Call Log Data Retention Policies</h2>
+<p>The standard RingCentral Message Store and Account Data Retention Policy dictates the quantity or length of time call log records and call recordings are stored by RingCentral, this is known as the RingCentral Data Retention policy, and it:</p>
+<ul>
+<li>Enforces rules for managing account data storage</li>
+<li>Provides specifications for development considerations with data archival</li>
+<li>Has different rules for HIPAA and non-HIPAA RingCentral Accounts</li>
+</ul>
+<p>Please consult our Knowledge Base to view our most up-to-date <a href="http://success.ringcentral.com/articles/en_US/RC_Knowledge_Article/2178">Message Storage and Account Data Retention Policy</a>.</p>
+<h2 id="common-use-cases">Common Use Cases</h2>
+<p>The primary use case developers have for data archival is to prevent data-loss caused by the RingCentral Data Retention Policy.</p>
+<p>Other common use cases are:</p>
+<ul>
+<li>Volume usage invalidation and account usage reconciliation</li>
+<li>Analytics and Reporting</li>
+<li>Legal Data Storage Requirements (such as SEC requirements for stock traders)</li>
+<li>Business Process Improvements and Training</li>
+<li>Call Sentiment Analysis and Predictive Analytics</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>Data Loss Prevention is the most common use case, but what does that look like exactly?</p>
+<p>Assuming the following:</p>
+<ol>
+<li>Your business has a non-HIPAA RingCentral Account</li>
+<li>Automatic Call Recordings are enabled on all extensions</li>
+<li>There are 4000 users receiving 10 calls each daily on average</li>
+<li>Your organization requires all call recording data to be accessible at any time</li>
+</ol>
+<p>The issue is:
+<em> 4,000 users X 10 calls daily = 40,000 call recordings daily
+</em> Multiplied by 30 days = 1,200,000 call recordings monthly
+* RingCentral begins truncating call recordings at 90 days or 100,000 recordings in your acocunt (it drops oldest recording files based on these fixed limits)</p>
+<p>In this example, a developer would need to implement a data archival solution.</p>
+<h2 id="ringcentral-archiver">RingCentral Archiver</h2>
+<p>RingCentral Customers needing a turn-key solution and whom are using Dropbox can use the Ring Central Archiver available in the App Gallery using the URL below.
+It is supported by Ring Central and backs up your data as soon as you have it installed.</p>
+<ul>
+<li>Available in the <a href="https://www.ringcentral.com/apps/ringcentral-archiver">RingCentral App Gallery</a></li>
+<li>Backs up all your important business communication data from RingCentral</li>
+<li>Moves data to Dropbox hourly over SSL</li>
+</ul>
+<h2 id="developer-sample-application">Developer Sample Application</h2>
+<p>Additionally, there is the Call Recording Download Sample application available on Github.</p>
+<p>This is not an officially supported tool, but can serve as a handy starting point for developers building data archiving solutions with Amazon S3, local server solutions, or on DropBox. It can be easily customized and pull requests with improvements are always welcomed.</p>
+<ul>
+<li>Available on Github (MIT license)</li>
+<li>Requires:<ul>
+<li>PHP 5.3.29+</li>
+<li>Composer</li>
+<li>cURL Extension support in PHP</li>
+</ul>
+</li>
+<li>URL: https://github.com/anilkumarbp/Sample-Demo-to-Download-Call-Recordings</li>
+<li>Downloads Call Logs and/or Recordings to:<ul>
+<li>Local File System</li>
+<li>Amazon S3 Bucket (requires Amazon account)</li>
+<li>Save Call Recordings to DropBox (requires DropBox account)</li>
+</ul>
+</li>
+<li>Uses the official <a href="https://github.com/ringcentral/ringcentral-php">RingCentral PHP SDK</a></li>
+</ul>
+<p>Developers who choose to build their own solutions (or use this sample application), will need to define an application in the <a href="https://developers.ringcentral.com">Ring Central Developer Portal</a>.
+Use the settings listed in this page for your application. The resulting application will be able to download all your Ring Central activity data within your account when used with administrative authentication credentials.</p>
+<p>Developers can adjust the Permissions needed if requirements dictate only specific types of business communication data needs to be backed up.</p>
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-01-31</time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/byrnereese" title="Byrne Reese" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars0.githubusercontent.com/u/28429?v=4?size=32" alt="Byrne Reese"></a></li></ul>
+  </li>
+</ul>
+</div>
+	<div id="sidebar-toc" class="sidebar col-md-2">
+	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
+	</div>
+      </div>
+      </div><footer class="col-md-12">
+  <nav class="container">
+    <div class="row row-1">
+      <div class="col-6">
+	<a class="brand nav-link" href="http://developer.ringcentral.com/">Back to main site</a>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li class="nav-item"><a class="nav-link" href="#">Legal</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Privacy Notice</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+	<p>&copy;1999-2019 RingCentral, Inc. All rights reserved.</p>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li><a class="nav-link footer-image-link footer-image-link-facebook" href="http://www.facebook.com/ringcentral">
+	      <i class="fa fa-facebook"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="#">
+	      <i class="fa fa-twitter"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="#">
+	      <i class="fa fa-linkedin"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="#">
+	      <i class="fa fa-youtube"></i></a></li>
+	</ul>
+      </div>
+  </nav>
+</footer>
+      <script>
+	var base_url = "../../..",
+            shortcuts = ["foo"];
+      </script>
+      <script src="../../../js/base.js" defer></script>
+      <script src="../../../fonts.js" defer></script>
+      
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+      
+    </body>
+</html>

@@ -26,6 +26,10 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
+  - markdown_fenced_code_tabs:
+      single_block_as_tab: False
+      active_class: 'active'
+      template: 'bootstrap4'
 
 extra_css:
 - extra.css
@@ -58,7 +62,7 @@ pages:
     - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
     - 'Using the Developer Portal': 'basics/developer-portal.md'
-    - 'Account & Extension Settings': 'basics/configuration/account_extension.md'    
+    - 'Account & Extension Settings': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
@@ -81,7 +85,7 @@ pages:
     - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'sms/quick-start/c-sharp.md'
     - 'API Explorer': 'sms/quick-start/explorer.md'
-  - 'Developer Manual': 
+  - 'Developer Manual':
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
@@ -109,7 +113,7 @@ pages:
       - 'Web': 'missing.md'
       - 'iOS': 'missing.md'
       - 'Android': 'missing.md'
-    - 'RingOut': 
+    - 'RingOut':
       - 'Node.js': 'voice/quick-start/ringout/node.md'
       - 'Python': 'voice/quick-start/ringout/python.md'
       - 'PHP': 'voice/quick-start/ringout/php.md'
@@ -187,7 +191,7 @@ pages:
     - 'PHP': 'call-log/quick-start/php.md'
     - 'C#': 'call-log/quick-start/c-sharp.md'
     - 'API Explorer': 'call-log/quick-start/explorer.md'
-  - 'Developer Manual': 
+  - 'Developer Manual':
     - 'Overview': 'call-log/manual/overview.md'
     - 'Data Archival': 'call-log/manual/archival.md'
     - 'API Basics': 'call-log/manual/api.md'
