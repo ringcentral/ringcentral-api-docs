@@ -2,6 +2,8 @@ no_breadcrumb:true
 
 # Call Log Node.js Quick Start
 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+
 In this Quick Start, we are going to help you access your call history using our call-log API, which reads the voice and messaging transaction history and returns essential information about the transaction. Let's get started.
 
 ## Create an App
@@ -79,7 +81,7 @@ function read_user_calllog(){
         })
         .then(function (resp) {
             for (var record of resp.json().records)
-              console.log("Call log item: " + JSON.stringify(record))
+              console.log("Call type: " + record.type)
         });
 }
 ```
