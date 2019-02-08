@@ -23,7 +23,7 @@ An Authorization Profile (or "AuthZ" for short) contains the list of permissions
 
 Permissions indicate the access control policy calculated for the currently authenticated user. This data (in whole or in part) is calculated by RingCentral every time permission verification is invalidated for a principal during each request. To retrieve an authorization profile, compose a request to the following endpoint:
 
-   /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
+    /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
 
 For example: 
 
