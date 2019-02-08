@@ -72,7 +72,7 @@ pages:
     - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
 #    - 'Using the Developer Portal': 'basics/developer-portal.md'
-    - 'Account & Extension Settings': 'basics/configuration/account_extension.md'    
+    - 'Accounts & Extensions': 'basics/configuration/account_extension.md'    
     - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
@@ -99,7 +99,7 @@ pages:
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
-    - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
+#    - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
     - 'Pager Messages': 'sms/pager.md'
 #    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
