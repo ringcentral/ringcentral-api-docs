@@ -46,10 +46,7 @@ To retrieve the information about a particular account use the following request
 
 You may provide either explicit accountId or use simplified syntax with tilde (~). The examples of request and response are provided below.
 
-```
-GET /restapi/v1.0/account/~ HTTP/1.1
-Accept: application/json
-
+```http tab="Response"
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -86,6 +83,11 @@ Content-Type: application/json
   "mainNumber" : "18555440014",
   "status" : "Confirmed"
 }
+```
+
+```http tab="Request"
+GET /restapi/v1.0/account/~ HTTP/1.1
+Accept: application/json
 ```
 
 ### Retrieving Extension Data
