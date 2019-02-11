@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Password Flow Authentication Node.js Quick Start
+# Authorization Flow Authentication PHP Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,73 +37,54 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send a Fax message
 
-### Install RingCentral Node JS SDK
+### Install RingCentral PHP SDK
 
-```bash
-$ npm install ringcentral --save
+```php
+$ curl -sS https://getcomposer.org/installer | php
+$ php composer.phar require ringcentral/ringcentral-php
 ```
 
-### Create and Edit fax.js
+### Create and Edit fax.php
 
-Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```javascript
-const RC = require('ringcentral');
+```
+<?php
+require('vendor/autoload.php');
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
+$RECIPIENT = '<ENTER PHONE NUMBER>'
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-var rcsdk = new RC({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
-var platform = rcsdk.platform();
-platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
-      })
-      .then(function(resp) {
-          send_fax()
-      });
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
-function send_fax() {
-    var FormData = require('form-data');
-    formData = new FormData();
-    var body = {
-      to: [{'phoneNumber': RECIPIENT}],
-      faxResolution: 'High',
-      coverPageText: "This is a demo Fax page from Node JS"
-    }
+$platform = $rcsdk->platform();
+$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-    formData.append('json', new Buffer(JSON.stringify(body)), {
-        filename: 'request.json',
-        contentType: 'application/json'
-        });
+$request = $rcsdk->createMultipartBuilder()
+                 ->setBody(array(
+                     'to' => array(array('phoneNumber' => $RECIPIENT)),
+                     'faxResolution' => 'High',
+                 ))
+                 ->add(fopen('test.jpg', 'r'))
+                 ->request('/account/~/extension/~/fax');
 
-    formData.append('attachment', require('fs').createReadStream('test.jpg'));
-
-    platform.post('/account/~/extension/~/fax', formData)
-    .then(function (resp) {
-        console.log("FAX sent. Message status: " + resp.json().messageStatus)
-    })
-}
+$resp = $platform->sendRequest($request);
+print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
 ```
 
 ### Run Your Code
 
 You are almost done. Now run your script.
 
-```bash
-$ node fax.js
+```bask
+$ php fax.php
 ```
 
 ## Publish Your App

@@ -63,7 +63,7 @@ pages:
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
     - 'Webhooks': 'basics/notifications/webhooks.md'
-    - 'Mobile Push Notifications': 'basics/notifications/pubsub.md'
+    - 'Mobile Push Notifications': 'basics/notifications/pubnub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
     - 'Creating an Application': 'basics/create-app.md'
@@ -80,17 +80,17 @@ pages:
 - 'Authentication':
   - 'Getting Started':
     - 'Password Flow':
-      - 'Node.js': 'authentication/quick-start/node.md'
-      - 'Python': 'authentication/quick-start/python.md'
-      - 'PHP': 'authentication/quick-start/php.md'
-      - 'C#': 'authentication/quick-start/c-sharp.md'
-      - 'API Explorer': 'authentication/quick-start/explorer.md'
+      - 'Node.js': 'authentication/quick-start/password-flow/node.md'
+      - 'Python': 'authentication/quick-start/password-flow/python.md'
+      - 'PHP': 'authentication/quick-start/password-flow/php.md'
+      - 'C#': 'authentication/quick-start/password-flow/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/password-flow/explorer.md'
     - 'Authorization Flow':
-      - 'Node.js': 'authentication/quick-start/node.md'
-      - 'Python': 'authentication/quick-start/python.md'
-      - 'PHP': 'authentication/quick-start/php.md'
-      - 'C#': 'authentication/quick-start/c-sharp.md'
-      - 'API Explorer': 'authentication/quick-start/explorer.md'
+      - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
+      - 'Python': 'authentication/quick-start/authorization-flow/python.md'
+      - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
+      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/authorization-flow/explorer.md'
   - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
   - 'Sample Applications':

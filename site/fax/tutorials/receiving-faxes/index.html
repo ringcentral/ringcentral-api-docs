@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Receiving Faxes - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -972,79 +962,81 @@
 
 <h1 id="receiving-faxes">Receiving Faxes</h1>
 <p>In order to get the list of received faxes, use the <code>message-store</code> API endpoint with <code>messageType = Fax</code> query parameter:</p>
-<p> <pre class=codehilite><code class=language-http>GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax</code></pre></p>
+<pre class="codehilite"><code class="language-http">GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax</code></pre>
+
 <p>The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday:</p>
-<p> <pre class=codehilite><code class=language-http>{
-  &quot;uri&quot; : &quot;https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T09:19:00.000Z&amp;page=1&amp;perPage=100&quot;,
-  &quot;records&quot; : [ ... ,
+<pre class="codehilite"><code class="language-http">{
+  "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T09:19:00.000Z&amp;page=1&amp;perPage=100",
+  "records" : [ ... ,
     {
-      &quot;uri&quot;: &quot;https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004&quot;,
-      &quot;id&quot;: 5209304004,
-      &quot;from&quot;: {
-        &quot;phoneNumber&quot;: &quot;+15555287464&quot;
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004",
+      "id": 5209304004,
+      "from": {
+        "phoneNumber": "+15555287464"
       },
-      &quot;type&quot;: &quot;Fax&quot;,
-      &quot;creationTime&quot;: &quot;2018-10-08T09:17:27.000Z&quot;,
-      &quot;readStatus&quot;: &quot;Unread&quot;,
-      &quot;priority&quot;: &quot;Normal&quot;,
-      &quot;attachments&quot;: [
+      "type": "Fax",
+      "creationTime": "2018-10-08T09:17:27.000Z",
+      "readStatus": "Unread",
+      "priority": "Normal",
+      "attachments": [
         {
-          &quot;id&quot;: 5209304004,
-          &quot;uri&quot;: &quot;https://media.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004/content/5209304004&quot;,
-          &quot;type&quot;: &quot;RenderedDocument&quot;,
-          &quot;contentType&quot;: &quot;application/pdf&quot;
+          "id": 5209304004,
+          "uri": "https://media.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004/content/5209304004",
+          "type": "RenderedDocument",
+          "contentType": "application/pdf"
         }
       ],
-      &quot;direction&quot;: &quot;Inbound&quot;,
-      &quot;availability&quot;: &quot;Alive&quot;,
-      &quot;subject&quot;: &quot;+15556009976&quot;,
-      &quot;messageStatus&quot;: &quot;Received&quot;,
-      &quot;faxResolution&quot;: &quot;High&quot;,
-      &quot;faxPageCount&quot;: 1,
-      &quot;lastModifiedTime&quot;: &quot;2018-10-08T09:17:27.227Z&quot;
+      "direction": "Inbound",
+      "availability": "Alive",
+      "subject": "+15556009976",
+      "messageStatus": "Received",
+      "faxResolution": "High",
+      "faxPageCount": 1,
+      "lastModifiedTime": "2018-10-08T09:17:27.227Z"
     },
   ... ],
-  &quot;paging&quot; : {
-      &quot;page&quot; : 1,
-      &quot;totalPages&quot; : 3,
-      &quot;perPage&quot; : 100,
-      &quot;totalElements&quot; : 274,
-      &quot;pageStart&quot; : 0,
-      &quot;pageEnd&quot; : 99
+  "paging" : {
+      "page" : 1,
+      "totalPages" : 3,
+      "perPage" : 100,
+      "totalElements" : 274,
+      "pageStart" : 0,
+      "pageEnd" : 99
     },
-    &quot;navigation&quot; : {
-      &quot;nextPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=2&amp;perPage=100&quot; },
-      &quot;firstPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=1&amp;perPage=100&quot; },
-&quot;lastPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=3&amp;perPage=100&quot; }
-    }  </code></pre></p>
-<p>Adjusting <code>dateFrom</code> and <code>dateTo</code> parameters you may get the messages for desired date range:</p>
-<p> <pre class=codehilite><code class=language-http>GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&amp;dateFrom=2018-10-01&amp;dateTo=2018-10-07</code></pre></p>
-<p>If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:</p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/v1.0/subscription
+    "navigation" : {
+      "nextPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=2&amp;perPage=100" },
+      "firstPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=1&amp;perPage=100" },
+"lastPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=3&amp;perPage=100" }
+    }  </code></pre>
+
+<p>Adjusting <code>dateFrom</code> and <code>dateTo</code> parameters you may get the messages for desired date range:
+<pre class="codehilite"><code class="language-http">GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&amp;dateFrom=2018-10-01&amp;dateTo=2018-10-07</code></pre></p>
+<p>If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:
+<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/subscription
 
 {
-  &quot;eventFilters&quot;: [
-    &quot;/restapi/v1.0/account/~/extension/~/message-store&quot;
+  "eventFilters": [
+    "/restapi/v1.0/account/~/extension/~/message-store"
   ],
-  &quot;deliveryMode&quot;: {
-    &quot;transportType&quot;: &quot;WebHook&quot;,
-    &quot;address&quot;: &quot;https://myapp.io/newmessage&quot;
+  "deliveryMode": {
+    "transportType": "WebHook",
+    "address": "https://myapp.io/newmessage"
   }
 }</code></pre></p>
-<p>Then when a new message is received/sent your server will get a request with a payload like:</p>
-<p> <pre class=codehilite><code class=language-JSON>{
-  &quot;timestamp&quot;: &quot;2018-10-07T12:05:00.408+0000&quot;,
-  &quot;uuid&quot;: &quot;b11c9430-9687-4498-b12b-3fcb470bfe04&quot;,
-  &quot;event&quot;: &quot;/restapi/v1.0/account/230919004/extension/230919004/message-store&quot;,
-  &quot;subscriptionId&quot;: &quot;9d38419f-645f-4ee3-a053-8cf1368c21c4&quot;,
-  &quot;body&quot;: {
-    &quot;extensionId&quot;: 230919004,
-    &quot;lastUpdated&quot;: &quot;2018-10-07T12:05:00.531+0000&quot;,
-    &quot;changes&quot;: [
+<p>Then when a new message is received/sent your server will get a request with a payload like:
+<pre class="codehilite"><code class="language-JSON">{
+  "timestamp": "2018-10-07T12:05:00.408+0000",
+  "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
+  "event": "/restapi/v1.0/account/230919004/extension/230919004/message-store",
+  "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
+  "body": {
+    "extensionId": 230919004,
+    "lastUpdated": "2018-10-07T12:05:00.531+0000",
+    "changes": [
       {
-        &quot;type&quot;: &quot;Fax&quot;,
-        &quot;updatedCount&quot;: 0,
-        &quot;newCount&quot;: 1
+        "type": "Fax",
+        "updatedCount": 0,
+        "newCount": 1
       }
     ]
   }
@@ -1108,9 +1100,10 @@
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

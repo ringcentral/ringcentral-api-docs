@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Password Flow Authentication PHP Quick Start
+# Authorization Flow Authentication Python Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,54 +37,55 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send a Fax message
 
-### Install RingCentral PHP SDK
+### Install RingCentral Python SDK
 
-```php
-$ curl -sS https://getcomposer.org/installer | php
-$ php composer.phar require ringcentral/ringcentral-php
+```bash
+$ pip install ringcentral
 ```
 
-### Create and Edit fax.php
+### Create and Edit fax.py
 
-Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>fax.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```
-<?php
-require('vendor/autoload.php');
+```python
+from ringcentral import SDK
 
-$RECIPIENT = '<ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER PHONE NUMBER>'
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = rcsdk.platform()
+platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-$platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+builder = rcsdk.create_multipart_builder()
+builder.set_body({
+    'to': [{'phoneNumber': RECIPIENT}],
+    'faxResolution': "High",
+    'coverPageText': "This is a demo Fax page from Python"
+})
 
-$request = $rcsdk->createMultipartBuilder()
-                 ->setBody(array(
-                     'to' => array(array('phoneNumber' => $RECIPIENT)),
-                     'faxResolution' => 'High',
-                 ))
-                 ->add(fopen('test.jpg', 'r'))
-                 ->request('/account/~/extension/~/fax');
+attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
+builder.add(attachment)
 
-$resp = $platform->sendRequest($request);
-print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
+request = builder.request('/account/~/extension/~/fax')
+
+resp = platform.send_request(request)
+print 'Fax sent. Message status: ' + resp.json().messageStatus
 ```
 
 ### Run Your Code
 
 You are almost done. Now run your script.
 
-```bask
-$ php fax.php
+```bash
+$ python fax.py
 ```
 
 ## Publish Your App

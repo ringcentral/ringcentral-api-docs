@@ -2,6 +2,5 @@ mkdocs>=1.0.4
 mkdocs-bootstrap4>=0.1.2
 mkdocs-bootstrap-tables-plugin>=0.1.0
 markdown_fenced_code_tabs>=1.0.3
-markdown_fenced_code_tabs>=1.0.3
 mkdocs-material>=3.0
 mkdocs-markdown-filter>=0.1.1

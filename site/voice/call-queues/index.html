@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../favicon.ico">
         
         <title>Call Queues - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/code-styles.css" rel="stylesheet">
     <link href="../../css/code-tabs.css" rel="stylesheet">
     <link href="../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../missing/" class="">Node.js</a>
+    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">Python</a>
+    <a href="../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">PHP</a>
+    <a href="../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">C#</a>
+    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -993,44 +983,46 @@
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension?type=Department
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension?type=Department
 Accept: application/json
 Content-Type: application/json
 Accept-Language: en-US
-Authorization: Bearer MyToken</code></pre></p>
+Authorization: Bearer MyToken</code></pre>
+
 <p><strong>Example Response</strong></p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&amp;page=1&amp;perPage=100&quot;,
-  &quot;records&quot; : [
+  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&amp;page=1&amp;perPage=100",
+  "records" : [
     {
-      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333&quot;,
-      &quot;id&quot; : 22223333,
-      &quot;extensionNumber&quot; : &quot;201&quot;,
-      &quot;contact&quot; : {
-        &quot;firstName&quot; : &quot;Sales Queue&quot;,
-        &quot;email&quot; : &quot;john.doe@example.com&quot;
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333",
+      "id" : 22223333,
+      "extensionNumber" : "201",
+      "contact" : {
+        "firstName" : "Sales Queue",
+        "email" : "john.doe@example.com"
       },
-      &quot;name&quot; : &quot;Sales Queue&quot;,
-      &quot;type&quot; : &quot;Department&quot;,
-      &quot;status&quot; : &quot;Enabled&quot;,
-      &quot;permissions&quot; : {
-        &quot;admin&quot; : {
-          &quot;enabled&quot; : false
+      "name" : "Sales Queue",
+      "type" : "Department",
+      "status" : "Enabled",
+      "permissions" : {
+        "admin" : {
+          "enabled" : false
         },
-        &quot;internationalCalling&quot; : {
-          &quot;enabled&quot; : false
+        "internationalCalling" : {
+          "enabled" : false
         }
       },
-      &quot;profileImage&quot; : {
-        &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image&quot;
+      "profileImage" : {
+        "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image"
       }
     }
   ],
-  &quot;paging&quot; : {...}
-}</code></pre></p>
+  "paging" : {...}
+}</code></pre>
+
 <h2 id="read-queue-agent-list">Read Queue Agent List</h2>
 <p>To get the agent members of a queue, call the department members endpoint.</p>
 <table class="table">
@@ -1050,30 +1042,32 @@ Content-Type: application/json
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/11111111/department/22223333/members
+<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/11111111/department/22223333/members
 Accept: application/json
-Authorization: Bearer MyToken</code></pre></p>
+Authorization: Bearer MyToken</code></pre>
+
 <p><strong>Example Response</strong></p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&amp;perPage=100&quot;,
-  &quot;records&quot; : [
+  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&amp;perPage=100",
+  "records" : [
     {
-      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222&quot;,
-      &quot;id&quot; : 11112222,
-      &quot;extensionNumber&quot; : &quot;101&quot;
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
+      "id" : 11112222,
+      "extensionNumber" : "101"
     },
     {
-      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333&quot;,
-      &quot;id&quot; : 11113333,
-      &quot;extensionNumber&quot; : &quot;102&quot;
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333",
+      "id" : 11113333,
+      "extensionNumber" : "102"
     }
   ],
-  &quot;paging&quot; : {...}
-  &quot;navigatin&quot; : {...}
-}</code></pre></p>
+  "paging" : {...}
+  "navigatin" : {...}
+}</code></pre>
+
 <h2 id="update-queue-agent-list">Update Queue Agent List</h2>
 <p>Users can be added and removed as queue agents using the <code>account/{accountId}/department/bulk-assign</code> endpoint and the extension ids of interest.</p>
 <table class="table">
@@ -1093,34 +1087,36 @@ Content-Type: application/json
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/11111111/department/bulk-assign
+<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/11111111/department/bulk-assign
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer MyToken
 
 {
-  &quot;items&quot; : [
+  "items" : [
     {
-      &quot;departmentId&quot; : &quot;22223333&quot;,   
-      &quot;addedExtensionIds&quot; : [
-        &quot;11112222&quot;, &quot;11113333&quot;
+      "departmentId" : "22223333",   
+      "addedExtensionIds" : [
+        "11112222", "11113333"
       ],
-      &quot;removedExtensionIds&quot; : [
-        &quot;11114444&quot;, &quot;11115555&quot;
+      "removedExtensionIds" : [
+        "11114444", "11115555"
       ]
     }, 
     {
-      &quot;departmentId&quot; : &quot;22224444&quot;,   
-      &quot;addedExtensionIds&quot; : [
-        &quot;11112222&quot;, &quot;11113333&quot;
+      "departmentId" : "22224444",   
+      "addedExtensionIds" : [
+        "11112222", "11113333"
       ]
     }
   ] 
-}</code></pre></p>
+}</code></pre>
+
 <p><strong>Example Response</strong></p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 204 No Content
+<pre class="codehilite"><code class="language-http">HTTP/1.1 204 No Content
 Content-Type: application/json
-Content-Language: en-US</code></pre></p>
+Content-Language: en-US</code></pre>
+
 <h2 id="read-user-queue-agent-presence">Read User Queue Agent Presence</h2>
 <p>A user extension's actual presence status is determined by aggregating a number of different presence statuses including <code>dndStatus</code>, <code>telephonyStatus</code> and <code>userStatus</code>. These and the aggregate presence, <code>presenceStatus</code> are availabe in the presence endpoint.</p>
 <p>A user extension's queue agent status is set by the extension presence <code>dndStatus</code> property. This can be set to one of four values:</p>
@@ -1147,30 +1143,32 @@ Content-Language: en-US</code></pre></p>
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/11112222/presence
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
-Authorization: Bearer MyToken</code></pre></p>
+Authorization: Bearer MyToken</code></pre>
+
 <p><strong>Example Response</strong></p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 530
 
 {
-  &quot;uri&quot; : &quot;https.../restapi/v1.0/account/11111111/extension/11112222/presence&quot;,
-  &quot;extension&quot; : {
-    &quot;uri&quot; : &quot;https.../restapi/v1.0/account/11111111/extension/11112222&quot;,
-    &quot;id&quot; : 11112222,
-    &quot;extensionNumber&quot; : &quot;101&quot;
+  "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222/presence",
+  "extension" : {
+    "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222",
+    "id" : 11112222,
+    "extensionNumber" : "101"
   },
-  &quot;presenceStatus&quot; : &quot;Available&quot;,
-  &quot;telephonyStatus&quot; : &quot;NoCall&quot;,
-  &quot;userStatus&quot; : &quot;Available&quot;,
-  &quot;dndStatus&quot; : &quot;TakeAllCalls&quot;,
-  &quot;message&quot; : &quot;Hello, World&quot;,
-  &quot;allowSeeMyPresence&quot; : true,
-  &quot;ringOnMonitoredCall&quot; : false,
-  &quot;pickUpCallsOnHold&quot; : false
-}</code></pre></p>
+  "presenceStatus" : "Available",
+  "telephonyStatus" : "NoCall",
+  "userStatus" : "Available",
+  "dndStatus" : "TakeAllCalls",
+  "message" : "Hello, World",
+  "allowSeeMyPresence" : true,
+  "ringOnMonitoredCall" : false,
+  "pickUpCallsOnHold" : false
+}</code></pre>
+
 <h2 id="update-user-queue-agent-presence">Update User Queue Agent Presence</h2>
 <p>To enable or disable an user extension's queue agent presence, update the extension's presence <code>dndStatus</code> property.</p>
 <table class="table">
@@ -1190,13 +1188,14 @@ Content-Length: 530
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/11112222/presence
+<pre class="codehilite"><code class="language-http">PUT /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
 Authorization: Bearer MyToken
 
 {
-  &quot;dndStatus&quot;: &quot;DoNotAcceptDepartmentCalls&quot;
-}</code></pre></p>
+  "dndStatus": "DoNotAcceptDepartmentCalls"
+}</code></pre>
+
 <h2 id="subscribe-for-presence-notification-events">Subscribe for Presence Notification Events</h2>
 <p>To receive events about presence changes to an extension, you can make a subscription for the following extension presence information using the following event filter. To subscribe for multiple extensions, multiple event filters, one or more per extension can be supplied for a single subscription.</p>
 <p><code>v1.0/account/{accountId}/extension/{extensionId}/presence?detailedTelephonyState=true</code></p>
@@ -1258,9 +1257,10 @@ Authorization: Bearer MyToken
 	var base_url = "../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../js/base.js" defer></script>
-      <script src="../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

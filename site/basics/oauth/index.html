@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../favicon.ico">
         
         <title>Auth Types - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/code-styles.css" rel="stylesheet">
     <link href="../../css/code-tabs.css" rel="stylesheet">
     <link href="../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../missing/" class="">Node.js</a>
+    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">Python</a>
+    <a href="../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">PHP</a>
+    <a href="../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">C#</a>
+    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -1096,13 +1086,15 @@
 </tbody>
 </table>
 <p>If authentication has been passed successfully, your application will get a response similar to the following:</p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 302 Found
-Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&amp;state=xyz&amp;expires_in=60</code></pre></p>
+<pre class="codehilite"><code class="language-http">HTTP/1.1 302 Found
+Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&amp;state=xyz&amp;expires_in=60</code></pre>
+
 <h4 id="step-4-exchange-code-for-token">Step 4. Exchange code for token</h4>
 <p>After the web server receives the authorization code, it can exchange the authorization code for an access token using token endpoint <code>/restapi/oauth/token</code> (API group is <em>Auth</em>).</p>
 <p>Token requests must include client authentication (see Client Authentication section).</p>
 <p><strong>Request Body</strong></p>
-<p> <pre class=codehilite><code class=language-http>Content Type: application/x-www-form-urlencoded</code></pre></p>
+<pre class="codehilite"><code class="language-http">Content Type: application/x-www-form-urlencoded</code></pre>
+
 <table class="table">
 <thead>
 <tr>
@@ -1146,7 +1138,8 @@ Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&a
 </table>
 <h4 id="step-5-handling-token-server-response">Step 5. Handling token server response</h4>
 <p><strong>Response Body</strong></p>
-<p> <pre class=codehilite><code class=language-http>Content Type: application/json</code></pre></p>
+<pre class="codehilite"><code class="language-http">Content Type: application/json</code></pre>
+
 <table class="table">
 <thead>
 <tr>
@@ -1194,27 +1187,31 @@ Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&a
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>```http tab="Request"
-POST /restapi/oauth/token HTTP/1.1 
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Request</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
 Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDMTFQMDFQQVMwM
   XxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaHBuWHZINGM2WTdqaWlBOE
   VhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tl
-  qs1s&amp;grant_type=authorization_code&amp;redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              </p>
-<p> <pre class=codehilite><code>```http tab=&quot;Response&quot;
-HTTP/1.1 200 OK
+  qs1s&amp;grant_type=authorization_code&amp;redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              </code></pre></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Response</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-   &quot;access_token&quot; : &quot;U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw&quot;,
-   &quot;token_type&quot; : &quot;bearer&quot;,
-   &quot;expires_in&quot; : 7199,
-   &quot;refresh_token&quot; : &quot;U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w&quot;,
-   &quot;refresh_token_expires_in&quot; : 604799,
-   &quot;scope&quot; : &quot;AccountInfo CallLog ExtensionInfo Messages SMS&quot;,
-   &quot;owner_id&quot; : &quot;256440016&quot;
-}</code></pre></p>
+   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+   "token_type" : "bearer",
+   "expires_in" : 7199,
+   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+   "refresh_token_expires_in" : 604799,
+   "scope" : "AccountInfo CallLog ExtensionInfo Messages SMS",
+   "owner_id" : "256440016"
+}</code></pre></div>
+</div>
 <h3 id="implicit-grant-flow">Implicit Grant Flow</h3>
 <p>Implicit Grant flow is an authorization flow (OAuth 2.0) for browser based apps. If you are building a browser only app and do not have a serverside component , Implicit Grant is the reccomended flow. Implicit grant ensures that your app enables your user to securely login and grant access to only those resources that they consent to . Implicit grant secures your app in a browser enviornment.</p>
 <p>This 2-legged authorization flow used by RingCentral involves obtaining an access token from API server, and using the access token for making API calls.The general flow looks like this:</p>
@@ -1281,9 +1278,10 @@ Content-Type: application/json
 </tbody>
 </table>
 <p><strong>Request Body</strong></p>
-<p> <pre class=codehilite><code class=language-http>GET /authorize?response_type=token&amp;client_id=s6BhdRkqt3&amp;state=xyz&amp;redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&amp;scope=Contacts HTTP/1.1
+<pre class="codehilite"><code class="language-http">GET /authorize?response_type=token&amp;client_id=s6BhdRkqt3&amp;state=xyz&amp;redirect_uri=http%3A%2F%2Fexample%2Ecom%2Fcb&amp;scope=Contacts HTTP/1.1
 Content Type: text/html
-Host: platform.devtest.ringcentral.com</code></pre></p>
+Host: platform.devtest.ringcentral.com</code></pre>
+
 <h4 id="step-2-user-login-and-consent_1">Step 2: User login and consent</h4>
 <p>On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.</p>
 <p><img src="../../img/implicit_grant_userlogin.png" class="img-fluid">
@@ -1291,16 +1289,17 @@ Host: platform.devtest.ringcentral.com</code></pre></p>
 <p>After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request with the access token in the url #fragment.</p>
 <p>Assumning the user grants access , the response would contain the information as shown below</p>
 <p><strong>Example Response</strong></p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: text/html
 
 {
-    &quot;access_token&quot; : &quot;U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw&quot;,
-    &quot;token_type&quot; : &quot;bearer&quot;,
-    &quot;expires_in&quot; : 3600,
-    &quot;endpoint_id&quot; :&quot;xxxxxxxx&quot;,
-    &quot;scope&quot; : &quot;Contacts&quot;
-}</code></pre></p>
+    "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+    "token_type" : "bearer",
+    "expires_in" : 3600,
+    "endpoint_id" :"xxxxxxxx",
+    "scope" : "Contacts"
+}</code></pre>
+
 <p>The actual #fragment response would be something like below :</p>
 <p>http://localhost:8080/callback.html#access_token=XXXXXXXXXXXX&amp;token_type=bearer&amp;expires_in=3600&amp;endpoint_id=0eTdUFwhQJa98zYssI-JFA&amp;scope=Contacts%20ReadCallLog</p>
 <p>If the user decides not to grant access to the application, the response URL contains error</p>
@@ -1335,7 +1334,8 @@ Content-Type: text/html
 <p><strong>Request Header</strong></p>
 <p>The <code>Content-Type</code> header should be specified as <code>application/x-www-form-urlencoded</code>. <strong>Please note:</strong> Request body should be encoded appropriately. For example email <code>john+doe@example.com</code> as username parameter should be specified so - <code>john%2Bdoe%40example.com</code>.</p>
 <p><strong>Request Body</strong></p>
-<p> <pre class=codehilite><code class=language-http>Content Type: application/x-www-form-urlencoded</code></pre></p>
+<pre class="codehilite"><code class="language-http">Content Type: application/x-www-form-urlencoded</code></pre>
+
 <table class="table">
 <thead>
 <tr>
@@ -1379,7 +1379,8 @@ Content-Type: text/html
 </table>
 <h4 id="step-2-handling-token-server-response">Step 2. Handling token server response</h4>
 <p><strong>Response Body</strong></p>
-<p> <pre class=codehilite><code class=language-http>Content Type: application/json</code></pre></p>
+<pre class="codehilite"><code class="language-http">Content Type: application/json</code></pre>
+
 <table class="table">
 <thead>
 <tr>
@@ -1422,24 +1423,28 @@ Content-Type: text/html
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>```http tab="Request"
-POST /restapi/oauth/token HTTP/1.1 
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Request</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">POST /restapi/oauth/token HTTP/1.1 
 Accept: application/json 
 Content-Type: application/x-www-form-urlencoded 
 Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
-grant_type=password&amp;username=18559100010&amp;extension=101&amp;password=121212             </p>
-<p> <pre class=codehilite><code>```http tab=&quot;Response&quot;
-HTTP/1.1 200 OK
+grant_type=password&amp;username=18559100010&amp;extension=101&amp;password=121212             </code></pre></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">Response</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-   &quot;access_token&quot; : &quot;U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw&quot;,
-   &quot;token_type&quot; : &quot;bearer&quot;,
-   &quot;expires_in&quot; : 7199,
-   &quot;refresh_token&quot; : &quot;U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w&quot;,
-   &quot;refresh_token_expires_in&quot; : 604799,
-   &quot;owner_id&quot; : &quot;256440016&quot;
-}</code></pre></p>
+   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+   "token_type" : "bearer",
+   "expires_in" : 7199,
+   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+   "refresh_token_expires_in" : 604799,
+   "owner_id" : "256440016"
+}</code></pre></div>
+</div>
 <h3 id="client-credentials-authorization-flow">Client Credentials Authorization Flow</h3>
 <p>This authorization flow is mostly used by RingCentral partner applications which need to create RingCentral user accounts and control their lifecycle without providing credentials of these users. This flow uses Client Credentials OAuth grant type and, in fact, unlike other described flows authorizes only the application.</p>
 <div class="admonition alert">
@@ -1455,22 +1460,24 @@ Content-Type: application/json
 <li><code>grant_type = client credentials</code>;</li>
 <li><code>brand_id</code> - constant value, provided by RingCentral.</li>
 </ul>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/oauth/token HTTP/1.1
+<pre class="codehilite"><code class="language-http">POST /restapi/oauth/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0
 Accept: application/json
 
-access_token_ttl=7200&amp;grant_type=client_credentials&amp;brand_id=1234</code></pre></p>
+access_token_ttl=7200&amp;grant_type=client_credentials&amp;brand_id=1234</code></pre>
+
 <p>In response, the server returns the access token which serves for authorization in subsequent requests. Each access token has a limited lifetime which is returned in response alongside with the token itself.</p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-   &quot;access_token&quot; : &quot;UExBMDFUMDRQV1MwMXzROYH78MeLmsvo8Li9rA2_AY6YPw&quot;,
-   &quot;token_type&quot; : &quot;bearer&quot;,
-   &quot;expires_in&quot; : 3599,
-   &quot;scope&quot; : &quot;EditExtensions ReadAccounts EditAccounts Accounts NumberLookup&quot;
-}</code></pre></p>
+   "access_token" : "UExBMDFUMDRQV1MwMXzROYH78MeLmsvo8Li9rA2_AY6YPw",
+   "token_type" : "bearer",
+   "expires_in" : 3599,
+   "scope" : "EditExtensions ReadAccounts EditAccounts Accounts NumberLookup"
+}</code></pre>
+
 <div class="admonition alert">
 <p class="admonition-title">FYI</p>
 <p>If you try to access any account related data through API with signup session token, you'll get the <code>401 Unauthorized</code> error. In order to work with the newly created account further, the client application needs to request another access token, see the next section.</p>
@@ -1485,34 +1492,37 @@ Content-Type: application/json
 <li><code>brand_id</code> – constant value provided by RingCentral</li>
 <li><code>partner_account_id</code> – specific identifier of account designed and stored by the partner</li>
 </ul>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/oauth/token HTTP/1.1
+<pre class="codehilite"><code class="language-http">POST /restapi/oauth/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
 Accept: application/json
 
-partner_account_id=BAN0009&amp;access_token_ttl=7200&amp;grant_type=client_credentials&amp;brand_id=1234</code></pre></p>
+partner_account_id=BAN0009&amp;access_token_ttl=7200&amp;grant_type=client_credentials&amp;brand_id=1234</code></pre>
+
 <p>In case of successful authentication the RingCentral API returns the new access token. This access token is tied to a specific account and may only be used to access account-related APIs for the specific account or to access non-account APIs.</p>
-<p> <pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
+<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-   &quot;access_token&quot; : &quot;UExBMDFUMDRQV1MwMXyr1gnxGh-egGk5mUfgpMpNmdSGKQ&quot;,
-   &quot;token_type&quot; : &quot;bearer&quot;,
-   &quot;expires_in&quot; : 3599,
-   &quot;scope&quot; : &quot;EditExtensions ReadAccounts EditAccounts...&quot;
-}</code></pre></p>
+   "access_token" : "UExBMDFUMDRQV1MwMXyr1gnxGh-egGk5mUfgpMpNmdSGKQ",
+   "token_type" : "bearer",
+   "expires_in" : 3599,
+   "scope" : "EditExtensions ReadAccounts EditAccounts..."
+}</code></pre>
+
 <div class="admonition warning">
 <p class="admonition-title">Attempt to access any other account with this access token will result in the <code>401 Unauthorized</code> error message.</p>
 </div>
 <h2 id="client-authentication">Client Authentication</h2>
 <p>Each application (client) that intends to obtain an access token must be authenticated. To authenticate the application we use <strong>application key</strong> (also referred as “client id” in OAuth 2.0 specification) and <strong>application secret</strong> (also referred as “client secret” in OAuth 2.0 specification) issued during application registration. They are passed to the token endpoint as username and password using the HTTP Basic authentication scheme.</p>
 <p>For example, you have obtained application key <code>YourAppKey</code> and application secret <code>YourAppSecret</code>. Combine them in a string with a colon <code>YourAppKey:YourAppSecret</code> and encode with Base64; thus you will get the following authorization token <code>WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0</code>. Put this value into your token request as shown in example below (the example represents <a href="#password-flow">Password Flow</a>):</p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/oauth/token HTTP/1.1  
+<pre class="codehilite"><code class="language-http">POST /restapi/oauth/token HTTP/1.1  
 Host: platform.ringcentral.com
 Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
 Content-Type: application/x-www-form-urlencoded;charset=UTF-8
 
-grant_type=password&amp;username=18887776655&amp;extension=102&amp;password=Myp@ssw0rd</code></pre></p>
+grant_type=password&amp;username=18887776655&amp;extension=102&amp;password=Myp@ssw0rd</code></pre>
+
 <p>Example values are:</p>
 <ul>
 <li>
@@ -1536,24 +1546,27 @@ grant_type=password&amp;username=18887776655&amp;extension=102&amp;password=Myp@
 <p>Now your application should use the issued access token to perform the required actions. Each request must pass the access token using one of the following ways:</p>
 <p><strong>Option 1: Bearer (recommended)</strong></p>
 <p>The Bearer authentication scheme followed by access token in the Authorization header. For example, to get a specific address-book entry, you need to perform the following request:</p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828
 Authorization: Bearer 2YotnFZFEjr1zCsicMWpAA 
 Host: platform.ringcentral.com
 Accept: application/json  
-Connection: keep-alive</code></pre></p>
+Connection: keep-alive</code></pre>
+
 <p><strong>Option 2. Access token query parameter</strong></p>
 <p>You can also pass the access token as a query parameterpecified as a value. For example, to get a specific address-book entry, you need to perform the following request:</p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828?access_token=2YotnFZFEjr1zCsicMWpAA
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828?access_token=2YotnFZFEjr1zCsicMWpAA
 Host: platform.ringcentral.com
 Accept: application/json  
-Connection: keep-alive</code></pre></p>
+Connection: keep-alive</code></pre>
+
 <h2 id="token-revocation">Token Revocation</h2>
 <p>There are some situations when the user may want to revoke the already granted access in order to stop application activity. To revoke access/refresh token the following request is used:</p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/oauth/revoke  HTTP/1.1
+<pre class="codehilite"><code class="language-http">POST /restapi/oauth/revoke  HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0
 
-token=U0pDMDFQMDFKV1MwMXwJ_W7L1fG4eGXBW9Pp-otywzriCw</code></pre></p>
+token=U0pDMDFQMDFKV1MwMXwJ_W7L1fG4eGXBW9Pp-otywzriCw</code></pre>
+
 <p>The request must contain HTTP Basic authorization string Base64 encoded and generated from client credentials: the application key ("userid" in terms of <a href="https://tools.ietf.org/html/rfc2617">RFC-2617</a>) and application secret ("password" in terms of <a href="https://tools.ietf.org/html/rfc2617">RFC-2617</a>). The request should contain the <code>token</code> form (preferred) or query parameter, which holds the value of an access or refresh token. The server returns <code>HTTP 200 OK</code> when the request has been successfully processed. Please note that due to security reasons (to prevent eavesdropping) successful response is returned even if revocation was not successful (for instance if a token passed was issued to another application, expired, or by other means malformed. For additional details see <a href="https://tools.ietf.org/html/rfc7009">RFC-7009: OAuth 2.0 Token Revocation</a>.</p>
 <h2 id="application-permissions">Application Permissions</h2>
 <p>In order to work with particular RingCentral API resources the application should have the corresponding permissions. Required API permissions are generally declared at the stage of application registration and confirmed by the user on authentication stage. The following permissions are available:</p>
@@ -1789,9 +1802,10 @@ token=U0pDMDFQMDFKV1MwMXwJ_W7L1fG4eGXBW9Pp-otywzriCw</code></pre></p>
 	var base_url = "../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../js/base.js" defer></script>
-      <script src="../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

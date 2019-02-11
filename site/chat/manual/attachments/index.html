@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Message Attachments - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -992,89 +982,91 @@
 <p><img src="../../img/glip_post_attachment_demo.png" class="img-fluid"></p>
 <h3 id="inbound-webhook-example">Inbound Webhook Example</h3>
 <p>Here is an example message body for an inbound webhook:</p>
-<p> <pre class=codehilite><code class=language-json>{
-  &quot;icon&quot;: &quot;https://example.com/post_icon.png&quot;,
-  &quot;title&quot;: &quot;**Title of the post**&quot;,
-  &quot;body&quot;: &quot;Body of the post&quot;,
-  &quot;attachments&quot;: [
+<pre class="codehilite"><code class="language-json">{
+  "icon": "https://example.com/post_icon.png",
+  "title": "**Title of the post**",
+  "body": "Body of the post",
+  "attachments": [
     {
-      &quot;color&quot;: &quot;#00ff2a&quot;,
-      &quot;pretext&quot;: &quot;Attachment pretext appears before the attachment block&quot;,
-      &quot;author_name&quot;: &quot;Author Name&quot;,
-      &quot;author_link&quot;: &quot;https://example.com/author_link&quot;,
-      &quot;author_icon&quot;: &quot;https://example.com/author_icon.png&quot;,
-      &quot;title&quot;: &quot;Attachment Title&quot;,
-      &quot;title_link&quot;: &quot;https://example.com/title_link&quot;,
-      &quot;fields&quot;: [
+      "color": "#00ff2a",
+      "pretext": "Attachment pretext appears before the attachment block",
+      "author_name": "Author Name",
+      "author_link": "https://example.com/author_link",
+      "author_icon": "https://example.com/author_icon.png",
+      "title": "Attachment Title",
+      "title_link": "https://example.com/title_link",
+      "fields": [
         {
-          &quot;title&quot;: &quot;Field 1&quot;,
-          &quot;value&quot;: &quot;A short field&quot;,
-          &quot;short&quot;: true
+          "title": "Field 1",
+          "value": "A short field",
+          "short": true
         },
         {
-          &quot;title&quot;: &quot;Field 2&quot;,
-          &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
-          &quot;short&quot;: true
+          "title": "Field 2",
+          "value": "[A linked short field](https://example.com)",
+          "short": true
         },
         {
-          &quot;title&quot;: &quot;Field 3&quot;,
-          &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;
+          "title": "Field 3",
+          "value": "A long, full-width field with *formatting* and [a link](https://example.com)"
         }
       ],
-      &quot;text&quot;: &quot;Attachment text&quot;
-      &quot;image_url&quot;: &quot;https://example.com/congrats.gif&quot;,
-      &quot;footer&quot;: &quot;Attachment footer and timestamp&quot;,
-      &quot;footer_icon&quot;: &quot;https://example.com/footer_icon.png&quot;,
-      &quot;ts&quot;: 1503723350
+      "text": "Attachment text"
+      "image_url": "https://example.com/congrats.gif",
+      "footer": "Attachment footer and timestamp",
+      "footer_icon": "https://example.com/footer_icon.png",
+      "ts": 1503723350
     }
   ]
-}</code></pre></p>
+}</code></pre>
+
 <p>Here is some example code:</p>
 <p>Go: https://github.com/grokify/go-glip/tree/master/examples/test_webhook</p>
 <h3 id="post-message-example">Post Message Example</h3>
 <p>Here is the same message with slightly different property names for a API request:</p>
-<p> <pre class=codehilite><code class=language-json>{
-  &quot;text&quot;: &quot;Body of the post&quot;,
-  &quot;attachments&quot;: [
+<pre class="codehilite"><code class="language-json">{
+  "text": "Body of the post",
+  "attachments": [
     {
-      &quot;type&quot;: &quot;Card&quot;,
-      &quot;fallback&quot;: &quot;Attachment fallback text&quot;,
-      &quot;color&quot;: &quot;#00ff2a&quot;,
-      &quot;intro&quot;: &quot;Attachment intro appears before the attachment block&quot;,
-        &quot;author&quot;: {
-          &quot;name&quot;: &quot;Author Name&quot;,
-          &quot;uri&quot;: &quot;https://example.com/author_link&quot;,
-          &quot;iconUri&quot;: &quot;https://example.com/author_icon.png&quot;
+      "type": "Card",
+      "fallback": "Attachment fallback text",
+      "color": "#00ff2a",
+      "intro": "Attachment intro appears before the attachment block",
+        "author": {
+          "name": "Author Name",
+          "uri": "https://example.com/author_link",
+          "iconUri": "https://example.com/author_icon.png"
         },
-      &quot;title&quot;: &quot;Attachment Title&quot;,
-      &quot;text&quot;: &quot;Attachment text&quot;,
-      &quot;imageUri&quot;: &quot;https://example.com/congrats.gif&quot;,
-      &quot;thumbnailUri&quot;: &quot;https://example.com/thumbnail_icon.png&quot;,
-      &quot;fields&quot;: [
+      "title": "Attachment Title",
+      "text": "Attachment text",
+      "imageUri": "https://example.com/congrats.gif",
+      "thumbnailUri": "https://example.com/thumbnail_icon.png",
+      "fields": [
         {
-          &quot;title&quot;: &quot;Field 1&quot;,
-          &quot;value&quot;: &quot;A short field&quot;,
-          &quot;style&quot;: &quot;Short&quot;
-        },
-        {
-          &quot;title&quot;: &quot;Field 2&quot;,
-          &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
-          &quot;style&quot;: &quot;Short&quot;
+          "title": "Field 1",
+          "value": "A short field",
+          "style": "Short"
         },
         {
-          &quot;title&quot;: &quot;Field 3&quot;,
-          &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;,
-          &quot;style&quot;: &quot;Long&quot;
+          "title": "Field 2",
+          "value": "[A linked short field](https://example.com)",
+          "style": "Short"
+        },
+        {
+          "title": "Field 3",
+          "value": "A long, full-width field with *formatting* and [a link](https://example.com)",
+          "style": "Long"
         }
       ],
-      &quot;footnote&quot;: {
-        &quot;text&quot;: &quot;Attachment footer and timestamp&quot;,
-        &quot;iconUri&quot;: &quot;https://example.com/footer_icon.png&quot;,
-        &quot;time&quot;: &quot;2018-01-05T18:52:35.993311508-08:00&quot;
+      "footnote": {
+        "text": "Attachment footer and timestamp",
+        "iconUri": "https://example.com/footer_icon.png",
+        "time": "2018-01-05T18:52:35.993311508-08:00"
       }
     }
   ]
-}</code></pre></p>
+}</code></pre>
+
 <p>Here is some example code:</p>
 <p>Go: https://github.com/grokify/go-ringcentral/tree/master/examples/glip_post_attachment</p>
 <h3 id="property-descriptions">Property Descriptions</h3>
@@ -1088,16 +1080,18 @@
 <li><strong>author_link</strong> — Used to link the authors name. Will only work when author_name is present.</li>
 <li><strong>author_icon</strong> — A url to an image up to 82x82 px that will display to the left of the author's name. Will only work when author_name is present.</li>
 </ul>
-<p> <pre class=codehilite><code class=language-json>&quot;author_name&quot;: &quot;Author Name&quot;,
-&quot;author_link&quot;: &quot;https://example.com/author_link&quot;,
-&quot;author_icon&quot;: &quot;https://example.com/author_icon.png&quot;,</code></pre></p>
+<pre class="codehilite"><code class="language-json">"author_name": "Author Name",
+"author_link": "https://example.com/author_link",
+"author_icon": "https://example.com/author_icon.png",</code></pre>
+
 <p><strong>title</strong> — A set of properties that will render a title under the author if author is set.</p>
 <ul>
 <li><strong>title</strong> — The actual title string</li>
 <li><strong>title_link</strong> — Used to linkify the title</li>
 </ul>
-<p> <pre class=codehilite><code class=language-json>&quot;title&quot;: &quot;Attachment Title&quot;,
-&quot;title_link&quot;: &quot;https://fexample.com/title_link&quot;,</code></pre></p>
+<pre class="codehilite"><code class="language-json">"title": "Attachment Title",
+"title_link": "https://fexample.com/title_link",</code></pre>
+
 <p><strong>text</strong> — A large string field (up to 1000 chars) to be displayed as the body of a message (markdown)</p>
 <p><strong>fields</strong> — An array of objects that will render indvidual subsections within a message</p>
 <ul>
@@ -1105,22 +1099,23 @@
 <li><strong>value</strong> — A string that will display under the field title (Markdown)</li>
 <li><strong>style</strong> — An enumerated string for <code>Short</code> and <code>Long</code> to indicate the width of the message, Defaults to <code>Long</code></li>
 </ul>
-<p> <pre class=codehilite><code class=language-json>&quot;fields&quot;: [
+<pre class="codehilite"><code class="language-json">"fields": [
   {
-    &quot;title&quot;: &quot;Field 1&quot;,
-    &quot;value&quot;: &quot;A short field&quot;,
-    &quot;short&quot;: true
+    "title": "Field 1",
+    "value": "A short field",
+    "short": true
   },
   {
-    &quot;title&quot;: &quot;Field 2&quot;,
-    &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
-    &quot;short&quot;: true
+    "title": "Field 2",
+    "value": "[A linked short field](https://example.com)",
+    "short": true
   },
   {
-    &quot;title&quot;: &quot;Field 3&quot;,
-    &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;
+    "title": "Field 3",
+    "value": "A long, full-width field with *formatting* and [a link](https://example.com)"
   }
-],</code></pre></p>
+],</code></pre>
+
 <p><strong>image_url</strong> — A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. Glip only support "HTTPS" Urls. If the URL is a http url we show a placeholder.</p>
 <p><strong>thumb_url</strong> — A string url used to display a thumbnail to the right of a message (82x82)</p>
 <p><strong>footer</strong> — A set of properties that will render a footer under the message.</p>
@@ -1129,9 +1124,10 @@
 <li><strong>footer_icon</strong> — A URL used to display a 32x32px icon to the left of the footer</li>
 <li><strong>ts</strong> — A Unix timestamp to be formatted and displayed to the right of the footer</li>
 </ul>
-<p> <pre class=codehilite><code class=language-json>&quot;footer&quot;: &quot;Attachment footer and timestamp&quot;,
-&quot;footer_icon&quot;: &quot;https://example.com/footer_icon.png&quot;,
-&quot;ts&quot;: 1503714729</code></pre></p>
+<pre class="codehilite"><code class="language-json">"footer": "Attachment footer and timestamp",
+"footer_icon": "https://example.com/footer_icon.png",
+"ts": 1503714729</code></pre>
+
 <h3 id="markdown-support">Markdown Support</h3>
 <p>Glip supports a simple form of Markdown for formatting the body of incoming messages. The following are supported for post attachments in addition to post bodies.</p>
 <p>*italics*</p>
@@ -1198,9 +1194,10 @@
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Detailed Call Log Data - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -986,401 +976,406 @@
 </ol>
 <h2 id="retrieve-call-log-data-via-the-api">Retrieve Call Log Data via the API</h2>
 <p>Now check that the call records exist in the API, first fetch an <code>access_token</code> for the User you used to initiate the above calls.</p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre></p>
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre>
+
 <p>We should now have a list of call records. If you followed steps 1 through 3 above you should see these records specifically. You should observe:</p>
 <ul>
 <li>The legs for multi-legged calls are missing.</li>
 <li>We can see the three different recordings, but one of these calls was made to a call group from an outside line. </li>
 </ul>
-<p> <pre class=codehilite><code class=language-json>{
-    &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&amp;dateFrom=2016-06-05T23:11:00.000Z&amp;page=1&amp;perPage=100&quot;,
-    &quot;records&quot;: [
+<pre class="codehilite"><code class="language-json">{
+    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&amp;dateFrom=2016-06-05T23:11:00.000Z&amp;page=1&amp;perPage=100",
+    "records": [
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Simple&quot;,
-            &quot;id&quot;: &quot;ASaxDDkSZ5s42MA&quot;,
-            &quot;sessionId&quot;: &quot;13916417004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-            &quot;duration&quot;: 55,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;action&quot;: &quot;Phone Call&quot;,
-            &quot;result&quot;: &quot;Accepted&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+15623215778&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Simple",
+            "id": "ASaxDDkSZ5s42MA",
+            "sessionId": "13916417004",
+            "startTime": "2016-06-06T23:07:20.000Z",
+            "duration": 55,
+            "type": "Voice",
+            "direction": "Inbound",
+            "action": "Phone Call",
+            "result": "Accepted",
+            "to": {
+                "phoneNumber": "+15623215778",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;name&quot;: &quot;SAN FRANCSCO CA&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "from": {
+                "phoneNumber": "+14158905908",
+                "name": "SAN FRANCSCO CA",
+                "location": "San Francisco (South), CA"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-                &quot;id&quot;: &quot;1662272004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                "id": "1662272004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
             }
         },
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Simple&quot;,
-            &quot;id&quot;: &quot;ASaoSC9FIMaOF24&quot;,
-            &quot;sessionId&quot;: &quot;13914800004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T18:12:30.000Z&quot;,
-            &quot;duration&quot;: 55,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;action&quot;: &quot;VoIP Call&quot;,
-            &quot;result&quot;: &quot;Call connected&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Simple",
+            "id": "ASaoSC9FIMaOF24",
+            "sessionId": "13914800004",
+            "startTime": "2016-06-06T18:12:30.000Z",
+            "duration": 55,
+            "type": "Voice",
+            "direction": "Outbound",
+            "action": "VoIP Call",
+            "result": "Call connected",
+            "to": {
+                "phoneNumber": "+14158905908",
+                "location": "San Francisco (South), CA"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "from": {
+                "phoneNumber": "+16505496100",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004&quot;,
-                &quot;id&quot;: &quot;1659910004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                "id": "1659910004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
             }
         },
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Simple&quot;,
-            &quot;id&quot;: &quot;ASaoLzRiqjLaFYU&quot;,
-            &quot;sessionId&quot;: &quot;13914782004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T18:07:41.000Z&quot;,
-            &quot;duration&quot;: 64,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;action&quot;: &quot;VoIP Call&quot;,
-            &quot;result&quot;: &quot;Call connected&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Simple",
+            "id": "ASaoLzRiqjLaFYU",
+            "sessionId": "13914782004",
+            "startTime": "2016-06-06T18:07:41.000Z",
+            "duration": 64,
+            "type": "Voice",
+            "direction": "Outbound",
+            "action": "VoIP Call",
+            "result": "Call connected",
+            "to": {
+                "phoneNumber": "+14158905908",
+                "location": "San Francisco (South), CA"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "from": {
+                "phoneNumber": "+16505496100",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004&quot;,
-                &quot;id&quot;: &quot;1659903004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                "id": "1659903004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
             }
         }
     ],
-    &quot;paging&quot;: {
-        &quot;page&quot;: 1,
-        &quot;perPage&quot;: 100,
-        &quot;pageStart&quot;: 0,
-        &quot;pageEnd&quot;: 2
+    "paging": {
+        "page": 1,
+        "perPage": 100,
+        "pageStart": 0,
+        "pageEnd": 2
     },
-    &quot;navigation&quot;: {
-        &quot;firstPage&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&amp;dateFrom=2016-06-05T23:11:00.000Z&amp;page=1&amp;perPage=100&quot;
+    "navigation": {
+        "firstPage": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&amp;dateFrom=2016-06-05T23:11:00.000Z&amp;page=1&amp;perPage=100"
         }
     }
-}</code></pre></p>
+}</code></pre>
+
 <h3 id="filtering-by-a-time-range">Filtering by a Time Range</h3>
 <p>If you already have plenty of call log data to sample from, you can scope the request to an appropriate time range by adding the <code>dateTo</code> and <code>dateFrom</code> query parameters (remember, ISO 8601 formatted and URL Encoded strings).</p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=STARTING_DATE_TIME&amp;dateTo=ENDING_DATE_TIME HTTP/1.1
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=STARTING_DATE_TIME&amp;dateTo=ENDING_DATE_TIME HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre></p>
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre>
+
 <h2 id="retrieve-detailed-call-log-data">Retrieve Detailed Call Log Data</h2>
 <p>Fetch the list of "Detailed" call logs so we can inspect the Detailed records. We do this by adding the <code>view</code> query paremter and setting it equal to <code>Detailed</code>.</p>
-<p> <pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/~/extension/~/call-log?view=Detailed HTTP/1.1
+<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/call-log?view=Detailed HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre></p>
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre>
+
 <p>If everything worked, we should receive an HTTP 200 response with the JSON body which contain the <code>legs</code> property. Specifically, for the most recent item in the list which was used to make an inbound call to a Call Group, we can see the second leg being connected from the outside line to the Call Group main number:</p>
-<p> <pre class=codehilite><code class=language-json>{
-    &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&amp;dateFrom=2016-06-05T23:09:00.000Z&amp;page=1&amp;perPage=100&quot;,
-    &quot;records&quot;: [
+<pre class="codehilite"><code class="language-json">{
+    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&amp;dateFrom=2016-06-05T23:09:00.000Z&amp;page=1&amp;perPage=100",
+    "records": [
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Detailed&quot;,
-            &quot;id&quot;: &quot;ASaxDDkSZ5s42MA&quot;,
-            &quot;sessionId&quot;: &quot;13916417004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-            &quot;duration&quot;: 55,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;action&quot;: &quot;Phone Call&quot;,
-            &quot;result&quot;: &quot;Accepted&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+15623215778&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Detailed",
+            "id": "ASaxDDkSZ5s42MA",
+            "sessionId": "13916417004",
+            "startTime": "2016-06-06T23:07:20.000Z",
+            "duration": 55,
+            "type": "Voice",
+            "direction": "Inbound",
+            "action": "Phone Call",
+            "result": "Accepted",
+            "to": {
+                "phoneNumber": "+15623215778",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;name&quot;: &quot;SAN FRANCSCO CA&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "from": {
+                "phoneNumber": "+14158905908",
+                "name": "SAN FRANCSCO CA",
+                "location": "San Francisco (South), CA"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-                &quot;id&quot;: &quot;1662272004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                "id": "1662272004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
             },
-            &quot;transport&quot;: &quot;PSTN&quot;,
-            &quot;lastModifiedTime&quot;: &quot;2016-06-06T23:08:23.336Z&quot;,
-            &quot;legs&quot;: [
+            "transport": "PSTN",
+            "lastModifiedTime": "2016-06-06T23:08:23.336Z",
+            "legs": [
                 {
-                    &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-                    &quot;duration&quot;: 55,
-                    &quot;type&quot;: &quot;Voice&quot;,
-                    &quot;direction&quot;: &quot;Inbound&quot;,
-                    &quot;action&quot;: &quot;Phone Call&quot;,
-                    &quot;result&quot;: &quot;Accepted&quot;,
-                    &quot;to&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+15623215778&quot;,
-                        &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+                    "startTime": "2016-06-06T23:07:20.000Z",
+                    "duration": 55,
+                    "type": "Voice",
+                    "direction": "Inbound",
+                    "action": "Phone Call",
+                    "result": "Accepted",
+                    "to": {
+                        "phoneNumber": "+15623215778",
+                        "name": "SDK Engineer Candidate"
                     },
-                    &quot;from&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                        &quot;name&quot;: &quot;SAN FRANCSCO CA&quot;,
-                        &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+                    "from": {
+                        "phoneNumber": "+14158905908",
+                        "name": "SAN FRANCSCO CA",
+                        "location": "San Francisco (South), CA"
                     },
-                    &quot;recording&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-                        &quot;id&quot;: &quot;1662272004&quot;,
-                        &quot;type&quot;: &quot;OnDemand&quot;,
-                        &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+                    "recording": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                        "id": "1662272004",
+                        "type": "OnDemand",
+                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
                     },
-                    &quot;transport&quot;: &quot;PSTN&quot;,
-                    &quot;legType&quot;: &quot;Accept&quot;,
-                    &quot;extension&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-                        &quot;id&quot;: 664573005
+                    "transport": "PSTN",
+                    "legType": "Accept",
+                    "extension": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "id": 664573005
                     }
                 },
                 {
-                    &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-                    &quot;duration&quot;: 55,
-                    &quot;type&quot;: &quot;Voice&quot;,
-                    &quot;direction&quot;: &quot;Outbound&quot;,
-                    &quot;action&quot;: &quot;VoIP Call&quot;,
-                    &quot;result&quot;: &quot;Accepted&quot;,
-                    &quot;to&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+16506429233&quot;,
-                        &quot;location&quot;: &quot;San Mateo, CA&quot;
+                    "startTime": "2016-06-06T23:07:20.000Z",
+                    "duration": 55,
+                    "type": "Voice",
+                    "direction": "Outbound",
+                    "action": "VoIP Call",
+                    "result": "Accepted",
+                    "to": {
+                        "phoneNumber": "+16506429233",
+                        "location": "San Mateo, CA"
                     },
-                    &quot;from&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                        &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+                    "from": {
+                        "phoneNumber": "+14158905908",
+                        "name": "SDK Engineer Candidate"
                     },
-                    &quot;recording&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-                        &quot;id&quot;: &quot;1662272004&quot;,
-                        &quot;type&quot;: &quot;OnDemand&quot;,
-                        &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+                    "recording": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                        "id": "1662272004",
+                        "type": "OnDemand",
+                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
                     },
-                    &quot;transport&quot;: &quot;VoIP&quot;,
-                    &quot;legType&quot;: &quot;PstnToSip&quot;,
-                    &quot;extension&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-                        &quot;id&quot;: 664573005
+                    "transport": "VoIP",
+                    "legType": "PstnToSip",
+                    "extension": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "id": 664573005
                     }
                 }
             ]
         },
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Detailed&quot;,
-            &quot;id&quot;: &quot;ASaoSC9FIMaOF24&quot;,
-            &quot;sessionId&quot;: &quot;13914800004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T18:12:30.000Z&quot;,
-            &quot;duration&quot;: 55,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;action&quot;: &quot;VoIP Call&quot;,
-            &quot;result&quot;: &quot;Call connected&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Detailed",
+            "id": "ASaoSC9FIMaOF24",
+            "sessionId": "13914800004",
+            "startTime": "2016-06-06T18:12:30.000Z",
+            "duration": 55,
+            "type": "Voice",
+            "direction": "Outbound",
+            "action": "VoIP Call",
+            "result": "Call connected",
+            "to": {
+                "phoneNumber": "+14158905908",
+                "location": "San Francisco (South), CA"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "from": {
+                "phoneNumber": "+16505496100",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004&quot;,
-                &quot;id&quot;: &quot;1659910004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                "id": "1659910004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
             },
-            &quot;transport&quot;: &quot;VoIP&quot;,
-            &quot;lastModifiedTime&quot;: &quot;2016-06-06T18:13:43.335Z&quot;,
-            &quot;legs&quot;: [
+            "transport": "VoIP",
+            "lastModifiedTime": "2016-06-06T18:13:43.335Z",
+            "legs": [
                 {
-                    &quot;startTime&quot;: &quot;2016-06-06T18:12:30.000Z&quot;,
-                    &quot;duration&quot;: 55,
-                    &quot;type&quot;: &quot;Voice&quot;,
-                    &quot;direction&quot;: &quot;Outbound&quot;,
-                    &quot;action&quot;: &quot;VoIP Call&quot;,
-                    &quot;result&quot;: &quot;Call connected&quot;,
-                    &quot;to&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                        &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+                    "startTime": "2016-06-06T18:12:30.000Z",
+                    "duration": 55,
+                    "type": "Voice",
+                    "direction": "Outbound",
+                    "action": "VoIP Call",
+                    "result": "Call connected",
+                    "to": {
+                        "phoneNumber": "+14158905908",
+                        "location": "San Francisco (South), CA"
                     },
-                    &quot;from&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                        &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+                    "from": {
+                        "phoneNumber": "+16505496100",
+                        "name": "SDK Engineer Candidate"
                     },
-                    &quot;recording&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004&quot;,
-                        &quot;id&quot;: &quot;1659910004&quot;,
-                        &quot;type&quot;: &quot;OnDemand&quot;,
-                        &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content&quot;
+                    "recording": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                        "id": "1659910004",
+                        "type": "OnDemand",
+                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
                     },
-                    &quot;transport&quot;: &quot;VoIP&quot;,
-                    &quot;legType&quot;: &quot;SipToPstnUnmetered&quot;,
-                    &quot;extension&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-                        &quot;id&quot;: 664573005
+                    "transport": "VoIP",
+                    "legType": "SipToPstnUnmetered",
+                    "extension": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "id": 664573005
                     }
                 }
             ]
         },
         {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Detailed&quot;,
-            &quot;id&quot;: &quot;ASaoLzRiqjLaFYU&quot;,
-            &quot;sessionId&quot;: &quot;13914782004&quot;,
-            &quot;startTime&quot;: &quot;2016-06-06T18:07:41.000Z&quot;,
-            &quot;duration&quot;: 64,
-            &quot;type&quot;: &quot;Voice&quot;,
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;action&quot;: &quot;VoIP Call&quot;,
-            &quot;result&quot;: &quot;Call connected&quot;,
-            &quot;to&quot;: {
-                &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Detailed",
+            "id": "ASaoLzRiqjLaFYU",
+            "sessionId": "13914782004",
+            "startTime": "2016-06-06T18:07:41.000Z",
+            "duration": 64,
+            "type": "Voice",
+            "direction": "Outbound",
+            "action": "VoIP Call",
+            "result": "Call connected",
+            "to": {
+                "phoneNumber": "+14158905908",
+                "location": "San Francisco (South), CA"
             },
-            &quot;from&quot;: {
-                &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+            "from": {
+                "phoneNumber": "+16505496100",
+                "name": "SDK Engineer Candidate"
             },
-            &quot;recording&quot;: {
-                &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004&quot;,
-                &quot;id&quot;: &quot;1659903004&quot;,
-                &quot;type&quot;: &quot;OnDemand&quot;,
-                &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content&quot;
+            "recording": {
+                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                "id": "1659903004",
+                "type": "OnDemand",
+                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
             },
-            &quot;transport&quot;: &quot;VoIP&quot;,
-            &quot;lastModifiedTime&quot;: &quot;2016-06-06T18:09:03.334Z&quot;,
-            &quot;legs&quot;: [
+            "transport": "VoIP",
+            "lastModifiedTime": "2016-06-06T18:09:03.334Z",
+            "legs": [
                 {
-                    &quot;startTime&quot;: &quot;2016-06-06T18:07:41.000Z&quot;,
-                    &quot;duration&quot;: 64,
-                    &quot;type&quot;: &quot;Voice&quot;,
-                    &quot;direction&quot;: &quot;Outbound&quot;,
-                    &quot;action&quot;: &quot;VoIP Call&quot;,
-                    &quot;result&quot;: &quot;Call connected&quot;,
-                    &quot;to&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-                        &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+                    "startTime": "2016-06-06T18:07:41.000Z",
+                    "duration": 64,
+                    "type": "Voice",
+                    "direction": "Outbound",
+                    "action": "VoIP Call",
+                    "result": "Call connected",
+                    "to": {
+                        "phoneNumber": "+14158905908",
+                        "location": "San Francisco (South), CA"
                     },
-                    &quot;from&quot;: {
-                        &quot;phoneNumber&quot;: &quot;+16505496100&quot;,
-                        &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+                    "from": {
+                        "phoneNumber": "+16505496100",
+                        "name": "SDK Engineer Candidate"
                     },
-                    &quot;recording&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004&quot;,
-                        &quot;id&quot;: &quot;1659903004&quot;,
-                        &quot;type&quot;: &quot;OnDemand&quot;,
-                        &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content&quot;
+                    "recording": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                        "id": "1659903004",
+                        "type": "OnDemand",
+                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
                     },
-                    &quot;transport&quot;: &quot;VoIP&quot;,
-                    &quot;legType&quot;: &quot;SipToPstnUnmetered&quot;,
-                    &quot;extension&quot;: {
-                        &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-                        &quot;id&quot;: 664573005
+                    "transport": "VoIP",
+                    "legType": "SipToPstnUnmetered",
+                    "extension": {
+                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "id": 664573005
                     }
                 }
             ]
         }
     ],
-    &quot;paging&quot;: {
-        &quot;page&quot;: 1,
-        &quot;perPage&quot;: 100,
-        &quot;pageStart&quot;: 0,
-        &quot;pageEnd&quot;: 2
+    "paging": {
+        "page": 1,
+        "perPage": 100,
+        "pageStart": 0,
+        "pageEnd": 2
     },
-    &quot;navigation&quot;: {
-        &quot;firstPage&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&amp;dateFrom=2016-06-05T23:09:00.000Z&amp;page=1&amp;perPage=100&quot;
+    "navigation": {
+        "firstPage": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&amp;dateFrom=2016-06-05T23:09:00.000Z&amp;page=1&amp;perPage=100"
         }
     }
-}</code></pre></p>
+}</code></pre>
+
 <h2 id="inspecting-multi-leg-calls">Inspecting Multi-Leg Calls</h2>
 <p>Inspecting the <code>legs</code> property of the multi-leg call, we can see two different <code>legType</code> properties, the most recent (legs[0]) was the <code>Accept</code> which occurred when the call was accepted on your SoftPhone, while the former (legs[1]) was the <code>PstnToSip</code> which occurred when the inbound call from my celluar device was pointed by RingCentral to the IVR setup within my account. The <code>from.name</code> property would not make sense if you were to neglect looking at the call legType.</p>
-<p> <pre class=codehilite><code class=language-json>&quot;legs&quot;: [
+<pre class="codehilite"><code class="language-json">"legs": [
     {
-        &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-        &quot;duration&quot;: 55,
-        &quot;type&quot;: &quot;Voice&quot;,
-        &quot;direction&quot;: &quot;Inbound&quot;,
-        &quot;action&quot;: &quot;Phone Call&quot;,
-        &quot;result&quot;: &quot;Accepted&quot;,
-        &quot;to&quot;: {
-            &quot;phoneNumber&quot;: &quot;+15623215778&quot;, // The direct number of the Call Group defined in RingCentral
-            &quot;name&quot;: &quot;SDK Engineer Candidate&quot; // Name of the Extension that handled the call
+        "startTime": "2016-06-06T23:07:20.000Z",
+        "duration": 55,
+        "type": "Voice",
+        "direction": "Inbound",
+        "action": "Phone Call",
+        "result": "Accepted",
+        "to": {
+            "phoneNumber": "+15623215778", // The direct number of the Call Group defined in RingCentral
+            "name": "SDK Engineer Candidate" // Name of the Extension that handled the call
         },
-        &quot;from&quot;: {
-            &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-            &quot;name&quot;: &quot;SAN FRANCSCO CA&quot;,
-            &quot;location&quot;: &quot;San Francisco (South), CA&quot;
+        "from": {
+            "phoneNumber": "+14158905908",
+            "name": "SAN FRANCSCO CA",
+            "location": "San Francisco (South), CA"
         },
-        &quot;recording&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-            &quot;id&quot;: &quot;1662272004&quot;,
-            &quot;type&quot;: &quot;OnDemand&quot;,
-            &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+        "recording": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+            "id": "1662272004",
+            "type": "OnDemand",
+            "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
         },
-        &quot;transport&quot;: &quot;PSTN&quot;,
-        &quot;legType&quot;: &quot;Accept&quot;,
-        &quot;extension&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-            &quot;id&quot;: 664573005
+        "transport": "PSTN",
+        "legType": "Accept",
+        "extension": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+            "id": 664573005
         }
     },
     {
-        &quot;startTime&quot;: &quot;2016-06-06T23:07:20.000Z&quot;,
-        &quot;duration&quot;: 55,
-        &quot;type&quot;: &quot;Voice&quot;,
-        &quot;direction&quot;: &quot;Outbound&quot;,
-        &quot;action&quot;: &quot;VoIP Call&quot;,
-        &quot;result&quot;: &quot;Accepted&quot;,
-        &quot;to&quot;: {
-            &quot;phoneNumber&quot;: &quot;+16506429233&quot;,
-            &quot;location&quot;: &quot;San Mateo, CA&quot;
+        "startTime": "2016-06-06T23:07:20.000Z",
+        "duration": 55,
+        "type": "Voice",
+        "direction": "Outbound",
+        "action": "VoIP Call",
+        "result": "Accepted",
+        "to": {
+            "phoneNumber": "+16506429233",
+            "location": "San Mateo, CA"
         },
-        &quot;from&quot;: {
-            &quot;phoneNumber&quot;: &quot;+14158905908&quot;,
-            &quot;name&quot;: &quot;SDK Engineer Candidate&quot;
+        "from": {
+            "phoneNumber": "+14158905908",
+            "name": "SDK Engineer Candidate"
         },
-        &quot;recording&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004&quot;,
-            &quot;id&quot;: &quot;1662272004&quot;,
-            &quot;type&quot;: &quot;OnDemand&quot;,
-            &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content&quot;
+        "recording": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+            "id": "1662272004",
+            "type": "OnDemand",
+            "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
         },
-        &quot;transport&quot;: &quot;VoIP&quot;,
-        &quot;legType&quot;: &quot;PstnToSip&quot;,
-        &quot;extension&quot;: {
-            &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005&quot;,
-            &quot;id&quot;: 664573005
+        "transport": "VoIP",
+        "legType": "PstnToSip",
+        "extension": {
+            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+            "id": 664573005
         }
     }
-]</code></pre></p>
+]</code></pre>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -1439,9 +1434,10 @@ Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN </code></pre></p>
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

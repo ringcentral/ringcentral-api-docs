@@ -203,7 +203,7 @@ print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
 $ php fax.php
 ```
 
-``` c-sharp fct_label="C#"
+``` dotnet fct_label="C#"
 <h3>Create a Visual Studio project</h3>
 <ol>
 <li>Choose Console Application .Net Core -> App</li>

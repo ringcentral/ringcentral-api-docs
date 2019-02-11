@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Auth Profile & Permissions - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../account_extension/" class="">Account & Extension Settings</a>
+    <a href="../account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -972,84 +962,102 @@
 
 <h1 id="granting-and-revoking-user-permissions">Granting and Revoking User Permissions</h1>
 <p>RingCentral provides developers the ability to view Authorization Profile information about user extensions. Authorization profiles define the capabilities and features within RingCentral which an extension may execute. This data concerning <strong>Roles</strong> and <strong>Permissions</strong> is presented heuristically as <em>Authorization Profile</em> data to developer applications and integrations providing useful context as it relates to a user/extension.</p>
-<h2 id="authorization-profile">Authorization Profile</h2>
-<p><code>/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile</code></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><ul class="nav nav-tabs"><li class=nav-item><a class="nav-link active" href=#tab-group-0-0_http-panel role=tab id=tab-group-0-0_http-tab data-toggle=tab data-lang=http aria-controls=tab-group-0-0_http-panel aria-selected=true>Http</a></li><li class=nav-item><a class="nav-link " href=#tab-group-0-1_http-panel role=tab id=tab-group-0-1_http-tab data-toggle=tab data-lang=http aria-controls=tab-group-0-1_http-panel aria-selected=false>Http</a></li></ul><div class=tab-content><div id=tab-group-0-0_http-panel class="tab-pane show active" role=tabpanel aria-labelledby=tab-group-0-0_http-tab><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/~/extension/~/authz-profile
-Accept: application/json
-Accept-Language: en-US</code></pre></div><div id=tab-group-0-1_http-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-0-1_http-tab><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Language: en-US
-{
-    &quot;uri&quot;: &quot;.../restapi/v1.0/account/4589345367/extension/4589345367/authz-profile&quot;,
-    &quot;permissions&quot;: [
-        {
-            &quot;permission&quot;: { &quot;id&quot;: &quot;ReadMessages&quot;, &quot;uri&quot;: ... }, 
-            &quot;effectiveRole&quot;: { &quot;id&quot;: &quot;12346&quot;, &quot;uri&quot;: ... }, 
-            &quot;scope&quot;:&quot;Self&quot;
-        },
-        {
-            &quot;permission&quot;: { &quot;id&quot;: &quot;ReadUserData&quot;, &quot;uri&quot;: ... }, 
-            &quot;effectiveRole&quot;: { &quot;id&quot;: &quot;987654&quot;, &quot;uri&quot;: ...}, 
-            &quot;scope&quot;:&quot;AllExtensions&quot;
-        },
-        ...
-    ]
-}</code></pre></div></div></div>
-
-<ul>
-<li>Authorization Profile (or AuthZ for short) data contains the effective list of permissions granted to a principal (extension) via role assignments made explicitly by your RingCentral Account Administrators, and implicitly by RingCentral as it applies to Account Administrator actions for Roles and Permissions. Permissions indicate the access control policy calculated for the currently authenticated  principal. This data (in whole or in part) is calculated by RingCentral every time permission verification is invalidated for a principal during each request.</li>
-<li>Authorization profile (fully or partially) is built every time RingCentral verifies if a certain permission is granted to the authenticated principal.</li>
-<li>AuthZ Profile data is part of the Extension API resource. Each extension in your RingCentral account will have an associated AuthZ Profile</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Keep in Mind</p>
-<p>This data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefAccount.html">RingCentral API Account Resource Reference</a>.</p>
-</div>
-<h2 id="user-permissions-and-permission-invalidation">User Permissions and Permission Invalidation</h2>
-<p>Users are granted specific permissions in RingCentral by Account Administrators within the Online Account Portal for either <a href="https://service.ringcentral.com">Production</a> or <a href="https://service.devtest.ringcentral.com">Sandbox</a> accounts.</p>
-<p>As a <strong>Best Practice</strong>, it is highly recommended that developers building applications and integrations with RingCentral should perpetually invalidate user actions against the permissions of an extension, and not against the role(s) assigned to a given user extension as permissions assigned to a role can modify over time.</p>
-<p>This can be accomplished by Checking Access to verify that a user has a specified permission and can be executed with the following API request (requires a valid <code>access_token</code> for the user):</p>
-<p>```http tab="Request"
-GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
-Accept: application/json
-Accept-Language: en-US</p>
-<p> <pre class=codehilite><code>```http tab=&quot;Response&quot;
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Language: en-US
-{
-    &quot;uri&quot;: &quot;.../restapi/v1.0/account/4589345367/extension/4589345367/auth-profile/check?permissionId=ReadMessages&quot;,
-    &quot;successful&quot;: true,
-    &quot;details&quot;: {
-        &quot;permission&quot;: { &quot;id&quot;: &quot;ReadMessages&quot;, &quot;uri&quot;: ... },
-        &quot;effectiveRole&quot;: { &quot;id&quot;: &quot;12346&quot;, &quot;uri&quot;: ... },
-        &quot;scope&quot;: &quot;Self&quot;
-    }
-}</code></pre></p>
-<p>The response attribute <code>successful</code> should only ever be <code>true</code> if all requested permissions are granted. This API resource is part of the <strong>Light</strong> API Group, which makes it much easier to execute this action for your application or integration.</p>
-<h2 id="roles-and-permissions-api-groups-and-rate-limits">Roles and Permissions API Groups and Rate Limits</h2>
-<p>Since Roles and Permissions are part of the Extension API resource, to make a request to the base route falls under the <strong>Light</strong> API Group.</p>
-<p>Dictionary resources used to obtain more detailed and specific Role and Permission information are also <strong>Light</strong> API Group.</p>
-<p>You can view the API Developer Guide to understand the rate limits for the Usage Plan of your organization at this URL:</p>
-<p>https://developers.ringcentral.com/api-docs/latest/index.html#!#RateLimitDetails.html</p>
-<h2 id="common-use-cases">Common Use Cases</h2>
-<p>Role and Pemrission data can be used in a variety of use cases, the most common use cases are:</p>
+<p>Role and Permission data can be used in a variety of use cases, the most common being:</p>
 <ul>
 <li><strong>Security</strong> - Be certain that a principal currently has been granted the necessary permission prior to enabling access to that feature</li>
 <li><strong>User Experience</strong> - Invalidating the permissions currently granted a principal prior to making a permission-dependent feature available from within your application or integration</li>
 <li><strong>Risk and Loss Prevention</strong> - Ensuring you are not exposing risk or loss to your application/integration users and their organizations</li>
 </ul>
-<h3 id="role-and-permission-anti-patterns">Role and Permission Anti-Patterns</h3>
+<div class="admonition warning">
+<p class="admonition-title">Role and Permission Anti-Patterns</p>
 <p>It is also important to understand anti-patterns of Roles and Permissions, these are ways developers should <strong>not</strong> use this resource.</p>
 <ul>
 <li><strong>Role Assumption</strong> - Developers should never ever assume that because a principal has a specific Role that principal will have an associated permission which is generally available</li>
 <li><strong>Session Permission Caching</strong> - Never store or cache permissions for a given principal for use during an entire session, as permissions may be revoked at any time</li>
 </ul>
+</div>
+<h2 id="authorization-profiles">Authorization Profiles</h2>
+<p>An Authorization Profile (or "AuthZ" for short) contains the list of permissions granted to a principal (extension) via:</p>
+<ul>
+<li>Role assignments made explicitly by your RingCentral Account Administrators;</li>
+<li>Role assignments made implicitly by RingCentral as it applies to Account Administrator actions for Roles and Permissions.</li>
+</ul>
+<p>Permissions indicate the access control policy calculated for the currently authenticated user. This data (in whole or in part) is calculated by RingCentral every time permission verification is invalidated for a principal during each request. To retrieve an authorization profile, compose a request to the following endpoint:</p>
+<pre class="codehilite"><code>/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile</code></pre>
+
+
+<p>For example: </p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Response</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Language: en-US
+{
+    "uri": ".../restapi/v1.0/account/4589345367/extension/4589345367/authz-profile",
+    "permissions": [
+        {
+            "permission": { "id": "ReadMessages", "uri": ... }, 
+            "effectiveRole": { "id": "12346", "uri": ... }, 
+            "scope":"Self"
+        },
+        {
+            "permission": { "id": "ReadUserData", "uri": ... }, 
+            "effectiveRole": { "id": "987654", "uri": ...}, 
+            "scope":"AllExtensions"
+        },
+        ...
+    ]
+}</code></pre></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Request</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/authz-profile
+Accept: application/json
+Accept-Language: en-US</code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Keep in Mind</p>
+<ul>
+<li>Authorization Profiles (fully or partially) are built every time RingCentral verifies if a certain permission is granted to the authenticated user.</li>
+<li>Authorization Profile data is part of the Extension API resource. Each extension in your RingCentral account will have an AuthZ profile associate with it. </li>
+<li>Authorization Profile data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefAccount.html">RingCentral API Account Resource Reference</a>.</li>
+</ul>
+</div>
+<h2 id="permission-validation">Permission Validation</h2>
+<p>Users are granted specific permissions in RingCentral by Account Administrators within the Online Account Portal for either <a href="https://service.ringcentral.com">Production</a> or <a href="https://service.devtest.ringcentral.com">Sandbox</a> accounts.</p>
+<p>We strongly recommended to developers that they should always validate user actions against the permissions of an extension, and not against the role(s) assigned to a given user extension as permissions assigned to a role can modify over time. This can be accomplished by checking access to verify that a user has a specified permission and can be executed with the following API request (requires a valid <code>access_token</code> for the user):</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Response</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Language: en-US
+{
+    "uri": ".../restapi/v1.0/account/4589345367/extension/4589345367/auth-profile/check?permissionId=ReadMessages",
+    "successful": true,
+    "details": {
+        "permission": { "id": "ReadMessages", "uri": ... },
+        "effectiveRole": { "id": "12346", "uri": ... },
+        "scope": "Self"
+    }
+}</code></pre></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">Request</label>
+<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
+Authorization: Bearer xxxxxxxxxxxxx
+Accept: application/json
+Accept-Language: en-US</code></pre></div>
+</div>
+<p>The response attribute <code>successful</code> should only ever be <code>true</code> if all requested permissions are granted. This API resource is part of the <strong>Light</strong> API Group, which makes it much easier to execute this action for your application or integration.</p>
+<h3 id="api-groups-and-rate-limits">API Groups and Rate Limits</h3>
+<p>Since Roles and Permissions are part of the Extension API resource, to make a request to the base route falls under the <strong>Light</strong> API Group.</p>
+<p>Dictionary resources used to obtain more detailed and specific Role and Permission information are also in the <strong>Light</strong> API Group.</p>
+<p>To learn more, consult the API Reference relating to the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RateLimitDetails.html">rate limits for the usage plan of your organization</a>.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-01-31</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-02-08</time>
   </li>
 <!--
   <li class="readingTime">
@@ -1103,9 +1111,10 @@ Content-Language: en-US
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

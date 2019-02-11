@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../favicon.ico">
         
         <title>Call Control - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/code-styles.css" rel="stylesheet">
     <link href="../../css/code-tabs.css" rel="stylesheet">
     <link href="../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,23 @@
   <ul>
     
 <li>
-    <a href="../../missing/" class="">Node.js</a>
+    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">Python</a>
+    <a href="../../authentication/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">PHP</a>
+    <a href="../../authentication/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">C#</a>
+    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../missing/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
 </li>
   </ul>
 </li>
@@ -429,10 +423,6 @@
     
 <li>
     <a href="../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -1008,64 +998,66 @@
 </li>
 </ol>
 <p>Subscribe using any suitable transport, e.g. PubNub or Webhooks:</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/subscription
+<pre class="codehilite"><code>POST /restapi/v1.0/subscription
 
 {
-    &quot;eventFilters&quot;: [
-      &quot;/restapi/v1.0/account/~/telephony/sessions&quot;,
-      &quot;/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true&quot;
+    "eventFilters": [
+      "/restapi/v1.0/account/~/telephony/sessions",
+      "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true"
     ],
-    &quot;deliveryMode&quot;: {
-    &quot;transportType&quot;: &quot;PubNub&quot;
+    "deliveryMode": {
+    "transportType": "PubNub"
     }
-}</code></pre></p>
+}</code></pre>
+
 <h3 id="presence">Presence</h3>
 <p>Added <em>telephonySessionId</em> &amp; <em>partyId</em> (NEW).</p>
 <p><strong>Limitations</strong>: Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added <em>activeCalls.telephonySessionId</em> and <em>activeCalls.partyId</em> to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.</p>
-<p> <pre class=codehilite><code class=language-json>{
-    &quot;uuid&quot;: &quot;1787755531108376563&quot;,
-    &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-    &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;uuid&quot;: &quot;1787755531108376563&quot;,
-      &quot;event&quot;: &quot;/restapi/v1.0/account/400144452008/extension/400144455008/presence?detailedTelephonyState=true&amp;sipData=true&quot;,
-      &quot;timestamp&quot;: &quot;2018-06-05T00:14:50.184Z&quot;,
-      &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-      &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;body&quot;: {
-        &quot;extensionId&quot;: 400144455008,
-        &quot;telephonyStatus&quot;: &quot;Ringing&quot;,
-        &quot;activeCalls&quot;: [
+<pre class="codehilite"><code class="language-json">{
+    "uuid": "1787755531108376563",
+    "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
+    "ownerId": "400144455008",
+      "uuid": "1787755531108376563",
+      "event": "/restapi/v1.0/account/400144452008/extension/400144455008/presence?detailedTelephonyState=true&amp;sipData=true",
+      "timestamp": "2018-06-05T00:14:50.184Z",
+      "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
+      "ownerId": "400144455008",
+      "body": {
+        "extensionId": 400144455008,
+        "telephonyStatus": "Ringing",
+        "activeCalls": [
           {
-            &quot;id&quot;: &quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;fromName&quot;: &quot;TheCat Jerry&quot;,
-            &quot;from&quot;: &quot;103&quot;,
-            &quot;toName&quot;: &quot;Tom Sawyer&quot;,
-            &quot;to&quot;: &quot;102&quot;,
-            &quot;telephonyStatus&quot;: &quot;Ringing&quot;,
-            &quot;sipData&quot;: {
-              &quot;toTag&quot;: &quot;blf&quot;,
-              &quot;fromTag&quot;: &quot;cs171841903434018384-2&quot;,
-              &quot;remoteUri&quot;: &quot;sip:103@ringcentral.com&quot;,
-              &quot;localUri&quot;: &quot;sip:102@ringcentral.com&quot;
+            "id": "Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx",
+            "direction": "Inbound",
+            "fromName": "TheCat Jerry",
+            "from": "103",
+            "toName": "Tom Sawyer",
+            "to": "102",
+            "telephonyStatus": "Ringing",
+            "sipData": {
+              "toTag": "blf",
+              "fromTag": "cs171841903434018384-2",
+              "remoteUri": "sip:103@ringcentral.com",
+              "localUri": "sip:102@ringcentral.com"
             },
-            &quot;partyId&quot;:&quot;cs171843418296416309-2&quot;,
-            &quot;telephonySessionId&quot;:&quot;Y3MxNjk4ODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA&quot;,
-            &quot;sessionId&quot;: &quot;402936341008&quot;,
-            &quot;startTime&quot;: &quot;2018-06-05T00:14:50.149Z&quot;
+            "partyId":"cs171843418296416309-2",
+            "telephonySessionId":"Y3MxNjk4ODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA",
+            "sessionId": "402936341008",
+            "startTime": "2018-06-05T00:14:50.149Z"
           }
         ],
-        &quot;sequence&quot;: 34470,
-        &quot;presenceStatus&quot;: &quot;Available&quot;,
-        &quot;userStatus&quot;: &quot;Available&quot;,
-        &quot;dndStatus&quot;: &quot;TakeAllCalls&quot;,
-        &quot;allowSeeMyPresence&quot;: true,
-        &quot;ringOnMonitoredCall&quot;: false,
-        &quot;pickUpCallsOnHold&quot;: false,
-        &quot;totalActiveCalls&quot;: 1
+        "sequence": 34470,
+        "presenceStatus": "Available",
+        "userStatus": "Available",
+        "dndStatus": "TakeAllCalls",
+        "allowSeeMyPresence": true,
+        "ringOnMonitoredCall": false,
+        "pickUpCallsOnHold": false,
+        "totalActiveCalls": 1
       }
     }
-  }</code></pre></p>
+  }</code></pre>
+
 <p>You will be using the "telephonySessionId" and "partyId" to control Active calls using Call Control API.</p>
 <h3 id="telephony-sessions">Telephony Sessions</h3>
 <p><strong>Limitations</strong>: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:</p>
@@ -1075,141 +1067,143 @@
 <li>if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)</li>
 </ul>
 <p>Push Notification Example:</p>
-<p> <pre class=codehilite><code class=language-json>{
-    &quot;uuid&quot;: &quot;837270960869181944&quot;,
-    &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-    &quot;ownerId&quot;: &quot;400144455008&quot;,
-    &quot;pn_apns&quot;: {
-      &quot;aps&quot;: {
-        &quot;content-available&quot;: 1
+<pre class="codehilite"><code class="language-json">{
+    "uuid": "837270960869181944",
+    "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
+    "ownerId": "400144455008",
+    "pn_apns": {
+      "aps": {
+        "content-available": 1
       },
-      &quot;uuid&quot;: &quot;837270960869181944&quot;,
-      &quot;event&quot;: &quot;/restapi/v1.0/account/400144452008/extension/400144455008/telephony/sessions&quot;,
-      &quot;timestamp&quot;: &quot;2018-06-05T00:14:50.181Z&quot;,
-      &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-      &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;body&quot;: {
-        &quot;sequence&quot;: 5,
-        &quot;sessionId&quot;: &quot;402936341008&quot;,
-        &quot;telephonySessionId&quot;: &quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;,
-        &quot;serverId&quot;: &quot;10.62.25.111.TAM&quot;,
-        &quot;eventTime&quot;: &quot;2018-06-05T00:14:50.147Z&quot;,
-        &quot;accountId&quot;: &quot;400144452008&quot;,
-        &quot;parties&quot;: [
+      "uuid": "837270960869181944",
+      "event": "/restapi/v1.0/account/400144452008/extension/400144455008/telephony/sessions",
+      "timestamp": "2018-06-05T00:14:50.181Z",
+      "subscriptionId": "5c37f936-fa66-4b4b-95af-1e94b51a748d",
+      "ownerId": "400144455008",
+      "body": {
+        "sequence": 5,
+        "sessionId": "402936341008",
+        "telephonySessionId": "Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx",
+        "serverId": "10.62.25.111.TAM",
+        "eventTime": "2018-06-05T00:14:50.147Z",
+        "accountId": "400144452008",
+        "parties": [
           {
-            &quot;extensionId&quot;: &quot;400144455008&quot;,
-            &quot;id&quot;: &quot;cs171841903434018384-2&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;to&quot;: {
-              &quot;phoneNumber&quot;: &quot;102&quot;,
-              &quot;name&quot;: &quot;Tom Sawyer&quot;,
-              &quot;extensionId&quot;: &quot;400144455008&quot;
+            "extensionId": "400144455008",
+            "id": "cs171841903434018384-2",
+            "direction": "Inbound",
+            "to": {
+              "phoneNumber": "102",
+              "name": "Tom Sawyer",
+              "extensionId": "400144455008"
             },
-            &quot;from&quot;: {
-              &quot;phoneNumber&quot;: &quot;103&quot;,
-              &quot;name&quot;: &quot;TheCat Jerry&quot;,
-              &quot;extensionId&quot;: &quot;400144457008&quot;
+            "from": {
+              "phoneNumber": "103",
+              "name": "TheCat Jerry",
+              "extensionId": "400144457008"
             },
-            &quot;status&quot;: {
-              &quot;code&quot;: &quot;Proceeding&quot;,
-              &quot;mobilePickupData&quot;: {
-                &quot;ccMailboxes&quot;: [
-                  &quot;400144455008&quot;
+            "status": {
+              "code": "Proceeding",
+              "mobilePickupData": {
+                "ccMailboxes": [
+                  "400144455008"
                 ],
-                &quot;to&quot;: &quot;#19008@sip-mesdevams.lab.nordigy.ru:5060&quot;,
-                &quot;sid&quot;: &quot;402936472080&quot;,
-                &quot;srvLvl&quot;: &quot;-149699523&quot;,
-                &quot;srvLvlExt&quot;: &quot;390&quot;
+                "to": "#19008@sip-mesdevams.lab.nordigy.ru:5060",
+                "sid": "402936472080",
+                "srvLvl": "-149699523",
+                "srvLvlExt": "390"
               }
             },
-            &quot;missedCall&quot;: false,
-            &quot;standAlone&quot;: false,
-            &quot;muted&quot;: false
+            "missedCall": false,
+            "standAlone": false,
+            "muted": false
           }
         ],
-        &quot;origin&quot;: {
-          &quot;type&quot;: &quot;Call&quot;
+        "origin": {
+          "type": "Call"
         },
-        &quot;extensionId&quot;: &quot;400144455008&quot;
+        "extensionId": "400144455008"
       }
     }
-  }</code></pre></p>
+  }</code></pre>
+
 <h2 id="using-the-call-control-api">Using the Call Control API</h2>
 <p>RC User is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.</p>
 <p><em>NOTE</em>: In Release 10.3 we're planning to provide <strong>Call Out</strong> API to initiate a call.</p>
 <p>Once the call is initiated User can get Session details either from telephony/session Push Notification or from API response if call was started via RingOut or CallOut REST API.</p>
 <p>Session status can be retrieved via the following request:</p>
-<p> <pre class=codehilite><code>GET /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;
+<p><pre class="codehilite"><code>GET /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;
 Content-Type: application/json
 Authorization: Bearer &lt;access-token&gt;
 
 {
-    &quot;creationTime&quot;: &quot;2018-08-01T13:36:09Z&quot;,
-    &quot;id&quot;: &quot;Y3MxNzE4MzU2NzgxNTM2MTY1NDhAMTAuNjIuMS4zMA&quot;,
-    &quot;origin&quot;: {
-        &quot;type&quot;: &quot;Call&quot;
+    "creationTime": "2018-08-01T13:36:09Z",
+    "id": "Y3MxNzE4MzU2NzgxNTM2MTY1NDhAMTAuNjIuMS4zMA",
+    "origin": {
+        "type": "Call"
     },
-    &quot;parties&quot;: [
+    "parties": [
         {
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;from&quot;: {
-                &quot;extensionId&quot;: &quot;400415045004&quot;,
-                &quot;name&quot;: &quot;TheCat Jerry&quot;,
-                &quot;phoneNumber&quot;: &quot;+18882101932&quot;
+            "direction": "Outbound",
+            "from": {
+                "extensionId": "400415045004",
+                "name": "TheCat Jerry",
+                "phoneNumber": "+18882101932"
             },
-            &quot;id&quot;: &quot;cs171835678153616548-1&quot;,
-            &quot;muted&quot;: false,
-            &quot;owner&quot;: {
-                &quot;accountId&quot;: &quot;400415035004&quot;,
-                &quot;extensionId&quot;: &quot;400415045004&quot;
+            "id": "cs171835678153616548-1",
+            "muted": false,
+            "owner": {
+                "accountId": "400415035004",
+                "extensionId": "400415045004"
             },
-            &quot;standAlone&quot;: false,
-            &quot;status&quot;: {
-                &quot;code&quot;: &quot;Answered&quot;
+            "standAlone": false,
+            "status": {
+                "code": "Answered"
             },
-            &quot;to&quot;: {
-                &quot;extensionId&quot;: &quot;400415042004&quot;,
-                &quot;name&quot;: &quot;Tom Sawyer&quot;,
-                &quot;phoneNumber&quot;: &quot;102&quot;
+            "to": {
+                "extensionId": "400415042004",
+                "name": "Tom Sawyer",
+                "phoneNumber": "102"
             }
         },
         {
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;from&quot;: {
-                &quot;extensionId&quot;: &quot;400415045004&quot;,
-                &quot;name&quot;: &quot;TheCat Jerry&quot;,
-                &quot;phoneNumber&quot;: &quot;103&quot;
+            "direction": "Inbound",
+            "from": {
+                "extensionId": "400415045004",
+                "name": "TheCat Jerry",
+                "phoneNumber": "103"
             },
-            &quot;id&quot;: &quot;cs171835678153616548-2&quot;,
-            &quot;muted&quot;: false,
-            &quot;owner&quot;: {
-                &quot;accountId&quot;: &quot;400415035004&quot;,
-                &quot;extensionId&quot;: &quot;400415042004&quot;
+            "id": "cs171835678153616548-2",
+            "muted": false,
+            "owner": {
+                "accountId": "400415035004",
+                "extensionId": "400415042004"
             },
-            &quot;standAlone&quot;: false,
-            &quot;status&quot;: {
-                &quot;code&quot;: &quot;Answered&quot;
+            "standAlone": false,
+            "status": {
+                "code": "Answered"
             },
-            &quot;to&quot;: {
-                &quot;extensionId&quot;: &quot;400415042004&quot;,
-                &quot;name&quot;: &quot;Tom Sawyer&quot;,
-                &quot;phoneNumber&quot;: &quot;102&quot;
+            "to": {
+                "extensionId": "400415042004",
+                "name": "Tom Sawyer",
+                "phoneNumber": "102"
             }
         }
     ]
-}</code></pre></p>
-<p><em>NOTE</em>: There are specific scenarios when the call became splitted to multiple Sessions.</p>
+}</code></pre>
+<em>NOTE</em>: There are specific scenarios when the call became splitted to multiple Sessions.</p>
 <h2 id="pre-call-control">Pre-Call Control</h2>
 <p>Pre-Call Controls are soft keys that allow you to choose an action for an incoming call. In Beta version of <strong>Call Control</strong> API you'll be able to use the following distribution options:</p>
 <h3 id="forwarding-calls">Forwarding Calls</h3>
 <p>You can use the <strong>Forward</strong> API if you want to transfer the incoming call to another phone number or to voicemail, without answering the call. <strong>Forward</strong> API works for parties in Setup and Proceeding states only (this is the main differece with Transfer API, which works with already accepted calls). For now Forward to phone number and Vociemail are available, see below.</p>
 <h4 id="forward-to-phone-number">Forward to phone number</h4>
 <p>To forward the incoming call to another phone number take <em>telephonySessionId</em> and <em>partyId</em> from telephony/sessions notification and use them in endpoint path, see example below.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
 
 {
-&quot;phoneNumber&quot;:&quot;+12059690601&quot;
-}</code></pre></p>
+"phoneNumber":"+12059690601"
+}</code></pre>
+
 <p><em>NOTE</em>: phoneNumber in request body should be in e164 format.</p>
 <p><strong>Tips</strong>:</p>
 <ul>
@@ -1218,14 +1212,16 @@ Authorization: Bearer &lt;access-token&gt;
 </ul>
 <h4 id="forward-to-voicemail">Forward to Voicemail</h4>
 <p>To forward the incoming call to Voicemail specify <strong>voicemail</strong> in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
 
 {
-&quot;voicemail&quot;:&quot;400415048004&quot;
-}</code></pre></p>
+"voicemail":"400415048004"
+}</code></pre>
+
 <h3 id="rejecting-calls">Rejecting Calls</h3>
 <p>Using Reject API will stop the ringing on your app. It works as Ignore option on Ringcenrtral Desktop app, i.e. the caller will still hear ringing sounds, until picked up on another Forwarding Number, or until the caller is routed to your extension's voicemail.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/reject</code></pre></p>
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/reject</code></pre>
+
 <p><em>NOTE</em>: In upcoming releases we're planning to support much more features, like</p>
 <ul>
 <li><strong>Answer (Replace)</strong> - accept the incoming call.</li>
@@ -1237,15 +1233,17 @@ Authorization: Bearer &lt;access-token&gt;
 <p>When call is in progress you can manage participants, start and pause recording, transfer or park the call and much more.. And all this available via Ringcentral API now!</p>
 <h3 id="mute-and-unmute-participant">Mute and Unmute participant</h3>
 <p>Mute or Unmute the participant based on the boolean parameter you provide:</p>
-<p> <pre class=codehilite><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;
+<p><pre class="codehilite"><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;
 
 {
-&quot;muted&quot; : true
-}</code></pre></p>
-<p><em>NOTE</em>: There is a known limitation for this API - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via <strong>Call Control</strong> API and Ringcentral Desktop app you need to unmute both endpoints to bring media back.</p>
+"muted" : true
+}</code></pre>
+<em>NOTE</em>: There is a known limitation for this API - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via <strong>Call Control</strong> API and Ringcentral Desktop app you need to unmute both endpoints to bring media back.</p>
 <h3 id="hold-and-unhold-call">Hold and UnHold Call</h3>
 <p>Use <strong>Hold</strong> API to put the participant on hold. Use <strong>Unhold</strong> API otherwise:</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/hold</code></pre></p>
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/hold
+</code></pre>
+
 <p><strong>Tips</strong>: </p>
 <ul>
 <li>You can configure the your <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html">Music on Hold via API</a>. Keep callers informed and entertained with messages and music on hold.</li>
@@ -1254,57 +1252,58 @@ Authorization: Bearer &lt;access-token&gt;
 <h3 id="call-transfer">Call Transfer</h3>
 <p><strong>Transfer</strong> API works similar to <strong>Forward</strong> API, except that party should accept the call. You can transfer the call to another phone number, to voicemail or to Park Location (Park Orbit feature).</p>
 <h4 id="transfer-to-phone-number">Transfer to phone number</h4>
-<p>Specify the target phone number for a party transfer:</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p>Specify the target phone number for a party transfer:
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
 
 {
-&quot;phoneNumber&quot;:&quot;+12059690601&quot;
-}</code></pre></p>
-<p><strong>Tips</strong>: </p>
+"phoneNumber":"+12059690601"
+}</code></pre>
+<strong>Tips</strong>: </p>
 <ul>
 <li>There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using <strong>extensionNumber</strong>.</li>
 </ul>
 <h4 id="transfer-to-voicemail">Transfer to Voicemail</h4>
-<p>To forward the call to Voicemail specify <strong>voicemail</strong> in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p>To forward the call to Voicemail specify <strong>voicemail</strong> in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
 
 {
-&quot;voicemail&quot;:&quot;400415048004&quot;
+"voicemail":"400415048004"
 }</code></pre></p>
 <h4 id="call-park">Call Park</h4>
-<p>If you are a member of any Park Location Group you could park the call via <strong>Transfer</strong> API. The call will be parked to specified mailbox.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p>If you are a member of any Park Location Group you could park the call via <strong>Transfer</strong> API. The call will be parked to specified mailbox.
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
 
 {
-&quot;parkOrbit&quot;:&quot;400416048004&quot;
-}</code></pre></p>
-<p>Setting up and Using Park Locations via <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/8355">Service Site</a> or via <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html">Ringcentral API</a>.</p>
+"parkOrbit":"400416048004"
+}</code></pre>
+Setting up and Using Park Locations via <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/8355">Service Site</a> or via <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html">Ringcentral API</a>.</p>
 <h2 id="recording-calls">Recording Calls</h2>
-<p>To start recording use <strong>Recordings</strong> API. You will hear a notification that the call is being recorded.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings</code></pre></p>
-<p>The response can be as follows:</p>
-<p> <pre class=codehilite><code>{
-    &quot;active&quot;: true,
-    &quot;id&quot;: &quot;&lt;recordingId&gt;&quot;
-}</code></pre></p>
-<p>Once recording is started you can pause and unpause recording as follows:</p>
-<p> <pre class=codehilite><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings/&lt;recordingId&gt;
+<p>To start recording use <strong>Recordings</strong> API. You will hear a notification that the call is being recorded.
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings</code></pre>
+The response can be as follows:
+<pre class="codehilite"><code>{
+    "active": true,
+    "id": "&lt;recordingId&gt;"
+}</code></pre>
+Once recording is started you can pause and unpause recording as follows:
+<pre class="codehilite"><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings/&lt;recordingId&gt;
 
 {
-&quot;active&quot;: false
-}</code></pre></p>
-<p><strong>Tips</strong>: <a href="https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/">How to Obtain Call Recording Metadata and Content</a></p>
+"active": false
+}</code></pre>
+<strong>Tips</strong>: <a href="https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/">How to Obtain Call Recording Metadata and Content</a></p>
 <h2 id="call-flip">Call Flip</h2>
 <p>Call flipping is useful if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone) and enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone... you get the idea. See <a href="https://www.ringcentral.com/office/features/call-flip/overview.html">How Call Flip works</a>.</p>
 <p><a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding">Configure your Call Flip Settings</a> via Service Site or via <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html">Ringcentral Forwarding Number List API</a>.</p>
-<p> <pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/flip
+<pre class="codehilite"><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/flip
 
 {
-  &quot;callFlipId&quot;: &quot;*2&quot;
-}</code></pre></p>
+  "callFlipId": "*2"
+}</code></pre>
+
 <h2 id="ending-calls">Ending Calls</h2>
 <p>Drop the call for all participants:</p>
-<p> <pre class=codehilite><code>DELETE /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;</code></pre></p>
+<pre class="codehilite"><code>DELETE /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;</code></pre>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -1363,9 +1362,10 @@ Authorization: Bearer &lt;access-token&gt;
 	var base_url = "../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../js/base.js" defer></script>
-      <script src="../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
