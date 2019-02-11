@@ -72,18 +72,25 @@ pages:
     - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
 #    - 'Using the Developer Portal': 'basics/developer-portal.md'
-    - 'Accounts & Extensions': 'basics/configuration/account_extension.md'    
+    - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
 - 'Authentication':
   - 'Getting Started':
-    - 'Node.js': 'missing.md'
-    - 'Python': 'missing.md'
-    - 'PHP': 'missing.md'
-    - 'C#': 'missing.md'
-    - 'API Explorer': 'missing.md'
+    - 'Password Flow':
+      - 'Node.js': 'authentication/quick-start/node.md'
+      - 'Python': 'authentication/quick-start/python.md'
+      - 'PHP': 'authentication/quick-start/php.md'
+      - 'C#': 'authentication/quick-start/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/explorer.md'
+    - 'Authorization Flow':
+      - 'Node.js': 'authentication/quick-start/node.md'
+      - 'Python': 'authentication/quick-start/python.md'
+      - 'PHP': 'authentication/quick-start/php.md'
+      - 'C#': 'authentication/quick-start/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/explorer.md'
   - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
   - 'Sample Applications':
