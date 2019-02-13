@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -969,8 +1003,7 @@
 <li>You can extract ngrok into the folder of your preference and run ngrok from there.</li>
 <li>Launch ngrok by navigating to the directory where you unzipped ngrok and starting with the port you want to expose to the public internet with the following:</li>
 </ul>
-<pre class="codehilite"><code>./ngrok http 4390</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_2nt0ug6bgyian84 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_2nt0ug6bgyian84-panel role=tab><label for=tab-group-0-0_2nt0ug6bgyian84 class=code-tab-label data-lang id=tab-group-0-0_2nt0ug6bgyian84-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_2nt0ug6bgyian84-panel aria-labelledby=tab-group-0-0_2nt0ug6bgyian84-label><pre class=codehilite><code>./ngrok http 4390</code></pre></div></div></p>
 <p>If every thing goes well you should see the follow screen.</p>
 <p><img src="../../img/ngrok-running.png" class="img-fluid"></p>
 <h2 id="create-a-glip-bot-application">Create a Glip Bot application</h2>
@@ -998,8 +1031,7 @@
 <p>Fire up the terminal window and change the path to the cloned applicaton directory and enter the command below:</p>
 </li>
 </ol>
-<pre class="codehilite"><code>$ npm install</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_efvxh0kjd9g3fh2 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_efvxh0kjd9g3fh2-panel role=tab><label for=tab-group-1-0_efvxh0kjd9g3fh2 class=code-tab-label data-lang id=tab-group-1-0_efvxh0kjd9g3fh2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_efvxh0kjd9g3fh2-panel aria-labelledby=tab-group-1-0_efvxh0kjd9g3fh2-label><pre class=codehilite><code>$ npm install</code></pre></div></div></p>
 <ol>
 <li>
 <p>Create a copy of env.template file and rename it to <code>.env</code></p>
@@ -1012,8 +1044,7 @@
 <p>Run the following command in terminal to launch the app.</p>
 </li>
 </ol>
-<pre class="codehilite"><code>$ npm start</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_q3rtv1jv1yhuw9x checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_q3rtv1jv1yhuw9x-panel role=tab><label for=tab-group-2-0_q3rtv1jv1yhuw9x class=code-tab-label data-lang id=tab-group-2-0_q3rtv1jv1yhuw9x-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_q3rtv1jv1yhuw9x-panel aria-labelledby=tab-group-2-0_q3rtv1jv1yhuw9x-label><pre class=codehilite><code>$ npm start</code></pre></div></div></p>
 <ol>
 <li>
 <p>Go to the <code>Bot</code> tab of the recently created app in the developer portal. Click on the <code>Add to Glip</code> button.</p>
@@ -1025,12 +1056,12 @@
 <p>You can now exchange the authorization code for an bot token using the code below:</p>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-javascript">    //Authorization callback method.
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_javascript checked=checked class=code-tab data-lang=javascript aria-controls=tab-group-3-0_javascript-panel role=tab><label for=tab-group-3-0_javascript class=code-tab-label data-lang=javascript id=tab-group-3-0_javascript-label>Javascript</label><div class=code-tabpanel role=tabpanel data-lang=javascript id=tab-group-3-0_javascript-panel aria-labelledby=tab-group-3-0_javascript-label><pre class=codehilite><code class=language-javascript>    //Authorization callback method.
     app.get('/oauth', function (req, res) {
         if(!req.query.code){
             res.status(500);
-            res.send({"Error": "Looks like we're not getting code."});
-            console.log("Looks like we're not getting code.");
+            res.send({&quot;Error&quot;: &quot;Looks like we're not getting code.&quot;});
+            console.log(&quot;Looks like we're not getting code.&quot;);
         }else {
             platform.login({
                 code : req.query.code,
@@ -1042,26 +1073,25 @@
                 subscribeToGlipEvents();
             }).catch(function(e){
                 console.error(e)
-                res.send("Error: " + e);
+                res.send(&quot;Error: &quot; + e);
             })
         }
-    });</code></pre>
-
+    });</code></pre></div></div></p>
 <p>The access token obtained is a <code>permanent</code> access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to Glip.</p>
 <ol>
 <li>We can now subscribe to glip events using the code below:</li>
 </ol>
-<pre class="codehilite"><code class="language-javascript">    function subscribeToGlipEvents(token){
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_javascript checked=checked class=code-tab data-lang=javascript aria-controls=tab-group-4-0_javascript-panel role=tab><label for=tab-group-4-0_javascript class=code-tab-label data-lang=javascript id=tab-group-4-0_javascript-label>Javascript</label><div class=code-tabpanel role=tabpanel data-lang=javascript id=tab-group-4-0_javascript-panel aria-labelledby=tab-group-4-0_javascript-label><pre class=codehilite><code class=language-javascript>    function subscribeToGlipEvents(token){
         var requestData = {
-            "eventFilters": [
-                "/restapi/v1.0/glip/posts",
-                "/restapi/v1.0/glip/groups"
+            &quot;eventFilters&quot;: [
+                &quot;/restapi/v1.0/glip/posts&quot;,
+                &quot;/restapi/v1.0/glip/groups&quot;
             ],
-            "deliveryMode": {
-                "transportType": "WebHook",
-                "address": REDIRECT_HOST + "/callback"
+            &quot;deliveryMode&quot;: {
+                &quot;transportType&quot;: &quot;WebHook&quot;,
+                &quot;address&quot;: REDIRECT_HOST + &quot;/callback&quot;
             },
-            "expiresIn": 500000000
+            &quot;expiresIn&quot;: 500000000
         };
         platform.post('/subscription', requestData)
             .then(function (subscriptionResponse) {
@@ -1072,8 +1102,7 @@
                 console.error(e);
                 throw e;
             });
-    }</code></pre>
-
+    }</code></pre></div></div></p>
 <ol>
 <li>
 <p>Now login to <code>glip.devtest.ringcentral.com</code> with your credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.</p>
@@ -1083,22 +1112,22 @@
 <p>You should now see the notification messages in the console as show below:</p>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-json">{
-    "timestamp": "2017-03-21T18:29:27.408+0000",
-    "subscriptionId": "a45645-0001-cc71-9de3-674476722",
-    "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-    "event": "/restapi/v1.0/glip/posts",
-    "body": {
-        "eventType": "PostAdded",
-        "id": "0000001",
-        "type": "TextMessage",
-        "text": "Hi!",
-        "creatorId": "123456789",
-        "groupId": "1234",
-        "creationTime": "2017-03-21T18:29:20Z",
-        "lastModifiedTime": "2017-03-21T18:29:27Z"
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-5-0_json-panel role=tab><label for=tab-group-5-0_json class=code-tab-label data-lang=json id=tab-group-5-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-5-0_json-panel aria-labelledby=tab-group-5-0_json-label><pre class=codehilite><code class=language-json>{
+    &quot;timestamp&quot;: &quot;2017-03-21T18:29:27.408+0000&quot;,
+    &quot;subscriptionId&quot;: &quot;a45645-0001-cc71-9de3-674476722&quot;,
+    &quot;uuid&quot;: &quot;b11c9430-9687-4498-b12b-3fcb470bfe04&quot;,
+    &quot;event&quot;: &quot;/restapi/v1.0/glip/posts&quot;,
+    &quot;body&quot;: {
+        &quot;eventType&quot;: &quot;PostAdded&quot;,
+        &quot;id&quot;: &quot;0000001&quot;,
+        &quot;type&quot;: &quot;TextMessage&quot;,
+        &quot;text&quot;: &quot;Hi!&quot;,
+        &quot;creatorId&quot;: &quot;123456789&quot;,
+        &quot;groupId&quot;: &quot;1234&quot;,
+        &quot;creationTime&quot;: &quot;2017-03-21T18:29:20Z&quot;,
+        &quot;lastModifiedTime&quot;: &quot;2017-03-21T18:29:27Z&quot;
     }
-}</code></pre>
+}</code></pre></div></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

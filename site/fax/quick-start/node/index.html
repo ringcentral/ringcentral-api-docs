@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -975,11 +1009,10 @@
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
 <h2 id="send-a-fax-message">Send a Fax message</h2>
 <h3 id="install-ringcentral-node-js-sdk">Install RingCentral Node JS SDK</h3>
-<pre class="codehilite"><code class="language-bash">$ npm install ringcentral --save</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-0-0_bash-panel role=tab><label for=tab-group-0-0_bash class=code-tab-label data-lang=bash id=tab-group-0-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-0-0_bash-panel aria-labelledby=tab-group-0-0_bash-label><pre class=codehilite><code class=language-bash>$ npm install ringcentral --save</code></pre></div></div></p>
 <h3 id="create-and-edit-faxjs">Create and Edit fax.js</h3>
 <p>Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-<pre class="codehilite"><code class="language-javascript">const RC = require('ringcentral');
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_javascript checked=checked class=code-tab data-lang=javascript aria-controls=tab-group-1-0_javascript-panel role=tab><label for=tab-group-1-0_javascript class=code-tab-label data-lang=javascript id=tab-group-1-0_javascript-label>Javascript</label><div class=code-tabpanel role=tabpanel data-lang=javascript id=tab-group-1-0_javascript-panel aria-labelledby=tab-group-1-0_javascript-label><pre class=codehilite><code class=language-javascript>const RC = require('ringcentral');
 
 RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
 
@@ -989,7 +1022,7 @@ RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
 RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
 RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101"&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
 
 var rcsdk = new RC({
       server: RINGCENTRAL_SERVER,
@@ -1012,7 +1045,7 @@ function send_fax() {
     var body = {
       to: [{'phoneNumber': RECIPIENT}],
       faxResolution: 'High',
-      coverPageText: "This is a demo Fax page from Node JS"
+      coverPageText: &quot;This is a demo Fax page from Node JS&quot;
     }
 
     formData.append('json', new Buffer(JSON.stringify(body)), {
@@ -1024,14 +1057,12 @@ function send_fax() {
 
     platform.post('/account/~/extension/~/fax', formData)
     .then(function (resp) {
-        console.log("FAX sent. Message status: " + resp.json().messageStatus)
+        console.log(&quot;FAX sent. Message status: &quot; + resp.json().messageStatus)
     })
-}</code></pre>
-
+}</code></pre></div></div></p>
 <h3 id="run-your-code">Run Your Code</h3>
 <p>You are almost done. Now run your script.</p>
-<pre class="codehilite"><code class="language-bash">$ node fax.js</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-2-0_bash-panel role=tab><label for=tab-group-2-0_bash class=code-tab-label data-lang=bash id=tab-group-2-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-2-0_bash-panel aria-labelledby=tab-group-2-0_bash-label><pre class=codehilite><code class=language-bash>$ node fax.js</code></pre></div></div></p>
 <h2 id="publish-your-app">Publish Your App</h2>
 <p>Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend <a href="../basics/publish">going through this process</a> for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.</p>
 

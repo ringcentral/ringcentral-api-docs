@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -982,91 +1016,89 @@
 <p><img src="../../img/glip_post_attachment_demo.png" class="img-fluid"></p>
 <h3 id="inbound-webhook-example">Inbound Webhook Example</h3>
 <p>Here is an example message body for an inbound webhook:</p>
-<pre class="codehilite"><code class="language-json">{
-  "icon": "https://example.com/post_icon.png",
-  "title": "**Title of the post**",
-  "body": "Body of the post",
-  "attachments": [
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-0-0_json-panel role=tab><label for=tab-group-0-0_json class=code-tab-label data-lang=json id=tab-group-0-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-0-0_json-panel aria-labelledby=tab-group-0-0_json-label><pre class=codehilite><code class=language-json>{
+  &quot;icon&quot;: &quot;https://example.com/post_icon.png&quot;,
+  &quot;title&quot;: &quot;**Title of the post**&quot;,
+  &quot;body&quot;: &quot;Body of the post&quot;,
+  &quot;attachments&quot;: [
     {
-      "color": "#00ff2a",
-      "pretext": "Attachment pretext appears before the attachment block",
-      "author_name": "Author Name",
-      "author_link": "https://example.com/author_link",
-      "author_icon": "https://example.com/author_icon.png",
-      "title": "Attachment Title",
-      "title_link": "https://example.com/title_link",
-      "fields": [
+      &quot;color&quot;: &quot;#00ff2a&quot;,
+      &quot;pretext&quot;: &quot;Attachment pretext appears before the attachment block&quot;,
+      &quot;author_name&quot;: &quot;Author Name&quot;,
+      &quot;author_link&quot;: &quot;https://example.com/author_link&quot;,
+      &quot;author_icon&quot;: &quot;https://example.com/author_icon.png&quot;,
+      &quot;title&quot;: &quot;Attachment Title&quot;,
+      &quot;title_link&quot;: &quot;https://example.com/title_link&quot;,
+      &quot;fields&quot;: [
         {
-          "title": "Field 1",
-          "value": "A short field",
-          "short": true
+          &quot;title&quot;: &quot;Field 1&quot;,
+          &quot;value&quot;: &quot;A short field&quot;,
+          &quot;short&quot;: true
         },
         {
-          "title": "Field 2",
-          "value": "[A linked short field](https://example.com)",
-          "short": true
+          &quot;title&quot;: &quot;Field 2&quot;,
+          &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
+          &quot;short&quot;: true
         },
         {
-          "title": "Field 3",
-          "value": "A long, full-width field with *formatting* and [a link](https://example.com)"
+          &quot;title&quot;: &quot;Field 3&quot;,
+          &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;
         }
       ],
-      "text": "Attachment text"
-      "image_url": "https://example.com/congrats.gif",
-      "footer": "Attachment footer and timestamp",
-      "footer_icon": "https://example.com/footer_icon.png",
-      "ts": 1503723350
+      &quot;text&quot;: &quot;Attachment text&quot;
+      &quot;image_url&quot;: &quot;https://example.com/congrats.gif&quot;,
+      &quot;footer&quot;: &quot;Attachment footer and timestamp&quot;,
+      &quot;footer_icon&quot;: &quot;https://example.com/footer_icon.png&quot;,
+      &quot;ts&quot;: 1503723350
     }
   ]
-}</code></pre>
-
+}</code></pre></div></div></p>
 <p>Here is some example code:</p>
 <p>Go: https://github.com/grokify/go-glip/tree/master/examples/test_webhook</p>
 <h3 id="post-message-example">Post Message Example</h3>
 <p>Here is the same message with slightly different property names for a API request:</p>
-<pre class="codehilite"><code class="language-json">{
-  "text": "Body of the post",
-  "attachments": [
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-1-0_json-panel role=tab><label for=tab-group-1-0_json class=code-tab-label data-lang=json id=tab-group-1-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-1-0_json-panel aria-labelledby=tab-group-1-0_json-label><pre class=codehilite><code class=language-json>{
+  &quot;text&quot;: &quot;Body of the post&quot;,
+  &quot;attachments&quot;: [
     {
-      "type": "Card",
-      "fallback": "Attachment fallback text",
-      "color": "#00ff2a",
-      "intro": "Attachment intro appears before the attachment block",
-        "author": {
-          "name": "Author Name",
-          "uri": "https://example.com/author_link",
-          "iconUri": "https://example.com/author_icon.png"
+      &quot;type&quot;: &quot;Card&quot;,
+      &quot;fallback&quot;: &quot;Attachment fallback text&quot;,
+      &quot;color&quot;: &quot;#00ff2a&quot;,
+      &quot;intro&quot;: &quot;Attachment intro appears before the attachment block&quot;,
+        &quot;author&quot;: {
+          &quot;name&quot;: &quot;Author Name&quot;,
+          &quot;uri&quot;: &quot;https://example.com/author_link&quot;,
+          &quot;iconUri&quot;: &quot;https://example.com/author_icon.png&quot;
         },
-      "title": "Attachment Title",
-      "text": "Attachment text",
-      "imageUri": "https://example.com/congrats.gif",
-      "thumbnailUri": "https://example.com/thumbnail_icon.png",
-      "fields": [
+      &quot;title&quot;: &quot;Attachment Title&quot;,
+      &quot;text&quot;: &quot;Attachment text&quot;,
+      &quot;imageUri&quot;: &quot;https://example.com/congrats.gif&quot;,
+      &quot;thumbnailUri&quot;: &quot;https://example.com/thumbnail_icon.png&quot;,
+      &quot;fields&quot;: [
         {
-          "title": "Field 1",
-          "value": "A short field",
-          "style": "Short"
-        },
-        {
-          "title": "Field 2",
-          "value": "[A linked short field](https://example.com)",
-          "style": "Short"
+          &quot;title&quot;: &quot;Field 1&quot;,
+          &quot;value&quot;: &quot;A short field&quot;,
+          &quot;style&quot;: &quot;Short&quot;
         },
         {
-          "title": "Field 3",
-          "value": "A long, full-width field with *formatting* and [a link](https://example.com)",
-          "style": "Long"
+          &quot;title&quot;: &quot;Field 2&quot;,
+          &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
+          &quot;style&quot;: &quot;Short&quot;
+        },
+        {
+          &quot;title&quot;: &quot;Field 3&quot;,
+          &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;,
+          &quot;style&quot;: &quot;Long&quot;
         }
       ],
-      "footnote": {
-        "text": "Attachment footer and timestamp",
-        "iconUri": "https://example.com/footer_icon.png",
-        "time": "2018-01-05T18:52:35.993311508-08:00"
+      &quot;footnote&quot;: {
+        &quot;text&quot;: &quot;Attachment footer and timestamp&quot;,
+        &quot;iconUri&quot;: &quot;https://example.com/footer_icon.png&quot;,
+        &quot;time&quot;: &quot;2018-01-05T18:52:35.993311508-08:00&quot;
       }
     }
   ]
-}</code></pre>
-
+}</code></pre></div></div></p>
 <p>Here is some example code:</p>
 <p>Go: https://github.com/grokify/go-ringcentral/tree/master/examples/glip_post_attachment</p>
 <h3 id="property-descriptions">Property Descriptions</h3>
@@ -1080,18 +1112,16 @@
 <li><strong>author_link</strong> — Used to link the authors name. Will only work when author_name is present.</li>
 <li><strong>author_icon</strong> — A url to an image up to 82x82 px that will display to the left of the author's name. Will only work when author_name is present.</li>
 </ul>
-<pre class="codehilite"><code class="language-json">"author_name": "Author Name",
-"author_link": "https://example.com/author_link",
-"author_icon": "https://example.com/author_icon.png",</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-2-0_json-panel role=tab><label for=tab-group-2-0_json class=code-tab-label data-lang=json id=tab-group-2-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-2-0_json-panel aria-labelledby=tab-group-2-0_json-label><pre class=codehilite><code class=language-json>&quot;author_name&quot;: &quot;Author Name&quot;,
+&quot;author_link&quot;: &quot;https://example.com/author_link&quot;,
+&quot;author_icon&quot;: &quot;https://example.com/author_icon.png&quot;,</code></pre></div></div></p>
 <p><strong>title</strong> — A set of properties that will render a title under the author if author is set.</p>
 <ul>
 <li><strong>title</strong> — The actual title string</li>
 <li><strong>title_link</strong> — Used to linkify the title</li>
 </ul>
-<pre class="codehilite"><code class="language-json">"title": "Attachment Title",
-"title_link": "https://fexample.com/title_link",</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-3-0_json-panel role=tab><label for=tab-group-3-0_json class=code-tab-label data-lang=json id=tab-group-3-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-3-0_json-panel aria-labelledby=tab-group-3-0_json-label><pre class=codehilite><code class=language-json>&quot;title&quot;: &quot;Attachment Title&quot;,
+&quot;title_link&quot;: &quot;https://fexample.com/title_link&quot;,</code></pre></div></div></p>
 <p><strong>text</strong> — A large string field (up to 1000 chars) to be displayed as the body of a message (markdown)</p>
 <p><strong>fields</strong> — An array of objects that will render indvidual subsections within a message</p>
 <ul>
@@ -1099,23 +1129,22 @@
 <li><strong>value</strong> — A string that will display under the field title (Markdown)</li>
 <li><strong>style</strong> — An enumerated string for <code>Short</code> and <code>Long</code> to indicate the width of the message, Defaults to <code>Long</code></li>
 </ul>
-<pre class="codehilite"><code class="language-json">"fields": [
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-4-0_json-panel role=tab><label for=tab-group-4-0_json class=code-tab-label data-lang=json id=tab-group-4-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-4-0_json-panel aria-labelledby=tab-group-4-0_json-label><pre class=codehilite><code class=language-json>&quot;fields&quot;: [
   {
-    "title": "Field 1",
-    "value": "A short field",
-    "short": true
+    &quot;title&quot;: &quot;Field 1&quot;,
+    &quot;value&quot;: &quot;A short field&quot;,
+    &quot;short&quot;: true
   },
   {
-    "title": "Field 2",
-    "value": "[A linked short field](https://example.com)",
-    "short": true
+    &quot;title&quot;: &quot;Field 2&quot;,
+    &quot;value&quot;: &quot;[A linked short field](https://example.com)&quot;,
+    &quot;short&quot;: true
   },
   {
-    "title": "Field 3",
-    "value": "A long, full-width field with *formatting* and [a link](https://example.com)"
+    &quot;title&quot;: &quot;Field 3&quot;,
+    &quot;value&quot;: &quot;A long, full-width field with *formatting* and [a link](https://example.com)&quot;
   }
-],</code></pre>
-
+],</code></pre></div></div></p>
 <p><strong>image_url</strong> — A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. Glip only support "HTTPS" Urls. If the URL is a http url we show a placeholder.</p>
 <p><strong>thumb_url</strong> — A string url used to display a thumbnail to the right of a message (82x82)</p>
 <p><strong>footer</strong> — A set of properties that will render a footer under the message.</p>
@@ -1124,10 +1153,9 @@
 <li><strong>footer_icon</strong> — A URL used to display a 32x32px icon to the left of the footer</li>
 <li><strong>ts</strong> — A Unix timestamp to be formatted and displayed to the right of the footer</li>
 </ul>
-<pre class="codehilite"><code class="language-json">"footer": "Attachment footer and timestamp",
-"footer_icon": "https://example.com/footer_icon.png",
-"ts": 1503714729</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-5-0_json-panel role=tab><label for=tab-group-5-0_json class=code-tab-label data-lang=json id=tab-group-5-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-5-0_json-panel aria-labelledby=tab-group-5-0_json-label><pre class=codehilite><code class=language-json>&quot;footer&quot;: &quot;Attachment footer and timestamp&quot;,
+&quot;footer_icon&quot;: &quot;https://example.com/footer_icon.png&quot;,
+&quot;ts&quot;: 1503714729</code></pre></div></div></p>
 <h3 id="markdown-support">Markdown Support</h3>
 <p>Glip supports a simple form of Markdown for formatting the body of incoming messages. The following are supported for post attachments in addition to post bodies.</p>
 <p>*italics*</p>

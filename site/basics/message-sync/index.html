@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1071,36 +1105,35 @@
 <p>Due to implementation specifics, the server cannot guarantee the exact number of records that is specified in recordCount parameter. So the client application should be ready to get more records than it is requested in some rare cases.</p>
 </div>
 <p>The corresponding response from server will be:</p>
-<pre class="codehilite"><code class="language-json">{
-   "uri": "https://.../message-sync?messageType=VoiceMail&amp;syncType=FSync&amp;dateFrom=2012-02-25T00:00:00.000Z",
-             "records":    [
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-0-0_json-panel role=tab><label for=tab-group-0-0_json class=code-tab-label data-lang=json id=tab-group-0-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-0-0_json-panel aria-labelledby=tab-group-0-0_json-label><pre class=codehilite><code class=language-json>{
+   &quot;uri&quot;: &quot;https://.../message-sync?messageType=VoiceMail&amp;syncType=FSync&amp;dateFrom=2012-02-25T00:00:00.000Z&quot;,
+             &quot;records&quot;:    [
       {
-         "uri": "https://.../message-store/308833278010",  "id": 308833278010,
-         "to": [{"contact": {"name": "John Smith"}}],
-         "from": {"contact": {"name": "Jane Smith"}},
-         "type": "VoiceMail",
-         "creationTime": "2012-08-08T12:17:28.000Z",
-         "readStatus": "Unread",
-         "priority": "Normal",
-         "attachments": [         {
-            "id": 1,
-            "uri": "http://.../message-store/308833278010/content/1",  "contentType": "audio/x-wav",
-            "vmDuration": 42
+         &quot;uri&quot;: &quot;https://.../message-store/308833278010&quot;,  &quot;id&quot;: 308833278010,
+         &quot;to&quot;: [{&quot;contact&quot;: {&quot;name&quot;: &quot;John Smith&quot;}}],
+         &quot;from&quot;: {&quot;contact&quot;: {&quot;name&quot;: &quot;Jane Smith&quot;}},
+         &quot;type&quot;: &quot;VoiceMail&quot;,
+         &quot;creationTime&quot;: &quot;2012-08-08T12:17:28.000Z&quot;,
+         &quot;readStatus&quot;: &quot;Unread&quot;,
+         &quot;priority&quot;: &quot;Normal&quot;,
+         &quot;attachments&quot;: [         {
+            &quot;id&quot;: 1,
+            &quot;uri&quot;: &quot;http://.../message-store/308833278010/content/1&quot;,  &quot;contentType&quot;: &quot;audio/x-wav&quot;,
+            &quot;vmDuration&quot;: 42
          }],
-         "direction": "Inbound",
-         "availability": "Alive",
-         "subject": "Message",
-         "messageStatus": "Received",
-         "lastModifiedTime": "2012-08-08T12:17:28.000Z"
+         &quot;direction&quot;: &quot;Inbound&quot;,
+         &quot;availability&quot;: &quot;Alive&quot;,
+         &quot;subject&quot;: &quot;Message&quot;,
+         &quot;messageStatus&quot;: &quot;Received&quot;,
+         &quot;lastModifiedTime&quot;: &quot;2012-08-08T12:17:28.000Z&quot;
       }
    ],
-   "syncInfo":    {
-      "syncType": "FSync",
-      "syncToken": "AAAAAv8AAAE1sc6UAP_______________wAAATlo9mWw",
-      "syncTime": "2012-08-27T16:42:22.000Z"
+   &quot;syncInfo&quot;:    {
+      &quot;syncType&quot;: &quot;FSync&quot;,
+      &quot;syncToken&quot;: &quot;AAAAAv8AAAE1sc6UAP_______________wAAATlo9mWw&quot;,
+      &quot;syncTime&quot;: &quot;2012-08-27T16:42:22.000Z&quot;
    }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <p>Sync Token to be used in subsequent request is returned as a part of syncInfo structure (see the bottom of code example above).</p>
 <div class="admonition warning">
 <p class="admonition-title">FYI</p>

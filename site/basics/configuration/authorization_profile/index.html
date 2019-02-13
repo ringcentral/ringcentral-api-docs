@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -987,10 +1021,8 @@
 
 
 <p>For example: </p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p>```http tab="Response"
+HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Language: en-US
 {
@@ -1008,13 +1040,11 @@ Content-Language: en-US
         },
         ...
     ]
-}</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/authz-profile
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_jxpir3ip795wf1k checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_jxpir3ip795wf1k-panel role=tab><label for=tab-group-0-0_jxpir3ip795wf1k class=code-tab-label data-lang id=tab-group-0-0_jxpir3ip795wf1k-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_jxpir3ip795wf1k-panel aria-labelledby=tab-group-0-0_jxpir3ip795wf1k-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/~/extension/~/authz-profile
 Accept: application/json
-Accept-Language: en-US</code></pre></div>
-</div>
+Accept-Language: en-US</code></pre></div></div></p>
 <div class="admonition info">
 <p class="admonition-title">Keep in Mind</p>
 <ul>
@@ -1026,10 +1056,8 @@ Accept-Language: en-US</code></pre></div>
 <h2 id="permission-validation">Permission Validation</h2>
 <p>Users are granted specific permissions in RingCentral by Account Administrators within the Online Account Portal for either <a href="https://service.ringcentral.com">Production</a> or <a href="https://service.devtest.ringcentral.com">Sandbox</a> accounts.</p>
 <p>We strongly recommended to developers that they should always validate user actions against the permissions of an extension, and not against the role(s) assigned to a given user extension as permissions assigned to a role can modify over time. This can be accomplished by checking access to verify that a user has a specified permission and can be executed with the following API request (requires a valid <code>access_token</code> for the user):</p>
-<div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p>```http tab="Response"
+HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Language: en-US
 {
@@ -1040,14 +1068,12 @@ Content-Language: en-US
         "effectiveRole": { "id": "12346", "uri": ... },
         "scope": "Self"
     }
-}</code></pre></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_01oq8meo0vxecic checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_01oq8meo0vxecic-panel role=tab><label for=tab-group-1-0_01oq8meo0vxecic class=code-tab-label data-lang id=tab-group-1-0_01oq8meo0vxecic-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_01oq8meo0vxecic-panel aria-labelledby=tab-group-1-0_01oq8meo0vxecic-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/~/extension/~/authz-profile/check?permissionId=ReadMessages
 Authorization: Bearer xxxxxxxxxxxxx
 Accept: application/json
-Accept-Language: en-US</code></pre></div>
-</div>
+Accept-Language: en-US</code></pre></div></div></p>
 <p>The response attribute <code>successful</code> should only ever be <code>true</code> if all requested permissions are granted. This API resource is part of the <strong>Light</strong> API Group, which makes it much easier to execute this action for your application or integration.</p>
 <h3 id="api-groups-and-rate-limits">API Groups and Rate Limits</h3>
 <p>Since Roles and Permissions are part of the Extension API resource, to make a request to the base route falls under the <strong>Light</strong> API Group.</p>

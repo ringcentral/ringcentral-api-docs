@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -966,16 +1000,15 @@
 <p>The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the <code>POST</code>, <code>GET</code> and <code>DELETE</code> methods correspondingly.</p>
 <h2 id="making-a-call">Making a Call</h2>
 <p>The two-legged RingOut call can be created via the following request:</p>
-<pre class="codehilite"><code>POST /restapi/v1.0/account/~/extension/~/ringout
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_synkf6r8yqdhuct checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_synkf6r8yqdhuct-panel role=tab><label for=tab-group-0-0_synkf6r8yqdhuct class=code-tab-label data-lang id=tab-group-0-0_synkf6r8yqdhuct-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_synkf6r8yqdhuct-panel aria-labelledby=tab-group-0-0_synkf6r8yqdhuct-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/extension/~/ringout
 Content-Type: application/json
 Authorization: Bearer &lt;access-token&gt; 
 
 {
-    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
-    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
-    "playPrompt": true /* optional field */
-}</code></pre>
-
+    &quot;from&quot;: {&quot;phoneNumber&quot;: &quot;13443334444&quot;}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
+    &quot;to&quot;: {&quot;phoneNumber&quot;: &quot;13453443434&quot;}, /* to parameter is required */ 
+    &quot;playPrompt&quot;: true /* optional field */
+}</code></pre></div></div></p>
 <p>Where:</p>
 <ul>
 <li>
@@ -992,19 +1025,18 @@ Authorization: Bearer &lt;access-token&gt;
 </li>
 </ul>
 <p>The response can be as follows:</p>
-<pre class="codehilite"><code>200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ujgo6la4wt7yif5 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ujgo6la4wt7yif5-panel role=tab><label for=tab-group-1-0_ujgo6la4wt7yif5 class=code-tab-label data-lang id=tab-group-1-0_ujgo6la4wt7yif5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ujgo6la4wt7yif5-panel aria-labelledby=tab-group-1-0_ujgo6la4wt7yif5-label><pre class=codehilite><code>200 OK
 Content-Type: application/json 
 
 {
-    "id": 234343434, 
-    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-    "status": {  
-        "callStatus": "Success",  
-        "callerStatus": "Success",  
-        "calleeStatus": "Success"   
+    &quot;id&quot;: 234343434, 
+    &quot;uri&quot;: &quot;/restapi/v1.0/account/~/extension/~/ringout/234343434&quot;, 
+    &quot;status&quot;: {  
+        &quot;callStatus&quot;: &quot;Success&quot;,  
+        &quot;callerStatus&quot;: &quot;Success&quot;,  
+        &quot;calleeStatus&quot;: &quot;Success&quot;   
     }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <p>Where:</p>
 <ul>
 <li>
@@ -1105,25 +1137,23 @@ Content-Type: application/json
 
 
 <p>The response will be as follows:</p>
-<pre class="codehilite"><code>200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_jtw8pwe20qjwfd2 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_jtw8pwe20qjwfd2-panel role=tab><label for=tab-group-2-0_jtw8pwe20qjwfd2 class=code-tab-label data-lang id=tab-group-2-0_jtw8pwe20qjwfd2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_jtw8pwe20qjwfd2-panel aria-labelledby=tab-group-2-0_jtw8pwe20qjwfd2-label><pre class=codehilite><code>200 OK
 Content-Type: application/json
 
 {  
-    "id": 234343434, 
-    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
-    "status": {  
-        "callStatus": "Success",  
-        "callerStatus": "Success",  
-        "calleeStatus": "Success"   
+    &quot;id&quot;: 234343434, 
+    &quot;uri&quot;: &quot;/restapi/v1.0/account/~/extension/~/ringout/234343434&quot;, 
+    &quot;status&quot;: {  
+        &quot;callStatus&quot;: &quot;Success&quot;,  
+        &quot;callerStatus&quot;: &quot;Success&quot;,  
+        &quot;calleeStatus&quot;: &quot;Success&quot;   
     }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <h2 id="call-control">Call Control</h2>
 <p>The RingCentral Connect Platform does not currently support control of outbound calls. However, you can cancel ringout call while callee party status is <code>InProgress</code>. To do that make a <code>DELETE</code> request to ringout URI.</p>
-<pre class="codehilite"><code>DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434  
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_7h9ujh179hitvlw checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_7h9ujh179hitvlw-panel role=tab><label for=tab-group-3-0_7h9ujh179hitvlw class=code-tab-label data-lang id=tab-group-3-0_7h9ujh179hitvlw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_7h9ujh179hitvlw-panel aria-labelledby=tab-group-3-0_7h9ujh179hitvlw-label><pre class=codehilite><code>DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434  
 
-204 No Content  </code></pre>
-
+204 No Content  </code></pre></div></div></p>
 <h2 id="caller-id">Caller ID</h2>
 <p>RingCentral allows users to select which number to use for their Caller Id Name (<code>CNAM</code>) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/Outbound-Caller-ID-Overview">KB Article #3471</a>.</p>
 

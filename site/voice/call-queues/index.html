@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -983,46 +1017,44 @@
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension?type=Department
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-0-0_http-panel role=tab><label for=tab-group-0-0_http class=code-tab-label data-lang=http id=tab-group-0-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-0-0_http-panel aria-labelledby=tab-group-0-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension?type=Department
 Accept: application/json
 Content-Type: application/json
 Accept-Language: en-US
-Authorization: Bearer MyToken</code></pre>
-
+Authorization: Bearer MyToken</code></pre></div></div></p>
 <p><strong>Example Response</strong></p>
-<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&amp;page=1&amp;perPage=100",
-  "records" : [
+  &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&amp;page=1&amp;perPage=100&quot;,
+  &quot;records&quot; : [
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333",
-      "id" : 22223333,
-      "extensionNumber" : "201",
-      "contact" : {
-        "firstName" : "Sales Queue",
-        "email" : "john.doe@example.com"
+      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333&quot;,
+      &quot;id&quot; : 22223333,
+      &quot;extensionNumber&quot; : &quot;201&quot;,
+      &quot;contact&quot; : {
+        &quot;firstName&quot; : &quot;Sales Queue&quot;,
+        &quot;email&quot; : &quot;john.doe@example.com&quot;
       },
-      "name" : "Sales Queue",
-      "type" : "Department",
-      "status" : "Enabled",
-      "permissions" : {
-        "admin" : {
-          "enabled" : false
+      &quot;name&quot; : &quot;Sales Queue&quot;,
+      &quot;type&quot; : &quot;Department&quot;,
+      &quot;status&quot; : &quot;Enabled&quot;,
+      &quot;permissions&quot; : {
+        &quot;admin&quot; : {
+          &quot;enabled&quot; : false
         },
-        "internationalCalling" : {
-          "enabled" : false
+        &quot;internationalCalling&quot; : {
+          &quot;enabled&quot; : false
         }
       },
-      "profileImage" : {
-        "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image"
+      &quot;profileImage&quot; : {
+        &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image&quot;
       }
     }
   ],
-  "paging" : {...}
-}</code></pre>
-
+  &quot;paging&quot; : {...}
+}</code></pre></div></div></p>
 <h2 id="read-queue-agent-list">Read Queue Agent List</h2>
 <p>To get the agent members of a queue, call the department members endpoint.</p>
 <table class="table">
@@ -1042,32 +1074,30 @@ Content-Type: application/json
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/11111111/department/22223333/members
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-2-0_http-panel role=tab><label for=tab-group-2-0_http class=code-tab-label data-lang=http id=tab-group-2-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-2-0_http-panel aria-labelledby=tab-group-2-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/11111111/department/22223333/members
 Accept: application/json
-Authorization: Bearer MyToken</code></pre>
-
+Authorization: Bearer MyToken</code></pre></div></div></p>
 <p><strong>Example Response</strong></p>
-<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-3-0_http-panel role=tab><label for=tab-group-3-0_http class=code-tab-label data-lang=http id=tab-group-3-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-3-0_http-panel aria-labelledby=tab-group-3-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&amp;perPage=100",
-  "records" : [
+  &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&amp;perPage=100&quot;,
+  &quot;records&quot; : [
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
-      "id" : 11112222,
-      "extensionNumber" : "101"
+      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222&quot;,
+      &quot;id&quot; : 11112222,
+      &quot;extensionNumber&quot; : &quot;101&quot;
     },
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333",
-      "id" : 11113333,
-      "extensionNumber" : "102"
+      &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333&quot;,
+      &quot;id&quot; : 11113333,
+      &quot;extensionNumber&quot; : &quot;102&quot;
     }
   ],
-  "paging" : {...}
-  "navigatin" : {...}
-}</code></pre>
-
+  &quot;paging&quot; : {...}
+  &quot;navigatin&quot; : {...}
+}</code></pre></div></div></p>
 <h2 id="update-queue-agent-list">Update Queue Agent List</h2>
 <p>Users can be added and removed as queue agents using the <code>account/{accountId}/department/bulk-assign</code> endpoint and the extension ids of interest.</p>
 <table class="table">
@@ -1087,36 +1117,34 @@ Content-Type: application/json
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/11111111/department/bulk-assign
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-4-0_http-panel role=tab><label for=tab-group-4-0_http class=code-tab-label data-lang=http id=tab-group-4-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-4-0_http-panel aria-labelledby=tab-group-4-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/11111111/department/bulk-assign
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer MyToken
 
 {
-  "items" : [
+  &quot;items&quot; : [
     {
-      "departmentId" : "22223333",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
+      &quot;departmentId&quot; : &quot;22223333&quot;,   
+      &quot;addedExtensionIds&quot; : [
+        &quot;11112222&quot;, &quot;11113333&quot;
       ],
-      "removedExtensionIds" : [
-        "11114444", "11115555"
+      &quot;removedExtensionIds&quot; : [
+        &quot;11114444&quot;, &quot;11115555&quot;
       ]
     }, 
     {
-      "departmentId" : "22224444",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
+      &quot;departmentId&quot; : &quot;22224444&quot;,   
+      &quot;addedExtensionIds&quot; : [
+        &quot;11112222&quot;, &quot;11113333&quot;
       ]
     }
   ] 
-}</code></pre>
-
+}</code></pre></div></div></p>
 <p><strong>Example Response</strong></p>
-<pre class="codehilite"><code class="language-http">HTTP/1.1 204 No Content
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-5-0_http-panel role=tab><label for=tab-group-5-0_http class=code-tab-label data-lang=http id=tab-group-5-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-5-0_http-panel aria-labelledby=tab-group-5-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 204 No Content
 Content-Type: application/json
-Content-Language: en-US</code></pre>
-
+Content-Language: en-US</code></pre></div></div></p>
 <h2 id="read-user-queue-agent-presence">Read User Queue Agent Presence</h2>
 <p>A user extension's actual presence status is determined by aggregating a number of different presence statuses including <code>dndStatus</code>, <code>telephonyStatus</code> and <code>userStatus</code>. These and the aggregate presence, <code>presenceStatus</code> are availabe in the presence endpoint.</p>
 <p>A user extension's queue agent status is set by the extension presence <code>dndStatus</code> property. This can be set to one of four values:</p>
@@ -1143,32 +1171,30 @@ Content-Language: en-US</code></pre>
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension/11112222/presence
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-6><input name=tab-group-6 type=radio id=tab-group-6-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-6-0_http-panel role=tab><label for=tab-group-6-0_http class=code-tab-label data-lang=http id=tab-group-6-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-6-0_http-panel aria-labelledby=tab-group-6-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
-Authorization: Bearer MyToken</code></pre>
-
+Authorization: Bearer MyToken</code></pre></div></div></p>
 <p><strong>Example Response</strong></p>
-<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-7-0_http-panel role=tab><label for=tab-group-7-0_http class=code-tab-label data-lang=http id=tab-group-7-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-7-0_http-panel aria-labelledby=tab-group-7-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 530
 
 {
-  "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222/presence",
-  "extension" : {
-    "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222",
-    "id" : 11112222,
-    "extensionNumber" : "101"
+  &quot;uri&quot; : &quot;https.../restapi/v1.0/account/11111111/extension/11112222/presence&quot;,
+  &quot;extension&quot; : {
+    &quot;uri&quot; : &quot;https.../restapi/v1.0/account/11111111/extension/11112222&quot;,
+    &quot;id&quot; : 11112222,
+    &quot;extensionNumber&quot; : &quot;101&quot;
   },
-  "presenceStatus" : "Available",
-  "telephonyStatus" : "NoCall",
-  "userStatus" : "Available",
-  "dndStatus" : "TakeAllCalls",
-  "message" : "Hello, World",
-  "allowSeeMyPresence" : true,
-  "ringOnMonitoredCall" : false,
-  "pickUpCallsOnHold" : false
-}</code></pre>
-
+  &quot;presenceStatus&quot; : &quot;Available&quot;,
+  &quot;telephonyStatus&quot; : &quot;NoCall&quot;,
+  &quot;userStatus&quot; : &quot;Available&quot;,
+  &quot;dndStatus&quot; : &quot;TakeAllCalls&quot;,
+  &quot;message&quot; : &quot;Hello, World&quot;,
+  &quot;allowSeeMyPresence&quot; : true,
+  &quot;ringOnMonitoredCall&quot; : false,
+  &quot;pickUpCallsOnHold&quot; : false
+}</code></pre></div></div></p>
 <h2 id="update-user-queue-agent-presence">Update User Queue Agent Presence</h2>
 <p>To enable or disable an user extension's queue agent presence, update the extension's presence <code>dndStatus</code> property.</p>
 <table class="table">
@@ -1188,14 +1214,13 @@ Content-Length: 530
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">PUT /restapi/v1.0/account/11111111/extension/11112222/presence
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-8-0_http-panel role=tab><label for=tab-group-8-0_http class=code-tab-label data-lang=http id=tab-group-8-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-8-0_http-panel aria-labelledby=tab-group-8-0_http-label><pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/11112222/presence
 Accept: application/json
 Authorization: Bearer MyToken
 
 {
-  "dndStatus": "DoNotAcceptDepartmentCalls"
-}</code></pre>
-
+  &quot;dndStatus&quot;: &quot;DoNotAcceptDepartmentCalls&quot;
+}</code></pre></div></div></p>
 <h2 id="subscribe-for-presence-notification-events">Subscribe for Presence Notification Events</h2>
 <p>To receive events about presence changes to an extension, you can make a subscription for the following extension presence information using the following event filter. To subscribe for multiple extensions, multiple event filters, one or more per extension can be supplied for a single subscription.</p>
 <p><code>v1.0/account/{accountId}/extension/{extensionId}/presence?detailedTelephonyState=true</code></p>

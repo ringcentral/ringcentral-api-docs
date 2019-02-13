@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../authentication/quick-start/python/" class="">Python</a>
+    <a href="../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1004,15 +1038,16 @@ tincidunt. Aenean ullamcorper sit amet nulla at interdum.</p>
 <p>Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu
   lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,
   sit amet laoreet nibh.
-  <pre class="codehilite"><code class="language-js">var _extends = function(target) {
-  for (var i = 1; i &lt; arguments.length; i++) {
-    var source = arguments[i];
-    for (var key in source) {
-      target[key] = source[key];
+  <code>js hl_lines="8"
+  var _extends = function(target) {
+    for (var i = 1; i &lt; arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        target[key] = source[key];
+      }
     }
-  }
-  return target;
-};</code></pre></p>
+    return target;
+  };</code></p>
 <blockquote>
 <p>Praesent at <code>:::js return target</code>, sodales nibh vel, tempor felis. Fusce
       vel lacinia lacus. Suspendisse rhoncus nunc non nisi iaculis ultrices.
@@ -1072,7 +1107,8 @@ tincidunt. Aenean ullamcorper sit amet nulla at interdum.</p>
 </li>
 <li>
 <p>Pellentesque eget <code>:::js var _extends</code> ornare tellus, ut gravida mi.
-<pre class="codehilite"><code class="language-js">var _extends = function(target) {
+<code>js hl_lines="1"
+var _extends = function(target) {
   for (var i = 1; i &lt; arguments.length; i++) {
     var source = arguments[i];
     for (var key in source) {
@@ -1080,7 +1116,7 @@ tincidunt. Aenean ullamcorper sit amet nulla at interdum.</p>
     }
   }
   return target;
-};</code></pre></p>
+};</code></p>
 </li>
 </ol>
 </li>
@@ -1386,17 +1422,12 @@ sit amet laoreet nibh.</p>
 </details>
 <h3 id="tabbed-code-blocks">Tabbed Code Blocks</h3>
 <p>Multiple code blocks in a row will automatically be grouped into a set of tabs. This utilizes the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/superfences/">superfences</a> markdown extension.</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">c</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-c">printf("HELLO WORLD!");</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">java</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-java">System.out.println("HELLO WORLD!");</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_2" />
-<label for="__tab_1_2">python</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-python">print("HELLO WORLD!")</code></pre></div>
-</div>
+<p>```c tab=
+printf("HELLO WORLD!");</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_r663vqxe4c6tc6k checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_r663vqxe4c6tc6k-panel role=tab><label for=tab-group-0-0_r663vqxe4c6tc6k class=code-tab-label data-lang id=tab-group-0-0_r663vqxe4c6tc6k-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_r663vqxe4c6tc6k-panel aria-labelledby=tab-group-0-0_r663vqxe4c6tc6k-label><pre class=codehilite><code>```java tab=
+System.out.println(&quot;HELLO WORLD!&quot;);</code></pre></div></div></p>
+<p><code>python tab=
+print("HELLO WORLD!")</code></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

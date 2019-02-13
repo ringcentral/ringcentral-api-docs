@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -975,13 +1009,12 @@
 <p><strong>Example URL</strong></p>
 <p>To subscribe, the webhook URL must return a <code>Validation-Token</code> header when it is presented with one.</p>
 <p>Here is a minimal example using PHP:</p>
-<pre class="codehilite"><code class="language-php">&lt;?php
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_php checked=checked class=code-tab data-lang=php aria-controls=tab-group-0-0_php-panel role=tab><label for=tab-group-0-0_php class=code-tab-label data-lang=php id=tab-group-0-0_php-label>Php</label><div class=code-tabpanel role=tabpanel data-lang=php id=tab-group-0-0_php-panel aria-labelledby=tab-group-0-0_php-label><pre class=codehilite><code class=language-php>&lt;?php
 $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
 if (strlen($v)&gt;0) {
-  header("Validation-Token: {$v}");
+  header(&quot;Validation-Token: {$v}&quot;);
 }
-?&gt;</code></pre>
-
+?&gt;</code></pre></div></div></p>
 <h2 id="create-a-webhook">Create a Webhook</h2>
 <p>A webhook subscription can be created by making a post to the <code>subscription</code> endpoint:</p>
 <table class="table">
@@ -1001,24 +1034,23 @@ if (strlen($v)&gt;0) {
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/subscription
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/subscription
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer MyToken
 
 {
-  "eventFilters": [
-    "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true",
-    "/restapi/v1.0/account/~/extension/~/message-store",
-    "/restapi/v1.0/account/~/extension/~/presence/line",
-    "/restapi/v1.0/account/~/extension"
+  &quot;eventFilters&quot;: [
+    &quot;/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true&quot;,
+    &quot;/restapi/v1.0/account/~/extension/~/message-store&quot;,
+    &quot;/restapi/v1.0/account/~/extension/~/presence/line&quot;,
+    &quot;/restapi/v1.0/account/~/extension&quot;
   ],
-  "deliveryMode": {
-    "transportType": "WebHook",
-    "address": "https://myapp.ngrok.io/hook?auth_token=MySecureToken"
+  &quot;deliveryMode&quot;: {
+    &quot;transportType&quot;: &quot;WebHook&quot;,
+    &quot;address&quot;: &quot;https://myapp.ngrok.io/hook?auth_token=MySecureToken&quot;
   }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <h2 id="create-webhook-renewal-event-filter">Create Webhook Renewal Event Filter</h2>
 <p>RingCentral webhooks expire and will expire unless they are renewed. A webhook subscription can also subscribe for special reminder events. The reminder events have a simple body with an <code>expiresIn</code> property containing the expiration time in seconds.</p>
 <p>The subscription event filter has the following format with the <code>threshold</code> and <code>interval</code> parameters to govern when reminders are sent and how often:</p>

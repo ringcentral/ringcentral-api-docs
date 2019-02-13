@@ -26,7 +26,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/basics/notifications/pubsub/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/basics/notifications/pubnub/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -76,27 +76,52 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/node/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/password-flow/node/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/python/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/password-flow/python/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/php/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/password-flow/php/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/c-sharp/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/password-flow/c-sharp/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/explorer/</loc>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/password-flow/explorer/</loc>
+     <lastmod>2019-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/node/</loc>
+     <lastmod>2019-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/python/</loc>
+     <lastmod>2019-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/php/</loc>
+     <lastmod>2019-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/c-sharp/</loc>
+     <lastmod>2019-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/explorer/</loc>
      <lastmod>2019-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1006,38 +1040,37 @@
 </tr>
 </tbody>
 </table>
-<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-0-0_http-panel role=tab><label for=tab-group-0-0_http class=code-tab-label data-lang=http id=tab-group-0-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-0-0_http-panel aria-labelledby=tab-group-0-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
 
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&amp;perPage=100",
-  "records": [
+  &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&amp;perPage=100&quot;,
+  &quot;records&quot;: [
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/33333333",
-      "id": "33333333",
-      "type": "Custom",
-      "name": "My Custom Rule 1",
-      "enabled": true,
-      "callers": [
+      &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/33333333&quot;,
+      &quot;id&quot;: &quot;33333333&quot;,
+      &quot;type&quot;: &quot;Custom&quot;,
+      &quot;name&quot;: &quot;My Custom Rule 1&quot;,
+      &quot;enabled&quot;: true,
+      &quot;callers&quot;: [
         {
-          "callerId": "16505551212"
+          &quot;callerId&quot;: &quot;16505551212&quot;
         }
       ],
-      "callHandlingAction": "ForwardCalls"
+      &quot;callHandlingAction&quot;: &quot;ForwardCalls&quot;
     },
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
-      "id": "business-hours-rule",
-      "type": "BusinessHours",
-      "enabled": true,
-      "callHandlingAction": "ForwardCalls"
+      &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule&quot;,
+      &quot;id&quot;: &quot;business-hours-rule&quot;,
+      &quot;type&quot;: &quot;BusinessHours&quot;,
+      &quot;enabled&quot;: true,
+      &quot;callHandlingAction&quot;: &quot;ForwardCalls&quot;
     }
   ],
-  "paging": {...},
-  "navigation": {...}
-}</code></pre>
-
+  &quot;paging&quot;: {...},
+  &quot;navigation&quot;: {...}
+}</code></pre></div></div></p>
 <h2 id="read-an-answering-rule">Read an Answering Rule</h2>
 <table class="table">
 <thead>
@@ -1056,106 +1089,104 @@ Authorization: Bearer MyAccessToken
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
 Accept: application/json
-Authorization: Bearer MyAccessToken</code></pre>
-
+Authorization: Bearer MyAccessToken</code></pre></div></div></p>
 <p><strong>Example Response</strong></p>
-<pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-2-0_http-panel role=tab><label for=tab-group-2-0_http class=code-tab-label data-lang=http id=tab-group-2-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-2-0_http-panel aria-labelledby=tab-group-2-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
-    "id": "business-hours-rule",
-    "type": "BusinessHours",
-    "enabled": true,
-    "schedule": {
-        "ref": "BusinessHours"
+    &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule&quot;,
+    &quot;id&quot;: &quot;business-hours-rule&quot;,
+    &quot;type&quot;: &quot;BusinessHours&quot;,
+    &quot;enabled&quot;: true,
+    &quot;schedule&quot;: {
+        &quot;ref&quot;: &quot;BusinessHours&quot;
     },
-    "callHandlingAction": "ForwardCalls",
-    "forwarding": {
-        "notifyMySoftPhones": true,
-        "notifyAdminSoftPhones": false,
-        "softPhonesRingCount": 1,
-        "ringingMode": "Sequentially",
-        "rules": [
+    &quot;callHandlingAction&quot;: &quot;ForwardCalls&quot;,
+    &quot;forwarding&quot;: {
+        &quot;notifyMySoftPhones&quot;: true,
+        &quot;notifyAdminSoftPhones&quot;: false,
+        &quot;softPhonesRingCount&quot;: 1,
+        &quot;ringingMode&quot;: &quot;Sequentially&quot;,
+        &quot;rules&quot;: [
             {
-                "index": 1,
-                "ringCount": 4,
-                "forwardingNumbers": [
+                &quot;index&quot;: 1,
+                &quot;ringCount&quot;: 4,
+                &quot;forwardingNumbers&quot;: [
                     {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333",
-                        "id": "33333333",
-                        "phoneNumber": "+16505551212",
-                        "label": "My Cisco SPA-303 Desk Phone"
+                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333&quot;,
+                        &quot;id&quot;: &quot;33333333&quot;,
+                        &quot;phoneNumber&quot;: &quot;+16505551212&quot;,
+                        &quot;label&quot;: &quot;My Cisco SPA-303 Desk Phone&quot;
                     }
                 ]
             },
             {
-                "index": 2,
-                "ringCount": 8,
-                "forwardingNumbers": [
+                &quot;index&quot;: 2,
+                &quot;ringCount&quot;: 8,
+                &quot;forwardingNumbers&quot;: [
                     {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/44444444",
-                        "id": "44444444",
-                        "phoneNumber": "+4155551212",
-                        "label": "Home"
+                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/44444444&quot;,
+                        &quot;id&quot;: &quot;44444444&quot;,
+                        &quot;phoneNumber&quot;: &quot;+4155551212&quot;,
+                        &quot;label&quot;: &quot;Home&quot;
                     }
                 ]
             },
             {
-                "index": 3,
-                "ringCount": 12,
-                "forwardingNumbers": [
+                &quot;index&quot;: 3,
+                &quot;ringCount&quot;: 12,
+                &quot;forwardingNumbers&quot;: [
                     {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/55555555",
-                        "id": "55555555",
-                        "phoneNumber": "+12125551212",
-                        "label": "Mobile"
+                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/55555555&quot;,
+                        &quot;id&quot;: &quot;55555555&quot;,
+                        &quot;phoneNumber&quot;: &quot;+12125551212&quot;,
+                        &quot;label&quot;: &quot;Mobile&quot;
                     }
                 ]
             }
         ]
     },
-    "greetings": [
+    &quot;greetings&quot;: [
         {
-            "type": "Voicemail",
-            "prompt": {
-                "id": "0",
-                "type": "message",
-                "name": "No One Available"
+            &quot;type&quot;: &quot;Voicemail&quot;,
+            &quot;prompt&quot;: {
+                &quot;id&quot;: &quot;0&quot;,
+                &quot;type&quot;: &quot;message&quot;,
+                &quot;name&quot;: &quot;No One Available&quot;
             }
         },
         {
-            "type": "Introductory"
+            &quot;type&quot;: &quot;Introductory&quot;
         },
         {
-            "type": "AudioWhileConnecting",
-            "prompt": {
-                "id": "6",
-                "type": "music",
-                "name": "Acoustic"
+            &quot;type&quot;: &quot;AudioWhileConnecting&quot;,
+            &quot;prompt&quot;: {
+                &quot;id&quot;: &quot;6&quot;,
+                &quot;type&quot;: &quot;music&quot;,
+                &quot;name&quot;: &quot;Acoustic&quot;
             }
         },
         {
-            "type": "ConnectingMessage",
-            "prompt": {
-                "id": "3",
-                "type": "message",
-                "name": "Forward hold 1"
+            &quot;type&quot;: &quot;ConnectingMessage&quot;,
+            &quot;prompt&quot;: {
+                &quot;id&quot;: &quot;3&quot;,
+                &quot;type&quot;: &quot;message&quot;,
+                &quot;name&quot;: &quot;Forward hold 1&quot;
             }
         }
     ],
-    "screening": "Never",
-    "voicemail": {
-        "enabled": true,
-        "recipient": {
-            "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222",
-            "id": 22222222
+    &quot;screening&quot;: &quot;Never&quot;,
+    &quot;voicemail&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;recipient&quot;: {
+            &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222&quot;,
+            &quot;id&quot;: 22222222
         }
     }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <h2 id="update-an-answering-rule">Update an Answering Rule</h2>
 <p>Answering rules can be updated by configuring forwarding numbers individuall and in Ring Groups. For each forwarding number, the <code>index</code> and <code>forwardingNumber.id</code> is required.</p>
 <p>The <code>ringCount</code> property indicates how many times the call should ring before moving to the next rule. Each ring corresponds to 5 seconds in the Online Account Portal.</p>
@@ -1176,33 +1207,32 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-<pre class="codehilite"><code class="language-http">PUT /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-3-0_http-panel role=tab><label for=tab-group-3-0_http class=code-tab-label data-lang=http id=tab-group-3-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-3-0_http-panel aria-labelledby=tab-group-3-0_http-label><pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
 Content-Type: application/json
 
 {
-  "forwarding": {
-    "rules": [
+  &quot;forwarding&quot;: {
+    &quot;rules&quot;: [
       {
-        "index": 1,
-        "ringCount": 2,
-        "forwardingNumbers": [
-          { id: "22223333" },
-          { id: "22224444" }
+        &quot;index&quot;: 1,
+        &quot;ringCount&quot;: 2,
+        &quot;forwardingNumbers&quot;: [
+          { id: &quot;22223333&quot; },
+          { id: &quot;22224444&quot; }
         ]
       },
       {
-        "index": 2,
-        "ringCount": 4,
-        "forwardingNumbers": [
-          { id: "22225555" }
+        &quot;index&quot;: 2,
+        &quot;ringCount&quot;: 4,
+        &quot;forwardingNumbers&quot;: [
+          { id: &quot;22225555&quot; }
         ]
       }
     ]
   }
-}</code></pre>
-
+}</code></pre></div></div></p>
 <h2 id="delete-an-answering-rule">Delete an Answering Rule</h2>
 <table class="table">
 <thead>
@@ -1241,14 +1271,14 @@ The business and after hours rules can forward calls to a set of forwarding numb
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<pre class="codehilite"><code class="language-http">PUT /restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333 HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-4-0_http-panel role=tab><label for=tab-group-4-0_http class=code-tab-label data-lang=http id=tab-group-4-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-4-0_http-panel aria-labelledby=tab-group-4-0_http-label><pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333 HTTP/1.1
 Accept: application/json
 Authorization: Bearer MyAccessToken
 Content-Type: application/json
 
 {
-  "phoneNumber": "+16505551212"
-}</code></pre>
+  &quot;phoneNumber&quot;: &quot;+16505551212&quot;
+}</code></pre></div></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

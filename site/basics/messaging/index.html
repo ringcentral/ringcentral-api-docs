@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1034,35 +1068,34 @@
 </ul>
 <p>See the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#MessageInfo">API Reference</a> section for the full list of supported message attributes.</p>
 <p>Let's consider the example request below. GET <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#MessageInfo">Message Info</a> request allows retrieving the Message Info object. In the example below the message type is SMS. The other message types: Fax, Pager, Voicemail and Text are retrieved via the same request with the corresponding <code>type</code> value.</p>
-<pre class="codehilite"><code>GET /restapi/v1.0/account/~/extension/~/message-store/320272588010 HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_wcr8ex69xjd2p8m checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_wcr8ex69xjd2p8m-panel role=tab><label for=tab-group-0-0_wcr8ex69xjd2p8m class=code-tab-label data-lang id=tab-group-0-0_wcr8ex69xjd2p8m-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_wcr8ex69xjd2p8m-panel aria-labelledby=tab-group-0-0_wcr8ex69xjd2p8m-label><pre class=codehilite><code>GET /restapi/v1.0/account/~/extension/~/message-store/320272588010 HTTP/1.1
 Accept: application/json               
 
 HTTP/1.1 200 OK
 Content-Type: application/json 
 
 {
-   "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010",
-   "id": 320272588010,
-   "to": [{"phoneNumber": "18551003732"}],
-   "from": {"phoneNumber": "18559100010"},
-   "type": "SMS",
-   "creationTime": "2012-10-18T10:40:31.000Z",
-   "readStatus": "Unread",
-   "priority": "Normal",
-   "attachments": [   {
-      "id": 1,
-      "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010/content/1",
-      "contentType": "text/plain"
+   &quot;uri&quot;: &quot;.../account/1346632010/extension/1346632010/message-store/320272588010&quot;,
+   &quot;id&quot;: 320272588010,
+   &quot;to&quot;: [{&quot;phoneNumber&quot;: &quot;18551003732&quot;}],
+   &quot;from&quot;: {&quot;phoneNumber&quot;: &quot;18559100010&quot;},
+   &quot;type&quot;: &quot;SMS&quot;,
+   &quot;creationTime&quot;: &quot;2012-10-18T10:40:31.000Z&quot;,
+   &quot;readStatus&quot;: &quot;Unread&quot;,
+   &quot;priority&quot;: &quot;Normal&quot;,
+   &quot;attachments&quot;: [   {
+      &quot;id&quot;: 1,
+      &quot;uri&quot;: &quot;.../account/1346632010/extension/1346632010/message-store/320272588010/content/1&quot;,
+      &quot;contentType&quot;: &quot;text/plain&quot;
    }],
-   "direction": "Outbound",
-   "availability": "Alive",
-   "subject": "Test SMS message from Platform server",
-   "messageStatus": "Delivered",
-   "smsDeliveryTime": "2012-10-18T10:40:42.000Z",
-   "conversationId": 4178398077955743750,
-   "lastModifiedTime": "2012-10-18T10:40:42.000Z"
-} </code></pre>
-
+   &quot;direction&quot;: &quot;Outbound&quot;,
+   &quot;availability&quot;: &quot;Alive&quot;,
+   &quot;subject&quot;: &quot;Test SMS message from Platform server&quot;,
+   &quot;messageStatus&quot;: &quot;Delivered&quot;,
+   &quot;smsDeliveryTime&quot;: &quot;2012-10-18T10:40:42.000Z&quot;,
+   &quot;conversationId&quot;: 4178398077955743750,
+   &quot;lastModifiedTime&quot;: &quot;2012-10-18T10:40:42.000Z&quot;
+} </code></pre></div></div></p>
 <h2 id="message-availability-and-life-cycle">Message Availability and Life Cycle</h2>
 <p>Every outbound or inbound message is created in the system in alive state. This state is tracked using the <code>availability</code> property, which is returned as a part of message metadata, and contains the <code>Alive</code> value by default.</p>
 <p>Once the message is deleted by the user, its availability is changed to <code>Deleted</code>, but it still remains in the extension mailbox and can be restored by the user.</p>

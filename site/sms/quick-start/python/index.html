@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -975,11 +1009,10 @@
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
 <h2 id="send-an-sms">Send an SMS</h2>
 <h3 id="install-ringcentral-python-sdk">Install RingCentral Python SDK</h3>
-<pre class="codehilite"><code class="language-bash">$ pip install ringcentral</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-0-0_bash-panel role=tab><label for=tab-group-0-0_bash class=code-tab-label data-lang=bash id=tab-group-0-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-0-0_bash-panel aria-labelledby=tab-group-0-0_bash-label><pre class=codehilite><code class=language-bash>$ pip install ringcentral</code></pre></div></div></p>
 <h3 id="create-and-edit-smspy">Create and Edit sms.py</h3>
 <p>Create a file called <code>sms.py</code>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-<pre class="codehilite"><code class="language-python">from ringcentral import SDK
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_python checked=checked class=code-tab data-lang=python aria-controls=tab-group-1-0_python-panel role=tab><label for=tab-group-1-0_python class=code-tab-label data-lang=python id=tab-group-1-0_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-1-0_python-panel aria-labelledby=tab-group-1-0_python-label><pre class=codehilite><code class=language-python>from ringcentral import SDK
 
 RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
 
@@ -989,7 +1022,7 @@ RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
 RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
 RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101"&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
 
 rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
@@ -1000,12 +1033,10 @@ platform.post('/restapi/v1.0/account/~/extension/~/sms',
                   'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
                   'to'   : [ {'phoneNumber': RECIPIENT} ],
                   'text' : 'Hello World from Python'
-              })</code></pre>
-
+              })</code></pre></div></div></p>
 <h3 id="run-your-code">Run Your Code</h3>
 <p>You are almost done. Now run your script.</p>
-<pre class="codehilite"><code class="language-bash">$ python sms.py</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-2-0_bash-panel role=tab><label for=tab-group-2-0_bash class=code-tab-label data-lang=bash id=tab-group-2-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-2-0_bash-panel aria-labelledby=tab-group-2-0_bash-label><pre class=codehilite><code class=language-bash>$ python sms.py</code></pre></div></div></p>
 <h2 id="publish-your-app">Publish Your App</h2>
 <p>Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend <a href="../basics/publish">going through this process</a> for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.</p>
 

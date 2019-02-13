@@ -28,7 +28,7 @@ To use RingCentral Push Notifications the client application can create a notifi
 
 ### Authorization
 
-When a client creates a subscription it must be authenticated and authorized to use the RingCentral API. It includes, at least, application authentication. Certain event filter requires the client to be authorized to access specific extension data, so the client needs to pass a valid access token in the request. For more details please refer to the [Authentication](../basics/oauth.md) section.
+When a client creates a subscription it must be authenticated and authorized to use the RingCentral API. It includes, at least, application authentication. Certain event filter requires the client to be authorized to access specific extension data, so the client needs to pass a valid access token in the request. For more details please refer to the [Authentication](./oauth.md) section.
 
 ### Subscription Creation
 
@@ -95,7 +95,7 @@ HTTP/1.1 200 OK
   "uri" : "/restapi/v1.0/subscription/78c53776-6aa5-4089-b080-150089c097bf"
 }
 ```
-        
+
 ### Notifications Handling
 
 Push notifications will be delivered to the client application via the delivery mechanism specified in subscription. Each notification has the same common structure, which can be easily described with a simple example:
@@ -110,7 +110,7 @@ Push notifications will be delivered to the client application via the delivery 
            }
 }
 ```          
- 
+
 According to received notification the client application should either update local data or notify user about data changes (for example, new messages received).
 
 ### Subscription Renewal
@@ -151,7 +151,7 @@ DELETE /restapi/v1.0/subscription/78c53776-6aa5-4089-b080-150089c097bf HTTP/1.1
 Accept: application/json
 Authorization: Bearer U0pDMDFQMDFKV1MwMnxXEhpuK23FJtRSi_rafOgPSMOorQ
 ```
- 
+
 The response will be the following:
 
     HTTP/1.1 204 No Content

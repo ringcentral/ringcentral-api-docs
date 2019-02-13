@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -999,15 +1033,15 @@
 </table>
 <h2 id="example-request">Example Request</h2>
 <p>The request below shows the required <code>originalMessageId</code> property with the optional <code>to</code> and <code>sendTime</code> properties.</p>
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/11112222/extension/22223333/fax HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-0-0_http-panel role=tab><label for=tab-group-0-0_http class=code-tab-label data-lang=http id=tab-group-0-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-0-0_http-panel aria-labelledby=tab-group-0-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/11112222/extension/22223333/fax HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer MyToken
 
 {
-  "originalMessageId": "12345678",
-  "to": [ { "phoneNumber": "+15551234567" } ],
-  "sendTime": "2016-12-01T00:00:00Z"
-}</code></pre>
+  &quot;originalMessageId&quot;: &quot;12345678&quot;,
+  &quot;to&quot;: [ { &quot;phoneNumber&quot;: &quot;+15551234567&quot; } ],
+  &quot;sendTime&quot;: &quot;2016-12-01T00:00:00Z&quot;
+}</code></pre></div></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

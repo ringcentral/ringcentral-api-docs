@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -975,12 +1009,11 @@
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
 <h2 id="send-an-sms">Send an SMS</h2>
 <h3 id="install-ringcentral-php-sdk">Install RingCentral PHP SDK</h3>
-<pre class="codehilite"><code class="language-php">$ curl -sS https://getcomposer.org/installer | php
-$ php composer.phar require ringcentral/ringcentral-php</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_php checked=checked class=code-tab data-lang=php aria-controls=tab-group-0-0_php-panel role=tab><label for=tab-group-0-0_php class=code-tab-label data-lang=php id=tab-group-0-0_php-label>Php</label><div class=code-tabpanel role=tabpanel data-lang=php id=tab-group-0-0_php-panel aria-labelledby=tab-group-0-0_php-label><pre class=codehilite><code class=language-php>$ curl -sS https://getcomposer.org/installer | php
+$ php composer.phar require ringcentral/ringcentral-php</code></pre></div></div></p>
 <h3 id="create-and-edit-smsphp">Create and Edit sms.php</h3>
 <p>Create a file called <code>sms.php</code>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-<pre class="codehilite"><code>&lt;?php
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_mnmf8skfjd4bbmz checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_mnmf8skfjd4bbmz-panel role=tab><label for=tab-group-1-0_mnmf8skfjd4bbmz class=code-tab-label data-lang id=tab-group-1-0_mnmf8skfjd4bbmz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_mnmf8skfjd4bbmz-panel aria-labelledby=tab-group-1-0_mnmf8skfjd4bbmz-label><pre class=codehilite><code>&lt;?php
 require('vendor/autoload.php');
 
 $RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
@@ -991,7 +1024,7 @@ $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
 $RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
 $RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101"&gt;'
+$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
 
 $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
@@ -1004,12 +1037,10 @@ $resp = $platform-&gt;post('/account/~/extension/~/sms',
        'to' =&gt; array(array('phoneNumber' =&gt; $RECIPIENT)),
        'text' =&gt; 'Hello World from PHP'
      ));
-print_r ("SMS sent. Message status: " . $resp-&gt;json()-&gt;messageStatus);)</code></pre>
-
+print_r (&quot;SMS sent. Message status: &quot; . $resp-&gt;json()-&gt;messageStatus);)</code></pre></div></div></p>
 <h3 id="run-your-code">Run Your Code</h3>
 <p>You are almost done. Now run your script.</p>
-<pre class="codehilite"><code class="language-bask">$ php sms.php</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bask checked=checked class=code-tab data-lang=bask aria-controls=tab-group-2-0_bask-panel role=tab><label for=tab-group-2-0_bask class=code-tab-label data-lang=bask id=tab-group-2-0_bask-label>Bask</label><div class=code-tabpanel role=tabpanel data-lang=bask id=tab-group-2-0_bask-panel aria-labelledby=tab-group-2-0_bask-label><pre class=codehilite><code class=language-bask>$ php sms.php</code></pre></div></div></p>
 <h2 id="publish-your-app">Publish Your App</h2>
 <p>Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend <a href="../basics/publish">going through this process</a> for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.</p>
 

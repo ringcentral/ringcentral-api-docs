@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -962,85 +996,83 @@
 
 <h1 id="receiving-faxes">Receiving Faxes</h1>
 <p>In order to get the list of received faxes, use the <code>message-store</code> API endpoint with <code>messageType = Fax</code> query parameter:</p>
-<pre class="codehilite"><code class="language-http">GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-0-0_http-panel role=tab><label for=tab-group-0-0_http class=code-tab-label data-lang=http id=tab-group-0-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-0-0_http-panel aria-labelledby=tab-group-0-0_http-label><pre class=codehilite><code class=language-http>GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax</code></pre></div></div></p>
 <p>The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday:</p>
-<pre class="codehilite"><code class="language-http">{
-  "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T09:19:00.000Z&amp;page=1&amp;perPage=100",
-  "records" : [ ... ,
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>{
+  &quot;uri&quot; : &quot;https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T09:19:00.000Z&amp;page=1&amp;perPage=100&quot;,
+  &quot;records&quot; : [ ... ,
     {
-      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004",
-      "id": 5209304004,
-      "from": {
-        "phoneNumber": "+15555287464"
+      &quot;uri&quot;: &quot;https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004&quot;,
+      &quot;id&quot;: 5209304004,
+      &quot;from&quot;: {
+        &quot;phoneNumber&quot;: &quot;+15555287464&quot;
       },
-      "type": "Fax",
-      "creationTime": "2018-10-08T09:17:27.000Z",
-      "readStatus": "Unread",
-      "priority": "Normal",
-      "attachments": [
+      &quot;type&quot;: &quot;Fax&quot;,
+      &quot;creationTime&quot;: &quot;2018-10-08T09:17:27.000Z&quot;,
+      &quot;readStatus&quot;: &quot;Unread&quot;,
+      &quot;priority&quot;: &quot;Normal&quot;,
+      &quot;attachments&quot;: [
         {
-          "id": 5209304004,
-          "uri": "https://media.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004/content/5209304004",
-          "type": "RenderedDocument",
-          "contentType": "application/pdf"
+          &quot;id&quot;: 5209304004,
+          &quot;uri&quot;: &quot;https://media.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004/content/5209304004&quot;,
+          &quot;type&quot;: &quot;RenderedDocument&quot;,
+          &quot;contentType&quot;: &quot;application/pdf&quot;
         }
       ],
-      "direction": "Inbound",
-      "availability": "Alive",
-      "subject": "+15556009976",
-      "messageStatus": "Received",
-      "faxResolution": "High",
-      "faxPageCount": 1,
-      "lastModifiedTime": "2018-10-08T09:17:27.227Z"
+      &quot;direction&quot;: &quot;Inbound&quot;,
+      &quot;availability&quot;: &quot;Alive&quot;,
+      &quot;subject&quot;: &quot;+15556009976&quot;,
+      &quot;messageStatus&quot;: &quot;Received&quot;,
+      &quot;faxResolution&quot;: &quot;High&quot;,
+      &quot;faxPageCount&quot;: 1,
+      &quot;lastModifiedTime&quot;: &quot;2018-10-08T09:17:27.227Z&quot;
     },
   ... ],
-  "paging" : {
-      "page" : 1,
-      "totalPages" : 3,
-      "perPage" : 100,
-      "totalElements" : 274,
-      "pageStart" : 0,
-      "pageEnd" : 99
+  &quot;paging&quot; : {
+      &quot;page&quot; : 1,
+      &quot;totalPages&quot; : 3,
+      &quot;perPage&quot; : 100,
+      &quot;totalElements&quot; : 274,
+      &quot;pageStart&quot; : 0,
+      &quot;pageEnd&quot; : 99
     },
-    "navigation" : {
-      "nextPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=2&amp;perPage=100" },
-      "firstPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=1&amp;perPage=100" },
-"lastPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=3&amp;perPage=100" }
-    }  </code></pre>
-
-<p>Adjusting <code>dateFrom</code> and <code>dateTo</code> parameters you may get the messages for desired date range:
-<pre class="codehilite"><code class="language-http">GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&amp;dateFrom=2018-10-01&amp;dateTo=2018-10-07</code></pre></p>
-<p>If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/subscription
+    &quot;navigation&quot; : {
+      &quot;nextPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=2&amp;perPage=100&quot; },
+      &quot;firstPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=1&amp;perPage=100&quot; },
+&quot;lastPage&quot; : { &quot;uri&quot; : &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&amp;availability=Alive&amp;dateFrom=2018-10-07T08:56:00.000Z&amp;page=3&amp;perPage=100&quot; }
+    }  </code></pre></div></div></p>
+<p>Adjusting <code>dateFrom</code> and <code>dateTo</code> parameters you may get the messages for desired date range:</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-2-0_http-panel role=tab><label for=tab-group-2-0_http class=code-tab-label data-lang=http id=tab-group-2-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-2-0_http-panel aria-labelledby=tab-group-2-0_http-label><pre class=codehilite><code class=language-http>GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&amp;dateFrom=2018-10-01&amp;dateTo=2018-10-07</code></pre></div></div></p>
+<p>If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-3-0_http-panel role=tab><label for=tab-group-3-0_http class=code-tab-label data-lang=http id=tab-group-3-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-3-0_http-panel aria-labelledby=tab-group-3-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/subscription
 
 {
-  "eventFilters": [
-    "/restapi/v1.0/account/~/extension/~/message-store"
+  &quot;eventFilters&quot;: [
+    &quot;/restapi/v1.0/account/~/extension/~/message-store&quot;
   ],
-  "deliveryMode": {
-    "transportType": "WebHook",
-    "address": "https://myapp.io/newmessage"
+  &quot;deliveryMode&quot;: {
+    &quot;transportType&quot;: &quot;WebHook&quot;,
+    &quot;address&quot;: &quot;https://myapp.io/newmessage&quot;
   }
-}</code></pre></p>
-<p>Then when a new message is received/sent your server will get a request with a payload like:
-<pre class="codehilite"><code class="language-JSON">{
-  "timestamp": "2018-10-07T12:05:00.408+0000",
-  "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-  "event": "/restapi/v1.0/account/230919004/extension/230919004/message-store",
-  "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
-  "body": {
-    "extensionId": 230919004,
-    "lastUpdated": "2018-10-07T12:05:00.531+0000",
-    "changes": [
+}</code></pre></div></div></p>
+<p>Then when a new message is received/sent your server will get a request with a payload like:</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_JSON checked=checked class=code-tab data-lang=JSON aria-controls=tab-group-4-0_JSON-panel role=tab><label for=tab-group-4-0_JSON class=code-tab-label data-lang=JSON id=tab-group-4-0_JSON-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=JSON id=tab-group-4-0_JSON-panel aria-labelledby=tab-group-4-0_JSON-label><pre class=codehilite><code class=language-JSON>{
+  &quot;timestamp&quot;: &quot;2018-10-07T12:05:00.408+0000&quot;,
+  &quot;uuid&quot;: &quot;b11c9430-9687-4498-b12b-3fcb470bfe04&quot;,
+  &quot;event&quot;: &quot;/restapi/v1.0/account/230919004/extension/230919004/message-store&quot;,
+  &quot;subscriptionId&quot;: &quot;9d38419f-645f-4ee3-a053-8cf1368c21c4&quot;,
+  &quot;body&quot;: {
+    &quot;extensionId&quot;: 230919004,
+    &quot;lastUpdated&quot;: &quot;2018-10-07T12:05:00.531+0000&quot;,
+    &quot;changes&quot;: [
       {
-        "type": "Fax",
-        "updatedCount": 0,
-        "newCount": 1
+        &quot;type&quot;: &quot;Fax&quot;,
+        &quot;updatedCount&quot;: 0,
+        &quot;newCount&quot;: 1
       }
     ]
   }
-}</code></pre></p>
+}</code></pre></div></div></p>
 <p>As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also <a href="https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_overview/">Push Notifications</a> for more notification delivery options and <a href="https://ringcentral-api-docs.readthedocs.io/en/latest/messages_sync/">Message Sync</a> for fine-tuned synchronization.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">

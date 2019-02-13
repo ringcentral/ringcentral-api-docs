@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1012,13 +1046,10 @@
 
 
 <p>One may provide either explicit <code>accountId</code> or use the simplified syntax of a tilde (<code>~</code>). A tilde instructs RingCentral to use the account id associated with the current authentication context. For example:</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
+<p>```http tab="Response"
+HTTP/1.1 200 OK
+Content-Type: application/json</p>
+<p>{
   "uri" : "https.../restapi/v1.0/account/401145624008",
   "id" : 401145624008,
   "serviceInfo" : {
@@ -1050,12 +1081,10 @@ Content-Type: application/json
   },
   "mainNumber" : "18555440014",
   "status" : "Confirmed"
-}</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~ HTTP/1.1
-Accept: application/json</code></pre></div>
-</div>
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_wela41nib9y3uzp checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_wela41nib9y3uzp-panel role=tab><label for=tab-group-0-0_wela41nib9y3uzp class=code-tab-label data-lang id=tab-group-0-0_wela41nib9y3uzp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_wela41nib9y3uzp-panel aria-labelledby=tab-group-0-0_wela41nib9y3uzp-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/~ HTTP/1.1
+Accept: application/json</code></pre></div></div></p>
 <h2 id="retrieving-extension-data">Retrieving Extension Data</h2>
 <p>The RingCentral Account API also allows for the retrieval of information on extensions that belong to a particular account.</p>
 <h3 id="extension-types">Extension Types</h3>
@@ -1086,7 +1115,7 @@ Accept: application/json</code></pre></div>
 </tr>
 <tr>
 <td><strong>Department</strong></td>
-<td>A department extension allows you to distribute calls to department member extensions based on the number of calls they’ve taken, how long they’ve waited to take a call or their experience. You may also have the calls distributed in random order.</td>
+<td>A department extension allows you to distribute calls to department member extensions based on the number of calls they&rsquo;ve taken, how long they&rsquo;ve waited to take a call or their experience. You may also have the calls distributed in random order.</td>
 </tr>
 <tr>
 <td><strong>TakeMessageOnly</strong> (or Voicemail)</td>
@@ -1124,11 +1153,9 @@ Accept: application/json</code></pre></div>
 </div>
 <h3 id="getting-a-list-of-extensions">Getting a list of extensions</h3>
 <p>Here is an example request and response where one is retrieving a list of extensions in an account. </p>
-<div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
-Content-Type: application/json               
+<p>```http tab="Response"
+HTTP/1.1 200 OK
+Content-Type: application/json             <br />
 {
    "uri": ".../account/159048008/extension?page=1&amp;perPage=100"
    "records": [
@@ -1143,7 +1170,7 @@ Content-Type: application/json
              { "firstName" : "John" 
                "lastName"  : "Smith"
                "company" : "MyCompany Inc."
-               "email" : "john.smith@mycompany.com" }  
+               "email" : "john.smith@mycompany.com" }<br />
       },
       {
          "uri": ".../account/159048008/extension/1201056008",
@@ -1172,12 +1199,10 @@ Content-Type: application/json
          "firstPage": {"uri": ".../account/159048008/extension?page=1},
          "lastPage": {"uri": ".../account/159048008/extension?page=1}
    }
-}</code></pre></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/159048008/extension HTTP/1.1
-Accept: application/json                </code></pre></div>
-</div>
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_vsrtajkd7laiehz checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_vsrtajkd7laiehz-panel role=tab><label for=tab-group-1-0_vsrtajkd7laiehz class=code-tab-label data-lang id=tab-group-1-0_vsrtajkd7laiehz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_vsrtajkd7laiehz-panel aria-labelledby=tab-group-1-0_vsrtajkd7laiehz-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/159048008/extension HTTP/1.1
+Accept: application/json                </code></pre></div></div></p>
 <h3 id="retrieving-a-specific-extension">Retrieving a specific extension</h3>
 <p>It is also possible to get the data about a particular extension. As in case of an account ID, you can use tilde (<code>~</code>) to refer to the currently logged-in extension instead of specifying its numeric ID, as follows:</p>
 <pre class="codehilite"><code>GET /restapi/v1.0/account/~/extension/~</code></pre>
@@ -1280,11 +1305,9 @@ Accept: application/json                </code></pre></div>
 </ul>
 </div>
 <p>The example below shows how to get phone numbers which can be used by a particular extension user.</p>
-<div class="superfences-tabs">
-<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
-<label for="__tab_3_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
-Content-Type: application/json               
+<p>```http tab="Response"
+HTTP/1.1 200 OK
+Content-Type: application/json             <br />
 {
    "uri": ".../account/159048008/extension/435068008/phone-number?page=1&amp;perPage=100",
    "records": [
@@ -1294,14 +1317,14 @@ Content-Type: application/json
          "paymentType": "TollFree",
          "type": "VoiceFax",
          "usageType": "CompanyNumber",
-         "features": [ CallerId ]          
+         "features": [ CallerId ]        <br />
      }, 
      {
          "id": 359733008,
          "phoneNumber": "17869876543",
          "paymentType": "External",
          "usageType": "ForwardedNumber",
-         "features": [ ]          
+         "features": [ ]        <br />
      },
      {
          "id": 723455008,
@@ -1309,9 +1332,9 @@ Content-Type: application/json
          "paymentType": "Local",
          "type": "VoiceOnly",
          "usageType": "DirectNumber",
-         "features": [ CallerId, SmsSender ]          
+         "features": [ CallerId, SmsSender ]        <br />
        } ],
-   "paging":    
+   "paging":  <br />
    {
       "page": 1,
       "totalPages": 1,
@@ -1320,17 +1343,15 @@ Content-Type: application/json
       "pageStart": 0,
       "pageEnd": 2
    },
-   "navigation":    
+   "navigation":  <br />
    {
       "firstPage": {"uri": ".../account/159048008/extension/435068008/phone-number?page=1&amp;perPage=100"},
       "lastPage": {"uri": "../account/159048008/extension/435068008/phone-number?page=1&amp;perPage=100"}
    }
-}</code></pre></div>
-<input name="__tabs_3" type="radio" id="__tab_3_1" />
-<label for="__tab_3_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/phone-number HTTP/1.1
-Accept: application/json                </code></pre></div>
-</div>
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_tl864awghz418o1 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_tl864awghz418o1-panel role=tab><label for=tab-group-2-0_tl864awghz418o1 class=code-tab-label data-lang id=tab-group-2-0_tl864awghz418o1-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_tl864awghz418o1-panel aria-labelledby=tab-group-2-0_tl864awghz418o1-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/~/extension/~/phone-number HTTP/1.1
+Accept: application/json                </code></pre></div></div></p>
 <p>The user with administrator privileges can also retrieve the list of all phone numbers belonging to a given account using the following URI:</p>
 <pre class="codehilite"><code>GET /restapi/v1.0/account/{accountId}/phone-number</code></pre>
 
@@ -1344,13 +1365,10 @@ Accept: application/json                </code></pre></div>
 
 
 <p>The example below shows how to get the forwarding/call flip numbers list of a particular extension user.</p>
-<div class="superfences-tabs">
-<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
-<label for="__tab_4_0">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
+<p>```http tab="Response"
+HTTP/1.1 200 OK
+Content-Type: application/json</p>
+<p>{
   "uri" : "https:.../restapi/v1.0/account/400249137008/extension/400249137008/forwarding-number?page=1&amp;perPage=100",
   "records" : [ {
     "phoneNumber" : "+17609410044",
@@ -1389,13 +1407,11 @@ Content-Type: application/json
       "uri" : "https:.../restapi/v1.0/account/400249137008/extension/400249137008/forwarding-number?page=1&amp;perPage=100"
     }
   }
-}</code></pre></div>
-<input name="__tabs_4" type="radio" id="__tab_4_1" />
-<label for="__tab_4_1">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0/account/~/extension/~/forwarding-number HTTP/1.1
+}</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_z5gb6onm2ow2mx1 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_z5gb6onm2ow2mx1-panel role=tab><label for=tab-group-3-0_z5gb6onm2ow2mx1 class=code-tab-label data-lang id=tab-group-3-0_z5gb6onm2ow2mx1-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_z5gb6onm2ow2mx1-panel aria-labelledby=tab-group-3-0_z5gb6onm2ow2mx1-label><pre class=codehilite><code>```http tab=&quot;Request&quot;
+GET /restapi/v1.0/account/~/extension/~/forwarding-number HTTP/1.1
 Accept: application/json
-Authorization: Bearer U0pDMDFQMDFKV1MwMXwvOFNzrXIkPlOq4Asm8diElhjMeQ</code></pre></div>
-</div>
+Authorization: Bearer U0pDMDFQMDFKV1MwMXwvOFNzrXIkPlOq4Asm8diElhjMeQ</code></pre></div></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

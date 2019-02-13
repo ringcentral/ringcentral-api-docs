@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -964,10 +998,8 @@
 <p>One can send images and other files via SMS as well. Doing so requires developers to POST to the <code>sms</code> endpoint using multipart form-data, or attachments. In the following example we will transmit an image called <code>test.jpg</code> along with the text message, "hello world."</p>
 <h2 id="creating-attachments">Creating Attachments</h2>
 <p>When assembling a multipart message, it is important to remember that the root part, or first part of the request is always the request body or payload. Subsequently you attach images and files to the request. You can see how this is done via the code samples below. </p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Javascript</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-javascript">const SDK = require('ringcentral')
+<p>```javascript tab="Javascript" hl_lines="15 16 17 18 19 20 21"
+const SDK = require('ringcentral')
 const FormData = require('form-data')
 const rcsdk = new SDK({
   server: "url", appKey: "client id", appSecret: "secret"
@@ -995,18 +1027,17 @@ platform.login({
   })
 }).catch(e =&gt; {
   console.error(e)
-})</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Python</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-python">from ringcentral import SDK
-sdk = SDK( "client id", "secret", "url" );
+})</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_myyotod5ct1reas checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_myyotod5ct1reas-panel role=tab><label for=tab-group-0-0_myyotod5ct1reas class=code-tab-label data-lang id=tab-group-0-0_myyotod5ct1reas-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_myyotod5ct1reas-panel aria-labelledby=tab-group-0-0_myyotod5ct1reas-label><pre class=codehilite><code>```python tab=&quot;Python&quot; hl_lines=&quot;5 6 7 8 9 10 11 12 13&quot;
+from ringcentral import SDK
+sdk = SDK( &quot;client id&quot;, &quot;secret&quot;, &quot;url&quot; );
 platform = sdk.platform()
-platform.login( "username", "ext", "password" )
+platform.login( &quot;username&quot;, &quot;ext&quot;, &quot;password&quot; )
 builder = sdk.create_multipart_builder()
 builder.set_body({
-    'from': {'phoneNumber': "username"},
+    'from': {'phoneNumber': &quot;username&quot;},
     'to': [{'phoneNumber': toNumber}],
-    'text': "Hello world"
+    'text': &quot;Hello world&quot;
 })
 image = open ('test.jpg', 'rb')
 attachment = ('test.jpg', image, 'image/jpeg')
@@ -1015,10 +1046,9 @@ try:
     request = builder.request('/account/~/extension/~/sms')
     response = platform.send_request(request)
 except Exception as e:
-    print(e)</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_2" />
-<label for="__tab_1_2">PHP</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-php">&lt;?php
+    print(e)</code></pre></div></div></p>
+<p><code>php tab="PHP" hl_lines="10 11 12 13"
+&lt;?php
 $rcsdk = new RingCentral\SDK\SDK("client id","secret","server");
 $platform = $rcsdk-&gt;platform();
 $platform-&gt;login( "username", "ext", "password" );
@@ -1032,8 +1062,7 @@ $request = $rcsdk-&gt;createMultipartBuilder()
     -&gt;add(fopen(__DIR__.'/test.jpg', 'r'))
     -&gt;request('/account/~/extension/~/sms');
 $r = $platform-&gt;sendRequest($request);
-?&gt;</code></pre></div>
-</div>
+?&gt;</code></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">

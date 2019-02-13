@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication .NET Quick Start
+# Fax .NET Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,185 +37,18 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send a Fax message
 
-``` js fct_label="Node JS"
+### Create a Visual Studio project
 
-// Install RingCentral Node JS SDK
+* Choose Console Application .Net Core -> App
+* Select Target Framework .NET Core 2.1
+* Add NuGet package RingCentral.Client (3.0.0) SDK
+* Enter project name "Send_SMS"
 
-$ npm install ringcentral --save
+### Edit the file Program.cs
 
-// Create and Edit fax.js
+Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-/*
-Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
-*/
-
-const RC = require('ringcentral');
-
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-var rcsdk = new RC({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
-var platform = rcsdk.platform();
-platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
-      })
-      .then(function(resp) {
-          send_fax()
-      });
-
-function send_fax() {
-    var FormData = require('form-data');
-    formData = new FormData();
-    var body = {
-      to: [{'phoneNumber': RECIPIENT}],
-      faxResolution: 'High',
-      coverPageText: "This is a demo Fax page from Node JS"
-    }
-
-    formData.append('json', new Buffer(JSON.stringify(body)), {
-        filename: 'request.json',
-        contentType: 'application/json'
-        });
-
-    formData.append('attachment', require('fs').createReadStream('test.jpg'));
-
-    platform.post('/account/~/extension/~/fax', formData)
-    .then(function (resp) {
-        console.log("FAX sent. Message status: " + resp.json().messageStatus)
-    })
-}
-
-/*** Run Your Code ***/
-/*
-You are almost done. Now run your script.
-*/
-
-$ node fax.js
-```
-
-``` python fct_label="Python"
-<h3>Install RingCentral Python SDK</h3>
-
-<pre><code>
-$ pip install ringcentral
-</code></pre>
-
-<h3>Create and Edit fax.py</h3>
-
-<p>Create a file called <tt>fax.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-
-from ringcentral import SDK
-
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
-builder = rcsdk.create_multipart_builder()
-builder.set_body({
-    'to': [{'phoneNumber': RECIPIENT}],
-    'faxResolution': "High",
-    'coverPageText': "This is a demo Fax page from Python"
-})
-
-attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
-builder.add(attachment)
-
-request = builder.request('/account/~/extension/~/fax')
-
-resp = platform.send_request(request)
-print 'Fax sent. Message status: ' + resp.json().messageStatus
-
-<h3>Run Your Code</h3>
-
-<p>You are almost done. Now run your script.</p>
-
-$ python fax.py
-```
-
-``` php fct_label="PHP"
-<h3>Install RingCentral PHP SDK</h3>
-
-<pre><code>
-$ curl -sS https://getcomposer.org/installer | php
-$ php composer.phar require ringcentral/ringcentral-php
-</code></pre>
-
-<h3>Create and Edit fax.php</h3>
-
-<p>Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-
-<?php
-require('vendor/autoload.php');
-
-$RECIPIENT = '<ENTER PHONE NUMBER>'
-
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-
-$platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
-
-$request = $rcsdk->createMultipartBuilder()
-                 ->setBody(array(
-                     'to' => array(array('phoneNumber' => $RECIPIENT)),
-                     'faxResolution' => 'High',
-                 ))
-                 ->add(fopen('test.jpg', 'r'))
-                 ->request('/account/~/extension/~/fax');
-
-$resp = $platform->sendRequest($request);
-print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
-
-<h3>Run Your Code</h3>
-
-<p>You are almost done. Now run your script.</p>
-
-$ php fax.php
-```
-
-``` c-sharp fct_label="C#"
-<h3>Create a Visual Studio project</h3>
-<ol>
-<li>Choose Console Application .Net Core -> App</li>
-<li>Select Target Framework .NET Core 2.1</li>
-<li>Add NuGet package RingCentral.Client (3.0.0) SDK</li>
-<li>Enter project name "Send_SMS"</li>
-</ol>
-
-<h3>Edit the file Program.cs</h3>
-
-<p>Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-
+```dotnet
 using System;
 using System.Threading.Tasks;
 using RingCentral;
@@ -256,7 +89,12 @@ namespace Send_Fax
         }
     }
 }
-
-<h3>Run Your App</h3>
-<p>You are almost done. Now run your app from Visual Studio.</p>
 ```
+
+### Run Your App
+
+You are almost done. Now run your app from Visual Studio.
+
+## Publish Your App
+
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -982,36 +1016,33 @@
 <ol>
 <li>Obtain a new RingCentral access_token using the credentials for the user you logged into the RingCentral Soft Phone with to create the recording.</li>
 </ol>
-<pre class="codehilite"><code>POST /restapi/oauth/token HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_kol4o7wadywpp9o checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_kol4o7wadywpp9o-panel role=tab><label for=tab-group-0-0_kol4o7wadywpp9o class=code-tab-label data-lang id=tab-group-0-0_kol4o7wadywpp9o-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_kol4o7wadywpp9o-panel aria-labelledby=tab-group-0-0_kol4o7wadywpp9o-label><pre class=codehilite><code>POST /restapi/oauth/token HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Authorization: Basic YOUR_BASE_64_ENCODED_API_KEYS_SEPARATED_BY_A_COLON
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Cache-Control: no-cache
 
-grant_type=password&amp;username=RC_USERNAME_WITHOUT_PLUS_SYMBOL&amp;password=YOUR_RC_PASSWORD_URL_ENCODED&amp;extension=YOUR_RC_EXTENSION</code></pre>
-
+grant_type=password&amp;username=RC_USERNAME_WITHOUT_PLUS_SYMBOL&amp;password=YOUR_RC_PASSWORD_URL_ENCODED&amp;extension=YOUR_RC_EXTENSION</code></pre></div></div></p>
 <ol>
 <li>Fetch the list of Call Logs for the currently authenticated user</li>
 </ol>
-<pre class="codehilite"><code>GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_39ng2079z28xcuf checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_39ng2079z28xcuf-panel role=tab><label for=tab-group-1-0_39ng2079z28xcuf class=code-tab-label data-lang id=tab-group-1-0_39ng2079z28xcuf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_39ng2079z28xcuf-panel aria-labelledby=tab-group-1-0_39ng2079z28xcuf-label><pre class=codehilite><code>GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 Host: platform.devtest.ringcentral.com
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer YOUR_VALID_ACCESS_TOKEN
-Cache-Control: no-cache</code></pre>
-
+Cache-Control: no-cache</code></pre></div></div></p>
 <p>This should return a list of call logs.</p>
 <ol>
 <li>The Call Recording Metadata is actually contained within the <code>recordings</code> property of the response body JSON. It should have a format similar to the following:</li>
 </ol>
-<pre class="codehilite"><code>"recording": {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/recording/RECORDING_ID",
-    "id": "RECORDING_ID",
-    "type": "OnDemand",
-    "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/ACCOUNT_ID/recording/RECORDING_ID/content"
-}</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_j315qft9speky5n checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_j315qft9speky5n-panel role=tab><label for=tab-group-2-0_j315qft9speky5n class=code-tab-label data-lang id=tab-group-2-0_j315qft9speky5n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_j315qft9speky5n-panel aria-labelledby=tab-group-2-0_j315qft9speky5n-label><pre class=codehilite><code>&quot;recording&quot;: {
+    &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/recording/RECORDING_ID&quot;,
+    &quot;id&quot;: &quot;RECORDING_ID&quot;,
+    &quot;type&quot;: &quot;OnDemand&quot;,
+    &quot;contentUri&quot;: &quot;https://media.devtest.ringcentral.com:443/restapi/v1.0/account/ACCOUNT_ID/recording/RECORDING_ID/content&quot;
+}</code></pre></div></div></p>
 <p>Of course, you can use the <code>recordings[item].uri</code> property to obtain the Call Recording Metadata as well, but that is redundant.</p>
 <ol>
 <li>

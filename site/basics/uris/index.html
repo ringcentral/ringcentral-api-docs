@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -1064,29 +1098,25 @@
 </table>
 <h3 id="example">Example</h3>
 <p>Let's consider a simple example of a <code>GET</code> method — retrieving the version of the RingCentral REST API.</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Request</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">GET /restapi/v1.0 HTTP/1.1
+<p>```http tab="Request"
+GET /restapi/v1.0 HTTP/1.1
 Accept: application/json
-Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw</code></pre></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Response</label>
-<div class="superfences-content"><pre class="codehilite"><code class="language-http">HTTP/1.1 200 OK
+Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw</p>
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_xpcd4jww0z1m0p8 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_xpcd4jww0z1m0p8-panel role=tab><label for=tab-group-0-0_xpcd4jww0z1m0p8 class=code-tab-label data-lang id=tab-group-0-0_xpcd4jww0z1m0p8-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_xpcd4jww0z1m0p8-panel aria-labelledby=tab-group-0-0_xpcd4jww0z1m0p8-label><pre class=codehilite><code>```http tab=&quot;Response&quot;
+HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "uri" : "https.../restapi/",
-  "apiVersions" : [ {
-    "uri" : "https.../restapi/v1.0",
-    "versionString" : "1.0.9",
-    "releaseDate" : "2013-12-01T00:00:00.000Z",
-    "uriString" : "v1.0"
+  &quot;uri&quot; : &quot;https.../restapi/&quot;,
+  &quot;apiVersions&quot; : [ {
+    &quot;uri&quot; : &quot;https.../restapi/v1.0&quot;,
+    &quot;versionString&quot; : &quot;1.0.9&quot;,
+    &quot;releaseDate&quot; : &quot;2013-12-01T00:00:00.000Z&quot;,
+    &quot;uriString&quot; : &quot;v1.0&quot;
   } ],
-  "serverVersion" : "6.1.0.846",
-  "serverRevision" : "294476"
-}</code></pre></div>
-</div>
+  &quot;serverVersion&quot; : &quot;6.1.0.846&quot;,
+  &quot;serverRevision&quot; : &quot;294476&quot;
+}</code></pre></div></div></p>
 <div class="admonition alert">
 <p class="admonition-title">FYI</p>
 <p>Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.</p>
@@ -1095,16 +1125,13 @@ Content-Type: application/json
 <p>Sometimes, due to different technical/networking limitations, API clients cannot issue all HTTP methods. In the most severe case a client may be restricted to <code>GET</code> and <code>POST</code> methods only. To work around this situation the RingCentral API provides a mechanism for masquerading (or "tunneling") <code>PUT</code> and <code>DELETE</code> methods as a <code>POST</code>. This can be achieved in two ways:</p>
 <h4 id="x-http-method-override-header">X-HTTP-Method-Override header</h4>
 <p>Using <code>X-HTTP-Method-Override</code> the client instructs the server to override the actual value of the HTTP method by one passed in this header. For example, the following request:</p>
-<pre class="codehilite"><code class="language-http">DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1</code></pre></div></div></p>
 <p>Can be alternatively sent as:</p>
-<pre class="codehilite"><code class="language-http">POST /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
-X-HTTP-Method-Override: DELETE</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-2-0_http-panel role=tab><label for=tab-group-2-0_http class=code-tab-label data-lang=http id=tab-group-2-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-2-0_http-panel aria-labelledby=tab-group-2-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+X-HTTP-Method-Override: DELETE</code></pre></div></div></p>
 <h4 id="the-_method-query-parameter">The "_method" query parameter</h4>
 <p>In really unfortunate circumstances some clients do not even support HTTP headers. Therefore, one additional way one can override the method name is via the <code>_method</code> query parameter. For example:</p>
-<pre class="codehilite"><code>POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE HTTP/1.1</code></pre>
-
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_h2n9crxqmhfas81 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_h2n9crxqmhfas81-panel role=tab><label for=tab-group-3-0_h2n9crxqmhfas81 class=code-tab-label data-lang id=tab-group-3-0_h2n9crxqmhfas81-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_h2n9crxqmhfas81-panel aria-labelledby=tab-group-3-0_h2n9crxqmhfas81-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE HTTP/1.1</code></pre></div></div></p>
 <p>If both the override header and query parameter are specified in the HTTP request and contain different values, the server returns <code>HTTP 400 Bad Request</code> error.</p>
 <div class="admonition warning">
 <p class="admonition-title">Tunneling HTTP methods should be used only when no other workaround is available.</p>

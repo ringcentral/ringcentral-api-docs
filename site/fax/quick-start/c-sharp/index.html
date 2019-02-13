@@ -258,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -332,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../authentication/quick-start/node/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/python/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/php/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../authentication/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -974,22 +1008,29 @@
 
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
 <h2 id="send-a-fax-message">Send a Fax message</h2>
-<p>``` js fct_label="Node JS"</p>
-<p>// Install RingCentral Node JS SDK</p>
-<p>$ npm install ringcentral --save</p>
-<p>// Create and Edit fax.js</p>
-<p>/<em>
-Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
-</em>/</p>
-<p>const RC = require('ringcentral');</p>
-<p>RECIPIENT = '<ENTER PHONE NUMBER>'</p>
-<p>RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'</p>
-<p>RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'</p>
-<p>var rcsdk = new RC({
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_js checked=checked class=code-tab data-lang=js aria-controls=tab-group-0-0_js-panel role=tab><label for=tab-group-0-0_js class=code-tab-label data-lang=js id=tab-group-0-0_js-label>Node JS</label><div class=code-tabpanel role=tabpanel data-lang=js id=tab-group-0-0_js-panel aria-labelledby=tab-group-0-0_js-label><pre class=codehilite><code class=language-js>// Install RingCentral Node JS SDK
+
+$ npm install ringcentral --save
+
+// Create and Edit fax.js
+
+/*
+Create a file called &lt;tt&gt;fax.js&lt;/tt&gt;. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+*/
+
+const RC = require('ringcentral');
+
+RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+
+RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
+RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
+RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+
+var rcsdk = new RC({
       server: RINGCENTRAL_SERVER,
       appKey: RINGCENTRAL_CLIENTID,
       appSecret: RINGCENTRAL_CLIENTSECRET
@@ -1002,37 +1043,36 @@ platform.login({
       })
       .then(function(resp) {
           send_fax()
-      });</p>
-<p>function send_fax() {
+      });
+
+function send_fax() {
     var FormData = require('form-data');
     formData = new FormData();
     var body = {
       to: [{'phoneNumber': RECIPIENT}],
       faxResolution: 'High',
-      coverPageText: "This is a demo Fax page from Node JS"
-    }</p>
-<pre class="codehilite"><code>formData.append('json', new Buffer(JSON.stringify(body)), {
-    filename: 'request.json',
-    contentType: 'application/json'
-    });
+      coverPageText: &quot;This is a demo Fax page from Node JS&quot;
+    }
 
-formData.append('attachment', require('fs').createReadStream('test.jpg'));
+    formData.append('json', new Buffer(JSON.stringify(body)), {
+        filename: 'request.json',
+        contentType: 'application/json'
+        });
 
-platform.post('/account/~/extension/~/fax', formData)
-.then(function (resp) {
-    console.log(&quot;FAX sent. Message status: &quot; + resp.json().messageStatus)
-})</code></pre>
+    formData.append('attachment', require('fs').createReadStream('test.jpg'));
 
+    platform.post('/account/~/extension/~/fax', formData)
+    .then(function (resp) {
+        console.log(&quot;FAX sent. Message status: &quot; + resp.json().messageStatus)
+    })
+}
 
-<p>}</p>
-<p>/<strong><em> Run Your Code </em></strong>/
-/<em>
+/*** Run Your Code ***/
+/*
 You are almost done. Now run your script.
-</em>/</p>
-<p>$ node fax.js
-<pre class="codehilite"><code>
-``` python fct_label="Python"
-&lt;h3&gt;Install RingCentral Python SDK&lt;/h3&gt;
+*/
+
+$ node fax.js</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_python class=code-tab data-lang=python aria-controls=tab-group-0-1_python-panel role=tab><label for=tab-group-0-1_python class=code-tab-label data-lang=python id=tab-group-0-1_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-0-1_python-panel aria-labelledby=tab-group-0-1_python-label><pre class=codehilite><code class=language-python>&lt;h3&gt;Install RingCentral Python SDK&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;
 $ pip install ringcentral
@@ -1052,7 +1092,7 @@ RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
 RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
 RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY "101"&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
 
 rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
@@ -1061,8 +1101,8 @@ platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD
 builder = rcsdk.create_multipart_builder()
 builder.set_body({
     'to': [{'phoneNumber': RECIPIENT}],
-    'faxResolution': "High",
-    'coverPageText': "This is a demo Fax page from Python"
+    'faxResolution': &quot;High&quot;,
+    'coverPageText': &quot;This is a demo Fax page from Python&quot;
 })
 
 attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
@@ -1077,53 +1117,56 @@ print 'Fax sent. Message status: ' + resp.json().messageStatus
 
 &lt;p&gt;You are almost done. Now run your script.&lt;/p&gt;
 
-$ python fax.py</code></pre></p>
-<p>``` php fct_label="PHP"
-<h3>Install RingCentral PHP SDK</h3></p>
-<pre><code>
+$ python fax.py</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_php class=code-tab data-lang=php aria-controls=tab-group-0-2_php-panel role=tab><label for=tab-group-0-2_php class=code-tab-label data-lang=php id=tab-group-0-2_php-label>PHP</label><div class=code-tabpanel role=tabpanel data-lang=php id=tab-group-0-2_php-panel aria-labelledby=tab-group-0-2_php-label><pre class=codehilite><code class=language-php>&lt;h3&gt;Install RingCentral PHP SDK&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;
 $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar require ringcentral/ringcentral-php
-</code></pre>
+&lt;/code&gt;&lt;/pre&gt;
 
-<h3>Create and Edit fax.php</h3>
+&lt;h3&gt;Create and Edit fax.php&lt;/h3&gt;
 
-<p>Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
+&lt;p&gt;Create a file called &lt;tt&gt;sms.php&lt;/tt&gt;. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.&lt;/p&gt;
 
-<?php
+&lt;?php
 require('vendor/autoload.php');
 
-<p>$RECIPIENT = '<ENTER PHONE NUMBER>'</p>
-<p>$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'</p>
-<p>$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'</p>
-<p>$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);</p>
-<p>$platform = $rcsdk-&gt;platform();
-$platform-&gt;login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);</p>
-<p>$request = $rcsdk-&gt;createMultipartBuilder()
+$RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+
+$RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
+$RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+$RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
+$RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
+$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+
+$platform = $rcsdk-&gt;platform();
+$platform-&gt;login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+
+$request = $rcsdk-&gt;createMultipartBuilder()
                  -&gt;setBody(array(
                      'to' =&gt; array(array('phoneNumber' =&gt; $RECIPIENT)),
                      'faxResolution' =&gt; 'High',
                  ))
                  -&gt;add(fopen('test.jpg', 'r'))
-                 -&gt;request('/account/~/extension/~/fax');</p>
-<p>$resp = $platform-&gt;sendRequest($request);
-print_r ("FAX sent. Message status: " . $resp-&gt;json()-&gt;messageStatus);</p>
-<h3>Run Your Code</h3>
+                 -&gt;request('/account/~/extension/~/fax');
 
-<p>You are almost done. Now run your script.</p>
+$resp = $platform-&gt;sendRequest($request);
+print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageStatus);
 
-<p>$ php fax.php
-<pre class="codehilite"><code>
-``` dotnet fct_label="C#"
-&lt;h3&gt;Create a Visual Studio project&lt;/h3&gt;
+&lt;h3&gt;Run Your Code&lt;/h3&gt;
+
+&lt;p&gt;You are almost done. Now run your script.&lt;/p&gt;
+
+$ php fax.php</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-3_dotnet class=code-tab data-lang=dotnet aria-controls=tab-group-0-3_dotnet-panel role=tab><label for=tab-group-0-3_dotnet class=code-tab-label data-lang=dotnet id=tab-group-0-3_dotnet-label>C#</label><div class=code-tabpanel role=tabpanel data-lang=dotnet id=tab-group-0-3_dotnet-panel aria-labelledby=tab-group-0-3_dotnet-label><pre class=codehilite><code class=language-dotnet>&lt;h3&gt;Create a Visual Studio project&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Choose Console Application .Net Core -&gt; App&lt;/li&gt;
 &lt;li&gt;Select Target Framework .NET Core 2.1&lt;/li&gt;
 &lt;li&gt;Add NuGet package RingCentral.Client (3.0.0) SDK&lt;/li&gt;
-&lt;li&gt;Enter project name "Send_SMS"&lt;/li&gt;
+&lt;li&gt;Enter project name &quot;Send_SMS&quot;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3&gt;Edit the file Program.cs&lt;/h3&gt;
@@ -1138,13 +1181,13 @@ namespace Send_Fax
 {
     class Program
     {
-        const string RECIPIENT = "&lt;ENTER PHONE NUMBER&gt;";
-        const string RINGCENTRAL_CLIENTID = "&lt;ENTER CLIENT ID&gt;";
-        const string RINGCENTRAL_CLIENTSECRET = "&lt;ENTER CLIENT SECRET&gt;";
+        const string RECIPIENT = &quot;&lt;ENTER PHONE NUMBER&gt;&quot;;
+        const string RINGCENTRAL_CLIENTID = &quot;&lt;ENTER CLIENT ID&gt;&quot;;
+        const string RINGCENTRAL_CLIENTSECRET = &quot;&lt;ENTER CLIENT SECRET&gt;&quot;;
 
-        const string RINGCENTRAL_USERNAME = "&lt;YOUR ACCOUNT PHONE NUMBER&gt;";
-        const string RINGCENTRAL_PASSWORD = "&lt;YOUR ACCOUNT PASSWORD&gt;";
-        const string RINGCENTRAL_EXTENSION = "&lt;YOUR EXTENSION, PROBABLY ";
+        const string RINGCENTRAL_USERNAME = &quot;&lt;YOUR ACCOUNT PHONE NUMBER&gt;&quot;;
+        const string RINGCENTRAL_PASSWORD = &quot;&lt;YOUR ACCOUNT PASSWORD&gt;&quot;;
+        const string RINGCENTRAL_EXTENSION = &quot;&lt;YOUR EXTENSION, PROBABLY &quot;;
 
         static void Main(string[] args)
         {
@@ -1156,28 +1199,28 @@ namespace Send_Fax
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length &gt; 0)
             {
-                var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
+                var attachment = new Attachment { fileName = &quot;test.jpg&quot;, contentType = &quot;image/jpeg&quot;, bytes = System.IO.File.ReadAllBytes(&quot;test.jpg&quot;) };
                 var attachments = new Attachment[] { attachment };
 
                 var body = new {
                         to = new CallerInfo[] { new CallerInfo { phoneNumber = RECIPIENT } },
-                        faxResolution = "High",
-                        coverPageText = "This is a demo Fax page from C Sharp"
+                        faxResolution = &quot;High&quot;,
+                        coverPageText = &quot;This is a demo Fax page from C Sharp&quot;
                     };
                 var resp = await rc.Restapi().Account().Extension().Fax().Post(body, attachments);
-                Console.WriteLine("Fax sent. Message status: " + resp.messageStatus);
+                Console.WriteLine(&quot;Fax sent. Message status: &quot; + resp.messageStatus);
             }
         }
     }
 }
 
 &lt;h3&gt;Run Your App&lt;/h3&gt;
-&lt;p&gt;You are almost done. Now run your app from Visual Studio.&lt;/p&gt;</code></pre></p>
+&lt;p&gt;You are almost done. Now run your app from Visual Studio.&lt;/p&gt;</code></pre></div></div>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-02-06</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-02-11</time>
   </li>
 <!--
   <li class="readingTime">
