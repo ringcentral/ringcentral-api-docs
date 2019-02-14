@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Access Control - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -260,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../../../basics/notifications/pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../../../basics/notifications/pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../../basics/developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../../basics/configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../../basics/configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -429,10 +457,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -973,7 +997,7 @@
 <h1 id="call-log-access-control">Call Log Access Control</h1>
 <p>Like every other RingCentral API resource, the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html">Call Log</a> API resource has specific limitiations in place for accessing Call Log data via our API.</p>
 <p>Developers can easily determine the Permissions available for an access token by viewing the <code>scope</code> property while requesting an <code>access_token</code> from RingCentral OAuth endpoints (this works for either <a href="">ROPC</a> or <a href="">Authorization Flow</a>). The <code>scope</code> property will be a string which can be split on whitespace " ". The following example shows how to use the <a href="https://github.com/ringcentral/ringcentral-js">RingCentral JS SDK</a> to inspect for the required API Permissions prior to executing these requests (on an ROPC <code>Server-Only NO UI</code> Platform Type application).:</p>
-<p> <pre class=codehilite><code class=language-javascript>var RC = require('ringcentral');
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_javascript checked=checked class=code-tab data-lang=javascript aria-controls=tab-group-0-0_javascript-panel role=tab><label for=tab-group-0-0_javascript class=code-tab-label data-lang=javascript id=tab-group-0-0_javascript-label>Javascript</label><div class=code-tabpanel role=tabpanel data-lang=javascript id=tab-group-0-0_javascript-panel aria-labelledby=tab-group-0-0_javascript-label><pre class=codehilite><code class=language-javascript>var RC = require('ringcentral');
 var sdk = new SDK({
     server: 'https://platform.devtest.ringcentral.com' // for Production: https://platform.ringcentral.com
     appKey: '{{REPLACE_WITH_YOUR_APP_KEY}}',
@@ -1018,7 +1042,7 @@ if(checkPermission('ReadCallLog')) {
         })
         .catch(function(e) {
         });
-}</code></pre></p>
+}</code></pre></div></div></p>
 <h2 id="api-permissions">API Permissions</h2>
 <p>There are two main API permissions developers will need to access Call Log data, <code>ReadCallLog</code> and <code>ReadCallRecording</code>.</p>
 <p>You may need to configure your application in the <a href="https://developer.ringcentral.com">RingCentral Developer Portal</a> to enable your app/integration to use the Call Log API resources. Always refer to the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html">RingCentral API Developer Guide</a> for the most up-to-date information on accessing the Call Log API resource.</p>
@@ -1073,7 +1097,7 @@ if(checkPermission('ReadCallLog')) {
 </table>
 <h2 id="common-permission-errors">Common Permission Errors</h2>
 <p>If you do not have <code>ReadCallLog</code> API Permission set on an application which is submitting request which require this permission, you will receive the following HTTP 403 error response:</p>
-<p> <pre class=codehilite><code>{
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_quxg7dme5i62nvx checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_quxg7dme5i62nvx-panel role=tab><label for=tab-group-1-0_quxg7dme5i62nvx class=code-tab-label data-lang id=tab-group-1-0_quxg7dme5i62nvx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_quxg7dme5i62nvx-panel aria-labelledby=tab-group-1-0_quxg7dme5i62nvx-label><pre class=codehilite><code>{
     &quot;errorCode&quot;: &quot;InsufficientPermissions&quot;,
     &quot;message&quot;: &quot;In order to call this API endpoint, application needs to have [ReadCallLog] permission&quot;,
     &quot;errors&quot;: [
@@ -1084,9 +1108,9 @@ if(checkPermission('ReadCallLog')) {
         }
     ],
     &quot;permissionName&quot;: &quot;ReadCallLog&quot;
-}</code></pre></p>
+}</code></pre></div></div></p>
 <p>If you do not have <code>ReadCallRecording</code> API Permission set on an application which is submitting a request which require this permission, you will receive the following HTTP 403 error response</p>
-<p> <pre class=codehilite><code>{
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_0zhxjrf1iapq8ve checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_0zhxjrf1iapq8ve-panel role=tab><label for=tab-group-2-0_0zhxjrf1iapq8ve class=code-tab-label data-lang id=tab-group-2-0_0zhxjrf1iapq8ve-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_0zhxjrf1iapq8ve-panel aria-labelledby=tab-group-2-0_0zhxjrf1iapq8ve-label><pre class=codehilite><code>{
     &quot;errorCode&quot;: &quot;InsufficientPermissions&quot;,
     &quot;message&quot;: &quot;In order to call this API endpoint, application needs to have [ReadCallRecording] permission&quot;,
     &quot;errors&quot;: [
@@ -1097,7 +1121,7 @@ if(checkPermission('ReadCallLog')) {
         }
     ],
     &quot;permissionName&quot;: &quot;ReadCallRecording&quot;
-}</code></pre></p>
+}</code></pre></div></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -1156,9 +1180,10 @@ if(checkPermission('ReadCallLog')) {
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

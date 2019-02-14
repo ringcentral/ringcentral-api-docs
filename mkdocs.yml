@@ -29,6 +29,10 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
+  - markdown_fenced_code_tabs:
+      single_block_as_tab: False
+      active_class: 'active'
+      template: 'bootstrap4'
 
 extra_css:
 - extra.css
@@ -46,7 +50,7 @@ pages:
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
     - 'Webhooks': 'basics/notifications/webhooks.md'
-    - 'Mobile Push Notifications': 'basics/notifications/pubsub.md'
+    - 'Mobile Push Notifications': 'basics/notifications/pubnub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
     - 'Creating an Application': 'basics/create-app.md'
@@ -55,18 +59,25 @@ pages:
     - 'Using Lead Forms': 'basics/lead-forms.md'
   - 'Account Management':
 #    - 'Using the Developer Portal': 'basics/developer-portal.md'
-    - 'Accounts & Extensions': 'basics/configuration/account_extension.md'    
+    - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
 - 'Authentication':
   - 'Getting Started':
-    - 'Node.js': 'missing.md'
-    - 'Python': 'missing.md'
-    - 'PHP': 'missing.md'
-    - 'C#': 'missing.md'
-    - 'API Explorer': 'missing.md'
+    - 'Password Flow':
+      - 'Node.js': 'authentication/quick-start/password-flow/node.md'
+      - 'Python': 'authentication/quick-start/password-flow/python.md'
+      - 'PHP': 'authentication/quick-start/password-flow/php.md'
+      - 'C#': 'authentication/quick-start/password-flow/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/password-flow/explorer.md'
+    - 'Authorization Flow':
+      - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
+      - 'Python': 'authentication/quick-start/authorization-flow/python.md'
+      - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
+      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
+      - 'API Explorer': 'authentication/quick-start/authorization-flow/explorer.md'
   - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
   - 'Sample Applications':

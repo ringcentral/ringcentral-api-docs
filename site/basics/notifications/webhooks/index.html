@@ -16,30 +16,27 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
         <title>Webhooks - Developing with RingCentral</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-    <link href="../../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link href="../../../extra.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../../css/code-styles.css" rel="stylesheet">
     <link href="../../../css/code-tabs.css" rel="stylesheet">
     <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/base.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -222,7 +219,8 @@
       </ul>
     </div>
   </div>
-</nav><div id="content" class="container">
+</nav>
+      <div id="content" class="container">
         
       <div class="row">
         <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
@@ -260,7 +258,7 @@
 </li>
     
 <li>
-    <a href="../pubsub/" class="">Mobile Push Notifications</a>
+    <a href="../pubnub/" class="">Mobile Push Notifications</a>
 </li>
     
 <li>
@@ -298,11 +296,7 @@
   <ul>
     
 <li>
-    <a href="../../developer-portal/" class="">Using the Developer Portal</a>
-</li>
-    
-<li>
-    <a href="../../configuration/account_extension/" class="">Account & Extension Settings</a>
+    <a href="../../configuration/account_extension/" class="">Accounts & Extensions</a>
 </li>
     
 <li>
@@ -338,23 +332,57 @@
   <ul>
     
 <li>
-    <a href="../../../missing/" class="">Node.js</a>
+  <span>Password Flow</span>
+  <!--<a href="#" class="">Password Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">Python</a>
+    <a href="../../../authentication/quick-start/password-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">PHP</a>
+    <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">C#</a>
+    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../../missing/" class="">API Explorer</a>
+    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>Authorization Flow</span>
+  <!--<a href="#" class="">Authorization Flow</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -429,10 +457,6 @@
     
 <li>
     <a href="../../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
-</li>
-    
-<li>
-    <a href="../../../sms/tutorials/saving-files.md" class="">Saving SMS to a file</a>
 </li>
     
 <li>
@@ -985,12 +1009,12 @@
 <p><strong>Example URL</strong></p>
 <p>To subscribe, the webhook URL must return a <code>Validation-Token</code> header when it is presented with one.</p>
 <p>Here is a minimal example using PHP:</p>
-<p> <pre class=codehilite><code class=language-php>&lt;?php
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_php checked=checked class=code-tab data-lang=php aria-controls=tab-group-0-0_php-panel role=tab><label for=tab-group-0-0_php class=code-tab-label data-lang=php id=tab-group-0-0_php-label>Php</label><div class=code-tabpanel role=tabpanel data-lang=php id=tab-group-0-0_php-panel aria-labelledby=tab-group-0-0_php-label><pre class=codehilite><code class=language-php>&lt;?php
 $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
 if (strlen($v)&gt;0) {
   header(&quot;Validation-Token: {$v}&quot;);
 }
-?&gt;</code></pre></p>
+?&gt;</code></pre></div></div></p>
 <h2 id="create-a-webhook">Create a Webhook</h2>
 <p>A webhook subscription can be created by making a post to the <code>subscription</code> endpoint:</p>
 <table class="table">
@@ -1010,7 +1034,7 @@ if (strlen($v)&gt;0) {
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <pre class=codehilite><code class=language-http>POST /restapi/v1.0/subscription
+<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>POST /restapi/v1.0/subscription
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer MyToken
@@ -1026,7 +1050,7 @@ Authorization: Bearer MyToken
     &quot;transportType&quot;: &quot;WebHook&quot;,
     &quot;address&quot;: &quot;https://myapp.ngrok.io/hook?auth_token=MySecureToken&quot;
   }
-}</code></pre></p>
+}</code></pre></div></div></p>
 <h2 id="create-webhook-renewal-event-filter">Create Webhook Renewal Event Filter</h2>
 <p>RingCentral webhooks expire and will expire unless they are renewed. A webhook subscription can also subscribe for special reminder events. The reminder events have a simple body with an <code>expiresIn</code> property containing the expiration time in seconds.</p>
 <p>The subscription event filter has the following format with the <code>threshold</code> and <code>interval</code> parameters to govern when reminders are sent and how often:</p>
@@ -1144,9 +1168,10 @@ Authorization: Bearer MyToken
 	var base_url = "../../..",
             shortcuts = ["foo"];
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
       <script src="../../../js/base.js" defer></script>
-      <script src="../../../fonts.js" defer></script>
-      
       <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
