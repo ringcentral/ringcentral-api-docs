@@ -8,7 +8,7 @@ GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax
 
 The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday:
 
-```http
+```json
 {
   "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T09:19:00.000Z&page=1&perPage=100",
   "records" : [ ... ,
@@ -55,14 +55,14 @@ The API response will contain a list of fax messages paginated by 100 (records p
 ```
 
 Adjusting `dateFrom` and `dateTo` parameters you may get the messages for desired date range:
+
 ```http
 GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax&dateFrom=2018-10-01&dateTo=2018-10-07
 ```
 
 If you'd like to track all new messages (including fax) in your app, you can use the push notification feature. Subscribe using the specific message store event filter:
-```http
-POST /restapi/v1.0/subscription
 
+```json
 {
   "eventFilters": [
     "/restapi/v1.0/account/~/extension/~/message-store"
@@ -75,7 +75,8 @@ POST /restapi/v1.0/subscription
 ```
 
 Then when a new message is received/sent your server will get a request with a payload like:
-```JSON
+
+```json
 {
   "timestamp": "2018-10-07T12:05:00.408+0000",
   "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
