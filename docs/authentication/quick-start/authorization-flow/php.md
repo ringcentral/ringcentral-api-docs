@@ -152,9 +152,9 @@ Create a file called <tt>test.html</tt>. In this file we'll add a few API call t
 
 ### Create an __engine.php__ file
 
-Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</> and RingCentral API calls.
+Create a file called <tt>engine.php</tt>. In this file we'll handle the **OAuth2 callback** and RingCentral API calls.
 
-``` php
+```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 use RingCentral\SDK\Http\HttpException;
