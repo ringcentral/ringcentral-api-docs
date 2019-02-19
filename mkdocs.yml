@@ -6,17 +6,17 @@ edit_uri: tree/bootstrap-vertical-nav/docs
 docs_dir: docs
 
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: bootstrap-vertical-nav
-      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: bootstrap-vertical-nav
+#      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
   - bootstrap-tables
 #  - markdown-filter
 #  - search-path:
 #       path: 'code_samples/'
 
 theme:
-  name: bootstrap4
+  name: moonstone
   custom_dir: 'theme/'
   suppress_nextprev: true
   shortcuts:
@@ -35,25 +35,8 @@ markdown_extensions:
       template: 'bootstrap4'
 
 extra_css:
-- https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css
-- css/font-awesome.min.css
-- css/code-styles.css
-- css/code-tabs.css
-- css/admonition.css
-- https://fonts.googleapis.com/icon?family=Material+Icons
-- https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css
-- css/base.css
 - extra.css
-
-header_javascript:
-- https://code.jquery.com/jquery-3.3.1.slim.min.js
-- fonts.js
-
-footer_javascript:
-- https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js
-- https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js
-- https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js
-- js/base.js
+- css/mega-menu.css
 
 copyright: "1999-2019 RingCentral, Inc. All rights reserved."
 
@@ -130,16 +113,11 @@ pages:
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
   - 'Getting Started':
-    - 'WebRTC':
-      - 'Web': 'missing.md'
-      - 'iOS': 'missing.md'
-      - 'Android': 'missing.md'
-    - 'RingOut':
-      - 'Node.js': 'voice/quick-start/ringout/node.md'
-      - 'Python': 'voice/quick-start/ringout/python.md'
-      - 'PHP': 'voice/quick-start/ringout/php.md'
-      - 'C#': 'voice/quick-start/ringout/c-sharp.md'
-      - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
+    - 'Node.js': 'voice/quick-start/ringout/node.md'
+    - 'Python': 'voice/quick-start/ringout/python.md'
+    - 'PHP': 'voice/quick-start/ringout/php.md'
+    - 'C#': 'voice/quick-start/ringout/c-sharp.md'
+    - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
   - 'Developer Manual': 'missing.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
@@ -225,3 +203,23 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+- 'Meetings':
+  - 'Getting Started':
+    - 'Node.js': 'meetings/quick-start/node.md'
+    - 'Python': 'meetings/quick-start/python.md'
+    - 'PHP': 'meetings/quick-start/php.md'
+    - 'C#': 'meetings/quick-start/c-sharp.md'
+  - 'Developer Manual':
+    - 'Scheduling a Meeting': 'meetings/manual/schedule.md'
+    - 'Meeting Recordings': 'meetings/manual/recordings.md'
+  - 'API Reference':
+    - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
+    - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
+    - 'Get Meeting Info': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting
+    - 'Update Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting
+    - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
+    - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
+    - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
+    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
+    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
+
