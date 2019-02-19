@@ -21,7 +21,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>On the second page of the create app wizard enter the following:
   <ul>
   <li>Select 'Private' for Application Type.</li>
-  <li>Select 'ServerWeb' for Platform Type.</li>
+  <li>Select 'Server/Web' for Platform Type.</li>
   </ul>
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
@@ -45,7 +45,7 @@ $ php composer.phar require ringcentral/ringcentral-php
 ```
 ### Create a configs.php file
 
-Create a file called <tt>configs.php</tt>. Be sure to edit the variables value in ALL CAPS with your app credentials.
+Create a file called <tt>configs.php</tt>. Be sure to edit the variables value in &lt;ALL CAPS> with your app credentials.
 
 ``` PHP
 $RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
@@ -152,9 +152,9 @@ Create a file called <tt>test.html</tt>. In this file we'll add a few API call t
 
 ### Create an __engine.php__ file
 
-Create a file called <tt>engine.php</tt>. In this file we'll handle the **OAuth2 callback** and RingCentral API calls.
+Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</> and RingCentral API calls.
 
-```php
+``` php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 use RingCentral\SDK\Http\HttpException;

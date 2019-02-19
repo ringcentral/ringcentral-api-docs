@@ -69,6 +69,12 @@ ul.nav li.main {
 .dropdown-submenu{
     position: relative;
 }
+.dropdown-submenu a::after{
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 3px;
+    top: 40%;
+}
 .dropdown-submenu .dropdown-menu {
     display: none !important;
 }

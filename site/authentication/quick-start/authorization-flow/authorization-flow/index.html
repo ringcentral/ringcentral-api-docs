@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/authorization-flow/">
+        <link rel="shortcut icon" href="../../../../favicon.ico">
+        
+        <title>Authorization Flow Authentication .NET Quick Start - Developing with RingCentral</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../../../extra.css" rel="stylesheet">
+    <link href="../../../../css/mega-menu.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../../js/base.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body class="">
+      
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="../../../..">Developing with RingCentral</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+          <!-- Main navigation -->
+          <ul class="nav navbar-nav">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Basics <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li>
+    <a href="../../../../get-started/" class="dropdown-item">Get Started</a>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Using the API</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../basics/uris/" class="dropdown-item">Methods, Endpoints and Parameters</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/sandbox/" class="dropdown-item">Developing in Sandbox</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/your-rc-phone/" class="dropdown-item">Using Phones in Sandbox</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/notifications/webhooks/" class="dropdown-item">Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/notifications/pubnub/" class="dropdown-item">Mobile Push Notifications</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/rate-limits/" class="dropdown-item">Rate Limits</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Application Management</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../basics/create-app/" class="dropdown-item">Creating an Application</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/production/" class="dropdown-item">Deploying to Production</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/app-gallery/" class="dropdown-item">Publishing to App Gallery</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/lead-forms/" class="dropdown-item">Using Lead Forms</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Account Management</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../basics/configuration/account_extension/" class="dropdown-item">Accounts & Extensions</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/configuration/authorization_profile/" class="dropdown-item">Auth Profile & Permissions</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Messaging</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../basics/messaging/" class="dropdown-item">Sending Messages</a>
+</li>
+    
+<li>
+    <a href="../../../../basics/message-sync/" class="dropdown-item">Message Synchronization</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Authentication <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Password Flow</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../password-flow/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../password-flow/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../password-flow/php/" class="dropdown-item">PHP</a>
+</li>
+  </ul>
+</li>
+    
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Authorization Flow</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../php/" class="dropdown-item">PHP</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../basics/oauth/" class="dropdown-item">Auth Types</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SMS <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../sms/quick-start/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/quick-start/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/quick-start/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/quick-start/c-sharp/" class="dropdown-item">C#</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/quick-start/explorer/" class="dropdown-item">API Explorer</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../sms/tutorials/valid-sms-numbers/" class="dropdown-item">Valid Sending Numbers</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/tutorials/sending-sms/" class="dropdown-item">Sending an SMS</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/tutorials/sending-images/" class="dropdown-item">Sending Images over SMS</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/pager/" class="dropdown-item">Pager Messages</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/tutorials/delivery-status/" class="dropdown-item">Tracking Delivery Status</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/tutorials/message-histories/" class="dropdown-item">Message Histories</a>
+</li>
+    
+<li>
+    <a href="../../../../sms/tutorials/receiving/" class="dropdown-item">Receiving SMS</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">API Reference</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS" class="dropdown-item">Send SMS</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="dropdown-item">Get Message List</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="dropdown-item">Delete Conversation</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="dropdown-item">Get Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="dropdown-item">Update Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="dropdown-item">Delete Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="dropdown-item">Get Attachment</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Sample Applications</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/" class="dropdown-item">SMS Sample App Walkthrough</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="dropdown-item">A2P SMS Messaging</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/" class="dropdown-item">Two-factor Authentication</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../voice/quick-start/ringout/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/quick-start/ringout/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/quick-start/ringout/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/quick-start/ringout/c-sharp/" class="dropdown-item">C#</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/quick-start/ringout/explorer/" class="dropdown-item">API Explorer</a>
+</li>
+  </ul>
+</li>
+                
+<li>
+    <a href="../../../../missing/" class="dropdown-item">Developer Manual</a>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">API Reference</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall" class="dropdown-item">Make Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus" class="dropdown-item">Get Call Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall" class="dropdown-item">Cancel Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallSessionStatus" class="dropdown-item">Call Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-deleteCallSession" class="dropdown-item">Drop Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-holdCallParty" class="dropdown-item">Hold Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-unholdCallParty" class="dropdown-item">Unhold Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-rejectParty" class="dropdown-item">Reject Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-transferCallParty" class="dropdown-item">Transfer Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-forwardCallParty" class="dropdown-item">Forward Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-callFlipParty" class="dropdown-item">Flip Call</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallPartyStatus" class="dropdown-item">Call Party Status</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty" class="dropdown-item">Update Call Party</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording" class="dropdown-item">Start Recording</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording" class="dropdown-item">Pause/Resume Recording</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Tutorials</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../voice/ringout/" class="dropdown-item">RingOut</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/webrtc/" class="dropdown-item">WebRTC</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/call-queues/" class="dropdown-item">Call Queues</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/call-control/" class="dropdown-item">Call Control</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/answering-rules/" class="dropdown-item">Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../../../../voice/uri-scheme/" class="dropdown-item">URI Scheme</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Sample Applications</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/" class="dropdown-item">Building a Web Phone with WebRTC</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fax <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../fax/quick-start/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/quick-start/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/quick-start/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/quick-start/c-sharp/" class="dropdown-item">C#</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/quick-start/explorer/" class="dropdown-item">API Explorer</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../fax/tutorials/sending-faxes/" class="dropdown-item">Sending Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/tutorials/receiving-faxes/" class="dropdown-item">Receiving Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../../fax/tutorials/resending-faxes/" class="dropdown-item">Forwarding and Resending</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">API Reference</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage" class="dropdown-item">Create Fax</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages" class="dropdown-item">Get Cover Pages</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="dropdown-item">Get Message List</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="dropdown-item">Delete Conversation</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="dropdown-item">Get Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="dropdown-item">Update Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="dropdown-item">Delete Message(s)</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="dropdown-item">Get Attachment</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Sample Applications</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="dropdown-item">Custom Fax Cover Pages</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chat <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../chat/quick-start/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../chat/quick-start/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../chat/quick-start/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../chat/quick-start/c-sharp/" class="dropdown-item">C#</a>
+</li>
+    
+<li>
+    <a href="../../../../chat/quick-start/explorer/" class="dropdown-item">API Explorer</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../chat/manual/api/" class="dropdown-item">API Overview</a>
+</li>
+    
+<li>
+    <a href="../../../../chat/manual/attachments/" class="dropdown-item">Message Attachments</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Tutorials</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../chat/tutorials/local-bots/" class="dropdown-item">Building a Bot Locally</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Sample Applications</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="dropdown-item">Glip Bot using IBM Watson and Botkit</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="dropdown-item">Voicemail Transcription Bot</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Call Logs <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../call-log/quick-start/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/quick-start/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/quick-start/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/quick-start/c-sharp/" class="dropdown-item">C#</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/quick-start/explorer/" class="dropdown-item">API Explorer</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../call-log/manual/overview/" class="dropdown-item">Overview</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/archival/" class="dropdown-item">Data Archival</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/api/" class="dropdown-item">API Basics</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/recordings/" class="dropdown-item">Call Recordings</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/sync/" class="dropdown-item">Synchronization</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/details/" class="dropdown-item">Detailed Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/best-practices/" class="dropdown-item">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../../../call-log/manual/access/" class="dropdown-item">Access Control</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Sample Applications</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/" class="dropdown-item">Call Log Analytics for iOS</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/" class="dropdown-item">Call Log Visualizations</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/callrecording-notification-node/" class="dropdown-item">Call Recording Push Notification</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meetings <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Getting Started</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../meetings/quick-start/node/" class="dropdown-item">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/python/" class="dropdown-item">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/php/" class="dropdown-item">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/c-sharp/" class="dropdown-item">C#</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">Developer Manual</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="../../../../meetings/manual/schedule/" class="dropdown-item">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/manual/recordings/" class="dropdown-item">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+                
+<li class="dropdown-submenu">
+  <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown" aria-expanded="false">API Reference</a>
+  <ul class="dropdown-menu">
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="dropdown-item">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="dropdown-item">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="dropdown-item">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="dropdown-item">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="dropdown-item">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="dropdown-item">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="dropdown-item">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="dropdown-item">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="dropdown-item">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+              </ul>
+            </li>
+          </ul>
+	  
+          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/bootstrap-vertical-nav/docs/authentication/quick-start/authorization-flow/authorization-flow.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+            </li>
+          </ul>
+	</div>
+	</div>
+      </nav><div id="content" class="container">
+        
+      <div class="row">
+        <div class="col-md-9" role="main">
+
+
+
+<h1 id="authorization-flow-authentication-net-quick-start">Authorization Flow Authentication .NET Quick Start</h1>
+<p>Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.</p>
+<p>In this Quick Start, we are going to help you send a fax message using our Fax API, which sends a cover page and a high resolution attachment to a recipient. Let's get started.</p>
+<h2 id="create-an-app">Create an App</h2>
+<p>The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Fax App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.</p>
+<p><a target="_new" href="https://developer.ringcentral.com/new-app?name=Fax+Quick+Start+App&desc=A+simple+app+to+demo+sending+a+Fax+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Faxes&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a></p>
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Give your app a name and description, then click Next.</li>
+<li>On the second page of the create app wizard enter the following:
+  <ul>
+  <li>Select 'Private' for Application Type.</li>
+  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  </ul>
+  </li>
+<li>On the third page of the create app wizard, select the following permissions:
+  <ul>
+    <li>SMS</li>
+  </ul>
+  </li>
+<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+</ol>
+</div>
+
+<p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
+<h2 id="send-a-fax-message">Send a Fax message</h2>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><ul class="nav nav-tabs"><li class=nav-item><a class="nav-link active" href=#tab-group-0-0_js-panel role=tab id=tab-group-0-0_js-tab data-toggle=tab data-lang=js aria-controls=tab-group-0-0_js-panel aria-selected=true>Node JS</a></li><li class=nav-item><a class="nav-link " href=#tab-group-0-1_python-panel role=tab id=tab-group-0-1_python-tab data-toggle=tab data-lang=python aria-controls=tab-group-0-1_python-panel aria-selected=false>Python</a></li><li class=nav-item><a class="nav-link " href=#tab-group-0-2_php-panel role=tab id=tab-group-0-2_php-tab data-toggle=tab data-lang=php aria-controls=tab-group-0-2_php-panel aria-selected=false>PHP</a></li><li class=nav-item><a class="nav-link " href=#tab-group-0-3_c-sharp-panel role=tab id=tab-group-0-3_c-sharp-tab data-toggle=tab data-lang=c-sharp aria-controls=tab-group-0-3_c-sharp-panel aria-selected=false>C#</a></li></ul><div class=tab-content><div id=tab-group-0-0_js-panel class="tab-pane show active" role=tabpanel aria-labelledby=tab-group-0-0_js-tab><pre class=codehilite><code class=language-js>// Install RingCentral Node JS SDK
+
+$ npm install ringcentral --save
+
+// Create and Edit fax.js
+
+/*
+Create a file called &lt;tt&gt;fax.js&lt;/tt&gt;. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+*/
+
+const RC = require('ringcentral');
+
+RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+
+RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
+RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
+RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+
+var rcsdk = new RC({
+      server: RINGCENTRAL_SERVER,
+      appKey: RINGCENTRAL_CLIENTID,
+      appSecret: RINGCENTRAL_CLIENTSECRET
+  });
+var platform = rcsdk.platform();
+platform.login({
+      username: RINGCENTRAL_USERNAME,
+      password: RINGCENTRAL_PASSWORD,
+      extension: RINGCENTRAL_EXTENSION
+      })
+      .then(function(resp) {
+          send_fax()
+      });
+
+function send_fax() {
+    var FormData = require('form-data');
+    formData = new FormData();
+    var body = {
+      to: [{'phoneNumber': RECIPIENT}],
+      faxResolution: 'High',
+      coverPageText: &quot;This is a demo Fax page from Node JS&quot;
+    }
+
+    formData.append('json', new Buffer(JSON.stringify(body)), {
+        filename: 'request.json',
+        contentType: 'application/json'
+        });
+
+    formData.append('attachment', require('fs').createReadStream('test.jpg'));
+
+    platform.post('/account/~/extension/~/fax', formData)
+    .then(function (resp) {
+        console.log(&quot;FAX sent. Message status: &quot; + resp.json().messageStatus)
+    })
+}
+
+/*** Run Your Code ***/
+/*
+You are almost done. Now run your script.
+*/
+
+$ node fax.js</code></pre></div><div id=tab-group-0-1_python-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-0-1_python-tab><pre class=codehilite><code class=language-python>&lt;h3&gt;Install RingCentral Python SDK&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;
+$ pip install ringcentral
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Create and Edit fax.py&lt;/h3&gt;
+
+&lt;p&gt;Create a file called &lt;tt&gt;fax.py&lt;/tt&gt;. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.&lt;/p&gt;
+
+from ringcentral import SDK
+
+RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+
+RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
+RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
+RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
+RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+
+rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = rcsdk.platform()
+platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+
+builder = rcsdk.create_multipart_builder()
+builder.set_body({
+    'to': [{'phoneNumber': RECIPIENT}],
+    'faxResolution': &quot;High&quot;,
+    'coverPageText': &quot;This is a demo Fax page from Python&quot;
+})
+
+attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
+builder.add(attachment)
+
+request = builder.request('/account/~/extension/~/fax')
+
+resp = platform.send_request(request)
+print 'Fax sent. Message status: ' + resp.json().messageStatus
+
+&lt;h3&gt;Run Your Code&lt;/h3&gt;
+
+&lt;p&gt;You are almost done. Now run your script.&lt;/p&gt;
+
+$ python fax.py</code></pre></div><div id=tab-group-0-2_php-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-0-2_php-tab><pre class=codehilite><code class=language-php>&lt;h3&gt;Install RingCentral PHP SDK&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;
+$ curl -sS https://getcomposer.org/installer | php
+$ php composer.phar require ringcentral/ringcentral-php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Create and Edit fax.php&lt;/h3&gt;
+
+&lt;p&gt;Create a file called &lt;tt&gt;sms.php&lt;/tt&gt;. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.&lt;/p&gt;
+
+&lt;?php
+require('vendor/autoload.php');
+
+$RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+
+$RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
+$RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+$RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
+$RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
+$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+
+$platform = $rcsdk-&gt;platform();
+$platform-&gt;login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+
+$request = $rcsdk-&gt;createMultipartBuilder()
+                 -&gt;setBody(array(
+                     'to' =&gt; array(array('phoneNumber' =&gt; $RECIPIENT)),
+                     'faxResolution' =&gt; 'High',
+                 ))
+                 -&gt;add(fopen('test.jpg', 'r'))
+                 -&gt;request('/account/~/extension/~/fax');
+
+$resp = $platform-&gt;sendRequest($request);
+print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageStatus);
+
+&lt;h3&gt;Run Your Code&lt;/h3&gt;
+
+&lt;p&gt;You are almost done. Now run your script.&lt;/p&gt;
+
+$ php fax.php</code></pre></div><div id=tab-group-0-3_c-sharp-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-0-3_c-sharp-tab><pre class=codehilite><code class=language-c-sharp>&lt;h3&gt;Create a Visual Studio project&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Choose Console Application .Net Core -&gt; App&lt;/li&gt;
+&lt;li&gt;Select Target Framework .NET Core 2.1&lt;/li&gt;
+&lt;li&gt;Add NuGet package RingCentral.Client (3.0.0) SDK&lt;/li&gt;
+&lt;li&gt;Enter project name &quot;Send_SMS&quot;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Edit the file Program.cs&lt;/h3&gt;
+
+&lt;p&gt;Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.&lt;/p&gt;
+
+using System;
+using System.Threading.Tasks;
+using RingCentral;
+
+namespace Send_Fax
+{
+    class Program
+    {
+        const string RECIPIENT = &quot;&lt;ENTER PHONE NUMBER&gt;&quot;;
+        const string RINGCENTRAL_CLIENTID = &quot;&lt;ENTER CLIENT ID&gt;&quot;;
+        const string RINGCENTRAL_CLIENTSECRET = &quot;&lt;ENTER CLIENT SECRET&gt;&quot;;
+
+        const string RINGCENTRAL_USERNAME = &quot;&lt;YOUR ACCOUNT PHONE NUMBER&gt;&quot;;
+        const string RINGCENTRAL_PASSWORD = &quot;&lt;YOUR ACCOUNT PASSWORD&gt;&quot;;
+        const string RINGCENTRAL_EXTENSION = &quot;&lt;YOUR EXTENSION, PROBABLY &quot;;
+
+        static void Main(string[] args)
+        {
+            send_fax().Wait();
+        }
+        static private async Task send_fax()
+        {
+            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
+            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+            if (rc.token.access_token.Length &gt; 0)
+            {
+                var attachment = new Attachment { fileName = &quot;test.jpg&quot;, contentType = &quot;image/jpeg&quot;, bytes = System.IO.File.ReadAllBytes(&quot;test.jpg&quot;) };
+                var attachments = new Attachment[] { attachment };
+
+                var body = new {
+                        to = new CallerInfo[] { new CallerInfo { phoneNumber = RECIPIENT } },
+                        faxResolution = &quot;High&quot;,
+                        coverPageText = &quot;This is a demo Fax page from C Sharp&quot;
+                    };
+                var resp = await rc.Restapi().Account().Extension().Fax().Post(body, attachments);
+                Console.WriteLine(&quot;Fax sent. Message status: &quot; + resp.messageStatus);
+            }
+        }
+    }
+}
+
+&lt;h3&gt;Run Your App&lt;/h3&gt;
+&lt;p&gt;You are almost done. Now run your app from Visual Studio.&lt;/p&gt;</code></pre></div></div></div>
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+</div>
+        <div class="col-md-3"><div class="navbar-light navbar-expand-md hidden-print sticky-top sticky-offset" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    <div id="toc-collapse" class="navbar-collapse collapse card">
+        <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a class="nav-link" href="#authorization-flow-authentication-net-quick-start">Authorization Flow Authentication .NET Quick Start</a></li>
+                <li class="nav-item">
+                    <a href="#create-an-app" class="nav-link">Create an App</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#send-a-fax-message" class="nav-link">Send a Fax message</a>
+                </li>
+        </ul>
+    </div>
+</div></div>
+      </div>
+      </div>
+      
+      <footer class="col-md-12">
+	<hr>
+	<div class="container">
+	  <p>1999-2019 RingCentral, Inc. All rights reserved.</p>
+	</div>
+      </footer>
+      <script>
+	var base_url = "../../../..",
+            shortcuts = ["foo"];
+      </script>
+      <script src="../../../../js/base.js" defer></script>
+      
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+      
+    </body>
+</html>
