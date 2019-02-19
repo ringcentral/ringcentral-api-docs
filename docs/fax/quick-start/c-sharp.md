@@ -48,7 +48,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```dotnet
+``` c#
 using System;
 using System.Threading.Tasks;
 using RingCentral;
