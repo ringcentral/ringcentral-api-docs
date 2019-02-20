@@ -1,0 +1,168 @@
+.admonition>.admonition-title:before,
+.admonition>summary:before,
+details>.admonition-title:before,
+details>summary:before,
+summary:after {
+    font-family:Material Icons;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:400;
+    line-height:1;
+    text-transform:none;
+    white-space:nowrap;
+    speak:none;
+    word-wrap:normal;
+    direction:ltr;
+}
+
+.admonition p, details p {
+    margin-top: 10px;
+}
+.admonition, details {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  overflow: auto; }
+  [dir="rtl"] .admonition, [dir="rtl"] details {
+    border-right: 0.4rem solid #448aff;
+    border-left: none; }
+  html .admonition > :last-child, html details > :last-child {
+    margin-bottom: 1.2rem; }
+  .admonition .admonition, details .admonition, .admonition details, details details {
+    margin: 1em 0; }
+  .admonition > .admonition-title, details > .admonition-title, .admonition > summary, details > summary {
+    margin: 0 -1.2rem;
+    padding: 0.8rem 1.2rem 0.8rem 4rem;
+    border-bottom: 0.1rem solid rgba(68, 138, 255, 0.1);
+    background-color: rgba(68, 138, 255, 0.1);
+    font-weight: 700; }
+    [dir="rtl"] .admonition > .admonition-title, [dir="rtl"] details > .admonition-title, [dir="rtl"] .admonition > summary, [dir="rtl"] details > summary {
+      padding: 0.8rem 4rem 0.8rem 1.2rem; }
+    .admonition > .admonition-title:last-child, details > .admonition-title:last-child, .admonition > summary:last-child, details > summary:last-child {
+      margin-bottom: 0; }
+    .admonition > .admonition-title::before, details > .admonition-title::before, .admonition > summary::before, details > summary::before {
+      position: absolute;
+      left: 1.2rem;
+      color: #448aff;
+      font-size: 1.5rem;
+      content: "\E3C9"; }
+      [dir="rtl"] .admonition > .admonition-title::before, [dir="rtl"] details > .admonition-title::before, [dir="rtl"] .admonition > summary::before, [dir="rtl"] details > summary::before {
+        right: 1.2rem;
+        left: initial; }
+      details[open] summary {
+	  margin-bottom: 20px
+      }
+  .admonition.summary, details.summary, .admonition.tldr, details.tldr, .admonition.abstract, details.abstract {
+    border-left-color: #00b0ff; }
+    [dir="rtl"] .admonition.summary, [dir="rtl"] details.summary, [dir="rtl"] .admonition.tldr, [dir="rtl"] details.tldr, [dir="rtl"] .admonition.abstract, [dir="rtl"] details.abstract {
+      border-right-color: #00b0ff; }
+    .admonition.summary > .admonition-title, details.summary > .admonition-title, .admonition.tldr > .admonition-title, details.tldr > .admonition-title, .admonition.summary > summary, details.summary > summary, .admonition.tldr > summary, details.tldr > summary, .admonition.abstract > .admonition-title, details.abstract > .admonition-title, .admonition.abstract > summary, details.abstract > summary {
+      border-bottom-color: 0.1rem solid rgba(0, 176, 255, 0.1);
+      background-color: rgba(0, 176, 255, 0.1); }
+      .admonition.summary > .admonition-title::before, details.summary > .admonition-title::before, .admonition.tldr > .admonition-title::before, details.tldr > .admonition-title::before, .admonition.summary > summary::before, details.summary > summary::before, .admonition.tldr > summary::before, details.tldr > summary::before, .admonition.abstract > .admonition-title::before, details.abstract > .admonition-title::before, .admonition.abstract > summary::before, details.abstract > summary::before {
+        color: #00b0ff;
+        content: "\E8D2"; }
+  .admonition.todo, details.todo, .admonition.info, details.info {
+    border-left-color: #00b8d4; }
+    [dir="rtl"] .admonition.todo, [dir="rtl"] details.todo, [dir="rtl"] .admonition.info, [dir="rtl"] details.info {
+      border-right-color: #00b8d4; }
+    .admonition.todo > .admonition-title, details.todo > .admonition-title, .admonition.todo > summary, details.todo > summary, .admonition.info > .admonition-title, details.info > .admonition-title, .admonition.info > summary, details.info > summary {
+      border-bottom-color: 0.1rem solid rgba(0, 184, 212, 0.1);
+      background-color: rgba(0, 184, 212, 0.1); }
+      .admonition.todo > .admonition-title::before, details.todo > .admonition-title::before, .admonition.todo > summary::before, details.todo > summary::before, .admonition.info > .admonition-title::before, details.info > .admonition-title::before, .admonition.info > summary::before, details.info > summary::before {
+        color: #00b8d4;
+        content: "\E88E"; }
+  .admonition.hint, details.hint, .admonition.important, details.important, .admonition.tip, details.tip {
+    border-left-color: #00bfa5; }
+    [dir="rtl"] .admonition.hint, [dir="rtl"] details.hint, [dir="rtl"] .admonition.important, [dir="rtl"] details.important, [dir="rtl"] .admonition.tip, [dir="rtl"] details.tip {
+      border-right-color: #00bfa5; }
+    .admonition.hint > .admonition-title, details.hint > .admonition-title, .admonition.important > .admonition-title, details.important > .admonition-title, .admonition.hint > summary, details.hint > summary, .admonition.important > summary, details.important > summary, .admonition.tip > .admonition-title, details.tip > .admonition-title, .admonition.tip > summary, details.tip > summary {
+      border-bottom-color: 0.1rem solid rgba(0, 191, 165, 0.1);
+      background-color: rgba(0, 191, 165, 0.1); }
+      .admonition.hint > .admonition-title::before, details.hint > .admonition-title::before, .admonition.important > .admonition-title::before, details.important > .admonition-title::before, .admonition.hint > summary::before, details.hint > summary::before, .admonition.important > summary::before, details.important > summary::before, .admonition.tip > .admonition-title::before, details.tip > .admonition-title::before, .admonition.tip > summary::before, details.tip > summary::before {
+        color: #00bfa5;
+        content: "\E80E"; }
+  .admonition.check, details.check, .admonition.done, details.done, .admonition.success, details.success {
+    border-left-color: #00c853; }
+    [dir="rtl"] .admonition.check, [dir="rtl"] details.check, [dir="rtl"] .admonition.done, [dir="rtl"] details.done, [dir="rtl"] .admonition.success, [dir="rtl"] details.success {
+      border-right-color: #00c853; }
+    .admonition.check > .admonition-title, details.check > .admonition-title, .admonition.done > .admonition-title, details.done > .admonition-title, .admonition.check > summary, details.check > summary, .admonition.done > summary, details.done > summary, .admonition.success > .admonition-title, details.success > .admonition-title, .admonition.success > summary, details.success > summary {
+      border-bottom-color: 0.1rem solid rgba(0, 200, 83, 0.1);
+      background-color: rgba(0, 200, 83, 0.1); }
+      .admonition.check > .admonition-title::before, details.check > .admonition-title::before, .admonition.done > .admonition-title::before, details.done > .admonition-title::before, .admonition.check > summary::before, details.check > summary::before, .admonition.done > summary::before, details.done > summary::before, .admonition.success > .admonition-title::before, details.success > .admonition-title::before, .admonition.success > summary::before, details.success > summary::before {
+        color: #00c853;
+        content: "\E876"; }
+  .admonition.help, details.help, .admonition.faq, details.faq, .admonition.question, details.question {
+    border-left-color: #64dd17; }
+    [dir="rtl"] .admonition.help, [dir="rtl"] details.help, [dir="rtl"] .admonition.faq, [dir="rtl"] details.faq, [dir="rtl"] .admonition.question, [dir="rtl"] details.question {
+      border-right-color: #64dd17; }
+    .admonition.help > .admonition-title, details.help > .admonition-title, .admonition.faq > .admonition-title, details.faq > .admonition-title, .admonition.help > summary, details.help > summary, .admonition.faq > summary, details.faq > summary, .admonition.question > .admonition-title, details.question > .admonition-title, .admonition.question > summary, details.question > summary {
+      border-bottom-color: 0.1rem solid rgba(100, 221, 23, 0.1);
+      background-color: rgba(100, 221, 23, 0.1); }
+      .admonition.help > .admonition-title::before, details.help > .admonition-title::before, .admonition.faq > .admonition-title::before, details.faq > .admonition-title::before, .admonition.help > summary::before, details.help > summary::before, .admonition.faq > summary::before, details.faq > summary::before, .admonition.question > .admonition-title::before, details.question > .admonition-title::before, .admonition.question > summary::before, details.question > summary::before {
+        color: #64dd17;
+        content: "\E887"; }
+  .admonition.caution, details.caution, .admonition.attention, details.attention, .admonition.warning, details.warning {
+    border-left-color: #ff9100; }
+    [dir="rtl"] .admonition.caution, [dir="rtl"] details.caution, [dir="rtl"] .admonition.attention, [dir="rtl"] details.attention, [dir="rtl"] .admonition.warning, [dir="rtl"] details.warning {
+      border-right-color: #ff9100; }
+    .admonition.caution > .admonition-title, details.caution > .admonition-title, .admonition.attention > .admonition-title, details.attention > .admonition-title, .admonition.caution > summary, details.caution > summary, .admonition.attention > summary, details.attention > summary, .admonition.warning > .admonition-title, details.warning > .admonition-title, .admonition.warning > summary, details.warning > summary {
+      border-bottom-color: 0.1rem solid rgba(255, 145, 0, 0.1);
+      background-color: rgba(255, 145, 0, 0.1); }
+      .admonition.caution > .admonition-title::before, details.caution > .admonition-title::before, .admonition.attention > .admonition-title::before, details.attention > .admonition-title::before, .admonition.caution > summary::before, details.caution > summary::before, .admonition.attention > summary::before, details.attention > summary::before, .admonition.warning > .admonition-title::before, details.warning > .admonition-title::before, .admonition.warning > summary::before, details.warning > summary::before {
+        color: #ff9100;
+        content: "\E002"; }
+  .admonition.fail, details.fail, .admonition.missing, details.missing, .admonition.failure, details.failure {
+    border-left-color: #ff5252; }
+    [dir="rtl"] .admonition.fail, [dir="rtl"] details.fail, [dir="rtl"] .admonition.missing, [dir="rtl"] details.missing, [dir="rtl"] .admonition.failure, [dir="rtl"] details.failure {
+      border-right-color: #ff5252; }
+    .admonition.fail > .admonition-title, details.fail > .admonition-title, .admonition.missing > .admonition-title, details.missing > .admonition-title, .admonition.fail > summary, details.fail > summary, .admonition.missing > summary, details.missing > summary, .admonition.failure > .admonition-title, details.failure > .admonition-title, .admonition.failure > summary, details.failure > summary {
+      border-bottom-color: 0.1rem solid rgba(255, 82, 82, 0.1);
+      background-color: rgba(255, 82, 82, 0.1); }
+      .admonition.fail > .admonition-title::before, details.fail > .admonition-title::before, .admonition.missing > .admonition-title::before, details.missing > .admonition-title::before, .admonition.fail > summary::before, details.fail > summary::before, .admonition.missing > summary::before, details.missing > summary::before, .admonition.failure > .admonition-title::before, details.failure > .admonition-title::before, .admonition.failure > summary::before, details.failure > summary::before {
+        color: #ff5252;
+        content: "\E14C"; }
+  .admonition.error, details.error, .admonition.danger, details.danger {
+    border-left-color: #ff1744; }
+    [dir="rtl"] .admonition.error, [dir="rtl"] details.error, [dir="rtl"] .admonition.danger, [dir="rtl"] details.danger {
+      border-right-color: #ff1744; }
+    .admonition.error > .admonition-title, details.error > .admonition-title, .admonition.error > summary, details.error > summary, .admonition.danger > .admonition-title, details.danger > .admonition-title, .admonition.danger > summary, details.danger > summary {
+      border-bottom-color: 0.1rem solid rgba(255, 23, 68, 0.1);
+      background-color: rgba(255, 23, 68, 0.1); }
+      .admonition.error > .admonition-title::before, details.error > .admonition-title::before, .admonition.error > summary::before, details.error > summary::before, .admonition.danger > .admonition-title::before, details.danger > .admonition-title::before, .admonition.danger > summary::before, details.danger > summary::before {
+        color: #ff1744;
+        content: "\E3E7"; }
+  .admonition.bug, details.bug {
+    border-left-color: #f50057; }
+    [dir="rtl"] .admonition.bug, [dir="rtl"] details.bug {
+      border-right-color: #f50057; }
+    .admonition.bug > .admonition-title, details.bug > .admonition-title, .admonition.bug > summary, details.bug > summary {
+      border-bottom-color: 0.1rem solid rgba(245, 0, 87, 0.1);
+      background-color: rgba(245, 0, 87, 0.1); }
+      .admonition.bug > .admonition-title::before, details.bug > .admonition-title::before, .admonition.bug > summary::before, details.bug > summary::before {
+        color: #f50057;
+        content: "\E868"; }
+  .admonition.example, details.example {
+    border-left-color: #651fff; }
+    [dir="rtl"] .admonition.example, [dir="rtl"] details.example {
+      border-right-color: #651fff; }
+    .admonition.example > .admonition-title, details.example > .admonition-title, .admonition.example > summary, details.example > summary {
+      border-bottom-color: 0.1rem solid rgba(101, 31, 255, 0.1);
+      background-color: rgba(101, 31, 255, 0.1); }
+      .admonition.example > .admonition-title::before, details.example > .admonition-title::before, .admonition.example > summary::before, details.example > summary::before {
+        color: #651fff;
+        content: "\E242"; }
+  .admonition.cite, details.cite, .admonition.quote, details.quote {
+    border-left-color: #9e9e9e; }
+    [dir="rtl"] .admonition.cite, [dir="rtl"] details.cite, [dir="rtl"] .admonition.quote, [dir="rtl"] details.quote {
+      border-right-color: #9e9e9e; }
+    .admonition.cite > .admonition-title, details.cite > .admonition-title, .admonition.cite > summary, details.cite > summary, .admonition.quote > .admonition-title, details.quote > .admonition-title, .admonition.quote > summary, details.quote > summary {
+      border-bottom-color: 0.1rem solid rgba(158, 158, 158, 0.1);
+      background-color: rgba(158, 158, 158, 0.1); }
+      .admonition.cite > .admonition-title::before, details.cite > .admonition-title::before, .admonition.cite > summary::before, details.cite > summary::before, .admonition.quote > .admonition-title::before, details.quote > .admonition-title::before, .admonition.quote > summary::before, details.quote > summary::before {
+        color: #9e9e9e;
+        content: "\E244"; }
