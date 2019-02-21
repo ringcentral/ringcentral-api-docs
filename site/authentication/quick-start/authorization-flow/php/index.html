@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <script>
-	// Hack for scrolling window when linking to anchor tag with fixed nav header
-        var shiftWindow = function() { scrollBy(0, -75) };
-        window.addEventListener("hashchange", shiftWindow);
-        function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/php/">
-        <link rel="shortcut icon" href="../../../../favicon.ico">
-        
-        <title>PHP - Developing with RingCentral</title>
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/authentication/quick-start/authorization-flow/php/">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    
+    <title>PHP - Developing with RingCentral</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../../../css/code-styles.css" rel="stylesheet">
-    <link href="../../../../css/code-tabs.css" rel="stylesheet">
-    <link href="../../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../../css/code-styles.css" rel="stylesheet">
+    <link href="../../../../css/mega-menu.css" rel="stylesheet">
+    <link href="../../../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../../../css/admonition.css" rel="stylesheet">
     <link href="../../../../css/base.css" rel="stylesheet">
     <link href="../../../../extra.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../../../css/mega-menu.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../../../fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
-            ga('send', 'pageview');
-        </script> 
-    </head>
-
-    <body class="" data-spy="scroll" data-target="#toc">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <script src="fonts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="" data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="../../../..">
       <img src="../../../../logo_beta.svg" />
@@ -220,10 +217,10 @@
     </div>
   </div>
 </nav>
-      <div id="content" class="container">
-        
-      <div class="row">
-        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+    <div id="content" class="container">
+      
+    <div class="row">
+      <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
@@ -347,14 +344,6 @@
 <li>
     <a href="../../password-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../password-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../password-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
     
@@ -374,14 +363,6 @@
 <li>
     <a href="./" class=" active">PHP</a>
 </li>
-    
-<li>
-    <a href="../c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
   </ul>
@@ -394,17 +375,6 @@
     
 <li>
     <a href="../../../../basics/oauth/" class="">Auth Types</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../../missing/" class="">Auth Server</a>
 </li>
   </ul>
 </li>
@@ -543,30 +513,6 @@
   <ul>
     
 <li>
-  <span>WebRTC</span>
-  <!--<a href="#" class="">WebRTC</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../../missing/" class="">Web</a>
-</li>
-    
-<li>
-    <a href="../../../../missing/" class="">iOS</a>
-</li>
-    
-<li>
-    <a href="../../../../missing/" class="">Android</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>RingOut</span>
-  <!--<a href="#" class="">RingOut</a>-->
-  <ul>
-    
-<li>
     <a href="../../../../voice/quick-start/ringout/node/" class="">Node.js</a>
 </li>
     
@@ -584,8 +530,6 @@
     
 <li>
     <a href="../../../../voice/quick-start/ringout/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -971,20 +915,107 @@
 </li>
         </ul>
       </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
 </div>
-        <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col-md-7" role="main">
 
 
 
 <h1 id="authorization-flow-authentication-php-quick-start">Authorization Flow Authentication PHP Quick Start</h1>
 <p>Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.</p>
-<p>In this Quick Start, we are going to help you send a fax message using our Fax API, which sends a cover page and a high resolution attachment to a recipient. Let's get started.</p>
+<p>In this Quick Start, we are going to help you authorize a user to login with username and password to get an access token and a refresh token. Let's get started.</p>
 <h2 id="create-an-app">Create an App</h2>
-<p>The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Fax App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.</p>
-<p><a target="_new" href="https://developer.ringcentral.com/new-app?name=Fax+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Faxes&redirectUri=" class="btn btn-primary">Create Fax App</a>
+<p>The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create User Login App" button below. Enter a name and description if you want to change them, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.</p>
+<p><a target="_new" href="https://developer.ringcentral.com/new-app?name=Authorization+Flow+Quick+Start+App&desc=A+simple+app+to+demo+authorizing+user+on+RingCentral&public=false&type=ServerWeb&carriers=7710,7310,3420&permissions=ReadAccounts,ReadCallLog&redirectUri=http://localhost:5000/oauth2callback" class="btn btn-primary">Create User Login App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a></p>
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -994,63 +1025,202 @@
 <li>On the second page of the create app wizard enter the following:
   <ul>
   <li>Select 'Private' for Application Type.</li>
-  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  <li>Select 'Server/Web' for Platform Type.</li>
   </ul>
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>Faxes</li>
+    <li>ReadAccounts,ReadCallLog</li>
   </ul>
   </li>
-<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+<li>Specify the redirect Uri as http://localhost:5000/engine.php?oauth2callback.</li>
 </ol>
 </div>
 
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
-<h2 id="send-a-fax-message">Send a Fax message</h2>
+<h2 id="authorization-flow">Authorization Flow</h2>
 <h3 id="install-ringcentral-php-sdk">Install RingCentral PHP SDK</h3>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_php checked=checked class=code-tab data-lang=php aria-controls=tab-group-0-0_php-panel role=tab><label for=tab-group-0-0_php class=code-tab-label data-lang=php id=tab-group-0-0_php-label>Php</label><div class=code-tabpanel role=tabpanel data-lang=php id=tab-group-0-0_php-panel aria-labelledby=tab-group-0-0_php-label><pre class=codehilite><code class=language-php>$ curl -sS https://getcomposer.org/installer | php
-$ php composer.phar require ringcentral/ringcentral-php</code></pre></div></div></p>
-<h3 id="create-and-edit-faxphp">Create and Edit fax.php</h3>
-<p>Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_jf8cq2hnzkc1p18 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_jf8cq2hnzkc1p18-panel role=tab><label for=tab-group-1-0_jf8cq2hnzkc1p18 class=code-tab-label data-lang id=tab-group-1-0_jf8cq2hnzkc1p18-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_jf8cq2hnzkc1p18-panel aria-labelledby=tab-group-1-0_jf8cq2hnzkc1p18-label><pre class=codehilite><code>&lt;?php
-require('vendor/autoload.php');
+<p> <div class=codehilite><pre><span></span><span class=x>$ curl -sS https://getcomposer.org/installer | php</span>
+<span class=x>$ php composer.phar require ringcentral/ringcentral-php</span>
+</pre></div></p>
+<h3 id="create-a-configsphp-file">Create a configs.php file</h3>
+<p>Create a file called <tt>configs.php</tt>. Be sure to edit the variables value in &lt;ALL CAPS&gt; with your app credentials.</p>
+<p> <div class=codehilite><pre><span></span><span class=x>$RINGCENTRAL_CLIENTID = &quot;&lt;ENTER CLIENT ID&gt;&quot;;</span>
+<span class=x>$RINGCENTRAL_CLIENTSECRET = &quot;&lt;ENTER CLIENT SECRET&gt;&quot;;</span>
+<span class=x>$RINGCENTRAL_SERVER_URL = &quot;https://platform.devtest.ringcentral.com&quot;;</span>
+<span class=x>$RINGCENTRAL_REDIRECT_URL = &quot;http://localhost:5000/engine.php?oauth2callback&quot;;</span>
+</pre></div></p>
+<h3 id="create-an-indexphp">Create an index.php</h3>
+<p>Create a file called <tt>index.php</tt>. In this file we'll implement the login page.</p>
+<p> <div class=codehilite><pre><span></span><span class=cp>&lt;?php</span>
+<span class=k>require</span><span class=p>(</span><span class=no>__DIR__</span> <span class=o>.</span> <span class=s1>&#39;vendor/autoload.php&#39;</span><span class=p>);</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\Http\HttpException</span><span class=p>;</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\Http\ApiResponse</span><span class=p>;</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\SDK</span><span class=p>;</span>
+<span class=k>require_once</span> <span class=p>(</span><span class=s1>&#39;configs.php&#39;</span><span class=p>);</span>
 
-$RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+<span class=nb>session_start</span><span class=p>();</span>
 
-$RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
-$RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+<span class=nv>$rcsdk</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>SDK</span><span class=p>(</span><span class=nv>$RINGCENTRAL_CLIENT_ID</span><span class=p>,</span> <span class=nv>$RINGCENTRAL_CLIENT_SECRET</span><span class=p>,</span> <span class=nv>$RINGCENTRAL_SERVER_URL</span><span class=p>);</span>
+<span class=nv>$platform</span> <span class=o>=</span> <span class=nv>$rcsdk</span><span class=o>-&gt;</span><span class=na>platform</span><span class=p>();</span>
 
-$RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
-$RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-$RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+<span class=c1>// Using the authUrl to call the platform function</span>
+<span class=nv>$url</span> <span class=o>=</span> <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>authUrl</span><span class=p>(</span><span class=k>array</span><span class=p>(</span>
+          <span class=s1>&#39;redirectUri&#39;</span> <span class=o>=&gt;</span> <span class=nv>$RINGCENTRAL_REDIRECT_URL</span><span class=p>,</span>
+          <span class=s1>&#39;state&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;initialState&#39;</span><span class=p>,</span>
+          <span class=s1>&#39;brandId&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;&#39;</span><span class=p>,</span>
+          <span class=s1>&#39;display&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;&#39;</span><span class=p>,</span>
+          <span class=s1>&#39;prompt&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;&#39;</span>
+        <span class=p>));</span>
+<span class=cp>?&gt;</span><span class=x></span>
 
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+<span class=x>&lt;!DOCTYPE html&gt;</span>
+<span class=x>&lt;html&gt;</span>
+<span class=x>&lt;head&gt;</span>
+<span class=x>    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class=x>    &lt;title&gt;RingCentral Authorization Code Flow Authentication&lt;/title&gt;</span>
+<span class=x>    &lt;script&gt;</span>
+<span class=x>        var url = &#39;</span><span class=cp>&lt;?php</span> <span class=k>echo</span> <span class=nv>$url</span><span class=p>;</span> <span class=cp>?&gt;</span><span class=x>&#39;;</span>
+<span class=x>        var redirectUri = &#39;</span><span class=cp>&lt;?php</span> <span class=k>echo</span> <span class=nv>$RINGCENTRAL_REDIRECT_URL</span><span class=p>;</span> <span class=cp>?&gt;</span><span class=x>&#39;;</span>
+<span class=x>        var config = {</span>
+<span class=x>            authUri: url,</span>
+<span class=x>            redirectUri: redirectUri,</span>
+<span class=x>        }</span>
+<span class=x>        var OAuthCode = function (config) {</span>
+<span class=x>            this.config = config;</span>
+<span class=x>            this.loginPopup = function () {</span>
+<span class=x>                this.loginPopupUri(this.config[&#39;authUri&#39;], this.config[&#39;redirectUri&#39;]);</span>
+<span class=x>            }</span>
+<span class=x>            this.loginPopupUri = function (authUri, redirectUri) {</span>
+<span class=x>                var win = window.open(authUri, &#39;windowname1&#39;, &#39;width=800, height=600&#39;);</span>
+<span class=x>                var pollOAuth = window.setInterval(function () {</span>
+<span class=x>                    try {</span>
+<span class=x>                        if (win.document.URL.indexOf(redirectUri) != -1) {</span>
+<span class=x>                            window.clearInterval(pollOAuth);</span>
+<span class=x>                            win.close();</span>
+<span class=x>                            window.location.href = &quot;test.html&quot;</span>
+<span class=x>                        }</span>
+<span class=x>                    }catch (e) {</span>
+<span class=x>                        console.log(e);</span>
+<span class=x>                    }</span>
+<span class=x>                }, 100);</span>
+<span class=x>            }</span>
+<span class=x>        }</span>
+<span class=x>        var oauth = new OAuthCode(config);</span>
+<span class=x>    &lt;/script&gt;</span>
+<span class=x>&lt;/head&gt;</span>
+<span class=x>&lt;body&gt;</span>
+<span class=x>  &lt;div align=&quot;justify&quot;&gt;</span>
+<span class=x>    &lt;div style=&quot;width:500px&quot;&gt;</span>
+<span class=x>      &lt;p&gt;</span>
+<span class=x>        &lt;b&gt;Important!&lt;/b&gt; You need to enable pop-up for this web site in order to login your RingCentral via this Web app.</span>
+<span class=x>      &lt;/p&gt;</span>
+<span class=x>    &lt;/div&gt;</span>
+<span class=x>    &lt;button onclick=&quot;oauth.loginPopup()&quot;&gt;Login RingCentral Account&lt;/button&gt;</span>
+<span class=x>  &lt;/div&gt;</span>
+<span class=x>&lt;/body&gt;</span>
+<span class=x>&lt;/html&gt;</span>
+</pre></div></p>
+<h3 id="create-a-testhtml-file">Create a test.html file</h3>
+<p>Create a file called <tt>test.html</tt>. In this file we'll add a few API call test cases and a logout button.</p>
+<p> <div class=codehilite><pre><span></span><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&quot;UTF-8&quot;</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+  <span class=p>&lt;</span><span class=nt>b</span><span class=p>&gt;&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&quot;http://localhost:5000/engine.php?logout&quot;</span><span class=p>&gt;</span>Logout<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;&lt;/</span><span class=nt>b</span><span class=p>&gt;</span>
+  <span class=p>&lt;</span><span class=nt>h2</span><span class=p>&gt;</span>Call APIs<span class=p>&lt;/</span><span class=nt>h2</span><span class=p>&gt;</span>
+  <span class=p>&lt;</span><span class=nt>ul</span><span class=p>&gt;</span>
+      <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&quot;http://localhost:5000/engine.php?api=extension&quot;</span><span class=p>&gt;</span>Read Extension Info<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+      <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&quot;http://localhost:5000/engine.php?api=extension-call-log&quot;</span><span class=p>&gt;</span>Read Extension Call Log<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+      <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&quot;http://localhost:5000/engine.php?api=account-call-log&quot;</span><span class=p>&gt;</span>Read Account Call Log<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+  <span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</pre></div></p>
+<h3 id="create-an-enginephp-file">Create an <strong>engine.php</strong> file</h3>
+<p>Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</> and RingCentral API calls.</p>
+<p> <div class=codehilite><pre><span></span><span class=cp>&lt;?php</span>
+<span class=k>require_once</span><span class=p>(</span><span class=no>__DIR__</span> <span class=o>.</span> <span class=s1>&#39;/vendor/autoload.php&#39;</span><span class=p>);</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\Http\HttpException</span><span class=p>;</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\Http\ApiResponse</span><span class=p>;</span>
+<span class=k>use</span> <span class=nx>RingCentral\SDK\SDK</span><span class=p>;</span>
+<span class=k>require_once</span><span class=p>(</span><span class=s1>&#39;configs.php&#39;</span><span class=p>);</span>
 
-$platform = $rcsdk-&gt;platform();
-$platform-&gt;login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+<span class=nb>session_start</span><span class=p>();</span>
 
-$request = $rcsdk-&gt;createMultipartBuilder()
-                 -&gt;setBody(array(
-                     'to' =&gt; array(array('phoneNumber' =&gt; $RECIPIENT)),
-                     'faxResolution' =&gt; 'High',
-                 ))
-                 -&gt;add(fopen('test.jpg', 'r'))
-                 -&gt;request('/account/~/extension/~/fax');
+<span class=nv>$rcsdk</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>SDK</span><span class=p>(</span><span class=nv>$RINGCENTRAL_CLIENT_ID</span><span class=p>,</span> <span class=nv>$RINGCENTRAL_CLIENT_SECRET</span><span class=p>,</span> <span class=nv>$RINGCENTRAL_SERVER_URL</span><span class=p>);</span>
+<span class=nv>$platform</span> <span class=o>=</span> <span class=nv>$rcsdk</span><span class=o>-&gt;</span><span class=na>platform</span><span class=p>();</span>
 
-$resp = $platform-&gt;sendRequest($request);
-print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageStatus);</code></pre></div></div></p>
+<span class=k>if</span> <span class=p>(</span><span class=nb>isset</span><span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;oauth2callback&#39;</span><span class=p>])){</span>
+  <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nb>isset</span><span class=p>(</span><span class=nv>$_GET</span><span class=p>[</span><span class=s1>&#39;code&#39;</span><span class=p>]))</span> <span class=p>{</span>
+      <span class=k>return</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=nv>$qs</span> <span class=o>=</span> <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>parseAuthRedirectUrl</span><span class=p>(</span><span class=nv>$_SERVER</span><span class=p>[</span><span class=s1>&#39;QUERY_STRING&#39;</span><span class=p>]);</span>
+  <span class=nv>$qs</span><span class=p>[</span><span class=s2>&quot;redirectUri&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=nv>$RINGCENTRAL_REDIRECT_URL</span><span class=p>;</span>
+
+  <span class=nv>$apiResponse</span> <span class=o>=</span> <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>login</span><span class=p>(</span><span class=nv>$qs</span><span class=p>);</span>
+  <span class=nv>$_SESSION</span><span class=p>[</span><span class=s1>&#39;sessionAccessToken&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=nv>$apiResponse</span><span class=o>-&gt;</span><span class=na>json</span><span class=p>();</span>
+  <span class=k>exit</span><span class=p>();</span>
+<span class=p>}</span>
+
+<span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nb>isset</span><span class=p>(</span><span class=nv>$_SESSION</span><span class=p>[</span><span class=s1>&#39;sessionAccessToken&#39;</span><span class=p>]))</span> <span class=p>{</span>
+    <span class=nb>header</span><span class=p>(</span><span class=s2>&quot;Location: http://localhost:5000&quot;</span><span class=p>);</span>
+    <span class=k>exit</span><span class=p>();</span>
+<span class=p>}</span><span class=k>else</span><span class=p>{</span>
+    <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>auth</span><span class=p>()</span><span class=o>-&gt;</span><span class=na>setData</span><span class=p>((</span><span class=k>array</span><span class=p>)</span><span class=nv>$_SESSION</span><span class=p>[</span><span class=s1>&#39;sessionAccessToken&#39;</span><span class=p>]);</span>
+    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>loggedIn</span><span class=p>())</span> <span class=p>{</span>
+        <span class=nb>header</span><span class=p>(</span><span class=s2>&quot;Location: http://localhost:5000&quot;</span><span class=p>);</span>
+        <span class=k>exit</span><span class=p>();</span>
+    <span class=p>}</span>
+    <span class=k>if</span> <span class=p>(</span><span class=nb>isset</span><span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;logout&#39;</span><span class=p>])){</span>
+        <span class=nb>unset</span><span class=p>(</span><span class=nv>$_SESSION</span><span class=p>[</span><span class=s1>&#39;sessionAccessToken&#39;</span><span class=p>]);</span>
+        <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>logout</span><span class=p>();</span>
+        <span class=nb>header</span><span class=p>(</span><span class=s2>&quot;Location: http://localhost:5000&quot;</span><span class=p>);</span>
+        <span class=k>exit</span><span class=p>();</span>
+    <span class=p>}</span><span class=k>elseif</span> <span class=p>(</span><span class=nb>isset</span><span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;api&#39;</span><span class=p>])){</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;api&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s2>&quot;extension&quot;</span><span class=p>)</span> <span class=p>{</span>
+            <span class=nv>$endpoint</span> <span class=o>=</span> <span class=s2>&quot;/restapi/v1.0/account/~/extension&quot;</span><span class=p>;</span>
+            <span class=nx>callGetRequest</span><span class=p>(</span><span class=nv>$endpoint</span><span class=p>,</span> <span class=k>null</span><span class=p>);</span>
+        <span class=p>}</span><span class=k>elseif</span> <span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;api&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s2>&quot;extension-call-log&quot;</span><span class=p>)</span> <span class=p>{</span>
+            <span class=nv>$endpoint</span> <span class=o>=</span> <span class=s2>&quot;/restapi/v1.0/account/~/extension/~/call-log&quot;</span><span class=p>;</span>
+            <span class=nv>$params</span> <span class=o>=</span> <span class=k>array</span><span class=p>(</span>
+                <span class=s1>&#39;fromDate&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;2018-12-01T00:00:00.000Z&#39;</span><span class=p>,</span>
+              <span class=p>);</span>
+            <span class=nx>callGetRequest</span><span class=p>(</span><span class=nv>$endpoint</span><span class=p>,</span> <span class=nv>$params</span><span class=p>);</span>
+        <span class=p>}</span><span class=k>elseif</span> <span class=p>(</span><span class=nv>$_REQUEST</span><span class=p>[</span><span class=s1>&#39;api&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s2>&quot;account-call-log&quot;</span><span class=p>)</span> <span class=p>{</span>
+            <span class=nv>$endpoint</span> <span class=o>=</span> <span class=s2>&quot;/restapi/v1.0/account/~/call-log&quot;</span><span class=p>;</span>
+            <span class=nv>$params</span> <span class=o>=</span> <span class=k>array</span><span class=p>(</span>
+                <span class=s1>&#39;fromDate&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;2018-12-01T00:00:00.000Z&#39;</span><span class=p>,</span>
+              <span class=p>);</span>
+            <span class=nx>callGetRequest</span><span class=p>(</span><span class=nv>$endpoint</span><span class=p>,</span> <span class=nv>$params</span><span class=p>);</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=k>function</span> <span class=nf>callGetRequest</span><span class=p>(</span><span class=nv>$endpoint</span><span class=p>,</span> <span class=nv>$params</span><span class=p>){</span>
+  <span class=k>global</span> <span class=nv>$platform</span><span class=p>;</span>
+  <span class=k>try</span> <span class=p>{</span>
+    <span class=nv>$resp</span> <span class=o>=</span> <span class=nv>$platform</span><span class=o>-&gt;</span><span class=na>get</span><span class=p>(</span><span class=nv>$endpoint</span><span class=p>,</span> <span class=nv>$params</span><span class=p>);</span>
+    <span class=k>echo</span> <span class=s2>&quot;&lt;p&gt;&quot;</span><span class=o>.</span><span class=nv>$resp</span><span class=o>-&gt;</span><span class=na>text</span><span class=p>()</span><span class=o>.</span><span class=s2>&quot;&lt;/p&gt;&quot;</span><span class=p>;</span>
+  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>\RingCentral\SDK\Http\ApiException</span> <span class=nv>$e</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>print</span> <span class=s1>&#39;Expected HTTP Error: &#39;</span> <span class=o>.</span> <span class=nv>$e</span><span class=o>-&gt;</span><span class=na>getMessage</span><span class=p>()</span> <span class=o>.</span> <span class=nx>PHP_EOL</span><span class=p>;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+<span class=cp>?&gt;</span><span class=x></span>
+</pre></div></p>
 <h3 id="run-your-code">Run Your Code</h3>
 <p>You are almost done. Now run your script.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bask checked=checked class=code-tab data-lang=bask aria-controls=tab-group-2-0_bask-panel role=tab><label for=tab-group-2-0_bask class=code-tab-label data-lang=bask id=tab-group-2-0_bask-label>Bask</label><div class=code-tabpanel role=tabpanel data-lang=bask id=tab-group-2-0_bask-panel aria-labelledby=tab-group-2-0_bask-label><pre class=codehilite><code class=language-bask>$ php fax.php</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span>$ php -S localhost:5000
+</pre></div></p>
 <h2 id="publish-your-app">Publish Your App</h2>
 <p>Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend <a href="../basics/publish">going through this process</a> for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-02-11</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
   </li>
 <!--
   <li class="readingTime">
@@ -1059,15 +1229,15 @@ print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageSt
 -->
   <li class="contributors-holder">
     <span class="contributors-text">Contributors</span>
-    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/PacoVu" title="Paco Vu" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars1.githubusercontent.com/u/13070584?v=4?size=32" alt="Paco Vu"></a></li></ul>
+    <ul class="contributors" data-bi-name="contributors"></ul>
   </li>
 </ul>
 </div>
-	<div id="sidebar-toc" class="sidebar col-md-2">
-	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
-	</div>
+      <div id="sidebar-toc" class="sidebar col-md-2">
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
-      </div><footer class="col-md-12">
+    </div>
+    </div><footer class="col-md-12">
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
@@ -1100,15 +1270,15 @@ print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageSt
       </div>
   </nav>
 </footer>
-      <script>
-	var base_url = "../../../..",
-            shortcuts = ["foo"];
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
-      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
-      <script src="../../../../js/base.js" defer></script>
-      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <script>
+      var base_url = "../../../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../../../js/base.js" defer></script>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1148,6 +1318,6 @@ print_r (&quot;FAX sent. Message status: &quot; . $resp-&gt;json()-&gt;messageSt
         </div>
     </div>
 </div>
-      
-    </body>
+    
+  </body>
 </html>

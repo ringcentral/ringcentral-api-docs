@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <script>
-	// Hack for scrolling window when linking to anchor tag with fixed nav header
-        var shiftWindow = function() { scrollBy(0, -75) };
-        window.addEventListener("hashchange", shiftWindow);
-        function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/answering-rules/">
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-        <title>Answering Rules - Developing with RingCentral</title>
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/answering-rules/">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <title>Answering Rules - Developing with RingCentral</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../css/code-styles.css" rel="stylesheet">
-    <link href="../../css/code-tabs.css" rel="stylesheet">
-    <link href="../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/code-styles.css" rel="stylesheet">
+    <link href="../../css/mega-menu.css" rel="stylesheet">
+    <link href="../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../css/admonition.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
     <link href="../../extra.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../css/mega-menu.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
-            ga('send', 'pageview');
-        </script> 
-    </head>
-
-    <body class="" data-spy="scroll" data-target="#toc">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <script src="fonts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="" data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="../..">
       <img src="../../logo_beta.svg" />
@@ -220,10 +217,10 @@
     </div>
   </div>
 </nav>
-      <div id="content" class="container">
-        
-      <div class="row">
-        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+    <div id="content" class="container">
+      
+    <div class="row">
+      <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
@@ -347,14 +344,6 @@
 <li>
     <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
     
@@ -374,14 +363,6 @@
 <li>
     <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
   </ul>
@@ -394,17 +375,6 @@
     
 <li>
     <a href="../../basics/oauth/" class="">Auth Types</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="../../missing/" class="">Auth Server</a>
 </li>
   </ul>
 </li>
@@ -543,30 +513,6 @@
   <ul>
     
 <li>
-  <span>WebRTC</span>
-  <!--<a href="#" class="">WebRTC</a>-->
-  <ul>
-    
-<li>
-    <a href="../../missing/" class="">Web</a>
-</li>
-    
-<li>
-    <a href="../../missing/" class="">iOS</a>
-</li>
-    
-<li>
-    <a href="../../missing/" class="">Android</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>RingOut</span>
-  <!--<a href="#" class="">RingOut</a>-->
-  <ul>
-    
-<li>
     <a href="../quick-start/ringout/node/" class="">Node.js</a>
 </li>
     
@@ -584,8 +530,6 @@
     
 <li>
     <a href="../quick-start/ringout/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -971,11 +915,98 @@
 </li>
         </ul>
       </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
 </div>
-        <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col-md-7" role="main">
 
 
 <nav aria-label="breadcrumb">
@@ -1040,9 +1071,9 @@
 </tr>
 </tbody>
 </table>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-0-0_http-panel role=tab><label for=tab-group-0-0_http class=code-tab-label data-lang=http id=tab-group-0-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-0-0_http-panel aria-labelledby=tab-group-0-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
+<p> <div class=codehilite><pre><span></span><span class=nf>GET</span> <span class=nn>/restapi/v1.0/account/11111111/extension/22222222/answering-rule</span> <span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span>
+<span class=na>Accept</span><span class=o>:</span> <span class=l>application/json</span>
+<span class=na>Authorization</span><span class=o>:</span> <span class=l>Bearer MyAccessToken</span>
 
 {
   &quot;uri&quot;: &quot;https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&amp;perPage=100&quot;,
@@ -1070,7 +1101,8 @@ Authorization: Bearer MyAccessToken
   ],
   &quot;paging&quot;: {...},
   &quot;navigation&quot;: {...}
-}</code></pre></div></div></p>
+}
+</pre></div></p>
 <h2 id="read-an-answering-rule">Read an Answering Rule</h2>
 <table class="table">
 <thead>
@@ -1089,104 +1121,106 @@ Authorization: Bearer MyAccessToken
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-1-0_http-panel role=tab><label for=tab-group-1-0_http class=code-tab-label data-lang=http id=tab-group-1-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-1-0_http-panel aria-labelledby=tab-group-1-0_http-label><pre class=codehilite><code class=language-http>GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=nf>GET</span> <span class=nn>/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule</span> <span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span>
+<span class=na>Accept</span><span class=o>:</span> <span class=l>application/json</span>
+<span class=na>Authorization</span><span class=o>:</span> <span class=l>Bearer MyAccessToken</span>
+</pre></div></p>
 <p><strong>Example Response</strong></p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-2-0_http-panel role=tab><label for=tab-group-2-0_http class=code-tab-label data-lang=http id=tab-group-2-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-2-0_http-panel aria-labelledby=tab-group-2-0_http-label><pre class=codehilite><code class=language-http>HTTP/1.1 200 OK
-Content-Type: application/json
+<p> <div class=codehilite><pre><span></span><span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span> <span class=m>200</span> <span class=ne>OK</span>
+<span class=na>Content-Type</span><span class=o>:</span> <span class=l>application/json</span>
 
-{
-    &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule&quot;,
-    &quot;id&quot;: &quot;business-hours-rule&quot;,
-    &quot;type&quot;: &quot;BusinessHours&quot;,
-    &quot;enabled&quot;: true,
-    &quot;schedule&quot;: {
-        &quot;ref&quot;: &quot;BusinessHours&quot;
-    },
-    &quot;callHandlingAction&quot;: &quot;ForwardCalls&quot;,
-    &quot;forwarding&quot;: {
-        &quot;notifyMySoftPhones&quot;: true,
-        &quot;notifyAdminSoftPhones&quot;: false,
-        &quot;softPhonesRingCount&quot;: 1,
-        &quot;ringingMode&quot;: &quot;Sequentially&quot;,
-        &quot;rules&quot;: [
-            {
-                &quot;index&quot;: 1,
-                &quot;ringCount&quot;: 4,
-                &quot;forwardingNumbers&quot;: [
-                    {
-                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333&quot;,
-                        &quot;id&quot;: &quot;33333333&quot;,
-                        &quot;phoneNumber&quot;: &quot;+16505551212&quot;,
-                        &quot;label&quot;: &quot;My Cisco SPA-303 Desk Phone&quot;
-                    }
-                ]
-            },
-            {
-                &quot;index&quot;: 2,
-                &quot;ringCount&quot;: 8,
-                &quot;forwardingNumbers&quot;: [
-                    {
-                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/44444444&quot;,
-                        &quot;id&quot;: &quot;44444444&quot;,
-                        &quot;phoneNumber&quot;: &quot;+4155551212&quot;,
-                        &quot;label&quot;: &quot;Home&quot;
-                    }
-                ]
-            },
-            {
-                &quot;index&quot;: 3,
-                &quot;ringCount&quot;: 12,
-                &quot;forwardingNumbers&quot;: [
-                    {
-                        &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/55555555&quot;,
-                        &quot;id&quot;: &quot;55555555&quot;,
-                        &quot;phoneNumber&quot;: &quot;+12125551212&quot;,
-                        &quot;label&quot;: &quot;Mobile&quot;
-                    }
-                ]
-            }
-        ]
-    },
-    &quot;greetings&quot;: [
-        {
-            &quot;type&quot;: &quot;Voicemail&quot;,
-            &quot;prompt&quot;: {
-                &quot;id&quot;: &quot;0&quot;,
-                &quot;type&quot;: &quot;message&quot;,
-                &quot;name&quot;: &quot;No One Available&quot;
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Introductory&quot;
-        },
-        {
-            &quot;type&quot;: &quot;AudioWhileConnecting&quot;,
-            &quot;prompt&quot;: {
-                &quot;id&quot;: &quot;6&quot;,
-                &quot;type&quot;: &quot;music&quot;,
-                &quot;name&quot;: &quot;Acoustic&quot;
-            }
-        },
-        {
-            &quot;type&quot;: &quot;ConnectingMessage&quot;,
-            &quot;prompt&quot;: {
-                &quot;id&quot;: &quot;3&quot;,
-                &quot;type&quot;: &quot;message&quot;,
-                &quot;name&quot;: &quot;Forward hold 1&quot;
-            }
-        }
-    ],
-    &quot;screening&quot;: &quot;Never&quot;,
-    &quot;voicemail&quot;: {
-        &quot;enabled&quot;: true,
-        &quot;recipient&quot;: {
-            &quot;uri&quot;: &quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222&quot;,
-            &quot;id&quot;: 22222222
-        }
-    }
-}</code></pre></div></div></p>
+<span class=p>{</span>
+    <span class=nt>&quot;uri&quot;</span><span class=p>:</span> <span class=s2>&quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;business-hours-rule&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;BusinessHours&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;enabled&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;schedule&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;ref&quot;</span><span class=p>:</span> <span class=s2>&quot;BusinessHours&quot;</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;callHandlingAction&quot;</span><span class=p>:</span> <span class=s2>&quot;ForwardCalls&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;forwarding&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;notifyMySoftPhones&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;notifyAdminSoftPhones&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+        <span class=nt>&quot;softPhonesRingCount&quot;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+        <span class=nt>&quot;ringingMode&quot;</span><span class=p>:</span> <span class=s2>&quot;Sequentially&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;rules&quot;</span><span class=p>:</span> <span class=p>[</span>
+            <span class=p>{</span>
+                <span class=nt>&quot;index&quot;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+                <span class=nt>&quot;ringCount&quot;</span><span class=p>:</span> <span class=mi>4</span><span class=p>,</span>
+                <span class=nt>&quot;forwardingNumbers&quot;</span><span class=p>:</span> <span class=p>[</span>
+                    <span class=p>{</span>
+                        <span class=nt>&quot;uri&quot;</span><span class=p>:</span> <span class=s2>&quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;33333333&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;+16505551212&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;label&quot;</span><span class=p>:</span> <span class=s2>&quot;My Cisco SPA-303 Desk Phone&quot;</span>
+                    <span class=p>}</span>
+                <span class=p>]</span>
+            <span class=p>},</span>
+            <span class=p>{</span>
+                <span class=nt>&quot;index&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+                <span class=nt>&quot;ringCount&quot;</span><span class=p>:</span> <span class=mi>8</span><span class=p>,</span>
+                <span class=nt>&quot;forwardingNumbers&quot;</span><span class=p>:</span> <span class=p>[</span>
+                    <span class=p>{</span>
+                        <span class=nt>&quot;uri&quot;</span><span class=p>:</span> <span class=s2>&quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/44444444&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;44444444&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;+4155551212&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;label&quot;</span><span class=p>:</span> <span class=s2>&quot;Home&quot;</span>
+                    <span class=p>}</span>
+                <span class=p>]</span>
+            <span class=p>},</span>
+            <span class=p>{</span>
+                <span class=nt>&quot;index&quot;</span><span class=p>:</span> <span class=mi>3</span><span class=p>,</span>
+                <span class=nt>&quot;ringCount&quot;</span><span class=p>:</span> <span class=mi>12</span><span class=p>,</span>
+                <span class=nt>&quot;forwardingNumbers&quot;</span><span class=p>:</span> <span class=p>[</span>
+                    <span class=p>{</span>
+                        <span class=nt>&quot;uri&quot;</span><span class=p>:</span> <span class=s2>&quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/55555555&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;55555555&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;+12125551212&quot;</span><span class=p>,</span>
+                        <span class=nt>&quot;label&quot;</span><span class=p>:</span> <span class=s2>&quot;Mobile&quot;</span>
+                    <span class=p>}</span>
+                <span class=p>]</span>
+            <span class=p>}</span>
+        <span class=p>]</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;greetings&quot;</span><span class=p>:</span> <span class=p>[</span>
+        <span class=p>{</span>
+            <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;Voicemail&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;prompt&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;0&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;message&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;No One Available&quot;</span>
+            <span class=p>}</span>
+        <span class=p>},</span>
+        <span class=p>{</span>
+            <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;Introductory&quot;</span>
+        <span class=p>},</span>
+        <span class=p>{</span>
+            <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;AudioWhileConnecting&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;prompt&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;6&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;music&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;Acoustic&quot;</span>
+            <span class=p>}</span>
+        <span class=p>},</span>
+        <span class=p>{</span>
+            <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;ConnectingMessage&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;prompt&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;3&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;message&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;Forward hold 1&quot;</span>
+            <span class=p>}</span>
+        <span class=p>}</span>
+    <span class=p>],</span>
+    <span class=nt>&quot;screening&quot;</span><span class=p>:</span> <span class=s2>&quot;Never&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;voicemail&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;enabled&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;recipient&quot;</span><span class=p>:</span> <span class=p>{</span>
+            <span class=nt>&quot;uri&quot;</span><span class=p>:</span> <span class=s2>&quot;http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=mi>22222222</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</pre></div></p>
 <h2 id="update-an-answering-rule">Update an Answering Rule</h2>
 <p>Answering rules can be updated by configuring forwarding numbers individuall and in Ring Groups. For each forwarding number, the <code>index</code> and <code>forwardingNumber.id</code> is required.</p>
 <p>The <code>ringCount</code> property indicates how many times the call should ring before moving to the next rule. Each ring corresponds to 5 seconds in the Online Account Portal.</p>
@@ -1207,32 +1241,33 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-3-0_http-panel role=tab><label for=tab-group-3-0_http class=code-tab-label data-lang=http id=tab-group-3-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-3-0_http-panel aria-labelledby=tab-group-3-0_http-label><pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-Content-Type: application/json
+<p> <div class=codehilite><pre><span></span><span class=nf>PUT</span> <span class=nn>/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule</span> <span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span>
+<span class=na>Accept</span><span class=o>:</span> <span class=l>application/json</span>
+<span class=na>Authorization</span><span class=o>:</span> <span class=l>Bearer MyAccessToken</span>
+<span class=na>Content-Type</span><span class=o>:</span> <span class=l>application/json</span>
 
-{
-  &quot;forwarding&quot;: {
-    &quot;rules&quot;: [
-      {
-        &quot;index&quot;: 1,
-        &quot;ringCount&quot;: 2,
-        &quot;forwardingNumbers&quot;: [
-          { id: &quot;22223333&quot; },
-          { id: &quot;22224444&quot; }
-        ]
-      },
-      {
-        &quot;index&quot;: 2,
-        &quot;ringCount&quot;: 4,
-        &quot;forwardingNumbers&quot;: [
-          { id: &quot;22225555&quot; }
-        ]
-      }
-    ]
-  }
-}</code></pre></div></div></p>
+<span class=p>{</span>
+  <span class=nt>&quot;forwarding&quot;</span><span class=p>:</span> <span class=p>{</span>
+    <span class=nt>&quot;rules&quot;</span><span class=p>:</span> <span class=p>[</span>
+      <span class=p>{</span>
+        <span class=nt>&quot;index&quot;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+        <span class=nt>&quot;ringCount&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+        <span class=nt>&quot;forwardingNumbers&quot;</span><span class=p>:</span> <span class=p>[</span>
+          <span class=p>{</span> <span class=err>id:</span> <span class=nt>&quot;22223333&quot;</span> <span class=p>},</span>
+          <span class=p>{</span> <span class=err>id:</span> <span class=nt>&quot;22224444&quot;</span> <span class=p>}</span>
+        <span class=p>]</span>
+      <span class=p>},</span>
+      <span class=p>{</span>
+        <span class=nt>&quot;index&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+        <span class=nt>&quot;ringCount&quot;</span><span class=p>:</span> <span class=mi>4</span><span class=p>,</span>
+        <span class=nt>&quot;forwardingNumbers&quot;</span><span class=p>:</span> <span class=p>[</span>
+          <span class=p>{</span> <span class=err>id:</span> <span class=nt>&quot;22225555&quot;</span> <span class=p>}</span>
+        <span class=p>]</span>
+      <span class=p>}</span>
+    <span class=p>]</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</pre></div></p>
 <h2 id="delete-an-answering-rule">Delete an Answering Rule</h2>
 <table class="table">
 <thead>
@@ -1271,19 +1306,20 @@ The business and after hours rules can forward calls to a set of forwarding numb
 </tbody>
 </table>
 <p><strong>Example Request</strong></p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_http checked=checked class=code-tab data-lang=http aria-controls=tab-group-4-0_http-panel role=tab><label for=tab-group-4-0_http class=code-tab-label data-lang=http id=tab-group-4-0_http-label>Http</label><div class=code-tabpanel role=tabpanel data-lang=http id=tab-group-4-0_http-panel aria-labelledby=tab-group-4-0_http-label><pre class=codehilite><code class=language-http>PUT /restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333 HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-Content-Type: application/json
+<p> <div class=codehilite><pre><span></span><span class=nf>PUT</span> <span class=nn>/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333</span> <span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span>
+<span class=na>Accept</span><span class=o>:</span> <span class=l>application/json</span>
+<span class=na>Authorization</span><span class=o>:</span> <span class=l>Bearer MyAccessToken</span>
+<span class=na>Content-Type</span><span class=o>:</span> <span class=l>application/json</span>
 
-{
-  &quot;phoneNumber&quot;: &quot;+16505551212&quot;
-}</code></pre></div></div></p>
+<span class=p>{</span>
+  <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;+16505551212&quot;</span>
+<span class=p>}</span>
+</pre></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2018-12-12</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
   </li>
 <!--
   <li class="readingTime">
@@ -1292,15 +1328,15 @@ Content-Type: application/json
 -->
   <li class="contributors-holder">
     <span class="contributors-text">Contributors</span>
-    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/byrnereese" title="Byrne Reese" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars0.githubusercontent.com/u/28429?v=4?size=32" alt="Byrne Reese"></a></li></ul>
+    <ul class="contributors" data-bi-name="contributors"></ul>
   </li>
 </ul>
 </div>
-	<div id="sidebar-toc" class="sidebar col-md-2">
-	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
-	</div>
+      <div id="sidebar-toc" class="sidebar col-md-2">
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
-      </div><footer class="col-md-12">
+    </div>
+    </div><footer class="col-md-12">
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
@@ -1333,15 +1369,15 @@ Content-Type: application/json
       </div>
   </nav>
 </footer>
-      <script>
-	var base_url = "../..",
-            shortcuts = ["foo"];
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
-      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
-      <script src="../../js/base.js" defer></script>
-      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <script>
+      var base_url = "../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../js/base.js" defer></script>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1381,6 +1417,6 @@ Content-Type: application/json
         </div>
     </div>
 </div>
-      
-    </body>
+    
+  </body>
 </html>

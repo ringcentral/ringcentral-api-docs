@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <script>
-	// Hack for scrolling window when linking to anchor tag with fixed nav header
-        var shiftWindow = function() { scrollBy(0, -75) };
-        window.addEventListener("hashchange", shiftWindow);
-        function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/call-control/">
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-        <title>Call Control - Developing with RingCentral</title>
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/call-control/">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <title>Call Control - Developing with RingCentral</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../css/code-styles.css" rel="stylesheet">
-    <link href="../../css/code-tabs.css" rel="stylesheet">
-    <link href="../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/code-styles.css" rel="stylesheet">
+    <link href="../../css/mega-menu.css" rel="stylesheet">
+    <link href="../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../css/admonition.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
     <link href="../../extra.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../css/mega-menu.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
-            ga('send', 'pageview');
-        </script> 
-    </head>
-
-    <body class="" data-spy="scroll" data-target="#toc">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <script src="fonts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="" data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="../..">
       <img src="../../logo_beta.svg" />
@@ -220,10 +217,10 @@
     </div>
   </div>
 </nav>
-      <div id="content" class="container">
-        
-      <div class="row">
-        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+    <div id="content" class="container">
+      
+    <div class="row">
+      <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
@@ -347,14 +344,6 @@
 <li>
     <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
     
@@ -374,14 +363,6 @@
 <li>
     <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
   </ul>
@@ -394,17 +375,6 @@
     
 <li>
     <a href="../../basics/oauth/" class="">Auth Types</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="../../missing/" class="">Auth Server</a>
 </li>
   </ul>
 </li>
@@ -543,30 +513,6 @@
   <ul>
     
 <li>
-  <span>WebRTC</span>
-  <!--<a href="#" class="">WebRTC</a>-->
-  <ul>
-    
-<li>
-    <a href="../../missing/" class="">Web</a>
-</li>
-    
-<li>
-    <a href="../../missing/" class="">iOS</a>
-</li>
-    
-<li>
-    <a href="../../missing/" class="">Android</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>RingOut</span>
-  <!--<a href="#" class="">RingOut</a>-->
-  <ul>
-    
-<li>
     <a href="../quick-start/ringout/node/" class="">Node.js</a>
 </li>
     
@@ -584,8 +530,6 @@
     
 <li>
     <a href="../quick-start/ringout/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -971,11 +915,98 @@
 </li>
         </ul>
       </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
 </div>
-        <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col-md-7" role="main">
 
 
 <nav aria-label="breadcrumb">
@@ -1032,64 +1063,66 @@
 </li>
 </ol>
 <p>Subscribe using any suitable transport, e.g. PubNub or Webhooks:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_1jciznxldugswxx checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_1jciznxldugswxx-panel role=tab><label for=tab-group-0-0_1jciznxldugswxx class=code-tab-label data-lang id=tab-group-0-0_1jciznxldugswxx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_1jciznxldugswxx-panel aria-labelledby=tab-group-0-0_1jciznxldugswxx-label><pre class=codehilite><code>POST /restapi/v1.0/subscription
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/subscription</span>
 
-{
-    &quot;eventFilters&quot;: [
-      &quot;/restapi/v1.0/account/~/telephony/sessions&quot;,
-      &quot;/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true&quot;
-    ],
-    &quot;deliveryMode&quot;: {
-    &quot;transportType&quot;: &quot;PubNub&quot;
-    }
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>    &quot;eventFilters&quot;: [</span>
+<span class=err>      &quot;/restapi/v1.0/account/~/telephony/sessions&quot;,</span>
+<span class=err>      &quot;/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&amp;sipData=true&quot;</span>
+<span class=err>    ],</span>
+<span class=err>    &quot;deliveryMode&quot;: {</span>
+<span class=err>    &quot;transportType&quot;: &quot;PubNub&quot;</span>
+<span class=err>    }</span>
+<span class=err>}</span>
+</pre></div></p>
 <h3 id="presence">Presence</h3>
 <p>Added <em>telephonySessionId</em> &amp; <em>partyId</em> (NEW).</p>
 <p><strong>Limitations</strong>: Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added <em>activeCalls.telephonySessionId</em> and <em>activeCalls.partyId</em> to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-1-0_json-panel role=tab><label for=tab-group-1-0_json class=code-tab-label data-lang=json id=tab-group-1-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-1-0_json-panel aria-labelledby=tab-group-1-0_json-label><pre class=codehilite><code class=language-json>{
-    &quot;uuid&quot;: &quot;1787755531108376563&quot;,
-    &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-    &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;uuid&quot;: &quot;1787755531108376563&quot;,
-      &quot;event&quot;: &quot;/restapi/v1.0/account/400144452008/extension/400144455008/presence?detailedTelephonyState=true&amp;sipData=true&quot;,
-      &quot;timestamp&quot;: &quot;2018-06-05T00:14:50.184Z&quot;,
-      &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-      &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;body&quot;: {
-        &quot;extensionId&quot;: 400144455008,
-        &quot;telephonyStatus&quot;: &quot;Ringing&quot;,
-        &quot;activeCalls&quot;: [
-          {
-            &quot;id&quot;: &quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;fromName&quot;: &quot;TheCat Jerry&quot;,
-            &quot;from&quot;: &quot;103&quot;,
-            &quot;toName&quot;: &quot;Tom Sawyer&quot;,
-            &quot;to&quot;: &quot;102&quot;,
-            &quot;telephonyStatus&quot;: &quot;Ringing&quot;,
-            &quot;sipData&quot;: {
-              &quot;toTag&quot;: &quot;blf&quot;,
-              &quot;fromTag&quot;: &quot;cs171841903434018384-2&quot;,
-              &quot;remoteUri&quot;: &quot;sip:103@ringcentral.com&quot;,
-              &quot;localUri&quot;: &quot;sip:102@ringcentral.com&quot;
-            },
-            &quot;partyId&quot;:&quot;cs171843418296416309-2&quot;,
-            &quot;telephonySessionId&quot;:&quot;Y3MxNjk4ODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA&quot;,
-            &quot;sessionId&quot;: &quot;402936341008&quot;,
-            &quot;startTime&quot;: &quot;2018-06-05T00:14:50.149Z&quot;
-          }
-        ],
-        &quot;sequence&quot;: 34470,
-        &quot;presenceStatus&quot;: &quot;Available&quot;,
-        &quot;userStatus&quot;: &quot;Available&quot;,
-        &quot;dndStatus&quot;: &quot;TakeAllCalls&quot;,
-        &quot;allowSeeMyPresence&quot;: true,
-        &quot;ringOnMonitoredCall&quot;: false,
-        &quot;pickUpCallsOnHold&quot;: false,
-        &quot;totalActiveCalls&quot;: 1
-      }
-    }
-  }</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=p>{</span>
+    <span class=nt>&quot;uuid&quot;</span><span class=p>:</span> <span class=s2>&quot;1787755531108376563&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;subscriptionId&quot;</span><span class=p>:</span> <span class=s2>&quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;ownerId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;uuid&quot;</span><span class=p>:</span> <span class=s2>&quot;1787755531108376563&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;event&quot;</span><span class=p>:</span> <span class=s2>&quot;/restapi/v1.0/account/400144452008/extension/400144455008/presence?detailedTelephonyState=true&amp;sipData=true&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;timestamp&quot;</span><span class=p>:</span> <span class=s2>&quot;2018-06-05T00:14:50.184Z&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;subscriptionId&quot;</span><span class=p>:</span> <span class=s2>&quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;ownerId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;body&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;extensionId&quot;</span><span class=p>:</span> <span class=mi>400144455008</span><span class=p>,</span>
+        <span class=nt>&quot;telephonyStatus&quot;</span><span class=p>:</span> <span class=s2>&quot;Ringing&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;activeCalls&quot;</span><span class=p>:</span> <span class=p>[</span>
+          <span class=p>{</span>
+            <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;direction&quot;</span><span class=p>:</span> <span class=s2>&quot;Inbound&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;fromName&quot;</span><span class=p>:</span> <span class=s2>&quot;TheCat Jerry&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;from&quot;</span><span class=p>:</span> <span class=s2>&quot;103&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;toName&quot;</span><span class=p>:</span> <span class=s2>&quot;Tom Sawyer&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;to&quot;</span><span class=p>:</span> <span class=s2>&quot;102&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;telephonyStatus&quot;</span><span class=p>:</span> <span class=s2>&quot;Ringing&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;sipData&quot;</span><span class=p>:</span> <span class=p>{</span>
+              <span class=nt>&quot;toTag&quot;</span><span class=p>:</span> <span class=s2>&quot;blf&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;fromTag&quot;</span><span class=p>:</span> <span class=s2>&quot;cs171841903434018384-2&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;remoteUri&quot;</span><span class=p>:</span> <span class=s2>&quot;sip:103@ringcentral.com&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;localUri&quot;</span><span class=p>:</span> <span class=s2>&quot;sip:102@ringcentral.com&quot;</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;partyId&quot;</span><span class=p>:</span><span class=s2>&quot;cs171843418296416309-2&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;telephonySessionId&quot;</span><span class=p>:</span><span class=s2>&quot;Y3MxNjk4ODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;sessionId&quot;</span><span class=p>:</span> <span class=s2>&quot;402936341008&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;startTime&quot;</span><span class=p>:</span> <span class=s2>&quot;2018-06-05T00:14:50.149Z&quot;</span>
+          <span class=p>}</span>
+        <span class=p>],</span>
+        <span class=nt>&quot;sequence&quot;</span><span class=p>:</span> <span class=mi>34470</span><span class=p>,</span>
+        <span class=nt>&quot;presenceStatus&quot;</span><span class=p>:</span> <span class=s2>&quot;Available&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;userStatus&quot;</span><span class=p>:</span> <span class=s2>&quot;Available&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;dndStatus&quot;</span><span class=p>:</span> <span class=s2>&quot;TakeAllCalls&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;allowSeeMyPresence&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;ringOnMonitoredCall&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+        <span class=nt>&quot;pickUpCallsOnHold&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+        <span class=nt>&quot;totalActiveCalls&quot;</span><span class=p>:</span> <span class=mi>1</span>
+      <span class=p>}</span>
+    <span class=p>}</span>
+  <span class=err>}</span>
+</pre></div></p>
 <p>You will be using the "telephonySessionId" and "partyId" to control Active calls using Call Control API.</p>
 <h3 id="telephony-sessions">Telephony Sessions</h3>
 <p><strong>Limitations</strong>: Alpha solution, which is going to be amended in Release 10.3. The main limitation is non-optimal subscription logic, i.e. notification won't be delivered in the following scenarios:</p>
@@ -1099,129 +1132,131 @@
 <li>if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)</li>
 </ul>
 <p>Push Notification Example:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_json checked=checked class=code-tab data-lang=json aria-controls=tab-group-2-0_json-panel role=tab><label for=tab-group-2-0_json class=code-tab-label data-lang=json id=tab-group-2-0_json-label>Json</label><div class=code-tabpanel role=tabpanel data-lang=json id=tab-group-2-0_json-panel aria-labelledby=tab-group-2-0_json-label><pre class=codehilite><code class=language-json>{
-    &quot;uuid&quot;: &quot;837270960869181944&quot;,
-    &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-    &quot;ownerId&quot;: &quot;400144455008&quot;,
-    &quot;pn_apns&quot;: {
-      &quot;aps&quot;: {
-        &quot;content-available&quot;: 1
-      },
-      &quot;uuid&quot;: &quot;837270960869181944&quot;,
-      &quot;event&quot;: &quot;/restapi/v1.0/account/400144452008/extension/400144455008/telephony/sessions&quot;,
-      &quot;timestamp&quot;: &quot;2018-06-05T00:14:50.181Z&quot;,
-      &quot;subscriptionId&quot;: &quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;,
-      &quot;ownerId&quot;: &quot;400144455008&quot;,
-      &quot;body&quot;: {
-        &quot;sequence&quot;: 5,
-        &quot;sessionId&quot;: &quot;402936341008&quot;,
-        &quot;telephonySessionId&quot;: &quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;,
-        &quot;serverId&quot;: &quot;10.62.25.111.TAM&quot;,
-        &quot;eventTime&quot;: &quot;2018-06-05T00:14:50.147Z&quot;,
-        &quot;accountId&quot;: &quot;400144452008&quot;,
-        &quot;parties&quot;: [
-          {
-            &quot;extensionId&quot;: &quot;400144455008&quot;,
-            &quot;id&quot;: &quot;cs171841903434018384-2&quot;,
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;to&quot;: {
-              &quot;phoneNumber&quot;: &quot;102&quot;,
-              &quot;name&quot;: &quot;Tom Sawyer&quot;,
-              &quot;extensionId&quot;: &quot;400144455008&quot;
-            },
-            &quot;from&quot;: {
-              &quot;phoneNumber&quot;: &quot;103&quot;,
-              &quot;name&quot;: &quot;TheCat Jerry&quot;,
-              &quot;extensionId&quot;: &quot;400144457008&quot;
-            },
-            &quot;status&quot;: {
-              &quot;code&quot;: &quot;Proceeding&quot;,
-              &quot;mobilePickupData&quot;: {
-                &quot;ccMailboxes&quot;: [
-                  &quot;400144455008&quot;
-                ],
-                &quot;to&quot;: &quot;#19008@sip-mesdevams.lab.nordigy.ru:5060&quot;,
-                &quot;sid&quot;: &quot;402936472080&quot;,
-                &quot;srvLvl&quot;: &quot;-149699523&quot;,
-                &quot;srvLvlExt&quot;: &quot;390&quot;
-              }
-            },
-            &quot;missedCall&quot;: false,
-            &quot;standAlone&quot;: false,
-            &quot;muted&quot;: false
-          }
-        ],
-        &quot;origin&quot;: {
-          &quot;type&quot;: &quot;Call&quot;
-        },
-        &quot;extensionId&quot;: &quot;400144455008&quot;
-      }
-    }
-  }</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=p>{</span>
+    <span class=nt>&quot;uuid&quot;</span><span class=p>:</span> <span class=s2>&quot;837270960869181944&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;subscriptionId&quot;</span><span class=p>:</span> <span class=s2>&quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;ownerId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;pn_apns&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;aps&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;content-available&quot;</span><span class=p>:</span> <span class=mi>1</span>
+      <span class=p>},</span>
+      <span class=nt>&quot;uuid&quot;</span><span class=p>:</span> <span class=s2>&quot;837270960869181944&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;event&quot;</span><span class=p>:</span> <span class=s2>&quot;/restapi/v1.0/account/400144452008/extension/400144455008/telephony/sessions&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;timestamp&quot;</span><span class=p>:</span> <span class=s2>&quot;2018-06-05T00:14:50.181Z&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;subscriptionId&quot;</span><span class=p>:</span> <span class=s2>&quot;5c37f936-fa66-4b4b-95af-1e94b51a748d&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;ownerId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;body&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;sequence&quot;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span>
+        <span class=nt>&quot;sessionId&quot;</span><span class=p>:</span> <span class=s2>&quot;402936341008&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;telephonySessionId&quot;</span><span class=p>:</span> <span class=s2>&quot;Y3MxNzE4NDE5MDM0MzQwMTgzODRAMTAuNjIuMjUuMTEx&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;serverId&quot;</span><span class=p>:</span> <span class=s2>&quot;10.62.25.111.TAM&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;eventTime&quot;</span><span class=p>:</span> <span class=s2>&quot;2018-06-05T00:14:50.147Z&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;accountId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144452008&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;parties&quot;</span><span class=p>:</span> <span class=p>[</span>
+          <span class=p>{</span>
+            <span class=nt>&quot;extensionId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;id&quot;</span><span class=p>:</span> <span class=s2>&quot;cs171841903434018384-2&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;direction&quot;</span><span class=p>:</span> <span class=s2>&quot;Inbound&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;to&quot;</span><span class=p>:</span> <span class=p>{</span>
+              <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;102&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;Tom Sawyer&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;extensionId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;from&quot;</span><span class=p>:</span> <span class=p>{</span>
+              <span class=nt>&quot;phoneNumber&quot;</span><span class=p>:</span> <span class=s2>&quot;103&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;TheCat Jerry&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;extensionId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144457008&quot;</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;status&quot;</span><span class=p>:</span> <span class=p>{</span>
+              <span class=nt>&quot;code&quot;</span><span class=p>:</span> <span class=s2>&quot;Proceeding&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;mobilePickupData&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;ccMailboxes&quot;</span><span class=p>:</span> <span class=p>[</span>
+                  <span class=s2>&quot;400144455008&quot;</span>
+                <span class=p>],</span>
+                <span class=nt>&quot;to&quot;</span><span class=p>:</span> <span class=s2>&quot;#19008@sip-mesdevams.lab.nordigy.ru:5060&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;sid&quot;</span><span class=p>:</span> <span class=s2>&quot;402936472080&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;srvLvl&quot;</span><span class=p>:</span> <span class=s2>&quot;-149699523&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;srvLvlExt&quot;</span><span class=p>:</span> <span class=s2>&quot;390&quot;</span>
+              <span class=p>}</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;missedCall&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=nt>&quot;standAlone&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=nt>&quot;muted&quot;</span><span class=p>:</span> <span class=kc>false</span>
+          <span class=p>}</span>
+        <span class=p>],</span>
+        <span class=nt>&quot;origin&quot;</span><span class=p>:</span> <span class=p>{</span>
+          <span class=nt>&quot;type&quot;</span><span class=p>:</span> <span class=s2>&quot;Call&quot;</span>
+        <span class=p>},</span>
+        <span class=nt>&quot;extensionId&quot;</span><span class=p>:</span> <span class=s2>&quot;400144455008&quot;</span>
+      <span class=p>}</span>
+    <span class=p>}</span>
+  <span class=p>}</span>
+</pre></div></p>
 <h2 id="using-the-call-control-api">Using the Call Control API</h2>
 <p>RC User is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.</p>
 <p><em>NOTE</em>: In Release 10.3 we're planning to provide <strong>Call Out</strong> API to initiate a call.</p>
 <p>Once the call is initiated User can get Session details either from telephony/session Push Notification or from API response if call was started via RingOut or CallOut REST API.</p>
 <p>Session status can be retrieved via the following request:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_6nzekpva97f5umv checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_6nzekpva97f5umv-panel role=tab><label for=tab-group-3-0_6nzekpva97f5umv class=code-tab-label data-lang id=tab-group-3-0_6nzekpva97f5umv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_6nzekpva97f5umv-panel aria-labelledby=tab-group-3-0_6nzekpva97f5umv-label><pre class=codehilite><code>GET /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;
-Content-Type: application/json
-Authorization: Bearer &lt;access-token&gt;
+<p> <div class=codehilite><pre><span></span><span class=err>GET /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;</span>
+<span class=err>Content-Type: application/json</span>
+<span class=err>Authorization: Bearer &lt;access-token&gt;</span>
 
-{
-    &quot;creationTime&quot;: &quot;2018-08-01T13:36:09Z&quot;,
-    &quot;id&quot;: &quot;Y3MxNzE4MzU2NzgxNTM2MTY1NDhAMTAuNjIuMS4zMA&quot;,
-    &quot;origin&quot;: {
-        &quot;type&quot;: &quot;Call&quot;
-    },
-    &quot;parties&quot;: [
-        {
-            &quot;direction&quot;: &quot;Outbound&quot;,
-            &quot;from&quot;: {
-                &quot;extensionId&quot;: &quot;400415045004&quot;,
-                &quot;name&quot;: &quot;TheCat Jerry&quot;,
-                &quot;phoneNumber&quot;: &quot;+18882101932&quot;
-            },
-            &quot;id&quot;: &quot;cs171835678153616548-1&quot;,
-            &quot;muted&quot;: false,
-            &quot;owner&quot;: {
-                &quot;accountId&quot;: &quot;400415035004&quot;,
-                &quot;extensionId&quot;: &quot;400415045004&quot;
-            },
-            &quot;standAlone&quot;: false,
-            &quot;status&quot;: {
-                &quot;code&quot;: &quot;Answered&quot;
-            },
-            &quot;to&quot;: {
-                &quot;extensionId&quot;: &quot;400415042004&quot;,
-                &quot;name&quot;: &quot;Tom Sawyer&quot;,
-                &quot;phoneNumber&quot;: &quot;102&quot;
-            }
-        },
-        {
-            &quot;direction&quot;: &quot;Inbound&quot;,
-            &quot;from&quot;: {
-                &quot;extensionId&quot;: &quot;400415045004&quot;,
-                &quot;name&quot;: &quot;TheCat Jerry&quot;,
-                &quot;phoneNumber&quot;: &quot;103&quot;
-            },
-            &quot;id&quot;: &quot;cs171835678153616548-2&quot;,
-            &quot;muted&quot;: false,
-            &quot;owner&quot;: {
-                &quot;accountId&quot;: &quot;400415035004&quot;,
-                &quot;extensionId&quot;: &quot;400415042004&quot;
-            },
-            &quot;standAlone&quot;: false,
-            &quot;status&quot;: {
-                &quot;code&quot;: &quot;Answered&quot;
-            },
-            &quot;to&quot;: {
-                &quot;extensionId&quot;: &quot;400415042004&quot;,
-                &quot;name&quot;: &quot;Tom Sawyer&quot;,
-                &quot;phoneNumber&quot;: &quot;102&quot;
-            }
-        }
-    ]
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>    &quot;creationTime&quot;: &quot;2018-08-01T13:36:09Z&quot;,</span>
+<span class=err>    &quot;id&quot;: &quot;Y3MxNzE4MzU2NzgxNTM2MTY1NDhAMTAuNjIuMS4zMA&quot;,</span>
+<span class=err>    &quot;origin&quot;: {</span>
+<span class=err>        &quot;type&quot;: &quot;Call&quot;</span>
+<span class=err>    },</span>
+<span class=err>    &quot;parties&quot;: [</span>
+<span class=err>        {</span>
+<span class=err>            &quot;direction&quot;: &quot;Outbound&quot;,</span>
+<span class=err>            &quot;from&quot;: {</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415045004&quot;,</span>
+<span class=err>                &quot;name&quot;: &quot;TheCat Jerry&quot;,</span>
+<span class=err>                &quot;phoneNumber&quot;: &quot;+18882101932&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;id&quot;: &quot;cs171835678153616548-1&quot;,</span>
+<span class=err>            &quot;muted&quot;: false,</span>
+<span class=err>            &quot;owner&quot;: {</span>
+<span class=err>                &quot;accountId&quot;: &quot;400415035004&quot;,</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415045004&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;standAlone&quot;: false,</span>
+<span class=err>            &quot;status&quot;: {</span>
+<span class=err>                &quot;code&quot;: &quot;Answered&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;to&quot;: {</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415042004&quot;,</span>
+<span class=err>                &quot;name&quot;: &quot;Tom Sawyer&quot;,</span>
+<span class=err>                &quot;phoneNumber&quot;: &quot;102&quot;</span>
+<span class=err>            }</span>
+<span class=err>        },</span>
+<span class=err>        {</span>
+<span class=err>            &quot;direction&quot;: &quot;Inbound&quot;,</span>
+<span class=err>            &quot;from&quot;: {</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415045004&quot;,</span>
+<span class=err>                &quot;name&quot;: &quot;TheCat Jerry&quot;,</span>
+<span class=err>                &quot;phoneNumber&quot;: &quot;103&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;id&quot;: &quot;cs171835678153616548-2&quot;,</span>
+<span class=err>            &quot;muted&quot;: false,</span>
+<span class=err>            &quot;owner&quot;: {</span>
+<span class=err>                &quot;accountId&quot;: &quot;400415035004&quot;,</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415042004&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;standAlone&quot;: false,</span>
+<span class=err>            &quot;status&quot;: {</span>
+<span class=err>                &quot;code&quot;: &quot;Answered&quot;</span>
+<span class=err>            },</span>
+<span class=err>            &quot;to&quot;: {</span>
+<span class=err>                &quot;extensionId&quot;: &quot;400415042004&quot;,</span>
+<span class=err>                &quot;name&quot;: &quot;Tom Sawyer&quot;,</span>
+<span class=err>                &quot;phoneNumber&quot;: &quot;102&quot;</span>
+<span class=err>            }</span>
+<span class=err>        }</span>
+<span class=err>    ]</span>
+<span class=err>}</span>
+</pre></div></p>
 <p><em>NOTE</em>: There are specific scenarios when the call became splitted to multiple Sessions.</p>
 <h2 id="pre-call-control">Pre-Call Control</h2>
 <p>Pre-Call Controls are soft keys that allow you to choose an action for an incoming call. In Beta version of <strong>Call Control</strong> API you'll be able to use the following distribution options:</p>
@@ -1229,11 +1264,12 @@ Authorization: Bearer &lt;access-token&gt;
 <p>You can use the <strong>Forward</strong> API if you want to transfer the incoming call to another phone number or to voicemail, without answering the call. <strong>Forward</strong> API works for parties in Setup and Proceeding states only (this is the main differece with Transfer API, which works with already accepted calls). For now Forward to phone number and Vociemail are available, see below.</p>
 <h4 id="forward-to-phone-number">Forward to phone number</h4>
 <p>To forward the incoming call to another phone number take <em>telephonySessionId</em> and <em>partyId</em> from telephony/sessions notification and use them in endpoint path, see example below.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_t7ocfgm55rbqt9r checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_t7ocfgm55rbqt9r-panel role=tab><label for=tab-group-4-0_t7ocfgm55rbqt9r class=code-tab-label data-lang id=tab-group-4-0_t7ocfgm55rbqt9r-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_t7ocfgm55rbqt9r-panel aria-labelledby=tab-group-4-0_t7ocfgm55rbqt9r-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward</span>
 
-{
-&quot;phoneNumber&quot;:&quot;+12059690601&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;phoneNumber&quot;:&quot;+12059690601&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <p><em>NOTE</em>: phoneNumber in request body should be in e164 format.</p>
 <p><strong>Tips</strong>:</p>
 <ul>
@@ -1242,14 +1278,16 @@ Authorization: Bearer &lt;access-token&gt;
 </ul>
 <h4 id="forward-to-voicemail">Forward to Voicemail</h4>
 <p>To forward the incoming call to Voicemail specify <strong>voicemail</strong> in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_sqplaa3oqcmguuf checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_sqplaa3oqcmguuf-panel role=tab><label for=tab-group-5-0_sqplaa3oqcmguuf class=code-tab-label data-lang id=tab-group-5-0_sqplaa3oqcmguuf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_sqplaa3oqcmguuf-panel aria-labelledby=tab-group-5-0_sqplaa3oqcmguuf-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/forward</span>
 
-{
-&quot;voicemail&quot;:&quot;400415048004&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;voicemail&quot;:&quot;400415048004&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <h3 id="rejecting-calls">Rejecting Calls</h3>
 <p>Using Reject API will stop the ringing on your app. It works as Ignore option on Ringcenrtral Desktop app, i.e. the caller will still hear ringing sounds, until picked up on another Forwarding Number, or until the caller is routed to your extension's voicemail.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-6><input name=tab-group-6 type=radio id=tab-group-6-0_j9gvj4uf2bvnfn6 checked=checked class=code-tab data-lang aria-controls=tab-group-6-0_j9gvj4uf2bvnfn6-panel role=tab><label for=tab-group-6-0_j9gvj4uf2bvnfn6 class=code-tab-label data-lang id=tab-group-6-0_j9gvj4uf2bvnfn6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-6-0_j9gvj4uf2bvnfn6-panel aria-labelledby=tab-group-6-0_j9gvj4uf2bvnfn6-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/reject</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/reject</span>
+</pre></div></p>
 <p><em>NOTE</em>: In upcoming releases we're planning to support much more features, like</p>
 <ul>
 <li><strong>Answer (Replace)</strong> - accept the incoming call.</li>
@@ -1261,15 +1299,17 @@ Authorization: Bearer &lt;access-token&gt;
 <p>When call is in progress you can manage participants, start and pause recording, transfer or park the call and much more.. And all this available via Ringcentral API now!</p>
 <h3 id="mute-and-unmute-participant">Mute and Unmute participant</h3>
 <p>Mute or Unmute the participant based on the boolean parameter you provide:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_8y4bneg8j62jvwi checked=checked class=code-tab data-lang aria-controls=tab-group-7-0_8y4bneg8j62jvwi-panel role=tab><label for=tab-group-7-0_8y4bneg8j62jvwi class=code-tab-label data-lang id=tab-group-7-0_8y4bneg8j62jvwi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-0_8y4bneg8j62jvwi-panel aria-labelledby=tab-group-7-0_8y4bneg8j62jvwi-label><pre class=codehilite><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;
+<p> <div class=codehilite><pre><span></span><span class=err>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;</span>
 
-{
-&quot;muted&quot; : true
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;muted&quot; : true</span>
+<span class=err>}</span>
+</pre></div></p>
 <p><em>NOTE</em>: There is a known limitation for this API - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via <strong>Call Control</strong> API and Ringcentral Desktop app you need to unmute both endpoints to bring media back.</p>
 <h3 id="hold-and-unhold-call">Hold and UnHold Call</h3>
 <p>Use <strong>Hold</strong> API to put the participant on hold. Use <strong>Unhold</strong> API otherwise:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_ggglp1in9hzg4j3 checked=checked class=code-tab data-lang aria-controls=tab-group-8-0_ggglp1in9hzg4j3-panel role=tab><label for=tab-group-8-0_ggglp1in9hzg4j3 class=code-tab-label data-lang id=tab-group-8-0_ggglp1in9hzg4j3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-8-0_ggglp1in9hzg4j3-panel aria-labelledby=tab-group-8-0_ggglp1in9hzg4j3-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/hold</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/hold</span>
+</pre></div></p>
 <p><strong>Tips</strong>: </p>
 <ul>
 <li>You can configure the your <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html">Music on Hold via API</a>. Keep callers informed and entertained with messages and music on hold.</li>
@@ -1279,61 +1319,69 @@ Authorization: Bearer &lt;access-token&gt;
 <p><strong>Transfer</strong> API works similar to <strong>Forward</strong> API, except that party should accept the call. You can transfer the call to another phone number, to voicemail or to Park Location (Park Orbit feature).</p>
 <h4 id="transfer-to-phone-number">Transfer to phone number</h4>
 <p>Specify the target phone number for a party transfer:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-9><input name=tab-group-9 type=radio id=tab-group-9-0_3mh27hmkos5ifwm checked=checked class=code-tab data-lang aria-controls=tab-group-9-0_3mh27hmkos5ifwm-panel role=tab><label for=tab-group-9-0_3mh27hmkos5ifwm class=code-tab-label data-lang id=tab-group-9-0_3mh27hmkos5ifwm-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-9-0_3mh27hmkos5ifwm-panel aria-labelledby=tab-group-9-0_3mh27hmkos5ifwm-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer</span>
 
-{
-&quot;phoneNumber&quot;:&quot;+12059690601&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;phoneNumber&quot;:&quot;+12059690601&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <p><strong>Tips</strong>: </p>
 <ul>
 <li>There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using <strong>extensionNumber</strong>.</li>
 </ul>
 <h4 id="transfer-to-voicemail">Transfer to Voicemail</h4>
 <p>To forward the call to Voicemail specify <strong>voicemail</strong> in request body, similar to above example. The call will go straight to specified mailbox for the caller to leave a message.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_om5wbb7tatnbbqm checked=checked class=code-tab data-lang aria-controls=tab-group-10-0_om5wbb7tatnbbqm-panel role=tab><label for=tab-group-10-0_om5wbb7tatnbbqm class=code-tab-label data-lang id=tab-group-10-0_om5wbb7tatnbbqm-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-10-0_om5wbb7tatnbbqm-panel aria-labelledby=tab-group-10-0_om5wbb7tatnbbqm-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer</span>
 
-{
-&quot;voicemail&quot;:&quot;400415048004&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;voicemail&quot;:&quot;400415048004&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <h4 id="call-park">Call Park</h4>
 <p>If you are a member of any Park Location Group you could park the call via <strong>Transfer</strong> API. The call will be parked to specified mailbox.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-11><input name=tab-group-11 type=radio id=tab-group-11-0_njr63p6ewfzhznf checked=checked class=code-tab data-lang aria-controls=tab-group-11-0_njr63p6ewfzhznf-panel role=tab><label for=tab-group-11-0_njr63p6ewfzhznf class=code-tab-label data-lang id=tab-group-11-0_njr63p6ewfzhznf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-11-0_njr63p6ewfzhznf-panel aria-labelledby=tab-group-11-0_njr63p6ewfzhznf-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/transfer</span>
 
-{
-&quot;parkOrbit&quot;:&quot;400416048004&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;parkOrbit&quot;:&quot;400416048004&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <p>Setting up and Using Park Locations via <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/8355">Service Site</a> or via <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html">Ringcentral API</a>.</p>
 <h2 id="recording-calls">Recording Calls</h2>
 <p>To start recording use <strong>Recordings</strong> API. You will hear a notification that the call is being recorded.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-12><input name=tab-group-12 type=radio id=tab-group-12-0_lez38g2i9wi7mju checked=checked class=code-tab data-lang aria-controls=tab-group-12-0_lez38g2i9wi7mju-panel role=tab><label for=tab-group-12-0_lez38g2i9wi7mju class=code-tab-label data-lang id=tab-group-12-0_lez38g2i9wi7mju-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-12-0_lez38g2i9wi7mju-panel aria-labelledby=tab-group-12-0_lez38g2i9wi7mju-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings</span>
+</pre></div></p>
 <p>The response can be as follows:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-13><input name=tab-group-13 type=radio id=tab-group-13-0_06wr29yqb1ts8ms checked=checked class=code-tab data-lang aria-controls=tab-group-13-0_06wr29yqb1ts8ms-panel role=tab><label for=tab-group-13-0_06wr29yqb1ts8ms class=code-tab-label data-lang id=tab-group-13-0_06wr29yqb1ts8ms-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-13-0_06wr29yqb1ts8ms-panel aria-labelledby=tab-group-13-0_06wr29yqb1ts8ms-label><pre class=codehilite><code>{
+<p> <div class=codehilite><pre><span></span>{
     &quot;active&quot;: true,
     &quot;id&quot;: &quot;&lt;recordingId&gt;&quot;
-}</code></pre></div></div></p>
+}
+</pre></div></p>
 <p>Once recording is started you can pause and unpause recording as follows:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-14><input name=tab-group-14 type=radio id=tab-group-14-0_2r63k0l1vfr49dx checked=checked class=code-tab data-lang aria-controls=tab-group-14-0_2r63k0l1vfr49dx-panel role=tab><label for=tab-group-14-0_2r63k0l1vfr49dx class=code-tab-label data-lang id=tab-group-14-0_2r63k0l1vfr49dx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-14-0_2r63k0l1vfr49dx-panel aria-labelledby=tab-group-14-0_2r63k0l1vfr49dx-label><pre class=codehilite><code>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings/&lt;recordingId&gt;
+<p> <div class=codehilite><pre><span></span><span class=err>PATCH /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/recordings/&lt;recordingId&gt;</span>
 
-{
-&quot;active&quot;: false
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>&quot;active&quot;: false</span>
+<span class=err>}</span>
+</pre></div></p>
 <p><strong>Tips</strong>: <a href="https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_call-recordings/">How to Obtain Call Recording Metadata and Content</a></p>
 <h2 id="call-flip">Call Flip</h2>
 <p>Call flipping is useful if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone) and enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone... you get the idea. See <a href="https://www.ringcentral.com/office/features/call-flip/overview.html">How Call Flip works</a>.</p>
 <p><a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding">Configure your Call Flip Settings</a> via Service Site or via <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html">Ringcentral Forwarding Number List API</a>.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-15><input name=tab-group-15 type=radio id=tab-group-15-0_5if7p7iff41l2fi checked=checked class=code-tab data-lang aria-controls=tab-group-15-0_5if7p7iff41l2fi-panel role=tab><label for=tab-group-15-0_5if7p7iff41l2fi class=code-tab-label data-lang id=tab-group-15-0_5if7p7iff41l2fi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-15-0_5if7p7iff41l2fi-panel aria-labelledby=tab-group-15-0_5if7p7iff41l2fi-label><pre class=codehilite><code>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/flip
+<p> <div class=codehilite><pre><span></span><span class=err>POST /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;/flip</span>
 
-{
-  &quot;callFlipId&quot;: &quot;*2&quot;
-}</code></pre></div></div></p>
+<span class=err>{</span>
+<span class=err>  &quot;callFlipId&quot;: &quot;*2&quot;</span>
+<span class=err>}</span>
+</pre></div></p>
 <h2 id="ending-calls">Ending Calls</h2>
 <p>Drop the call for all participants:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-16><input name=tab-group-16 type=radio id=tab-group-16-0_asfnixmbhjm71hd checked=checked class=code-tab data-lang aria-controls=tab-group-16-0_asfnixmbhjm71hd-panel role=tab><label for=tab-group-16-0_asfnixmbhjm71hd class=code-tab-label data-lang id=tab-group-16-0_asfnixmbhjm71hd-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-16-0_asfnixmbhjm71hd-panel aria-labelledby=tab-group-16-0_asfnixmbhjm71hd-label><pre class=codehilite><code>DELETE /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span><span class=err>DELETE /restapi/v1.0/account/~/telephony/sessions/&lt;telephonySessionId&gt;/parties/&lt;partyId&gt;</span>
+</pre></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2018-12-12</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
   </li>
 <!--
   <li class="readingTime">
@@ -1342,15 +1390,15 @@ Authorization: Bearer &lt;access-token&gt;
 -->
   <li class="contributors-holder">
     <span class="contributors-text">Contributors</span>
-    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/byrnereese" title="Byrne Reese" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars0.githubusercontent.com/u/28429?v=4?size=32" alt="Byrne Reese"></a></li></ul>
+    <ul class="contributors" data-bi-name="contributors"></ul>
   </li>
 </ul>
 </div>
-	<div id="sidebar-toc" class="sidebar col-md-2">
-	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
-	</div>
+      <div id="sidebar-toc" class="sidebar col-md-2">
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
-      </div><footer class="col-md-12">
+    </div>
+    </div><footer class="col-md-12">
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
@@ -1383,15 +1431,15 @@ Authorization: Bearer &lt;access-token&gt;
       </div>
   </nav>
 </footer>
-      <script>
-	var base_url = "../..",
-            shortcuts = ["foo"];
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
-      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
-      <script src="../../js/base.js" defer></script>
-      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <script>
+      var base_url = "../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../js/base.js" defer></script>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1431,6 +1479,6 @@ Authorization: Bearer &lt;access-token&gt;
         </div>
     </div>
 </div>
-      
-    </body>
+    
+  </body>
 </html>

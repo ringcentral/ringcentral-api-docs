@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <script>
-	// Hack for scrolling window when linking to anchor tag with fixed nav header
-        var shiftWindow = function() { scrollBy(0, -75) };
-        window.addEventListener("hashchange", shiftWindow);
-        function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/sms/tutorials/receiving/">
-        <link rel="shortcut icon" href="../../../favicon.ico">
-        
-        <title>Receiving SMS - Developing with RingCentral</title>
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/sms/tutorials/receiving/">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    
+    <title>Receiving SMS - Developing with RingCentral</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../../css/code-styles.css" rel="stylesheet">
-    <link href="../../../css/code-tabs.css" rel="stylesheet">
-    <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../css/code-styles.css" rel="stylesheet">
+    <link href="../../../css/mega-menu.css" rel="stylesheet">
+    <link href="../../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="../../../css/base.css" rel="stylesheet">
     <link href="../../../extra.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../../css/mega-menu.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../../fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
-            ga('send', 'pageview');
-        </script> 
-    </head>
-
-    <body class="" data-spy="scroll" data-target="#toc">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <script src="fonts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="" data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="../../..">
       <img src="../../../logo_beta.svg" />
@@ -220,10 +217,10 @@
     </div>
   </div>
 </nav>
-      <div id="content" class="container">
-        
-      <div class="row">
-        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+    <div id="content" class="container">
+      
+    <div class="row">
+      <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
@@ -347,14 +344,6 @@
 <li>
     <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
     
@@ -374,14 +363,6 @@
 <li>
     <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
   </ul>
@@ -394,17 +375,6 @@
     
 <li>
     <a href="../../../basics/oauth/" class="">Auth Types</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../missing/" class="">Auth Server</a>
 </li>
   </ul>
 </li>
@@ -543,30 +513,6 @@
   <ul>
     
 <li>
-  <span>WebRTC</span>
-  <!--<a href="#" class="">WebRTC</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../missing/" class="">Web</a>
-</li>
-    
-<li>
-    <a href="../../../missing/" class="">iOS</a>
-</li>
-    
-<li>
-    <a href="../../../missing/" class="">Android</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>RingOut</span>
-  <!--<a href="#" class="">RingOut</a>-->
-  <ul>
-    
-<li>
     <a href="../../../voice/quick-start/ringout/node/" class="">Node.js</a>
 </li>
     
@@ -584,8 +530,6 @@
     
 <li>
     <a href="../../../voice/quick-start/ringout/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -971,11 +915,98 @@
 </li>
         </ul>
       </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
 </div>
-        <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col-md-7" role="main">
 
 
 <nav aria-label="breadcrumb">
@@ -997,12 +1028,13 @@
 <h1 id="receiving-and-responding-to-sms">Receiving and Responding to SMS</h1>
 <p>No content yet.</p>
 <h2 id="complete-example">Complete Example</h2>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_javascript checked=checked class=code-tab data-lang=javascript aria-controls=tab-group-0-0_javascript-panel role=tab><label for=tab-group-0-0_javascript class=code-tab-label data-lang=javascript id=tab-group-0-0_javascript-label>Javascript</label><div class=code-tabpanel role=tabpanel data-lang=javascript id=tab-group-0-0_javascript-panel aria-labelledby=tab-group-0-0_javascript-label><pre class=codehilite><code class=language-javascript></code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span>
+</pre></div></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-01-25</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
   </li>
 <!--
   <li class="readingTime">
@@ -1011,15 +1043,15 @@
 -->
   <li class="contributors-holder">
     <span class="contributors-text">Contributors</span>
-    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/byrnereese" title="Byrne Reese" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars0.githubusercontent.com/u/28429?v=4?size=32" alt="Byrne Reese"></a></li></ul>
+    <ul class="contributors" data-bi-name="contributors"></ul>
   </li>
 </ul>
 </div>
-	<div id="sidebar-toc" class="sidebar col-md-2">
-	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
-	</div>
+      <div id="sidebar-toc" class="sidebar col-md-2">
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
-      </div><footer class="col-md-12">
+    </div>
+    </div><footer class="col-md-12">
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
@@ -1052,15 +1084,15 @@
       </div>
   </nav>
 </footer>
-      <script>
-	var base_url = "../../..",
-            shortcuts = ["foo"];
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
-      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
-      <script src="../../../js/base.js" defer></script>
-      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <script>
+      var base_url = "../../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../../js/base.js" defer></script>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1100,6 +1132,6 @@
         </div>
     </div>
 </div>
-      
-    </body>
+    
+  </body>
 </html>

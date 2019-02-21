@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <script>
-	// Hack for scrolling window when linking to anchor tag with fixed nav header
-        var shiftWindow = function() { scrollBy(0, -75) };
-        window.addEventListener("hashchange", shiftWindow);
-        function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/call-log/quick-start/python/">
-        <link rel="shortcut icon" href="../../../favicon.ico">
-        
-        <title>Python - Developing with RingCentral</title>
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/call-log/quick-start/python/">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    
+    <title>Python - Developing with RingCentral</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../../css/code-styles.css" rel="stylesheet">
-    <link href="../../../css/code-tabs.css" rel="stylesheet">
-    <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../css/code-styles.css" rel="stylesheet">
+    <link href="../../../css/mega-menu.css" rel="stylesheet">
+    <link href="../../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../../css/admonition.css" rel="stylesheet">
     <link href="../../../css/base.css" rel="stylesheet">
     <link href="../../../extra.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="../../../css/mega-menu.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../../fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
-            ga('send', 'pageview');
-        </script> 
-    </head>
-
-    <body class="" data-spy="scroll" data-target="#toc">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <script src="fonts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="" data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="../../..">
       <img src="../../../logo_beta.svg" />
@@ -220,10 +217,10 @@
     </div>
   </div>
 </nav>
-      <div id="content" class="container">
-        
-      <div class="row">
-        <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+    <div id="content" class="container">
+      
+    <div class="row">
+      <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
@@ -347,14 +344,6 @@
 <li>
     <a href="../../../authentication/quick-start/password-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../../authentication/quick-start/password-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../../authentication/quick-start/password-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
     
@@ -374,14 +363,6 @@
 <li>
     <a href="../../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
 </li>
-    
-<li>
-    <a href="../../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../../authentication/quick-start/authorization-flow/explorer/" class="">API Explorer</a>
-</li>
   </ul>
 </li>
   </ul>
@@ -394,17 +375,6 @@
     
 <li>
     <a href="../../../basics/oauth/" class="">Auth Types</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../missing/" class="">Auth Server</a>
 </li>
   </ul>
 </li>
@@ -543,30 +513,6 @@
   <ul>
     
 <li>
-  <span>WebRTC</span>
-  <!--<a href="#" class="">WebRTC</a>-->
-  <ul>
-    
-<li>
-    <a href="../../../missing/" class="">Web</a>
-</li>
-    
-<li>
-    <a href="../../../missing/" class="">iOS</a>
-</li>
-    
-<li>
-    <a href="../../../missing/" class="">Android</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>RingOut</span>
-  <!--<a href="#" class="">RingOut</a>-->
-  <ul>
-    
-<li>
     <a href="../../../voice/quick-start/ringout/node/" class="">Node.js</a>
 </li>
     
@@ -584,8 +530,6 @@
     
 <li>
     <a href="../../../voice/quick-start/ringout/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -971,11 +915,98 @@
 </li>
         </ul>
       </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+</li>
+    
+<li>
+    <a href="../../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
 </div>
-        <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col-md-7" role="main">
 
 
 
@@ -1009,41 +1040,44 @@
 <p>When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.</p>
 <h2 id="read-your-call-log">Read your call log</h2>
 <h3 id="install-ringcentral-python-sdk">Install RingCentral Python SDK</h3>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-0-0_bash-panel role=tab><label for=tab-group-0-0_bash class=code-tab-label data-lang=bash id=tab-group-0-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-0-0_bash-panel aria-labelledby=tab-group-0-0_bash-label><pre class=codehilite><code class=language-bash>$ pip install ringcentral</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span>$ pip install ringcentral
+</pre></div></p>
 <h3 id="create-and-edit-calllogpy">Create and Edit calllog.py</h3>
 <p>Create a file called <tt>calllog.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_python checked=checked class=code-tab data-lang=python aria-controls=tab-group-1-0_python-panel role=tab><label for=tab-group-1-0_python class=code-tab-label data-lang=python id=tab-group-1-0_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-1-0_python-panel aria-labelledby=tab-group-1-0_python-label><pre class=codehilite><code class=language-python>from ringcentral import SDK
+<p> <div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>ringcentral</span> <span class=kn>import</span> <span class=n>SDK</span>
 
-RECIPIENT = '&lt;ENTER PHONE NUMBER&gt;'
+<span class=n>RECIPIENT</span> <span class=o>=</span> <span class=s1>&#39;&lt;ENTER PHONE NUMBER&gt;&#39;</span>
 
-RINGCENTRAL_CLIENTID = '&lt;ENTER CLIENT ID&gt;'
-RINGCENTRAL_CLIENTSECRET = '&lt;ENTER CLIENT SECRET&gt;'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+<span class=n>RINGCENTRAL_CLIENTID</span> <span class=o>=</span> <span class=s1>&#39;&lt;ENTER CLIENT ID&gt;&#39;</span>
+<span class=n>RINGCENTRAL_CLIENTSECRET</span> <span class=o>=</span> <span class=s1>&#39;&lt;ENTER CLIENT SECRET&gt;&#39;</span>
+<span class=n>RINGCENTRAL_SERVER</span> <span class=o>=</span> <span class=s1>&#39;https://platform.devtest.ringcentral.com&#39;</span>
 
-RINGCENTRAL_USERNAME = '&lt;YOUR ACCOUNT PHONE NUMBER&gt;'
-RINGCENTRAL_PASSWORD = '&lt;YOUR ACCOUNT PASSWORD&gt;'
-RINGCENTRAL_EXTENSION = '&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;'
+<span class=n>RINGCENTRAL_USERNAME</span> <span class=o>=</span> <span class=s1>&#39;&lt;YOUR ACCOUNT PHONE NUMBER&gt;&#39;</span>
+<span class=n>RINGCENTRAL_PASSWORD</span> <span class=o>=</span> <span class=s1>&#39;&lt;YOUR ACCOUNT PASSWORD&gt;&#39;</span>
+<span class=n>RINGCENTRAL_EXTENSION</span> <span class=o>=</span> <span class=s1>&#39;&lt;YOUR EXTENSION, PROBABLY &quot;101&quot;&gt;&#39;</span>
 
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+<span class=n>rcsdk</span> <span class=o>=</span> <span class=n>SDK</span><span class=p>(</span> <span class=n>RINGCENTRAL_CLIENTID</span><span class=p>,</span> <span class=n>RINGCENTRAL_CLIENTSECRET</span><span class=p>,</span> <span class=n>RINGCENTRAL_SERVER</span><span class=p>)</span>
+<span class=n>platform</span> <span class=o>=</span> <span class=n>rcsdk</span><span class=o>.</span><span class=n>platform</span><span class=p>()</span>
+<span class=n>platform</span><span class=o>.</span><span class=n>login</span><span class=p>(</span><span class=n>RINGCENTRAL_USERNAME</span><span class=p>,</span> <span class=n>RINGCENTRAL_EXTENSION</span><span class=p>,</span> <span class=n>RINGCENTRAL_PASSWORD</span><span class=p>)</span>
 
-params = {
-    'view' : 'Simple'
-}
-resp = platform.get('/restapi/v1.0/account/~/extension/~/call-log', params)
-for record in resp.json().records:
-    print &quot;Call type: &quot; + record.type</code></pre></div></div></p>
+<span class=n>params</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;view&#39;</span> <span class=p>:</span> <span class=s1>&#39;Simple&#39;</span>
+<span class=p>}</span>
+<span class=n>resp</span> <span class=o>=</span> <span class=n>platform</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;/restapi/v1.0/account/~/extension/~/call-log&#39;</span><span class=p>,</span> <span class=n>params</span><span class=p>)</span>
+<span class=k>for</span> <span class=n>record</span> <span class=ow>in</span> <span class=n>resp</span><span class=o>.</span><span class=n>json</span><span class=p>()</span><span class=o>.</span><span class=n>records</span><span class=p>:</span>
+    <span class=k>print</span> <span class=s2>&quot;Call type: &quot;</span> <span class=o>+</span> <span class=n>record</span><span class=o>.</span><span class=n>type</span>
+</pre></div></p>
 <h3 id="run-your-code">Run Your Code</h3>
 <p>You are almost done. Now run your script.</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-2-0_bash-panel role=tab><label for=tab-group-2-0_bash class=code-tab-label data-lang=bash id=tab-group-2-0_bash-label>Bash</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-2-0_bash-panel aria-labelledby=tab-group-2-0_bash-label><pre class=codehilite><code class=language-bash>$ python calllog.py</code></pre></div></div></p>
+<p> <div class=codehilite><pre><span></span>$ python calllog.py
+</pre></div></p>
 <h2 id="publish-your-app">Publish Your App</h2>
 <p>Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend <a href="../basics/publish">going through this process</a> for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
     <span class="last-updated-text">Last updated:</span>
-    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">2019-02-04</time>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
   </li>
 <!--
   <li class="readingTime">
@@ -1052,15 +1086,15 @@ for record in resp.json().records:
 -->
   <li class="contributors-holder">
     <span class="contributors-text">Contributors</span>
-    <ul class="contributors" data-bi-name="contributors"><li><a href="http://github.com/PacoVu" title="Paco Vu" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars1.githubusercontent.com/u/13070584?v=4?size=32" alt="Paco Vu"></a></li><li><a href="http://github.com/byrnereese" title="Byrne Reese" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="https://avatars0.githubusercontent.com/u/28429?v=4?size=32" alt="Byrne Reese"></a></li></ul>
+    <ul class="contributors" data-bi-name="contributors"></ul>
   </li>
 </ul>
 </div>
-	<div id="sidebar-toc" class="sidebar col-md-2">
-	  <nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
-	</div>
+      <div id="sidebar-toc" class="sidebar col-md-2">
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
-      </div><footer class="col-md-12">
+    </div>
+    </div><footer class="col-md-12">
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
@@ -1093,15 +1127,15 @@ for record in resp.json().records:
       </div>
   </nav>
 </footer>
-      <script>
-	var base_url = "../../..",
-            shortcuts = ["foo"];
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
-      <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
-      <script src="../../../js/base.js" defer></script>
-      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <script>
+      var base_url = "../../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../../js/base.js" defer></script>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1141,6 +1175,6 @@ for record in resp.json().records:
         </div>
     </div>
 </div>
-      
-    </body>
+    
+  </body>
 </html>
