@@ -708,7 +708,7 @@
             {
                 "name": "PHP",
                 "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/"
             }
         ]
     }
