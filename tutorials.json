@@ -683,5 +683,33 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-php-demo/"
             }
         ]
+    },
+    {
+        "title": "RingCentral Authorization Code Flow OAuth",
+        "description": "<p>In this step-by-step tutorial, you are going to learn how to authorize a user to login RingCentral platform using the authorization code flow.</p>",
+        "tags": [
+            "OAuth","Authorization Code Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+            }
+        ]
     }
 ]
