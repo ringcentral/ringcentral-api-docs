@@ -1,5 +1,5 @@
 mkdocs>=1.0.4
-mkdocs-moonstone>=0.1.1
+mkdocs-moonstone>=0.1.2
 mkdocs-git-committers-plugin>=0.1.3
 mkdocs-bootstrap-tables-plugin>=0.1.0
 markdown_fenced_code_tabs>=1.0.3
