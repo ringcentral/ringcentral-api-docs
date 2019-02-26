@@ -57,10 +57,10 @@ pages:
     - 'Deploying to Production': 'basics/production.md'
     - 'Publishing to App Gallery': 'basics/app-gallery.md'
     - 'Using Lead Forms': 'basics/lead-forms.md'
+    - 'Install App Buttons': 'basics/install-app-button.md'
   - 'Account Management':
-#    - 'Using the Developer Portal': 'basics/developer-portal.md'
     - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
-    - 'Auth Profile & Permissions': 'basics/configuration/authorization_profile.md'
+    - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
   - 'Messaging':
     - 'Sending Messages': 'basics/messaging.md'
     - 'Message Synchronization': 'basics/message-sync.md'
@@ -116,7 +116,13 @@ pages:
     - 'PHP': 'voice/quick-start/ringout/php.md'
     - 'C#': 'voice/quick-start/ringout/c-sharp.md'
     - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
-  - 'Developer Manual': 'missing.md'
+  - 'Developer Manual':
+    - 'Place a Call: RingOut': 'voice/ringout.md'
+    - 'Place a Call: WebRTC': 'voice/webrtc.md'
+    - 'Call Queues': 'voice/call-queues.md'
+    - 'Call Control': 'voice/call-control.md'
+    - 'Answering Rules': 'voice/answering-rules.md'
+    - 'URI Scheme': 'voice/uri-scheme.md' 
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
     - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
@@ -133,17 +139,8 @@ pages:
     - 'Update Call Party': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty'
     - 'Start Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording'
     - 'Pause/Resume Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording'
-  - 'Tutorials':
-    - 'RingOut': 'voice/ringout.md'
-    - 'WebRTC': 'voice/webrtc.md'
-    - 'Call Queues': 'voice/call-queues.md'
-    - 'Call Control': 'voice/call-control.md'
-    - 'Answering Rules': 'voice/answering-rules.md'
-    - 'URI Scheme': 'voice/uri-scheme.md'
   - 'Sample Applications':
     - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
-#    - 'Call Queues': 'missing.md'
-#    - 'Salesforce Dialer': 'missing.md'
 - 'Fax':
   - 'Getting Started':
     - 'Node.js': 'fax/quick-start/node.md'
@@ -166,18 +163,18 @@ pages:
     - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
   - 'Sample Applications':
     - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-- 'Chat':
+- 'Team Messaging':
   - 'Getting Started':
-    - 'Node.js': 'chat/quick-start/node.md'
-    - 'Python': 'chat/quick-start/python.md'
-    - 'PHP': 'chat/quick-start/php.md'
-    - 'C#': 'chat/quick-start/c-sharp.md'
-    - 'API Explorer': 'chat/quick-start/explorer.md'
+    - 'Node.js': 'team-messaging/quick-start/node.md'
+    - 'Python': 'team-messaging/quick-start/python.md'
+    - 'PHP': 'team-messaging/quick-start/php.md'
+    - 'C#': 'team-messaging/quick-start/c-sharp.md'
+    - 'API Explorer': 'team-messaging/quick-start/explorer.md'
   - 'Developer Manual':
-    - 'API Overview': 'chat/manual/api.md'
-    - 'Message Attachments': 'chat/manual/attachments.md'
+    - 'API Overview': 'team-messaging/manual/api.md'
+    - 'Message Attachments': 'team-messaging/manual/attachments.md'
   - 'Tutorials':
-    - 'Building a Bot Locally': 'chat/tutorials/local-bots.md'
+    - 'Building a Bot Locally': 'team-messaging/tutorials/local-bots.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
