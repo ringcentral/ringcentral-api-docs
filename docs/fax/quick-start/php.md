@@ -57,7 +57,7 @@ $rcsdk = new RingCentral\SDK\SDK('<ENTER CLIENT ID>', '<ENTER CLIENT SECRET>',
 $platform = $rcsdk->platform();
 $platform->login('<YOUR ACCOUNT PHONE NUMBER>',
                  '<YOUR EXTENSION, PROBABLY "101">',
-		 '<YOUR ACCOUNT PASSWORD>');
+                 '<YOUR ACCOUNT PASSWORD>');
 $request = $rcsdk->createMultipartBuilder()
                  ->setBody(array(
                      'to' => array(array('phoneNumber' => '<ENTER FAX NUMBER>')),

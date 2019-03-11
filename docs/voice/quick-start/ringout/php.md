@@ -57,7 +57,7 @@ $rcsdk = new RingCentral\SDK\SDK('<ENTER CLIENT ID>', '<ENTER CLIENT SECRET>',
 $platform = $rcsdk->platform();
 $platform->login('<YOUR ACCOUNT PHONE NUMBER>',
                  '<YOUR EXTENSION, PROBABLY "101">',
-		 '<YOUR ACCOUNT PASSWORD>');
+                 '<YOUR ACCOUNT PASSWORD>');
 $resp = $platform->post('/account/~/extension/~/ring-out',
     array(
       'from' => array('phoneNumber' => '<YOUR ACCOUNT PHONE NUMBER>'),

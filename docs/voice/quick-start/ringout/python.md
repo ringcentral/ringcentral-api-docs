@@ -45,7 +45,7 @@ rcsdk = SDK( '<ENTER CLIENT ID>', '<ENTER CLIENT SECRET>',
 platform = rcsdk.platform()
 platform.login('<YOUR ACCOUNT PHONE NUMBER>',
                '<YOUR EXTENSION, PROBABLY "101">',
-	       '<YOUR ACCOUNT PASSWORD>')
+               '<YOUR ACCOUNT PASSWORD>')
 resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
               {
                   'from' : { 'phoneNumber': '<YOUR ACCOUNT PHONE NUMBER>' },

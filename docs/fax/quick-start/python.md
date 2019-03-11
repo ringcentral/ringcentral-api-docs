@@ -55,7 +55,7 @@ rcsdk = SDK( '<ENTER CLIENT ID>', '<ENTER CLIENT SECRET>',
 platform = rcsdk.platform()
 platform.login('<YOUR ACCOUNT PHONE NUMBER>',
                '<YOUR EXTENSION, PROBABLY "101">',
-	       '<YOUR ACCOUNT PASSWORD>')
+               '<YOUR ACCOUNT PASSWORD>')
 builder = rcsdk.create_multipart_builder()
 builder.set_body({
     'to': [{'phoneNumber': '<ENTER FAX NUMBER>'}],

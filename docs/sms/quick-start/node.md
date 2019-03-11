@@ -47,7 +47,7 @@ $ npm install ringcentral --save
 
 Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```
+```javascript
 const RC = require('ringcentral')
 var rcsdk = new RC({
     server: 'https://platform.devtest.ringcentral.com',
