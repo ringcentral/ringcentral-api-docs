@@ -49,37 +49,26 @@ Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS 
 
 ```javascript
 const RC = require('ringcentral');
-
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
 var rcsdk = new RC({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
+    server: 'https://platform.devtest.ringcentral.com',
+    appKey: '<ENTER CLIENT ID>',
+    appSecret: '<ENTER CLIENT SECRET>'
+});
 var platform = rcsdk.platform();
 platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
-      })
-      .then(function(resp) {
-          send_fax()
-      });
+    username: '<YOUR ACCOUNT PHONE NUMBER>',
+    password: '<YOUR ACCOUNT PASSWORD>',
+    extension: '<YOUR EXTENSION, PROBABLY "101">'
+    })
+    .then(function(resp) {
+       send_fax()
+    });
 
 function send_fax() {
     var FormData = require('form-data');
     formData = new FormData();
     var body = {
-      to: [{'phoneNumber': RECIPIENT}],
+      to: [{'phoneNumber': '<ENTER FAX NUMBER>'}],
       faxResolution: 'High',
       coverPageText: "This is a demo Fax page from Node JS"
     }

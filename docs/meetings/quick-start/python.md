@@ -54,18 +54,12 @@ Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS wi
 from ringcentral import SDK
 import sys
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rcsdk = SDK( '<ENTER CLIENT ID>', '<ENTER CLIENT SECRET>',
+             'https://platform.devtest.ringcentral.com')
 platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
+platform.login('<YOUR ACCOUNT PHONE NUMBER>',
+               '<YOUR EXTENSION, PROBABLY "101">',
+	       '<YOUR ACCOUNT PASSWORD>')
 try:
     response = platform.post('/restapi/v1.0/account/~/extension/~/meeting',
                              {

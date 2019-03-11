@@ -49,42 +49,27 @@ Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with yo
 
 ```
 const RC = require('ringcentral')
-
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
 var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
+    server: 'https://platform.devtest.ringcentral.com',
+    appKey: '<ENTER CLIENT ID>',
+    appSecret: '<ENTER CLIENT SECRET>'
 });
 var platform = rcsdk.platform();
 platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
+    username: '<YOUR ACCOUNT PHONE NUMBER>',
+    password: '<YOUR ACCOUNT PASSWORD>',
+    extension: '<YOUR EXTENSION, PROBABLY "101">'
     })
     .then(function(resp) {
-        send_sms()
-    });
-
-function send_sms(){
-  platform.post('/account/~/extension/~/sms', {
-       from: {'phoneNumber': RINGCENTRAL_USERNAME},
-       to: [{'phoneNumber': RECIPIENT}],
-       text: 'Hello World from Node JS'
-     })
-     .then(function (resp) {
+      platform.post('/account/~/extension/~/sms', {
+        from: {'phoneNumber': '<YOUR ACCOUNT PHONE NUMBER>'},
+        to: [{'phoneNumber': '<ENTER PHONE NUMBER>'}],
+        text: 'Hello World from Node JS'
+      })
+      .then(function (resp) {
         console.log("SMS sent. Message status: " + resp.json().messageStatus)
-     });
-}      
+       });
+    });
 ```
 
 ### Run Your Code

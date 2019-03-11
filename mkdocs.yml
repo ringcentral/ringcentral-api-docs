@@ -9,7 +9,7 @@ plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
       branch: bootstrap-vertical-nav
-      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
+      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
   - bootstrap-tables
 #  - markdown-filter
 #  - search-path:
