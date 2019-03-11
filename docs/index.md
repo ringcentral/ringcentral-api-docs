@@ -27,7 +27,15 @@ no_breadcrumb:true
 
 <p>Not a programmer? <a href="">Try out the API with no programming</a>.</p>
 
-## Resources
+## Getting Help
+
+If on your way to building your first RingCentral application you encounter difficulty or need help, we are here to assist. Here are our most popular support resources available to you:
+
+* [Developer Forums](https://devcommunity.ringcentral.com/) - post a question to our support community.
+* [StackOverflow](http://stackoverflow.com/questions/tagged/ringcentral) - seek help from one of the Internet's most popular Q&A sites for developers.
+* [Live Chat](https://developer.ringcentral.com/community.html) - post your question to our public Glip Team for live, real-time support during business hours.#
+
+# Resources
 
 <div class="card-deck">
   <div class="card">
