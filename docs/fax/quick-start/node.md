@@ -50,7 +50,7 @@ Create a file called <tt>fax.js</tt>. Be sure to edit the variables in ALL CAPS 
 ```javascript
 const RC = require('ringcentral');
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER FAX NUMBER>'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'

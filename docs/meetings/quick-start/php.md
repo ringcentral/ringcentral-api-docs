@@ -55,8 +55,6 @@ Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS wi
 <?php
 require('vendor/autoload.php');
 
-$RECIPIENT = '<ENTER PHONE NUMBER>'
-
 $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'

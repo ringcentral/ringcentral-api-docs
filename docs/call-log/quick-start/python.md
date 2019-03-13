@@ -50,8 +50,6 @@ Create a file called <tt>calllog.py</tt>. Be sure to edit the variables in ALL C
 ```python
 from ringcentral import SDK
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'

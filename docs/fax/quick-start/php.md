@@ -52,7 +52,7 @@ Create a file called <tt>sms.php</tt>. Be sure to edit the variables in ALL CAPS
 <?php
 require('vendor/autoload.php');
 
-$RECIPIENT = '<ENTER PHONE NUMBER>'
+$RECIPIENT = '<ENTER FAX NUMBER>'
 
 $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
