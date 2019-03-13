@@ -53,16 +53,25 @@ Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS wi
 
 ```javascript
 const RC = require('ringcentral')
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
 var rcsdk = new RC({
-    server: 'https://platform.devtest.ringcentral.com',
-    appKey: '<ENTER CLIENT ID>',
-    appSecret: '<ENTER CLIENT SECRET>'
+    server: RINGCENTRAL_SERVER,
+    appKey: RINGCENTRAL_CLIENTID,
+    appSecret: RINGCENTRAL_CLIENTSECRET
 });
 var platform = rcsdk.platform();
 platform.login({
-    username: '<YOUR ACCOUNT PHONE NUMBER>',
-    password: '<YOUR ACCOUNT PASSWORD>',
-    extension: '<YOUR EXTENSION, PROBABLY "101">'
+    username: RINGCENTRAL_USERNAME,
+    password: RINGCENTRAL_PASSWORD,
+    extension: RINGCENTRAL_EXTENSION
     })
     .then(function(resp) {
 	platform.post('/account/~/extension/~/meeting', {

@@ -49,25 +49,36 @@ Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL C
 
 ```javascript
 const RC = require('ringcentral');
+
+RECIPIENT = '<ENTER PHONE NUMBER>'
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
 var rcsdk = new RC({
-    server: 'https://platform.devtest.ringcentral.com',
-    appKey: '<ENTER CLIENT ID>',
-    appSecret: '<ENTER CLIENT SECRET>'
-});
+      server: RINGCENTRAL_SERVER,
+      appKey: RINGCENTRAL_CLIENTID,
+      appSecret: RINGCENTRAL_CLIENTSECRET
+  });
 var platform = rcsdk.platform();
 platform.login({
-    username: '<YOUR ACCOUNT PHONE NUMBER>',
-    password: '<YOUR ACCOUNT PASSWORD>',
-    extension: '<YOUR EXTENSION, PROBABLY "101">'
-    })
-    .then(function(resp) {
-        call_ringout()
-    });
+      username: RINGCENTRAL_USERNAME,
+      password: RINGCENTRAL_PASSWORD,
+      extension: RINGCENTRAL_EXTENSION
+      })
+      .then(function(resp) {
+          call_ringout()
+      });
 
 function call_ringout() {
     platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
-      'from' : { 'phoneNumber': '<YOUR ACCOUNT PHONE NUMBER>' },
-      'to'   : {'phoneNumber': '<ENTER PHONE NUMBER TO CALL>' },
+      'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+      'to'   : {'phoneNumber': RECIPIENT},
       'playPrompt' : false
     })
     .then(function(resp){
