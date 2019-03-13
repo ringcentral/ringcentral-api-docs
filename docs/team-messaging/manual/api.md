@@ -1,22 +1,50 @@
-# Glip Messaging
+# Building Team Messaging Apps
 
-RingCentral Glip is a messaging application, both web and desktop, providing built-in chat, tasks, calendar, file/screen sharing, video conferencing and other useful tools.
+RingCentral's Team Messaging, also referred to as "Glip" is a web and desktop messaging application. It provides:
 
-With the Glip API you can automate conversational communications, easily synchronize notifications into a single location (greatly reducing email), programmatically generate Glip message post content, and you can even couple the new Glip API resources to operate with AI or Machine Learning to solve advanced use cases.
+* Chat
+* Task assignment and management
+* Calendaring and events
+* File/screen sharing
+* Video conferencing
 
-The Glip API provides you with the following functionality scope (base URL `/restapi/v1.0`):
+## What can you build?
 
-- send messages  - `POST /glip/posts`
-- read messages filtered by chat  - `GET /glip/posts`
-- create chats - `POST /glip/groups`
-- edit chat members  - `PUT /glip/groups/[groupId]/bulk-assign`
-- get chat member information - `GET /glip/persons/[personId]`
-- get list of chats filtered by chat type - `GET /glip/groups`
-- get particular chat(s) - `GET /glip/groups/[groupId]`
+The Team Messaging/Glip API you allows one to automate conversational communications, synchronize notifications into a single location (greatly reducing email), and post Glip messages. The API can be combined with other APIs, such as those offered by AI or Machine Learning systems, to solve advanced use cases.
 
-To learn more about the Glip API methods please view the following resources:
+### Bots
 
-* [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html)
-* [API Explorer](https://developer.ringcentral.com/api-explorer/latest/index.html#/Glip_%5BBeta%5D)
+One of the most common use cases for the Team Messaging API is "bots." Bots are agents that users within Glip can communicate with - they expose a conversional interface that allows for the completion of a number of tasks in a more natural way.
 
-On top of that Glip API features chat bots. You may need a smart companion to rent a car, broadcast weather, provide currency exchange rates, send birthday messages, or just in case.
+To help developers create fully featured, production-ready bots, we have created the following bot frameworks:
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Python Bot Framework</h5>
+      <a href="https://github.com/zxdong262/ringcentral-chatbot-python" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Javascript Bot Framework</h5>
+      <a href="https://github.com/ringcentral/ringcentral-chatbot-js" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
+
+RingCentral has provided a number of example bots developers can work with to help craft and hone their use case.
+
+**JavaScript Bots**
+
+* [Ping Bot](https://github.com/tylerlong/glip-ping-chatbot/) - this is the simplest bot one can build. It responds "pong" whenever someone types "ping."
+* [Crontab Bot](https://github.com/tylerlong/glip-crontab-chatbot) - a bot to edit a list of scheduled tasks via a variety of simple commands. 
+* [Google Drive Bot](https://github.com/tylerlong/glip-google-drive-chatbot) - a bot that will post messages whenever files are added and updated to a linked Google Drive account.
+* [RingCentral Assistant Bot](https://github.com/ringcentral/rc-assistant) - a bot to manage your RingCentral account in a variety of ways.
+
+**Python Bots**
+
+* [Date/Time Bot](https://github.com/zxdong262/ringcentral-date-time-chatbot) - a bot that displays the current date and/or time. 
+* [Poll Bot](https://github.com/zxdong262/ringcentral-poll-bot) - a bot that allows you to create and post a survey and store the results in a Google sheet. 
+* [Translation Bot](https://github.com/zxdong262/ringcentral-translate-bot) - a bot to assist in foreign language translation. 
+* [RingCentral Assistant Bot](https://github.com/zxdong262/ringcentral-assistant-bot) - a bot to manage your RingCentral account in a variety of ways.

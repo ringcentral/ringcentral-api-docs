@@ -50,7 +50,7 @@ Create a file called <tt>fax.py</tt>. Be sure to edit the variables in ALL CAPS 
 ```python
 from ringcentral import SDK
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
+RECIPIENT = '<ENTER FAX NUMBER>'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'

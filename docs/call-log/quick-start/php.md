@@ -52,8 +52,6 @@ Create a file called <tt>calllog.php</tt>. Be sure to edit the variables in ALL 
 <?php
 require('vendor/autoload.php');
 
-$RECIPIENT = '<ENTER PHONE NUMBER>'
-
 $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'

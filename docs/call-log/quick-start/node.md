@@ -50,8 +50,6 @@ Create a file called <tt>calllog.js</tt>. Be sure to edit the variables in ALL C
 ```javascript
 const RC = require('ringcentral');
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'

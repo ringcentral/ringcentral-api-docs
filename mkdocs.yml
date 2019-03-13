@@ -6,10 +6,9 @@ edit_uri: tree/bootstrap-vertical-nav/docs
 docs_dir: docs
 
 plugins:
-#  - git-committers:
-#      repository: ringcentral/ringcentral-api-docs
-#      branch: bootstrap-vertical-nav
-#      token: cdd674ab06f6a621af3ea3f77a240b4ab9bbff2d
+  - git-committers:
+      repository: ringcentral/ringcentral-api-docs
+      branch: bootstrap-vertical-nav
   - bootstrap-tables
 #  - markdown-filter
 #  - search-path:
@@ -29,10 +28,6 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
-  - markdown_fenced_code_tabs:
-      single_block_as_tab: False
-      active_class: 'active'
-      template: 'bootstrap4'
 
 extra_css:
 - extra.css
@@ -44,7 +39,6 @@ google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 
 pages:
 - 'The Basics':
-  - 'Get Started': 'get-started.md'
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
@@ -192,10 +186,10 @@ pages:
 - 'Team Messaging':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
-    - 'Python': 'team-messaging/quick-start/python.md'
-    - 'PHP': 'team-messaging/quick-start/php.md'
-    - 'C#': 'team-messaging/quick-start/c-sharp.md'
-    - 'API Explorer': 'team-messaging/quick-start/explorer.md'
+#    - 'Python': 'team-messaging/quick-start/python.md'
+#    - 'PHP': 'team-messaging/quick-start/php.md'
+#    - 'C#': 'team-messaging/quick-start/c-sharp.md'
+#    - 'API Explorer': 'team-messaging/quick-start/explorer.md'
   - 'Developer Manual':
     - 'API Overview': 'team-messaging/manual/api.md'
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
@@ -224,22 +218,22 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-#- 'Meetings':
-#  - 'Getting Started':
-#    - 'Node.js': 'meetings/quick-start/node.md'
-#    - 'Python': 'meetings/quick-start/python.md'
-#    - 'PHP': 'meetings/quick-start/php.md'
+- 'Meetings':
+  - 'Getting Started':
+    - 'Node.js': 'meetings/quick-start/node.md'
+    - 'Python': 'meetings/quick-start/python.md'
+    - 'PHP': 'meetings/quick-start/php.md'
 #    - 'C#': 'meetings/quick-start/c-sharp.md'
 #  - 'Developer Manual':
 #    - 'Scheduling a Meeting': 'meetings/manual/schedule.md'
 #    - 'Meeting Recordings': 'meetings/manual/recordings.md'
-#  - 'API Reference':
-#    - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
-#    - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
-#    - 'Get Meeting Info': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting
-#    - 'Update Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting
-#    - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
-#    - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
-#    - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
-#    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
-#    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
+  - 'API Reference':
+    - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
+    - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
+    - 'Get Meeting Info': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting
+    - 'Update Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting
+    - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
+    - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
+    - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
+    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
+    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
