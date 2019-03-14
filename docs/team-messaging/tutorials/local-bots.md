@@ -16,21 +16,21 @@ Glip bot applications must have OAuth redirect URLs that are accessible over the
 
 If every thing goes well you should see the follow screen.
 
-<img src="../../img/ngrok-running.png" class="img-fluid">
+<img src="../../../img/ngrok-running.png" class="img-fluid">
 
 ## Create a Glip Bot application
 
 * Sign in to [Developer Portal](https://developer.ringcentral.com) with your account login and password. If you do not have RingCentral account, please sign up.
 * Open My Apps tab and click 'Create App' button.
-  <img src="../../img/glip_bot_create_app.png" class="img-fluid">
+  <img src="../../../img/glip_bot_create_app.png" class="img-fluid">
 * Fill in the fields of the form 'General Settings - Create App' below:
-  <img src="../../img/glip_bot_general_setting_step1.png" class="img-fluid">
+  <img src="../../../img/glip_bot_general_setting_step1.png" class="img-fluid">
 * Fill in the fields of the form 'General Settings - AppType & Platform'. Make sure the platform type is `Server/Bot` as below:
-  <img src="../../img/glip_bot_general_setting_step2.png" class="img-fluid">
+  <img src="../../../img/glip_bot_general_setting_step2.png" class="img-fluid">
 * Fill in the fields of the form 'General Settings - OAuth Settings'. Add the following permissions `Glip`, `Webhook Subscription`, `Read Accounts`. In the oAuth redirect URI field, paste your ngrok forwarding address and add the /oauth endpoint at the end of the address that we opened up in our script. Click on `Create` once done.
-  <img src="../../img/glip_bot_general_setting_step3.png" class="img-fluid">
+  <img src="../../../img/glip_bot_general_setting_step3.png" class="img-fluid">
 * If everything goes well you will see the following screen. We will use the `ClientID` and `ClientSecret` generated in this step to update the `.env` file during the installation phase.
-  <img src="../../img/glip_bot_dashboard.png" class="img-fluid">
+  <img src="../../../img/glip_bot_dashboard.png" class="img-fluid">
 
 ## Create a Simple Nodejs application
 
@@ -49,7 +49,7 @@ $ npm install
 3. Create a copy of env.template file and rename it to `.env`
 
 4. Update the `.env` file with the values for `CLIENT_ID`, `CLIENT_SECRET` from the the bot creation step and the `REDIRECT_HOST` from ngrok. I would look something like this:
-   <img src="../../img/envfile.png" class="img-fluid">
+   <img src="../../../img/envfile.png" class="img-fluid">
 
 5. Run the following command in terminal to launch the app.
 
@@ -59,11 +59,11 @@ $ npm start
 
 6. Go to the `Bot` tab of the recently created app in the developer portal. Click on the `Add to Glip` button.
 
-    <img src="../../img/glip_bot_tab.png" class="img-fluid">
+    <img src="../../../img/glip_bot_tab.png" class="img-fluid">
 
     This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url. `NOTE:` Bot provisioner will only use the first url specificed in the oAuth settings.
 
-    <img src="../../img/authorization.png" class="img-fluid">
+    <img src="../../../img/authorization.png" class="img-fluid">
 
 7. You can now exchange the authorization code for an bot token using the code below:
 
@@ -122,7 +122,7 @@ The access token obtained is a `permanent` access token. It's the developer resp
 
 9. Now login to `glip.devtest.ringcentral.com` with your credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
 
-    <img src="../../img/glip_bot_devtest.png" class="img-fluid">
+    <img src="../../../img/glip_bot_devtest.png" class="img-fluid">
 
 10. You should now see the notification messages in the console as show below:
 
