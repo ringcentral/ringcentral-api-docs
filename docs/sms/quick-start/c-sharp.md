@@ -88,7 +88,7 @@ namespace Send_SMS
 }
 ```
 
-### >Run Your App
+### Run Your App
 
 You are almost done. Now run your app from Visual Studio.
 

@@ -25,7 +25,7 @@ no_breadcrumb:true
 
 <a class="btn btn-lg btn-primary" href="#">Get Started &raquo;</a>
 
-<p>Not a programmer? <a href="">Try out the API with no programming</a>.</p>
+<p>Not a programmer? <a href="../no-code/">Try out the API with no programming</a>.</p>
 
 ## Getting Help
 

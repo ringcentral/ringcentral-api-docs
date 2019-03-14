@@ -117,7 +117,7 @@ pages:
 #    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
-    - 'Receiving SMS': 'sms/tutorials/receiving.md'
+#    - 'Receiving SMS': 'sms/tutorials/receiving.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'

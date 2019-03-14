@@ -38,7 +38,7 @@ To create a subscription the client application should send the following reques
 
 In request body the client should specify event filters and delivery mode.
 
-By setting **event filters** the client specifies the notifications it wants to receive. The event filter is exposed as a URL, pointing to the RingCentral API resource which represents the data for which a notification is sent. Currently the following event types are available: messages and presence (see API Reference: [Event Types](https://developers.ringcentral.com/api-docs/latest/EventTypes.html)).
+By setting **event filters** the client specifies the notifications it wants to receive. The event filter is exposed as a URL, pointing to the RingCentral API resource which represents the data for which a notification is sent. Currently the following event types are available: messages and presence (see API Reference: [Event Types](https://developer.ringcentral.com/api-reference#Notification-Event-Types)).
 
 The **delivery mode** specifies the certain mechanism used to deliver event notification from the RingCentral service to the client application. Delivery mechanism can be selected by specifying `deliveryMode.transportType` attribute; currently only one transport channel is supported: the [PubNub cloud service](http://www.pubnub.com), which utilizes HTTP(s) long polling, web socket, and APNS transports for delivering push notifications (for more details see [Notifications Transport](#notifications-transport)).
 

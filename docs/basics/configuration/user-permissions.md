@@ -59,7 +59,7 @@ Accept-Language: en-US
 
     * Authorization Profiles (fully or partially) are built every time RingCentral verifies if a certain permission is granted to the authenticated user.
     * Authorization Profile data is part of the Extension API resource. Each extension in your RingCentral account will have an AuthZ profile associate with it. 
-    * Authorization Profile data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the [RingCentral API Account Resource Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefAccount.html).
+    * Authorization Profile data is only accessible at the Extension Level and not at the Account Level. For Account data, please see view the [RingCentral API Account Resource Reference](https://developer.ringcentral.com/api-reference#Authorization-Profile).
 
 ## Permission Validation
 
@@ -97,4 +97,5 @@ Since Roles and Permissions are part of the Extension API resource, to make a re
 
 Dictionary resources used to obtain more detailed and specific Role and Permission information are also in the **Light** API Group.
 
-To learn more, consult the API Reference relating to the [rate limits for the usage plan of your organization](https://developers.ringcentral.com/api-docs/latest/index.html#!#RateLimitDetails.html).
+To learn more, consult the [Rate Limit](../../rate-limits/) section.
+

@@ -59,7 +59,7 @@ Create your application at [Developer Portal](https://developers.ringcentral.com
 
     * **Authorization Flows**
 
-        [Authorization Flows](http://ringcentral-api-docs.readthedocs.io/en/latest/oauth/#authorization-flows) available for your app are listed here.
+        [Authorization Flows](../oauth/) available for your app are listed here.
 
         Continue by clicking the 'Next' button.
 

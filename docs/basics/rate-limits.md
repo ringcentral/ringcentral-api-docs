@@ -13,7 +13,7 @@ Each Rate Limit specifies how many requests to each API group are allowed. Curre
 * *Heavy*
 * *Auth*
 
-That means all the requests are characterized by their processing as *Light*, *Medium* or *Heavy*. There are also authorization requests, that form a separate group — *Auth*. Each request in [API Reference](https://developers.ringcentral.com/api-docs/latest/APIReference.html) is marked as *Heavy*, *Medium*, *Light* or *Auth* under the header *API Group*.
+That means all the requests are characterized by their processing as *Light*, *Medium* or *Heavy*. There are also authorization requests, that form a separate group — *Auth*. Each request in [API Reference](https://developer.ringcentral.com/api-reference) is marked as *Heavy*, *Medium*, *Light* or *Auth* under the header *API Group*.
 
 ## What Are Your App Rate Limits?
 
@@ -27,22 +27,16 @@ Let's consider the given rate limits. Within the above presented limits your cli
 
 Rate Limits are returned in specific headers in response for each request, unless the request is unlimited. Those headers are:
 
-* **X-Rate-Limit-Group** — API group of the given request (*Light*, *Medium*, *Heavy*, *Auth*)
-
-* **X-Rate-Limit-Limit** — current rate limit for the given request
-
-* **X-Rate-Limit-Remaining** — the number of requests left for the time interval (window) of this rate limit
-
-* **X-Rate-Limit-Window** — time interval in seconds for the given request rate limit
+| Header | Description |
+|-|-|
+| `X-Rate-Limit-Group` | API group of the given request (*Light*, *Medium*, *Heavy*, *Auth*) | 
+| `X-Rate-Limit-Limit` | current rate limit for the given request |
+| `X-Rate-Limit-Remaining` | the number of requests left for the time interval (window) of this rate limit |
+| `X-Rate-Limit-Window` | time interval in seconds for the given request rate limit |
 
 Let us consider the example of request retrieving account information. Rate Limits headers are returned in response alongside with HTTP status code.
 
-```http
-GET /restapi/v1.0/account/1696121004 HTTP/1.1
-Authorization: Bearer U0pDMDFQMDFQQVMwMXxBQUNZemU3b2ZxMUtDWXBoeAxQQ
-Accept: application/json
-
-
+```http tab="Response"
 HTTP/1.1 200 OK
 X-Rate-Limit-Group: light
 X-Rate-Limit-Limit: 1000
@@ -94,3 +88,10 @@ Content-Type: application/json; charset=UTF-8
   "setupWizardState" : "Completed"
 }
 ```
+
+```http tab="Request"
+GET /restapi/v1.0/account/1696121004 HTTP/1.1
+Authorization: Bearer U0pDMDFQMDFQQVMwMXxBQUNZemU3b2ZxMUtDWXBoeAxQQ
+Accept: application/json
+```
+
