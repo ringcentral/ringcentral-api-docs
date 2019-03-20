@@ -6,9 +6,9 @@ edit_uri: tree/bootstrap-vertical-nav/docs
 docs_dir: docs
 
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: bootstrap-vertical-nav
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: bootstrap-vertical-nav
   - bootstrap-tables
 #  - markdown-filter
 #  - search-path:
