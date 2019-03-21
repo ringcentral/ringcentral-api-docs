@@ -10,7 +10,7 @@ no_breadcrumb:true
 <div class="use-case-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="sms">Send an SMS</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="fax">Send a Fax</label>
-<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="chat">Build a chatbot</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="voice">Place a Call</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="meeting">Host a meeting</label>
 </div>
 
