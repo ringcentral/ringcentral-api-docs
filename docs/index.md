@@ -40,7 +40,7 @@ If on your way to building your first RingCentral application you encounter diff
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">API Explorer</h5>
+      <h5 class="card-title">API Reference</h5>
       <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
       <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
     </div>
