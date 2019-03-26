@@ -3,9 +3,44 @@ site_url: https://github.com/ringcentral/ringcentral-api-docs
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs.git
 docs_dir: docs
-theme: readthedocs
+#theme: readthedocs
+theme:
+    name: null
+    custom_dir: redirection/
 extra_css: [extra.css]
 extra_javascript: [fonts.js]
+extra:
+    urlRedirect:
+        overview/: /basics/uris/
+        rate_limits/: /basics/rate-limits/
+        oauth/: /basics/oauth/
+        account_extension/: /basics/configuration/account_extension/
+        calllog_introduction/: /call-log/manual/overview/
+        calllog_api-basics/: /call-log/manual/api/
+        calllog_detailed-call-logs/: /call-log/manual/details/
+        calllog_call-recordings/: /call-log/manual/recordings/
+        calllog_sync/: /call-log/manual/sync/
+        calllog_development-concerns/: /call-log/manual/best-practices/
+        data-archival/: /call-log/manual/archival/
+        messages_introduction/: /sms/tutorials/sending-sms/
+        messages_sms-and-pager/: /sms/pager/
+        messages_faxes/: /fax/tutorials/sending-faxes/
+        messages_sync/: /basics/message-sync/
+        calls_ringout/: /voice/ringout/
+        calls_uri-scheme/: /voice/uri-scheme/
+        calls_webrtc/: /voice/webrtc/
+        active_call_control_overview/: /voice/call-control/
+        active_call_control_quick_start/: /voice/call-control/
+        call_queue/: /voice/call-queues/
+        answering_rules/: /voice/answering-rules/
+        notifications_overview/: /basics/notifications/webhooks/
+        notifications_pubsub/: /basics/notifications/pubnub/
+        notifications_webhooks/: /basics/notifications/webhooks/
+        glip_api/: /team-messaging/manual/api/
+        glip_message_attachments/: /team-messaging/manual/attachments/
+        glip_bots/: /team-messaging/tutorials/local-bots/
+        authorization_profile/: /basics/configuration/user-permissions/
+        publish/: /basics/app-gallery/
 copyright: 2018, RingCentral, Inc.
 google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
 pages:
