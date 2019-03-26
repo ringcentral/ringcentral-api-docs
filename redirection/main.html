@@ -6,6 +6,11 @@
     <meta http-equiv="refresh" content="0; url=https://developers.ringcentral.com/guide{{config.extra.urlRedirect[page.url]}}">
 </head>
 <body>
+<div style="display: none">
+    {{ page.url }}
+    {{ config.extra.urlRedirect | tojson }}
+    {{ config.extra.urlRedirect[page.url] }}
+</div>    
 <h1>Redirecting...</h1>
 <a href="https://developers.ringcentral.com/guide{{config.extra.urlRedirect[page.url]}}">Click here if you are not redirected.</a>
 </body>
