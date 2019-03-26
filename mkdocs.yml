@@ -2,7 +2,7 @@ site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
-edit_uri: tree/bootstrap-vertical-nav/docs
+edit_uri: tree/master/docs
 docs_dir: docs
 
 plugins:
@@ -10,9 +10,6 @@ plugins:
       repository: ringcentral/ringcentral-api-docs
       branch: bootstrap-vertical-nav
   - bootstrap-tables
-#  - markdown-filter
-#  - search-path:
-#       path: 'code_samples/'
 
 theme:
   name: moonstone
