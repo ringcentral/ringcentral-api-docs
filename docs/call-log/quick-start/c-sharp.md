@@ -75,8 +75,8 @@ namespace Read_CallLog
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length > 0)
             {
-                var parameters = new CallLogPath.ListParameters();
-                paramters.view = "Simple"
+                var parameters = new LoadUserCallLogParameters();
+                parameters.view = "Simple";
                 var resp = await rc.Restapi().Account().Extension().CallLog().List(parameters);
                 foreach (CallLogRecord record in resp.records)
                 {
