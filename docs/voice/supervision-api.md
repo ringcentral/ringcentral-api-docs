@@ -139,7 +139,7 @@ Make sure you are using the correct accountId where this call is happening. The 
         "name": "Supervisor ABC",
         "phoneNumber": "101"
     },
-    "id": "party4",
+    "id": "party-4",
     "muted": false,
     "owner": {
         "accountId": "809646016",
