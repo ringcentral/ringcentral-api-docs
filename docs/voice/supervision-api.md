@@ -9,8 +9,7 @@
  This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer , stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio.
  
  The scenario can be visualized below
- 
-    <img src="../../img/api-supervision.png" class="img-fluid">
+![Supervision API](../../img/api-supervision.png)
  
  
 
@@ -115,7 +114,7 @@ It will have a response as below
 
 Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API.
 
-Supervision API Call
+Super API Call
 
 `POST https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/telephony/sessions/xysysysysysys/supervise
 
