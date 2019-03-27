@@ -33,7 +33,7 @@ extra_css:
 
 copyright: "1999-2019 RingCentral, Inc. All rights reserved."
 
-google_analytics: ['UA-57519112-5', 'ringcentral-api-docs.readthedocs.io']
+google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
 - 'The Basics':
