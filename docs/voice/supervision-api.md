@@ -118,7 +118,7 @@ Now that you have the telephonySessionID, Agent extension number and Supervisor 
 
 Body :
 
-{  
+`{  
    "mode": "Listen",
    "extensionNumber": "108",
    "deviceId":"60727004"
@@ -128,8 +128,7 @@ Make sure you are using the correct accountId where this call is happening. The 
 
 **Sample Response**
 
-`
-{
+`{
     "direction": "Outbound",
     "from": {
         "deviceId": "60727004",
@@ -153,16 +152,15 @@ Make sure you are using the correct accountId where this call is happening. The 
         "name": "Dibyendu Roy",
         "phoneNumber": "108"
     }
-}
-`
+}`
 
 You can see that the reponse shows the supervisor joining the Agent extension with a seperate partyId example : party4 here.
 
 What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
 
-To verify that the supervisor has joined the call you can use the , Account level presence API `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?`detailedTelephonyState=true&sipData=true` and see that additonal party has been added to the existing agent Session.
-`
-"activeCalls": [
+To verify that the supervisor has joined the call you can use the , Account level presence API `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
+
+`"activeCalls": [
                 {
                     "id": "aa97ce30b90441158a421ca0e9c0a233",
                     "direction": "Outbound",
@@ -182,8 +180,7 @@ To verify that the supervisor has joined the call you can use the , Account leve
                     "partyId": "party-4",
                     "telephonySessionId": "XXXXXXXXXX"
                 }
-            ]
-`
+            ]`
 
 
 **Note** : If you would be saving the audio stream , please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
