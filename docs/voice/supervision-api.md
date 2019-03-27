@@ -82,7 +82,7 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
                     "sessionId": "183851523016",
                     "startTime": "2019-03-26T22:16:29.629+0000",
                     "partyId": "cs168629785304410134536-2",
-                    "telephonySessionId": "Y3MxNjg2Mjk3ODUzMDQ0MTAxMzQ1MzZAMTAuMTMuMjIuMjU"
+                    "telephonySessionId": "XXXXXXXXXX"
                 }
             ]
         }`
@@ -159,6 +159,37 @@ Make sure you are using the correct accountId where this call is happening. The 
 `
 
 You can see that the reponse shows the supervisor joining the Agent extension with a seperate partyId example : party4 here.
+
+What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
+
+To verify that the supervisor has joined the call you can use the , Account level presence API `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true` and see that additonal party has been added to the existing agent Session.
+
+`
+"activeCalls": [
+                {
+                    "id": "aa97ce30b90441158a421ca0e9c0a233",
+                    "direction": "Outbound",
+                    "fromName": "Supervisor ABC",
+                    "from": "101",
+                    "toName": "Agent",
+                    "to": "108",
+                    "telephonyStatus": "CallConnected",
+                    "sipData": {
+                        "toTag": "I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
+                        "fromTag": "10.14.23.50-5070-a272ac7ba84b4a7",
+                        "remoteUri": "do-not-use-me-I-am-useless",
+                        "localUri": "do-not-use-me-I-am-useless"
+                    },
+                    "sessionId": "590506730017",
+                    "startTime": "2019-03-27T19:14:22.564+0000",
+                    "partyId": "party-4",
+                    "telephonySessionId": "XXXXXXXXXX"
+                }
+            ]
+`
+
+
+
 
 
 
