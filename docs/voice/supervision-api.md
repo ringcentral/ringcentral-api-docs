@@ -9,7 +9,7 @@
  This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer , stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio.
  
  The scenario can be visualized below
-![Supervision API](../../img/api-supervision.png)
+![Supervision API](../img/api-supervision.png)
  
  
 
@@ -29,11 +29,11 @@ You can also create,update and view details on call monitoring group using RingC
 
 ## Supervision API Anatomy
 
-API Endpoint `/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
+**API Endpoint** `/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
 
 Method : POST
 
-Request Body :
+**Request Body** :
 telephonySessionId for the existing session between the customer and the Agent. 
 `{  
    "mode": "Listen",
@@ -88,11 +88,11 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
         }`
 
 
-2. Extension Number : You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
+2. **Extension Number** : You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
 
 Note : In future we shall also support extensionId.
 
-3. deviceId : This is the deviceId of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API " `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/extension/~/device`
+3. **deviceId** : This is the deviceId of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API " `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/extension/~/device`
 
 It will have a response as below
 
@@ -114,7 +114,7 @@ It will have a response as below
 
 Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API.
 
-Super API Call
+**Supervision API Call**
 
 `POST https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/telephony/sessions/xysysysysysys/supervise
 
@@ -128,7 +128,7 @@ Body :
 
 Make sure you are using the correct accountId where this call is happening. The "mode" value is "Listen", and it instructs the backend to make sure the supervisor is joining the call in silent mode without any noise.
 
-Sample Response
+**Sample Response**
 
 `
 {
