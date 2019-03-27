@@ -7,7 +7,7 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 In this Quick Start, we are going to help you creating a meeting on the platform in just a few minutes. Let's get started.
 
 !!! warning "Meetings Permission Required"
-     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts. 
+     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
 
@@ -38,12 +38,11 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Schedule a Meeting
+## Create a Meeting
 
 ### Install RingCentral Node JS SDK
 
 ```bash
-$ npm init qs-meetings-node
 $ npm install ringcentral --save
 ```
 
@@ -56,7 +55,7 @@ const RC = require('ringcentral')
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
 
 RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
@@ -76,13 +75,15 @@ platform.login({
     .then(function(resp) {
 	platform.post('/account/~/extension/~/meeting', {
             topic: 'Test Meeting',
+            meetingType: 'Instant',
             allowJoinBeforeHost: true,
             startHostVideo: true,
             startParticipantsVideo: false
-	})
+	      })
         .then(function (resp) {
-            console.log( 'Start Your Meeting: ' + resp.json().links.startUri )
-     });
+            console.log('Start Your Meeting: ' + resp.json().links.startUri )
+            console.log('Join the Meeting: ' + resp.json().links.joinUri )
+        });
 });
 ```
 
@@ -102,4 +103,4 @@ Congratulations on creating your first RingCentral application. The last step is
 
 > I got the error: "Error: In order to call this API endpoint, user needs to have [Meetings] permission." What is going wrong?
 
-The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis. 
+The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis.

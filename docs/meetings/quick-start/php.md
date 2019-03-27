@@ -7,7 +7,7 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
 !!! warning "Meetings Permission Required"
-     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts. 
+     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
 
@@ -38,7 +38,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Schedule a Meeting
+## Create a Meeting
 
 ### Install RingCentral PHP SDK
 
@@ -57,7 +57,7 @@ require('vendor/autoload.php');
 
 $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+$RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
 
 $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
@@ -68,12 +68,19 @@ $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRE
 $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
+$params = array(
+    'topic' => 'Test Meeting',
+    'meetingType' => 'Instant',
+    'allowJoinBeforeHost' => true,
+    'startHostVideo' => true,
+    'startParticipantsVideo' => false
+    );
 try {
-  $resp = $platform->post('/account/~/extension/~/meeting',
-                          array( 'topic' => 'Test Meeting' ) );
-  print_r ("Join meeting:: " . $resp->json()->links->joinUri);
+  $resp = $platform->post('/account/~/extension/~/meeting', $params);
+  print_r ('Start Your Meeting: ' . $resp->json()->links->startUri . "\n");
+  print_r ('Join the Meeting: ' . $resp->json()->links->joinUri . "\n");
 } catch (Exception $e) {
-  echo "An error occured: ", $e->getMessage(), "\n";
+  print_r ("An error occurred: " . $e->getMessage() . "\n");
 }
 ```
 
@@ -93,4 +100,4 @@ Congratulations on creating your first RingCentral application. The last step is
 
 > I got the error: "Error: In order to call this API endpoint, user needs to have [Meetings] permission." What is going wrong?
 
-The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis. 
+The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis.

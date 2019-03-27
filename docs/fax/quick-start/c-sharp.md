@@ -41,8 +41,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
-* Add NuGet package RingCentral.Client (3.0.0) SDK
-* Enter project name "Send_SMS"
+* Add NuGet package RingCentral.Net (1.0.0) SDK
+* Enter project name "Send_Fax"
 
 ### Edit the file Program.cs
 
@@ -75,15 +75,14 @@ namespace Send_Fax
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length > 0)
             {
+                var requestParams = new SendFaxMessageRequest();
                 var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
                 var attachments = new Attachment[] { attachment };
-
-                var body = new {
-                        to = new CallerInfo[] { new CallerInfo { phoneNumber = RECIPIENT } },
-                        faxResolution = "High",
-                        coverPageText = "This is a demo Fax page from C Sharp"
-                    };
-                var resp = await rc.Restapi().Account().Extension().Fax().Post(body, attachments);
+                requestParams.attachments = attachments;
+                requestParams.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+                requestParams.faxResolution = "High";
+                requestParams.coverPageText = "This is a demo Fax page from C#";
+                var resp = await rc.Restapi().Account().Extension().Fax().Post(requestParams);
                 Console.WriteLine("Fax sent. Message status: " + resp.messageStatus);
             }
         }

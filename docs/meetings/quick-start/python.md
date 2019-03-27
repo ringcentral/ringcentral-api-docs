@@ -7,7 +7,7 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
 !!! warning "Meetings Permission Required"
-     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts. 
+     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
 
@@ -52,11 +52,10 @@ Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS wi
 
 ```python
 from ringcentral import SDK
-import sys
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
 
 RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
@@ -66,11 +65,17 @@ rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
+params = {
+    'topic': 'Test Meeting 1',
+    'meetingType': 'Instant',
+    'allowJoinBeforeHost': True,
+    'startHostVideo': True,
+    'startParticipantsVideo' : False
+}
 try:
-    response = platform.post('/restapi/v1.0/account/~/extension/~/meeting',
-                             {
-                                 'topic' : 'Test Meeting',
-                             })
+    resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
+    print "Start Your Meeting: " + resp.json().links.startUri
+    print "Join the Meeting: " + resp.json().links.joinUri
 except Exception as err:
     print("Exception: " + err.message)
 ```
@@ -91,4 +96,4 @@ Congratulations on creating your first RingCentral application. The last step is
 
 > I got the error: "Error: In order to call this API endpoint, user needs to have [Meetings] permission." What is going wrong?
 
-The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis. 
+The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis.

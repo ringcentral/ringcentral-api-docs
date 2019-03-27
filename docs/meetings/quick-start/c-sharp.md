@@ -1,16 +1,19 @@
 no_breadcrumb:true
 
-# SMS C# Quick Start
+# Meetings Node.js Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you creating a meeting on the platform in just a few minutes. Let's get started.
+
+!!! warning "Meetings Permission Required"
+     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Meetings App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=" class="btn btn-primary">Create Meetings App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -26,7 +29,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>SMS</li>
+    <li>Meetings</li>
   </ul>
   </li>
 <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
@@ -35,29 +38,32 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Send an SMS
+## Create a Meeting
 
 ### Create a Visual Studio project
 
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
 * Add NuGet package RingCentral.Net (1.0.0) SDK
-* Enter project name "Send_SMS"
+* Enter project name "Create_Meeting"
+
+```bash
+$ npm install ringcentral --save
+```
 
 ### Edit the file Program.cs
 
-Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```dotnet
+``` c#
 using System;
 using System.Threading.Tasks;
 using RingCentral;
 
-namespace Send_SMS
+namespace Create_Meeting
 {
     class Program
     {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
         const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
@@ -67,31 +73,39 @@ namespace Send_SMS
 
         static void Main(string[] args)
         {
-            send_sms().Wait();
+            send_fax().Wait();
         }
-        static private async Task send_sms()
+        static private async Task send_fax()
         {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
+            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, true);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length > 0)
             {
-                var parameters = new CreateSMSMessage();
-                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
-                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                parameters.text = "Hello World from C#";
-
-                var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
+              var parameters = new MeetingRequestResource();
+              parameters.topic = "Test Meeting";
+              parameters.meetingType = "Instant";
+              parameters.allowJoinBeforeHost = true;
+              parameters.startHostVideo = true;
+              parameters.startParticipantsVideo = false;
+              var resp = await rc.Restapi().Account().Extension().Meeting().Post(parameters);
+              Console.WriteLine("Start Your Meeting: " + resp.links.startUri);
+              Console.WriteLine("join the Meeting: " + resp.links.joinUri);
             }
         }
     }
 }
 ```
 
-### Run Your App
+### Run Your Code
 
 You are almost done. Now run your app from Visual Studio.
 
 ## Publish Your App
 
 Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/app-gallery) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+
+## Troubleshooting
+
+> I got the error: "Error: In order to call this API endpoint, user needs to have [Meetings] permission." What is going wrong?
+
+The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis.

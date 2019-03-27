@@ -4,13 +4,13 @@ no_breadcrumb:true
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you create a Webhook push notifications using our Push Notifications API, which allows your application receiving notifications on a selected events. Let's get started.
+In this Quick Start, we are going to help you create a Webhook push notifications app using our Push Notifications API, which allows your application receiving notifications on instant SMS message events. Let's get started.
 
 ## Create an App
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Notifications App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webhook+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SubscriptionWebhook&redirectUri=" class="btn btn-primary">Create Notifications App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webhook+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SubscriptionWebhook,SMS&redirectUri=" class="btn btn-primary">Create Notifications App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -26,7 +26,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>WebhookSubscriptions</li>
+    <li>WebhookSubscriptions, SMS</li>
   </ul>
   </li>
 <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
@@ -51,7 +51,7 @@ $ ngrok http 5000
 
 If the port 5000 is not available on your system, just choose another port number.
 
-Copy the forwarding address e.g. https://171c1761.ngrok.io and add the path "https://171c1761.ngrok.io/webhook" and paste it into the DELIVERY_MODE_ADDRESS variable in the code below.
+Copy the forwarding address e.g. https://171c1761.ngrok.io and append the path "/webhook" to the address then paste it into the DELIVERY_MODE_ADDRESS variable in the code below.
 
 ### Create and Edit webhook-notification.js
 
@@ -139,4 +139,4 @@ $ node webhook-notification.js
 
 ## Publish Your App
 
-Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../../basics/app-gallery) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../basics/publish) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
