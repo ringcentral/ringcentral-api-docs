@@ -4,18 +4,16 @@
 
  Before we start going into the details of Supervision API, let us explain a use case and a business scenario where this API will be used by one of our customer.
  
- **Usecase** : Imagine a contant center scenario. This is an inbound contact center where your customers are calling in and the calls are being handled by your designated agents. Now you decided that inorder to improve your customer experience , you want your agents to be better equipped with all the information and have everything at their fingertips to delight the customer. With this in mind and with the backdrop of technologies like Artificial Intelligence, you decided to build an AI Supervisor that can silently join an ongoing call between the customer and agent and stream the call audio , underatsnd it through NLP and provide run-time assistance information to the agent, thereby enhancing the agents capability and also delighting the customer at the same time. To add to that you also save cost by saving money that would otherwise have to be spent on hiring multiple supervisiors for your contact center.
+ **Usecase** : Imagine a contact center scenario. This is an inbound contact center where your customers are calling in and the calls are being handled by your designated agents. Now you decided that inorder to improve your customer experience , you want your agents to be better equipped with all the information and have everything at their fingertips to delight the customer. With this in mind and combined with technologies like Artificial Intelligence, you decided to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP device , stream the call audio , underatsnd it through NLP and provide run-time assistance information to the agent.An this helps enhancing the agent's capability and also delighting the customer at the same time. To add to that you also save cost by saving money that would otherwise have to be spent on hiring multiple supervisiors for your contact center.
  
- This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer , stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio.
+ This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer , stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio and provide suggestions.
  
  The scenario can be visualized below
 ![Supervision API](../img/api-supervision.png)
- 
- 
-
+  
 ## Prerequisites
 
-Before we dive deep into the API details lets first understand what the pre-requisites are
+Before we dive deep into the API details lets first understand what the pre-requisites are before using this API
 
 1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) . And the RC Account should have Call Monitoring Group feature enabled.
 
@@ -41,7 +39,7 @@ telephonySessionId for the existing session between the customer and the Agent.
    "deviceId": "
 }`
 
-Lets now define what all details you need to make a sucessful call. Y
+Lets now define what all details you need to make a sucessful call. 
 
 1. telephonySessionId (in the API request path parameter):
 You can get telephonySessionId from the Account level Presence API endpoint : 
