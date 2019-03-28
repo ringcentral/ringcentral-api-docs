@@ -18,8 +18,9 @@ The scenario can be visualized below:
 
 Before we dive deep into the API details lets first understand what the prerequisites for using this API:
 
-1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) . And the RC Account should have Call Monitoring Group feature enabled.
+1. Your RingCentral Account should have Call Monitoring Group feature enabled.
 
+1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) .
 2. You need to make sure that your Supervisor Extension is allowed to monitor the Agent Extensions
 
 3. Make sure the Agent and Supervisor are in your Call Monitoring Group.
