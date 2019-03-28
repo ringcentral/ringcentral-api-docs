@@ -35,11 +35,11 @@ Method : POST
 
 **Request Body** :
 
-`{  
+```{  
    "mode": "Listen",
    "extensionNumber": "103",
    "deviceId": "
-}`
+}```
 
 Lets now define what all details you need to make a sucessful call. 
 
@@ -49,8 +49,9 @@ You can get telephonySessionId from the Account level Presence API endpoint :
 
 You will see , something like below. Here the Agent Extension 108 is in an active call with the customer mentioned in "from" element.You will also get the telephonySessionId needed to call the Supervision API. 
 
- `{
-     "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
+ ```
+    {
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/pr esence",
             "extension": {
                 "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
                 "id": 62226587016,
@@ -85,18 +86,18 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
                     "telephonySessionId": "XXXXXXXXXX"
                 }
             ]
-        }`
+        }```
 
 
 2. **Extension Number** : You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
 
 Note : In future we shall also support extensionId.
 
-3. **deviceId** : This is the deviceId of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API " `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/extension/~/device`
+3. **deviceId** : This is the deviceId of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API " ```https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/extension/~/device```
 
 It will have a response as below
 
-` {
+``` {
             "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
             "id": "60727004",
             "type": "SoftPhone",
@@ -109,28 +110,28 @@ It will have a response as below
                 "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
                 "id": 809646016,
                 "extensionNumber": "101"
-            }`
+            }```
 
 
 Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API. "id": "60727004" is the deviceId you need. Now you are all set to call the API.
 
 **Supervision API Call**
 
-`POST https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/telephony/sessions/XXXXXXXXXX/supervise`
+```POST https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/telephony/sessions/XXXXXXXXXX/supervise```
 
 Body :
 
-`{  
+```{  
    "mode": "Listen",
    "extensionNumber": "108",
    "deviceId":"60727004"
-}`
+}```
 
 Make sure you are using the correct accountId where this call is happening. The "mode" value is "Listen", and it instructs the backend to make sure the supervisor is joining the call in silent mode without any **"BEEP"** noise.
 
 **Sample Response**
 
-`{
+```{
     "direction": "Outbound",
     "from": {
         "deviceId": "60727004",
@@ -154,15 +155,16 @@ Make sure you are using the correct accountId where this call is happening. The 
         "name": "Dibyendu Roy",
         "phoneNumber": "108"
     }
-}`
+}```
 
 You can see that the reponse shows the supervisor joining the Agent extension with a seperate partyId example : party4 here.
 
 What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
 
-To verify that the supervisor has joined the call you can use the , Account level presence API `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
+To verify that the supervisor has joined the call you can use the , Account level presence API 
+`https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
 
-`"activeCalls": [
+```"activeCalls": [
                 {
                     "id": "aa97ce30b90441158a421ca0e9c0a233",
                     "direction": "Outbound",
@@ -182,7 +184,7 @@ To verify that the supervisor has joined the call you can use the , Account leve
                     "partyId": "party-4",
                     "telephonySessionId": "XXXXXXXXXX"
                 }
-            ]`
+            ]```
 
 
 **Note** : If you would be saving the audio stream , please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
