@@ -10,12 +10,13 @@ With this in mind and combined with technologies like Artificial Intelligence, y
  
 This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer, stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio and provide suggestions.
  
- The scenario can be visualized below
+ The scenario can be visualized below:
+ 
 ![Supervision API](../img/api-supervision.png)
   
 ## Prerequisites
 
-Before we dive deep into the API details lets first understand what the pre-requisites are before using this API
+Before we dive deep into the API details lets first understand what the prerequisites are before using this API
 
 1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) . And the RC Account should have Call Monitoring Group feature enabled.
 
@@ -45,7 +46,7 @@ Method: POST
 
 Lets now define what all details you need to make a sucessful call. 
 
-1. **telephonySessionId** (in the API request path parameter as {sessionId} ):
+1. **telephonySessionId:** (in the API request path parameter as {sessionId} ):
 You can get telephonySessionId from the Account level Presence API endpoint : 
 `/restapi/v1.0/account/:accountId/presence/detailedTelephonyState=true&sipData=true`
 
@@ -92,11 +93,11 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
   ```
 
 
-2. **Extension Number** : You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
+2. **Extension Number:** You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
 
 Note: In future we shall also support extensionId.
 
-3. **deviceId** : This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
+3. **deviceId:** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
 
 It will have a response as below
 
