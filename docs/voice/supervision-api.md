@@ -16,7 +16,7 @@ The scenario can be visualized below:
   
 ## Prerequisites
 
-Before we dive deep into the API details lets first understand what the prerequisites are before using this API
+Before we dive deep into the API details lets first understand what the prerequisites for using this API:
 
 1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) . And the RC Account should have Call Monitoring Group feature enabled.
 
