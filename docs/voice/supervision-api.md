@@ -2,13 +2,13 @@
 
 ## Overview
 
- Before we start going into the details of Supervision API, let us explain a usecase where this API will be utilized by one of our customer.
+Before we start going into the details of Supervision API, let us explain a usecase where this API will be utilized by one of our customer.
  
- **Usecase** : Imagine a contact center scenario. This is an inbound contact center where your customers are calling in and the calls are being handled by your designated agents. Now you decided that inorder to improve your customer experience , you want your agents to be better equipped with all the information and have everything at their fingertips to delight the customer. 
+**Use case** : Imagine a contact center scenario. This is an inbound contact center where your customers are calling in and the calls are being handled by your designated agents. Now you decided that inorder to improve your customer experience, you want your agents to be better equipped with all the information and have everything at their fingertips to delight the customer. 
  
- With this in mind and combined with technologies like Artificial Intelligence, you decided to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP device , stream the call audio , decipher it through NLP and provide run-time assistance to the agent.This helps enhancing the agent's capability and also delights the customer at the same time. To add to that you also save cost by saving money that would otherwise have to be spent on hiring multiple supervisiors for your contact center.
+With this in mind and combined with technologies like Artificial Intelligence, you decided to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP device, stream the call audio, decipher it through NLP and provide run-time assistance to the agent.This helps enhancing the agent's capability and also delights the customer at the same time. To add to that you also save cost by saving money that would otherwise have to be spent on hiring multiple supervisiors for your contact center.
  
- This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer , stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio and provide suggestions.
+This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer, stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio and provide suggestions.
  
  The scenario can be visualized below
 ![Supervision API](../img/api-supervision.png)
@@ -94,9 +94,9 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
 
 2. **Extension Number** : You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
 
-Note : In future we shall also support extensionId.
+Note: In future we shall also support extensionId.
 
-3. **deviceId** : This is the deviceId of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API `https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/extension/~/device`
+3. **deviceId** : This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
 
 It will have a response as below
 
@@ -121,7 +121,7 @@ Now that you have the telephonySessionID, Agent extension number and Supervisor 
 
 **Supervision API Call**
 
-`POST https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/~/telephony/sessions/XXXXXXXXXX/supervise`
+`POST /restapi/v1.0/account/~/telephony/sessions/XXXXXXXXXX/supervise`
 
 Body:
 
@@ -170,7 +170,7 @@ You can see that the reponse shows the supervisor joining the Agent extension wi
 What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
 
 To verify that the supervisor has joined the call you can use the , Account level presence API 
-`https://{{RC_SERVER_HOSTNAME}}/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
+`/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
 
 ```
 "activeCalls": [
@@ -197,7 +197,7 @@ To verify that the supervisor has joined the call you can use the , Account leve
  ```
 
 
-**Note** : If you would be saving the audio stream , please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
+**Note:** If you would be saving the audio stream , please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
 
 Here you can also find a [Video](https://vimeo.com/326948521) that demonstrates a working example of a Supervision API using the concepts described here.
 
