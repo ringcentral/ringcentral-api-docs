@@ -2,15 +2,15 @@
 
 ## Overview
 
-Before we start going into the details of Supervision API, let us explain a usecase where this API will be utilized by one of our customer.
+Before we start going into the details of Supervision API, let us explain a common use case where this API will be used.
+
+The supervision API can be used to receive a real-time audio stream of a call so that a human supervisor or application and receive a real-time audio stream. In the case of an application, the real-time stream can be can be sent to a AI system that does real-time transcription and agent assist to provide guidance for agents during a call. Now you can improve your customer experience by equipping your agents to be better prepared with the information and have everything at their fingertips to delight the customer. 
  
-**Use case** : Imagine a contact center scenario. This is an inbound contact center where your customers are calling in and the calls are being handled by your designated agents. Now you decided that inorder to improve your customer experience, you want your agents to be better equipped with all the information and have everything at their fingertips to delight the customer. 
+With this in mind and the real-time audio stream can be combined with technologies like Artificial Intelligence to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP server, stream the call audio, transcribe it through natural language processing (NLP) and provide real-time assistance to the agent. This helps enhance the agent's capability and also delights the customer at the same time. To add to that you also save cost by providing supervision recommendations to more agents.
+
+Our customers implement this use case to provide real-time agent assist during ongoing call between an agent and customer. The API provides high quality, clean audio from the call which is then used by their propietry AI software to interpret the audio and provide suggestions.
  
-With this in mind and combined with technologies like Artificial Intelligence, you decided to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP device, stream the call audio, decipher it through NLP and provide run-time assistance to the agent.This helps enhancing the agent's capability and also delights the customer at the same time. To add to that you also save cost by saving money that would otherwise have to be spent on hiring multiple supervisiors for your contact center.
- 
-This was a real usecase for one of our customers and we provided them the supervision API to solve the piece of the puzzle where they can silently join an oginoing call between an agent and customer, stream clean and high quality audio from the call and then use their propietry AI software to interpret the audio and provide suggestions.
- 
- The scenario can be visualized below:
+The scenario can be visualized below:
  
 ![Supervision API](../img/api-supervision.png)
   
@@ -203,4 +203,3 @@ The party will appear in the `activeCalls` list such as the following example:
 > **Note:** If you would be saving the audio stream, please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
 
 Here you can also find a [Video](https://vimeo.com/326948521) that demonstrates a working example of a Supervision API using the concepts described here.
-
