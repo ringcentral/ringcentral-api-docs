@@ -169,8 +169,11 @@ You can see that the reponse shows the supervisor joining the Agent extension wi
 
 What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
 
-To verify that the supervisor has joined the call you can use the , Account level presence API 
-`/restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`  and see that additonal party has been added to the existing agent Session.
+To verify that the supervisor has joined the call you can use the, account level presence API and see that additonal party has been added to the existing agent session:
+
+`GET /restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`
+
+The party will appear in the `activeCalls` list such as the following example:
 
 ```
 "activeCalls": [
