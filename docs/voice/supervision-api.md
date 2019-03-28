@@ -187,5 +187,5 @@ To verify that the supervisor has joined the call you can use the , Account leve
 
 **Note** : If you would be saving the audio stream , please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
 
-Here you can also find a [Video](https://vimeo.com/user83397705/review/326948521/0ac3181c47) that demonstrates a working example of a Supervision API using the concepts described here.
+Here you can also find a [Video](https://vimeo.com/326948521) that demonstrates a working example of a Supervision API using the concepts described here.
 
