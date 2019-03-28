@@ -18,16 +18,12 @@ The scenario can be visualized below:
 
 Before we dive deep into the API details lets first understand what the prerequisites for using this API:
 
-1. Your RingCentral Account should have Call Monitoring Group feature enabled.
+1. Your RingCentral Account should have Call Monitoring Group feature enabled as designed in this [Knowledgebase article](
+https://support.ringcentral.com/s/article/8050?language=en_US).
 
-1. You should have a Call Monitoring Group defined as described [here](https://support.ringcentral.com/s/article/8050?language=en_US) .
-2. You need to make sure that your Supervisor Extension is allowed to monitor the Agent Extensions
+2. Set up a Call Monitoring Group with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com). You can also create,update and view details on call monitoring group using RingCentral public [APIs](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup)
 
-3. Make sure the Agent and Supervisor are in your Call Monitoring Group.
-
-You can also create,update and view details on call monitoring group using RingCentral public [APIs](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup)
-
-4. The Supervisor SIP device should accept "auto-answer" sip:INVITE (By default it should always be true and should work)
+3. The supervisor should be configured with a SIP device such as SIP server, that should be configured to accept "auto-answer" sip:INVITE. By default it should always be true and should work.
 
 ## Supervision API Anatomy
 
