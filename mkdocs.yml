@@ -79,7 +79,7 @@ pages:
     - 'Python': 'presence/quick-start/python.md'
     - 'PHP': 'presence/quick-start/php.md'
     - 'C#': 'presence/quick-start/c-sharp.md'
-    #- 'API Explorer': 'sms/quick-start/explorer.md'
+    - 'API Explorer': 'presence/quick-start/explorer.md'
 
 - 'Push Notifications':
   - 'Getting Started':
@@ -229,7 +229,7 @@ pages:
     - 'Node.js': 'meetings/quick-start/node.md'
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
-#    - 'C#': 'meetings/quick-start/c-sharp.md'
+    - 'C#': 'meetings/quick-start/c-sharp.md'
 #  - 'Developer Manual':
 #    - 'Scheduling a Meeting': 'meetings/manual/schedule.md'
 #    - 'Meeting Recordings': 'meetings/manual/recordings.md'
