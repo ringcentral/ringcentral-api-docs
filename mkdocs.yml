@@ -50,6 +50,7 @@ pages:
     - 'Publishing to App Gallery': 'basics/app-gallery.md'
     - 'Using Lead Forms': 'basics/lead-forms.md'
     - 'Install App Buttons': 'basics/install-app-button.md'
+  - 'API Explorer': 'basics/explorer.md'
   - 'Account Management':
     - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
@@ -79,7 +80,6 @@ pages:
     - 'Python': 'presence/quick-start/python.md'
     - 'PHP': 'presence/quick-start/php.md'
     - 'C#': 'presence/quick-start/c-sharp.md'
-    - 'API Explorer': 'presence/quick-start/explorer.md'
 
 - 'Push Notifications':
   - 'Getting Started':
@@ -88,13 +88,11 @@ pages:
       - 'Python': 'notifications/quick-start/pubnub/python.md'
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       #- 'C#': 'pubnub/quick-start/c-sharp.md'
-      #- 'API Explorer': 'sms/quick-start/explorer.md'
     - 'WebHook':
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
       - 'PHP': 'notifications/quick-start/webhook/php.md'
       #- 'C#': 'webhook/quick-start/c-sharp.md'
-      #- 'API Explorer': 'sms/quick-start/explorer.md'
 #  - 'Developer Manual':
 
   - 'API Reference':
@@ -112,7 +110,6 @@ pages:
     - 'Python': 'sms/quick-start/python.md'
     - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'sms/quick-start/c-sharp.md'
-    - 'API Explorer': 'sms/quick-start/explorer.md'
   - 'Developer Manual':
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
@@ -141,7 +138,6 @@ pages:
     - 'Python': 'voice/quick-start/ringout/python.md'
     - 'PHP': 'voice/quick-start/ringout/php.md'
     - 'C#': 'voice/quick-start/ringout/c-sharp.md'
-    - 'API Explorer': 'voice/quick-start/ringout/explorer.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
     - 'Place a Call: WebRTC': 'voice/webrtc.md'
@@ -173,7 +169,6 @@ pages:
     - 'Python': 'fax/quick-start/python.md'
     - 'PHP': 'fax/quick-start/php.md'
     - 'C#': 'fax/quick-start/c-sharp.md'
-    - 'API Explorer': 'fax/quick-start/explorer.md'
   - 'Developer Manual':
     - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
     - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
@@ -195,7 +190,6 @@ pages:
 #    - 'Python': 'team-messaging/quick-start/python.md'
 #    - 'PHP': 'team-messaging/quick-start/php.md'
 #    - 'C#': 'team-messaging/quick-start/c-sharp.md'
-#    - 'API Explorer': 'team-messaging/quick-start/explorer.md'
   - 'Developer Manual':
     - 'API Overview': 'team-messaging/manual/api.md'
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
@@ -210,7 +204,6 @@ pages:
     - 'Python': 'call-log/quick-start/python.md'
     - 'PHP': 'call-log/quick-start/php.md'
     - 'C#': 'call-log/quick-start/c-sharp.md'
-    - 'API Explorer': 'call-log/quick-start/explorer.md'
   - 'Developer Manual':
     - 'Overview': 'call-log/manual/overview.md'
     - 'Data Archival': 'call-log/manual/archival.md'
