@@ -1,6 +1,6 @@
 # Building Team Messaging Apps
 
-RingCentral's Team Messaging, also referred to as "Glip" is a web and desktop messaging application. It provides:
+RingCentral's Team Messaging product, also referred to as "Glip," is a web and desktop messaging application that provides:
 
 * Chat
 * Task assignment and management

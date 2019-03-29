@@ -79,7 +79,6 @@ pages:
     - 'Python': 'presence/quick-start/python.md'
     - 'PHP': 'presence/quick-start/php.md'
     - 'C#': 'presence/quick-start/c-sharp.md'
-    - 'API Explorer': 'presence/quick-start/explorer.md'
 
 - 'Push Notifications':
   - 'Getting Started':
@@ -197,10 +196,9 @@ pages:
 #    - 'C#': 'team-messaging/quick-start/c-sharp.md'
 #    - 'API Explorer': 'team-messaging/quick-start/explorer.md'
   - 'Developer Manual':
-    - 'API Overview': 'team-messaging/manual/api.md'
+    - 'Bot Frameworks': 'team-messaging/manual/bot-frameworks.md'
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
-  - 'Tutorials':
-    - 'Building a Bot Locally': 'team-messaging/tutorials/local-bots.md'
+    - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
