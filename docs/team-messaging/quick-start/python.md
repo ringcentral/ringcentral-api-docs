@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Team Messaging Python Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, team messaging and meetings. 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, team messaging and meetings.
 
 In this Quick Start, we are going to help you build your first chat bot using our Team Messaging API. Let's get started.
 
@@ -117,4 +117,4 @@ FLASK_ENV=development
 
 ## Publish Your App
 
-Congradulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/app-gallery) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

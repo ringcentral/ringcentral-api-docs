@@ -1,16 +1,16 @@
 no_breadcrumb:true
 
-# Password Flow Authentication Python Quick Start
+# SMS Python Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you authenticate a user with username and password to get an access token and a refresh token. Let's get started.
+In this Quick Start, we are going to help you read your account users' presence status. Let's get started.
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Basic App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Presence App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Basic+Quick+Start+App&desc=A+simple+app+to+demo+Password+Flow+Authentication+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadAccounts&redirectUri=" class="btn btn-primary">Create a Basic App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Presence+Quick+Start+App&desc=A+simple+app+to+demo+reading+account+users+presence+status&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadPresence&redirectUri=" class="btn btn-primary">Create Presence App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -26,7 +26,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>ReadAccounts</li>
+    <li>ReadPresence</li>
   </ul>
   </li>
 <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
@@ -35,7 +35,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Authenticate to get access token and refresh token
+## Read an account users' presence status
 
 ### Install RingCentral Python SDK
 
@@ -43,9 +43,9 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 $ pip install ringcentral
 ```
 
-### Create and Edit fax.py
+### Create and Edit sms.py
 
-Create a file called <tt>fax.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called `sms.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```python
 from ringcentral import SDK
@@ -64,20 +64,12 @@ rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-builder = rcsdk.create_multipart_builder()
-builder.set_body({
-    'to': [{'phoneNumber': RECIPIENT}],
-    'faxResolution': "High",
-    'coverPageText': "This is a demo Fax page from Python"
-})
-
-attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
-builder.add(attachment)
-
-request = builder.request('/account/~/extension/~/fax')
-
-resp = platform.send_request(request)
-print 'Fax sent. Message status: ' + resp.json().messageStatus
+platform.post('/restapi/v1.0/account/~/extension/~/sms',
+              {
+                  'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+                  'to'   : [ {'phoneNumber': RECIPIENT} ],
+                  'text' : 'Hello World from Python'
+              })
 ```
 
 ### Run Your Code
@@ -85,9 +77,9 @@ print 'Fax sent. Message status: ' + resp.json().messageStatus
 You are almost done. Now run your script.
 
 ```bash
-$ python fax.py
+$ python sms.py
 ```
 
 ## Publish Your App
 
-Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../../basics/app-gallery) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

@@ -58,11 +58,11 @@ pages:
     - 'Message Synchronization': 'basics/message-sync.md'
 - 'Authentication':
   - 'Getting Started':
-    - 'Password Flow':
-      - 'Node.js': 'authentication/quick-start/password-flow/node.md'
-      - 'Python': 'authentication/quick-start/password-flow/python.md'
-      - 'PHP': 'authentication/quick-start/password-flow/php.md'
-#      - 'C#': 'authentication/quick-start/password-flow/c-sharp.md'
+  #  - 'Password Flow':
+  #    - 'Node.js': 'authentication/quick-start/password-flow/node.md'
+  #    - 'Python': 'authentication/quick-start/password-flow/python.md'
+  #    - 'PHP': 'authentication/quick-start/password-flow/php.md'
+  #    - 'C#': 'authentication/quick-start/password-flow/c-sharp.md'
     - 'Authorization Flow':
       - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
       - 'Python': 'authentication/quick-start/authorization-flow/python.md'
@@ -73,6 +73,14 @@ pages:
 #  - 'Sample Applications':
 #    - 'Auth Server': 'missing.md'
 #
+- 'Presence':
+  - 'Getting Started':
+    - 'Node.js': 'presence/quick-start/node.md'
+    - 'Python': 'presence/quick-start/python.md'
+    - 'PHP': 'presence/quick-start/php.md'
+    - 'C#': 'presence/quick-start/c-sharp.md'
+    #- 'API Explorer': 'sms/quick-start/explorer.md'
+
 - 'Push Notifications':
   - 'Getting Started':
     - 'PubNub':
