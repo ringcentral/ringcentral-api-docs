@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Call Log API Explorer Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings. 
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you connect two people in a live phone call using our RingOut API, which dials two phone numbers, and then connects the two people when they answer. Let's get started.
 
@@ -36,10 +36,6 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Place a Call
+### Try it out
 
-TODO
-
-## Publish Your App
-
-Congradulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/app-gallery) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Click the "Try it out" button to read all users' presence status. If it works, try doing the same thing using one of our code samples.

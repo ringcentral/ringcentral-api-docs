@@ -63,7 +63,3 @@ Now, set the API call parameters for the "from," "to" and "text" fields. For the
 ### Try it out
 
 Click the "Try it out" button to send yourself an SMS. If it works, try doing the same thing using one of our code samples.
-
-## Publish Your App
-
-Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
