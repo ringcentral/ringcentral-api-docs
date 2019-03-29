@@ -8,7 +8,7 @@ The RingCentral API Explorer serves as a reference and test bench for all of Rin
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create RingCentral App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Test+Application&desc=A+generic+app+to+demo+API+calls+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create RingCentral App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Test+Application&desc=A+generic+app+to+demo+API+calls+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Contacts,EditExtensions,EditMessages,EditPresence,Faxes,Glip,InternalMessages,Meetings,ReadAccounts,ReadCallLog,ReadCallRecording,ReadContacts,ReadMessages,ReadPresence,RingOut,SMS,SubscriptionWebhook&redirectUri=" class="btn btn-primary">Create RingCentral App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
