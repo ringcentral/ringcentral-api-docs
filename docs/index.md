@@ -20,12 +20,11 @@ no_breadcrumb:true
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="python">Python</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="php">PHP</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="c#">C#</label>
-<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="no-code">I don't code</label>
 </div>
 
 <a class="btn btn-lg btn-primary" href="#">Get Started &raquo;</a>
 
-<p>Not a programmer? <a href="../no-code/">Try out the API with no programming</a>.</p>
+<p>Not a programmer? <a href="../basics/explorer/">Try out the API with no programming</a>.</p>
 
 ## Getting Help
 
