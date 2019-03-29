@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Exploring the API
+# Exploring and Testing the API
 
 The [RingCentral API Explorer](https://developer.ringcentral.com/api-reference) serves not only as a reference, but also as a test bench for all of RingCentral's APIs. The Explorer allows one to make calls with zero code. Let's use the API Explorer to send an SMS message without writing any code. 
 
