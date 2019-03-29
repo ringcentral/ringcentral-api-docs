@@ -25,6 +25,8 @@ https://support.ringcentral.com/s/article/8050?language=en_US).
 
 3. The supervisor should be configured with a SIP device such as SIP server, that should be configured to accept "auto-answer" sip:INVITE. By default it should always be true and should work.
 
+>**Note**: This feature is only available in a production enviornment and not supported in a sandbox enviornment.
+
 ## Supervision API Anatomy
 
 **API Endpoint** `/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
