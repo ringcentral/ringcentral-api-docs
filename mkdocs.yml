@@ -39,6 +39,7 @@ pages:
 - 'The Basics':
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
+    - 'Exploring the API': 'basics/explorer.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
     - 'Webhooks': 'basics/notifications/webhooks.md'
@@ -50,7 +51,6 @@ pages:
     - 'Publishing to App Gallery': 'basics/app-gallery.md'
     - 'Using Lead Forms': 'basics/lead-forms.md'
     - 'Install App Buttons': 'basics/install-app-button.md'
-  - 'API Explorer': 'basics/explorer.md'
   - 'Account Management':
     - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
