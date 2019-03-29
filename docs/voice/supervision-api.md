@@ -12,7 +12,7 @@ Our customers implement this use case to provide real-time agent assist during o
  
 The scenario can be visualized below:
  
-![Supervision API](../img/supervisionupdated-api.png)
+![Supervision API](../img/supervisionapi_v3.png)
   
 ## Prerequisites
 
