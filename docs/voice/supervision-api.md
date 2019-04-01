@@ -124,7 +124,7 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
 ```
 
 
-2. **Extension Number:** You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
+2. **extensionNumber:** You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
 
 Note: In future we shall also support extensionId.
 
