@@ -44,15 +44,13 @@ $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar require ringcentral/ringcentral-php
 ```
 
-### Create and Edit sms.php
+### Create and Edit presence.php
 
-Create a file called `sms.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called `presence.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```php
 <?php
 require('vendor/autoload.php');
-
-$RECIPIENT = '<ENTER PHONE NUMBER>'
 
 $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -67,13 +65,12 @@ $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRE
 $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-$resp = $platform->post('/account/~/extension/~/sms',
+$resp = $platform->get('/account/~/presence',
     array(
-       'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
-       'to' => array(array('phoneNumber' => $RECIPIENT)),
-       'text' => 'Hello World from PHP'
-     ));
-print_r ("SMS sent. Message status: " . $resp->json()->messageStatus);)
+        'detailedTelephonyState' => true
+    ));
+foreach ($resp->json()->records as $record)
+    print_r (json_encode($record, JSON_PRETTY_PRINT) . "\n");
 ```
 
 ### Run Your Code
@@ -81,7 +78,7 @@ print_r ("SMS sent. Message status: " . $resp->json()->messageStatus);)
 You are almost done. Now run your script.
 
 ```bask
-$ php sms.php
+$ php presence.php
 ```
 
 ## Graduate Your App

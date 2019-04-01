@@ -43,14 +43,12 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 $ pip install ringcentral
 ```
 
-### Create and Edit sms.py
+### Create and Edit presence.py
 
-Create a file called `sms.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called `presence.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```python
 from ringcentral import SDK
-
-RECIPIENT = '<ENTER PHONE NUMBER>'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -64,12 +62,12 @@ rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-platform.post('/restapi/v1.0/account/~/extension/~/sms',
-              {
-                  'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-                  'to'   : [ {'phoneNumber': RECIPIENT} ],
-                  'text' : 'Hello World from Python'
-              })
+resp = platform.get('/restapi/v1.0/account/~/presence',
+    {
+        'detailedTelephonyState' : True
+    })
+for record in resp.json().records:
+    print record.presenceStatus
 ```
 
 ### Run Your Code
@@ -77,7 +75,7 @@ platform.post('/restapi/v1.0/account/~/extension/~/sms',
 You are almost done. Now run your script.
 
 ```bash
-$ python sms.py
+$ python presence.py
 ```
 
 ## Graduate Your App

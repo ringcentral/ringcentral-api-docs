@@ -1,16 +1,16 @@
 no_breadcrumb:true
 
-# SMS C# Quick Start
+# PubNub Notifications Node.js Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you read your account users' presence status. Let's get started.
+In this Quick Start, we are going to help you subscribe for PubNub push notifications using our Push Notifications API, which allows your application receiving notifications on a selected events. Let's get started.
 
 ## Create an App
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Presence App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Notifications App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Presence+Quick+Start+App&desc=A+simple+app+to+demo+reading+account+users+presence+status&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadPresence&redirectUri=" class="btn btn-primary">Create Presence App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Push+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS&redirectUri=" class="btn btn-primary">Create Notifications App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -26,7 +26,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>ReadPresence</li>
+    <li>SMS</li>
   </ul>
   </li>
 <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
@@ -35,7 +35,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Read an account users' presence status
+## Subscribe for push notification
 
 ### Create a Visual Studio project
 
@@ -66,23 +66,21 @@ namespace Send_SMS
 
         static void Main(string[] args)
         {
-            read_users_presence().Wait();
+            send_sms().Wait();
         }
-        static private async Task read_users_presence()
+        static private async Task send_sms()
         {
             RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length > 0)
             {
-                var parameters = new AccountPresenceParameters();
-                parameters.detailedTelephonyState = true;
-                var resp = await rc.Restapi().Account().Presence().Get(parameters);
-                foreach (var record in resp.records)
-                {
-                    dynamic jsonStr = JsonConvert.SerializeObject(record);
-                    Console.WriteLine(jsonStr);
-                }
+                var parameters = new CreateSMSMessage();
+                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
+                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+                parameters.text = "Hello World from C#";
 
+                var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
+                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
             }
         }
     }
