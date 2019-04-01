@@ -48,35 +48,6 @@ Authorization: <YOUR_ACCESS_TOKEN>
 }
 ```
 
-```http tab="Response"
-{
-    "direction": "Outbound",
-    "from": {
-        "deviceId": "60727004",
-        "extensionId": "809646016",
-        "name": "Supervisor ABC",
-        "phoneNumber": "101"
-    },
-    "id": "party-4",
-    "muted": false,
-    "owner": {
-        "accountId": "809646016",
-        "extensionId": "809646016"
-    },
-    "standAlone": false,
-    "status": {
-        "code": "Answered",
-        "reason": "Supervising"
-    },
-    "to": {
-        "extensionId": "62226587016",
-        "name": "Dibyendu Roy",
-        "phoneNumber": "108"
-    }
-}
-```
-
-
 Lets now define what all details you need to make a sucessful call. 
 
 1. **telephonySessionId:** (in the API request path parameter as {sessionId} ):
@@ -160,6 +131,34 @@ Now that you have the telephonySessionID, Agent extension number and Supervisor 
 
 
 ### Response
+
+```http tab="Response"
+{
+    "direction": "Outbound",
+    "from": {
+        "deviceId": "60727004",
+        "extensionId": "809646016",
+        "name": "Supervisor ABC",
+        "phoneNumber": "101"
+    },
+    "id": "party-4",
+    "muted": false,
+    "owner": {
+        "accountId": "809646016",
+        "extensionId": "809646016"
+    },
+    "standAlone": false,
+    "status": {
+        "code": "Answered",
+        "reason": "Supervising"
+    },
+    "to": {
+        "extensionId": "62226587016",
+        "name": "Dibyendu Roy",
+        "phoneNumber": "108"
+    }
+}
+```
 
 You can see that the reponse shows the supervisor joining the Agent extension with a seperate `partyId` example : party4 here.
 
