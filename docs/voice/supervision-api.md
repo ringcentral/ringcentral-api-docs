@@ -51,45 +51,45 @@ You can get telephonySessionId from the Account level Presence API endpoint :
 
 You will see , something like below. Here the Agent Extension 108 is in an active call with the customer mentioned in "from" element.You will also get the telephonySessionId needed to call the Supervision API. 
 
- ```
-    {
-      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/pr esence",
-            "extension": {
-                "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
-                "id": 62226587016,
-                "extensionNumber": "108"
-            },
-            "presenceStatus": "Busy",
-            "telephonyStatus": "CallConnected",
-            "userStatus": "Available",
-            "dndStatus": "TakeAllCalls",
-            "meetingStatus": "Disconnected",
-            "allowSeeMyPresence": true,
-            "ringOnMonitoredCall": false,
-            "pickUpCallsOnHold": false,
-            "activeCalls": [
-                {
-                    "id": "8bd930cab325416aa054238237eb8832",
-                    "direction": "Inbound",
-                    "fromName": "ROY,DIBYENDU",
-                    "from": "+14083388064",
-                    "toName": "Dibyendu Roy",
-                    "to": "+12053788673",
-                    "telephonyStatus": "CallConnected",
-                    "sipData": {
-                        "toTag": "qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D",
-                        "fromTag": "10.13.22.25-5070-742e2a888ab14be",
-                        "remoteUri": "do-not-use-me-I-am-useless",
-                        "localUri": "do-not-use-me-I-am-useless"
-                    },
-                    "sessionId": "183851523016",
-                    "startTime": "2019-03-26T22:16:29.629+0000",
-                    "partyId": "cs168629785304410134536-2",
-                    "telephonySessionId": "XXXXXXXXXX"
-                }
-            ]
-        }
-  ```
+```
+{
+   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/pr esence",
+   "extension":{
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
+      "id":62226587016,
+      "extensionNumber":"108"
+   },
+   "presenceStatus":"Busy",
+   "telephonyStatus":"CallConnected",
+   "userStatus":"Available",
+   "dndStatus":"TakeAllCalls",
+   "meetingStatus":"Disconnected",
+   "allowSeeMyPresence":true,
+   "ringOnMonitoredCall":false,
+   "pickUpCallsOnHold":false,
+   "activeCalls":[
+      {
+         "id":"8bd930cab325416aa054238237eb8832",
+         "direction":"Inbound",
+         "fromName":"ROY,DIBYENDU",
+         "from":"+14083388064",
+         "toName":"Dibyendu Roy",
+         "to":"+12053788673",
+         "telephonyStatus":"CallConnected",
+         "sipData":{
+            "toTag":"qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D",
+            "fromTag":"10.13.22.25-5070-742e2a888ab14be",
+            "remoteUri":"do-not-use-me-I-am-useless",
+            "localUri":"do-not-use-me-I-am-useless"
+         },
+         "sessionId":"183851523016",
+         "startTime":"2019-03-26T22:16:29.629+0000",
+         "partyId":"cs168629785304410134536-2",
+         "telephonySessionId":"XXXXXXXXXX"
+      }
+   ]
+}
+```
 
 
 2. **Extension Number:** You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
