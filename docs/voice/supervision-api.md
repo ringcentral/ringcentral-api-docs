@@ -102,19 +102,20 @@ It will have a response as below
 
 ``` 
 {
-            "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
-            "id": "60727004",
-            "type": "SoftPhone",
-            "sku": "DV-1",
-            "name": "Softphone - Digital Line",
-            "serial": "LMRC8531",
-            "computerName": "LMRC8531",
-            "status": "Online",
-            "extension": {
-                "uri": "https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
-                "id": 809646016,
-                "extensionNumber": "101"
-            }
+   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
+   "id":"60727004",
+   "type":"SoftPhone",
+   "sku":"DV-1",
+   "name":"Softphone - Digital Line",
+   "serial":"LMRC8531",
+   "computerName":"LMRC8531",
+   "status":"Online",
+   "extension":{
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
+      "id":809646016,
+      "extensionNumber":"101"
+   }
+}
  ```
  
 Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API. "id": "60727004" is the deviceId you need. Now you are all set to call the API.
