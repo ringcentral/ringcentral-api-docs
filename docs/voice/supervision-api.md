@@ -25,7 +25,7 @@ https://support.ringcentral.com/s/article/8050?language=en_US).
 
 2. Set up a Call Monitoring Group with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com). You can also create, update and view details on call monitoring group using [RingCentral public APIs](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
-3. The supervisor should be configured with a SIP device such as VoIP phone or a SIP server, that should be configured to accept "auto-answer" sip:INVITE. For the Supervision API to work, this should always be true.
+3. The supervisor should be configured with a SIP device such as VoIP phone or a SIP server, that should be configured to auto answer / respond to a SIP INVITE request. For the Supervision API to work, this should always be true.
 
 > **Note**: This feature is only available in a production enviornment and not supported in a sandbox enviornment.
 
