@@ -42,7 +42,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
 * Add NuGet package RingCentral.Net (1.0.0) SDK
-* Enter project name "Send_SMS"
+* Add NuGet package RingCentral.Net.PubNubPCL SDK
+* Enter project name "Read_Presence"
 
 ### Edit the file Program.cs
 
@@ -53,7 +54,7 @@ using System;
 using System.Threading.Tasks;
 using RingCentral;
 
-namespace Send_SMS
+namespace Read_Presence
 {
     class Program
     {
