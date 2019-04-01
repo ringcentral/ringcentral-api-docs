@@ -35,7 +35,7 @@ The Supervise Call API is used to have RingCentral initiate a call out to a regi
 
 ### Request
 
-```http tab="Request"
+```HTTP tab=
 POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
@@ -48,17 +48,44 @@ Authorization: <YOUR_ACCESS_TOKEN>
 }
 ```
 
-Lets now define what all details you need to make a sucessful call. 
+```Ruby tab=
+require 'ringcentral'
 
-1. **telephonySessionId:** (in the API request path parameter as {sessionId} ):
-You can get telephonySessionId from the Account level Presence API endpoint : 
+rc = RingCentral.new(
+  'client_id',
+  'client_secret',
+  'https://platform.ringcentral.com')
+  
+rc.authorize username: '+16505550100',
+  extension: '',
+  password:  'my_password')
+
+res = rc.post '/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise', payload: {  
+   "mode": "Listen",
+   "extensionNumber": "108",
+   "deviceId": "60727004"
+}
+```
+
+Let's now define the parameters needed for a sucessful call:
+
+* `telephonySessionId`
+* `mode`
+* `extensionNumber`
+* `deviceId`
+
+1. **`telephonySessionId`:** This is the unique identifier for the call, including all parties. The `telephonySessionId` can be retrieved from any of the following: (a) Call Session Notification events, (b) account-level presence API, or (c) extension-level presence API.
+
+The following uses the account-level presence API.
+
+You can get telephonySessionId from the Account level Presence API endpoint: 
 `/restapi/v1.0/account/:accountId/presence/detailedTelephonyState=true&sipData=true`
 
 You will see , something like below. Here the Agent Extension 108 is in an active call with the customer mentioned in "from" element.You will also get the telephonySessionId needed to call the Supervision API. 
 
 ```
 {
-   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/pr esence",
+   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
    "extension":{
       "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
       "id":62226587016,
