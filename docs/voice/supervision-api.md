@@ -12,7 +12,7 @@ To build an effective, programmatic supervisor or coach, the real-time audio str
 
 Our customers implement this agent assist use case to provide real-time suggestions during ongoing calls between agents and customers. The API provides high quality, clean audio from the call which is then used by their proprietry AI software to interpret the audio and provide suggestions.
  
-The scenario can be visualized below:
+The scenario can be visualized below. Once the call is established, the Supervision API can be used to join the app by providing the call's `sessionId` and the agent's `extensionNumber` and the supervisor's `deviceId`.
  
 ![Supervision API](../img/supervisionapi_v3.png)
   
