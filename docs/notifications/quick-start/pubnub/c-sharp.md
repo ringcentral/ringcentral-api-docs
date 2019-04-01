@@ -42,18 +42,19 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
 * Add NuGet package RingCentral.Net (1.0.0) SDK
-* Enter project name "Send_SMS"
+* Add NuGet package RingCentral.Net.PubNubPCL SDK
+* Enter project name "PubNub_Notifications"
 
 ### Edit the file Program.cs
 
-Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```dotnet
 using System;
 using System.Threading.Tasks;
 using RingCentral;
 
-namespace Send_SMS
+namespace PubNub_Notifications
 {
     class Program
     {
@@ -66,21 +67,37 @@ namespace Send_SMS
 
         static void Main(string[] args)
         {
-            send_sms().Wait();
+            pubnub_notification().Wait();
         }
-        static private async Task send_sms()
+        static private async Task pubnub_notification()
         {
             RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             if (rc.token.access_token.Length > 0)
             {
-                var parameters = new CreateSMSMessage();
-                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
-                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                parameters.text = "Hello World from C#";
-
-                var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
+                try
+                {
+                    var eventFilters = new[]
+                    {
+                        "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
+                    };
+                    var subscription = new Subscription(rc, eventFilters, message =>
+                    {
+                        var jsonObj = JObject.Parse(message);
+                        var msg = jsonObj["body"]["subject"];
+                        Console.WriteLine(msg);
+                    });
+                    var subscriptionInfo = await subscription.Subscribe();
+                    Console.WriteLine(subscriptionInfo.id);
+                    while (true)
+                    {
+                        Thread.Sleep(5000);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
         }
     }

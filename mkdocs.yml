@@ -80,6 +80,10 @@ pages:
     - 'Python': 'presence/quick-start/python.md'
     - 'PHP': 'presence/quick-start/php.md'
     - 'C#': 'presence/quick-start/c-sharp.md'
+  - 'API Reference':
+    - 'Get User Status': 'https://developers.ringcentral.com/api-reference#Presence-getPresenceStatus'
+    - 'Update User Status': 'https://developers.ringcentral.com/api-reference#Presence-updatePresenceStatus'
+    - 'Get Users Presence Statuses': 'https://developers.ringcentral.com/api-reference#Presence-accountPresence'
 
 - 'Push Notifications':
   - 'Getting Started':
@@ -92,7 +96,7 @@ pages:
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
       - 'PHP': 'notifications/quick-start/webhook/php.md'
-      #- 'C#': 'webhook/quick-start/c-sharp.md'
+      #- 'C#': 'notifications/quick-start/webhook/c-sharp.md'
 #  - 'Developer Manual':
 
   - 'API Reference':

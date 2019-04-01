@@ -46,7 +46,7 @@ $ php composer.phar require ringcentral/ringcentral-php
 
 ### Create and Edit presence.php
 
-Create a file called `presence.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called `presence.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```php
 <?php

@@ -58,6 +58,7 @@ namespace Call_Ringout
     class Program
     {
           const string RECIPIENT = "<ENTER PHONE NUMBER>";
+
           const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
           const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 

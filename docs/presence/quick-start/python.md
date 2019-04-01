@@ -45,7 +45,7 @@ $ pip install ringcentral
 
 ### Create and Edit presence.py
 
-Create a file called `presence.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called `presence.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```python
 from ringcentral import SDK
