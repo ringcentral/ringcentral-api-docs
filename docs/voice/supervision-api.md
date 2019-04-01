@@ -128,7 +128,7 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
 
 Note: In future we shall also support extensionId.
 
-3. **deviceId:** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviveID using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
+3. **deviceId:** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
 
 It will have a response as below
 
