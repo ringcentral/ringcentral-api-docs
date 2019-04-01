@@ -177,28 +177,31 @@ To verify that the supervisor has joined the call you can use the, account level
 The party will appear in the `activeCalls` list such as the following example:
 
 ```
-"activeCalls": [
-                {
-                    "id": "aa97ce30b90441158a421ca0e9c0a233",
-                    "direction": "Outbound",
-                    "fromName": "Supervisor ABC",
-                    "from": "101",
-                    "toName": "Agent",
-                    "to": "108",
-                    "telephonyStatus": "CallConnected",
-                    "sipData": {
-                        "toTag": "I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
-                        "fromTag": "10.14.23.50-5070-a272ac7ba84b4a7",
-                        "remoteUri": "do-not-use-me-I-am-useless",
-                        "localUri": "do-not-use-me-I-am-useless"
-                    },
-                    "sessionId": "590506730017",
-                    "startTime": "2019-03-27T19:14:22.564+0000",
-                    "partyId": "party-4",
-                    "telephonySessionId": "XXXXXXXXXX"
-                }
-            ]
- ```
+{
+   "activeCalls":[
+      {
+         "id":"aa97ce30b90441158a421ca0e9c0a233",
+         "direction":"Outbound",
+         "fromName":"Supervisor ABC",
+         "from":"101",
+         "toName":"Agent",
+         "to":"108",
+         "telephonyStatus":"CallConnected",
+         "sipData":{
+            "toTag":"I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
+            "fromTag":"10.14.23.50-5070-a272ac7ba84b4a7",
+            "remoteUri":"do-not-use-me-I-am-useless",
+            "localUri":"do-not-use-me-I-am-useless"
+         },
+         "sessionId":"590506730017",
+         "startTime":"2019-03-27T19:14:22.564+0000",
+         "partyId":"party-4",
+         "telephonySessionId":"XXXXXXXXXX"
+      }
+   ]
+   ...
+}
+```
 
 > **Note:** If you would be saving the audio stream, please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
 
