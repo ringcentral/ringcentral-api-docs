@@ -25,24 +25,54 @@ https://support.ringcentral.com/s/article/8050?language=en_US).
 
 2. Set up a Call Monitoring Group with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com). You can also create, update and view details on call monitoring group using [RingCentral public APIs](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
-3. The supervisor should be configured with a SIP device such as VoIPO phone or a SIP server, that should be configured to accept "auto-answer" sip:INVITE. For the Supervision API to work, this should always be true.
+3. The supervisor should be configured with a SIP device such as VoIP phone or a SIP server, that should be configured to accept "auto-answer" sip:INVITE. For the Supervision API to work, this should always be true.
 
 > **Note**: This feature is only available in a production enviornment and not supported in a sandbox enviornment.
 
 ## Supervise Call API
 
-The Supervise Call API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows:
+The Supervise Call API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
+
+### Request
 
 ```http tab="Request"
-POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise HTTP/1.1
+POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 Authorization: <YOUR_ACCESS_TOKEN>
 
 {  
    "mode": "Listen",
-   "extensionNumber": "103",
-   "deviceId": "
+   "extensionNumber": "108",
+   "deviceId": "60727004"
+}
+```
+
+```http tab="Response"
+{
+    "direction": "Outbound",
+    "from": {
+        "deviceId": "60727004",
+        "extensionId": "809646016",
+        "name": "Supervisor ABC",
+        "phoneNumber": "101"
+    },
+    "id": "party-4",
+    "muted": false,
+    "owner": {
+        "accountId": "809646016",
+        "extensionId": "809646016"
+    },
+    "standAlone": false,
+    "status": {
+        "code": "Answered",
+        "reason": "Supervising"
+    },
+    "to": {
+        "extensionId": "62226587016",
+        "name": "Dibyendu Roy",
+        "phoneNumber": "108"
+    }
 }
 ```
 
@@ -124,57 +154,18 @@ It will have a response as below
  
 Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API. "id": "60727004" is the deviceId you need. Now you are all set to call the API.
 
-**Supervision API Call**
+**`mode`** value is "Listen", and it instructs the backend to make sure the supervisor is joining the call in silent mode.
 
-`POST /restapi/v1.0/account/~/telephony/sessions/XXXXXXXXXX/supervise`
+> Note: this API will not result in a beep sound that is present when manually monitoring a call via `*80` so that transcription apps can get a clearer stream.
 
-Body:
 
-```
-{  
-   "mode": "Listen",
-   "extensionNumber": "108",
-   "deviceId":"60727004"
-}
-```
+### Response
 
-Make sure you are using the correct accountId where this call is happening. The "mode" value is "Listen", and it instructs the backend to make sure the supervisor is joining the call in silent mode without any **"BEEP"** noise.
-
-**Sample Response**
-
-```
-{
-    "direction": "Outbound",
-    "from": {
-        "deviceId": "60727004",
-        "extensionId": "809646016",
-        "name": "Supervisor ABC",
-        "phoneNumber": "101"
-    },
-    "id": "party-4",
-    "muted": false,
-    "owner": {
-        "accountId": "809646016",
-        "extensionId": "809646016"
-    },
-    "standAlone": false,
-    "status": {
-        "code": "Answered",
-        "reason": "Supervising"
-    },
-    "to": {
-        "extensionId": "62226587016",
-        "name": "Dibyendu Roy",
-        "phoneNumber": "108"
-    }
-}
-```
-
-You can see that the reponse shows the supervisor joining the Agent extension with a seperate partyId example : party4 here.
+You can see that the reponse shows the supervisor joining the Agent extension with a seperate `partyId` example : party4 here.
 
 What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
 
-To verify that the supervisor has joined the call you can use the, account level presence API and see that additonal party has been added to the existing agent session:
+To verify that the supervisor has joined the call you can use the, account level presence API and see that additional party has been added to the existing agent session:
 
 `GET /restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`
 
