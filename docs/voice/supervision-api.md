@@ -4,11 +4,13 @@
 
 Before we start going into the details of Supervision API, let us explain a common use case where this API will be used.
 
-The supervision API can be used to receive a real-time audio stream of a call so that a human supervisor or application and receive a real-time audio stream. In the case of an application, the real-time stream can be can be sent to a AI system that does real-time transcription and agent assist to provide guidance for agents during a call. Now you can improve your customer experience by equipping your agents to be better prepared with the information and have everything at their fingertips to delight the customer. 
- 
-With this in mind and the real-time audio stream can be combined with technologies like Artificial Intelligence to build an AI Supervisor. This supervisor can silently join an ongoing call between the customer and agent from a SIP server, stream the call audio, transcribe it through natural language processing (NLP) and provide real-time assistance to the agent. This helps enhance the agent's capability and also delights the customer at the same time. To add to that you also save cost by providing supervision recommendations to more agents.
+The [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) feature allows a person, typically a supervisor, or an app to receive a real-time audio stream so they can listen in on a call in real-time and provide feedback to an existing call, typically one with an agent. The Supervision API allows a human or app "supervisor" to be added programatically.
 
-Our customers implement this use case to provide real-time agent assist during ongoing call between an agent and customer. The API provides high quality, clean audio from the call which is then used by their propietry AI software to interpret the audio and provide suggestions.
+One use case for the Supervision API is to add a app to a a call that provids real-time transcription and agent assist to provide guidance for agents during a call. This can improve your customer experience by equipping your agents are better prepared with the information and have everything at their fingertips to delight the customer. 
+
+To build an effective, programmatic supervisor or coach, the real-time audio stream can be combined with technologies like artificial intelligence to build an automated supervisor. This supervisor can silently join multiple, ongoing calls between  customers and agents from a single SIP server application, stream the call audio, transcribe it through natural language processing (NLP) and provide real-time assistance to the agent. This helps enhance the agent's capability and also delights the customer at the same time. You also improve performance by providing supervision recommendations to more agents.
+
+Our customers implement this agent assist use case to provide real-time suggestions during ongoing calls between agents and customers. The API provides high quality, clean audio from the call which is then used by their proprietry AI software to interpret the audio and provide suggestions.
  
 The scenario can be visualized below:
  
