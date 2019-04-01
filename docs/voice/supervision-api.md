@@ -29,21 +29,23 @@ https://support.ringcentral.com/s/article/8050?language=en_US).
 
 > **Note**: This feature is only available in a production enviornment and not supported in a sandbox enviornment.
 
-## Supervision API Anatomy
+## Supervise Call API
 
-**API Endpoint** `/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
+The Supervise Call API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows:
 
-Method: POST
+```http tab="Request"
+POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise HTTP/1.1
+Content-Type: application/json
+Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+Authorization: <YOUR_ACCESS_TOKEN>
 
-**Request Body:**
-
-```
 {  
    "mode": "Listen",
    "extensionNumber": "103",
    "deviceId": "
 }
 ```
+
 
 Lets now define what all details you need to make a sucessful call. 
 
