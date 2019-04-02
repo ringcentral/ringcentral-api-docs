@@ -73,7 +73,7 @@ Let's now define the parameters needed for a sucessful call:
 2. **`telephonySessionId` (path, required):** This is the unique identifier for the call, including all parties. See the next section on how to get a list of current telephony sessions.
 3. **`deviceId` (body, required):** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
 4. **`extensionNumber` (body, required):** The extension number of the agent whose call you want to monitor. Note: In future we shall also support `extensionId`.
-5. **`mode` (body, required)):** Currently, the only method supported is `Listen`.
+5. **`mode` (body, required):** Currently, the only method supported is `Listen`.
 
 #### Retrieving `telephonySessionId` and `extensionNumber`
 
@@ -155,6 +155,10 @@ It will have a response as below:
 
 ### Response
 
+The API response will show the supervisor joining the agent extension with a seperate party `id`, e.g. `party-4` in this example.
+
+The RingCentral system will then send a SIP INVITE request to the supervisor device which is expected to join the existing customer-agent call session automatically with auto answer. Now the human or app supervisor can stream the audio.
+
 ```http tab="Response"
 {
     "direction": "Outbound",
@@ -183,13 +187,11 @@ It will have a response as below:
 }
 ```
 
-You can see that the reponse shows the supervisor joining the Agent extension with a seperate `partyId` example : party4 here.
+#### Verify the Supervisor has Joined the Session
 
-What will happen is, it will make the Supervisor device join the existing Customer-Agent session silently and now the Supervisor can listen or stream the audio. 
+To verify that the supervisor has joined the call you can use the account level Presence API and see that additional party has been added to the existing agent session by calling the `presence` API and checking for the supervisor's party in the `activeCalls` property. For example:
 
-To verify that the supervisor has joined the call you can use the, account level presence API and see that additional party has been added to the existing agent session:
-
-`GET /restapi/v1.0/account/:accountId/presence?detailedTelephonyState=true&sipData=true`
+`GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipData=true`
 
 The party will appear in the `activeCalls` list such as the following example:
 
@@ -220,6 +222,5 @@ The party will appear in the `activeCalls` list such as the following example:
 }
 ```
 
-> **Note:** If you would be saving the audio stream, please make sure you comply with the FCC guidelines and letting the customer know that the calls will be monitored. 
-
-Here you can also find a [Video](https://vimeo.com/326948521) that demonstrates a working example of a Supervision API using the concepts described here.
+> **Note:** If you would be saving the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. 
+The following [video](https://vimeo.com/326948521) demonstrates a working example of the Supervision API using the concepts described here.
