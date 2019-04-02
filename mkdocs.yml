@@ -74,6 +74,24 @@ pages:
 #  - 'Sample Applications':
 #    - 'Auth Server': 'missing.md'
 #
+# - 'Message Store':
+#   - 'Getting Started':
+#     - 'SMS':
+#       - 'Node.js': 'message-store/quick-start/sms/node.md'
+#       - 'Python': 'message-store/quick-start/sms/python.md'
+#       - 'PHP': 'message-store/quick-start/sms/php.md'
+#       - 'C#': 'message-store/quick-start/sms/c-sharp.md'
+#     - 'Fax':
+#       - 'Node.js': 'message-store/quick-start/fax/node.md'
+#       - 'Python': 'message-store/quick-start/fax/python.md'
+#       - 'PHP': 'message-store/quick-start/fax/php.md'
+#       - 'C#': 'message-store/quick-start/fax/c-sharp.md'
+#     - 'MMS':
+#       - 'Node.js': 'message-store/quick-start/mms/node.md'
+#       - 'Python': 'message-store/quick-start/mms/python.md'
+#       - 'PHP': 'message-store/quick-start/mms/php.md'
+#       - 'C#': 'message-store/quick-start/mms/c-sharp.md'
+  #  - 'Developer Manual':
 - 'Presence':
   - 'Getting Started':
     - 'Node.js': 'presence/quick-start/node.md'

@@ -7,8 +7,8 @@ Phone numbers can have different capabilties determined by the presence of the f
 | Feature | Description |
 |-|-|
 | `SmsSender` | send and receive regular texts |
-| `MmsSender` | send and receive group texts and files | 
-| `InternationalSmsSender` | send and receive regular texts to international numbers | 
+| `MmsSender` | send and receive group texts and files |
+| `InternationalSmsSender` | send and receive regular texts to international numbers |
 
 ## Listing Valid SMS Numbers
 
@@ -77,4 +77,3 @@ This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSe
 ## SMS and the Main Company Number
 
 You can send and receive SMS messages from the main company phone number when authorized as the Operator Extension. By default, the Operation Extension is set to extension 101. This can be edited and assigned to other extensions in the Online Account Portal under "Auto-Receptionist" > "Operator Extension.""
-
