@@ -69,21 +69,25 @@ res = rc.post '/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySe
 
 Let's now define the parameters needed for a sucessful call:
 
-* `telephonySessionId`
-* `mode`
-* `extensionNumber`
-* `deviceId`
+1. **`accountId` (path, required):** This is the unique identifier for the account associated with the request. This can be the actual id or `~` for the current `accountId`. The default `~` value is acceptable in all uses for this API.
+2. **`telephonySessionId` (path, required):** This is the unique identifier for the call, including all parties. See the next section on how to get a list of current telephony sessions.
+3. **`deviceId` (body, required):** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
+4. **`extensionNumber` (body, required):** The extension number of the agent whose call you want to monitor. Note: In future we shall also support `extensionId`.
+5. **`mode` (body, required)):** Currently, the only method supported is `Listen`.
 
-1. **`telephonySessionId`:** This is the unique identifier for the call, including all parties. The `telephonySessionId` can be retrieved from any of the following: (a) Call Session Notification events, (b) account-level presence API, or (c) extension-level presence API.
+#### Retrieving `telephonySessionId` and `extensionNumber`
 
-The following uses the account-level presence API.
+These two properties can be retrieved from any of the following: (a) Call Session Notification events, (b) account-level presence API, or (c) extension-level presence API.
 
-You can get telephonySessionId from the Account level Presence API endpoint: 
-`/restapi/v1.0/account/:accountId/presence/detailedTelephonyState=true&sipData=true`
+The following example uses the account-level presence API.
 
-You will see , something like below. Here the Agent Extension 108 is in an active call with the customer mentioned in "from" element.You will also get the telephonySessionId needed to call the Supervision API. 
+The `telephonySessionId` is available in the the account level Presence API endpoint:
 
-```
+`GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&sipData=true`
+
+An example response is shown below. Here the agent extension is in the `extension.extensionNumber` property and the `telephonySessionId` is in the `activeCalls[0].telephonySessionId` property.
+
+```json
 {
    "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
    "extension":{
@@ -123,14 +127,13 @@ You will see , something like below. Here the Agent Extension 108 is in an activ
 }
 ```
 
+#### Retrieving the `deviceId`
 
-2. **extensionNumber:** You would need the extension number of the agent whose call you want to   monitor. In the example case shown here, it s 108 (Agent Extension).
+To retrieve the `deviceId` to use in this API, call the `extension/device` endpoint on the supervisor's extension as follows:
 
-Note: In future we shall also support extensionId.
+`GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device`
 
-3. **deviceId:** This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device`
-
-It will have a response as below
+It will have a response as below:
 
 ``` 
 {
@@ -148,14 +151,7 @@ It will have a response as below
       "extensionNumber":"101"
    }
 }
- ```
- 
-Now that you have the telephonySessionID, Agent extension number and Supervisor deviceID, you are all set to make call the Supervise API. "id": "60727004" is the deviceId you need. Now you are all set to call the API.
-
-**`mode`** value is "Listen", and it instructs the backend to make sure the supervisor is joining the call in silent mode.
-
-> Note: this API will not result in a beep sound that is present when manually monitoring a call via `*80` so that transcription apps can get a clearer stream.
-
+```
 
 ### Response
 
