@@ -35,6 +35,8 @@ The Supervise Call API is used to have RingCentral initiate a call out to a regi
 
 ### Request
 
+The following is an example request showing the required parameters to add a supervisor to an existing call session.
+
 ```HTTP tab=
 POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
 Content-Type: application/json
