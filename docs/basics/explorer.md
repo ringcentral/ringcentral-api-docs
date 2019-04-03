@@ -31,7 +31,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 ### Access the RingCentral API Explorer
 
-<a class="btn btn-secondary" target="_new" href="https://developers.ringcentral.com/api-reference#SMS-and-MMS-sendSMS">Open the API Explorer &raquo;</a>
+<a class="btn btn-primary" target="_new" href="https://developers.ringcentral.com/api-reference#SMS-and-MMS-sendSMS">Open the API Explorer &raquo;</a>
 
 Scroll to the "SMS section" of the API Explorer. You should see this:
 
