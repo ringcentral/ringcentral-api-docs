@@ -92,16 +92,6 @@ pages:
 #       - 'PHP': 'message-store/quick-start/mms/php.md'
 #       - 'C#': 'message-store/quick-start/mms/c-sharp.md'
   #  - 'Developer Manual':
-- 'Presence':
-  - 'Getting Started':
-    - 'Node.js': 'presence/quick-start/node.md'
-    - 'Python': 'presence/quick-start/python.md'
-    - 'PHP': 'presence/quick-start/php.md'
-    - 'C#': 'presence/quick-start/c-sharp.md'
-  - 'API Reference':
-    - 'Get User Status': 'https://developers.ringcentral.com/api-reference#Presence-getPresenceStatus'
-    - 'Update User Status': 'https://developers.ringcentral.com/api-reference#Presence-updatePresenceStatus'
-    - 'Get Users Presence Statuses': 'https://developers.ringcentral.com/api-reference#Presence-accountPresence'
 
 - 'Push Notifications':
   - 'Getting Started':
@@ -167,6 +157,7 @@ pages:
     - 'Call Control': 'voice/call-control.md'
     - 'Answering Rules': 'voice/answering-rules.md'
     - 'URI Scheme': 'voice/uri-scheme.md'
+    - 'Supervising Calls': 'voice/supervision.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
     - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
@@ -238,6 +229,18 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+
+- 'Presence':
+  - 'Getting Started':
+    - 'Node.js': 'presence/quick-start/node.md'
+    - 'Python': 'presence/quick-start/python.md'
+    - 'PHP': 'presence/quick-start/php.md'
+    - 'C#': 'presence/quick-start/c-sharp.md'
+  - 'API Reference':
+    - 'Get User Status': 'https://developers.ringcentral.com/api-reference#Presence-getPresenceStatus'
+    - 'Update User Status': 'https://developers.ringcentral.com/api-reference#Presence-updatePresenceStatus'
+    - 'Get Users Presence Statuses': 'https://developers.ringcentral.com/api-reference#Presence-accountPresence'
+
 - 'Meetings':
   - 'Getting Started':
     - 'Node.js': 'meetings/quick-start/node.md'
