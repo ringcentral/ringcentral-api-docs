@@ -53,7 +53,7 @@ If the port 5000 is not available on your system, just choose another port numbe
 
 Copy the forwarding address e.g. https://171c1761.ngrok.io and append the path "/webhook" to the address then paste it into the DELIVERY_MODE_ADDRESS variable in the code below.
 
-
+Note: Running the demo code requires Python 3.x
 
 ### Create and Edit webhook-notification.py
 
@@ -96,26 +96,30 @@ except Exception as e:
 Create a file called <tt>webhook-server.py</tt>.
 
 ```python
-import http.server
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
-requestHandler = http.server.BaseHTTPRequestHandler
-class S(requestHandler):
+class S(BaseHTTPRequestHandler):
     def do_POST(self):
         path = self.path
         if path == "/webhookcallback":
             validationToken = self.headers['Validation-Token']
-            if validationToken is not "":
+            if validationToken is not None:
                 self.send_response(200)
                 self.send_header('Validation-Token', validationToken)
                 return self.end_headers()
             else:
-                print ("Webhook data")
+                content_len = int(self.headers.get('Content-Length'))
+                payload = self.rfile.read(content_len)
+                print (payload)
+                return
+        else:
+            print ("Ignore this")
 
-def run(server_class=http.server.HTTPServer, handler_class=S, port=5000):
+
+def run(server_class = HTTPServer, handler_class = S, port=5000):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print ('Starting httpd...')
-    handler_class.protocol_version = "HTTP/1.1"
     httpd.serve_forever()
 
 if __name__ == "__main__":
@@ -134,13 +138,13 @@ You are almost done. Now run your script.
 Open a terminal window and run the server code.
 
 ```bask
-$ python webhook-server.py
+$ python3 webhook-server.py
 ```
 
 Open another terminal window and run the app
 
 ```bask
-$ python webhook-notification.php
+$ python3 webhook-notification.py
 ```
 Now you can send an SMS message to the extension's phone number to see how you'll receive the notification.
 
