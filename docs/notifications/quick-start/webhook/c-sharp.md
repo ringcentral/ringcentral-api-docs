@@ -37,6 +37,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Subscribe for push notification
 
+We use .NET core which is cross-platform. You can get it [here](https://dotnet.microsoft.com/download).
+
 ### Create a solution
 
 ```bash
