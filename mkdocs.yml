@@ -74,13 +74,23 @@ pages:
 #  - 'Sample Applications':
 #    - 'Auth Server': 'missing.md'
 #
-# - 'Message Store':
-#   - 'Getting Started':
-#     - 'SMS':
-#       - 'Node.js': 'message-store/quick-start/sms/node.md'
-#       - 'Python': 'message-store/quick-start/sms/python.md'
-#       - 'PHP': 'message-store/quick-start/sms/php.md'
-#       - 'C#': 'message-store/quick-start/sms/c-sharp.md'
+- 'Message Store':
+  - 'Getting Started':
+    - 'Node.js': 'message-store/quick-start/node.md'
+    - 'Python': 'message-store/quick-start/python.md'
+    - 'PHP': 'message-store/quick-start/php.md'
+    - 'C#': 'message-store/quick-start/c-sharp.md'
+  - 'API Reference':
+    - 'Get Message List': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages'
+    - 'Get Message Attachment': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById'
+    - 'Delete Message(s)': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage'
+    - 'Sync Messages': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-syncMessages'
+
+    # - 'SMS':
+    #   - 'Node.js': 'message-store/quick-start/sms/node.md'
+    #   - 'Python': 'message-store/quick-start/sms/python.md'
+    #   - 'PHP': 'message-store/quick-start/sms/php.md'
+    #   - 'C#': 'message-store/quick-start/sms/c-sharp.md'
 #     - 'Fax':
 #       - 'Node.js': 'message-store/quick-start/fax/node.md'
 #       - 'Python': 'message-store/quick-start/fax/python.md'
@@ -134,22 +144,22 @@ pages:
 #    - 'Receiving SMS': 'sms/tutorials/receiving.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
-    - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
-    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter'
-    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-loadMessage'
-    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
-    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
-    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
+    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessagesByFilter'
+    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-loadMessage'
+    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-updateMessage'
+    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage'
+    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById'
   - 'Sample Applications':
     - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
   - 'Getting Started':
-    - 'Node.js': 'voice/quick-start/ringout/node.md'
-    - 'Python': 'voice/quick-start/ringout/python.md'
-    - 'PHP': 'voice/quick-start/ringout/php.md'
-    - 'C#': 'voice/quick-start/ringout/c-sharp.md'
+    - 'RingOut':
+      - 'Node.js': 'voice/quick-start/ringout/node.md'
+      - 'Python': 'voice/quick-start/ringout/python.md'
+      - 'PHP': 'voice/quick-start/ringout/php.md'
+      - 'C#': 'voice/quick-start/ringout/c-sharp.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
     - 'Place a Call: WebRTC': 'voice/webrtc.md'

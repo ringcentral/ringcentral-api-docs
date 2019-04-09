@@ -42,7 +42,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
 * Enter project name "Call_Ringout"
-* Add NuGet package RingCentral.Net (1.0.0) SDK
+* Add NuGet package RingCentral.Net (1.1.1) SDK
 
 ### Edit the file Program.cs
 
@@ -95,4 +95,4 @@ You are almost done. Now run your app from Visual Studio.
 
 ## Graduate Your App
 
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
