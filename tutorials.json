@@ -691,24 +691,57 @@
             "OAuth","Authorization Code Flow"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/",
+            "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-nodejs-demo/",
             "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-nodejs-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
             },
             {
                 "name": "Python",
-                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-python-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-python-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-python-demo/"
             },
             {
                 "name": "PHP",
-                "githubUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-php-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Download Message Attachments from Message Store",
+        "description": "<p>In this step-by-step tutorial, you are going to learn how to access a user's message store and download message attachments to save them in a local machine.</p>",
+        "tags": [
+            "Message Store"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-nodejs-demo/"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-php-demo/"
+            },
+            {
+                "name": "C-Sharp",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-csharp-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-csharp-demo/"
             }
         ]
     }
