@@ -16,6 +16,11 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/"
             },
             {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-python-quickstart/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-python-quickstart/"
+            },
+            {
                 "name": "PHP",
                 "githubUri": "https://github.com/ringcentral-tutorials/sms-api-php-quickstart/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-php-quickstart/"
@@ -183,6 +188,11 @@
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
             },
             {
+                "name": "Python",
+                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/"
+            },
+            {
                 "name": "PHP",
                 "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/"
@@ -258,6 +268,16 @@
                 "name": "Node JS",
                 "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo"
             }
         ]
     },
@@ -605,6 +625,123 @@
                 "name": "Learn More",
                 "githubUri": "",
                 "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction/"
+            }
+        ]
+    },
+    {
+        "title": "RingCentral Platform Authentication with Password Flow OAuth.",
+        "description": "<p>In this tutorial, you will learn how to authenticate RingCentral platform with Password Flow OAuth using RingCentral SDK</p>",
+        "tags": [
+            "OAuth","Password Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-nodejs-demo//"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-nodejs-demo//"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/password-flow-authentication-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/password-flow-authentication-php-demo//"
+            }
+        ]
+    },
+    {
+        "title": "Access RingCentral platform services using native APIs",
+        "description": "<p>In this tutorial, you will learn how to authenticate RingCentral platform with Password Flow OAuth using native APIs</p>",
+        "tags": [
+            "OAuth","Password Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-nodejs-demo/"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/call-ringcentral-apis-native-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/call-ringcentral-apis-native-php-demo/"
+            }
+        ]
+    },
+    {
+        "title": "RingCentral Authorization Code Flow OAuth",
+        "description": "<p>In this step-by-step tutorial, you are going to learn how to authorize a user to login RingCentral platform using the authorization code flow.</p>",
+        "tags": [
+            "OAuth","Authorization Code Flow"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/authorization-code-flow-oauth-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-php-demo/"
+            }
+        ]
+    },
+    {
+        "title": "Download Message Attachments from Message Store",
+        "description": "<p>In this step-by-step tutorial, you are going to learn how to access a user's message store and download message attachments to save them in a local machine.</p>",
+        "tags": [
+            "Message Store"
+        ],
+        "defaults": {
+            "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-nodejs-demo/"
+        },
+        "languages": [
+            {
+                "name": "Node JS",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-nodejs-demo/"
+            },
+            {
+                "name": "Python",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-python-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-python-demo/"
+            },
+            {
+                "name": "PHP",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-php-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-php-demo/"
+            },
+            {
+                "name": "C-Sharp",
+                "githubUri": "https://github.com/ringcentral-tutorials/message-store-download-content-csharp-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/message-store-download-content-csharp-demo/"
             }
         ]
     }

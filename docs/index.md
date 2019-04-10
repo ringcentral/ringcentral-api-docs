@@ -1,21 +1,59 @@
+no_breadcrumb:true
 
-![RC Developers Logo](img/rc-developers_logo.png)
+# RingCentral Developer Guide
 
-This guide presents key features of **RingCentral Connect Platform API**.
+## Let's Get Started
 
-**RingCentral** provides the #1 cloud communications solution: all-inclusive phone system with online meetings, messaging, and [more](https://www.ringcentral.com/).
+<p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes.</p>
 
-**RingCentral API** is based on the Representational State Transfer (REST) architecture. REST is not a standard but an architectural style, and it uses the following standards:
+<p>What do you want to do with the API?</p>
+<div class="use-case-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="sms">Send an SMS</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="fax">Send a Fax</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="voice">Place a Call</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="meeting">Host a meeting</label>
+</div>
 
-* HTTP
-* URL
-* XML/HTML/GIF/JPEG/etc. (resource representations)
-* text/xml, text/html, application/json, image/jpeg, etc. (MIME Types)
+<p>What language do you prefer?</p>
+<div class="language-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="node">Node</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="python">Python</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="php">PHP</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="c#">C#</label>
+</div>
 
-REST allows you to access the API in the same way you would access a web server. Whenever you want to access any API service, send a standard HTTP command to a particular resource that represents the required functionality. Every API service is represented by a specific endpoint that is accessed by its own URI via sending standard requests using HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+<a class="btn btn-lg btn-primary" href="#">Get Started &raquo;</a>
 
-One of the key advantages of REST architecture is simplicity. You can build your application on the fly without any additional tools, development kits or specifications. If you know how to interact with a simple web server, then you are ready to use the RingCentral API.
+<p>Not a programmer? <a href="../basics/explorer/">Try out the API with no programming</a>.</p>
 
-We also provide [SDKs](https://developers.ringcentral.com/library/sdks.html) for quicker development.
+## Getting Help
 
-You can find [full specification](https://developers.ringcentral.com/api-docs/latest/index.html) and [code dependent tutorials](https://ringcentral.github.io/tutorials/) at our [Developer Portal](https://developers.ringcentral.com/api-and-docs.html).
+If on your way to building your first RingCentral application you encounter difficulty or need help, we are here to assist. Here are our most popular support resources available to you:
+
+* [Developer Forums](https://devcommunity.ringcentral.com/) - post a question to our support community.
+* [StackOverflow](http://stackoverflow.com/questions/tagged/ringcentral) - seek help from one of the Internet's most popular Q&A sites for developers.
+* [Live Chat](https://developer.ringcentral.com/community.html) - post your question to our public Glip Team for live, real-time support during business hours.#
+
+# Resources
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">API Reference</h5>
+      <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
+      <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">SDKs</h5>
+      <p class="card-text">We offer development libraries in a number of languages (C#, Java, Python, PHP, Javascript and more) to made building apps easier.</p>
+      <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
+
+## About RingCentral
+
+RingCentral is a leading provider of global enterprise cloud communications and collaboration solutions. More flexible and cost-effective than legacy on-premises systems, RingCentral empowers modern mobile and distributed workforces to communicate, collaborate, and connect from any location, on any device and via any mode. RingCentral provides unified voice, video, team messaging and collaboration, conferencing, online meetings, digital customer engagement and integrated contact center solutions for enterprises globally. RingCentral’s open platform integrates with leading business apps and enables customers to easily customize business workflows.
+
