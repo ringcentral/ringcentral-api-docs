@@ -152,7 +152,7 @@ Create a file called <tt>test.html</tt>. In this file we'll add a few API call t
 
 ### Create an __engine.php__ file
 
-Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</> and RingCentral API calls.
+Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</b> and RingCentral API calls.
 
 ``` php
 <?php
