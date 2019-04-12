@@ -179,13 +179,11 @@ pages:
 - 'Team Messaging':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
-#    - 'Python': 'team-messaging/quick-start/python.md'
-#    - 'PHP': 'team-messaging/quick-start/php.md'
-#    - 'C#': 'team-messaging/quick-start/c-sharp.md'
   - 'Developer Manual':
     - 'Bot Frameworks': 'team-messaging/manual/bot-frameworks.md'
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
     - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
+    - 'Bot Frameworks': team-messaging/manual/frameworks.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
