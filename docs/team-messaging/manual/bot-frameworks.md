@@ -21,14 +21,14 @@ To help developers create fully featured, production-ready bots, we have created
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Python Bot Framework</h5>
-      <a href="https://github.com/zxdong262/ringcentral-chatbot-python" class="btn btn-primary">Learn more</a>
+      <h5 class="card-title">Javascript Bot Framework</h5>
+      <a href="https://ringcentral.github.io/ringcentral-chatbot-js/" class="btn btn-primary">Learn more</a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Javascript Bot Framework</h5>
-      <a href="https://github.com/ringcentral/ringcentral-chatbot-js" class="btn btn-primary">Learn more</a>
+      <h5 class="card-title">Python Bot Framework</h5>
+      <a href="https://github.com/zxdong262/ringcentral-chatbot-python" class="btn btn-primary">Learn more</a>
     </div>
   </div>
 </div>
