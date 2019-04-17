@@ -124,11 +124,10 @@ pages:
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
   - 'Getting Started':
-    - 'RingOut':
-      - 'Node.js': 'voice/quick-start/ringout/node.md'
-      - 'Python': 'voice/quick-start/ringout/python.md'
-      - 'PHP': 'voice/quick-start/ringout/php.md'
-      - 'C#': 'voice/quick-start/ringout/c-sharp.md'
+    - 'Node.js': 'voice/quick-start/ringout/node.md'
+    - 'Python': 'voice/quick-start/ringout/python.md'
+    - 'PHP': 'voice/quick-start/ringout/php.md'
+    - 'C#': 'voice/quick-start/ringout/c-sharp.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
     - 'Place a Call: WebRTC': 'voice/webrtc.md'
