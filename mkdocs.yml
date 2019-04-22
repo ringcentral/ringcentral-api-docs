@@ -68,7 +68,7 @@ pages:
       - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
       - 'Python': 'authentication/quick-start/authorization-flow/python.md'
       - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
-#      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
+      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
   - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
 
@@ -83,7 +83,7 @@ pages:
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
       - 'PHP': 'notifications/quick-start/webhook/php.md'
-      #- 'C#': 'notifications/quick-start/webhook/c-sharp.md'
+      - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
 #  - 'Developer Manual':
 
   - 'API Reference':

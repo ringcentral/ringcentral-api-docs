@@ -245,6 +245,8 @@ You are almost done. Now run your script.
 $ node index.js
 ```
 
-## Publish Your App
+Open a Web browser and load localhost:5000
 
-Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+## Graduate Your App
+
+Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
