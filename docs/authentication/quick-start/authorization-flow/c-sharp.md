@@ -44,8 +44,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 We use .NET core which is cross-platform. You can get it [here](https://dotnet.microsoft.com/download).
 
 ```bash
-mkdir my-solution
-cd my-solution
+mkdir authorization-demo
+cd authorization-demo
 dotnet new sln
 mkdir my-project
 cd my-project
@@ -108,7 +108,7 @@ namespace my_project
                 {
                     var oauthUri = rc.AuthorizeUri(RINGCENTRAL_REDIRECT_URL);
                     await context.Response.WriteAsync(
-                        Html($"<a href=\"{oauthUri}\">Click here to authorize</a>"));
+                        Html($"<a href=\"{oauthUri}\">Login RingCentral Account</a>"));
                     return;
                 }
 
@@ -163,9 +163,6 @@ namespace my_project
 }
 ```
 
-Source code for this project is available [here](https://github.com/tylerlong/ringcentral-csharp-oauth-demo).
-
-
 ### Run Your Code
 
 You are almost done. Now run your app.
@@ -174,9 +171,11 @@ You are almost done. Now run your app.
 $ dotnet run
 ```
 
+Open a Web browser and load localhost:5000
+
 If you meet "Unable to configure HTTPS endpoint" issue, please read [this article](http://www.waynethompson.com.au/blog/dotnet-dev-certs-https/).
 
 
-## Publish Your App
+## Graduate Your App
 
-Congratulations on creating your first RingCentral application. The last step is to publish your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

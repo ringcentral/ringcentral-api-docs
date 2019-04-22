@@ -42,7 +42,7 @@ We use .NET core which is cross-platform. You can get it [here](https://dotnet.m
 ### Create a solution
 
 ```bash
-mkdir my-solution
+mkdir webhook-demo
 cd my-solution
 dotnet new sln
 ```
@@ -50,7 +50,7 @@ dotnet new sln
 ### Create WebHook Server project
 
 ```
-cd my-solution
+cd webhook-demo
 mkdir webhook-server
 cd webhook-server
 dotnet new web
@@ -61,7 +61,7 @@ cd webhook-server
 
 Edit `Startup.cs` and override its content with code below:
 
-```cs
+```c#
 using System;
 using System.IO;
 using System.Text;
@@ -81,7 +81,7 @@ namespace webhook_server
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-            
+
             app.Run( async (context) =>
             {
                 context.Request.Headers.TryGetValue("Validation-Token", out StringValues validationToken);
@@ -129,7 +129,7 @@ Edit `setup-webhook.csproj` file and add `<LangVersion>latest</LangVersion>` to 
 Edit `Program.cs` file and override its content with code below. Be sure to edit the variables in <ALL CAPS> with your app credentials.
 
 
-```cs
+```c#
 using System;
 using System.Threading.Tasks;
 using RingCentral;
@@ -139,10 +139,10 @@ namespace setup_webhook
     class Program
     {
         private const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
-        private const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_ID>";
+        private const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
         private const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
         private const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
-        private const string RINGCENTRAL_EXTENSION = "";
+        private const string RINGCENTRAL_EXTENSION = "<OPTIONAL>";
         private const string RINGCENTRAL_PASSWORD = "<RINGCENTRAL_PASSWORD>";
         private const string RINGCENTRAL_WEBHOOK_ADDRESS = "<RINGCENTRAL_WEBHOOK_ADDRESS>";
 
@@ -164,9 +164,6 @@ namespace setup_webhook
     }
 }
 ```
-
-Source code for this project is available [here](https://github.com/tylerlong/ringcentral-csharp-webhook-demo).
-
 
 ### Run Your Code
 
@@ -190,9 +187,6 @@ dotnet run
 ### Test the app
 
 Send an sms to `RINGCENTRAL_USERNAME` phone number, and watch the output of my-solution/webhook-server project.
-
-There will be notififation messages printed.
-
 
 ## Graduate Your App
 
