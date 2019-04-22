@@ -1,5 +1,7 @@
 # Authorization Flows on RingCentral Using OAuth 2.0
 
+The RingCentral API supports OAuth 2.0 authentication flows as described in [RFC-6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749), [RFC-6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://tools.ietf.org/html/rfc6750) and [RFC-7009: OAuth 2.0 Token Revocation](https://tools.ietf.org/html/rfc7009).
+
 Your application and its users must be authorized by RingCentral in order to eliminate any possibility of abuse. The RingCentral API uses *OAuth 2.0* protocol for authentication and authorization, which is widely supported by the majority of cloud API providers. For more details see [OAuth 2.0 protocol specification](http://oauth.net/2/).
 
 In general, the steps your app needs to take to use RingCentral APIs (including authorization) are as follows:
