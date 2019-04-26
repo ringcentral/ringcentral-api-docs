@@ -108,6 +108,7 @@ pages:
     - 'Pager Messages': 'sms/pager.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
+    - 'Working with Message Store': 'sms/tutorials/message-store.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessagesByFilter'
@@ -162,6 +163,7 @@ pages:
     - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
     - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
     - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
+    - 'Working with Message Store': 'sms/tutorials/message-store.md'
   - 'API Reference':
     - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
     - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
@@ -202,19 +204,6 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-
-- 'Message Store':
-  - 'Getting Started':
-    - 'Node.js': 'message-store/quick-start/node.md'
-    - 'Python': 'message-store/quick-start/python.md'
-    - 'PHP': 'message-store/quick-start/php.md'
-    - 'C#': 'message-store/quick-start/c-sharp.md'
-  - 'API Reference':
-    - 'Get Message List': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages'
-    - 'Get Message Attachment': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById'
-    - 'Delete Message(s)': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage'
-    - 'Sync Messages': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-syncMessages'
-
 - 'Meetings':
   - 'Getting Started':
     - 'Node.js': 'meetings/quick-start/node.md'
