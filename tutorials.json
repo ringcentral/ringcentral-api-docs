@@ -508,13 +508,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_bots/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/team-messaging/manual/local-bots"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_bots/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/team-messaging/manual/local-bots"
             }
         ]
     },
