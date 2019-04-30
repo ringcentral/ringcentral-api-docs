@@ -105,12 +105,10 @@ pages:
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
-#    - 'Saving SMS to a file': 'sms/tutorials/saving-files.md'
     - 'Pager Messages': 'sms/pager.md'
-#    - 'Sending to Multiple People (MMS)': 'sms/tutorials/mms.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
-#    - 'Receiving SMS': 'sms/tutorials/receiving.md'
+    - 'Working with Message Store': 'sms/tutorials/message-store.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessagesByFilter'
@@ -124,11 +122,10 @@ pages:
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
 - 'Voice':
   - 'Getting Started':
-    - 'RingOut':
-      - 'Node.js': 'voice/quick-start/ringout/node.md'
-      - 'Python': 'voice/quick-start/ringout/python.md'
-      - 'PHP': 'voice/quick-start/ringout/php.md'
-      - 'C#': 'voice/quick-start/ringout/c-sharp.md'
+    - 'Node.js': 'voice/quick-start/node.md'
+    - 'Python': 'voice/quick-start/python.md'
+    - 'PHP': 'voice/quick-start/php.md'
+    - 'C#': 'voice/quick-start/c-sharp.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
     - 'Place a Call: WebRTC': 'voice/webrtc.md'
@@ -137,6 +134,7 @@ pages:
     - 'Answering Rules': 'voice/answering-rules.md'
     - 'URI Scheme': 'voice/uri-scheme.md'
     - 'Supervising Calls': 'voice/supervision.md'
+    - 'Presence': 'voice/presence.md'
   - 'API Reference':
     - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
     - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
@@ -165,6 +163,7 @@ pages:
     - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
     - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
     - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
+    - 'Working with Message Store': 'sms/tutorials/message-store.md'
   - 'API Reference':
     - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
     - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
@@ -179,13 +178,10 @@ pages:
 - 'Team Messaging':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
-#    - 'Python': 'team-messaging/quick-start/python.md'
-#    - 'PHP': 'team-messaging/quick-start/php.md'
-#    - 'C#': 'team-messaging/quick-start/c-sharp.md'
   - 'Developer Manual':
-    - 'Bot Frameworks': 'team-messaging/manual/bot-frameworks.md'
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
     - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
+    - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
@@ -208,57 +204,12 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-
-- 'Message Store':
-  - 'Getting Started':
-    - 'Node.js': 'message-store/quick-start/node.md'
-    - 'Python': 'message-store/quick-start/python.md'
-    - 'PHP': 'message-store/quick-start/php.md'
-    - 'C#': 'message-store/quick-start/c-sharp.md'
-  - 'API Reference':
-    - 'Get Message List': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages'
-    - 'Get Message Attachment': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById'
-    - 'Delete Message(s)': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage'
-    - 'Sync Messages': 'https://developers.ringcentral.com/api-reference#SMS-and-MMS-syncMessages'
-
-    # - 'SMS':
-    #   - 'Node.js': 'message-store/quick-start/sms/node.md'
-    #   - 'Python': 'message-store/quick-start/sms/python.md'
-    #   - 'PHP': 'message-store/quick-start/sms/php.md'
-    #   - 'C#': 'message-store/quick-start/sms/c-sharp.md'
-#     - 'Fax':
-#       - 'Node.js': 'message-store/quick-start/fax/node.md'
-#       - 'Python': 'message-store/quick-start/fax/python.md'
-#       - 'PHP': 'message-store/quick-start/fax/php.md'
-#       - 'C#': 'message-store/quick-start/fax/c-sharp.md'
-#     - 'MMS':
-#       - 'Node.js': 'message-store/quick-start/mms/node.md'
-#       - 'Python': 'message-store/quick-start/mms/python.md'
-#       - 'PHP': 'message-store/quick-start/mms/php.md'
-#       - 'C#': 'message-store/quick-start/mms/c-sharp.md'
-  #  - 'Developer Manual':
-
-
-- 'Presence':
-  - 'Getting Started':
-    - 'Node.js': 'presence/quick-start/node.md'
-    - 'Python': 'presence/quick-start/python.md'
-    - 'PHP': 'presence/quick-start/php.md'
-    - 'C#': 'presence/quick-start/c-sharp.md'
-  - 'API Reference':
-    - 'Get User Status': 'https://developers.ringcentral.com/api-reference#Presence-getPresenceStatus'
-    - 'Update User Status': 'https://developers.ringcentral.com/api-reference#Presence-updatePresenceStatus'
-    - 'Get Users Presence Statuses': 'https://developers.ringcentral.com/api-reference#Presence-accountPresence'
-
 - 'Meetings':
   - 'Getting Started':
     - 'Node.js': 'meetings/quick-start/node.md'
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
-#  - 'Developer Manual':
-#    - 'Scheduling a Meeting': 'meetings/manual/schedule.md'
-#    - 'Meeting Recordings': 'meetings/manual/recordings.md'
   - 'API Reference':
     - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
     - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
