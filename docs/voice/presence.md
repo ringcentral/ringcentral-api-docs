@@ -53,7 +53,7 @@ foreach ($resp->json()->records as $record)
     print_r (json_encode($record, JSON_PRETTY_PRINT) . "\n");
 ```
 
-```javascript tab="Javascript"
+```javascript tab="Node JS"
 const RC = require('ringcentral')
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
@@ -115,7 +115,7 @@ resp = platform.get('/restapi/v1.0/account/~/presence',
         'detailedTelephonyState' : True
     })
 for record in resp.json().records:
-    print record.presenceStatus
+    print record
 ```
 
 ```c# tab="C#"
@@ -159,9 +159,33 @@ namespace Read_Presence
 }
 ```
 
+```ruby tab="Ruby"
+require 'ringcentral'
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
+rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
+
+resp = rc.get('/restapi/v1.0/account/~/presence', payload:
+    {
+        detailedTelephonyState: true
+    })
+
+for record in resp.body['records'] do
+    puts record
+end
+```
+
 ## Required Permissions
 
-Apps requesting to read presence information require the `ReadPresence` permssion. 
+Apps requesting to read presence information require the `ReadPresence` permssion.
 
 ## Presence APIs
 
