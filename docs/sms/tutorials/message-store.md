@@ -48,15 +48,15 @@ Below is an example JSON representation of a message that would be returned by t
   }
 ```
 
-The API Reference contains a [more detailed breakdown of the structure of a message](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages) within the Message Store. 
+The API Reference contains a [more detailed breakdown of the structure of a message](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages) within the Message Store.
 
 ## Message Store Code Samples
 
-The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission. The button below will help you quickly create an application that can be used with the code samples provided. 
+The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission. The button below will help you quickly create an application that can be used with the code samples provided.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Message+Store+Quick+Start+App&desc=A+simple+app+to+demo+downloading+user+message+content&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadMessages&redirectUri=" class="btn btn-primary">Create Message Store App</a>
 
-```javascript tab="Javascript"
+```javascript tab="Node JS"
 const RC = require('ringcentral')
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
@@ -192,6 +192,31 @@ namespace Read_User_Message_Store
         }
     }
 }
+```
+
+```ruby tab="Ruby"
+require 'ringcentral'
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
+rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
+
+resp = rc.get('/restapi/v1.0/account/~/extension/~/message-store', payload:
+    {
+        dateFrom: '2019-01-01T00:00:00.000Z',
+        dateTo: '2019-03-31T23:59:59.999Z',
+    })
+
+for record in resp.body['records'] do
+    puts record['type']
+end
 ```
 
 ## Relevant APIs for Further Reading
