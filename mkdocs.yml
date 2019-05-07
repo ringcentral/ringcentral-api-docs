@@ -110,6 +110,7 @@ pages:
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
     - 'Working with Message Store': 'sms/tutorials/message-store.md'
+    - 'Sample App Walk-through': 'sms/tutorials/walk-through.md'
   - 'API Reference':
     - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
     - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessagesByFilter'
