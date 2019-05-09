@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication Node.js Quick Start
+# Authorization Flow Authentication - Node JS Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -91,8 +91,7 @@ app.get('/', function (req, res) {
         authorize_uri: platform.authUrl({
             brandId: '',
             redirectUri: RINGCENTRAL_REDIRECT_URL
-          }),
-        redirect_uri: RINGCENTRAL_REDIRECT_URL
+          })
         });
 })
 
@@ -124,7 +123,7 @@ app.get('/oauth2callback', function(req, res) {
       })
       .then(function (token) {
           req.session.tokens = token.json()
-          res.send('login success');
+          res.redirect("/test")
       })
       .catch(function (e) {
           res.send('Login error ' + e);
@@ -173,47 +172,16 @@ Create a file called <tt>index.ejs</tt>. In this file, we'll implement the login
 ``` html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>RingCentral Authorization Code Flow Authentication</title>
-    <script>
-        var config = {
-              authUri: '<%- authorize_uri %>',
-              redirectUri: '<%- redirect_uri %>',
-        }
-        var OAuthCode = function(config) {
-            this.config = config;
-            this.loginPopup  = function() {
-                this.loginPopupUri(this.config['authUri'], this.config['redirectUri']);
-            }
-            this.loginPopupUri  = function(authUri, redirectUri) {
-                var win         = window.open(authUri, 'windowname1', 'width=800, height=600');
-                var pollOAuth   = window.setInterval(function() {
-                    try {
-                        if (win.document.URL.indexOf(redirectUri) != -1) {
-                            window.clearInterval(pollOAuth);
-                            win.close();
-                            window.location.href = "test"
-                        }
-                    } catch(e) {
-                        console.log(e)
-                    }
-                }, 100);
-            }
-        }
-        var oauth = new OAuthCode(config);
-    </script>
-</head>
-<body>
-    <div align="justify">
-      <div style="width:500px">
-        <p>
-          <b>Important!</b> You need to enable pop-up for this web site in order to login your RingCentral via this Web app.
-        </p>
-      </div>
-      <button onclick="oauth.loginPopup()">Login RingCentral Account</button>
-    </div>
-</body>
+  </head>
+  <body>
+    <h2>
+        RingCentral Authorization Code Flow Authentication
+    </h2>
+    <a href="<%- authorize_uri %>">Login RingCentral Account</a>
+  </body>
 </html>
 ```
 

@@ -128,14 +128,14 @@ Authorization: Bearer MyToken
       "removedExtensionIds" : [
         "11114444", "11115555"
       ]
-    }, 
+    },
     {
       "departmentId" : "22224444",   
       "addedExtensionIds" : [
         "11112222", "11113333"
       ]
     }
-  ] 
+  ]
 }
 ```
 
@@ -149,7 +149,7 @@ Content-Language: en-US
 
 ## Read User Queue Agent Presence
 
-A user extension's actual presence status is determined by aggregating a number of different presence statuses including `dndStatus`, `telephonyStatus` and `userStatus`. These and the aggregate presence, `presenceStatus` are availabe in the presence endpoint.
+A user extension's actual presence status is determined by aggregating a number of different presence statuses including `dndStatus`, `telephonyStatus` and `userStatus`. These and the aggregate presence, `presenceStatus` are available in the presence endpoint.
 
 A user extension's queue agent status is set by the extension presence `dndStatus` property. This can be set to one of four values:
 
