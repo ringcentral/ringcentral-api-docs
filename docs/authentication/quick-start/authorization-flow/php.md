@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication PHP Quick Start
+# Authorization Flow Authentication - PHP Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -80,52 +80,20 @@ $url = $platform->authUrl(array(
           'prompt' => ''
         ));
 ?>
-
+```
+```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>RingCentral Authorization Code Flow Authentication</title>
-    <script>
-        var url = '<?php echo $url; ?>';
-        var redirectUri = '<?php echo $RINGCENTRAL_REDIRECT_URL; ?>';
-        var config = {
-            authUri: url,
-            redirectUri: redirectUri,
-        }
-        var OAuthCode = function (config) {
-            this.config = config;
-            this.loginPopup = function () {
-                this.loginPopupUri(this.config['authUri'], this.config['redirectUri']);
-            }
-            this.loginPopupUri = function (authUri, redirectUri) {
-                var win = window.open(authUri, 'windowname1', 'width=800, height=600');
-                var pollOAuth = window.setInterval(function () {
-                    try {
-                        if (win.document.URL.indexOf(redirectUri) != -1) {
-                            window.clearInterval(pollOAuth);
-                            win.close();
-                            window.location.href = "test.html"
-                        }
-                    }catch (e) {
-                        console.log(e);
-                    }
-                }, 100);
-            }
-        }
-        var oauth = new OAuthCode(config);
-    </script>
-</head>
-<body>
-  <div align="justify">
-    <div style="width:500px">
-      <p>
-        <b>Important!</b> You need to enable pop-up for this web site in order to login your RingCentral via this Web app.
-      </p>
-    </div>
-    <button onclick="oauth.loginPopup()">Login RingCentral Account</button>
-  </div>
-</body>
+  <head>
+      <meta charset="UTF-8">
+      <title>RingCentral Authorization Code Flow Authentication</title>
+  </head>
+  <body>
+    <h2>
+      RingCentral Authorization Code Flow Authentication
+    </h2>
+    <a href="<?php echo $url; ?>">Login RingCentral Account</a>
+  </body>
 </html>
 ```
 
@@ -176,7 +144,7 @@ if (isset($_REQUEST['oauth2callback'])){
 
   $apiResponse = $platform->login($qs);
   $_SESSION['sessionAccessToken'] = $apiResponse->json();
-  exit();
+  header("Location: http://localhost:5000/test.html");
 }
 
 if (!isset($_SESSION['sessionAccessToken'])) {

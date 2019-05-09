@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication C# Quick Start
+# Authorization Flow Authentication - C# Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -108,18 +108,19 @@ namespace my_project
                 {
                     var oauthUri = rc.AuthorizeUri(RINGCENTRAL_REDIRECT_URL);
                     await context.Response.WriteAsync(
-                        Html($"<a href=\"{oauthUri}\">Login RingCentral Account</a>"));
+                        Html($"<h2>RingCentral Authorization Code Flow Authentication</h2><a href=\"{oauthUri}\">Login RingCentral Account</a>"));
                     return;
                 }
 
                 switch (context.Request.Path)
                 {
                     case "/":
-                        await context.Response.WriteAsync(Html(@"<ul>
+                        await context.Response.WriteAsync(Html(@"<b><a href=""/logout"">Logout</a></b>
+                            <h2>Call APIs</h2>
+                            <ul>
                                 <li><a href=""/test?api=extension"" target=""_blank"">Read Extension Info</a></li>
                                 <li><a href=""/test?api=extension-call-log"" target=""_blank"">Read Extension Call Log</a></li>
                                 <li><a href=""/test?api=account-call-log"" target=""_blank"">Read Account Call Log</a></li>
-                                <li><a href=""/logout"">Logout</a></li>
                             </ul>"));
                         break;
                     case "/oauth2callback":

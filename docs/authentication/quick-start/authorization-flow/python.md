@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication Python Quick Start
+# Authorization Flow Authentication - Python Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -74,8 +74,7 @@ def login():
         ('state', 'initialState')
     )
     auth_url = base_url + '?' + urllib.urlencode(params)
-    redirect_uri = RINGCENTRAL_REDIRECT_URL
-    return render_template('index.html', authorize_uri=auth_url, redirect_uri=RINGCENTRAL_REDIRECT_URL)
+    return render_template('index.html', authorize_uri=auth_url)
 
 @app.route('/oauth2callback', methods=['GET'])
 def oauth2callback():
@@ -84,7 +83,7 @@ def oauth2callback():
     platform.login('', '', '', auth_code, RINGCENTRAL_REDIRECT_URL)
     tokens = platform.auth().data()
     session['sessionAccessToken'] = tokens
-    return "Login successfully"
+    return render_template('test.html')
 
 @app.route('/test', methods=['GET'])
 def callapi():
@@ -122,53 +121,19 @@ Create a file called <tt>index.html</tt>. In this file, we'll implement the logi
 ``` html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>RingCentral Authorization Code Flow Authentication</title>
-    <script>
-        var url = '{{ authorize_uri }}';
-        url = url.replace(/&amp;/g, '&');
-        var config = {
-            authUri: url,
-            redirectUri: '{{ redirect_uri }}',
-          }
-
-        var OAuthCode = function(config) {
-            this.config = config;
-            this.loginPopup  = function() {
-                this.loginPopupUri(this.config['authUri'], this.config['redirectUri']);
-            }
-            this.loginPopupUri  = function(authUri, redirectUri) {
-                var win         = window.open(authUri, 'windowname1', 'width=800, height=600');
-                var pollOAuth   = window.setInterval(function() {
-                    try {
-                        console.log(win.document.URL);
-                        if (win.document.URL.indexOf(redirectUri) != -1) {
-                            window.clearInterval(pollOAuth);
-                            win.close();
-                            window.location.href = "/callapis?api"
-                        }
-                    } catch(e) {
-                        console.log(e)
-                    }
-                }, 100);
-            }
-        }
-        var oauth = new OAuthCode(config);
-    </script>
-</head>
-<body>
-  <div align="justify">
-    <div style="width:500px">
-      <p>
-        <b>Important!</b> You need to enable pop-up for this web site in order to login your RingCentral via this Web app.
-      </p>
-    </div>
-    <button onclick="oauth.loginPopup()">Login RingCentral Account</button>
-  </div>
-</body>
+  <head>
+      <meta charset="UTF-8">
+      <title>RingCentral Authorization Code Flow Authentication</title>
+  </head>
+  <body>
+    <h2>
+        RingCentral Authorization Code Flow Authentication
+    </h2>
+    <a href="{{ authorize_uri }}">Login RingCentral Account</a>
+  </body>
 </html>
 ```
+
 Create a file called <tt>test.html</tt>. In this file, we'll add a few API call test cases and a logout button.
 
 ``` html
