@@ -186,6 +186,7 @@ pages:
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
     - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
     - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
+    - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
