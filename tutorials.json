@@ -165,14 +165,14 @@
             "SMS/MMS"
         ],
         "defaults": {
-            "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/",
-            "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/"
+            "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
+            "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/",
-                "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-demo/"
+                "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
+                "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
             }
         ]
     },
