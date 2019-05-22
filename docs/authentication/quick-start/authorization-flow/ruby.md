@@ -141,8 +141,8 @@ Browse to the "app/views/main" folder and edit the <tt>login.html.erb</tt>.
 $ rails generate controller main test
 ```
 
-!!! Note
-  answer "no" to the overwrite the main_controller.rb confirmation!
+!!! warning "Do not overwrite the main_controller.rb"
+    Answer "no" to the overwrite main_controller.rb confirmation!
 
 Browse to the "app/views/main" folder and edit the <tt> test.html.erb</tt>.
 
