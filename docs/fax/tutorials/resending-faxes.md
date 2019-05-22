@@ -1,3 +1,5 @@
+meta_description: Learn how to use the RingCentral API to forward or resend a previously sent fax to save time and storage. 
+
 # Forwarding and Resending Faxes
 
 With RingCentral, you can forward or resend a fax that has been previously sent through the system. In this case, the RingCentral API can use the fax message already stored on our servers so there is no need to send the message again. This can be useful for the following use cases:
