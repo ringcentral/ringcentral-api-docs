@@ -4,25 +4,6 @@ The RingCentral API allows clients to retrieve and modify message histories. Thi
 
 Here are a few examples of how developers can interface with the RingCentral Message Store.
 
-## Get list of messages
-
-The following will return a list of messages from a certain date. 
-
-```javascript
-platform.get('/account/~/extension/~/message-store', {
-  dateFrom: '2018-04-20T06:33:00.000Z'
-})
-```
-
-Developers can also retrieve messages based on any of the following criteria:
-
-* availability status
-* conversation ID
-* date from and date to
-* message direction, e.g. inbound vs outbound
-* message type, e.g. fax, sms, voicemail, etc.
-* read status, e.g. read or unread
-
 ## Updating the Read Status
 
 Individual messages can also be modified.

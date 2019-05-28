@@ -50,7 +50,7 @@ Below is an example JSON representation of a message that would be returned by t
 
 The API Reference contains a [more detailed breakdown of the structure of a message](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages) within the Message Store.
 
-## Message Store Code Samples
+## Getting a list of messages
 
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission. The button below will help you quickly create an application that can be used with the code samples provided.
 
@@ -221,7 +221,7 @@ end
 
 ## Relevant APIs for Further Reading
 
-* [Get Message List](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages)
-* [Get Message Attachment](https://developers.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById)
-* [Delete Message(s)](https://developers.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage)
-* [Sync Messages](https://developers.ringcentral.com/api-reference#SMS-and-MMS-syncMessages)
+* [Get Message List](https://developers.ringcentral.com/api-reference/Message-Store/listMessages)
+* [Get Message Attachment](https://developers.ringcentral.com/api-reference/Message-Store/readMessageContent)
+* [Delete Message(s)](https://developers.ringcentral.com/api-reference/Message-Store/deleteMessage)
+* [Sync Messages](https://developers.ringcentral.com/api-reference/Message-Store/syncMessages)

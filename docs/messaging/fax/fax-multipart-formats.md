@@ -1,9 +1,6 @@
-# Sending a Fax
+# Fax Multipart Formats
 
-Faxes are a popular mechanism for sending files. There are two ways to send a fax, one using `multipart/form-data` and another using `multipart/mixed` described below -- the choice of which may depend on your API client. For more information on fax support, see the following resources:
-
-* [API Reference](https://developers.ringcentral.com/api-reference#Fax-sendFaxMessage)
-* [Developer FAQ](http://ringcentral-faq.readthedocs.io/en/latest/fax/)
+Fax documents can be packaged using two different MIME formats: `multipart/form-data` and `multipart/mixed`. The distinction between these two formats is nuanced. If you are using a RingCentral SDK then it is not entirely necessary to know the difference as the SDK takes care of packaging for you. However, if you are writing your own client to transmit faxes, then this guide will help you encode your MIME attachments properly. 
 
 ## Send a Fax Using multipart/form-data
 
