@@ -8,7 +8,7 @@ docs_dir: docs
 plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
-      branch: master
+      branch: api-ref-ia-sync
   - bootstrap-tables
 
 theme:
@@ -178,5 +178,3 @@ pages:
   - 'Sample Applications':
     - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
-
-
