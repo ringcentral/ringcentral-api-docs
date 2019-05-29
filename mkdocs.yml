@@ -80,6 +80,7 @@ pages:
       - 'Python': 'notifications/quick-start/pubnub/python.md'
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
+      - 'Java': 'notifications/quick-start/pubnub/java.md'
     - 'WebHook':
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'

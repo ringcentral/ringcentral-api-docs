@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# PubNub Notifications Node.js Quick Start
+# PubNub Notifications C# Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -88,7 +88,7 @@ namespace PubNub_Notifications
                         Console.WriteLine(msg);
                     });
                     var subscriptionInfo = await subscription.Subscribe();
-                    Console.WriteLine(subscriptionInfo.id);
+                    Console.WriteLine("Ready to receive incoming SMS via PubNub.");
                     while (true)
                     {
                         Thread.Sleep(5000);

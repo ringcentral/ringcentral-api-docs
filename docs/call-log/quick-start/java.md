@@ -41,7 +41,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 * Create a new Java project
 * Select the Gradle Project wizard
-* Enter project name "Send_SMS"
+* Enter project name "Read_CallLog"
 * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
 ```json hl_lines="4",linenums="1"
@@ -57,12 +57,12 @@ dependencies {
 
 ### Create a new Java Class
 
-Select "File -> New -> Class" to create a new Java class named "Send_SMS"
+Select "File -> New -> Class" to create a new Java class named "Read_CallLog"
 
 ```java
-package Send_SMS;
+package Read_CallLog;
 
-public class Send_SMS {
+public class Read_CallLog {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -71,7 +71,7 @@ public class Send_SMS {
 }
 ```
 
-### Edit the file "Send_SMS.java".
+### Edit the file "Read_CallLog.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
