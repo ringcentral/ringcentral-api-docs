@@ -1,17 +1,58 @@
-# Track the Delivery Status of a Message
+# Working with the Message Attachments
 
+RingCentral message attachments are stored under the Message Store database and can be accessed via .
 
-## Form Data
+* MMS messages
+* Faxes
+* Voicemail
 
-```javascript
-platform.get(`/account/~/extension/~/message-store/${messageId}`).then(response => {
-  console.log(response.json().messageStatus)
-})
+Messages within the Message Store can be managed in a variety of ways. One can:
+
+* Delete messages
+* Modify the read/unread status
+* View the delivery status
+
+[Learn more about modifying the Message Store &raquo;](../message-histories)
+
+## Message Data Structure
+
+Below is an example JSON representation of a message that would be returned by the API when fetching a list or single message. This particular message is a voicemail:
+
+```json hl_lines="15 16 17 18 19 20 21",linenums="1"
+{
+    "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/4xxx8/extension/4xxx8/message-store/4xxx8",
+    "id" : 402406984008,
+    "type" : "VoiceMail",
+    "to" : [ {
+        "name" : "Jane Smith"
+    } ],
+    "from" : {
+        "phoneNumber" : "+18442058517",
+        "name" : "RingCentral"
+    },
+    "creationTime" : "2018-09-18T09:24:03.000Z",
+    "readStatus" : "Unread",
+    "priority" : "Normal",
+    "attachments" : [ {
+        "id" : 402406984008,
+        "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/4xxx8/extension/4xxx8/message-store/4xxx8/content/4xxx8",
+        "type" : "AudioRecording",
+        "contentType" : "audio/x-wav",
+        "vmDuration" : 25
+    } ],
+    "direction" : "Inbound",
+    "availability" : "Alive",
+    "messageStatus" : "Received",
+    "lastModifiedTime" : "2018-09-18T09:24:03.531Z",
+    "vmTranscriptionStatus" : "NotAvailable"
+  }
 ```
 
-## Reading the Message Deliver Status
+The API Reference contains a [more detailed breakdown of the structure of a message](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages) within the Message Store.
 
-The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
+## Access the Message Attachments
+
+The following code sample shows how to call the Message Store to read a message metadata and download the message attachment. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
 ```javascript tab="Node JS"
 const RC = require('ringcentral')
@@ -21,7 +62,7 @@ var platform = rcsdk.platform();
 platform.login( {username: "username", password: "password", extension: "extension_number"} )
     .then(function(resp) {
         platform.get('/account/~/extension/~/message-store', {
-             messageType: 'SMS'
+             messageType: 'VoiceMail'
         })
         .then(function (response) {
             console.log(JSON.stringify(response.json()))
@@ -90,9 +131,9 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
 
 ```json hl_lines="6 7 8 9 10 11 12 13 15 23 25",linenums="1"
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
+  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/17800xxxx/extension/17800xxxx/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
   "records" : [ {
-    "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004",
+    "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/17800xxxx/extension/17800xxxx/message-store/6424569004",
     "id" : 6424569004,
     "to" : [ {
       "phoneNumber" : "+1312982XXXX"
@@ -107,7 +148,7 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
     "priority" : "Normal",
     "attachments" : [ {
       "id" : 6424569004,
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004/content/6424569004",
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/17800xxxx/extension/17800xxxx/message-store/6424569004/content/6424569004",
       "type" : "Text",
       "contentType" : "text/plain"
     } ],
@@ -132,10 +173,10 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
   },
   "navigation" : {
     "firstPage" : {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/17800xxxx/extension/17800xxxx/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
     },
     "lastPage" : {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/17800xxxx/extension/17800xxxx/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
     }
   }
 }

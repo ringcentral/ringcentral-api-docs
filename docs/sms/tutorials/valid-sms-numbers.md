@@ -14,35 +14,62 @@ Phone numbers can have different capabilties determined by the presence of the f
 
 To determine which numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
-```HTTP tab=
+```http tab="HTTP"
 GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 ```
 
-```Ruby tab=
-require 'ringcentral'
+```javascript tab="Node JS"
+const RC = require('ringcentral')
 
-rc = RingCentral.new(
-  'client_id',
-  'client_secret',
-  'https://platform.ringcentral.com')
-
-rc.authorize(
-  username:  '+16505550100',
-  extension: '',
-  password:  'my_password')
-
-res = rc.get '/restapi/v1.0/account/~/extension/~/phone-number'
+var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+var platform = rcsdk.platform();
+platform.login( {username: "username", password: "password", extension: "extension_number"} )
+    .then(function(resp) {
+        platform.get('/account/~/extension/~/phone-number')
+          .then(function (response) {
+              console.log(response)
+          })
+    });
 ```
 
-```Python tab=
-sdk = SDK( "client_id",
-           "client_secret",
-           "server_url" )
+```python tab="Python"
+from ringcentral import SDK
+
+sdk = SDK( "client_id", "client_secret", "server_url" )
 platform = sdk.platform()
-platform.login( "username",
-                "extension",
-                "password" )
+platform.login( "username", "extension", "password" )
 response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
+print (response)
+```
+
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
+
+$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+$platform = $rcsdk->platform();
+$platform->login( "username", "extension_number", "password" );
+$response = $platform->get('/account/~/extension/~/phone-number');
+print_r ($response . "\n");
+```
+
+```c# tab="C#"
+using System;
+using RingCentral;
+
+RestClient rc = new RestClient( "client_id", "client_secret", false);
+await rc.Authorize( "username", "extension_number", "password");
+var response = await rc.Restapi().Account().Extension().PhoneNumber().List(parameters);
+Console.WriteLine(response);
+```
+
+```ruby tab="Ruby"
+require 'ringcentral'
+
+rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+response = rc.get '/restapi/v1.0/account/~/extension/~/phone-number'
+puts response
 ```
 
 This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
@@ -76,4 +103,4 @@ This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSe
 
 ## SMS and the Main Company Number
 
-You can send and receive SMS messages from the main company phone number when authorized as the Operator Extension. By default, the Operation Extension is set to extension 101. This can be edited and assigned to other extensions in the Online Account Portal under "Auto-Receptionist" > "Operator Extension.""
+You can send and receive SMS messages from the main company phone number when authorized as the Operator Extension. By default, the Operator Extension is set to extension 101. This can be edited and assigned to other extensions in the Online Account Portal under "Auto-Receptionist" > "Operator Extension.""

@@ -20,6 +20,7 @@ no_breadcrumb:true
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="python">Python</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="php">PHP</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="c#">C#</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="java">Java</label>
 </div>
 
 <a class="btn btn-lg btn-primary" href="#">Get Started &raquo;</a>
@@ -56,4 +57,3 @@ If on your way to building your first RingCentral application you encounter diff
 ## About RingCentral
 
 RingCentral is a leading provider of global enterprise cloud communications and collaboration solutions. More flexible and cost-effective than legacy on-premises systems, RingCentral empowers modern mobile and distributed workforces to communicate, collaborate, and connect from any location, on any device and via any mode. RingCentral provides unified voice, video, team messaging and collaboration, conferencing, online meetings, digital customer engagement and integrated contact center solutions for enterprises globally. RingCentral’s open platform integrates with leading business apps and enables customers to easily customize business workflows.
-

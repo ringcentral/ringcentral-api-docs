@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Fax C# Quick Start
+# Fax Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,62 +37,95 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send a Fax message
 
-### Create a Visual Studio project
+### Create a Java project (using Eclipse IDE)
 
-* Choose Console Application .Net Core -> App
-* Select Target Framework .NET Core 2.1
+* Create a new Java project
+* Select the Gradle Project wizard
 * Enter project name "Send_Fax"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-### Edit the file Program.cs
+```json hl_lines="4",linenums="1"
+dependencies {
+    // ...
+
+    compile 'com.ringcentral:ringcentral:0.6.4'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+```
+
+### Create a new Java Class
+
+Select "File -> New -> Class" to create a new Java class named "Send_Fax"
+
+```java
+package Send_Fax;
+
+public class Send_Fax {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}
+```
+
+### Edit the file "Send_Fax.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-``` c#
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+```java
+package Send_Fax;
 
-namespace Send_Fax
-{
-    class Program
-    {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+import java.io.IOException;
 
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+import com.google.gson.Gson;
 
-        static void Main(string[] args)
-        {
-            send_fax().Wait();
-        }
-        static private async Task send_fax()
-        {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
-            {
-                var requestParams = new SendFaxMessageRequest();
-                var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
-                var attachments = new Attachment[] { attachment };
-                requestParams.attachments = attachments;
-                requestParams.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                requestParams.faxResolution = "High";
-                requestParams.coverPageText = "This is a demo Fax page from C#";
-                var resp = await rc.Restapi().Account().Extension().Fax().Post(requestParams);
-                Console.WriteLine("Fax sent. Message status: " + resp.messageStatus);
-            }
-        }
+public class Send_Fax {
+    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+    		try {
+          sendFax();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+  	public static void sendFax() throws RestException, IOException{
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+                
+        String body = "{"
+        	    		+ "\"to\": [{ \"phoneNumber\": \"" + RECIPIENT_NUMBER + "\"}],"
+        	    		+ "\"faxResolution\": \"High\","
+        	    		+ "\"coverPageText\": \"This is a demo Fax page from Java\"}";
+
+        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.MIXED)
+        	 .addPart(RequestBody.create(MediaType.parse("application/json"), body))
+        	 .addFormDataPart("attachment", "test.jpg", RequestBody.create(MediaType.parse("image/jpeg"), Files.readAllBytes(Paths.get("./src/test/resources/test.jpg"))))
+        	 .build();
+        ResponseBody response = restClient.restApi().account().extension().fax().post(requestBody);
+        FaxResponse resp = new Gson().fromJson(response.string(), FaxResponse.class);
+        System.out.println("SMS sent. Message status: " + response.messageStatus);
     }
 }
 ```
 
 ### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Eclipse.
 
 ## Graduate Your App
 

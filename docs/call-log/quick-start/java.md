@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Call Log .NET Quick Start
+# Call Log Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,61 +37,88 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Read your call log
 
-### Create a Visual Studio project
+### Create a Java project (using Eclipse IDE)
 
-* Choose Console Application .Net Core -> App
-* Select Target Framework .NET Core 2.1
+* Create a new Java project
+* Select the Gradle Project wizard
 * Enter project name "Read_CallLog"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-### Edit the file Program.cs
+```json hl_lines="4",linenums="1"
+dependencies {
+    // ...
+
+    compile 'com.ringcentral:ringcentral:0.6.4'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+```
+
+### Create a new Java Class
+
+Select "File -> New -> Class" to create a new Java class named "Read_CallLog"
+
+```java
+package Read_CallLog;
+
+public class Read_CallLog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}
+```
+
+### Edit the file "Read_CallLog.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-``` c#
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+```java
+package Read_CallLog;
 
-namespace Read_CallLog
-{
-    class Program
-    {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+import java.io.IOException;
 
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-        static void Main(string[] args)
-        {
-            read_user_calllog().Wait();
-        }
-        static private async Task read_user_calllog()
-        {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
-            {
-                var parameters = new LoadUserCallLogParameters();
-                parameters.view = "Simple";
-                var resp = await rc.Restapi().Account().Extension().CallLog().List(parameters);
-                foreach (CallLogRecord record in resp.records)
-                {
-                    Console.WriteLine("Call type: " + record.type);
-                }
 
-            }
-        }
+public class Read_CallLog {
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+    		try {
+          readUserCallLog();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+  	public static void readUserCallLog() throws RestException, IOException{
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+        HttpClient.QueryParameter dateFrom = new HttpClient.QueryParameter("view", "Simple");
+
+        ResponseBody response = restClient.restApi().account().extension().callLog().get(view);
+        ExtensionCallLogResponse resp = new Gson().fromJson(response.string(), ExtensionCallLogResponse.class);
+  	    for (CallLogRecord record : resp.records) {
+  	    	  System.out.println("Call type: " + record.type);
+  	    }
     }
 }
 ```
 
 ### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Eclipse.
 
 ## Graduate Your App
 

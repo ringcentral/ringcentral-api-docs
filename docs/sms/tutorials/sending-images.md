@@ -4,21 +4,21 @@ One can send images and other files via SMS as well. Doing so requires developer
 
 ## Creating Attachments
 
-When assembling a multipart message, it is important to remember that the root part, or first part of the request is always the request body or payload. Subsequently you attach images and files to the request. You can see how this is done via the code samples below. 
+When assembling a multipart message, it is important to remember that the root part, or first part of the request is always the request body or payload. Subsequently you attach images and files to the request. You can see how this is done via the code samples below.
 
 ```javascript tab="Javascript" hl_lines="15 16 17 18 19 20 21"
 const SDK = require('ringcentral')
 const FormData = require('form-data')
 const rcsdk = new SDK({
-  server: "url", appKey: "client id", appSecret: "secret"
+  server: "server_url", appKey: "client_id", appSecret: "client_secret"
 })
 const platform = rcsdk.platform()
 platform.login({
-  username: "username", extension: "ext", password: "password"
+  username: "username", extension: "extension_number", password: "password"
 }).then(response => {
   const body = {
     from: { phoneNumber: "username" },
-    to: [ { phoneNumber: "receiver" } ],
+    to: [ { phoneNumber: "recipient_number" } ],
     text: 'Hello world'
   }
   const formData = new FormData()
@@ -40,14 +40,14 @@ platform.login({
 
 ```python tab="Python" hl_lines="5 6 7 8 9 10 11 12 13"
 from ringcentral import SDK
-sdk = SDK( "client id", "secret", "url" );
+sdk = SDK( "client id", "client_secret", "server_url" );
 platform = sdk.platform()
-platform.login( "username", "ext", "password" )
+platform.login( "username", "extnsion_number", "password" )
 builder = sdk.create_multipart_builder()
 builder.set_body({
     'from': {'phoneNumber': "username"},
-    'to': [{'phoneNumber': toNumber}],
-    'text': "Hello world"
+    'to': [{'phoneNumber': "recipient_number"}],
+    'text': "Hello World"
 })
 image = open ('test.jpg', 'rb')
 attachment = ('test.jpg', image, 'image/jpeg')
@@ -61,9 +61,9 @@ except Exception as e:
 
 ```php tab="PHP" hl_lines="10 11 12 13"
 <?php
-$rcsdk = new RingCentral\SDK\SDK("client id","secret","server");
+$rcsdk = new RingCentral\SDK\SDK("client id","client_secret","server_url");
 $platform = $rcsdk->platform();
-$platform->login( "username", "ext", "password" );
+$platform->login( "username", "extension_number", "password" );
 $body = array(
    'from' => array( 'phoneNumber' => "username" ),
    'to'   => array( array('phoneNumber' => "receiver" ) ),

@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Meetings C# Quick Start
+# Meetings Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -40,65 +40,92 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Create a Meeting
 
-### Create a Visual Studio project
+### Create a Java project (using Eclipse IDE)
 
-* Choose Console Application .Net Core -> App
-* Select Target Framework .NET Core 2.1
+* Create a new Java project
+* Select the Gradle Project wizard
 * Enter project name "Create_Meeting"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-```bash
-$ npm install ringcentral --save
+```json hl_lines="4",linenums="1"
+dependencies {
+    // ...
+
+    compile 'com.ringcentral:ringcentral:0.6.4'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
 ```
 
-### Edit the file Program.cs
+### Create a new Java Class
+
+Select "File -> New -> Class" to create a new Java class named "Create_Meeting"
+
+```java
+package Create_Meeting;
+
+public class Create_Meeting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}
+```
+
+### Edit the file "Create_Meeting.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-``` c#
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+```java
+package Create_Meeting;
 
-namespace Create_Meeting
-{
-    class Program
-    {
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+import java.io.IOException;
 
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-        static void Main(string[] args)
-        {
-            send_fax().Wait();
-        }
-        static private async Task send_fax()
-        {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, true);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
-            {
-              var parameters = new MeetingRequestResource();
-              parameters.topic = "Test Meeting";
-              parameters.meetingType = "Instant";
-              parameters.allowJoinBeforeHost = true;
-              parameters.startHostVideo = true;
-              parameters.startParticipantsVideo = false;
-              var resp = await rc.Restapi().Account().Extension().Meeting().Post(parameters);
-              Console.WriteLine("Start Your Meeting: " + resp.links.startUri);
-              Console.WriteLine("join the Meeting: " + resp.links.joinUri);
-            }
-        }
+
+public class Create_Meeting {
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+    		try {
+          createMeeting();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+  	public static void createMeeting() throws RestException, IOException{
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+
+        MeetingRequestResource parameters = new MeetingRequestResource();
+        parameters.topic = "Instant Meeting";
+        parameters.meetingType = "Instant";
+        parameters.allowJoinBeforeHost = true;
+        parameters.startHostVideo = true;
+        parameters.startParticipantsVideo = false;
+
+        MeetingResponseResource response = restClient.restApi().account().extension().meeting().post(parameters, MeetingResponseResource.class);
+  	    System.out.println("Start Your Meeting: " + response.links.startUri);
+  	    System.out.println("Join the Meeting: " + response.links.joinUri);
     }
 }
 ```
 
-### Run Your Code
+### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Eclipse.
 
 ## Graduate Your App
 

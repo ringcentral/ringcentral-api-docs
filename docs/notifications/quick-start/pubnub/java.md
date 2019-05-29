@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# PubNub Notifications C# Quick Start
+# PubNub Notifications Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,68 +37,93 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Subscribe for push notification
 
-### Create a Visual Studio project
+### Create a Java project (using Eclipse IDE)
 
-* Choose Console Application .Net Core -> App
-* Select Target Framework .NET Core 2.1
+* Create a new Java project
+* Select the Gradle Project wizard
 * Enter project name "PubNub_Notifications"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
-* Add NuGet package RingCentral.Net.PubNubPCL SDK
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-### Edit the file Program.cs
+```json hl_lines="4",linenums="1"
+dependencies {
+    // ...
+
+    compile 'com.ringcentral:ringcentral:0.6.4'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+```
+
+### Create a new Java Class
+
+Select "File -> New -> Class" to create a new Java class named "PubNub_Notifications"
+
+```java
+package PubNub_Notifications;
+
+public class PubNub_Notifications {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}
+```
+
+### Edit the file "PubNub_Notifications.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```dotnet
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+```java
+package PubNub_Notifications;
 
-namespace PubNub_Notifications
-{
-    class Program
-    {
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+import java.io.IOException;
+import java.util.function.Consumer;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+public class PubNub_Notifications {
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-        static void Main(string[] args)
-        {
-            pubnub_notification().Wait();
-        }
-        static private async Task pubnub_notification()
-        {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+  		try {
+  			PubNubNotifications();
+  		} catch (RestException | IOException e) {
+  			e.printStackTrace();
+  		}
+  	}
+
+    public static void PubNubNotifications() throws RestException, IOException {
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+
+        Consumer<String> callback = payload -> {
+        		InstantMessageNotification notification = JSON.parseObject( payload, InstantMessageNotification.class);
+        		InstantMessageEvent body = notification.body;
+        		System.out.println(body.subject);
+        };
+
+        Subscription subscription = restClient.subscription(
+    	            new String[]{"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"},
+    	            callback);
+        subscription.subscribe();
+        System.out.println("Ready to receive incoming SMS via PubNub.");
+
+        try {
+            while (true)
             {
-                try
-                {
-                    var eventFilters = new[]
-                    {
-                        "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
-                    };
-                    var subscription = new Subscription(rc, eventFilters, message =>
-                    {
-                        var jsonObj = JObject.Parse(message);
-                        var msg = jsonObj["body"]["subject"];
-                        Console.WriteLine(msg);
-                    });
-                    var subscriptionInfo = await subscription.Subscribe();
-                    Console.WriteLine("Ready to receive incoming SMS via PubNub.");
-                    while (true)
-                    {
-                        Thread.Sleep(5000);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                Thread.sleep(60000);
             }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
@@ -106,7 +131,7 @@ namespace PubNub_Notifications
 
 ### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Eclipse.
 
 ## Graduate Your App
 

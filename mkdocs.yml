@@ -80,6 +80,7 @@ pages:
       - 'Python': 'notifications/quick-start/pubnub/python.md'
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
+      - 'Java': 'notifications/quick-start/pubnub/java.md'
     - 'WebHook':
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
@@ -102,12 +103,14 @@ pages:
     - 'Python': 'sms/quick-start/python.md'
     - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'sms/quick-start/c-sharp.md'
+    - 'Java': 'sms/quick-start/java.md'
     - 'Ruby': 'sms/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
     - 'Pager Messages': 'sms/pager.md'
+    - 'Message Attachments': 'sms/tutorials/message-attachments.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
     - 'Working with Message Store': 'sms/tutorials/message-store.md'
@@ -128,6 +131,7 @@ pages:
     - 'Python': 'voice/quick-start/python.md'
     - 'PHP': 'voice/quick-start/php.md'
     - 'C#': 'voice/quick-start/c-sharp.md'
+    - 'Java': 'voice/quick-start/java.md'
     - 'Ruby': 'voice/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
@@ -162,6 +166,7 @@ pages:
     - 'Python': 'fax/quick-start/python.md'
     - 'PHP': 'fax/quick-start/php.md'
     - 'C#': 'fax/quick-start/c-sharp.md'
+    - 'Java': 'fax/quick-start/java.md'
     - 'Ruby': 'fax/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
@@ -196,6 +201,7 @@ pages:
     - 'Python': 'call-log/quick-start/python.md'
     - 'PHP': 'call-log/quick-start/php.md'
     - 'C#': 'call-log/quick-start/c-sharp.md'
+    - 'Java': 'call-log/quick-start/java.md'
     - 'Ruby': 'call-log/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Overview': 'call-log/manual/overview.md'
@@ -216,6 +222,7 @@ pages:
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
+    - 'Java': 'meetings/quick-start/java.md'
     - 'Ruby': 'meetings/quick-start/ruby.md'
   - 'API Reference':
     - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings

@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# RingOut C# Quick Start
+# RingOut Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,61 +37,88 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Place a Call
 
-### Create a Visual Studio project
+### Create a Java project (using Eclipse IDE)
 
-* Choose Console Application .Net Core -> App
-* Select Target Framework .NET Core 2.1
-* Enter project name "Call_Ringout"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
+* Create a new Java project
+* Select the Gradle Project wizard
+* Enter project name "Call_RingOut"
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-### Edit the file Program.cs
+```json hl_lines="4",linenums="1"
+dependencies {
+    // ...
+
+    compile 'com.ringcentral:ringcentral:0.6.4'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+```
+
+### Create a new Java Class
+
+Select "File -> New -> Class" to create a new Java class named "Call_RingOut"
+
+```java
+package Call_RingOut;
+
+public class Call_RingOut {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}
+```
+
+### Edit the file "Call_RingOut.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-``` c#
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+```java
+package Call_RingOut;
 
-namespace Call_Ringout
-{
-    class Program
-    {
-          const string RECIPIENT = "<ENTER PHONE NUMBER>";
+import java.io.IOException;
 
-          const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-          const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-          const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-          const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-          const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
-          static void Main(string[] args)
-          {
-              call_ringout().Wait();
-          }
-          static private async Task call_ringout()
-          {
-              RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-              await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              if (rc.token.access_token.Length > 0)
-              {
-                  var parameters = new MakeRingOutRequest();
-                  parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
-                  parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
-                  parameters.playPrompt = false;
+public class Call_RingOut {
+    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-                  var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
-                  Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
-              }
-          }
-      }
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+  		try {
+  			callRingOut();
+  		} catch (RestException | IOException e) {
+  			e.printStackTrace();
+  		}
+  	}
+
+  	public static void callRingOut() throws RestException, IOException {
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+  	    MakeRingOutRequest requestBody = new MakeRingOutRequest();
+        requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
+        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
+        requestBody.playPrompt = false;
+        RingOutInfo ringoutInfo = restClient.restApi().account().extension().ringOut().post(requestBody, RingOutInfo.class);
+        System.out.println("Call Placed. Call status: " + ringoutInfo.status.callStatus);
+    }
 }
 ```
 
 ### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Eclipse.
 
 ## Graduate Your App
 

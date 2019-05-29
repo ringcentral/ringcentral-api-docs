@@ -2,7 +2,7 @@
 
 The RingCentral Message Store is a centralized repository of all the messages sent and received within the system. There are many types of messages that can stored here, including:
 
-* SMS ans MMS messages
+* SMS and MMS messages
 * Faxes
 * Voicemail
 
@@ -14,7 +14,7 @@ Messages within the Message Store can be managed in a variety of ways. One can:
 
 [Learn more about modifying the Message Store &raquo;](../message-histories)
 
-## Message Structure
+## Message Data Structure
 
 Below is an example JSON representation of a message that would be returned by the API when fetching a list or single message. This particular message is a voicemail:
 
@@ -50,173 +50,136 @@ Below is an example JSON representation of a message that would be returned by t
 
 The API Reference contains a [more detailed breakdown of the structure of a message](https://developers.ringcentral.com/api-reference#SMS-and-MMS-listMessages) within the Message Store.
 
-## Message Store Code Samples
+## Reading the Message Store
 
-The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission. The button below will help you quickly create an application that can be used with the code samples provided.
-
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Message+Store+Quick+Start+App&desc=A+simple+app+to+demo+downloading+user+message+content&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadMessages&redirectUri=" class="btn btn-primary">Create Message Store App</a>
+The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
 ```javascript tab="Node JS"
 const RC = require('ringcentral')
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
-});
+var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
 var platform = rcsdk.platform();
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
+platform.login( {username: "username", password: "password", extension: "extension_number"} )
     .then(function(resp) {
-        read_user_message_store()
+        platform.get('/account/~/extension/~/message-store', {
+             messageType: 'SMS'
+        })
+        .then(function (response) {
+            console.log(JSON.stringify(response.json()))
+        })
     });
-
-function read_user_message_store(){
-    platform.get('/account/~/extension/~/message-store', {
-          dateFrom: '2019-01-01T00:00:00.000Z',
-          dateTo: '2019-03-31T23:59:59.999Z'
-        })
-        .then(function (resp) {
-            var jsonObj = resp.json()
-            for (var record of jsonObj.records){
-              console.log(record.type)
-            }
-        })
-        .catch(function(e){
-            console.log(e.message)
-        });
 }
 ```
 
 ```python tab="Python"
 from ringcentral import SDK
-from ringcentral.http.api_exception import ApiException
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+sdk = SDK( "client_id", "client_secret", "server_url" )
+platform = sdk.platform()
+platform.login( "username", "extension", "password" )
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
-try:
-    resp = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
+response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
         {
-            'dateFrom': '2019-01-01T00:00:00.000Z',
-            'dateTo': '2019-03-31T23:59:59.999Z'
+            'messageType': 'SMS'
         })
-    for record in resp.json().records:
-        print ("message type: " + record.type)
-except ApiException as e:
-    print (e.getMessage())
+print (response.text())
 ```
 
 ```php tab="PHP"
 <?php
 require('vendor/autoload.php');
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
 $platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+$platform->login( "username", "extension_number", "password" );
 
-$resp = $platform->get('/account/~/extension/~/message-store',
+$response = $platform->get('/account/~/extension/~/message-store',
     array(
-      'dateFrom' => '2019-01-01T00:00:00.000Z',
-      'dateTo' => '2019-03-31T23:59:59.999Z'
+      'messageType' => 'SMS'
     ));
-foreach ($resp->json()->records as $record)
-    print_r ($record->type) . "\n");
+print_r ($response->text());
 ```
 
 ```c# tab="C#"
 using System;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 using RingCentral;
 
-namespace Read_User_Message_Store
-{
-    class Program
-    {
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY "101">";
-
-        static void Main(string[] args)
-        {
-            read_user_message_store().Wait();
-        }
-        static private async Task read_user_message_store()
-        {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
-            {
-                var parameters = new ListMessagesParameters();
-                parameters.dateFrom = "2019-01-01T00:00:00.000Z";
-                parameters.dateTo = "2019-03-31T23:59:59.999Z";
-                var resp = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
-                foreach (var record in resp.records)
-                {
-                    Console.WriteLine(record.type);
-                }
-
-            }
-        }
-    }
-}
+RestClient rc = new RestClient( "client_id", "client_secret", false);
+await rc.Authorize( "username", "extension_number", "password");
+var parameters = new ListMessagesParameters();
+parameters.messageType = string[] ("SMS");
+var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
+var jsonStr = JsonConvert.SerializeObject(response);
+Console.WriteLine(jsonStr);
 ```
 
 ```ruby tab="Ruby"
 require 'ringcentral'
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-resp = rc.get('/restapi/v1.0/account/~/extension/~/message-store', payload:
+rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+response = rc.get('/account/~/extension/~/message-store', payload:
     {
-        dateFrom: '2019-01-01T00:00:00.000Z',
-        dateTo: '2019-03-31T23:59:59.999Z',
+        messageType: 'SMS'
     })
+puts response.body
+```
 
-for record in resp.body['records'] do
-    puts record['type']
-end
+This example response shows the `to`, `from`, `type`, `readStatus`, `direction` and `subject` amongst other properties of an SMS message record from the message store:
+
+```json hl_lines="6 7 8 9 10 11 12 13 15 23 25",linenums="1"
+{
+  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
+  "records" : [ {
+    "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004",
+    "id" : 6424569004,
+    "to" : [ {
+      "phoneNumber" : "+1312982XXXX"
+    } ],
+    "from" : {
+      "phoneNumber" : "+165051XXXX",
+      "location" : "San Mateo, CA"
+    },
+    "type" : "SMS",
+    "creationTime" : "2019-05-22T17:07:28.000Z",
+    "readStatus" : "Unread",
+    "priority" : "Normal",
+    "attachments" : [ {
+      "id" : 6424569004,
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004/content/6424569004",
+      "type" : "Text",
+      "contentType" : "text/plain"
+    } ],
+    "direction" : "Inbound",
+    "availability" : "Alive",
+    "subject" : "Test SMS using a RingCentral Developer account - Hello World",
+    "messageStatus" : "Received",
+    "conversationId" : 8031152018338945839,
+    "conversation" : {
+      "id" : "8031152018338945839",
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/conversation/8031152018338945839"
+    },
+    "lastModifiedTime" : "2019-05-22T17:07:28.091Z"
+  } ],
+  "paging" : {
+    "page" : 1,
+    "totalPages" : 1,
+    "perPage" : 100,
+    "totalElements" : 1,
+    "pageStart" : 0,
+    "pageEnd" : 0
+  },
+  "navigation" : {
+    "firstPage" : {
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+    },
+    "lastPage" : {
+      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+    }
+  }
+}
 ```
 
 ## Relevant APIs for Further Reading

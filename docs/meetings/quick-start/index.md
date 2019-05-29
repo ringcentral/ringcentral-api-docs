@@ -10,6 +10,7 @@ Get started by scheduling a meeting in under five minutes:
 * [Python](./python/)
 * [PHP](./php/)
 * [C#](./c-sharp/)
+* [Java](./java/)
 * [Ruby](./ruby/)
 
 <a class="btn btn-primary" href="https://developers.ringcentral.com/api-products/meetings">Learn more about the Meetings API &raquo;</a>
