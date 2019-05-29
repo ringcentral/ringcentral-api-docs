@@ -1,8 +1,13 @@
 # Authorization Code Flow
 
-Authorization code flow protects users information and lets them control what they share with your app. You are required to use this flow if your app is a web app and will be used by more than one user.
+The "Authorization Code Flow," also referred to as a "3-legged authorization flow," is the most common and recommended form of authenticating RingCentral users within the context of an application. This process conforms to the OAuth 2.0 standard and works to:
 
-3-legged authorization flow used by RingCentral involves obtaining an authorization code from API server, which is exchanged for an access token later. The general flow looks like this:
+* Keep a user's auth credentials secure, and out of the hands of a third-party.
+* Disclose what permissions an app requires.
+* Prompt the user to explicitly authorize an app to access their data.
+* Provide the developer with a token that can used to by their application to act on a user's behalf. 
+
+The general flow looks like this:
 
 <img src="../../img/auth_code_flow.png" class="img-fluid">
 
@@ -10,7 +15,7 @@ The step-by-step details of this flow are explained below.
 
 ## Step 1. Request authorization code
 
-When your application needs to access a user's data, redirect the user to RingCentral API server. Generate a URL to request access from endpoint `/restapi/oauth/authorize`. This request must be in the `application/x-www-form-urlencoded` format by passing the following parameters in the HTTP request body:
+When your application needs to access a user's data, redirect the user to the RingCentral API server. Generate a URL to request access from endpoint `/restapi/oauth/authorize`. This request must be in the `application/x-www-form-urlencoded` format and must contain the following parameters in the HTTP request body:
 	
 | Parameter       | Type   | Description |
 | --------------- | ------ | ----------- |
@@ -27,15 +32,14 @@ On this step your app’s user is redirected by the browser to a RingCentral aut
 
 <img src="../../img/user_consent.png" class="img-fluid">
 
-After confirming the permissions, user enters his/her RingCentral credentials, and the browser redirects back to the redirect URI you’ve provided in request.
+After confirming the permissions, the user enters their RingCentral credentials, and the browser is then redirected to the "Redirect URI" you’ve provided in the request.
 
 ## Step 3. Handling authorization code server response
 
 The authorization server responds to your application's access request by using the URL specified in the request.
 
-If the user approves the access request, then the response contains an authorization code.
-
-If the user does not approve the request, the response contains an error message.
+* If the user approves the access request, then the response contains an authorization code.
+* If the user does not approve the request, the response contains an error message.
 
 An authorization code response contains:
 
@@ -56,7 +60,7 @@ Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&s
      
 After the web server receives the authorization code, it can exchange the authorization code for an access token using token endpoint `/restapi/oauth/token` (API group is *Auth*).
 
-Token requests must include client authentication (see Client Authentication section).
+Token requests must include client authentication credentials (see Client Authentication section).
 
 **Request Body**
 
@@ -75,11 +79,7 @@ Content Type: application/x-www-form-urlencoded
 	
 ## Step 5. Handling token server response
 
-**Response Body**
-
-```http
-Content Type: application/json
-```
+The server responds with an access token which can presented in subsequent requests in the HTTP Authorization header to authenticate API Calls. The response will contain the following parameters: 
 
 | Parameter                  | Type    | Description |
 | -------------------------- | ------- | ----------- |
