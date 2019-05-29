@@ -102,12 +102,14 @@ pages:
     - 'Python': 'sms/quick-start/python.md'
     - 'PHP': 'sms/quick-start/php.md'
     - 'C#': 'sms/quick-start/c-sharp.md'
+    - 'Java': 'sms/quick-start/java.md'
     - 'Ruby': 'sms/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
     - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
     - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
     - 'Pager Messages': 'sms/pager.md'
+    - 'Message Attachments': 'sms/tutorials/message-attachments.md'
     - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
     - 'Message Histories': 'sms/tutorials/message-histories.md'
     - 'Working with Message Store': 'sms/tutorials/message-store.md'
@@ -128,6 +130,7 @@ pages:
     - 'Python': 'voice/quick-start/python.md'
     - 'PHP': 'voice/quick-start/php.md'
     - 'C#': 'voice/quick-start/c-sharp.md'
+    - 'Java': 'voice/quick-start/java.md'
     - 'Ruby': 'voice/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Place a Call: RingOut': 'voice/ringout.md'
@@ -216,6 +219,7 @@ pages:
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
+    - 'Java': 'meetings/quick-start/java.md'
     - 'Ruby': 'meetings/quick-start/ruby.md'
   - 'API Reference':
     - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings

@@ -8,6 +8,7 @@ Take advantage of automating SMS communication through our SMS APIs to convenien
 * [Python](./python/)
 * [PHP](./php/)
 * [C#](./c-sharp/)
+* [Java](./java/)
 * [Ruby](./ruby/)
 
 <a class="btn btn-primary" href="https://developers.ringcentral.com/api-products/sms">Learn more about the Voice API &raquo;</a>
