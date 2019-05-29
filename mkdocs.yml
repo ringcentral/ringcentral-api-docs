@@ -77,11 +77,11 @@ pages:
 
 - 'Messaging':
   - 'Getting Started':
-    - 'Node.js': 'sms/quick-start/node.md'
-    - 'Python': 'sms/quick-start/python.md'
-    - 'PHP': 'sms/quick-start/php.md'
-    - 'C#': 'sms/quick-start/c-sharp.md'
-    - 'Ruby': 'sms/quick-start/ruby.md'
+    - 'Node.js': 'messaging/quick-start/node.md'
+    - 'Python': 'messaging/quick-start/python.md'
+    - 'PHP': 'messaging/quick-start/php.md'
+    - 'C#': 'messaging/quick-start/c-sharp.md'
+    - 'Ruby': 'messaging/quick-start/ruby.md'
   - 'SMS':
     - 'Sending an SMS': 'messaging/sms/sending-sms.md'
     - 'Sending an MMS': 'messaging/sms/sending-images.md'
