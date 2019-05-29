@@ -71,7 +71,7 @@ public class PubNub_Notifications {
 }
 ```
 
-### Edit the file "Call_RingOut.java".
+### Edit the file "PubNub_Notifications.java".
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
