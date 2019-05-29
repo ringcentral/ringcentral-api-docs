@@ -46,7 +46,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ### Edit the file Program.cs
 
-Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ``` c#
 using System;

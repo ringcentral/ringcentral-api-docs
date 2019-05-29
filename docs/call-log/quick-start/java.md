@@ -73,7 +73,7 @@ public class Read_CallLog {
 
 ### Edit the file "Read_CallLog.java".
 
-Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```java
 package Read_CallLog;

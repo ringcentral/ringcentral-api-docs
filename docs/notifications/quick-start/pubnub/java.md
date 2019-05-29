@@ -73,7 +73,7 @@ public class PubNub_Notifications {
 
 ### Edit the file "PubNub_Notifications.java".
 
-Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```java
 package PubNub_Notifications;
@@ -82,8 +82,6 @@ import java.io.IOException;
 import java.util.function.Consumer;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
-
-
 
 public class PubNub_Notifications {
     static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
@@ -104,7 +102,7 @@ public class PubNub_Notifications {
   	}
 
     public static void PubNubNotifications() throws RestException, IOException {
-    		restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
         restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
         Consumer<String> callback = payload -> {
@@ -113,20 +111,20 @@ public class PubNub_Notifications {
         		System.out.println(body.subject);
         };
 
-    		Subscription subscription = restClient.subscription(
+        Subscription subscription = restClient.subscription(
     	            new String[]{"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"},
     	            callback);
-    	  subscription.subscribe();
-    	  System.out.println("Ready to receive incoming SMS via PubNub.");
+        subscription.subscribe();
+        System.out.println("Ready to receive incoming SMS via PubNub.");
 
         try {
-    	    	while (true)
+            while (true)
             {
                 Thread.sleep(60000);
             }
-    		} catch (InterruptedException e) {
-    			   e.printStackTrace();
-    		}
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
