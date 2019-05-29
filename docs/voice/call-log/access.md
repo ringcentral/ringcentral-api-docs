@@ -73,7 +73,7 @@ The following table provides a quick outline about what API permissions the API 
 
 If you do not have `ReadCallLog` API Permission set on an application which is submitting request which require this permission, you will receive the following HTTP 403 error response:
 
-```
+```json
 {
     "errorCode": "InsufficientPermissions",
     "message": "In order to call this API endpoint, application needs to have [ReadCallLog] permission",
@@ -90,7 +90,7 @@ If you do not have `ReadCallLog` API Permission set on an application which is s
 
 If you do not have `ReadCallRecording` API Permission set on an application which is submitting a request which require this permission, you will receive the following HTTP 403 error response
 
-```
+```json
 {
     "errorCode": "InsufficientPermissions",
     "message": "In order to call this API endpoint, application needs to have [ReadCallRecording] permission",

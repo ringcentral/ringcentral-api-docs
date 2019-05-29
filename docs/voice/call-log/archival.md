@@ -154,25 +154,3 @@ It is supported by Ring Central and backs up your data as soon as you have it in
 * Backs up all your important business communication data from RingCentral
 * Moves data to Dropbox hourly over SSL
 
-## Developer Sample Application
-
-Additionally, there is the Call Recording Download Sample application available on Github.
-
-This is not an officially supported tool, but can serve as a handy starting point for developers building data archiving solutions with Amazon S3, local server solutions, or on DropBox. It can be easily customized and pull requests with improvements are always welcomed.
-
-* Available on Github (MIT license)
-* Requires:
-    * PHP 5.3.29+
-    * Composer
-    * cURL Extension support in PHP
-* URL: https://github.com/anilkumarbp/Sample-Demo-to-Download-Call-Recordings
-* Downloads Call Logs and/or Recordings to:
-    * Local File System
-    * Amazon S3 Bucket (requires Amazon account)
-    * Save Call Recordings to DropBox (requires DropBox account)
-* Uses the official [RingCentral PHP SDK](https://github.com/ringcentral/ringcentral-php)
-
-Developers who choose to build their own solutions (or use this sample application), will need to define an application in the [Ring Central Developer Portal](https://developers.ringcentral.com).
-Use the settings listed in this page for your application. The resulting application will be able to download all your Ring Central activity data within your account when used with administrative authentication credentials.
-
-Developers can adjust the Permissions needed if requirements dictate only specific types of business communication data needs to be backed up.
