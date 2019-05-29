@@ -87,11 +87,6 @@ footer {
     color: #797979;
     padding-bottom: 30px;
 }
-footer .brand {
-    background: url('./img/footer_rclogo.png') no-repeat 0px 20px;
-    padding: 40px 0 10px 0;
-    font-size: 12px;
-}
 footer .row-1 {
     border-bottom: 1px solid #414141;
     margin-bottom: 10px
@@ -340,6 +335,16 @@ ul.nav li.main {
         width: auto;
     }
 }
+
+@media (min-width: 576px) {
+     .container-fluid #sidebar-nav {
+          max-width: 285px;
+     }
+     .container-fluid #sidebar-toc {
+          max-width: 190px;
+     }
+}
+
 
 .btn:visited {
     color: white;

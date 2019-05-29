@@ -42,6 +42,7 @@ pages:
     - 'Exploring the API': 'basics/explorer.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
+    - 'App Permissions': 'basics/permissions.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
     - 'Creating an Application': 'basics/create-app.md'
@@ -110,16 +111,6 @@ pages:
     - 'PHP': 'meetings/quick-start/php.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
     - 'Ruby': 'meetings/quick-start/ruby.md'
-  - 'API Reference':
-    - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
-    - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
-    - 'Get Meeting Info': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting
-    - 'Update Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting
-    - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
-    - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
-    - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
-    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
-    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
 
 - 'Voice':
   - 'Getting Started':
@@ -146,22 +137,6 @@ pages:
     - 'Synchronization': 'voice/call-log/sync.md'
     - 'Best Practices': 'voice/call-log/best-practices.md'
     - 'Access Control': 'voice/call-log/access.md'
-  - 'API Reference':
-    - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
-    - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
-    - 'Cancel Call': 'https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall'
-    - 'Call Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallSessionStatus'
-    - 'Drop Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-deleteCallSession'
-    - 'Hold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-holdCallParty'
-    - 'Unhold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-unholdCallParty'
-    - 'Reject Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-rejectParty'
-    - 'Transfer Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-transferCallParty'
-    - 'Forward Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-forwardCallParty'
-    - 'Flip Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-callFlipParty'
-    - 'Call Party Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallPartyStatus'
-    - 'Update Call Party': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty'
-    - 'Start Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording'
-    - 'Pause/Resume Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording'
   - 'Sample Applications':
     - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
@@ -179,6 +154,11 @@ pages:
     - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
   - 'Developer Manual':
     - 'Auth Types': 'basics/oauth.md'
+    - 'Auth Code Flow': 'authentication/auth-code-flow.md'
+    - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
+    - 'Password Flow': 'authentication/password-flow.md'
+    - 'Client Credentials Flow': 'authentication/client-creds.md'
+    - 'Auth Tokens': 'authentication/tokens.md'
 
 - 'Notifications and Events':
   - 'Getting Started':
@@ -195,11 +175,6 @@ pages:
   - 'Developer Manual':
     - 'Webhooks': 'notifications/manual/webhooks.md'
     - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
-  - 'API Reference':
-    - 'Create Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-createSubscription'
-    - 'Get Subscriptions': 'https://developer.ringcentral.com/api-reference#Subscriptions-listSubscriptions'
-    - 'Renew Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-updateSubscription'
-    - 'Delete Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-deleteSubscription'
   - 'Sample Applications':
     - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'

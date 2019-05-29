@@ -33,14 +33,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="fonts.js"></script>
+    <script src="../../fonts.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
-      ga('create', 'UA-57519112-5', 'ringcentral-api-docs.readthedocs.io');
+      ga('create', 'UA-57519112-1', 'developers.ringcentral.com');
       ga('send', 'pageview');
     </script> 
   </head>
@@ -120,7 +120,7 @@
                   <li><a href="https://developer.ringcentral.com/api-reference#Call-Log">Call Log</a></li>
                   <li><a href="https://developer.ringcentral.com/api-reference#RingOut">RingOut</a></li>
                   <li><a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS">SMS</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#Chats">Glip</a></li>
+                  <li><a href="https://developer.ringcentral.com/api-reference#Chats">Team Messaging</a></li>
                   <li><a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings">Meetings</a></li>
                   <li><a href="https://developer.ringcentral.com/api-reference#Fax">Fax</a></li>
 		  <li></li>
@@ -156,7 +156,7 @@
                   <li class="sub-menu-heading">Discuss</li>
                   <li><a href="https://devcommunity.ringcentral.com/">Developer Forum</a></li>
                   <li><a href="http://stackoverflow.com/questions/tagged/ringcentral">Stack Overflow</a></li>
-                  <li><a href="https://developer.ringcentral.com/community.html">Glip</a></li>
+                  <li><a href="https://developer.ringcentral.com/community.html">Team Messaging</a></li>
                 </ul>
                 <ul>
                   <li class="sub-menu-heading">Learn</li>
@@ -211,27 +211,23 @@
       
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/bootstrap-vertical-nav/docs/basics/rate-limits.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+          <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/master/docs/basics/rate-limits.md"><i class="fa fa-github"></i> Edit on GitHub</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-    <div id="content" class="container">
+    <div id="content"class="container-fluid">
       
-    <div class="row">
+    <div class="row flex-nowrap">
       <div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
   <div class="container">
     <!-- Main navigation -->
     <ul class="nav navbar-nav">
-      <li class="toplevel nav-item active" data-toggle="collapse" data-target="#the-basics">
-        <!--<a href="#" class="nav-link">The Basics <b class="caret"></b></a>-->
-        <span class="section-title">The Basics</span>
-        <ul id="the-basics" class="collapse">
-          
-<li>
-    <a href="../../get-started/" class="">Get Started</a>
-</li>
+      <li class="toplevel nav-item active" data-toggle="collapse" data-target="#basics">
+        <!--<a href="#" class="nav-link">Basics <b class="caret"></b></a>-->
+        <span class="section-title">Basics</span>
+        <ul id="basics" class="collapse">
           
 <li>
   <span>Using the API</span>
@@ -243,6 +239,10 @@
 </li>
     
 <li>
+    <a href="../explorer/" class="">Exploring the API</a>
+</li>
+    
+<li>
     <a href="../sandbox/" class="">Developing in Sandbox</a>
 </li>
     
@@ -251,11 +251,7 @@
 </li>
     
 <li>
-    <a href="../notifications/webhooks/" class="">Webhooks</a>
-</li>
-    
-<li>
-    <a href="../notifications/pubnub/" class="">Mobile Push Notifications</a>
+    <a href="../permissions/" class="">App Permissions</a>
 </li>
     
 <li>
@@ -284,6 +280,10 @@
 <li>
     <a href="../lead-forms/" class="">Using Lead Forms</a>
 </li>
+    
+<li>
+    <a href="../install-app-button/" class="">Install App Buttons</a>
+</li>
   </ul>
 </li>
           
@@ -297,31 +297,16 @@
 </li>
     
 <li>
-    <a href="../configuration/authorization_profile/" class="">Auth Profile & Permissions</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Messaging</span>
-  <!--<a href="#" class="">Messaging</a>-->
-  <ul>
-    
-<li>
-    <a href="../messaging/" class="">Sending Messages</a>
-</li>
-    
-<li>
-    <a href="../message-sync/" class="">Message Synchronization</a>
+    <a href="../configuration/user-permissions/" class="">Auth Profile & Permissions</a>
 </li>
   </ul>
 </li>
         </ul>
       </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#authentication">
-        <!--<a href="#" class="nav-link">Authentication <b class="caret"></b></a>-->
-        <span class="section-title">Authentication</span>
-        <ul id="authentication" class="collapse">
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#call-management">
+        <!--<a href="#" class="nav-link">Call Management <b class="caret"></b></a>-->
+        <span class="section-title">Call Management</span>
+        <ul id="call-management" class="collapse">
           
 <li>
   <span>Getting Started</span>
@@ -329,41 +314,7 @@
   <ul>
     
 <li>
-  <span>Password Flow</span>
-  <!--<a href="#" class="">Password Flow</a>-->
-  <ul>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/password-flow/php/" class="">PHP</a>
-</li>
-  </ul>
-</li>
-    
-<li>
-  <span>Authorization Flow</span>
-  <!--<a href="#" class="">Authorization Flow</a>-->
-  <ul>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
-</li>
-  </ul>
+    <a href="../../call-management/quick-start/node.md" class="">Node.js</a>
 </li>
   </ul>
 </li>
@@ -374,16 +325,20 @@
   <ul>
     
 <li>
-    <a href="../oauth/" class="">Auth Types</a>
+    <a href="../../voice/answering-rules/" class="">Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-queues/" class="">Call Queues</a>
 </li>
   </ul>
 </li>
         </ul>
       </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#sms">
-        <!--<a href="#" class="nav-link">SMS <b class="caret"></b></a>-->
-        <span class="section-title">SMS</span>
-        <ul id="sms" class="collapse">
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#glip/team-messaging">
+        <!--<a href="#" class="nav-link">Glip/Team Messaging <b class="caret"></b></a>-->
+        <span class="section-title">Glip/Team Messaging</span>
+        <ul id="glip/team-messaging" class="collapse">
           
 <li>
   <span>Getting Started</span>
@@ -391,23 +346,7 @@
   <ul>
     
 <li>
-    <a href="../../sms/quick-start/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../sms/quick-start/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../sms/quick-start/php/" class="">PHP</a>
-</li>
-    
-<li>
-    <a href="../../sms/quick-start/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../sms/quick-start/explorer/" class="">API Explorer</a>
+    <a href="../../team-messaging/quick-start/node/" class="">Node.js</a>
 </li>
   </ul>
 </li>
@@ -418,66 +357,143 @@
   <ul>
     
 <li>
-    <a href="../../sms/tutorials/valid-sms-numbers/" class="">Valid Sending Numbers</a>
+    <a href="../../team-messaging/manual/attachments/" class="">Message Attachments</a>
 </li>
     
 <li>
-    <a href="../../sms/tutorials/sending-sms/" class="">Sending an SMS</a>
+    <a href="../../team-messaging/manual/local-bots/" class="">Building a Bot Locally</a>
 </li>
     
 <li>
-    <a href="../../sms/tutorials/sending-images/" class="">Sending Images over SMS</a>
+    <a href="../../team-messaging/manual/frameworks/" class="">Bot Frameworks</a>
 </li>
     
 <li>
-    <a href="../../sms/pager/" class="">Pager Messages</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/delivery-status/" class="">Tracking Delivery Status</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/message-histories/" class="">Message Histories</a>
-</li>
-    
-<li>
-    <a href="../../sms/tutorials/receiving/" class="">Receiving SMS</a>
+    <a href="../../team-messaging/manual/webhooks/" class="">Glip Webhooks</a>
 </li>
   </ul>
 </li>
           
 <li>
-  <span>API Reference</span>
-  <!--<a href="#" class="">API Reference</a>-->
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
   <ul>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS" class="">Send SMS</a>
+    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="">Glip Bot using IBM Watson and Botkit</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="">Get Message List</a>
+    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="">Voicemail Transcription Bot</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#messaging">
+        <!--<a href="#" class="nav-link">Messaging <b class="caret"></b></a>-->
+        <span class="section-title">Messaging</span>
+        <ul id="messaging" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../sms/quick-start/node.md" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="">Delete Conversation</a>
+    <a href="../../sms/quick-start/python.md" class="">Python</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="">Get Message(s)</a>
+    <a href="../../sms/quick-start/php.md" class="">PHP</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="">Update Message(s)</a>
+    <a href="../../sms/quick-start/c-sharp.md" class="">C#</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="">Delete Message(s)</a>
+    <a href="../../sms/quick-start/ruby.md" class="">Ruby</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>SMS</span>
+  <!--<a href="#" class="">SMS</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/sms/sending-sms/" class="">Sending an SMS</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="">Get Attachment</a>
+    <a href="../../messaging/sms/sending-images/" class="">Sending an MMS</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/valid-sms-numbers/" class="">Valid SMS Numbers</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Fax</span>
+  <!--<a href="#" class="">Fax</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/fax/sending-faxes/" class="">Sending Faxes</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/fax-multipart-formats/" class="">Multipart Formats</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/receiving-faxes/" class="">Receiving Faxes</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/resending-faxes/" class="">Forwarding and Resending Faxes</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Pager Messages</span>
+  <!--<a href="#" class="">Pager Messages</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/pager/sending-pager-messages/" class="">Sending Pager Messages</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Message Store</span>
+  <!--<a href="#" class="">Message Store</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/message-store/messaging/" class="">Sending Messages</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-store/" class="">Working with Message Store</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-sync/" class="">Message Synchronization</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-histories/" class="">Modifying Message Histories</a>
 </li>
   </ul>
 </li>
@@ -498,6 +514,86 @@
 <li>
     <a href="https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/" class="">Two-factor Authentication</a>
 </li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="">Custom Fax Cover Pages</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+    <a href="../../meetings/quick-start/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../meetings/quick-start/ruby/" class="">Ruby</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>API Reference</span>
+  <!--<a href="#" class="">API Reference</a>-->
+  <ul>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
+</li>
+    
+<li>
+    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+</li>
   </ul>
 </li>
         </ul>
@@ -513,29 +609,106 @@
   <ul>
     
 <li>
-    <a href="../../voice/quick-start/ringout/node/" class="">Node.js</a>
+    <a href="../../voice/quick-start/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../voice/quick-start/ringout/python/" class="">Python</a>
+    <a href="../../voice/quick-start/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../voice/quick-start/ringout/php/" class="">PHP</a>
+    <a href="../../voice/quick-start/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../voice/quick-start/ringout/c-sharp/" class="">C#</a>
+    <a href="../../voice/quick-start/c-sharp/" class="">C#</a>
 </li>
     
 <li>
-    <a href="../../voice/quick-start/ringout/explorer/" class="">API Explorer</a>
+    <a href="../../voice/quick-start/ruby/" class="">Ruby</a>
 </li>
   </ul>
 </li>
           
 <li>
-    <a href="../../missing/" class="">Developer Manual</a>
+  <span>Placing Calls</span>
+  <!--<a href="#" class="">Placing Calls</a>-->
+  <ul>
+    
+<li>
+    <a href="../../voice/ringout/" class="">RingOut</a>
+</li>
+    
+<li>
+    <a href="../../voice/webrtc/" class="">WebRTC</a>
+</li>
+    
+<li>
+    <a href="../../voice/uri-scheme/" class="">URI Scheme</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Active Calls</span>
+  <!--<a href="#" class="">Active Calls</a>-->
+  <ul>
+    
+<li>
+    <a href="../../voice/active-calls/" class="">Reading Active Calls</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-control/" class="">Call Control</a>
+</li>
+    
+<li>
+    <a href="../../voice/supervision/" class="">Supervising Calls</a>
+</li>
+    
+<li>
+    <a href="../../voice/presence/" class="">Presence</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Logs</span>
+  <!--<a href="#" class="">Call Logs</a>-->
+  <ul>
+    
+<li>
+    <a href="../../voice/call-log/reading-call-log/" class="">Reading Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/api/" class="">Data Types</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/details/" class="">Detailed Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/archival/" class="">Data Archival</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/recordings/" class="">Call Recordings</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/sync/" class="">Synchronization</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../voice/call-log/access/" class="">Access Control</a>
+</li>
+  </ul>
 </li>
           
 <li>
@@ -606,37 +779,6 @@
 </li>
           
 <li>
-  <span>Tutorials</span>
-  <!--<a href="#" class="">Tutorials</a>-->
-  <ul>
-    
-<li>
-    <a href="../../voice/ringout/" class="">RingOut</a>
-</li>
-    
-<li>
-    <a href="../../voice/webrtc/" class="">WebRTC</a>
-</li>
-    
-<li>
-    <a href="../../voice/call-queues/" class="">Call Queues</a>
-</li>
-    
-<li>
-    <a href="../../voice/call-control/" class="">Call Control</a>
-</li>
-    
-<li>
-    <a href="../../voice/answering-rules/" class="">Answering Rules</a>
-</li>
-    
-<li>
-    <a href="../../voice/uri-scheme/" class="">URI Scheme</a>
-</li>
-  </ul>
-</li>
-          
-<li>
   <span>Sample Applications</span>
   <!--<a href="#" class="">Sample Applications</a>-->
   <ul>
@@ -644,261 +786,6 @@
 <li>
     <a href="https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/" class="">Building a Web Phone with WebRTC</a>
 </li>
-  </ul>
-</li>
-        </ul>
-      </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#fax">
-        <!--<a href="#" class="nav-link">Fax <b class="caret"></b></a>-->
-        <span class="section-title">Fax</span>
-        <ul id="fax" class="collapse">
-          
-<li>
-  <span>Getting Started</span>
-  <!--<a href="#" class="">Getting Started</a>-->
-  <ul>
-    
-<li>
-    <a href="../../fax/quick-start/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../fax/quick-start/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../fax/quick-start/php/" class="">PHP</a>
-</li>
-    
-<li>
-    <a href="../../fax/quick-start/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../fax/quick-start/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Developer Manual</span>
-  <!--<a href="#" class="">Developer Manual</a>-->
-  <ul>
-    
-<li>
-    <a href="../../fax/tutorials/sending-faxes/" class="">Sending Faxes</a>
-</li>
-    
-<li>
-    <a href="../../fax/tutorials/receiving-faxes/" class="">Receiving Faxes</a>
-</li>
-    
-<li>
-    <a href="../../fax/tutorials/resending-faxes/" class="">Forwarding and Resending</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>API Reference</span>
-  <!--<a href="#" class="">API Reference</a>-->
-  <ul>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage" class="">Create Fax</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages" class="">Get Cover Pages</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-listMessages" class="">Get Message List</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter" class="">Delete Conversation</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-loadMessage" class="">Get Message(s)</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-updateMessage" class="">Update Message(s)</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-deleteMessage" class="">Delete Message(s)</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById" class="">Get Attachment</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="">Custom Fax Cover Pages</a>
-</li>
-  </ul>
-</li>
-        </ul>
-      </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#chat">
-        <!--<a href="#" class="nav-link">Chat <b class="caret"></b></a>-->
-        <span class="section-title">Chat</span>
-        <ul id="chat" class="collapse">
-          
-<li>
-  <span>Getting Started</span>
-  <!--<a href="#" class="">Getting Started</a>-->
-  <ul>
-    
-<li>
-    <a href="../../chat/quick-start/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../chat/quick-start/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../chat/quick-start/php/" class="">PHP</a>
-</li>
-    
-<li>
-    <a href="../../chat/quick-start/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../chat/quick-start/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Developer Manual</span>
-  <!--<a href="#" class="">Developer Manual</a>-->
-  <ul>
-    
-<li>
-    <a href="../../chat/manual/api/" class="">API Overview</a>
-</li>
-    
-<li>
-    <a href="../../chat/manual/attachments/" class="">Message Attachments</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Tutorials</span>
-  <!--<a href="#" class="">Tutorials</a>-->
-  <ul>
-    
-<li>
-    <a href="../../chat/tutorials/local-bots/" class="">Building a Bot Locally</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
-    
-<li>
-    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="">Glip Bot using IBM Watson and Botkit</a>
-</li>
-    
-<li>
-    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="">Voicemail Transcription Bot</a>
-</li>
-  </ul>
-</li>
-        </ul>
-      </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#call-logs">
-        <!--<a href="#" class="nav-link">Call Logs <b class="caret"></b></a>-->
-        <span class="section-title">Call Logs</span>
-        <ul id="call-logs" class="collapse">
-          
-<li>
-  <span>Getting Started</span>
-  <!--<a href="#" class="">Getting Started</a>-->
-  <ul>
-    
-<li>
-    <a href="../../call-log/quick-start/node/" class="">Node.js</a>
-</li>
-    
-<li>
-    <a href="../../call-log/quick-start/python/" class="">Python</a>
-</li>
-    
-<li>
-    <a href="../../call-log/quick-start/php/" class="">PHP</a>
-</li>
-    
-<li>
-    <a href="../../call-log/quick-start/c-sharp/" class="">C#</a>
-</li>
-    
-<li>
-    <a href="../../call-log/quick-start/explorer/" class="">API Explorer</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Developer Manual</span>
-  <!--<a href="#" class="">Developer Manual</a>-->
-  <ul>
-    
-<li>
-    <a href="../../call-log/manual/overview/" class="">Overview</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/archival/" class="">Data Archival</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/api/" class="">API Basics</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/recordings/" class="">Call Recordings</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/sync/" class="">Synchronization</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/details/" class="">Detailed Call Log Data</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/best-practices/" class="">Best Practices</a>
-</li>
-    
-<li>
-    <a href="../../call-log/manual/access/" class="">Access Control</a>
-</li>
-  </ul>
-</li>
-          
-<li>
-  <span>Sample Applications</span>
-  <!--<a href="#" class="">Sample Applications</a>-->
-  <ul>
     
 <li>
     <a href="https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/" class="">Call Log Analytics for iOS</a>
@@ -915,10 +802,10 @@
 </li>
         </ul>
       </li>
-      <li class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
-        <!--<a href="#" class="nav-link">Meetings <b class="caret"></b></a>-->
-        <span class="section-title">Meetings</span>
-        <ul id="meetings" class="collapse">
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#authentication">
+        <!--<a href="#" class="nav-link">Authentication <b class="caret"></b></a>-->
+        <span class="section-title">Authentication</span>
+        <ul id="authentication" class="collapse">
           
 <li>
   <span>Getting Started</span>
@@ -926,19 +813,23 @@
   <ul>
     
 <li>
-    <a href="../../meetings/quick-start/node/" class="">Node.js</a>
+    <a href="../../authentication/quick-start/authorization-flow/node/" class="">Node.js</a>
 </li>
     
 <li>
-    <a href="../../meetings/quick-start/python/" class="">Python</a>
+    <a href="../../authentication/quick-start/authorization-flow/python/" class="">Python</a>
 </li>
     
 <li>
-    <a href="../../meetings/quick-start/php/" class="">PHP</a>
+    <a href="../../authentication/quick-start/authorization-flow/php/" class="">PHP</a>
 </li>
     
 <li>
-    <a href="../../meetings/quick-start/c-sharp/" class="">C#</a>
+    <a href="../../authentication/quick-start/authorization-flow/c-sharp/" class="">C#</a>
+</li>
+    
+<li>
+    <a href="../../authentication/quick-start/authorization-flow/ruby/" class="">Ruby</a>
 </li>
   </ul>
 </li>
@@ -949,11 +840,101 @@
   <ul>
     
 <li>
-    <a href="../../meetings/manual/schedule/" class="">Scheduling a Meeting</a>
+    <a href="../oauth/" class="">Auth Types</a>
 </li>
     
 <li>
-    <a href="../../meetings/manual/recordings/" class="">Meeting Recordings</a>
+    <a href="../../authentication/auth-code-flow/" class="">Auth Code Flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/implicit-grant-flow/" class="">Implicit Grant Flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/password-flow/" class="">Password Flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/client-creds/" class="">Client Credentials Flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/tokens/" class="">Auth Tokens</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li class="toplevel nav-item" data-toggle="collapse" data-target="#notifications-and-events">
+        <!--<a href="#" class="nav-link">Notifications and Events <b class="caret"></b></a>-->
+        <span class="section-title">Notifications and Events</span>
+        <ul id="notifications-and-events" class="collapse">
+          
+<li>
+  <span>Getting Started</span>
+  <!--<a href="#" class="">Getting Started</a>-->
+  <ul>
+    
+<li>
+  <span>PubNub</span>
+  <!--<a href="#" class="">PubNub</a>-->
+  <ul>
+    
+<li>
+    <a href="../../notifications/quick-start/pubnub/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/pubnub/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/pubnub/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/pubnub/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+    
+<li>
+  <span>WebHook</span>
+  <!--<a href="#" class="">WebHook</a>-->
+  <ul>
+    
+<li>
+    <a href="../../notifications/quick-start/webhook/node/" class="">Node.js</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/webhook/python/" class="">Python</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/webhook/php/" class="">PHP</a>
+</li>
+    
+<li>
+    <a href="../../notifications/quick-start/webhook/c-sharp/" class="">C#</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../notifications/manual/webhooks/" class="">Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../notifications/manual/pubnub/" class="">Mobile Push Notifications</a>
 </li>
   </ul>
 </li>
@@ -964,39 +945,34 @@
   <ul>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings" class="">Get Scheduled Meetings</a>
+    <a href="https://developer.ringcentral.com/api-reference#Subscriptions-createSubscription" class="">Create Subscription</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting" class="">Create Meetings</a>
+    <a href="https://developer.ringcentral.com/api-reference#Subscriptions-listSubscriptions" class="">Get Subscriptions</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting" class="">Get Meeting Info</a>
+    <a href="https://developer.ringcentral.com/api-reference#Subscriptions-updateSubscription" class="">Renew Subscription</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting" class="">Update Meeting</a>
+    <a href="https://developer.ringcentral.com/api-reference#Subscriptions-deleteSubscription" class="">Delete Subscription</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/" class="">Create SMS Push Notification</a>
 </li>
     
 <li>
-    <a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting" class="">Delete Meeting</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting" class="">End Meeting</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo" class="">Get Meeting Service Info</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings" class="">Get Account Meeting Recordings</a>
-</li>
-    
-<li>
-    <a href="https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings" class="">Get User Meeting Recordings</a>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
 </li>
   </ul>
 </li>
@@ -1006,14 +982,14 @@
   </div>
 </nav>
 </div>
-      <div id="main" class="col-md-7" role="main">
+      <div id="main" class="col" role="main">
 
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
     
-    <li class="breadcrumb-item">The Basics</li>
+    <li class="breadcrumb-item">Basics</li>
     
     
     
@@ -1036,84 +1012,101 @@
 <li><em>Heavy</em></li>
 <li><em>Auth</em></li>
 </ul>
-<p>That means all the requests are characterized by their processing as <em>Light</em>, <em>Medium</em> or <em>Heavy</em>. There are also authorization requests, that form a separate group — <em>Auth</em>. Each request in <a href="https://developers.ringcentral.com/api-docs/latest/APIReference.html">API Reference</a> is marked as <em>Heavy</em>, <em>Medium</em>, <em>Light</em> or <em>Auth</em> under the header <em>API Group</em>.</p>
+<p>That means all the requests are characterized by their processing as <em>Light</em>, <em>Medium</em> or <em>Heavy</em>. There are also authorization requests, that form a separate group — <em>Auth</em>. Each request in <a href="https://developer.ringcentral.com/api-reference">API Reference</a> is marked as <em>Heavy</em>, <em>Medium</em>, <em>Light</em> or <em>Auth</em> under the header <em>API Group</em>.</p>
 <h2 id="what-are-your-app-rate-limits">What Are Your App Rate Limits?</h2>
 <p>Rate Limits plan available for your client application is available in your RC account by clicking the 'Rate Limits' in My Apps tab, see the image below. It informs you how many requests of each API group are supported and what is the time frame in seconds for every request.</p>
 <p><img src="../../img/rate_limits.png" class="img-fluid"></p>
 <p>Let's consider the given rate limits. Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute. If you exceed these limitations the server returns the <code>429 Too Many Requests</code> HTTP error code. It means that the client is throttled by the server due to high request rate. The retry period in seconds, after which the requests can be sent, is specified in <code>Retry-After</code> response header.</p>
 <h2 id="rate-limits-response-headers">Rate Limits Response Headers</h2>
 <p>Rate Limits are returned in specific headers in response for each request, unless the request is unlimited. Those headers are:</p>
-<ul>
-<li>
-<p><strong>X-Rate-Limit-Group</strong> — API group of the given request (<em>Light</em>, <em>Medium</em>, <em>Heavy</em>, <em>Auth</em>)</p>
-</li>
-<li>
-<p><strong>X-Rate-Limit-Limit</strong> — current rate limit for the given request</p>
-</li>
-<li>
-<p><strong>X-Rate-Limit-Remaining</strong> — the number of requests left for the time interval (window) of this rate limit</p>
-</li>
-<li>
-<p><strong>X-Rate-Limit-Window</strong> — time interval in seconds for the given request rate limit</p>
-</li>
-</ul>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Header</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Rate-Limit-Group</code></td>
+<td>API group of the given request (<em>Light</em>, <em>Medium</em>, <em>Heavy</em>, <em>Auth</em>)</td>
+</tr>
+<tr>
+<td><code>X-Rate-Limit-Limit</code></td>
+<td>current rate limit for the given request</td>
+</tr>
+<tr>
+<td><code>X-Rate-Limit-Remaining</code></td>
+<td>the number of requests left for the time interval (window) of this rate limit</td>
+</tr>
+<tr>
+<td><code>X-Rate-Limit-Window</code></td>
+<td>time interval in seconds for the given request rate limit</td>
+</tr>
+</tbody>
+</table>
 <p>Let us consider the example of request retrieving account information. Rate Limits headers are returned in response alongside with HTTP status code.</p>
-<p> <div class=codehilite><pre><span></span><span class=nf>GET</span> <span class=nn>/restapi/v1.0/account/1696121004</span> <span class=kr>HTTP</span><span class=o>/</span><span class=m>1.1</span>
-<span class=na>Authorization</span><span class=o>:</span> <span class=l>Bearer U0pDMDFQMDFQQVMwMXxBQUNZemU3b2ZxMUtDWXBoeAxQQ</span>
-<span class=na>Accept</span><span class=o>:</span> <span class=l>application/json</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Response</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-Rate-Limit-Group</span><span class="o">:</span> <span class="l">light</span>
+<span class="na">X-Rate-Limit-Limit</span><span class="o">:</span> <span class="l">1000</span>
+<span class="na">X-Rate-Limit-Remaining</span><span class="o">:</span> <span class="l">999</span>
+<span class="na">X-Rate-Limit-Window</span><span class="o">:</span> <span class="l">60</span>
+<span class="na">Content-Language</span><span class="o">:</span> <span class="l">en-US</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json; charset=UTF-8</span>
 
-
-HTTP/1.1 200 OK
-X-Rate-Limit-Group: light
-X-Rate-Limit-Limit: 1000
-X-Rate-Limit-Remaining: 999
-X-Rate-Limit-Window: 60
-Content-Language: en-US
-Content-Type: application/json; charset=UTF-8
-
-{
-  &quot;uri&quot; : &quot;https.../restapi/v1.0/account/1696121004&quot;,
-  &quot;id&quot; : 1696121004,
-  &quot;serviceInfo&quot; : {
-    &quot;uri&quot; : &quot;https.../restapi/v1.0/account/1696121004/service-info&quot;,
-    &quot;brand&quot; : {
-      &quot;id&quot; : &quot;1210&quot;,
-      &quot;name&quot; : &quot;RingCentral&quot;,
-      &quot;homeCountry&quot; : {
-        &quot;id&quot; : &quot;1&quot;,
-        &quot;uri&quot; : &quot;https.../restapi/v1.0/dictionary/country/1&quot;,
-        &quot;name&quot; : &quot;United States&quot;,
-        &quot;isoCode&quot; : &quot;US&quot;,
-        &quot;callingCode&quot; : &quot;1&quot;
-      }
-    },
-    &quot;servicePlan&quot; : {
-      &quot;id&quot; : &quot;1216&quot;,
-      &quot;name&quot; : &quot;Professional&quot;,
-      &quot;edition&quot; : &quot;Unknown&quot;
-    },
-    &quot;billingPlan&quot; : {
-      &quot;id&quot; : &quot;159&quot;,
-      &quot;name&quot; : &quot;Monthly&quot;,
-      &quot;durationUnit&quot; : &quot;Month&quot;,
-      &quot;duration&quot; : 1,
-      &quot;type&quot; : &quot;Regular&quot;
-    }
-  },
-  &quot;operator&quot; : {
-    &quot;uri&quot; : &quot;https.../restapi/v1.0/account/1696121004/extension/1696121004&quot;,
-    &quot;id&quot; : 1696121004,
-    &quot;extensionNumber&quot; : &quot;101&quot;
-  },
-  &quot;mainNumber&quot; : &quot;+18774180010&quot;,
-  &quot;status&quot; : &quot;Confirmed&quot;,
-  &quot;signupInfo&quot; : {
-    &quot;signupState&quot; : [ &quot;CreditCardApproved&quot;, &quot;BillingEntered&quot;, &quot;AccountCreated&quot;, &quot;AccountConfirmed&quot; ],
-    &quot;verificationReason&quot; : &quot;Unknown&quot;
-  },
-  &quot;setupWizardState&quot; : &quot;Completed&quot;
-}
-</pre></div></p>
+<span class="p">{</span>
+  <span class="nt">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;https.../restapi/v1.0/account/1696121004&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="mi">1696121004</span><span class="p">,</span>
+  <span class="nt">&quot;serviceInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;https.../restapi/v1.0/account/1696121004/service-info&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;brand&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1210&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;RingCentral&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;homeCountry&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;https.../restapi/v1.0/dictionary/country/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isoCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;callingCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;servicePlan&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1216&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Professional&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;edition&quot;</span> <span class="p">:</span> <span class="s2">&quot;Unknown&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;billingPlan&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;159&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Monthly&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;durationUnit&quot;</span> <span class="p">:</span> <span class="s2">&quot;Month&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;duration&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Regular&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;operator&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;https.../restapi/v1.0/account/1696121004/extension/1696121004&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="mi">1696121004</span><span class="p">,</span>
+    <span class="nt">&quot;extensionNumber&quot;</span> <span class="p">:</span> <span class="s2">&quot;101&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;mainNumber&quot;</span> <span class="p">:</span> <span class="s2">&quot;+18774180010&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;Confirmed&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;signupInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;signupState&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;CreditCardApproved&quot;</span><span class="p">,</span> <span class="s2">&quot;BillingEntered&quot;</span><span class="p">,</span> <span class="s2">&quot;AccountCreated&quot;</span><span class="p">,</span> <span class="s2">&quot;AccountConfirmed&quot;</span> <span class="p">],</span>
+    <span class="nt">&quot;verificationReason&quot;</span> <span class="p">:</span> <span class="s2">&quot;Unknown&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;setupWizardState&quot;</span> <span class="p">:</span> <span class="s2">&quot;Completed&quot;</span>
+<span class="p">}</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Request</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="nf">GET</span> <span class="nn">/restapi/v1.0/account/1696121004</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer U0pDMDFQMDFQQVMwMXxBQUNZemU3b2ZxMUtDWXBoeAxQQ</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div></div>
+</div>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -1139,14 +1132,14 @@ Content-Type: application/json; charset=UTF-8
   <nav class="container">
     <div class="row row-1">
       <div class="col-6">
-	<a class="brand nav-link" href="http://developer.ringcentral.com/">Back to main site</a>
+	<a class="brand nav-link" href="http://developers.ringcentral.com/">Back to main site</a>
       </div>
       <div class="col-6">
 	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
-	  <li class="nav-item"><a class="nav-link" href="#">Legal</a></li>
-	  <li class="nav-item"><a class="nav-link" href="#">Privacy Notice</a></li>
-	  <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
-	  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+	  <li class="nav-item"><a class="nav-link" href="http://www.ringcentral.com/legal.html">Legal</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://www.ringcentral.com/legal/privacy-notice.html">Privacy Notice</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://devcommunity.ringcentral.com/">Community</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://medium.com/ringcentral-developers">Blog</a></li>
 	</ul>
       </div>
     </div>
@@ -1158,11 +1151,11 @@ Content-Type: application/json; charset=UTF-8
 	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
 	  <li><a class="nav-link footer-image-link footer-image-link-facebook" href="http://www.facebook.com/ringcentral">
 	      <i class="fa fa-facebook"></i></a></li>
-	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="#">
+	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="http://twitter.com/ringcentraldevs">
 	      <i class="fa fa-twitter"></i></a></li>
-	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="#">
+	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="http://www.linkedin.com/company/ringcentral">
 	      <i class="fa fa-linkedin"></i></a></li>
-	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="#">
+	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="http://www.youtube.com/ringcentral">
 	      <i class="fa fa-youtube"></i></a></li>
 	</ul>
       </div>
