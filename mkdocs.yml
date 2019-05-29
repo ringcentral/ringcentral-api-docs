@@ -63,7 +63,7 @@ pages:
     - 'Answering Rules': 'voice/answering-rules.md'
     - 'Call Queues': 'voice/call-queues.md'
 
-- 'Glip/Team Messaging':
+- 'Glip':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
   - 'Developer Manual':
