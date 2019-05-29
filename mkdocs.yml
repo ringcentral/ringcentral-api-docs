@@ -165,6 +165,7 @@ pages:
     - 'Python': 'fax/quick-start/python.md'
     - 'PHP': 'fax/quick-start/php.md'
     - 'C#': 'fax/quick-start/c-sharp.md'
+    - 'Java': 'fax/quick-start/java.md'
     - 'Ruby': 'fax/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
@@ -199,6 +200,7 @@ pages:
     - 'Python': 'call-log/quick-start/python.md'
     - 'PHP': 'call-log/quick-start/php.md'
     - 'C#': 'call-log/quick-start/c-sharp.md'
+    - 'Java': 'call-log/quick-start/java.md'
     - 'Ruby': 'call-log/quick-start/ruby.md'
   - 'Developer Manual':
     - 'Overview': 'call-log/manual/overview.md'
