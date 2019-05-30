@@ -2,17 +2,71 @@
 
 Tokens are used to provide a context in each request for authorization or authentication. It is important to understand distinctions between token types:
 
-* **Access token** is a special token issued by authorization server and used by the application to make requests to all endpoints which require authentication.
+* An **Access Token** is a token issued by authorization server and used by the application to make requests to all endpoints which require authentication.
 
-* **Refresh token** can be provided along with access token once your application successfully passes the authorization. It can be used only once to refresh short-lived access token. The refresh token itself cannot be used to access protected resources.
+* A **Refresh Token** can be provided alongside the access token during authorization. It is a single-use token used to fetch a new access token before it expires. The refresh token itself cannot be used to access protected resources.
 
-To prevent possible abuse by means of intercepting tokens and using them illegally, access and refresh token lifetimes are limited. By default access token **expires in one hour**. Refresh token lifetime is typically limited to one week. Actual lifetimes of access and refresh tokens are returned in `expires_in` and `refresh_token_expires_in` attributes of a token endpoint response.
+## Token Expiration and Invalidation
 
-The API requests which include expired access tokens are rejected with `HTTP 401 Unauthorized` responses. So an application is forced to obtain a new access token using one of the authorization flows.
+Tokens may be invalidated for any of the following reasons:
 
-Both access and refresh tokens may also be revoked by the user at any time. In this case the application is required to authorize again.
+* Access and refresh tokens can expire. 
+* Access and refresh tokens may be revoked by the end-user at any time.
+* If a user's credentials are changed (via RingCentral's Service Web, Mobile Web or Admin Interface sites) all issued tokens are invalidated immediately, and all established sessions are terminated.
 
-If the user's credentials are changed (via RingCentral Service Web, Mobile Web or Admin Interface sites), all issued tokens are invalidated immediately, and all established sessions are terminated.
+In an expired or invalidated token is used, RingCentral will respond with an HTTP error of "401 Unauthorized."
+
+When tokens expire or are invalidated, applications must obtain a fresh access token again. 
+
+## Authenticating Your Application to Obtain an Access Token
+
+Each application that intends to obtain an access token must authenticate itself. Applications authenticate themselves by presenting their app's Client ID and Client Secret using the HTTP Basic authentication scheme. 
+
+For example, when you created your app RingCentral provided you with the following credentials for your app:
+
+* Client ID: `YourAppKey`
+* Client Secret: `YourAppSecret`
+
+These two credentials will be presented to RingCentral in an HTTP Authorization header in the following way:
+
+1. Combine them in a single string separated with a colon: `YourAppKey:YourAppSecret`
+2. Base64 encode the resulting string, which should produce: `WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0`
+3. Use this encoded string in your token request as shown below:
+   ```http
+   POST /restapi/oauth/token HTTP/1.1  
+   Host: platform.ringcentral.com
+   Authorization: Basic WW91ckFwcEtleTpZb3VyQXBwU2VjcmV0 
+   Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+   
+   grant_type=password&username=18887776655&extension=102&password=Myp@ssw0rd
+   ```
+
+## Using Access Tokens to Call RingCentral APIs
+
+Once an access token is obtained, it should be transmitted with each call to the RingCentral API using one of the following methods:
+
+**Option 1: Bearer (recommended)**
+
+Transmit the access token by way of the HTTP Bearer authentication scheme. For example:
+
+```http hl_lines="2"
+GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828
+Authorization: Bearer 2YotnFZFEjr1zCsicMWpAA 
+Host: platform.ringcentral.com
+Accept: application/json  
+Connection: keep-alive
+```
+
+**Option 2. Access token query parameter**
+
+Transmit the access token as a query parameter specified as a value. For example:
+
+```http hl_lines="1"
+GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828?access_token=2YotnFZFEjr1zCsicMWpAA
+Host: platform.ringcentral.com
+Accept: application/json  
+Connection: keep-alive
+```
 
 ## Token Revocation
 

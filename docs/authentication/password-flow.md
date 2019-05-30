@@ -1,16 +1,15 @@
 # Password Flow
 
-Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
+Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow to implement. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
 
-**Please note that this flow is considered to be less secure and requires an additional level of trust between you and the application.**
+!!! warning "Password Flow is rarely recommended"
+    The Password Flow is considered by many to be less secure because it requires an app to store a username and password in plain text by the server or client utilizing it. Utilizing the password flow requires an additional level of trust between you and the application.
 
-This authorization flow uses Resource Owner Password Credentials OAuth grant type.
-
-Two steps are required for this flow:
+This authorization flow uses Resource Owner Password Credentials OAuth grant type. Two steps are required for this flow:
 
 1.  The application by itself obtains user credentials from the user.
     
-2.  The application supplies user credentials and application credentials in a request to a token endpoint. Once the credentials are successfully verified, the application receives the access token and the refresh token in HTTP response.
+2.  The application supplies user credentials and application credentials in a request to a token endpoint. Once the credentials are successfully verified, the application receives the access token and the refresh token in an HTTP response.
 
 Resource Owner Password Credentials flow used by RingCentral results in obtaining an access token from API server. The general ROPC flow looks like this:
 
@@ -42,7 +41,7 @@ Content Type: application/x-www-form-urlencoded
 | `access_token_ttl`  | integer | Optional. Access token lifetime in seconds; the possible values are from 600 sec (10 min) to 3600 sec (1 hour). The default value is 3600 sec. If the value specified exceeds the default one, the default value is set. If the value specified is less than 600 seconds, the minimum value (600 sec) is set |
 | `refresh_token_ttl` |	integer | Optional. Refresh token lifetime in seconds. The default value depends on the client application, but as usual it equals to 7 days. If the value specified exceeds the default one, the default value is applied. |
 | `username`          | string  | Phone number in [E.164](http://en.wikipedia.org/wiki/E.164) format or email address linked to account or extension. **Please note:** You cannot use one and the same email address for authorization on different extensions (even if they are assigned to different accounts)
-vv| `extension`         | string  | Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator |
+| `extension`         | string  | Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator |
 | `password`          | string  | Required. User's password |
 	
 ## Step 2. Handling token server response
