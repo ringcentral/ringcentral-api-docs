@@ -36,12 +36,13 @@ copyright: "1999-2019 RingCentral, Inc. All rights reserved."
 google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
-- 'The Basics':
+- 'Basics':
   - 'Using the API':
     - 'Methods, Endpoints and Parameters': 'basics/uris.md'
     - 'Exploring the API': 'basics/explorer.md'
     - 'Developing in Sandbox': 'basics/sandbox.md'
     - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
+    - 'Media Content': 'basics/media.md'
     - 'Webhooks': 'basics/notifications/webhooks.md'
     - 'Mobile Push Notifications': 'basics/notifications/pubnub.md'
     - 'Rate Limits': 'basics/rate-limits.md'
