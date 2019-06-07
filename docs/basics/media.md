@@ -69,3 +69,7 @@ GET /account/230919004/extension/230919004/message-store/5209304004/content/5209
 Host: media.ringcentral.com
 Range: bytes=0-1023
 ```
+
+### HTTP 206 Partial
+
+Developers should also be aware of the potential that the server may respond with a 206 Partial response code indicating that only part of the file is being returned. In the event you received this header, you will need to download the file in chunks according to the [standard](https://tools.ietf.org/html/rfc7233). 
