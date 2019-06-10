@@ -59,9 +59,11 @@ pages:
 - 'Call Management':
   - 'Getting Started':
     - 'Node.js': 'call-management/quick-start/node.md'
+    - 'Python': 'call-management/quick-start/python.md'
+    - 'PHP': 'call-management/quick-start/php.md'
   - 'Developer Manual':
-    - 'Answering Rules': 'voice/answering-rules.md'
-    - 'Call Queues': 'voice/call-queues.md'
+    - 'Answering Rules': 'call-management/answering-rules.md'
+    - 'Call Queues': 'call-management/call-queues.md'
 
 - 'Glip':
   - 'Getting Started':
