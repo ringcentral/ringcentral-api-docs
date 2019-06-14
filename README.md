@@ -23,6 +23,7 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 % git clone https://github.com/ringcentral/ringcentral-api-docs.git
 % cd ringcentral-api-docs
 % pip install mkdocs
+% pip install mkdocs-moonstone
 % mkdocs serve
 ```
 
