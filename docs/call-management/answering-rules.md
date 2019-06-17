@@ -17,11 +17,7 @@ Answering rules are handled by the `account/~/extension/~/answering-rule` endpoi
 |--------|----------|-------------|
 | `GET` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/` | Get extension rule list |
 
-```http
-GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-
+```json
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&perPage=100",
   "records": [
@@ -57,20 +53,7 @@ Authorization: Bearer MyAccessToken
 |--------|----------|-------------|
 | `GET` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Get a rule |
 
-**Example Request**
-
-```http
-GET /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-```
-
-**Example Response**
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
+```json
 {
     "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
     "id": "business-hours-rule",
@@ -170,19 +153,11 @@ Answering rules can be updated by configuring forwarding numbers individuall and
 
 The `ringCount` property indicates how many times the call should ring before moving to the next rule. Each ring corresponds to 5 seconds in the Online Account Portal.
 
-**Example Request**
-
-
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Update a rule |
 
-```http
-PUT /restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-Content-Type: application/json
-
+```json
 {
   "forwarding": {
     "rules": [
@@ -223,14 +198,7 @@ An update can be written as follows:
 |--------|----------|-------------|
 | `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}` | Update a forwarding number |
 
-**Example Request**
-
-```http
-PUT /restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333 HTTP/1.1
-Accept: application/json
-Authorization: Bearer MyAccessToken
-Content-Type: application/json
-
+```json
 {
   "phoneNumber": "+16505551212"
 }

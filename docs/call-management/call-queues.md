@@ -14,22 +14,9 @@ The List Extensions endpoint can be used to retrieve a list of call queues, know
 |--------|----------|-------------|
 | `GET`  | `v1.0/account/{accountId}/extension?type=Department` | Read a list of call queues, aka departments |
 
-**Example Request**
+**Sample Response**
 
-```http
-GET /restapi/v1.0/account/11111111/extension?type=Department
-Accept: application/json
-Content-Type: application/json
-Accept-Language: en-US
-Authorization: Bearer MyToken
-```
-
-**Example Response**
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
+```json
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&page=1&perPage=100",
   "records" : [
@@ -69,20 +56,9 @@ To get the agent members of a queue, call the department members endpoint.
 |--------|----------|-------------|
 | `GET` | `v1.0/account/{accountId}/department/{departmentId}/members` | Read department members |
 
-**Example Request**
+**Sample Response**
 
-```http
-POST /restapi/v1.0/account/11111111/department/22223333/members
-Accept: application/json
-Authorization: Bearer MyToken
-```
-
-**Example Response**
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
+```json
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&perPage=100",
   "records" : [
@@ -110,14 +86,7 @@ Users can be added and removed as queue agents using the `account/{accountId}/de
 |--------|----------|-------------|
 | `POST` | `v1.0/account/{accountId}/department/bulk-assign` | Add and remove multiple users from one or more departments |
 
-**Example Request**
-
-```http
-POST /restapi/v1.0/account/11111111/department/bulk-assign
-Accept: application/json
-Content-Type: application/json
-Authorization: Bearer MyToken
-
+```json
 {
   "items" : [
     {
@@ -139,7 +108,7 @@ Authorization: Bearer MyToken
 }
 ```
 
-**Example Response**
+**Sample Response**
 
 ```http
 HTTP/1.1 204 No Content
@@ -162,21 +131,9 @@ A user extension's queue agent status is set by the extension presence `dndStatu
 |--------|----------|-------------|
 | `GET` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Read extension presence |
 
-**Example Request**
+**Sample Response**
 
-```http
-GET /restapi/v1.0/account/11111111/extension/11112222/presence
-Accept: application/json
-Authorization: Bearer MyToken
-```
-
-**Example Response**
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 530
-
+```json
 {
   "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222/presence",
   "extension" : {
@@ -203,13 +160,7 @@ To enable or disable an user extension's queue agent presence, update the extens
 |--------|----------|-------------|
 | `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Update extension presence |
 
-**Example Request**
-
-```http
-PUT /restapi/v1.0/account/11111111/extension/11112222/presence
-Accept: application/json
-Authorization: Bearer MyToken
-
+```json
 {
   "dndStatus": "DoNotAcceptDepartmentCalls"
 }
@@ -217,6 +168,4 @@ Authorization: Bearer MyToken
 
 ## Subscribe for Presence Notification Events
 
-To receive events about presence changes to an extension, you can make a subscription for the following extension presence information using the following event filter. To subscribe for multiple extensions, multiple event filters, one or more per extension can be supplied for a single subscription.
-
-`v1.0/account/{accountId}/extension/{extensionId}/presence?detailedTelephonyState=true`
+You can receive events about presence changes to an extension by subscribing to extension specific presence information using an event filter. To learn more, consult our documentation relating to our [Presence API](../../../voice/presence/).
