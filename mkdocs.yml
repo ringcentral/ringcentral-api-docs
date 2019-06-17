@@ -85,6 +85,7 @@ pages:
     - 'Node.js': 'messaging/quick-start/node.md'
     - 'Python': 'messaging/quick-start/python.md'
     - 'PHP': 'messaging/quick-start/php.md'
+    - 'Java': 'messaging/quick-start/java.md'
     - 'C#': 'messaging/quick-start/c-sharp.md'
     - 'Ruby': 'messaging/quick-start/ruby.md'
   - 'SMS':
