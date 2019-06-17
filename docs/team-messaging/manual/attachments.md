@@ -10,6 +10,7 @@ Glip Message Attachments allow developers to attach rich content to posts with f
 
 !!! note "What to be aware of when using message attachments"
     * All fields except `text` have a character limit of 300 bytes.
+    * The cummulative size limit for all attachments is 1.5M bytes. 
     * "Glipdown," a RingCentral flavor of Markdown, provides some text formatting options (bold, italics, links, etc.)
 
 ## Posting Messages via the REST API
