@@ -128,6 +128,47 @@ for record in resp.body['records'] do
 end
 ```
 
+```java tab="Java"
+package Read_CallLog;
+
+import java.io.IOException;
+
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+
+public class Read_CallLog {
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+    		try {
+          readUserCallLog();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+  	public static void readUserCallLog() throws RestException, IOException{
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+        HttpClient.QueryParameter dateFrom = new HttpClient.QueryParameter("view", "Simple");
+
+        ResponseBody response = restClient.restApi().account().extension().callLog().get(view);
+        ExtensionCallLogResponse resp = new Gson().fromJson(response.string(), ExtensionCallLogResponse.class);
+  	    for (CallLogRecord record : resp.records) {
+  	    	  System.out.println("Call type: " + record.type);
+  	    }
+    }
+}
+```
+
 ```c# tab="C#"
 using System;
 using System.Threading.Tasks;
