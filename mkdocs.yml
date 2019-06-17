@@ -8,7 +8,7 @@ docs_dir: docs
 plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
-      branch: master
+      branch: api-ref-ia-sync
   - bootstrap-tables
 
 theme:
@@ -45,6 +45,7 @@ pages:
     - 'Media Content': 'basics/media.md'
     - 'Webhooks': 'basics/notifications/webhooks.md'
     - 'Mobile Push Notifications': 'basics/notifications/pubnub.md'
+    - 'App Permissions': 'basics/permissions.md'
     - 'Rate Limits': 'basics/rate-limits.md'
   - 'Application Management':
     - 'Creating an Application': 'basics/create-app.md'
@@ -55,137 +56,19 @@ pages:
   - 'Account Management':
     - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
     - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
-  - 'Messaging':
-    - 'Sending Messages': 'basics/messaging.md'
-    - 'Message Synchronization': 'basics/message-sync.md'
-- 'Authentication':
-  - 'Getting Started':
-  #  - 'Password Flow':
-  #    - 'Node.js': 'authentication/quick-start/password-flow/node.md'
-  #    - 'Python': 'authentication/quick-start/password-flow/python.md'
-  #    - 'PHP': 'authentication/quick-start/password-flow/php.md'
-  #    - 'C#': 'authentication/quick-start/password-flow/c-sharp.md'
-    - 'Authorization Flow':
-      - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
-      - 'Python': 'authentication/quick-start/authorization-flow/python.md'
-      - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
-      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
-      - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
-  - 'Developer Manual':
-    - 'Auth Types': 'basics/oauth.md'
 
-- 'Notifications and Events':
-  - 'Getting Started':
-    - 'PubNub':
-      - 'Node.js': 'notifications/quick-start/pubnub/node.md'
-      - 'Python': 'notifications/quick-start/pubnub/python.md'
-      - 'PHP': 'notifications/quick-start/pubnub/php.md'
-      - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
-      - 'Java': 'notifications/quick-start/pubnub/java.md'
-    - 'WebHook':
-      - 'Node.js': 'notifications/quick-start/webhook/node.md'
-      - 'Python': 'notifications/quick-start/webhook/python.md'
-      - 'PHP': 'notifications/quick-start/webhook/php.md'
-      - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
-#  - 'Developer Manual':
+# ---- CORE APIs ----
 
-  - 'API Reference':
-    - 'Create Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-createSubscription'
-    - 'Get Subscriptions': 'https://developer.ringcentral.com/api-reference#Subscriptions-listSubscriptions'
-    - 'Renew Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-updateSubscription'
-    - 'Delete Subscription': 'https://developer.ringcentral.com/api-reference#Subscriptions-deleteSubscription'
-  - 'Sample Applications':
-    - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
-    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
-#
-- 'SMS':
+- 'Call Management':
   - 'Getting Started':
-    - 'Node.js': 'sms/quick-start/node.md'
-    - 'Python': 'sms/quick-start/python.md'
-    - 'PHP': 'sms/quick-start/php.md'
-    - 'C#': 'sms/quick-start/c-sharp.md'
-    - 'Java': 'sms/quick-start/java.md'
-    - 'Ruby': 'sms/quick-start/ruby.md'
+    - 'Node.js': 'call-management/quick-start/node.md'
+    - 'Python': 'call-management/quick-start/python.md'
+    - 'PHP': 'call-management/quick-start/php.md'
   - 'Developer Manual':
-    - 'Valid Sending Numbers': 'sms/tutorials/valid-sms-numbers.md'
-    - 'Sending an SMS': 'sms/tutorials/sending-sms.md'
-    - 'Sending Images over SMS': 'sms/tutorials/sending-images.md'
-    - 'Pager Messages': 'sms/pager.md'
-    - 'Message Attachments': 'sms/tutorials/message-attachments.md'
-    - 'Tracking Delivery Status': 'sms/tutorials/delivery-status.md'
-    - 'Message Histories': 'sms/tutorials/message-histories.md'
-    - 'Working with Message Store': 'sms/tutorials/message-store.md'
-  - 'API Reference':
-    - 'Send SMS': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS'
-    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessagesByFilter'
-    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-loadMessage'
-    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-updateMessage'
-    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-deleteMessage'
-    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#SMS-and-MMS-getMessageAttachmentById'
-  - 'Sample Applications':
-    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
-    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
-    - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
-- 'Voice':
-  - 'Getting Started':
-    - 'Node.js': 'voice/quick-start/node.md'
-    - 'Python': 'voice/quick-start/python.md'
-    - 'PHP': 'voice/quick-start/php.md'
-    - 'C#': 'voice/quick-start/c-sharp.md'
-    - 'Java': 'voice/quick-start/java.md'
-    - 'Ruby': 'voice/quick-start/ruby.md'
-  - 'Developer Manual':
-    - 'Place a Call: RingOut': 'voice/ringout.md'
-    - 'Place a Call: WebRTC': 'voice/webrtc.md'
-    - 'Call Queues': 'voice/call-queues.md'
-    - 'Call Control': 'voice/call-control.md'
-    - 'Answering Rules': 'voice/answering-rules.md'
-    - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'Supervising Calls': 'voice/supervision.md'
-    - 'Presence': 'voice/presence.md'
-  - 'API Reference':
-    - 'Make Call': 'https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall'
-    - 'Get Call Status': 'https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus'
-    - 'Cancel Call': 'https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall'
-    - 'Call Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallSessionStatus'
-    - 'Drop Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-deleteCallSession'
-    - 'Hold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-holdCallParty'
-    - 'Unhold Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-unholdCallParty'
-    - 'Reject Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-rejectParty'
-    - 'Transfer Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-transferCallParty'
-    - 'Forward Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-forwardCallParty'
-    - 'Flip Call': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-callFlipParty'
-    - 'Call Party Status': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-getCallPartyStatus'
-    - 'Update Call Party': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-updateCallParty'
-    - 'Start Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-startCallRecording'
-    - 'Pause/Resume Recording': 'https://developer.ringcentral.com/api-reference#Call-Control-Beta-pauseResumeCallRecording'
-  - 'Sample Applications':
-    - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
-- 'Fax':
-  - 'Getting Started':
-    - 'Node.js': 'fax/quick-start/node.md'
-    - 'Python': 'fax/quick-start/python.md'
-    - 'PHP': 'fax/quick-start/php.md'
-    - 'C#': 'fax/quick-start/c-sharp.md'
-    - 'Java': 'fax/quick-start/java.md'
-    - 'Ruby': 'fax/quick-start/ruby.md'
-  - 'Developer Manual':
-    - 'Sending Faxes': 'fax/tutorials/sending-faxes.md'
-    - 'Receiving Faxes': 'fax/tutorials/receiving-faxes.md'
-    - 'Forwarding and Resending': 'fax/tutorials/resending-faxes.md'
-    - 'Working with Message Store': 'sms/tutorials/message-store.md'
-  - 'API Reference':
-    - 'Create Fax': 'https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage'
-    - 'Get Cover Pages': 'https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages'
-    - 'Get Message List': 'https://developer.ringcentral.com/api-reference#Fax-listMessages'
-    - 'Delete Conversation': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter'
-    - 'Get Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-loadMessage'
-    - 'Update Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-updateMessage'
-    - 'Delete Message(s)': 'https://developer.ringcentral.com/api-reference#Fax-deleteMessage'
-    - 'Get Attachment': 'https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById'
-  - 'Sample Applications':
-    - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-- 'Team Messaging':
+    - 'Answering Rules': 'call-management/answering-rules.md'
+    - 'Call Queues': 'call-management/call-queues.md'
+
+- 'Glip':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
   - 'Developer Manual':
@@ -196,42 +79,108 @@ pages:
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
-- 'Call Logs':
+
+- 'Messaging':
   - 'Getting Started':
-    - 'Node.js': 'call-log/quick-start/node.md'
-    - 'Python': 'call-log/quick-start/python.md'
-    - 'PHP': 'call-log/quick-start/php.md'
-    - 'C#': 'call-log/quick-start/c-sharp.md'
-    - 'Java': 'call-log/quick-start/java.md'
-    - 'Ruby': 'call-log/quick-start/ruby.md'
-  - 'Developer Manual':
-    - 'Overview': 'call-log/manual/overview.md'
-    - 'Data Archival': 'call-log/manual/archival.md'
-    - 'API Basics': 'call-log/manual/api.md'
-    - 'Call Recordings': 'call-log/manual/recordings.md'
-    - 'Synchronization': 'call-log/manual/sync.md'
-    - 'Detailed Call Log Data': 'call-log/manual/details.md'
-    - 'Best Practices': 'call-log/manual/best-practices.md'
-    - 'Access Control': 'call-log/manual/access.md'
+    - 'Node.js': 'messaging/quick-start/node.md'
+    - 'Python': 'messaging/quick-start/python.md'
+    - 'PHP': 'messaging/quick-start/php.md'
+    - 'C#': 'messaging/quick-start/c-sharp.md'
+    - 'Ruby': 'messaging/quick-start/ruby.md'
+  - 'SMS':
+    - 'Sending an SMS': 'messaging/sms/sending-sms.md'
+    - 'Sending an MMS': 'messaging/sms/sending-images.md'
+    - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+  - 'Fax':
+    - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
+    - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
+    - 'Receiving Faxes': 'messaging/fax/receiving-faxes.md'
+    - 'Forwarding and Resending Faxes': 'messaging/fax/resending-faxes.md'
+  - 'Pager Messages':
+    - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
+  - 'Message Store':
+    - 'Sending Messages': 'messaging/message-store/messaging.md'
+    - 'Working with Message Store': 'messaging/message-store/message-store.md'
+    - 'Message Synchronization': 'messaging/message-store/message-sync.md'
+    - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
   - 'Sample Applications':
-    - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
-    - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
-    - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
+    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+    - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
+    - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+
 - 'Meetings':
   - 'Getting Started':
     - 'Node.js': 'meetings/quick-start/node.md'
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
-    - 'Java': 'meetings/quick-start/java.md'
     - 'Ruby': 'meetings/quick-start/ruby.md'
-  - 'API Reference':
-    - 'Get Scheduled Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings
-    - 'Create Meetings': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting
-    - 'Get Meeting Info': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting
-    - 'Update Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting
-    - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
-    - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
-    - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
-    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
-    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
+
+- 'Voice':
+  - 'Getting Started':
+    - 'Node.js': 'voice/quick-start/node.md'
+    - 'Python': 'voice/quick-start/python.md'
+    - 'PHP': 'voice/quick-start/php.md'
+    - 'C#': 'voice/quick-start/c-sharp.md'
+    - 'Java': 'voice/quick-start/java.md'
+    - 'Ruby': 'voice/quick-start/ruby.md'
+  - 'Placing Calls':
+    - 'RingOut': 'voice/ringout.md'
+    - 'WebRTC': 'voice/webrtc.md'
+    - 'URI Scheme': 'voice/uri-scheme.md'
+  - 'Active Calls':
+    - 'Reading Active Calls': 'voice/active-calls.md'
+    - 'Call Control': 'voice/call-control.md'
+    - 'Supervising Calls': 'voice/supervision.md'
+    - 'Presence': 'voice/presence.md'
+  - 'Call Logs':
+    - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
+    - 'Data Types': 'voice/call-log/api.md'
+    - 'Detailed Call Log Data': 'voice/call-log/details.md'
+    - 'Data Archival': 'voice/call-log/archival.md'
+    - 'Call Recordings': 'voice/call-log/recordings.md'
+    - 'Synchronization': 'voice/call-log/sync.md'
+    - 'Best Practices': 'voice/call-log/best-practices.md'
+    - 'Access Control': 'voice/call-log/access.md'
+  - 'Sample Applications':
+    - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
+    - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
+    - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
+    - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+  
+# ---- SECONDARY APIs ----
+
+- 'Authentication':
+  - 'Getting Started':
+    - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
+    - 'Python': 'authentication/quick-start/authorization-flow/python.md'
+    - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
+    - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
+    - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
+  - 'Developer Manual':
+    - 'Auth Flows': 'authentication/oauth.md'
+    - 'Auth Tokens': 'authentication/tokens.md'
+    - 'Auth Code Flow': 'authentication/auth-code-flow.md'
+    - 'Password Flow': 'authentication/password-flow.md'
+    - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
+    - 'Client Credentials Flow': 'authentication/client-creds.md'
+
+- 'Notifications and Events':
+  - 'Getting Started':
+    - 'PubNub':
+      - 'Node.js': 'notifications/quick-start/pubnub/node.md'
+      - 'Python': 'notifications/quick-start/pubnub/python.md'
+      - 'PHP': 'notifications/quick-start/pubnub/php.md'
+      - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
+    - 'WebHook':
+      - 'Node.js': 'notifications/quick-start/webhook/node.md'
+      - 'Python': 'notifications/quick-start/webhook/python.md'
+      - 'PHP': 'notifications/quick-start/webhook/php.md'
+      - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
+  - 'Developer Manual':
+    - 'Webhooks': 'notifications/manual/webhooks.md'
+    - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
+  - 'Sample Applications':
+    - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
+    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
