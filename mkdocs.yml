@@ -114,6 +114,7 @@ pages:
     - 'Node.js': 'meetings/quick-start/node.md'
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
+    - 'Java': 'meetings/quick-start/java.md'
     - 'C#': 'meetings/quick-start/c-sharp.md'
     - 'Ruby': 'meetings/quick-start/ruby.md'
 
