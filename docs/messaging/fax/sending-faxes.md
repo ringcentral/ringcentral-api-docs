@@ -147,6 +147,54 @@ resp = platform.send_request(request)
 print 'Fax sent. Message status: ' + resp.json().messageStatus
 ```
 
+```java tab="Java"
+package Send_Fax;
+
+import java.io.IOException;
+
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+import com.google.gson.Gson;
+
+public class Send_Fax {
+    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+
+  	static RestClient restClient;
+
+  	public static void main(String[] args) {
+    		try {
+          sendFax();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+  	public static void sendFax() throws RestException, IOException{
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+                
+        String body = "{"
+        	    		+ "\"to\": [{ \"phoneNumber\": \"" + RECIPIENT_NUMBER + "\"}],"
+        	    		+ "\"faxResolution\": \"High\","
+        	    		+ "\"coverPageText\": \"This is a demo Fax page from Java\"}";
+
+        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.MIXED)
+        	 .addPart(RequestBody.create(MediaType.parse("application/json"), body))
+        	 .addFormDataPart("attachment", "test.jpg", RequestBody.create(MediaType.parse("image/jpeg"), Files.readAllBytes(Paths.get("./src/test/resources/test.jpg"))))
+        	 .build();
+        ResponseBody response = restClient.restApi().account().extension().fax().post(requestBody);
+        FaxResponse resp = new Gson().fromJson(response.string(), FaxResponse.class);
+        System.out.println("SMS sent. Message status: " + response.messageStatus);
+    }
+}
+```
+
 ```c# tab="C#"
 using System;
 using System.Threading.Tasks;
