@@ -69,11 +69,12 @@ pages:
 - 'Glip':
   - 'Getting Started':
     - 'Node.js': 'team-messaging/quick-start/node.md'
-  - 'Developer Manual':
+  - 'Posting Glip Messages':
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
+    - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
+  - 'Glip Bots':
     - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
     - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
-    - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
   - 'Sample Applications':
     - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
     - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
