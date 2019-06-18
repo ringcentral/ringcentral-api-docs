@@ -6,6 +6,10 @@ One can send images and other files via SMS as well. Doing so requires developer
 
 When assembling a multipart message, it is important to remember that the root part, or first part of the request is always the request body or payload. Subsequently you attach images and files to the request. You can see how this is done via the code samples below.
 
+!!! warning "Attachment Limitations"
+    * There is a combined limit of 1.5M bytes for all attachments.
+    * There is a limit of 10 attachments for any request. 
+
 ```javascript tab="Javascript" hl_lines="15 16 17 18 19 20 21"
 const SDK = require('ringcentral')
 const FormData = require('form-data')
