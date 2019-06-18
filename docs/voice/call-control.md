@@ -2,8 +2,6 @@
 
 The Call Control API is a REST based interface, allowing developers to customize and integrate your phone system everywhere. It will help you build creative solutions based on our phone service and improve customer communications experience. The Call Control API makes it easy to make, retrieve, control and monitor calls.
 
-*Please note that the API is currently in beta and subject to change. To gain access to this API please contact devsupport@ringcentral.com.*
-
 ## Terminology
 
 *Session* - In the context of a call , a session is a high level resource, that contains all the 	 elements of a call, including the parties involved in the call.
@@ -12,13 +10,13 @@ The Call Control API is a REST based interface, allowing developers to customize
 
 ## Telephony Sessions Notifications
 
-*telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions. 
+*telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions.
 
 The Extension Level Event Filter is: /restapi/v1.0/account/~/telephony/sessions
 
 The Account Level Event Filter is: /restapi/v1.0/account/telephony/sessions
 
-Based on the level where the subscription is configured,you will receive notifications accordingly and use the data there , primarily *telephonySessionId* & *partyId* to control an active call. 
+Based on the level where the subscription is configured,you will receive notifications accordingly and use the data there , primarily *telephonySessionId* & *partyId* to control an active call.
 
 *telephonySessionId* : The telephonySessionId represents an active Session and can be utilized to manage the session using Call Control APIs described later at a session level, example ending an active call.
 
@@ -26,16 +24,16 @@ Based on the level where the subscription is configured,you will receive notific
 
 *Prerequisites for Using Call Control API* : The Prerequisites for using call control APIs are
 
-                                             
+
 1. Advanced User Permission - Call Control API is in Advanced API Category
 
 2. Access to *telephonySessionId* and *partyId* for an Active Call. The access to these 2 components can be obtained in the following ways:
 
     * You can use presence endpoints to make a GET call to get active call details for a current user, including *telephonySessionId* and *partyId* , which you can then use to control parts of an Active Call.
-    * You can user Telephony Sessions Subscriptions explained in the begining and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
+    * You can user Telephony Sessions Subscriptions explained in the beginning and covered later in the section to get all the status updates for various stages of an Active call from start to end including *telephonySessionId* and *partyId* data, which can then be used to control an active call. Details are covered later in the section.
     * You can also get *telephonySessionId* and *partyId*  by subscribing to Detail presence notifications(/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true).
 
-## Subscribe to Telephony Notifications 
+## Subscribe to Telephony Notifications
 
 Currently RingCentral provides a few ways to detect new or in-progress call via Push Notification mechanism:
 
@@ -189,9 +187,7 @@ Push Notification Example:
 
 ## Using the Call Control API
 
-RC User is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.
-
-*NOTE*: In Release 10.3 we're planning to provide **Call Out** API to initiate a call.
+RingCentral user is able to initiate a call via RC app: RC Phone, Glip, RingOut via Service Site, etc.
 
 Once the call is initiated User can get Session details either from telephony/session Push Notification or from API response if call was started via RingOut or CallOut REST API.
 
@@ -261,8 +257,6 @@ Authorization: Bearer <access-token>
 *NOTE*: There are specific scenarios when the call became splitted to multiple Sessions.
 
 ## Pre-Call Control
-
-Pre-Call Controls are soft keys that allow you to choose an action for an incoming call. In Beta version of **Call Control** API you'll be able to use the following distribution options:
 
 ### Forwarding Calls
 
@@ -340,7 +334,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 ```
 
-**Tips**: 
+**Tips**:
 
 * You can configure the your [Music on Hold via API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefUserCustomGreetingList.html). Keep callers informed and entertained with messages and music on hold.
 
@@ -360,7 +354,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 "phoneNumber":"+12059690601"
 }
 ```
-**Tips**: 
+**Tips**:
 
 * There is an option to transfer the call via Main Company Number + extension number, e.g. "phoneNumber":"+18882101932*104". In future releases we're planning to remove this option, but provide an ability to Transfer and Forward the call using **extensionNumber**.
 

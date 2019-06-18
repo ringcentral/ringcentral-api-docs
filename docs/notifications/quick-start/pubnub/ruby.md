@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# PubNub Notifications Python Quick Start
+# PubNub Notifications Ruby Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,21 +37,19 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Subscribe for push notification
 
-### Install RingCentral Python SDK
+### Install RingCentral Ruby SDK
 
 ```bash
-$ pip install ringcentral
+$ gem install ringcentral-sdk
 ```
 
-### Create and Edit pubnub_notification.py
+### Create and Edit pubnub_notification.rb
 
-Create a file called <tt>pubnub_notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>pubnub_notification.rb</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```python
-from multiprocessing import Process
-from time import sleep
-from ringcentral.subscription import Events
-from ringcentral import SDK
+```ruby
+require 'ringcentral'
+require 'subscription'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -61,35 +59,27 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+$rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+$rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-def on_message(msg):
-    print (msg)
+def createSubscription(callback)
+    events = [
+        '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
+    ]
+    subscription = PubNub.new($rc, events, lambda { |message|
+        callback.call(message)
+    })
+    subscription.subscribe()
+    puts "Waiting for incoming SMS message ..."
+    while 1
+        sleep(5)
+    end
+end
 
-def pubnub():
-    try:
-        s = rcsdk.create_subscription()
-        s.add_events(['/account/~/extension/~/message-store/instant?type=SMS'])
-        s.on(Events.notification, on_message)
-        res = s.register()
-        try:
-            print("Wait for notification...")
-        except Exception as e:
-            print (e)
-        while True:
-            sleep(0.1)
+createSubscription(lambda { |msg|
+    puts msg
+})
 
-    except KeyboardInterrupt:
-        print("Pubnub listener stopped...")
-
-p = Process(target=pubnub)
-try:
-    p.start()
-except KeyboardInterrupt:
-    p.terminate()
-    print("Stopped by User")
 ```
 
 ### Run Your Code
@@ -97,7 +87,7 @@ except KeyboardInterrupt:
 You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
 
 ```bash
-$ python pubnub_notification.py
+$ ruby pubnub_notification.rb
 ```
 
 ## Graduate Your App

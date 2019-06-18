@@ -81,6 +81,7 @@ pages:
       - 'Python': 'notifications/quick-start/pubnub/python.md'
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
+      - 'Ruby': 'notifications/quick-start/pubnub/ruby.md'
       - 'Java': 'notifications/quick-start/pubnub/java.md'
     - 'WebHook':
       - 'Node.js': 'notifications/quick-start/webhook/node.md'
@@ -233,5 +234,5 @@ pages:
     - 'Delete Meeting': https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting
     - 'End Meeting': https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting
     - 'Get Meeting Service Info': https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo
-    - 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
-    - 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings
+    #- 'Get Account Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings
+    #- 'Get User Meeting Recordings': https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings

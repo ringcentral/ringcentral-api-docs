@@ -66,8 +66,10 @@ $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
 $params = array(
-   'view' => 'Simple'
-    );
+   'dateFrom' => '2019-01-01T00:00:00.000Z',
+   'type' => array ('Voice'),
+   'direction' => array ('Outbound')
+   );
 $resp = $platform->get('/account/~/extension/~/call-log', $params);
 foreach ($resp->json()->records as $record) {
     print_r ("Call type: ".$record->type);

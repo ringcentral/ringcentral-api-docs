@@ -47,11 +47,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-
-    compile 'com.ringcentral:ringcentral:0.6.4'
-
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
 }
 ```
 
@@ -106,7 +102,7 @@ public class Send_Fax {
   	public static void sendFax() throws RestException, IOException{
         restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
         restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-                
+
         String body = "{"
         	    		+ "\"to\": [{ \"phoneNumber\": \"" + RECIPIENT_NUMBER + "\"}],"
         	    		+ "\"faxResolution\": \"High\","

@@ -23,11 +23,20 @@ const RC = require('ringcentral')
 
 var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
 var platform = rcsdk.platform();
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
+
+platform.login( {username: "username", password: "password", extension: "extension_number"
+    })
     .then(function(resp) {
         platform.get('/account/~/extension/~/phone-number')
           .then(function (response) {
-              console.log(response)
+              var jsonObj = response.json()
+              for (var record of jsonObj.records)
+              {
+                  console.log("This phone number " + record.phoneNumber + " has the following features: " );
+                	for (var feature of record.features) {
+                		console.log("=> " + feature);
+                	}
+              }
           })
     });
 ```
@@ -38,8 +47,12 @@ from ringcentral import SDK
 sdk = SDK( "client_id", "client_secret", "server_url" )
 platform = sdk.platform()
 platform.login( "username", "extension", "password" )
+
 response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
-print (response)
+for record in response.json().records:
+    print "This phone number " + record.phoneNumber + " has the following features: "
+    for feature in record.features:
+        print " => " + feature
 ```
 
 ```php tab="PHP"
@@ -49,18 +62,75 @@ require('vendor/autoload.php');
 $rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 $platform = $rcsdk->platform();
 $platform->login( "username", "extension_number", "password" );
+
 $response = $platform->get('/account/~/extension/~/phone-number');
-print_r ($response . "\n");
+foreach ($response->json()->records as $record){
+    print_r ("This phone number ".$record->phoneNumber." has the following features: "."\n");
+    foreach ($record->features as $feature)
+        print_r (" => ".$feature."\n");
 ```
 
 ```c# tab="C#"
 using System;
+using System.Threading.Tasks;
 using RingCentral;
 
-RestClient rc = new RestClient( "client_id", "client_secret", false);
-await rc.Authorize( "username", "extension_number", "password");
-var response = await rc.Restapi().Account().Extension().PhoneNumber().List(parameters);
-Console.WriteLine(response);
+namespace Read_Phone_Number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            detect_phone_number_feature().Wait();
+        }
+        static private async Task detect_phone_number_feature()
+        {
+            RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+            await rc.Authorize("username", "extension_number", "password");
+
+            var response = await rc.Restapi().Account().Extension().PhoneNumber().Get();
+
+            foreach (var record in response.records)
+            {
+                Console.WriteLine("This phone number " + record.phoneNumber + " has the following features: " );
+              	foreach (var feature in record.features) {
+              		Console.WriteLine("=> " + feature);
+              	}
+            }
+        }
+    }
+}
+```
+
+```java tab="Java"
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+public class Read_Phone_Number {
+	  public static void main(String[] args) {
+    		try {
+    			detect_phone_number_feature();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+    public static void detect_phone_number_feature() throws RestException, IOException{
+        RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
+        restClient.authorize("username", "extension_number", "password");
+
+        restClient = new RestClient("client_id", "client_secret", "server_url");
+        restClient.authorize("username", "extension_number", "password");
+
+        var response = restClient.restapi().account().extension().phonenumber().get();
+        for (var record : response.records) {
+          	System.out.println("This phone number " + record.phoneNumber + " has the following features: " );
+          	for (var feature : record.features) {
+          		System.out.println("=> " + feature);
+          	}
+        }
+    }
+}
 ```
 
 ```ruby tab="Ruby"
@@ -68,8 +138,14 @@ require 'ringcentral'
 
 rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
 rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-response = rc.get '/restapi/v1.0/account/~/extension/~/phone-number'
-puts response
+response = rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
+
+for record in response.body['records'] do
+    puts "This phone number " + record['phoneNumber'] + " has the following features: "
+    for feature in record['features'] do
+        puts " => " + feature
+    end
+end
 ```
 
 This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
