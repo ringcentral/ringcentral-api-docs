@@ -8,7 +8,7 @@ docs_dir: docs
 plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
-      branch: api-ref-ia-sync
+      branch: 19.2.1
   - bootstrap-tables
 
 theme:
