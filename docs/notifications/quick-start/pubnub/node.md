@@ -94,7 +94,7 @@ subscription.on(subscription.events.notification, function(msg) {
 
 ### Run Your Code
 
-You are almost done. Now run your script.
+You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
 
 ```bash
 $ node pubnub-notification.js

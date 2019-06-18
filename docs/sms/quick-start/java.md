@@ -47,11 +47,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-
-    compile 'com.ringcentral:ringcentral:0.6.4'
-
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
 }
 ```
 
@@ -104,15 +100,15 @@ public class Send_SMS {
   	}
 
   	public static void sendSms() throws RestException, IOException{
-        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-        CreateSMSMessage postParameters = new CreateSMSMessage();
-        postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(RINGCENTRAL_USERNAME);
-        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
-        postParameters.text = "Hello World from Java";
+      restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+      restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+      CreateSMSMessage postParameters = new CreateSMSMessage();
+      postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(RINGCENTRAL_USERNAME);
+      postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
+      postParameters.text = "Hello World from Java";
 
-        MessageInfo response = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);
-        System.out.println("SMS sent. Message status: " + response.messageStatus);
+      var response = restClient.restapi().account().extension().sms().post(postParameters);
+      System.out.println("SMS sent. Message status: " + response.messageStatus);
     }
 }
 ```

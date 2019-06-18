@@ -47,11 +47,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-
-    compile 'com.ringcentral:ringcentral:0.6.4'
-
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
 }
 ```
 
@@ -103,15 +99,20 @@ public class Read_CallLog {
   	}
 
   	public static void readUserCallLog() throws RestException, IOException{
-        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-        HttpClient.QueryParameter dateFrom = new HttpClient.QueryParameter("view", "Simple");
+      restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+      restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
-        ResponseBody response = restClient.restApi().account().extension().callLog().get(view);
-        ExtensionCallLogResponse resp = new Gson().fromJson(response.string(), ExtensionCallLogResponse.class);
-  	    for (CallLogRecord record : resp.records) {
-  	    	  System.out.println("Call type: " + record.type);
-  	    }
+      ReadUserCallLogParameters getParameters = new ReadUserCallLogParameters();
+
+      getParameters.dateFrom = "2019-01-01T00:00:00.000Z";
+      getParameters.direction = new String[] {"Inbound" };
+      getParameters.type = new String[] {"Voice"};
+
+      var response = restClient.restapi().account().extension().calllog().list(getParameters);
+
+      for (CallLogRecord record : response.records) {
+        System.out.println("Call type: " + record.type);
+      }
     }
 }
 ```

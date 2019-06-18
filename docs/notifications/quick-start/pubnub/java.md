@@ -47,11 +47,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-
-    compile 'com.ringcentral:ringcentral:0.6.4'
-
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
 }
 ```
 
@@ -79,9 +75,12 @@ Be sure to edit the variables in ALL CAPS with your app and user credentials.
 package PubNub_Notifications;
 
 import java.io.IOException;
-import java.util.function.Consumer;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
+import com.ringcentral.pubnub.Subscription;
 
 public class PubNub_Notifications {
     static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
@@ -105,22 +104,25 @@ public class PubNub_Notifications {
         restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
         restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
-        Consumer<String> callback = payload -> {
-        		InstantMessageNotification notification = JSON.parseObject( payload, InstantMessageNotification.class);
-        		InstantMessageEvent body = notification.body;
-        		System.out.println(body.subject);
+        var eventFilters = new String[] {
+        	"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
         };
+        Subscription subscription = new Subscription(restClient, eventFilters, (message) -> {
+        	JSONObject jObject = JSON.parseObject(message);
+        	if (jObject.getString("event").contains("instant?type=SMS")) {
+	        	InstantMessageEvent notification = JSON.parseObject( message, InstantMessageEvent.class);
+	        	InstantMessageEventBody body = notification.body;
+	        	System.out.println(body.subject);
+        	}
+        });
 
-        Subscription subscription = restClient.subscription(
-    	            new String[]{"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"},
-    	            callback);
         subscription.subscribe();
         System.out.println("Ready to receive incoming SMS via PubNub.");
 
         try {
             while (true)
             {
-                Thread.sleep(60000);
+                Thread.sleep(10000);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -131,7 +133,7 @@ public class PubNub_Notifications {
 
 ### Run Your App
 
-You are almost done. Now run your app from Eclipse.
+You are almost done. Now run your app from Eclipse and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
 
 ## Graduate Your App
 

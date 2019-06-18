@@ -63,7 +63,9 @@ platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
 params = {
-    'view' : 'Simple'
+    'dateFrom': "2019-01-01T00:00:00.000Z",
+    'type': ['Voice'],
+    'direction': ['Outbound']
 }
 resp = platform.get('/restapi/v1.0/account/~/extension/~/call-log', params)
 for record in resp.json().records:

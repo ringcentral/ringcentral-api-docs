@@ -1,6 +1,6 @@
 # Working with the Message Store
 
-The RingCentral Message Store is a centralized repository of all the messages sent and received within the system. There are many types of messages that can stored here, including:
+The RingCentral Message Store is a centralized repository of all the messages sent and received within the system. There are many types of messages that can be stored here, including:
 
 * SMS and MMS messages
 * Faxes
@@ -59,10 +59,11 @@ const RC = require('ringcentral')
 
 var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
 var platform = rcsdk.platform();
+
 platform.login( {username: "username", password: "password", extension: "extension_number"} )
     .then(function(resp) {
         platform.get('/account/~/extension/~/message-store', {
-             messageType: 'SMS'
+             messageType: ['SMS']
         })
         .then(function (response) {
             console.log(JSON.stringify(response.json()))
@@ -80,7 +81,7 @@ platform.login( "username", "extension", "password" )
 
 response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
         {
-            'messageType': 'SMS'
+            'messageType': ['SMS']
         })
 print (response.text())
 ```
@@ -96,7 +97,7 @@ $platform->login( "username", "extension_number", "password" );
 
 $response = $platform->get('/account/~/extension/~/message-store',
     array(
-      'messageType' => 'SMS'
+      'messageType' => array('SMS')
     ));
 print_r ($response->text());
 ```
@@ -104,15 +105,60 @@ print_r ($response->text());
 ```c# tab="C#"
 using System;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 using RingCentral;
 
-RestClient rc = new RestClient( "client_id", "client_secret", false);
-await rc.Authorize( "username", "extension_number", "password");
-var parameters = new ListMessagesParameters();
-parameters.messageType = string[] ("SMS");
-var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
-var jsonStr = JsonConvert.SerializeObject(response);
-Console.WriteLine(jsonStr);
+namespace Read_MessageStore
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            read_users_presence().Wait();
+        }
+        static private async Task read_account_presence()
+        {
+            RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+            await rc.Authorize("username", "extension_number", "password");
+
+            var parameters = new ListMessagesParameters();
+            parameters.messageType = string[] ("SMS");
+            var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
+
+            var jsonStr = JsonConvert.SerializeObject(response);
+            Console.WriteLine(jsonStr);
+        }
+    }
+}
+```
+
+```java tab="Java"
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+public class Read_MessageStore {
+	  public static void main(String[] args) {
+    		try {
+    			read_user_message_store();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
+  	}
+
+    public static void read_user_message_store() throws RestException, IOException{
+        RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
+        restClient.authorize("username", "extension_number", "password");
+
+        ListMessagesParameters parameters = new ListMessagesParameters();
+        parameters.messageType = new String[] {"SMS"};
+
+        var response = restClient.restapi().account().extension().messagestore().list(parameters);
+
+        for (var record : response.records) {
+           	System.out.println(record.messageStatus);
+        }
+    }
+}
 ```
 
 ```ruby tab="Ruby"
@@ -120,7 +166,7 @@ require 'ringcentral'
 
 rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
 rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-response = rc.get('/account/~/extension/~/message-store', payload:
+response = rc.get('/account/~/extension/~/message-store',
     {
         messageType: 'SMS'
     })

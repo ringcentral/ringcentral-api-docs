@@ -75,7 +75,9 @@ platform.login({
 
 function read_user_calllog(){
     platform.get('/account/~/extension/~/call-log', {
-             view: 'Simple'
+            dateFrom: "2019-01-01T00:00:00.000Z",
+            type: ['Voice'],
+            direction: ['Outbound']
         })
         .then(function (resp) {
             for (var record of resp.json().records)

@@ -50,11 +50,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-
-    compile 'com.ringcentral:ringcentral:0.6.4'
-
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
 }
 ```
 

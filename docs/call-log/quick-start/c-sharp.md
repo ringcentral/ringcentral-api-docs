@@ -76,7 +76,10 @@ namespace Read_CallLog
             if (rc.token.access_token.Length > 0)
             {
                 var parameters = new LoadUserCallLogParameters();
-                parameters.view = "Simple";
+                parameters.dateFrom = "2019-01-01T00:00:00.000Z";
+                parameters.type = string[] { "Voice" };
+                parameters.direction = string[] { "Outbound" }
+                
                 var resp = await rc.Restapi().Account().Extension().CallLog().List(parameters);
                 foreach (CallLogRecord record in resp.records)
                 {
