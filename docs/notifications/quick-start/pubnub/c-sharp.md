@@ -84,8 +84,10 @@ namespace PubNub_Notifications
                     var subscription = new Subscription(rc, eventFilters, message =>
                     {
                         var jsonObj = JObject.Parse(message);
-                        var msg = jsonObj["body"]["subject"];
-                        Console.WriteLine(msg);
+                        if (jsonObj["event"].ToString().Contains("instant?type=SMS"))
+                        {
+                            Console.WriteLine(jsonObj["body"]["subject"]);
+                        }
                     });
                     var subscriptionInfo = await subscription.Subscribe();
                     Console.WriteLine("Ready to receive incoming SMS via PubNub.");
@@ -106,7 +108,7 @@ namespace PubNub_Notifications
 
 ### Run Your App
 
-You are almost done. Now run your app from Visual Studio.
+You are almost done. Now run your app from Visual Studio and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
 
 ## Graduate Your App
 
