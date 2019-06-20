@@ -29,6 +29,11 @@
                 "name": "C#",
                 "githubUri": "https://github.com/ringcentral-tutorials/sms-api-csharp-demo/",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-csharp-demo/"
+            },
+            {
+                "name": "Java",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-api-java-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/sms-api-java-demo/"
             }
         ]
     },
