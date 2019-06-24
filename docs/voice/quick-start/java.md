@@ -44,10 +44,10 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Enter project name "Call_RingOut"
 * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-```json hl_lines="4",linenums="1"
+```json hl_lines="3",linenums="1"
 dependencies {
     // ...
-    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta10'
 }
 ```
 

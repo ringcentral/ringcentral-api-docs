@@ -26,26 +26,9 @@ Below is a sample response from the Presence API to illustrate the visibility it
 }
 ```
 
-## Example Presence Apps
+## Sample Code to Get Started with Presence
 
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
-
-$rcsdk = new RingCentral\SDK\SDK("client_id", "client_secret", "server_url");
-
-$platform = $rcsdk->platform();
-$platform->login("username", "extension_number", "password");
-
-$resp = $platform->get('/account/~/presence',
-    array(
-        'detailedTelephonyState' => true
-    ));
-foreach ($resp->json()->records as $record)
-    print_r ($record->userStatus . "\n");
-```
-
-```javascript tab="Node JS"
+```javascript tab="JavaScript"
 const RC = require('ringcentral')
 
 var rcsdk = new RC({ server: "server_url", appKey: "client_id", appSecret: "client_secret" });
@@ -64,9 +47,6 @@ platform.login({
                 console.log(record.userStatus)
               }
           })
-          .catch(function(e){
-              console.log(e.message)
-          });
     });
 ```
 
@@ -85,6 +65,23 @@ for record in resp.json().records:
     print record.userStatus
 ```
 
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
+
+$rcsdk = new RingCentral\SDK\SDK("client_id", "client_secret", "server_url");
+
+$platform = $rcsdk->platform();
+$platform->login("username", "extension_number", "password");
+
+$resp = $platform->get('/account/~/presence',
+    array(
+        'detailedTelephonyState' => true
+    ));
+foreach ($resp->json()->records as $record)
+    print_r ($record->userStatus . "\n");
+```
+
 ```c# tab="C#"
 using System;
 using System.Threading.Tasks;
@@ -98,7 +95,7 @@ namespace Read_Presence
         {
             read_users_presence().Wait();
         }
-        static private async Task read_account_presence()
+        static private async Task read_users_presence()
         {
             RestClient rc = new RestClient("client_id", "client_secret", "server_url");
             await rc.Authorize("username", "extension_number", "password");
@@ -130,13 +127,13 @@ public class Read_Presence {
   	}
 
     public static void read_users_presence() throws RestException, IOException{
-        RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
-        restClient.authorize("username", "extension_number", "password");
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
 
         var parameters = new ReadAccountPresenceParameters();
         parameters.detailedTelephonyState = true;
 
-        var response = restClient.restapi().account().presence().get(parameters);
+        var response = rc.restapi().account().presence().get(parameters);
         for (var record : response.records)
         	 System.out.println(record.userStatus);
     }
@@ -161,7 +158,7 @@ end
 
 ## Required Permissions
 
-Apps requesting to read presence information require the `ReadPresence` permssion.
+Apps requesting to read presence information require the `ReadPresence` permission.
 
 ## Presence APIs
 

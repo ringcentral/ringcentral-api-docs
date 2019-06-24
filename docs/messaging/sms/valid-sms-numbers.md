@@ -18,7 +18,7 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 ```
 
-```javascript tab="Node JS"
+```javascript tab="JavaScript"
 const RC = require('ringcentral')
 
 var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );

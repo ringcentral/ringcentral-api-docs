@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Meetings Node.js Quick Start
+# Meetings JavaScript Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -40,7 +40,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Create a Meeting
 
-### Install RingCentral Node JS SDK
+### Install RingCentral JavaScript SDK
 
 ```bash
 $ npm install ringcentral --save
