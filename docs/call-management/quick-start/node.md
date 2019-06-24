@@ -1,16 +1,16 @@
 no_breadcrumb:true
 
-# Call Forwarding Node.js Quick Start
+# Call Answering Rules JavaScript Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to define the forwarding rules for a RingCentral phone number, so that your personal mobile phone will also receive phone calls made to your RingCentral phone number. Let's get started.
+In this Quick Start, we are going to read preset call answering rules of a user, so that you can see the rule's details and update the rule with new values if you want to. Let's get started.
 
 ## Create an App
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Call Management App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Call+Management+Quick+Start+App&desc=A+simple+app+to+demo+call+forwarding+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadAccounts,EditExtensions&redirectUri=" class="btn btn-primary">Create Call Management App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Call+Management+Quick+Start+App&desc=A+simple+app+to+demo+call+answering+rules+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=ReadAccounts&redirectUri=" class="btn btn-primary">Create Call Management App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -26,7 +26,6 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   </li>
 <li>On the third page of the create app wizard, select the following permissions:
   <ul>
-    <li>EditExtensions</li>
     <li>ReadAccounts</li>
   </ul>
 </li>
@@ -36,7 +35,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Setup Call Forwarding
+## Read User Call Answering Rules
 
 ### Install RingCentral Node JS SDK
 
@@ -44,14 +43,12 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 $ npm install ringcentral --save
 ```
 
-### Create and Edit forwarding.js
+### Create and Edit get-call-answering_rules.js
 
-Create a file called <tt>forwarding.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set your personal phone number.
+Create a file called <tt>get-call-answering_rules.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```javascript
 const RC = require('ringcentral');
-
-PERSONAL_CELL_PHONE = '<ENTER YOUR PHONE NUMBER>'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -73,31 +70,34 @@ platform.login({
       extension: RINGCENTRAL_EXTENSION
       })
       .then(function(resp) {
-          call_forwarding()
-	  show_extension()
+          get_user_call_answering_rules()
       });
 
-function call_forwarding() {
-    platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
-      'phoneNumber': PERSONAL_CELL_PHONE,
-      'label'      : 'Personal Phone',
-      'type'       : 'Mobile'
-    })
-    .then(function(resp){
-        console.log("Call forwarding configured. Phone numbers: ")
-    })
-    .catch(function(resp){
-        console.log("Something went wrong. Maybe you already configured \ncall forwarding for your mobile phone number? Let's see: ")
-    })
+function get_user_call_answering_rules() {
+    platform.get('/restapi/v1.0/account/~/extension/~/answering-rule', {
+        'view': "Detailed",
+        'enabledOnly': false
+      })
+      .then(function(resp){
+          var jsonObj = resp.json()
+          for (var record of jsonObj.records){
+              // use the record.id to read rule details
+              get_user_call_answering_rule(record.id)
+          }
+      })
+      .catch(function(e){
+          console.log(e.message)
+      })
 }
 
-function show_extension() {
-    platform.get('/restapi/v1.0/account/~/extension/~/forwarding-number')
-    .then(function(resp){
-        resp.json().records.forEach( function(val) {
-            console.log( val.label + ": " + val.phoneNumber )
-        });
-    })
+function get_user_call_answering_rule(id) {
+    platform.get('/restapi/v1.0/account/~/extension/~/answering-rule/' + id )
+        .then(function(resp){
+            console.log(resp.text())
+        })
+        .catch(function(e){
+            console.log(e.message)
+        })
 }
 ```
 
@@ -106,7 +106,7 @@ function show_extension() {
 You are almost done. Now run your script.
 
 ```bash
-$ node forwarding.js
+$ node get-call-answering_rules.js
 ```
 
 ## Graduate Your App

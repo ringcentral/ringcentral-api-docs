@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Call Answering Rules Python Quick Start
+# Call Answering Rules Ruby Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,18 +37,20 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Read User Call Answering Rules
 
-### Install RingCentral Python SDK
+### Install RingCentral Ruby SDK
 
 ```bash
-$ pip install ringcentral
+$ gem install ringcentral-sdk
 ```
 
-### Create and Edit get-call-answering_rules.py
+### Create and Edit get-call-answering_rules.rb
 
-Create a file called <tt>get-call-answering_rules.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+Create a file called `get-call-answering_rules.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```javascript
-const RC = require('ringcentral');
+```ruby
+require 'ringcentral'
+
+RECIPIENT = '<ENTER PHONE NUMBER>'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -58,22 +60,17 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-params = {
-    'view': "Detailed",
-    'enabledOnly': False
-}
-
-try:
-    resp = platform.get('/account/~/extension/~/answering-rule', params)
-    for record in resp.json().records:
-        rule = platform.get('/account/~/extension/~/answering-rule/' + record.id)
-        print (rule.text())
-except Exception as e:
-    print(e)
+resp = rc.get('/restapi/v1.0/account/~/extension/~/answering-rule', {
+    view: "Detailed",
+    enabledOnly: false
+})
+for record in resp.body['records'] do
+    rule = rc.get('/restapi/v1.0/account/~/extension/~/answering-rule/' + record['id'])
+    puts rule.body
+end
 ```
 
 ### Run Your Code
@@ -81,9 +78,9 @@ except Exception as e:
 You are almost done. Now run your script.
 
 ```bash
-$ python get-call-answering_rules.py
+$ ruby get-call-answering_rules.rb
 ```
 
 ## Graduate Your App
 
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

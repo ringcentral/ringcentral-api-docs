@@ -62,9 +62,13 @@ pages:
     - 'JavaScript': 'call-management/quick-start/node.md'
     - 'Python': 'call-management/quick-start/python.md'
     - 'PHP': 'call-management/quick-start/php.md'
+    - 'Java': 'call-management/quick-start/java.md'
+    - 'C#': 'call-management/quick-start/c-sharp.md'
+    - 'Ruby': 'call-management/quick-start/ruby.md'
   - 'Developer Manual':
-    - 'Answering Rules': 'call-management/answering-rules.md'
-    - 'Call Queues': 'call-management/call-queues.md'
+    - 'Answering Rules': 'call-management/manual/answering-rules.md'
+    - 'Call Queues': 'call-management/manual/call-queues.md'
+    #- 'CallForwarding': 'call-management/manual/call-forwarding.md'
 
 - 'Glip':
   - 'Getting Started':
@@ -128,8 +132,8 @@ pages:
     - 'JavaScript': 'voice/quick-start/node.md'
     - 'Python': 'voice/quick-start/python.md'
     - 'PHP': 'voice/quick-start/php.md'
-    - 'C#': 'voice/quick-start/c-sharp.md'
     - 'Java': 'voice/quick-start/java.md'
+    - 'C#': 'voice/quick-start/c-sharp.md'
     - 'Ruby': 'voice/quick-start/ruby.md'
   - 'Placing Calls':
     - 'RingOut': 'voice/ringout.md'
@@ -180,6 +184,7 @@ pages:
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       - 'Java': 'notifications/quick-start/pubnub/java.md'
       - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
+      - 'Ruby': 'notifications/quick-start/pubnub/ruby.md'
     - 'WebHook':
       - 'JavaScript': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'

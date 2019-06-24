@@ -81,23 +81,24 @@ import com.ringcentral.definitions.*;
 
 
 public class Call_RingOut {
-    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
-    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
   	public static void main(String[] args) {
+      var obj = new Call_RingOut();
   		try {
-  			callRingOut();
+  			obj.callRingOut();
   		} catch (RestException | IOException e) {
   			e.printStackTrace();
   		}
   	}
 
-  	public static void callRingOut() throws RestException, IOException {
+  	public void callRingOut() throws RestException, IOException {
         RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
         rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
