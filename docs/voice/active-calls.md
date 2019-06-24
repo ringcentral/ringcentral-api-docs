@@ -151,7 +151,7 @@ public class Read_User_ActiveCalls {
 
         var response = rc.restapi().account().extension().activecalls().list(parameters);
   	    for (CallLogRecord record : response.records) {
-  	    	System.out.println("Call result: " + record.result);
+  	    	  System.out.println("Call result: " + record.result);
   	    }
     }
 }

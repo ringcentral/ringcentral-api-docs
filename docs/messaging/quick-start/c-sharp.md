@@ -73,16 +73,13 @@ namespace Send_SMS
         {
             RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
-            {
-                var parameters = new CreateSMSMessage();
-                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
-                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                parameters.text = "Hello World from C#";
+            var parameters = new CreateSMSMessage();
+            parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
+            parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+            parameters.text = "Hello World from C#";
 
-                var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
-            }
+            var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
+            Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
         }
     }
 }

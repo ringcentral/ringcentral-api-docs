@@ -79,6 +79,7 @@ namespace Create_Meeting
         {
             RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, true);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+
             var parameters = new MeetingRequestResource();
             parameters.topic = "Test Meeting";
             parameters.meetingType = "Instant";
