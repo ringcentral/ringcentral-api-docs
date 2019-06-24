@@ -54,7 +54,7 @@ The API Reference contains a [more detailed breakdown of the structure of a mess
 
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
-```javascript tab="Node JS"
+```javascript tab="JavaScript"
 const RC = require('ringcentral')
 
 var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
@@ -114,9 +114,9 @@ namespace Read_MessageStore
     {
         static void Main(string[] args)
         {
-            read_users_presence().Wait();
+            read_user_message_store().Wait();
         }
-        static private async Task read_account_presence()
+        static private async Task read_user_message_store()
         {
             RestClient rc = new RestClient("client_id", "client_secret", "server_url");
             await rc.Authorize("username", "extension_number", "password");
@@ -146,17 +146,16 @@ public class Read_MessageStore {
   	}
 
     public static void read_user_message_store() throws RestException, IOException{
-        RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
-        restClient.authorize("username", "extension_number", "password");
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
 
         ListMessagesParameters parameters = new ListMessagesParameters();
         parameters.messageType = new String[] {"SMS"};
 
-        var response = restClient.restapi().account().extension().messagestore().list(parameters);
+        var response = rc.restapi().account().extension().messagestore().list(parameters);
 
-        for (var record : response.records) {
-           	System.out.println(record.messageStatus);
-        }
+        String jsonStr = JSON.toJSONString(response);
+        System.out.println(jsonStr);
     }
 }
 ```

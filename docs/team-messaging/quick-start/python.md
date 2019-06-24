@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Create Glip Team JavaScript Quick Start
+# Create Glip Team Python Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,18 +37,18 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Create a Glip team
 
-### Install RingCentral JavaScript SDK
+### Install RingCentral Python JS SDK
 
 ```bash
-$ npm install ringcentral --save
+$ pip install ringcentral
 ```
 
 ### Create and Edit create-glip-team.js
 
 Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```JavaScript
-const RC = require('ringcentral')
+```python
+from ringcentral import SDK
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -58,38 +58,19 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
-});
-var platform = rcsdk.platform();
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
-    .then(function(resp) {
-        create_glip_team()
-    });
+rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = rcsdk.platform()
+platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-function create_glip_team(){
-    var endpoint = "/restapi/v1.0/glip/teams"
-    var params = {
-        public: true,
-        name: "Fun team",
-        members: [{ email: "member.1@gmail.com"}, {email:"member.2@gmail.com"}],
-        description: "Let chit chat here"
-      }
-    platform.post(endpoint, params)
-      .then(function(resp){
-          var json = resp.json()
-          console.log(JSON.stringify(json))
-      })
-      .catch(function(e){
-          console.log(e)
-      })
+endpoint = "/restapi/v1.0/glip/teams"
+params = {
+    "public": True,
+    "name": "Fun team",
+    "members": [{ "email": "member.1@gmail.com"}, {"email":"member.2@gmail.com"}],
+    "description": "Let chit chat here"
 }
+resp = platform.post(endpoint, params)
+print(resp.text())
 ```
 
 ### Run Your Code
@@ -97,7 +78,7 @@ function create_glip_team(){
 You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
 ```bash
-$ node create-glip-team.js
+$ python create-glip-team.py
 ```
 
 ## Graduate Your App

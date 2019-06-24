@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# SMS Node.js Quick Start
+# SMS JavaScript Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,7 +37,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Send an SMS
 
-### Install RingCentral Node JS SDK
+### Install RingCentral JavaScript SDK
 
 ```bash
 $ npm install ringcentral --save
@@ -79,7 +79,7 @@ function send_sms(){
   platform.post('/account/~/extension/~/sms', {
        from: {'phoneNumber': RINGCENTRAL_USERNAME},
        to: [{'phoneNumber': RECIPIENT}],
-       text: 'Hello World from Node JS'
+       text: 'Hello World from JavaScript'
      })
      .then(function (resp) {
         console.log("SMS sent. Message status: " + resp.json().messageStatus)

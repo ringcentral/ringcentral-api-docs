@@ -6,22 +6,152 @@ The user specifies a certain number under the forwarding number list, starts Rin
 
 The API treats a two-legged RingOut call as a resource that can be created, retrieved, or deleted via the `POST`, `GET` and `DELETE` methods correspondingly.
 
-## Making a Call
+## Sample Code to Get Started with RingOut
 
 The two-legged RingOut call can be created via the following request:
 
-```
+```http tab="HTTP"
 POST /restapi/v1.0/account/~/extension/~/ringout
 Content-Type: application/json
-Authorization: Bearer <access-token> 
+Authorization: Bearer <access-token>
 
 {
-    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */ 
-    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */ 
+    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */
+    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */
     "playPrompt": true /* optional field */
 }
 ```
- 
+
+```javascript tab="Javascript"
+const RC = require('ringcentral');
+
+var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+var platform = rcsdk.platform();
+
+platform.login( {username: "username", password: "password", extension: "extension_number"} )
+      .then(function(resp) {
+          platform.post('/account/~/extension/~/ring-out', {
+              'from' : { 'phoneNumber': "13443334444" },
+              'to'   : {'phoneNumber': "13453443434"},
+              'playPrompt' : true
+            })
+            .then(function(resp){
+                console.log("Call placed. Call status: " + resp.json().status.callStatus)
+            })
+      });
+```
+
+```python tab="Python"
+from ringcentral import SDK
+
+sdk = SDK( "client_id", "client_secret", "server_url" )
+platform = sdk.platform()
+platform.login( "username", "extension", "password" )
+
+resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
+    {
+      'from' : { 'phoneNumber': "13443334444" },
+      'to'   : { 'phoneNumber': "13453443434" },
+      'playPrompt' : True
+    })
+print "Call placed. Call status: " + resp.json().status.callStatus
+```
+
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
+
+$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+
+$platform = $rcsdk->platform();
+$platform->login( "username", "extension_number", "password" );
+
+$resp = $platform->post('/account/~/extension/~/ring-out',
+    array(
+      'from' => array( 'phoneNumber' => "13443334444" ),
+      'to' => array( 'phoneNumber' => "13453443434" ),
+      'playPrompt' => true
+    ));
+
+print_r ("Call placed. Call status: " . $resp->json()->status->callStatus);
+?>
+```
+
+```c# tab="C#"
+using System;
+using System.Threading.Tasks;
+using RingCentral;
+
+namespace Call_RingOut
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            call_ringout().Wait();
+        }
+        static private async Task call_ringout()
+        {
+            RestClient rc = new RestClient("client_id", "client_secret", false);
+            await rc.Authorize("username", "extension_number", "password");
+            var parameters = new MakeRingOutRequest();
+            parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = "13443334444" };
+            parameters.to = new MakeRingOutCallerInfoRequestTo { phoneNumber = "13453443434" };
+            parameters.playPrompt = true;
+
+            var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
+            Console.WriteLine("Call Placed. Call status: " + resp.status.callStatus);
+        }
+    }
+}
+```
+
+```java tab="Java"
+package Read_CallLog;
+
+import java.io.IOException;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+public class Call_RingOut {
+    public static void main(String[] args) {
+        try {
+            call_ringout();
+        } catch (RestException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+  	public static void call_ringout() throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        MakeRingOutRequest requestBody = new MakeRingOutRequest();
+        parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13443334444" ));
+        parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13453443434" ));
+        parameters.playPrompt = true;
+        
+        var response = rc.restapi().account().extension().ringout().post(requestBody);
+        System.out.println("Call Placed. Call status: " + response.status.callStatus);
+    }
+}
+```
+
+```ruby tab="Ruby"
+require 'ringcentral'
+
+rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+
+resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
+    from: { phoneNumber: "13443334444" },
+    to: { phoneNumber: "13453443434" },
+    playPrompt: true
+})
+
+puts "Call placed. Call status: " + resp.body['status']['callStatus']
+```
+
 Where:
 
 -   **from**
@@ -40,11 +170,11 @@ The response can be as follows:
 
 ```
 200 OK
-Content-Type: application/json 
- 
+Content-Type: application/json
+
 {
-    "id": 234343434, 
-    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "id": 234343434,
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434",
     "status": {  
         "callStatus": "Success",  
         "callerStatus": "Success",  
@@ -78,14 +208,14 @@ Where:
     | `InternationalDisabled` | <ul><li>International calling disabled (Call to International number) *or*</li><li>Domestic calling disabled (Call with local Country code) *or*</li><li>Internal calling disabled (Call within one account)</li></ul>|
     | `NoSessionFound`        | RingOut status was requested for RingOut session which does not exist (e.g was already Closed) |
     | `Invalid`               | RingOut session state is unknown due to internal failure                                       |
-	
+
 
 Call status is generated as a combination of both call legs statuses (caller and callee):
 
 <img src="../../img/ringout_flow_call.png" class="img-fluid">
-	
+
 Caller or Callee statuses are separately generated for the target call party:
-	
+
 <img src="../../img/ringout_flow_callee.png" class="img-fluid">
 
 ## RingOut Flow
@@ -103,7 +233,7 @@ Failed call:
 Use polling to get the status of an ongoing outbound call.
 
     GET/restapi/v1.0/account/~/extension/~/ringout/234343434
-   
+
 The response will be as follows:
 
 ```
@@ -111,8 +241,8 @@ The response will be as follows:
 Content-Type: application/json
 
 {  
-    "id": 234343434, 
-    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434", 
+    "id": 234343434,
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434",
     "status": {  
         "callStatus": "Success",  
         "callerStatus": "Success",  
@@ -135,3 +265,6 @@ DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434
 
 RingCentral allows users to select which number to use for their Caller Id Name (`CNAM`) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://success.ringcentral.com/articles/RC_Knowledge_Article/Outbound-Caller-ID-Overview).
 
+## RingOut API Permissions
+
+Apps requesting to make a ring-out call require the `RingOut` permission.

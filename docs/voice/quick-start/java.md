@@ -44,10 +44,10 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Enter project name "Call_RingOut"
 * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-```json hl_lines="4",linenums="1"
+```json hl_lines="3",linenums="1"
 dependencies {
     // ...
-    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta10'
 }
 ```
 
@@ -89,8 +89,6 @@ public class Call_RingOut {
     static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
     static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
-  	static RestClient restClient;
-
   	public static void main(String[] args) {
   		try {
   			callRingOut();
@@ -100,16 +98,16 @@ public class Call_RingOut {
   	}
 
   	public static void callRingOut() throws RestException, IOException {
-      restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-      restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
-      MakeRingOutRequest requestBody = new MakeRingOutRequest();
-      requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
-      requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
-      requestBody.playPrompt = false;
+        MakeRingOutRequest requestBody = new MakeRingOutRequest();
+        requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
+        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
+        requestBody.playPrompt = false;
 
-      var response = restClient.restapi().account().extension().ringout().post(requestBody);
-      System.out.println("Call Placed. Call status: " + response.status.callStatus);
+        var response = rc.restapi().account().extension().ringout().post(requestBody);
+        System.out.println("Call Placed. Call status: " + response.status.callStatus);
     }
 }
 ```

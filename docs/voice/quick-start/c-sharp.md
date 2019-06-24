@@ -74,16 +74,13 @@ namespace Call_Ringout
           {
               RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
               await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              if (rc.token.access_token.Length > 0)
-              {
-                  var parameters = new MakeRingOutRequest();
-                  parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
-                  parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
-                  parameters.playPrompt = false;
+              var parameters = new MakeRingOutRequest();
+              parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
+              parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
+              parameters.playPrompt = false;
 
-                  var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
-                  Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
-              }
+              var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
+              Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
           }
       }
 }

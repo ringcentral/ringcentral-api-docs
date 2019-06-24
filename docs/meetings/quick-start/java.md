@@ -50,7 +50,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ```json hl_lines="4",linenums="1"
 dependencies {
     // ...
-    compile 'com.ringcentral:ringcentral:1.0.0-beta9'
+    compile 'com.ringcentral:ringcentral:1.0.0-beta10'
 }
 ```
 
@@ -91,8 +91,6 @@ public class Create_Meeting {
     static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
     static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
-  	static RestClient restClient;
-
   	public static void main(String[] args) {
     		try {
           createMeeting();
@@ -102,8 +100,8 @@ public class Create_Meeting {
   	}
 
   	public static void createMeeting() throws RestException, IOException{
-        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
         MeetingRequestResource parameters = new MeetingRequestResource();
         parameters.topic = "Instant Meeting";
@@ -112,9 +110,9 @@ public class Create_Meeting {
         parameters.startHostVideo = true;
         parameters.startParticipantsVideo = false;
 
-        MeetingResponseResource response = restClient.restApi().account().extension().meeting().post(parameters, MeetingResponseResource.class);
-  	    System.out.println("Start Your Meeting: " + response.links.startUri);
-  	    System.out.println("Join the Meeting: " + response.links.joinUri);
+        var response = rc.restapi().account().extension().meeting().post(parameters);
+        System.out.println("Start Your Meeting: " + response.links.startUri);
+        System.out.println("Join the Meeting: " + response.links.joinUri);
     }
 }
 ```

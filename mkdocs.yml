@@ -59,7 +59,7 @@ pages:
 
 - 'Call Management':
   - 'Getting Started':
-    - 'Node.js': 'call-management/quick-start/node.md'
+    - 'JavaScript': 'call-management/quick-start/node.md'
     - 'Python': 'call-management/quick-start/python.md'
     - 'PHP': 'call-management/quick-start/php.md'
   - 'Developer Manual':
@@ -68,7 +68,12 @@ pages:
 
 - 'Glip':
   - 'Getting Started':
-    - 'Node.js': 'team-messaging/quick-start/node.md'
+    - 'JavaScript': 'team-messaging/quick-start/node.md'
+    - 'Python': 'team-messaging/quick-start/python.md'
+    - 'PHP': 'team-messaging/quick-start/php.md'
+    - 'Java': 'team-messaging/quick-start/java.md'
+    - 'C#': 'team-messaging/quick-start/c-sharp.md'
+    - 'Ruby': 'team-messaging/quick-start/ruby.md'
   - 'Posting Glip Messages':
     - 'Message Attachments': 'team-messaging/manual/attachments.md'
     - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
@@ -81,7 +86,7 @@ pages:
 
 - 'Messaging':
   - 'Getting Started':
-    - 'Node.js': 'messaging/quick-start/node.md'
+    - 'JavaScript': 'messaging/quick-start/node.md'
     - 'Python': 'messaging/quick-start/python.md'
     - 'PHP': 'messaging/quick-start/php.md'
     - 'Java': 'messaging/quick-start/java.md'
@@ -104,14 +109,14 @@ pages:
     - 'Message Synchronization': 'messaging/message-store/message-sync.md'
     - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
   - 'Sample Applications':
-    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
+    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/'
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
     - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 
 - 'Meetings':
   - 'Getting Started':
-    - 'Node.js': 'meetings/quick-start/node.md'
+    - 'JavaScript': 'meetings/quick-start/node.md'
     - 'Python': 'meetings/quick-start/python.md'
     - 'PHP': 'meetings/quick-start/php.md'
     - 'Java': 'meetings/quick-start/java.md'
@@ -120,7 +125,7 @@ pages:
 
 - 'Voice':
   - 'Getting Started':
-    - 'Node.js': 'voice/quick-start/node.md'
+    - 'JavaScript': 'voice/quick-start/node.md'
     - 'Python': 'voice/quick-start/python.md'
     - 'PHP': 'voice/quick-start/php.md'
     - 'C#': 'voice/quick-start/c-sharp.md'
@@ -149,12 +154,12 @@ pages:
     - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
     - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
     - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-  
+
 # ---- SECONDARY APIs ----
 
 - 'Authentication':
   - 'Getting Started':
-    - 'Node.js': 'authentication/quick-start/authorization-flow/node.md'
+    - 'JavaScript': 'authentication/quick-start/authorization-flow/node.md'
     - 'Python': 'authentication/quick-start/authorization-flow/python.md'
     - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
     - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
@@ -170,13 +175,13 @@ pages:
 - 'Notifications and Events':
   - 'Getting Started':
     - 'PubNub':
-      - 'Node.js': 'notifications/quick-start/pubnub/node.md'
+      - 'JavaScript': 'notifications/quick-start/pubnub/node.md'
       - 'Python': 'notifications/quick-start/pubnub/python.md'
       - 'PHP': 'notifications/quick-start/pubnub/php.md'
       - 'Java': 'notifications/quick-start/pubnub/java.md'
       - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
     - 'WebHook':
-      - 'Node.js': 'notifications/quick-start/webhook/node.md'
+      - 'JavaScript': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
       - 'PHP': 'notifications/quick-start/webhook/php.md'
       - 'C#': 'notifications/quick-start/webhook/c-sharp.md'

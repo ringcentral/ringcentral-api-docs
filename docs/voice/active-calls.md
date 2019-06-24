@@ -10,7 +10,7 @@ Developers should consider Active Calls to be a time-sensitive cache, where the 
 
 !!! info "See Also: Call Log"
     The Active Call API is a close cousin to the RingCentral [Call Log API](../call-log/reading-call-log/) using identical data constructs and responses. The key and only difference being the following:
-    
+
     * Active Call API returns a list of live calls in an account. These are calls that have been connected to an extension. It does not return calls currently being routed to an extension.
     * Active Call API connects to a different URL/endpoint.
 
@@ -37,32 +37,17 @@ GET /restapi/v1.0/account/~/extension/~/active-calls HTTP/1.1
 
 ## Response Format
 
-The response format for active calls mirrors that of Call Log responses exactly. 
+The response format for active calls mirrors that of Call Log responses exactly.
 
-## Sample Code
+## Sample Code to Get Started with reading user active calls
 
-```javascript tab="Javascript"
+```javascript tab="JavaScript"
 const RC = require('ringcentral');
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-var rcsdk = new RC({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
+var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
 var platform = rcsdk.platform();
-platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
-      })
+
+platform.login( {username: "username", password: "password", extension: "extension_number"} )
       .then(function(resp) {
           read_active_calls()
       });
@@ -73,82 +58,43 @@ function read_active_calls(){
         })
         .then(function (resp) {
             for (var record of resp.json().records)
-              console.log("Call type: " + record.type)
+              console.log("Call result: " + record.result)
         });
 }
-```
-
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
-
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-
-$platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
-
-$params = array(
-   'view' => 'Simple'
-    );
-$resp = $platform->get('/account/~/extension/~/active-calls', $params);
-foreach ($resp->json()->records as $record) {
-    print_r ("Call type: ".$record->type);
-}
-?>
 ```
 
 ```python tab="Python"
 from ringcentral import SDK
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+sdk = SDK( "client_id", "client_secret", "server_url" )
+platform = sdk.platform()
+platform.login( "username", "extension", "password" )
 
 params = {
     'view' : 'Simple'
 }
 resp = platform.get('/restapi/v1.0/account/~/extension/~/active-calls', params)
 for record in resp.json().records:
-    print "Call type: " + record.type
+    print "Call result: " + record.result
 ```
 
-```ruby tab="Ruby"
-require 'ringcentral'
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+$platform = $rcsdk->platform();
+$platform->login( "username", "extension_number", "password" );
 
-rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-resp = rc.get('/restapi/v1.0/account/~/active-calls', payload: {
-    view: 'Simple'
-})
-
-for record in resp.body['records'] do
-    puts "Call type: " + record['type']
-end
+$params = array(
+   'view' => 'Simple'
+    );
+$resp = $platform->get('/account/~/extension/~/active-calls', $params);
+foreach ($resp->json()->records as $record) {
+    print_r ("Call result: ".$record->result);
+}
+?>
 ```
 
 ```c# tab="C#"
@@ -156,40 +102,72 @@ using System;
 using System.Threading.Tasks;
 using RingCentral;
 
-namespace Read_ActiveCalls
+namespace Read_User_ActiveCalls
 {
     class Program
     {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
-
         static void Main(string[] args)
         {
-            read_active_calls().Wait();
+            read_user_active_calls().Wait();
         }
-        static private async Task read_active_calls()
+        static private async Task read_user_active_calls()
         {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
+            RestClient rc = new RestClient("client_id", "client_secret", false);
+            await rc.Authorize("username", "extension_number", "password");
+            var parameters = new ListExtensionActiveCallsParameters();
+            parameters.view = "Simple";
+            var resp = await rc.Restapi().Account().Extension().ActiveCalls().Get(parameters);
+            foreach (CallLogRecord record in resp.records)
             {
-                var parameters = new LoadUserCallLogParameters();
-                parameters.view = "Simple";
-                var resp = await rc.Restapi().Account().Extension().ActiveCalls().List(parameters);
-                foreach (CallLogRecord record in resp.records)
-                {
-                    Console.WriteLine("Call type: " + record.type);
-                }
-
+                Console.WriteLine("Call result: " + record.result);
             }
         }
     }
 }
 ```
 
+```java tab="Java"
+package Read_User_ActiveCalls;
 
+import java.io.IOException;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+public class Read_User_ActiveCalls {
+    public static void main(String[] args) {
+        try {
+            read_user_activecals();
+        } catch (RestException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+  	public static void read_user_activecals() throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        var getParameters = new ListExtensionActiveCallsParameters();
+        parameters.view = "Simple"
+
+        var response = rc.restapi().account().extension().activecalls().list(parameters);
+  	    for (CallLogRecord record : response.records) {
+  	    	  System.out.println("Call result: " + record.result);
+  	    }
+    }
+}
+```
+
+```ruby tab="Ruby"
+require 'ringcentral'
+
+rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+
+resp = rc.get('/restapi/v1.0/account/~/extension/~/active-calls', {
+    view: 'Simple'
+})
+
+for record in resp.body['records'] do
+    puts "Call result: " + record['result']
+end
+```

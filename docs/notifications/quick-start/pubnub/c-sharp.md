@@ -73,33 +73,30 @@ namespace PubNub_Notifications
         {
             RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            if (rc.token.access_token.Length > 0)
+            try
             {
-                try
+                var eventFilters = new[]
                 {
-                    var eventFilters = new[]
+                    "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
+                };
+                var subscription = new Subscription(rc, eventFilters, message =>
+                {
+                    var jsonObj = JObject.Parse(message);
+                    if (jsonObj["event"].ToString().Contains("instant?type=SMS"))
                     {
-                        "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
-                    };
-                    var subscription = new Subscription(rc, eventFilters, message =>
-                    {
-                        var jsonObj = JObject.Parse(message);
-                        if (jsonObj["event"].ToString().Contains("instant?type=SMS"))
-                        {
-                            Console.WriteLine(jsonObj["body"]["subject"]);
-                        }
-                    });
-                    var subscriptionInfo = await subscription.Subscribe();
-                    Console.WriteLine("Ready to receive incoming SMS via PubNub.");
-                    while (true)
-                    {
-                        Thread.Sleep(5000);
+                        Console.WriteLine(jsonObj["body"]["subject"]);
                     }
-                }
-                catch (Exception ex)
+                });
+                var subscriptionInfo = await subscription.Subscribe();
+                Console.WriteLine("Ready to receive incoming SMS via PubNub.");
+                while (true)
                 {
-                    Console.WriteLine(ex);
+                    Thread.Sleep(5000);
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }

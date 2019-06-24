@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Authorization Flow Authentication - Node JS Quick Start
+# Authorization Flow Authentication - JavaScript Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,7 +37,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Authorization Flow
 
-### Install RingCentral Node JS SDK and some dependencies
+### Install RingCentral JavaScript SDK and some dependencies
 
 ```bash
 $ npm install ringcentral --save
