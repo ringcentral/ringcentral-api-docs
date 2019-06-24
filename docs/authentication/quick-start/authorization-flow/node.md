@@ -1,4 +1,4 @@
-JavaScriptno_breadcrumb:true
+no_breadcrumb:true
 
 # Authorization Flow Authentication - JavaScript Quick Start
 
