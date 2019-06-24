@@ -47,7 +47,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Enter project name "Create_Meeting"
 * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-```json hl_lines="4",linenums="1"
+```json hl_lines="3",linenums="1"
 dependencies {
     // ...
     compile 'com.ringcentral:ringcentral:1.0.0-beta10'
@@ -84,22 +84,23 @@ import com.ringcentral.definitions.*;
 
 
 public class Create_Meeting {
-    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
   	public static void main(String[] args) {
+        var obj = new Create_Meeting();
     		try {
-          createMeeting();
+          obj.createMeeting();
     		} catch (RestException | IOException e) {
     			e.printStackTrace();
     		}
   	}
 
-  	public static void createMeeting() throws RestException, IOException{
+  	public void createMeeting() throws RestException, IOException{
         RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
         rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 

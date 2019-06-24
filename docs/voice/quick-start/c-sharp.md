@@ -42,7 +42,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
 * Enter project name "Call_Ringout"
-* Add NuGet package RingCentral.Net (1.1.1) SDK
+* Add NuGet package RingCentral.Net (1.2.1) SDK
 
 ### Edit the file Program.cs
 
