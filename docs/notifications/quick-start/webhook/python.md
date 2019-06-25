@@ -49,9 +49,7 @@ $ pip install ringcentral
 $ ngrok http 5000
 ```
 
-If the port 5000 is not available on your system, just choose another port number.
-
-Copy the forwarding address e.g. https://171c1761.ngrok.io and append the path "/webhook" to the address then paste it into the DELIVERY_MODE_ADDRESS variable in the code below.
+Copy the forwarding address e.g. https://54a0541a.ngrok.io and append the path "/webhookcallback" to the address then paste it into the DELIVERY_ADDRESS variable in the code below.
 
 Note: Running the demo code requires Python 3.x
 
@@ -70,7 +68,7 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-DELIVERY_MODE_ADDRESS='https://XXXXXXXX.ngrok.io/webhookcallback'
+DELIVERY_ADDRESS= '<https://XXXXXXXX.ngrok.io/webhookcallback>'
 
 rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 platform = rcsdk.platform()
@@ -82,7 +80,7 @@ try:
         "eventFilters" : eventFilters,
         "deliveryMode": {
             "transportType": 'WebHook',
-            "address": DELIVERY_MODE_ADDRESS
+            "address": DELIVERY_ADDRESS
         }
     }
     res = platform.post("/subscription", params)

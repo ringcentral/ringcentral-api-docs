@@ -50,9 +50,7 @@ $ php composer.phar require ringcentral/ringcentral-php
 $ ngrok http 5000
 ```
 
-If the port 5000 is not available on your system, just choose another port number.
-
-Copy the forwarding address e.g. https://171c1761.ngrok.io and append the path "/webhook-notification.php?webhookcallback" to the address then paste it into the DELIVERY_MODE_ADDRESS variable in the code below.
+Copy the forwarding address e.g. https://54a0541a.ngrok.io and append the path "/webhook-notification.php?webhookcallback" to the address then paste it into the $DELIVERY_ADDRESS variable in the code below.
 
 ### Create and Edit webhook-notification.php
 
@@ -70,8 +68,7 @@ $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-$DELIVERY_MODE_ADDRESS='<https://xxxxxxxx.ngrok.io/webhook-notification.php?webhookcallback>'
-$DELIVERY_MODE_TRANSPORT_TYPE='WebHook'
+$DELIVERY_ADDRESS='<https://xxxxxxxx.ngrok.io/webhook-notification.php?webhookcallback>'
 
 $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 $platform = $rcsdk->platform();
@@ -91,8 +88,8 @@ if (isset($_REQUEST['webhookcallback'])){
                 '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'
                 ),
             'deliveryMode' => array(
-                'transportType' => $DELIVERY_MODE_TRANSPORT_TYPE,
-                'address' => $DELIVERY_MODE_ADDRESS
+                'transportType' => "WebHook",
+                'address' => $DELIVERY_ADDRESS
             ));
     try {
           $apiResponse = $platform->post('/subscription', $params);

@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Webhook Notifications JavaScript Quick Start
+# Webhook Notifications Ruby Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -37,10 +37,11 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Subscribe for push notification
 
-### Install RingCentral JavaScript SDK
+### Install RingCentral Ruby SDK
 
 ```bash
-$ npm install ringcentral --save
+$ gem install ringcentral-sdk
+$ gem install sinatra
 ```
 
 ### Run ngrok to create a localhost tunnel
@@ -49,15 +50,14 @@ $ npm install ringcentral --save
 $ ngrok http 5000
 ```
 
-Copy the forwarding address e.g. https://54a0541a.ngrok.io and append the path "/webhook" to the address then paste it into the DELIVERY_ADDRESS variable in the code below.
+Copy the forwarding address e.g. https://54a0541a.ngrok.io and paste it into the DELIVERY_ADDRESS variable in the code below.
 
-### Create and Edit webhook-notification.js
+### Create and Edit webhook-notification.rb
 
-Create a file called <tt>webhook-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+Create a file called <tt>webhook-notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```javascript
-var http = require('http');
-var SDK = require('ringcentral')
+```ruby
+require 'ringcentral'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -67,72 +67,58 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-DELIVERY_ADDRESS= '<https://xxxxxxxx.ngrok.io/webhook>'
+DELIVERY_ADDRESS= '<https://xxxxxxxx.ngrok.io>'
 
-PORT=5000
 
-var server = http.createServer(function(req, res) {
-    if (req.method == 'POST') {
-        if (req.url == "/webhook"){
-            if(req.headers.hasOwnProperty("validation-token")) {
-                res.setHeader('Validation-Token', req.headers['validation-token']);
-                res.statusCode = 200;
-                res.end();
-            } else {
-                var body = []
-                req.on('data', function(chunk) {
-                    body.push(chunk);
-                }).on('end', function() {
-                    body = Buffer.concat(body).toString();
-                    var jsonObj = JSON.parse(body)
-                    console.log(jsonObj.body);
-                });
-            }
-        }
-    }else{
-        console.log("IGNORE OTHER METHODS")
-    }
-});
-server.listen(PORT);
+rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-var rcsdk = new SDK({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
+r = rc.post('/restapi/v1.0/subscription', payload: {
+    eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
+    deliveryMode: { transportType: 'WebHook', address: DELIVERY_ADDRESS }
+})
 
-var platform = rcsdk.platform();
-platform.login({
-            username: RINGCENTRAL_USERNAME,
-            password: RINGCENTRAL_PASSWORD,
-            extension: RINGCENTRAL_EXTENSION
-        })
-        .then(function(resp) {
-            var params = {
-              eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
-              deliveryMode: {
-                  transportType: "WebHook",
-                  address: DELIVERY_ADDRESS
-                  }
-              }
-            platform.post('/subscription', params)
-              .then(function(subscriptionResponse) {
-                  console.log("Ready to receive incoming SMS via WebHook.")
-              })
-              .catch(function(e) {
-                  console.error(e);
-                  throw e;
-              });
-      });
+puts r.body['id']
+puts "WebHook Ready"
+
+rc.revoke()
+```
+
+### Create and Edit webhook-server.rb
+
+Create a file called <tt>webhook-server.rb</tt>.
+
+```ruby
+require 'sinatra'
+set :port, 5000
+post '/' do
+    status 200
+    headers('Validation-Token' => request.env['HTTP_VALIDATION_TOKEN']) if request.env['HTTP_VALIDATION_TOKEN']
+    request.body.rewind
+    body = request.body.read
+    puts body
+    # do whatever with body
+    body 'OK'
+end
 ```
 
 ### Run Your Code
 
 You are almost done. Now run your script.
 
-```bash
-$ node webhook-notification.js
+Open a terminal window and run the server code.
+
+```bask
+$ ruby webhook-server.rb
 ```
+
+Open another terminal window and run the app
+
+```bask
+$ ruby webhook-notification.rb
+```
+
+Now you can send an SMS message to the extension's phone number to see how you'll receive the notification.
 
 ## Graduate Your App
 

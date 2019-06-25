@@ -166,6 +166,7 @@ pages:
     - 'JavaScript': 'authentication/quick-start/authorization-flow/node.md'
     - 'Python': 'authentication/quick-start/authorization-flow/python.md'
     - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
+    - 'Java': 'authentication/quick-start/authorization-flow/java.md'
     - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
     - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
   - 'Developer Manual':
@@ -189,7 +190,9 @@ pages:
       - 'JavaScript': 'notifications/quick-start/webhook/node.md'
       - 'Python': 'notifications/quick-start/webhook/python.md'
       - 'PHP': 'notifications/quick-start/webhook/php.md'
+      - 'Java': 'notifications/quick-start/webhook/java.md'
       - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
+      - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
   - 'Developer Manual':
     - 'Webhooks': 'notifications/manual/webhooks.md'
     - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
