@@ -106,10 +106,7 @@ namespace webhook_server
 $ ngrok http 5000
 ```
 
-If the port 5000 is not available on your system, just choose another port number.
-
-Copy the forwarding address e.g. https://171c1761.ngrok.io and append the path "/webhook" to the address then paste it into the `RINGCENTRAL_WEBHOOK_ADDRESS` variable in the code below.
-
+Copy the forwarding address e.g. https://54a0541a.ngrok.io and append the path "/webhook" to the address then paste it into the `DELIVERY_ADDRESS` variable in the code below.
 
 ### Create Setup WebHook project
 
@@ -144,7 +141,8 @@ namespace setup_webhook
         private const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
         private const string RINGCENTRAL_EXTENSION = "<OPTIONAL>";
         private const string RINGCENTRAL_PASSWORD = "<RINGCENTRAL_PASSWORD>";
-        private const string RINGCENTRAL_WEBHOOK_ADDRESS = "<RINGCENTRAL_WEBHOOK_ADDRESS>";
+
+        private const string DELIVERY_ADDRESS = "<https://xxxxxxxx.ngrok.io/webhook>"";
 
         static async Task Main(string[] args)
         {
@@ -156,7 +154,7 @@ namespace setup_webhook
                 deliveryMode = new NotificationDeliveryModeRequest
                 {
                     transportType = "WebHook",
-                    address = RINGCENTRAL_WEBHOOK_ADDRESS
+                    address = DELIVERY_ADDRESS
                 }
             });
             Console.WriteLine("WebHook ready!");

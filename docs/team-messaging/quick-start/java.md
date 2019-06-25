@@ -87,7 +87,7 @@ public class Create_Glip_Team {
 
     String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
     String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION";
 
   	public static void main(String[] args) {
     		try {
@@ -121,7 +121,7 @@ public class Create_Glip_Team {
 
 ### Run Your Code
 
-You are almost done.  Now run your app from Eclipse.. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
+You are almost done.  Now run your app from Eclips.. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
 ## Graduate Your App
 
