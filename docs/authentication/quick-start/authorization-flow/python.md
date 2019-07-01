@@ -73,7 +73,7 @@ def login():
         ('client_id', RINGCENTRAL_CLIENT_ID),
         ('state', 'initialState')
     )
-    auth_url = base_url + '?' + urllib.urlencode(params)
+    auth_url = base_url + '?' + urllib.parse.urlencode(params)
     return render_template('index.html', authorize_uri=auth_url)
 
 @app.route('/oauth2callback', methods=['GET'])
