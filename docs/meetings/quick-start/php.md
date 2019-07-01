@@ -51,7 +51,7 @@ $ php composer.phar require ringcentral/ringcentral-php
 
 Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```
+```PHP
 <?php
 require('vendor/autoload.php');
 
