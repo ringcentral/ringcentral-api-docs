@@ -39,7 +39,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ### Install RingCentral PHP SDK
 
-```php
+``` bash
 $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar require ringcentral/ringcentral-php
 ```
@@ -48,17 +48,20 @@ $ php composer.phar require ringcentral/ringcentral-php
 Create a file called <tt>configs.php</tt>. Be sure to edit the variables value in &lt;ALL CAPS> with your app credentials.
 
 ``` PHP
-$RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-$RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+<?php
+$RINGCENTRAL_CLIENT_ID = "<ENTER CLIENT ID>";
+$RINGCENTRAL_CLIENT_SECRET = "<ENTER CLIENT SECRET>";
 $RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
 $RINGCENTRAL_REDIRECT_URL = "http://localhost:5000/engine.php?oauth2callback";
+?>
 ```
 
 ### Create an index.php
 
 Create a file called <tt>index.php</tt>. In this file we'll implement the login page.
 
-``` php
+``` HTML+PHP
+<!DOCTYPE html>
 <?php
 require(__DIR__ . 'vendor/autoload.php');
 use RingCentral\SDK\Http\HttpException;
@@ -80,9 +83,7 @@ $url = $platform->authUrl(array(
           'prompt' => ''
         ));
 ?>
-```
-```html
-<!DOCTYPE html>
+
 <html>
   <head>
       <meta charset="UTF-8">
@@ -197,7 +198,7 @@ function callGetRequest($endpoint, $params){
 
 You are almost done. Now run your script.
 
-```bask
+```bash
 $ php -S localhost:5000
 ```
 
