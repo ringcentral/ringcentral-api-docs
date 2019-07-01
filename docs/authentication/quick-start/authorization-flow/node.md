@@ -88,7 +88,7 @@ app.get('/', function (req, res) {
         }
     }
     res.render('index', {
-        authorize_uri: platform.authUrl({
+        authorize_uri: platform.loginUrl({
             brandId: '',
             redirectUri: RINGCENTRAL_REDIRECT_URL
           })
