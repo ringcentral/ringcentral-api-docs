@@ -146,8 +146,8 @@ pages:
   # ---- SECONDARY APIs ----
 - 'Secondary':
 
-  - 'Basics':
-      - 'Using the API':
+  - 'Using the API':
+      - 'Basics':
           - 'Methods, Endpoints and Parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
           - 'Developing in Sandbox': 'basics/sandbox.md'
