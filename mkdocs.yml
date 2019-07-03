@@ -116,6 +116,7 @@ pages:
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
+      - 'Build a Bot in Node': 'team-messaging/manual/node.md'
       - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
     - 'Sample Applications':
       - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'

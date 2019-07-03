@@ -1,10 +1,8 @@
 no_breadcrumb:true
 
-# Team Messaging Node.js Quick Start
+# Build a Glip Bot Using Node
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, team messaging and meetings.
-
-In this Quick Start, we are going to help you build your first chat bot using our Team Messaging API. Let's get started.
+This guide will take you through the process of building your first bot for Glip using RingCentral's [Javascript Glip Bot Framework](https://github.com/ringcentral/ringcentral-chatbot-js). Let's begin! 
 
 ## Setup Your Project
 
