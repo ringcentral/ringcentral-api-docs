@@ -1,0 +1,30 @@
+<nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
+  <div class="container">
+    {%- if nav|length>1 %}
+    <!-- Main navigation -->
+    {%- for nav_item in nav %}
+    <ul class="nav navbar-nav">
+      {%- for nav_item in nav_item.children %}
+      {%- if nav_item.children %}
+      <li class="toplevel nav-item{% if nav_item.active %} active{% endif %}" data-toggle="collapse" data-target="#{{ nav_item.title|lower|replace(' ','-') }}">
+        <!--<a href="#" class="nav-link">{{ nav_item.title }} <b class="caret"></b></a>-->
+        <span class="section-title">{{ nav_item.title }}</span>
+        <ul id="{{ nav_item.title|lower|replace(" ","-") }}" class="collapse">
+	  {%- for nav_item in nav_item.children %}
+          {% include "nav-sub.html" %}
+	  {%- endfor %}
+        </ul>
+      </li>
+      {%- else %}
+      <li {% if nav_item.active %}class="active"{% endif %}>
+        <a class="nav-link" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+    {% if loop.first %}<hr>{% endif %}
+    {%- endfor %}
+    {%- endif %}
+  </div>
+</nav>
+
