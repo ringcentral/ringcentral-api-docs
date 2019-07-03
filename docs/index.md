@@ -1,4 +1,23 @@
-ht" href="#"><input type="radio" name="language" value="node">Node</label>
+no_breadcrumb:true
+
+# RingCentral Developer Guide
+
+## Let's Get Started
+
+<p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes.</p>
+
+<p>What do you want to do with the API?</p>
+<div class="use-case-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="sms">Send an SMS</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="fax">Send a Fax</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="voice">Place a Call</label>
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="use-case" value="meeting">Host a meeting</label>
+</div>
+
+<p>What language do you prefer?</p>
+
+<div class="language-select btn-group btn-group-toggle" data-toggle="buttons" role="group">
+<label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="node">Node</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="python">Python</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="php">PHP</label>
 <label data-toggle="button" class="btn btn-light" href="#"><input type="radio" name="language" value="c#">C#</label>

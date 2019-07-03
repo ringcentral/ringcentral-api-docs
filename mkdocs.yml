@@ -41,76 +41,6 @@ pages:
 
 # ---- CORE APIs ----
 - 'Primary':
-  - 'Call Management':
-    - 'Getting Started':
-      - 'JavaScript': 'call-management/quick-start/node.md'
-      - 'Python': 'call-management/quick-start/python.md'
-      - 'PHP': 'call-management/quick-start/php.md'
-      - 'Java': 'call-management/quick-start/java.md'
-      - 'C#': 'call-management/quick-start/c-sharp.md'
-      - 'Ruby': 'call-management/quick-start/ruby.md'
-    - 'Developer Manual':
-      - 'Answering Rules': 'call-management/manual/answering-rules.md'
-      - 'Call Queues': 'call-management/manual/call-queues.md'
-      - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
-
-  - 'Glip':
-    - 'Getting Started':
-      - 'JavaScript': 'team-messaging/quick-start/node.md'
-      - 'Python': 'team-messaging/quick-start/python.md'
-      - 'PHP': 'team-messaging/quick-start/php.md'
-      - 'Java': 'team-messaging/quick-start/java.md'
-      - 'C#': 'team-messaging/quick-start/c-sharp.md'
-      - 'Ruby': 'team-messaging/quick-start/ruby.md'
-    - 'Posting Glip Messages':
-      - 'Message Attachments': 'team-messaging/manual/attachments.md'
-      - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
-    - 'Glip Bots':
-      - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
-      - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
-    - 'Sample Applications':
-      - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
-      - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
-
-  - 'Messaging':
-    - 'Getting Started':
-      - 'JavaScript': 'messaging/quick-start/node.md'
-      - 'Python': 'messaging/quick-start/python.md'
-      - 'PHP': 'messaging/quick-start/php.md'
-      - 'Java': 'messaging/quick-start/java.md'
-      - 'C#': 'messaging/quick-start/c-sharp.md'
-      - 'Ruby': 'messaging/quick-start/ruby.md'
-    - 'SMS':
-      - 'Sending an SMS': 'messaging/sms/sending-sms.md'
-      - 'Sending an MMS': 'messaging/sms/sending-images.md'
-      - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
-    - 'Fax':
-      - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
-      - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
-      - 'Receiving Faxes': 'messaging/fax/receiving-faxes.md'
-      - 'Forwarding and Resending Faxes': 'messaging/fax/resending-faxes.md'
-    - 'Pager Messages':
-      - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
-    - 'Message Store':
-      - 'Sending Messages': 'messaging/message-store/messaging.md'
-      - 'Working with Message Store': 'messaging/message-store/message-store.md'
-      - 'Message Synchronization': 'messaging/message-store/message-sync.md'
-      - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
-    - 'Sample Applications':
-      - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/'
-      - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
-      - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
-      - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-
-  - 'Meetings':
-    - 'Getting Started':
-      - 'JavaScript': 'meetings/quick-start/node.md'
-      - 'Python': 'meetings/quick-start/python.md'
-      - 'PHP': 'meetings/quick-start/php.md'
-      - 'Java': 'meetings/quick-start/java.md'
-      - 'C#': 'meetings/quick-start/c-sharp.md'
-      - 'Ruby': 'meetings/quick-start/ruby.md'
-
   - 'Voice':
     - 'Getting Started':
       - 'JavaScript': 'voice/quick-start/node.md'
@@ -142,6 +72,76 @@ pages:
       - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
       - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+
+  - 'Messaging':
+    - 'Getting Started':
+      - 'JavaScript': 'messaging/quick-start/node.md'
+      - 'Python': 'messaging/quick-start/python.md'
+      - 'PHP': 'messaging/quick-start/php.md'
+      - 'Java': 'messaging/quick-start/java.md'
+      - 'C#': 'messaging/quick-start/c-sharp.md'
+      - 'Ruby': 'messaging/quick-start/ruby.md'
+    - 'SMS':
+      - 'Sending an SMS': 'messaging/sms/sending-sms.md'
+      - 'Sending an MMS': 'messaging/sms/sending-images.md'
+      - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+    - 'Fax':
+      - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
+      - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
+      - 'Receiving Faxes': 'messaging/fax/receiving-faxes.md'
+      - 'Forwarding and Resending Faxes': 'messaging/fax/resending-faxes.md'
+    - 'Pager Messages':
+      - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
+    - 'Message Store':
+      - 'Sending Messages': 'messaging/message-store/messaging.md'
+      - 'Working with Message Store': 'messaging/message-store/message-store.md'
+      - 'Message Synchronization': 'messaging/message-store/message-sync.md'
+      - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
+    - 'Sample Applications':
+      - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/'
+      - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+      - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
+      - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+
+  - 'Glip':
+    - 'Getting Started':
+      - 'JavaScript': 'team-messaging/quick-start/node.md'
+      - 'Python': 'team-messaging/quick-start/python.md'
+      - 'PHP': 'team-messaging/quick-start/php.md'
+      - 'Java': 'team-messaging/quick-start/java.md'
+      - 'C#': 'team-messaging/quick-start/c-sharp.md'
+      - 'Ruby': 'team-messaging/quick-start/ruby.md'
+    - 'Posting Glip Messages':
+      - 'Message Attachments': 'team-messaging/manual/attachments.md'
+      - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
+    - 'Glip Bots':
+      - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
+      - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
+    - 'Sample Applications':
+      - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
+      - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
+
+  - 'Call Management':
+    - 'Getting Started':
+      - 'JavaScript': 'call-management/quick-start/node.md'
+      - 'Python': 'call-management/quick-start/python.md'
+      - 'PHP': 'call-management/quick-start/php.md'
+      - 'Java': 'call-management/quick-start/java.md'
+      - 'C#': 'call-management/quick-start/c-sharp.md'
+      - 'Ruby': 'call-management/quick-start/ruby.md'
+    - 'Developer Manual':
+      - 'Answering Rules': 'call-management/manual/answering-rules.md'
+      - 'Call Queues': 'call-management/manual/call-queues.md'
+      - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
+
+  - 'Meetings':
+    - 'Getting Started':
+      - 'JavaScript': 'meetings/quick-start/node.md'
+      - 'Python': 'meetings/quick-start/python.md'
+      - 'PHP': 'meetings/quick-start/php.md'
+      - 'Java': 'meetings/quick-start/java.md'
+      - 'C#': 'meetings/quick-start/c-sharp.md'
+      - 'Ruby': 'meetings/quick-start/ruby.md'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
