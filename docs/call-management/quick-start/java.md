@@ -51,6 +51,8 @@ dependencies {
 }
 ```
 
+* Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
 ### Create a new Java Class
 
 Select "File -> New -> Class" to create a new Java class named "Get_User_Call_Answering_Rules"
@@ -81,23 +83,23 @@ import com.ringcentral.definitions.*;
 
 
 public class Get_User_Call_Answering_Rules {
-    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
   	public static void main(String[] args) {
-        var obj = new Get_User_Call_Answering_Rules();
     		try {
-          obj.get_user_call_answering_rules();
+          get_user_call_answering_rules();
     		} catch (RestException | IOException e) {
     			e.printStackTrace();
     		}
   	}
 
-    public void get_user_call_answering_rules() throws RestException, IOException{
+    public static void get_user_call_answering_rules() throws RestException, IOException{
     		RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
     		rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 

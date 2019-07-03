@@ -47,10 +47,6 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Enter project name "Create_Meeting"
 * Add NuGet package RingCentral.Net (1.2.1) SDK
 
-```bash
-$ npm install ringcentral --save
-```
-
 ### Edit the file Program.cs
 
 Be sure to edit the variables in ALL CAPS with your app and user credentials.
@@ -69,7 +65,7 @@ namespace Create_Meeting
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
         static void Main(string[] args)
         {

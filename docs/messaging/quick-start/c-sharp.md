@@ -63,7 +63,7 @@ namespace Send_SMS
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
         static void Main(string[] args)
         {

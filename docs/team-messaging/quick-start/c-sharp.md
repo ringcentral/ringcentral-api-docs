@@ -41,7 +41,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 * Choose Console Application .Net Core -> App
 * Select Target Framework .NET Core 2.1
-* Enter project name "Send_SMS"
+* Enter project name "Create_Glip_Team"
 * Add NuGet package RingCentral.Net (1.2.1) SDK
 
 ### Edit the file Program.cs
@@ -51,7 +51,9 @@ Be sure to edit the variables in ALL CAPS with your app and user credentials. Be
 ``` c#
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using RingCentral;
+using Newtonsoft.Json;
 
 namespace Create_Glip_Team
 {
@@ -62,7 +64,7 @@ namespace Create_Glip_Team
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
         static void Main(string[] args)
         {
@@ -95,10 +97,6 @@ namespace Create_Glip_Team
 ### Run Your Code
 
 You are almost done. Now run your app from Visual Studio. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
-
-```bash
-$ node create-glip-team.js
-```
 
 ## Graduate Your App
 
