@@ -68,7 +68,7 @@ pages:
   - 'Developer Manual':
     - 'Answering Rules': 'call-management/manual/answering-rules.md'
     - 'Call Queues': 'call-management/manual/call-queues.md'
-    #- 'CallForwarding': 'call-management/manual/call-forwarding.md'
+    - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
 
 - 'Glip':
   - 'Getting Started':

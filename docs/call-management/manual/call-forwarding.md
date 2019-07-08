@@ -1,171 +1,154 @@
-# Call Handling: Call Forwarding
+# Call Forwarding and Call Flipping
 
-Call queues are a poplar way to have multiple people respond to incoming calls.
+Call Forwarding allows incoming phone calls to be directed to another phone number. This is handy when receipients have multiple phone numbers and physical phone at which they can be reached. There are two primary ways calls are directed to other phones/numbers:
 
-## Create a Call Queue
+* **Call Forwarding** applies to incoming calls, and allows those calls to ring at one or more numbers sequentially or simultaneously.
 
-Creating a call queue is performed in the [Online Account Portal](https://service.ringcentral.com) under groups.
+* **Call Flipping** applies to active calls, and allows a speaker to instantly transfer an active call to another phone or device without having to terminate the call.
 
-## Read Call Queue List
+## Phone Types
 
-The List Extensions endpoint can be used to retrieve a list of call queues, known as departments via the API.
+| Type | Description |
+|-|-|
+| PhoneLine | This refers to a RingCentral device or hard-phone. When specifying this type when creating/registering a new call forwarding number, the developer must also specify the device id (see [API Reference](https://developers.ringcentral.com/api-reference/Call-Forwarding/createForwardingNumber)). |
+| Home | Home phone number. |
+| Mobile | Mobile phone number. |
+| Work | Work phone number. |
+| Other | A phone number of any other type. | 
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET`  | `v1.0/account/{accountId}/extension?type=Department` | Read a list of call queues, aka departments |
+## Registering a Call Forwarding Number
 
-**Sample Response**
+```javascript tab="Javascript"
+const RC = require('ringcentral');
 
-```json
-{
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&page=1&perPage=100",
-  "records" : [
-    {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333",
-      "id" : 22223333,
-      "extensionNumber" : "201",
-      "contact" : {
-        "firstName" : "Sales Queue",
-        "email" : "john.doe@example.com"
-      },
-      "name" : "Sales Queue",
-      "type" : "Department",
-      "status" : "Enabled",
-      "permissions" : {
-        "admin" : {
-          "enabled" : false
-        },
-        "internationalCalling" : {
-          "enabled" : false
-        }
-      },
-      "profileImage" : {
-        "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image"
-      }
-    }
-  ],
-  "paging" : {...}
+PERSONAL_CELL_PHONE = '<ENTER YOUR PHONE NUMBER>'
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
+var rcsdk = new RC({
+      server: RINGCENTRAL_SERVER,
+      appKey: RINGCENTRAL_CLIENTID,
+      appSecret: RINGCENTRAL_CLIENTSECRET
+  });
+var platform = rcsdk.platform();
+platform.login({
+      username: RINGCENTRAL_USERNAME,
+      password: RINGCENTRAL_PASSWORD,
+      extension: RINGCENTRAL_EXTENSION
+      })
+      .then(function(resp) {
+          call_forwarding()
+	  show_extension()
+      });
+
+function call_forwarding() {
+    platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
+      'phoneNumber': PERSONAL_CELL_PHONE,
+      'label'      : 'Personal Phone',
+      'type'       : 'Mobile'
+    })
+    .then(function(resp){
+        console.log("Call forwarding configured. Phone numbers: ")
+    })
+    .catch(function(resp){
+        console.log("Something went wrong. Maybe you already configured \ncall forwarding for your mobile phone number? Let's see: ")
+    })
+}
+
+function show_extension() {
+    platform.get('/restapi/v1.0/account/~/extension/~/forwarding-number')
+    .then(function(resp){
+        resp.json().records.forEach( function(val) {
+            console.log( val.label + ": " + val.phoneNumber )
+        });
+    })
 }
 ```
 
-## Read Queue Agent List
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
 
-To get the agent members of a queue, call the department members endpoint.
+$PERSONAL_CELL_PHONE = '<ENTER YOUR PHONE NUMBER>';
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/department/{departmentId}/members` | Read department members |
+$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
+$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
 
-**Sample Response**
+$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
+$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
+$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
 
-```json
-{
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&perPage=100",
-  "records" : [
-    {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
-      "id" : 11112222,
-      "extensionNumber" : "101"
-    },
-    {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333",
-      "id" : 11113333,
-      "extensionNumber" : "102"
-    }
-  ],
-  "paging" : {...}
-  "navigatin" : {...}
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+
+$platform = $rcsdk->platform();
+$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+
+try {
+    $resp = $platform->post('/account/~/extension/~/forwarding-number',
+        array(
+            'phoneNumber' => $PERSONAL_CELL_PHONE,
+            'label'       => 'Personal Phone',
+            'type'        => 'Mobile'
+        ));
+    echo "Call forwarding configured. Phone numbers:\n";
+} catch (Exception $e) {
+    echo "Something went wrong. Maybe you already configured\n";
+    echo "call forwarding for your mobile phone number? Let's see:\n";
 }
-```
-
-## Update Queue Agent List
-
-Users can be added and removed as queue agents using the `account/{accountId}/department/bulk-assign` endpoint and the extension ids of interest.
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `v1.0/account/{accountId}/department/bulk-assign` | Add and remove multiple users from one or more departments |
-
-```json
-{
-  "items" : [
-    {
-      "departmentId" : "22223333",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
-      ],
-      "removedExtensionIds" : [
-        "11114444", "11115555"
-      ]
-    },
-    {
-      "departmentId" : "22224444",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
-      ]
-    }
-  ]
+$resp = $platform->get('/account/~/extension/~/forwarding-number');
+foreach ( $resp->json()->records as $key => $val ) {
+    echo $val->{'label'} . ":  " . $val->{'phoneNumber'} . "\n";
 }
+?>
 ```
 
-**Sample Response**
+```python tab="Python"
+const RC = require('ringcentral');
 
-```http
-HTTP/1.1 204 No Content
-Content-Type: application/json
-Content-Language: en-US
+PERSONAL_CELL_PHONE = '<ENTER YOUR PHONE NUMBER>'
+
+RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+
+RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+
+rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+platform = rcsdk.platform()
+platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+
+try:
+    resp = platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
+        'phoneNumber': PERSONAL_CELL_PHONE,
+        'label'      : 'Personal Phone',
+        'type'       : 'Mobile'
+    })
+    print("Call forwarding configured. Phone numbers: ")
+except:
+    print("Something went wrong. Maybe you already configured")
+    print("call forwarding for your mobile phone number? Let's see: ")
+    
+resp = platform.get('/restapi/v1.0/account/~/extension/~/forwarding-number')
+for val in resp.json().records:
+    print( val.label + ": " + val.phoneNumber )
 ```
 
-## Read User Queue Agent Presence
+## Related API Endpoints
 
-A user extension's actual presence status is determined by aggregating a number of different presence statuses including `dndStatus`, `telephonyStatus` and `userStatus`. These and the aggregate presence, `presenceStatus` are available in the presence endpoint.
+* [Get Forwarding Number List](https://developers.ringcentral.com/api-reference/Call-Forwarding/listForwardingNumbers)
+* [Create Forwarding Number](https://developers.ringcentral.com/api-reference/Call-Forwarding/createForwardingNumber)
+* [Get Forwarding Number](https://developers.ringcentral.com/api-reference/Call-Forwarding/readForwardingNumber)
+* [Update Forwarding Number](https://developers.ringcentral.com/api-reference/Call-Forwarding/updateForwardingNumber)
+* [Delete Forwarding Number](https://developers.ringcentral.com/api-reference/Call-Forwarding/deleteForwardingNumber)
 
-A user extension's queue agent status is set by the extension presence `dndStatus` property. This can be set to one of four values:
 
-1. `TakeAllCalls`
-1. `DoNotAcceptAnyCalls`
-1. `DoNotAcceptDepartmentCalls`
-1. `TakeDepartmentCallsOnly`
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Read extension presence |
-
-**Sample Response**
-
-```json
-{
-  "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222/presence",
-  "extension" : {
-    "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222",
-    "id" : 11112222,
-    "extensionNumber" : "101"
-  },
-  "presenceStatus" : "Available",
-  "telephonyStatus" : "NoCall",
-  "userStatus" : "Available",
-  "dndStatus" : "TakeAllCalls",
-  "message" : "Hello, World",
-  "allowSeeMyPresence" : true,
-  "ringOnMonitoredCall" : false,
-  "pickUpCallsOnHold" : false
-}
-```
-
-## Update User Queue Agent Presence
-
-To enable or disable an user extension's queue agent presence, update the extension's presence `dndStatus` property.
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Update extension presence |
-
-```json
-{
-  "dndStatus": "DoNotAcceptDepartmentCalls"
-}
-```
-
-## Subscribe for Presence Notification Events
-
-You can receive events about presence changes to an extension by subscribing to extension specific presence information using an event filter. To learn more, consult our documentation relating to our [Presence API](../../../voice/presence/).
