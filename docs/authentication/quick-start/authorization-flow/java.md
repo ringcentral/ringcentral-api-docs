@@ -44,14 +44,18 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 * Create a new Java project
 * Select the Gradle Project wizard
 * Enter project name "Authentication"
-* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+* Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK, Javax Servlet, and Jetty to the project as shown below:
 
-```json hl_lines="3",linenums="1"
+```json hl_lines="3 4 5",linenums="3"
 dependencies {
     // ...
     compile 'com.ringcentral:ringcentral:1.0.0-beta13'
+    compile 'javax.servlet:javax.servlet-api:4.0.1'
+    compile 'org.eclipse.jetty:jetty-server:9.4.19.v20190610'
 }
 ```
+
+* Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
 
 ### Create a new Java Class
 
@@ -96,18 +100,17 @@ import java.util.stream.Collectors;
 
 public class Authorization_Flow extends AbstractHandler {
     private static String TOKEN_KEY = "rc-token";
-    private static String REDIRECT_URI = "http://localhost:8080/oauth2callback";
 
     private static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
     private static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
     private static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
+    private static String REDIRECT_URI = "http://localhost:5000/oauth2callback";
 
     private static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
     private static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    private static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION";
 
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8080);
+        Server server = new Server(5000);
         server.setHandler(new Authorization_Flow());
         server.start();
         server.join();
@@ -195,7 +198,7 @@ public class Authorization_Flow extends AbstractHandler {
 
 ### Run Your Code
 
-You are almost done. Now run your app from Eclipse. Then Open a Web browser and enter localhost:8080.
+You are almost done. Now run your app from Eclipse. Then Open a Web browser and enter localhost:5000.
 
 ## Graduate Your App
 

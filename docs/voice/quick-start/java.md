@@ -51,6 +51,8 @@ dependencies {
 }
 ```
 
+* Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
 ### Create a new Java Class
 
 Select "File -> New -> Class" to create a new Java class named "Call_RingOut"
@@ -81,35 +83,36 @@ import com.ringcentral.definitions.*;
 
 
 public class Call_RingOut {
-    String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
-    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+	static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
 
-    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+	static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+	static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+	static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-  	public static void main(String[] args) {
-      var obj = new Call_RingOut();
-  		try {
-  			obj.callRingOut();
-  		} catch (RestException | IOException e) {
-  			e.printStackTrace();
-  		}
-  	}
+	static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+	static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+	static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
-  	public void callRingOut() throws RestException, IOException {
-        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+	public static void main(String[] args) {
+		try {
+			callRingOut();
+		} catch (RestException | IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-        MakeRingOutRequest requestBody = new MakeRingOutRequest();
-        requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
-        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
-        requestBody.playPrompt = false;
+	public static void callRingOut() throws RestException, IOException {
+		RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+		rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
-        var response = rc.restapi().account().extension().ringout().post(requestBody);
-        System.out.println("Call Placed. Call status: " + response.status.callStatus);
-    }
+		MakeRingOutRequest requestBody = new MakeRingOutRequest();
+		requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
+		requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
+		requestBody.playPrompt = false;
+
+		var response = rc.restapi().account().extension().ringout().post(requestBody);
+		System.out.println("Call Placed. Call status: " + response.status.callStatus);
+	}
 }
 ```
 

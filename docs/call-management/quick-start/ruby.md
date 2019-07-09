@@ -50,8 +50,6 @@ Create a file called `get-call-answering_rules.rb`. Be sure to edit the variable
 ```ruby
 require 'ringcentral'
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
-
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
 RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
