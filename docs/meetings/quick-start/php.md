@@ -51,17 +51,17 @@ $ php composer.phar require ringcentral/ringcentral-php
 
 Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
-```
+```PHP
 <?php
 require('vendor/autoload.php');
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
+$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
+$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
+$RINGCENTRAL_SERVER = 'https://platform.ringcentral.com';
 
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
+$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
+$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
 
 $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 

@@ -37,27 +37,28 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Create a Glip team
 
-### Install RingCentral Node JS SDK
+### Install RingCentral PHP SDK
 
 ```php
 $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar require ringcentral/ringcentral-php
 ```
 
-### Create and Edit create-glip-team.js
+### Create and Edit create-glip-team.php
 
-Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+Create a file called `create-glip-team.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```PHP
-const RC = require('ringcentral')
+<?php
+require(__DIR__ . 'vendor/autoload.php');
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
+$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
+$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
 
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
+$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
+$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
 
 $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
@@ -68,13 +69,14 @@ $endpoint = "/restapi/v1.0/glip/teams";
 $params = array(
       "public" => true,
       "name" => "Fun team",
-      "members" => array( array ( "email" => "member.1@gmail.com"),
-                          array ( "email" => "member.2@gmail.com")),
+      "members" => array(array("email" => "member.1@gmail.com"),
+                          array("email" => "member.2@gmail.com")),
       "description" => "Let chit chat here"
 );
 
 $resp = $platform->post($endpoint, $params);
 print($resp->text());
+?>
 ```
 
 ### Run Your Code

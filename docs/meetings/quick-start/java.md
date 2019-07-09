@@ -54,6 +54,8 @@ dependencies {
 }
 ```
 
+* Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
 ### Create a new Java Class
 
 Select "File -> New -> Class" to create a new Java class named "Create_Meeting"
@@ -89,7 +91,7 @@ public class Create_Meeting {
 
     String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
     String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
   	public static void main(String[] args) {
         var obj = new Create_Meeting();

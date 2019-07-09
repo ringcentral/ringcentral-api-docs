@@ -51,6 +51,8 @@ dependencies {
 }
 ```
 
+* Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
 ### Create a new Java Class
 
 Select "File -> New -> Class" to create a new Java class named "Create_Glip_Team"
@@ -81,13 +83,13 @@ import com.ringcentral.definitions.*;
 import java.util.HashMap;
 
 public class Create_Glip_Team {
-    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-    String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION";
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
   	public static void main(String[] args) {
     		try {
@@ -121,7 +123,7 @@ public class Create_Glip_Team {
 
 ### Run Your Code
 
-You are almost done.  Now run your app from Eclips.. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
+You are almost done.  Now run your app from Eclipse. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
 ## Graduate Your App
 

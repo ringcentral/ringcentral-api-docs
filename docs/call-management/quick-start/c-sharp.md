@@ -52,6 +52,7 @@ Be sure to edit the variables in ALL CAPS with your app and user credentials.
 using System;
 using System.Threading.Tasks;
 using RingCentral;
+using Newtonsoft.Json;
 
 namespace Get_User_Call_Answering_Rules
 {
@@ -62,7 +63,7 @@ namespace Get_User_Call_Answering_Rules
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
         static void Main(string[] args)
         {
