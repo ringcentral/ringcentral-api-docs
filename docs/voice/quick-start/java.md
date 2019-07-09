@@ -83,36 +83,36 @@ import com.ringcentral.definitions.*;
 
 
 public class Call_RingOut {
-    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+	static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
 
-    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
+	static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+	static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+	static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+	static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+	static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+	static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
-  	public static void main(String[] args) {
-        try {
-            callRingOut();
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
-  	}
+	public static void main(String[] args) {
+		try {
+			callRingOut();
+		} catch (RestException | IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-  	public static void callRingOut() throws RestException, IOException {
-        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+	public static void callRingOut() throws RestException, IOException {
+		RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+		rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
-        MakeRingOutRequest requestBody = new MakeRingOutRequest();
-        requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
-        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
-        requestBody.playPrompt = false;
+		MakeRingOutRequest requestBody = new MakeRingOutRequest();
+		requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
+		requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
+		requestBody.playPrompt = false;
 
-        var response = rc.restapi().account().extension().ringout().post(requestBody);
-        System.out.println("Call Placed. Call status: " + response.status.callStatus);
-    }
+		var response = rc.restapi().account().extension().ringout().post(requestBody);
+		System.out.println("Call Placed. Call status: " + response.status.callStatus);
+	}
 }
 ```
 
