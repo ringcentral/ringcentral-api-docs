@@ -14,7 +14,7 @@ no_breadcrumb:true
     <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Glip API</strong></li>
     <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
   </ul>
-  <p>Not a programmer? <a href="../basics/explorer/">Try out the API with no programming</a>.</p>
+  <p>Not a programmer? <a href="./basics/explorer/">Try out the API with no programming</a>.</p>
 </div>
 
 ## Popular Use Cases and Documentation
@@ -53,7 +53,7 @@ no_breadcrumb:true
       <ul class="pl-0 ml-4">
       <li><a href="./voice/ringout/" class="card-link">RingOut</a></li>
       <li><a href="./voice/call-control/" class="card-link">Active Call Control</a></li>
-      <li><a href="./voice/call-recordings/" class="card-link">Call Recordings</a></li>
+      <li><a href="./voice/call-log/recordings/" class="card-link">Call Recordings</a></li>
       </ul>
     </div>
   </div>
