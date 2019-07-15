@@ -112,7 +112,8 @@ pages:
       - 'C#': 'team-messaging/quick-start/c-sharp.md'
       - 'Ruby': 'team-messaging/quick-start/ruby.md'
     - 'Posting Glip Messages':
-      - 'Message Attachments': 'team-messaging/manual/attachments.md'
+      - 'Message Formatting': 'team-messaging/manual/formatting.md'
+      - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
