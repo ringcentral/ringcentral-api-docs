@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
-  <div class="container">
+<nav id="mainnav" class="navbar navbar-default navbar-expand-md navbar-light sticky-top" role="navigation">
+<!--  <div class="container">-->
     {%- block site_name %}
     <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
       <img src="{{ nav.homepage.url|url }}/logo_beta.svg" />
     </a>
     {%- endblock %}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav-navbar-collapse" aria-controls="mainnav-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse">
+    <div id="mainnav-navbar-collapse" class="collapse navbar-collapse">
       {%- block site_nav %}
       <ul class="nav navbar-nav mr-auto mx-auto">
         <li id="products-dropdown" class="main-item nav-item dropdown">
@@ -224,5 +224,5 @@
         {%- endblock %}
       </ul>
     </div>
-  </div>
+<!--  </div>-->
 </nav>

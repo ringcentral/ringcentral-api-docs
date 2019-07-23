@@ -1,9 +1,13 @@
-<nav id="sidenav" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse.show">
-  <div class="container">
+<nav id="sidenav" class="navbar navbar-default navbar-expand-md navbar-dark" role="navigation">
+  <a class="navbar-brand d-block d-md-none d-xl-none" href="#"><i class="fa fa-home fa-fw"></i> Table of Contents</a>
+  <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#sidebar-navbar-collapse" aria-controls="sidebar-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="sidebar-navbar-collapse">
     {%- if nav|length>1 %}
     <!-- Main navigation -->
+    <ul class="nav navbar-nav flex-column">
     {%- for nav_item in nav %}
-    <ul class="nav navbar-nav">
       {%- for nav_item in nav_item.children %}
       {%- if nav_item.children %}
       <li id="nav-item-{{ nav_item.title|lower|replace(' ','-') }}" class="toplevel nav-item{% if nav_item.active %} active{% endif %}" data-toggle="collapse" data-target="#{{ nav_item.title|lower|replace(' ','-') }}">
@@ -21,9 +25,9 @@
       </li>
       {%- endif %}
       {%- endfor %}
-    </ul>
-    {% if loop.first %}<hr>{% endif %}
+    {% if loop.first %}<li class="divider"><hr></li>{% endif %}
     {%- endfor %}
+    </ul>
     {%- endif %}
   </div>
 </nav>

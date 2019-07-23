@@ -2,10 +2,6 @@
     background-color: rgb(6,132,189);
     color: #DBE6F1;
 }
-#sidebar-nav hr {
-    border-color: white;
-    height: 1px;
-}
 #sidebar-nav a,
 #sidebar-nav a:visited {
     color: #DBE6F1;
@@ -15,6 +11,7 @@ footer .brand {
     padding: 40px 0 10px 0;
     font-size: 12px;
 }
+
 /*
 #secondary-nav {
     background-color: rgb(245,245,245);
