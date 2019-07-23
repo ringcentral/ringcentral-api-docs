@@ -37,15 +37,15 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Create a Glip team
 
-### Install RingCentral Python JS SDK
+### Install RingCentral Python SDK
 
 ```bash
 $ pip install ringcentral
 ```
 
-### Create and Edit create-glip-team.js
+### Create and Edit create-glip-team.py
 
-Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+Create a file called `create-glip-team.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```python
 from ringcentral import SDK
