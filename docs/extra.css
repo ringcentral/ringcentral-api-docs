@@ -11,6 +11,16 @@ footer .brand {
     padding: 40px 0 10px 0;
     font-size: 12px;
 }
+.btn-light:visited {
+    color: #212529;
+}
+.jumbotron .qs-link {
+    margin-right: 10px;
+}
+#content #main a {
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 /*
 #secondary-nav {

@@ -1,11 +1,11 @@
-# Supervising Calls
+# Call Monitoring
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
-The Supervision API allows a developer to connect to an active phone call and subsubscribe to an audio stream programatically. Some use cases for this API include:
+The Call Monitoring API allows a developer to connect to an active phone call and subscribe to an audio stream programatically. Some use cases for this API include:
 
 * To provide a real-time transcription of a call.
-* To use  NLP and AI to assist agents in helping resolve cases faster.
+* To use NLP and AI to assist agents in helping resolve cases faster.
 
 Partners today have used this API to provide RingCentral customers with call assistants that provide their agents with real-time suggestions to help provide customers with rapid and accurate recommendations. This scenario is visualized below. Once the call is established, the Supervision API can be used to connect an app to a call by providing:
 
@@ -28,6 +28,18 @@ https://support.ringcentral.com/s/article/8050?language=en_US).
 
 !!! important "No sandbox support"
     This feature is only available in a production enviornment and not supported in a sandbox enviornment.
+
+## Call Monitoring Groups
+
+Due to the sensitive nature of Call Monitoring, authorization to be monitored and to monitor others must be specifically given to extensions within an account. To manage these permissions, a developer first creates a Call Monitoring Group, and then adds users/extensions to that group designating:
+
+* What extensions/individuals can be monitored
+* What extensions/individuals can monitor others
+
+Once a Call Monitoring group has been configured, developers can use the Supervise Call API below to actively listen in on a call. 
+
+* [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
+* [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
 
 ## Supervise Call API
 

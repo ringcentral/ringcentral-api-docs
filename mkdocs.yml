@@ -42,6 +42,7 @@ pages:
 # ---- CORE APIs ----
 - 'Primary':
   - 'Voice':
+    - 'Overview': 'voice/index.md'
     - 'Getting Started':
       - 'JavaScript': 'voice/quick-start/node.md'
       - 'Python': 'voice/quick-start/python.md'
@@ -56,7 +57,7 @@ pages:
     - 'Active Calls':
       - 'Reading Active Calls': 'voice/active-calls.md'
       - 'Call Control': 'voice/call-control.md'
-      - 'Supervising Calls': 'voice/supervision.md'
+      - 'Call Monitoring': 'voice/supervision.md'
       - 'Presence': 'voice/presence.md'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
@@ -74,6 +75,7 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
 
   - 'Messaging':
+    - 'Overview': 'messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'messaging/quick-start/node.md'
       - 'Python': 'messaging/quick-start/python.md'
@@ -94,7 +96,7 @@ pages:
       - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
     - 'Message Store':
       - 'Sending Messages': 'messaging/message-store/messaging.md'
-      - 'Working with Message Store': 'messaging/message-store/message-store.md'
+      - 'Working with Message Store': 'messaging/message-store/working-with-message-store.md'
       - 'Message Synchronization': 'messaging/message-store/message-sync.md'
       - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
     - 'Sample Applications':
@@ -124,6 +126,7 @@ pages:
       - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
 
   - 'Call Management':
+    - 'Overview': 'call-management/index.md'
     - 'Getting Started':
       - 'JavaScript': 'call-management/quick-start/node.md'
       - 'Python': 'call-management/quick-start/python.md'
@@ -137,6 +140,7 @@ pages:
       - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
 
   - 'Meetings':
+    - 'Overview': 'meetings/index.md'
     - 'Getting Started':
       - 'JavaScript': 'meetings/quick-start/node.md'
       - 'Python': 'meetings/quick-start/python.md'

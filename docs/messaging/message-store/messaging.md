@@ -50,6 +50,11 @@ Apart from common message attributes which can be returned for a message of any 
 | `sms` | appears only in SMS messages; example: `smsDeliveryTime` |
 | `pg` | appears only in Pager messages; example: `pgToDepartment` |
 
+For example, the following attributes returned by the Message Store relate exclusively to voicemail messages:
+
+* `vmTranscriptionStatus`
+* `vmDuration`
+
 See the [API Reference](https://developer.ringcentral.com/api-reference) section for the full list of supported message attributes.
 
 Let's consider the example request below. GET [Message Info](https://developer.ringcentral.com/api-reference#SMS-and-MMS-loadMessage) request allows retrieving the Message Info object. In the example below the message type is SMS. The other message types: Fax, Pager, Voicemail and Text are retrieved via the same request with the corresponding `type` value.
