@@ -1,4 +1,21 @@
-# Authorization Flows on RingCentral Using OAuth 2.0
+# Authorization Flows on RingCentral
+
+<div class="jumbotron pt-1">
+  <h3 class="display-5">Getting Started with OAuth</h3>
+  <p class="lead">RingCentral supports a number of different authentication modes to satisfy the needs of the many different types of applications built on top of our platform, from mobile to desktop, from public to private, from bots to webapps.</p>
+  <p>The authentication mode we recommend developers implement is OAuth, a 3-legged auth flow that grants applications access to a user's account without exchanging a username/password with a 3rd party. The guides below will walk you through the creation of a simple OAuth flow.</p>
+  <a href="quick-start/authorization-flow/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="quick-start/authorization-flow/php/" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="quick-start/authorization-flow/python/" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/authorization-flow/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="quick-start/authorization-flow/java/" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="quick-start/authorization-flow/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
+</div>
+
+!!! info "First time building an app?"
+    Before you begin implementing a full 3-legged auth flow, we recommend you complete any one of our Quick Start guides which utilize our [Password Flow](./password-flow/). While password based auth is not recommended for most applications, we recognize that it is in many respects the easiest to implement. Start there, and when you have successfully made your first API call, come back to improve the security of your application by implementing our [Authorization Code Flow](./auth-code-flow/). 
+
+## Overview
 
 Your application and its users must be authorized by RingCentral in order to eliminate any possibility of abuse. The RingCentral API uses the [OAuth 2.0 protocol](http://oauth.net/2/) for authentication and authorization, which is widely supported by the majority of cloud API providers.
 

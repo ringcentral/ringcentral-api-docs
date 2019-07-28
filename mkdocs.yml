@@ -106,6 +106,7 @@ pages:
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 
   - 'Glip':
+    - 'Overview': 'team-messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'team-messaging/quick-start/node.md'
       - 'Python': 'team-messaging/quick-start/python.md'
@@ -172,6 +173,7 @@ pages:
           - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
 
   - 'Authentication':
+    - 'Overview': 'authentication/index.md'
     - 'Getting Started':
       - 'JavaScript': 'authentication/quick-start/authorization-flow/node.md'
       - 'Python': 'authentication/quick-start/authorization-flow/python.md'
@@ -180,7 +182,6 @@ pages:
       - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
       - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
     - 'Developer Manual':
-      - 'Auth Flows': 'authentication/oauth.md'
       - 'Auth Tokens': 'authentication/tokens.md'
       - 'Auth Code Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
@@ -188,6 +189,7 @@ pages:
       - 'Client Credentials Flow': 'authentication/client-creds.md'
 
   - 'Notifications and Events':
+    - 'Overview': 'notifications/index.md'
     - 'Getting Started':
       - 'PubNub':
         - 'JavaScript': 'notifications/quick-start/pubnub/node.md'
