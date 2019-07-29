@@ -62,7 +62,7 @@ Authorization: <YOUR_ACCESS_TOKEN>
 }
 ```
 
-```Ruby tab=
+```Ruby tab="Ruby"
 require 'ringcentral'
 
 rc = RingCentral.new(
