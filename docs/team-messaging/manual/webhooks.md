@@ -34,10 +34,10 @@ With a webhook URL in-hand after creating one as shown above, developers can pos
 * Calendar Events
 * Notes
 
-Cards are the most common form of post as they provide a more practical way of transmitting lots of information to a reader. 
+Cards are the most common form of post as they provide a more practical way of transmitting lots of information to a reader.
 
 !!! warning "REST API <> Inbound Glip Webhooks"
-    Posting a "card" to a webhook URL as described below utilizes **almost** the same message structure as discussed in [Message Attachments](../attachments). But be advised, they are not identical. 
+    Posting a "card" to a webhook URL as described below utilizes **almost** the same message structure as discussed in [Message Attachments](../attachments). But be advised, they are not identical.
 
 ### Example Glip Webhook
 
@@ -47,7 +47,7 @@ The following is an example message, transmitted in the POST body, to a Glip web
 {
   "icon": "https://example.com/post_icon.png",
   "title": "**Title of the post**",
-  "body": "Body of the post",
+  "text": "Body of the post",
   "attachments": [
     {
       "type": "Card",
@@ -87,5 +87,3 @@ The following is an example message, transmitted in the POST body, to a Glip web
 It will result in a message and card that appears a shown below:
 
 <img src="../../../img/glip_post_attachment_demo.png" class="img-fluid">
-
-
