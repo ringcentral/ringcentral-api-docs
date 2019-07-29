@@ -202,7 +202,50 @@ The response from the Supervision API will show the supervisor joining the agent
     }
 }
 ```
+### Sample SIP Invite sent to the Supervisor Device
 
+```
+|||INVITE sip:18002097562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
+||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
+||||Max-Forwards: 69
+||||User-Agent: RC_SIPWRP_25.111
+||||From: <sip:+16508370072@10.62.192.70>;tag=10.62.25.111-5070-6ce1264681244a
+||||To: <sip:18002097562*102-c4giuv3vhjebe@192.168.12.3;ob>
+||||Contact: <sip:+16508370072@10.62.192.70:5091;transport=tcp>
+||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7
+||||CSeq: 31268 INVITE
+||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx
+||||Alert-Info: Auto Answer
+||||Call-Info: <KyOAG0RTd5fP1WkxMAuXNw..>;purpose=info;Answer-After=0
+||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO
+||||Supported: replaces, timer, diversion
+||||Session-Expires: 14400;refresher=uac
+||||Min-SE: 90
+||||Content-Type: application/sdp
+||||Content-Length: 510
+||||P-Acme-VSA: 200:KyOAG0RTd5fP1WkxMAuXNw..
+||||v=0
+||||o=- 137800156 2016517757 IN IP4 10.62.192.70
+||||s=SmcSip
+||||c=IN IP4 10.62.192.70
+||||t=0 0
+||||m=audio 50400 RTP/AVP 111 9 0 18 96 8 109 101
+||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-7
+||||a=rtpmap:111 OPUS/48000/2
+||||a=fmtp:111 useinbandfec=1
+||||a=rtcp-fb:111 ccm tmmbr
+||||m=audio 50402 RTP/AVP 111 9 0 18 96 8 109 101
+||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-8
+||||a=rtpmap:111 OPUS/48000/2
+||||a=fmtp:111 useinbandfec=1
+||||a=rtcp-fb:111 ccm tmmbr
+||||a=sendrecv
+
+p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx (This is the Supervisor's party-id and the session-id
+
+and the i headers contains the PSTN(Customer)party-id and Agent party-id
+
+```
 #### How to verify the Supervisor has joined the session
 
 To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the `activeCalls` property. For example:
