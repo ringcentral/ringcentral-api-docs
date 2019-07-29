@@ -1,4 +1,4 @@
-# Call Monitoring
+# Call Supervision and Monitoring
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
@@ -173,9 +173,16 @@ GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device
 
 ### Response
 
-The response from the Supervision API will show the supervisor joining the agent extension with a seperate party `id`, e.g. `party-4` in this example. The RingCentral system will then send a SIP INVITE request to the supervisor device which is expected to join the existing customer-agent call session automatically with auto answer. Now the human or app supervisor can stream the audio.
+If the request is success, two things will happen.
 
-```http tab="Response"
+1. First, the API will send a response to reflect that the supervisor has joined the agent extension with a seperate party `id`, e.g. `party-4` in this example.
+2. Next, RingCentral will then send a SIP INVITE request to the supervisor's device which will signal the device to join the existing customer-agent call session automatically with auto answer.
+
+Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below. 
+
+#### JSON Response from API
+
+```json
 {
     "direction": "Outbound",
     "from": {
@@ -202,9 +209,15 @@ The response from the Supervision API will show the supervisor joining the agent
     }
 }
 ```
-### Sample SIP Invite sent to the Supervisor Device
 
-```
+#### Sample SIP Invite sent to the Supervising Device
+
+Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:
+
+* Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
+* Line 26: `i` contains the PSTN's (customer) `party-id` and the agent `party-id`
+
+```http hl_lines="10 26" linenums="1"
 |||INVITE sip:18002097562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
 ||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
 ||||Max-Forwards: 69
@@ -240,12 +253,8 @@ The response from the Supervision API will show the supervisor joining the agent
 ||||a=fmtp:111 useinbandfec=1
 ||||a=rtcp-fb:111 ccm tmmbr
 ||||a=sendrecv
-
-p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx (This is the Supervisor's party-id and the session-id
-
-and the i headers contains the PSTN(Customer)party-id and Agent party-id
-
 ```
+
 #### How to verify the Supervisor has joined the session
 
 To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the `activeCalls` property. For example:
