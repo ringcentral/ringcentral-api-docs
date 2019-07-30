@@ -12,9 +12,9 @@ The Call Control API is a REST based interface, allowing developers to customize
 
 *telephony/sessions* - a new subscription endpoint filter that can be configured at an account or extension level to get notifications/data streams on an ongoing Active telephony sessions.
 
-The Extension Level Event Filter is: /restapi/v1.0/account/~/telephony/sessions
+The Extension Level Event Filter is: /restapi/v1.0/account/~/extension/~/telephony/sessions
 
-The Account Level Event Filter is: /restapi/v1.0/account/telephony/sessions
+The Account Level Event Filter is: /restapi/v1.0/account/~/telephony/sessions
 
 Based on the level where the subscription is configured,you will receive notifications accordingly and use the data there , primarily *telephonySessionId* & *partyId* to control an active call.
 
