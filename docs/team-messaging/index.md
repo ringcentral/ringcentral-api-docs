@@ -21,7 +21,7 @@ Glip Bots are automated agents that users can interact with in a coversational m
 * to delivery notifications to users privately
 * automate interactions with users in a conversational manner
 
-RingCentral [supports and offers a number of Bot frameworks](./frameworks/) to help developers create Glip Bots. To get started creating a bot, we recommend using our [Javascript Bot Framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which enables developers to create a bot in 10 lines of code, like this "Ping Bot:"
+RingCentral [supports and offers a number of Bot frameworks](./manual/frameworks/) to help developers create Glip Bots. To get started creating a bot, we recommend using our [Javascript Bot Framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which enables developers to create a bot in 10 lines of code, like this "Ping Bot:"
 
 ```javascript linenums="1"
 const createApp = require('ringcentral-chatbot/dist/apps').default
