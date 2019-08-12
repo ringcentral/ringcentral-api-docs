@@ -99,9 +99,9 @@ Frequently, while developing an application or integration, it is helpful for De
 Ring Central Users can view their voicemail, fax messages, and call logs through the Ring Central Online Account Portal, Ring Central desktop app and Ring Central mobile app. Text Messages can be viewed through the Ring Central desktop app and mobile app.
 Here is a list of official Ring Central knowledge base articles describing the manual processes and tools available for gathering your Activity Log data.
 
-* [Activity Log Overview](https://success.ringcentral.com/articles/RC_Knowledge_Article/Activity-Log-Overview)
+* [Activity Log Overview](https://support.ringcentral.com/s/article/Activity-Log-Overview)
 * [Phone System Reports](https://www.ringcentral.com/office/features/call-metrics-reporting/overview.html)
-* [Downloading Your Call Log](https://success.ringcentral.com/articles/RC_Knowledge_Article/Activity-Log-Overview)
+* [Downloading Your Call Log](https://support.ringcentral.com/s/article/Activity-Log-Overview)
 
 Now we will take a moment to review the Ring Central Data Retention Policy further since it highlights important information as it relates to your Data Archival system architecture.
 
@@ -113,7 +113,7 @@ The standard RingCentral Message Store and Account Data Retention Policy dictate
 * Provides specifications for development considerations with data archival
 * Has different rules for HIPAA and non-HIPAA RingCentral Accounts
 
-Please consult our Knowledge Base to view our most up-to-date [Message Storage and Account Data Retention Policy](http://success.ringcentral.com/articles/en_US/RC_Knowledge_Article/2178).
+Please consult our Knowledge Base to view our most up-to-date [Message Storage and Account Data Retention Policy](https://support.ringcentral.com/s/article/2178).
 
 ## Common Use Cases
 

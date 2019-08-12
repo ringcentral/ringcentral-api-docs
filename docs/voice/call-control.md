@@ -379,7 +379,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 "parkOrbit":"400416048004"
 }
 ```
-Setting up and Using Park Locations via [Service Site](https://success.ringcentral.com/articles/RC_Knowledge_Article/8355) or via [Ringcentral API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html).
+Setting up and Using Park Locations via [Service Site](https://support.ringcentral.com/s/article/8355) or via [Ringcentral API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html).
 
 ## Recording Calls
 
@@ -408,7 +408,7 @@ PATCH /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<p
 
 Call flipping is useful if you rely on a number of different phones (e.g., desk phone, cell phone, the RingCentral softphone) and enables you to transfer calls between any two phones. Flip a call from a desk phone to a mobile phone or a mobile phone to a home phone... you get the idea. See [How Call Flip works](https://www.ringcentral.com/office/features/call-flip/overview.html).
 
-[Configure your Call Flip Settings](https://success.ringcentral.com/articles/RC_Knowledge_Article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding) via Service Site or via [Ringcentral Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html).
+[Configure your Call Flip Settings](https://support.ringcentral.com/s/article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding) via Service Site or via [Ringcentral Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html).
 
 ```
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/flip
