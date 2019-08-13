@@ -29,6 +29,18 @@ The first step in making your application available to our partner's customers i
 
 Our partner's customers may not always be aware that RingCentral is the service powering the solution they use everyday. They may only know their service by the name our partner's give the product, for example "AT&T Office@Hand." For this reason, we recommend developers use buttons, or at least copy/language, to help customer connect via the right service. The following buttons have been crafted to help you construct buttons to initiate the login flow with RingCentral, or any of our partners.
 
+#### RingCentral
+
+![RingCentral Logo](../button-ringcentral.png)
+
+**Button HTML**
+
+```html
+<a href="http://platform.ringcentral.com/login?<OAUTH PARAMS>">
+  <img src="<IMG PATH>" />
+</a>
+```
+
 #### AT&T Office@Hand
 
 ![Office@Hand Logo](https://login-officeathand.att.com/static/media/logo-19.3.0.svg)
@@ -71,18 +83,14 @@ AT&T Office@Hand customers on RingCentral operate in a completely separate envir
 Below are a set of recommendations for developers when building their applications.
 
 1. When constructing the Login URL to initiate the 3-legged authorization flow:
-   * Developers should direct their users to the proper domain depending upon whether the user is a customer of RingCentral or Office@Hand.
-   * Developers should include the `brandId` querystring parameter and set it to `3420`.
-   * Developers wishing to use the same OAuth Redirect URI for both Office@Hand and RingCentral customers should also provide a value in the `state` querystring parameter. The `state` parameter will be returned verbatim in the redirect to complete the OAuth flow. The value provided can help developers disambiguate between a RingCentral and Office@Hand customer.
+     * Developers should direct their users to the proper domain depending upon whether the user is a customer of RingCentral or Office@Hand.
+     * Developers should include the `brandId` querystring parameter and set it to `3420`.
+     * Developers wishing to use the same OAuth Redirect URI for both Office@Hand and RingCentral customers should also provide a value in the `state` querystring parameter. The `state` parameter will be returned verbatim in the redirect to complete the OAuth flow. The value provided can help developers disambiguate between a RingCentral and Office@Hand customer.
 2. Developers should make efforts to remember whether their users are associated with RingCentral or Office@Hand, as all subsequent API requests need to be directed to the proper server environment in order to be completed successfully.
 
 #### Sample Application
 
-A [sample application]() was created to help illustrate the guidelines above. Here are a few code snippets of interest:
-
-```javascript
-
-```
+A [sample application](https://github.com/byrnereese/ringcentral-office-at-hand-sample-app) was created to help illustrate the guidelines above. It's README highlights the specific code changes you may need to make to your application to ensure compatibility with all of our partners. 
 
 ## Promotion in the App Gallery
 
