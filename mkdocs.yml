@@ -162,6 +162,7 @@ pages:
           - 'Media Content': 'basics/media.md'
           - 'App Permissions': 'basics/permissions.md'
           - 'Rate Limits': 'basics/rate-limits.md'
+          - 'Partner Compatibility': 'basics/partner-compatibility.md'
       - 'Application Management':
           - 'Creating an Application': 'basics/create-app.md'
           - 'Deploying to Production': 'basics/production.md'
