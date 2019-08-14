@@ -22,7 +22,7 @@ To create a forwarding number:
 
 * Specify the `phoneNumber` parameter. This is a phone number for an incoming call to be forwarded to.
 * Specify `type` parameter using one of the type's value from the table above. The default value is "Other"
-* Specify the `label` (title of the forwarding number object) parameter if the `type` is omitted or specified with as `Other`.
+* Specify the `label` (title of the forwarding number object) parameter if the `type` is omitted or specified as "Other".
 * Specify the `id` for the `device` object if the `type` is specified as "PhoneLine".
 * Make a POST request to `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number` endpoint.
 
