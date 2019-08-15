@@ -4,7 +4,7 @@ In this tutorial, you will learn how to navigate and make use of more detailed a
 
 ## Create Test Data
 
-1. There are a few ways you can do this, but the easiest way is to put your [RingCentral Soft Phone in Sandbox Mode](https://developers.ringcentral.com/library/tutorials/test-account.html), and then make a test call using to your RingCentral Soft Phone from an outside number.
+1. There are a few ways you can do this, but the easiest way is to put your [RingCentral Soft Phone in Sandbox Mode](../../../basics/your-rc-phone/), and then make a test call using to your RingCentral Soft Phone from an outside number.
 
 2. Make sure to record one of these calls by pressing the `Record` button in the soft phone and ensuring the call lasts for at least 30-60 seconds, then click the `Record` button again to stop the recording.
 
@@ -16,7 +16,7 @@ Now check that the call records exist in the API, first fetch an `access_token` 
 
 ```http
 GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
-Host: platform.devtest.ringcentral.com
+Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
@@ -29,10 +29,10 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
 
 ```json
 {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&dateFrom=2016-06-05T23:11:00.000Z&page=1&perPage=100",
+    "uri": "https://platform.ringcentral.com/restapi/..snip..&page=1&perPage=100",
     "records": [
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Simple",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaxDDkSZ5s42MA?view=Simple",
             "id": "ASaxDDkSZ5s42MA",
             "sessionId": "13916417004",
             "startTime": "2016-06-06T23:07:20.000Z",
@@ -51,14 +51,14 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
                 "location": "San Francisco (South), CA"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1662272004",
                 "id": "1662272004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../recording/1662272004/content"
             }
         },
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Simple",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoSC9FIMaOF24?view=Simple",
             "id": "ASaoSC9FIMaOF24",
             "sessionId": "13914800004",
             "startTime": "2016-06-06T18:12:30.000Z",
@@ -76,14 +76,14 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
                 "id": "1659910004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../1659910004/content"
             }
         },
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Simple",
+            "uri": "https://platform.devtest.ringcentral.com/restapi/..snip..?view=Simple",
             "id": "ASaoLzRiqjLaFYU",
             "sessionId": "13914782004",
             "startTime": "2016-06-06T18:07:41.000Z",
@@ -101,10 +101,10 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../1659903004",
                 "id": "1659903004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
             }
         }
     ],
@@ -116,7 +116,7 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
     },
     "navigation": {
         "firstPage": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Simple&dateFrom=2016-06-05T23:11:00.000Z&page=1&perPage=100"
+            "uri": "https://platform.ringcentral.com/restapi/..snip..&page=1&perPage=100"
         }
     }
 }
@@ -127,8 +127,8 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
 If you already have plenty of call log data to sample from, you can scope the request to an appropriate time range by adding the `dateTo` and `dateFrom` query parameters (remember, ISO 8601 formatted and URL Encoded strings).
 
 ```http
-GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=STARTING_DATE_TIME&dateTo=ENDING_DATE_TIME HTTP/1.1
-Host: platform.devtest.ringcentral.com
+GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=DATE&dateTo=DATE HTTP/1.1
+Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
@@ -150,10 +150,10 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
 
 ```json
 {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&dateFrom=2016-06-05T23:09:00.000Z&page=1&perPage=100",
+    "uri": "https://platform.ringcentral.com/restapi/..snip../call-log?..snip..&perPage=100",
     "records": [
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaxDDkSZ5s42MA?view=Detailed",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaxDDkSZ5s42MA?view=Detailed",
             "id": "ASaxDDkSZ5s42MA",
             "sessionId": "13916417004",
             "startTime": "2016-06-06T23:07:20.000Z",
@@ -172,10 +172,10 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                 "location": "San Francisco (South), CA"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../1662272004",
                 "id": "1662272004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
             },
             "transport": "PSTN",
             "lastModifiedTime": "2016-06-06T23:08:23.336Z",
@@ -197,15 +197,15 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "location": "San Francisco (South), CA"
                     },
                     "recording": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../1662272004",
                         "id": "1662272004",
                         "type": "OnDemand",
-                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
                     "transport": "PSTN",
                     "legType": "Accept",
                     "extension": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
                         "id": 664573005
                     }
                 },
@@ -225,22 +225,22 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../1662272004",
                         "id": "1662272004",
                         "type": "OnDemand",
-                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
                     "transport": "VoIP",
                     "legType": "PstnToSip",
                     "extension": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
                         "id": 664573005
                     }
                 }
             ]
         },
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoSC9FIMaOF24?view=Detailed",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoSC9FIMaOF24?view=Detailed",
             "id": "ASaoSC9FIMaOF24",
             "sessionId": "13914800004",
             "startTime": "2016-06-06T18:12:30.000Z",
@@ -258,10 +258,10 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
                 "id": "1659910004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
             },
             "transport": "VoIP",
             "lastModifiedTime": "2016-06-06T18:13:43.335Z",
@@ -282,22 +282,22 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659910004",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
                         "id": "1659910004",
                         "type": "OnDemand",
-                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659910004/content"
+                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
                     "transport": "VoIP",
                     "legType": "SipToPstnUnmetered",
                     "extension": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
                         "id": 664573005
                     }
                 }
             ]
         },
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log/ASaoLzRiqjLaFYU?view=Detailed",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoLzRiqjLaFYU?view=Detailed",
             "id": "ASaoLzRiqjLaFYU",
             "sessionId": "13914782004",
             "startTime": "2016-06-06T18:07:41.000Z",
@@ -315,10 +315,10 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1659903004",
                 "id": "1659903004",
                 "type": "OnDemand",
-                "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
+                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
             },
             "transport": "VoIP",
             "lastModifiedTime": "2016-06-06T18:09:03.334Z",
@@ -339,15 +339,15 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1659903004",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../1659903004",
                         "id": "1659903004",
                         "type": "OnDemand",
-                        "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1659903004/content"
+                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
                     "transport": "VoIP",
                     "legType": "SipToPstnUnmetered",
                     "extension": {
-                        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
                         "id": 664573005
                     }
                 }
@@ -362,7 +362,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
     },
     "navigation": {
         "firstPage": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005/call-log?view=Detailed&dateFrom=2016-06-05T23:09:00.000Z&page=1&perPage=100"
+            "uri": "https://platform.ringcentral.com/restapi/..snip..&page=1&perPage=100"
         }
     }
 }
@@ -391,15 +391,15 @@ Inspecting the `legs` property of the multi-leg call, we can see two different `
             "location": "San Francisco (South), CA"
         },
         "recording": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1662272004",
             "id": "1662272004",
             "type": "OnDemand",
-            "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+            "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
         },
         "transport": "PSTN",
         "legType": "Accept",
         "extension": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
             "id": 664573005
         }
     },
@@ -419,15 +419,15 @@ Inspecting the `legs` property of the multi-leg call, we can see two different `
             "name": "SDK Engineer Candidate"
         },
         "recording": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/recording/1662272004",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../1662272004",
             "id": "1662272004",
             "type": "OnDemand",
-            "contentUri": "https://media.devtest.ringcentral.com:443/restapi/v1.0/account/133128004/recording/1662272004/content"
+            "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
         },
         "transport": "VoIP",
         "legType": "PstnToSip",
         "extension": {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/133128004/extension/664573005",
+            "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
             "id": 664573005
         }
     }
