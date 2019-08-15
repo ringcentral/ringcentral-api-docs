@@ -1,12 +1,17 @@
 # Call Queues
 
-Call Queues are a poplar way to have multiple people respond to incoming calls. They are a useful way for example to create a department of people that all respond when a call is directed to the same extension. 
+A call queue is a special extension that can hold a group of user extensions. It provides a convenient way to have multiple people (a department) respond to incoming calls.
 
-They work by assigning a number of extensions to a call queue grouping. The call queue grouping has an extension of its own. When a call is directed to the queue's extension, the call is connected with the first extension in the queue that is available. If a call is directed to an extension via the queue, and the receiving extension fails to answer, the call will be directed to that extension's voice mail. The call will *not* re-enter the queue. 
+As an extension, a call queue has a name, an extension number and can be assigned with a direct phone number. Incoming calls dialed directly to that direct number (if assigned) or to the main company number followed by the * and the extension number (e.g. 16501234567*112), will be redirected to the group of extensions defined in the call queue. 
+
+
+They work by assigning a number of extensions to a call queue grouping. The call queue grouping has an extension of its own. When a call is directed to the queue's extension, the call is connected with the first extension in the queue that is available. If a call is directed to an extension via the queue, and the receiving extension fails to answer, the call will be directed to that extension's voice mail. The call will *not* re-enter the queue.
 
 ## Create a Call Queue
 
-Creating a call queue is performed in the [Online Account Portal](https://service.ringcentral.com) under groups.
+Creating a call queue is performed in the [Online Account Portal](https://service.ringcentral.com) under the Groups option.
+
+
 
 ## Read Call Queue List
 
