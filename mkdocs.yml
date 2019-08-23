@@ -114,6 +114,8 @@ pages:
       - 'Java': 'team-messaging/quick-start/java.md'
       - 'C#': 'team-messaging/quick-start/c-sharp.md'
       - 'Ruby': 'team-messaging/quick-start/ruby.md'
+    - 'Manual':
+      - "Composing Links": 'team-messaging/manual/links.md'
     - 'Posting Glip Messages':
       - 'Message Formatting': 'team-messaging/manual/formatting.md'
       - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
