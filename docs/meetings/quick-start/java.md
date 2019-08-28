@@ -86,16 +86,19 @@ import com.ringcentral.definitions.*;
 
 
 public class Create_Meeting {
-    String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-    String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+    static RestClient restClient;
 
   	public static void main(String[] args) {
         var obj = new Create_Meeting();
     		try {
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
           obj.createMeeting();
     		} catch (RestException | IOException e) {
     			e.printStackTrace();
@@ -103,9 +106,6 @@ public class Create_Meeting {
   	}
 
   	public void createMeeting() throws RestException, IOException{
-        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-
         MeetingRequestResource parameters = new MeetingRequestResource();
         parameters.topic = "Instant Meeting";
         parameters.meetingType = "Instant";
@@ -113,7 +113,7 @@ public class Create_Meeting {
         parameters.startHostVideo = true;
         parameters.startParticipantsVideo = false;
 
-        var response = rc.restapi().account().extension().meeting().post(parameters);
+        var response = restClient.restapi().account().extension().meeting().post(parameters);
         System.out.println("Start Your Meeting: " + response.links.startUri);
         System.out.println("Join the Meeting: " + response.links.joinUri);
     }

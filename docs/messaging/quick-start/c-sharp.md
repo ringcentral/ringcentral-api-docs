@@ -65,20 +65,22 @@ namespace Send_SMS
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
         const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
+        static RestClient restClient;
+
         static void Main(string[] args)
         {
+            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+            restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
             send_sms().Wait();
         }
         static private async Task send_sms()
         {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             var parameters = new CreateSMSMessage();
             parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
             parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
             parameters.text = "Hello World from C#";
 
-            var resp = await rc.Restapi().Account().Extension().Sms().Post(parameters);
+            var resp = await restClient.Restapi().Account().Extension().Sms().Post(parameters);
             Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
         }
     }

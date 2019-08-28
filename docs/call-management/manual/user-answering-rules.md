@@ -21,7 +21,7 @@ An example of a simple use case is when you take a day off from work, you may wa
 
 An advanced answering rule can be created with multiple conditions based on time of day, date range, incoming caller ID and called number to offer powerful call management capabilities.
 
-<img class="img-fluid" src="../../../img/answering_rule_flow.png">
+<img class="img-fluid" src="../../../img/answering-rule-flow.png">
 
 There are 3 types of rules:
 
@@ -282,7 +282,7 @@ puts resp.body
 Upon successful API call completion, the response contains the id (`ruleId`) and other information of the newly created rule.
 ```json hl_lines="3", linenums="1"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009114/extension/178009114/answering-rule/227207004",
+  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178002314/extension/178009114/answering-rule/227207004",
   "id": "227207004",
   "type": "Custom",
   "name": "My weekly meetings",
@@ -452,7 +452,7 @@ To delete a company answering rule:
 
 Required permission(s): EditExtensions
 
-Response
+Sample Response
 ```json
 {
   "callHandlingAction":"TakeMessagesOnly",
