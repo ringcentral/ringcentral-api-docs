@@ -22,15 +22,15 @@ To retain Glip data according to your company data retention policy, you can use
 | Get Glip Compliance Export Archive Content | `/restapi/v1.0/glip/data-export/taskId/archive/archiveId` |
 |||
 
-## How to archive the Glip data
+## How to archive Glip data
 
-There are 4 steps to archive your company Glip using the APIs set:
+There are 3 steps to archive your company Glip data using the Compliance Export APIs set:
 
-#### 1. Create an export report task
+#### 1. Create an export task
 
-To create an export report task:
+To create an export task:
 
-* Specify the period of time for the archive. The period of time is specified by the `dateFrom` and `dateTo`.
+* Specify the period of time for the archive. The period of time is specified by the `dateFrom` and `dateTo`. Maximum range is 30 days.
 * Specify a list of users by `userIds`.
 * Specify a list of channels by `chatIds`
 * Make a POST request to the `/restapi/v1.0/glip/data-export` endpoint.
@@ -56,7 +56,7 @@ Upon successful API call completion, the response contains the id (taskId) and t
 
 #### 2. Check the status of a task identified by the taskId
 
-To archive a large data export report (for a long period of time or for an account with a large number of extensions), the report creation process may take several minutes to complete. Therefore, you should check the status of a task to ensure it is marked as “Completed” before you can proceed to get the report.
+To export a large data report (for a long period of time or for an account with a large number of members), the report creation process may take several minutes to complete. Therefore, you should check the status of a task to ensure it is marked as “Completed” before you can proceed to get the report.
 The status of a task can be any of the following values:
 
 _Accepted - Pending - InProgress - AttemptFailed - Failed - Completed - Cancelled_
