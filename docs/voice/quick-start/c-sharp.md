@@ -66,20 +66,22 @@ namespace Call_Ringout
           const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
           const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
+          static RestClient restClient;
+
           static void Main(string[] args)
           {
+              restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+              restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
               call_ringout().Wait();
           }
           static private async Task call_ringout()
           {
-              RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-              await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
               var parameters = new MakeRingOutRequest();
               parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
               parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
               parameters.playPrompt = false;
 
-              var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
+              var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
               Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
           }
       }

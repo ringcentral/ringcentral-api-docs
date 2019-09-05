@@ -66,14 +66,16 @@ namespace Create_Glip_Team
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
         const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
+        static RestClient restClient;
+
         static void Main(string[] args)
         {
+            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+            restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
             create_glip_team().Wait();
         }
         static private async Task create_glip_team()
         {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             var parameters = new GlipPostTeamBody();
             parameters.@public = true;
             parameters.name = "Fun team";
@@ -86,7 +88,7 @@ namespace Create_Glip_Team
 
             parameters.members = new Object[] { member1, member2 };
 
-            var response = await rc.Restapi().Glip().Teams().Post(parameters);
+            var response = await restClient.Restapi().Glip().Teams().Post(parameters);
             var jsonStr = JsonConvert.SerializeObject(response);
             Console.WriteLine(jsonStr);
         }

@@ -119,6 +119,8 @@ pages:
       - 'Message Formatting': 'team-messaging/manual/formatting.md'
       - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
+    - 'Glip Compliance Export':
+      - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
       - 'Build a Bot in Node': 'team-messaging/manual/node.md'
