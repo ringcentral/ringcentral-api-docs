@@ -91,18 +91,18 @@ public class Create_Glip_Team {
     static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
     static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
-  	public static void main(String[] args) {
-    		try {
-          create_glip_team();
-    		} catch (RestException | IOException e) {
-    			e.printStackTrace();
-    		}
-  	}
-
-  	public static void create_glip_team() throws RestException, IOException{
-        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-
+    static RestClient restClient;
+    public static void main(String[] args) {
+        var obj = new Create_Glip_Team();
+        try {
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+          obj.create_glip_team()();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+    }
+  	public void create_glip_team() throws RestException, IOException{
         var parameters = new GlipPostTeamBody();
         parameters._public = true;
         parameters.name = "Fun team";
@@ -114,7 +114,7 @@ public class Create_Glip_Team {
 
         parameters.members = new HashMap[] { members };
 
-        var response = rc.restapi().glip().teams().post(parameters);
+        var response = restClient.restapi().glip().teams().post(parameters);
         String jsonStr = JSON.toJSONString(response);
         System.out.println(jsonStr);
     }
