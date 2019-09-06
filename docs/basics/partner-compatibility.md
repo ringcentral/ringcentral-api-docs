@@ -22,7 +22,7 @@ The first step in making your application available to our partner's customers i
 1. Make sure your app is Application Type is set to "Public."
 2. Select your desired partners under "Carrier." *By default, all are selected.*
 
-<img class="img-fluid" src="../partners-create-app.png" width="75%" />
+<img class="img-fluid" src="../partners-create-app.png" width="50%" />
 
 *If a partner is not selected, then customers associated with that partner will be prohibited from authenticating or using your application.*
 
@@ -58,7 +58,7 @@ When constructing a login URL to initiate the authorization process in a [3-legg
 |-|-|-|
 | `3420` | AT&T Office@Hand | ![Office@Hand Logo](../logo-att.png) |
 | `7310` | TELUS | ![TELUS Logo](../logo-telus.png) |
-| `7710` | BT | ![BT Logo]() | 
+| `7710` | BT | ![BT Logo](../logo-bt.png) | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 
@@ -70,6 +70,19 @@ AT&T Office@Hand customers on RingCentral operate in a completely separate envir
 |-|-|
 | RingCentral | `https://platform.ringcentral.com/` |
 | Office@Hand | `https://platform.ringcentral.biz/` |
+
+### Constructing a Login URL
+
+This all culminates in a URL that a user will click on to initiate the authorization process. Below is an example URL:
+
+```
+https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>&brand_id=7710&display=&prompt=
+```
+
+Remember, pay close attention to the following:
+
+* The domain you utilize may depend upon the carrier you are linking to.
+* The `brandId` parameter will need to be customized based on the logo you want to appear on the login page.
 
 #### AT&T Office@Hand Compatibility
 
@@ -97,7 +110,7 @@ This can be accomplished by:
 3. Using the pull-down menu as seen in the screenshot below, select the respective partner's App Gallery.
 4. Edit your app's profile and submit when finished.
 
-<img class="img-fluid" src="../partners-publish-app.png" width="75%" />
+<img class="img-fluid" src="../partners-publish-app.png" width="50%" />
 
 ### Why do you require multiple profiles?
 
