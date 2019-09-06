@@ -65,21 +65,23 @@ namespace PubNub_Notifications
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
         const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
+        static RestClient rcsdk = null;
+
         static void Main(string[] args)
         {
+            rcsdk = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+            rcsdk.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
             pubnub_notification().Wait();
         }
         static private async Task pubnub_notification()
         {
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-            await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             try
             {
                 var eventFilters = new[]
                 {
                     "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
                 };
-                var subscription = new Subscription(rc, eventFilters, message =>
+                var subscription = new Subscription(rcsdk, eventFilters, message =>
                 {
                     var jsonObj = JObject.Parse(message);
                     if (jsonObj["event"].ToString().Contains("instant?type=SMS"))

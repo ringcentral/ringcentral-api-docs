@@ -1,205 +1,83 @@
-# Call Handling: Answering Rules
+# Answering Rules Overview
 
-Answering Rules enable users to control how calls are handled when their extension is called. Users can set which phone numbers are called, in which order and after what delay, as well as configure Ring Groups.
+Answering Rules APIs can be used to create and manage logic for routing incoming calls throughout your RingCentral account. For example, the following are all answering rules you can construct using the Answering Rule API. 
 
-Answering rules are handled by the `account/~/extension/~/answering-rule` endpoint and associate rules with phone numbers handled by the user's forwarding number endpoint. Each user has 2 default answering rules for business hours and after hours, known as `business-hours-rule` and `after-hours-rule`, as well as custom rules.
+* If an incoming call is received outside business hours, route the call to my voicemail.
+* If an incoming call is received outside of business hours, but the phone number is that of a VIP customer, route the call to my mobile phone. 
+* A call comes in on a day you are off from work, you want all incoming calls to your work phone number to be re-routed automatically to one of your co-workers to handle the calls.
 
-| API | path |
-|-----|------|
-| Answering Rule Endpoint | `v1.0/account/~/extension/~/answering-rule/` |
-| Answering Rule Endpoint for Business Hours Rule | `v1.0/account/~/extension/~/answering-rule/business-hours-rule` |
-| Answering Rule Endpoint for After Hours Rule | `v1.0/account/~/extension/~/answering-rule/after-hours-rule` |
-| Forwarding Number Endpoint | `v1.0/account/~/extension/~/forwarding-number/` |
+## Answering Rule Structure
 
-## Read Answering Rule List
+An answering rule is made up of two main components:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/` | Get extension rule list |
+* A set of conditions that must be met
+* An action to take on a call that meets the conditions above
 
-```json
-{
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&perPage=100",
-  "records": [
-    {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/33333333",
-      "id": "33333333",
-      "type": "Custom",
-      "name": "My Custom Rule 1",
-      "enabled": true,
-      "callers": [
-        {
-          "callerId": "16505551212"
-        }
-      ],
-      "callHandlingAction": "ForwardCalls"
-    },
-    {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
-      "id": "business-hours-rule",
-      "type": "BusinessHours",
-      "enabled": true,
-      "callHandlingAction": "ForwardCalls"
-    }
-  ],
-  "paging": {...},
-  "navigation": {...}
-}
-```
+Here is an example Answering Rule flow:
 
-## Read an Answering Rule
+<img class="img-fluid" src="../../../img/answering-rule-flow.png">
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Get a rule |
+### Rule Types
 
-```json
-{
-    "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
-    "id": "business-hours-rule",
-    "type": "BusinessHours",
-    "enabled": true,
-    "schedule": {
-        "ref": "BusinessHours"
-    },
-    "callHandlingAction": "ForwardCalls",
-    "forwarding": {
-        "notifyMySoftPhones": true,
-        "notifyAdminSoftPhones": false,
-        "softPhonesRingCount": 1,
-        "ringingMode": "Sequentially",
-        "rules": [
-            {
-                "index": 1,
-                "ringCount": 4,
-                "forwardingNumbers": [
-                    {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/33333333",
-                        "id": "33333333",
-                        "phoneNumber": "+16505551212",
-                        "label": "My Cisco SPA-303 Desk Phone"
-                    }
-                ]
-            },
-            {
-                "index": 2,
-                "ringCount": 8,
-                "forwardingNumbers": [
-                    {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/44444444",
-                        "id": "44444444",
-                        "phoneNumber": "+4155551212",
-                        "label": "Home"
-                    }
-                ]
-            },
-            {
-                "index": 3,
-                "ringCount": 12,
-                "forwardingNumbers": [
-                    {
-                        "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/forwarding-number/55555555",
-                        "id": "55555555",
-                        "phoneNumber": "+12125551212",
-                        "label": "Mobile"
-                    }
-                ]
-            }
-        ]
-    },
-    "greetings": [
-        {
-            "type": "Voicemail",
-            "prompt": {
-                "id": "0",
-                "type": "message",
-                "name": "No One Available"
-            }
-        },
-        {
-            "type": "Introductory"
-        },
-        {
-            "type": "AudioWhileConnecting",
-            "prompt": {
-                "id": "6",
-                "type": "music",
-                "name": "Acoustic"
-            }
-        },
-        {
-            "type": "ConnectingMessage",
-            "prompt": {
-                "id": "3",
-                "type": "message",
-                "name": "Forward hold 1"
-            }
-        }
-    ],
-    "screening": "Never",
-    "voicemail": {
-        "enabled": true,
-        "recipient": {
-            "uri": "http://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222",
-            "id": 22222222
-        }
-    }
-}
-```
+The Answering Rules API has endpoints for creating two different core rule types:
 
-## Update an Answering Rule
+* **User Rules** - these rules are applied to incoming call to a specific user or extension. 
 
-Answering rules can be updated by configuring forwarding numbers individuall and in Ring Groups. For each forwarding number, the `index` and `forwardingNumber.id` is required.
+* **Company Rules** - these rules are applied to incoming calls to extensions that are not owned by a specific user, for example IVR extensions, call queues, departments, etc. 
 
-The `ringCount` property indicates how many times the call should ring before moving to the next rule. Each ring corresponds to 5 seconds in the Online Account Portal.
+Finally, both User and company rules can each be of the following sub-types:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Update a rule |
+| Rule Type | Purpose |
+|-|-|
+| Business Hours Rule | If active, incoming calls during defined business hours will be evaluated based on conditions defined in this rule. |
+| After Hours Rule | If active, incoming calls after business hours will be evaluated based on conditions defined in this rule. |
+| Custom Rule | Custom rules for special routing during holidays or specific times of the day (e.g. lunch break) or for special callers/callees. |
 
-```json
-{
-  "forwarding": {
-    "rules": [
-      {
-        "index": 1,
-        "ringCount": 2,
-        "forwardingNumbers": [
-          { id: "22223333" },
-          { id: "22224444" }
-        ]
-      },
-      {
-        "index": 2,
-        "ringCount": 4,
-        "forwardingNumbers": [
-          { id: "22225555" }
-        ]
-      }
-    ]
-  }
-}
-```
+!!! note "Using IDs to differentiate rule types"
+    Answering rules are identified by unique rule IDs. The `ruleId` of the default Business Hours and After Hours rule is `business-hours-rule` and `after-hours-rule` respectively. A custom `ruleId` is identified by a long-number as a string e.g. `33333333`
 
-## Delete an Answering Rule
+### Rule Conditions
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `DELETE` | `v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}` | Delete a rule |
+Answering Rules can be constructed around the following conditions/criteria:
 
-## Update a Forwarding Number
+* **Schedule** - such as during company business hours, after hours or specific times of the day.
+* **Caller's phome number** - incoming calls from the specified caller(s) phone number.
+* **Recipient's phone number** - incoming calls to a selected phone number(s). Phone numbers must belong to the same extension.
 
-Permissions needed: EditExtensions
-The business and after hours rules can forward calls to a set of forwarding numbers. To update the phone number used, identify the forwarding number in the list of rules and then update the phone number of that resource using a HTTP PUT request to the endpoint updating the phoneNumber property.
+### Rule Actions
 
-An update can be written as follows:
+The action that can taken on a call depends upon the type of the answering rule being created. 
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}` | Update a forwarding number |
+#### Actions for User Answering Rules
 
-```json
-{
-  "phoneNumber": "+16505551212"
-}
-```
+* **Forward Call**: re-route an incoming call to multiple phone numbers in a specific order with greeting settings apply.
+* **Unconditional Forward**: forward an incoming call immediately to a specified number.
+* **Take a Message**: play back a voicemail greeting then forward an incoming call to a voice mailbox.
+* **Play Announcement**: play back a pre-recorded announcement then hang up.
+* **Transfer to Extension**: forward an incoming call (dialed to a Call Queue extension) to a specific extension.
+* **Send to Agent Queue**: forward an incoming call (dialed to a Call Queue extension) to one or more specified agents.
+
+!!! info "Important Notes about User Answering Rules"
+    
+    * Each user has 2 default answering rules for business hours and after business hours. The default rules can be read and updated with new schedule. They cannot be used with callers' or callees' conditions.
+    * The default After Hours rule exists only if the user business hours is set different than 24 hours.
+    * An answering rule can be turned on or off by changing the `enabled` parameter to True or False, respectively.
+
+#### Actions for Company Answering Rules
+
+* **Operator** - play company greeting and forward to an operator extension.
+* **Disconnect** - play back company greeting then hangup.
+* **Bypass** - bypass company greeting and forward to a selected extension.
+
+!!! info "Important Notes about Company Answering Rules"
+    * Company Answering Rules can be accessed/managed only by admin users!
+    * Each account has 2 default answering rules for business hours and after business hours. The default rules can be read and updated with new schedule. They cannot be used with callers' or callees' conditions.
+    * The default After Hours rule exists only if the Company Business Hours is set different than 24 hours.
+    * An answering rule can be turned on or off by changing the `enabled` parameter to True or False, respectively.
+
+## Continue Reading
+
+To learn more about User and Company Answering Rules, see sample code, and to begin building your own rules via the Answering Rule API, please consult the following Developer Guide Resources:
+
+* [User Answering Rules &raquo;](../user-answering-rules/)
+* [Company Answering Rules &raquo;](../company-answering-rules/)

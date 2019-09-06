@@ -1,24 +1,30 @@
 # Call Queues
 
-Call Queues are a poplar way to have multiple people respond to incoming calls. They are a useful way for example to create a department of people that all respond when a call is directed to the same extension. 
+A call queue is a special extension that can hold a group of user extensions (members). It provides a convenient way to have multiple people (a department) respond to incoming calls.
 
-They work by assigning a number of extensions to a call queue grouping. The call queue grouping has an extension of its own. When a call is directed to the queue's extension, the call is connected with the first extension in the queue that is available. If a call is directed to an extension via the queue, and the receiving extension fails to answer, the call will be directed to that extension's voice mail. The call will *not* re-enter the queue. 
+As an extension, a call queue has a name, an extension number and can be assigned with a direct phone number as well. When a call is directed to the call queue's extension, the call is connected with the members of group in several ways depending on the settings of the call queue:
+
+- **Rotating** - Regularly change the order that you ring available members to evenly distribute calls.
+- **Simultaneous** - Ring all available members at the same time. You can do this for up to 10 extensions.
+- **Sequential** - Ring available members one at a time in the order you set.
 
 ## Create a Call Queue
 
-Creating a call queue is performed in the [Online Account Portal](https://service.ringcentral.com) under groups.
+To create a call queue extension, login your RingCentral account at [Online Account Portal](https://service.ringcentral.com), choose the "Phone System" tab then go under the Group(s) option. Click the "New Call Queue" button to start creating a new one.
+
+!!! Note
+    There is no API to create a call queue extension!
 
 ## Read Call Queue List
 
-The List Extensions endpoint can be used to retrieve a list of call queues, known as departments via the API.
+To read all call queue extensions from an account:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET`  | `v1.0/account/{accountId}/extension?type=Department` | Read a list of call queues, aka departments |
+* Make a GET request to the `/restapi/v1.0/account/{accountId}/extension?type=Department` endpoint.
+
+Required permission(s): ReadAccounts
 
 **Sample Response**
-
-```json
+```json hl_lines="6", linenums="1"
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&page=1&perPage=100",
   "records" : [
@@ -50,16 +56,18 @@ The List Extensions endpoint can be used to retrieve a list of call queues, know
 }
 ```
 
-## Read Queue Agent List
+## Read Call Queue members
 
-To get the agent members of a queue, call the department members endpoint.
+To read all members (user extensions) of a call queue:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/department/{departmentId}/members` | Read department members |
+* Make a GET request to the `/restapi/v1.0/account/{accountId}/call-queues/[groupId]/members` endpoint, where `groupId` is the id of a call queue.
+
+!!! Hint
+    A valid `groupId` can be retrieved using the previous API to read all call queue extensions.
+
+Required permission(s): ReadAccounts
 
 **Sample Response**
-
 ```json
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&perPage=100",
@@ -75,99 +83,196 @@ To get the agent members of a queue, call the department members endpoint.
       "extensionNumber" : "102"
     }
   ],
-  "paging" : {...}
-  "navigatin" : {...}
+  ...
 }
 ```
 
-## Update Queue Agent List
+## Update Call Queue members
 
-Users can be added and removed as queue agents using the `account/{accountId}/department/bulk-assign` endpoint and the extension ids of interest.
+Members can be added to and removed from an existing call queue.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `v1.0/account/{accountId}/department/bulk-assign` | Add and remove multiple users from one or more departments |
+To add new member(s) to a call queue:
 
-```json
-{
-  "items" : [
-    {
-      "departmentId" : "22223333",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
-      ],
-      "removedExtensionIds" : [
-        "11114444", "11115555"
-      ]
-    },
-    {
-      "departmentId" : "22224444",   
-      "addedExtensionIds" : [
-        "11112222", "11113333"
-      ]
+* Specify the `addedExtensionIds` array and add new member(s) with their extension id.
+
+To remove existing member(s) from a call queue:
+
+* Specify the `removedExtensionIds` array and add existing member(s) with their extension id.
+
+* Make a POST request to the `/restapi/v1.0/account/{accountId}/call-queues/[groupId]/bulk-assign` endpoint, where the `groupId` is the id of the call queue extension to be updated.
+
+!!! Notes
+    You can specify both `addedExtensionIds` and `removedExtensionIds` parameters to add new members to and to remove old members from a call queue in a single post request.
+
+Required permission(s): EditExtensions
+
+### Sample code to update a call queue's members
+
+The following code sample shows how to add 2 new members to a call queue named "Support Department". Presumed that the "Support Department" call queue exists and the new members' extension id is "888888888" and "999999999", respectively.
+
+```javascript tab="JavaScript"
+var SDK = require('ringcentral')
+
+var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+var platform = rcsdk.platform();
+
+platform.login( {username: "username", password: "password", extension: "extension_number"} )
+    .then(function(resp) {
+        get_call_queues()
+    });
+}
+
+function get_call_queues() {
+    platform.get('/restapi/v1.0/account/~/call-queues')
+        .then(function(resp){
+            var jsonObj = resp.json()
+            for (var group of jsonObj.records){
+              if (group.name == "Support Department"){
+                 add_new_members(group.id)
+                 break
+              }
+            }
+        })
+        .catch(function(ex){
+            console.log(ex)
+        })
+}
+
+function add_new_members(groupId) {
+    var params = {
+        addedExtensionIds: ["888888888", "999999999"]
     }
-  ]
+    platform.post('/restapi/v1.0/account/~/call-queues/'+groupId+'/bulk-assign', params)
+       .then(function(resp){
+          console.log(resp)
+       })
+       .catch(function(ex){
+          console.log(ex)
+       })
 }
 ```
 
-**Sample Response**
+```python tab="Python"
+from ringcentral import SDK
 
-```http
-HTTP/1.1 204 No Content
-Content-Type: application/json
-Content-Language: en-US
+sdk = SDK( "client_id", "client_secret", "server_url" )
+platform = sdk.platform()
+platform.login( "username", "extension", "password" )
+
+resp = platform.get('/restapi/v1.0/account/~/call-queues')
+for group in resp.json().records:
+    if group.name == 'Support Department':
+        resp = platform.post('/restapi/v1.0/account/~/call-queues/'+group.id+"/bulk-assign",
+        {
+            'addedExtensionIds': ['888888888', '999999999']
+        })
+        print (resp.response())
+        break
 ```
 
-## Read User Queue Agent Presence
+```php tab="PHP"
+<?php
+require('vendor/autoload.php');
 
-A user extension's actual presence status is determined by aggregating a number of different presence statuses including `dndStatus`, `telephonyStatus` and `userStatus`. These and the aggregate presence, `presenceStatus` are available in the presence endpoint.
+$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-A user extension's queue agent status is set by the extension presence `dndStatus` property. This can be set to one of four values:
+$platform = $rcsdk->platform();
+$platform->login( "username", "extension_number", "password" );
 
-1. `TakeAllCalls`
-1. `DoNotAcceptAnyCalls`
-1. `DoNotAcceptDepartmentCalls`
-1. `TakeDepartmentCallsOnly`
+$resp = $platform->get('/account/~/call-queues');
+foreach ($resp->json()->records as $group){
+    if ($group->name == "Support Department"){
+        $params = array(
+          'addedExtensionIds' => array("888888888", "999999999")
+          );
+        $resp = $platform->post('/account/~/call-queues/'.$group->id.'/bulk-assign', $params);
+        print_r($resp->response());
+        break;
+    }
+}
+```
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Read extension presence |
+```c# tab="C#"
+using System;
+using System.Threading.Tasks;
+using RingCentral;
 
-**Sample Response**
-
-```json
+namespace Update_CallQueue_Members
 {
-  "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222/presence",
-  "extension" : {
-    "uri" : "https.../restapi/v1.0/account/11111111/extension/11112222",
-    "id" : 11112222,
-    "extensionNumber" : "101"
-  },
-  "presenceStatus" : "Available",
-  "telephonyStatus" : "NoCall",
-  "userStatus" : "Available",
-  "dndStatus" : "TakeAllCalls",
-  "message" : "Hello, World",
-  "allowSeeMyPresence" : true,
-  "ringOnMonitoredCall" : false,
-  "pickUpCallsOnHold" : false
+    class Program
+    {
+        static RestClient rcsdk;
+        static void Main(string[] args)
+        {
+            rcsdk = new RestClient("client_id", "client_secret", "server_url");
+            await rcsdk.Authorize("username", "extension_number", "password");
+            add_callqueue_members().Wait();
+        }
+        static private async Task add_callqueue_members()
+        {
+            var resp = await rcsdk.Restapi().Account().CallQueues().Get();
+            foreach (var group in resp.records)
+            {
+                if (group.name == "Support Department")
+                {
+                    var parameters = new CallQueueBulkAssignResource();
+                    parameters.addedExtensionIds = new string[] { "888888888", "999999999" };
+                    await rcsdk.Restapi().Account().CallQueues(group.id).BulkAssign().Post(parameters);
+                    Console.WriteLine("Members added");
+                    break;
+                }
+            }
+        }
+    }
 }
 ```
 
-## Update User Queue Agent Presence
+```java tab="Java"
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-To enable or disable an user extension's queue agent presence, update the extension's presence `dndStatus` property.
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `PUT` | `v1.0/account/{accountId}/extension/{extensionId}/presence` | Update extension presence |
-
-```json
-{
-  "dndStatus": "DoNotAcceptDepartmentCalls"
+public class Update_CallQueue_Members {
+  static RestClient rcsdk;
+  public static void main(String[] args) {
+    var obj = new Update_CallQueue_Members();
+    rcsdk = new RestClient("client_id", "client_secret", "server_url");
+    try {
+      rcsdk.authorize("username", "extension_number", "password");
+      obj.add_callqueue_members();
+    } catch (RestException | IOException e) {
+      e.printStackTrace();
+    }
+  }
+  public void add_callqueue_members() throws RestException, IOException{
+    var resp = restClient.restapi().account().callqueues().get();
+    for (var group : resp.records) {
+      if (group.name.equals("Sales team")){
+        var parameters = new CallQueueBulkAssignResource();
+        parameters.addedExtensionIds = new String[] {"888888888", "999999999"};
+        restClient.restapi().account().callqueues(group.id).bulkassign().post(parameters);
+        System.out.println("Members added.");
+        break;
+      }
+    }
+  }
 }
 ```
 
-## Subscribe for Presence Notification Events
+```ruby tab="Ruby"
+require 'ringcentral'
 
-You can receive events about presence changes to an extension by subscribing to extension specific presence information using an event filter. To learn more, consult our documentation relating to our [Presence API](../../../voice/presence/).
+rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+
+response = rc.get('/restapi/v1.0/account/~/call-queues')
+for group in response.body['records'] do
+    if group['name'] == "Support Department"
+        params = {
+          addedExtensionIds: ["888888888", "999999999"]
+        }
+        response = rc.post('/restapi/v1.0/account/~/call-queues/'+group['id']+'/bulk-assign', payload: params)
+        puts response.status
+        break
+    end
+end
+```

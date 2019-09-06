@@ -93,24 +93,24 @@ public class Send_SMS {
     static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
     static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
+    static RestClient restClient;
     public static void main(String[] args) {
+        var obj = new Send_SMS();
         try {
-            sendSms();
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+          obj.send_sms()();
         } catch (RestException | IOException e) {
-            e.printStackTrace();
+          e.printStackTrace();
         }
     }
-
-    public static void sendSms() throws RestException, IOException {
-        RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-        rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-
+    public static void send_sms() throws RestException, IOException {
         CreateSMSMessage postParameters = new CreateSMSMessage();
         postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(RINGCENTRAL_USERNAME);
         postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
         postParameters.text = "Hello World from Java";
 
-        var response = rc.restapi().account().extension().sms().post(postParameters);
+        var response = restClient.restapi().account().extension().sms().post(postParameters);
         System.out.println("SMS sent. Message status: " + response.messageStatus);
     }
 }
