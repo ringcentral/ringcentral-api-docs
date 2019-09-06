@@ -4,9 +4,9 @@ A call queue is a special extension that can hold a group of user extensions (me
 
 As an extension, a call queue has a name, an extension number and can be assigned with a direct phone number as well. When a call is directed to the call queue's extension, the call is connected with the members of group in several ways depending on the settings of the call queue:
 
-- Rotating: Regularly change the order that you ring available members to evenly distribute calls.
-- Simultaneous: Ring all available members at the same time. You can do this for up to 10 extensions.
-- Sequential: Ring available members one at a time in the order you set.
+- **Rotating** - Regularly change the order that you ring available members to evenly distribute calls.
+- **Simultaneous** - Ring all available members at the same time. You can do this for up to 10 extensions.
+- **Sequential** - Ring available members one at a time in the order you set.
 
 ## Create a Call Queue
 
