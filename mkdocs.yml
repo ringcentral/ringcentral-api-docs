@@ -162,6 +162,7 @@ pages:
 
   - 'Using the API':
       - 'Basics':
+          - 'Your First App': 'basics/your-first-steps.md'
           - 'Methods, Endpoints and Parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
           - 'Developing in Sandbox': 'basics/sandbox.md'
