@@ -18,7 +18,7 @@ If you are building an application having to do with making, receiving, routing 
 * Send and receive SMS.
 * View call log and history. 
 
-[Learn more about your "RingCentral soft phones" &raquo;](../basics/your-rc-phone)
+[Learn more about your "RingCentral soft phones" &raquo;](../your-rc-phone)
 
 ## Registering your first app
 
@@ -51,7 +51,7 @@ This field determines what development features will be made available to your a
 
 !!! danger "You cannot edit Platform Type after your app has been created"
 
-[Learn more about platform types in "Creating an Application" &raquo;](../basics/create-app/)
+[Learn more about platform types in "Creating an Application" &raquo;](../create-app/)
 
 #### Permissions
 
@@ -59,7 +59,7 @@ The permissions you select for your app will determine which APIs you can call a
 
 Selecting permissions you may not actually need can impede access to production later as we require apps in production to exercise all permissions assigned to them. If for example you declare your app needs the "SMS" permission but do not actually send an SMS, then you will need to adjust your permissions before graduating your app to production.
 
-[Learn more about Application Permissions &raquo;](../basics/permissions/)
+[Learn more about Application Permissions &raquo;](../permissions/)
 
 ## Choosing the right authentication scheme
 
@@ -68,9 +68,9 @@ RingCentral supports a number of authentication schemes depending upon the type 
 * **Platform Type** - different types of apps will have different technical requirements for auth, for example "browser-based apps" have access to Implicit Grant flows which other apps do not, and password-based auth is only allowed for "Server/No UI" apps. 
 
 !!! hint "Recommended Auth Scheme: OAuth"
-    The vast majority of applications on RingCentral should be using the [3-legged authentication auth code flow](../authentication/auth-code-flow/) as it is the most secure and conforms to Internet best practices with regards to authorization, transparency and security. 
+    The vast majority of applications on RingCentral should be using the [3-legged authentication auth code flow](../../authentication/auth-code-flow/) as it is the most secure and conforms to Internet best practices with regards to authorization, transparency and security. 
 
-[Learn more about Authentication on RingCentral &raquo;](../authentication/)
+[Learn more about Authentication on RingCentral &raquo;](../../authentication/)
 
 ## Bringing all your features together
 
