@@ -19,6 +19,20 @@ Finally, make a POST request to the following endpoint:
 /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
 ```
 
+### Call Handling Conditions
+
+The following parameters are used for specifying call handling conditions. 
+
+* `callers`: a list of callers' phone numbers or contact names
+    * `callerId`:
+    * `name`:
+* `calledNumbers`:  a list of recipients' phone numbers
+    * `phoneNumber`: a phone number belonging to the user/extension
+* `schedule`: week day and time or time ranges or business hours and after hours parameters
+    * `weeklyRanges`: week day and time ranges
+    * `ranges`: date and time ranges
+    * `ref`: "BusinessHours" or "AfterHours". Business hours can be set using the [Business Hours API Reference](https://developers.ringcentral.com/api-reference/Business-Hours/updateUserBusinessHours)
+
 ### Call Handling Actions
 
 | Action | Description |
@@ -38,20 +52,6 @@ Finally, make a POST request to the following endpoint:
     If "AgentQueue" is specified for `callHandlingAction`, the `queue` parameter object is required.
 
 Required permission(s): EditExtensions
-
-### Call Handling Conditions
-
-The following parameters are used for specifying call handling conditions. 
-
-* `callers`: a list of callers' phone numbers or contact names
-    * `callerId`:
-    * `name`:
-* `calledNumbers`:  a list of recipients' phone numbers
-    * `phoneNumber`: a phone number belonging to the user/extension
-* `schedule`: week day and time or time ranges or business hours and after hours parameters
-    * `weeklyRanges`: week day and time ranges
-    * `ranges`: date and time ranges
-    * `ref`: "BusinessHours" or "AfterHours". Business hours can be set using the [Business Hours API Reference](https://developers.ringcentral.com/api-reference/Business-Hours/updateUserBusinessHours)
 
 ## Sample Code
 

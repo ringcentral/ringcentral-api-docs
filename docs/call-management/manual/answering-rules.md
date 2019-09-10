@@ -41,7 +41,7 @@ Finally, both User and company rules can each be of the following sub-types:
 Answering Rules can be constructed around the following conditions/criteria:
 
 * **Schedule** - such as during company business hours, after hours or specific times of the day.
-* **Caller's phome number** - incoming calls from the specified caller(s) phone number.
+* **Caller's phone number** - incoming calls from the specified caller(s) phone number.
 * **Recipient's phone number** - incoming calls to a selected phone number(s). Phone numbers must belong to the same extension.
 
 ### Rule Actions

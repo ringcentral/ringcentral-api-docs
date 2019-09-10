@@ -36,7 +36,7 @@ To create an export report task:
 !!! hint "How to find IDs to filter by"
     Valid `userIds` can be retrieved using the [Get Chat API](https://developers.ringcentral.com/api-reference/Chats/readGlipChat) to get a list of members from a chat room.
 
-    Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all call queue extensions.
+    Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all teams/chats/conversations.
 
 Required permission(s):  Glip
 
