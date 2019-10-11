@@ -161,20 +161,21 @@ pages:
 - 'Secondary':
 
   - 'Using the API':
-      - 'Basics':
-          - 'Your First App': 'basics/your-first-steps.md'
+      - 'Development Lifecycle':
+          - 'Tips For Your First App': 'basics/your-first-steps.md'
+          - 'Create an Application': 'basics/create-app.md'
+          - 'Develop in Sandbox': 'basics/sandbox.md'
+          - 'Graduate to Production': 'basics/production.md'
+          - 'Promote in App Gallery': 'basics/app-gallery.md'
+      - 'Fundamentals':
           - 'Methods, Endpoints and Parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
-          - 'Developing in Sandbox': 'basics/sandbox.md'
           - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
           - 'Media Content': 'basics/media.md'
           - 'App Permissions': 'basics/permissions.md'
           - 'Rate Limits': 'basics/rate-limits.md'
           - 'Partner Compatibility': 'basics/partner-compatibility.md'
       - 'Application Management':
-          - 'Creating an Application': 'basics/create-app.md'
-          - 'Deploying to Production': 'basics/production.md'
-          - 'Publishing to App Gallery': 'basics/app-gallery.md'
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
       - 'Account Management':
