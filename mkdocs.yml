@@ -221,3 +221,5 @@ pages:
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+
+  - 'Downloads and SDKs': sdks.md
