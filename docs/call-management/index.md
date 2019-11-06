@@ -54,7 +54,7 @@ A Call Queue is a group of users one can designate to share incoming calls. For 
 
 ### Call Routing and IVR
 
-Call Routing, or IVR ("Interactive Voice Response"), is the means by which one builds was is commonly referred to as a phone tree, e.g. "if you would like to speak to someone in Sales, please press '2' now." The Call Routing API allows developers to:
+Call Routing, or IVR ("Interactive Voice Response"), is the means by which one builds what is commonly referred to as a phone tree, e.g. "if you would like to speak to someone in Sales, please press '2' now." The Call Routing API allows developers to:
 
 * **Create, update and delete IVR prompts** - an IVR prompt is the recorded greeting that is played to the caller. 
 * **Create, update and delete IVR menus** - an IVR menu is what is bound to an IVR prompt and is what governs what menu options will be made available to users, and what actions will be taken when those options are selected.
