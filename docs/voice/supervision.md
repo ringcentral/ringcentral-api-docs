@@ -297,9 +297,9 @@ GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipDa
 
 !!! We now show you, how to build a sample application using the Call Monitoring API
 
-Note: In this case the deviceID of the supervisor will change every time the supervisor logs out or re-registers from the SoftPhone, so you need to make sure you have the correct and latest deviceID that can be used. We would cover a separate section on how to make a static deviceID.This example uses Node.js as a development language. You can use the language of your choice. 
-
 ### Steps using the Call Monitoring API with Supervisor Device as SoftPhone (Dynamic  deviceId)
+
+Note: In this case the deviceID of the supervisor will change every time the supervisor logs out or re-registers from the SoftPhone, so you need to make sure you have the correct and latest deviceID that can be used. We would cover a separate section on how to make a static deviceID.This example uses Node.js as a development language. You can use the language of your choice. 
 
 (a) Make sure you have installed/imported the below libraries
 
