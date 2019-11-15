@@ -298,7 +298,7 @@ GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipDa
 !!! We now show you, how to build a sample application using the Call Monitoring API
     Note: In this case the deviceID of the supervisor will change every time the supervisor logs out or re-registers from the SoftPhone, so you need to make sure you have the correct and latest deviceID that can be used. We would cover a separate section on how to make a static deviceID.This example uses Node.js as a development language. You can use the language of your choice. 
 
-### Steps (with a dynamic deviceID) Using the Call Monitoring API with Supervisor Device as SoftPhone (Dynamic  deviceId)
+### Steps using the Call Monitoring API with Supervisor Device as SoftPhone (Dynamic  deviceId)
 
 (a) Make sure you have installed/imported the below libraries
 
@@ -323,7 +323,7 @@ If you want to build your own softphone SDK in other languages, please refer to 
 
 Code for Softphone Registration using RingCentral SDK
      
-           ```
+```
             (async () => {
             await rc.login({
             username: process.env.RINGCENTRAL_USERNAME,
@@ -332,7 +332,7 @@ Code for Softphone Registration using RingCentral SDK
             })
             const softphone = new Softphone(rc)
             await softphone.register()
-         ```
+```
 
 (c) Setup the Agent Extension/s to be monitored: You would have a predefined list of Agent Extension numbers that you want to be monitored. The below code takes the Agent Extension numbers from a file and sets up Subscriptions on them using PubNub. This will allow your App to be notified when Agent goes into a Live Call, so that you can initiate a Call Monitoring.
 
@@ -404,4 +404,3 @@ You can also refer to this [Blog](https://medium.com/ringcentral-developers/auto
 All the steps here would be the same as above, except how to configure a BYOD device with a Fixed Device ID.
 
 [Steps](https://support.ringcentral.com/s/article/4966?language=en_US) for Configuring a BYOD Device with a Fixed Device ID
-
