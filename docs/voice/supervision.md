@@ -338,7 +338,7 @@ Code for Softphone Registration using RingCentral SDK
 (c) Setup the Agent Extension/s to be monitored: You would have a predefined list of Agent Extension numbers that you want to be monitored. The below code takes the Agent Extension numbers from a file and sets up Subscriptions on them using PubNub. This will allow your App to be notified when Agent goes into a Live Call, so that you can initiate a Call Monitoring.
 
 ```
-        const r = await rc.get('/restapi/v1.0/account/~/extension')
+       const r = await rc.get('/restapi/v1.0/account/~/extension')
        const json = await r.json()
        const agentExt = json.records.filter(ext => ext.extensionNumber === process.env.RINGCENTRAL_AGENT_EXT)[0]
        const subscriptions = new Subscriptions({
@@ -369,9 +369,9 @@ Code for Softphone Registration using RingCentral SDK
 (e) Once the call monitoring API is triggered , the Supervisor device (SoftPhone) accepts the SIP INVITE automatically (It was pre-configured to do that) and the agent-customer call audio is live streamed to the Supervisor device. In this sample app , we have generated an audio track and saved the audio file as call.raw into local filesystem from where the app is run.
 
 ```
-     softphone.on('INVITE', sipMessage => {
-    softphone.answer(sipMessage)
-    softphone.once('track', e => {
+      softphone.on('INVITE', sipMessage => {
+      softphone.answer(sipMessage)
+      softphone.once('track', e => {
       const audioSink = new nonstandard.RTCAudioSink(e.track)
       let speaker = null
       let prevSampleRate = null
