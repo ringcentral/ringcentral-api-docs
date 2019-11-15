@@ -395,7 +395,11 @@ Code for Softphone Registration using RingCentral SDK
       
 ```
 
-With the [Demo](https://github.com/tylerlong/ringcentral-call-supervise-demo) App you can listen to the Audio Talk. It also saves the audio in a file called call.raw on your local machine (the directory where your app runs from). You can play the file using the command play -e signed -b 16 -r 8000 -c 1 call.raw 
+With the [Demo](https://github.com/tylerlong/ringcentral-call-supervise-demo) App you can listen to the Audio Talk. It also saves the audio in a file called call.raw on your local machine (the directory where your app runs from). You can play the file using the command 
+```
+play -e signed -b 16 -r 8000 -c 1 call.raw 
+
+```
 
 You can also refer to this [Blog](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) 
 
@@ -405,3 +409,4 @@ You can also refer to this [Blog](https://medium.com/ringcentral-developers/auto
 All the steps here would be the same as above, except how to configure a BYOD device with a Fixed Device ID.
 
 [Steps](https://support.ringcentral.com/s/article/4966?language=en_US) for Configuring a BYOD Device with a Fixed Device ID
+
