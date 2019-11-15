@@ -325,14 +325,14 @@ If you want to build your own softphone SDK in other languages, please refer to 
 Code for Softphone Registration using RingCentral SDK
      
 ```
-            (async () => {
-            await rc.login({
-            username: process.env.RINGCENTRAL_USERNAME,
-            extension: process.env.RINGCENTRAL_EXTENSION,
-            password: process.env.RINGCENTRAL_PASSWORD
-            })
-            const softphone = new Softphone(rc)
-            await softphone.register()
+      (async () => {
+      await rc.login({
+      username: process.env.RINGCENTRAL_USERNAME,
+      extension: process.env.RINGCENTRAL_EXTENSION,
+      password: process.env.RINGCENTRAL_PASSWORD
+      })
+      const softphone = new Softphone(rc)
+      await softphone.register()
 ```
 
 (c) Setup the Agent Extension/s to be monitored: You would have a predefined list of Agent Extension numbers that you want to be monitored. The below code takes the Agent Extension numbers from a file and sets up Subscriptions on them using PubNub. This will allow your App to be notified when Agent goes into a Live Call, so that you can initiate a Call Monitoring.
