@@ -399,7 +399,7 @@ With the [Demo](https://github.com/tylerlong/ringcentral-call-supervise-demo) Ap
 
 You can also refer to this [Blog](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) 
 
-### Steps (with a fixed deviceID)
+### Steps with BYOD Phone (with a fixed deviceID)
 
 
 All the steps here would be the same as above, except how to configure a BYOD device with a Fixed Device ID.
