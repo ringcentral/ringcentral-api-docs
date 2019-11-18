@@ -8,7 +8,7 @@ Authentication to the network is an essential part of any and every RingCentral 
 
 Password-based authentication is by far the simplest way technically to authenticate to the platform. It is a useful way for developers/applications to access their own organization's data. It is not recommended to use this form of authentication when accessing a customer's account information.
 
-For simplicity, all of the quick starts in our Developer Guide utilize Password-based authentication. To try it out, consult our [SMS Quick Starts](../../../sms/quick-start/).
+For simplicity, all of the quick starts in our Developer Guide utilize Password-based authentication. To try it out, consult our [SMS Quick Starts](../../messaging/quick-start/).
 
 ## Authorizaton Flow, a.k.a. "OAuth"
 

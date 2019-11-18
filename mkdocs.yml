@@ -115,6 +115,8 @@ pages:
       - 'Java': 'team-messaging/quick-start/java.md'
       - 'C#': 'team-messaging/quick-start/c-sharp.md'
       - 'Ruby': 'team-messaging/quick-start/ruby.md'
+    - 'Manual':
+      - "Composing Links": 'team-messaging/manual/links.md'
     - 'Posting Glip Messages':
       - 'Message Formatting': 'team-messaging/manual/formatting.md'
       - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
@@ -138,7 +140,8 @@ pages:
       - 'Java': 'call-management/quick-start/java.md'
       - 'C#': 'call-management/quick-start/c-sharp.md'
       - 'Ruby': 'call-management/quick-start/ruby.md'
-    - 'Developer Manual':
+    - 'Call Routing':
+      - 'Answering Rules Overview': 'call-management/manual/answering-rules.md'
       - 'User Answering Rules': 'call-management/manual/user-answering-rules.md'
       - 'Company Answering Rules': 'call-management/manual/company-answering-rules.md'
       - 'Call Queues': 'call-management/manual/call-queues.md'
@@ -158,18 +161,21 @@ pages:
 - 'Secondary':
 
   - 'Using the API':
-      - 'Basics':
+      - 'Development Lifecycle':
+          - 'Tips For Your First App': 'basics/your-first-steps.md'
+          - 'Create an Application': 'basics/create-app.md'
+          - 'Develop in Sandbox': 'basics/sandbox.md'
+          - 'Graduate to Production': 'basics/production.md'
+          - 'Promote in App Gallery': 'basics/app-gallery.md'
+      - 'Fundamentals':
           - 'Methods, Endpoints and Parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
-          - 'Developing in Sandbox': 'basics/sandbox.md'
           - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
           - 'Media Content': 'basics/media.md'
           - 'App Permissions': 'basics/permissions.md'
           - 'Rate Limits': 'basics/rate-limits.md'
+          - 'Partner Compatibility': 'basics/partner-compatibility.md'
       - 'Application Management':
-          - 'Creating an Application': 'basics/create-app.md'
-          - 'Deploying to Production': 'basics/production.md'
-          - 'Publishing to App Gallery': 'basics/app-gallery.md'
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
       - 'Account Management':
@@ -215,3 +221,5 @@ pages:
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+
+  - 'Downloads and SDKs': sdks.md

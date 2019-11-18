@@ -4,12 +4,12 @@
   <h3 class="display-5">Getting Started with the Subscriptions API</h3>
   <p class="lead"></p>
   <p>We invite all developers to try out our Subscriptions API by writing a simple app to create a webhook subscription when an SMS is received at your phone number. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/webook/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/webook/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/webook/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/webook/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/webook/java/" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/webook/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
+  <a href="quick-start/webhook/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="quick-start/webhook/php/" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="quick-start/webhook/python/" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/webhook/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="quick-start/webhook/java/" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="quick-start/webhook/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
 ## What are events, notifications and subscriptions?

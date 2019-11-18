@@ -23,6 +23,15 @@ When your application needs to access a user's data, redirect the user to the Ri
 | `client_id`     | string | Required. Enter your application key (Production or Sandbox) here |
 | `redirect_uri`  |URI     | Required. This is a callback URI which determines where the response will be sent to. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration. This URI can be HTTP/HTTPS address for web applications or custom scheme URI for mobile or desktop applications. |
 | `state`         | string | Optional, recommended. An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client. The parameter should be used for preventing cross-site request forgery |
+| `brandId`       | integer | Optional. A number identifying the RingCentral Carrier Partner logo to display on the login page. See [RingCentral Partner Compatibility Guide](../../basics/partner-compatibility/).
+
+**Example Login URL**
+
+Below is an example login URL to initiate the authorization flow. We recommend developers use an SDK to generate this URL in a more automated fashion. 
+
+```
+https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>&brand_id=7710&display=&prompt=
+```
 
 ## Step 2. User login and consent
 

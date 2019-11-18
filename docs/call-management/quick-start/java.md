@@ -119,6 +119,15 @@ public class Get_User_Call_Answering_Rules {
 
 You are almost done. Now run your app from Eclipse.
 
-## Graduate Your App
+## Need Help?
 
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
+
+<a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=call+management">Search the forums &raquo;</a>
+
+## What's Next?
+
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
+
+<a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
+

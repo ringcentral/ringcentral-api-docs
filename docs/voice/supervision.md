@@ -1,4 +1,4 @@
-# Call Monitoring
+# Call Supervision and Monitoring
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
@@ -62,7 +62,7 @@ Authorization: <YOUR_ACCESS_TOKEN>
 }
 ```
 
-```Ruby tab=
+```Ruby tab="Ruby"
 require 'ringcentral'
 
 rc = RingCentral.new(
@@ -173,9 +173,16 @@ GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device
 
 ### Response
 
-The response from the Supervision API will show the supervisor joining the agent extension with a seperate party `id`, e.g. `party-4` in this example. The RingCentral system will then send a SIP INVITE request to the supervisor device which is expected to join the existing customer-agent call session automatically with auto answer. Now the human or app supervisor can stream the audio.
+If the request is success, two things will happen.
 
-```http tab="Response"
+1. First, the API will send a response to reflect that the supervisor has joined the agent extension with a seperate party `id`, e.g. `party-4` in this example.
+2. Next, RingCentral will then send a SIP INVITE request to the supervisor's device which will signal the device to join the existing customer-agent call session automatically with auto answer.
+
+Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below. 
+
+#### JSON Response from API
+
+```json
 {
     "direction": "Outbound",
     "from": {
@@ -201,6 +208,51 @@ The response from the Supervision API will show the supervisor joining the agent
         "phoneNumber": "108"
     }
 }
+```
+
+#### Sample SIP Invite sent to the Supervising Device
+
+Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:
+
+* Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
+* Line 26: `i` contains the PSTN's (customer) `party-id` and the agent `party-id`
+
+```http hl_lines="10 26" linenums="1"
+|||INVITE sip:18002097562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
+||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
+||||Max-Forwards: 69
+||||User-Agent: RC_SIPWRP_25.111
+||||From: <sip:+16508370072@10.62.192.70>;tag=10.62.25.111-5070-6ce1264681244a
+||||To: <sip:18002097562*102-c4giuv3vhjebe@192.168.12.3;ob>
+||||Contact: <sip:+16508370072@10.62.192.70:5091;transport=tcp>
+||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7
+||||CSeq: 31268 INVITE
+||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx
+||||Alert-Info: Auto Answer
+||||Call-Info: <KyOAG0RTd5fP1WkxMAuXNw..>;purpose=info;Answer-After=0
+||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO
+||||Supported: replaces, timer, diversion
+||||Session-Expires: 14400;refresher=uac
+||||Min-SE: 90
+||||Content-Type: application/sdp
+||||Content-Length: 510
+||||P-Acme-VSA: 200:KyOAG0RTd5fP1WkxMAuXNw..
+||||v=0
+||||o=- 137800156 2016517757 IN IP4 10.62.192.70
+||||s=SmcSip
+||||c=IN IP4 10.62.192.70
+||||t=0 0
+||||m=audio 50400 RTP/AVP 111 9 0 18 96 8 109 101
+||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-7
+||||a=rtpmap:111 OPUS/48000/2
+||||a=fmtp:111 useinbandfec=1
+||||a=rtcp-fb:111 ccm tmmbr
+||||m=audio 50402 RTP/AVP 111 9 0 18 96 8 109 101
+||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-8
+||||a=rtpmap:111 OPUS/48000/2
+||||a=fmtp:111 useinbandfec=1
+||||a=rtcp-fb:111 ccm tmmbr
+||||a=sendrecv
 ```
 
 #### How to verify the Supervisor has joined the session

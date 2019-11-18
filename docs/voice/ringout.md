@@ -263,7 +263,7 @@ DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434
 
 ## Caller ID
 
-RingCentral allows users to select which number to use for their Caller Id Name (`CNAM`) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://success.ringcentral.com/articles/RC_Knowledge_Article/Outbound-Caller-ID-Overview).
+RingCentral allows users to select which number to use for their Caller Id Name (`CNAM`) value when making calls. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://support.ringcentral.com/s/article/Outbound-Caller-ID-Overview).
 
 ## RingOut API Permissions
 

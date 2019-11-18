@@ -1,48 +1,46 @@
 # Glip Compliance Exports
 
-RingCentral Glip data retention rule is based on the account's setting:
+Compliance Exports is a special capability specifically built for companies and regulated industries, such as financial services, with compliance requirements for using electronic communication in the workplace. This feature is also a fail-safe way of preserving business communications for legal discovery or internal review.
+
+## RingCentral Data Retention Policy
+
+The Glip Compliance Export API allows any data retention practices to be automated and is essential for regulated industries because RingCentral does not retain customer data indefinitely. Our data retention policy is as follows, depending upon whether your account is "HIPAA enabled."
 
 | Account | Glip Data Retention Rule |
-|-----|------|
-| Non-HIPAA | The account admin can set the retention policy to any number of days, although there are preset options for 30, 60 and 90 days. Once a policy is set, on a nightly basis all content older than the specified number of days will be deleted. |
-| HIPAA enabled | All data will be deleted after 30 days. |
-|||
+|-|-|
+| **Non-HIPAA** | The account admin can set the retention policy to any number of days, although there are preset options for 30, 60 and 90 days. Once a policy is set, on a nightly basis all content older than the specified number of days will be deleted. |
+| **HIPAA enabled** | All data will be deleted after 30 days. |
 
-To retain Glip data according to your company data retention policy, you can use the compliance export APIs to archive full or part of the data periodically.
-
-!!! Important
+!!! alert Important
     The Glip compliance exports APIs run at the account level. This means that only users with the admin role would be able to call these APIs to export the data of all users in the entire account.
 
-## Glip Compliance Export APIs set
+## Glip Data Export Process
 
-| API | path |
-|-----|------|
-| Create Glip Compliance Export | `/restapi/v1.0/glip/data-export` |
-| Get Glip Compliance Export Task | `/restapi/v1.0/glip/data-export/taskId` |
-| Get Glip Compliance Export Archive Content | `/restapi/v1.0/glip/data-export/taskId/archive/archiveId` |
-|||
+Glip Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
 
-## How to archive Glip data
+1. Developer creates an "Export Report" task.
+2. Developer polls to check the status of the created "Export Report" task.
+3. When the task is complete, developer downloads the generated file.
 
-There are 3 steps to archive your company Glip data using the Compliance Export APIs set:
+What follows is a more detailed walk-through of this process.
 
-#### 1. Create an export task
+### Creating an Export Report Task
 
 To create an export task:
 
-* Specify the period of time for the archive. The period of time is specified by the `dateFrom` and `dateTo`. Maximum range is 30 days.
-* Specify a list of users by `userIds`.
-* Specify a list of channels by `chatIds`
-* Make a POST request to the `/restapi/v1.0/glip/data-export` endpoint.
+* Specify the period of time for the archive via the `dateFrom` and `dateTo` parameters.
+* Specify a list of users whose data you would like to export via the `userIds` parameter.
+* Specify a list of teams/conversations to export via `chatIds` parameter.
+* Finally, make a POST request to the `/restapi/v1.0/glip/data-export` endpoint.
 
-!!! Hint
+!!! hint "How to find IDs to filter by"
     Valid `userIds` can be retrieved using the [Get Chat API](https://developers.ringcentral.com/api-reference/Chats/readGlipChat) to get a list of members from a chat room.
 
-    Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all call queue extensions.
+    Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all teams/chats/conversations.
 
 Required permission(s):  Glip
 
-Upon successful API call completion, the response contains the id (taskId) and the status of the newly created task.
+If successful, the response will contain the task ID and the status of the newly created task as shown below.
 
 ```json hl_lines="3", linenums="1"
 {
@@ -54,18 +52,22 @@ Upon successful API call completion, the response contains the id (taskId) and t
 }
 ```
 
-#### 2. Check the status of a task identified by the taskId
+### Polling the Status of the Export Task
 
-To export a large data report (for a long period of time or for an account with a large number of members), the report creation process may take several minutes to complete. Therefore, you should check the status of a task to ensure it is marked as “Completed” before you can proceed to get the report.
-The status of a task can be any of the following values:
+To archive a large data export report (for a long period of time or for an account with a large number of extensions), the report creation process may take several minutes to complete. Therefore, you will need to periodically check the status of a task. When its status is marked as "Completed" you can proceed to get the report. The status of a task can be any of the following values:
 
-_Accepted - Pending - InProgress - AttemptFailed - Failed - Completed - Cancelled_
+* Accepted
+* Pending
+* InProgress
+* AttemptFailed
+* Failed
+* Completed
+* Cancelled
 
-To check the status of a task, make a GET request to `/restapi/v1.0/glip/data-export/[taskId]` endpoint. Where the `taskId` is the value of the `id` returned in the previous step.
+To check the status of a task, make a GET request to `/restapi/v1.0/glip/data-export/[taskId]` endpoint. Where the `taskId` is the value of the `id` returned in the previous step. If the report is ready, the task status is marked as "Completed."
 
-If the report is ready, the task status is marked as “Completed”.
+When successful, the response will contain the id (taskId) and the status of the newly created task.
 
-Upon successful API call completion, the response contains the id (taskId) and the status of the newly created task.
 ```json hl_lines="3 6", linenums="1"
 {
   "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX",
@@ -81,15 +83,15 @@ Upon successful API call completion, the response contains the id (taskId) and t
 }
 ```
 
-#### 3. Get the archive files.
+### Retrieving Archive Files
 
-When a task is created successfully and completed, make a GET request to the `uri` under the `result` of the object returned in the previous step.
+When an Export Task is successfully completed, make a GET request to the `uri` under the `result` of the object returned in the previous step.
 
 ```http
 GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX/archive/1?access_token=['access_token']
 ```
 
-## Sample code to export team messaging data
+## Sample Code: Export Team Messaging Data
 
 The following code sample shows how to call the Glip Compliance Export APIs to export the team messaging data and save it to a local machine.
 

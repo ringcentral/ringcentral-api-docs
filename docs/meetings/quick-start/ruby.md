@@ -84,12 +84,15 @@ You are almost done. Now run your script.
 $ ruby meetings.rb
 ```
 
-## Graduate Your App
+## Need Help?
 
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
-## Troubleshooting
+<a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=meetings">Search the forums &raquo;</a>
 
-> I got the error: "Error: In order to call this API endpoint, user needs to have [Meetings] permission." What is going wrong?
+## What's Next?
 
-The Meetings API is not available to free developer accounts. In order to use this API, please sign-up for a paid RingCentral account, which can be made available on a free trial basis.
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
+
+<a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
+
