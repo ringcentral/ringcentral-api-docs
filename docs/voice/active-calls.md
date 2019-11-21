@@ -1,4 +1,4 @@
-# Reading Active Calls
+# Finding Active Calls on the Network
 
 Active Calls provides developers with time-sensitive insights into what is (or has recently) occurred in your RingCentral Account. We can perform this lookup at the Account Level or at the Extension Level depending upon the role of the user who has authenticated and obtained an access_token.
 
