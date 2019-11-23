@@ -85,8 +85,8 @@ Presence events are triggered whenever a user's availability changes. This may o
 
 Developers can receive notifications about telephony session state changes for a single user/extension, or for all users across an entire account. The following subscription event filters are used accordingly:
 
-* **Extension-level Event Filter**: `/restapi/v1.0/account/~/telephony/sessions`
-* **Account-level Event Filter**: `/restapi/v1.0/account/telephony/sessions`
+* **Account-level Event Filter**: `/restapi/v1.0/account/~/telephony/sessions`
+* **Extension-level Event Filter**: `/restapi/v1.0/account/~/extension/~/telephony/sessions`
 
 ### Example Telephony Session Notification
 
