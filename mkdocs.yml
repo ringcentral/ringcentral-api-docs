@@ -54,11 +54,14 @@ pages:
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'Active Calls':
-      - 'Reading Active Calls': 'voice/active-calls.md'
-      - 'Call Control': 'voice/call-control.md'
-      - 'Call Monitoring': 'voice/supervision.md'
+    - 'Call Control':
+      - 'Overview': 'voice/call-control.md'
+      - 'Finding active calls': 'voice/finding-active-calls.md'
+      - 'Detecting state changes': 'voice/call-control-sessions.md'
       - 'Presence': 'voice/presence.md'
+      - 'Pre-call Control': 'voice/pre-call-control.md'
+      - 'Active-call Control': 'voice/active-call-control.md'
+      - 'Call Monitoring': 'voice/supervision.md'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
       - 'Data Types': 'voice/call-log/api.md'
