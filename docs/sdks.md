@@ -36,7 +36,7 @@ If you’ve built your own RingCentral library, plugin, or open source app, plea
 
 Some of these integrations may be incomplete. Feedback and bugs should be directed to their representative authors.
 
-### C#
+### C&#35;
 
 * [RCdotNetXDK](https://github.com/vshisterov/RCdotNetXDK) - A C# .NET client library wrapper with model classes and helpers
 * [ringcentral-demos-fax-cover-page](https://github.com/grokify/ringcentral-demos-fax-cover-page/tree/master/csharp) - A custom fax cover page demo app using C#
