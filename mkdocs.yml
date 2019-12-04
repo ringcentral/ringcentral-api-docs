@@ -178,6 +178,7 @@ pages:
           - 'App Permissions': 'basics/permissions.md'
           - 'Rate Limits': 'basics/rate-limits.md'
           - 'Partner Compatibility': 'basics/partner-compatibility.md'
+          - 'App Promotion Checklist': 'basics/app-gallery-checklist.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
