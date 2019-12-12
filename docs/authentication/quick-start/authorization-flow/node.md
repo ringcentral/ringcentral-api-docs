@@ -40,7 +40,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ### Install RingCentral JavaScript SDK and some dependencies
 
 ```bash
-$ npm install ringcentral --save
+$ npm install @ringcentral/sdk --save
 $ npm install express --save
 $ npm install express-session --save
 $ npm install ejs --save
@@ -53,7 +53,7 @@ Create a file called <tt>index.js</tt>. Be sure to edit the variables in &lt;ALL
 ```javascript
 var app = require('express')();
 var session = require('express-session');
-var ringcentral = require('ringcentral');
+var RingCentral = require('@ringcentral/sdk').SDK;
 var path = require('path')
 
 app.use(session({ secret: 'somesecretstring', tokens: ''}));
@@ -65,10 +65,11 @@ const RINGCENTRAL_CLIENT_SECRET= '<ENTER CLIENT SECRET>'
 const RINGCENTRAL_SERVER_URL= 'https://platform.devtest.ringcentral.com'
 const RINGCENTRAL_REDIRECT_URL= 'http://localhost:5000/oauth2callback'
 
-var rcsdk = new ringcentral({
+var rcsdk = new RingCentral({
   server: RINGCENTRAL_SERVER_URL,
-  appKey: RINGCENTRAL_CLIENT_ID,
-  appSecret: RINGCENTRAL_CLIENT_SECRET
+  clientId: RINGCENTRAL_CLIENT_ID,
+  clientSecret: RINGCENTRAL_CLIENT_SECRET,
+  redirectUri: RINGCENTRAL_REDIRECT_URL
 });
 
 var server = require('http').createServer(app);
@@ -89,8 +90,7 @@ app.get('/', function (req, res) {
     }
     res.render('index', {
         authorize_uri: platform.loginUrl({
-            brandId: '',
-            redirectUri: RINGCENTRAL_REDIRECT_URL
+            brandId: ''
           })
         });
 })
@@ -119,7 +119,6 @@ app.get('/oauth2callback', function(req, res) {
       var platform = rcsdk.platform()
       platform.login({
           code: req.query.code,
-          redirectUri: RINGCENTRAL_REDIRECT_URL
       })
       .then(function (token) {
           req.session.tokens = token.json()
@@ -157,7 +156,10 @@ app.get('/test', function(req, res) {
 function callGetEndpoint(platform, endpoint, res){
     platform.get(endpoint)
     .then(function(resp){
-        res.send(JSON.stringify(resp.json()))
+      return resp.json()
+    })
+    .then(function(json) {
+      res.send(JSON.stringify(json))
     })
     .catch(function(e){
         res.send("Error")
