@@ -36,14 +36,14 @@ Due to the sensitive nature of Call Monitoring, authorization to be monitored an
 * What extensions/individuals can be monitored
 * What extensions/individuals can monitor others
 
-Once a Call Monitoring group has been configured, developers can use the Supervise Call API below to actively listen in on a call. 
+Once a Call Monitoring group has been configured, developers can use the Call Supervision API below to actively listen in on a call. 
 
 * [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
 * [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
 
-## Supervise Call API
+## Using the Call Supervision API
 
-The Supervise Call API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
+The Call Supervision API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
 
 ### Request
 
@@ -293,120 +293,136 @@ GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipDa
 !!! note "FCC Compliance"
     If you intend to save the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. The following [video](https://vimeo.com/326948521) demonstrates a working example of the Supervision API using the concepts described here.
 
-#### Building a sample Call Monitoring application 
+## Sample Call Monitoring Application
 
-!!! We now show you, how to build a sample application using the Call Monitoring API
+In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones. 
 
-### Steps using the Call Monitoring API with Supervisor Device as SoftPhone (Dynamic  deviceId)
+In this example we will cover the following topics:
 
-Note: In this case the deviceID of the supervisor will change every time the supervisor logs out or re-registers from the SoftPhone, so you need to make sure you have the correct and latest deviceID that can be used. We would cover a separate section on how to make a static deviceID.This example uses Node.js as a development language. You can use the language of your choice. 
+1. Getting setup
+2. Obtaining the device ID of the supervisors soft phone
+3. Setting up the supervisors device for monitoring
+4. Detecting an incoming call
+5. Invoking the Call Supervision API
 
-(a) Make sure you have installed/imported the below libraries
+### Setup
 
-```        
-        import RingCentral from '@ringcentral/sdk'
-        import Subscriptions from '@ringcentral/subscriptions'
-        import Speaker from 'speaker'
-        import { nonstandard } from 'wrtc'
-        import Softphone from 'ringcentral-softphone'
-        import fs from 'fs'
+This sample application is written in NodeJS. Let's make sure you have installed the necessary prerequisites.
+
+```js
+import RingCentral from '@ringcentral/sdk'
+import Subscriptions from '@ringcentral/subscriptions'
+import Speaker from 'speaker'
+import { nonstandard } from 'wrtc'
+import Softphone from 'ringcentral-softphone'
+import fs from 'fs'
 ```
 
-(b) Get the deviceID of the Supervisor device - This can be done in following ways
+### Obtain the soft phone's device ID
 
-  
-(i) Getting the devices attached to an Extension using [Get Devices API](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices) 
+A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID. 
 
-(ii) Use the SIP Registration API to get the deviceID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below
+1. Get the devices attached to an extension using the [Get Devices API](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices).
 
-If you want to build your own softphone SDK in other languages, please refer to this 
-[Blog](https://medium.com/@tylerlong/2281edd661ec) for reference.
+2. Use the SIP Registration API to get the device ID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below
 
 Code for Softphone Registration using RingCentral SDK
      
-```
-      (async () => {
-      await rc.login({
-      username: process.env.RINGCENTRAL_USERNAME,
-      extension: process.env.RINGCENTRAL_EXTENSION,
-      password: process.env.RINGCENTRAL_PASSWORD
-      })
-      const softphone = new Softphone(rc)
-      await softphone.register()
-```
-
-(c) Setup the Agent Extension/s to be monitored: You would have a predefined list of Agent Extension numbers that you want to be monitored. The below code takes the Agent Extension numbers from a file and sets up Subscriptions on them using PubNub. This will allow your App to be notified when Agent goes into a Live Call, so that you can initiate a Call Monitoring.
-
-```
-       const r = await rc.get('/restapi/v1.0/account/~/extension')
-       const json = await r.json()
-       const agentExt = json.records.filter(ext => ext.extensionNumber === process.env.RINGCENTRAL_AGENT_EXT)[0]
-       const subscriptions = new Subscriptions({
-       sdk: rc
-       })
-       const subscription = subscriptions.createSubscription({
-       pollInterval: 10 * 1000,
-       renewHandicapMs: 2 * 60 * 1000
-       })
-      subscription.setEventFilters([`/restapi/v1.0/account/~/extension/${agentExt.id}/telephony/sessions`])
+```js
+(async () => {
+    await rc.login({
+        username: process.env.RINGCENTRAL_USERNAME,
+        extension: process.env.RINGCENTRAL_EXTENSION,
+        password: process.env.RINGCENTRAL_PASSWORD
+    })
+    const softphone = new Softphone(rc)
+    await softphone.register()
+})
 ```
 
-(d) Now, when a customer calls the monitored Agent, you detect the call using your previously set up subscription (on the agent extension) and then trigger your Monitoring API Call to start streaming the LIVE audio call between the agent and the customer. The below code does the same.
+!!! tip "Getting the device ID of a hard phone"
+    Generally speaking, the process of using a hard phone, a.k.a. BYOD, is the same. However, an API call is not necessary to obtain the device ID of the supervisors phone. Learn how to [setup a third-party device on the RingCentral network](https://support.ringcentral.com/s/article/4966?language=en_US) and obtain a fixed device ID.
 
-```
-      subscription.on(subscription.events.notification, async function (message) {
-      if (message.body.parties.some(p => p.status.code === 'Answered' && p.direction === 'Inbound')) {
-      await rc.post(`/restapi/v1.0/account/~/telephony/sessions/${message.body.telephonySessionId}/supervise`, {
-      mode: 'Listen',
-      supervisorDeviceId: softphone.device.id,
-      agentExtensionNumber: agentExt.extensionNumber
-      })
-      }
-      })
-      
+### Prepare agent extension(s) for monitoring
+
+Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin. 
+
+```js
+const r = await rc.get('/restapi/v1.0/account/~/extension')
+const json = await r.json()
+const agentExt = json.records.filter(ext => ext.extensionNumber === process.env.RINGCENTRAL_AGENT_EXT)[0]
+const subscriptions = new Subscriptions({
+    sdk: rc
+})
+const subscription = subscriptions.createSubscription({
+    pollInterval: 10 * 1000,
+    renewHandicapMs: 2 * 60 * 1000
+})
+subscription.setEventFilters([`/restapi/v1.0/account/~/extension/${agentExt.id}/telephony/sessions`])
 ```
 
-(e) Once the call monitoring API is triggered , the Supervisor device (SoftPhone) accepts the SIP INVITE automatically (It was pre-configured to do that) and the agent-customer call audio is live streamed to the Supervisor device. In this sample app , we have generated an audio track and saved the audio file as call.raw into local filesystem from where the app is run.
+### Respond to an incoming call
 
+Now, when a customer calls the monitored agent/extension, our application will be alerted allowing us to trigger the Call Supervision API, which will in turn start streaming the live audio call between the agent and the customer.
+
+```js
+subscription.on(subscription.events.notification, async function (message) {
+    if (message.body.parties.some(p => p.status.code === 'Answered' && p.direction === 'Inbound')) {
+        await rc.post(`/restapi/v1.0/account/~/telephony/sessions/${message.body.telephonySessionId}/supervise`, {
+            mode: 'Listen',
+            supervisorDeviceId: softphone.device.id,
+            agentExtensionNumber: agentExt.extensionNumber
+        })
+    }
+})
 ```
-      softphone.on('INVITE', sipMessage => {
-      softphone.answer(sipMessage)
-      softphone.once('track', e => {
-      const audioSink = new nonstandard.RTCAudioSink(e.track)
-      let speaker = null
-      let prevSampleRate = null
-      const audioFilePath = 'call.raw'
-      if (fs.existsSync(audioFilePath)) {
-        fs.unlinkSync(audioFilePath)
-      }
-      const writeStream = fs.createWriteStream(audioFilePath, { flags: 'a' })
-      audioSink.ondata = data => {
-        console.log('live audio data receivedlive audio data received, sample rate is', data.sampleRate)
-        if (speaker === null) {
-          if (data.sampleRate === prevSampleRate) { // wait until sample rate stable
-            speaker = new Speaker({ channels: data.channelCount, bitDepth: data.bitsPerSample, sampleRate: data.sampleRate, signed: true })
-          }
-          prevSampleRate = data.sampleRate
-        } else {
-          speaker.write(Buffer.from(data.samples.buffer))
-          writeStream.write(Buffer.from(data.samples.buffer))
+
+###
+
+When the Call Supervision API is invoked, the Supervisor's device (SoftPhone) accepts the SIP INVITE automatically (it was pre-configured to do that) and the agent-customer call audio is streamed in real-timne to the Supervisor's device.
+
+In the sample code below, we take the additional step of saving the call to an audio file (`call.raw`) onto the local filesystem.
+
+```js
+softphone.on('INVITE', sipMessage => {
+    softphone.answer(sipMessage)
+    softphone.once('track', e => {
+        const audioSink = new nonstandard.RTCAudioSink(e.track)
+        let speaker = null
+        let prevSampleRate = null
+        const audioFilePath = 'call.raw'
+        if (fs.existsSync(audioFilePath)) {
+            fs.unlinkSync(audioFilePath)
         }
-      }
-      
+        const writeStream = fs.createWriteStream(audioFilePath, { flags: 'a' })
+        audioSink.ondata = data => {
+            console.log('live audio data received, sample rate is ', data.sampleRate)
+            if (speaker === null) {
+                // wait until sample rate stable
+                if (data.sampleRate === prevSampleRate) { 
+                    speaker = new Speaker({
+	                channels: data.channelCount,
+                        bitDepth: data.bitsPerSample,
+                        sampleRate: data.sampleRate,
+                        signed: true
+		    })
+                }
+                prevSampleRate = data.sampleRate
+            } else {
+                speaker.write(Buffer.from(data.samples.buffer))
+                writeStream.write(Buffer.from(data.samples.buffer))
+            }
+        }
+    }
+}
 ```
 
-With the [Demo](https://github.com/tylerlong/ringcentral-call-supervise-demo) App you can listen to the Audio Talk. It also saves the audio in a file called call.raw on your local machine (the directory where your app runs from). You can play the file using the command 
-```
-play -e signed -b 16 -r 8000 -c 1 call.raw 
+When the call is complete, you can play the file using the following command:
 
-```
+`play -e signed -b 16 -r 8000 -c 1 call.raw`
 
-You can also refer to this [Blog](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) 
+### Additional Resources
 
-### Steps with BYOD Phone (with a fixed deviceID)
-
-
-All the steps here would be the same as above, except how to configure a BYOD device with a Fixed Device ID.
-
-[Steps](https://support.ringcentral.com/s/article/4966?language=en_US) for Configuring a BYOD Device with a Fixed Device ID
+* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
+* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
 
