@@ -43,7 +43,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ### Install RingCentral JavaScript SDK
 
 ```bash
-$ npm install ringcentral --save
+$ npm install @ringcentral/sdk --save
 ```
 
 ### Create and Edit meetings.js
@@ -51,7 +51,7 @@ $ npm install ringcentral --save
 Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```javascript
-const RC = require('ringcentral')
+const SDK = require('@ringcentral/sdk').SDK
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -61,10 +61,10 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-var rcsdk = new RC({
+var rcsdk = new SDK({
     server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
+    clientId: RINGCENTRAL_CLIENTID,
+    clientSecret: RINGCENTRAL_CLIENTSECRET
 });
 var platform = rcsdk.platform();
 platform.login({
@@ -73,16 +73,19 @@ platform.login({
     extension: RINGCENTRAL_EXTENSION
     })
     .then(function(resp) {
-	platform.post('/account/~/extension/~/meeting', {
+	platform.post('/restapi/v1.0/account/~/extension/~/meeting', {
             topic: 'Test Meeting',
             meetingType: 'Instant',
             allowJoinBeforeHost: true,
             startHostVideo: true,
             startParticipantsVideo: false
 	      })
-        .then(function (resp) {
-            console.log('Start Your Meeting: ' + resp.json().links.startUri )
-            console.log('Join the Meeting: ' + resp.json().links.joinUri )
+        .then(function(resp) {
+          return resp.json()
+        })
+        .then(function (json) {
+            console.log('Start Your Meeting: ' + json.links.startUri )
+            console.log('Join the Meeting: ' + json.links.joinUri )
         });
 });
 ```
