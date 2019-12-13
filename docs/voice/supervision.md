@@ -426,3 +426,104 @@ When the call is complete, you can play the file using the following command:
 * Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
 * Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
 
+### (New) Dual Channel Audio Streaming
+
+We have extended the Supervision API with dual channel Audio streaming, one for each call party.
+
+Now you can even get seperate audio streams for each of the voice channels(one for the agent and other for the customer) .This will enable you to get cleaner high quality audio to feed into your AI engine for higher quality transcription.
+
+The Request / Response is shown below. We have made minor changes in the API Request schema.
+
+ Changes (Backward Compatible Non Breaking):
+
+1. We added ```agentExtensionId```. (Old version uses ```extensionNumber```)
+2. Renamed ```deviceId``` to ```supervisorDeviceId```. To provide more clarity
+3. Change in URI Path - The new URL path includes  parties/party-id to stream the stream the specific
+   participant party audio.
+
+All these New changes are backward compatible, so if you have already built an app with the earlier version of the Supervision API, it should keep working as usual.
+
+The SIP invite will contain the ```session-id``` and ```party-id``` of the monitored session exactly as the example SIP INVITE shown above. 
+
+Sample Party Information in SIP
+
+```p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2```
+
+
+```Request tab="Request"
+POST /v1.0/account/40001234567890/telephony/sessions/s-171842208208020510/parties/p-171842208208020510-2/supervise
+{  
+   "mode": "Listen",
+   "agentExtensionId": "40001234567890",
+   "supervisorDeviceId": "191888004"
+}
+```
+
+```Response tab="Response"
+HTTP 201 Created
+{  
+   "direction":"Outbound",
+   "from":{  
+      "deviceId":"803872000020",
+      "name":"John Smith",
+      "extensionId":"400130078008",
+      "phoneNumber":"+18772096645"
+   },
+   "id":"p-171842208208020510-3",
+   "accountId":"400130073008",
+   "extensionId":"400130078008",
+   "muted":false,
+   "owner":{  
+      "accountId":"400130073008",
+      "extensionId":"400130078008"
+   },
+   "standAlone":false,
+   "status":{  
+      "code":"Answered",
+      "reason":"Supervising"
+   },
+   "to":{  
+      "phoneNumber":"+18772096347"
+   }
+}
+```
+For the customer audio stream , just get the customer party-id from your Telephony Session Notifications and call the Supervision API. For a sucessful supervision request, Telephony Session Notifications should show an event with the following:
+
+```state.reason == Supervising```
+```from is Supervisor party```
+```to should be taken from "to" of the party connected to the corresponding monitored leg.```
+
+Example Telephony Session Event for a supervised session
+
+```
+{
+...
+"parties" : [
+...
+  "from" : {
+                    "instanceId" : "<supervisor instance id>" , 
+                    "mailboxId" :  "< supervisor from mailbox id>" , 
+                    "name" :       "< supervisor from name>" , 
+                    "number" :     "< supervisor from #>" 
+  },
+  "to" : {
+                    "instanceId" : "<monitored party instance id>" , 
+                    "mailboxId" :  "<to mailbox id>" , 
+                    "name" :       "<to name>" , 
+                    "number" :     "<to #>" 
+  },
+  "state" : {   
+                    "name" :    "Answered", 
+                    "reason": "Supervising"
+                },
+  ...
+
+  "rcFeature" : {   
+                    "name" : "Supervising" , 
+                    "mode" : "Monitor" 
+                },
+  ...
+}
+```
+
+Hope this will provide you enough information to get started on building your Monitoring or Streaming application.
