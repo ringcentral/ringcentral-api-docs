@@ -48,13 +48,9 @@ The following images have been provided to help you construct buttons to initiat
 
 ![ATT Login Button](../button-att.png)
 
-<!--
-
 #### Avaya Cloud Office
 
 ![Avaya Cloud Office Button](../button-avaya.png)
-
--->
 
 #### BT
 
