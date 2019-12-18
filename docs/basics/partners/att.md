@@ -52,13 +52,13 @@ AT&T Office@Hand customers on RingCentral operate in a completely separate envir
 ```json
 {
   "uri": "https://platform.ringcentral.biz/restapi/v1.0/account/12xx04",
-    "id": 12xx04,
-      "serviceInfo": {
-          "uri": "https://platform.ringcentral.biz/restapi/v1.0/account/12xx04/service-info",
-	      "brand": {
-	            "id": "3420",
-		          "name": "AT&T Office@Hand"
-			  ...
+  "id": 12xx04,
+  "serviceInfo": {
+    "uri": "https://platform.ringcentral.biz/restapi/v1.0/account/12xx04/service-info",
+    "brand": {
+      "id": "3420",
+      "name": "AT&T Office@Hand"
+      ...
 ```
 
 ### Best practices and recommendations

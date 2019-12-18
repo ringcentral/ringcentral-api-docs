@@ -54,10 +54,10 @@ API: `https://platform.ringcentral.com/restapi/v1.0/account/~`
 
 ```json
 {
-  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/12133895004",
-  "id": 12133895004,
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/12xx04",
+  "id": 12xx04,
   "serviceInfo": {
-    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/12133895004/service-info",
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/12xx04/service-info",
     "brand": {
       "id": "7710",
       "name": "BT Cloud Phone"
