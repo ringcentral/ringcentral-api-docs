@@ -75,6 +75,7 @@ Once you have successfully published your application within the RingCentral App
 
 Partners receive a number of benefits, one of the most valuable being featured in the RingCentral App Gallery. To join the CP3 program as a Premier Partner, please fill out our [partner application form](https://www.ringcentral.com/partner/isvagentform.html). Being featured is at the discretion of our Connect Platform Partner team.
 
+<!--
 ??? info "Reference: App Gallery Fields"
     | Field Name | Description |
     |------------|-------------|
@@ -103,3 +104,4 @@ Partners receive a number of benefits, one of the most valuable being featured i
     | Document URL | The URL to your application's documentation. |
     | Community URL | The URL to your application's support community or forums. |
     | Wiki URL | The URL to your application's online documentation portal/wiki. |
+-->
