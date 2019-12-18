@@ -173,7 +173,10 @@ pages:
           - 'App Gallery': 'basics/app-gallery.md'
           - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
           - 'Partner compatibility': 'basics/partner-compatibility.md'
-          - 'Partner Brand Guidelines': 'basics/partner-brand-guidelines.md'
+          - 'Partner Brand Guidelines':
+             - 'ATT': 'basics/partners/att.md'
+             - 'BT': 'basics/partners/bt.md'
+             - 'TELUS': 'basics/partners/telus.md'
       - 'Fundamentals':
           - 'Methods, endpoints and parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
