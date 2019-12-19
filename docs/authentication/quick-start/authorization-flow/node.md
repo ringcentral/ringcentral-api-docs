@@ -78,7 +78,7 @@ console.log("listen to port 5000")
 
 app.get('/index', function (req, res) {
   res.redirect("/")
-});
+})
 app.get('/', function (req, res) {
     var platform = rcsdk.platform()
     if (req.session.tokens != undefined){
@@ -101,7 +101,7 @@ app.get('/', function (req, res) {
           brandId: ''
         })
     });
-});
+})
 
 app.get('/logout', function(req, res) {
   if (req.session.tokens != undefined){
@@ -118,13 +118,13 @@ app.get('/logout', function(req, res) {
                 console.log(e)
             });
         }
-        req.session.tokens = null;
+        req.session.tokens = null
         res.redirect("/")
       });
       return
   }
   res.redirect("/")
-});
+})
 
 app.get('/oauth2callback', function(req, res) {
   if (req.query.code) {
@@ -133,15 +133,14 @@ app.get('/oauth2callback', function(req, res) {
           code: req.query.code,
       })
       .then(function(response) {
-        return response.json();
+        return response.json()
       })
       .then(function (token) {
-          console.log(token);
           req.session.tokens = token
           res.redirect("/test")
       })
       .catch(function (e) {
-          res.send('Login error ' + e);
+          res.send('Login error ' + e)
       });
   }else {
       res.send('No Auth code');
@@ -156,13 +155,13 @@ app.get('/test', function(req, res) {
       platform.loggedIn().then(function(isLoggedIn) {
         if (isLoggedIn) {
           if (req.query.api == "extension"){
-            var endpoint = "/restapi/v1.0/account/~/extension";
+            var endpoint = "/restapi/v1.0/account/~/extension"
             return callGetEndpoint(platform, endpoint, res)
           } else if (req.query.api == "extension-call-log"){
-            var endpoint = "/restapi/v1.0/account/~/extension/~/call-log";
+            var endpoint = "/restapi/v1.0/account/~/extension/~/call-log"
             return callGetEndpoint(platform, endpoint, res)
           } if (req.query.api == "account-call-log"){
-            var endpoint = "/restapi/v1.0/account/~/call-log";
+            var endpoint = "/restapi/v1.0/account/~/call-log"
             return callGetEndpoint(platform, endpoint, res)
           }
         }
