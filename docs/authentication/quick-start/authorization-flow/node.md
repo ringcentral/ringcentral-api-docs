@@ -78,38 +78,50 @@ console.log("listen to port 5000")
 
 app.get('/index', function (req, res) {
   res.redirect("/")
-})
+});
 app.get('/', function (req, res) {
     var platform = rcsdk.platform()
     if (req.session.tokens != undefined){
         var tokensObj = req.session.tokens
-        platform.auth().setData(tokensObj)
-        if (platform.loggedIn()){
+        platform.auth().setData(tokensObj);
+        platform.loggedIn().then(function(isLoggedIn) {
+          if (isLoggedIn) {
             return res.render('test')
-        }
+          }
+          res.render('index', {
+              authorize_uri: platform.loginUrl({
+                brandId: ''
+              })
+          });
+        })
+        return;
     }
     res.render('index', {
         authorize_uri: platform.loginUrl({
-            brandId: ''
-          })
-        });
-})
+          brandId: ''
+        })
+    });
+});
 
 app.get('/logout', function(req, res) {
   if (req.session.tokens != undefined){
       var tokensObj = req.session.tokens
       var platform = rcsdk.platform()
       platform.auth().setData(tokensObj)
-      if (platform.loggedIn()){
+      platform.loggedIn().then(function(isLoggedIn) {
+        if (isLoggedIn) {
           platform.logout()
-          .then(function(resp){
-              console.log("logged out")
-          })
-          .catch(function(e){
-              console.log(e)
-          });
-      }
-      req.session.tokens = null
+            .then(function(resp){
+                console.log("logged out")
+            })
+            .catch(function(e){
+                console.log(e)
+            });
+        }
+        req.session.tokens = null;
+        res.redirect("/")
+      });
+      return
   }
   res.redirect("/")
 });
@@ -120,8 +132,12 @@ app.get('/oauth2callback', function(req, res) {
       platform.login({
           code: req.query.code,
       })
+      .then(function(response) {
+        return response.json();
+      })
       .then(function (token) {
-          req.session.tokens = token.json()
+          console.log(token);
+          req.session.tokens = token
           res.redirect("/test")
       })
       .catch(function (e) {
@@ -137,18 +153,22 @@ app.get('/test', function(req, res) {
       var tokensObj = req.session.tokens
       var platform = rcsdk.platform()
       platform.auth().setData(tokensObj)
-      if (platform.loggedIn()){
+      platform.loggedIn().then(function(isLoggedIn) {
+        if (isLoggedIn) {
           if (req.query.api == "extension"){
             var endpoint = "/restapi/v1.0/account/~/extension";
             return callGetEndpoint(platform, endpoint, res)
-          }else if (req.query.api == "extension-call-log"){
+          } else if (req.query.api == "extension-call-log"){
             var endpoint = "/restapi/v1.0/account/~/extension/~/call-log";
             return callGetEndpoint(platform, endpoint, res)
-          }if (req.query.api == "account-call-log"){
+          } if (req.query.api == "account-call-log"){
             var endpoint = "/restapi/v1.0/account/~/call-log";
             return callGetEndpoint(platform, endpoint, res)
           }
-      }
+        }
+        res.redirect("/")
+      })
+      return;
   }
   res.redirect("/")
 });
