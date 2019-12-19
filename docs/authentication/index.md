@@ -29,17 +29,9 @@ In general, the steps your app needs to take to use RingCentral APIs (including 
 
 4. Refresh your access token when necessary, as they can expire. 
 
-## Supported Authorization Flows
+## What auth flow is right for my app?
 
-There are several authorization flows one can use to obtain an access token to call the RingCentral API. They are:
-
-* **[Authorization Code Flow](./auth-code-flow)** (recommended) - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
-
-* **[Password Flow](./password-flow)** (a.k.a. Resource Owner Password Credentials Flow (ROPC) - a 2-legged authorization flow which is more suitable for server apps used by a single user account. This is by far the easiest authentication scheme to implement, but is considered insecure as it requires servers to store username and password credentials in plain text. 
-
-* **Refresh Token Flow** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Authorization Code or Password flows for obtaining new access tokens.
-
-!!! warning "App Settings Impact What Auth Flows You Can Use"
+??? warning "App Settings Impact What Auth Flows You Can Use"
     How an application is configured will determine what authorization flows can be used to obtain an access token. This restriction has been known to trip-up many a developer. Please be aware of the following restrictions:
     
        * 'Public' apps are not allowed to use the [Password Flow](./password-flow)
@@ -47,6 +39,16 @@ There are several authorization flows one can use to obtain an access token to c
        * Apps with no user interface are not allowed to use [Auth Code Flow](./auth-code-flow)
     
     You can check which flows are available for your app on your app's Setting page.
+
+There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. 
+
+* **[Auth Code Flow](./auth-code-flow)** (recommended) - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
+
+* **[Implicit Flow](./implicit-grant-flow)** - a 2-legged authorization flow common for mobile and desktop apps.
+
+* **[Password Flow](./password-flow)** - a 2-legged authorization flow suitable for server apps used by a single user account. This is by far the easiest authentication scheme to implement, but is considered insecure as it requires servers to store username and password credentials in plain text. 
+
+* **Refresh Token Flow** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Auth Code or Password flows for obtaining new access tokens.
 
 ### Learn More
 
