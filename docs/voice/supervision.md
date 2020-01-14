@@ -426,3 +426,25 @@ When the call is complete, you can play the file using the following command:
 * Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
 * Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
 
+### Dual Channel Call Streaming ( Call Supervision and Monitoring)
+
+The dual channel call streaming [API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty) allows to receive a real time audio stream for each of the two parties involved in the call. The primary use case is a contact center app wishing to monitor a call between a customer and an agent with high quality audio stream for individual parties.
+
+This API is an enhancement of the Supervision API whereby there will be a seperate supervsion API request for each party.
+
+All the other prerquisites and conditions are exactly same as the Supervision API, the only differene is that this API endpoint is at the party level instead of being at a call session level (like the Supervision API). In case of dual channel call streaming there will be a seperate API call for each of the call party to provide seperate audio streams(One for the agent and one for the customer).
+
+```HTTP tab="Raw"
+POST /restapi/v1.0/account/accountId/telephony/sessions/{sessionId}/parties/{partyId}/supervise HTTP/1.1
+Content-Type: application/json
+Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+Authorization: <YOUR_ACCESS_TOKEN>
+
+{  
+   "mode": "Listen",
+   "agentExtensionId": "40001234567890",
+   "supervisorDeviceId": "191888004"
+}
+```
+
+
