@@ -447,4 +447,4 @@ Authorization: <YOUR_ACCESS_TOKEN>
    "supervisorDeviceId": "191888004"
 }
 ```
-####### Notes: If a RingCentral HardPhone or WebRTC device is used as the monitoring device instead of a SIP server, in such a scenario if the agent call is supervised first (streaming the agent auido stream) the second SIP invite to monitor the customer stream would not be automatically accepted by the device. The first call will be put on hold and the second will start ringing. This is because this use case is designed for a server side device capeable of accepting multiple parallel SIP invites.
+###### Notes: If a RingCentral HardPhone or WebRTC device is used as the monitoring device instead of a SIP server, in such a scenario if the agent call is supervised first (streaming the agent auido stream) the second SIP invite to monitor the customer stream would not be automatically accepted by the device. The first call will be put on hold and the second will start ringing. This is because this use case is designed for a server side device capeable of accepting multiple parallel SIP invites.
