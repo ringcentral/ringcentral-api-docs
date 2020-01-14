@@ -435,7 +435,7 @@ All the other prerequisites and conditions are exactly same as the Supervision A
 
 
 ```HTTP tab="Raw"
-POST /restapi/v1.0/account/accountId/telephony/sessions/{sessionId}/parties/{partyId}/supervise HTTP/1.1
+POST /restapi/v1.0/account/accountId/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 Authorization: <YOUR_ACCESS_TOKEN>
