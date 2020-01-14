@@ -428,11 +428,11 @@ When the call is complete, you can play the file using the following command:
 
 ### Dual Channel Call Streaming ( Call Supervision and Monitoring)
 
-The dual channel call streaming [API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty) allows to receive a real time audio stream for each of the two parties involved in the call. The primary use case is a contact center app wishing to monitor a call between a customer and an agent with high quality audio stream for individual parties.
+The dual channel call streaming [API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty) allows to receive a real time audio stream for each of the two parties involved in the call.The primary use case is a contact center app wishing to monitor a call between a customer and an agent with high quality audio stream for individual parties.
 
-This API is an enhancement of the Supervision API whereby there will be a seperate supervsion API request for each party.
+This API is an enhancement of the Supervision API whereby there will be a separate supervision API request for each party.
+All the other prerequisites and conditions are exactly same as the Supervision API, the only difference is that this API endpoint is at the party level instead of being at a call session level (like the Supervision API). In case of dual channel call streaming there will be a separate API call for each of the call party to provide separate audio streams for each call participant(One for the agent and one for the customer).
 
-All the other prerquisites and conditions are exactly same as the Supervision API, the only differene is that this API endpoint is at the party level instead of being at a call session level (like the Supervision API). In case of dual channel call streaming there will be a seperate API call for each of the call party to provide seperate audio streams(One for the agent and one for the customer).
 
 ```HTTP tab="Raw"
 POST /restapi/v1.0/account/accountId/telephony/sessions/{sessionId}/parties/{partyId}/supervise HTTP/1.1
