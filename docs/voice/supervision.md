@@ -215,7 +215,7 @@ Once those two operations are complete, the human or app supervisor will be allo
 Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:
 
 * Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
-* Line 26: `i` contains the PSTN's (customer) `party-id` and the agent `party-id`
+* Line 26: `p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2` the party-id here is the monitored party-id.
 
 ```http hl_lines="10 26" linenums="1"
 |||INVITE sip:18002097562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
@@ -227,7 +227,8 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 ||||Contact: <sip:+16508370072@10.62.192.70:5091;transport=tcp>
 ||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7
 ||||CSeq: 31268 INVITE
-||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx
+||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=s-cs171841903350030962
+||||p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2
 ||||Alert-Info: Auto Answer
 ||||Call-Info: <KyOAG0RTd5fP1WkxMAuXNw..>;purpose=info;Answer-After=0
 ||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO
@@ -426,3 +427,25 @@ When the call is complete, you can play the file using the following command:
 * Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
 * Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
 
+### Dual Channel Call Streaming ( Call Supervision and Monitoring)
+
+The dual channel call streaming [API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty) enables to receive a real time audio stream separately for each of the two parties involved in the call. The primary use case is a contact center app that monitors a call between a customer and an agent with high quality audio stream for each party.
+
+This API is an enhancement of the Supervision API. There will be two supervision API requests, one for each call participant.
+
+All the other prerequisites and conditions are exactly same as the Supervision API, the only difference is that this API endpoint is at the party level instead of it being at a call session level (like the Supervision API).
+
+```HTTP tab="Raw"
+POST /restapi/v1.0/account/accountId/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
+Content-Type: application/json
+Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+Authorization: <YOUR_ACCESS_TOKEN>
+
+{  
+   "mode": "Listen",
+   "agentExtensionId": "40001234567890",
+   "supervisorDeviceId": "191888004"
+}
+```
+
+###### Note: If a RingCentral Hard Phone or a WebRTC application is used as the monitoring device instead of a SIP server, in such a scenario if the agent call is supervised first (streaming the agent audio stream), the device will receive the first SIP invite for the agent party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
