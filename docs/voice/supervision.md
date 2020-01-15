@@ -11,7 +11,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 * Call's `sessionId`
 * Agent's `extensionNumber`
-* Supervisor's `deviceId`.
+* Supervisor's `deviceId`
  
 <img class="img-fluid" src="../../img/supervisionapi_v3.png">
   
@@ -19,8 +19,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 Before you begin, please verify these prerequesites are met:
 
-1. Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this [Knowledgebase article](
-https://support.ringcentral.com/s/article/8050?language=en_US).
+1. Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this [Knowledgebase article](https://support.ringcentral.com/s/article/8050?language=en_US).
 
 2. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
@@ -378,8 +377,6 @@ subscription.on(subscription.events.notification, async function (message) {
 })
 ```
 
-###
-
 When the Call Supervision API is invoked, the Supervisor's device (SoftPhone) accepts the SIP INVITE automatically (it was pre-configured to do that) and the agent-customer call audio is streamed in real-timne to the Supervisor's device.
 
 In the sample code below, we take the additional step of saving the call to an audio file (`call.raw`) onto the local filesystem.
@@ -422,20 +419,13 @@ When the call is complete, you can play the file using the following command:
 
 `play -e signed -b 16 -r 8000 -c 1 call.raw`
 
-### Additional Resources
+### How to monitor calls using dual channel audio
 
-* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
-* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
+The Supervision API allows for [dual channel call streaming](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), one channel for each of the two parties on the call. This capability is often used in call/contact center implementation that require access to high quality audio streams for use with voice recognition and speech transcription systems.
 
-### Dual Channel Call Streaming ( Call Supervision and Monitoring)
+This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
 
-The dual channel call streaming [API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty) enables to receive a real time audio stream separately for each of the two parties involved in the call. The primary use case is a contact center app that monitors a call between a customer and an agent with high quality audio stream for each party.
-
-This API is an enhancement of the Supervision API. There will be two supervision API requests, one for each call participant.
-
-All the other prerequisites and conditions are exactly same as the Supervision API, the only difference is that this API endpoint is at the party level instead of it being at a call session level (like the Supervision API).
-
-```HTTP tab="Raw"
+```http tab="Raw"
 POST /restapi/v1.0/account/accountId/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
@@ -448,4 +438,11 @@ Authorization: <YOUR_ACCESS_TOKEN>
 }
 ```
 
-###### Note: If a RingCentral Hard Phone or a WebRTC application is used as the monitoring device instead of a SIP server, in such a scenario if the agent call is supervised first (streaming the agent audio stream), the device will receive the first SIP invite for the agent party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
+!!! note "Server-side vs client-side device monitoring"
+    If a RingCentral hard-phone or a WebRTC application is used as the monitoring device instead of a SIP server, then the agent's call is supervised first (streaming the agent audio stream). In other words, the device will receive the first SIP invite for the agent's party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
+
+### Additional Resources
+
+* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
+* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
+
