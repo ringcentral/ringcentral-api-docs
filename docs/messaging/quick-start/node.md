@@ -40,7 +40,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ### Install RingCentral JavaScript SDK
 
 ```bash
-$ npm install ringcentral --save
+$ npm install @ringcentral/sdk --save
 ```
 
 ### Create and Edit sms.js
@@ -48,7 +48,7 @@ $ npm install ringcentral --save
 Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
 ```javascript
-const RC = require('ringcentral')
+const SDK = require('@ringcentral/sdk').SDK
 
 RECIPIENT = '<ENTER PHONE NUMBER>'
 
@@ -60,10 +60,10 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-var rcsdk = new RC({
+var rcsdk = new SDK({
     server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
+    clientId: RINGCENTRAL_CLIENTID,
+    clientSecret: RINGCENTRAL_CLIENTSECRET
 });
 var platform = rcsdk.platform();
 platform.login({
@@ -76,7 +76,7 @@ platform.login({
     });
 
 function send_sms(){
-  platform.post('/account/~/extension/~/sms', {
+  platform.post('/restapi/v1.0/account/~/extension/~/sms', {
        from: {'phoneNumber': RINGCENTRAL_USERNAME},
        to: [{'phoneNumber': RECIPIENT}],
        text: 'Hello World from JavaScript'
@@ -84,7 +84,7 @@ function send_sms(){
      .then(function (resp) {
         console.log("SMS sent. Message status: " + resp.json().messageStatus)
      });
-}      
+}
 ```
 
 ### Run Your Code

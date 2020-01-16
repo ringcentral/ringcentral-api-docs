@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# RingCentral Developer Guide
+# RingCentral Office Developer Guide
 
 <div class="jumbotron pt-1">
   <h3 class="display-5">Let's Get Started!</h3>

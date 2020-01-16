@@ -11,7 +11,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 * Call's `sessionId`
 * Agent's `extensionNumber`
-* Supervisor's `deviceId`.
+* Supervisor's `deviceId`
  
 <img class="img-fluid" src="../../img/supervisionapi_v3.png">
   
@@ -19,8 +19,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 Before you begin, please verify these prerequesites are met:
 
-1. Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this [Knowledgebase article](
-https://support.ringcentral.com/s/article/8050?language=en_US).
+1. Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this [Knowledgebase article](https://support.ringcentral.com/s/article/8050?language=en_US).
 
 2. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
@@ -36,14 +35,14 @@ Due to the sensitive nature of Call Monitoring, authorization to be monitored an
 * What extensions/individuals can be monitored
 * What extensions/individuals can monitor others
 
-Once a Call Monitoring group has been configured, developers can use the Supervise Call API below to actively listen in on a call. 
+Once a Call Monitoring group has been configured, developers can use the Call Supervision API below to actively listen in on a call. 
 
 * [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
 * [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
 
-## Supervise Call API
+## Using the Call Supervision API
 
-The Supervise Call API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
+The Call Supervision API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
 
 ### Request
 
@@ -215,7 +214,7 @@ Once those two operations are complete, the human or app supervisor will be allo
 Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:
 
 * Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
-* Line 26: `i` contains the PSTN's (customer) `party-id` and the agent `party-id`
+* Line 26: `p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2` the party-id here is the monitored party-id.
 
 ```http hl_lines="10 26" linenums="1"
 |||INVITE sip:18002097562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
@@ -227,7 +226,8 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 ||||Contact: <sip:+16508370072@10.62.192.70:5091;transport=tcp>
 ||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7
 ||||CSeq: 31268 INVITE
-||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx
+||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=s-cs171841903350030962
+||||p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2
 ||||Alert-Info: Auto Answer
 ||||Call-Info: <KyOAG0RTd5fP1WkxMAuXNw..>;purpose=info;Answer-After=0
 ||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO
@@ -292,3 +292,157 @@ GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipDa
 
 !!! note "FCC Compliance"
     If you intend to save the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. The following [video](https://vimeo.com/326948521) demonstrates a working example of the Supervision API using the concepts described here.
+
+## Sample Call Monitoring Application
+
+In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones. 
+
+In this example we will cover the following topics:
+
+1. Getting setup
+2. Obtaining the device ID of the supervisors soft phone
+3. Setting up the supervisors device for monitoring
+4. Detecting an incoming call
+5. Invoking the Call Supervision API
+
+### Setup
+
+This sample application is written in NodeJS. Let's make sure you have installed the necessary prerequisites.
+
+```js
+import RingCentral from '@ringcentral/sdk'
+import Subscriptions from '@ringcentral/subscriptions'
+import Speaker from 'speaker'
+import { nonstandard } from 'wrtc'
+import Softphone from 'ringcentral-softphone'
+import fs from 'fs'
+```
+
+### Obtain the soft phone's device ID
+
+A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID. 
+
+1. Get the devices attached to an extension using the [Get Devices API](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices).
+
+2. Use the SIP Registration API to get the device ID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below
+
+Code for Softphone Registration using RingCentral SDK
+     
+```js
+(async () => {
+    await rc.login({
+        username: process.env.RINGCENTRAL_USERNAME,
+        extension: process.env.RINGCENTRAL_EXTENSION,
+        password: process.env.RINGCENTRAL_PASSWORD
+    })
+    const softphone = new Softphone(rc)
+    await softphone.register()
+})
+```
+
+!!! tip "Getting the device ID of a hard phone"
+    Generally speaking, the process of using a hard phone, a.k.a. BYOD, is the same. However, an API call is not necessary to obtain the device ID of the supervisors phone. Learn how to [setup a third-party device on the RingCentral network](https://support.ringcentral.com/s/article/4966?language=en_US) and obtain a fixed device ID.
+
+### Prepare agent extension(s) for monitoring
+
+Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin. 
+
+```js
+const r = await rc.get('/restapi/v1.0/account/~/extension')
+const json = await r.json()
+const agentExt = json.records.filter(ext => ext.extensionNumber === process.env.RINGCENTRAL_AGENT_EXT)[0]
+const subscriptions = new Subscriptions({
+    sdk: rc
+})
+const subscription = subscriptions.createSubscription({
+    pollInterval: 10 * 1000,
+    renewHandicapMs: 2 * 60 * 1000
+})
+subscription.setEventFilters([`/restapi/v1.0/account/~/extension/${agentExt.id}/telephony/sessions`])
+```
+
+### Respond to an incoming call
+
+Now, when a customer calls the monitored agent/extension, our application will be alerted allowing us to trigger the Call Supervision API, which will in turn start streaming the live audio call between the agent and the customer.
+
+```js
+subscription.on(subscription.events.notification, async function (message) {
+    if (message.body.parties.some(p => p.status.code === 'Answered' && p.direction === 'Inbound')) {
+        await rc.post(`/restapi/v1.0/account/~/telephony/sessions/${message.body.telephonySessionId}/supervise`, {
+            mode: 'Listen',
+            supervisorDeviceId: softphone.device.id,
+            agentExtensionNumber: agentExt.extensionNumber
+        })
+    }
+})
+```
+
+When the Call Supervision API is invoked, the Supervisor's device (SoftPhone) accepts the SIP INVITE automatically (it was pre-configured to do that) and the agent-customer call audio is streamed in real-timne to the Supervisor's device.
+
+In the sample code below, we take the additional step of saving the call to an audio file (`call.raw`) onto the local filesystem.
+
+```js
+softphone.on('INVITE', sipMessage => {
+    softphone.answer(sipMessage)
+    softphone.once('track', e => {
+        const audioSink = new nonstandard.RTCAudioSink(e.track)
+        let speaker = null
+        let prevSampleRate = null
+        const audioFilePath = 'call.raw'
+        if (fs.existsSync(audioFilePath)) {
+            fs.unlinkSync(audioFilePath)
+        }
+        const writeStream = fs.createWriteStream(audioFilePath, { flags: 'a' })
+        audioSink.ondata = data => {
+            console.log('live audio data received, sample rate is ', data.sampleRate)
+            if (speaker === null) {
+                // wait until sample rate stable
+                if (data.sampleRate === prevSampleRate) { 
+                    speaker = new Speaker({
+	                channels: data.channelCount,
+                        bitDepth: data.bitsPerSample,
+                        sampleRate: data.sampleRate,
+                        signed: true
+		    })
+                }
+                prevSampleRate = data.sampleRate
+            } else {
+                speaker.write(Buffer.from(data.samples.buffer))
+                writeStream.write(Buffer.from(data.samples.buffer))
+            }
+        }
+    }
+}
+```
+
+When the call is complete, you can play the file using the following command:
+
+`play -e signed -b 16 -r 8000 -c 1 call.raw`
+
+### How to monitor calls using dual channel audio
+
+The Supervision API allows for [dual channel call streaming](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), one channel for each of the two parties on the call. This capability is often used in call/contact center implementation that require access to high quality audio streams for use with voice recognition and speech transcription systems.
+
+This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
+
+```http tab="Raw"
+POST /restapi/v1.0/account/accountId/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
+Content-Type: application/json
+Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+Authorization: <YOUR_ACCESS_TOKEN>
+
+{  
+   "mode": "Listen",
+   "agentExtensionId": "40001234567890",
+   "supervisorDeviceId": "191888004"
+}
+```
+
+!!! note "Server-side vs client-side device monitoring"
+    If a RingCentral hard-phone or a WebRTC application is used as the monitoring device instead of a SIP server, then the agent's call is supervised first (streaming the agent audio stream). In other words, the device will receive the first SIP invite for the agent's party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
+
+### Additional Resources
+
+* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
+* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
+

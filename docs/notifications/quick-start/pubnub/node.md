@@ -40,7 +40,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ### Install RingCentral JavaScript SDK
 
 ```bash
-$ npm install ringcentral --save
+$ npm install @ringcentral/sdk @ringcentral/subscriptions --save
 ```
 
 ### Create and Edit pubnub-notification.js
@@ -48,7 +48,8 @@ $ npm install ringcentral --save
 Create a file called <tt>pubnub-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```javascript
-const RC = require('ringcentral');
+const SDK = require('@ringcentral/sdk').SDK
+const Subscriptions = require('@ringcentral/subscriptions').Subscriptions
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -59,21 +60,24 @@ RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 var rcsdk = new SDK({
-      server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
-  });
+    server: RINGCENTRAL_SERVER,
+    clientId: RINGCENTRAL_CLIENTID,
+    clientSecret: RINGCENTRAL_CLIENTSECRET
+});
 var platform = rcsdk.platform();
-var subscription = rcsdk.createSubscription();
+var subscriptions = new Subscriptions({
+   sdk: rcsdk
+});
+var subscription = subscriptions.createSubscription({ pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000 });
 
 platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
-      })
-      .then(function(resp) {
-          subscribe_for_SMS_notification()
-      });
+    username: RINGCENTRAL_USERNAME,
+    password: RINGCENTRAL_PASSWORD,
+    extension: RINGCENTRAL_EXTENSION
+})
+.then(function(resp) {
+    subscribe_for_SMS_notification()
+});
 
 function subscribe_for_SMS_notification(){
     subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'])

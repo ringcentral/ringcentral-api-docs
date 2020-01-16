@@ -54,11 +54,14 @@ pages:
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'Active Calls':
-      - 'Reading Active Calls': 'voice/active-calls.md'
-      - 'Call Control': 'voice/call-control.md'
-      - 'Call Monitoring': 'voice/supervision.md'
+    - 'Call Control':
+      - 'Overview': 'voice/call-control.md'
+      - 'Finding active calls': 'voice/finding-active-calls.md'
+      - 'Detecting state changes': 'voice/call-control-sessions.md'
       - 'Presence': 'voice/presence.md'
+      - 'Pre-call Control': 'voice/pre-call-control.md'
+      - 'Active-call Control': 'voice/active-call-control.md'
+      - 'Call Monitoring': 'voice/supervision.md'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
       - 'Data Types': 'voice/call-log/api.md'
@@ -162,25 +165,31 @@ pages:
 
   - 'Using the API':
       - 'Development Lifecycle':
-          - 'Tips For Your First App': 'basics/your-first-steps.md'
-          - 'Create an Application': 'basics/create-app.md'
-          - 'Develop in Sandbox': 'basics/sandbox.md'
-          - 'Graduate to Production': 'basics/production.md'
-          - 'Promote in App Gallery': 'basics/app-gallery.md'
+          - 'Tips for your first app': 'basics/your-first-steps.md'
+          - 'Create an application': 'basics/create-app.md'
+          - 'Develop in sandbox': 'basics/sandbox.md'
+          - 'Graduate to production': 'basics/production.md'
+      - 'App Promotion':
+          - 'App Gallery': 'basics/app-gallery.md'
+          - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
+          - 'Partner compatibility': 'basics/partner-compatibility.md'
+          - 'Partner Brand Guidelines':
+             - 'ATT': 'basics/partners/att.md'
+             - 'BT': 'basics/partners/bt.md'
+             - 'TELUS': 'basics/partners/telus.md'
       - 'Fundamentals':
-          - 'Methods, Endpoints and Parameters': 'basics/uris.md'
+          - 'Methods, endpoints and parameters': 'basics/uris.md'
           - 'Exploring the API': 'basics/explorer.md'
-          - 'Using Phones in Sandbox': 'basics/your-rc-phone.md'
-          - 'Media Content': 'basics/media.md'
-          - 'App Permissions': 'basics/permissions.md'
-          - 'Rate Limits': 'basics/rate-limits.md'
-          - 'Partner Compatibility': 'basics/partner-compatibility.md'
+          - 'Using phones in sandbox': 'basics/your-rc-phone.md'
+          - 'Media content': 'basics/media.md'
+          - 'App permissions': 'basics/permissions.md'
+          - 'Rate limits': 'basics/rate-limits.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
       - 'Account Management':
           - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
-          - 'Auth Profile & Permissions': 'basics/configuration/user-permissions.md'
+          - 'Auth profile & permissions': 'basics/configuration/user-permissions.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'

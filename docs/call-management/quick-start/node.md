@@ -40,7 +40,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ### Install RingCentral Node JS SDK
 
 ```bash
-$ npm install ringcentral --save
+$ npm install @ringcentral/sdk --save
 ```
 
 ### Create and Edit get-call-answering_rules.js
@@ -48,7 +48,7 @@ $ npm install ringcentral --save
 Create a file called <tt>get-call-answering_rules.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
 ```javascript
-const RC = require('ringcentral');
+const SDK = require('@ringcentral/sdk').SDK
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
 RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -58,10 +58,10 @@ RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
 RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-var rcsdk = new RC({
+var rcsdk = new SDK({
       server: RINGCENTRAL_SERVER,
-      appKey: RINGCENTRAL_CLIENTID,
-      appSecret: RINGCENTRAL_CLIENTSECRET
+      clientId: RINGCENTRAL_CLIENTID,
+      clientSecret: RINGCENTRAL_CLIENTSECRET
   });
 var platform = rcsdk.platform();
 platform.login({
@@ -79,11 +79,12 @@ function get_user_call_answering_rules() {
         'enabledOnly': false
       })
       .then(function(resp){
-          var jsonObj = resp.json()
-          for (var record of jsonObj.records){
-              // use the record.id to read rule details
-              get_user_call_answering_rule(record.id)
-          }
+          return resp.json()
+      }).then(function(jsonObj) {
+        for (var record of jsonObj.records){
+          // use the record.id to read rule details
+          get_user_call_answering_rule(record.id)
+        }
       })
       .catch(function(e){
           console.log(e.message)
@@ -93,7 +94,10 @@ function get_user_call_answering_rules() {
 function get_user_call_answering_rule(id) {
     platform.get('/restapi/v1.0/account/~/extension/~/answering-rule/' + id )
         .then(function(resp){
-            console.log(resp.text())
+          return resp.text()
+        })
+        .then(function(text) {
+          console.log(text)
         })
         .catch(function(e){
             console.log(e.message)
