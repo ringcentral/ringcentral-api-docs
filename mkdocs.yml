@@ -175,6 +175,7 @@ pages:
           - 'Partner compatibility': 'basics/partner-compatibility.md'
           - 'Partner Brand Guidelines':
              - 'ATT': 'basics/partners/att.md'
+             - 'Avaya Cloud Office': 'basics/partners/aco.md'
              - 'BT': 'basics/partners/bt.md'
              - 'TELUS': 'basics/partners/telus.md'
       - 'Fundamentals':
