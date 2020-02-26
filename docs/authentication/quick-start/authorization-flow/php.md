@@ -143,8 +143,8 @@ if (isset($_REQUEST['oauth2callback'])){
   $qs = $platform->parseAuthRedirectUrl($_SERVER['QUERY_STRING']);
   $qs["redirectUri"] = $RINGCENTRAL_REDIRECT_URL;
 
-  $apiResponse = $platform->login($qs);
-  $_SESSION['sessionAccessToken'] = $apiResponse->json();
+  $platform->login($qs);
+  $_SESSION['sessionAccessToken'] = $platform->auth()->data();
   header("Location: http://localhost:5000/test.html");
 }
 

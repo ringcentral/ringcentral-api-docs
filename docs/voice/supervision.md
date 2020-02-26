@@ -421,7 +421,7 @@ When the call is complete, you can play the file using the following command:
 
 ### How to monitor calls using dual channel audio
 
-The Supervision API allows for [dual channel call streaming](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), one channel for each of the two parties on the call. This capability is often used in call/contact center implementation that require access to high quality audio streams for use with voice recognition and speech transcription systems.
+The Supervision API allows for [dual channel call streaming](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), one channel for each of the two parties on the call. This capability is often desirable in call/contact center implementations that require access to high quality audio streams for use with voice recognition and speech transcription systems.
 
 This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
 

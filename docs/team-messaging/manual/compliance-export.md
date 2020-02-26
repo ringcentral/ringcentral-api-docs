@@ -14,6 +14,8 @@ The Glip Compliance Export API allows any data retention practices to be automat
 !!! alert Important
     The Glip compliance exports APIs run at the account level. This means that only users with the admin role would be able to call these APIs to export the data of all users in the entire account.
 
+    The Compliance Exports feature must be turned on from the Glip app in the Administration settings.
+
 ## Glip Data Export Process
 
 Glip Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
@@ -22,20 +24,18 @@ Glip Exports can take some time to compile and make available for download. Ther
 2. Developer polls to check the status of the created "Export Report" task.
 3. When the task is complete, developer downloads the generated file.
 
-What follows is a more detailed walk-through of this process. 
+What follows is a more detailed walk-through of this process.
 
 ### Creating an Export Report Task
 
-To create an export report task:
+To create an export task:
 
-* Specify the period of time for the archive via the `dateFrom` and `dateTo` parameters.
-* Specify a list of users whose data you would like to export via the `userIds` parameter.
-* Specify a list of teams/conversations to export via `chatIds` parameter.
+* Specify the period of time for the archive via the `timeFrom` and `timeTo` parameters.
+* Specify a list of users whose data you would like to export via the `contacts` parameter. A `contact` is an object and can be specified by an id number or an email address.
+* Specify a list of teams/conversations to export via the `chatIds` parameter.
 * Finally, make a POST request to the `/restapi/v1.0/glip/data-export` endpoint.
 
 !!! hint "How to find IDs to filter by"
-    Valid `userIds` can be retrieved using the [Get Chat API](https://developers.ringcentral.com/api-reference/Chats/readGlipChat) to get a list of members from a chat room.
-
     Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all teams/chats/conversations.
 
 Required permission(s):  Glip
@@ -44,11 +44,19 @@ If successful, the response will contain the task ID and the status of the newly
 
 ```json hl_lines="3", linenums="1"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX",
-  "id":"178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX",
-  "creationTime":"2019-08-30T19:32:11Z",
-  "lastModifiedTime":"2019-08-30T19:32:11Z",
-  "status":"Accepted"
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "id":"809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "creationTime":"2020-01-16T22:12:55Z",
+  "lastModifiedTime":"2020-01-16T22:12:55Z",
+  "status":"Accepted",
+  "creator": {
+    "id":"62288329016",
+    "firstName":"Paco",
+    "lastName":"Vu"},
+  "specific": {
+    "timeFrom":"2020-01-14T00:00:00Z",
+    "timeTo":"2020-01-16T22:12:55Z"
+    }
 }
 ```
 
@@ -70,16 +78,25 @@ When successful, the response will contain the id (taskId) and the status of the
 
 ```json hl_lines="3 6", linenums="1"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX",
-  "id":"178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX",
-  "creationTime":"2019-08-30T19:32:11Z",
-  "lastModifiedTime":"2019-08-30T19:32:12Z",
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "id":"809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "creationTime":"2020-01-16T22:12:55Z",
+  "lastModifiedTime":"2020-01-16T22:12:55Z",
   "status":"Completed",
-  "result":[
-  {
-    "size":3095,
-    "uri":"https://media.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX/archive/1"
-  }]
+  "creator": {
+    "id":"62288329016",
+    "firstName":"Paco",
+    "lastName":"Vu"},
+  "specific": {
+    "timeFrom":"2020-01-14T00:00:00Z",
+    "timeTo":"2020-01-16T22:12:55Z"
+    },
+  "datasets":[
+    {
+      "id":"1",
+      "size":3434,
+      "uri":"https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX/datasets/1"
+    }]
 }
 ```
 
@@ -88,7 +105,7 @@ When successful, the response will contain the id (taskId) and the status of the
 When an Export Task is successfully completed, make a GET request to the `uri` under the `result` of the object returned in the previous step.
 
 ```http
-GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/178009004-178009004-9bf6d9b751ab40d39e6bfa1XXXXXXXXX/archive/1?access_token=['access_token']
+GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX/datasets/1?access_token=['access_token']
 ```
 
 ## Sample Code: Export Team Messaging Data
@@ -113,8 +130,8 @@ function create_glip_compliance_export_task(){
     console.log("Create export task.")
     var endpoint = "/restapi/v1.0/glip/data-export"
     var params = {
-        dateFrom: "2019-08-01T00:00:00.000Z",
-        dateTo: "2019-08-26T23:59:59.999Z"
+        timeFrom: "2019-08-01T00:00:00.000Z",
+        timeTo: "2019-08-26T23:59:59.999Z"
       }
     platform.post(endpoint, params)
       .then(function(resp){
@@ -135,7 +152,7 @@ function get_glip_compliance_export_task(taskId){
           if (json.status == "Completed"){
               for (var i=0; i<json.result.length; i++){
                 var fileName = "glip-export-reports/" + json.creationTime + "_" + i + ".zip"
-                get_glip_report_archived_content(json.result[i].uri, fileName)
+                get_glip_report_archived_content(json.datasets[i].uri, fileName)
               }
           }else if (json.status == "Accepted" || json.status == "InProgress") {
               setTimeout(function(){
@@ -179,8 +196,8 @@ def create_glip_compliance_export_task():
     print ("Create export task.")
     endpoint = "/restapi/v1.0/glip/data-export"
     params = {
-        "dateFrom": "2019-07-01T00:00:00.000Z",
-        "dateTo": "2019-07-29T23:59:59.999Z"
+        "timeFrom": "2019-07-01T00:00:00.000Z",
+        "timeTo": "2019-07-29T23:59:59.999Z"
       }
     resp = platform.post(endpoint, params)
     json = resp.json()
@@ -192,10 +209,10 @@ def get_glip_compliance_export_task(taskId):
     response = platform.get(endpoint)
     jsonObj = response.json()
     if jsonObj.status == "Completed":
-        length = len(jsonObj.result)
+        length = len(jsonObj.datasets)
         for i in range(length):
             fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-            get_glip_report_archived_content(jsonObj.result[i].uri, fileName)
+            get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
     elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
         time.sleep(5)
         get_glip_compliance_export_task(taskId)
@@ -230,8 +247,8 @@ function create_glip_compliance_export_task(){
     try {
         $response = $platform->post($endpoint,
             array(
-                'dateFrom' => "2019-08-01T00:00:00.000Z",
-                'dateTo' => "2019-08-26T23:59:59.999Z",
+                'timeFrom' => "2019-08-01T00:00:00.000Z",
+                'timeTo' => "2019-08-26T23:59:59.999Z",
             ));
         $json = $response->json();
         get_glip_compliance_export_task($json->id);
@@ -248,9 +265,9 @@ function get_glip_compliance_export_task($taskId){
         $response = $platform->get($endpoint);
         $json = $response->json();
         if ($json->status == "Completed"){
-            for ($i=0; $i<count($json->result); $i++){
+            for ($i=0; $i<count($json->datasets); $i++){
               $fileName = "glip-export-reports_" . $json->creationTime . "_" . $i . ".zip";
-              get_glip_report_archived_content($json->result[$i]->uri, $fileName);
+              get_glip_report_archived_content($json->datasets[$i]->uri, $fileName);
             }
         }else if ($json->status == "Accepted" || $json->status == "InProgress"){
             sleep(5);
@@ -293,8 +310,8 @@ namespace Export_Glip_Data
         static private async Task create_glip_compliance_export_task()
         {
             var parameters = new CreateDataExportTaskRequest();
-            parameters.dateFrom = "2019-08-01T00:00:00.000Z";
-            parameters.dateTo = "2019-08-26T23:59:59.999Z";
+            parameters.timeFrom = "2019-08-01T00:00:00.000Z";
+            parameters.timeTo = "2019-08-26T23:59:59.999Z";
 
             var resp = await rcsdk.Restapi().Glip().DataExport().Post(parameters);
             Console.WriteLine("Create export task");
@@ -312,10 +329,10 @@ namespace Export_Glip_Data
             }
             if (resp.status == "Completed")
             {
-                for (var i = 0; i < resp.result.Length; i++)
+                for (var i = 0; i < resp.datasets.Length; i++)
                 {
                     var fileName = "glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
-                    var contentUrl = resp.result[i].uri + "?access_token=" + rcsdk.token.access_token;
+                    var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
                     WebClient webClient = new WebClient();
                     webClient.DownloadFile(contentUrl, fileName);
                     Console.WriteLine("Save report zip file to the local machine.");
@@ -352,8 +369,8 @@ public class Export_Glip_Data {
     }
     public void create_glip_compliance_export_task() throws RestException, IOException {
         var parameters = new CreateDataExportTaskRequest();
-        parameters.dateFrom = "2019-08-01T00:00:00.000Z";
-        parameters.dateTo = "2019-08-26T23:59:59.999Z";
+        parameters.timeFrom = "2019-08-01T00:00:00.000Z";
+        parameters.timeTo = "2019-08-26T23:59:59.999Z";
 
         var resp = rcsdk.restapi().glip().dataexport().post(parameters);
         System.out.println("Create export task.");
@@ -372,10 +389,10 @@ public class Export_Glip_Data {
             }
         }
         if (resp.status.equals("Completed")) {
-            for (var i = 0; i < resp.result.length; i++)
+            for (var i = 0; i < resp.datasets.length; i++)
             {
                 var fileName = "./src/test/resources/glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
-                var contentUrl = resp.result[i].uri + "?access_token=" + rcsdk.token.access_token;
+                var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
                 try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
                 	FileOutputStream fileOS = new FileOutputStream(fileName)) {
                 	byte data[] = new byte[1024];
@@ -405,8 +422,8 @@ def create_glip_compliance_export_task()
     puts "Create export task."
     endpoint = "/restapi/v1.0/glip/data-export"
     response = $rc.post(endpoint, payload: {
-        dateFrom: "2019-07-01T00:00:00.000Z",
-        dateTo: "2019-07-29T23:59:59.999Z"
+        timeFrom: "2019-07-01T00:00:00.000Z",
+        timeTo: "2019-07-29T23:59:59.999Z"
       })
     get_glip_compliance_export_task(response.body['id'])
 end
@@ -417,10 +434,10 @@ def get_glip_compliance_export_task(taskId)
     response = $rc.get(endpoint)
     body = response.body
     if body['status'] == "Completed"
-        length = body['result'].length
+        length = body['datasets'].length
         for i in (0...length)
             fileName = "glip-export-reports_" + body['creationTime'] + "_" + i.to_s + ".zip"
-            get_glip_report_archived_content(body['result'][i]['uri'], fileName)
+            get_glip_report_archived_content(body['datasets'][i]['uri'], fileName)
         end
     elsif body['status'] == "Accepted" || body['status'] == "InProgress"
         sleep(5)
