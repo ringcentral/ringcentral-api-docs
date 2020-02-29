@@ -13,13 +13,9 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <ol>
 <li><a href="https://developers.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Give your app a name and description, then click Next.</li>
-<li>On the second page of the create app wizard enter the following:
-  <ul>
-  <li>Select 'Private' for Application Type.</li>
-  <li>Select 'Server-only (No UI)' for Platform Type.</li>
-  </ul>
-  </li>
+<li>Select "Office Integration App" under "What type of app are you creating?"</li>
+<li>Select "Other Non-UI" under "Where will you be calling the API from?"
+<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
 <li>On the third page of the create app wizard, select all permissions for your test.
   <img src="../../../img/explorer_create_app.png" class="img-fluid">
 </li>

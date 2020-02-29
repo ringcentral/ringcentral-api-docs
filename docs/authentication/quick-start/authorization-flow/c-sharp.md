@@ -25,7 +25,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
   <li>Select 'Server/Web' for Platform Type.</li>
   </ul>
   </li>
-<li>On the third page of the create app wizard, select the following permissions:
+<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
   <ul>
     <li>ReadAccounts,ReadCallLog</li>
   </ul>
