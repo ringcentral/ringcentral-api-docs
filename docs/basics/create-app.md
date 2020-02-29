@@ -1,6 +1,6 @@
 # Creating an Application
 
-To create and register your RingCentral application, start by [signing in](https://developers.ringcentral.com/login.html#/) to the RingCentral Developer Portal with your account login and password. If you do not have RingCentral account, please sign up.
+To create and register your RingCentral application, start by [signing in](https://developers.ringcentral.com/login.html#/) to the RingCentral Developer Console with your account login and password. If you do not have RingCentral account, please sign up.
 
 After you login you will be taken to the Apps Console where all of your apps are listed and can be managed. Click the "Create App" button.
 
@@ -9,59 +9,71 @@ After you login you will be taken to the Apps Console where all of your apps are
 
 Upon clicking "Create App" you will be asked a number of questions to configure your app properly. 
 
-## General Settings
+## Select your app type
 
-<img src="../../img/create-app-general-settings.png" class="img-fluid">
-  
+<img src="../../img/create-app-type.png" class="img-fluid">
+
+RingCentral allows developers to create a number of different types of apps. Each type may expose different configuration options and/or capabilities specific to that app. The two app types we currently support are:
+
+* **Office Integration App** - this is by far the most common type of app created by developers as it gives developers generalized access to our wide selection of APIs available across our Office product-line (voice, SMS, meetings, team messaging, call logging, call control, etc.)
+
+* **Messaging Bot** - this refers to a special kind of app known as a "bot" used within RingCentral's team messaging product called Glip. 
+
+### Where will you be calling the API from?
+
+How your app will authenticate itself to the platform will depend upon the architecture and nature of your application. By telling us how and where the RingCentral API will be called, we can better secure your application and guide you towards the best authentication methodology to use. Here are your options:
+
+| Type | Description | Supported Auth Modes | 
+|-|-|-|
+| **Web server** | This is the most common setting and refers to apps that adhere to a traditional client-server relationship, in which API calls to RingCentral are made from a server. | Auth code, Refresh token |
+| **Web browser** | This is for "single-page apps" or those that utilize a pure client-side implementation with no server-side component. | Auth code, implicit grant, refresh token |
+| **Android** | For mobile apps built natively for Android. | Auth code, password, refresh token |
+| **iOS** | For mobile apps built natively for iOS devices, e.g. iPhone | Auth code, password, refresh token |
+| **Windows Desktop** | For downloadable apps built for Windows. | Auth code, password, refresh token |
+| **Mac Desktop** | For downloadable apps build for Macs. | Auth code, password, refresh token |
+| **Other Non-UI** | For apps that run via the command-line. | Password, refresh token |
+
+## App Access
+
+RingCentral can enforce an access policy on behalf of its developers. RingCentral supports the following access policies.
+
+<img src="../../img/create-app-access.png" class="img-fluid">
+
+| Access Level | Description |
+|-|-|
+| **All RingCentral Customers** | This makes your application available to the entire RingCentral ecosystem of customers, including those customers of our brand partners. We often refer to these apps as "public." |
+| **Only members of my organization/conpany** | This restricts access to your app to only users belonging to your RingCentral account. We often refer to these apps as "private." |
+| **Only customers of selected brand partners** | This restricts access to your app to only select brand partners. |
+
+!!! tip "Expand the reach of your application!"
+    RingCentral works with a number of partners who white-label the RingCentral platform for their respective markets. Our partners include BT, Telus, Avaya and AT&T. [Learn more about about building apps for these partners &raquo;](../partner-compatibility/)
+
+## Will you be promoting your app?
+
+To better support our developers wishing to promote their application to our customers, we ask if you intend to [promote your app in our App Gallery](../app-gallery/). *Your answer is for internal-use only.*
+
+<img src="../../img/create-app-promote.png" class="img-fluid">
+
+!!! warn "You cannot edit all fields after your app has been created."
+    For security reasons, various properties of your app will become locked once it has been created. Therefore, before you proceed, please verify that your app is compatible with your desired authentication method.
+    
+    <img src="../../img/create-app-confirm.png" class="img-fluid">
+
+## App Properties and Scope
+
+Finally, fill in the other properties of your app. 
+
+<img src="../../img/create-app-properties.png" width="50%" class="img-fluid">
+
 | Field | Description | 
 |-|-|
 | **Application Name** | Enter the name of your app. This name will be displayed to your users during authorization. |
-| **Organization Name** | Enter the name of your organization. This name will be displayed to your users during authorization. You will only prompted for this the first time. | 
-| **Description** | Enter the text describing your app which is needed for app graduation only and will *not* be displayed to your app users. It should contain minimum 20 characters. | 
-    
-## App Type & Platform
+| **Organization Name** | Enter the name of your organization. This name will be displayed to your users during authorization. You will only prompted for this the first time you create an app. | 
+| **App Description** | Enter the text describing your app which is needed for app graduation only and will *not* be displayed to your app users. It should contain minimum 20 characters. |
+| **App Permissions** | Enter the permissions, or "app scope" your app will require. This will restrict what APIs your app will have permission to call, and can protect your app from mis-use or abuse. |
+| **URLs** | You may need to register a set of URLs for your app to facilitate a secure authorization process. | 
 
-<img src="../../img/create-app-type-and-platform.png" class="img-fluid">
-
-#### Application Type
-
-Specify the application type. Please take time to specify correct value as it is not editable after your app is created and affects Authorization flows available for your app.
-
-You can choose one app type out of two:
-
-* **Private** - if you are developing an app for your own RingCentral account use;
-
-* **Public** - if you are developing an app for many RingCentral accounts.
-
-!!! note "Changing Application Type"
-    Once you choose your application type you cannot change it yourself. If you'd like to move from a private app to a public app, please email: [devsupport@ringcentral.com](mailto:devsupport@ringcentral.com).
-
-#### Platform Type
-
-Select the application type from the list. Please take time to specify correct value as it is not editable after your app is created and affects Authorization flows available for your app.
-
-You can select one platform type from the list:
-
-| Type | Description |
-|-|-|
-| **Mobile (iOS/Android/Other)** | Native and hybrid mobile apps for iOS, Android and other mobile platforms. |
-| **Desktop (Mac/Windows/Other)** | Installable desktop apps including Windows, Mac and others. This includes Chrome apps. |
-| **Browser-based** | In-browser, client-side apps that communicate with RingCentral APIs on the client, e.g. client-side JavaScript. |
-| **Server/Web** | Web-based apps are apps that communicate with RingCentral APIs from the server, e.g. Node.js,cPHP / Laravel, Ruby on Rails, etc. |
-| **Server/Bot** | Chat bot apps built for Glip that communicate with RingCentral APIs (including Glip API) from the server side and can be running on your private or public network | 
-| **Server-only (No UI)** | If your app does not have any user interface please pick this option. |
-
-#### Authorization Flows
-
-This field is not editable, but rather discloses what authorization and authentication modes are available to your application based upin the Application Type you selected.
-
-## OAuth Settings
-
-<img src="../../img/create-app-oauth-settings.png" class="img-fluid">
-
-Select the permissions useful for your app from the drop-down list. And if your app will use Authorization Code Flow, specify the OAuth Redirect URI. Click the 'Create' button.
-
-## Code Your App
+## What next? Code your app...
 
 With your application having been created, you are now ready to begin building your app. Make note of your app's Client ID and Client Secret as you will need these when authenticating your app to the platform.
 
