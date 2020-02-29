@@ -23,14 +23,13 @@ Our partners give developers and companies access to entirely different customer
 
 ## Creating Apps
 
-The first step in making your application available to our partner's customers is to select the partner your app can be made available to when you initially create your app. In step 2 of the [Create Application Process](../create-app/) you must:
+The first step in making your application available to our partner's customers is to set the proper access permissions when you initially create your app. There are two ways to make your app available to RingCentral brand partners when configuring "who will be authorized to access your app?" They are:
 
-1. Make sure your app is Application Type is set to "Public."
-2. Select your desired partners under "Carrier." *By default, all are selected.*
+1. Select "All RingCentral customers." When this is selected, your app will be made available to all RingCentral customers, including those of our brand partners. If RingCentral were to add more brand partners, then your app will automatically be available to them as well. *This is the recommended option.*
+
+2. Select "Only customers of selected brand partners," then select the specific brand partners you want to limit access to. For those wishing to maximize the reach of their application, we recommend selecting "All RingCentral customers."
 
 <img class="img-fluid mx-auto d-block" src="../partners-create-app.png" style="max-width:500px" />
-
-*If a partner is not selected, then customers associated with that partner will be prohibited from authenticating or using your application.*
 
 ## Authentication
 
