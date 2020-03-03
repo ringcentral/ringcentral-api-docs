@@ -41,23 +41,23 @@ The following images have been provided to help you construct buttons to initiat
 
 #### RingCentral
 
-![RingCentral Login Button](../button-ringcentral.png)
+<img src="../button-ringcentral.png" alt="RingCentral connect button">
 
 #### AT&T Office@Hand
 
-![ATT Login Button](../button-att.png)
+<img alt="ATT Login Button" src="../button-att.png">
 
 #### Avaya Cloud Office
 
-![Avaya Cloud Office Button](../button-avaya.png)
+<img alt="Avaya Cloud Office Button" src="../button-avaya.png">
 
 #### BT
 
-![ATT Login Button](../button-bt.png)
+<img alt="ATT Login Button" src="../button-bt.png">
 
 #### TELUS
 
-![TELUS Login Button](../button-telus.png)
+<img alt="TELUS Login Button" src="../button-telus.png">
 
 ### Login Page Branding
 
@@ -65,10 +65,10 @@ When constructing a login URL to initiate the authorization process in a [3-legg
 
 | Brand Id Value | Service | Logo Displayed |
 |-|-|-|
-| `3420` | AT&T Office@Hand | ![Office@Hand Logo](../logo-att.png) |
-| `6010` | Avaya Cloud Office | ![Avaya Cloud Office Logo](../logo-avaya-sm.jpg) |
-| `7310` | TELUS | ![TELUS Logo](../logo-telus.png) |
-| `7710` | BT | ![BT Logo](../logo-bt.png) | 
+| `3420` | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../logo-att.png"> |
+| `6010` | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../logo-avaya-sm.jpg"> |
+| `7310` | TELUS | <img alt="TELUS Logo" src="../logo-telus.png"> |
+| `7710` | BT | <img alt="BT Logo" src="../logo-bt.png"> | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 

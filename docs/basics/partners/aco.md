@@ -12,7 +12,7 @@ If you use "RingCentral Office" branding in your Application, replace it with "A
 
 Sample logo is shown below for Avaya Cloud Office. This logo can be scaled to the appropriate pixel dimensions in your App. 
 
-![Avaya Cloud Office logo](../logo_aco.jpg)
+<img alt="Avaya Cloud Office by RingCentral logo" src="../logo_aco.jpg">
 
 Avaya policy dictates that Apps should not utilize the Avaya corporate logo, Avaya color scheme, and should always position the Avaya Cloud Office logo and name as sub-tending to your own brand and App name; e.g. APP Name for Avaya Cloud office is acceptable, where as Avaya Cloud Office APP NAME is not.
 
