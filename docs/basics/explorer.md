@@ -16,8 +16,8 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>Select "Office Integration App" under "What type of app are you creating?"</li>
 <li>Select "Other Non-UI" under "Where will you be calling the API from?"
 <li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
-<li>On the third page of the create app wizard, select all permissions for your test.
-  <img src="../../../img/explorer_create_app.png" class="img-fluid">
+<li>On the third page of the create app wizard, select all permissions for your test.<br>
+    <img src="../../../img/explorer_create_app.png" class="img-fluid">
 </li>
 <li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
 </ol>
