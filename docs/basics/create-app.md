@@ -15,7 +15,7 @@ Upon clicking "Create App" you will be asked a number of questions to configure 
 
 RingCentral allows developers to create a number of different types of apps. Each type may expose different configuration options and/or capabilities specific to that app. The two app types we currently support are:
 
-* **Office Integration App** - this is by far the most common type of app created by developers as it gives developers generalized access to our wide selection of APIs available across our Office product-line (voice, SMS, meetings, team messaging, call logging, call control, etc.)
+* **API App for RingCentral Office** - this is by far the most common type of app created by developers as it gives developers generalized access to our wide selection of APIs available across our Office product-line (voice, SMS, meetings, team messaging, call logging, call control, etc.)
 
 * **Messaging Bot** - this refers to a special kind of app known as a "bot" used within RingCentral's team messaging product called Glip. 
 
