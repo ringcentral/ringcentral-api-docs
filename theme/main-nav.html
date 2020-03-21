@@ -1,228 +1,208 @@
-<nav id="mainnav" class="navbar navbar-default navbar-expand-md navbar-light sticky-top" role="navigation">
-<!--  <div class="container">-->
-    {%- block site_name %}
-    <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
-      <img src="{{ nav.homepage.url|url }}/logo_beta.svg" />
-    </a>
-    {%- endblock %}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav-navbar-collapse" aria-controls="mainnav-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="mainnav-navbar-collapse" class="collapse navbar-collapse">
-      {%- block site_nav %}
-      <ul class="nav navbar-nav mr-auto mx-auto">
-        <li id="products-dropdown" class="main-item nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-          <div id="mega-menu-products" class="dropdown-menu mega-menu" role="menu" aria-labelledby="navbarDropdown">
-	    <div class="row">
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">APIs</li>
-                  <li><a href="https://developer.ringcentral.com/api-products/voice">Voice</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-products/sms">SMS</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-products/fax">Fax</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-products/team-messaging">Chat</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-products/meetings">Meetings</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-products/data">Call Log</a></li>
-<!-- TODO: Change "Configuration" to "Account"?
-                  <li><a href="https://developer.ringcentral.com/api-products/configuration">Configuration</a></li>
--->
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">Widgets</li>
-                  <li><a href="https://developer.ringcentral.com/embeddable-voice.html">RingCentral Embeddable</a></li>
-                </ul>
-                <ul>
-                  <li class="sub-menu-heading">Bots</li>
-                  <li><a href="https://developer.ringcentral.com/library/chatbots.html">SMS Bot Framework</a></li>
-                  <li><a href="https://developer.ringcentral.com/library/chatbots.html">Chat Bot Framework</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <img src="https://images.ctfassets.net/up8h5u10ttz3/69wfSTqwkowM2ySYouo2qU/da9f91e31b1a4266552181e29e9938db/platformsignup.png" width="100%">
-              </div>
-	    </div> 
-          </div>
-        </li>
-        <li class="main-item nav-item dropdown" id="resources-dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
-          <div id="mega-menu-resources" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
-	    <div class="row">
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">Docs</li>
-                  <li><a href="{{ nav.homepage.url|url }}/get-started/">Getting Started</a></li>
-                  <li><a href="{{ nav.homepage.url|url }}">Developer Guide</a></li>
-                  <li><a href="http://ringcentral-api-changelog.readthedocs.io/en/latest/">Changelog</a></li>
-                </ul>
-<!--
-		<ul>
-                  <li class="sub-menu-heading">Downloads</li>
-                  <li><a href="https://developer.ringcentral.com/library/sdks.html#">SDKs</a></li>
-		</ul>
--->
-                <ul>
-                  <li class="sub-menu-heading">Use Cases</li>
-                  <li><a href="https://www.ringcentral.com/whyringcentral/casestudies.html?integrations=API">Case Studies</a></li>
-                  <li><a href="https://www.ringcentral.com/resources/learning-center.html#whitepapers">White papers</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">API Reference</li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#Call-Log">Call Log</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#RingOut">RingOut</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#SMS-and-MMS">SMS</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#Chats">Team Messaging</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#Upcoming-Meetings">Meetings</a></li>
-                  <li><a href="https://developer.ringcentral.com/api-reference#Fax">Fax</a></li>
-		  <li></li>
-                  <li><a class="mega-menu-link" href="https://developer.ringcentral.com/api-reference">API Explorer &raquo;</a></li>
-                </ul>
-              </div>
-              <div class="col-md-2">
-                <ul>
-                  <li class="sub-menu-heading">SDKs</li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-csharp-client">C#</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-swift">iOS/Swift</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-js">Javascript</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-java">Java</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-php">PHP</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-python">Python</a></li>
-                  <li><a href="https://github.com/ringcentral/ringcentral-ruby">Ruby</a></li>
-		  <li></li>
-                  <li><a class="mega-menu-link" href="https://developer.ringcentral.com/library/sdks.html">All SDKs &raquo;</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <img src="https://images.ctfassets.net/up8h5u10ttz3/29HlpFhK362Y00MseE8Oek/2a401f3ca6a6fa32cdf95104cebdc728/award2.png" width="100%">
-              </div>
-	    </div> 
-          </div>
-        </li>
-        <li class="main-item nav-item dropdown" id="community-dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
-          <div id="mega-menu-community" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
-	    <div class="row">
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">Discuss</li>
-                  <li><a href="https://devcommunity.ringcentral.com/">Developer Forum</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/ringcentral">Stack Overflow</a></li>
-                  <li><a href="https://developer.ringcentral.com/community.html">Team Messaging</a></li>
-                </ul>
-                <ul>
-                  <li class="sub-menu-heading">Learn</li>
-                  <li><a href="https://medium.com/ringcentral-developers">Blog</a></li>
-                  <li><a href="https://developer.ringcentral.com/support/developer-events.html">Events</a></li>
-                  <li><a href="https://go.ringcentral.com/Developer-Webinar-Series-Registration.html">Webinars</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li class="sub-menu-heading">Partner</li>
-                  <li><a href="https://www.ringcentral.com/apps/">App Gallery</a></li>
-                  <li><a href="https://www.ringcentral.com/partner/isv.html">Partner Programs</a></li>
-                </ul>
-                <ul>
-                  <li class="sub-menu-heading">Follow</li>
-                  <li><a href="https://twitter.com/RingCentralDevs">Twitter</a></li>
-                  <li><a href="https://github.com/ringcentral/">Github</a></li>
-                  <li><a href="https://www.youtube.com/watch?v=H4n-7dBFTEc&list=PLpfipw7KaEwagUy8S4Za25usqFg4bWiAx">YouTube</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <img src="https://images.ctfassets.net/up8h5u10ttz3/29HlpFhK362Y00MseE8Oek/2a401f3ca6a6fa32cdf95104cebdc728/award2.png" width="100%">
-              </div>
-	    </div> 
-          </div>
-        </li>
-        <li class="main-item nav-item dropdown" id="support-dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
-          <div id="mega-menu-support" class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
-	    <div class="row">
-              <div class="col-md-6">
-                <ul>
-                  <li class="sub-menu-heading">Support</li>
-                  <li><a href="http://ringcentral-faq.readthedocs.io/">FAQs</a></li>
-                  <li><a href="https://devcommunity.ringcentral.com/">Developer Forum</a></li>
-                  <li><a href="#">Create a ticket</a></li>
-                  <li><a href="#">View your tickets</a></li>
-                </ul>
-                <ul>
-                  <li class="sub-menu-heading">Professional Services</li>
-                  <li><a href="https://developer.ringcentral.com/support/services.html">Let us build the perfect app for you</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <img src="https://images.ctfassets.net/up8h5u10ttz3/1nEecYNk3CeSYKCUMyWOUk/57ab94c71c56819a3ae2021a3ad75138/pro_services.png" width="100%">
-              </div>
-	    </div> 
-          </div>
-        </li>
-      </ul>
-      {%- endblock %}
-      
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        {%- block search_button %}
-        {%- if 'search' in config['plugins'] %}
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-	    <i class="fa fa-search"></i> Search
-          </a>
-        </li>
-        {%- endif %}
-        {%- endblock %}
-	
-        {%- block next_prev %}
-        {%- if page and (page.next_page or page.previous_page) and (not config.theme.suppress_nextprev) %}
-        <li class="nav-item{% if not page.previous_page %} disabled{% endif %}">
-          <a class="nav-link" rel="next" {% if page.previous_page %}href="{{ page.previous_page.url|url }}"{% endif %}>
-	    <i class="fa fa-arrow-left"></i> Previous
-          </a>
-        </li>
-        <li class="nav-item{% if not page.next_page %} disabled{% endif %}">
-          <a class="nav-link" rel="prev" {% if page.next_page %}href="{{ page.next_page.url|url }}"{% endif %}>
-	    Next <i class="fa fa-arrow-right"></i>
-          </a>
-        </li>
-        {%- endif %}
-        {%- endblock %}
-	
-        {%- block repo %}
-        {%- if page and page.edit_url %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ page.edit_url }}">
-	    {%- if config.repo_name == 'GitHub' -%}
-	    <i class="fa fa-github"></i> Edit on {{ config.repo_name }}
-	    {%- elif config.repo_name == 'Bitbucket' -%}
-	    <i class="fa fa-bitbucket"></i> Edit on {{ config.repo_name }}
-	    {%- elif config.repo_name == 'GitLab' -%}
-	    <i class="fa fa-gitlab"></i> Edit on {{ config.repo_name }}
-	    {%- else -%}
-	    Edit on {{ config.repo_name }}
-	    {%- endif -%}
-          </a>
-        </li>
-        {%- elif config.repo_url %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ config.repo_url }}">
-	    {%- if config.repo_name == 'GitHub' -%}
-	    <i class="fa fa-github"></i> {{ config.repo_name }}
-	    {%- elif config.repo_name == 'Bitbucket' -%}
-	    <i class="fa fa-bitbucket"></i> {{ config.repo_name }}
-	    {%- elif config.repo_name == 'GitLab' -%}
-	    <i class="fa fa-gitlab"></i> {{ config.repo_name }}
-	    {%- else -%}
-	    {{ config.repo_name }}
-	    {%- endif -%}
-          </a>
-        </li>
-        {%- endif %}
-        {%- endblock %}
+  <header>
+    <div class="top-mininav container">
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a href="https://www.ringcentral.com/apps" rel="nofollow">App Gallery</a></li>
+        <li class="nav-item"><a href="https://www.ringcentral.com/" rel="nofollow">RingCentral Home</a></li>
       </ul>
     </div>
-<!--  </div>-->
-</nav>
+    <nav class="navbar navbar-expand-lg primary">
+      <div class="container">
+        <a class="navbar-brand" href="https://developers.ringcentral.com/" rel="nofollow">
+          <img src="https://developers.ringcentral.com/logo_beta.0c4ef52e60ef79e139f0.svg" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse dpw-category-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item office active dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/">Office <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item engage dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/engage/api-products/digital">Engage</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-expand secondary">
+      <div id="secondary-nav" class="collapse navbar-collapse container">
+        <ul class="nav navbar-nav">
+          <li class="dropdown mega-dropdown products horiz-nav-item nav-item">
+            <a href="#" data-toggle="dropdown">Product</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <h3>Products</h3>
+                    <p>Try all of our APIs for free in your very own secure development sandbox.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn btn-primary">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <h4>APIs</h4>
+                  <ul>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/voice" rel="nofollow">Voice</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/sms" rel="nofollow">SMS/MMS</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/team-messaging" rel="nofollow">Glip Messaging</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/meetings" rel="nofollow">Meetings</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/fax" rel="nofollow">Fax</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/data" rel="nofollow">Data</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/configuration" rel="nofollow">Configuration</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3  secondary-nav-links">
+                  <h4>App Gallery</h4>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Automation" rel="nofollow">Automation</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Bots%20%26%20Notifications" rel="nofollow">Bots & Notification</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Customer%20Support" rel="nofollow">Customer Support</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=CRM" rel="nofollow">CRM</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Healthcare" rel="nofollow">Healthcare</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">Browse all categories</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <h4>Widgets</h4>
+                  <ul>
+                    <li><a href="https://developer.ringcentral.com/embeddable-voice.html" rel="nofollow">RingCentral Embeddable</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-extension-factory" rel="nofollow">Chrome Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-for-google-firefox-addon" rel="nofollow">Firefox Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-c2d" rel="nofollow">Click-to-Dial</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-1 secondary-nav-links"></li>
+              </ul>
+            </div>       
+          </li>
+          <li class="dropdown mega-dropdown resources horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/api-and-docs.html" data-toggle="dropdown">Resources</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">  
+                    <h3>Resources</h3>
+                    <p>Build your first app in your preferred programming language in 5 minutes or less.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Documentation</h4>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Getting started</a></li>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Developer Guide</a></li>
+                    <li><a href="https://developers.ringcentral.com/tutorials.html" rel="nofollow">Browse tutorials</a></li>
+                    <li><a href="https://ringcentral-api-changelog.readthedocs.io/en/latest/" rel="nofollow">API changelog</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>API Reference</h4>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Call-Log" rel="nofollow">Call log</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/RingOut" rel="nofollow">RingOut</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/SMS" rel="nofollow">SMS</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Chats" rel="nofollow">Team messaging</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Management" rel="nofollow">Meetings</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Fax" rel="nofollow">Fax</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference" rel="nofollow">See all APIs</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Downloads</h4>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide/sdks" rel="nofollow">SDKs</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">SMS bot frameworks</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">Glip bot frameworks</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Use Cases</h4>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/whyringcentral/casestudies.html?product=16" rel="nofollow">Case studies</a></li>
+                    <li><a href="https://www.ringcentral.com/resources/learning-center.html#whitepapers" rel="nofollow">Whitepapers</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="dropdown mega-dropdown community horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/community.html" data-toggle="dropdown">Community</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <h3>Community</h3>
+                    <p>Grow your skills, earn RingCentral swag, software, conference passes, electronics, and more.</p>
+                    <a href="https://gamechanging.dev/" class="btn" rel="nofollow">Become a Game Changer</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Discuss</h4>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://stackoverflow.com/questions/tagged/ringcentral" rel="nofollow">StackOverflow</a></li>
+                    <li><a href="https://developers.ringcentral.com/community.html" rel="nofollow">Live Chat via Glip</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Learn</h4>
+                  <ul>
+                    <li><a href="https://medium.com/ringcentral-developers" rel="nofollow">Blog</a></li>
+                    <li><a href="https://developers.ringcentral.com/support/developer-events.html" rel="nofollow">Events</a></li>
+                    <li><a href="https://go.ringcentral.com/Developer-Webinar-Series-Registration.html" rel="nofollow">Webinars</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Share</h4>
+                  <ul>
+                    <li><a href="https://twitter.com/RingCentralDevs" rel="nofollow">Twitter</a></li>
+                    <li><a href="https://github.com/ringcentral/" rel="nofollow">Github</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=H4n-7dBFTEc&list=PLpfipw7KaEwagUy8S4Za25usqFg4bWiAx" rel="nofollow">YouTube</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <h4>Partner</h4>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">App Gallery</a></li>
+                    <li><a href="https://www.ringcentral.com/partner/isv.html" rel="nofollow">Partner Program</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="gamechangers horiz-nav-item nav-item"><a href="https://gamechanging.dev/" rel="nofollow">Game Changers</a></li>
+          <li class="dropdown mega-dropdown support horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/support.html" data-toggle="dropdown">Support</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <h3>Support</h3>
+                    <p>Get your questions answered by our amazing community in the RingCentral Developers forum.</p>
+                    <a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow" class="btn">Post in the forum</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <h4>Support</h4>
+                  <ul>
+                    <li><a href="https://ringcentral-faq.readthedocs.io/" rel="nofollow">FAQs</a></li>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/create" rel="nofollow">Create a ticket</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/check" rel="nofollow">View your tickets</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <h4>Professional Services</h4>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/support/services.html" rel="nofollow">Let us build the perfect app for you</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="console horiz-nav-item nav-item"><a href="https://developers.ringcentral.com/my-account.html" rel="nofollow">Console</a></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-nav" aria-controls="secondary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </header>
