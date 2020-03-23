@@ -8,8 +8,8 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
 
 ## Integrations
 
-1. [RingCentral for HubSpot](https://www.ringcentral.com/apps/hubspot) ([support](https://github.com/ringcentral/hubspot-embeddable-ringcentral-phone/issues))
-1. [RingCentral for Insighty](https://www.ringcentral.com/apps/insightly) ([support](https://github.com/ringcentral/insightly-embeddable-ringcentral-phone/issues))
-1. [RingCentral for Pipedrive](https://www.ringcentral.com/apps/pipedrive) ([support](https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone-spa/issues))
-1. [RingCentral for PracticeSuite](https://www.ringcentral.com/apps/practicesuite) ([support](https://github.com/ringcentral/ringcentral-for-practicesuite/issues))
-1. [RingCentral for Redtail CRM](https://www.ringcentral.com/apps/redtail-crm) ([support](https://github.com/ringcentral/redtail-embeddable-ringcentral-phone/issues))
+1. [RingCentral for HubSpot](https://www.ringcentral.com/apps/hubspot) ([code](https://github.com/ringcentral/hubspot-embeddable-ringcentral-phone), [support](https://github.com/ringcentral/hubspot-embeddable-ringcentral-phone/issues))
+1. [RingCentral for Insighty](https://www.ringcentral.com/apps/insightly) ([code](https://github.com/ringcentral/insightly-embeddable-ringcentral-phone), [support](https://github.com/ringcentral/insightly-embeddable-ringcentral-phone/issues))
+1. [RingCentral for Pipedrive](https://www.ringcentral.com/apps/pipedrive) ([code](https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone-spa), [support](https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone-spa/issues))
+1. [RingCentral for PracticeSuite](https://www.ringcentral.com/apps/practicesuite) ([code](https://github.com/ringcentral/ringcentral-for-practicesuite), [support](https://github.com/ringcentral/ringcentral-for-practicesuite/issues))
+1. [RingCentral for Redtail CRM](https://www.ringcentral.com/apps/redtail-crm) ([code](https://github.com/ringcentral/redtail-embeddable-ringcentral-phone), [support](https://github.com/ringcentral/redtail-embeddable-ringcentral-phone/issues))
