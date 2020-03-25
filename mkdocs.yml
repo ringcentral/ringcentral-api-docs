@@ -175,6 +175,7 @@ pages:
           - 'Partner compatibility': 'basics/partner-compatibility.md'
           - 'Partner Brand Guidelines':
              - 'ATT': 'basics/partners/att.md'
+             - 'Avaya Cloud Office': 'basics/partners/aco.md'
              - 'BT': 'basics/partners/bt.md'
              - 'TELUS': 'basics/partners/telus.md'
       - 'Fundamentals':
@@ -206,6 +207,10 @@ pages:
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
       - 'Client Credentials Flow': 'authentication/client-creds.md'
+
+  - 'Custom Fields':
+    - 'Overview': 'customfields/index.md'
+    - 'Exploring the API': 'customfields/explorer.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
