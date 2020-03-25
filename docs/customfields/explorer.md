@@ -68,9 +68,10 @@ response = platform.get('/account/~/custom-fields')
              print('Display Name- ' + custom_fields.records[x].displayName + ' id- ' +custom_fields.records[x].id + ' Category- '+custom_fields.records[x].category + '\n' )
 
            #print(custom_fields.records)
-        except ApiException as e:
-         print("Error while fetching custom fields" + e)
 
+        except ApiException as e:
+            print("Error while fetching custom fields" + e)
+        
 ```
 
 ## Update Custom fields
@@ -99,7 +100,9 @@ platform.login(USERNAME, EXTENSION, PASSWORD)
 
             response =  platform.put('/account/~/custom-fields/{}'.format(id), body)
             print(response.json().displayName)
+
         except ApiException as e:
+
             print("Error while creating custom fields" + e)
 
 ```
@@ -123,7 +126,7 @@ sdk = SDK(APP_KEY, APP_SECRET, SERVER)
 platform = sdk.platform()
 platform.login(USERNAME, EXTENSION, PASSWORD)
 
-try:
+        try:
 
 
             response =  platform.delete('/account/~/custom-fields/{}'.format(id))
