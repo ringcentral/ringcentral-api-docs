@@ -20,8 +20,8 @@
         </ul>
       </li>
       {%- else %}
-      <li {% if nav_item.active %}class="active"{% endif %}>
-        <a class="nav-link" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+      <li id="nav-item-{{ nav_item.title|lower|replace(' ','-') }}" class="toplevel nav-item{% if nav_item.active %} active{% endif %}">
+        <a class="section-title nav-link" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
       </li>
       {%- endif %}
       {%- endfor %}
