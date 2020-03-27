@@ -8,10 +8,9 @@ no_breadcrumb:true
   <hr class="my-4">
   <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
   <ul>
-    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>Messaging API</strong>.</li> 
+    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS and Fax API</strong>.</li> 
     <li><a href="./voice/quick-start/">Dial a number using Ringout</a> using our <strong>Voice API</strong>.</li> 
-    <li><a href="./call-management/quick-start/">Display a list of answering rules</a> using our <strong>Call Management API</strong></li>
-    <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Glip API</strong></li>
+    <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Team Messaging API</strong></li>
     <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
   </ul>
   <p>Not a programmer? <a href="./basics/explorer/">Try out the API with no programming</a>.</p>
@@ -24,7 +23,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="card-title">SMS</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Messaging API</h6>
+      <h6 class="card-subtitle mb-2 text-muted">SMS ans Fax API</h6>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
@@ -36,7 +35,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="card-title">Fax</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Messaging API</h6>
+      <h6 class="card-subtitle mb-2 text-muted">SMS and Fax API</h6>
       <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>

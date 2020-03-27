@@ -1,6 +1,6 @@
 # Sending Faxes
 
-Faxes remain a key way in which many business and industries share and transmit documents, and is another type of message that can be sent using the RingCentral Messaging API. Using this API, developers can send one or more documents at a time to a single recipient. This for example makes it possible for a developer to attach and transmit a cover page that is stored independently from the core document being transmitted.
+Faxes remain a key way in which many business and industries share and transmit documents, and is another type of message that can be sent using the RingCentral SMS and Fax API. Using this API, developers can send one or more documents at a time to a single recipient. This for example makes it possible for a developer to attach and transmit a cover page that is stored independently from the core document being transmitted.
 
 The Fax API is different from other RingCentral APIs in that it packages the message and each document as a separate MIME attachment. The root attachment is the main API message that identifies the recipient of the fax. Subsequent attachments are the documents to be transmitted in sequence. A typical call to the Fax API therefore follows this format:
 
