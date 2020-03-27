@@ -1,7 +1,7 @@
 # Introduction to RingCentral's Voice API
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with the Voice API</h3>
+  <h2 class="h3 display-5">Getting Started with the Voice API</h2>
   <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
   <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
@@ -26,7 +26,7 @@ Before you dive into the Voice API, it can be helpful to understand how it fits 
 
 The RingCentral Voice API is the primary way developers interface with, manage, and manipulate active calls on the network. Below are the major functional areas of this API. 
 
-### Make a phone call using RingCentral
+### Make a phone call
 
 RingCentral's [Call Management API](../call-management/) provides a number of a facilities for controlling and routing incoming calls. The Voice API provides developers with some means for placing calls programmatically - mainly RingOut.
 
@@ -71,7 +71,7 @@ The RingCentral Call Log is an authoritative record of all the calls that were c
 * Call direction (inbound, outbound)
 * Duration
 
-### Downloading Call Recordings
+### Download call recordings
 
 In addition to providing metadata about a call that took place on the network, the Call Log API also makes available to developers a URL from which the audio of a recorded call can be downloaded.
 

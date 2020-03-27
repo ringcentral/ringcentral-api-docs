@@ -1,7 +1,7 @@
 # Introduction to Team Messaging Integrations
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with the Team Messaging API</h3>
+  <h2 class="h3 display-5">Getting Started with the Team Messaging API</h2>
   <p class="lead">RingCentral Team Messaging, a.k.a. "Glip," is a team collaboration solution that helps organize and centralize team communication. Glip is an exciting platform to develop for given the wide range of use cases, and integration possibilities.</p>
   <p>We invite all developers to try out our Team Messaging API by writing a simple app to create a Glip Team in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
@@ -14,7 +14,7 @@
 
 ## What can you build using the Team Messaging API?
 
-### Bots
+### Build a bot
 
 Bots are automated agents that users can interact with in a coversational manner. Bots are useful when one wishes:
 
@@ -36,13 +36,13 @@ const app = createApp(handle)
 app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 ```
 
-### Notifications
+### Build a notification app
 
 [Glip Webhooks](./manual/webhooks/) can be used to create inputs into which 3rd-party webhooks can be posted and converted into [richly formatted messages](./manual/formatting). For example, the [Glip/Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a Glip team of your choosing:
 
 <img src="../img/glip_post_attachment_salesforce.png" class="img img-fluid" width="30%">
 
-### Project Management
+### Integrate with project management
 
 RingCentral Team Messaging can also be used to help with project management. In Team Messaging you can create:
 

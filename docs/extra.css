@@ -99,6 +99,9 @@ footer .brand {
 .btn-light:visited {
     color: #212529;
 }
+.homepage .jumbotron h2 {
+    margin-top: 20px;
+}
 .jumbotron .qs-link {
     margin-right: 10px;
 }
