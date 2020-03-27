@@ -1,7 +1,7 @@
 mkdocs>=1.0.4
 mkdocs-moonstone>=0.1.7
 mkdocs-git-committers-plugin>=0.1.9
-mkdocs-bootstrap-tables-plugin>=0.1.0
+mkdocs-bootstrap-tables-plugin>=0.1.1
 markdown_fenced_code_tabs>=1.0.3
 mkdocs-material>=3.0
 mkdocs-markdown-filter>=0.1.1
