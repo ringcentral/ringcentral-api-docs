@@ -1,24 +1,12 @@
-# Introduction to Call Management on RingCentral
+# Introduction to Call Routing on RingCentral
 
-<div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with the Call Management API</h3>
-  <p class="lead">The Call Management API allows developers to build and manage the set of rules that govern the flow of calls through a phone system to help connect callers to the right person within the organization in the most efficient way possible. These rules encompass call forwarding and blocking, phone tree (IVR) navigation, call queues, and the many highly customized behaviors one might want to build in a programmatic fashion.</p>
-  <p>We invite all developers to try out our Call Management API by writing a simple app to display a list of Answering Rules in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/java/" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
-</div>
+## What is Call Routing?
 
-## What is Call Management?
+Within the RingCentral platform "call routing" refers to the set of activities and configurations within a RingCentral account to control how calls flow and are routed through their network. 
 
-Within the RingCentral platform Call Management refers to the set of activities and configurations within a RingCentral account to control how calls flow and are routed through their network. 
+## What are the components of call routing?
 
-## What are the components of Call Management?
-
-Calls that are placed into a RingCentral account can be managed and routed a number of different ways via the Call Management API. These are:
+Calls that are placed into a RingCentral account can be managed and routed a number of different ways via the Call Routing API. These are:
 
 ### Business Hours
 
@@ -28,7 +16,7 @@ Developers can designate a schedule for both users and companies to reflect when
 
 ### Call Blocking
 
-Developers can define via the Call Management API what types of calls should be blocked, or specifically allowed. Calls can be allowed or blocked and handled based upon any of the following criteria:
+Developers can define via the Call Routing API what types of calls should be blocked, or specifically allowed. Calls can be allowed or blocked and handled based upon any of the following criteria:
 
 * Was caller ID transmitted?
 * Was a pay phone used?
@@ -47,7 +35,7 @@ Call Flipping specifically applies to active calls, and allows a call to be inst
 
 ### Call Queues
 
-A Call Queue is a group of users one can designate to share incoming calls. For example, you may wish to group all customer support representatives together so that a call can be routed to the first available person in that group. The Call Management API allows developers to manage call queues by adding and removing extensions from a Call Queue to assist in routing calls quickly and efficiently to a human to answer. 
+A Call Queue is a group of users one can designate to share incoming calls. For example, you may wish to group all customer support representatives together so that a call can be routed to the first available person in that group. The Call Routing API allows developers to manage call queues by adding and removing extensions from a Call Queue to assist in routing calls quickly and efficiently to a human to answer. 
 
 * [Read about the Call Queue API](./manual/call-queues/)
 * [Learn how to create a Call Queue Group in the Admin Console](https://support.ringcentral.com/s/article/How-to-change-the-number-of-your-department-members?language=en_US)

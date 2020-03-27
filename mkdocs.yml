@@ -54,6 +54,14 @@ pages:
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
+    - 'Call Routing':
+      - 'Overview': 'voice/call-routing/index.md'
+      - 'Get Started': 'voice/call-routing/get-started.md'
+      - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
+      - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
+      - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
+      - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
+      - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
     - 'Call Control':
       - 'Overview': 'voice/call-control.md'
       - 'Finding active calls': 'voice/finding-active-calls.md'
@@ -77,7 +85,7 @@ pages:
       - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
 
-  - 'Messaging':
+  - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'messaging/quick-start/node.md'
@@ -109,7 +117,7 @@ pages:
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 
-  - 'Glip':
+  - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'team-messaging/quick-start/node.md'
@@ -133,22 +141,6 @@ pages:
     - 'Sample Applications':
       - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
       - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
-
-  - 'Call Management':
-    - 'Overview': 'call-management/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'call-management/quick-start/node.md'
-      - 'Python': 'call-management/quick-start/python.md'
-      - 'PHP': 'call-management/quick-start/php.md'
-      - 'Java': 'call-management/quick-start/java.md'
-      - 'C#': 'call-management/quick-start/c-sharp.md'
-      - 'Ruby': 'call-management/quick-start/ruby.md'
-    - 'Call Routing':
-      - 'Answering Rules Overview': 'call-management/manual/answering-rules.md'
-      - 'User Answering Rules': 'call-management/manual/user-answering-rules.md'
-      - 'Company Answering Rules': 'call-management/manual/company-answering-rules.md'
-      - 'Call Queues': 'call-management/manual/call-queues.md'
-      - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
 
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
