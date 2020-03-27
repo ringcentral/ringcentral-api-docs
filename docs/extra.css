@@ -80,6 +80,12 @@
 #sidebar-nav #nav-item-downloads-and-sdks:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/sdks-hover.svg');
 }    
+#sidebar-nav #nav-item-account {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_account.svg')
+}
+#sidebar-nav #nav-item-account:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_account_hover.svg')
+}
 
 #sidebar-nav a,
 #sidebar-nav a:visited {
