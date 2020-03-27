@@ -5,3 +5,4 @@ mkdocs-bootstrap-tables-plugin>=0.1.0
 markdown_fenced_code_tabs>=1.0.3
 mkdocs-material>=3.0
 mkdocs-markdown-filter>=0.1.1
+mkdocs-pymdownx-material-extras==1.0b11
