@@ -66,7 +66,6 @@ pages:
       - 'Overview': 'voice/call-control.md'
       - 'Finding active calls': 'voice/finding-active-calls.md'
       - 'Detecting state changes': 'voice/call-control-sessions.md'
-      - 'Presence': 'voice/presence.md'
       - 'Pre-call Control': 'voice/pre-call-control.md'
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
@@ -194,6 +193,7 @@ pages:
     - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
     - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
+    - 'Presence': 'account/presence.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
