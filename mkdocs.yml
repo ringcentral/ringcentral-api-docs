@@ -187,11 +187,14 @@ pages:
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
       - 'Account Management':
-          - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
           - 'Auth profile & permissions': 'basics/configuration/user-permissions.md'
 
   - 'Account':
     - 'Overview': 'account/index.md'
+    - 'Users and Extensions': 'account/extensions.md'
+    - 'Phone Numbers': 'account/phone-numbers.md'
+    - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
+    - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
 
   - 'Authentication':

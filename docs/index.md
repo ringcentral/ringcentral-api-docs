@@ -9,7 +9,7 @@ no_breadcrumb:true
   <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
   <ul>
     <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS and Fax API</strong>.</li> 
-    <li><a href="./voice/quick-start/">Dial a number using Ringout</a> using our <strong>Voice API</strong>.</li> 
+    <li><a href="./voice/quick-start/">Make a phone call</a> using Ringout in our <strong>Voice API</strong>.</li> 
     <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Team Messaging API</strong></li>
     <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
   </ul>
