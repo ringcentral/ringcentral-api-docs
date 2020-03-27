@@ -1,12 +1,15 @@
 no_breadcrumb:true
 
-# Meetings Python Quick Start
+# RingCentral Video Quick Start for Python
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-!!! warning "Meetings Permission Required"
+??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
+     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../../rcm/create-meeting/). 
+
+??? check "Meetings Permission Required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
@@ -62,16 +65,14 @@ platform = rcsdk.platform()
 platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
 params = {
-    'topic': 'Test Meeting 1',
-    'meetingType': 'Instant',
-    'allowJoinBeforeHost': True,
-    'startHostVideo': True,
-    'startParticipantsVideo' : False
+    'name': 'Test Meeting',
+    'allowJoinBeforeHost': true,
+    'muteAudio': false,
+    'muteVideo': true
 }
 try:
-    resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
-    print "Start Your Meeting: " + resp.json().links.startUri
-    print "Join the Meeting: " + resp.json().links.joinUri
+    resp = platform.post('/rcvideo/v1/bridges', params)
+    print "Start your meeting: " + resp.json().joinUri
 except Exception as err:
     print("Exception: " + err.message)
 ```
