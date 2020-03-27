@@ -4,7 +4,7 @@
      The RingCentral Video API is currently available to select partners and developers. If you are interested in building a RingCentral Video integration, please [request access today](https://forms.gle/Pk7pNMwky8di5LCR8)!
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">See the RingCentral Video API in action!</h3>
+  <h2 class="h3 display-5">See the RingCentral Video API in action!</h2>
   <p class="lead">The RingCentral Video API gives developers the ability to create and schedule meetings, as well as to access meeting history and recordings.</p>
   <p>We invite all developers to check out the RingCentral Video API by looking at a simple app to schedule a meeting in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>

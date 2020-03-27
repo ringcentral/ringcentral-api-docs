@@ -103,6 +103,7 @@ body {
   background-size: cover;
   margin-right: 30px;
 }
+  .secondary-nav-cta .h3,
   .secondary-nav-cta h3 {
     color:rgb(6, 132, 189);
     font-weight: 600;
@@ -141,15 +142,12 @@ body {
   .secondary-nav-links a {
     color:rgb(6, 132, 189);
   }
+  .secondary-nav-links .h4,
   .secondary-nav-links h4 {
     color:rgb(6, 132, 189);
     font-weight: 700;
     font-size: 18px;  
   }
-  .secondary-nav-links h4 {
-    color:rgb(6, 132, 189);
-  }
-
 
 
 .dpw-category-nav{
