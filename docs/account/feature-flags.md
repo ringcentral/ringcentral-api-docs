@@ -1,5 +1,17 @@
 # User Feature Flags
 
+RingCentral provides developers the ability to view Feature set information about user extensions. Feature flags define the capabilities and features within RingCentral which an extension may execute. This data concerning **Feature** availability is presented heuristically as *Feature Flags* data to developer applications and integrations providing useful context as it relates to a user/extension.
+
+Feature flags can be used in a variety of use cases, the most common being:
+
+* **Security** - Be certain that a principal currently has been granted the necessary permission prior to enabling access to that feature
+* **User Experience** - Invalidating the permissions currently granted a principal prior to making a permission-dependent feature available from within your application or integration
+* **Risk and Loss Prevention** - Ensuring you are not exposing risk or loss to your application/integration users and their organizations
+
+We recommended to developers to validate user actions against the feature flags of the corresponding user's extension, and not against the role(s) assigned to that user/extension as permissions assigned to a role can modify over time. 
+
+## How are features and capabilities calculated?
+
 A set of feature flags contains the list of permissions and abilities granted to a user, or "extension." These permissions are granted via a number of different means including:
 
 * The features that come your with service plan
@@ -45,6 +57,14 @@ Content-Language: en-US
   ]
 }
 ```
+
+## What not to use feature flags for...
+
+It is also important to understand anti-patterns of Feature Availability, these are ways developers should **not** use this resource.
+    
+* **Role Assumption** - Developers should never ever assume that because a principal has a specific Role that principal will have an associated permission which is generally available
+
+* **Session Permission Caching** - Never store or cache permissions for a given principal for use during an entire session, as permissions may be revoked at any time
 
 !!! info "Keep in Mind"
 

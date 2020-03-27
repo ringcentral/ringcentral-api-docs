@@ -186,8 +186,6 @@ pages:
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Account Management':
-          - 'Auth profile & permissions': 'basics/configuration/user-permissions.md'
 
   - 'Account':
     - 'Overview': 'account/index.md'
