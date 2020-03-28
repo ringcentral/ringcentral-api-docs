@@ -8,3 +8,29 @@ Every RingCentral Video account holder has a "Personal Meeting ID." This persona
 To retrieve your person meeting ID formulate a request like the following:
 
     GET /rcvideo/v1/bridges?default=true
+
+Which returns something like this:
+
+```json
+{
+    "id": "sjc01-c04-ndb11111111164f6fbb1503cb",
+    "participantCode": "202111145",
+    "hostCode": "991111383",
+    "allowJoinBeforeHost": true,
+    "uri": "/restapi/v1.0/conferencing/bridge/sjc01-c04-ndb111111164f6fbb1503cb",
+    "shortId": "202111145",
+    "meetingUri": "/join/202111145",
+    "joinUri": "https://v.ringcentral.com/join/202111145",
+    "name": "Luke Skywalker's RingCentral Video meeting",
+    "type": 0,
+    "muteAudio": false,
+    "muteVideo": false,
+    "announceOnEnter": true,
+    "countOnEnter": true,
+    "enterExitTonesMode": 1,
+    "musicEnabled": true,
+    "isMeetingSecret": false,
+    "accountId": "37439510",
+    "extensionId": "557601020"
+}
+```
