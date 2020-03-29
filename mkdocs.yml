@@ -213,10 +213,6 @@ pages:
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
       - 'Client Credentials Flow': 'authentication/client-creds.md'
 
-  - 'Custom Fields':
-    - 'Overview': 'customfields/index.md'
-    - 'Exploring the API': 'customfields/explorer.md'
-
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
     - 'Getting Started':
