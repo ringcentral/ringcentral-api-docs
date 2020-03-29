@@ -156,6 +156,8 @@ pages:
     - 'RingCentral Meetings':
       - 'Overview': 'meetings/rcm/index.md'
       - 'Create a Meeting': 'meetings/rcm/create-meeting.md'
+    - 'Sample Applications':
+      - 'RingCentral Video': 'https://github.com/ringcentral/ringcentral-video-js-demo'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
