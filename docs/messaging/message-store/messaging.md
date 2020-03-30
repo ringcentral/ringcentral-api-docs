@@ -66,8 +66,8 @@ Content-Type: application/json
 {
    "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010",
    "id": 320272588010,
-   "to": [{"phoneNumber": "18551003732"}],
-   "from": {"phoneNumber": "18559100010"},
+   "to": [{"phoneNumber": "18555553732"}],
+   "from": {"phoneNumber": "18555550010"},
    "type": "SMS",
    "creationTime": "2012-10-18T10:40:31.000Z",
    "readStatus": "Unread",

@@ -57,12 +57,12 @@ Specify the target phone number for a party transfer:
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/transfer
 
 {
-  "phoneNumber":"+12059690601"
+  "phoneNumber":"+12055550601"
 }
 ```
 
 !!! tip "Transferring to specific extension"
-    There is an option to transfer the call via Main Company Number + extension number, e.g. `"phoneNumber":"+18882101932*104"`. In the future we're planning to remove this option, but provide an ability to transfer and forward the call using `extensionNumber`.
+    There is an option to transfer the call via Main Company Number + extension number, e.g. `"phoneNumber":"+18885551932*104"`. In the future we're planning to remove this option, but provide an ability to transfer and forward the call using `extensionNumber`.
 
 #### Transfer to voicemail
 

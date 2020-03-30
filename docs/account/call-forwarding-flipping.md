@@ -22,22 +22,22 @@ Below is a sample response.
 {
   "uri" : "https:.../restapi/v1.0/account/400249137008/extension/400249137008/forwarding-number?page=1&perPage=100",
   "records" : [ {
-    "phoneNumber" : "+17609410044",
+    "phoneNumber" : "+17605550044",
     "label" : "John Smith Desk Phone",
     "features" : [ "CallFlip" ],
     "flipNumber" : "1"
   }, {
-    "phoneNumber" : "+18559878944",
+    "phoneNumber" : "+18885558944",
     "label" : "Work",
     "features" : [ "CallForwarding", "CallFlip" ],
     "flipNumber" : "2"
   }, {
-    "phoneNumber" : "+14803960003",
+    "phoneNumber" : "+14805550003",
     "label" : "Jane Smith Softphone",
     "features" : [ "CallFlip" ],
     "flipNumber" : "3"
   }, {
-    "phoneNumber" : "+12078260027",
+    "phoneNumber" : "+12075550027",
     "label" : "Other",
     "features" : [ "CallForwarding", "CallFlip" ],
     "flipNumber" : "4"

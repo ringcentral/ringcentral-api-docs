@@ -44,7 +44,7 @@ The example response below shows what is return when you use the [Get Account Ph
    "records": [
      {
          "id": 246715008,
-         "phoneNumber": "18559105564",
+         "phoneNumber": "18555551264",
          "paymentType": "TollFree",
          "type": "VoiceFax",
          "usageType": "CompanyNumber",
@@ -52,14 +52,14 @@ The example response below shows what is return when you use the [Get Account Ph
      }, 
      {
          "id": 359733008,
-         "phoneNumber": "17869876543",
+         "phoneNumber": "17865556543",
          "paymentType": "External",
          "usageType": "ForwardedNumber",
          "features": [ ]          
      },
      {
          "id": 723455008,
-         "phoneNumber": "16503316252",
+         "phoneNumber": "16505556252",
          "paymentType": "Local",
          "type": "VoiceOnly",
          "usageType": "DirectNumber",

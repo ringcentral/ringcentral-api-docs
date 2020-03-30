@@ -66,7 +66,7 @@ What follows is sample response to getting the current account's configuration.
     "id" : 401145624008,
     "extensionNumber" : "101"
   },
-  "mainNumber" : "18555440014",
+  "mainNumber" : "18885550014",
   "status" : "Confirmed"
 }
 ```

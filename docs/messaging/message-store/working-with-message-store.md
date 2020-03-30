@@ -27,7 +27,7 @@ Below is an example JSON representation of a message that would be returned by t
         "name" : "Jane Smith"
     } ],
     "from" : {
-        "phoneNumber" : "+18442058517",
+        "phoneNumber" : "+18445558517",
         "name" : "RingCentral"
     },
     "creationTime" : "2018-09-18T09:24:03.000Z",
@@ -181,10 +181,10 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
     "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004",
     "id" : 6424569004,
     "to" : [ {
-      "phoneNumber" : "+1312982XXXX"
+      "phoneNumber" : "+13125559821"
     } ],
     "from" : {
-      "phoneNumber" : "+165051XXXX",
+      "phoneNumber" : "+16505558379",
       "location" : "San Mateo, CA"
     },
     "type" : "SMS",

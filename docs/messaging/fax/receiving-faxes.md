@@ -16,7 +16,7 @@ The API response will contain a list of fax messages paginated by 100 (records p
       "uri": "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store/5209304004",
       "id": 5209304004,
       "from": {
-        "phoneNumber": "+15555287464"
+        "phoneNumber": "+12138887464"
       },
       "type": "Fax",
       "creationTime": "2018-10-08T09:17:27.000Z",
@@ -32,7 +32,7 @@ The API response will contain a list of fax messages paginated by 100 (records p
       ],
       "direction": "Inbound",
       "availability": "Alive",
-      "subject": "+15556009976",
+      "subject": "+12135559976",
       "messageStatus": "Received",
       "faxResolution": "High",
       "faxPageCount": 1,
