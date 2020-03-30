@@ -426,7 +426,7 @@ The Supervision API allows for [dual channel call streaming](https://developers.
 This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
 
 ```http tab="Raw"
-POST /restapi/v1.0/account/accountId/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
+POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
 Content-Type: application/json
 Content-Length: ACTUAL_CONTENT_LENGTH_HERE
 Authorization: <YOUR_ACCESS_TOKEN>
