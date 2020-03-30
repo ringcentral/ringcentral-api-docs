@@ -13,7 +13,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 * Agent's `extensionNumber`
 * Supervisor's `deviceId`
  
-<img class="img-fluid" src="../../img/supervisionapi_v3.png">
+<img class="img-fluid" src="../../img/supervisionapi_v3.png" style="max-width:600px;">
   
 ## Prerequisites
 
