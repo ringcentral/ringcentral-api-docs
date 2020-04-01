@@ -1,3 +1,10 @@
+#sidebar-nav .nav li.nav-item > ul {
+    list-style: none;
+}
+#sidebar-nav .nav li.nav-item > ul > li {
+    margin-left: 15px;
+}
+
 #sidebar-nav {
     background-color: rgb(88,88,88);
     color: #DBE6F1;

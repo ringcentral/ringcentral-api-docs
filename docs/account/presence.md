@@ -8,12 +8,12 @@ Apps can determine one's availability by looking at an aggregated status the pla
 
 Below is a sample response from the Presence API to illustrate the visibility it can provide. The aggregated/computed status is highlighted below.
 
-```json linenums="1" hl_lines="10"
+```json hl_lines="10", linenums="1"
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004/presence",
   "extension": {
     "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004",
-    "id": 248xxx004,
+    "id": 248111004,
     "extensionNumber": "101"
   },
   "presenceStatus": "Available",
