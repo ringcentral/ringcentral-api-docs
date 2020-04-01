@@ -18,4 +18,4 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
 
 1. [RingCentral Phone for Linux](https://www.ringcentral.com/apps/ringcentral-phone-for-linux) ([code](https://github.com/ringcentral/ringcentral-embeddable-electron-app), [support](https://github.com/ringcentral/ringcentral-embeddable-electron-app/issues))
 1. [Toll Free SMS App](https://www.ringcentral.com/apps/toll-free-sms-app) ([code](https://github.com/PacoVu/ringcentral-send-tollfree-sms), [support](https://github.com/PacoVu/ringcentral-send-tollfree-sms/issues))
-1. [Glip Auto-Responder](https://www.ringcentral.com/apps/glip-auto-responder)
+1. [Glip Auto-Responder](https://www.ringcentral.com/apps/glip-auto-responder) ([code](https://github.com/rc-personal-bot-framework/faq-glip-personal-bot), [support](https://github.com/rc-personal-bot-framework/faq-glip-personal-bot/issues))
