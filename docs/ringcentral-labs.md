@@ -16,5 +16,6 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
 
 ## Apps
 
+1. [RingCentral Phone for Linux](https://www.ringcentral.com/apps/ringcentral-phone-for-linux)
 1. [Toll Free SMS App](https://www.ringcentral.com/apps/toll-free-sms-app) ([code](https://github.com/PacoVu/ringcentral-send-tollfree-sms), [support](https://github.com/PacoVu/ringcentral-send-tollfree-sms/issues))
 1. [Glip Auto-Responder](https://www.ringcentral.com/apps/glip-auto-responder)
