@@ -66,7 +66,6 @@ pages:
       - 'Overview': 'voice/call-control.md'
       - 'Finding active calls': 'voice/finding-active-calls.md'
       - 'Detecting state changes': 'voice/call-control-sessions.md'
-      - 'Presence': 'voice/presence.md'
       - 'Pre-call Control': 'voice/pre-call-control.md'
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
@@ -157,6 +156,8 @@ pages:
     - 'RingCentral Meetings':
       - 'Overview': 'meetings/rcm/index.md'
       - 'Create a Meeting': 'meetings/rcm/create-meeting.md'
+    - 'Sample Applications':
+      - 'RingCentral Video': 'https://github.com/ringcentral/ringcentral-video-js-demo'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
@@ -186,13 +187,15 @@ pages:
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Account Management':
-          - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
-          - 'Auth profile & permissions': 'basics/configuration/user-permissions.md'
 
   - 'Account':
     - 'Overview': 'account/index.md'
+    - 'Users and Extensions': 'account/extensions.md'
+    - 'Phone Numbers': 'account/phone-numbers.md'
+    - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
+    - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
+    - 'Presence': 'account/presence.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
@@ -235,3 +238,4 @@ pages:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 
   - 'Downloads and SDKs': sdks.md
+  

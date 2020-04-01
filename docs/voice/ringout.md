@@ -16,8 +16,8 @@ Content-Type: application/json
 Authorization: Bearer <access-token>
 
 {
-    "from": {"phoneNumber": "13443334444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */
-    "to": {"phoneNumber": "13453443434"}, /* to parameter is required */
+    "from": {"phoneNumber": "13445554444"}, /* from parameter is optional if there is a default number in user's forwarding numbers */
+    "to": {"phoneNumber": "13455553434"}, /* to parameter is required */
     "playPrompt": true /* optional field */
 }
 ```
@@ -31,8 +31,8 @@ var platform = rcsdk.platform();
 platform.login( {username: "username", password: "password", extension: "extension_number"} )
       .then(function(resp) {
           platform.post('/account/~/extension/~/ring-out', {
-              'from' : { 'phoneNumber': "13443334444" },
-              'to'   : {'phoneNumber': "13453443434"},
+              'from' : { 'phoneNumber': "13445554444" },
+              'to'   : {'phoneNumber': "13455553434"},
               'playPrompt' : true
             })
             .then(function(resp){
@@ -50,8 +50,8 @@ platform.login( "username", "extension", "password" )
 
 resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
     {
-      'from' : { 'phoneNumber': "13443334444" },
-      'to'   : { 'phoneNumber': "13453443434" },
+      'from' : { 'phoneNumber': "13445554444" },
+      'to'   : { 'phoneNumber': "13455553434" },
       'playPrompt' : True
     })
 print "Call placed. Call status: " + resp.json().status.callStatus
@@ -68,8 +68,8 @@ $platform->login( "username", "extension_number", "password" );
 
 $resp = $platform->post('/account/~/extension/~/ring-out',
     array(
-      'from' => array( 'phoneNumber' => "13443334444" ),
-      'to' => array( 'phoneNumber' => "13453443434" ),
+      'from' => array( 'phoneNumber' => "13445554444" ),
+      'to' => array( 'phoneNumber' => "13455553434" ),
       'playPrompt' => true
     ));
 
@@ -95,8 +95,8 @@ namespace Call_RingOut
             RestClient rc = new RestClient("client_id", "client_secret", false);
             await rc.Authorize("username", "extension_number", "password");
             var parameters = new MakeRingOutRequest();
-            parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = "13443334444" };
-            parameters.to = new MakeRingOutCallerInfoRequestTo { phoneNumber = "13453443434" };
+            parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = "13445554444" };
+            parameters.to = new MakeRingOutCallerInfoRequestTo { phoneNumber = "13455553434" };
             parameters.playPrompt = true;
 
             var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
@@ -127,8 +127,8 @@ public class Call_RingOut {
         rc.authorize("username", "extension_number", "password");
 
         MakeRingOutRequest requestBody = new MakeRingOutRequest();
-        parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13443334444" ));
-        parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13453443434" ));
+        parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13445554444" ));
+        parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13455553434" ));
         parameters.playPrompt = true;
         
         var response = rc.restapi().account().extension().ringout().post(requestBody);
@@ -144,8 +144,8 @@ rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
 rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
 resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
-    from: { phoneNumber: "13443334444" },
-    to: { phoneNumber: "13453443434" },
+    from: { phoneNumber: "13445554444" },
+    to: { phoneNumber: "13455553434" },
     playPrompt: true
 })
 

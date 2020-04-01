@@ -20,11 +20,15 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 ### Running ReadTheDocs Locally
 
 ```
-% git clone https://github.com/ringcentral/ringcentral-api-docs.git
-% cd ringcentral-api-docs
-% pip install mkdocs
-% pip install mkdocs-moonstone
-% mkdocs serve
+$ git clone https://github.com/ringcentral/ringcentral-api-docs.git
+$ cd ringcentral-api-docs
+$ pip install mkdocs
+$ pip install mkdocs-moonstone
+$ pip install mkdocs-bootstrap4
+$ pip install mkdocs-bootstrap-tables-plugin
+$ pip install mkdocs-git-committers-plugin
+$ pip install pymdown-extensions
+$ mkdocs serve
 ```
 
 Then you should be able to load http://localhost:8000 to view the documentation.

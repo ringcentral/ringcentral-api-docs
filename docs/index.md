@@ -3,15 +3,14 @@ no_breadcrumb:true
 # RingCentral Office Developer Guide
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Let's Get Started!</h3>
+  <h3 class="h3 display-5">Let's build your first RingCentral app!</h3>
   <p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes using one of our Quick Start Guides.</p>
   <hr class="my-4">
   <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
   <ul>
-    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>Messaging API</strong>.</li> 
-    <li><a href="./voice/quick-start/">Dial a number using Ringout</a> using our <strong>Voice API</strong>.</li> 
-    <li><a href="./call-management/quick-start/">Display a list of answering rules</a> using our <strong>Call Management API</strong></li>
-    <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Glip API</strong></li>
+    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS and Fax API</strong>.</li> 
+    <li><a href="./voice/quick-start/">Make a phone call</a> using Ringout in our <strong>Voice API</strong>.</li> 
+    <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Team Messaging API</strong></li>
     <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
   </ul>
   <p>Not a programmer? <a href="./basics/explorer/">Try out the API with no programming</a>.</p>
@@ -23,8 +22,8 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">SMS</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Messaging API</h6>
+      <h5 class="h5 card-title">SMS</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS ans Fax API</h6>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
@@ -35,8 +34,8 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Fax</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Messaging API</h6>
+      <h5 class="h5 card-title">Fax</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
       <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>
@@ -47,8 +46,8 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Making and Controlling Calls</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Voice API</h6>
+      <h5 class="h5 card-title">Making and Controlling Calls</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">Voice API</h6>
       <p class="card-text">Use RingCentral to enable a "click-to-dial" experience, and to manage calls in progress.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./voice/ringout/" class="card-link">RingOut</a></li>
@@ -63,8 +62,8 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Authentication</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Auth API</h6>
+      <h5 class="h5 card-title">Authentication</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">Auth API</h6>
       <p class="card-text">The first step in making any API call is authenticating to the platform.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./authentication/auth-code-flow/" class="card-link">OAuth, a.k.a. 3-legged auth</a></li>
@@ -75,8 +74,8 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Subscribe to Notifications</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Subscription API</h6>
+      <h5 class="h5 card-title">Subscribe to Notifications</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">Subscription API</h6>
       <p class="card-text">Receive notifications when events of interest occur within your account to create more responsive applications.</p>
       <ul>
       <li><a href="./notifications/manual/webhooks/" class="card-link">Webhooks</a></li>
@@ -100,14 +99,14 @@ If on your way to building your first RingCentral application you encounter diff
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">API Reference</h5>
+      <h5 class="h5 card-title">API Reference</h5>
       <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
       <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">SDKs</h5>
+      <h5 class="h5 card-title">SDKs</h5>
       <p class="card-text">We offer development libraries in a number of languages (C#, Java, Python, PHP, Javascript and more) to made building apps easier.</p>
       <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
     </div>

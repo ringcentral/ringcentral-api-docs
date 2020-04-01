@@ -1,12 +1,15 @@
 no_breadcrumb:true
 
-# Meetings JavaScript Quick Start
+# RingCentral Video Quick Start for Javascript
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you creating a meeting on the platform in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-!!! warning "Meetings Permission Required"
+??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
+     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../../rcm/create-meeting/). 
+
+??? check "Meetings Permission Required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
@@ -69,19 +72,17 @@ platform.login({
     extension: RINGCENTRAL_EXTENSION
     })
     .then(function(resp) {
-	platform.post('/restapi/v1.0/account/~/extension/~/meeting', {
-            topic: 'Test Meeting',
-            meetingType: 'Instant',
-            allowJoinBeforeHost: true,
-            startHostVideo: true,
-            startParticipantsVideo: false
-	      })
+	platform.post('/rcvideo/v1/bridges', {
+             name: 'Test Meeting',
+             allowJoinBeforeHost: true,
+             muteAudio: false,
+             muteVideo: true
+        })
         .then(function(resp) {
           return resp.json()
         })
         .then(function (json) {
-            console.log('Start Your Meeting: ' + json.links.startUri )
-            console.log('Join the Meeting: ' + json.links.joinUri )
+            console.log('Start Your Meeting: ' + json.joinUri )
         });
 });
 ```

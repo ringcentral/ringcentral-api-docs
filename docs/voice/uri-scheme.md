@@ -1,12 +1,19 @@
-# Calling a URI
+# Triggering a call via a URI
 
 In addition to making calls via the RingOut API, if the user has the RingCentral for Desktop softphone installed, it is possible to use a URI scheme to initiate a dial out from the application.
 
-RingCentral supports both a custom `rcmobile` URI scheme will resolve the issue of competing applications using the same URI scheme and a standard `tel` URI scheme which is more common but subject to competing uses.
+RingCentral supports the following URI schemes:
+
+* `rcmobile://`
+* `tel://`
+
+We recommend using the `rcmobile` scheme as it will resolve the issue of competing applications using the same URI scheme.
 
 ## RingCentral URI Scheme
 
-The RingCentral `rcmobile` URI Scheme is specific to RingCentral and thus has a higher probability of working as intended.
+The RingCentral `rcmobile` URI Scheme is specific to RingCentral and thus has a higher probability of working as intended. It utilizes the [E.164](https://en.wikipedia.org/wiki/E.164) format. 
+
+**Example**
 
 ```html
 <!-- HTML URI Scheme -->

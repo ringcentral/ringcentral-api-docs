@@ -1,7 +1,25 @@
+#sidebar-nav .nav li.nav-item > ul {
+    list-style: none;
+}
+#sidebar-nav .nav li.nav-item > ul > li {
+    margin-left: 15px;
+}
+
 #sidebar-nav {
     background-color: rgb(88,88,88);
     color: #DBE6F1;
 }
+
+#sidebar-toc .repo {
+    border-bottom: 1px solid rgba(47,47,47,.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+#sidebar-toc .repo a {
+}
+
 #sidebar-nav .toplevel .section-title {
     margin-left: 35px;
     padding-bottom: 3px;
@@ -98,6 +116,9 @@ footer .brand {
 }
 .btn-light:visited {
     color: #212529;
+}
+.homepage .jumbotron h2 {
+    margin-top: 20px;
 }
 .jumbotron .qs-link {
     margin-right: 10px;

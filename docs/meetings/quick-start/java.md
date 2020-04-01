@@ -1,12 +1,15 @@
 no_breadcrumb:true
 
-# Meetings Java Quick Start
+# RingCentral Video Quick Start for Java
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you creating a meeting on the platform in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-!!! warning "Meetings Permission Required"
+??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
+     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../../rcm/create-meeting/). 
+
+??? check "Meetings Permission Required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
@@ -92,26 +95,24 @@ public class Create_Meeting {
 
   	public static void main(String[] args) {
         var obj = new Create_Meeting();
-    		try {
-          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-          obj.createMeeting();
-    		} catch (RestException | IOException e) {
-    			e.printStackTrace();
-    		}
+    	   try {
+              restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+              restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+              obj.createMeeting();
+           } catch (RestException | IOException e) {
+    	      e.printStackTrace();
+           }
   	}
 
   	public void createMeeting() throws RestException, IOException{
         MeetingRequestResource parameters = new MeetingRequestResource();
-        parameters.topic = "Instant Meeting";
-        parameters.meetingType = "Instant";
+        parameters.name = 'Test Meeting';
         parameters.allowJoinBeforeHost = true;
-        parameters.startHostVideo = true;
-        parameters.startParticipantsVideo = false;
+        parameters.muteAudio = false;
+        parameters.muteVideo = true;
 
         var response = restClient.restapi().account().extension().meeting().post(parameters);
-        System.out.println("Start Your Meeting: " + response.links.startUri);
-        System.out.println("Join the Meeting: " + response.links.joinUri);
+        System.out.println("Start Your Meeting: " + response.joinUri);
     }
 }
 ```

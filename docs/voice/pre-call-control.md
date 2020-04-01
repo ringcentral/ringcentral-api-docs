@@ -22,7 +22,7 @@ To forward the incoming call to another phone number utilize the `telephonySessi
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/forward
 
 {
-  "phoneNumber":"+12059690601"
+  "phoneNumber":"+12055550601"
 }
 ```
 

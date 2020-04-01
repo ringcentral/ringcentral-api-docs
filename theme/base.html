@@ -70,12 +70,40 @@
     {%- set main_content %}
     <div class="row flex-nowrap">
       <div id="sidebar-nav" class="sidebar col-md-3">{% include "side-nav.html" %}</div>
-      <div id="main" class="{%- if config.theme.fluid_layout -%}col{%- else -%}col-md-9{%- endif -%}" role="main">{% include "content.html" %}</div>
-<!--
-      <div id="sidebar-toc" class="sidebar col-md-2">
+      <div id="main" class="{%- if config.theme.fluid_layout -%}col{%- else -%}col-md-8{%- endif -%}" role="main">{% include "content.html" %}</div>
+      <div id="sidebar-toc" class="sidebar col-md-3">
+        <div class="repo">
+            {%- block repo %}
+            {%- if page and page.edit_url %}
+              <a class="nav-link" href="{{ page.edit_url }}">
+		{%- if config.repo_name == 'GitHub' -%}
+		<i class="fa fa-github"></i> Edit on {{ config.repo_name }}
+		{%- elif config.repo_name == 'Bitbucket' -%}
+		<i class="fa fa-bitbucket"></i> Edit on {{ config.repo_name }}
+		{%- elif config.repo_name == 'GitLab' -%}
+		<i class="fa fa-gitlab"></i> Edit on {{ config.repo_name }}
+		{%- else -%}
+		Edit on {{ config.repo_name }}
+		{%- endif -%}
+              </a>
+            {%- elif config.repo_url %}
+              <a class="nav-link" href="{{ config.repo_url }}">
+		{%- if config.repo_name == 'GitHub' -%}
+		<i class="fa fa-github"></i> {{ config.repo_name }}
+		{%- elif config.repo_name == 'Bitbucket' -%}
+		<i class="fa fa-bitbucket"></i> {{ config.repo_name }}
+		{%- elif config.repo_name == 'GitLab' -%}
+		<i class="fa fa-gitlab"></i> {{ config.repo_name }}
+		{%- else -%}
+		{{ config.repo_name }}
+		{%- endif -%}
+              </a>
+            {%- endif %}
+            {%- endblock %}
+        </div>
 	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
--->
+
     </div>
     {%- endset %}
     

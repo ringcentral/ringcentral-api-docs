@@ -56,7 +56,7 @@ platform.login( {username: "username", password: "password", extension: "extensi
 
 function create_forwarding_number_by_number() {
   platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
-        phoneNumber: "11234567890",
+        phoneNumber: "11235557890",
         type: "Other",
         label: "My ATT number"
       })
@@ -78,7 +78,7 @@ platform = sdk.platform()
 platform.login( "username", "extension", "password" )
 
 params = {
-    'phoneNumber': '11234567890',
+    'phoneNumber': '11235557890',
     'type': 'Other',
     'label': 'My ATT number'
   }
@@ -98,7 +98,7 @@ $platform = $rcsdk->platform();
 $platform->login( "username", "extension_number", "password" );
 
 $params = array (
-    'phoneNumber' => '11234567890',
+    'phoneNumber' => '11235557890',
     'type' => 'Other',
     'label' => 'My ATT number'
 );
@@ -127,7 +127,7 @@ namespace Create_ForwardingNumber
             await rc.Authorize("username", "extension_number", "password");
 
             var parameters = new CreateForwardingNumberRequest();
-            parameters.phoneNumber = "11234567890";
+            parameters.phoneNumber = "11235557890";
             parameters.type = "Other";
             parameters.label = "My ATT number";
 
@@ -158,7 +158,7 @@ public class Create_ForwardingNumber {
         rc.authorize("username", "extension_number", "password");
 
         var parameters = new CreateForwardingNumberRequest();
-        parameters.phoneNumber = "11234567890";
+        parameters.phoneNumber = "11235557890";
         parameters.type = "Other";
         parameters.label = "My ATT number";
 
@@ -178,7 +178,7 @@ $rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
 $rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
 params = {
-    phoneNumber: '11234567890',
+    phoneNumber: '11235557890',
     type: 'Other',
     label: 'My ATT number'
 }
@@ -204,7 +204,7 @@ Upon successful API call completion, the response contains a list of predefined 
     {
       "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/592178004",
       "id":"592178004",
-      "phoneNumber":"+14134294674",
+      "phoneNumber":"+14135554674",
       "label":"RingCentral for Desktop",
       "features":["CallFlip"],
       "flipNumber":"1",
@@ -215,7 +215,7 @@ Upon successful API call completion, the response contains a list of predefined 
     },{
       "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711909004",
       "id":"711909004",
-      "phoneNumber":"+16505130930",
+      "phoneNumber":"+16505550930",
       "label":"Mobile",
       "features":["CallForwarding","CallFlip"],
       "flipNumber":"2",
@@ -223,7 +223,7 @@ Upon successful API call completion, the response contains a list of predefined 
     },{
       "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711910004",
       "id":"711910004",
-      "phoneNumber":"+16502245476",
+      "phoneNumber":"+16505555476",
       "label":"Work",
       "features":["CallForwarding","CallFlip"],
       "flipNumber":"3",
@@ -249,7 +249,7 @@ Upon successful API call completion, the response contains a detailed informatio
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178003454/extension/178003454/forwarding-number/712613004",
   "id": "712613004",
-  "phoneNumber": "+14085464388",
+  "phoneNumber": "+14085554388",
   "label": "RingCentral for Desktop",
   "features": [
     "CallFlip",

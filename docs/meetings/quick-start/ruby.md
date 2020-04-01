@@ -1,12 +1,15 @@
 no_breadcrumb:true
 
-# Meetings Ruby Quick Start
+# RingCentral Video Quick Start for Ruby
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-!!! warning "Meetings Permission Required"
+??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
+     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../../rcm/create-meeting/). 
+
+??? check "Meetings Permission Required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
@@ -46,7 +49,7 @@ $ rem install ringcentral-sdk
 
 Create a file called `meetings.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-```python
+```ruby
 require 'ringcentral'
 
 RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
@@ -60,16 +63,14 @@ RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-resp = rc.post('/restapi/v1.0/account/~/extension/~/meeting', payload: {
-    topic: 'Ruby Meeting 1',
-    meetingType: 'Instant',
-    allowJoinBeforeHost: true,
-    startHostVideo: true,
-    startParticipantsVideo: false
+resp = rc.post('/rcvideo/v1/bridges', payload: {
+    'name': 'Test Meeting',
+    'allowJoinBeforeHost': true,
+    'muteAudio': false,
+    'muteVideo': true
 })
 
-puts "Start Your Meeting: " + resp.body['links']['startUri']
-puts "Join the Meeting: " + resp.body['links']['joinUri']
+puts "Start your meeting: " + resp.body['joinUri']
 ```
 
 ### Run Your Code
