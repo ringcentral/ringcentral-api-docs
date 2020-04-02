@@ -1,3 +1,5 @@
+no_breadcrumb:true
+
 # RingCentral Labs Solutions
 
 RingCentral Labs solutions are a set of free, customizable, curated solutions built by RingCentral employees. They are designed to provide finished end-user solutions that solve common problems. RingCentral Labs apps are free to use, but are not official products, and should be considered community projects - these apps are not officially tested or documented.
