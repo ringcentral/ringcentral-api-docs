@@ -230,4 +230,5 @@ pages:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 
   - 'Downloads and SDKs': sdks.md
+#  - 'RingCentral Labs': labs.md
   
