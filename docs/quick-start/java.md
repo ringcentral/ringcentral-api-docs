@@ -1,32 +1,33 @@
 no_breadcrumb:true
 
-# RingCentral Video Quick Start for Java
+# Meetings Java Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you creating a meeting on the platform in just a few minutes. Let's get started.
 
-??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
-     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../../rcm/create-meeting/). 
-
-??? check "Meetings Permission Required"
+!!! warning "Meetings Permission Required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
 
 ## Create an App
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Meetings App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Meetings App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=" class="btn btn-primary">Create Meetings App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
-<li>Select "Other Non-UI" under "Where will you be calling the API from?"
-<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
-<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
+<li>Give your app a name and description, then click Next.</li>
+<li>On the second page of the create app wizard enter the following:
+  <ul>
+  <li>Select 'Private' for Application Type.</li>
+  <li>Select 'Server-only (No UI)' for Platform Type.</li>
+  </ul>
+  </li>
+<li>On the third page of the create app wizard, select the following permissions:
   <ul>
     <li>Meetings</li>
   </ul>
@@ -95,24 +96,26 @@ public class Create_Meeting {
 
   	public static void main(String[] args) {
         var obj = new Create_Meeting();
-    	   try {
-              restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-              restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.createMeeting();
-           } catch (RestException | IOException e) {
-    	      e.printStackTrace();
-           }
+    		try {
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+          obj.createMeeting();
+    		} catch (RestException | IOException e) {
+    			e.printStackTrace();
+    		}
   	}
 
   	public void createMeeting() throws RestException, IOException{
         MeetingRequestResource parameters = new MeetingRequestResource();
-        parameters.name = 'Test Meeting';
+        parameters.topic = "Instant Meeting";
+        parameters.meetingType = "Instant";
         parameters.allowJoinBeforeHost = true;
-        parameters.muteAudio = false;
-        parameters.muteVideo = true;
+        parameters.startHostVideo = true;
+        parameters.startParticipantsVideo = false;
 
         var response = restClient.restapi().account().extension().meeting().post(parameters);
-        System.out.println("Start Your Meeting: " + response.joinUri);
+        System.out.println("Start Your Meeting: " + response.links.startUri);
+        System.out.println("Join the Meeting: " + response.links.joinUri);
     }
 }
 ```

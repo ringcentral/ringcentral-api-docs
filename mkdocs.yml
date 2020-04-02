@@ -150,14 +150,6 @@ pages:
       - 'Java': 'meetings/quick-start/java.md'
       - 'C#': 'meetings/quick-start/c-sharp.md'
       - 'Ruby': 'meetings/quick-start/ruby.md'
-    - 'Get Personal Meeting ID': 'meetings/personal-meetings.md'
-    - 'List Past Meetings': 'meetings/meeting-history.md'
-    - 'Meeting Configuration': 'meetings/meeting-config.md'
-    - 'RingCentral Meetings':
-      - 'Overview': 'meetings/rcm/index.md'
-      - 'Create a Meeting': 'meetings/rcm/create-meeting.md'
-    - 'Sample Applications':
-      - 'RingCentral Video': 'https://github.com/ringcentral/ringcentral-video-js-demo'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
