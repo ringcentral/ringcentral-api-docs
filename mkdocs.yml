@@ -222,8 +222,9 @@ pages:
         - 'Java': 'notifications/quick-start/webhook/java.md'
         - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
         - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
-    - 'Developer Manual':
-      - 'Webhooks': 'notifications/manual/webhooks.md'
+    - 'Webhooks':
+      - 'Creating Webhooks': 'notifications/manual/webhooks.md'
+      - 'Receiving Webhooks': 'notifications/manual/webhooks-receiving.md'
       - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'

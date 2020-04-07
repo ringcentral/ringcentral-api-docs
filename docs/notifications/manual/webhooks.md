@@ -1,10 +1,10 @@
-# Subscribing to and Using Webhooks
+# Creating Webhooks
 
-RingCentral's Connect Platform supports oubound webhooks as a method of receiving push notifications.
+RingCentral supports oubound webhooks as a method of receiving notifications about events of interest to an application.
 
 ## Create a Webhook URL
 
-To create a webhook, you'll need webserver that listens on a specific URL for events, known as the webhook URL, that you will configure when creating the subscription. The webhook URL service must meet the following requirements:
+To create a webhook, you'll need a webserver that listens on a specific URL for events, known as the "webhook URL." You will register this URL with RingCentral when creating the subscription. The webhook URL service must meet the following requirements:
 
 1. is available on the Internet
 2. has a TLS / SSL enabled*
@@ -62,7 +62,7 @@ Authorization: Bearer MyToken
 
 ## Create Webhook Renewal Event Filter
 
-RingCentral webhooks expire and will expire unless they are renewed. A webhook subscription can also subscribe for special reminder events. The reminder events have a simple body with an `expiresIn` property containing the expiration time in seconds.
+RingCentral webhooks expire unless they are renewed. To help keep webhooks active and alive, applications can subscribe to special reminder events. The reminder events have a simple body with an `expiresIn` property containing the expiration time in seconds.
 
 The subscription event filter has the following format with the `threshold` and `interval` parameters to govern when reminders are sent and how often:
 
