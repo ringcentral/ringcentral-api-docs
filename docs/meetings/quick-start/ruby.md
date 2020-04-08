@@ -6,7 +6,7 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-??? warning "This is for RingCentral Meetings. Looking for the RingCentral Video API?"
+!!! warning "This is for RingCentral Meetings. Looking for the RingCentral Video API?"
      This guide to creating meetings is designed for **RingCentral Meetings**. If you are looking to get started using our built-from-the-ground-up RingCentral Video API, [request access today](https://forms.gle/Pk7pNMwky8di5LCR8)!
 
 ??? check "Meetings Permission Required"
