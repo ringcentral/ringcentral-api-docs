@@ -150,6 +150,7 @@ pages:
       - 'Java': 'meetings/quick-start/java.md'
       - 'C#': 'meetings/quick-start/c-sharp.md'
       - 'Ruby': 'meetings/quick-start/ruby.md'
+    - 'RingCentral Video': 'meetings/video.md'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
