@@ -176,7 +176,7 @@ pages:
           - 'Using phones in sandbox': 'basics/your-rc-phone.md'
           - 'Media content': 'basics/media.md'
           - 'App permissions': 'basics/permissions.md'
-	  - 'URI schemes': 'basics/uri-schemes.md'
+          - 'URI schemes': 'basics/uri-schemes.md'
           - 'Rate limits': 'basics/rate-limits.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
