@@ -9,7 +9,7 @@ RingCentral supports the following URI schemes:
 
 We recommend using the `rcmobile` scheme as it will resolve the issue of competing applications using the same URI scheme.
 
-## RingCentral URI Scheme
+## RingCentral Voice URI Scheme
 
 The RingCentral `rcmobile` URI Scheme is specific to RingCentral and thus has a higher probability of working as intended. It utilizes the [E.164](https://en.wikipedia.org/wiki/E.164) format. 
 
