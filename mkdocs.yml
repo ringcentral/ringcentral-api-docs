@@ -226,8 +226,9 @@ pages:
         - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
     - 'Webhooks':
       - 'Creating Webhooks': 'notifications/manual/webhooks.md'
-      - 'Receiving Webhooks': 'notifications/manual/webhooks-receiving.md'
-      - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
+      - 'Receiving Webhooks': 'notifications/manual/webhooks/receiving.md'
+      - 'Configuring TLS/SSL': 'notifications/manual/webhooks/configuring-tls-ssl.md'
+    - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
