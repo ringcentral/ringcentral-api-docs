@@ -87,6 +87,9 @@ certmagic.HTTPS([]string{"example.com"}, mux)
 Of note, it is important that your server send the Intermediate CA certificates. If your server has a valid Server Certificate but doesn't send the required Intermediate CA certificates, the RingCentral service will not be able to follow the chain to a valid Root CA certificate. If intermediate certificates are missing, you will receive a Status `400` Error Code `SUB-524` response like the following.
 
 ```json
+HTTP/1.1 400 Bad Request
+Content-Type: application/json;charset=utf-8
+
 {
   "errorCode":"SUB-524",
   "message":"HTTPS certificate is not valid",
