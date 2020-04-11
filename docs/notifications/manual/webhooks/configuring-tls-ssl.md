@@ -80,6 +80,16 @@ import "github.com/caddyserver/certmagic"
 certmagic.HTTPS([]string{"example.com"}, mux)
 ```
 
+## Checking Certificate Status
+
+Your certificate must be valid according to your Certificate Authority. The Online Certificate Status Protocol (OCSP) ([IETF RFC-6960](https://tools.ietf.org/html/rfc6960)) is used for checking certificate validity. There are a variety of ways to check status based on implementations of this protocol.
+
+An easy manual way to check is to use the following web page where you can paste a PEM-encoded certificate.
+
+[https://decoder.link/ocsp](https://decoder.link/ocsp)
+
+An easy manual way to get a server's PEM encoded certificate is to use the Firefox browser's cert viewer'ss linkss for downloading the PEM certificate and chain.
+
 ## Troubleshooting
 
 ### SUB-524: HTTPS certificate is not valid
