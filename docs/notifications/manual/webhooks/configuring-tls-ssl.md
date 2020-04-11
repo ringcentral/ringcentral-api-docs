@@ -21,13 +21,13 @@ Many AMCE clients make the job of retrieving and renewing certificates painless.
 
 To create a key pair and certificate manually, there are 3 steps:
 
-1) Create the key pair and request the certificate.
+#### 1) Create the key pair and request the certificate
 
 The following command will promopt you to create a file on a server you control.
 
 `$ certbot certonly --manual --preferred-challenges http -d mysite.com`
 
-2) Add a challenge file to the server.
+#### 2) Add a challenge file to the server
 
 ```
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -51,7 +51,7 @@ After you create that file, `certbot` will create two files:
    /etc/letsencrypt/live/example.com/privkey.pem
 ```
 
-3) Install the certificates.
+#### 3) Install the certificates
 
 Use the following configurations to install your key and certificate in your webserver. For Let's Encrypt, you will receive two certificates, one for your server and another for the Let's Encrypt Intermediatee CA. Both of these need to be provided by your server.
 
@@ -70,7 +70,7 @@ With Let's Encrypt, there are also ways to fully automate the process for certif
 
 For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go handles the entire process requesting, loading, and renewing certificates transparently.
 
-```http tab="Go"
+```go tab="Go"
 import "github.com/caddyserver/certmagic"
 
 // Replace the following:
