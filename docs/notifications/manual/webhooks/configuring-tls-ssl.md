@@ -7,7 +7,7 @@ This guide provides some quick information on how to configure TLS / SSL on a we
 1. Creating a Key Pair and Requesting a TLS / SSL Server Certificate
 1. Installing the certificate in a server
 
-This tutorial will use [Let's Encrypt](https://letsencrypt.org/) for certificates. Other Certificate Authorities will have their own ways to process Certificate Signing Requests (CSRs) and return Certificates for use.
+This tutorial will use [Let's Encrypt](https://letsencrypt.org/) for certificates. Other Certificate Authorities will have their own ways to process Certificate Signing Requests (CSRs) and return Certificates, such as using PKCS #10 CSRs.
 
 ## Creating a Key Pair and Requesting a TLS / SSL Server Certificate
 
