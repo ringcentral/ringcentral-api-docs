@@ -25,7 +25,7 @@ To create a key pair and certificate manually, there are 3 steps:
 
 The following command will promopt you to create a file on a server you control.
 
-`$ certbot certonly --manual --preferred-challenges http -d mysite.com`
+`$ certbot certonly --manual --preferred-challenges http -d {mysite.com}`
 
 #### 2) Add a challenge file to the server
 
@@ -37,7 +37,7 @@ hm-Fjvqk7U37Nw2SMyKfAD_CE8sDsGrHczJmvUkzuxI.ReoGCSKTofBLRj97vINiQ8jZ39IMLvSmKhaX
 
 And make it available on your web server at this URL:
 
-http://example.com/.well-known/acme-challenge/hh-Fjzqk7V37Nw2SLyKfZD_CE8sDsQrHczVovUkzuxI
+http://mysite.com/.well-known/acme-challenge/hh-Fjzqk7V37Nw2SLyKfZD_CE8sDsQrHczVovUkzuxI
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
@@ -46,9 +46,9 @@ After you create that file, `certbot` will create two files:
 
 ```
  - Congratulations! Your certificate and chain have been saved at:
-   /etc/letsencrypt/live/example.com/fullchain.pem
+   /etc/letsencrypt/live/mysite.com/fullchain.pem
    Your key file has been saved at:
-   /etc/letsencrypt/live/example.com/privkey.pem
+   /etc/letsencrypt/live/mysite.com/privkey.pem
 ```
 
 #### 3) Install the certificates
@@ -58,8 +58,8 @@ Use the following configurations to install your key and certificate in your web
 ```http tab="Apache"
 SSLEngine on
 SSLProtocol -all +TLSv1.2 +TLSv1.3
-SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+SSLCertificateFile /etc/letsencrypt/live/mysite.com/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/mysite.com/privkey.pem
 ```
 
 * Note: In Apache 2.4.8 and above, Apache will handle both the server certificate and the intermedidiate CA certificate(s) in the `SSLCertificateFile` directive. Below 2.4.8, a separate directive is needed for the intermediate CA, the `SSLCertificateChainFile` directive. Other web servers may have similar requirements.
@@ -68,7 +68,7 @@ SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
 
 With Let's Encrypt, there are also ways to fully automate the process for certificate management.
 
-For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go handles the entire process requesting, loading, and renewing certificates transparently.
+For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go handles the entire process requesting, loading, and renewing certificates transparently. You just need to start your HTTPS server using it with a single line.
 
 ```go tab="Go"
 import "github.com/caddyserver/certmagic"
