@@ -68,7 +68,7 @@ SSLCertificateKeyFile /etc/letsencrypt/live/mysite.com/privkey.pem
 
 With Let's Encrypt, there are also ways to fully automate the process for certificate management.
 
-For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go implements the [AMCE Protocol](https://tools.ietf.org/html/rfc8555) handles the entire process requesting, loading, and renewing certificates transparently. You just need to start your HTTPS server using it with a single line.
+For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go implements the [AMCE Protocol](https://tools.ietf.org/html/rfc8555) and handles the entire process requesting, loading, and renewing certificates transparently. You just need to start your HTTPS server using it with a single line.
 
 ```go tab="Go"
 import "github.com/caddyserver/certmagic"
