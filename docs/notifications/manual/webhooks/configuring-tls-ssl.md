@@ -80,5 +80,21 @@ import "github.com/caddyserver/certmagic"
 certmagic.HTTPS([]string{"example.com"}, mux)
 ```
 
+## Troubleshooting
 
+### SUB-524: HTTPS certificate is not valid
 
+Of note, it is important that your server send the Intermediate CA certificates. If your server has a valid Server Certificate but doesn't send the required Intermediate CA certificates, the RingCentral service will not be able to follow the chain to a valid Root CA certificate. If intermediate certificates are missing, you will receive a Status `400` Error Code `SUB-524` response like the following.
+
+```json
+{
+  "errorCode":"SUB-524",
+  "message":"HTTPS certificate is not valid",
+  "errors":[
+    {
+      "errorCode":"SUB-524",
+      "message":"HTTPS certificate is not valid"
+    }
+  ]
+}
+```
