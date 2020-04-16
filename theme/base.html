@@ -101,6 +101,11 @@
             {%- endif %}
             {%- endblock %}
         </div>
+
+        {% if page and not page.meta.no_rating %}
+        <div id="rating" class="nav-link">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        {% endif %}
+
 	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
       </div>
 
