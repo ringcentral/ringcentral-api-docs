@@ -31,7 +31,7 @@ extra_css:
 - extra.css
 - css/mega-menu.css
 
-copyright: "1999-2019 RingCentral, Inc. All rights reserved."
+copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
 google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
