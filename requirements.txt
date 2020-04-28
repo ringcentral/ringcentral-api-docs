@@ -1,5 +1,5 @@
 mkdocs>=1.1
-mkdocs-moonstone>=0.1.8
+mkdocs-ringcentral>=0.1.1
 mkdocs-git-committers-plugin>=0.1.9
 mkdocs-bootstrap-tables-plugin>=0.1.1
 markdown_fenced_code_tabs>=1.0.3
