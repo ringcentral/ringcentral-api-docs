@@ -205,7 +205,6 @@ pages:
       - 'Auth Code Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
-      - 'Client Credentials Flow': 'authentication/client-creds.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
