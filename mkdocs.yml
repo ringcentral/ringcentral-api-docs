@@ -12,7 +12,7 @@ plugins:
   - bootstrap-tables
 
 theme:
-  name: moonstone
+  name: ringcentral
   custom_dir: 'theme/'
   fluid_layout: True
   suppress_nextprev: true
