@@ -93,6 +93,7 @@ pages:
       - 'C#': 'messaging/quick-start/c-sharp.md'
       - 'Ruby': 'messaging/quick-start/ruby.md'
     - 'SMS':
+      - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'

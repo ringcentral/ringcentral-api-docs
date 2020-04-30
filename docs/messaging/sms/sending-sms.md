@@ -1,7 +1,7 @@
 # Sending an SMS
 
 !!! warning "First time sending an SMS?"
-    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages.
+    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, and checking out our [SMS Best Practices Guide](../best-practices/).
 
 SMS messages can be sent to or received from the handsets operated by most mobile carriers (all major US carriers are currently supported). Each SMS is a peer-to-peer message from one phone number to another. There is a special SMS API endpoint to create and send SMS messages.
 
