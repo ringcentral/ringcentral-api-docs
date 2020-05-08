@@ -28,3 +28,39 @@ $ cd ringcentral-api-docs
 ```
 
 Then you should be able to load http://localhost:8000 to view the documentation.
+
+## Tips for Styling Documentation
+
+### Customizing the underlying theme and HTML
+
+For local development, mkdocs uses a [RingCentral Mkdocs Theme](https://github.com/byrnereese/mkdocs-ringcentral). If you wish to affect the underlying structure of the site you have two choices:
+
+* Override locally
+* Fix globally
+
+To override locally, consult the mkdocs documentation on creating a [custom theme](https://www.mkdocs.org/user-guide/custom-themes/). The process involves overriding theme files with your own custom files. This requires you understand the underlying theme structure, so consult the structure of [mkdocs-ringcentral](https://github.com/byrnereese/mkdocs-ringcentral).
+
+To make a change globally, you can also submit a pull request to [mkdocs-ringcentral](https://github.com/byrnereese/mkdocs-ringcentral) and the change can be propogated across all documentation projects that utilize it.
+
+### Utilizing components from Bootstrap
+
+Our documentation is all based on the open-source CSS framework called Bootstrap. It makes available a number of commonly used UI components that can be cut and paste into our docs and be rendered faithfully.
+
+* Visit the [Bootstrap Component Library](https://getbootstrap.com/docs/4.4/components/alerts/) to learn more
+
+### Using the Material component library
+
+Our documentation also makes use of the [Mkdocs Material Plugin](https://squidfunk.github.io/mkdocs-material/). This plugin is what renders admonitions for example.
+
+```
+!!! note "Phasellus posuere in sem ut cursus"
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod.
+```
+
+This plugin extends the markdown language new ways of encoding text in markdown, including:
+
+* [admonitions](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
+* [footnotes/citations](https://squidfunk.github.io/mkdocs-material/extensions/footnotes/)
+* [HTML meta tags](https://squidfunk.github.io/mkdocs-material/extensions/metadata/)
+
+There are a number of [other Markdown extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/) available through Material as well. 
