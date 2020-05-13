@@ -156,6 +156,14 @@ pages:
 - 'Secondary':
 
   - 'Using the API':
+      - 'Methods, endpoints and parameters': 'basics/uris.md'
+      - 'Exploring the API': 'basics/explorer.md'
+      - 'Using phones in sandbox': 'basics/your-rc-phone.md'
+      - 'Media content': 'basics/media.md'
+      - 'App permissions': 'basics/permissions.md'
+      - 'URI schemes': 'basics/uri-schemes.md'
+      - 'Rate limits': 'basics/rate-limits.md'
+  - 'Applications':
       - 'Development Lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
           - 'Create an application': 'basics/create-app.md'
@@ -170,14 +178,6 @@ pages:
              - 'Avaya Cloud Office': 'basics/partners/aco.md'
              - 'BT': 'basics/partners/bt.md'
              - 'TELUS': 'basics/partners/telus.md'
-      - 'Fundamentals':
-          - 'Methods, endpoints and parameters': 'basics/uris.md'
-          - 'Exploring the API': 'basics/explorer.md'
-          - 'Using phones in sandbox': 'basics/your-rc-phone.md'
-          - 'Media content': 'basics/media.md'
-          - 'App permissions': 'basics/permissions.md'
-          - 'URI schemes': 'basics/uri-schemes.md'
-          - 'Rate limits': 'basics/rate-limits.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
