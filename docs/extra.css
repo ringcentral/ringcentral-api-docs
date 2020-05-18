@@ -44,6 +44,18 @@
 #sidebar-nav .toplevel.nav-item {
     width: 100%;
 }
+#sidebar-nav #nav-item-ringcentral-labs {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/ringcentral-labs.svg')
+}
+#sidebar-nav #nav-item-ringcentral-labs:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/ringcentral-labs-hover.svg');
+}
+#sidebar-nav #nav-item-applications {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/applications.svg')
+}
+#sidebar-nav #nav-item-applications:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/applications-hover.svg');
+}
 #sidebar-nav #nav-item-voice {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_voice.svg?v=2020032620200227-0720')
 }
