@@ -6,7 +6,7 @@ Take advantage of automating SMS communication through our SMS APIs to convenien
 
 ##### Choose a Language to Get Started
 
-Send an SMS in less than five minutes and thne check out our [SMS Best Practices Guide](../sms/best-practices).
+Send an SMS in less than five minutes and then check out our [SMS Best Practices Guide](../sms/best-practices).
 
 * [Javascript/Node](./node/)
 * [Python](./python/)

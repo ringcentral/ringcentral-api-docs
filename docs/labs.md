@@ -51,8 +51,8 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
     <a href="https://www.ringcentral.com/apps/pipedrive" class="card-link">Learn more</a>
   </div>
   <div class="card-footer">
-    <a href="https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone/issues" class="card-link">Get Support</a>
-    <a href="https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone" class="card-link">Github</a>
+    <a href="https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone-spa/issues" class="card-link">Get Support</a>
+    <a href="https://github.com/ringcentral/pipedrive-embeddable-ringcentral-phone-spa" class="card-link">Github</a>
   </div>
 </div>
 
@@ -97,7 +97,7 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
     <p class="card-text">Embed the RingCentral experience into any web application in 5 minutes or less. Try out RingCentral Embeddable.</p>
   </div>
   <div class="card-footer">
-    <a href="https://developer.ringcentral.com/embeddable-voice.html" class="card-link stretched-link">Learn more</a>
+    <a href="https://developer.ringcentral.com/embeddable-voice.html" class="card-link">Learn more</a>
   </div>
 </div>
 
