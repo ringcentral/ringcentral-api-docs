@@ -7,7 +7,7 @@ Our partners include:
 * AT&T Office@Hand
 * Avaya Cloud Office
 * TELUS
-* BT Cloud Phone
+* BT Cloud Work
 
 ??? tip "Learn how to promote your app to our partners"
     Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
@@ -74,7 +74,7 @@ Leaving `brandId` blank will result in RingCentral's logo being displayed.
 
 ### Constructing a Login URL for RingCentral Partners
 
-Developers should take care in building the URLs used to initiate the login and authorization (a.k.a. OAuth) flow for their app, as the URL will specify the logo that will appear on the login page. Here is a sample login URL that will display the BT Cloud Phone logo to the user on our login page. 
+Developers should take care in building the URLs used to initiate the login and authorization (a.k.a. OAuth) flow for their app, as the URL will specify the logo that will appear on the login page. Here is a sample login URL that will display the BT Cloud Work logo to the user on our login page. 
 
 ```
 https://platform.ringcentral.com/restapi/oauth/authorize\
