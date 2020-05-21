@@ -1,16 +1,16 @@
-# BT Cloud Phone Brand and Developer Guidelines
+# BT Cloud Work Brand and Developer Guidelines
 
-This document is intended for RingCentral ISVs and developers who want to enable their apps for BT Cloud Phone, leveraging their App for RingCentral Office.
+This document is intended for RingCentral ISVs and developers who want to enable their apps for BT Cloud Work, leveraging their App for RingCentral Office.
 
-## App requirements for BT Cloud Phone
+## App requirements for BT Cloud Work
 
-The document outlines incremental App requirements to enable your application for BT Cloud Phone. It is important to comply with these requirements, to qualify your app for BT Cloud Phone. If you have any questions, please reach out to your RingCentral developer support. As noted above, this document assumes you have already enabled (or are enabling) your application for RingCentral Office and compliant with its guidelines.
+The document outlines incremental App requirements to enable your application for BT Cloud Work. It is important to comply with these requirements, to qualify your app for BT Cloud Work. If you have any questions, please reach out to your RingCentral developer support. As noted above, this document assumes you have already enabled (or are enabling) your application for RingCentral Office and compliant with its guidelines.
 
 ### 1. Partner branding and logo
 
-If you use "RingCentral Office" branding in your Application, replace it with "BT Cloud Phone" to reference BT Cloud Phone product.
+If you use "RingCentral Office" branding in your Application, replace it with "BT Cloud Work" to reference BT Cloud Work product.
 
-Sample logo is shown below for BT Cloud Phone. This logo can be scaled to the appropriate pixel dimensions in your App
+Sample logo is shown below for BT Cloud Work. This logo can be scaled to the appropriate pixel dimensions in your App
 
 ![BT logo](../logo-bt.png)
 
