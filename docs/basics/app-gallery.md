@@ -1,16 +1,10 @@
-# Promoting your application
+# Promoting your application in the RingCentral App Gallery
 
-RingCentral is a platform that gives developers access to hundreds and hundreds of thousands of customers across some of the largest brands in the world, including:
+RingCentral is a platform that gives developers access to hundreds and hundreds of thousands of customers across some of the largest brands in the world, including AT&T, Avaya, BT, and Telus. This guide will help you access these customers by promoting your app within each brand's dedicated App Gallery. Let's get started!
 
-* AT&T
-* Avaya
-* BT
-* RingCentral
-* Telus
+!!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../update-profile/)"
 
-This guide will help you access these customers by promoting your app within each brand's dedicated App Gallery. Let's get started!
-
-??? tip "Learn more about developing for our partner brands"
+??? info "Learn more about developing apps specifically for our partner brands"
     To best position and market your product to our brand and distribution partners, learn about their brand guidelines, and how to compose connect buttons for them.
     
     AT&T Office@Hand has other special technical requirements developers should be aware of as well.
