@@ -139,3 +139,61 @@ try:
 except ApiException as e:
     print("Error while creating custom fields" + e)
 ```
+
+## How to insert and update the Custom fields Value for User Extensions?
+Once the custom fields are created developers can insert and update custom fields value for user extensions using the Update Extension API.
+Only an Admin User can change and view the custom field values for other extensions. Standard users can only view custom field value on their assigned extensions.
+
+```python tab="Python"
+from __future__ import print_function
+
+from ringcentral.http.api_exception import ApiException
+from ringcentral import SDK
+from config import USERNAME, EXTENSION, PASSWORD, APP_KEY, APP_SECRET, SERVER
+sdk = SDK(APP_KEY, APP_SECRET, SERVER)
+platform = sdk.platform()
+platform.login(USERNAME, EXTENSION, PASSWORD)
+ 
+         #POST Body
+        body =  {
+                   "customFields": [
+                       {
+                         "id":"64016",
+                          "value":"Test for Update"
+                       }
+                                  ]
+                }
+        try:
+            response =  platform.put('/account/~/extension/~', body)
+            user = response.json()
+            print('Custom Field value updated for Custom Field id 64016')
+            for x in user.customFields:
+                 print('Custom Field Display Name -'+ x.displayName +  ' |  Custom Field Value - ' + x.value + ' | id - ' +  x.id)
+
+        except ApiException as e:
+            print("Error while updatibg custom field value" + e)
+``` 
+## How to find the Custom fields Value from User Extensions?
+
+Once the custom field is created on a user extension, developers can use the Get Extension API to see custom field details on that extension
+
+
+```python tab="Python"
+from __future__ import print_function
+
+from ringcentral.http.api_exception import ApiException
+from ringcentral import SDK
+from config import USERNAME, EXTENSION, PASSWORD, APP_KEY, APP_SECRET, SERVER
+sdk = SDK(APP_KEY, APP_SECRET, SERVER)
+platform = sdk.platform()
+platform.login(USERNAME, EXTENSION, PASSWORD)
+        try:
+            response = platform.get('/account/~/extension/~')
+            user = response.json()
+            for x in user.customFields:
+                 print(x.value)
+      
+       except ApiException as e:
+            print("Error fetching Custom Fields" + e)
+
+```
