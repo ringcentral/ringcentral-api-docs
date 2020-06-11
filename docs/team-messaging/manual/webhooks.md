@@ -47,7 +47,7 @@ The following is an example message, transmitted in the POST body, to a Glip web
 {
   "icon": "https://example.com/post_icon.png",
   "title": "**Title of the post**",
-  "text": "Body of the post",
+  "body": "Body of the post",
   "attachments": [
     {
       "type": "Card",
