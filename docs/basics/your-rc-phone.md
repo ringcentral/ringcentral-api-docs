@@ -6,10 +6,10 @@ Every sandbox account is provisioned a different main company phone number and u
 * Voicemail - to retrieve, listen to, and delete voicemails.
 * Call Control - to hang-up, hold, flip, forward calls placed to sandbox numbers. 
 
-You can use several phone with your sandbox account to make and receive calls.
+Several RingCentral phones can be used with your sandbox account to make and receive calls.
 
 1. [RingCentral Phone](https://www.ringcentral.com/apps/rc-phone) available in our App Gallery. This is a full-featured, production application with many features, including making/receiving calls, accessing voicemail, call control, SMS, etc.
-1. [Embeddable Widget](https://ringcentral.github.io/ringcentral-embeddable/). This is a full-featured, production read web developer tool that can be used to integrate RingCentral functionality with your web app.
+1. [Embeddable Widget](https://ringcentral.github.io/ringcentral-embeddable/). This is a full-featured, production ready developer tool that can be used to integrate RingCentral functionality with your web app.
 1. [WebRTC Demo App](https://ringcentral.github.io/ringcentral-web-phone/). This is a WebRTC voice endpoint that implements inbound and outbound calls with various call controls.
 
 More information is available below on using and configuring these endpoints to work in Sandbox and to configure your app if needed.
@@ -28,24 +28,22 @@ Every new install of the RingCentral Phone is configured to work in production. 
 
 ## 2) Embeddable Web Widget and Sandbox Environmnets.
 
-The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. Read more at [https://github.com/ringcentral/ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable).
+The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. In addition to doing development with it, there is a hosted demo you can configure and use.
 
-You can run your own instance or use hosted demo instant. We will describe using the hosted version here. If you wish to use this for other environments, see the instruciton manual from the seller.
+To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app.
 
-1. Navigate to the demo Embeddable page: https://ringcentral.github.io/ringcentral-embeddable/
-2. Click the `Config` button to set the data you need for Embeddable. For sandbox, eensure you are using the sandbox Server URL, Client Id and Client Secreet.
-3. Add the OAuht 2.0 URL: https://ringcentral.github.io/ringcentral-embeddable/redirect.html
-4. Click "Sign In" on the floating app.
+Read more below:
+
+* Docs and Software: [https://github.com/ringcentral/ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable).
+* Demo (read to configure): [https://ringcentral.github.io/ringcentral-embeddable/](https://ringcentral.github.io/ringcentral-embeddable/)
 
 ## 3) WebRTC Demo App and Sandbox Environmnets.
 
-To use the WebRTC Demo App that comess with the RingCentral WebRTC SDK, you can use the hosted demo or run your own instance of the demo.
+To use the WebRTC Demo App is provided with the RingCentral WebRTC SDK. In addition to doing development with it, there is a hosted demo you can configure and use.
 
-The demo is located in the WebRTC SDK (`github.com/ringcentral/ringcentral-web-phone`).
+To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app.
 
-When ussing the online demo, use the following steps:
+Read more below:
 
-1. Create an application with the proper permissions.
-1. Enter the OAuth 2.0 redirect URL as:`http://ringcentral.github.io/ringcentral-web-phone/callback.html` 
-1. Navigate to [http://ringcentral.github.io/ringcentral-web-phone/](http://ringcentral.github.io/ringcentral-web-phone/)
-1. Enter your server, OAuth2.0 cient ID, and Secree
+* Docs and Software: [https://github.com/ringcentral/ringcentral-web-phone](https://github.com/ringcentral/ringcentral-web-phone).
+* Demo (read to configure): [http://ringcentral.github.io/ringcentral-web-phone/](http://ringcentral.github.io/ringcentral-web-phone/)
