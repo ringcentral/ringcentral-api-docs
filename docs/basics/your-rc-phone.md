@@ -14,7 +14,7 @@ Several RingCentral phones can be used with your sandbox account to make and rec
 
 More information is available below on using and configuring these endpoints to work in Sandbox and to configure your app if needed.
 
-## 1) RingCentral Phone and Sandbox Environment
+## RingCentral Phone and the Sandbox Environment
 
 Every new install of the RingCentral Phone is configured to work in production. To switch your phone to the sandbox environment, followi these steps:
 
@@ -26,7 +26,7 @@ Every new install of the RingCentral Phone is configured to work in production. 
    
 3. Select 'Sandbox' in the pop-up menu and sign in with your sandbox account credentials.
 
-## 2) Embeddable Web Widget and Sandbox Environmnets.
+## Embeddable Web Widget and the Sandbox Environmnet
 
 The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. In addition to doing development with it, there is a hosted demo you can configure and use.
 
@@ -38,7 +38,7 @@ Read more below:
 * [Docs and Software](https://github.com/ringcentral/ringcentral-embeddable)
 * [Demo App (read to configure)](https://ringcentral.github.io/ringcentral-embeddable)
 
-## 3) WebRTC Demo App and Sandbox Environmnets.
+## WebRTC Demo App and the Sandbox Environmnet
 
 To use the WebRTC Demo App is provided with the RingCentral WebRTC SDK. In addition to doing development with it, there is a hosted demo you can configure and use.
 
