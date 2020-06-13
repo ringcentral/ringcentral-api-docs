@@ -28,6 +28,14 @@ Every new install of the RingCentral Phone is configured to work in production. 
 
 ## 2) Embeddable Web Widget and Sandbox Environmnets.
 
+The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. Read more at [https://github.com/ringcentral/ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable).
+
+You can run your own instance or use hosted demo instant. We will describe using the hosted version here. If you wish to use this for other environments, see the instruciton manual from the seller.
+
+1. Navigate to the demo Embeddable page: https://ringcentral.github.io/ringcentral-embeddable/
+2. Click the `Config` button to set the data you need for Embeddable. For sandbox, eensure you are using the sandbox Server URL, Client Id and Client Secreet.
+3. Add the OAuht 2.0 URL: https://ringcentral.github.io/ringcentral-embeddable/redirect.html
+4. Click "Sign In" on the floating app.
 
 ## 3) WebRTC Demo App and Sandbox Environmnets.
 
@@ -40,3 +48,4 @@ When ussing the online demo, use the following steps:
 1. Create an application with the proper permissions.
 1. Enter the OAuth 2.0 redirect URL as:`http://ringcentral.github.io/ringcentral-web-phone/callback.html` 
 1. Navigate to [http://ringcentral.github.io/ringcentral-web-phone/](http://ringcentral.github.io/ringcentral-web-phone/)
+1. Enter your server, OAuth2.0 cient ID, and Secree
