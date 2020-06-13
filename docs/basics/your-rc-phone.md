@@ -30,7 +30,7 @@ Every new install of the RingCentral Phone is configured to work in production. 
 
 The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. In addition to doing development with it, there is a hosted demo you can configure and use.
 
-To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app.
+To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app. To use with your sandbox account, use the credentials for your sandbox account.
 
 Read more below:
 
@@ -41,7 +41,7 @@ Read more below:
 
 To use the WebRTC Demo App is provided with the RingCentral WebRTC SDK. In addition to doing development with it, there is a hosted demo you can configure and use.
 
-To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app.
+To use the demo, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app. To use with your sandbox account, use the credentials for your sandbox account.
 
 Read more below:
 
