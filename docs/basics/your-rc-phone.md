@@ -34,8 +34,8 @@ To use the demo, you need to configure the Embeddable with your Client ID, Clien
 
 Read more below:
 
-* Docs and Software: [https://github.com/ringcentral/ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable).
-* Demo (read to configure): [https://ringcentral.github.io/ringcentral-embeddable/](https://ringcentral.github.io/ringcentral-embeddable/)
+* Docs and Software: [https://github.com/ringcentral/ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable)
+* Demo (read to configure): [https://ringcentral.github.io/ringcentral-embeddable/](https://ringcentral.github.io/ringcentral-embeddable)
 
 ## 3) WebRTC Demo App and Sandbox Environmnets.
 
@@ -45,5 +45,5 @@ To use the demo, you need to configure the Embeddable with your Client ID, Clien
 
 Read more below:
 
-* Docs and Software: [https://github.com/ringcentral/ringcentral-web-phone](https://github.com/ringcentral/ringcentral-web-phone).
-* Demo (read to configure): [http://ringcentral.github.io/ringcentral-web-phone/](http://ringcentral.github.io/ringcentral-web-phone/)
+* Docs and Software: [https://github.com/ringcentral/ringcentral-web-phone](https://github.com/ringcentral/ringcentral-web-phone)
+* Demo (read to configure): [http://ringcentral.github.io/ringcentral-web-phone/](http://ringcentral.github.io/ringcentral-web-phone)
