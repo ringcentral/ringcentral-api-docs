@@ -173,7 +173,7 @@ pages:
           - 'Graduate to production': 'basics/production.md'
       - 'App Promotion':
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
-          - 'Update a Profile': 'basics/profile-update.md'
+          - 'Update a Profile': 'basics/update-profile.md'
           - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
           - 'Partner compatibility': 'basics/partner-compatibility.md'
           - 'Partner Brand Guidelines':
