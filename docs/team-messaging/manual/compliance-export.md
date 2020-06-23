@@ -150,7 +150,7 @@ function get_glip_compliance_export_task(taskId){
       .then(function(resp){
           var json = resp.json()
           if (json.status == "Completed"){
-              for (var i=0; i<json.result.length; i++){
+              for (var i=0; i<json.datasets.length; i++){
                 var fileName = "glip-export-reports/" + json.creationTime + "_" + i + ".zip"
                 get_glip_report_archived_content(json.datasets[i].uri, fileName)
               }
