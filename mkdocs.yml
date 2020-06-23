@@ -70,6 +70,7 @@ pages:
       - 'Pre-call Control': 'voice/pre-call-control.md'
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
+      - 'Call Session Notifications': 'voice/call-session-notifications.md'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
       - 'Data Types': 'voice/call-log/api.md'
@@ -237,4 +238,3 @@ pages:
 
   - 'Downloads and SDKs': sdks.md
   - 'RingCentral Labs': labs.md
-  
