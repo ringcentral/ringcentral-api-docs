@@ -44,8 +44,8 @@ If successful, the response will contain the task ID and the status of the newly
 
 ```json hl_lines="3", linenums="1"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
-  "id":"809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
+  "id":"809646016-xx-yy",
   "creationTime":"2020-01-16T22:12:55Z",
   "lastModifiedTime":"2020-01-16T22:12:55Z",
   "status":"Accepted",
@@ -78,8 +78,8 @@ When successful, the response will contain the id (taskId) and the status of the
 
 ```json hl_lines="3 6", linenums="1"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
-  "id":"809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX",
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
+  "id":"809646016-xx-yy",
   "creationTime":"2020-01-16T22:12:55Z",
   "lastModifiedTime":"2020-01-16T22:12:55Z",
   "status":"Completed",
@@ -95,17 +95,19 @@ When successful, the response will contain the id (taskId) and the status of the
     {
       "id":"1",
       "size":3434,
-      "uri":"https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX/datasets/1"
+      "uri":"https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/datasets/1"
     }]
 }
 ```
 
-### Retrieving Archive Files
+### Authentication and file downloads
 
-When an Export Task is successfully completed, make a GET request to the `uri` under the `result` of the object returned in the previous step.
+When an Export Task is successfully completed, make a GET request to the `uri` under the `datasets` of the object returned in the previous step.
+
+The file reference is protected and cannot be downloaded without an authentication context. To download a compliance archive file, append your authentication token (the same one you would use in your HTTP Authorization header) in a `access_token` parameter as shown below:
 
 ```http
-GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-62288329016-4a80f950dab9402284856dXXXXXXXXXX/datasets/1?access_token=['access_token']
+GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/datasets/1?access_token=['access_token']
 ```
 
 ## Sample Code: Export Team Messaging Data
@@ -151,7 +153,7 @@ function get_glip_compliance_export_task(taskId){
           var json = resp.json()
           if (json.status == "Completed"){
               for (var i=0; i<json.datasets.length; i++){
-                var fileName = "glip-export-reports/" + json.creationTime + "_" + i + ".zip"
+                var fileName = "glip-export-reports-" + json.creationTime + "_" + i + ".zip"
                 get_glip_report_archived_content(json.datasets[i].uri, fileName)
               }
           }else if (json.status == "Accepted" || json.status == "InProgress") {

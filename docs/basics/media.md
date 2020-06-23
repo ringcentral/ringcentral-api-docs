@@ -9,6 +9,7 @@ A number of RingCentral APIs make available to developers access to media files 
 * Fax Documents
 * MMS attachments
 * Greetings
+* Compliance Exports
 
 ### Download URLs for Media Content
 
@@ -60,6 +61,12 @@ All media files can be accessed via a URL returned via an API Call. For example,
 
 !!! note "Building media content URLs"
     While media content URLs all end predictably in `/content`, developers should not build these URLs manually. Content URLs should be fetched a response payload directly as they are subject to change. 
+
+### Downloading Protected Content
+
+Often a media asset you need to download requires authentication. Your app or script can download the file programmatically by appending an `access_token` parameter to the URL. The value of this parameter is your authentication token typically transmitted in your Authorization header when making API calls. For example:
+
+    https://media.ringcentral.com/restapi/v1.0/glip/data-export/248664004-xx-yy/archive/1?access_token=U0pDMTF...3xBUQ
 
 ### Downloading Partial Content
 
