@@ -172,5 +172,3 @@ CallControl permission is needed.
     * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
     * if a party belongs to another session (transferred call, conference, etc).
     * if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
-
-
