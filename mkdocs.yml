@@ -23,6 +23,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed
   - codehilite:
       linenums: "None"
   - markdown_include.include:
@@ -135,6 +136,7 @@ pages:
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
     - 'Glip Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
+      - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
       - 'Build a Bot in Node': 'team-messaging/manual/node.md'
