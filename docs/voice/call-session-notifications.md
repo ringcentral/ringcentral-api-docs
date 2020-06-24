@@ -1,14 +1,14 @@
-# Call Session Notification
+# Telephony Session Notification
 
-A developer can use call session notification to detect all changes in the status of a call effectively. 
+A developer can use Telephony Session Notification to detect all changes in the status of a call effectively. 
 
-## What is Call Session Notification (CSN)?
+## What is Telephony Session Notification?
 
-A Call Session Notification (Telephony Session Notification) is a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Call Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Call session notification events can be subscribed both at an Account level or at an Extension level.
+A Telephony Session Notification (Telephony Session Notification) is a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Telephony Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Telephony Session Notification events can be subscribed both at an Account level or at an Extension level.
 
-Account Level Call Session Notification -  Will track and provide notifications for all the extensions within an account.
+Account Level Telephony Session Notification -  Will track and provide notifications for all the extensions within an account.
 
-Extension Level Call Session Notification - Will track calls on a specific extension.
+Extension Level Telephony Session Notification - Will track calls on a specific extension.
 
 Detailed instructions on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
 
@@ -17,21 +17,63 @@ Detailed instructions on how to subscribe to [RingCentral events](https://develo
 
 ## What are the use cases?
 
-Call Analytics -  Developers can use the raw data from call session notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
+<h5>Call Analytics</h5> -  Developers can use the raw data from Telephony Session Notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
 
-1. Call Hold Time - Time duration between Hold and Non-Hold state. If a call is held multiple times, it can be calculated based on the sum of total hold times.
-2. Call Talk Time - Time duration between answered and any other state till the end of the call. If a call has multiple intermediate states after an Answered state like Hold, Unhold the total talk time will be equal to the sum of all the times between Answered and other call states till the end of the call.
-3. Ring Time - This is the amount of time the call was ringing before it was answered. It is the time duration between Proceeding and Answered state.
+Call Hold Time - Time duration between Hold and Answered state. If a call is held multiple times, it can be calculated based on the sum of total hold times.
+
+  Call Hold Time = Time difference between Answered and Hold  
+
+  Example
+
+
+  
+  Step 1: Get the `'eventTime': '2020-06-24T00:00:30.809Z'` for `'code': 'Hold'` 
+
+
+  Step 2: Get the `'eventTime': '2020-06-24T00:00:45.710Z'` for `'code': 'Answered'`
+  
+  
+  Step 3:  Hold Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-24T00:00:45.710Z'` - `'eventTime': '2020-06-24T00:00:30.809Z'` = 15 seconds
+
+Call Talk Time- Time duration between answered and disconnected.
+
+  Call Talk Time = Time difference between Answered and Disconnected 
+  (If the call is put on hold in between, you can include the hold time or subtract the total hold times based on business logic)
+  
+  Example
+
+  Step 1 : Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
+
+  Step 2:  Get the `'eventTime': '2020-06-23T23:46:34.132Z'` for `'code': 'Disconnected'`
+
+
+  Step 3 : Call Talk Time =   Timestamp in Step 2 - Timestamp in Step 1 =  `'eventTime': '2020-06-23T23:46:34.132Z'` - `'eventTime': '2020-06-23T23:46:23.451Z'` = 13 seconds
+
+Ring Time - This is the amount of time the call was ringing before it was answered. It is the time duration between Proceeding and Answered state.
+
+
+  Ring Time = Time difference between Proceeding and Answered
+    
+  Example:
+
+  Step 1:  Get the `'eventTime': '2020-06-23T23:46:11.243Z'` for `'code': 'Proceeding'`
+
+
+  Step 2:  Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
 
 
 
-Call Monitoring - Call Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
+  Step 3:  Ring Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-23T23:46:23.451Z'` - `'eventTime': '2020-06-23T23:46:11.243Z'` = 12 seconds
 
-Incoming call routing - Call Session Notifications can be used to monitor and detect an incoming call and apply custom call routing logic to suit business-specific needs. For example, forwarding calls from an important customer to a call queue supervisor.
+
+
+<h5>Call Monitoring</h5> - Telephony Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
+
+<h5>Incoming call routing</h5> - Telephony Session Notifications can be used to monitor and detect an incoming call and apply custom call routing logic to suit business-specific needs. For example, forwarding calls from an important customer to a call queue supervisor.
 
 ## What are the different states of a Call?
 
-A call transitions through various states from the start of the call to the end. A Call Session Notification captures each of these states. States of a call are associated with the parties involved in the call, and it can be the "Outbound" party (party making the call) or the "Inbound" party (party receiving the call). The schema object "status.code" in the Call Session Notification captures the state of the call in regards to the party (Outbound or Inbound) involved in the call. The table below illustrates the different states that a party goes though in a call session.
+A call transitions through various states from the start of the call to the end. A Telephony Session Notification captures each of these states. States of a call are associated with the parties involved in the call, and it can be the "Outbound" party (party making the call) or the "Inbound" party (party receiving the call). The schema object "status.code" in the Telephony Session Notification captures the state of the call in regards to the party (Outbound or Inbound) involved in the call. The table below illustrates the different states that a party goes though in a call session.
 
 | Call Session | Party Direction | State|Description
 | ----------- | ----------- |----------- |-----------|
@@ -50,27 +92,27 @@ A call transitions through various states from the start of the call to the end.
 | Session Establishing| Inbound / Outbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in  "state" : "{ "reason" }.Examples: 1. Call Flip 2. BLF pick up 3. Blind transfer 4. transfer 5. Call is disconnected by the user or back end.|
 | Session Establishing| Inbound / Outbound|Gone| (a) The party transferred the call and cross call is established (a) "state" : "peerId" should be set for the both ends of the cross call. A reason must  be set in the  "state" : "{ "reason" }. Examples: 1. Attended transfer 2.Call pick up from Park (not from Park Orbit) 3.Monitoring / Barge / Whisper|
 
-## What are the key Schema Objects of a Call Session Notification ?
+## What are the key Schema Objects of a Telephony Session Notification ?
 
-The two key elements for a Call Session Notification are 
+The two key elements for a Telephony Session Notification are 
 
-Telephony Session Id (telephonySessionId) - This entity uniquely identifies a specific call session. Developers can use telephonySessionId to fetch all the details of a telephony session using [Get Call Session Status API](https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus)
+Telephony Session Id ( `telephonySessionId`) - This entity uniquely identifies a specific call session. Developers can use telephonySessionId to fetch all the details of a telephony session using [Get Call Session Status API](https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus)
 
-Party Id (id) - This entity uniquely identifies a specific party/endpoint  in the call session.
+Party Id (`id`) - This entity uniquely identifies a specific party/endpoint  in the call session.
 
-Once a developer has the telephonySessionId and the Party Id (id) she can control a call using [Call Control APIs](https://developers.ringcentral.com/api-reference/Call-Control)
+Once a developer has the telephonySessionId and the Party Id (`id`) she can control a call using [Call Control APIs](https://developers.ringcentral.com/api-reference/Call-Control)
 
-### Some of the other important schema objects in Call Session Notification are 
+### Some of the other important schema objects in Telephony Session Notification are 
 
-direction - Outbound or Inbound depending on the party involved.
+`direction` - Outbound or Inbound depending on the party involved.
 
-ownerId - The mailbox id incase of a RingCentral extension.
+`ownerId` - The mailbox id incase of a RingCentral extension.
 
-extensionId - RingCentral extension Id for a RingCentral party.
+`extensionId` - RingCentral extension Id for a RingCentral party.
 
-eventTime - Time of the event. Could be used to calculate various call time elements.
+`eventTime` - Time of the event. Could be used to calculate various call time elements.
 
-### Sample Call Session Notification Event
+### Sample Telephony Session Notification Event
 
 ```json 
 {
@@ -117,7 +159,7 @@ eventTime - Time of the event. Could be used to calculate various call time elem
    }
 ```
 
-### Example Call Session Notification for a Typical Call Flow (Inbound & Outbound with all States & Sequence) 
+### Example Telephony Session Notification for a Typical Call Flow (Inbound & Outbound with all States & Sequence) 
 
 
 
@@ -133,11 +175,11 @@ eventTime - Time of the event. Could be used to calculate various call time elem
 For Error Codes refer to [RingCentral Error Codes](https://developers.ringcentral.com/api-reference/Error-Codes) in API Reference
 
 
-## What is the difference between Call Session Notifications and Telephony Presence Notifications
+## What is the difference between Telephony Session Notifications and Telephony Presence Notifications
 
-| Call Session Notifications | Telephony Presence Notification
+| Telephony Session Notifications | Telephony Presence Notification
 | ----------- | ----------- |
-| Call Session Notification provides detailed call session information for all the states of a call at an account level or an extension level.[Extension Level Notification](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)     [Account Level Notification](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)| Telephony Presence Notification provides information in case of changes in any presence information at an extension example DND, etc     [Extension Presence](https://developers.ringcentral.com/api-reference/Extension-Presence-Event)    [Account Presence](https://developers.ringcentral.com/api-reference/Account-Presence-Event)|
+| Telephony Session Notification provides detailed call session information for all the states of a call at an account level or an extension level.[Extension Level Notification](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)     [Account Level Notification](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)| Telephony Presence Notification provides information in case of changes in any presence information at an extension example DND, etc     [Extension Presence](https://developers.ringcentral.com/api-reference/Extension-Presence-Event)    [Account Presence](https://developers.ringcentral.com/api-reference/Account-Presence-Event)|
 | It should be used to fetch detailed call information like Call State Changes,  call participants states, etc.| Mainly used to track user presence information. Only tracks an Extension, cannot track Call Queue, PSTN.|
 | It can monitor all the calls/sessions in an account.| Its key purpose is to monitor the presence of a specific user/extension.|
 
@@ -145,28 +187,29 @@ For Error Codes refer to [RingCentral Error Codes](https://developers.ringcentra
 
 ## Summary
 
-Call Session Notifications are detailed telephony event notifications that capture raw data of all the activity going on in a call session, including the details of the parties involved in the call. Developers can use this information to build a customized call analytics dashboard, custom call routing applications, call monitoring applications, and other applications that need detailed call session data. The Call Session Notifications also provides the detail call elements like telephonySessionId and id(party id) required to control an active call.
+Telephony Session Notifications are detailed telephony event notifications that capture raw data of all the activity going on in a call session, including the details of the parties involved in the call. Developers can use this information to build a customized call analytics dashboard, custom call routing applications, call monitoring applications, and other applications that need detailed call session data. The Telephony Session Notifications also provides the detail call elements like telephonySessionId and id(party id) required to control an active call.
 
 ## FAQ
 
-1.Does the Call Session Notification emit the events in the same sequence as seen by the sequence number?
+- Does the Telephony Session Notification emit the events in the same sequence as seen by the sequence number?</h6>
 
-It might be the case that sometimes later sequence numbers are emitted first for example an event with a sequence number of 5 can be received before sequence 2 or 3, this can happen due to delay or differences in timing by the Webhook or PubNub event delivery services.
+      It might be the case that sometimes later sequence numbers are emitted first for example an event with a sequence number of 5 can be received before sequence 2 or 3, this can happen due to delay or differences in timing by the Webhook or PubNub event delivery services.
 
-2.Can the Call Session Notification be used to subscribe for specific extensions?
-
-Yes Call Session Notification can be used to subscribe at an Extension or at an Account Level.
-
-3.What App permission is needed to access Call Session Notification?
-
-CallControl permission is needed.
+- Can the Telephony Session Notification be used to subscribe for specific extensions?
+  
+     Yes Telephony Session Notification can be used to subscribe at an Extension or at an Account Level.
 
 
+- What App permission is needed to access Telephony Session Notification?
 
+    CallControl permission is needed.
 
 
 
-!!! note "Current limitations of Call Session Notifications."
+
+
+
+!!! note "Current limitations of Telephony Session Notifications."
     In our initial implementation notification won't be delivered in the following scenarios:
     
     * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
