@@ -93,3 +93,12 @@ Authorization: Bearer <access-token>
 }
 ```
 
+### Control a Call
+
+To control incoming a call before accepted:
+
+<a class="btn btn-secondary" href="../pre-call-control/">Read about Pre-Cal Control &raquo;</a>
+
+To control a active Call:
+
+<a class="btn btn-secondary" href="../active-call-control/">Read about Active-call Control &raquo;</a>

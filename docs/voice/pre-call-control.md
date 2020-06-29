@@ -64,3 +64,8 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
     * **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
     * **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
 
+## More
+
+We provide [Call Control JS SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help developer call these API more functionally.
+
+<a class="btn btn-primary" href="../call-control-js-sdk">Read about RingCentral Call Control JS SDK &raquo;</a>
