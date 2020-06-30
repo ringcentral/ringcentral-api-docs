@@ -17,11 +17,13 @@ Detailed instructions on how to subscribe to [RingCentral events](https://develo
 
 ## What are the use cases?
 
-<h5>Call Analytics</h5> -  Developers can use the raw data from Telephony Session Notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
+##### Call Analytics
 
-    - Ring Time
-    - Call Talk Time
-    - Call Hold Time
+Developers can use the raw data from Telephony Session Notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
+
+   - Ring Time
+   - Call Talk Time
+   - Call Hold Time
 
 !!! note "Development Considerations."
     The individual event streams needs to be stored in a persistent storage like MySql DB to peform the calculations.
@@ -75,9 +77,11 @@ Detailed instructions on how to subscribe to [RingCentral events](https://develo
 
 
 
-<h5>Call Monitoring</h5> - Telephony Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
+##### Call Monitoring   
+Telephony Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
 
-<h5>Incoming call routing</h5> - Telephony Session Notifications can be used to monitor and detect an incoming call and apply custom call routing logic to suit business-specific needs. For example, forwarding calls from an important customer to a call queue supervisor.
+##### Incoming call routing
+Telephony Session Notifications can be used to monitor and detect an incoming call and apply custom call routing logic to suit business-specific needs. For example, forwarding calls from an important customer to a call queue supervisor.
 
 ## What are the different states of a Call?
 
@@ -112,13 +116,12 @@ Once a developer has the telephonySessionId and the Party Id (`id`) she can cont
 
 ### Some of the other important schema objects in Telephony Session Notification are 
 
-`direction` - Outbound or Inbound depending on the party involved.
-
-`ownerId` - The mailbox id incase of a RingCentral extension.
-
-`extensionId` - RingCentral extension Id for a RingCentral party.
-
-`eventTime` - Time of the event. Could be used to calculate various call time elements.
+| Schema Object |        Description
+| ----------- | ----------- |
+| `direction` |Outbound or Inbound depending on the party involved. |
+| `ownerId` |The mailbox id incase of a RingCentral extension. |
+| `extensionId` |RingCentral extension Id for a RingCentral party. |
+| `eventTime` |Time of the event. Could be used to calculate various call time elements. |
 
 ### Sample Telephony Session Notification Event
 
@@ -151,14 +154,14 @@ Once a developer has the telephonySessionId and the Party Id (`id`) she can cont
             },
             "status":{
                "code":"Setup",
-               "rcc":False
+               "rcc":"False"
             },
             "park":{
 
             },
-            "missedCall":False,
-            "standAlone":False,
-            "muted":False
+            "missedCall":"False",
+            "standAlone":"False",
+            "muted":"False"
          }
       ],
       "origin":{
