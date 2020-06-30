@@ -12,12 +12,12 @@
 
 We added the following key features to do the heavy lifting for you.
 
-* Call session management. Load existed sessions and manage session lifecycle
+* Call session management. Load existing call sessions and manage call session lifecycle
 * Call session event. Handle telephony session event, sync status
 * Session functional API. Request call control API with function
 * Devices management. Load user’s devices
 
-## Install
+## Installation
 
 Use npm or yarn
 
@@ -130,7 +130,8 @@ We created an online demo that you can check out on this [Github page](https://r
     Firstly, please create a free RingCentral app in [RingCentral Developers website](https://developers.ringcentral.com/).
 
     * App type: Browser-Based or Server/Web
-    * Permissions: 'Call Control', 'Read Accounts', 'Read Presence', 'Webhook Subscriptions'
+    * Permissions: `Call Control`, `Read Accounts`, `Read Presence`, `Webhook Subscriptions`
+    * Add redirect uri `https://ringcentral.github.io/ringcentral-call-control-js/redirect.html` into your app
 
 ### Make a call
 
