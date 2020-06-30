@@ -19,37 +19,15 @@ Detailed instructions on how to subscribe to [RingCentral events](https://develo
 
 <h5>Call Analytics</h5> -  Developers can use the raw data from Telephony Session Notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
 
-Call Hold Time - Time duration between Hold and Answered state. If a call is held multiple times, it can be calculated based on the sum of total hold times.
+    - Ring Time
+    - Call Talk Time
+    - Call Hold Time
 
-  Call Hold Time = Time difference between Answered and Hold  
-
-  Example
-
-
-  
-  Step 1: Get the `'eventTime': '2020-06-24T00:00:30.809Z'` for `'code': 'Hold'` 
+!!! note "Development Considerations."
+    The individual event streams needs to be stored in a persistent storage like MySql DB to peform the calculations.
 
 
-  Step 2: Get the `'eventTime': '2020-06-24T00:00:45.710Z'` for `'code': 'Answered'`
-  
-  
-  Step 3:  Hold Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-24T00:00:45.710Z'` - `'eventTime': '2020-06-24T00:00:30.809Z'` = 15 seconds
-
-Call Talk Time- Time duration between answered and disconnected.
-
-  Call Talk Time = Time difference between Answered and Disconnected 
-  (If the call is put on hold in between, you can include the hold time or subtract the total hold times based on business logic)
-  
-  Example
-
-  Step 1 : Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
-
-  Step 2:  Get the `'eventTime': '2020-06-23T23:46:34.132Z'` for `'code': 'Disconnected'`
-
-
-  Step 3 : Call Talk Time =   Timestamp in Step 2 - Timestamp in Step 1 =  `'eventTime': '2020-06-23T23:46:34.132Z'` - `'eventTime': '2020-06-23T23:46:23.451Z'` = 13 seconds
-
-Ring Time - This is the amount of time the call was ringing before it was answered. It is the time duration between Proceeding and Answered state.
+### Ring Time - This is the amount of time the call was ringing before it was answered. It is the time duration between Proceeding and Answered state.
 
 
   Ring Time = Time difference between Proceeding and Answered
@@ -64,6 +42,36 @@ Ring Time - This is the amount of time the call was ringing before it was answer
 
 
   Step 3:  Ring Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-23T23:46:23.451Z'` - `'eventTime': '2020-06-23T23:46:11.243Z'` = 12 seconds
+
+### Call Talk Time- Time duration between answered and disconnected.
+
+  Call Talk Time = Time difference between Answered and Disconnected 
+  (If the call is put on hold in between, you can include the hold time or subtract the total hold times based on business logic)
+  
+  Example
+
+  Step 1 : Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
+
+  Step 2:  Get the `'eventTime': '2020-06-23T23:46:34.132Z'` for `'code': 'Disconnected'`
+
+
+  Step 3 : Call Talk Time =   Timestamp in Step 2 - Timestamp in Step 1 =  `'eventTime': '2020-06-23T23:46:34.132Z'` - `'eventTime': '2020-06-23T23:46:23.451Z'` = 13 seconds
+
+### Call Hold Time - Time duration between Hold and Answered state. If a call is held multiple times, it can be calculated based on the sum of total hold times.
+
+  Call Hold Time = Time difference between Answered and Hold  
+
+  Example
+
+
+  
+  Step 1: Get the `'eventTime': '2020-06-24T00:00:30.809Z'` for `'code': 'Hold'` 
+
+
+  Step 2: Get the `'eventTime': '2020-06-24T00:00:45.710Z'` for `'code': 'Answered'`
+  
+  
+  Step 3:  Hold Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-24T00:00:45.710Z'` - `'eventTime': '2020-06-24T00:00:30.809Z'` = 15 seconds
 
 
 
@@ -215,5 +223,3 @@ Telephony Session Notifications are detailed telephony event notifications that 
     * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
     * if a party belongs to another session (transferred call, conference, etc).
     * if a party does not belong to any accountId or mailboxId (some parties are created to represent intermediate "leg", e.g. to connect telephony session with RC Conference)
-
-
