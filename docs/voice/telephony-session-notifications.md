@@ -154,12 +154,12 @@ Once a developer has the telephonySessionId and the Party Id (`id`) she can cont
         },
         "status": {
           "code": "Setup",
-          "rcc": "False"
+          "rcc": false
         },
         "park": {},
-        "missedCall": "False",
-        "standAlone": "False",
-        "muted": "False"
+        "missedCall": false,
+        "standAlone": false,
+        "muted": false
       }
     ],
     "origin": {
