@@ -4,7 +4,7 @@ A developer can use Telephony Session Notification to detect all changes in the 
 
 ## What is Telephony Session Notification?
 
-A Telephony Session Notification (Telephony Session Notification) is a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Telephony Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Telephony Session Notification events can be subscribed both at an Account level or at an Extension level.
+A Telephony Session Notification is a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Telephony Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Telephony Session Notification events can be subscribed both at an Account level or at an Extension level.
 
 Account Level Telephony Session Notification -  Will track and provide notifications for all the extensions within an account.
 
@@ -127,47 +127,46 @@ Once a developer has the telephonySessionId and the Party Id (`id`) she can cont
 
 ```json 
 {
-   "uuid":"1823485288313944239",
-   "event":"/restapi/v1.0/account/809646016/extension/809646016/telephony/sessions",
-   "timestamp":"2020-06-14T19:27:18.390Z",
-   "subscriptionId":"53300e7c-5e69-42bf-ab4d-179aabc6e869",
-   "ownerId":"809646016",
-   "body":{
-      "sequence":3,
-      "sessionId":"425008160016",
-      "telephonySessionId":"s-a6abd24ca6774373a8120a3390d3cbe8",
-      "serverId":"10.13.22.28.TAM",
-      "eventTime":"2020-06-14T19:27:18.340Z",
-      "parties":[
-         {
-            "accountId":"809646016",
-            "extensionId":"809646016",
-            "id":"p-a6abd24ca6774373a8120a3390d3cbe8-2",
-            "direction":"Inbound",
-            "to":{
-               "phoneNumber":"+19043014558",
-               "name":"TESTER Babji",
-               "extensionId":"809646016"
-            },
-            "from":{
-               "phoneNumber":"+14083388064"
-            },
-            "status":{
-               "code":"Setup",
-               "rcc":"False"
-            },
-            "park":{
-
-            },
-            "missedCall":"False",
-            "standAlone":"False",
-            "muted":"False"
-         }
-      ],
-      "origin":{
-         "type":"Call"
+  "uuid": "1823485288313944239",
+  "event": "/restapi/v1.0/account/809646016/extension/809646016/telephony/sessions",
+  "timestamp": "2020-06-14T19:27:18.390Z",
+  "subscriptionId": "53300e7c-5e69-42bf-ab4d-179aabc6e869",
+  "ownerId": "809646016",
+  "body": {
+    "sequence": 3,
+    "sessionId": "425008160016",
+    "telephonySessionId": "s-a6abd24ca6774373a8120a3390d3cbe8",
+    "serverId": "10.13.22.28.TAM",
+    "eventTime": "2020-06-14T19:27:18.340Z",
+    "parties": [
+      {
+        "accountId": "809646016",
+        "extensionId": "809646016",
+        "id": "p-a6abd24ca6774373a8120a3390d3cbe8-2",
+        "direction": "Inbound",
+        "to": {
+          "phoneNumber": "+19043014558",
+          "name": "TESTER Babji",
+          "extensionId": "809646016"
+        },
+        "from": {
+          "phoneNumber": "+14083388064"
+        },
+        "status": {
+          "code": "Setup",
+          "rcc": "False"
+        },
+        "park": {},
+        "missedCall": "False",
+        "standAlone": "False",
+        "muted": "False"
       }
-   }
+    ],
+    "origin": {
+      "type": "Call"
+    }
+  }
+}
 ```
 
 ### Example Telephony Session Notification for a Typical Call Flow (Inbound & Outbound with all States & Sequence) 
