@@ -99,10 +99,10 @@ A call transitions through various states from the start of the call to the end.
 | Session Establishing| Inbound|Voicemail|The call is forwarded to VoiceMail. Is applicable for a party with RingCentral owners only.|
 | Session Establishing| Inbound|VMScreening|The call is forwarded to VoiceMail and a callee is listening to the media from the caller. Is applicable for a party with RingCentral owners only.|
 | Session Establishing| Inbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in "state" : "{ "reason" }. Examples: (a) Call to Call Queue, the call was answered/accepted by an agent. (b) Caller entered an extension while the call was being established ("Thank you for calling. If you know your party's extension you may dial it at any time. For the Operator press 0.") (c) BLF pick up.|
-| Session Establishing| Inbound / Outbound|Hold|Party which put the call on hold is reported in "Hold" state.|
-| Session Establishing| Inbound / Outbound|Parked|The call is parked. (a) Park Orbit (Park Location):"state" : "parkData" is empty (b) Park Extension (*8xx)"state" : "parkData" contains Park Extension number (*8xx).|
-| Session Establishing| Inbound / Outbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in  "state" : "{ "reason" }.Examples: 1. Call Flip 2. BLF pick up 3. Blind transfer 4. transfer 5. Call is disconnected by the user or back end.|
-| Session Establishing| Inbound / Outbound|Gone| (a) The party transferred the call and cross call is established (a) "state" : "peerId" should be set for the both ends of the cross call. A reason must  be set in the  "state" : "{ "reason" }. Examples: 1. Attended transfer 2.Call pick up from Park (not from Park Orbit) 3.Monitoring / Barge / Whisper|
+| Session Established| Inbound / Outbound|Hold|Party which put the call on hold is reported in "Hold" state.|
+| Session Established| Inbound / Outbound|Parked|The call is parked. (a) Park Orbit (Park Location):"state" : "parkData" is empty (b) Park Extension (*8xx)"state" : "parkData" contains Park Extension number (*8xx).|
+| Session Established| Inbound / Outbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in  "state" : "{ "reason" }.Examples: 1. Call Flip 2. BLF pick up 3. Blind transfer 4. transfer 5. Call is disconnected by the user or back end.|
+| Session Established| Inbound / Outbound|Gone| (a) The party transferred the call and cross call is established (a) "state" : "peerId" should be set for the both ends of the cross call. A reason must  be set in the  "state" : "{ "reason" }. Examples: 1. Attended transfer 2.Call pick up from Park (not from Park Orbit) 3.Monitoring / Barge / Whisper|
 
 ## What are the key Schema Objects of a Telephony Session Notification ?
 
