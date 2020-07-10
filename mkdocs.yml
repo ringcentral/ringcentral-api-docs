@@ -206,10 +206,10 @@ pages:
       - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
       - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
     - 'Developer Manual':
-      - 'Auth Tokens': 'authentication/tokens.md'
-      - 'Auth Code Flow': 'authentication/auth-code-flow.md'
+      - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
+      - 'Using Auth Tokens': 'authentication/tokens.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
