@@ -17,15 +17,27 @@ TLS / SSL is only required to be enabled in production. For development purposes
 
 To subscribe, the webhook URL must return a `Validation-Token` header when it is presented with one.
 
-Here is a minimal example using PHP:
+Here are some minimal examples:
 
-```php
+```php tab="PHP"
 <?php
 $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
 if (strlen($v)>0) {
   header("Validation-Token: {$v}");
 }
 ?>
+```
+
+```ruby tab="Ruby"
+require 'sinatra'
+
+post '/webhook' do
+  validation_token = request.env['HTTP_VALIDATION_TOKEN']
+  unless validation_token.nil?
+    headers['Validation-Token'] = validation_token
+    return
+  end
+end
 ```
 
 ## Create a Webhook
