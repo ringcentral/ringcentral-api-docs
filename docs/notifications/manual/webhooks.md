@@ -32,9 +32,9 @@ if (strlen($v)>0) {
 require 'sinatra'
 
 post '/webhook' do
-  validation_token = request.env['HTTP_VALIDATION_TOKEN']
-  unless validation_token.nil?
-    headers['Validation-Token'] = validation_token
+  v = request.env['HTTP_VALIDATION_TOKEN']
+  unless v.nil?
+    headers['Validation-Token'] = v
     return
   end
 end
