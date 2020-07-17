@@ -2,9 +2,9 @@
 
 A popular use case for RingCentral APIs is to calculate the amount of time spent in various states in a call, used in the RingCentral system, such as in the analytics dashboard. Popular call component times include:
 
-1. Ring Time: this is the amount of time the call is ringing another party, so only one party is connected.
-1. Talk Time: this is the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
-1. Hold Time: this is the maoun tof time a party is on hold and listening to hold music.
+1. **Ring Time:** this is the amount of time the call is ringing another party, so only one party is connected.
+1. **Talk Time:** this is the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
+1. **Hold Time:** this is the maoun tof time a party is on hold and listening to hold music.
 
 ## Using Telephony Session Events to Calculate Metrics
 
@@ -29,35 +29,17 @@ Detailed information on the [Notification types](https://developers.ringcentral.
 
 Information [on subscribing to event notifications is available in the Developer Guide](../../notifications).
 
-## Calculating Ring Time
+## Call Time Metrics Calculations
 
-The ring time is the amount of time a call is spent in the ringing phasse before the call parties are connected.
+In the following calculations, use the `eventTime`'s RFC-3339 `date-time` values to calculate the times.
 
-Ring time is calculated by adding the duration of the following event time periods:
-
-* Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status
-
-## Calculating Talk Time
-
-Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected.
-
-Talk time is calculated by adding the duration of the following event time periods
-
-* All durations beginning with `Answered` status and ending with `Hold` or `Disconnected` status
+| Time Metric | Description | Algorithm |
+|-------------|-------------|-------------|
+| Ring&nbsp;Time| Ring time is the amount of time a call is spent in the ringing phasse before the call parties are connected. | Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status. |
+| Talk&nbsp;Time | Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected. | Sum of all durations beginning with `Answered` status and ending with `Hold` or `Disconnected` status |
+| Hold&nbsp;Time | Hold time is the amount of time a user is listening to put on hold and lisstening to hold music. | Sum of all durations beginning with `Hold` status and ending with `Answered` or `Disconnected` status |
 
 Of note, the status code for "Unhold" is also `Answered`.
-
-The first `Answered` status event is the same event in the "Calculating Ring Time" section above.
-
-## Calculating Hold Time
-
-Hold time is the amount of time a user is listening to put on hold and lisstening to hold music.
-
-Hold time is calculated by adding the duration of the following event time periods:
-
-* All durations beginning with `Hold` status and ending with `Answered` or `Disconnected` status
-
-These states are documented in the "Calculating Ring Time" section above.
 
 ## Example Events
 
