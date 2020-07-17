@@ -59,204 +59,210 @@ Required permission(s): EditExtensions
 
 The following code sample shows how to create a user custom answering rule that will re-route all incoming calls to a voice mailbox during a user's weekly meeting times on Monday and Friday.
 
-```javascript tab="JavaScript"
-var SDK = require('ringcentral')
+=== "JavaScript"
+	```javascript 
+	var SDK = require('ringcentral')
 
-var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
-var platform = rcsdk.platform();
+	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var platform = rcsdk.platform();
 
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
-    .then(function(resp) {
-        create_user_custom_rule()
-    });
-}
+	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+	    .then(function(resp) {
+		create_user_custom_rule()
+	    });
+	}
 
-function create_user_custom_rule() {
-  var params = {
-    enabled: true,
-    type: "Custom",
-    name: "My weekly meetings",
-    schedule : {
-      weeklyRanges: {
-        monday: [ { from: "09:00", to: "10:00" } ],
-        friday: [ { from: "10:00", to: "15:00" } ]
-      }
-    },
-    callHandlingAction: "TakeMessagesOnly"
-  }
+	function create_user_custom_rule() {
+	  var params = {
+	    enabled: true,
+	    type: "Custom",
+	    name: "My weekly meetings",
+	    schedule : {
+	      weeklyRanges: {
+		monday: [ { from: "09:00", to: "10:00" } ],
+		friday: [ { from: "10:00", to: "15:00" } ]
+	      }
+	    },
+	    callHandlingAction: "TakeMessagesOnly"
+	  }
 
-  platform.post('/account/~/extension/~/answering-rule', params)
-  .then(function(resp){
-      console.log(resp.json())
-  })
-  .catch(function(e){
-      console.log(e)
-  })
-}
-```
+	  platform.post('/account/~/extension/~/answering-rule', params)
+	  .then(function(resp){
+	      console.log(resp.json())
+	  })
+	  .catch(function(e){
+	      console.log(e)
+	  })
+	}
+	```
 
-```python tab="Python"
-from ringcentral import SDK
+=== "Python"
+	```python
+	from ringcentral import SDK
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
-platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+	sdk = SDK( "client_id", "client_secret", "server_url" )
+	platform = sdk.platform()
+	platform.login( "username", "extension", "password" )
 
-params = {
-    'enabled': True,
-    'type': 'Custom',
-    'name': "My weekly meetings",
-    'schedule' : {
-      'weeklyRanges': {
-        'monday': [{ 'from': "09:00",'to': "10:00" }],
-        'friday': [{ 'from': "10:00", 'to': "15:00" }]
-      }
-    },
-    'callHandlingAction': "TakeMessagesOnly"
-  }
-resp = platform.post('/restapi/v1.0/account/~/extension/~/answering-rule', params)
+	params = {
+	    'enabled': True,
+	    'type': 'Custom',
+	    'name': "My weekly meetings",
+	    'schedule' : {
+	      'weeklyRanges': {
+		'monday': [{ 'from': "09:00",'to': "10:00" }],
+		'friday': [{ 'from': "10:00", 'to': "15:00" }]
+	      }
+	    },
+	    'callHandlingAction': "TakeMessagesOnly"
+	  }
+	resp = platform.post('/restapi/v1.0/account/~/extension/~/answering-rule', params)
 
-print resp.text()
-```
+	print resp.text()
+	```
 
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
+=== "PHP"
+	```php
+	<?php
+	require('vendor/autoload.php');
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-$platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+	$platform = $rcsdk->platform();
+	$platform->login( "username", "extension_number", "password" );
 
-$params = array (
-    'enabled' => true,
-    'type' => "Custom",
-    'name' => "My weekly meetings",
-    'schedule' => array (
-      'weeklyRanges' => array (
-        'monday' => array ( array ('from' => "09:00", 'to' => "10:00")),
-        'friday' => array ( array ('from' => "10:00", 'to' => "15:00"))
-      )
-    ),
-    'callHandlingAction' => "TakeMessagesOnly"
-);
-$resp = $platform->post('/account/~/extension/~/answering-rule', $params);
+	$params = array (
+	    'enabled' => true,
+	    'type' => "Custom",
+	    'name' => "My weekly meetings",
+	    'schedule' => array (
+	      'weeklyRanges' => array (
+		'monday' => array ( array ('from' => "09:00", 'to' => "10:00")),
+		'friday' => array ( array ('from' => "10:00", 'to' => "15:00"))
+	      )
+	    ),
+	    'callHandlingAction' => "TakeMessagesOnly"
+	);
+	$resp = $platform->post('/account/~/extension/~/answering-rule', $params);
 
-print_r ($resp->text());
-```
+	print_r ($resp->text());
+	```
 
-```c# tab="C#"
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+=== "C#"
+	```c#
+	using System;
+	using System.Threading.Tasks;
+	using RingCentral;
 
-namespace Create_Custom_Answering_Rule
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            create_custom_answering_rule().Wait();
-        }
-        static private async Task create_custom_answering_rule()
-        {
-            RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-            await rc.Authorize("username", "extension_number", "password");
+	namespace Create_Custom_Answering_Rule
+	{
+	    class Program
+	    {
+		static void Main(string[] args)
+		{
+		    create_custom_answering_rule().Wait();
+		}
+		static private async Task create_custom_answering_rule()
+		{
+		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+		    await rc.Authorize("username", "extension_number", "password");
 
-            var parameters = new CreateAnsweringRuleRequest();
-            parameters.enabled = true;
-            parameters.type = "Custom";
-            parameters.name = "My weekly meetings";
-            var schedule = new ScheduleInfo();
-            var weeklyRanges = new WeeklyScheduleInfo();
-            TimeInterval meetingTime = new TimeInterval();
-            meetingTime.from = "09:00";
-            meetingTime.to = "10:00";
-            weeklyRanges.monday = new TimeInterval[] { meetingTime };
+		    var parameters = new CreateAnsweringRuleRequest();
+		    parameters.enabled = true;
+		    parameters.type = "Custom";
+		    parameters.name = "My weekly meetings";
+		    var schedule = new ScheduleInfo();
+		    var weeklyRanges = new WeeklyScheduleInfo();
+		    TimeInterval meetingTime = new TimeInterval();
+		    meetingTime.from = "09:00";
+		    meetingTime.to = "10:00";
+		    weeklyRanges.monday = new TimeInterval[] { meetingTime };
 
-            meetingTime = new TimeInterval();
-            meetingTime.from = "10:00";
-            meetingTime.to = "15:00";
-            weeklyRanges.friday = new TimeInterval[] { meetingTime };
+		    meetingTime = new TimeInterval();
+		    meetingTime.from = "10:00";
+		    meetingTime.to = "15:00";
+		    weeklyRanges.friday = new TimeInterval[] { meetingTime };
 
-            schedule.weeklyRanges = weeklyRanges;
-            parameters.schedule = schedule;
-            parameters.callHandlingAction = "TakeMessagesOnly";
+		    schedule.weeklyRanges = weeklyRanges;
+		    parameters.schedule = schedule;
+		    parameters.callHandlingAction = "TakeMessagesOnly";
 
-            var response = await rc.Restapi().Account().Extension().AnsweringRule().Post(parameters);
-            var jsonStr = JsonConvert.SerializeObject(response);
-            Console.WriteLine(jsonStr);
-        }
-    }
-}
-```
+		    var response = await rc.Restapi().Account().Extension().AnsweringRule().Post(parameters);
+		    var jsonStr = JsonConvert.SerializeObject(response);
+		    Console.WriteLine(jsonStr);
+		}
+	    }
+	}
+	```
 
-```java tab="Java"
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+=== "Java"
+	```java
+	import com.ringcentral.*;
+	import com.ringcentral.definitions.*;
 
-public class Export_MessageStore {
-	  public static void main(String[] args) {
-    		try {
-    			create_custom_answering_rule();
-    		} catch (RestException | IOException e) {
-    			e.printStackTrace();
-    		}
-  	}
+	public class Export_MessageStore {
+		  public static void main(String[] args) {
+			try {
+				create_custom_answering_rule();
+			} catch (RestException | IOException e) {
+				e.printStackTrace();
+			}
+		}
 
-    public static void create_custom_answering_rule() throws RestException, IOException {
-        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-        rc.authorize("username", "extension_number", "password");
+	    public static void create_custom_answering_rule() throws RestException, IOException {
+		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+		rc.authorize("username", "extension_number", "password");
 
-        var parameters = new CreateAnsweringRuleRequest();
-        parameters.enabled = true;
-        parameters.type = "Custom";
-        parameters.name = "My weekly meetings";
-        var schedule = new ScheduleInfo();
-        var weeklyRanges = new WeeklyScheduleInfo();
-        TimeInterval meetingTime = new TimeInterval();
-        meetingTime.from = "09:00";
-        meetingTime.to = "10:00";
-        weeklyRanges.monday = new TimeInterval[] { meetingTime };
+		var parameters = new CreateAnsweringRuleRequest();
+		parameters.enabled = true;
+		parameters.type = "Custom";
+		parameters.name = "My weekly meetings";
+		var schedule = new ScheduleInfo();
+		var weeklyRanges = new WeeklyScheduleInfo();
+		TimeInterval meetingTime = new TimeInterval();
+		meetingTime.from = "09:00";
+		meetingTime.to = "10:00";
+		weeklyRanges.monday = new TimeInterval[] { meetingTime };
 
-        meetingTime = new TimeInterval();
-        meetingTime.from = "10:00";
-        meetingTime.to = "15:00";
-        weeklyRanges.friday = new TimeInterval[] { meetingTime };
+		meetingTime = new TimeInterval();
+		meetingTime.from = "10:00";
+		meetingTime.to = "15:00";
+		weeklyRanges.friday = new TimeInterval[] { meetingTime };
 
-        schedule.weeklyRanges = weeklyRanges;
-        parameters.schedule = schedule;
-        parameters.callHandlingAction = "TakeMessagesOnly";
+		schedule.weeklyRanges = weeklyRanges;
+		parameters.schedule = schedule;
+		parameters.callHandlingAction = "TakeMessagesOnly";
 
-        var response =  rc.restapi().account().extension().answeringrule().post(parameters);
-        System.out.println(JSON.toJSONString(response));
-        }
-    }
-}
-```
+		var response =  rc.restapi().account().extension().answeringrule().post(parameters);
+		System.out.println(JSON.toJSONString(response));
+		}
+	    }
+	}
+	```
 
-```ruby tab="Ruby"
-require 'ringcentral'
+=== "Ruby"
+	```ruby
+	require 'ringcentral'
 
-$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-params = {
-    enabled: true,
-    type: 'Custom',
-    name: 'My weekly meetings',
-    schedule: {
-      weeklyRanges: {
-        monday: [{ from: "09:00", to: "10:00" }],
-        friday: [{ from: "10:00", to: "15:00" }]
-      }
-    },
-    callHandlingAction: "TakeMessagesOnly",
-}
-resp = rc.post('/restapi/v1.0/account/~/extension/~/answering-rule', payload: params)
+	params = {
+	    enabled: true,
+	    type: 'Custom',
+	    name: 'My weekly meetings',
+	    schedule: {
+	      weeklyRanges: {
+		monday: [{ from: "09:00", to: "10:00" }],
+		friday: [{ from: "10:00", to: "15:00" }]
+	      }
+	    },
+	    callHandlingAction: "TakeMessagesOnly",
+	}
+	resp = rc.post('/restapi/v1.0/account/~/extension/~/answering-rule', payload: params)
 
-puts resp.body
-```
+	puts resp.body
+	```
 
 Upon successful API call completion, the response contains the id (`ruleId`) and other information of the newly created rule.
 
