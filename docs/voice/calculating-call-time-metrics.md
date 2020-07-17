@@ -2,18 +2,18 @@
 
 A popular use case for RingCentral APIs is to calculate the amount of time spent in various states in a call, used in the RingCentral system, such as in the analytics dashboard. Popular call component times include:
 
-1. **Ring Time:** this is the amount of time the call is ringing another party, so only one party is connected.
-1. **Talk Time:** this is the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
-1. **Hold Time:** this is the maoun tof time a party is on hold and listening to hold music.
+1. **Ring Time:** the amount of time the call is ringing another party, so only one party is connected.
+1. **Talk Time:** the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
+1. **Hold Time:** the amount of time a party is on hold and listening to hold music.
 
 ## Using Telephony Session Events to Calculate Metrics
 
 [Telephony Session Notifications](../telephony-session-notifications) are the recommended way to calculate call time metrics.
 
-When receiving a stream of events, it is ipmortant to note the following:
+When receiving a stream of events, it is important to note the following:
 
 * All events for a particular call are grouped by the `telephonySessionId` which is unique per call.
-* All events for a particular call are ordered by the `sequence` integer property. Events can come in different chronological order so it's important to sequence them properly.
+* All events for a particular call are ordered by the `sequence` integer property. Events can come in different chronological order so it's important to sequence them properly for analysis.
 * To calculate call metrics like ring, talk, and hold times, it is important to keep track of previous events to sequence them together so you should use a data store to collect events by `telephonySessionId` and order them by `sequence`. Then calculate the metrics using the time duration between call status changes using the `eventTime` and party `status.code` properties.
 
 The `telephonySessionId`, `sequence` and `eventTime` properties are in the event's `body` property. The `status.code` property is in the body's `parties` array. All of these are shown below.
@@ -33,11 +33,11 @@ Information [on subscribing to event notifications is available in the Developer
 
 ## Call Time Metrics Calculations
 
-Call time metrics are performed by calculating the durations between specific call states as specified by the status code.
+Call time metrics are performed by calculating the durations between specific call states as specified by the event status code.
 
 An example time line is shown below:
 
-<img src="../call-time-metrics-time-line.png" style="width:100%"/>
+<img src="../ringcentral-call-time-metrics-timeline.svg" style="width:100%"/>
 
 | Time Metric | Description | Algorithm |
 |-------------|-------------|-------------|
@@ -54,9 +54,9 @@ See a list of all Status Codes in the [Telephony Sesion Notifcations overview pa
 
 ## Example Events
 
-The following are example eveents in a call to calculate call time metrics.
+The following are example events in a call to calculate call time metrics.
 
-Note: these are partial events with most propertieses removed, to highight the properties needed to caculate various call talk time metrics.
+Note: these are partial events with most properties removed, to highight the properties needed to caculate various call time metrics.
 
 ### Ring Time - Proceeding Event
 
