@@ -1,127 +1,68 @@
-# Telephony Session Notification
+# Telephony Session Notifications
 
-A developer can use Telephony Session Notification to detect all changes in the status of a call effectively. 
+A developer can use Telephony Session Notifications to detect all changes in the status of a call effectively. 
 
-## What is Telephony Session Notification?
+## What are Telephony Session Notifications?
 
-A Telephony Session Notification is a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Telephony Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Telephony Session Notification events can be subscribed both at an Account level or at an Extension level.
+Telephony Session Notifications are a series of notifications or events a developer can use to track an end-to-end telephony call in RingCentral. The call can be from an external PSTN or any mobile number to a RingCentral extension, or it can be from a RingCentral Digital Line to an external PSTN number, or it can be between two RingCentral extensions. The Telephony Session Notification provides detailed end-to-end call sessions and party (endpoints/user) level information to enable developers to take specific actions or build custom reports based on that call information. The Telephony Session Notification events can be subscribed both at an Account level or at an Extension level.
 
-Account Level Telephony Session Notification -  Will track and provide notifications for all the extensions within an account.
-
-Extension Level Telephony Session Notification - Will track calls on a specific extension.
+* Account Level Telephony Session Notification -  Will track and provide notifications for all the extensions within an account.
+* Extension Level Telephony Session Notification - Will track calls on a specific extension.
 
 Detailed instructions on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
 
-Detailed instructions on how to subscribe to [RingCentral events](https://developers.ringcentral.com/guide/notifications) or notifications are available in the API reference
+Detailed instructions on how to subscribe to [RingCentral events](../../notifications) or notifications are available in the API reference.
 
+## Popular use cases for Telephony Sessions
 
-## What are the use cases?
-
-##### Call Analytics
+### Call Analytics
 
 Developers can use the raw data from Telephony Session Notification events and build call analytics dashboards replicating live reports which use the same event streams. Some of the standard call analytics metrics and their corresponding formulas are:
 
-   - Ring Time
-   - Call Talk Time
-   - Call Hold Time
+* Ring Time
+* Talk Time
+* Hold Time
 
-!!! note "Development Considerations."
-    The individual event streams needs to be stored in a persistent storage like MySql DB to peform the calculations.
+See the [Calculating Call Time Metrics guide](../calculating-call-time-metrics) on how to calculate these metrics using notifications.
 
-
-### Ring Time - This is the amount of time the call was ringing before it was answered. It is the time duration between Proceeding and Answered state.
-
-
-  Ring Time = Time difference between Proceeding and Answered
-    
-  Example:
-
-  Step 1:  Get the `'eventTime': '2020-06-23T23:46:11.243Z'` for `'code': 'Proceeding'`
-
-
-  Step 2:  Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
-
-
-
-  Step 3:  Ring Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-23T23:46:23.451Z'` - `'eventTime': '2020-06-23T23:46:11.243Z'` = 12 seconds
-
-### Call Talk Time- Time duration between answered and disconnected.
-
-  Call Talk Time = Time difference between Answered and Disconnected 
-  (If the call is put on hold in between, you can include the hold time or subtract the total hold times based on business logic)
-  
-  Example
-
-  Step 1 : Get the `'eventTime': '2020-06-23T23:46:23.451Z'` for `'code': 'Answered'`
-
-  Step 2:  Get the `'eventTime': '2020-06-23T23:46:34.132Z'` for `'code': 'Disconnected'`
-
-
-  Step 3 : Call Talk Time =   Timestamp in Step 2 - Timestamp in Step 1 =  `'eventTime': '2020-06-23T23:46:34.132Z'` - `'eventTime': '2020-06-23T23:46:23.451Z'` = 13 seconds
-
-### Call Hold Time - Time duration between Hold and Answered state. If a call is held multiple times, it can be calculated based on the sum of total hold times.
-
-  Call Hold Time = Time difference between Answered and Hold  
-
-  Example
-
-
-  
-  Step 1: Get the `'eventTime': '2020-06-24T00:00:30.809Z'` for `'code': 'Hold'` 
-
-
-  Step 2: Get the `'eventTime': '2020-06-24T00:00:45.710Z'` for `'code': 'Answered'`
-  
-  
-  Step 3:  Hold Time =  Timestamp in Step 2 - Timestamp in Step 1 = `'eventTime': '2020-06-24T00:00:45.710Z'` - `'eventTime': '2020-06-24T00:00:30.809Z'` = 15 seconds
-
-
-
-##### Call Monitoring   
+### Call Monitoring via Real-Time Streaming
 Telephony Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
 
-##### Incoming call routing
+### Incoming Call Routing
 Telephony Session Notifications can be used to monitor and detect an incoming call and apply custom call routing logic to suit business-specific needs. For example, forwarding calls from an important customer to a call queue supervisor.
 
-## What are the different states of a Call?
+## Call Status Codes
 
 A call transitions through various states from the start of the call to the end. A Telephony Session Notification captures each of these states. States of a call are associated with the parties involved in the call, and it can be the "Outbound" party (party making the call) or the "Inbound" party (party receiving the call). The schema object "status.code" in the Telephony Session Notification captures the state of the call in regards to the party (Outbound or Inbound) involved in the call. The table below illustrates the different states that a party goes though in a call session.
 
-| Call Session | Party Direction | State|Description
+| Call Session | Party Direction | Status Code |Description
 | ----------- | ----------- |----------- |-----------|
-| Session Establishing| Outbound|Setup|RingCentral telephony platform receives the outbound call request.|
-| Session Establishing| Outbound|Proceeding|RingCentral platform successfully sent an outbound SIP command and received a successful response from the other party.|
-| Session Establishing| Outbound|Answered|RingCentral to RingCentral: RingCentral destination (Company/User/Call Queue) is reached and Call Handling Rules started to execute.|
+| Session Establishing| Outbound|`Setup`|RingCentral telephony platform receives the outbound call request.|
+| Session Establishing| Outbound|`Proceeding`|RingCentral platform successfully sent an outbound SIP command and received a successful response from the other party.|
+| Session Establishing| Outbound|`Answered`|RingCentral to RingCentral: RingCentral destination (Company/User/Call Queue) is reached and Call Handling Rules started to execute.|
 | Session Establishing| Inbound|Setup (call to RingCentral only, this state will only show for RingCentral to RingCentral calls for Inbound party direction|Initial state for a call to RingCentral destination. It is reported when the call reached the target user/extension, and the Call Handling Rules started to execute|
-| Session Establishing| Inbound|Proceeding|Initial state for a call to PSTN, 2-leg-RingOut (both legs), RingMe. The call is being forwarded to an endpoint.|
-| Session Establishing| Inbound|FaxReceive|Fax receiving has started. Is applicable for a party with RingCentral owners only.|
-| Session Establishing| Inbound|Answered|In general case the party is in "Answered" state when the call is answered on a target endpoint and media is established. But, if 'Prompt me before connecting' flag is 'on' the party remains in 'proceeding' state till the target user accepts the call.|
-| Session Establishing| Inbound|Voicemail|The call is forwarded to VoiceMail. Is applicable for a party with RingCentral owners only.|
-| Session Establishing| Inbound|VMScreening|The call is forwarded to VoiceMail and a callee is listening to the media from the caller. Is applicable for a party with RingCentral owners only.|
-| Session Establishing| Inbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in "state" : "{ "reason" }. Examples: (a) Call to Call Queue, the call was answered/accepted by an agent. (b) Caller entered an extension while the call was being established ("Thank you for calling. If you know your party's extension you may dial it at any time. For the Operator press 0.") (c) BLF pick up.|
-| Session Established| Inbound / Outbound|Hold|Party which put the call on hold is reported in "Hold" state.|
-| Session Established| Inbound / Outbound|Parked|The call is parked. (a) Park Orbit (Park Location):"state" : "parkData" is empty (b) Park Extension (*8xx)"state" : "parkData" contains Park Extension number (*8xx).|
-| Session Established| Inbound / Outbound|Disconnected|The call is finished or a party leaves the session in another manner, disconnect reason should be set in  "state" : "{ "reason" }.Examples: 1. Call Flip 2. BLF pick up 3. Blind transfer 4. transfer 5. Call is disconnected by the user or back end.|
-| Session Established| Inbound / Outbound|Gone| (a) The party transferred the call and cross call is established (a) "state" : "peerId" should be set for the both ends of the cross call. A reason must  be set in the  "state" : "{ "reason" }. Examples: 1. Attended transfer 2.Call pick up from Park (not from Park Orbit) 3.Monitoring / Barge / Whisper|
+| Session Establishing| Inbound|`Proceeding`|Initial state for a call to PSTN, 2-leg-RingOut (both legs), RingMe. The call is being forwarded to an endpoint.|
+| Session Establishing| Inbound|`FaxReceive`|Fax receiving has started. Is applicable for a party with RingCentral owners only.|
+| Session Establishing| Inbound|`Answered`|In general case the party is in "Answered" state when the call is answered on a target endpoint and media is established. But, if 'Prompt me before connecting' flag is 'on' the party remains in 'proceeding' state till the target user accepts the call.|
+| Session Establishing| Inbound|`Voicemail`|The call is forwarded to VoiceMail. Is applicable for a party with RingCentral owners only.|
+| Session Establishing| Inbound|`VMScreening`|The call is forwarded to VoiceMail and a callee is listening to the media from the caller. Is applicable for a party with RingCentral owners only.|
+| Session Establishing| Inbound|`Disconnected`|The call is finished or a party leaves the session in another manner, disconnect reason should be set in "state" : "{ "reason" }. Examples: (a) Call to Call Queue, the call was answered/accepted by an agent. (b) Caller entered an extension while the call was being established ("Thank you for calling. If you know your party's extension you may dial it at any time. For the Operator press 0.") (c) BLF pick up.|
+| Session Established| Inbound / Outbound|`Hold`|Party which put the call on hold is reported in "Hold" state.|
+| Session Established| Inbound / Outbound|`Parked`|The call is parked. (a) Park Orbit (Park Location):"state" : "parkData" is empty (b) Park Extension (*8xx)"state" : "parkData" contains Park Extension number (*8xx).|
+| Session Established| Inbound / Outbound|`Disconnected`|The call is finished or a party leaves the session in another manner, disconnect reason should be set in  "state" : "{ "reason" }.Examples: 1. Call Flip 2. BLF pick up 3. Blind transfer 4. transfer 5. Call is disconnected by the user or back end.|
+| Session Established| Inbound / Outbound|`Gone`| (a) The party transferred the call and cross call is established (a) "state" : "peerId" should be set for the both ends of the cross call. A reason must  be set in the  "state" : "{ "reason" }. Examples: 1. Attended transfer 2.Call pick up from Park (not from Park Orbit) 3.Monitoring / Barge / Whisper|
 
-## What are the key Schema Objects of a Telephony Session Notification ?
+## What are the key Schema Objects of a Telephony Session Notification?
 
-The two key elements for a Telephony Session Notification are 
+The two key elements for a Telephony Session Notification are:
 
-Telephony Session Id ( `telephonySessionId`) - This entity uniquely identifies a specific call session. Developers can use telephonySessionId to fetch all the details of a telephony session using [Get Call Session Status API](https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus)
-
-Party Id (`id`) - This entity uniquely identifies a specific party/endpoint  in the call session.
-
-Once a developer has the telephonySessionId and the Party Id (`id`) she can control a call using [Call Control APIs](https://developers.ringcentral.com/api-reference/Call-Control)
-
-### Some of the other important schema objects in Telephony Session Notification are 
-
-| Schema Object |        Description
-| ----------- | ----------- |
-| `direction` |Outbound or Inbound depending on the party involved. |
-| `ownerId` |The mailbox id incase of a RingCentral extension. |
-| `extensionId` |RingCentral extension Id for a RingCentral party. |
-| `eventTime` |Time of the event. Could be used to calculate various call time elements. |
+| Name | Property Name | Description |
+|------|---------------|-------------|
+| Telephony Session Id | `telephonySessionId` | This entity uniquely identifies a specific call session. Developers can use telephonySessionId to fetch all the details of a telephony session using [Get Call Session Status API](https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus) |
+| Party Id | `party[0].id` | This entity uniquely identifies a specific party/endpoint  in the call session. Once a developer has the telephonySessionId and the Party Id (`id`) she can control a call using [Call Control APIs](https://developers.ringcentral.com/api-reference/Call-Control) |
+| Call Direction | `direction` |Outbound or Inbound depending on the party involved. |
+| Unique User(Extension) ID | `extensionId` |RingCentral extension Id for a RingCentral party. |
+| Event Time | `eventTime` |Time of the event. This can be used to calculate various [call time metrics](../calculating-call-time-metrics). |
 
 ### Sample Telephony Session Notification Event
 
@@ -171,14 +112,9 @@ Once a developer has the telephonySessionId and the Party Id (`id`) she can cont
 
 ### Example Telephony Session Notification for a Typical Call Flow (Inbound & Outbound with all States & Sequence) 
 
-
-
-[PSTN to RingCentral](https://github.com/dibyenduroy/csn-data/blob/master/PSTN-RingCentral-DataStreams.txt)
-
-[RingCentral to RingCentral](https://github.com/dibyenduroy/csn-data/blob/master/RingCentral-RingCentral.txt)
-
-[RingCentral to PSTN](https://github.com/dibyenduroy/csn-data/blob/master/RingCentral-PSTN.txt)
-
+* [PSTN to RingCentral](https://github.com/dibyenduroy/csn-data/blob/master/PSTN-RingCentral-DataStreams.txt)
+* [RingCentral to RingCentral](https://github.com/dibyenduroy/csn-data/blob/master/RingCentral-RingCentral.txt)
+* [RingCentral to PSTN](https://github.com/dibyenduroy/csn-data/blob/master/RingCentral-PSTN.txt)
 
 ## Error Codes
 
