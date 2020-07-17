@@ -35,7 +35,7 @@ In the following calculations, use the `eventTime`'s RFC-3339 `date-time` values
 
 | Time Metric | Description | Algorithm |
 |-------------|-------------|-------------|
-| Ring&nbsp;Time| Ring time is the amount of time a call is spent in the ringing phasse before the call parties are connected. | Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status. |
+| Ring&nbsp;Time| Ring time is the amount of time a call is spent in the ringing phase before the call parties are connected. | Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status. |
 | Talk&nbsp;Time | Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected. | Sum of all durations beginning with `Answered` status and ending with `Hold` or `Disconnected` status |
 | Hold&nbsp;Time | Hold time is the amount of time a user is listening to put on hold and lisstening to hold music. | Sum of all durations beginning with `Hold` status and ending with `Answered` or `Disconnected` status |
 
@@ -49,7 +49,7 @@ Note: these are partial events with most propertieses removed, to highight the p
 
 ### Ring Time - Proceeding Event
 
-This is a partial event just highliighting the important properties:
+This is a partial event including just the properties relevant for this discussion:
 
 ```json
 {
@@ -70,7 +70,7 @@ This is a partial event just highliighting the important properties:
 
 ### Ring Time - First Answer Event
 
-This is a partial event just highliighting the important properties:
+This is a partial event including just the properties relevant for this discussion:
 
 ```json
 {
@@ -90,7 +90,7 @@ This is a partial event just highliighting the important properties:
 ```
 ### Talk Time - Hold Event
 
-This is a partial event just highliighting the important properties:
+This is a partial event including just the properties relevant for this discussion:
 
 ```json
 {
@@ -111,7 +111,7 @@ This is a partial event just highliighting the important properties:
 
 ### Talk Time - "Unhold" Event
 
-This is a partial event just highliighting the important properties:
+This is a partial event including just the properties relevant for this discussion:
 
 ```json
 {
@@ -132,7 +132,7 @@ This is a partial event just highliighting the important properties:
 
 ### Talk Time - Disconnected Event
 
-This is a partial event just highliighting the important properties:
+This is a partial event including just the properties relevant for this discussion:
 
 ```json
 {
