@@ -54,123 +54,129 @@ The API Reference contains a [more detailed breakdown of the structure of a mess
 
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
-```javascript tab="JavaScript"
-const RC = require('ringcentral')
+=== "JavaScript"
+	```javascript
+	const RC = require('ringcentral')
 
-var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
-var platform = rcsdk.platform();
+	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var platform = rcsdk.platform();
 
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
-    .then(function(resp) {
-        platform.get('/account/~/extension/~/message-store', {
-             messageType: ['SMS']
-        })
-        .then(function (response) {
-            console.log(JSON.stringify(response.json()))
-        })
-    });
-}
-```
+	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+	    .then(function(resp) {
+		platform.get('/account/~/extension/~/message-store', {
+		     messageType: ['SMS']
+		})
+		.then(function (response) {
+		    console.log(JSON.stringify(response.json()))
+		})
+	    });
+	}
+	```
 
-```python tab="Python"
-from ringcentral import SDK
+=== "Python"
+	```python
+	from ringcentral import SDK
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
-platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+	sdk = SDK( "client_id", "client_secret", "server_url" )
+	platform = sdk.platform()
+	platform.login( "username", "extension", "password" )
 
-response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
-        {
-            'messageType': ['SMS']
-        })
-print (response.text())
-```
+	response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
+		{
+		    'messageType': ['SMS']
+		})
+	print (response.text())
+	```
 
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
+=== "PHP"
+	```php
+	<?php
+	require('vendor/autoload.php');
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-$platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+	$platform = $rcsdk->platform();
+	$platform->login( "username", "extension_number", "password" );
 
-$response = $platform->get('/account/~/extension/~/message-store',
-    array(
-      'messageType' => array('SMS')
-    ));
-print_r ($response->text());
-```
+	$response = $platform->get('/account/~/extension/~/message-store',
+	    array(
+	      'messageType' => array('SMS')
+	    ));
+	print_r ($response->text());
+	```
 
-```c# tab="C#"
-using System;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
-using RingCentral;
+=== "C#"
+	```c#
+	using System;
+	using Newtonsoft.Json;
+	using System.Threading.Tasks;
+	using RingCentral;
 
-namespace Read_MessageStore
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            read_user_message_store().Wait();
-        }
-        static private async Task read_user_message_store()
-        {
-            RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-            await rc.Authorize("username", "extension_number", "password");
+	namespace Read_MessageStore
+	{
+	    class Program
+	    {
+		static void Main(string[] args)
+		{
+		    read_user_message_store().Wait();
+		}
+		static private async Task read_user_message_store()
+		{
+		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+		    await rc.Authorize("username", "extension_number", "password");
 
-            var parameters = new ListMessagesParameters();
-            parameters.messageType = string[] ("SMS");
-            var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
+		    var parameters = new ListMessagesParameters();
+		    parameters.messageType = string[] ("SMS");
+		    var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
 
-            var jsonStr = JsonConvert.SerializeObject(response);
-            Console.WriteLine(jsonStr);
-        }
-    }
-}
-```
+		    var jsonStr = JsonConvert.SerializeObject(response);
+		    Console.WriteLine(jsonStr);
+		}
+	    }
+	}
+	```
 
-```java tab="Java"
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+=== "Java"
+	```java
+	import com.ringcentral.*;
+	import com.ringcentral.definitions.*;
 
-public class Read_MessageStore {
-	  public static void main(String[] args) {
-    		try {
-    			read_user_message_store();
-    		} catch (RestException | IOException e) {
-    			e.printStackTrace();
-    		}
-  	}
+	public class Read_MessageStore {
+		  public static void main(String[] args) {
+			try {
+				read_user_message_store();
+			} catch (RestException | IOException e) {
+				e.printStackTrace();
+			}
+		}
 
-    public static void read_user_message_store() throws RestException, IOException{
-        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-        rc.authorize("username", "extension_number", "password");
+	    public static void read_user_message_store() throws RestException, IOException{
+		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+		rc.authorize("username", "extension_number", "password");
 
-        ListMessagesParameters parameters = new ListMessagesParameters();
-        parameters.messageType = new String[] {"SMS"};
+		ListMessagesParameters parameters = new ListMessagesParameters();
+		parameters.messageType = new String[] {"SMS"};
 
-        var response = rc.restapi().account().extension().messagestore().list(parameters);
+		var response = rc.restapi().account().extension().messagestore().list(parameters);
 
-        String jsonStr = JSON.toJSONString(response);
-        System.out.println(jsonStr);
-    }
-}
-```
+		String jsonStr = JSON.toJSONString(response);
+		System.out.println(jsonStr);
+	    }
+	}
+	```
 
-```ruby tab="Ruby"
-require 'ringcentral'
+=== "Ruby"
+	```ruby
+	require 'ringcentral'
 
-rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-response = rc.get('/account/~/extension/~/message-store',
-    {
-        messageType: 'SMS'
-    })
-puts response.body
-```
+	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+	response = rc.get('/account/~/extension/~/message-store',
+	    {
+		messageType: 'SMS'
+	    })
+	puts response.body
+	```
 
 This example response shows the `to`, `from`, `type`, `readStatus`, `direction` and `subject` amongst other properties of an SMS message record from the message store:
 

@@ -134,393 +134,399 @@ The archived file at index one (archive/1) is a .zip file containing attachments
 
 The following code sample shows how to call the Message Store Export APIs to export the message store data and save it to a local machine.
 
-```javascript tab="JavaScript"
-var SDK = require('ringcentral')
-var fs = require('fs')
-var https = require('https');
+=== "JavaScript"
+	```javascript
+	var SDK = require('ringcentral')
+	var fs = require('fs')
+	var https = require('https');
 
-var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
-var platform = rcsdk.platform();
+	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var platform = rcsdk.platform();
 
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
-    .then(function(resp) {
-        create_message_store_report()
-    });
-}
+	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+	    .then(function(resp) {
+		create_message_store_report()
+	    });
+	}
 
-function create_message_store_report(){
-    var endpoint = "/restapi/v1.0/account/~/message-store-report"
-    var params = {
-        dateFrom: "2019-03-01T00:00:00.000Z",
-        dateTo: "2019-03-31T23:59:59.999Z"
-      }
-    platform.post(endpoint, params)
-      .then(function(resp){
-          var json = resp.json()
-          get_message_store_report_task(json.id)
-      })
-      .catch(function(e){
-          console.log(e)
-      })
-}
+	function create_message_store_report(){
+	    var endpoint = "/restapi/v1.0/account/~/message-store-report"
+	    var params = {
+		dateFrom: "2019-03-01T00:00:00.000Z",
+		dateTo: "2019-03-31T23:59:59.999Z"
+	      }
+	    platform.post(endpoint, params)
+	      .then(function(resp){
+		  var json = resp.json()
+		  get_message_store_report_task(json.id)
+	      })
+	      .catch(function(e){
+		  console.log(e)
+	      })
+	}
 
-function get_message_store_report_task(taskId){
-    console.log("check task creation status ...")
-    var endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
-    platform.get(endpoint)
-      .then(function(resp){
-          var json = resp.json()
-          if (json.status == "Completed"){
-              get_message_store_report_archive(json.id)
-          }else {
-              setTimeout(function(){
-                get_message_store_report_task(taskId)
-              }, 5000);
-          }
-      })
-      .catch(function(e){
-          console.log(e)
-      })
-}
+	function get_message_store_report_task(taskId){
+	    console.log("check task creation status ...")
+	    var endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
+	    platform.get(endpoint)
+	      .then(function(resp){
+		  var json = resp.json()
+		  if (json.status == "Completed"){
+		      get_message_store_report_archive(json.id)
+		  }else {
+		      setTimeout(function(){
+			get_message_store_report_task(taskId)
+		      }, 5000);
+		  }
+	      })
+	      .catch(function(e){
+		  console.log(e)
+	      })
+	}
 
-function get_message_store_report_archive(taskId){
-    console.log("getting report uri ...")
-    var endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
-    platform.get(endpoint)
-      .then(function(resp){
-          var json = resp.json()
-          var date = new Date()
-          for (var i=0; i< json.records.length; i++){
-              var fileName = "message_store_content_" + date.toISOString() + "_" + i + ".zip"
-              get_message_store_report_archive_content(json.records[i].uri, fileName)
-          }
-      })
-      .catch(function(e){
-          console.log(e)
-      })
-}
+	function get_message_store_report_archive(taskId){
+	    console.log("getting report uri ...")
+	    var endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
+	    platform.get(endpoint)
+	      .then(function(resp){
+		  var json = resp.json()
+		  var date = new Date()
+		  for (var i=0; i< json.records.length; i++){
+		      var fileName = "message_store_content_" + date.toISOString() + "_" + i + ".zip"
+		      get_message_store_report_archive_content(json.records[i].uri, fileName)
+		  }
+	      })
+	      .catch(function(e){
+		  console.log(e)
+	      })
+	}
 
-function get_message_store_report_archive_content(contentUri, fileName){
-    var uri = platform.createUrl(contentUri, {addToken: true});
-    download(uri, fileName, function(){
-        console.log("Save report zip file to the local machine.")
-    })
-}
+	function get_message_store_report_archive_content(contentUri, fileName){
+	    var uri = platform.createUrl(contentUri, {addToken: true});
+	    download(uri, fileName, function(){
+		console.log("Save report zip file to the local machine.")
+	    })
+	}
 
-const download = function(uri, dest, cb) {
-    var file = fs.createWriteStream(dest);
-    var request = https.get(uri, function(response) {
-        response.pipe(file);
-        file.on('finish', function() {
-            file.close(cb);
-        });
-    });
-}
-```
+	const download = function(uri, dest, cb) {
+	    var file = fs.createWriteStream(dest);
+	    var request = https.get(uri, function(response) {
+		response.pipe(file);
+		file.on('finish', function() {
+		    file.close(cb);
+		});
+	    });
+	}
+	```
 
-```python tab="Python"
-from ringcentral import SDK
+=== "Python"
+	```python
+	from ringcentral import SDK
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
-platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+	sdk = SDK( "client_id", "client_secret", "server_url" )
+	platform = sdk.platform()
+	platform.login( "username", "extension", "password" )
 
-def create_message_store_report() :
-    endpoint = "/restapi/v1.0/account/~/message-store-report"
-    params = {
-        "dateFrom": "2019-01-01T00:00:00.000Z",
-        "dateTo": "2019-03-31T23:59:59.999Z"
-    }
-    response = platform.post(endpoint, params)
-    json = response.json()
-    get_message_store_report_task(json.id)
+	def create_message_store_report() :
+	    endpoint = "/restapi/v1.0/account/~/message-store-report"
+	    params = {
+		"dateFrom": "2019-01-01T00:00:00.000Z",
+		"dateTo": "2019-03-31T23:59:59.999Z"
+	    }
+	    response = platform.post(endpoint, params)
+	    json = response.json()
+	    get_message_store_report_task(json.id)
 
-def get_message_store_report_task(taskId):
-    print("check task creation status ...")
-    endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
-    response = platform.get(endpoint)
-    json = response.json()
-    if json.status == "Completed":
-        get_message_store_report_archive(taskId)
-    else:
-        time.sleep(2)
-        get_message_store_report_task(taskId)
+	def get_message_store_report_task(taskId):
+	    print("check task creation status ...")
+	    endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
+	    response = platform.get(endpoint)
+	    json = response.json()
+	    if json.status == "Completed":
+		get_message_store_report_archive(taskId)
+	    else:
+		time.sleep(2)
+		get_message_store_report_task(taskId)
 
-def get_message_store_report_archive(taskId):
-    print("getting report uri ...")
-    endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
-    response = platform.get(endpoint)
-    jsonObj = response.json()
-    length = len(jsonObj.records)
-    dateLog = datetime.datetime.today().strftime("%Y_%m_%d_%H_%M")
-    for i in range(length):
-        fileName = "message_store_content_" + dateLog + "_" + str(i) + ".zip"
-        get_message_store_report_archive_content(jsonObj.records[i].uri, fileName)
+	def get_message_store_report_archive(taskId):
+	    print("getting report uri ...")
+	    endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
+	    response = platform.get(endpoint)
+	    jsonObj = response.json()
+	    length = len(jsonObj.records)
+	    dateLog = datetime.datetime.today().strftime("%Y_%m_%d_%H_%M")
+	    for i in range(length):
+		fileName = "message_store_content_" + dateLog + "_" + str(i) + ".zip"
+		get_message_store_report_archive_content(jsonObj.records[i].uri, fileName)
 
-def get_message_store_report_archive_content(contentUri, zipFile):
-    print("Save report zip file to the local machine.")
-    uri = platform.create_url(contentUri, False, None, True);
-    print (uri)
-    fileHandler = urllib2.urlopen(uri)
-    with open(zipFile, 'wb') as output:
-        output.write(fileHandler.read())
+	def get_message_store_report_archive_content(contentUri, zipFile):
+	    print("Save report zip file to the local machine.")
+	    uri = platform.create_url(contentUri, False, None, True);
+	    print (uri)
+	    fileHandler = urllib2.urlopen(uri)
+	    with open(zipFile, 'wb') as output:
+		output.write(fileHandler.read())
 
 
-create_message_store_report()
-```
+	create_message_store_report()
+	```
 
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
+=== "PHP"
+	```php
+	<?php
+	require('vendor/autoload.php');
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-$platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+	$platform = $rcsdk->platform();
+	$platform->login( "username", "extension_number", "password" );
 
-create_message_store_report();
+	create_message_store_report();
 
-function create_message_store_report(){
-    global $platform;
-    echo ("create report ...\n");
-    $endpoint = "/account/~/message-store-report";
-    try {
-        $response = $platform->post($endpoint,
-            array(
-                'dateFrom' => "2019-03-01T00:00:00.000Z",
-                'dateTo' => "2019-03-31T23:59:59.999Z",
-            ));
-        $json = $response->json();
-        get_message_store_report_task($json->id);
-    }catch(\RingCentral\SDK\Http\ApiException $e) {
-        echo($e);
-    }
-}
+	function create_message_store_report(){
+	    global $platform;
+	    echo ("create report ...\n");
+	    $endpoint = "/account/~/message-store-report";
+	    try {
+		$response = $platform->post($endpoint,
+		    array(
+			'dateFrom' => "2019-03-01T00:00:00.000Z",
+			'dateTo' => "2019-03-31T23:59:59.999Z",
+		    ));
+		$json = $response->json();
+		get_message_store_report_task($json->id);
+	    }catch(\RingCentral\SDK\Http\ApiException $e) {
+		echo($e);
+	    }
+	}
 
-function get_message_store_report_task($taskId){
-    global $platform;
-    echo ("check task creation status ...\n");
-    $endpoint = "/account/~/message-store-report/" . $taskId;
-    try {
-        $response = $platform->get($endpoint);
-        $json = $response->json();
-        if ($json->status == "Completed")
-            get_message_store_report_archive($json->id);
-        else if ($json->status == "Accepted" || $json->status == "InProgress"){
-            sleep(2);
-            get_message_store_report_task($taskId);
-        }else
-          echo ($json->status);
-    }catch(\RingCentral\SDK\Http\ApiException $e) {
-        echo($e);
-    }
-}
+	function get_message_store_report_task($taskId){
+	    global $platform;
+	    echo ("check task creation status ...\n");
+	    $endpoint = "/account/~/message-store-report/" . $taskId;
+	    try {
+		$response = $platform->get($endpoint);
+		$json = $response->json();
+		if ($json->status == "Completed")
+		    get_message_store_report_archive($json->id);
+		else if ($json->status == "Accepted" || $json->status == "InProgress"){
+		    sleep(2);
+		    get_message_store_report_task($taskId);
+		}else
+		  echo ($json->status);
+	    }catch(\RingCentral\SDK\Http\ApiException $e) {
+		echo($e);
+	    }
+	}
 
-function get_message_store_report_archive($taskId){
-    global $platform;
-    echo ("getting report uri ...\n");
-    $endpoint = "/account/~/message-store-report/" . $taskId . "/archive";
-    try {
-        $response = $platform->get($endpoint);
-        $json = $response->json();
-        for ($i=0; $i < count($json->records); $i++){
-            $fileName = "message_store_content_" . date("Y_m_d_H_i", time()) . "_" . $i . ".zip";
-            get_message_store_report_archive_content($json->records[$i]->uri, $fileName);
-        }
-        echo ("Done!\n");
-    }catch(\RingCentral\SDK\Http\ApiException $e) {
-        echo($e);
-    }
-}
+	function get_message_store_report_archive($taskId){
+	    global $platform;
+	    echo ("getting report uri ...\n");
+	    $endpoint = "/account/~/message-store-report/" . $taskId . "/archive";
+	    try {
+		$response = $platform->get($endpoint);
+		$json = $response->json();
+		for ($i=0; $i < count($json->records); $i++){
+		    $fileName = "message_store_content_" . date("Y_m_d_H_i", time()) . "_" . $i . ".zip";
+		    get_message_store_report_archive_content($json->records[$i]->uri, $fileName);
+		}
+		echo ("Done!\n");
+	    }catch(\RingCentral\SDK\Http\ApiException $e) {
+		echo($e);
+	    }
+	}
 
-function get_message_store_report_archive_content($contentUri, $fileName){
-    global $platform;
-    global $archiveFolder;
-    echo ("Save report zip file to the local machine.\n");
-    $uri = $platform->createUrl($contentUri, array(
-        'addServer' => false,
-        'addMethod' => 'GET',
-        'addToken'  => true
-    ));
-    $dest = $archiveFolder.$fileName;
-    file_put_contents($dest, fopen($uri, 'r'));
-}
-```
+	function get_message_store_report_archive_content($contentUri, $fileName){
+	    global $platform;
+	    global $archiveFolder;
+	    echo ("Save report zip file to the local machine.\n");
+	    $uri = $platform->createUrl($contentUri, array(
+		'addServer' => false,
+		'addMethod' => 'GET',
+		'addToken'  => true
+	    ));
+	    $dest = $archiveFolder.$fileName;
+	    file_put_contents($dest, fopen($uri, 'r'));
+	}
+	```
 
-```c# tab="C#"
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+=== "C#"
+	```c#
+	using System;
+	using System.Threading.Tasks;
+	using RingCentral;
 
-namespace Export_MessageStore
-{
-    class Program
-    {
-        static RestClient rcsdk;
-        static void Main(string[] args)
-        {
-            rcsdk = new RestClient("client_id", "client_secret", "server_url");
-            await rcsdk.Authorize("username", "extension_number", "password");
-            export_message_store().Wait();
-        }
-        static private async Task export_message_store()
-        {
-            var parameters = new CreateMessageStoreReportRequest();
-            parameters.dateFrom = "2019-01-01T00:00:00.000Z";
-            parameters.dateTo = "2019-03-31T23:59:59.999Z";
+	namespace Export_MessageStore
+	{
+	    class Program
+	    {
+		static RestClient rcsdk;
+		static void Main(string[] args)
+		{
+		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
+		    await rcsdk.Authorize("username", "extension_number", "password");
+		    export_message_store().Wait();
+		}
+		static private async Task export_message_store()
+		{
+		    var parameters = new CreateMessageStoreReportRequest();
+		    parameters.dateFrom = "2019-01-01T00:00:00.000Z";
+		    parameters.dateTo = "2019-03-31T23:59:59.999Z";
 
-            var response = await rcsdk.Restapi().Account().MessageStoreReport().Post(parameters);
-            var jsonStr = JsonConvert.SerializeObject(response);
-            Console.WriteLine(jsonStr);
-            bool polling = true;
-            while (polling)
-            {
-                Console.WriteLine("check task creation status ...");
-                Thread.Sleep(5000);
-                response = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Get();
-                if (response.status != "InProgress")
-                {
-                    polling = false;
-                }
-            }
-            if (response.status == "Completed")
-            {
-                var resp = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Archive().List();
-                DateTime value = DateTime.Now;
-                var dateStr = value.ToString("yyyy-MM-dd-HH_mm");
-                for (var i = 0; i < resp.records.Length; i++)
-                {
-                    var fileName = "message_store_content_" + dateStr + "_" + i + ".zip";
-                    var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
-                    WebClient webClient = new WebClient();
-                    webClient.DownloadFile(contentUrl, fileName);
-                }
-            }
-        }
-    }
-}
-```
+		    var response = await rcsdk.Restapi().Account().MessageStoreReport().Post(parameters);
+		    var jsonStr = JsonConvert.SerializeObject(response);
+		    Console.WriteLine(jsonStr);
+		    bool polling = true;
+		    while (polling)
+		    {
+			Console.WriteLine("check task creation status ...");
+			Thread.Sleep(5000);
+			response = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Get();
+			if (response.status != "InProgress")
+			{
+			    polling = false;
+			}
+		    }
+		    if (response.status == "Completed")
+		    {
+			var resp = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Archive().List();
+			DateTime value = DateTime.Now;
+			var dateStr = value.ToString("yyyy-MM-dd-HH_mm");
+			for (var i = 0; i < resp.records.Length; i++)
+			{
+			    var fileName = "message_store_content_" + dateStr + "_" + i + ".zip";
+			    var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
+			    WebClient webClient = new WebClient();
+			    webClient.DownloadFile(contentUrl, fileName);
+			}
+		    }
+		}
+	    }
+	}
+	```
 
-```java tab="Java"
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.URL;
+=== "Java"
+	```java
+	import com.ringcentral.*;
+	import com.ringcentral.definitions.*;
+	import java.io.BufferedInputStream;
+	import java.io.FileOutputStream;
+	import java.io.IOException;
+	import java.net.URL;
 
-public class Export_MessageStore {
-    static RestClient rcsdk;
-    public static void main(String[] args) {
-        var obj = new Export_MessageStore();
-        rcsdk = new RestClient("client_id", "client_secret", "server_url");
-        try {
-            rcsdk.authorize("username", "extension_number", "password");
-            obj.export_message_store();
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
-    }
+	public class Export_MessageStore {
+	    static RestClient rcsdk;
+	    public static void main(String[] args) {
+		var obj = new Export_MessageStore();
+		rcsdk = new RestClient("client_id", "client_secret", "server_url");
+		try {
+		    rcsdk.authorize("username", "extension_number", "password");
+		    obj.export_message_store();
+		} catch (RestException | IOException e) {
+		    e.printStackTrace();
+		}
+	    }
 
-    public static void export_message_store() throws RestException, IOException{
-        var parameters = new CreateMessageStoreReportRequest();
-        parameters.dateFrom = "2019-01-01T00:00:00.000Z";
-        parameters.dateTo = "2019-03-31T23:59:59.999Z";
+	    public static void export_message_store() throws RestException, IOException{
+		var parameters = new CreateMessageStoreReportRequest();
+		parameters.dateFrom = "2019-01-01T00:00:00.000Z";
+		parameters.dateTo = "2019-03-31T23:59:59.999Z";
 
-        var response =  rcsdk.restapi().account().messagestorereport().post(parameters);
-        var taskId = response.id;
-        boolean polling = true;
-        while (polling)
-        {
-            System.out.println("check task creation status ...");
-            try {
-            	Thread.sleep(5000);
-            	response = rcsdk.restapi().account().messagestorereport(taskId).get();
-            	if (!response.status.equals("InProgress"))
-            		polling = false;
-            } catch (InterruptedException e) {
-    			e.printStackTrace();
-    		}
-        }
-        if (response.status.equals("Completed")) {
-        	SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd-HH_mm");
-        	Date date = new Date(System.currentTimeMillis());
-        	var dateStr = formatter.format(date);
-            var resp = rcsdk.restapi().account().messagestorereport(response.id).archive().list();
-            for (var i = 0; i < resp.records.length; i++)
-            {
-                var fileName = "./src/test/resources/message_store_content_" + dateStr + "_" + i + ".zip";
-                var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
-                try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
-                	FileOutputStream fileOS = new FileOutputStream(fileName)) {
-                	byte data[] = new byte[1024];
-                	int byteContent;
-                	while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-                		fileOS.write(data, 0, byteContent);
-                	}
-                } catch (IOException e) {
-                   // handles IO exceptions
-                }
-            }
-        }
-    }
-}
-```
+		var response =  rcsdk.restapi().account().messagestorereport().post(parameters);
+		var taskId = response.id;
+		boolean polling = true;
+		while (polling)
+		{
+		    System.out.println("check task creation status ...");
+		    try {
+			Thread.sleep(5000);
+			response = rcsdk.restapi().account().messagestorereport(taskId).get();
+			if (!response.status.equals("InProgress"))
+				polling = false;
+		    } catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		if (response.status.equals("Completed")) {
+			SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd-HH_mm");
+			Date date = new Date(System.currentTimeMillis());
+			var dateStr = formatter.format(date);
+		    var resp = rcsdk.restapi().account().messagestorereport(response.id).archive().list();
+		    for (var i = 0; i < resp.records.length; i++)
+		    {
+			var fileName = "./src/test/resources/message_store_content_" + dateStr + "_" + i + ".zip";
+			var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
+			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
+				FileOutputStream fileOS = new FileOutputStream(fileName)) {
+				byte data[] = new byte[1024];
+				int byteContent;
+				while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+					fileOS.write(data, 0, byteContent);
+				}
+			} catch (IOException e) {
+			   // handles IO exceptions
+			}
+		    }
+		}
+	    }
+	}
+	```
 
-```ruby tab="Ruby"
-require 'ringcentral'
-require "open-uri"
+=== "Ruby"
+	```ruby
+	require 'ringcentral'
+	require "open-uri"
 
-$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-def create_message_store_report()
-    endpoint = "/restapi/v1.0/account/~/message-store-report"
-    response = $rc.post(endpoint, payload: {
-        dateFrom: "2019-01-01T00:00:00.000Z",
-        dateTo: "2019-03-31T23:59:59.999Z"
-      })
-    puts response.body['id']
-    puts response.body['status']
-    get_message_store_report_task(response.body['id'])
-end
+	def create_message_store_report()
+	    endpoint = "/restapi/v1.0/account/~/message-store-report"
+	    response = $rc.post(endpoint, payload: {
+		dateFrom: "2019-01-01T00:00:00.000Z",
+		dateTo: "2019-03-31T23:59:59.999Z"
+	      })
+	    puts response.body['id']
+	    puts response.body['status']
+	    get_message_store_report_task(response.body['id'])
+	end
 
-def get_message_store_report_task(taskId)
-    puts "check task creation status ..."
-    endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
-    response = $rc.get(endpoint)
-    if response.body['status'] == "Completed"
-        get_message_store_report_archive(taskId)
-    else
-        sleep(2)
-        get_message_store_report_task(taskId)
-    end
-end
+	def get_message_store_report_task(taskId)
+	    puts "check task creation status ..."
+	    endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
+	    response = $rc.get(endpoint)
+	    if response.body['status'] == "Completed"
+		get_message_store_report_archive(taskId)
+	    else
+		sleep(2)
+		get_message_store_report_task(taskId)
+	    end
+	end
 
-def get_message_store_report_archive(taskId)
-    puts "getting report uri ..."
-    endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
-    response = $rc.get(endpoint)
-    length = response.body['records'].length
-    dateLog = Time.now.strftime("%Y_%m_%d_%H_%M")
-    for i in (0...length)
-        fileName = "message_store_content_" + dateLog + "_" + i.to_s + ".zip"
-        get_message_store_report_archive_content(response.body['records'][i]['uri'], fileName)
-    end
-end
+	def get_message_store_report_archive(taskId)
+	    puts "getting report uri ..."
+	    endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
+	    response = $rc.get(endpoint)
+	    length = response.body['records'].length
+	    dateLog = Time.now.strftime("%Y_%m_%d_%H_%M")
+	    for i in (0...length)
+		fileName = "message_store_content_" + dateLog + "_" + i.to_s + ".zip"
+		get_message_store_report_archive_content(response.body['records'][i]['uri'], fileName)
+	    end
+	end
 
-def get_message_store_report_archive_content(contentUri, zipFile)
-    puts "Save report zip file to the local machine."
-    uri = contentUri + "?access_token=" + $rc.token['access_token']
-    open(uri) do |data|
-      File.open(zipFile, "wb") do |file|
-        file.write(data.read)
-      end
-    end
-end
+	def get_message_store_report_archive_content(contentUri, zipFile)
+	    puts "Save report zip file to the local machine."
+	    uri = contentUri + "?access_token=" + $rc.token['access_token']
+	    open(uri) do |data|
+	      File.open(zipFile, "wb") do |file|
+		file.write(data.read)
+	      end
+	    end
+	end
 
-create_message_store_report()
-```
+	create_message_store_report()
+	```
 
 ## Relevant APIs for Further Reading
 
