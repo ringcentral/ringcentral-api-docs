@@ -81,12 +81,13 @@ pages:
       - 'Synchronization': 'voice/call-log/sync.md'
       - 'Best Practices': 'voice/call-log/best-practices.md'
       - 'Access Control': 'voice/call-log/access.md'
+    - 'Call Analytics':
+      - 'Calculating Call Metrics': 'voice/calculating-call-time-metrics.md'
     - 'Sample Applications':
       - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
       - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
       - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started':

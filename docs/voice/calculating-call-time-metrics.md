@@ -33,6 +33,12 @@ Information [on subscribing to event notifications is available in the Developer
 
 ## Call Time Metrics Calculations
 
+Call time metrics are performed by calculating the durations between specific call states as specified by the status code.
+
+An example time line is shown below:
+
+<img src="../call-time-metrics-time-line.png" style="width:100%"/>
+
 | Time Metric | Description | Algorithm |
 |-------------|-------------|-------------|
 | Ring&nbsp;Time| Ring time is the amount of time a call is spent in the ringing phase before the call parties are connected. | Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status. |
