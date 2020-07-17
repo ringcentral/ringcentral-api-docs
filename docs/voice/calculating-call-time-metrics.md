@@ -8,6 +8,8 @@ A popular use case for RingCentral APIs is to calculate the amount of time spent
 
 ## Using Telephony Session Events to Calculate Metrics
 
+[Telephony Session Notifications](../telephony-session-notifications) are the recommended way to calculate call time metrics.
+
 When receiving a stream of events, it is ipmortant to note the following:
 
 * All events for a particular call are grouped by the `telephonySessionId` which is unique per call.
@@ -31,15 +33,18 @@ Information [on subscribing to event notifications is available in the Developer
 
 ## Call Time Metrics Calculations
 
-In the following calculations, use the `eventTime`'s RFC-3339 `date-time` values to calculate the times.
-
 | Time Metric | Description | Algorithm |
 |-------------|-------------|-------------|
 | Ring&nbsp;Time| Ring time is the amount of time a call is spent in the ringing phase before the call parties are connected. | Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status. |
 | Talk&nbsp;Time | Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected. | Sum of all durations beginning with `Answered` status and ending with `Hold` or `Disconnected` status |
 | Hold&nbsp;Time | Hold time is the amount of time a user is listening to put on hold and lisstening to hold music. | Sum of all durations beginning with `Hold` status and ending with `Answered` or `Disconnected` status |
 
-Of note, the status code for "Unhold" is also `Answered`.
+Notes:
+
+1. the status code for "Unhold" is also `Answered`.
+1. use the `eventTime` values which are all RFC-3339 `date-time` values.
+
+See a list of all Status Codes in the [Telephony Sesion Notifcations overview page](../telephony-session-notifications).
 
 ## Example Events
 
