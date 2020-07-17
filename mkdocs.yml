@@ -23,6 +23,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed
   - codehilite:
       linenums: "None"
   - markdown_include.include:
@@ -136,6 +137,7 @@ pages:
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
     - 'Glip Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
+      - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
       - 'Build a Bot in Node': 'team-messaging/manual/node.md'
@@ -205,10 +207,10 @@ pages:
       - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
       - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
     - 'Developer Manual':
-      - 'Auth Tokens': 'authentication/tokens.md'
-      - 'Auth Code Flow': 'authentication/auth-code-flow.md'
+      - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
+      - 'Using Auth Tokens': 'authentication/tokens.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'

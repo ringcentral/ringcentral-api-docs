@@ -153,7 +153,7 @@ function get_glip_compliance_export_task(taskId){
           var json = resp.json()
           if (json.status == "Completed"){
               for (var i=0; i<json.datasets.length; i++){
-                var fileName = "glip-export-" + json.creationTime + "_" + i + ".zip"
+                var fileName = "glip-export-reports-" + json.creationTime + "_" + i + ".zip"
                 get_glip_report_archived_content(json.datasets[i].uri, fileName)
               }
           }else if (json.status == "Accepted" || json.status == "InProgress") {

@@ -1,6 +1,6 @@
 # Authorization Code Flow
 
-The "Authorization Code Flow," also referred to as a "3-legged authorization flow," is the most common and recommended form of authenticating RingCentral users within the context of an application. This process conforms to the OAuth 2.0 standard and works to:
+The "Authorization Code Flow," also referred to as a "3-legged authorization flow" or simply "OAuth" is the most common and recommended form of authenticating RingCentral users within the context of an application. This process conforms to the OAuth 2.0 standard and works to:
 
 * Keep a user's auth credentials secure, and out of the hands of a third-party.
 * Disclose what permissions an app requires.
