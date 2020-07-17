@@ -76,29 +76,31 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 
 Let's consider a simple example of a `GET` method — retrieving the version of the RingCentral REST API.
 
-```http tab="Request"
-GET /restapi/v1.0 HTTP/1.1
-Accept: application/json
-Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
-```
+=== "Request"
+	```http 
+	GET /restapi/v1.0 HTTP/1.1
+	Accept: application/json
+	Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
+	```
 
-```http tab="Response"
-HTTP/1.1 200 OK
-Content-Type: application/json
+=== "Response"
+	```http
+	HTTP/1.1 200 OK
+	Content-Type: application/json
 
-{
-  "uri" : "https.../restapi/",
-  "apiVersions" : [ {
-    "uri" : "https.../restapi/v1.0",
-    "versionString" : "1.0.9",
-    "releaseDate" : "2013-12-01T00:00:00.000Z",
-    "uriString" : "v1.0"
-  } ],
-  "serverVersion" : "6.1.0.846",
-  "serverRevision" : "294476"
-}
-```
-
+	{
+	  "uri" : "https.../restapi/",
+	  "apiVersions" : [ {
+	    "uri" : "https.../restapi/v1.0",
+	    "versionString" : "1.0.9",
+	    "releaseDate" : "2013-12-01T00:00:00.000Z",
+	    "uriString" : "v1.0"
+	  } ],
+	  "serverVersion" : "6.1.0.846",
+	  "serverRevision" : "294476"
+	}
+	```
+		
 !!! alert "FYI"
     Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.
 
