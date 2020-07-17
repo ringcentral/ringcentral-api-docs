@@ -6,7 +6,7 @@ A popular use case for RingCentral APIs is to calculate the amount of time spent
 1. Talk Time: this is the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
 1. Hold Time: this is the maoun tof time a party is on hold and listening to hold music.
 
-## Using Telephony Session Events to Caclulate Metrics
+## Using Telephony Session Events to Calculate Metrics
 
 When receiving a stream of events, it is ipmortant to note the following:
 
