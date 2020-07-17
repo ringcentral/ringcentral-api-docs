@@ -35,7 +35,7 @@ The ring time is the amount of time a call is spent in the ringing phasse before
 
 Ring time is calculated by adding the duration of the following event time periods:
 
-* Begin with `Proceeding` status and end with first `Answered` status
+* Duration begining with `Proceeding` status and ending with first `Answered` or `Disconnected` status
 
 ## Calculating Talk Time
 
@@ -43,7 +43,7 @@ Talk time is the amount of time two or more parties are connected with each othe
 
 Talk time is calculated by adding the duration of the following event time periods
 
-* Begin with any `Answered` status and end with `Hold` or `Disconnected` status
+* All durations beginning with `Answered` status and ending with `Hold` or `Disconnected` status
 
 Of note, the status code for "Unhold" is also `Answered`.
 
@@ -55,7 +55,7 @@ Hold time is the amount of time a user is listening to put on hold and lisstenin
 
 Hold time is calculated by adding the duration of the following event time periods:
 
-* Start with any `Hold` status and end with `Answered` or `Disconnected` status
+* All durations beginning with `Hold` status and ending with `Answered` or `Disconnected` status
 
 These states are documented in the "Calculating Ring Time" section above.
 
