@@ -6,17 +6,6 @@ A popular use case for RingCentral APIs is to calculate the amount of time spent
 1. Talk Time: this is the amount of time when two or more parties are connected (not on hold). Calls with less than half a second of talk time are not recoreded in the RingCentral system.
 1. Hold Time: this is the maoun tof time a party is on hold and listening to hold music.
 
-## Subscribing to Telephony Session Events
-
-Use the standard subscription approach with either of the following event filters:
-
-* [Account Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
-* [Extension Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
-
-Detailed information on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
-
-Information [on subscribing to event notifications is available in the Developer Guide](../../notifications).
-
 ## Using Telephony Session Events to Caclulate Metrics
 
 When receiving a stream of events, it is ipmortant to note the following:
@@ -27,6 +16,19 @@ When receiving a stream of events, it is ipmortant to note the following:
 
 The `telephonySessionId`, `sequence` and `eventTime` properties are in the event's `body` property. The `status.code` property is in the body's `parties` array. All of these are shown below.
 
+### Subscribing to Telephony Session Events
+
+Here is some information to get started on using Telephony Session Events.
+
+Use the standard subscription approach with either of the following event filters:
+
+* [Account Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
+* [Extension Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
+
+Detailed information on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
+
+Information [on subscribing to event notifications is available in the Developer Guide](../../notifications).
+
 ## Calculating Ring Time
 
 The ring time is the amount of time a call is spent in the ringing phasse before the call parties are connected.
@@ -35,7 +37,35 @@ Ring time is calculated by adding the duration of the following event time perio
 
 * Start with `Proceeding` status and end with `Answered` status
 
-Two abbreviated events would look like:
+## Calculating Talk Time
+
+Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected.
+
+Talk time is calculated by adding the duration of the following event time periods
+
+* Start with `Answered` status and end with `Hold` status
+* Start with `Answered` status and end with `Disconnected` status
+
+Of note, the status code for "Unhold" is also `Answered`.
+
+The first `Answered` status event is the same event in the "Calculating Ring Time" section above.
+
+## Calculating Hold Time
+
+Hold time is the amount of time a user is listening to put on hold and lisstening to hold music.
+
+Hold time is calculated by adding the duration of the following event time periods:
+
+* Start with `Hold` status and end with `Answered` status
+* Start with `Hold` status and end with `Disconnected` status
+
+These states are documented in the "Calculating Ring Time" section above.
+
+## Example Events
+
+The following are example eveents in a call to calculate call time metrics.
+
+Note: these are partial events with most propertieses removed, to highight the properties needed to caculate various call talk time metrics.
 
 ### Ring Time - Proceeding Event
 
@@ -78,20 +108,6 @@ This is a partial event just highliighting the important properties:
   }
 }
 ```
-
-## Calculating Talk Time
-
-Talk time is the amount of time two or more parties are connected with each other and not on hold. When a user is put on hold, the person hears hold music and is thus not connected.
-
-Talk time is calculated by adding the duration of the following event time periods
-
-* Start with `Answered` status and end with `Hold` status
-* Start with `Answered` status and end with `Disconnected` status
-
-Of note, the status code for "Unhold" is also `Answered`.
-
-The first `Answered` status event is the same event in the "Calculating Ring Time" section above.
-
 ### Talk Time - Hold Event
 
 This is a partial event just highliighting the important properties:
@@ -154,17 +170,6 @@ This is a partial event just highliighting the important properties:
   }
 }
 ```
-
-## Calculating Hold Time
-
-Hold time is the amount of time a user is listening to put on hold and lisstening to hold music.
-
-Hold time is calculated by adding the duration of the following event time periods:
-
-* Start with `Hold` status and end with `Answered` status
-* Start with `Hold` status and end with `Disconnected` status
-
-These states are documented in the "Calculating Ring Time" section above.
 
 !!! note "Current limitations of Telephony Session Notifications."
     In our initial implementation notification won't be delivered in the following scenarios:
