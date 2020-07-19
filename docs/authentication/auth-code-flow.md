@@ -102,27 +102,29 @@ The server responds with an access token which can presented in subsequent reque
     
 **Example**
 
-```http tab="Request"
-POST /restapi/oauth/token HTTP/1.1 
-Accept: application/json 
-Content-Type: application/x-www-form-urlencoded 
-Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDMTFQMDFQQVMwM
-  XxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaHBuWHZINGM2WTdqaWlBOE
-  VhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tl
-  qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
-```
+=== "Request"
+	```http
+	POST /restapi/oauth/token HTTP/1.1 
+	Accept: application/json 
+	Content-Type: application/x-www-form-urlencoded 
+	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDMTFQMDFQQVMwM
+	  XxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaHBuWHZINGM2WTdqaWlBOE
+	  VhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tl
+	  qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
+	```
 
-```http tab="Response"
-HTTP/1.1 200 OK
-Content-Type: application/json
-    
-{
-   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-   "token_type" : "bearer",
-   "expires_in" : 7199,
-   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
-   "refresh_token_expires_in" : 604799,
-   "scope" : "AccountInfo CallLog ExtensionInfo Messages SMS",
-   "owner_id" : "256440016"
-}
-```
+=== "Response"
+	```http
+	HTTP/1.1 200 OK
+	Content-Type: application/json
+	    
+	{
+	   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+	   "token_type" : "bearer",
+	   "expires_in" : 7199,
+	   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+	   "refresh_token_expires_in" : 604799,
+	   "scope" : "AccountInfo CallLog ExtensionInfo Messages SMS",
+	   "owner_id" : "256440016"
+	}
+	```

@@ -313,14 +313,17 @@ The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material
 
 Multiple code blocks in a row will automatically be grouped into a set of tabs. This utilizes the [superfences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) markdown extension.
 
-```c tab=
-printf("HELLO WORLD!");
-```
+=== "C"
+	```c
+	printf("HELLO WORLD!");
+	```
 
-```java tab=
-System.out.println("HELLO WORLD!");
-```
+=== "Java"
+	```java
+	System.out.println("HELLO WORLD!");
+	```
 
-```python tab=
-print("HELLO WORLD!")
-```
+=== "Python"
+	```python
+	print("HELLO WORLD!")
+	```

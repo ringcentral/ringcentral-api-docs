@@ -213,22 +213,22 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    response = platform.get(endpoint)
 	    jsonObj = response.json()
 	    if jsonObj.status == "Completed":
-		length = len(jsonObj.datasets)
-		for i in range(length):
-		    fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-		    get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
+			length = len(jsonObj.datasets)
+			for i in range(length):
+		    		fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
+		    		get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
 	    elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
-		time.sleep(5)
-		get_glip_compliance_export_task(taskId)
+			time.sleep(5)
+			get_glip_compliance_export_task(taskId)
 	    else:
-		print (jsonObj.status)
+			print (jsonObj.status)
 
 	def get_glip_report_archived_content(contentUri, zipFile):
 	    print("Save export zip file to the local machine.")
 	    uri = platform.create_url(contentUri, False, None, True);
 	    fileHandler = urllib2.urlopen(uri)
 	    with open(zipFile, 'wb') as output:
-		output.write(fileHandler.read())
+			output.write(fileHandler.read())
 
 	create_glip_compliance_export_task()
 	```

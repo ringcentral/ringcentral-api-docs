@@ -55,12 +55,13 @@ After you create that file, `certbot` will create two files:
 
 Use the following configurations to install your key and certificate in your webserver. For Let's Encrypt, you will receive two certificates, one for your server and another for the Let's Encrypt Intermediatee CA. Both of these need to be provided by your server.
 
-```http tab="Apache"
-SSLEngine on
-SSLProtocol -all +TLSv1.2 +TLSv1.3
-SSLCertificateFile /etc/letsencrypt/live/mysite.com/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/mysite.com/privkey.pem
-```
+=== "Apache"
+	```http
+	SSLEngine on
+	SSLProtocol -all +TLSv1.2 +TLSv1.3
+	SSLCertificateFile /etc/letsencrypt/live/mysite.com/fullchain.pem
+	SSLCertificateKeyFile /etc/letsencrypt/live/mysite.com/privkey.pem
+	```
 
 * Note: In Apache 2.4.8 and above, Apache will handle both the server certificate and the intermedidiate CA certificate(s) in the `SSLCertificateFile` directive. Below 2.4.8, a separate directive is needed for the intermediate CA, the `SSLCertificateChainFile` directive. Other web servers may have similar requirements.
 
@@ -70,15 +71,16 @@ With Let's Encrypt, there are also ways to fully automate the process for certif
 
 For example, [CertMagic](https://github.com/caddyserver/certmagic) for Go implements the [AMCE Protocol](https://tools.ietf.org/html/rfc8555) and handles the entire process requesting, loading, and renewing certificates transparently. You just need to start your HTTPS server using it with a single line.
 
-```go tab="Go"
-import "github.com/caddyserver/certmagic"
+=== "Go"
+	```go
+	import "github.com/caddyserver/certmagic"
 
-// Replace the following:
-// http.ListenAndServe(":80", mux)
+	// Replace the following:
+	// http.ListenAndServe(":80", mux)
 
-// with encrypted HTTPS with HTTP->HTTPS redirects 🔒😍
-certmagic.HTTPS([]string{"example.com"}, mux)
-```
+	// with encrypted HTTPS with HTTP->HTTPS redirects 🔒😍
+	certmagic.HTTPS([]string{"example.com"}, mux)
+	```
 
 ## Checking Certificate Status
 
