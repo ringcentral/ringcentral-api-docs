@@ -266,7 +266,7 @@ The following code sample shows how to create a user custom answering rule that 
 
 Upon successful API call completion, the response contains the id (`ruleId`) and other information of the newly created rule.
 
-```json hl_lines="3", linenums="1"
+```json hl_lines="3"
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178002314/extension/178009114/answering-rule/227207004",
   "id": "227207004",
@@ -285,7 +285,7 @@ To get a list of all user answering rules for an extension, make a GET request t
 Required permission(s): ReadExtensions
 
 Upon successful API call completion, the response contains a list of all existing user answering rules (including the default rules).
-```json hl_lines="6 13", linenums="1"
+```json hl_lines="6 13"
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&perPage=100",
   "records": [

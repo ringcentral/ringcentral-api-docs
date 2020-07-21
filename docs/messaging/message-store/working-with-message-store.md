@@ -180,7 +180,7 @@ The following code sample shows how to call the Message Store to display a list 
 
 This example response shows the `to`, `from`, `type`, `readStatus`, `direction` and `subject` amongst other properties of an SMS message record from the message store:
 
-```json hl_lines="6 7 8 9 10 11 12 13 15 23 25",linenums="1"
+```json hl_lines="6 7 8 9 10 11 12 13 15 23 25"
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
   "records" : [ {

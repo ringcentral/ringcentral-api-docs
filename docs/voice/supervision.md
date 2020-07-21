@@ -222,7 +222,7 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 * Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
 * Line 26: `p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2` the party-id here is the monitored party-id.
 
-```http hl_lines="10 26" linenums="1"
+```http hl_lines="10 26"
 |||INVITE sip:18005557562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
 ||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
 ||||Max-Forwards: 69

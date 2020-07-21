@@ -42,7 +42,7 @@ Required permission(s):  Glip
 
 If successful, the response will contain the task ID and the status of the newly created task as shown below.
 
-```json hl_lines="3", linenums="1"
+```json hl_lines="3"
 {
   "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
   "id":"809646016-xx-yy",
@@ -76,7 +76,7 @@ To check the status of a task, make a GET request to `/restapi/v1.0/glip/data-ex
 
 When successful, the response will contain the id (taskId) and the status of the newly created task.
 
-```json hl_lines="3 6", linenums="1"
+```json hl_lines="3 6"
 {
   "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
   "id":"809646016-xx-yy",

@@ -311,8 +311,7 @@ The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material
 
 ### Tabbed Code Blocks
 
-Multiple code blocks in a row will automatically be grouped into a set of tabs. This utilizes the [superfences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) markdown extension.
-
+Multiple code blocks in a row will automatically be grouped into a set of tabs with the syntax shown below. Spacing issues can occur in final results so double check all work. === "title" and then the ``` "code" ``` to complete it.
 === "C"
 	```c
 	printf("HELLO WORLD!");

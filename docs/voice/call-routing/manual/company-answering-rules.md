@@ -272,7 +272,7 @@ Required permission(s): ReadAccounts
 
 Upon successful API call completion, the response contains a list of all existing answering rules (including the default rules).
 
-```json hl_lines="6 13", linenums="1"
+```json hl_lines="6 13"
 {
   "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/answering-rule?page=1&perPage=100",
   "records": [
