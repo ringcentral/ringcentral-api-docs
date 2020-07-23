@@ -203,7 +203,7 @@ To read all forwarding numbers:
 Required permission(s): ReadExtensions
 
 Upon successful API call completion, the response contains a list of predefined forwarding numbers
-```json hl_lines="6 17 25", linenums="1"
+```json hl_lines="6 17 25"
 {
   "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number?page=1&perPage=100",
   "records":[

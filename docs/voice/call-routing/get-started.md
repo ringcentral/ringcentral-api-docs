@@ -148,8 +148,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 	try:
 	    resp = platform.get('/account/~/extension/~/answering-rule', params)
 	    for record in resp.json().records:
-		rule = platform.get('/account/~/extension/~/answering-rule/' + record.id)
-		print (rule.text())
+			rule = platform.get('/account/~/extension/~/answering-rule/' + record.id)
+			print (rule.text())
 	except Exception as e:
 	    print(e)
 	```

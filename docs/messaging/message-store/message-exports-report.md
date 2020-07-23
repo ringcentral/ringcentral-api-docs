@@ -53,7 +53,7 @@ Required permission(s):  ReadMessages
 
 Upon successful API call completion, the response contains the id (taskId) and the status of the newly created task.
 
-```json hl_lines="3 4", linenums="1"
+```json hl_lines="3 4"
 {
   uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   id: '178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
@@ -77,7 +77,7 @@ To check the status of a task, make a GET request to `/restapi/v1.0/account/~/me
 If the report is ready, the task status is marked as “Completed”.
 
 Upon successful API call completion, the response contains the id (taskId) and the status of the newly created task.
-```json hl_lines="3 4", linenums="1"
+```json hl_lines="3 4"
 {
   uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   id: '178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
@@ -94,7 +94,7 @@ Upon successful API call completion, the response contains the id (taskId) and t
 When a task is created successfully and completed, make a GET request to the `/restapi/v1.0/account/~/message-store-report/[taskId]/archive` endpoint. Where the `taskId` is the value of the `id` returned in the previous step.
 
 Upon successful API call completion, the response is a list of records. Each record contains the URI of the archival file and the size of that file.
-```json hl_lines="4 5", linenums="1"
+```json hl_lines="4 5"
 {
   records: [
   {

@@ -24,7 +24,7 @@ To read all call queue extensions from an account:
 Required permission(s): ReadAccounts
 
 **Sample Response**
-```json hl_lines="6", linenums="1"
+```json hl_lines="6"
 {
   "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&page=1&perPage=100",
   "records" : [
@@ -163,13 +163,13 @@ The following code sample shows how to add 2 new members to a call queue named "
 
 	resp = platform.get('/restapi/v1.0/account/~/call-queues')
 	for group in resp.json().records:
-	    if group.name == 'Support Department':
-		resp = platform.post('/restapi/v1.0/account/~/call-queues/'+group.id+"/bulk-assign",
-		{
-		    'addedExtensionIds': ['888888888', '999999999']
-		})
-		print (resp.response())
-		break
+	   	 if group.name == 'Support Department':
+			resp = platform.post('/restapi/v1.0/account/~/call-queues/'+group.id+"/bulk-assign",
+			{
+		    	'addedExtensionIds': ['888888888', '999999999']
+			})
+			print (resp.response())
+			break
 	```
 
 === "PHP"

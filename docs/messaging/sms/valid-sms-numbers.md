@@ -157,7 +157,7 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 
 This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
 
-```json hl_lines="12 13 14",linenums="1"
+```json hl_lines="12 13 14"
 {
   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/phone-number?page=1&perPage=100",
   "records":[
