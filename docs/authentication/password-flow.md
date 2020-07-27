@@ -2,6 +2,9 @@
 
 Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow to implement. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
 
+!!! warning "Password Flow cannot be used if Single Sign-On is enforced"
+    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. 
+
 !!! warning "Password Flow is rarely recommended"
     The Password Flow is considered by many to be less secure because it requires an app to store a username and password in plain text by the server or client utilizing it. Utilizing the password flow requires an additional level of trust between you and the application.
 
