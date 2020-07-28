@@ -1,5 +1,14 @@
 .tabbed-content p {
-    padding: 20px 20px 0 20px;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.tabbed-content h1,
+.tabbed-content h2,
+.tabbed-content h3,
+.tabbed-content h4,
+.tabbed-content h5
+{
+    padding-left: 1rem;
 }
 
 #sidebar-nav .nav li.nav-item > ul {
