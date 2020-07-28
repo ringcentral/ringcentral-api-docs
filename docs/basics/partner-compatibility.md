@@ -6,8 +6,9 @@ Our partners include:
 
 * AT&T Office@Hand
 * Avaya Cloud Office
-* TELUS
 * BT Cloud Work
+* TELUS
+* Unify Office
 
 ??? tip "Learn how to promote your app to our partners"
     Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
