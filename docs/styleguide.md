@@ -215,11 +215,6 @@ Use the [Keys extension](https://facelessuser.github.io/pymdown-extensions/exten
 
 Call outs, or "admonitions," can be used to call special attention to important details or facets. They can optionally expand/collapse, and can even be nested. 
 
-???+ note "Open styled details"
-
-    ??? danger "Nested details!"
-        And more content again.
-
 The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) allows for the creation of an array of call outs.
 
 * note
@@ -301,6 +296,13 @@ The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material
     5. On the third page of the create app wizard, select the following permissions:
          * RingOut
     6. We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.
+
+### Nested Call Outs
+
+???+ note "Open styled details"
+
+    ??? danger "Nested details!"
+        And more content again.
 
 ## Tabs
 
