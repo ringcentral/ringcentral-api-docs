@@ -185,6 +185,7 @@ pages:
              - 'Avaya Cloud Office': 'basics/partners/aco.md'
              - 'BT Cloud Work': 'basics/partners/bt.md'
              - 'TELUS Business Connect': 'basics/partners/telus.md'
+	     - 'Unify Office': 'basics/partners/atos.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
