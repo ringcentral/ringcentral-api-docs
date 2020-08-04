@@ -70,7 +70,7 @@ You will need to submit the following resources using the same process you follo
 
 Once submitted, RingCentral will review your App for compliance to Avaya Cloud Office requirements. You will receive pertinent feedback on steps to approval.
 
-When approved, and assuming this is a public App, it will have listed on the RingCentral App Gallery. This App Gallery serves as a great discovery portal for your App and prospective users can download or sign up for your App from here.
+When approved, and assuming this is a public App, it will be listed on the RingCentral App Gallery. This App Gallery serves as a great discovery portal for your App and prospective users can download or sign up for your App from here.
 
 We are excited to see you develop and scale your App across RingCentral and Avaya Cloud Office!
 

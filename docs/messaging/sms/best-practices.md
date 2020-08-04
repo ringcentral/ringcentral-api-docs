@@ -27,7 +27,7 @@ If you use URLs in your message, the following are important considerations are 
     
     If you wish to use one for text messages, check to see the service supports ussing your own domain, sometimes called custom domains or vanity URLs.
 
-    Somoe common public / shared domain shorteners to avoid include:
+    Some common public / shared domain shorteners to avoid include:
     - bit.ly
     - goo.gl
     - tinyurl.com
