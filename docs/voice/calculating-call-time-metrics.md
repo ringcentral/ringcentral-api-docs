@@ -37,7 +37,7 @@ Call time metrics are performed by calculating the durations between specific ca
 
 An example time line is shown below:
 
-<img src="../ringcentral-call-time-metrics-timeline.svg" style="width:100%"/>
+<img src="../ringcentral-call-time-metrics-timeline.png" style="width:100%"/>
 
 | Time Metric | Description | Algorithm |
 |-------------|-------------|-------------|
