@@ -66,24 +66,26 @@ Content Type: application/json
 	
 **Example**
 
-```http tab="Request"
-POST /restapi/oauth/token HTTP/1.1 
-Accept: application/json 
-Content-Type: application/x-www-form-urlencoded 
-Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
-grant_type=password&username=18559100010&extension=101&password=121212             
-```
+=== "Request"
+	```http
+	POST /restapi/oauth/token HTTP/1.1 
+	Accept: application/json 
+	Content-Type: application/x-www-form-urlencoded 
+	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
+	grant_type=password&username=18559100010&extension=101&password=121212             
+	```
 
-```http tab="Response"
-HTTP/1.1 200 OK
-Content-Type: application/json
-        
-{
-   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-   "token_type" : "bearer",
-   "expires_in" : 7199,
-   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
-   "refresh_token_expires_in" : 604799,
-   "owner_id" : "256440016"
-}
-```
+=== "Response"
+	```http
+	HTTP/1.1 200 OK
+	Content-Type: application/json
+		
+	{
+	   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+	   "token_type" : "bearer",
+	   "expires_in" : 7199,
+	   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+	   "refresh_token_expires_in" : 604799,
+	   "owner_id" : "256440016"
+	}
+	```

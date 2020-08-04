@@ -6,23 +6,25 @@ Glip provides developers with a mechanism to make it easier to post messages to 
 
 To create a Glip webhook, a developer specifies a group or team ID into which a Glip post will be created when a message is posted to the webhook URL that is returned. Let's look at a sample request and response for how a webhook URL is generated.
 
-```http tab="Request"
-POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/6090227714/webhooks
-```
+=== "Request"
+	```http
+	POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/6090227714/webhooks
+	```
 
-```json tab="Response" hl_lines="9"
-{
-    "id": "3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
-    "creatorId": "61307231006",
-    "groupIds": [
-        "6090227714"
-    ],
-    "creationTime": "2018-12-11T16:29:02.185Z",
-    "lastModifiedTime": "2018-12-11T16:29:02.185Z",
-    "uri": "https://hooks.glip.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
-    "status": "Active"
-}
-```
+=== "Response"
+	```json 
+	{
+	    "id": "3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
+	    "creatorId": "61307231006",
+	    "groupIds": [
+		"6090227714"
+	    ],
+	    "creationTime": "2018-12-11T16:29:02.185Z",
+	    "lastModifiedTime": "2018-12-11T16:29:02.185Z",
+	    "uri": "https://hooks.glip.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
+	    "status": "Active"
+	}
+	```
 
 A URL is provisioned for each webhook (as shown above in the sample response) which is bound to the Glip Team or Group that was used when the webhook was created. When a developer posts to that URL, Glip will create a post within the corresponding group or team.
 

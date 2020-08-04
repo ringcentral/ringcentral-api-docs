@@ -18,137 +18,143 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 
 ## Sample Code to Get Started with Call Log
 
-```javascript tab="JavaScript"
-const RC = require('ringcentral');
+=== "JavaScript"
+	```javascript 
+	const RC = require('ringcentral');
 
-var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
-var platform = rcsdk.platform();
+	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var platform = rcsdk.platform();
 
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
-      .then(function(resp) {
-          read_user_calllog()
-      });
+	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+	      .then(function(resp) {
+		  read_user_calllog()
+	      });
 
-function read_user_calllog(){
-    platform.get('/account/~/extension/~/call-log', {
-             view: 'Detailed'
-        })
-        .then(function (resp) {
-            for (var record of resp.json().records)
-              console.log("Call type: " + record.type)
-        });
-}
-```
+	function read_user_calllog(){
+	    platform.get('/account/~/extension/~/call-log', {
+		     view: 'Detailed'
+		})
+		.then(function (resp) {
+		    for (var record of resp.json().records)
+		      console.log("Call type: " + record.type)
+		});
+	}
+	```
 
-```python tab="Python"
-from ringcentral import SDK
+=== "Python"
+	```python
+	from ringcentral import SDK
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
-platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+	sdk = SDK( "client_id", "client_secret", "server_url" )
+	platform = sdk.platform()
+	platform.login( "username", "extension", "password" )
 
-params = {
-    'view': 'Detailed'
-}
-resp = platform.get('/restapi/v1.0/account/~/extension/~/call-log', params)
-for record in resp.json().records:
-    print "Call type: " + record.type
-```
+	params = {
+	    'view': 'Detailed'
+	}
+	resp = platform.get('/restapi/v1.0/account/~/extension/~/call-log', params)
+	for record in resp.json().records:
+	    print "Call type: " + record.type
+	```
 
-```php tab="PHP"
-<?php
-require('vendor/autoload.php');
+=== "PHP"
+	```php
+	<?php
+	require('vendor/autoload.php');
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
-$platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+	$platform = $rcsdk->platform();
+	$platform->login( "username", "extension_number", "password" );
 
-$params = array(
-   'view' => 'Detailed'
-    );
-$resp = $platform->get('/account/~/extension/~/call-log', $params);
-foreach ($resp->json()->records as $record) {
-    print_r ("Call type: ".$record->type);
-}
-?>
-```
+	$params = array(
+	   'view' => 'Detailed'
+	    );
+	$resp = $platform->get('/account/~/extension/~/call-log', $params);
+	foreach ($resp->json()->records as $record) {
+	    print_r ("Call type: ".$record->type);
+	}
+	?>
+	```
 
-```c# tab="C#"
-using System;
-using System.Threading.Tasks;
-using RingCentral;
+=== "C#"
+	```c#
+	using System;
+	using System.Threading.Tasks;
+	using RingCentral;
 
-namespace Read_CallLog
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            read_user_calllog().Wait();
-        }
-        static private async Task read_user_calllog()
-        {
-            RestClient rc = new RestClient("client_id", "client_secret", false);
-            await rc.Authorize("username", "extension_number", "password");
-            var parameters = new ReadUserCallLogParameters();
-            parameters.view = "Detailed";
+	namespace Read_CallLog
+	{
+	    class Program
+	    {
+		static void Main(string[] args)
+		{
+		    read_user_calllog().Wait();
+		}
+		static private async Task read_user_calllog()
+		{
+		    RestClient rc = new RestClient("client_id", "client_secret", false);
+		    await rc.Authorize("username", "extension_number", "password");
+		    var parameters = new ReadUserCallLogParameters();
+		    parameters.view = "Detailed";
 
-            var resp = await rc.Restapi().Account().Extension().CallLog().List(parameters);
-            foreach (CallLogRecord record in resp.records)
-            {
-                Console.WriteLine("Call type: " + record.type);
-            }
-        }
-    }
-}
-```
+		    var resp = await rc.Restapi().Account().Extension().CallLog().List(parameters);
+		    foreach (CallLogRecord record in resp.records)
+		    {
+			Console.WriteLine("Call type: " + record.type);
+		    }
+		}
+	    }
+	}
+	```
 
-```java tab="Java"
-package Read_CallLog;
+=== "Java"
+	```java
+	package Read_CallLog;
 
-import java.io.IOException;
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+	import java.io.IOException;
+	import com.ringcentral.*;
+	import com.ringcentral.definitions.*;
 
-public class Read_CallLog {
-    public static void main(String[] args) {
-        try {
-            readUserCallLog();
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
-    }
+	public class Read_CallLog {
+	    public static void main(String[] args) {
+		try {
+		    readUserCallLog();
+		} catch (RestException | IOException e) {
+		    e.printStackTrace();
+		}
+	    }
 
-  	public static void readUserCallLog() throws RestException, IOException{
-        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-        rc.authorize("username", "extension_number", "password");
+		public static void readUserCallLog() throws RestException, IOException{
+		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+		rc.authorize("username", "extension_number", "password");
 
-        ReadUserCallLogParameters getParameters = new ReadUserCallLogParameters();
-        parameters.view = "Detailed"
+		ReadUserCallLogParameters getParameters = new ReadUserCallLogParameters();
+		parameters.view = "Detailed"
 
-        var response = rc.restapi().account().extension().calllog().list(parameters);
-  	    for (CallLogRecord record : response.records) {
-  	    	System.out.println("Call type: " + record.type);
-  	    }
-    }
-}
-```
+		var response = rc.restapi().account().extension().calllog().list(parameters);
+		    for (CallLogRecord record : response.records) {
+			System.out.println("Call type: " + record.type);
+		    }
+	    }
+	}
+	```
 
-```ruby tab="Ruby"
-require 'ringcentral'
+=== "Ruby"
+	```ruby
+	require 'ringcentral'
 
-rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
+	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-resp = rc.get('/restapi/v1.0/account/~/extension/~/call-log', {
-    view: 'Detailed'
-})
+	resp = rc.get('/restapi/v1.0/account/~/extension/~/call-log', {
+	    view: 'Detailed'
+	})
 
-for record in resp.body['records'] do
-    puts "Call type: " + record['type']
-end
-```
+	for record in resp.body['records'] do
+	    puts "Call type: " + record['type']
+	end
+	```
 
 ## Call Log API Permissions
 

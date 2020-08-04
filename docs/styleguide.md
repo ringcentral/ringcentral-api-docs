@@ -348,20 +348,19 @@ You can create tabs using the [Tabbed Extension](https://facelessuser.github.io/
 
 ### Tabbed Code Blocks
 
-=== "C"
+Multiple code blocks in a row will automatically be grouped into a set of tabs with the syntax shown below. Spacing issues can occur in final results so double check all work. === "title" and then the ``` "code" ``` to complete it.
 
-    ```c
-    printf("HELLO WORLD!");
-    ```
+=== "C"
+	```c
+	printf("HELLO WORLD!");
+	```
 
 === "Java"
-
-    ```java
-    System.out.println("HELLO WORLD!");
-    ```
+	```java
+	System.out.println("HELLO WORLD!");
+	```
 
 === "Python"
-
-    ```python
-    print("HELLO WORLD!")
-    ```
+	```python
+	print("HELLO WORLD!")
+	```

@@ -48,37 +48,39 @@ The Call Supervision API is used to have RingCentral initiate a call out to a re
 
 The following is an example request showing the required parameters to add a supervisor to an existing call session.
 
-```HTTP tab="Raw"
-POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
-Content-Type: application/json
-Content-Length: ACTUAL_CONTENT_LENGTH_HERE
-Authorization: <YOUR_ACCESS_TOKEN>
+=== "Raw"
+	```HTTP 
+	POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
+	Content-Type: application/json
+	Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+	Authorization: <YOUR_ACCESS_TOKEN>
 
-{  
-   "mode": "Listen",
-   "extensionNumber": "108",
-   "deviceId": "60727004"
-}
-```
+	{  
+	   "mode": "Listen",
+	   "extensionNumber": "108",
+	   "deviceId": "60727004"
+	}
+	```
 
-```Ruby tab="Ruby"
-require 'ringcentral'
+=== "Ruby"
+	```Ruby 
+	require 'ringcentral'
 
-rc = RingCentral.new(
-  'client_id',
-  'client_secret',
-  'https://platform.ringcentral.com')
-  
-rc.authorize username: '+16505550100',
-  extension: '',
-  password:  'my_password')
+	rc = RingCentral.new(
+	  'client_id',
+	  'client_secret',
+	  'https://platform.ringcentral.com')
+	  
+	rc.authorize username: '+16505550100',
+	  extension: '',
+	  password:  'my_password')
 
-res = rc.post '/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise', payload: {  
-   "mode": "Listen",
-   "extensionNumber": "108",
-   "deviceId": "60727004"
-}
-```
+	res = rc.post '/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise', payload: {  
+	   "mode": "Listen",
+	   "extensionNumber": "108",
+	   "deviceId": "60727004"
+	}
+	```
 
 #### Parameters
 
@@ -100,75 +102,79 @@ The `telephonySessionId` and `extensionNumber` properties can be retrieved from 
 
 The following example shows how to retrieve the `telephonySessionId` uses the account-level presence API. The agent extension is in the `extension.extensionNumber` property and the `telephonySessionId` is in the `activeCalls[0].telephonySessionId` property.
 
-```json tab="Response" hl_lines="6 34"
-{
-   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
-   "extension":{
-      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
-      "id":62226587016,
-      "extensionNumber":"108"
-   },
-   "presenceStatus":"Busy",
-   "telephonyStatus":"CallConnected",
-   "userStatus":"Available",
-   "dndStatus":"TakeAllCalls",
-   "meetingStatus":"Disconnected",
-   "allowSeeMyPresence":true,
-   "ringOnMonitoredCall":false,
-   "pickUpCallsOnHold":false,
-   "activeCalls":[
-      {
-         "id":"8bd930cab325416aa054238237eb8832",
-         "direction":"Inbound",
-         "fromName":"ROY,DIBYENDU",
-         "from":"+14083388064",
-         "toName":"Dibyendu Roy",
-         "to":"+12055558673",
-         "telephonyStatus":"CallConnected",
-         "sipData":{
-            "toTag":"qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D",
-            "fromTag":"10.13.22.25-5070-742e2a888ab14be",
-            "remoteUri":"do-not-use-me-I-am-useless",
-            "localUri":"do-not-use-me-I-am-useless"
-         },
-         "sessionId":"183851523016",
-         "startTime":"2019-03-26T22:16:29.629+0000",
-         "partyId":"cs168629785304410134536-2",
-         "telephonySessionId":"XXXXXXXXXX"
-      }
-   ]
-}
-```
+=== "Response"
+	```json 
+	{
+	   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
+	   "extension":{
+	      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
+	      "id":62226587016,
+	      "extensionNumber":"108"
+	   },
+	   "presenceStatus":"Busy",
+	   "telephonyStatus":"CallConnected",
+	   "userStatus":"Available",
+	   "dndStatus":"TakeAllCalls",
+	   "meetingStatus":"Disconnected",
+	   "allowSeeMyPresence":true,
+	   "ringOnMonitoredCall":false,
+	   "pickUpCallsOnHold":false,
+	   "activeCalls":[
+	      {
+		 "id":"8bd930cab325416aa054238237eb8832",
+		 "direction":"Inbound",
+		 "fromName":"ROY,DIBYENDU",
+		 "from":"+14083388064",
+		 "toName":"Dibyendu Roy",
+		 "to":"+12055558673",
+		 "telephonyStatus":"CallConnected",
+		 "sipData":{
+		    "toTag":"qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D",
+		    "fromTag":"10.13.22.25-5070-742e2a888ab14be",
+		    "remoteUri":"do-not-use-me-I-am-useless",
+		    "localUri":"do-not-use-me-I-am-useless"
+		 },
+		 "sessionId":"183851523016",
+		 "startTime":"2019-03-26T22:16:29.629+0000",
+		 "partyId":"cs168629785304410134536-2",
+		 "telephonySessionId":"XXXXXXXXXX"
+	      }
+	   ]
+	}
+	```
 
-```http tab="Request"
-GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&sipData=true
-```
+=== "Request"
+	```http 
+	GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&sipData=true
+	```
 
 #### How to find the Device ID
 
 To retrieve the `deviceId` required by this API, call the `extension/device` endpoint on the supervisor's extension as follows:
 
-```json tab="Response"
-{
-   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
-   "id":"60727004",
-   "type":"SoftPhone",
-   "sku":"DV-1",
-   "name":"Softphone - Digital Line",
-   "serial":"LMRC8531",
-   "computerName":"LMRC8531",
-   "status":"Online",
-   "extension":{
-      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
-      "id":809646016,
-      "extensionNumber":"101"
-   }
-}
-```
+=== "Response"
+	```json
+	{
+	   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
+	   "id":"60727004",
+	   "type":"SoftPhone",
+	   "sku":"DV-1",
+	   "name":"Softphone - Digital Line",
+	   "serial":"LMRC8531",
+	   "computerName":"LMRC8531",
+	   "status":"Online",
+	   "extension":{
+	      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
+	      "id":809646016,
+	      "extensionNumber":"101"
+	   }
+	}
+	```
 
-```http tab="Request"
-GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device
-```
+=== "Request"
+	```http
+	GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device
+	```
 
 ### Response
 
@@ -216,7 +222,7 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 * Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
 * Line 26: `p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2` the party-id here is the monitored party-id.
 
-```http hl_lines="10 26" linenums="1"
+```http hl_lines="10 26"
 |||INVITE sip:18005557562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
 ||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
 ||||Max-Forwards: 69
@@ -259,36 +265,38 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 
 To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the `activeCalls` property. For example:
 
-```json tab="Response" hl_lines="19"
-{
-   "activeCalls":[
-      {
-         "id":"aa97ce30b90441158a421ca0e9c0a233",
-         "direction":"Outbound",
-         "fromName":"Supervisor ABC",
-         "from":"101",
-         "toName":"Agent",
-         "to":"108",
-         "telephonyStatus":"CallConnected",
-         "sipData":{
-            "toTag":"I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
-            "fromTag":"10.14.23.50-5070-a272ac7ba84b4a7",
-            "remoteUri":"do-not-use-me-I-am-useless",
-            "localUri":"do-not-use-me-I-am-useless"
-         },
-         "sessionId":"590506730017",
-         "startTime":"2019-03-27T19:14:22.564+0000",
-         "partyId":"party-4",
-         "telephonySessionId":"XXXXXXXXXX"
-      }
-   ]
-   ...
-}
-```
+=== "Response"
+	```json 
+	{
+	   "activeCalls":[
+	      {
+		 "id":"aa97ce30b90441158a421ca0e9c0a233",
+		 "direction":"Outbound",
+		 "fromName":"Supervisor ABC",
+		 "from":"101",
+		 "toName":"Agent",
+		 "to":"108",
+		 "telephonyStatus":"CallConnected",
+		 "sipData":{
+		    "toTag":"I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
+		    "fromTag":"10.14.23.50-5070-a272ac7ba84b4a7",
+		    "remoteUri":"do-not-use-me-I-am-useless",
+		    "localUri":"do-not-use-me-I-am-useless"
+		 },
+		 "sessionId":"590506730017",
+		 "startTime":"2019-03-27T19:14:22.564+0000",
+		 "partyId":"party-4",
+		 "telephonySessionId":"XXXXXXXXXX"
+	      }
+	   ]
+	   ...
+	}
+	```
 
-```http tab="Request"
-GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipData=true
-```
+=== "Request"
+	```http 
+	GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipData=true
+	```
 
 !!! note "FCC Compliance"
     If you intend to save the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. The following [video](https://vimeo.com/326948521) demonstrates a working example of the Supervision API using the concepts described here.
@@ -425,18 +433,19 @@ The Supervision API allows for [dual channel call streaming](https://developers.
 
 This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
 
-```http tab="Raw"
-POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
-Content-Type: application/json
-Content-Length: ACTUAL_CONTENT_LENGTH_HERE
-Authorization: <YOUR_ACCESS_TOKEN>
+=== "Raw"
+	```http
+	POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
+	Content-Type: application/json
+	Content-Length: ACTUAL_CONTENT_LENGTH_HERE
+	Authorization: <YOUR_ACCESS_TOKEN>
 
-{  
-   "mode": "Listen",
-   "agentExtensionId": "40001234567890",
-   "supervisorDeviceId": "191888004"
-}
-```
+	{  
+	   "mode": "Listen",
+	   "agentExtensionId": "40001234567890",
+	   "supervisorDeviceId": "191888004"
+	}
+	```
 
 !!! note "Server-side vs client-side device monitoring"
     If a RingCentral hard-phone or a WebRTC application is used as the monitoring device instead of a SIP server, then the agent's call is supervised first (streaming the agent audio stream). In other words, the device will receive the first SIP invite for the agent's party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
