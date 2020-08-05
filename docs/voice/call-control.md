@@ -102,3 +102,15 @@ To control incoming a call before accepted:
 To control a active Call:
 
 <a class="btn btn-secondary" href="../active-call-control/">Read about Active-call Control &raquo;</a>
+
+## Telephony Session Notifications
+
+A developer can use Telephony Session Notifications to detect all changes in the status of a call effectively.
+
+<a class="btn btn-secondary" href="../telephony-session-notifications/">Read about Telephony Session Notifications &raquo;</a>
+
+### Call Control JS SDK
+
+We provide [Call Control JS SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help developer call these API more functionally, and handle TelephonySession notifications easily.
+
+<a class="btn btn-secondary" href="https://github.com/ringcentral/ringcentral-call-control-js">Read about RingCentral Call Control JS SDK &raquo;</a>

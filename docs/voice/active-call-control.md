@@ -136,9 +136,3 @@ Drop the call for all participants:
 ```
 DELETE /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>
 ```
-
-## More
-
-We provide [Call Control JS SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help developer call these API more functionally.
-
-<a class="btn btn-primary" href="https://github.com/ringcentral/ringcentral-call-control-js">Read about RingCentral Call Control JS SDK &raquo;</a>
