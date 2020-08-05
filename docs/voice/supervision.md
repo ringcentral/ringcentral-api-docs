@@ -25,9 +25,6 @@ Before you begin, please verify these prerequesites are met:
 
 3. The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.
 
-!!! important "No sandbox support"
-    This feature is only available in a production enviornment and not supported in a sandbox enviornment.
-
 ## Call Monitoring Groups
 
 Due to the sensitive nature of Call Monitoring, authorization to be monitored and to monitor others must be specifically given to extensions within an account. To manage these permissions, a developer first creates a Call Monitoring Group, and then adds users/extensions to that group designating:
