@@ -23,6 +23,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.tabbed
+  - pymdownx.superfences
   - codehilite:
       linenums: "None"
   - markdown_include.include:
@@ -37,8 +38,6 @@ copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
-
-
 
 # ---- CORE APIs ----
 - 'Primary':
@@ -71,6 +70,7 @@ pages:
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
+      - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
       - 'Data Types': 'voice/call-log/api.md'

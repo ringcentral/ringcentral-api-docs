@@ -8,6 +8,9 @@ The actions a developer can take on a call prior to it being connected or answer
 * Send to voicemail
 * Reject the call
 
+!!! info "Try the Call Control SDK"
+    We created the [Call Control SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help Javascript developers call these APIs using a more functional coding style, and handle TelephonySession notifications more easily.
+
 ## Forwarding Calls
 
 You can use the Forward API to transfer the incoming call to another phone number or to voicemail, without answering the call. The Forward API works for parties in the `Setup` and `Proceeding` states only (this is the main differece with the Transfer API, which works with already accepted calls). 

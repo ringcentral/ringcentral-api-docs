@@ -9,6 +9,9 @@ The Call Control API is a REST-based interface, allowing developers to customize
 
 To control a call, a developer must first identify the specific call (or "session") and in some cases the specific person (or "party") they wish to manipulate. Here are two common ways of discovering this information.
 
+!!! info "Try the Call Control SDK"
+    We created the [Call Control SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help Javascript developers call these APIs using a more functional coding style, and handle TelephonySession notifications more easily.
+
 ### Generate a list of active calls
 
 A developer can use a REST API to generate a list of all active calls (or "sessions") within an organization, or for a specific user. From the list returned, one can then fetch detail session information about an individual session. 
@@ -93,24 +96,10 @@ Authorization: Bearer <access-token>
 }
 ```
 
-### Control a Call
+## Learn more
 
-To control incoming a call before accepted:
+* Control an incoming a call before it is accepted: [Pre-call Controll](../pre-call-control/)
+* Control an active call already in progress: [Actice Call Control](../active-call-control/)
+* Detect changes in the status of a call: [Telephony Session Notifications](../telephony-session-notifications/)
 
-<a class="btn btn-secondary" href="../pre-call-control/">Read about Pre-Cal Control &raquo;</a>
 
-To control a active Call:
-
-<a class="btn btn-secondary" href="../active-call-control/">Read about Active-call Control &raquo;</a>
-
-## Telephony Session Notifications
-
-A developer can use Telephony Session Notifications to detect all changes in the status of a call effectively.
-
-<a class="btn btn-secondary" href="../telephony-session-notifications/">Read about Telephony Session Notifications &raquo;</a>
-
-### Call Control JS SDK
-
-We provide [Call Control JS SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help developer call these API more functionally, and handle TelephonySession notifications easily.
-
-<a class="btn btn-secondary" href="https://github.com/ringcentral/ringcentral-call-control-js">Read about RingCentral Call Control JS SDK &raquo;</a>
