@@ -63,4 +63,3 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
     * **Answer (Replace)** - accept the incoming call.
     * **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
     * **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
-

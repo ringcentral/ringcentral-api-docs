@@ -45,6 +45,16 @@ This open source code repository contains the official library developers can us
 * [Complete Usage Documentation on Github](https://github.com/ringcentral/ringcentral-web-phone#usage)
 * [Wrapper API to SIP.js](https://github.com/ringcentral/ringcentral-web-phone#api) providing full call controls to developers
 
+## RingCentral Call JS Library
+
+The library bases on RingCentral WebPhone Client library and Call Control RESTful API.
+
+* [RingCentral Call JS Library on Github](https://github.com/ringcentral/ringcentral-call-js)
+* Provides easy to use framework
+* Uses the [RingCentral WebPhone SDK](https://github.com/ringcentral/ringcentral-web-phone)
+* Uses [Call Control API](../call-control/)
+* Support to get and control calls in all devices
+
 ## Defining a WebRTC Application
 
 To use the Web Phone client library (or to create your own custom application) you will need to define a new application in the Ring Central Developer Portal.
