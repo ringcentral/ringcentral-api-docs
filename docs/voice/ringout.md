@@ -258,15 +258,19 @@ Content-Type: application/json
 }
 ```
 
-## Call Control
+## How to cancel a RingOut in progress
 
-The RingCentral Connect Platform does not currently support control of outbound calls. However, you can cancel ringout call while callee party status is `InProgress`. To do that make a `DELETE` request to ringout URI.
+RingCentral does not currently support call control for outbound calls. However, you can cancel a RingOut call while the callee's party status is `InProgress`by making a `DELETE` request to the RingOut endpoint as shown below:
 
 ```
 DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434  
-
-204 No Content  
 ```
+
+If successful, the platform will respond with a 204. 
+
+Deleting the RingOut is only available when the RingOut has been initiated and the call has not been connected. For example:
+
+If you initiate a RingOut and immediately call the DELETE RingOut endpoint, the call would get terminated as long as the RingOut between the two parties is not connected (first leg has not been established). If the first leg of the call has been initiated, then the DELETE API will not terminate the call.
 
 ## Caller ID
 

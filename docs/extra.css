@@ -1,3 +1,17 @@
+.api-index td.endpoint {
+    border-top: 0;
+    padding-top: 0;
+    font-size: 0.85em;
+}
+.api-index .method {
+    white-space: nowrap;
+}
+.api-index .method,
+.api-index .description {
+    padding-bottom: 0;
+}
+
+
 .tabbed-content p {
     padding: 1rem 1rem 0 1rem;
 }
