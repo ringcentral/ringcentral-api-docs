@@ -46,43 +46,35 @@ You can subscribe at the account level for all extensions or specific extensions
 * [Account-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
 * [User-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
 
-There are 3 general approaches you can use:
+### 1) Account-Level Subscription
 
-### 1) Subscribe and Attempt for All Extensions
+Subscribing for events at the account level is recommended when you are subscribing for many extensions. This approach makes it much simpler to handle the number, and dynamic nature, of monitored users.
 
-The most generic way to subscribe for events is to uses the account level events and attempt to subscribe for every
+You will need to maintain a list of extensions you have permission to monitor and then make Supervision API calls for call for a monitored user.
 
-The advantage of this approach is that your application will not miss any calls by being misconfigured, since it will attempt to subscribe for all calls.
+Attempting to make Supervision Calls for users you do not have permissions for will result in errors. You can minimize errors but still capture callss from non-synced users by attempting to Supervise Calls for users that don't exist in your synced replica.
 
-The disadvantages of this approach is that you will be making more API calls and, if there are a lot of API calls, will need to be within your Rate Limit Plan.
+### 2) User-Level Subscription
 
-### 2) Subscribe for All Extensions and Filter Events
+Subscribing for events at the user level is recommended wish you have a limited number of extensions to monitor from a large set.
 
-A way to limit the number of calls you subscribe for is to periodically sync the user extensions you have permissions to monitor by calling the Call Monitoring Groups API.
+In this case, retrieve the list of extensions to be monitored firts, and then maintain subscriptions for just those extensions.
+
+### Retrieving Extension You can Monitor
+
+You can retrieve a list of extensions your user can monitor by calling the Call Monitoring Groups API.
 
 ```
 GET /restapi/v1.0/account/accountId/call-monitoring-groups
 ```
 
-For each resulting group, call the Group Members API for the `groupId`:
+For each group in the response, call the Group Members API for the `groupId`:
 
 ```
 GET /restapi/v1.0/account/accountId/call-monitoring-groups/groupId/members
 ```
 
-This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Collect the monitored user `extensionId` properties to uses in filtering telephony session eventss for calls you wish to monitor.
-
-Advantages of this approach is if you are monitoring few users relative to the total numer of users and if your application isn't optimized ot handle many inbound events. This will reduce the number of calls you attempt to supervise relative to the option above.
-
-Disadvantages include potentially misssing calls if your application fails to subscribe to relevant users.
-
-### 3) Subscribe for Specific Extensions
-
-The third approach is to use a similiar appraoch to the above to retrieve a lists of user extension ids to monitor and then update individual subscriptions for each.
-
-Advantages of this approach is if you are monitoring few users relative to the total numer of users.
-
-Disadvantages include potentially missing calls if your application fails to subscribe to relevant users.
+This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Filter the groups for ones your user is has the `Monitoring -User` permisssion and then collect all the `Monitored - User` extension ids for your list.
 
 ## Using the Call Supervision API
 
