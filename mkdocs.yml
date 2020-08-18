@@ -83,7 +83,7 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
-    - 'Getting Started': 'messaging/quick-start/'
+    - 'Getting Started': 'messaging/quick-start.md'
     - 'SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
@@ -186,26 +186,14 @@ pages:
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
-    - 'Getting Started':
-      - 'PubNub':
-        - 'JavaScript': 'notifications/quick-start/pubnub/node.md'
-        - 'Python': 'notifications/quick-start/pubnub/python.md'
-        - 'PHP': 'notifications/quick-start/pubnub/php.md'
-        - 'Java': 'notifications/quick-start/pubnub/java.md'
-        - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
-        - 'Ruby': 'notifications/quick-start/pubnub/ruby.md'
-      - 'WebHook':
-        - 'JavaScript': 'notifications/quick-start/webhook/node.md'
-        - 'Python': 'notifications/quick-start/webhook/python.md'
-        - 'PHP': 'notifications/quick-start/webhook/php.md'
-        - 'Java': 'notifications/quick-start/webhook/java.md'
-        - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
-        - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
-    - 'Webhooks':
-      - 'Creating Webhooks': 'notifications/manual/webhooks.md'
-      - 'Receiving Webhooks': 'notifications/manual/webhooks/receiving.md'
-      - 'Configuring TLS/SSL': 'notifications/manual/webhooks/configuring-tls-ssl.md'
-    - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
+    - 'Push Notifications':
+      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
+      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
+    - 'WebHooks':
+      - 'Getting Started': 'notifications/webhooks/quick-start.md'
+      - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
+      - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
+      - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
