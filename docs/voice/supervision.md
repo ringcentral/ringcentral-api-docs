@@ -65,13 +65,13 @@ In this case, retrieve the list of extensions to be monitored firts, and then ma
 You can retrieve a list of extensions your user can monitor by calling the Call Monitoring Groups API.
 
 ```
-GET /restapi/v1.0/account/accountId/call-monitoring-groups
+GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
 ```
 
 For each group in the response, call the Group Members API for the `groupId`:
 
 ```
-GET /restapi/v1.0/account/accountId/call-monitoring-groups/groupId/members
+GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
 ```
 
 This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Filter the groups for ones your user is has the `Monitoring -User` permisssion and then collect all the `Monitored - User` extension ids for your list.
