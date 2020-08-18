@@ -46,7 +46,6 @@ You can subscribe at the account level for all extensions or specific extensions
 * [Account-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
 * [User-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
 
-See specific details on 
 ### 1) Account-Level Subscription
 
 Subscribing for events at the account level is recommended when you are subscribing for many extensions. This approach makes it much simpler to handle the number, and dynamic nature, of monitored users.
