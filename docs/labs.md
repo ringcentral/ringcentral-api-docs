@@ -126,7 +126,7 @@ For help on any RingCentral Labs app please consult each project's GitHub Issues
   <img class="card-img-top" src="../img/logo-toll-free.png" alt="RingCentral for Linux">
   <div class="card-body">
     <h5 class="card-title">Toll-free SMS App</h5>
-    <p class="card-text">The Toll-free SMS App helps people compose, and broadcast up to 50,000 bulk SMS messages per day using a RingCentral toll-feee number.</p>
+    <p class="card-text">The Toll-free SMS App helps people compose, and broadcast up to 50,000 bulk SMS messages per day using a RingCentral toll-free number.</p>
     <a href="https://www.ringcentral.com/apps/toll-free-sms-app">Learn more</a>
   </div>
   <div class="card-footer">
