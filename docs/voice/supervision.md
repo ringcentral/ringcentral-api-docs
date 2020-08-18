@@ -1,4 +1,4 @@
-# Call Supervision and Monitoring
+# Call Supervision, Monitoring and Streaming
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
@@ -32,10 +32,57 @@ Due to the sensitive nature of Call Monitoring, authorization to be monitored an
 * What extensions/individuals can be monitored
 * What extensions/individuals can monitor others
 
-Once a Call Monitoring group has been configured, developers can use the Call Supervision API below to actively listen in on a call. 
+Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call. 
 
 * [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
 * [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
+
+## Subscribing to Telephony Session Events
+
+To receive call events with the `telephonySessionId` necessary for the Supervision API, you will need to subscribe for Telephony Session events which will allow your application to receive real-time events with this information.
+
+You can subscribe at the account level for all extensions or specific extensions.
+
+* [Account-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
+* [User-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
+
+There are 3 general approaches you can use:
+
+### 1) Subscribe and Attempt for All Extensions
+
+The most generic way to subscribe for events is to uses the account level events and attempt to subscribe for every
+
+The advantage of this approach is that your application will not miss any calls by being misconfigured, since it will attempt to subscribe for all calls.
+
+The disadvantages of this approach is that you will be making more API calls and, if there are a lot of API calls, will need to be within your Rate Limit Plan.
+
+### 2) Subscribe for All Extensions and Filter Events
+
+A way to limit the number of calls you subscribe for is to periodically sync the user extensions you have permissions to monitor by calling the Call Monitoring Groups API.
+
+```
+GET /restapi/v1.0/account/accountId/call-monitoring-groups
+```
+
+For each resulting group, call the Group Members API for the `groupId`:
+
+```
+GET /restapi/v1.0/account/accountId/call-monitoring-groups/groupId/members
+```
+
+This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Collect the monitored user `extensionId` properties to uses in filtering telephony session eventss for calls you wish to monitor.
+
+Advantages of this approach is if you are monitoring few users relative to the total numer of users and if your application isn't optimized ot handle many inbound events. This will reduce the number of calls you attempt to supervise relative to the option above.
+
+Disadvantages include potentially misssing calls if your application fails to subscribe to relevant users.
+
+### 3) Subscribe for Specific Extensions
+
+The third approach is to use a similiar appraoch to the above to retrieve a lists of user extension ids to monitor and then update individual subscriptions for each.
+
+Advantages of this approach is if you are monitoring few users relative to the total numer of users.
+
+Disadvantages include potentially missing calls if your application fails to subscribe to relevant users.
 
 ## Using the Call Supervision API
 
