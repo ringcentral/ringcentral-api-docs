@@ -4,6 +4,9 @@ Developers who wish to either download/backup or create an interface for users t
 
 If you do not already have a call recording created in your Sandbox account, you can do this manually.
 
+!!! info "Enabling Call Recording: Automatic vs On-Demand"
+    RingCentral supports both Automatic Call Recording (ACR) and On-Demand Call Recording. Information on how to initiate Automatic and On-Demand Call Recording is available in [KB Article 3171](http://success.ringcentral.com/articles/RC_Knowledge_Article/How-to-Initiate-On-Demand-Call-Recordings). Using WebRTC, it's also possible to programmatically initiate and stop recording per the [WebRTC documentation](https://github.com/ringcentral/ringcentral-web-phone).
+
 ## Creating a Call Recording
 
 For simplicity, we are going to step you through using the RingCentral Soft Phone (in Direct Dial Mode) to create an outbound call, and record that call.
