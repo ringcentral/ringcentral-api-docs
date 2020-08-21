@@ -1,4 +1,4 @@
-# Call Supervision and Monitoring
+# Call Supervision, Monitoring and Streaming
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
@@ -32,10 +32,49 @@ Due to the sensitive nature of Call Monitoring, authorization to be monitored an
 * What extensions/individuals can be monitored
 * What extensions/individuals can monitor others
 
-Once a Call Monitoring group has been configured, developers can use the Call Supervision API below to actively listen in on a call. 
+Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call. 
 
 * [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
 * [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
+
+## Subscribing to Telephony Session Events
+
+A recommended way to receive real-time events for calls is to use [Telephony Session Notifications](telephony-session-notifications). You will need the call event's `telephonySessionId` to call the Supervision API.
+
+You can subscribe at the account level for all extensions or specific extensions.
+
+* [Account-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
+* [User-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
+
+### 1) Account-Level Subscription
+
+Subscribing for events at the account level is recommended when you are subscribing for many extensions. This approach makes it much simpler to handle the number, and dynamic nature, of monitored users.
+
+You will need to maintain a list of extensions you have permission to monitor and then make Supervision API calls for call for a monitored user.
+
+Attempting to make Supervision Calls for users you do not have permissions for will result in errors. You can minimize errors but still capture callss from non-synced users by attempting to Supervise Calls for users that don't exist in your synced replica.
+
+### 2) User-Level Subscription
+
+Subscribing for events at the user level is recommended wish you have a limited number of extensions to monitor from a large set.
+
+In this case, retrieve the list of extensions to be monitored firts, and then maintain subscriptions for just those extensions.
+
+### Retrieving Extension You can Monitor
+
+You can retrieve a list of extensions your user can monitor by calling the Call Monitoring Groups API.
+
+```
+GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
+```
+
+For each group in the response, call the Group Members API for the `groupId`:
+
+```
+GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
+```
+
+This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Filter the groups for ones your user is has the `Monitoring -User` permisssion and then collect all the `Monitored - User` extension ids for your list.
 
 ## Using the Call Supervision API
 
