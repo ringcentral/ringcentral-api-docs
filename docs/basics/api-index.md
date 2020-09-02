@@ -16,12 +16,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get API Versions <a href="https://developers.ringcentral.com/api-reference/API-Info/readAPIVersions" class="external-link">#</a>
+        Get API Versions <a href="https://developers.ringcentral.com/api-reference/API-Info/readAPIVersions" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns current API version(s) and server info.</p></p>
-      </td>
+      <td class="description"><p>Returns current API version(s) and server info.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -33,12 +31,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Version Info <a href="https://developers.ringcentral.com/api-reference/API-Info/readAPIVersion" class="external-link">#</a>
+        Get Version Info <a href="https://developers.ringcentral.com/api-reference/API-Info/readAPIVersion" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns current API version info by apiVersion.</p></p>
-      </td>
+      <td class="description"><p>Returns current API version info by apiVersion.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -63,12 +59,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAutomaticLocationUpdatesUsers" aria-expanded="true" aria-controls="listAutomaticLocationUpdatesUsers">Get User List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listAutomaticLocationUpdatesUsers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAutomaticLocationUpdatesUsers" aria-expanded="true" aria-controls="listAutomaticLocationUpdatesUsers">Get User List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listAutomaticLocationUpdatesUsers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of users with their status of Automatic Location Updates feature.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of users with their status of Automatic Location Updates feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -157,12 +151,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleAutomaticaLocationUpdatesUsers" aria-expanded="true" aria-controls="assignMultipleAutomaticaLocationUpdatesUsers">Enable Automatic Location Updates for Users</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/assignMultipleAutomaticaLocationUpdatesUsers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleAutomaticaLocationUpdatesUsers" aria-expanded="true" aria-controls="assignMultipleAutomaticaLocationUpdatesUsers">Enable Automatic Location Updates for Users</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/assignMultipleAutomaticaLocationUpdatesUsers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Enables or disables Automatic Location Updates feature for multiple account users.</p></p>
-      </td>
+      <td class="description"><p>Enables or disables Automatic Location Updates feature for multiple account users.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -202,12 +194,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listWirelessPoints" aria-expanded="true" aria-controls="listWirelessPoints">Get Wireless Point List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listWirelessPoints" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listWirelessPoints" aria-expanded="true" aria-controls="listWirelessPoints">Get Wireless Point List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listWirelessPoints" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns account wireless points configured and used for Automatic Location Updates feature.</p></p>
-      </td>
+      <td class="description"><p>Returns account wireless points configured and used for Automatic Location Updates feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -275,12 +265,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createWirelessPoint" aria-expanded="true" aria-controls="createWirelessPoint">Create Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createWirelessPoint" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createWirelessPoint" aria-expanded="true" aria-controls="createWirelessPoint">Create Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createWirelessPoint" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new wireless point in network configuration with the emergency address assigned.</p></p>
-      </td>
+      <td class="description"><p>Creates a new wireless point in network configuration with the emergency address assigned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -320,12 +308,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readWirelessPoint" aria-expanded="true" aria-controls="readWirelessPoint">Get Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readWirelessPoint" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readWirelessPoint" aria-expanded="true" aria-controls="readWirelessPoint">Get Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readWirelessPoint" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the specified wireless access point of a corporate map with the emergency address assigned.</p></p>
-      </td>
+      <td class="description"><p>Returns the specified wireless access point of a corporate map with the emergency address assigned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -365,12 +351,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateWirelessPoint" aria-expanded="true" aria-controls="updateWirelessPoint">Update Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateWirelessPoint" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateWirelessPoint" aria-expanded="true" aria-controls="updateWirelessPoint">Update Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateWirelessPoint" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the specified wireless access point of a corporate map by ID.</p></p>
-      </td>
+      <td class="description"><p>Updates the specified wireless access point of a corporate map by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -417,12 +401,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteWirelessPoint" aria-expanded="true" aria-controls="deleteWirelessPoint">Delete Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteWirelessPoint" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteWirelessPoint" aria-expanded="true" aria-controls="deleteWirelessPoint">Delete Wireless Point</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteWirelessPoint" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes wireless point(s) of a corporate map by ID(s).</p></p>
-      </td>
+      <td class="description"><p>Deletes wireless point(s) of a corporate map by ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -462,12 +444,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Network Map <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listNetworks" class="external-link">#</a>
+        Get Network Map <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listNetworks" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns corporate networks map with emergency addresses assigned to the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns corporate networks map with emergency addresses assigned to the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -479,12 +459,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createNetwork" aria-expanded="true" aria-controls="createNetwork">Create Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createNetwork" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createNetwork" aria-expanded="true" aria-controls="createNetwork">Create Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createNetwork" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new network in corporate ethernet map for assignment of emergency addresses to network access points.</p></p>
-      </td>
+      <td class="description"><p>Creates a new network in corporate ethernet map for assignment of emergency addresses to network access points.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -524,12 +502,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readNetwork" aria-expanded="true" aria-controls="readNetwork">Get Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readNetwork" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readNetwork" aria-expanded="true" aria-controls="readNetwork">Get Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readNetwork" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the specified network with emergency addresses assigned to the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns the specified network with emergency addresses assigned to the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -569,12 +545,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateNetwork" aria-expanded="true" aria-controls="updateNetwork">Update Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateNetwork" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateNetwork" aria-expanded="true" aria-controls="updateNetwork">Update Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateNetwork" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates network in corporate ethernet map for assignment of emergency addresses to network access points.</p></p>
-      </td>
+      <td class="description"><p>Updates network in corporate ethernet map for assignment of emergency addresses to network access points.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -621,12 +595,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteNetwork" aria-expanded="true" aria-controls="deleteNetwork">Delete Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteNetwork" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteNetwork" aria-expanded="true" aria-controls="deleteNetwork">Delete Network</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteNetwork" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes network(s) in corporate ethernet map for Automatic Location Updates feature.</p></p>
-      </td>
+      <td class="description"><p>Deletes network(s) in corporate ethernet map for Automatic Location Updates feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -666,12 +638,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDevicesAutomaticLocationUpdates" aria-expanded="true" aria-controls="listDevicesAutomaticLocationUpdates">Get Device List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listDevicesAutomaticLocationUpdates" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDevicesAutomaticLocationUpdates" aria-expanded="true" aria-controls="listDevicesAutomaticLocationUpdates">Get Device List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listDevicesAutomaticLocationUpdates" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of common devices with their status of Automatic Location Updates feature.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of common devices with their status of Automatic Location Updates feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -760,12 +730,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleDevicesAutomaticLocationUpdates" aria-expanded="true" aria-controls="assignMultipleDevicesAutomaticLocationUpdates">Enable Automatic Location Updates for Devices</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/assignMultipleDevicesAutomaticLocationUpdates" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleDevicesAutomaticLocationUpdates" aria-expanded="true" aria-controls="assignMultipleDevicesAutomaticLocationUpdates">Enable Automatic Location Updates for Devices</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/assignMultipleDevicesAutomaticLocationUpdates" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Enables or disables Automatic Location Updates feature for the specified common phones.</p></p>
-      </td>
+      <td class="description"><p>Enables or disables Automatic Location Updates feature for the specified common phones.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -805,12 +773,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountSwitches" aria-expanded="true" aria-controls="listAccountSwitches">Get Account Switch List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listAccountSwitches" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountSwitches" aria-expanded="true" aria-controls="listAccountSwitches">Get Account Switch List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listAccountSwitches" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns corporate map of configured network switches with the assigned emergency addresses for the logged-in account.</p></p>
-      </td>
+      <td class="description"><p>Returns corporate map of configured network switches with the assigned emergency addresses for the logged-in account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -878,12 +844,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createSwitch" aria-expanded="true" aria-controls="createSwitch">Create Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createSwitch" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createSwitch" aria-expanded="true" aria-controls="createSwitch">Create Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createSwitch" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new switch in corporate map based on chassis ID and used for Automatic Locations Update feature.</p></p>
-      </td>
+      <td class="description"><p>Creates a new switch in corporate map based on chassis ID and used for Automatic Locations Update feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -923,12 +887,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readSwitch" aria-expanded="true" aria-controls="readSwitch">Get Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readSwitch" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readSwitch" aria-expanded="true" aria-controls="readSwitch">Get Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readSwitch" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the specified switch with the assigned emergency address.</p></p>
-      </td>
+      <td class="description"><p>Returns the specified switch with the assigned emergency address.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -968,12 +930,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateSwitch" aria-expanded="true" aria-controls="updateSwitch">Update Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateSwitch" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateSwitch" aria-expanded="true" aria-controls="updateSwitch">Update Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateSwitch" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates switch. Partial update is not supported, all switch parameters should be specified. If null value is received or parameter is missing, its value is removed.</p></p>
-      </td>
+      <td class="description"><p>Updates switch. Partial update is not supported, all switch parameters should be specified. If null value is received or parameter is missing, its value is removed.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1020,12 +980,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteSwitch" aria-expanded="true" aria-controls="deleteSwitch">Delete Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteSwitch" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteSwitch" aria-expanded="true" aria-controls="deleteSwitch">Delete Switch</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/deleteSwitch" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes wireless switch(es) in network configuration for Automatic Location Updates feature.</p></p>
-      </td>
+      <td class="description"><p>Deletes wireless switch(es) in network configuration for Automatic Location Updates feature.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1065,12 +1023,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMultipleSwitches" aria-expanded="true" aria-controls="createMultipleSwitches">Create Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createMultipleSwitches" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMultipleSwitches" aria-expanded="true" aria-controls="createMultipleSwitches">Create Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createMultipleSwitches" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates multiple switches in corporate map. The maximum number of switches per request is 10 000; limitation for account is 10 000.</p></p>
-      </td>
+      <td class="description"><p>Creates multiple switches in corporate map. The maximum number of switches per request is 10 000; limitation for account is 10 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1110,12 +1066,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMultipleSwitches" aria-expanded="true" aria-controls="updateMultipleSwitches">Update Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateMultipleSwitches" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMultipleSwitches" aria-expanded="true" aria-controls="updateMultipleSwitches">Update Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateMultipleSwitches" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates multiple switches in corporate map. The maximum number of switches per request is 10 000; limitation for account is 10 000.</p></p>
-      </td>
+      <td class="description"><p>Updates multiple switches in corporate map. The maximum number of switches per request is 10 000; limitation for account is 10 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1155,12 +1109,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMultipleWirelessPoints" aria-expanded="true" aria-controls="createMultipleWirelessPoints">Create Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createMultipleWirelessPoints" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMultipleWirelessPoints" aria-expanded="true" aria-controls="createMultipleWirelessPoints">Create Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createMultipleWirelessPoints" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates multiple wireless points in corporate map. The maximum number of wireless points per request is 10 000; limitation for account is 70 000.</p></p>
-      </td>
+      <td class="description"><p>Creates multiple wireless points in corporate map. The maximum number of wireless points per request is 10 000; limitation for account is 70 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1200,12 +1152,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMultipleWirelessPoints" aria-expanded="true" aria-controls="updateMultipleWirelessPoints">Update Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateMultipleWirelessPoints" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMultipleWirelessPoints" aria-expanded="true" aria-controls="updateMultipleWirelessPoints">Update Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateMultipleWirelessPoints" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates wireless points in corporate map. The maximum number of wireless points per request is 10 000; limitation for account is 70 000.</p></p>
-      </td>
+      <td class="description"><p>Updates wireless points in corporate map. The maximum number of wireless points per request is 10 000; limitation for account is 70 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1245,12 +1195,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#validateMultipleWirelessPoints" aria-expanded="true" aria-controls="validateMultipleWirelessPoints">Validate Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/validateMultipleWirelessPoints" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#validateMultipleWirelessPoints" aria-expanded="true" aria-controls="validateMultipleWirelessPoints">Validate Multiple Wireless Points</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/validateMultipleWirelessPoints" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Validates wireless points before creation or update. The maximum number of wireless points per request is 10 000.</p></p>
-      </td>
+      <td class="description"><p>Validates wireless points before creation or update. The maximum number of wireless points per request is 10 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1290,12 +1238,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#validateMultipleSwitches" aria-expanded="true" aria-controls="validateMultipleSwitches">Validate Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/validateMultipleSwitches" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#validateMultipleSwitches" aria-expanded="true" aria-controls="validateMultipleSwitches">Validate Multiple Switches</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/validateMultipleSwitches" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Validates switches before creation or update. The maximum number of switches per request is 10 000.</p></p>
-      </td>
+      <td class="description"><p>Validates switches before creation or update. The maximum number of switches per request is 10 000.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1335,12 +1281,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAutomaticLocationUpdatesTask" aria-expanded="true" aria-controls="readAutomaticLocationUpdatesTask">Get Emergency Map Configuration Task</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readAutomaticLocationUpdatesTask" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAutomaticLocationUpdatesTask" aria-expanded="true" aria-controls="readAutomaticLocationUpdatesTask">Get Emergency Map Configuration Task</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readAutomaticLocationUpdatesTask" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns results of the task created within the frame of Automatic Location Updates feature. Currently four task types are supported: 'Wireless Points Bulk Create', 'Wireless Points Bulk Update', 'Switches Bulk Create', 'Switches Bulk Update'</p></p>
-      </td>
+      <td class="description"><p>Returns results of the task created within the frame of Automatic Location Updates feature. Currently four task types are supported: 'Wireless Points Bulk Create', 'Wireless Points Bulk Update', 'Switches Bulk Create', 'Switches Bulk Update'</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1380,12 +1324,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createEmergencyLocation" aria-expanded="true" aria-controls="createEmergencyLocation">Add Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createEmergencyLocation" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createEmergencyLocation" aria-expanded="true" aria-controls="createEmergencyLocation">Add Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createEmergencyLocation" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1425,12 +1367,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listEmergencyLocations" aria-expanded="true" aria-controls="listEmergencyLocations">Get Emergency Location List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listEmergencyLocations" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listEmergencyLocations" aria-expanded="true" aria-controls="listEmergencyLocations">Get Emergency Location List</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/listEmergencyLocations" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns emergency response locations of the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns emergency response locations of the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1519,12 +1459,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readEmergencyLocation" aria-expanded="true" aria-controls="readEmergencyLocation">Get Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readEmergencyLocation" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readEmergencyLocation" aria-expanded="true" aria-controls="readEmergencyLocation">Get Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/readEmergencyLocation" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns emergency response location by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns emergency response location by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1564,12 +1502,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateEmergencyLocation" aria-expanded="true" aria-controls="updateEmergencyLocation">Update Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateEmergencyLocation" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateEmergencyLocation" aria-expanded="true" aria-controls="updateEmergencyLocation">Update Emergency Location</a> <a href="https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/updateEmergencyLocation" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the specified emergency response location.</p></p>
-      </td>
+      <td class="description"><p>Updates the specified emergency response location.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1629,12 +1565,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserBusinessHours" aria-expanded="true" aria-controls="readUserBusinessHours">Get User Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/readUserBusinessHours" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserBusinessHours" aria-expanded="true" aria-controls="readUserBusinessHours">Get User Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/readUserBusinessHours" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the user hours when the call handling rules are applied. <strong>Please note:</strong> If user hours are set to 'Custom hours' then a particular schedule is returned; however if set to '24 hours/7 days a week' an empty schedule is returned.</p></p>
-      </td>
+      <td class="description"><p>Returns the user hours when the call handling rules are applied. <strong>Please note:</strong> If user hours are set to 'Custom hours' then a particular schedule is returned; however if set to '24 hours/7 days a week' an empty schedule is returned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1674,12 +1608,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserBusinessHours" aria-expanded="true" aria-controls="updateUserBusinessHours">Update User Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/updateUserBusinessHours" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserBusinessHours" aria-expanded="true" aria-controls="updateUserBusinessHours">Update User Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/updateUserBusinessHours" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the extension user hours when answering rules are to be applied.</p></p>
-      </td>
+      <td class="description"><p>Updates the extension user hours when answering rules are to be applied.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1726,12 +1658,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Company Business Hours <a href="https://developers.ringcentral.com/api-reference/Business-Hours/readCompanyBusinessHours" class="external-link">#</a>
+        Get Company Business Hours <a href="https://developers.ringcentral.com/api-reference/Business-Hours/readCompanyBusinessHours" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns company hours when answering rules are to be applied.</p></p>
-      </td>
+      <td class="description"><p>Returns company hours when answering rules are to be applied.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1743,12 +1673,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCompanyBusinessHours" aria-expanded="true" aria-controls="updateCompanyBusinessHours">Update Company Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/updateCompanyBusinessHours" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCompanyBusinessHours" aria-expanded="true" aria-controls="updateCompanyBusinessHours">Update Company Business Hours</a> <a href="https://developers.ringcentral.com/api-reference/Business-Hours/updateCompanyBusinessHours" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates company hours when answering rules are to be applied.</p></p>
-      </td>
+      <td class="description"><p>Updates company hours when answering rules are to be applied.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1801,12 +1729,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipEvents" aria-expanded="true" aria-controls="readGlipEvents">Get User Events List</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/readGlipEvents" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipEvents" aria-expanded="true" aria-controls="readGlipEvents">Get User Events List</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/readGlipEvents" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns all calendar events created by the current user.</p></p>
-      </td>
+      <td class="description"><p>Returns all calendar events created by the current user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1846,12 +1772,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Create Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/createEvent" class="external-link">#</a>
+        Create Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/createEvent" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a new calendar event.</p></p>
-      </td>
+      <td class="description"><p>Creates a new calendar event.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1863,12 +1787,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/readEvent" class="external-link">#</a>
+        Get Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/readEvent" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the specified calendar event(s) by ID(s).</p></p>
-      </td>
+      <td class="description"><p>Returns the specified calendar event(s) by ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1880,12 +1802,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateEvent" aria-expanded="true" aria-controls="updateEvent">Update Event</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/updateEvent" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateEvent" aria-expanded="true" aria-controls="updateEvent">Update Event</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/updateEvent" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the specified calendar event.</p></p>
-      </td>
+      <td class="description"><p>Updates the specified calendar event.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1925,12 +1845,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Delete Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/deleteEvent" class="external-link">#</a>
+        Delete Event <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/deleteEvent" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes the specified calendar event.</p></p>
-      </td>
+      <td class="description"><p>Deletes the specified calendar event.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1942,12 +1860,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createEventbyGroupId" aria-expanded="true" aria-controls="createEventbyGroupId">Create Event by Group ID</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/createEventbyGroupId" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createEventbyGroupId" aria-expanded="true" aria-controls="createEventbyGroupId">Create Event by Group ID</a> <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/createEventbyGroupId" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new calendar event within the specified group.</p></p>
-      </td>
+      <td class="description"><p>Creates a new calendar event within the specified group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -1987,12 +1903,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Group Events <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents" class="external-link">#</a>
+        Get Group Events <a href="https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a list of calendar events available for the current user within the specified group. Users can only see their personal tasks and public tasks.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of calendar events available for the current user within the specified group. Users can only see their personal tasks and public tasks.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2017,12 +1931,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallerBlockingSettings" aria-expanded="true" aria-controls="readCallerBlockingSettings">Get Caller Blocking Settings</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/readCallerBlockingSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallerBlockingSettings" aria-expanded="true" aria-controls="readCallerBlockingSettings">Get Caller Blocking Settings</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/readCallerBlockingSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the current caller blocking settings of a user.</p></p>
-      </td>
+      <td class="description"><p>Returns the current caller blocking settings of a user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2062,12 +1974,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallerBlockingSettings" aria-expanded="true" aria-controls="updateCallerBlockingSettings">Update Caller Blocking Settings</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/updateCallerBlockingSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallerBlockingSettings" aria-expanded="true" aria-controls="updateCallerBlockingSettings">Update Caller Blocking Settings</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/updateCallerBlockingSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the current caller blocking settings of a user.</p></p>
-      </td>
+      <td class="description"><p>Updates the current caller blocking settings of a user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2114,12 +2024,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listBlockedAllowedNumbers" aria-expanded="true" aria-controls="listBlockedAllowedNumbers">Get Blocked/Allowed Phone Numbers</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/listBlockedAllowedNumbers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listBlockedAllowedNumbers" aria-expanded="true" aria-controls="listBlockedAllowedNumbers">Get Blocked/Allowed Phone Numbers</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/listBlockedAllowedNumbers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the lists of blocked and allowed phone numbers.</p></p>
-      </td>
+      <td class="description"><p>Returns the lists of blocked and allowed phone numbers.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2180,12 +2088,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createBlockedAllowedNumber" aria-expanded="true" aria-controls="createBlockedAllowedNumber">Add Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/createBlockedAllowedNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createBlockedAllowedNumber" aria-expanded="true" aria-controls="createBlockedAllowedNumber">Add Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/createBlockedAllowedNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates either blocked or allowed phone number list with a new phone number.</p></p>
-      </td>
+      <td class="description"><p>Updates either blocked or allowed phone number list with a new phone number.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2232,12 +2138,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readBlockedAllowedNumber" aria-expanded="true" aria-controls="readBlockedAllowedNumber">Get Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/readBlockedAllowedNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readBlockedAllowedNumber" aria-expanded="true" aria-controls="readBlockedAllowedNumber">Get Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/readBlockedAllowedNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2284,12 +2188,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteBlockedAllowedNumber" aria-expanded="true" aria-controls="deleteBlockedAllowedNumber">Delete Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/deleteBlockedAllowedNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteBlockedAllowedNumber" aria-expanded="true" aria-controls="deleteBlockedAllowedNumber">Delete Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/deleteBlockedAllowedNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Deletes blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2336,12 +2238,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateBlockedAllowedNumber" aria-expanded="true" aria-controls="updateBlockedAllowedNumber">Update Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/updateBlockedAllowedNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateBlockedAllowedNumber" aria-expanded="true" aria-controls="updateBlockedAllowedNumber">Update Blocked/Allowed Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Blocking/updateBlockedAllowedNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Updates blocked or allowed phone number(s) by their ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2408,12 +2308,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCallOutCallSession" aria-expanded="true" aria-controls="createCallOutCallSession">Make CallOut</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/createCallOutCallSession" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCallOutCallSession" aria-expanded="true" aria-controls="createCallOutCallSession">Make CallOut</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/createCallOutCallSession" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new outbound call out session.</p></p>
-      </td>
+      <td class="description"><p>Creates a new outbound call out session.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2453,12 +2351,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallSessionStatus" aria-expanded="true" aria-controls="readCallSessionStatus">Get Call Session Status</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallSessionStatus" aria-expanded="true" aria-controls="readCallSessionStatus">Get Call Session Status</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the status of a call session by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns the status of a call session by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2512,12 +2408,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallSession" aria-expanded="true" aria-controls="deleteCallSession">Drop Call Session</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/deleteCallSession" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallSession" aria-expanded="true" aria-controls="deleteCallSession">Drop Call Session</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/deleteCallSession" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Drops a call session.</p></p>
-      </td>
+      <td class="description"><p>Drops a call session.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2557,12 +2451,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#holdCallParty" aria-expanded="true" aria-controls="holdCallParty">Hold Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/holdCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#holdCallParty" aria-expanded="true" aria-controls="holdCallParty">Hold Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/holdCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Puts the party to stand-alone mode and starts to play Hold Music according to configuration &amp; state to peers. There is a known limitation for Hold API - hold via REST API doesn't work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.</p></p>
-      </td>
+      <td class="description"><p>Puts the party to stand-alone mode and starts to play Hold Music according to configuration &amp; state to peers. There is a known limitation for Hold API - hold via REST API doesn't work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2609,12 +2501,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#unholdCallParty" aria-expanded="true" aria-controls="unholdCallParty">Unhold Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/unholdCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#unholdCallParty" aria-expanded="true" aria-controls="unholdCallParty">Unhold Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/unholdCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Brings a party back into a call and stops to play Hold Music. There is a known limitation for Hold API - hold via REST API doesn't work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.</p></p>
-      </td>
+      <td class="description"><p>Brings a party back into a call and stops to play Hold Music. There is a known limitation for Hold API - hold via REST API doesn't work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2661,12 +2551,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#rejectParty" aria-expanded="true" aria-controls="rejectParty">Reject Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/rejectParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#rejectParty" aria-expanded="true" aria-controls="rejectParty">Reject Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/rejectParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Rejects an inbound call in a "Setup" or "Proceeding" state</p></p>
-      </td>
+      <td class="description"><p>Rejects an inbound call in a "Setup" or "Proceeding" state</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2713,12 +2601,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#ignoreCallInQueue" aria-expanded="true" aria-controls="ignoreCallInQueue">Ignore Call in Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/ignoreCallInQueue" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#ignoreCallInQueue" aria-expanded="true" aria-controls="ignoreCallInQueue">Ignore Call in Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/ignoreCallInQueue" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Ignores a call to a call queue agent in <code>Setup</code> or <code>Proceeding</code> state.</p></p>
-      </td>
+      <td class="description"><p>Ignores a call to a call queue agent in <code>Setup</code> or <code>Proceeding</code> state.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2772,12 +2658,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#transferCallParty" aria-expanded="true" aria-controls="transferCallParty">Transfer Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/transferCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#transferCallParty" aria-expanded="true" aria-controls="transferCallParty">Transfer Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/transferCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Transfers a party by placing a new call to the specified target</p></p>
-      </td>
+      <td class="description"><p>Transfers a party by placing a new call to the specified target</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2831,12 +2715,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#bridgeCallParty" aria-expanded="true" aria-controls="bridgeCallParty">Bridge Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/bridgeCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#bridgeCallParty" aria-expanded="true" aria-controls="bridgeCallParty">Bridge Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/bridgeCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Connects two parties from different call sessions.</p></p>
-      </td>
+      <td class="description"><p>Connects two parties from different call sessions.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2890,12 +2772,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#answerCallParty" aria-expanded="true" aria-controls="answerCallParty">Answer Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/answerCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#answerCallParty" aria-expanded="true" aria-controls="answerCallParty">Answer Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/answerCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Answers a call on a certain device by passing the corresponding device ID in request body. Supported for call forwarding, call transfer, call flip and call queues.</p></p>
-      </td>
+      <td class="description"><p>Answers a call on a certain device by passing the corresponding device ID in request body. Supported for call forwarding, call transfer, call flip and call queues.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2949,12 +2829,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#pickupCallParty" aria-expanded="true" aria-controls="pickupCallParty">Pickup Call</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/pickupCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#pickupCallParty" aria-expanded="true" aria-controls="pickupCallParty">Pickup Call</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/pickupCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Picks up a call parked to the specified park location.</p></p>
-      </td>
+      <td class="description"><p>Picks up a call parked to the specified park location.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3008,12 +2886,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#forwardCallParty" aria-expanded="true" aria-controls="forwardCallParty">Forward Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/forwardCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#forwardCallParty" aria-expanded="true" aria-controls="forwardCallParty">Forward Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/forwardCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Distributes a non-answered call to the defined target. Applicable for "Setup" or "Proceeding" states</p></p>
-      </td>
+      <td class="description"><p>Distributes a non-answered call to the defined target. Applicable for "Setup" or "Proceeding" states</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3067,12 +2943,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#replyParty" aria-expanded="true" aria-controls="replyParty">Reply with Text</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/replyParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#replyParty" aria-expanded="true" aria-controls="replyParty">Reply with Text</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/replyParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Replies with text/pattern without picking up a call.</p></p>
-      </td>
+      <td class="description"><p>Replies with text/pattern without picking up a call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3126,12 +3000,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#callFlipParty" aria-expanded="true" aria-controls="callFlipParty">Call Flip on Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/callFlipParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#callFlipParty" aria-expanded="true" aria-controls="callFlipParty">Call Flip on Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/callFlipParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Performs call flip procedure by holding opposite party and calling to the specified target</p></p>
-      </td>
+      <td class="description"><p>Performs call flip procedure by holding opposite party and calling to the specified target</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3185,12 +3057,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#callParkParty" aria-expanded="true" aria-controls="callParkParty">Call Park</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/callParkParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#callParkParty" aria-expanded="true" aria-controls="callParkParty">Call Park</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/callParkParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Parks a call to a virtual location from where it can further be retrieved by any user from any phone of the system. The call session and call party identifiers should be specified in path. Currently the users can park only their own incoming calls. Up to 50 calls can be parked simultaneously. Park location starts with asterisk (*) and ranges 801-899.</p></p>
-      </td>
+      <td class="description"><p>Parks a call to a virtual location from where it can further be retrieved by any user from any phone of the system. The call session and call party identifiers should be specified in path. Currently the users can park only their own incoming calls. Up to 50 calls can be parked simultaneously. Park location starts with asterisk (*) and ranges 801-899.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3237,12 +3107,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallPartyStatus" aria-expanded="true" aria-controls="readCallPartyStatus">Get Call Party Status</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/readCallPartyStatus" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallPartyStatus" aria-expanded="true" aria-controls="readCallPartyStatus">Get Call Party Status</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/readCallPartyStatus" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a party status of a call session by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a party status of a call session by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3289,12 +3157,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallParty" aria-expanded="true" aria-controls="deleteCallParty">Delete Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/deleteCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallParty" aria-expanded="true" aria-controls="deleteCallParty">Delete Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/deleteCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes a party of a call session by ID. It is possible to delete only one conference participant per request.</p></p>
-      </td>
+      <td class="description"><p>Deletes a party of a call session by ID. It is possible to delete only one conference participant per request.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3341,12 +3207,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallParty" aria-expanded="true" aria-controls="updateCallParty">Update Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/updateCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallParty" aria-expanded="true" aria-controls="updateCallParty">Update Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/updateCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Modify the party of a call session by ID. There is a known limitation for Mute scenario - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and Ringcentral Desktop app you need to unmute both endpoints to bring media back. </p></p>
-      </td>
+      <td class="description"><p>Modify the party of a call session by ID. There is a known limitation for Mute scenario - mute via REST API doesn't work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and Ringcentral Desktop app you need to unmute both endpoints to bring media back. </p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3400,12 +3264,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#startCallRecording" aria-expanded="true" aria-controls="startCallRecording">Create Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/startCallRecording" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#startCallRecording" aria-expanded="true" aria-controls="startCallRecording">Create Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/startCallRecording" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Starts a new call recording for the party</p></p>
-      </td>
+      <td class="description"><p>Starts a new call recording for the party</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3452,12 +3314,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#pauseResumeCallRecording" aria-expanded="true" aria-controls="pauseResumeCallRecording">Pause/Resume Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/pauseResumeCallRecording" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#pauseResumeCallRecording" aria-expanded="true" aria-controls="pauseResumeCallRecording">Pause/Resume Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/pauseResumeCallRecording" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Pause/resume recording</p></p>
-      </td>
+      <td class="description"><p>Pause/resume recording</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3525,12 +3385,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#superviseCallSession" aria-expanded="true" aria-controls="superviseCallSession">Supervise Call Session</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/superviseCallSession" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#superviseCallSession" aria-expanded="true" aria-controls="superviseCallSession">Supervise Call Session</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/superviseCallSession" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Allows to monitor a call session in 'Listen' mode. Input parameters should contain internal identifiers of a monitored user and a supervisor's device. Call session should be specified in path. Please note that this method supports single channel audio flow, which means that audio of both call participants is mixed and delivered to the supervisor in single audio channel.</p></p>
-      </td>
+      <td class="description"><p>Allows to monitor a call session in 'Listen' mode. Input parameters should contain internal identifiers of a monitored user and a supervisor's device. Call session should be specified in path. Please note that this method supports single channel audio flow, which means that audio of both call participants is mixed and delivered to the supervisor in single audio channel.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3577,12 +3435,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#superviseCallParty" aria-expanded="true" aria-controls="superviseCallParty">Supervise Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#superviseCallParty" aria-expanded="true" aria-controls="superviseCallParty">Supervise Call Party</a> <a href="https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Allows to monitor a call party in 'Listen' mode. Input parameters are extension number of a monitored user and internal identifier of a supervisor's device. Call session and party identifiers should be specified in path. Please note that for this method dual channel audio flow is supported, which means that you need to make one more request for monitoring the second participant of a call. And as a result of each monitoring request the client recieves SIP invite with the following header <code>p-rc-api-monitoring-ids</code> containing IDs of the monitored party and session. The flow is supported for calls with no more than 2 participants.</p></p>
-      </td>
+      <td class="description"><p>Allows to monitor a call party in 'Listen' mode. Input parameters are extension number of a monitored user and internal identifier of a supervisor's device. Call session and party identifiers should be specified in path. Please note that for this method dual channel audio flow is supported, which means that you need to make one more request for monitoring the second participant of a call. And as a result of each monitoring request the client recieves SIP invite with the following header <code>p-rc-api-monitoring-ids</code> containing IDs of the monitored party and session. The flow is supported for calls with no more than 2 participants.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3649,12 +3505,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listForwardingNumbers" aria-expanded="true" aria-controls="listForwardingNumbers">Get Forwarding Number List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/listForwardingNumbers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listForwardingNumbers" aria-expanded="true" aria-controls="listForwardingNumbers">Get Forwarding Number List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/listForwardingNumbers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of extension phone numbers used for call forwarding and call flip. The returned list contains all the extension phone numbers used for call forwarding and call flip.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of extension phone numbers used for call forwarding and call flip. The returned list contains all the extension phone numbers used for call forwarding and call flip.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3708,12 +3562,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createForwardingNumber" aria-expanded="true" aria-controls="createForwardingNumber">Create Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/createForwardingNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createForwardingNumber" aria-expanded="true" aria-controls="createForwardingNumber">Create Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/createForwardingNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Adds a new forwarding number to the forwarding number list.</p></p>
-      </td>
+      <td class="description"><p>Adds a new forwarding number to the forwarding number list.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3760,12 +3612,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readForwardingNumber" aria-expanded="true" aria-controls="readForwardingNumber">Get Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/readForwardingNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readForwardingNumber" aria-expanded="true" aria-controls="readForwardingNumber">Get Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/readForwardingNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a specific forwarding number.</p></p>
-      </td>
+      <td class="description"><p>Returns a specific forwarding number.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3812,12 +3662,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateForwardingNumber" aria-expanded="true" aria-controls="updateForwardingNumber">Update Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/updateForwardingNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateForwardingNumber" aria-expanded="true" aria-controls="updateForwardingNumber">Update Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/updateForwardingNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the existing forwarding number from the forwarding number list.</p></p>
-      </td>
+      <td class="description"><p>Updates the existing forwarding number from the forwarding number list.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3871,12 +3719,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteForwardingNumber" aria-expanded="true" aria-controls="deleteForwardingNumber">Delete Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/deleteForwardingNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteForwardingNumber" aria-expanded="true" aria-controls="deleteForwardingNumber">Delete Forwarding Number</a> <a href="https://developers.ringcentral.com/api-reference/Call-Forwarding/deleteForwardingNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes a forwarding number from the forwarding number list by its ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes a forwarding number from the forwarding number list by its ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3936,12 +3782,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserCallLog" aria-expanded="true" aria-controls="readUserCallLog">Get User Call Log Records</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readUserCallLog" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserCallLog" aria-expanded="true" aria-controls="readUserCallLog">Get User Call Log Records</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readUserCallLog" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call log records filtered by parameters specified.</p></p>
-      </td>
+      <td class="description"><p>Returns call log records filtered by parameters specified.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4086,12 +3930,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteUserCallLog" aria-expanded="true" aria-controls="deleteUserCallLog">Delete User Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/deleteUserCallLog" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteUserCallLog" aria-expanded="true" aria-controls="deleteUserCallLog">Delete User Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/deleteUserCallLog" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes filtered call log records.</p></p>
-      </td>
+      <td class="description"><p>Deletes filtered call log records.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4173,12 +4015,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncUserCallLog" aria-expanded="true" aria-controls="syncUserCallLog">Sync User Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/syncUserCallLog" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncUserCallLog" aria-expanded="true" aria-controls="syncUserCallLog">Sync User Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/syncUserCallLog" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Synchronizes call log records.</p></p>
-      </td>
+      <td class="description"><p>Synchronizes call log records.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4267,12 +4107,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserCallRecord" aria-expanded="true" aria-controls="readUserCallRecord">Get User Call Record</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readUserCallRecord" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserCallRecord" aria-expanded="true" aria-controls="readUserCallRecord">Get User Call Record</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readUserCallRecord" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call log records by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns call log records by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4326,12 +4164,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionActiveCalls" aria-expanded="true" aria-controls="listExtensionActiveCalls">Get User Active Calls</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/listExtensionActiveCalls" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionActiveCalls" aria-expanded="true" aria-controls="listExtensionActiveCalls">Get User Active Calls</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/listExtensionActiveCalls" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns records of all extension calls that are in progress, ordered by start time in descending order.</p></p>
-      </td>
+      <td class="description"><p>Returns records of all extension calls that are in progress, ordered by start time in descending order.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4406,12 +4242,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyCallLog" aria-expanded="true" aria-controls="readCompanyCallLog">Get Company Call Log Records</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readCompanyCallLog" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyCallLog" aria-expanded="true" aria-controls="readCompanyCallLog">Get Company Call Log Records</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readCompanyCallLog" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call log records filtered by parameters specified.</p></p>
-      </td>
+      <td class="description"><p>Returns call log records filtered by parameters specified.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4528,12 +4362,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncAccountCallLog" aria-expanded="true" aria-controls="syncAccountCallLog">Sync Company Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/syncAccountCallLog" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncAccountCallLog" aria-expanded="true" aria-controls="syncAccountCallLog">Sync Company Call Log</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/syncAccountCallLog" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Synchronizes company call log records.</p></p>
-      </td>
+      <td class="description"><p>Synchronizes company call log records.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4615,12 +4447,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyCallRecord" aria-expanded="true" aria-controls="readCompanyCallRecord">Get Company Call Log Record(s)</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readCompanyCallRecord" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyCallRecord" aria-expanded="true" aria-controls="readCompanyCallRecord">Get Company Call Log Record(s)</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/readCompanyCallRecord" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns individual call log record(s) by ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns individual call log record(s) by ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4667,12 +4497,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCompanyActiveCalls" aria-expanded="true" aria-controls="listCompanyActiveCalls">Get Company Active Calls</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/listCompanyActiveCalls" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCompanyActiveCalls" aria-expanded="true" aria-controls="listCompanyActiveCalls">Get Company Active Calls</a> <a href="https://developers.ringcentral.com/api-reference/Call-Log/listCompanyActiveCalls" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns records of all calls that are in progress, ordered by start time in descending order.</p></p>
-      </td>
+      <td class="description"><p>Returns records of all calls that are in progress, ordered by start time in descending order.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4760,12 +4588,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCallMonitoringGroup" aria-expanded="true" aria-controls="createCallMonitoringGroup">Create Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCallMonitoringGroup" aria-expanded="true" aria-controls="createCallMonitoringGroup">Create Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new call monitoring group.</p></p>
-      </td>
+      <td class="description"><p>Creates a new call monitoring group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4805,12 +4631,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallMonitoringGroups" aria-expanded="true" aria-controls="listCallMonitoringGroups">Get Call Monitoring Groups List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroups" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallMonitoringGroups" aria-expanded="true" aria-controls="listCallMonitoringGroups">Get Call Monitoring Groups List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroups" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call monitoring groups that can be filtered by some extension.</p></p>
-      </td>
+      <td class="description"><p>Returns call monitoring groups that can be filtered by some extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4864,12 +4688,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallMonitoringGroup" aria-expanded="true" aria-controls="updateCallMonitoringGroup">Updates Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroup" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallMonitoringGroup" aria-expanded="true" aria-controls="updateCallMonitoringGroup">Updates Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroup" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates call monitoring group name by ID.</p></p>
-      </td>
+      <td class="description"><p>Updates call monitoring group name by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4916,12 +4738,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallMonitoringGroup" aria-expanded="true" aria-controls="deleteCallMonitoringGroup">Delete Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/deleteCallMonitoringGroup" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallMonitoringGroup" aria-expanded="true" aria-controls="deleteCallMonitoringGroup">Delete Call Monitoring Group</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/deleteCallMonitoringGroup" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Remove infromation about the given call monitoring group.</p></p>
-      </td>
+      <td class="description"><p>Remove infromation about the given call monitoring group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4961,12 +4781,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallMonitoringGroupMembers" aria-expanded="true" aria-controls="listCallMonitoringGroupMembers">Get Call Monitoring Group Member List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroupMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallMonitoringGroupMembers" aria-expanded="true" aria-controls="listCallMonitoringGroupMembers">Get Call Monitoring Group Member List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroupMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call monitoring group members.</p></p>
-      </td>
+      <td class="description"><p>Returns call monitoring group members.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5020,12 +4838,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallMonitoringGroupList" aria-expanded="true" aria-controls="updateCallMonitoringGroupList">Update Call Monitoring Group List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroupList" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallMonitoringGroupList" aria-expanded="true" aria-controls="updateCallMonitoringGroupList">Update Call Monitoring Group List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroupList" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates call monitoring groups.</p></p>
-      </td>
+      <td class="description"><p>Updates call monitoring groups.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5085,12 +4901,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallQueues" aria-expanded="true" aria-controls="listCallQueues">Get Call Queue List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listCallQueues" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallQueues" aria-expanded="true" aria-controls="listCallQueues">Get Call Queue List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listCallQueues" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call queue group list.</p></p>
-      </td>
+      <td class="description"><p>Returns call queue group list.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5144,12 +4958,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueueInfo" aria-expanded="true" aria-controls="readCallQueueInfo">Get Call Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/readCallQueueInfo" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueueInfo" aria-expanded="true" aria-controls="readCallQueueInfo">Get Call Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/readCallQueueInfo" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns basic information on a call queue group extension.</p></p>
-      </td>
+      <td class="description"><p>Returns basic information on a call queue group extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5189,12 +5001,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueueInfo" aria-expanded="true" aria-controls="updateCallQueueInfo">Update Call Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/updateCallQueueInfo" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueueInfo" aria-expanded="true" aria-controls="updateCallQueueInfo">Update Call Queue</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/updateCallQueueInfo" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates information on a call queue group extension.</p></p>
-      </td>
+      <td class="description"><p>Updates information on a call queue group extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5241,12 +5051,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallQueueMembers" aria-expanded="true" aria-controls="listCallQueueMembers">Get Call Queue Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listCallQueueMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallQueueMembers" aria-expanded="true" aria-controls="listCallQueueMembers">Get Call Queue Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listCallQueueMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call queue group members.</p></p>
-      </td>
+      <td class="description"><p>Returns call queue group members.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5300,12 +5108,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleCallQueueMembers" aria-expanded="true" aria-controls="assignMultipleCallQueueMembers">Assign Multiple Call Queue Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/assignMultipleCallQueueMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleCallQueueMembers" aria-expanded="true" aria-controls="assignMultipleCallQueueMembers">Assign Multiple Call Queue Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/assignMultipleCallQueueMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a call queue group.</p></p>
-      </td>
+      <td class="description"><p>Updates a call queue group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5352,12 +5158,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserCallQueues" aria-expanded="true" aria-controls="updateUserCallQueues">Update User Call Queues</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/updateUserCallQueues" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserCallQueues" aria-expanded="true" aria-controls="updateUserCallQueues">Update User Call Queues</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/updateUserCallQueues" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the list of call queues where the user is an agent. This is a full update request, which means that if any queue where the user is an agent is not mentioned in request, then the user is automatically removed from this queue.</p></p>
-      </td>
+      <td class="description"><p>Updates the list of call queues where the user is an agent. This is a full update request, which means that if any queue where the user is an agent is not mentioned in request, then the user is automatically removed from this queue.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5404,12 +5208,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDepartmentMembers" aria-expanded="true" aria-controls="listDepartmentMembers">Get Department Member List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listDepartmentMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDepartmentMembers" aria-expanded="true" aria-controls="listDepartmentMembers">Get Department Member List</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/listDepartmentMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Viewing user account info (including name, business name, address and phone number/account number)</p></p>
-      </td>
+      <td class="description"><p>Viewing user account info (including name, business name, address and phone number/account number)</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5463,12 +5265,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleDepartmentMembers" aria-expanded="true" aria-controls="assignMultipleDepartmentMembers">Assign Multiple Department Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/assignMultipleDepartmentMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultipleDepartmentMembers" aria-expanded="true" aria-controls="assignMultipleDepartmentMembers">Assign Multiple Department Members</a> <a href="https://developers.ringcentral.com/api-reference/Call-Queues/assignMultipleDepartmentMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Adds and/or removes multiple call queue members</p></p>
-      </td>
+      <td class="description"><p>Adds and/or removes multiple call queue members</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5521,12 +5321,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallRecording" aria-expanded="true" aria-controls="readCallRecording">Get Call Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Recordings/readCallRecording" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallRecording" aria-expanded="true" aria-controls="readCallRecording">Get Call Recording</a> <a href="https://developers.ringcentral.com/api-reference/Call-Recordings/readCallRecording" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call recordings by ID(s).</p></p>
-      </td>
+      <td class="description"><p>Returns call recordings by ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5566,12 +5364,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallRecordingData" aria-expanded="true" aria-controls="listCallRecordingData">Get Call Recordings Data</a> <a href="https://developers.ringcentral.com/api-reference/Call-Recordings/listCallRecordingData" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallRecordingData" aria-expanded="true" aria-controls="listCallRecordingData">Get Call Recordings Data</a> <a href="https://developers.ringcentral.com/api-reference/Call-Recordings/listCallRecordingData" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns media content of a call recording.</p></p>
-      </td>
+      <td class="description"><p>Returns media content of a call recording.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5624,12 +5420,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createIVRPrompt" aria-expanded="true" aria-controls="createIVRPrompt">Create IVR Prompts</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/createIVRPrompt" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createIVRPrompt" aria-expanded="true" aria-controls="createIVRPrompt">Create IVR Prompts</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/createIVRPrompt" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates an IVR prompt.</p></p>
-      </td>
+      <td class="description"><p>Creates an IVR prompt.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5676,12 +5470,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get IVR Prompt List <a href="https://developers.ringcentral.com/api-reference/Call-Routing/listIVRPrompts" class="external-link">#</a>
+        Get IVR Prompt List <a href="https://developers.ringcentral.com/api-reference/Call-Routing/listIVRPrompts" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the list of IVR prompts.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of IVR prompts.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5693,12 +5485,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRPrompt" aria-expanded="true" aria-controls="readIVRPrompt">Get IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRPrompt" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRPrompt" aria-expanded="true" aria-controls="readIVRPrompt">Get IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRPrompt" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns an IVR prompt by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns an IVR prompt by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5738,12 +5528,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteIVRPrompt" aria-expanded="true" aria-controls="deleteIVRPrompt">Delete IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/deleteIVRPrompt" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteIVRPrompt" aria-expanded="true" aria-controls="deleteIVRPrompt">Delete IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/deleteIVRPrompt" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes an IVR prompt by ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes an IVR prompt by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5783,12 +5571,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateIVRPrompt" aria-expanded="true" aria-controls="updateIVRPrompt">Update IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/updateIVRPrompt" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateIVRPrompt" aria-expanded="true" aria-controls="updateIVRPrompt">Update IVR Prompt</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/updateIVRPrompt" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates an IVR prompt by ID</p></p>
-      </td>
+      <td class="description"><p>Updates an IVR prompt by ID</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5835,12 +5621,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRPromptContent" aria-expanded="true" aria-controls="readIVRPromptContent">Get IVR Prompt Content</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRPromptContent" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRPromptContent" aria-expanded="true" aria-controls="readIVRPromptContent">Get IVR Prompt Content</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRPromptContent" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns media content of an IVR prompt by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns media content of an IVR prompt by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5880,12 +5664,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createIVRMenu" aria-expanded="true" aria-controls="createIVRMenu">Create IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/createIVRMenu" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createIVRMenu" aria-expanded="true" aria-controls="createIVRMenu">Create IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/createIVRMenu" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a company IVR menu.</p></p>
-      </td>
+      <td class="description"><p>Creates a company IVR menu.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5925,12 +5707,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRMenu" aria-expanded="true" aria-controls="readIVRMenu">Get IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRMenu" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readIVRMenu" aria-expanded="true" aria-controls="readIVRMenu">Get IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/readIVRMenu" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a company IVR menu by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a company IVR menu by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -5970,12 +5750,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateIVRMenu" aria-expanded="true" aria-controls="updateIVRMenu">Update IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/updateIVRMenu" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateIVRMenu" aria-expanded="true" aria-controls="updateIVRMenu">Update IVR Menu</a> <a href="https://developers.ringcentral.com/api-reference/Call-Routing/updateIVRMenu" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a company IVR menu by ID.</p></p>
-      </td>
+      <td class="description"><p>Updates a company IVR menu by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6035,12 +5813,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipChats" aria-expanded="true" aria-controls="listGlipChats">Get Chats</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listGlipChats" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipChats" aria-expanded="true" aria-controls="listGlipChats">Get Chats</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listGlipChats" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6087,12 +5863,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Chat <a href="https://developers.ringcentral.com/api-reference/Chats/readGlipChat" class="external-link">#</a>
+        Get Chat <a href="https://developers.ringcentral.com/api-reference/Chats/readGlipChat" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about a chat by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns information about a chat by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6104,12 +5878,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listRecentChats" aria-expanded="true" aria-controls="listRecentChats">Get Recent Chats</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listRecentChats" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listRecentChats" aria-expanded="true" aria-controls="listRecentChats">Get Recent Chats</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listRecentChats" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns recent chats where the user is a member. All records in response are sorted by the <code>lastModifiedTime</code> in descending order (the latest changed chat is displayed first on page)</p></p>
-      </td>
+      <td class="description"><p>Returns recent chats where the user is a member. All records in response are sorted by the <code>lastModifiedTime</code> in descending order (the latest changed chat is displayed first on page)</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6149,12 +5921,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Favorite Chats <a href="https://developers.ringcentral.com/api-reference/Chats/listFavoriteChats" class="external-link">#</a>
+        Get Favorite Chats <a href="https://developers.ringcentral.com/api-reference/Chats/listFavoriteChats" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a list of the current user's favorite chats.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of the current user's favorite chats.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6166,12 +5936,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Add Chat to Favorites <a href="https://developers.ringcentral.com/api-reference/Chats/favoriteGlipChat" class="external-link">#</a>
+        Add Chat to Favorites <a href="https://developers.ringcentral.com/api-reference/Chats/favoriteGlipChat" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Adds the specified chat to the users's list of favorites.</p></p>
-      </td>
+      <td class="description"><p>Adds the specified chat to the users's list of favorites.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6183,12 +5951,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Remove Chat from Favorites <a href="https://developers.ringcentral.com/api-reference/Chats/unfavoriteGlipChat" class="external-link">#</a>
+        Remove Chat from Favorites <a href="https://developers.ringcentral.com/api-reference/Chats/unfavoriteGlipChat" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Removes the specified chat from the users's list of favorites.</p></p>
-      </td>
+      <td class="description"><p>Removes the specified chat from the users's list of favorites.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6200,12 +5966,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Mark Chat as Read <a href="https://developers.ringcentral.com/api-reference/Chats/markChatRead" class="external-link">#</a>
+        Mark Chat as Read <a href="https://developers.ringcentral.com/api-reference/Chats/markChatRead" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Sets the specified chat status to 'Read' for the current user.</p></p>
-      </td>
+      <td class="description"><p>Sets the specified chat status to 'Read' for the current user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6217,12 +5981,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Mark Chat as Unread <a href="https://developers.ringcentral.com/api-reference/Chats/markChatUnread" class="external-link">#</a>
+        Mark Chat as Unread <a href="https://developers.ringcentral.com/api-reference/Chats/markChatUnread" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Sets the specified chat status to 'Unread' for the current user.</p></p>
-      </td>
+      <td class="description"><p>Sets the specified chat status to 'Unread' for the current user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6234,12 +5996,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipGroups" aria-expanded="true" aria-controls="listGlipGroups">Get User Groups</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listGlipGroups" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipGroups" aria-expanded="true" aria-controls="listGlipGroups">Get User Groups</a> <a href="https://developers.ringcentral.com/api-reference/Chats/listGlipGroups" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of groups where the user is a member.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of groups where the user is a member.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6286,12 +6046,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Create Group <a href="https://developers.ringcentral.com/api-reference/Chats/createGlipGroup" class="external-link">#</a>
+        Create Group <a href="https://developers.ringcentral.com/api-reference/Chats/createGlipGroup" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a new private chat/team.</p></p>
-      </td>
+      <td class="description"><p>Creates a new private chat/team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6303,12 +6061,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Group <a href="https://developers.ringcentral.com/api-reference/Chats/readGlipGroup" class="external-link">#</a>
+        Get Group <a href="https://developers.ringcentral.com/api-reference/Chats/readGlipGroup" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about a group or multiple groups by their ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns information about a group or multiple groups by their ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6320,12 +6076,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignGlipGroupMembers" aria-expanded="true" aria-controls="assignGlipGroupMembers">Edit Group Members</a> <a href="https://developers.ringcentral.com/api-reference/Chats/assignGlipGroupMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignGlipGroupMembers" aria-expanded="true" aria-controls="assignGlipGroupMembers">Edit Group Members</a> <a href="https://developers.ringcentral.com/api-reference/Chats/assignGlipGroupMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates group members. <strong>Please note:</strong> Only groups of 'Team' type can be updated. Currently only one operation at a time (either adding or removal) is supported.</p></p>
-      </td>
+      <td class="description"><p>Updates group members. <strong>Please note:</strong> Only groups of 'Team' type can be updated. Currently only one operation at a time (either adding or removal) is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6378,12 +6132,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Account Info <a href="https://developers.ringcentral.com/api-reference/Company/readAccountInfo" class="external-link">#</a>
+        Get Account Info <a href="https://developers.ringcentral.com/api-reference/Company/readAccountInfo" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns basic information about a particular RingCentral customer account.</p></p>
-      </td>
+      <td class="description"><p>Returns basic information about a particular RingCentral customer account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6395,12 +6147,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Account Business Address <a href="https://developers.ringcentral.com/api-reference/Company/readAccountBusinessAddress" class="external-link">#</a>
+        Get Account Business Address <a href="https://developers.ringcentral.com/api-reference/Company/readAccountBusinessAddress" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns business address of a company.</p></p>
-      </td>
+      <td class="description"><p>Returns business address of a company.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6412,12 +6162,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateAccountBusinessAddress" aria-expanded="true" aria-controls="updateAccountBusinessAddress">Update Company Business Address</a> <a href="https://developers.ringcentral.com/api-reference/Company/updateAccountBusinessAddress" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateAccountBusinessAddress" aria-expanded="true" aria-controls="updateAccountBusinessAddress">Update Company Business Address</a> <a href="https://developers.ringcentral.com/api-reference/Company/updateAccountBusinessAddress" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the business address of a company that account is linked to. Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Updates the business address of a company that account is linked to. Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6457,12 +6205,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Account Service Info <a href="https://developers.ringcentral.com/api-reference/Company/readAccountServiceInfo" class="external-link">#</a>
+        Get Account Service Info <a href="https://developers.ringcentral.com/api-reference/Company/readAccountServiceInfo" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the information about service plan, available features and limitations for a particular RingCentral customer account.</p></p>
-      </td>
+      <td class="description"><p>Returns the information about service plan, available features and limitations for a particular RingCentral customer account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6487,12 +6233,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipConversations" aria-expanded="true" aria-controls="listGlipConversations">Get Conversations</a> <a href="https://developers.ringcentral.com/api-reference/Conversations/listGlipConversations" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipConversations" aria-expanded="true" aria-controls="listGlipConversations">Get Conversations</a> <a href="https://developers.ringcentral.com/api-reference/Conversations/listGlipConversations" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of conversations where the user is a member. All records in response are sorted by creation time of a chat in ascending order.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of conversations where the user is a member. All records in response are sorted by creation time of a chat in ascending order.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6532,12 +6276,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Create/Open Conversation <a href="https://developers.ringcentral.com/api-reference/Conversations/createGlipConversation" class="external-link">#</a>
+        Create/Open Conversation <a href="https://developers.ringcentral.com/api-reference/Conversations/createGlipConversation" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a new conversation or opens the existing one. If the conversation already exists, then its ID will be returned in response. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description. If you add a person to the existing conversation, it creates a whole new conversation.</p></p>
-      </td>
+      <td class="description"><p>Creates a new conversation or opens the existing one. If the conversation already exists, then its ID will be returned in response. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description. If you add a person to the existing conversation, it creates a whole new conversation.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6549,12 +6291,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Conversation <a href="https://developers.ringcentral.com/api-reference/Conversations/readGlipConversation" class="external-link">#</a>
+        Get Conversation <a href="https://developers.ringcentral.com/api-reference/Conversations/readGlipConversation" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about the specified conversation, including the list of conversation participants. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description. If you add a person to the existing conversation, it creates a whole new conversation.</p></p>
-      </td>
+      <td class="description"><p>Returns information about the specified conversation, including the list of conversation participants. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description. If you add a person to the existing conversation, it creates a whole new conversation.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6579,12 +6319,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCustomField" aria-expanded="true" aria-controls="createCustomField">Create Custom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/createCustomField" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCustomField" aria-expanded="true" aria-controls="createCustomField">Create Custom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/createCustomField" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates custom field attached to the object.</p></p>
-      </td>
+      <td class="description"><p>Creates custom field attached to the object.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6624,12 +6362,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        Get Custom Field List <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/listCustomFields" class="external-link">#</a>
+        Get Custom Field List <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/listCustomFields" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the list of created custom fields.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of created custom fields.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6641,12 +6377,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCustomField" aria-expanded="true" aria-controls="updateCustomField">Update Сustom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/updateCustomField" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCustomField" aria-expanded="true" aria-controls="updateCustomField">Update Сustom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/updateCustomField" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates custom field by ID specified in path.</p></p>
-      </td>
+      <td class="description"><p>Updates custom field by ID specified in path.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6693,12 +6427,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCustomField" aria-expanded="true" aria-controls="deleteCustomField">Delete Custom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/deleteCustomField" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCustomField" aria-expanded="true" aria-controls="deleteCustomField">Delete Custom Field</a> <a href="https://developers.ringcentral.com/api-reference/Custom-Fields/deleteCustomField" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes custom field(s) by ID(s) with the corresponding values.</p></p>
-      </td>
+      <td class="description"><p>Deletes custom field(s) by ID(s) with the corresponding values.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6751,12 +6483,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDevice" aria-expanded="true" aria-controls="readDevice">Get Device</a> <a href="https://developers.ringcentral.com/api-reference/Devices/readDevice" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDevice" aria-expanded="true" aria-controls="readDevice">Get Device</a> <a href="https://developers.ringcentral.com/api-reference/Devices/readDevice" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns account device(s) by their ID(s).</p></p>
-      </td>
+      <td class="description"><p>Returns account device(s) by their ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6803,12 +6533,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateDevice" aria-expanded="true" aria-controls="updateDevice">Update Device</a> <a href="https://developers.ringcentral.com/api-reference/Devices/updateDevice" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateDevice" aria-expanded="true" aria-controls="updateDevice">Update Device</a> <a href="https://developers.ringcentral.com/api-reference/Devices/updateDevice" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates account device(s) by their ID(s).</p></p>
-      </td>
+      <td class="description"><p>Updates account device(s) by their ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6862,12 +6590,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionDevices" aria-expanded="true" aria-controls="listExtensionDevices">Get Extension Device List</a> <a href="https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionDevices" aria-expanded="true" aria-controls="listExtensionDevices">Get Extension Device List</a> <a href="https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns devices of the extension(s) by their ID(s). Batch request is supported</p></p>
-      </td>
+      <td class="description"><p>Returns devices of the extension(s) by their ID(s). Batch request is supported</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -6934,12 +6660,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensions" aria-expanded="true" aria-controls="listExtensions">Get Extension List</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/listExtensions" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensions" aria-expanded="true" aria-controls="listExtensions">Get Extension List</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/listExtensions" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of extensions created for a particular account. All types of extensions are included in this list.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of extensions created for a particular account. All types of extensions are included in this list.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7014,12 +6738,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createExtension" aria-expanded="true" aria-controls="createExtension">Create Extension</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/createExtension" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createExtension" aria-expanded="true" aria-controls="createExtension">Create Extension</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/createExtension" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates an extension.</p></p>
-      </td>
+      <td class="description"><p>Creates an extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7059,12 +6781,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listUserTemplates" aria-expanded="true" aria-controls="listUserTemplates">Get User Template List</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/listUserTemplates" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listUserTemplates" aria-expanded="true" aria-controls="listUserTemplates">Get User Template List</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/listUserTemplates" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of user templates for the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of user templates for the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7118,12 +6838,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserTemplate" aria-expanded="true" aria-controls="readUserTemplate">Get User Template</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/readUserTemplate" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserTemplate" aria-expanded="true" aria-controls="readUserTemplate">Get User Template</a> <a href="https://developers.ringcentral.com/api-reference/Extensions/readUserTemplate" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the user template by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns the user template by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7176,12 +6894,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listContacts" aria-expanded="true" aria-controls="listContacts">Get Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/listContacts" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listContacts" aria-expanded="true" aria-controls="listContacts">Get Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/listContacts" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns user personal contacts.</p></p>
-      </td>
+      <td class="description"><p>Returns user personal contacts.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7256,12 +6972,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createContact" aria-expanded="true" aria-controls="createContact">Create Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/createContact" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createContact" aria-expanded="true" aria-controls="createContact">Create Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/createContact" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates personal user contact.</p></p>
-      </td>
+      <td class="description"><p>Creates personal user contact.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7315,12 +7029,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readContact" aria-expanded="true" aria-controls="readContact">Get Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/readContact" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readContact" aria-expanded="true" aria-controls="readContact">Get Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/readContact" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns contact(s) by ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns contact(s) by ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7367,12 +7079,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateContact" aria-expanded="true" aria-controls="updateContact">Update Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/updateContact" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateContact" aria-expanded="true" aria-controls="updateContact">Update Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/updateContact" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates personal contact information by contact ID(s). Batch request is supported</p></p>
-      </td>
+      <td class="description"><p>Updates personal contact information by contact ID(s). Batch request is supported</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7433,12 +7143,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteContact" aria-expanded="true" aria-controls="deleteContact">Delete Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/deleteContact" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteContact" aria-expanded="true" aria-controls="deleteContact">Delete Contact</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/deleteContact" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes contact(s) by ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Deletes contact(s) by ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7485,12 +7193,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncAddressBook" aria-expanded="true" aria-controls="syncAddressBook">Address Book Synchronization</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/syncAddressBook" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncAddressBook" aria-expanded="true" aria-controls="syncAddressBook">Address Book Synchronization</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/syncAddressBook" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Synchronizes user contacts.</p></p>
-      </td>
+      <td class="description"><p>Synchronizes user contacts.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7558,12 +7264,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listFavoriteContacts" aria-expanded="true" aria-controls="listFavoriteContacts">Get Favorite Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/listFavoriteContacts" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listFavoriteContacts" aria-expanded="true" aria-controls="listFavoriteContacts">Get Favorite Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/listFavoriteContacts" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of favorite contacts of the current extension. Favorite contacts include both company contacts (extensions) and personal contacts (address book records).</p></p>
-      </td>
+      <td class="description"><p>Returns the list of favorite contacts of the current extension. Favorite contacts include both company contacts (extensions) and personal contacts (address book records).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7603,12 +7307,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateFavoriteContactList" aria-expanded="true" aria-controls="updateFavoriteContactList">Update Favorite Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/updateFavoriteContactList" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateFavoriteContactList" aria-expanded="true" aria-controls="updateFavoriteContactList">Update Favorite Contact List</a> <a href="https://developers.ringcentral.com/api-reference/External-Contacts/updateFavoriteContactList" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the list of favorite contacts of the current extension. Favorite contacts include both company contacts (extensions) and personal contacts (address book records).<strong>Please note</strong>: currently personal address book size is limited to 10 000 contacts.</p></p>
-      </td>
+      <td class="description"><p>Updates the list of favorite contacts of the current extension. Favorite contacts include both company contacts (extensions) and personal contacts (address book records).<strong>Please note</strong>: currently personal address book size is limited to 10 000 contacts.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7668,12 +7370,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createFaxMessage" aria-expanded="true" aria-controls="createFaxMessage">Create Fax Message</a> <a href="https://developers.ringcentral.com/api-reference/Fax/createFaxMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createFaxMessage" aria-expanded="true" aria-controls="createFaxMessage">Create Fax Message</a> <a href="https://developers.ringcentral.com/api-reference/Fax/createFaxMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates and sends/resends a fax message. Resend can be implemented if sending has failed. Fax attachment size (both single and total) is limited to 50Mb.</p></p>
-      </td>
+      <td class="description"><p>Creates and sends/resends a fax message. Resend can be implemented if sending has failed. Fax attachment size (both single and total) is limited to 50Mb.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7762,12 +7462,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listFaxCoverPages" aria-expanded="true" aria-controls="listFaxCoverPages">Get Fax Cover Page List</a> <a href="https://developers.ringcentral.com/api-reference/Fax/listFaxCoverPages" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listFaxCoverPages" aria-expanded="true" aria-controls="listFaxCoverPages">Get Fax Cover Page List</a> <a href="https://developers.ringcentral.com/api-reference/Fax/listFaxCoverPages" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns fax cover pages available for the current extension.</p></p>
-      </td>
+      <td class="description"><p>Returns fax cover pages available for the current extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7820,11 +7518,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserFeatures" aria-expanded="true" aria-controls="readUserFeatures">Get User Features</a> <a href="https://developers.ringcentral.com/api-reference/Features/readUserFeatures" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserFeatures" aria-expanded="true" aria-controls="readUserFeatures">Get User Features</a> <a href="https://developers.ringcentral.com/api-reference/Features/readUserFeatures" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of supported features and information on their availability for the current extension. Specific feature(s) might be checked by providing <code>featureId</code> query param. Multiple values supported, format: <code>?featureId=Feature1&amp;featureId=Feature2</code>. To get only available features in order to decrease response size, <code>availableOnly=true</code> query param might be specified.
+      <td class="description"><p>Returns the list of supported features and information on their availability for the current extension. Specific feature(s) might be checked by providing <code>featureId</code> query param. Multiple values supported, format: <code>?featureId=Feature1&amp;featureId=Feature2</code>. To get only available features in order to decrease response size, <code>availableOnly=true</code> query param might be specified.
 In case the feature is available for the current user, <code>"available": true</code> is returned in the response for the record with corresponding feature <code>id</code>. Otherwise, additional attribute <code>reason</code> is returned with the appropriate code:
 * <code>ServicePlanLimitation</code> - the feature not included to the account service plan;
 * <code>AccountLimitation</code> - the feature is turned off for the account;
@@ -7843,8 +7540,7 @@ In case the feature is available for the current user, <code>"available": true</
     }
   ]
 }
-</code></pre></p>
-      </td>
+</code></pre></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7911,12 +7607,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create Data Export Task <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/createDataExportTask" class="external-link">#</a>
+        Create Data Export Task <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/createDataExportTask" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a task for Glip data export and returns a link at which the exported data will be available in future once the task is implemented. The exported data can be downloaded by calling Get Data Export Task method with the specified task ID. Simultaneously no more than 2 tasks per company can be created.</p></p>
-      </td>
+      <td class="description"><p>Creates a task for Glip data export and returns a link at which the exported data will be available in future once the task is implemented. The exported data can be downloaded by calling Get Data Export Task method with the specified task ID. Simultaneously no more than 2 tasks per company can be created.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7928,12 +7622,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDataExportTasks" aria-expanded="true" aria-controls="listDataExportTasks">Get Data Export Task List</a> <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/listDataExportTasks" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDataExportTasks" aria-expanded="true" aria-controls="listDataExportTasks">Get Data Export Task List</a> <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/listDataExportTasks" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of Glip data export tasks.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of Glip data export tasks.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7980,12 +7672,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Data Export Task <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/readDataExportTask" class="external-link">#</a>
+        Get Data Export Task <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/readDataExportTask" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the links for downloading Glip data exported within the specified task. If the export task is still in progress, then only the task status will be returned. If the data is ready for downloading, then the list of URLs will be returned.</p></p>
-      </td>
+      <td class="description"><p>Returns the links for downloading Glip data exported within the specified task. If the export task is still in progress, then only the task status will be returned. If the data is ready for downloading, then the list of URLs will be returned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -7997,12 +7687,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDataExportTaskDataset" aria-expanded="true" aria-controls="readDataExportTaskDataset">Get Data Export Task Dataset</a> <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/readDataExportTaskDataset" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDataExportTaskDataset" aria-expanded="true" aria-controls="readDataExportTaskDataset">Get Data Export Task Dataset</a> <a href="https://developers.ringcentral.com/api-reference/Glip-Compliance-Exports/readDataExportTaskDataset" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the specified dataset by ID. Each dataset is a ZIP archive the size of which is limited to 1 Gb.</p></p>
-      </td>
+      <td class="description"><p>Returns the specified dataset by ID. Each dataset is a ZIP archive the size of which is limited to 1 Gb.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8055,12 +7743,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Person <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipPerson" class="external-link">#</a>
+        Get Person <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipPerson" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a user or multiple users by their ID(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns a user or multiple users by their ID(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8072,12 +7758,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Company Info <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipCompany" class="external-link">#</a>
+        Get Company Info <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipCompany" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about one or more companies by their IDs.</p></p>
-      </td>
+      <td class="description"><p>Returns information about one or more companies by their IDs.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8089,12 +7773,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Preferences <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipPreferences" class="external-link">#</a>
+        Get Preferences <a href="https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipPreferences" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about user preferences.</p></p>
-      </td>
+      <td class="description"><p>Returns information about user preferences.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8119,12 +7801,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create Webhook in Group <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/createGlipGroupWebhook" class="external-link">#</a>
+        Create Webhook in Group <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/createGlipGroupWebhook" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a new webhook</p></p>
-      </td>
+      <td class="description"><p>Creates a new webhook</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8136,12 +7816,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Webhooks in Group <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/listGlipGroupWebhooks" class="external-link">#</a>
+        Get Webhooks in Group <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/listGlipGroupWebhooks" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns webhooks which are available for the current user by group ID.</p></p>
-      </td>
+      <td class="description"><p>Returns webhooks which are available for the current user by group ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8153,12 +7831,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Webhooks <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/listGlipWebhooks" class="external-link">#</a>
+        Get Webhooks <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/listGlipWebhooks" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a list of all webhooks associated with the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of all webhooks associated with the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8170,12 +7846,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/readGlipWebhook" class="external-link">#</a>
+        Get Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/readGlipWebhook" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns webhooks(s) with the specified id(s).</p></p>
-      </td>
+      <td class="description"><p>Returns webhooks(s) with the specified id(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8187,12 +7861,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/deleteGlipWebhook" class="external-link">#</a>
+        Delete Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/deleteGlipWebhook" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes the webhook by ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes the webhook by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8204,12 +7876,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Activate Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/activateGlipWebhook" class="external-link">#</a>
+        Activate Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/activateGlipWebhook" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Activates webhook by ID.</p></p>
-      </td>
+      <td class="description"><p>Activates webhook by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8221,12 +7891,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Suspend Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/suspendGlipWebhook" class="external-link">#</a>
+        Suspend Webhook <a href="https://developers.ringcentral.com/api-reference/Glip-Webhooks/suspendGlipWebhook" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Suspends webhook by ID.</p></p>
-      </td>
+      <td class="description"><p>Suspends webhook by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8251,12 +7919,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchDirectoryEntries" aria-expanded="true" aria-controls="searchDirectoryEntries">Search Company Directory Entries</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/searchDirectoryEntries" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchDirectoryEntries" aria-expanded="true" aria-controls="searchDirectoryEntries">Search Company Directory Entries</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/searchDirectoryEntries" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns contact information on corporate users of federated accounts according to the specified filtering and ordering.</p></p>
-      </td>
+      <td class="description"><p>Returns contact information on corporate users of federated accounts according to the specified filtering and ordering.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8296,12 +7962,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDirectoryEntry" aria-expanded="true" aria-controls="readDirectoryEntry">Get Corporate Directory Entry</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/readDirectoryEntry" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readDirectoryEntry" aria-expanded="true" aria-controls="readDirectoryEntry">Get Corporate Directory Entry</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/readDirectoryEntry" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns contact information on a particular corporate user of a federated account.</p></p>
-      </td>
+      <td class="description"><p>Returns contact information on a particular corporate user of a federated account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8341,12 +8005,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDirectoryEntries" aria-expanded="true" aria-controls="listDirectoryEntries">Get Company Directory Entries</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/listDirectoryEntries" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listDirectoryEntries" aria-expanded="true" aria-controls="listDirectoryEntries">Get Company Directory Entries</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/listDirectoryEntries" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns contact information on corporate users of federated accounts. Please note: 1. <code>User</code>, <code>DigitalUser</code>, <code>VirtualUser</code> and <code>FaxUser</code> types are returned as <code>User</code> type. 2. <code>ApplicationExtension</code> type is not returned. 3. Only extensions in <code>Enabled</code>, <code>Disabled</code> and <code>NotActivated</code> state are returned.</p></p>
-      </td>
+      <td class="description"><p>Returns contact information on corporate users of federated accounts. Please note: 1. <code>User</code>, <code>DigitalUser</code>, <code>VirtualUser</code> and <code>FaxUser</code> types are returned as <code>User</code> type. 2. <code>ApplicationExtension</code> type is not returned. 3. Only extensions in <code>Enabled</code>, <code>Disabled</code> and <code>NotActivated</code> state are returned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8421,12 +8083,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountFederation" aria-expanded="true" aria-controls="readAccountFederation">Get Account Federation</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/readAccountFederation" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountFederation" aria-expanded="true" aria-controls="readAccountFederation">Get Account Federation</a> <a href="https://developers.ringcentral.com/api-reference/Internal-Contacts/readAccountFederation" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns information on a federation and associated accounts.</p></p>
-      </td>
+      <td class="description"><p>Returns information on a federation and associated accounts.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8479,12 +8139,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#GetUserSetting" aria-expanded="true" aria-controls="GetUserSetting">Get Meeting User Settings</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetUserSetting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#GetUserSetting" aria-expanded="true" aria-controls="GetUserSetting">Get Meeting User Settings</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetUserSetting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns user settings for meetings.</p></p>
-      </td>
+      <td class="description"><p>Returns user settings for meetings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8524,12 +8182,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Locked Meeting Settings <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetAccountLockedSetting" class="external-link">#</a>
+        Get Locked Meeting Settings <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetAccountLockedSetting" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information on user meeting settings that are locked on account level and therefore cannot be changed by user.</p></p>
-      </td>
+      <td class="description"><p>Returns information on user meeting settings that are locked on account level and therefore cannot be changed by user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8541,12 +8197,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingServiceInfo" aria-expanded="true" aria-controls="readMeetingServiceInfo">Get Meeting Service Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readMeetingServiceInfo" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingServiceInfo" aria-expanded="true" aria-controls="readMeetingServiceInfo">Get Meeting Service Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readMeetingServiceInfo" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns information on dial-in numbers for meetings, support and international dial-in numbers URIs and meeting account information.</p></p>
-      </td>
+      <td class="description"><p>Returns information on dial-in numbers for meetings, support and international dial-in numbers URIs and meeting account information.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8586,12 +8240,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMeetingServiceInfo" aria-expanded="true" aria-controls="updateMeetingServiceInfo">Update Meeting Service Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/updateMeetingServiceInfo" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMeetingServiceInfo" aria-expanded="true" aria-controls="updateMeetingServiceInfo">Update Meeting Service Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/updateMeetingServiceInfo" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates personal meeting identifier.</p></p>
-      </td>
+      <td class="description"><p>Updates personal meeting identifier.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8638,12 +8290,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAssistants" aria-expanded="true" aria-controls="readAssistants">Get Assistants</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readAssistants" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAssistants" aria-expanded="true" aria-controls="readAssistants">Get Assistants</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readAssistants" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns assistants information.</p></p>
-      </td>
+      <td class="description"><p>Returns assistants information.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8683,12 +8333,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAssistedUsers" aria-expanded="true" aria-controls="readAssistedUsers">Get Assisted Users</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readAssistedUsers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAssistedUsers" aria-expanded="true" aria-controls="readAssistedUsers">Get Assisted Users</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/readAssistedUsers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns assisted users information.</p></p>
-      </td>
+      <td class="description"><p>Returns assisted users information.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8741,12 +8389,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listMeetings" aria-expanded="true" aria-controls="listMeetings">Get Scheduled Meetings</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/listMeetings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listMeetings" aria-expanded="true" aria-controls="listMeetings">Get Scheduled Meetings</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/listMeetings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a list of meetings for a particular extension. The list of meetings does not include meetings of 'Instant' type.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of meetings for a particular extension. The list of meetings does not include meetings of 'Instant' type.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8786,12 +8432,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMeeting" aria-expanded="true" aria-controls="createMeeting">Create Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/createMeeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMeeting" aria-expanded="true" aria-controls="createMeeting">Create Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/createMeeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new meeting.</p></p>
-      </td>
+      <td class="description"><p>Creates a new meeting.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8838,12 +8482,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeeting" aria-expanded="true" aria-controls="readMeeting">Get Meeting Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/readMeeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeeting" aria-expanded="true" aria-controls="readMeeting">Get Meeting Info</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/readMeeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a particular meetings details by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a particular meetings details by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8890,12 +8532,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMeeting" aria-expanded="true" aria-controls="updateMeeting">Update Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/updateMeeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMeeting" aria-expanded="true" aria-controls="updateMeeting">Update Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/updateMeeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Modifies a particular meeting.</p></p>
-      </td>
+      <td class="description"><p>Modifies a particular meeting.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -8949,12 +8589,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMeeting" aria-expanded="true" aria-controls="deleteMeeting">Delete Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/deleteMeeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMeeting" aria-expanded="true" aria-controls="deleteMeeting">Delete Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/deleteMeeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes a scheduled meeting.</p></p>
-      </td>
+      <td class="description"><p>Deletes a scheduled meeting.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9001,12 +8639,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#endMeeting" aria-expanded="true" aria-controls="endMeeting">End Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/endMeeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#endMeeting" aria-expanded="true" aria-controls="endMeeting">End Meeting</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/endMeeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Ends a meetings which is in progress.</p></p>
-      </td>
+      <td class="description"><p>Ends a meetings which is in progress.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9053,12 +8689,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingInvitation" aria-expanded="true" aria-controls="readMeetingInvitation">Get Meeting Invitation</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/readMeetingInvitation" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingInvitation" aria-expanded="true" aria-controls="readMeetingInvitation">Get Meeting Invitation</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/readMeetingInvitation" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a meeting invitation by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a meeting invitation by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9118,12 +8752,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountMeetingRecordings" aria-expanded="true" aria-controls="listAccountMeetingRecordings">Get Account Meeting Recordings List</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountMeetingRecordings" aria-expanded="true" aria-controls="listAccountMeetingRecordings">Get Account Meeting Recordings List</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of meeting recordings for the current account.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of meeting recordings for the current account.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9191,12 +8823,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listUserMeetingRecordings" aria-expanded="true" aria-controls="listUserMeetingRecordings">Get User Meeting Recordings List</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listUserMeetingRecordings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listUserMeetingRecordings" aria-expanded="true" aria-controls="listUserMeetingRecordings">Get User Meeting Recordings List</a> <a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listUserMeetingRecordings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of meetings recordings for the current user.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of meetings recordings for the current user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9284,12 +8914,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMessageStoreReport" aria-expanded="true" aria-controls="createMessageStoreReport">Create Message Store Report</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/createMessageStoreReport" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMessageStoreReport" aria-expanded="true" aria-controls="createMessageStoreReport">Create Message Store Report</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/createMessageStoreReport" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a task to collect all account messages within the specified time interval. Maximum number of simaltaneous tasks per account is 2.</p></p>
-      </td>
+      <td class="description"><p>Creates a task to collect all account messages within the specified time interval. Maximum number of simaltaneous tasks per account is 2.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9329,12 +8957,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportTask" aria-expanded="true" aria-controls="readMessageStoreReportTask">Get Message Store Report Task</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportTask" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportTask" aria-expanded="true" aria-controls="readMessageStoreReportTask">Get Message Store Report Task</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportTask" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the current status of a task on report creation.</p></p>
-      </td>
+      <td class="description"><p>Returns the current status of a task on report creation.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9374,12 +9000,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportArchive" aria-expanded="true" aria-controls="readMessageStoreReportArchive">Get Message Store Report Archive</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportArchive" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportArchive" aria-expanded="true" aria-controls="readMessageStoreReportArchive">Get Message Store Report Archive</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportArchive" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the created report with message data not including attachments.</p></p>
-      </td>
+      <td class="description"><p>Returns the created report with message data not including attachments.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9419,12 +9043,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportArchiveContent" aria-expanded="true" aria-controls="readMessageStoreReportArchiveContent">Get Message Store Report Archive Content</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportArchiveContent" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageStoreReportArchiveContent" aria-expanded="true" aria-controls="readMessageStoreReportArchiveContent">Get Message Store Report Archive Content</a> <a href="https://developers.ringcentral.com/api-reference/Message-Exports/readMessageStoreReportArchiveContent" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns one of the report archives with message contents in application/zip format.</p></p>
-      </td>
+      <td class="description"><p>Returns one of the report archives with message contents in application/zip format.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9484,12 +9106,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listMessages" aria-expanded="true" aria-controls="listMessages">Get Message List</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/listMessages" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listMessages" aria-expanded="true" aria-controls="listMessages">Get Message List</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/listMessages" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of messages from an extension mailbox.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of messages from an extension mailbox.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9606,12 +9226,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMessageByFilter" aria-expanded="true" aria-controls="deleteMessageByFilter">Delete Conversation</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/deleteMessageByFilter" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMessageByFilter" aria-expanded="true" aria-controls="deleteMessageByFilter">Delete Conversation</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/deleteMessageByFilter" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes conversation(s) by conversation ID(s). Batch request is supported, max number of IDs passed as query/path parameters is 50. Alternative syntax is supported - user converations can be deleted by passing multiple IDs in request body as an array of string, max number of conversation IDs passed in request body is 100. In this case asterisk is used in the path instead of IDs</p></p>
-      </td>
+      <td class="description"><p>Deletes conversation(s) by conversation ID(s). Batch request is supported, max number of IDs passed as query/path parameters is 50. Alternative syntax is supported - user converations can be deleted by passing multiple IDs in request body as an array of string, max number of conversation IDs passed in request body is 100. In this case asterisk is used in the path instead of IDs</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9672,12 +9290,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessage" aria-expanded="true" aria-controls="readMessage">Get Message</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessage" aria-expanded="true" aria-controls="readMessage">Get Message</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns individual message record(s) by the given message ID(s). The length of inbound messages is unlimited. Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns individual message record(s) by the given message ID(s). The length of inbound messages is unlimited. Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9724,12 +9340,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMessage" aria-expanded="true" aria-controls="updateMessage">Update Message List</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/updateMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMessage" aria-expanded="true" aria-controls="updateMessage">Update Message List</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/updateMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates message(s) by ID(s). Currently only message read status can be updated. Batch request is supported, max number of IDs passed as query/path parameters is 50. Alternative syntax is supported - user messages can be updated by passing multiple IDs in request body as an array of string, max number of IDs passed in request body is 1000. In this case asterisk is used in the path instead of IDs</p></p>
-      </td>
+      <td class="description"><p>Updates message(s) by ID(s). Currently only message read status can be updated. Batch request is supported, max number of IDs passed as query/path parameters is 50. Alternative syntax is supported - user messages can be updated by passing multiple IDs in request body as an array of string, max number of IDs passed in request body is 1000. In this case asterisk is used in the path instead of IDs</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9797,12 +9411,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMessage" aria-expanded="true" aria-controls="deleteMessage">Delete Message</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/deleteMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteMessage" aria-expanded="true" aria-controls="deleteMessage">Delete Message</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/deleteMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes message(s) by the given message ID(s). The first call of this method transfers the message to the 'Delete' status. The second call transfers the deleted message to the 'Purged' status. If it is required to make the message 'Purged' immediately (from the first call), then set the query parameter purge to 'True'.</p></p>
-      </td>
+      <td class="description"><p>Deletes message(s) by the given message ID(s). The first call of this method transfers the message to the 'Delete' status. The second call transfers the deleted message to the 'Purged' status. If it is required to make the message 'Purged' immediately (from the first call), then set the query parameter purge to 'True'.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9863,12 +9475,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageContent" aria-expanded="true" aria-controls="readMessageContent">Get Message Content</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessageContent" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMessageContent" aria-expanded="true" aria-controls="readMessageContent">Get Message Content</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessageContent" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a specific message attachment data as media stream.</p></p>
-      </td>
+      <td class="description"><p>Returns a specific message attachment data as media stream.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -9936,12 +9546,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncMessages" aria-expanded="true" aria-controls="syncMessages">Sync Messages</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/syncMessages" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncMessages" aria-expanded="true" aria-controls="syncMessages">Sync Messages</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/syncMessages" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Synchronizes messages.</p></p>
-      </td>
+      <td class="description"><p>Synchronizes messages.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10044,12 +9652,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Message Store Configuration <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessageStoreConfiguration" class="external-link">#</a>
+        Get Message Store Configuration <a href="https://developers.ringcentral.com/api-reference/Message-Store/readMessageStoreConfiguration" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns message store settings.</p></p>
-      </td>
+      <td class="description"><p>Returns message store settings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10061,12 +9667,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMessageStoreConfiguration" aria-expanded="true" aria-controls="updateMessageStoreConfiguration">Update Message Store Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/updateMessageStoreConfiguration" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateMessageStoreConfiguration" aria-expanded="true" aria-controls="updateMessageStoreConfiguration">Update Message Store Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Message-Store/updateMessageStoreConfiguration" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates message store settings.</p></p>
-      </td>
+      <td class="description"><p>Updates message store settings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10119,12 +9723,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMMS" aria-expanded="true" aria-controls="createMMS">Create MMS Message</a> <a href="https://developers.ringcentral.com/api-reference/MMS/createMMS" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMMS" aria-expanded="true" aria-controls="createMMS">Create MMS Message</a> <a href="https://developers.ringcentral.com/api-reference/MMS/createMMS" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates and sends media messages. Sending MMS messages simultaneously to different recipients is limited up to 50 requests per minute; relevant for all client applications.</p></p>
-      </td>
+      <td class="description"><p>Creates and sends media messages. Sending MMS messages simultaneously to different recipients is limited up to 50 requests per minute; relevant for all client applications.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10184,12 +9786,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createChatNote" aria-expanded="true" aria-controls="createChatNote">Create Note</a> <a href="https://developers.ringcentral.com/api-reference/Notes/createChatNote" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createChatNote" aria-expanded="true" aria-controls="createChatNote">Create Note</a> <a href="https://developers.ringcentral.com/api-reference/Notes/createChatNote" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new note in the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Creates a new note in the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10229,12 +9829,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listChatNotes" aria-expanded="true" aria-controls="listChatNotes">Get Chat Notes</a> <a href="https://developers.ringcentral.com/api-reference/Notes/listChatNotes" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listChatNotes" aria-expanded="true" aria-controls="listChatNotes">Get Chat Notes</a> <a href="https://developers.ringcentral.com/api-reference/Notes/listChatNotes" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of notes created in the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of notes created in the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10309,12 +9907,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Note <a href="https://developers.ringcentral.com/api-reference/Notes/readUserNote" class="external-link">#</a>
+        Get Note <a href="https://developers.ringcentral.com/api-reference/Notes/readUserNote" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the specified note(s). It is possible to fetch up to 50 notes per request.</p></p>
-      </td>
+      <td class="description"><p>Returns the specified note(s). It is possible to fetch up to 50 notes per request.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10326,12 +9922,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchNote" aria-expanded="true" aria-controls="patchNote">Update Note</a> <a href="https://developers.ringcentral.com/api-reference/Notes/patchNote" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchNote" aria-expanded="true" aria-controls="patchNote">Update Note</a> <a href="https://developers.ringcentral.com/api-reference/Notes/patchNote" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Edits a note. Notes can be edited by any user if posted to a chat the user belongs to.</p></p>
-      </td>
+      <td class="description"><p>Edits a note. Notes can be edited by any user if posted to a chat the user belongs to.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10371,12 +9965,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Note <a href="https://developers.ringcentral.com/api-reference/Notes/deleteNote" class="external-link">#</a>
+        Delete Note <a href="https://developers.ringcentral.com/api-reference/Notes/deleteNote" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes the specified note.</p></p>
-      </td>
+      <td class="description"><p>Deletes the specified note.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10388,12 +9980,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Lock Note <a href="https://developers.ringcentral.com/api-reference/Notes/lockNote" class="external-link">#</a>
+        Lock Note <a href="https://developers.ringcentral.com/api-reference/Notes/lockNote" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Locks a note providing the user with the unique write access for 5 hours.</p></p>
-      </td>
+      <td class="description"><p>Locks a note providing the user with the unique write access for 5 hours.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10405,12 +9995,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Unlock Note <a href="https://developers.ringcentral.com/api-reference/Notes/unlockNote" class="external-link">#</a>
+        Unlock Note <a href="https://developers.ringcentral.com/api-reference/Notes/unlockNote" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Unlocks a note letting other users edit this note. Once the note is locked (by another user) it cannot be unlocked during 5 hours since the lock datetime.</p></p>
-      </td>
+      <td class="description"><p>Unlocks a note letting other users edit this note. Once the note is locked (by another user) it cannot be unlocked during 5 hours since the lock datetime.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10422,12 +10010,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Publish Note <a href="https://developers.ringcentral.com/api-reference/Notes/publishNote" class="external-link">#</a>
+        Publish Note <a href="https://developers.ringcentral.com/api-reference/Notes/publishNote" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Publishes a note making it visible to other users.</p></p>
-      </td>
+      <td class="description"><p>Publishes a note making it visible to other users.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10452,12 +10038,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#authorize" aria-expanded="true" aria-controls="authorize">Authorize</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/authorize" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#authorize" aria-expanded="true" aria-controls="authorize">Authorize</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/authorize" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a link to a login page location.</p></p>
-      </td>
+      <td class="description"><p>Returns a link to a login page location.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10602,12 +10186,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#revokeToken" aria-expanded="true" aria-controls="revokeToken">Revoke Token</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/revokeToken" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#revokeToken" aria-expanded="true" aria-controls="revokeToken">Revoke Token</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/revokeToken" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Revokes access/refresh token. Requests to this endpoint must be authenticated with HTTP Basic scheme using the application key and application secret as login and password, correspondingly.</p></p>
-      </td>
+      <td class="description"><p>Revokes access/refresh token. Requests to this endpoint must be authenticated with HTTP Basic scheme using the application key and application secret as login and password, correspondingly.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10654,12 +10236,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#getToken" aria-expanded="true" aria-controls="getToken">Get Token</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/getToken" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#getToken" aria-expanded="true" aria-controls="getToken">Get Token</a> <a href="https://developers.ringcentral.com/api-reference/OAuth-2.0/getToken" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns access tokens for making API requests</p></p>
-      </td>
+      <td class="description"><p>Returns access tokens for making API requests</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10838,12 +10418,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createInternalTextMessage" aria-expanded="true" aria-controls="createInternalTextMessage">Create Internal Text Message</a> <a href="https://developers.ringcentral.com/api-reference/Pager-Messages/createInternalTextMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createInternalTextMessage" aria-expanded="true" aria-controls="createInternalTextMessage">Create Internal Text Message</a> <a href="https://developers.ringcentral.com/api-reference/Pager-Messages/createInternalTextMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates and sends an internal text message.</p></p>
-      </td>
+      <td class="description"><p>Creates and sends an internal text message.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10903,12 +10481,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listPagingGroupUsers" aria-expanded="true" aria-controls="listPagingGroupUsers">Get Paging Group Users</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/listPagingGroupUsers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listPagingGroupUsers" aria-expanded="true" aria-controls="listPagingGroupUsers">Get Paging Group Users</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/listPagingGroupUsers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of users allowed to page this group.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of users allowed to page this group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10962,12 +10538,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listPagingGroupDevices" aria-expanded="true" aria-controls="listPagingGroupDevices">Get Paging Group Devices</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/listPagingGroupDevices" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listPagingGroupDevices" aria-expanded="true" aria-controls="listPagingGroupDevices">Get Paging Group Devices</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/listPagingGroupDevices" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of paging devices assigned to this group.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of paging devices assigned to this group.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11021,12 +10595,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultiplePagingGroupUsersDevices" aria-expanded="true" aria-controls="assignMultiplePagingGroupUsersDevices">Assign Paging Group Users and Devices</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/assignMultiplePagingGroupUsersDevices" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#assignMultiplePagingGroupUsersDevices" aria-expanded="true" aria-controls="assignMultiplePagingGroupUsersDevices">Assign Paging Group Users and Devices</a> <a href="https://developers.ringcentral.com/api-reference/Paging-Only-Groups/assignMultiplePagingGroupUsersDevices" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Adds and/or removes paging group users and devices.</p></p>
-      </td>
+      <td class="description"><p>Adds and/or removes paging group users and devices.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11086,12 +10658,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionPhoneNumbers" aria-expanded="true" aria-controls="listExtensionPhoneNumbers">Get Extension Phone Number List</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionPhoneNumbers" aria-expanded="true" aria-controls="listExtensionPhoneNumbers">Get Extension Phone Number List</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of phone numbers that are used by a particular extension, and can be filtered by the phone number type. The returned list contains all numbers which are directly mapped to a given extension plus the features and also company-level numbers which may be used when performing different operations on behalf of this extension.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of phone numbers that are used by a particular extension, and can be filtered by the phone number type. The returned list contains all numbers which are directly mapped to a given extension plus the features and also company-level numbers which may be used when performing different operations on behalf of this extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11159,12 +10729,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountPhoneNumbers" aria-expanded="true" aria-controls="listAccountPhoneNumbers">Get Company Phone Number List</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/listAccountPhoneNumbers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAccountPhoneNumbers" aria-expanded="true" aria-controls="listAccountPhoneNumbers">Get Company Phone Number List</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/listAccountPhoneNumbers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of phone numbers assigned to RingCentral customer account. Both company-level and extension-level numbers are returned.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of phone numbers assigned to RingCentral customer account. Both company-level and extension-level numbers are returned.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11225,12 +10793,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountPhoneNumber" aria-expanded="true" aria-controls="readAccountPhoneNumber">Get Phone Number</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/readAccountPhoneNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountPhoneNumber" aria-expanded="true" aria-controls="readAccountPhoneNumber">Get Phone Number</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/readAccountPhoneNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the phone number(s) belonging to a certain account or extension by phoneNumberId(s). Batch request is supported.</p></p>
-      </td>
+      <td class="description"><p>Returns the phone number(s) belonging to a certain account or extension by phoneNumberId(s). Batch request is supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11270,12 +10836,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#parsePhoneNumber" aria-expanded="true" aria-controls="parsePhoneNumber">Parse Phone Number</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/parsePhoneNumber" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#parsePhoneNumber" aria-expanded="true" aria-controls="parsePhoneNumber">Parse Phone Number</a> <a href="https://developers.ringcentral.com/api-reference/Phone-Numbers/parsePhoneNumber" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns one or more parsed and/or formatted phone numbers that are passed as a string.</p></p>
-      </td>
+      <td class="description"><p>Returns one or more parsed and/or formatted phone numbers that are passed as a string.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11335,12 +10899,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipPost" aria-expanded="true" aria-controls="readGlipPost">Get Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipPost" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipPost" aria-expanded="true" aria-controls="readGlipPost">Get Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipPost" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns information about the specified post.</p></p>
-      </td>
+      <td class="description"><p>Returns information about the specified post.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11380,12 +10942,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchGlipPost" aria-expanded="true" aria-controls="patchGlipPost">Update Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/patchGlipPost" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchGlipPost" aria-expanded="true" aria-controls="patchGlipPost">Update Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/patchGlipPost" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a specific post within a chat.</p></p>
-      </td>
+      <td class="description"><p>Updates a specific post within a chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11432,12 +10992,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteGlipPost" aria-expanded="true" aria-controls="deleteGlipPost">Delete Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/deleteGlipPost" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteGlipPost" aria-expanded="true" aria-controls="deleteGlipPost">Delete Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/deleteGlipPost" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes the specified post from the chat.</p></p>
-      </td>
+      <td class="description"><p>Deletes the specified post from the chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11477,12 +11035,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipPosts" aria-expanded="true" aria-controls="readGlipPosts">Get Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipPosts" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readGlipPosts" aria-expanded="true" aria-controls="readGlipPosts">Get Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipPosts" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a list of posts from the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of posts from the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11529,12 +11085,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipPost" aria-expanded="true" aria-controls="createGlipPost">Create Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipPost" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipPost" aria-expanded="true" aria-controls="createGlipPost">Create Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipPost" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a post within the specified chat. Attachments are supported.</p></p>
-      </td>
+      <td class="description"><p>Creates a post within the specified chat. Attachments are supported.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11574,12 +11128,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipGroupPosts" aria-expanded="true" aria-controls="listGlipGroupPosts">Get Group Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/listGlipGroupPosts" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipGroupPosts" aria-expanded="true" aria-controls="listGlipGroupPosts">Get Group Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/listGlipGroupPosts" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns posts which are available for the current user by group ID.</p></p>
-      </td>
+      <td class="description"><p>Returns posts which are available for the current user by group ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11626,12 +11178,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipGroupPost" aria-expanded="true" aria-controls="createGlipGroupPost">Create Post in Group</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipGroupPost" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipGroupPost" aria-expanded="true" aria-controls="createGlipGroupPost">Create Post in Group</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipGroupPost" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new post in a group specified.</p></p>
-      </td>
+      <td class="description"><p>Creates a new post in a group specified.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11671,12 +11221,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateGlipPostText" aria-expanded="true" aria-controls="updateGlipPostText">Update Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/updateGlipPostText" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateGlipPostText" aria-expanded="true" aria-controls="updateGlipPostText">Update Post</a> <a href="https://developers.ringcentral.com/api-reference/Posts/updateGlipPostText" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Modifies text of a post.</p></p>
-      </td>
+      <td class="description"><p>Modifies text of a post.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11723,12 +11271,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipCard" aria-expanded="true" aria-controls="createGlipCard">Create Card</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipCard" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createGlipCard" aria-expanded="true" aria-controls="createGlipCard">Create Card</a> <a href="https://developers.ringcentral.com/api-reference/Posts/createGlipCard" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a new message.</p></p>
-      </td>
+      <td class="description"><p>Creates a new message.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11768,12 +11314,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Card <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipCard" class="external-link">#</a>
+        Get Card <a href="https://developers.ringcentral.com/api-reference/Posts/readGlipCard" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns card(s) with given id(s).</p></p>
-      </td>
+      <td class="description"><p>Returns card(s) with given id(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11785,12 +11329,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateGlipCard" aria-expanded="true" aria-controls="updateGlipCard">Update Card</a> <a href="https://developers.ringcentral.com/api-reference/Posts/updateGlipCard" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateGlipCard" aria-expanded="true" aria-controls="updateGlipCard">Update Card</a> <a href="https://developers.ringcentral.com/api-reference/Posts/updateGlipCard" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a card.</p></p>
-      </td>
+      <td class="description"><p>Updates a card.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11830,12 +11372,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Card <a href="https://developers.ringcentral.com/api-reference/Posts/deleteGlipCard" class="external-link">#</a>
+        Delete Card <a href="https://developers.ringcentral.com/api-reference/Posts/deleteGlipCard" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes a card by ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes a card by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11847,12 +11387,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipPosts" aria-expanded="true" aria-controls="listGlipPosts">Get Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/listGlipPosts" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipPosts" aria-expanded="true" aria-controls="listGlipPosts">Get Posts</a> <a href="https://developers.ringcentral.com/api-reference/Posts/listGlipPosts" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns posts available for the current user by group ID.</p></p>
-      </td>
+      <td class="description"><p>Returns posts available for the current user by group ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11899,12 +11437,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create Post <a href="https://developers.ringcentral.com/api-reference/Posts/createPost" class="external-link">#</a>
+        Create Post <a href="https://developers.ringcentral.com/api-reference/Posts/createPost" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a post.</p></p>
-      </td>
+      <td class="description"><p>Creates a post.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11929,12 +11465,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserPresenceStatus" aria-expanded="true" aria-controls="readUserPresenceStatus">Get User Presence Status</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readUserPresenceStatus" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserPresenceStatus" aria-expanded="true" aria-controls="readUserPresenceStatus">Get User Presence Status</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readUserPresenceStatus" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns presence status of an extension or several extensions by their ID(s). Batch request is supported. The 'presenceStatus' is returned as Offline (the parameters 'telephonyStatus', 'message', 'userStatus' and 'dndStatus' are not returned at all) for the following extension types: Department/Announcement Only/Take Messages Only (Voicemail)/Fax User/Paging Only Group/Shared Lines Group/IVR Menu/Application Extension/Park Location.If the user requests his/her own presence status, the response contains actual presence status even if the status publication is turned off. Batch request is supported. For batch requests the number of extensions in one request is limited to 30. If more extensions are included in the request, the error code 400 Bad Request is returned with the logical error code InvalidMultipartRequest and the corresponding message 'Extension Presence Info multipart request is limited to 30 extensions'.</p></p>
-      </td>
+      <td class="description"><p>Returns presence status of an extension or several extensions by their ID(s). Batch request is supported. The 'presenceStatus' is returned as Offline (the parameters 'telephonyStatus', 'message', 'userStatus' and 'dndStatus' are not returned at all) for the following extension types: Department/Announcement Only/Take Messages Only (Voicemail)/Fax User/Paging Only Group/Shared Lines Group/IVR Menu/Application Extension/Park Location.If the user requests his/her own presence status, the response contains actual presence status even if the status publication is turned off. Batch request is supported. For batch requests the number of extensions in one request is limited to 30. If more extensions are included in the request, the error code 400 Bad Request is returned with the logical error code InvalidMultipartRequest and the corresponding message 'Extension Presence Info multipart request is limited to 30 extensions'.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -11988,12 +11522,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserPresenceStatus" aria-expanded="true" aria-controls="updateUserPresenceStatus">Update User Presence Status</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateUserPresenceStatus" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserPresenceStatus" aria-expanded="true" aria-controls="updateUserPresenceStatus">Update User Presence Status</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateUserPresenceStatus" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates user-defined extension presence status, status message and DnD status by extension ID. Supported for regular User extensions only. The extension types listed do not support presence status: Department, Announcement Only, Take Messages Only (Voicemail), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.</p></p>
-      </td>
+      <td class="description"><p>Updates user-defined extension presence status, status message and DnD status by extension ID. Supported for regular User extensions only. The extension types listed do not support presence status: Department, Announcement Only, Take Messages Only (Voicemail), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12040,12 +11572,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountPresence" aria-expanded="true" aria-controls="readAccountPresence">Get User Presence Status List</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readAccountPresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAccountPresence" aria-expanded="true" aria-controls="readAccountPresence">Get User Presence Status List</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readAccountPresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns presence status of all extensions of an account. Please note: The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department, Announcement Only, Voicemail (Take Messages Only), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.</p></p>
-      </td>
+      <td class="description"><p>Returns presence status of all extensions of an account. Please note: The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department, Announcement Only, Voicemail (Take Messages Only), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12106,12 +11636,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueuePresence" aria-expanded="true" aria-controls="readCallQueuePresence">Get Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readCallQueuePresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueuePresence" aria-expanded="true" aria-controls="readCallQueuePresence">Get Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns presence status of the call queue members.</p></p>
-      </td>
+      <td class="description"><p>Returns presence status of the call queue members.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12151,12 +11679,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueuePresence" aria-expanded="true" aria-controls="updateCallQueuePresence">Update Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateCallQueuePresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueuePresence" aria-expanded="true" aria-controls="updateCallQueuePresence">Update Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates presence status of the call queue members in the specified queue.</p></p>
-      </td>
+      <td class="description"><p>Updates presence status of the call queue members in the specified queue.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12203,12 +11729,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtensionCallQueuePresence" aria-expanded="true" aria-controls="readExtensionCallQueuePresence">Get Agent’s Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readExtensionCallQueuePresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtensionCallQueuePresence" aria-expanded="true" aria-controls="readExtensionCallQueuePresence">Get Agent’s Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readExtensionCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a list of agent's call queues with the agent presence status (per queue)</p></p>
-      </td>
+      <td class="description"><p>Returns a list of agent's call queues with the agent presence status (per queue)</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12255,12 +11779,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtensionCallQueuePresence" aria-expanded="true" aria-controls="updateExtensionCallQueuePresence">Update Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateExtensionCallQueuePresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtensionCallQueuePresence" aria-expanded="true" aria-controls="updateExtensionCallQueuePresence">Update Call Queue Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateExtensionCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates availability of the agent for the call queues.</p></p>
-      </td>
+      <td class="description"><p>Updates availability of the agent for the call queues.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12307,12 +11829,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUnifiedPresence" aria-expanded="true" aria-controls="readUnifiedPresence">Get Unified Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readUnifiedPresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUnifiedPresence" aria-expanded="true" aria-controls="readUnifiedPresence">Get Unified Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/readUnifiedPresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the unified presence status of the requested user(s). The set of parameters returned by this method differs whether you return the requester's presence or any other user presence.</p></p>
-      </td>
+      <td class="description"><p>Returns the unified presence status of the requested user(s). The set of parameters returned by this method differs whether you return the requester's presence or any other user presence.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12352,12 +11872,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUnifiedPresence" aria-expanded="true" aria-controls="updateUnifiedPresence">Update Unified Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateUnifiedPresence" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUnifiedPresence" aria-expanded="true" aria-controls="updateUnifiedPresence">Update Unified Presence</a> <a href="https://developers.ringcentral.com/api-reference/Presence/updateUnifiedPresence" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the unified presence for the current user specified in path.</p></p>
-      </td>
+      <td class="description"><p>Updates the unified presence for the current user specified in path.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12417,12 +11935,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Language List <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listLanguages" class="external-link">#</a>
+        Get Language List <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listLanguages" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the information about supported languages.</p></p>
-      </td>
+      <td class="description"><p>Returns the information about supported languages.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12434,12 +11950,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Language <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readLanguage" class="external-link">#</a>
+        Get Language <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readLanguage" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns language by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns language by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12451,12 +11965,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCountries" aria-expanded="true" aria-controls="listCountries">Get Country List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listCountries" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCountries" aria-expanded="true" aria-controls="listCountries">Get Country List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listCountries" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns all the countries available for calling.</p></p>
-      </td>
+      <td class="description"><p>Returns all the countries available for calling.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12524,12 +12036,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Country <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readCountry" class="external-link">#</a>
+        Get Country <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readCountry" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the information on a specific country.</p></p>
-      </td>
+      <td class="description"><p>Returns the information on a specific country.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12541,12 +12051,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listLocations" aria-expanded="true" aria-controls="listLocations">Get Location List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listLocations" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listLocations" aria-expanded="true" aria-controls="listLocations">Get Location List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listLocations" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns all available locations for a certain state.</p></p>
-      </td>
+      <td class="description"><p>Returns all available locations for a certain state.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12607,12 +12115,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listStates" aria-expanded="true" aria-controls="listStates">Get States List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listStates" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listStates" aria-expanded="true" aria-controls="listStates">Get States List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listStates" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns all the states of a certain country</p></p>
-      </td>
+      <td class="description"><p>Returns all the states of a certain country</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12673,12 +12179,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get State <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readState" class="external-link">#</a>
+        Get State <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readState" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the information on a specific state.</p></p>
-      </td>
+      <td class="description"><p>Returns the information on a specific state.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12690,12 +12194,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listTimezones" aria-expanded="true" aria-controls="listTimezones">Get Timezone List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listTimezones" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listTimezones" aria-expanded="true" aria-controls="listTimezones">Get Timezone List</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/listTimezones" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns all available timezones.</p></p>
-      </td>
+      <td class="description"><p>Returns all available timezones.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12735,12 +12237,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readTimezone" aria-expanded="true" aria-controls="readTimezone">Get Timezone</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readTimezone" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readTimezone" aria-expanded="true" aria-controls="readTimezone">Get Timezone</a> <a href="https://developers.ringcentral.com/api-reference/Regional-Settings/readTimezone" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the information on a certain timezone.</p></p>
-      </td>
+      <td class="description"><p>Returns the information on a certain timezone.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12800,12 +12300,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createRingOutCall" aria-expanded="true" aria-controls="createRingOutCall">Make RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/createRingOutCall" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createRingOutCall" aria-expanded="true" aria-controls="createRingOutCall">Make RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/createRingOutCall" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Makes a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Makes a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12852,12 +12350,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readRingOutCallStatus" aria-expanded="true" aria-controls="readRingOutCallStatus">Get RingOut Call Status</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/readRingOutCallStatus" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readRingOutCallStatus" aria-expanded="true" aria-controls="readRingOutCallStatus">Get RingOut Call Status</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/readRingOutCallStatus" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the status of a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Returns the status of a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12904,12 +12400,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteRingOutCall" aria-expanded="true" aria-controls="deleteRingOutCall">Cancel RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/deleteRingOutCall" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteRingOutCall" aria-expanded="true" aria-controls="deleteRingOutCall">Cancel RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/deleteRingOutCall" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Cancels a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Cancels a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -12956,12 +12450,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createRingOutCallDeprecated" aria-expanded="true" aria-controls="createRingOutCallDeprecated">Make RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/createRingOutCallDeprecated" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createRingOutCallDeprecated" aria-expanded="true" aria-controls="createRingOutCallDeprecated">Make RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/createRingOutCallDeprecated" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Makes a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Makes a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13008,12 +12500,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readRingOutCallStatusDeprecated" aria-expanded="true" aria-controls="readRingOutCallStatusDeprecated">Get RingOut Call Status</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/readRingOutCallStatusDeprecated" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readRingOutCallStatusDeprecated" aria-expanded="true" aria-controls="readRingOutCallStatusDeprecated">Get RingOut Call Status</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/readRingOutCallStatusDeprecated" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns status of a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Returns status of a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13060,12 +12550,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteRingOutCallDeprecated" aria-expanded="true" aria-controls="deleteRingOutCallDeprecated">Cancel RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/deleteRingOutCallDeprecated" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteRingOutCallDeprecated" aria-expanded="true" aria-controls="deleteRingOutCallDeprecated">Cancel RingOut Call</a> <a href="https://developers.ringcentral.com/api-reference/RingOut/deleteRingOutCallDeprecated" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Cancels a 2-leg RingOut call.</p></p>
-      </td>
+      <td class="description"><p>Cancels a 2-leg RingOut call.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13125,12 +12613,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAnsweringRules" aria-expanded="true" aria-controls="listAnsweringRules">Get Call Handling Rules</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listAnsweringRules" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listAnsweringRules" aria-expanded="true" aria-controls="listAnsweringRules">Get Call Handling Rules</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listAnsweringRules" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the extension answering rules.</p></p>
-      </td>
+      <td class="description"><p>Returns the extension answering rules.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13198,12 +12684,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createAnsweringRule" aria-expanded="true" aria-controls="createAnsweringRule">Create Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createAnsweringRule" aria-expanded="true" aria-controls="createAnsweringRule">Create Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a custom answering rule for a particular caller ID.</p></p>
-      </td>
+      <td class="description"><p>Creates a custom answering rule for a particular caller ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13250,12 +12734,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAnsweringRule" aria-expanded="true" aria-controls="readAnsweringRule">Get Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAnsweringRule" aria-expanded="true" aria-controls="readAnsweringRule">Get Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns an answering rule by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns an answering rule by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13309,12 +12791,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateAnsweringRule" aria-expanded="true" aria-controls="updateAnsweringRule">Update Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateAnsweringRule" aria-expanded="true" aria-controls="updateAnsweringRule">Update Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a custom answering rule for a particular caller ID.</p></p>
-      </td>
+      <td class="description"><p>Updates a custom answering rule for a particular caller ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13368,12 +12848,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteAnsweringRule" aria-expanded="true" aria-controls="deleteAnsweringRule">Delete Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteAnsweringRule" aria-expanded="true" aria-controls="deleteAnsweringRule">Delete Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes a custom answering rule by a particular ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes a custom answering rule by a particular ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13420,12 +12898,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCompanyAnsweringRule" aria-expanded="true" aria-controls="createCompanyAnsweringRule">Create Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCompanyAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCompanyAnsweringRule" aria-expanded="true" aria-controls="createCompanyAnsweringRule">Create Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCompanyAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a company answering rule for a particular caller ID.</p></p>
-      </td>
+      <td class="description"><p>Creates a company answering rule for a particular caller ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13465,12 +12941,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCompanyAnsweringRules" aria-expanded="true" aria-controls="listCompanyAnsweringRules">Get Company Call Handling Rule List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCompanyAnsweringRules" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCompanyAnsweringRules" aria-expanded="true" aria-controls="listCompanyAnsweringRules">Get Company Call Handling Rule List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCompanyAnsweringRules" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a list of company answering rules.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of company answering rules.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13517,12 +12991,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyAnsweringRule" aria-expanded="true" aria-controls="readCompanyAnsweringRule">Get Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCompanyAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCompanyAnsweringRule" aria-expanded="true" aria-controls="readCompanyAnsweringRule">Get Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCompanyAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a company answering rule by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a company answering rule by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13562,12 +13034,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCompanyAnsweringRule" aria-expanded="true" aria-controls="updateCompanyAnsweringRule">Update Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCompanyAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCompanyAnsweringRule" aria-expanded="true" aria-controls="updateCompanyAnsweringRule">Update Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCompanyAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates a company answering rule.</p></p>
-      </td>
+      <td class="description"><p>Updates a company answering rule.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13614,12 +13084,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCompanyAnsweringRule" aria-expanded="true" aria-controls="deleteCompanyAnsweringRule">Delete Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCompanyAnsweringRule" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCompanyAnsweringRule" aria-expanded="true" aria-controls="deleteCompanyAnsweringRule">Delete Company Call Handling Rule</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCompanyAnsweringRule" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes a company custom answering rule by a particular ID.</p></p>
-      </td>
+      <td class="description"><p>Deletes a company custom answering rule by a particular ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13659,12 +13127,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listStandardGreetings" aria-expanded="true" aria-controls="listStandardGreetings">Get Standard Greeting List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listStandardGreetings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listStandardGreetings" aria-expanded="true" aria-controls="listStandardGreetings">Get Standard Greeting List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listStandardGreetings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of predefined standard greetings. Custom greetings recorded by user are not returned in response to this request. See Get Extension Custom Greetings.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of predefined standard greetings. Custom greetings recorded by user are not returned in response to this request. See Get Extension Custom Greetings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13718,12 +13184,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Standard Greeting <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readStandardGreeting" class="external-link">#</a>
+        Get Standard Greeting <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readStandardGreeting" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a standard greeting by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a standard greeting by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13735,12 +13199,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCompanyGreeting" aria-expanded="true" aria-controls="createCompanyGreeting">Create Company Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCompanyGreeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCompanyGreeting" aria-expanded="true" aria-controls="createCompanyGreeting">Create Company Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCompanyGreeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a custom company greeting.</p></p>
-      </td>
+      <td class="description"><p>Creates a custom company greeting.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13801,12 +13263,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCustomUserGreeting" aria-expanded="true" aria-controls="createCustomUserGreeting">Create Custom User Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCustomUserGreeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createCustomUserGreeting" aria-expanded="true" aria-controls="createCustomUserGreeting">Create Custom User Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/createCustomUserGreeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates custom greeting for an extension user.</p></p>
-      </td>
+      <td class="description"><p>Creates custom greeting for an extension user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13867,12 +13327,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCustomGreeting" aria-expanded="true" aria-controls="readCustomGreeting">Get Custom Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCustomGreeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCustomGreeting" aria-expanded="true" aria-controls="readCustomGreeting">Get Custom Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCustomGreeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a custom user greeting by ID.</p></p>
-      </td>
+      <td class="description"><p>Returns a custom user greeting by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13919,12 +13377,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Call Recording Settings <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCallRecordingSettings" class="external-link">#</a>
+        Get Call Recording Settings <a href="https://developers.ringcentral.com/api-reference/Rule-Management/readCallRecordingSettings" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns call recording settings.</p></p>
-      </td>
+      <td class="description"><p>Returns call recording settings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13936,12 +13392,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallRecordingSettings" aria-expanded="true" aria-controls="updateCallRecordingSettings">Update Call Recording Settings</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCallRecordingSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallRecordingSettings" aria-expanded="true" aria-controls="updateCallRecordingSettings">Update Call Recording Settings</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCallRecordingSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates current call recording settings.</p></p>
-      </td>
+      <td class="description"><p>Updates current call recording settings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13981,12 +13435,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Call Recording Extension List <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCallRecordingExtensions" class="external-link">#</a>
+        Get Call Recording Extension List <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCallRecordingExtensions" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the list of extensions to be recorded.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of extensions to be recorded.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -13998,12 +13450,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallRecordingExtensionList" aria-expanded="true" aria-controls="updateCallRecordingExtensionList">Update Call Recording Extension List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCallRecordingExtensionList" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallRecordingExtensionList" aria-expanded="true" aria-controls="updateCallRecordingExtensionList">Update Call Recording Extension List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/updateCallRecordingExtensionList" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates or updates the list of extensions to be recorded.</p></p>
-      </td>
+      <td class="description"><p>Creates or updates the list of extensions to be recorded.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14043,12 +13493,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallRecordingCustomGreetings" aria-expanded="true" aria-controls="listCallRecordingCustomGreetings">Get Call Recording Custom Greeting List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCallRecordingCustomGreetings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallRecordingCustomGreetings" aria-expanded="true" aria-controls="listCallRecordingCustomGreetings">Get Call Recording Custom Greeting List</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/listCallRecordingCustomGreetings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns call recording custom greetings.</p></p>
-      </td>
+      <td class="description"><p>Returns call recording custom greetings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14088,12 +13536,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Call Recording Custom Greeting List <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCallRecordingCustomGreetingList" class="external-link">#</a>
+        Delete Call Recording Custom Greeting List <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCallRecordingCustomGreetingList" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes call recording custom greetings.</p></p>
-      </td>
+      <td class="description"><p>Deletes call recording custom greetings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14105,12 +13551,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallRecordingCustomGreeting" aria-expanded="true" aria-controls="deleteCallRecordingCustomGreeting">Delete Call Recording Custom Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCallRecordingCustomGreeting" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallRecordingCustomGreeting" aria-expanded="true" aria-controls="deleteCallRecordingCustomGreeting">Delete Call Recording Custom Greeting</a> <a href="https://developers.ringcentral.com/api-reference/Rule-Management/deleteCallRecordingCustomGreeting" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes call recording custom greeting(s).</p></p>
-      </td>
+      <td class="description"><p>Deletes call recording custom greeting(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14163,12 +13607,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Check Health <a href="https://developers.ringcentral.com/api-reference/SCIM/checkHealth" class="external-link">#</a>
+        Check Health <a href="https://developers.ringcentral.com/api-reference/SCIM/checkHealth" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14180,12 +13622,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Check Health <a href="https://developers.ringcentral.com/api-reference/SCIM/checkHealth2" class="external-link">#</a>
+        Check Health <a href="https://developers.ringcentral.com/api-reference/SCIM/checkHealth2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14197,12 +13637,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Service Provider Config <a href="https://developers.ringcentral.com/api-reference/SCIM/readServiceProviderConfig2" class="external-link">#</a>
+        Get Service Provider Config <a href="https://developers.ringcentral.com/api-reference/SCIM/readServiceProviderConfig2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14214,12 +13652,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Service Provider Config <a href="https://developers.ringcentral.com/api-reference/SCIM/readServiceProviderConfig" class="external-link">#</a>
+        Get Service Provider Config <a href="https://developers.ringcentral.com/api-reference/SCIM/readServiceProviderConfig" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14231,12 +13667,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchViaGet2" aria-expanded="true" aria-controls="searchViaGet2">Search/List Users</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaGet2" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchViaGet2" aria-expanded="true" aria-controls="searchViaGet2">Search/List Users</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaGet2" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14283,12 +13717,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create User <a href="https://developers.ringcentral.com/api-reference/SCIM/createUser2" class="external-link">#</a>
+        Create User <a href="https://developers.ringcentral.com/api-reference/SCIM/createUser2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14300,12 +13732,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchViaGet" aria-expanded="true" aria-controls="searchViaGet">Search/List Users</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaGet" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#searchViaGet" aria-expanded="true" aria-controls="searchViaGet">Search/List Users</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaGet" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14352,12 +13782,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create User <a href="https://developers.ringcentral.com/api-reference/SCIM/createUser" class="external-link">#</a>
+        Create User <a href="https://developers.ringcentral.com/api-reference/SCIM/createUser" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14369,12 +13797,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Search/List Users <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaPost2" class="external-link">#</a>
+        Search/List Users <a href="https://developers.ringcentral.com/api-reference/SCIM/searchViaPost2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14386,12 +13812,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get User <a href="https://developers.ringcentral.com/api-reference/SCIM/readUser2" class="external-link">#</a>
+        Get User <a href="https://developers.ringcentral.com/api-reference/SCIM/readUser2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14403,12 +13827,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#replaceUser2" aria-expanded="true" aria-controls="replaceUser2">Update/Replace User</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/replaceUser2" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#replaceUser2" aria-expanded="true" aria-controls="replaceUser2">Update/Replace User</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/replaceUser2" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14448,12 +13870,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete User <a href="https://developers.ringcentral.com/api-reference/SCIM/deleteUser2" class="external-link">#</a>
+        Delete User <a href="https://developers.ringcentral.com/api-reference/SCIM/deleteUser2" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14465,12 +13885,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchUser2" aria-expanded="true" aria-controls="patchUser2">Update/Patch User</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/patchUser2" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchUser2" aria-expanded="true" aria-controls="patchUser2">Update/Patch User</a> <a href="https://developers.ringcentral.com/api-reference/SCIM/patchUser2" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p></p>
-      </td>
+      <td class="description"></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14523,12 +13941,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Register SIP Device <a href="https://developers.ringcentral.com/api-reference/SIP/createSIPRegistration" class="external-link">#</a>
+        Register SIP Device <a href="https://developers.ringcentral.com/api-reference/SIP/createSIPRegistration" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates SIP registration of a device/application (WebPhone, Mobile, softphone)</p></p>
-      </td>
+      <td class="description"><p>Creates SIP registration of a device/application (WebPhone, Mobile, softphone)</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14553,12 +13969,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createSMSMessage" aria-expanded="true" aria-controls="createSMSMessage">Send SMS</a> <a href="https://developers.ringcentral.com/api-reference/SMS/createSMSMessage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createSMSMessage" aria-expanded="true" aria-controls="createSMSMessage">Send SMS</a> <a href="https://developers.ringcentral.com/api-reference/SMS/createSMSMessage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates and sends a new text message. You can send SMS messages simultaneously to different recipients up to 40 requests per minute; this limitation is relevant for all client applications. Sending and receiving SMS is available for Toll-Free Numbers within the USA. You can send up to 10 attachments in one MMS message; the size of all attachments linked is limited to 1500000 bytes.</p></p>
-      </td>
+      <td class="description"><p>Creates and sends a new text message. You can send SMS messages simultaneously to different recipients up to 40 requests per minute; this limitation is relevant for all client applications. Sending and receiving SMS is available for Toll-Free Numbers within the USA. You can send up to 10 attachments in one MMS message; the size of all attachments linked is limited to 1500000 bytes.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14618,12 +14032,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Subscriptions <a href="https://developers.ringcentral.com/api-reference/Subscriptions/listSubscriptions" class="external-link">#</a>
+        Get Subscriptions <a href="https://developers.ringcentral.com/api-reference/Subscriptions/listSubscriptions" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns a list of subscriptions created by a particular user on a particular client app.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of subscriptions created by a particular user on a particular client app.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14635,12 +14047,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription" class="external-link">#</a>
+        Create Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a new subscription.</p></p>
-      </td>
+      <td class="description"><p>Creates a new subscription.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14652,12 +14062,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/readSubscription" class="external-link">#</a>
+        Get Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/readSubscription" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns the requested subscription.</p></p>
-      </td>
+      <td class="description"><p>Returns the requested subscription.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14669,12 +14077,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateSubscription" aria-expanded="true" aria-controls="updateSubscription">Renew Subscription / Update Event Filters</a> <a href="https://developers.ringcentral.com/api-reference/Subscriptions/updateSubscription" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateSubscription" aria-expanded="true" aria-controls="updateSubscription">Renew Subscription / Update Event Filters</a> <a href="https://developers.ringcentral.com/api-reference/Subscriptions/updateSubscription" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Renews the existent subscription if the request body is empty. If event filters are specified, calling this method modifies the event filters for the existing subscription. The client application can extend or narrow the events for which it receives notifications in the frame of one subscription.</p></p>
-      </td>
+      <td class="description"><p>Renews the existent subscription if the request body is empty. If event filters are specified, calling this method modifies the event filters for the existing subscription. The client application can extend or narrow the events for which it receives notifications in the frame of one subscription.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14721,12 +14127,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Cancel Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/deleteSubscription" class="external-link">#</a>
+        Cancel Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/deleteSubscription" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Cancels the existent subscription.</p></p>
-      </td>
+      <td class="description"><p>Cancels the existent subscription.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14738,12 +14142,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Renew Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/renewSubscription" class="external-link">#</a>
+        Renew Subscription <a href="https://developers.ringcentral.com/api-reference/Subscriptions/renewSubscription" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Renews an existent subscription by ID by posting request with an empty body.</p></p>
-      </td>
+      <td class="description"><p>Renews an existent subscription by ID by posting request with an empty body.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14768,12 +14170,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listChatTasks" aria-expanded="true" aria-controls="listChatTasks">Get Chat Tasks</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/listChatTasks" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listChatTasks" aria-expanded="true" aria-controls="listChatTasks">Get Chat Tasks</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/listChatTasks" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of tasks of the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of tasks of the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14869,12 +14269,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createTask" aria-expanded="true" aria-controls="createTask">Create Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/createTask" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createTask" aria-expanded="true" aria-controls="createTask">Create Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/createTask" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Creates a task in the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Creates a task in the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14914,12 +14312,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Task <a href="https://developers.ringcentral.com/api-reference/Tasks/readTask" class="external-link">#</a>
+        Get Task <a href="https://developers.ringcentral.com/api-reference/Tasks/readTask" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about the specified task(s) by ID(s).</p></p>
-      </td>
+      <td class="description"><p>Returns information about the specified task(s) by ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14931,12 +14327,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchTask" aria-expanded="true" aria-controls="patchTask">Patch Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/patchTask" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchTask" aria-expanded="true" aria-controls="patchTask">Patch Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/patchTask" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the specified task by ID.</p></p>
-      </td>
+      <td class="description"><p>Updates the specified task by ID.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14976,12 +14370,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Task <a href="https://developers.ringcentral.com/api-reference/Tasks/deleteTask" class="external-link">#</a>
+        Delete Task <a href="https://developers.ringcentral.com/api-reference/Tasks/deleteTask" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes the specified task.</p></p>
-      </td>
+      <td class="description"><p>Deletes the specified task.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14993,12 +14385,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#completeTask" aria-expanded="true" aria-controls="completeTask">Complete Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/completeTask" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#completeTask" aria-expanded="true" aria-controls="completeTask">Complete Task</a> <a href="https://developers.ringcentral.com/api-reference/Tasks/completeTask" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Completes a task in the specified chat.</p></p>
-      </td>
+      <td class="description"><p>Completes a task in the specified chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15051,12 +14441,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipTeams" aria-expanded="true" aria-controls="listGlipTeams">Get Teams</a> <a href="https://developers.ringcentral.com/api-reference/Teams/listGlipTeams" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listGlipTeams" aria-expanded="true" aria-controls="listGlipTeams">Get Teams</a> <a href="https://developers.ringcentral.com/api-reference/Teams/listGlipTeams" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of teams where the user is a member (both archived and active) combined with a list of public teams that can be joined by the current user. All records in response are sorted by creation time of a chat in ascending order.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of teams where the user is a member (both archived and active) combined with a list of public teams that can be joined by the current user. All records in response are sorted by creation time of a chat in ascending order.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15096,12 +14484,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Create Team <a href="https://developers.ringcentral.com/api-reference/Teams/createGlipTeam" class="external-link">#</a>
+        Create Team <a href="https://developers.ringcentral.com/api-reference/Teams/createGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Creates a team, and adds a list of people to the team.</p></p>
-      </td>
+      <td class="description"><p>Creates a team, and adds a list of people to the team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15113,12 +14499,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Team <a href="https://developers.ringcentral.com/api-reference/Teams/readGlipTeam" class="external-link">#</a>
+        Get Team <a href="https://developers.ringcentral.com/api-reference/Teams/readGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about the specified team.</p></p>
-      </td>
+      <td class="description"><p>Returns information about the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15130,12 +14514,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchGlipTeam" aria-expanded="true" aria-controls="patchGlipTeam">Update Team</a> <a href="https://developers.ringcentral.com/api-reference/Teams/patchGlipTeam" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#patchGlipTeam" aria-expanded="true" aria-controls="patchGlipTeam">Update Team</a> <a href="https://developers.ringcentral.com/api-reference/Teams/patchGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the name and description of the specified team.</p></p>
-      </td>
+      <td class="description"><p>Updates the name and description of the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15175,12 +14557,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Delete Team <a href="https://developers.ringcentral.com/api-reference/Teams/deleteGlipTeam" class="external-link">#</a>
+        Delete Team <a href="https://developers.ringcentral.com/api-reference/Teams/deleteGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Deletes the specified team.</p></p>
-      </td>
+      <td class="description"><p>Deletes the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15192,12 +14572,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Join Team <a href="https://developers.ringcentral.com/api-reference/Teams/joinGlipTeam" class="external-link">#</a>
+        Join Team <a href="https://developers.ringcentral.com/api-reference/Teams/joinGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Adds the current user to the specified team.</p></p>
-      </td>
+      <td class="description"><p>Adds the current user to the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15209,12 +14587,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Leave Team <a href="https://developers.ringcentral.com/api-reference/Teams/leaveGlipTeam" class="external-link">#</a>
+        Leave Team <a href="https://developers.ringcentral.com/api-reference/Teams/leaveGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Removes the current user from the specified team.</p></p>
-      </td>
+      <td class="description"><p>Removes the current user from the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15226,12 +14602,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#addGlipTeamMembers" aria-expanded="true" aria-controls="addGlipTeamMembers">Add Team Members</a> <a href="https://developers.ringcentral.com/api-reference/Teams/addGlipTeamMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#addGlipTeamMembers" aria-expanded="true" aria-controls="addGlipTeamMembers">Add Team Members</a> <a href="https://developers.ringcentral.com/api-reference/Teams/addGlipTeamMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Adds members to the specified team.</p></p>
-      </td>
+      <td class="description"><p>Adds members to the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15271,12 +14645,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#removeGlipTeamMembers" aria-expanded="true" aria-controls="removeGlipTeamMembers">Remove Team Members</a> <a href="https://developers.ringcentral.com/api-reference/Teams/removeGlipTeamMembers" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#removeGlipTeamMembers" aria-expanded="true" aria-controls="removeGlipTeamMembers">Remove Team Members</a> <a href="https://developers.ringcentral.com/api-reference/Teams/removeGlipTeamMembers" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Removes members from the specified team.</p></p>
-      </td>
+      <td class="description"><p>Removes members from the specified team.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15316,12 +14688,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Archive Team <a href="https://developers.ringcentral.com/api-reference/Teams/archiveGlipTeam" class="external-link">#</a>
+        Archive Team <a href="https://developers.ringcentral.com/api-reference/Teams/archiveGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Changes the status of the specified team to 'Archived'.</p></p>
-      </td>
+      <td class="description"><p>Changes the status of the specified team to 'Archived'.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15333,12 +14703,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Unarchive Team <a href="https://developers.ringcentral.com/api-reference/Teams/unarchiveGlipTeam" class="external-link">#</a>
+        Unarchive Team <a href="https://developers.ringcentral.com/api-reference/Teams/unarchiveGlipTeam" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Changes the status of the specified team to 'Active'.</p></p>
-      </td>
+      <td class="description"><p>Changes the status of the specified team to 'Active'.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15350,12 +14718,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Get Everyone Chat <a href="https://developers.ringcentral.com/api-reference/Teams/readGlipEveryone" class="external-link">#</a>
+        Get Everyone Chat <a href="https://developers.ringcentral.com/api-reference/Teams/readGlipEveryone" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Returns information about Everyone chat.</p></p>
-      </td>
+      <td class="description"><p>Returns information about Everyone chat.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15367,12 +14733,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        Update Everyone Сhat <a href="https://developers.ringcentral.com/api-reference/Teams/patchGlipEveryone" class="external-link">#</a>
+        Update Everyone Сhat <a href="https://developers.ringcentral.com/api-reference/Teams/patchGlipEveryone" class="external-link"><i class="fa fa-share"></i></a>
 	
       </td>
-      <td class="description">
-        <p><p>Updates Everyone chat information.</p></p>
-      </td>
+      <td class="description"><p>Updates Everyone chat information.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15397,12 +14761,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAuthorizationProfile" aria-expanded="true" aria-controls="readAuthorizationProfile">Get Authorization Profile</a> <a href="https://developers.ringcentral.com/api-reference/User-Permissions/readAuthorizationProfile" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readAuthorizationProfile" aria-expanded="true" aria-controls="readAuthorizationProfile">Get Authorization Profile</a> <a href="https://developers.ringcentral.com/api-reference/User-Permissions/readAuthorizationProfile" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a list of user permissions granted at authorization procedure. Please note: Some permissions may be restricted by extension type.</p></p>
-      </td>
+      <td class="description"><p>Returns a list of user permissions granted at authorization procedure. Please note: Some permissions may be restricted by extension type.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15442,12 +14804,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#checkUserPermission" aria-expanded="true" aria-controls="checkUserPermission">Check User Permission</a> <a href="https://developers.ringcentral.com/api-reference/User-Permissions/checkUserPermission" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#checkUserPermission" aria-expanded="true" aria-controls="checkUserPermission">Check User Permission</a> <a href="https://developers.ringcentral.com/api-reference/User-Permissions/checkUserPermission" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Checks if a certain user permission is activated for a particular extension.</p></p>
-      </td>
+      <td class="description"><p>Checks if a certain user permission is activated for a particular extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15514,12 +14874,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtension" aria-expanded="true" aria-controls="readExtension">Get Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readExtension" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtension" aria-expanded="true" aria-controls="readExtension">Get Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readExtension" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns basic information about a particular extension.</p></p>
-      </td>
+      <td class="description"><p>Returns basic information about a particular extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15559,12 +14917,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtension" aria-expanded="true" aria-controls="updateExtension">Update Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateExtension" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtension" aria-expanded="true" aria-controls="updateExtension">Update Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateExtension" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates user settings.</p></p>
-      </td>
+      <td class="description"><p>Updates user settings.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15611,12 +14967,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteExtension" aria-expanded="true" aria-controls="deleteExtension">Delete Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/deleteExtension" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteExtension" aria-expanded="true" aria-controls="deleteExtension">Delete Extension</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/deleteExtension" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Deletes extension(s) by ID(s). When an extension is being deleted the default API behaviour is as follows: ⋅⋅<em> user's direct numbers are preserved by becoming additional company numbers; ⋅⋅</em> user's digital lines (both device &amp; associated phone number) are deleted. You can change this behaviour using the filters: ..<em> create unassigned extensions for each digital line of the deleted extension by setting the query parameter <code>savePhoneLines</code> to <code>true</code> in request path; ..</em> remove direct numbers of the deleted extension by setting the query parameter <code>savePhoneNumbers</code> to <code>false</code> in request path</p></p>
-      </td>
+      <td class="description"><p>Deletes extension(s) by ID(s). When an extension is being deleted the default API behaviour is as follows: ⋅⋅<em> user's direct numbers are preserved by becoming additional company numbers; ⋅⋅</em> user's digital lines (both device &amp; associated phone number) are deleted. You can change this behaviour using the filters: ..<em> create unassigned extensions for each digital line of the deleted extension by setting the query parameter <code>savePhoneLines</code> to <code>true</code> in request path; ..</em> remove direct numbers of the deleted extension by setting the query parameter <code>savePhoneNumbers</code> to <code>false</code> in request path</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15670,12 +15024,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtensionCallerId" aria-expanded="true" aria-controls="readExtensionCallerId">Get Extension Caller ID</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readExtensionCallerId" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtensionCallerId" aria-expanded="true" aria-controls="readExtensionCallerId">Get Extension Caller ID</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readExtensionCallerId" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns information on an outbound caller ID of an extension.</p></p>
-      </td>
+      <td class="description"><p>Returns information on an outbound caller ID of an extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15715,12 +15067,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtensionCallerId" aria-expanded="true" aria-controls="updateExtensionCallerId">Update Extension Caller ID</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateExtensionCallerId" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtensionCallerId" aria-expanded="true" aria-controls="updateExtensionCallerId">Update Extension Caller ID</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateExtensionCallerId" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates outbound caller ID information of an extension.</p></p>
-      </td>
+      <td class="description"><p>Updates outbound caller ID information of an extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15767,12 +15117,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionGrants" aria-expanded="true" aria-controls="listExtensionGrants">Get Extension Grant List</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/listExtensionGrants" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#listExtensionGrants" aria-expanded="true" aria-controls="listExtensionGrants">Get Extension Grant List</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/listExtensionGrants" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the list of extensions with the information on grants given to the current extension regarding them. Currently the list of grants include: picking up a call, monitoring, calling or receiving a call on behalf of somebody, call delegation and calling paging groups.</p></p>
-      </td>
+      <td class="description"><p>Returns the list of extensions with the information on grants given to the current extension regarding them. Currently the list of grants include: picking up a call, monitoring, calling or receiving a call on behalf of somebody, call delegation and calling paging groups.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15833,13 +15181,11 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readNotificationSettings" aria-expanded="true" aria-controls="readNotificationSettings">Get Notification Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readNotificationSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readNotificationSettings" aria-expanded="true" aria-controls="readNotificationSettings">Get Notification Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readNotificationSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns notification settings for the current extension.
- <p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></p>
-      </td>
+      <td class="description"><p>Returns notification settings for the current extension.
+ <p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15879,13 +15225,11 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateNotificationSettings" aria-expanded="true" aria-controls="updateNotificationSettings">Update Notification Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateNotificationSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateNotificationSettings" aria-expanded="true" aria-controls="updateNotificationSettings">Update Notification Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateNotificationSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates notification settings for the current extension.
-<p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></p>
-      </td>
+      <td class="description"><p>Updates notification settings for the current extension.
+<p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15932,12 +15276,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserProfileImage" aria-expanded="true" aria-controls="readUserProfileImage">Get User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readUserProfileImage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserProfileImage" aria-expanded="true" aria-controls="readUserProfileImage">Get User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readUserProfileImage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns a profile image of an extension.</p></p>
-      </td>
+      <td class="description"><p>Returns a profile image of an extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -15977,12 +15319,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createUserProfileImage" aria-expanded="true" aria-controls="createUserProfileImage">Upload User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/createUserProfileImage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#createUserProfileImage" aria-expanded="true" aria-controls="createUserProfileImage">Upload User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/createUserProfileImage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Uploads the extension profile image.</p></p>
-      </td>
+      <td class="description"><p>Uploads the extension profile image.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16029,12 +15369,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserProfileImage" aria-expanded="true" aria-controls="updateUserProfileImage">Update User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateUserProfileImage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserProfileImage" aria-expanded="true" aria-controls="updateUserProfileImage">Update User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateUserProfileImage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the extension profile image</p></p>
-      </td>
+      <td class="description"><p>Updates the extension profile image</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16081,12 +15419,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readScaledPofileImage" aria-expanded="true" aria-controls="readScaledPofileImage">Get Scaled User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readScaledPofileImage" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readScaledPofileImage" aria-expanded="true" aria-controls="readScaledPofileImage">Get Scaled User Profile Image</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readScaledPofileImage" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns scaled profile image of an extension.</p></p>
-      </td>
+      <td class="description"><p>Returns scaled profile image of an extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16133,12 +15469,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readConferencingSettings" aria-expanded="true" aria-controls="readConferencingSettings">Get User Conferencing Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readConferencingSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readConferencingSettings" aria-expanded="true" aria-controls="readConferencingSettings">Get User Conferencing Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/readConferencingSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns the information on the Free Conference Calling (FCC) feature for a given extension.</p></p>
-      </td>
+      <td class="description"><p>Returns the information on the Free Conference Calling (FCC) feature for a given extension.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16185,12 +15519,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateConferencingSettings" aria-expanded="true" aria-controls="updateConferencingSettings">Update User Conferencing Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateConferencingSettings" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateConferencingSettings" aria-expanded="true" aria-controls="updateConferencingSettings">Update User Conferencing Settings</a> <a href="https://developers.ringcentral.com/api-reference/User-Settings/updateConferencingSettings" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Updates the default conferencing number for the current extension. The number can be selected from conferencing numbers of the current extension. Updates the setting, allowing participants join the conference before host.</p></p>
-      </td>
+      <td class="description"><p>Updates the default conferencing number for the current extension. The number can be selected from conferencing numbers of the current extension. Updates the setting, allowing participants join the conference before host.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16250,12 +15582,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserVideoConfiguration" aria-expanded="true" aria-controls="readUserVideoConfiguration">Get User Video Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Video-Configuration/readUserVideoConfiguration" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readUserVideoConfiguration" aria-expanded="true" aria-controls="readUserVideoConfiguration">Get User Video Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Video-Configuration/readUserVideoConfiguration" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Returns information about video configuration of the current user.</p></p>
-      </td>
+      <td class="description"><p>Returns information about video configuration of the current user.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -16295,12 +15625,10 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserVideoConfiguration" aria-expanded="true" aria-controls="updateUserVideoConfiguration">Update User Video Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Video-Configuration/updateUserVideoConfiguration" class="external-link">#</a>
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateUserVideoConfiguration" aria-expanded="true" aria-controls="updateUserVideoConfiguration">Update User Video Configuration</a> <a href="https://developers.ringcentral.com/api-reference/Video-Configuration/updateUserVideoConfiguration" class="external-link"><i class="fa fa-share"></i></a>
         
       </td>
-      <td class="description">
-        <p><p>Allows to update user video settings, for example video provider.</p></p>
-      </td>
+      <td class="description"><p>Allows to update user video settings, for example video provider.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
