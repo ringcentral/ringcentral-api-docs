@@ -66,4 +66,14 @@ To configure your Sandbox environment please follow the steps:
 
 Your Sandbox account is now ready to be used. You can now direct API calls to `https://platform.devtest.ringcentral.com`.
 
+## Deactivation of idle sandbox accounts
+
+!!! warning "Use it or lose it"
+    Sandbox accounts are provided to developers completely free of charge. As long as a sandbox is in active use, developers can rely on the sandbox being available. However, **if a sandbox account becomes idle for 90 days within an account, we will deactivate the sandbox account** in order to put those phone numbers back into circulation for others to use. 
+
+### What happens if I lose access to my sandbox?
+
+If you find yourself in the circumstance where your sandbox account has been deactivated, you can easily create a new one by following the prompts inside of the Developer Console. 
+
+Once the new sandbox account has been created then you may need to update the configuration of any apps that connect to your sandbox account, as your authentication credentials may have changed. 
 
