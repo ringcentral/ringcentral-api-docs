@@ -23,7 +23,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi</p>
+        <p>GET /restapi</p>
 	<div id="readAPIVersions" class="collapse" aria-labelledby="readAPIVersions">
 </div>
       </td>
@@ -38,7 +38,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/{apiVersion}</p>
+        <p>GET /restapi/{apiVersion}</p>
 	<div id="readAPIVersion" class="collapse" aria-labelledby="readAPIVersion">
 </div>
       </td>
@@ -66,7 +66,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/users</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/users</p>
 	<div id="listAutomaticLocationUpdatesUsers" class="collapse" aria-labelledby="listAutomaticLocationUpdatesUsers">
 
 	  <table class="table api-index">
@@ -158,7 +158,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/users/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/users/bulk-assign</p>
 	<div id="assignMultipleAutomaticaLocationUpdatesUsers" class="collapse" aria-labelledby="assignMultipleAutomaticaLocationUpdatesUsers">
 
 	  <table class="table api-index">
@@ -201,7 +201,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points</p>
 	<div id="listWirelessPoints" class="collapse" aria-labelledby="listWirelessPoints">
 
 	  <table class="table api-index">
@@ -272,7 +272,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points</p>
 	<div id="createWirelessPoint" class="collapse" aria-labelledby="createWirelessPoint">
 
 	  <table class="table api-index">
@@ -315,7 +315,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
 	<div id="readWirelessPoint" class="collapse" aria-labelledby="readWirelessPoint">
 
 	  <table class="table api-index">
@@ -358,7 +358,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
 	<div id="updateWirelessPoint" class="collapse" aria-labelledby="updateWirelessPoint">
 
 	  <table class="table api-index">
@@ -408,7 +408,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}</p>
 	<div id="deleteWirelessPoint" class="collapse" aria-labelledby="deleteWirelessPoint">
 
 	  <table class="table api-index">
@@ -451,7 +451,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks</p>
 	<div id="listNetworks" class="collapse" aria-labelledby="listNetworks">
 </div>
       </td>
@@ -466,7 +466,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks</p>
 	<div id="createNetwork" class="collapse" aria-labelledby="createNetwork">
 
 	  <table class="table api-index">
@@ -509,7 +509,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
 	<div id="readNetwork" class="collapse" aria-labelledby="readNetwork">
 
 	  <table class="table api-index">
@@ -552,7 +552,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
 	<div id="updateNetwork" class="collapse" aria-labelledby="updateNetwork">
 
 	  <table class="table api-index">
@@ -602,7 +602,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}</p>
 	<div id="deleteNetwork" class="collapse" aria-labelledby="deleteNetwork">
 
 	  <table class="table api-index">
@@ -645,7 +645,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices</p>
 	<div id="listDevicesAutomaticLocationUpdates" class="collapse" aria-labelledby="listDevicesAutomaticLocationUpdates">
 
 	  <table class="table api-index">
@@ -737,7 +737,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices/bulk-assign</p>
 	<div id="assignMultipleDevicesAutomaticLocationUpdates" class="collapse" aria-labelledby="assignMultipleDevicesAutomaticLocationUpdates">
 
 	  <table class="table api-index">
@@ -780,7 +780,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches</p>
 	<div id="listAccountSwitches" class="collapse" aria-labelledby="listAccountSwitches">
 
 	  <table class="table api-index">
@@ -851,7 +851,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches</p>
 	<div id="createSwitch" class="collapse" aria-labelledby="createSwitch">
 
 	  <table class="table api-index">
@@ -894,7 +894,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
 	<div id="readSwitch" class="collapse" aria-labelledby="readSwitch">
 
 	  <table class="table api-index">
@@ -937,7 +937,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
 	<div id="updateSwitch" class="collapse" aria-labelledby="updateSwitch">
 
 	  <table class="table api-index">
@@ -987,7 +987,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}</p>
 	<div id="deleteSwitch" class="collapse" aria-labelledby="deleteSwitch">
 
 	  <table class="table api-index">
@@ -1030,7 +1030,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-create</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-create</p>
 	<div id="createMultipleSwitches" class="collapse" aria-labelledby="createMultipleSwitches">
 
 	  <table class="table api-index">
@@ -1073,7 +1073,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-update</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-update</p>
 	<div id="updateMultipleSwitches" class="collapse" aria-labelledby="updateMultipleSwitches">
 
 	  <table class="table api-index">
@@ -1116,7 +1116,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-create</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-create</p>
 	<div id="createMultipleWirelessPoints" class="collapse" aria-labelledby="createMultipleWirelessPoints">
 
 	  <table class="table api-index">
@@ -1159,7 +1159,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-update</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-update</p>
 	<div id="updateMultipleWirelessPoints" class="collapse" aria-labelledby="updateMultipleWirelessPoints">
 
 	  <table class="table api-index">
@@ -1202,7 +1202,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-validate</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-validate</p>
 	<div id="validateMultipleWirelessPoints" class="collapse" aria-labelledby="validateMultipleWirelessPoints">
 
 	  <table class="table api-index">
@@ -1245,7 +1245,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-validate</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-validate</p>
 	<div id="validateMultipleSwitches" class="collapse" aria-labelledby="validateMultipleSwitches">
 
 	  <table class="table api-index">
@@ -1288,7 +1288,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-address-auto-update/tasks/{taskId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-address-auto-update/tasks/{taskId}</p>
 	<div id="readAutomaticLocationUpdatesTask" class="collapse" aria-labelledby="readAutomaticLocationUpdatesTask">
 
 	  <table class="table api-index">
@@ -1331,7 +1331,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-locations</p>
+        <p>POST /restapi/v1.0/account/{accountId}/emergency-locations</p>
 	<div id="createEmergencyLocation" class="collapse" aria-labelledby="createEmergencyLocation">
 
 	  <table class="table api-index">
@@ -1374,7 +1374,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-locations</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-locations</p>
 	<div id="listEmergencyLocations" class="collapse" aria-labelledby="listEmergencyLocations">
 
 	  <table class="table api-index">
@@ -1466,7 +1466,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-locations/{locationId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}</p>
 	<div id="readEmergencyLocation" class="collapse" aria-labelledby="readEmergencyLocation">
 
 	  <table class="table api-index">
@@ -1509,7 +1509,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/emergency-locations/{locationId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}</p>
 	<div id="updateEmergencyLocation" class="collapse" aria-labelledby="updateEmergencyLocation">
 
 	  <table class="table api-index">
@@ -1572,7 +1572,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours</p>
 	<div id="readUserBusinessHours" class="collapse" aria-labelledby="readUserBusinessHours">
 
 	  <table class="table api-index">
@@ -1615,7 +1615,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours</p>
 	<div id="updateUserBusinessHours" class="collapse" aria-labelledby="updateUserBusinessHours">
 
 	  <table class="table api-index">
@@ -1665,7 +1665,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/business-hours</p>
+        <p>GET /restapi/v1.0/account/{accountId}/business-hours</p>
 	<div id="readCompanyBusinessHours" class="collapse" aria-labelledby="readCompanyBusinessHours">
 </div>
       </td>
@@ -1680,7 +1680,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/business-hours</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/business-hours</p>
 	<div id="updateCompanyBusinessHours" class="collapse" aria-labelledby="updateCompanyBusinessHours">
 
 	  <table class="table api-index">
@@ -1736,7 +1736,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/events</p>
+        <p>GET /restapi/v1.0/glip/events</p>
 	<div id="readGlipEvents" class="collapse" aria-labelledby="readGlipEvents">
 
 	  <table class="table api-index">
@@ -1779,7 +1779,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/events</p>
+        <p>POST /restapi/v1.0/glip/events</p>
 	<div id="createEvent" class="collapse" aria-labelledby="createEvent">
 </div>
       </td>
@@ -1794,7 +1794,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/events/{eventId}</p>
+        <p>GET /restapi/v1.0/glip/events/{eventId}</p>
 	<div id="readEvent" class="collapse" aria-labelledby="readEvent">
 </div>
       </td>
@@ -1809,7 +1809,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/glip/events/{eventId}</p>
+        <p>PUT /restapi/v1.0/glip/events/{eventId}</p>
 	<div id="updateEvent" class="collapse" aria-labelledby="updateEvent">
 
 	  <table class="table api-index">
@@ -1852,7 +1852,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/events/{eventId}</p>
+        <p>DELETE /restapi/v1.0/glip/events/{eventId}</p>
 	<div id="deleteEvent" class="collapse" aria-labelledby="deleteEvent">
 </div>
       </td>
@@ -1867,7 +1867,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/events</p>
+        <p>POST /restapi/v1.0/glip/groups/{groupId}/events</p>
 	<div id="createEventbyGroupId" class="collapse" aria-labelledby="createEventbyGroupId">
 
 	  <table class="table api-index">
@@ -1910,7 +1910,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/events</p>
+        <p>GET /restapi/v1.0/glip/groups/{groupId}/events</p>
 	<div id="listGroupEvents" class="collapse" aria-labelledby="listGroupEvents">
 </div>
       </td>
@@ -1938,7 +1938,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking</p>
 	<div id="readCallerBlockingSettings" class="collapse" aria-labelledby="readCallerBlockingSettings">
 
 	  <table class="table api-index">
@@ -1981,7 +1981,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking</p>
 	<div id="updateCallerBlockingSettings" class="collapse" aria-labelledby="updateCallerBlockingSettings">
 
 	  <table class="table api-index">
@@ -2031,7 +2031,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers</p>
 	<div id="listBlockedAllowedNumbers" class="collapse" aria-labelledby="listBlockedAllowedNumbers">
 
 	  <table class="table api-index">
@@ -2095,7 +2095,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers</p>
 	<div id="createBlockedAllowedNumber" class="collapse" aria-labelledby="createBlockedAllowedNumber">
 
 	  <table class="table api-index">
@@ -2145,7 +2145,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
 	<div id="readBlockedAllowedNumber" class="collapse" aria-labelledby="readBlockedAllowedNumber">
 
 	  <table class="table api-index">
@@ -2195,7 +2195,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
 	<div id="deleteBlockedAllowedNumber" class="collapse" aria-labelledby="deleteBlockedAllowedNumber">
 
 	  <table class="table api-index">
@@ -2245,7 +2245,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}</p>
 	<div id="updateBlockedAllowedNumber" class="collapse" aria-labelledby="updateBlockedAllowedNumber">
 
 	  <table class="table api-index">
@@ -2315,7 +2315,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/call-out</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/call-out</p>
 	<div id="createCallOutCallSession" class="collapse" aria-labelledby="createCallOutCallSession">
 
 	  <table class="table api-index">
@@ -2358,7 +2358,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}</p>
 	<div id="readCallSessionStatus" class="collapse" aria-labelledby="readCallSessionStatus">
 
 	  <table class="table api-index">
@@ -2415,7 +2415,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}</p>
 	<div id="deleteCallSession" class="collapse" aria-labelledby="deleteCallSession">
 
 	  <table class="table api-index">
@@ -2458,7 +2458,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/hold</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/hold</p>
 	<div id="holdCallParty" class="collapse" aria-labelledby="holdCallParty">
 
 	  <table class="table api-index">
@@ -2508,7 +2508,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/unhold</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/unhold</p>
 	<div id="unholdCallParty" class="collapse" aria-labelledby="unholdCallParty">
 
 	  <table class="table api-index">
@@ -2558,7 +2558,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reject</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reject</p>
 	<div id="rejectParty" class="collapse" aria-labelledby="rejectParty">
 
 	  <table class="table api-index">
@@ -2608,7 +2608,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/ignore</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/ignore</p>
 	<div id="ignoreCallInQueue" class="collapse" aria-labelledby="ignoreCallInQueue">
 
 	  <table class="table api-index">
@@ -2665,7 +2665,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/transfer</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/transfer</p>
 	<div id="transferCallParty" class="collapse" aria-labelledby="transferCallParty">
 
 	  <table class="table api-index">
@@ -2722,7 +2722,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/bridge</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/bridge</p>
 	<div id="bridgeCallParty" class="collapse" aria-labelledby="bridgeCallParty">
 
 	  <table class="table api-index">
@@ -2779,7 +2779,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/answer</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/answer</p>
 	<div id="answerCallParty" class="collapse" aria-labelledby="answerCallParty">
 
 	  <table class="table api-index">
@@ -2836,7 +2836,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/pickup</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/pickup</p>
 	<div id="pickupCallParty" class="collapse" aria-labelledby="pickupCallParty">
 
 	  <table class="table api-index">
@@ -2893,7 +2893,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/forward</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/forward</p>
 	<div id="forwardCallParty" class="collapse" aria-labelledby="forwardCallParty">
 
 	  <table class="table api-index">
@@ -2950,7 +2950,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reply</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reply</p>
 	<div id="replyParty" class="collapse" aria-labelledby="replyParty">
 
 	  <table class="table api-index">
@@ -3007,7 +3007,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/flip</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/flip</p>
 	<div id="callFlipParty" class="collapse" aria-labelledby="callFlipParty">
 
 	  <table class="table api-index">
@@ -3064,7 +3064,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/park</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/park</p>
 	<div id="callParkParty" class="collapse" aria-labelledby="callParkParty">
 
 	  <table class="table api-index">
@@ -3114,7 +3114,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
 	<div id="readCallPartyStatus" class="collapse" aria-labelledby="readCallPartyStatus">
 
 	  <table class="table api-index">
@@ -3164,7 +3164,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
 	<div id="deleteCallParty" class="collapse" aria-labelledby="deleteCallParty">
 
 	  <table class="table api-index">
@@ -3214,7 +3214,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
+        <p>PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}</p>
 	<div id="updateCallParty" class="collapse" aria-labelledby="updateCallParty">
 
 	  <table class="table api-index">
@@ -3271,7 +3271,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings</p>
 	<div id="startCallRecording" class="collapse" aria-labelledby="startCallRecording">
 
 	  <table class="table api-index">
@@ -3321,7 +3321,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}</p>
+        <p>PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}</p>
 	<div id="pauseResumeCallRecording" class="collapse" aria-labelledby="pauseResumeCallRecording">
 
 	  <table class="table api-index">
@@ -3392,7 +3392,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise</p>
 	<div id="superviseCallSession" class="collapse" aria-labelledby="superviseCallSession">
 
 	  <table class="table api-index">
@@ -3442,7 +3442,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise</p>
+        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise</p>
 	<div id="superviseCallParty" class="collapse" aria-labelledby="superviseCallParty">
 
 	  <table class="table api-index">
@@ -3512,7 +3512,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number</p>
 	<div id="listForwardingNumbers" class="collapse" aria-labelledby="listForwardingNumbers">
 
 	  <table class="table api-index">
@@ -3569,7 +3569,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number</p>
 	<div id="createForwardingNumber" class="collapse" aria-labelledby="createForwardingNumber">
 
 	  <table class="table api-index">
@@ -3619,7 +3619,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
 	<div id="readForwardingNumber" class="collapse" aria-labelledby="readForwardingNumber">
 
 	  <table class="table api-index">
@@ -3669,7 +3669,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
 	<div id="updateForwardingNumber" class="collapse" aria-labelledby="updateForwardingNumber">
 
 	  <table class="table api-index">
@@ -3726,7 +3726,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}</p>
 	<div id="deleteForwardingNumber" class="collapse" aria-labelledby="deleteForwardingNumber">
 
 	  <table class="table api-index">
@@ -3789,7 +3789,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log</p>
 	<div id="readUserCallLog" class="collapse" aria-labelledby="readUserCallLog">
 
 	  <table class="table api-index">
@@ -3937,7 +3937,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log</p>
 	<div id="deleteUserCallLog" class="collapse" aria-labelledby="deleteUserCallLog">
 
 	  <table class="table api-index">
@@ -4022,7 +4022,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync</p>
 	<div id="syncUserCallLog" class="collapse" aria-labelledby="syncUserCallLog">
 
 	  <table class="table api-index">
@@ -4114,7 +4114,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}</p>
 	<div id="readUserCallRecord" class="collapse" aria-labelledby="readUserCallRecord">
 
 	  <table class="table api-index">
@@ -4171,7 +4171,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls</p>
 	<div id="listExtensionActiveCalls" class="collapse" aria-labelledby="listExtensionActiveCalls">
 
 	  <table class="table api-index">
@@ -4249,7 +4249,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-log</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-log</p>
 	<div id="readCompanyCallLog" class="collapse" aria-labelledby="readCompanyCallLog">
 
 	  <table class="table api-index">
@@ -4369,7 +4369,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-log-sync</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-log-sync</p>
 	<div id="syncAccountCallLog" class="collapse" aria-labelledby="syncAccountCallLog">
 
 	  <table class="table api-index">
@@ -4454,7 +4454,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-log/{callRecordId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId}</p>
 	<div id="readCompanyCallRecord" class="collapse" aria-labelledby="readCompanyCallRecord">
 
 	  <table class="table api-index">
@@ -4504,7 +4504,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/active-calls</p>
+        <p>GET /restapi/v1.0/account/{accountId}/active-calls</p>
 	<div id="listCompanyActiveCalls" class="collapse" aria-labelledby="listCompanyActiveCalls">
 
 	  <table class="table api-index">
@@ -4595,7 +4595,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups</p>
+        <p>POST /restapi/v1.0/account/{accountId}/call-monitoring-groups</p>
 	<div id="createCallMonitoringGroup" class="collapse" aria-labelledby="createCallMonitoringGroup">
 
 	  <table class="table api-index">
@@ -4638,7 +4638,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-monitoring-groups</p>
 	<div id="listCallMonitoringGroups" class="collapse" aria-labelledby="listCallMonitoringGroups">
 
 	  <table class="table api-index">
@@ -4695,7 +4695,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}</p>
 	<div id="updateCallMonitoringGroup" class="collapse" aria-labelledby="updateCallMonitoringGroup">
 
 	  <table class="table api-index">
@@ -4745,7 +4745,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}</p>
 	<div id="deleteCallMonitoringGroup" class="collapse" aria-labelledby="deleteCallMonitoringGroup">
 
 	  <table class="table api-index">
@@ -4788,7 +4788,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members</p>
 	<div id="listCallMonitoringGroupMembers" class="collapse" aria-labelledby="listCallMonitoringGroupMembers">
 
 	  <table class="table api-index">
@@ -4845,7 +4845,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign</p>
 	<div id="updateCallMonitoringGroupList" class="collapse" aria-labelledby="updateCallMonitoringGroupList">
 
 	  <table class="table api-index">
@@ -4908,7 +4908,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-queues</p>
 	<div id="listCallQueues" class="collapse" aria-labelledby="listCallQueues">
 
 	  <table class="table api-index">
@@ -4965,7 +4965,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}</p>
 	<div id="readCallQueueInfo" class="collapse" aria-labelledby="readCallQueueInfo">
 
 	  <table class="table api-index">
@@ -5008,7 +5008,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/call-queues/{groupId}</p>
 	<div id="updateCallQueueInfo" class="collapse" aria-labelledby="updateCallQueueInfo">
 
 	  <table class="table api-index">
@@ -5058,7 +5058,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}/members</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/members</p>
 	<div id="listCallQueueMembers" class="collapse" aria-labelledby="listCallQueueMembers">
 
 	  <table class="table api-index">
@@ -5115,7 +5115,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign</p>
 	<div id="assignMultipleCallQueueMembers" class="collapse" aria-labelledby="assignMultipleCallQueueMembers">
 
 	  <table class="table api-index">
@@ -5165,7 +5165,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queues</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queues</p>
 	<div id="updateUserCallQueues" class="collapse" aria-labelledby="updateUserCallQueues">
 
 	  <table class="table api-index">
@@ -5215,7 +5215,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/department/{departmentId}/members</p>
+        <p>GET /restapi/v1.0/account/{accountId}/department/{departmentId}/members</p>
 	<div id="listDepartmentMembers" class="collapse" aria-labelledby="listDepartmentMembers">
 
 	  <table class="table api-index">
@@ -5272,7 +5272,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/department/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/department/bulk-assign</p>
 	<div id="assignMultipleDepartmentMembers" class="collapse" aria-labelledby="assignMultipleDepartmentMembers">
 
 	  <table class="table api-index">
@@ -5328,7 +5328,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/recording/{recordingId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/recording/{recordingId}</p>
 	<div id="readCallRecording" class="collapse" aria-labelledby="readCallRecording">
 
 	  <table class="table api-index">
@@ -5371,7 +5371,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/recording/{recordingId}/content</p>
+        <p>GET /restapi/v1.0/account/{accountId}/recording/{recordingId}/content</p>
 	<div id="listCallRecordingData" class="collapse" aria-labelledby="listCallRecordingData">
 
 	  <table class="table api-index">
@@ -5427,7 +5427,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts</p>
+        <p>POST /restapi/v1.0/account/{accountId}/ivr-prompts</p>
 	<div id="createIVRPrompt" class="collapse" aria-labelledby="createIVRPrompt">
 
 	  <table class="table api-index">
@@ -5477,7 +5477,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts</p>
+        <p>GET /restapi/v1.0/account/{accountId}/ivr-prompts</p>
 	<div id="listIVRPrompts" class="collapse" aria-labelledby="listIVRPrompts">
 </div>
       </td>
@@ -5492,7 +5492,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
 	<div id="readIVRPrompt" class="collapse" aria-labelledby="readIVRPrompt">
 
 	  <table class="table api-index">
@@ -5535,7 +5535,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
 	<div id="deleteIVRPrompt" class="collapse" aria-labelledby="deleteIVRPrompt">
 
 	  <table class="table api-index">
@@ -5578,7 +5578,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}</p>
 	<div id="updateIVRPrompt" class="collapse" aria-labelledby="updateIVRPrompt">
 
 	  <table class="table api-index">
@@ -5628,7 +5628,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content</p>
+        <p>GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content</p>
 	<div id="readIVRPromptContent" class="collapse" aria-labelledby="readIVRPromptContent">
 
 	  <table class="table api-index">
@@ -5671,7 +5671,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-menus</p>
+        <p>POST /restapi/v1.0/account/{accountId}/ivr-menus</p>
 	<div id="createIVRMenu" class="collapse" aria-labelledby="createIVRMenu">
 
 	  <table class="table api-index">
@@ -5714,7 +5714,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}</p>
 	<div id="readIVRMenu" class="collapse" aria-labelledby="readIVRMenu">
 
 	  <table class="table api-index">
@@ -5757,7 +5757,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}</p>
 	<div id="updateIVRMenu" class="collapse" aria-labelledby="updateIVRMenu">
 
 	  <table class="table api-index">
@@ -5820,7 +5820,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats</p>
+        <p>GET /restapi/v1.0/glip/chats</p>
 	<div id="listGlipChats" class="collapse" aria-labelledby="listGlipChats">
 
 	  <table class="table api-index">
@@ -5870,7 +5870,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}</p>
+        <p>GET /restapi/v1.0/glip/chats/{chatId}</p>
 	<div id="readGlipChat" class="collapse" aria-labelledby="readGlipChat">
 </div>
       </td>
@@ -5885,7 +5885,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/recent/chats</p>
+        <p>GET /restapi/v1.0/glip/recent/chats</p>
 	<div id="listRecentChats" class="collapse" aria-labelledby="listRecentChats">
 
 	  <table class="table api-index">
@@ -5928,7 +5928,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/favorites</p>
+        <p>GET /restapi/v1.0/glip/favorites</p>
 	<div id="listFavoriteChats" class="collapse" aria-labelledby="listFavoriteChats">
 </div>
       </td>
@@ -5943,7 +5943,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/favorite</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/favorite</p>
 	<div id="favoriteGlipChat" class="collapse" aria-labelledby="favoriteGlipChat">
 </div>
       </td>
@@ -5958,7 +5958,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/unfavorite</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/unfavorite</p>
 	<div id="unfavoriteGlipChat" class="collapse" aria-labelledby="unfavoriteGlipChat">
 </div>
       </td>
@@ -5973,7 +5973,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/read</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/read</p>
 	<div id="markChatRead" class="collapse" aria-labelledby="markChatRead">
 </div>
       </td>
@@ -5988,7 +5988,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/unread</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/unread</p>
 	<div id="markChatUnread" class="collapse" aria-labelledby="markChatUnread">
 </div>
       </td>
@@ -6003,7 +6003,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/groups</p>
+        <p>GET /restapi/v1.0/glip/groups</p>
 	<div id="listGlipGroups" class="collapse" aria-labelledby="listGlipGroups">
 
 	  <table class="table api-index">
@@ -6053,7 +6053,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/groups</p>
+        <p>POST /restapi/v1.0/glip/groups</p>
 	<div id="createGlipGroup" class="collapse" aria-labelledby="createGlipGroup">
 </div>
       </td>
@@ -6068,7 +6068,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}</p>
+        <p>GET /restapi/v1.0/glip/groups/{groupId}</p>
 	<div id="readGlipGroup" class="collapse" aria-labelledby="readGlipGroup">
 </div>
       </td>
@@ -6083,7 +6083,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/bulk-assign</p>
+        <p>POST /restapi/v1.0/glip/groups/{groupId}/bulk-assign</p>
 	<div id="assignGlipGroupMembers" class="collapse" aria-labelledby="assignGlipGroupMembers">
 
 	  <table class="table api-index">
@@ -6139,7 +6139,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}</p>
 	<div id="readAccountInfo" class="collapse" aria-labelledby="readAccountInfo">
 </div>
       </td>
@@ -6154,7 +6154,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/business-address</p>
+        <p>GET /restapi/v1.0/account/{accountId}/business-address</p>
 	<div id="readAccountBusinessAddress" class="collapse" aria-labelledby="readAccountBusinessAddress">
 </div>
       </td>
@@ -6169,7 +6169,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/business-address</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/business-address</p>
 	<div id="updateAccountBusinessAddress" class="collapse" aria-labelledby="updateAccountBusinessAddress">
 
 	  <table class="table api-index">
@@ -6212,7 +6212,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/service-info</p>
+        <p>GET /restapi/v1.0/account/{accountId}/service-info</p>
 	<div id="readAccountServiceInfo" class="collapse" aria-labelledby="readAccountServiceInfo">
 </div>
       </td>
@@ -6240,7 +6240,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/conversations</p>
+        <p>GET /restapi/v1.0/glip/conversations</p>
 	<div id="listGlipConversations" class="collapse" aria-labelledby="listGlipConversations">
 
 	  <table class="table api-index">
@@ -6283,7 +6283,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/conversations</p>
+        <p>POST /restapi/v1.0/glip/conversations</p>
 	<div id="createGlipConversation" class="collapse" aria-labelledby="createGlipConversation">
 </div>
       </td>
@@ -6298,7 +6298,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/conversations/{chatId}</p>
+        <p>GET /restapi/v1.0/glip/conversations/{chatId}</p>
 	<div id="readGlipConversation" class="collapse" aria-labelledby="readGlipConversation">
 </div>
       </td>
@@ -6326,7 +6326,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/custom-fields</p>
+        <p>POST /restapi/v1.0/account/{accountId}/custom-fields</p>
 	<div id="createCustomField" class="collapse" aria-labelledby="createCustomField">
 
 	  <table class="table api-index">
@@ -6369,7 +6369,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/custom-fields</p>
+        <p>GET /restapi/v1.0/account/{accountId}/custom-fields</p>
 	<div id="listCustomFields" class="collapse" aria-labelledby="listCustomFields">
 </div>
       </td>
@@ -6384,7 +6384,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/custom-fields/{fieldId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/custom-fields/{fieldId}</p>
 	<div id="updateCustomField" class="collapse" aria-labelledby="updateCustomField">
 
 	  <table class="table api-index">
@@ -6434,7 +6434,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/custom-fields/{fieldId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/custom-fields/{fieldId}</p>
 	<div id="deleteCustomField" class="collapse" aria-labelledby="deleteCustomField">
 
 	  <table class="table api-index">
@@ -6490,7 +6490,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/device/{deviceId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/device/{deviceId}</p>
 	<div id="readDevice" class="collapse" aria-labelledby="readDevice">
 
 	  <table class="table api-index">
@@ -6540,7 +6540,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/device/{deviceId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/device/{deviceId}</p>
 	<div id="updateDevice" class="collapse" aria-labelledby="updateDevice">
 
 	  <table class="table api-index">
@@ -6597,7 +6597,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/device</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/device</p>
 	<div id="listExtensionDevices" class="collapse" aria-labelledby="listExtensionDevices">
 
 	  <table class="table api-index">
@@ -6667,7 +6667,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension</p>
 	<div id="listExtensions" class="collapse" aria-labelledby="listExtensions">
 
 	  <table class="table api-index">
@@ -6745,7 +6745,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension</p>
 	<div id="createExtension" class="collapse" aria-labelledby="createExtension">
 
 	  <table class="table api-index">
@@ -6788,7 +6788,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/templates</p>
+        <p>GET /restapi/v1.0/account/{accountId}/templates</p>
 	<div id="listUserTemplates" class="collapse" aria-labelledby="listUserTemplates">
 
 	  <table class="table api-index">
@@ -6845,7 +6845,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/templates/{templateId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/templates/{templateId}</p>
 	<div id="readUserTemplate" class="collapse" aria-labelledby="readUserTemplate">
 
 	  <table class="table api-index">
@@ -6901,7 +6901,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact</p>
 	<div id="listContacts" class="collapse" aria-labelledby="listContacts">
 
 	  <table class="table api-index">
@@ -6979,7 +6979,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact</p>
 	<div id="createContact" class="collapse" aria-labelledby="createContact">
 
 	  <table class="table api-index">
@@ -7036,7 +7036,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
 	<div id="readContact" class="collapse" aria-labelledby="readContact">
 
 	  <table class="table api-index">
@@ -7086,7 +7086,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
 	<div id="updateContact" class="collapse" aria-labelledby="updateContact">
 
 	  <table class="table api-index">
@@ -7150,7 +7150,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}</p>
 	<div id="deleteContact" class="collapse" aria-labelledby="deleteContact">
 
 	  <table class="table api-index">
@@ -7200,7 +7200,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync</p>
 	<div id="syncAddressBook" class="collapse" aria-labelledby="syncAddressBook">
 
 	  <table class="table api-index">
@@ -7271,7 +7271,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite</p>
 	<div id="listFavoriteContacts" class="collapse" aria-labelledby="listFavoriteContacts">
 
 	  <table class="table api-index">
@@ -7314,7 +7314,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite</p>
 	<div id="updateFavoriteContactList" class="collapse" aria-labelledby="updateFavoriteContactList">
 
 	  <table class="table api-index">
@@ -7377,7 +7377,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax</p>
 	<div id="createFaxMessage" class="collapse" aria-labelledby="createFaxMessage">
 
 	  <table class="table api-index">
@@ -7469,7 +7469,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/fax-cover-page</p>
+        <p>GET /restapi/v1.0/dictionary/fax-cover-page</p>
 	<div id="listFaxCoverPages" class="collapse" aria-labelledby="listFaxCoverPages">
 
 	  <table class="table api-index">
@@ -7544,7 +7544,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/features</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/features</p>
 	<div id="readUserFeatures" class="collapse" aria-labelledby="readUserFeatures">
 
 	  <table class="table api-index">
@@ -7614,7 +7614,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/data-export</p>
+        <p>POST /restapi/v1.0/glip/data-export</p>
 	<div id="createDataExportTask" class="collapse" aria-labelledby="createDataExportTask">
 </div>
       </td>
@@ -7629,7 +7629,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/data-export</p>
+        <p>GET /restapi/v1.0/glip/data-export</p>
 	<div id="listDataExportTasks" class="collapse" aria-labelledby="listDataExportTasks">
 
 	  <table class="table api-index">
@@ -7679,7 +7679,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/data-export/{taskId}</p>
+        <p>GET /restapi/v1.0/glip/data-export/{taskId}</p>
 	<div id="readDataExportTask" class="collapse" aria-labelledby="readDataExportTask">
 </div>
       </td>
@@ -7694,7 +7694,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/data-export/{taskId}/datasets/{datasetId}</p>
+        <p>GET /restapi/v1.0/glip/data-export/{taskId}/datasets/{datasetId}</p>
 	<div id="readDataExportTaskDataset" class="collapse" aria-labelledby="readDataExportTaskDataset">
 
 	  <table class="table api-index">
@@ -7750,7 +7750,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/persons/{personId}</p>
+        <p>GET /restapi/v1.0/glip/persons/{personId}</p>
 	<div id="readGlipPerson" class="collapse" aria-labelledby="readGlipPerson">
 </div>
       </td>
@@ -7765,7 +7765,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/companies/{companyId}</p>
+        <p>GET /restapi/v1.0/glip/companies/{companyId}</p>
 	<div id="readGlipCompany" class="collapse" aria-labelledby="readGlipCompany">
 </div>
       </td>
@@ -7780,7 +7780,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/preferences</p>
+        <p>GET /restapi/v1.0/glip/preferences</p>
 	<div id="readGlipPreferences" class="collapse" aria-labelledby="readGlipPreferences">
 </div>
       </td>
@@ -7808,7 +7808,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/webhooks</p>
+        <p>POST /restapi/v1.0/glip/groups/{groupId}/webhooks</p>
 	<div id="createGlipGroupWebhook" class="collapse" aria-labelledby="createGlipGroupWebhook">
 </div>
       </td>
@@ -7823,7 +7823,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/webhooks</p>
+        <p>GET /restapi/v1.0/glip/groups/{groupId}/webhooks</p>
 	<div id="listGlipGroupWebhooks" class="collapse" aria-labelledby="listGlipGroupWebhooks">
 </div>
       </td>
@@ -7838,7 +7838,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/webhooks</p>
+        <p>GET /restapi/v1.0/glip/webhooks</p>
 	<div id="listGlipWebhooks" class="collapse" aria-labelledby="listGlipWebhooks">
 </div>
       </td>
@@ -7853,7 +7853,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/webhooks/{webhookId}</p>
+        <p>GET /restapi/v1.0/glip/webhooks/{webhookId}</p>
 	<div id="readGlipWebhook" class="collapse" aria-labelledby="readGlipWebhook">
 </div>
       </td>
@@ -7868,7 +7868,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/webhooks/{webhookId}</p>
+        <p>DELETE /restapi/v1.0/glip/webhooks/{webhookId}</p>
 	<div id="deleteGlipWebhook" class="collapse" aria-labelledby="deleteGlipWebhook">
 </div>
       </td>
@@ -7883,7 +7883,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/webhooks/{webhookId}/activate</p>
+        <p>POST /restapi/v1.0/glip/webhooks/{webhookId}/activate</p>
 	<div id="activateGlipWebhook" class="collapse" aria-labelledby="activateGlipWebhook">
 </div>
       </td>
@@ -7898,7 +7898,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/webhooks/{webhookId}/suspend</p>
+        <p>POST /restapi/v1.0/glip/webhooks/{webhookId}/suspend</p>
 	<div id="suspendGlipWebhook" class="collapse" aria-labelledby="suspendGlipWebhook">
 </div>
       </td>
@@ -7926,7 +7926,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/directory/entries/search</p>
+        <p>POST /restapi/v1.0/account/{accountId}/directory/entries/search</p>
 	<div id="searchDirectoryEntries" class="collapse" aria-labelledby="searchDirectoryEntries">
 
 	  <table class="table api-index">
@@ -7969,7 +7969,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/directory/entries/{entryId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/directory/entries/{entryId}</p>
 	<div id="readDirectoryEntry" class="collapse" aria-labelledby="readDirectoryEntry">
 
 	  <table class="table api-index">
@@ -8012,7 +8012,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/directory/entries</p>
+        <p>GET /restapi/v1.0/account/{accountId}/directory/entries</p>
 	<div id="listDirectoryEntries" class="collapse" aria-labelledby="listDirectoryEntries">
 
 	  <table class="table api-index">
@@ -8090,7 +8090,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/directory/federation</p>
+        <p>GET /restapi/v1.0/account/{accountId}/directory/federation</p>
 	<div id="readAccountFederation" class="collapse" aria-labelledby="readAccountFederation">
 
 	  <table class="table api-index">
@@ -8146,7 +8146,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/user-settings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/user-settings</p>
 	<div id="GetUserSetting" class="collapse" aria-labelledby="GetUserSetting">
 
 	  <table class="table api-index">
@@ -8189,7 +8189,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/meeting/locked-settings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/meeting/locked-settings</p>
 	<div id="GetAccountLockedSetting" class="collapse" aria-labelledby="GetAccountLockedSetting">
 </div>
       </td>
@@ -8204,7 +8204,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info</p>
 	<div id="readMeetingServiceInfo" class="collapse" aria-labelledby="readMeetingServiceInfo">
 
 	  <table class="table api-index">
@@ -8247,7 +8247,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info</p>
+        <p>PATCH /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info</p>
 	<div id="updateMeetingServiceInfo" class="collapse" aria-labelledby="updateMeetingServiceInfo">
 
 	  <table class="table api-index">
@@ -8297,7 +8297,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assistants</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assistants</p>
 	<div id="readAssistants" class="collapse" aria-labelledby="readAssistants">
 
 	  <table class="table api-index">
@@ -8340,7 +8340,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assisted</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assisted</p>
 	<div id="readAssistedUsers" class="collapse" aria-labelledby="readAssistedUsers">
 
 	  <table class="table api-index">
@@ -8396,7 +8396,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting</p>
 	<div id="listMeetings" class="collapse" aria-labelledby="listMeetings">
 
 	  <table class="table api-index">
@@ -8439,7 +8439,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting</p>
 	<div id="createMeeting" class="collapse" aria-labelledby="createMeeting">
 
 	  <table class="table api-index">
@@ -8489,7 +8489,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
 	<div id="readMeeting" class="collapse" aria-labelledby="readMeeting">
 
 	  <table class="table api-index">
@@ -8539,7 +8539,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
 	<div id="updateMeeting" class="collapse" aria-labelledby="updateMeeting">
 
 	  <table class="table api-index">
@@ -8596,7 +8596,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}</p>
 	<div id="deleteMeeting" class="collapse" aria-labelledby="deleteMeeting">
 
 	  <table class="table api-index">
@@ -8646,7 +8646,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end</p>
 	<div id="endMeeting" class="collapse" aria-labelledby="endMeeting">
 
 	  <table class="table api-index">
@@ -8696,7 +8696,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/invitation</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/invitation</p>
 	<div id="readMeetingInvitation" class="collapse" aria-labelledby="readMeetingInvitation">
 
 	  <table class="table api-index">
@@ -8759,7 +8759,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/meeting-recordings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/meeting-recordings</p>
 	<div id="listAccountMeetingRecordings" class="collapse" aria-labelledby="listAccountMeetingRecordings">
 
 	  <table class="table api-index">
@@ -8830,7 +8830,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings</p>
 	<div id="listUserMeetingRecordings" class="collapse" aria-labelledby="listUserMeetingRecordings">
 
 	  <table class="table api-index">
@@ -8921,7 +8921,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-report</p>
+        <p>POST /restapi/v1.0/account/{accountId}/message-store-report</p>
 	<div id="createMessageStoreReport" class="collapse" aria-labelledby="createMessageStoreReport">
 
 	  <table class="table api-index">
@@ -8964,7 +8964,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-report/{taskId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}</p>
 	<div id="readMessageStoreReportTask" class="collapse" aria-labelledby="readMessageStoreReportTask">
 
 	  <table class="table api-index">
@@ -9007,7 +9007,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive</p>
+        <p>GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive</p>
 	<div id="readMessageStoreReportArchive" class="collapse" aria-labelledby="readMessageStoreReportArchive">
 
 	  <table class="table api-index">
@@ -9050,7 +9050,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}</p>
 	<div id="readMessageStoreReportArchiveContent" class="collapse" aria-labelledby="readMessageStoreReportArchiveContent">
 
 	  <table class="table api-index">
@@ -9113,7 +9113,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store</p>
 	<div id="listMessages" class="collapse" aria-labelledby="listMessages">
 
 	  <table class="table api-index">
@@ -9233,7 +9233,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store</p>
 	<div id="deleteMessageByFilter" class="collapse" aria-labelledby="deleteMessageByFilter">
 
 	  <table class="table api-index">
@@ -9297,7 +9297,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
 	<div id="readMessage" class="collapse" aria-labelledby="readMessage">
 
 	  <table class="table api-index">
@@ -9347,7 +9347,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
 	<div id="updateMessage" class="collapse" aria-labelledby="updateMessage">
 
 	  <table class="table api-index">
@@ -9418,7 +9418,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}</p>
 	<div id="deleteMessage" class="collapse" aria-labelledby="deleteMessage">
 
 	  <table class="table api-index">
@@ -9482,7 +9482,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}</p>
 	<div id="readMessageContent" class="collapse" aria-labelledby="readMessageContent">
 
 	  <table class="table api-index">
@@ -9553,7 +9553,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync</p>
 	<div id="syncMessages" class="collapse" aria-labelledby="syncMessages">
 
 	  <table class="table api-index">
@@ -9659,7 +9659,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-configuration</p>
+        <p>GET /restapi/v1.0/account/{accountId}/message-store-configuration</p>
 	<div id="readMessageStoreConfiguration" class="collapse" aria-labelledby="readMessageStoreConfiguration">
 </div>
       </td>
@@ -9674,7 +9674,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/message-store-configuration</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/message-store-configuration</p>
 	<div id="updateMessageStoreConfiguration" class="collapse" aria-labelledby="updateMessageStoreConfiguration">
 
 	  <table class="table api-index">
@@ -9730,7 +9730,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/mms</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/mms</p>
 	<div id="createMMS" class="collapse" aria-labelledby="createMMS">
 
 	  <table class="table api-index">
@@ -9793,7 +9793,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/notes</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/notes</p>
 	<div id="createChatNote" class="collapse" aria-labelledby="createChatNote">
 
 	  <table class="table api-index">
@@ -9836,7 +9836,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/notes</p>
+        <p>GET /restapi/v1.0/glip/chats/{chatId}/notes</p>
 	<div id="listChatNotes" class="collapse" aria-labelledby="listChatNotes">
 
 	  <table class="table api-index">
@@ -9914,7 +9914,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}</p>
+        <p>GET /restapi/v1.0/glip/notes/{noteId}</p>
 	<div id="readUserNote" class="collapse" aria-labelledby="readUserNote">
 </div>
       </td>
@@ -9929,7 +9929,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}</p>
+        <p>PATCH /restapi/v1.0/glip/notes/{noteId}</p>
 	<div id="patchNote" class="collapse" aria-labelledby="patchNote">
 
 	  <table class="table api-index">
@@ -9972,7 +9972,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}</p>
+        <p>DELETE /restapi/v1.0/glip/notes/{noteId}</p>
 	<div id="deleteNote" class="collapse" aria-labelledby="deleteNote">
 </div>
       </td>
@@ -9987,7 +9987,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}/lock</p>
+        <p>POST /restapi/v1.0/glip/notes/{noteId}/lock</p>
 	<div id="lockNote" class="collapse" aria-labelledby="lockNote">
 </div>
       </td>
@@ -10002,7 +10002,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}/unlock</p>
+        <p>POST /restapi/v1.0/glip/notes/{noteId}/unlock</p>
 	<div id="unlockNote" class="collapse" aria-labelledby="unlockNote">
 </div>
       </td>
@@ -10017,7 +10017,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/notes/{noteId}/publish</p>
+        <p>POST /restapi/v1.0/glip/notes/{noteId}/publish</p>
 	<div id="publishNote" class="collapse" aria-labelledby="publishNote">
 </div>
       </td>
@@ -10045,7 +10045,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/oauth/authorize</p>
+        <p>GET /restapi/oauth/authorize</p>
 	<div id="authorize" class="collapse" aria-labelledby="authorize">
 
 	  <table class="table api-index">
@@ -10193,7 +10193,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/oauth/revoke</p>
+        <p>POST /restapi/oauth/revoke</p>
 	<div id="revokeToken" class="collapse" aria-labelledby="revokeToken">
 
 	  <table class="table api-index">
@@ -10243,7 +10243,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/oauth/token</p>
+        <p>POST /restapi/oauth/token</p>
 	<div id="getToken" class="collapse" aria-labelledby="getToken">
 
 	  <table class="table api-index">
@@ -10425,7 +10425,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager</p>
 	<div id="createInternalTextMessage" class="collapse" aria-labelledby="createInternalTextMessage">
 
 	  <table class="table api-index">
@@ -10488,7 +10488,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users</p>
+        <p>GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users</p>
 	<div id="listPagingGroupUsers" class="collapse" aria-labelledby="listPagingGroupUsers">
 
 	  <table class="table api-index">
@@ -10545,7 +10545,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices</p>
+        <p>GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices</p>
 	<div id="listPagingGroupDevices" class="collapse" aria-labelledby="listPagingGroupDevices">
 
 	  <table class="table api-index">
@@ -10602,7 +10602,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign</p>
 	<div id="assignMultiplePagingGroupUsersDevices" class="collapse" aria-labelledby="assignMultiplePagingGroupUsersDevices">
 
 	  <table class="table api-index">
@@ -10665,7 +10665,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number</p>
 	<div id="listExtensionPhoneNumbers" class="collapse" aria-labelledby="listExtensionPhoneNumbers">
 
 	  <table class="table api-index">
@@ -10736,7 +10736,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/phone-number</p>
+        <p>GET /restapi/v1.0/account/{accountId}/phone-number</p>
 	<div id="listAccountPhoneNumbers" class="collapse" aria-labelledby="listAccountPhoneNumbers">
 
 	  <table class="table api-index">
@@ -10800,7 +10800,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}</p>
 	<div id="readAccountPhoneNumber" class="collapse" aria-labelledby="readAccountPhoneNumber">
 
 	  <table class="table api-index">
@@ -10843,7 +10843,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/number-parser/parse</p>
+        <p>POST /restapi/v1.0/number-parser/parse</p>
 	<div id="parsePhoneNumber" class="collapse" aria-labelledby="parsePhoneNumber">
 
 	  <table class="table api-index">
@@ -10906,7 +10906,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
+        <p>GET /restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
 	<div id="readGlipPost" class="collapse" aria-labelledby="readGlipPost">
 
 	  <table class="table api-index">
@@ -10949,7 +10949,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
+        <p>PATCH /restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
 	<div id="patchGlipPost" class="collapse" aria-labelledby="patchGlipPost">
 
 	  <table class="table api-index">
@@ -10999,7 +10999,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
+        <p>DELETE /restapi/v1.0/glip/chats/{chatId}/posts/{postId}</p>
 	<div id="deleteGlipPost" class="collapse" aria-labelledby="deleteGlipPost">
 
 	  <table class="table api-index">
@@ -11042,7 +11042,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/posts</p>
+        <p>GET /restapi/v1.0/glip/chats/{chatId}/posts</p>
 	<div id="readGlipPosts" class="collapse" aria-labelledby="readGlipPosts">
 
 	  <table class="table api-index">
@@ -11092,7 +11092,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/posts</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/posts</p>
 	<div id="createGlipPost" class="collapse" aria-labelledby="createGlipPost">
 
 	  <table class="table api-index">
@@ -11135,7 +11135,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/posts</p>
+        <p>GET /restapi/v1.0/glip/groups/{groupId}/posts</p>
 	<div id="listGlipGroupPosts" class="collapse" aria-labelledby="listGlipGroupPosts">
 
 	  <table class="table api-index">
@@ -11185,7 +11185,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/posts</p>
+        <p>POST /restapi/v1.0/glip/groups/{groupId}/posts</p>
 	<div id="createGlipGroupPost" class="collapse" aria-labelledby="createGlipGroupPost">
 
 	  <table class="table api-index">
@@ -11228,7 +11228,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text</p>
+        <p>PUT /restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text</p>
 	<div id="updateGlipPostText" class="collapse" aria-labelledby="updateGlipPostText">
 
 	  <table class="table api-index">
@@ -11278,7 +11278,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/cards</p>
+        <p>POST /restapi/v1.0/glip/cards</p>
 	<div id="createGlipCard" class="collapse" aria-labelledby="createGlipCard">
 
 	  <table class="table api-index">
@@ -11321,7 +11321,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/cards/{cardId}</p>
+        <p>GET /restapi/v1.0/glip/cards/{cardId}</p>
 	<div id="readGlipCard" class="collapse" aria-labelledby="readGlipCard">
 </div>
       </td>
@@ -11336,7 +11336,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/glip/cards/{cardId}</p>
+        <p>PUT /restapi/v1.0/glip/cards/{cardId}</p>
 	<div id="updateGlipCard" class="collapse" aria-labelledby="updateGlipCard">
 
 	  <table class="table api-index">
@@ -11379,7 +11379,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/cards/{cardId}</p>
+        <p>DELETE /restapi/v1.0/glip/cards/{cardId}</p>
 	<div id="deleteGlipCard" class="collapse" aria-labelledby="deleteGlipCard">
 </div>
       </td>
@@ -11394,7 +11394,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/posts</p>
+        <p>GET /restapi/v1.0/glip/posts</p>
 	<div id="listGlipPosts" class="collapse" aria-labelledby="listGlipPosts">
 
 	  <table class="table api-index">
@@ -11444,7 +11444,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/posts</p>
+        <p>POST /restapi/v1.0/glip/posts</p>
 	<div id="createPost" class="collapse" aria-labelledby="createPost">
 </div>
       </td>
@@ -11472,7 +11472,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence</p>
 	<div id="readUserPresenceStatus" class="collapse" aria-labelledby="readUserPresenceStatus">
 
 	  <table class="table api-index">
@@ -11529,7 +11529,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence</p>
 	<div id="updateUserPresenceStatus" class="collapse" aria-labelledby="updateUserPresenceStatus">
 
 	  <table class="table api-index">
@@ -11579,7 +11579,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/presence</p>
+        <p>GET /restapi/v1.0/account/{accountId}/presence</p>
 	<div id="readAccountPresence" class="collapse" aria-labelledby="readAccountPresence">
 
 	  <table class="table api-index">
@@ -11643,7 +11643,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence</p>
 	<div id="readCallQueuePresence" class="collapse" aria-labelledby="readCallQueuePresence">
 
 	  <table class="table api-index">
@@ -11686,7 +11686,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence</p>
 	<div id="updateCallQueuePresence" class="collapse" aria-labelledby="updateCallQueuePresence">
 
 	  <table class="table api-index">
@@ -11736,7 +11736,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence</p>
 	<div id="readExtensionCallQueuePresence" class="collapse" aria-labelledby="readExtensionCallQueuePresence">
 
 	  <table class="table api-index">
@@ -11786,7 +11786,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence</p>
 	<div id="updateExtensionCallQueuePresence" class="collapse" aria-labelledby="updateExtensionCallQueuePresence">
 
 	  <table class="table api-index">
@@ -11836,7 +11836,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence</p>
 	<div id="readUnifiedPresence" class="collapse" aria-labelledby="readUnifiedPresence">
 
 	  <table class="table api-index">
@@ -11879,7 +11879,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence</p>
+        <p>PATCH /restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence</p>
 	<div id="updateUnifiedPresence" class="collapse" aria-labelledby="updateUnifiedPresence">
 
 	  <table class="table api-index">
@@ -11942,7 +11942,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/language</p>
+        <p>GET /restapi/v1.0/dictionary/language</p>
 	<div id="listLanguages" class="collapse" aria-labelledby="listLanguages">
 </div>
       </td>
@@ -11957,7 +11957,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/language/{languageId}</p>
+        <p>GET /restapi/v1.0/dictionary/language/{languageId}</p>
 	<div id="readLanguage" class="collapse" aria-labelledby="readLanguage">
 </div>
       </td>
@@ -11972,7 +11972,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/country</p>
+        <p>GET /restapi/v1.0/dictionary/country</p>
 	<div id="listCountries" class="collapse" aria-labelledby="listCountries">
 
 	  <table class="table api-index">
@@ -12043,7 +12043,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/country/{countryId}</p>
+        <p>GET /restapi/v1.0/dictionary/country/{countryId}</p>
 	<div id="readCountry" class="collapse" aria-labelledby="readCountry">
 </div>
       </td>
@@ -12058,7 +12058,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/location</p>
+        <p>GET /restapi/v1.0/dictionary/location</p>
 	<div id="listLocations" class="collapse" aria-labelledby="listLocations">
 
 	  <table class="table api-index">
@@ -12122,7 +12122,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/state</p>
+        <p>GET /restapi/v1.0/dictionary/state</p>
 	<div id="listStates" class="collapse" aria-labelledby="listStates">
 
 	  <table class="table api-index">
@@ -12186,7 +12186,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/state/{stateId}</p>
+        <p>GET /restapi/v1.0/dictionary/state/{stateId}</p>
 	<div id="readState" class="collapse" aria-labelledby="readState">
 </div>
       </td>
@@ -12201,7 +12201,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/timezone</p>
+        <p>GET /restapi/v1.0/dictionary/timezone</p>
 	<div id="listTimezones" class="collapse" aria-labelledby="listTimezones">
 
 	  <table class="table api-index">
@@ -12244,7 +12244,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/timezone/{timezoneId}</p>
+        <p>GET /restapi/v1.0/dictionary/timezone/{timezoneId}</p>
 	<div id="readTimezone" class="collapse" aria-labelledby="readTimezone">
 
 	  <table class="table api-index">
@@ -12307,7 +12307,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out</p>
 	<div id="createRingOutCall" class="collapse" aria-labelledby="createRingOutCall">
 
 	  <table class="table api-index">
@@ -12357,7 +12357,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}</p>
 	<div id="readRingOutCallStatus" class="collapse" aria-labelledby="readRingOutCallStatus">
 
 	  <table class="table api-index">
@@ -12407,7 +12407,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}</p>
 	<div id="deleteRingOutCall" class="collapse" aria-labelledby="deleteRingOutCall">
 
 	  <table class="table api-index">
@@ -12457,7 +12457,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout</p>
 	<div id="createRingOutCallDeprecated" class="collapse" aria-labelledby="createRingOutCallDeprecated">
 
 	  <table class="table api-index">
@@ -12507,7 +12507,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}</p>
 	<div id="readRingOutCallStatusDeprecated" class="collapse" aria-labelledby="readRingOutCallStatusDeprecated">
 
 	  <table class="table api-index">
@@ -12557,7 +12557,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}</p>
 	<div id="deleteRingOutCallDeprecated" class="collapse" aria-labelledby="deleteRingOutCallDeprecated">
 
 	  <table class="table api-index">
@@ -12620,7 +12620,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule</p>
 	<div id="listAnsweringRules" class="collapse" aria-labelledby="listAnsweringRules">
 
 	  <table class="table api-index">
@@ -12691,7 +12691,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule</p>
 	<div id="createAnsweringRule" class="collapse" aria-labelledby="createAnsweringRule">
 
 	  <table class="table api-index">
@@ -12741,7 +12741,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
 	<div id="readAnsweringRule" class="collapse" aria-labelledby="readAnsweringRule">
 
 	  <table class="table api-index">
@@ -12798,7 +12798,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
 	<div id="updateAnsweringRule" class="collapse" aria-labelledby="updateAnsweringRule">
 
 	  <table class="table api-index">
@@ -12855,7 +12855,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}</p>
 	<div id="deleteAnsweringRule" class="collapse" aria-labelledby="deleteAnsweringRule">
 
 	  <table class="table api-index">
@@ -12905,7 +12905,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/answering-rule</p>
+        <p>POST /restapi/v1.0/account/{accountId}/answering-rule</p>
 	<div id="createCompanyAnsweringRule" class="collapse" aria-labelledby="createCompanyAnsweringRule">
 
 	  <table class="table api-index">
@@ -12948,7 +12948,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/answering-rule</p>
+        <p>GET /restapi/v1.0/account/{accountId}/answering-rule</p>
 	<div id="listCompanyAnsweringRules" class="collapse" aria-labelledby="listCompanyAnsweringRules">
 
 	  <table class="table api-index">
@@ -12998,7 +12998,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
 	<div id="readCompanyAnsweringRule" class="collapse" aria-labelledby="readCompanyAnsweringRule">
 
 	  <table class="table api-index">
@@ -13041,7 +13041,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
 	<div id="updateCompanyAnsweringRule" class="collapse" aria-labelledby="updateCompanyAnsweringRule">
 
 	  <table class="table api-index">
@@ -13091,7 +13091,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}</p>
 	<div id="deleteCompanyAnsweringRule" class="collapse" aria-labelledby="deleteCompanyAnsweringRule">
 
 	  <table class="table api-index">
@@ -13134,7 +13134,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting</p>
+        <p>GET /restapi/v1.0/dictionary/greeting</p>
 	<div id="listStandardGreetings" class="collapse" aria-labelledby="listStandardGreetings">
 
 	  <table class="table api-index">
@@ -13191,7 +13191,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/{greetingId}</p>
+        <p>GET /restapi/v1.0/dictionary/greeting/{greetingId}</p>
 	<div id="readStandardGreeting" class="collapse" aria-labelledby="readStandardGreeting">
 </div>
       </td>
@@ -13206,7 +13206,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/greeting</p>
+        <p>POST /restapi/v1.0/account/{accountId}/greeting</p>
 	<div id="createCompanyGreeting" class="collapse" aria-labelledby="createCompanyGreeting">
 
 	  <table class="table api-index">
@@ -13270,7 +13270,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting</p>
 	<div id="createCustomUserGreeting" class="collapse" aria-labelledby="createCustomUserGreeting">
 
 	  <table class="table api-index">
@@ -13334,7 +13334,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}</p>
 	<div id="readCustomGreeting" class="collapse" aria-labelledby="readCustomGreeting">
 
 	  <table class="table api-index">
@@ -13384,7 +13384,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-recording</p>
 	<div id="readCallRecordingSettings" class="collapse" aria-labelledby="readCallRecordingSettings">
 </div>
       </td>
@@ -13399,7 +13399,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/call-recording</p>
 	<div id="updateCallRecordingSettings" class="collapse" aria-labelledby="updateCallRecordingSettings">
 
 	  <table class="table api-index">
@@ -13442,7 +13442,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording/extensions</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-recording/extensions</p>
 	<div id="listCallRecordingExtensions" class="collapse" aria-labelledby="listCallRecordingExtensions">
 </div>
       </td>
@@ -13457,7 +13457,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording/bulk-assign</p>
+        <p>POST /restapi/v1.0/account/{accountId}/call-recording/bulk-assign</p>
 	<div id="updateCallRecordingExtensionList" class="collapse" aria-labelledby="updateCallRecordingExtensionList">
 
 	  <table class="table api-index">
@@ -13500,7 +13500,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording/custom-greetings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/call-recording/custom-greetings</p>
 	<div id="listCallRecordingCustomGreetings" class="collapse" aria-labelledby="listCallRecordingCustomGreetings">
 
 	  <table class="table api-index">
@@ -13543,7 +13543,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording/custom-greetings</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings</p>
 	<div id="deleteCallRecordingCustomGreetingList" class="collapse" aria-labelledby="deleteCallRecordingCustomGreetingList">
 </div>
       </td>
@@ -13558,7 +13558,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}</p>
 	<div id="deleteCallRecordingCustomGreeting" class="collapse" aria-labelledby="deleteCallRecordingCustomGreeting">
 
 	  <table class="table api-index">
@@ -13614,7 +13614,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/health</p>
+        <p>GET /scim/health</p>
 	<div id="checkHealth" class="collapse" aria-labelledby="checkHealth">
 </div>
       </td>
@@ -13629,7 +13629,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/v2/health</p>
+        <p>GET /scim/v2/health</p>
 	<div id="checkHealth2" class="collapse" aria-labelledby="checkHealth2">
 </div>
       </td>
@@ -13644,7 +13644,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/v2/ServiceProviderConfig</p>
+        <p>GET /scim/v2/ServiceProviderConfig</p>
 	<div id="readServiceProviderConfig2" class="collapse" aria-labelledby="readServiceProviderConfig2">
 </div>
       </td>
@@ -13659,7 +13659,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/ServiceProviderConfig</p>
+        <p>GET /scim/ServiceProviderConfig</p>
 	<div id="readServiceProviderConfig" class="collapse" aria-labelledby="readServiceProviderConfig">
 </div>
       </td>
@@ -13674,7 +13674,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/v2/Users</p>
+        <p>GET /scim/v2/Users</p>
 	<div id="searchViaGet2" class="collapse" aria-labelledby="searchViaGet2">
 
 	  <table class="table api-index">
@@ -13724,7 +13724,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/scim/v2/Users</p>
+        <p>POST /scim/v2/Users</p>
 	<div id="createUser2" class="collapse" aria-labelledby="createUser2">
 </div>
       </td>
@@ -13739,7 +13739,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/Users</p>
+        <p>GET /scim/Users</p>
 	<div id="searchViaGet" class="collapse" aria-labelledby="searchViaGet">
 
 	  <table class="table api-index">
@@ -13789,7 +13789,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/scim/Users</p>
+        <p>POST /scim/Users</p>
 	<div id="createUser" class="collapse" aria-labelledby="createUser">
 </div>
       </td>
@@ -13804,7 +13804,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/scim/v2/Users/.search</p>
+        <p>POST /scim/v2/Users/.search</p>
 	<div id="searchViaPost2" class="collapse" aria-labelledby="searchViaPost2">
 </div>
       </td>
@@ -13819,7 +13819,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/scim/v2/Users/{id}</p>
+        <p>GET /scim/v2/Users/{id}</p>
 	<div id="readUser2" class="collapse" aria-labelledby="readUser2">
 </div>
       </td>
@@ -13834,7 +13834,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/scim/v2/Users/{id}</p>
+        <p>PUT /scim/v2/Users/{id}</p>
 	<div id="replaceUser2" class="collapse" aria-labelledby="replaceUser2">
 
 	  <table class="table api-index">
@@ -13877,7 +13877,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/scim/v2/Users/{id}</p>
+        <p>DELETE /scim/v2/Users/{id}</p>
 	<div id="deleteUser2" class="collapse" aria-labelledby="deleteUser2">
 </div>
       </td>
@@ -13892,7 +13892,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/scim/v2/Users/{id}</p>
+        <p>PATCH /scim/v2/Users/{id}</p>
 	<div id="patchUser2" class="collapse" aria-labelledby="patchUser2">
 
 	  <table class="table api-index">
@@ -13948,7 +13948,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/client-info/sip-provision</p>
+        <p>POST /restapi/v1.0/client-info/sip-provision</p>
 	<div id="createSIPRegistration" class="collapse" aria-labelledby="createSIPRegistration">
 </div>
       </td>
@@ -13976,7 +13976,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms</p>
 	<div id="createSMSMessage" class="collapse" aria-labelledby="createSMSMessage">
 
 	  <table class="table api-index">
@@ -14039,7 +14039,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/subscription</p>
+        <p>GET /restapi/v1.0/subscription</p>
 	<div id="listSubscriptions" class="collapse" aria-labelledby="listSubscriptions">
 </div>
       </td>
@@ -14054,7 +14054,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/subscription</p>
+        <p>POST /restapi/v1.0/subscription</p>
 	<div id="createSubscription" class="collapse" aria-labelledby="createSubscription">
 </div>
       </td>
@@ -14069,7 +14069,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/subscription/{subscriptionId}</p>
+        <p>GET /restapi/v1.0/subscription/{subscriptionId}</p>
 	<div id="readSubscription" class="collapse" aria-labelledby="readSubscription">
 </div>
       </td>
@@ -14084,7 +14084,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/subscription/{subscriptionId}</p>
+        <p>PUT /restapi/v1.0/subscription/{subscriptionId}</p>
 	<div id="updateSubscription" class="collapse" aria-labelledby="updateSubscription">
 
 	  <table class="table api-index">
@@ -14134,7 +14134,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/subscription/{subscriptionId}</p>
+        <p>DELETE /restapi/v1.0/subscription/{subscriptionId}</p>
 	<div id="deleteSubscription" class="collapse" aria-labelledby="deleteSubscription">
 </div>
       </td>
@@ -14149,7 +14149,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/subscription/{subscriptionId}/renew</p>
+        <p>POST /restapi/v1.0/subscription/{subscriptionId}/renew</p>
 	<div id="renewSubscription" class="collapse" aria-labelledby="renewSubscription">
 </div>
       </td>
@@ -14177,7 +14177,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/tasks</p>
+        <p>GET /restapi/v1.0/glip/chats/{chatId}/tasks</p>
 	<div id="listChatTasks" class="collapse" aria-labelledby="listChatTasks">
 
 	  <table class="table api-index">
@@ -14276,7 +14276,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/chats/{chatId}/tasks</p>
+        <p>POST /restapi/v1.0/glip/chats/{chatId}/tasks</p>
 	<div id="createTask" class="collapse" aria-labelledby="createTask">
 
 	  <table class="table api-index">
@@ -14319,7 +14319,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/tasks/{taskId}</p>
+        <p>GET /restapi/v1.0/glip/tasks/{taskId}</p>
 	<div id="readTask" class="collapse" aria-labelledby="readTask">
 </div>
       </td>
@@ -14334,7 +14334,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/glip/tasks/{taskId}</p>
+        <p>PATCH /restapi/v1.0/glip/tasks/{taskId}</p>
 	<div id="patchTask" class="collapse" aria-labelledby="patchTask">
 
 	  <table class="table api-index">
@@ -14377,7 +14377,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/tasks/{taskId}</p>
+        <p>DELETE /restapi/v1.0/glip/tasks/{taskId}</p>
 	<div id="deleteTask" class="collapse" aria-labelledby="deleteTask">
 </div>
       </td>
@@ -14392,7 +14392,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/tasks/{taskId}/complete</p>
+        <p>POST /restapi/v1.0/glip/tasks/{taskId}/complete</p>
 	<div id="completeTask" class="collapse" aria-labelledby="completeTask">
 
 	  <table class="table api-index">
@@ -14448,7 +14448,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/teams</p>
+        <p>GET /restapi/v1.0/glip/teams</p>
 	<div id="listGlipTeams" class="collapse" aria-labelledby="listGlipTeams">
 
 	  <table class="table api-index">
@@ -14491,7 +14491,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams</p>
+        <p>POST /restapi/v1.0/glip/teams</p>
 	<div id="createGlipTeam" class="collapse" aria-labelledby="createGlipTeam">
 </div>
       </td>
@@ -14506,7 +14506,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}</p>
+        <p>GET /restapi/v1.0/glip/teams/{chatId}</p>
 	<div id="readGlipTeam" class="collapse" aria-labelledby="readGlipTeam">
 </div>
       </td>
@@ -14521,7 +14521,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}</p>
+        <p>PATCH /restapi/v1.0/glip/teams/{chatId}</p>
 	<div id="patchGlipTeam" class="collapse" aria-labelledby="patchGlipTeam">
 
 	  <table class="table api-index">
@@ -14564,7 +14564,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}</p>
+        <p>DELETE /restapi/v1.0/glip/teams/{chatId}</p>
 	<div id="deleteGlipTeam" class="collapse" aria-labelledby="deleteGlipTeam">
 </div>
       </td>
@@ -14579,7 +14579,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/join</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/join</p>
 	<div id="joinGlipTeam" class="collapse" aria-labelledby="joinGlipTeam">
 </div>
       </td>
@@ -14594,7 +14594,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/leave</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/leave</p>
 	<div id="leaveGlipTeam" class="collapse" aria-labelledby="leaveGlipTeam">
 </div>
       </td>
@@ -14609,7 +14609,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/add</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/add</p>
 	<div id="addGlipTeamMembers" class="collapse" aria-labelledby="addGlipTeamMembers">
 
 	  <table class="table api-index">
@@ -14652,7 +14652,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/remove</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/remove</p>
 	<div id="removeGlipTeamMembers" class="collapse" aria-labelledby="removeGlipTeamMembers">
 
 	  <table class="table api-index">
@@ -14695,7 +14695,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/archive</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/archive</p>
 	<div id="archiveGlipTeam" class="collapse" aria-labelledby="archiveGlipTeam">
 </div>
       </td>
@@ -14710,7 +14710,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/glip/teams/{chatId}/unarchive</p>
+        <p>POST /restapi/v1.0/glip/teams/{chatId}/unarchive</p>
 	<div id="unarchiveGlipTeam" class="collapse" aria-labelledby="unarchiveGlipTeam">
 </div>
       </td>
@@ -14725,7 +14725,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/glip/everyone</p>
+        <p>GET /restapi/v1.0/glip/everyone</p>
 	<div id="readGlipEveryone" class="collapse" aria-labelledby="readGlipEveryone">
 </div>
       </td>
@@ -14740,7 +14740,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PATCH https://platform.ringcentral.com/restapi/v1.0/glip/everyone</p>
+        <p>PATCH /restapi/v1.0/glip/everyone</p>
 	<div id="patchGlipEveryone" class="collapse" aria-labelledby="patchGlipEveryone">
 </div>
       </td>
@@ -14768,7 +14768,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile</p>
 	<div id="readAuthorizationProfile" class="collapse" aria-labelledby="readAuthorizationProfile">
 
 	  <table class="table api-index">
@@ -14811,7 +14811,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check</p>
 	<div id="checkUserPermission" class="collapse" aria-labelledby="checkUserPermission">
 
 	  <table class="table api-index">
@@ -14881,7 +14881,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
 	<div id="readExtension" class="collapse" aria-labelledby="readExtension">
 
 	  <table class="table api-index">
@@ -14924,7 +14924,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
 	<div id="updateExtension" class="collapse" aria-labelledby="updateExtension">
 
 	  <table class="table api-index">
@@ -14974,7 +14974,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>DELETE https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
+        <p>DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}</p>
 	<div id="deleteExtension" class="collapse" aria-labelledby="deleteExtension">
 
 	  <table class="table api-index">
@@ -15031,7 +15031,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id</p>
 	<div id="readExtensionCallerId" class="collapse" aria-labelledby="readExtensionCallerId">
 
 	  <table class="table api-index">
@@ -15074,7 +15074,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id</p>
 	<div id="updateExtensionCallerId" class="collapse" aria-labelledby="updateExtensionCallerId">
 
 	  <table class="table api-index">
@@ -15124,7 +15124,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/grant</p>
 	<div id="listExtensionGrants" class="collapse" aria-labelledby="listExtensionGrants">
 
 	  <table class="table api-index">
@@ -15189,7 +15189,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings</p>
 	<div id="readNotificationSettings" class="collapse" aria-labelledby="readNotificationSettings">
 
 	  <table class="table api-index">
@@ -15233,7 +15233,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings</p>
 	<div id="updateNotificationSettings" class="collapse" aria-labelledby="updateNotificationSettings">
 
 	  <table class="table api-index">
@@ -15283,7 +15283,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
 	<div id="readUserProfileImage" class="collapse" aria-labelledby="readUserProfileImage">
 
 	  <table class="table api-index">
@@ -15326,7 +15326,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>POST https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
+        <p>POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
 	<div id="createUserProfileImage" class="collapse" aria-labelledby="createUserProfileImage">
 
 	  <table class="table api-index">
@@ -15376,7 +15376,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image</p>
 	<div id="updateUserProfileImage" class="collapse" aria-labelledby="updateUserProfileImage">
 
 	  <table class="table api-index">
@@ -15426,7 +15426,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}</p>
 	<div id="readScaledPofileImage" class="collapse" aria-labelledby="readScaledPofileImage">
 
 	  <table class="table api-index">
@@ -15476,7 +15476,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing</p>
 	<div id="readConferencingSettings" class="collapse" aria-labelledby="readConferencingSettings">
 
 	  <table class="table api-index">
@@ -15526,7 +15526,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing</p>
 	<div id="updateConferencingSettings" class="collapse" aria-labelledby="updateConferencingSettings">
 
 	  <table class="table api-index">
@@ -15589,7 +15589,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>GET https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration</p>
+        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration</p>
 	<div id="readUserVideoConfiguration" class="collapse" aria-labelledby="readUserVideoConfiguration">
 
 	  <table class="table api-index">
@@ -15632,7 +15632,7 @@ In case the feature is available for the current user, <code>"available": true</
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
-        <p>PUT https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration</p>
+        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration</p>
 	<div id="updateUserVideoConfiguration" class="collapse" aria-labelledby="updateUserVideoConfiguration">
 
 	  <table class="table api-index">
