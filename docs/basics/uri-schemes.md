@@ -12,4 +12,4 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 
 ## See also
 
-* [Voice URI Schemes](../voice/uri-scheme/)
+* [Voice URI Schemes](../../voice/uri-scheme/)
