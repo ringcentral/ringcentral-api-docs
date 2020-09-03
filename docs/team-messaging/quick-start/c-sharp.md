@@ -78,14 +78,13 @@ namespace Create_Glip_Team
             parameters.name = "Fun team";
             parameters.description = "Let chit chat here";
 
-            var member1 = new Dictionary<string, string>();
-            member1.Add("email", "member.1@gmail.com");
-            var member2 = new Dictionary<string, string>();
-            member2.Add("email", "member.2@gmail.com");
+            var member1 = new CreateGlipMember();
+            member1.email = "member.1@gmail.com";
+            var member2 = new CreateGlipMember();
+            member2.email = "member.2@gmail.com";
+            parameters.members = new CreateGlipMember[] { member1, member2 };
 
-            parameters.members = new Object[] { member1, member2 };
-
-            var response = await restClient.Restapi().Glip().Teams().Post(parameters);
+            var response = await rc.Restapi().Glip().Teams().Post(parameters);
             var jsonStr = JsonConvert.SerializeObject(response);
             Console.WriteLine(jsonStr);
         }
