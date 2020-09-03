@@ -6,25 +6,24 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
+!!! note "Also check out our SMS Best Practices Guide"
+    After you finish this quick start, be sure to read our [SMS Best Practices Guide](../../sms/best-practices/).
+
 ## Create App and Get Credentials
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=" class="btn btn-primary">Create SMS App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create SMS App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Give your app a name and description, then click Next.</li>
-<li>On the second page of the create app wizard enter the following:
-  <ul>
-  <li>Select 'Private' for Application Type.</li>
-  <li>Select 'Server-only (No UI)' for Platform Type.</li>
-  </ul>
-  </li>
-<li>On the third page of the create app wizard, select the following permissions:
+<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
+<li>Select "Other Non-UI" under "Where will you be calling the API from?"
+<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
+<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
   <ul>
     <li>SMS</li>
   </ul>

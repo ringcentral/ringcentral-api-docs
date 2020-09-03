@@ -1,7 +1,7 @@
 # Introduction to RingCentral's Voice API
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with the Voice API</h3>
+  <h3 class="h3 display-5">Getting Started with the Voice API</h3>
   <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
   <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
@@ -12,7 +12,7 @@
   <a href="quick-start/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
-## Overview
+<p class="h2">Overview</p>
 
 Before you dive into the Voice API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings on one another. They are:
 
@@ -26,7 +26,7 @@ Before you dive into the Voice API, it can be helpful to understand how it fits 
 
 The RingCentral Voice API is the primary way developers interface with, manage, and manipulate active calls on the network. Below are the major functional areas of this API. 
 
-### Place a Call
+### Make a phone call
 
 RingCentral's [Call Management API](../call-management/) provides a number of a facilities for controlling and routing incoming calls. The Voice API provides developers with some means for placing calls programmatically - mainly RingOut.
 
@@ -36,7 +36,7 @@ Alternatively, developers can help users place calls via WebRTC or our [RingCent
 * [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html)
 * [Initiate a RingOut call from your soft phone](https://support.ringcentral.com/s/article/85?language=en_US)
 
-### Intercept Incoming Calls
+### Intercept incoming calls
 
 Before a call is connected with a user/extension, and while it is ringing, the Voice API gives the developer one last chance to route the call in someway. These ways are:
 
@@ -46,7 +46,7 @@ Before a call is connected with a user/extension, and while it is ringing, the V
 
 * Learn more about intercepting incoming calls using the [Call Control API](./call-control/)
 
-### Manipulate Active Calls
+### Manipulate and control active phone calls
 
 Once a call has been connected to an extension or user, the Voice API allows a developer to manipulate that call while it is progress. The Voice API enables developers to do the following to active calls:
 
@@ -71,7 +71,7 @@ The RingCentral Call Log is an authoritative record of all the calls that were c
 * Call direction (inbound, outbound)
 * Duration
 
-### Downloading Call Recordings
+### Download call recordings
 
 In addition to providing metadata about a call that took place on the network, the Call Log API also makes available to developers a URL from which the audio of a recorded call can be downloaded.
 

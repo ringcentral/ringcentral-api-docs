@@ -1,4 +1,11 @@
-# Auth Tokens
+# Using Auth Tokens
+
+!!! info "Need help authenticating your application?"
+    This guide is intended to assist developers in using authentication tokens once they have been acquired by going through one of authentication methods:
+          
+    * [3-legged OAuth Flow](../auth-code-flow/)
+    * [Password Flow](../password-flow)
+    * [Implicit Grant Flow](../implicit-grant-flow/)
 
 Tokens are used to provide a context in each request for authorization or authentication. It is important to understand distinctions between token types:
 

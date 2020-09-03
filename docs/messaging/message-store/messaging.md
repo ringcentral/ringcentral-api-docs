@@ -59,38 +59,40 @@ See the [API Reference](https://developer.ringcentral.com/api-reference) section
 
 Let's consider the example request below. GET [Message Info](https://developer.ringcentral.com/api-reference#SMS-and-MMS-loadMessage) request allows retrieving the Message Info object. In the example below the message type is SMS. The other message types: Fax, Pager, Voicemail and Text are retrieved via the same request with the corresponding `type` value.
 
-```http tab="Response"
-HTTP/1.1 200 OK
-Content-Type: application/json 
+=== "Response"
+	```http
+	HTTP/1.1 200 OK
+	Content-Type: application/json 
 
-{
-   "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010",
-   "id": 320272588010,
-   "to": [{"phoneNumber": "18551003732"}],
-   "from": {"phoneNumber": "18559100010"},
-   "type": "SMS",
-   "creationTime": "2012-10-18T10:40:31.000Z",
-   "readStatus": "Unread",
-   "priority": "Normal",
-   "attachments": [   {
-      "id": 1,
-      "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010/content/1",
-      "contentType": "text/plain"
-   }],
-   "direction": "Outbound",
-   "availability": "Alive",
-   "subject": "Test SMS message from Platform server",
-   "messageStatus": "Delivered",
-   "smsDeliveryTime": "2012-10-18T10:40:42.000Z",
-   "conversationId": 4178398077955743750,
-   "lastModifiedTime": "2012-10-18T10:40:42.000Z"
-} 
-```
+	{
+	   "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010",
+	   "id": 320272588010,
+	   "to": [{"phoneNumber": "18555553732"}],
+	   "from": {"phoneNumber": "18555550010"},
+	   "type": "SMS",
+	   "creationTime": "2012-10-18T10:40:31.000Z",
+	   "readStatus": "Unread",
+	   "priority": "Normal",
+	   "attachments": [   {
+	      "id": 1,
+	      "uri": ".../account/1346632010/extension/1346632010/message-store/320272588010/content/1",
+	      "contentType": "text/plain"
+	   }],
+	   "direction": "Outbound",
+	   "availability": "Alive",
+	   "subject": "Test SMS message from Platform server",
+	   "messageStatus": "Delivered",
+	   "smsDeliveryTime": "2012-10-18T10:40:42.000Z",
+	   "conversationId": 4178398077955743750,
+	   "lastModifiedTime": "2012-10-18T10:40:42.000Z"
+	} 
+	```
 
-```http tab="Request"
-GET /restapi/v1.0/account/~/extension/~/message-store/320272588010 HTTP/1.1
-Accept: application/json
-```
+=== "Request"
+	```http
+	GET /restapi/v1.0/account/~/extension/~/message-store/320272588010 HTTP/1.1
+	Accept: application/json
+	```
 
 ## Message Availability and Life Cycle
 

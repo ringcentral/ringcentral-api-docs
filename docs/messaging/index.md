@@ -1,9 +1,9 @@
-# Introduction to Messaging on RingCentral
+# Introduction to SMS and Fax Messaging on RingCentral
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with Messaging</h3>
+  <h3 class="h3 display-5">Getting Started with SMS and Fax Messaging</h3>
   <p class="lead">Within the RingCentral Platform, Messaging encompasses a number of elements that work together to enable developers to send and receive SMS, fax, voicemail and pager messages through the network. In addition, all messages sent and received over the network are captured within the RingCentral Message Store which allows developers to download messages, access message histories, and manage user inboxes.</p>
-  <p>We invite all developers to try out our Messaging API by writing a simple app to send an SMS message in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
+  <p>We invite all developers to try out our SMS and Fax API by writing a simple app to send an SMS message in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
@@ -12,7 +12,7 @@
   <a href="quick-start/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
-## What types of messages can be sent/received?
+## What types of messages can be sent or received?
 
 RingCentral supports a number of different types of messages that can be sent and received. They are all types of messages most are familiar with. But just in case:
 
@@ -26,11 +26,11 @@ RingCentral supports a number of different types of messages that can be sent an
 RingCentral's APIs allow for developers to send and receive messages of all of the above types. 
 
 !!! note "Glip Messages"
-    Another type of message is a "Glip Message" which are transmitted via RingCentral's Team Messaging product called "Glip." These messages are not managed via our messaging system and are discussed in more detail in [Glip section](../team-messaging/) of our Developer Guide.
+    Another type of message is a "Glip Message" which are transmitted via RingCentral's Team Messaging product called "Glip." These messages are not managed via our SMS and Fax messaging system and are discussed in more detail in [Glip section](../team-messaging/) of our Developer Guide.
 
-## Who does one send or receive a message?
+## How does one send or receive a message?
 
-The Messaging API allows developers to both send and receive messages of every type. The following guides will help you und
+The SMS and Fax API allows developers to both send and receive messages of every type. The following guides will help you und
 
 **SMS**
 

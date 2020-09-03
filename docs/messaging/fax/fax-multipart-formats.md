@@ -48,13 +48,13 @@ Content-Disposition: form-data; name="to"; filename=""
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 
-18001234567
+18005554567
 --Boundary_14_2952358_1361963763144
 Content-Disposition: form-data; name="to"; filename=""
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 
-18001234568
+18005554568
 --Boundary_14_2952358_1361963763144
 Content-Disposition: form-data; name="attachment"; filename=""
 Content-Transfer-Encoding: binary
@@ -88,7 +88,7 @@ Authorization: Bearer MyToken
 --Boundary_1_14413901_1361871080888
 Content-Type: application/json
 
-{"to":[{"phoneNumber":"18001234567"}],
+{"to":[{"phoneNumber":"18005554567"}],
  "faxResolution":"High",
  "sendTime":"2013-02-26T09:31:20.882Z"}
 

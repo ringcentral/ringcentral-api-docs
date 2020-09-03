@@ -53,16 +53,16 @@ The Transfer API works similar to the Forward API, except that the party must fi
 
 Specify the target phone number for a party transfer:
 
-```
+```http
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/transfer
 
 {
-  "phoneNumber":"+12059690601"
+  "phoneNumber":"+12055550601"
 }
 ```
 
 !!! tip "Transferring to specific extension"
-    There is an option to transfer the call via Main Company Number + extension number, e.g. `"phoneNumber":"+18882101932*104"`. In the future we're planning to remove this option, but provide an ability to transfer and forward the call using `extensionNumber`.
+    There is an option to transfer the call via Main Company Number + extension number, e.g. `"phoneNumber":"+18885551932*104"`. In the future we're planning to remove this option, but provide an ability to transfer and forward the call using `extensionNumber`.
 
 #### Transfer to voicemail
 
@@ -107,7 +107,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/:telephonySessionId/parties/:par
 
 Once recording is started you can pause and unpause recording as follows:
 
-```
+```http
 PATCH /restapi/v1.0/account/~/telephony/sessions/:telephonySessionId/parties/:partyId/recordings/:recordingId
 
 {
@@ -121,7 +121,7 @@ Call flipping is useful if you rely on a number of different phones (e.g., desk 
 
 [Configure your Call Flip Settings](https://support.ringcentral.com/s/article/Calling-Features-How-to-use-Call-Flip-for-instant-call-forwarding) via Service Site or via [Ringcentral Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html).
 
-```
+```http
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/flip
 
 {
@@ -133,6 +133,6 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 Drop the call for all participants:
 
-```
+```http
 DELETE /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>
 ```

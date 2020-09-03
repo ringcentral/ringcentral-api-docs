@@ -11,7 +11,7 @@ The doc outlines incremental App requirements to enable for AT&T Office@Hand. It
 If you use "RingCentral Office" branding in your App, replace this with "AT&T Office@Hand" to reference AT&T Office@Hand product.
 Sample logo is shown below for AT&T Office@Hand. This logo can be scaled to the appropriate pixel dimensions in your App.
 
-![ATT Office at Hand Logo](../logo_att.svg)
+<img alt="AT&amp;T Office at Hand Logo" src="../logo_att.svg">
 
 ### 2. Countries support
 

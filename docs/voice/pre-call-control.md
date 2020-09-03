@@ -8,6 +8,9 @@ The actions a developer can take on a call prior to it being connected or answer
 * Send to voicemail
 * Reject the call
 
+!!! info "Try the Call Control SDK"
+    We created the [Call Control SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help Javascript developers call these APIs using a more functional coding style, and handle TelephonySession notifications more easily.
+
 ## Forwarding Calls
 
 You can use the Forward API to transfer the incoming call to another phone number or to voicemail, without answering the call. The Forward API works for parties in the `Setup` and `Proceeding` states only (this is the main differece with the Transfer API, which works with already accepted calls). 
@@ -22,7 +25,7 @@ To forward the incoming call to another phone number utilize the `telephonySessi
 POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<partyId>/forward
 
 {
-  "phoneNumber":"+12059690601"
+  "phoneNumber":"+12055550601"
 }
 ```
 
@@ -63,4 +66,3 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
     * **Answer (Replace)** - accept the incoming call.
     * **Reply** - with this option you can send a Text-to-speech reply to the caller. It could be either pre-set message or custom own message. After you press Send, your message is announced to the Caller.
     * **Voicemail Screening** - you can listen and have the option to Pick up the call while your caller leaves you a voicemail.
-

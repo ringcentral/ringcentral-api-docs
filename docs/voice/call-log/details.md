@@ -42,11 +42,11 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
             "action": "Phone Call",
             "result": "Accepted",
             "to": {
-                "phoneNumber": "+15623215778",
+                "phoneNumber": "+15625555778",
                 "name": "SDK Engineer Candidate"
             },
             "from": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "name": "SAN FRANCSCO CA",
                 "location": "San Francisco (South), CA"
             },
@@ -68,11 +68,11 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
             "action": "VoIP Call",
             "result": "Call connected",
             "to": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "location": "San Francisco (South), CA"
             },
             "from": {
-                "phoneNumber": "+16505496100",
+                "phoneNumber": "+16505556100",
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
@@ -93,11 +93,11 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
             "action": "VoIP Call",
             "result": "Call connected",
             "to": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "location": "San Francisco (South), CA"
             },
             "from": {
-                "phoneNumber": "+16505496100",
+                "phoneNumber": "+16505556100",
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
@@ -163,11 +163,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
             "action": "Phone Call",
             "result": "Accepted",
             "to": {
-                "phoneNumber": "+15623215778",
+                "phoneNumber": "+15625555778",
                 "name": "SDK Engineer Candidate"
             },
             "from": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "name": "SAN FRANCSCO CA",
                 "location": "San Francisco (South), CA"
             },
@@ -188,11 +188,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                     "action": "Phone Call",
                     "result": "Accepted",
                     "to": {
-                        "phoneNumber": "+15623215778",
+                        "phoneNumber": "+15625555778",
                         "name": "SDK Engineer Candidate"
                     },
                     "from": {
-                        "phoneNumber": "+14158905908",
+                        "phoneNumber": "+14155555908",
                         "name": "SAN FRANCSCO CA",
                         "location": "San Francisco (South), CA"
                     },
@@ -217,11 +217,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                     "action": "VoIP Call",
                     "result": "Accepted",
                     "to": {
-                        "phoneNumber": "+16506429233",
+                        "phoneNumber": "+16505559233",
                         "location": "San Mateo, CA"
                     },
                     "from": {
-                        "phoneNumber": "+14158905908",
+                        "phoneNumber": "+14155555908",
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
@@ -250,11 +250,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
             "action": "VoIP Call",
             "result": "Call connected",
             "to": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "location": "San Francisco (South), CA"
             },
             "from": {
-                "phoneNumber": "+16505496100",
+                "phoneNumber": "+16505556100",
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
@@ -274,11 +274,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                     "action": "VoIP Call",
                     "result": "Call connected",
                     "to": {
-                        "phoneNumber": "+14158905908",
+                        "phoneNumber": "+14155555908",
                         "location": "San Francisco (South), CA"
                     },
                     "from": {
-                        "phoneNumber": "+16505496100",
+                        "phoneNumber": "+16505556100",
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
@@ -307,11 +307,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
             "action": "VoIP Call",
             "result": "Call connected",
             "to": {
-                "phoneNumber": "+14158905908",
+                "phoneNumber": "+14155555908",
                 "location": "San Francisco (South), CA"
             },
             "from": {
-                "phoneNumber": "+16505496100",
+                "phoneNumber": "+16505556100",
                 "name": "SDK Engineer Candidate"
             },
             "recording": {
@@ -331,11 +331,11 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                     "action": "VoIP Call",
                     "result": "Call connected",
                     "to": {
-                        "phoneNumber": "+14158905908",
+                        "phoneNumber": "+14155555908",
                         "location": "San Francisco (South), CA"
                     },
                     "from": {
-                        "phoneNumber": "+16505496100",
+                        "phoneNumber": "+16505556100",
                         "name": "SDK Engineer Candidate"
                     },
                     "recording": {
@@ -382,11 +382,11 @@ Inspecting the `legs` property of the multi-leg call, we can see two different `
         "action": "Phone Call",
         "result": "Accepted",
         "to": {
-            "phoneNumber": "+15623215778", // The direct number of the Call Group defined in RingCentral
+            "phoneNumber": "+15625555778", // The direct number of the Call Group defined in RingCentral
             "name": "SDK Engineer Candidate" // Name of the Extension that handled the call
         },
         "from": {
-            "phoneNumber": "+14158905908",
+            "phoneNumber": "+14155555908",
             "name": "SAN FRANCSCO CA",
             "location": "San Francisco (South), CA"
         },
@@ -411,11 +411,11 @@ Inspecting the `legs` property of the multi-leg call, we can see two different `
         "action": "VoIP Call",
         "result": "Accepted",
         "to": {
-            "phoneNumber": "+16506429233",
+            "phoneNumber": "+16505559233",
             "location": "San Mateo, CA"
         },
         "from": {
-            "phoneNumber": "+14158905908",
+            "phoneNumber": "+14155555908",
             "name": "SDK Engineer Candidate"
         },
         "recording": {

@@ -7,7 +7,7 @@ There are two primary ways in which a developer can detect a change in the statu
 
 What a developer subscribes to depends largely upon the use case. For example, subscribing to presence events provide a good way of establishing a call control policy that relates to a fixed extension on the network. However, perhaps call handling logic requires custom policies to be enforced on the fly depending upon the call itself. In which case, subscribing to a specific call, waiting for the call to enter a specific state is probably best. 
 
-## Creating a subscripion
+## Creating a Subscription
 
 Detailed instructions on [creating webhooks and subscriptions](../../notifications/) can be found elsewhere in the Developer Guide. As a convenience, here is how one would subscribe to receive both presence and telephony session events via a push notification.
 

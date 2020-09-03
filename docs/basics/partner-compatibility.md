@@ -6,8 +6,9 @@ Our partners include:
 
 * AT&T Office@Hand
 * Avaya Cloud Office
+* BT Cloud Work
 * TELUS
-* BT Cloud Phone
+* Unify Office
 
 ??? tip "Learn how to promote your app to our partners"
     Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
@@ -23,14 +24,13 @@ Our partners give developers and companies access to entirely different customer
 
 ## Creating Apps
 
-The first step in making your application available to our partner's customers is to select the partner your app can be made available to when you initially create your app. In step 2 of the [Create Application Process](../create-app/) you must:
+The first step in making your application available to our partner's customers is to set the proper access permissions when you initially create your app. There are two ways to make your app available to RingCentral brand partners when configuring "who will be authorized to access your app?" They are:
 
-1. Make sure your app is Application Type is set to "Public."
-2. Select your desired partners under "Carrier." *By default, all are selected.*
+1. Select "All RingCentral customers." When this is selected, your app will be made available to all RingCentral customers, including those of our brand partners. If RingCentral were to add more brand partners, then your app will automatically be available to them as well. *This is the recommended option.*
+
+2. Select "Only customers of selected brand partners," then select the specific brand partners you want to limit access to. For those wishing to maximize the reach of their application, we recommend selecting "All RingCentral customers."
 
 <img class="img-fluid mx-auto d-block" src="../partners-create-app.png" style="max-width:500px" />
-
-*If a partner is not selected, then customers associated with that partner will be prohibited from authenticating or using your application.*
 
 ## Authentication
 
@@ -42,23 +42,23 @@ The following images have been provided to help you construct buttons to initiat
 
 #### RingCentral
 
-![RingCentral Login Button](../button-ringcentral.png)
+<img src="../button-ringcentral.png" alt="RingCentral connect button">
 
 #### AT&T Office@Hand
 
-![ATT Login Button](../button-att.png)
+<img alt="ATT Login Button" src="../button-att.png">
 
 #### Avaya Cloud Office
 
-![Avaya Cloud Office Button](../button-avaya.png)
+<img alt="Avaya Cloud Office Button" src="../button-avaya.png">
 
 #### BT
 
-![ATT Login Button](../button-bt.png)
+<img alt="ATT Login Button" src="../button-bt.png">
 
 #### TELUS
 
-![TELUS Login Button](../button-telus.png)
+<img alt="TELUS Login Button" src="../button-telus.png">
 
 ### Login Page Branding
 
@@ -66,16 +66,16 @@ When constructing a login URL to initiate the authorization process in a [3-legg
 
 | Brand Id Value | Service | Logo Displayed |
 |-|-|-|
-| `3420` | AT&T Office@Hand | ![Office@Hand Logo](../logo-att.png) |
-| `6010` | Avaya Cloud Office | ![Avaya Cloud Office Logo](../logo-avaya-sm.jpg) |
-| `7310` | TELUS | ![TELUS Logo](../logo-telus.png) |
-| `7710` | BT | ![BT Logo](../logo-bt.png) | 
+| `3420` | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../logo-att.png"> |
+| `6010` | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../logo-avaya-sm.jpg"> |
+| `7310` | TELUS | <img alt="TELUS Logo" src="../logo-telus.png"> |
+| `7710` | BT | <img alt="BT Logo" src="../logo-bt.png"> | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 
 ### Constructing a Login URL for RingCentral Partners
 
-Developers should take care in building the URLs used to initiate the login and authorization (a.k.a. OAuth) flow for their app, as the URL will specify the logo that will appear on the login page. Here is a sample login URL that will display the BT Cloud Phone logo to the user on our login page. 
+Developers should take care in building the URLs used to initiate the login and authorization (a.k.a. OAuth) flow for their app, as the URL will specify the logo that will appear on the login page. Here is a sample login URL that will display the BT Cloud Work logo to the user on our login page. 
 
 ```
 https://platform.ringcentral.com/restapi/oauth/authorize\

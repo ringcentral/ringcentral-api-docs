@@ -10,18 +10,24 @@ In this Quick Start, we are going to help you connect two people in a live phone
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create RingOut App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=RingOut+Quick+Start+App&desc=A+simple+app+to+demo+placing+a+call+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=RingOut&redirectUri=" class="btn btn-primary">Create RingOut App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=RingOut+Quick+Start+App&desc=A+simple+app+to+demo+placing+a+call+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=RingOut&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create RingOut App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
-??? example "Show Detailed Instructions"
-    1. [Login or create an account](https://developer.ringcentral.com/login.html#/) if you have not done so already.
-    2. Go to Console/Apps and click 'Create App' button.
-    3. Give your app a name and description, then click Next.
-    4. On the second page of the create app wizard enter the following:
-         * Select 'Private' for Application Type.
-         * Select 'Server-only (No UI)' for Platform Type.
-    5. On the third page of the create app wizard, select the following permissions:
-         * RingOut
-    6. We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
+<li>Select "Other Non-UI" under "Where will you be calling the API from?"
+<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
+<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
+  <ul>
+    <li>RingOut</li>
+  </ul>
+</li>
+<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+</ol>
+</div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 

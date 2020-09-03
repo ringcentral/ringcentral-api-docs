@@ -2,6 +2,9 @@
 
 Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow to implement. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
 
+!!! warning "Password Flow cannot be used if Single Sign-On is enforced"
+    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. 
+
 !!! warning "Password Flow is rarely recommended"
     The Password Flow is considered by many to be less secure because it requires an app to store a username and password in plain text by the server or client utilizing it. Utilizing the password flow requires an additional level of trust between you and the application.
 
@@ -63,24 +66,26 @@ Content Type: application/json
 	
 **Example**
 
-```http tab="Request"
-POST /restapi/oauth/token HTTP/1.1 
-Accept: application/json 
-Content-Type: application/x-www-form-urlencoded 
-Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
-grant_type=password&username=18559100010&extension=101&password=121212             
-```
+=== "Request"
+	```http
+	POST /restapi/oauth/token HTTP/1.1 
+	Accept: application/json 
+	Content-Type: application/x-www-form-urlencoded 
+	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
+	grant_type=password&username=18559100010&extension=101&password=121212             
+	```
 
-```http tab="Response"
-HTTP/1.1 200 OK
-Content-Type: application/json
-        
-{
-   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-   "token_type" : "bearer",
-   "expires_in" : 7199,
-   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
-   "refresh_token_expires_in" : 604799,
-   "owner_id" : "256440016"
-}
-```
+=== "Response"
+	```http
+	HTTP/1.1 200 OK
+	Content-Type: application/json
+		
+	{
+	   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+	   "token_type" : "bearer",
+	   "expires_in" : 7199,
+	   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+	   "refresh_token_expires_in" : 604799,
+	   "owner_id" : "256440016"
+	}
+	```

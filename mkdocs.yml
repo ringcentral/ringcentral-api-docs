@@ -12,8 +12,7 @@ plugins:
   - bootstrap-tables
 
 theme:
-  name: moonstone
-  custom_dir: 'theme/'
+  name: ringcentral
   fluid_layout: True
   suppress_nextprev: true
   shortcuts:
@@ -23,21 +22,22 @@ markdown_extensions:
   - markdown.extensions.admonition
   - pymdownx.details
   - pymdownx.keys
+  - pymdownx.tabbed
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
+  - markdown_include.include:
+       base_path: docs
 
 extra_css:
 - extra.css
 - css/mega-menu.css
 
-copyright: "1999-2019 RingCentral, Inc. All rights reserved."
+copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
 google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
-
-
 
 # ---- CORE APIs ----
 - 'Primary':
@@ -54,14 +54,23 @@ pages:
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
+    - 'Call Routing':
+      - 'Overview': 'voice/call-routing/index.md'
+      - 'Get Started': 'voice/call-routing/get-started.md'
+      - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
+      - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
+      - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
+      - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
+      - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
     - 'Call Control':
       - 'Overview': 'voice/call-control.md'
       - 'Finding active calls': 'voice/finding-active-calls.md'
       - 'Detecting state changes': 'voice/call-control-sessions.md'
-      - 'Presence': 'voice/presence.md'
       - 'Pre-call Control': 'voice/pre-call-control.md'
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
+      - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
+      - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
       - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
       - 'Data Types': 'voice/call-log/api.md'
@@ -71,13 +80,14 @@ pages:
       - 'Synchronization': 'voice/call-log/sync.md'
       - 'Best Practices': 'voice/call-log/best-practices.md'
       - 'Access Control': 'voice/call-log/access.md'
+    - 'Call Analytics':
+      - 'Calculating Call Metrics': 'voice/calculating-call-time-metrics.md'
     - 'Sample Applications':
       - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
       - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
       - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-
-  - 'Messaging':
+  - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'messaging/quick-start/node.md'
@@ -87,6 +97,7 @@ pages:
       - 'C#': 'messaging/quick-start/c-sharp.md'
       - 'Ruby': 'messaging/quick-start/ruby.md'
     - 'SMS':
+      - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
@@ -109,7 +120,7 @@ pages:
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 
-  - 'Glip':
+  - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started':
       - 'JavaScript': 'team-messaging/quick-start/node.md'
@@ -126,6 +137,7 @@ pages:
       - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
     - 'Glip Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
+      - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
     - 'Glip Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
       - 'Build a Bot in Node': 'team-messaging/manual/node.md'
@@ -133,22 +145,6 @@ pages:
     - 'Sample Applications':
       - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
       - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
-
-  - 'Call Management':
-    - 'Overview': 'call-management/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'call-management/quick-start/node.md'
-      - 'Python': 'call-management/quick-start/python.md'
-      - 'PHP': 'call-management/quick-start/php.md'
-      - 'Java': 'call-management/quick-start/java.md'
-      - 'C#': 'call-management/quick-start/c-sharp.md'
-      - 'Ruby': 'call-management/quick-start/ruby.md'
-    - 'Call Routing':
-      - 'Answering Rules Overview': 'call-management/manual/answering-rules.md'
-      - 'User Answering Rules': 'call-management/manual/user-answering-rules.md'
-      - 'Company Answering Rules': 'call-management/manual/company-answering-rules.md'
-      - 'Call Queues': 'call-management/manual/call-queues.md'
-      - 'Call Forwarding/Flipping': 'call-management/manual/call-forwarding.md'
 
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
@@ -159,37 +155,49 @@ pages:
       - 'Java': 'meetings/quick-start/java.md'
       - 'C#': 'meetings/quick-start/c-sharp.md'
       - 'Ruby': 'meetings/quick-start/ruby.md'
+    - 'RingCentral Video': 'meetings/video.md'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
 
   - 'Using the API':
+      - 'Methods, endpoints and parameters': 'basics/uris.md'
+      - 'Exploring the API': 'basics/explorer.md'
+      - 'Using phones in sandbox': 'basics/your-rc-phone.md'
+      - 'Media content': 'basics/media.md'
+      - 'App permissions': 'basics/permissions.md'
+      - 'URI schemes': 'basics/uri-schemes.md'
+      - 'Rate limits': 'basics/rate-limits.md'
+      - 'API Reference Index': 'basics/api-index.md'
+  - 'Applications':
       - 'Development Lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
           - 'Create an application': 'basics/create-app.md'
           - 'Develop in sandbox': 'basics/sandbox.md'
           - 'Graduate to production': 'basics/production.md'
       - 'App Promotion':
-          - 'App Gallery': 'basics/app-gallery.md'
+          - 'Submit to the App Gallery': 'basics/app-gallery.md'
+          - 'Update a Profile': 'basics/update-profile.md'
           - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
           - 'Partner compatibility': 'basics/partner-compatibility.md'
           - 'Partner Brand Guidelines':
-             - 'ATT': 'basics/partners/att.md'
-             - 'BT': 'basics/partners/bt.md'
-             - 'TELUS': 'basics/partners/telus.md'
-      - 'Fundamentals':
-          - 'Methods, endpoints and parameters': 'basics/uris.md'
-          - 'Exploring the API': 'basics/explorer.md'
-          - 'Using phones in sandbox': 'basics/your-rc-phone.md'
-          - 'Media content': 'basics/media.md'
-          - 'App permissions': 'basics/permissions.md'
-          - 'Rate limits': 'basics/rate-limits.md'
+             - 'AT&T Office@Hand': 'basics/partners/att.md'
+             - 'Avaya Cloud Office': 'basics/partners/aco.md'
+             - 'BT Cloud Work': 'basics/partners/bt.md'
+             - 'TELUS Business Connect': 'basics/partners/telus.md'
+             - 'Unify Office': 'basics/partners/atos.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Account Management':
-          - 'Accounts & Extensions': 'basics/configuration/account_extension.md'
-          - 'Auth profile & permissions': 'basics/configuration/user-permissions.md'
+
+  - 'Account':
+    - 'Overview': 'account/index.md'
+    - 'Users and Extensions': 'account/extensions.md'
+    - 'Phone Numbers': 'account/phone-numbers.md'
+    - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
+    - 'User Feature Flags': 'account/feature-flags.md'
+    - 'Custom Fields': 'account/custom-fields.md'
+    - 'Presence': 'account/presence.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
@@ -201,11 +209,10 @@ pages:
       - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
       - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
     - 'Developer Manual':
-      - 'Auth Tokens': 'authentication/tokens.md'
-      - 'Auth Code Flow': 'authentication/auth-code-flow.md'
+      - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
-      - 'Client Credentials Flow': 'authentication/client-creds.md'
+      - 'Using Auth Tokens': 'authentication/tokens.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
@@ -224,11 +231,15 @@ pages:
         - 'Java': 'notifications/quick-start/webhook/java.md'
         - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
         - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
-    - 'Developer Manual':
-      - 'Webhooks': 'notifications/manual/webhooks.md'
-      - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
+    - 'Webhooks':
+      - 'Creating Webhooks': 'notifications/manual/webhooks.md'
+      - 'Receiving Webhooks': 'notifications/manual/webhooks/receiving.md'
+      - 'Configuring TLS/SSL': 'notifications/manual/webhooks/configuring-tls-ssl.md'
+    - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 
   - 'Downloads and SDKs': sdks.md
+  - 'RingCentral Labs': labs.md
+ 

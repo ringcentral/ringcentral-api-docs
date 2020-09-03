@@ -1,5 +1,10 @@
 # Introduction to the Meetings API
 
+??? check "Want to develop for the RingCentral Video API?"
+     The RingCentral Meetings API is different from our newer RingCentral Video API. The RingCentral Meetings API is built on top of our classic meetings solution, while RingCentral Video is a built-from-the-ground-up, next generation meetings platform.
+     
+     The RingCentral Video API is currently available to select partners and developers. If you are interested in building a RingCentral Video integration, please [request access today](https://forms.gle/Pk7pNMwky8di5LCR8)!
+
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with Meetings</h3>
   <p class="lead">The RingCentral Meetings API gives developers the ability to create, schedule, update and delete meetings. In addition, the API gives one access to the list of dial-in phone numbers, URLs, and other connection information so that organizers can compose proper invitations to meeting attendees.</p>

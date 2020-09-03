@@ -6,11 +6,15 @@ AT&T is the second largest service provider for mobile and fixed telecom service
 
 [AT&T Office@Hand Developer and Brand Guidelines &raquo;](../partners/att/)
 
-## BT Cloud Phone
+## Avaya Cloud Office
+
+[Avaya Cloud Office Developer and Brand Guidelines &raquo;](../partners/aco/)
+
+## BT Cloud Work
 
 BT is one of the leading communications companies, serving the broadband, phone, TV and mobile needs of customers in the UK and in more than 170 countries worldwide.
 
-[BT Cloud Phone Developer and Brand Guidelines &raquo;](../partners/bt/)
+[BT Cloud Work Developer and Brand Guidelines &raquo;](../partners/bt/)
 
 ## TELUS Business Connect
 

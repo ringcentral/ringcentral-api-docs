@@ -11,23 +11,20 @@ In this Quick Start, we are going to help you authorize a user to login with use
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create User Login App" button below. Enter a name and description if you want to change them, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Authorization+Flow+Quick+Start+App&desc=A+simple+app+to+demo+authorizing+user+on+RingCentral&public=false&type=ServerWeb&carriers=7710,7310,3420&permissions=ReadAccounts,ReadCallLog&redirectUri=http://localhost:5000/oauth2callback" class="btn btn-primary">Create User Login App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Authorization+Flow+Quick+Start+App&desc=A+simple+app+to+demo+authorizing+user+on+RingCentral&public=false&type=ServerWeb&carriers=7710,7310,3420&permissions=ReadAccounts,ReadCallLog&redirectUri=http://localhost:5000/oauth2callback&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create User Login App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Give your app a name and description, then click Next.</li>
-<li>On the second page of the create app wizard enter the following:
+<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
+<li>Select "Web server" under "Where will you be calling the API from?"
+<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
+<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
   <ul>
-  <li>Select 'Private' for Application Type.</li>
-  <li>Select 'Server/Web' for Platform Type.</li>
-  </ul>
-  </li>
-<li>On the third page of the create app wizard, select the following permissions:
-  <ul>
-    <li>ReadAccounts,ReadCallLog</li>
+    <li>ReadAccounts</li>
+    <li>ReadCallLog</li>
   </ul>
   </li>
 <li>Specify the redirect Uri as http://localhost:5000/oauth2callback.</li>
@@ -35,7 +32,6 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 </div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
-
 
 ## Authorization Flow
 

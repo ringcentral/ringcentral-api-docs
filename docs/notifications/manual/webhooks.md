@@ -1,33 +1,43 @@
-# Subscribing to and Using Webhooks
+# Creating Webhooks
 
-RingCentral's Connect Platform supports oubound webhooks as a method of receiving push notifications.
+RingCentral supports oubound webhooks as a method of receiving notifications about events of interest to an application.
 
 ## Create a Webhook URL
 
-To create a webhook, you'll need webserver that listens on a specific URL for events, known as the webhook URL, that you will configure when creating the subscription. The webhook URL service must meet the following requirements:
+To create a webhook, you'll need a webserver that listens on a specific URL for events, known as the "webhook URL." You will register this URL with RingCentral when creating the subscription. The webhook URL service must meet the following requirements:
 
 1. is available on the Internet
-2. has a TLS / SSL enabled*
+2. has TLS 1.2 or higher enabled*
 3. can respond within 1000 milliseconds with 200 OK
 4. will respond with `Validation-Token` header on subscription
 
-TLS / SSL only needs to be enabled in production. For development purposes, TLS is not necessary.
-
-For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/).
+TLS / SSL is only required to be enabled in production. For development purposes, TLS is not necessary. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS / SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](./configuring-tls-ssl/)
 
 **Example URL**
 
 To subscribe, the webhook URL must return a `Validation-Token` header when it is presented with one.
 
-Here is a minimal example using PHP:
+Here are some minimal examples:
 
-```php
+```php tab="PHP"
 <?php
 $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
 if (strlen($v)>0) {
   header("Validation-Token: {$v}");
 }
 ?>
+```
+
+```ruby tab="Ruby"
+require 'sinatra'
+
+post '/webhook' do
+  v = request.env['HTTP_VALIDATION_TOKEN']
+  unless v.nil? || v.length == 0
+    headers['Validation-Token'] = v
+    return
+  end
+end
 ```
 
 ## Create a Webhook
@@ -62,7 +72,7 @@ Authorization: Bearer MyToken
 
 ## Create Webhook Renewal Event Filter
 
-RingCentral webhooks expire and will expire unless they are renewed. A webhook subscription can also subscribe for special reminder events. The reminder events have a simple body with an `expiresIn` property containing the expiration time in seconds.
+RingCentral webhooks expire unless they are renewed. To help keep webhooks active and alive, applications can subscribe to special reminder events. The reminder events have a simple body with an `expiresIn` property containing the expiration time in seconds.
 
 The subscription event filter has the following format with the `threshold` and `interval` parameters to govern when reminders are sent and how often:
 
@@ -90,3 +100,6 @@ To retrieve a list of webhooks, make a `GET` call to the subscription endpoint. 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `v1.0/subscription` | Read a webhook list |
+
+!!! info "SUB-525 Webhook server response is invalid"
+    When conducting a token validation request from RingCentral, be sure to transmit the HTTP header of "Content-type: application/json", even if your response's body is empty. [Learn more](https://forums.developers.ringcentral.com/questions/1097/sub-525-sandbox-webhook-subscription-failure.html#reply_19553895)

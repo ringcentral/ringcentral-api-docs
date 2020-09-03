@@ -9,6 +9,9 @@ The Call Control API is a REST-based interface, allowing developers to customize
 
 To control a call, a developer must first identify the specific call (or "session") and in some cases the specific person (or "party") they wish to manipulate. Here are two common ways of discovering this information.
 
+!!! info "Try the Call Control SDK"
+    We created the [Call Control SDK](https://github.com/ringcentral/ringcentral-call-control-js) to help Javascript developers call these APIs using a more functional coding style, and handle TelephonySession notifications more easily.
+
 ### Generate a list of active calls
 
 A developer can use a REST API to generate a list of all active calls (or "sessions") within an organization, or for a specific user. From the list returned, one can then fetch detail session information about an individual session. 
@@ -48,7 +51,7 @@ Authorization: Bearer <access-token>
             "from": {
                 "extensionId": "400415045004",
                 "name": "The Cat Jerry",
-                "phoneNumber": "+18882101932"
+                "phoneNumber": "+18885551932"
             },
             "id": "cs171835678153616548-1",
             "muted": false,
@@ -92,4 +95,11 @@ Authorization: Bearer <access-token>
     ]
 }
 ```
+
+## Learn more
+
+* Control an incoming a call before it is accepted: [Pre-call Controll](../pre-call-control/)
+* Control an active call already in progress: [Actice Call Control](../active-call-control/)
+* Detect changes in the status of a call: [Telephony Session Notifications](../telephony-session-notifications/)
+
 

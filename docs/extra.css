@@ -1,7 +1,149 @@
+.api-index td.endpoint {
+    border-top: 0;
+    padding-top: 0;
+    font-size: 0.85em;
+}
+.api-index .method {
+    white-space: nowrap;
+}
+.api-index .method,
+.api-index .description {
+    padding-bottom: 0;
+}
+
+
+.tabbed-content p {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.tabbed-content h1,
+.tabbed-content h2,
+.tabbed-content h3,
+.tabbed-content h4,
+.tabbed-content h5
+{
+    padding-left: 1rem;
+}
+
+#sidebar-nav .nav li.nav-item > ul {
+    list-style: none;
+}
+#sidebar-nav .nav li.nav-item > ul > li {
+    margin-left: 15px;
+}
+
 #sidebar-nav {
-    background-color: rgb(6,132,189);
+    background-color: rgb(88,88,88);
     color: #DBE6F1;
 }
+
+#sidebar-toc .repo {
+    border-bottom: 1px solid rgba(47,47,47,.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+#sidebar-toc .repo a {
+}
+
+#sidebar-nav .toplevel .section-title {
+    margin-left: 35px;
+    padding-bottom: 3px;
+    font-size: 14px;
+    text-transform: none;
+}
+#sidebar-nav .nav-item {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 18px 18px;
+    background-position: 0 3px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+#sidebar-nav .nav-item .section-title.nav-link {
+    padding: 0;
+}
+#sidebar-nav .nav-item > ul > li {
+    font-size: 14px;
+    margin-left: 32px;
+}
+#sidebar-nav .toplevel.nav-item {
+    width: 100%;
+}
+#sidebar-nav #nav-item-ringcentral-labs {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/ringcentral-labs.svg')
+}
+#sidebar-nav #nav-item-ringcentral-labs:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/ringcentral-labs-hover.svg');
+}
+#sidebar-nav #nav-item-applications {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/applications.svg')
+}
+#sidebar-nav #nav-item-applications:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/applications-hover.svg');
+}
+#sidebar-nav #nav-item-voice {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_voice.svg?v=2020032620200227-0720')
+}
+#sidebar-nav #nav-item-voice:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/voice-hover.svg?v=20200326');
+}
+#sidebar-nav #nav-item-sms-and-fax {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging.svg?v=2020032620200227-0720');
+}
+#sidebar-nav #nav-item-sms-and-fax:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging_hover.svg');
+}
+#sidebar-nav #nav-item-team-messaging {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_glip.svg?v=2020032620200227-0720');
+}
+#sidebar-nav #nav-item-team-messaging:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_glip_hover.svg');
+}
+#sidebar-nav #nav-item-call-management {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_call.svg?v=2020032620200227-0720');
+}
+#sidebar-nav #nav-item-call-management:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_call_hover.svg');
+}
+#sidebar-nav #nav-item-meetings {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting.svg');
+}
+#sidebar-nav #nav-item-meetings:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting_hover.svg');
+}
+#sidebar-nav #nav-item-using-the-api {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/default.svg');
+}
+#sidebar-nav #nav-item-using-the-api:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/default-hover.svg');
+}
+#sidebar-nav #nav-item-authentication {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/authentication.svg');
+}
+#sidebar-nav #nav-item-authentication:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/authentication-hover.svg');
+}
+#sidebar-nav #nav-item-notifications-and-events {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/notifications-and-events.svg');
+}
+#sidebar-nav #nav-item-notifications-and-events:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/notifications-and-events-hover.svg');
+}
+#sidebar-nav #nav-item-downloads-and-sdks {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/sdks.svg');
+}    
+#sidebar-nav #nav-item-downloads-and-sdks:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/sdks-hover.svg');
+}    
+#sidebar-nav #nav-item-account {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_account.svg')
+}
+#sidebar-nav #nav-item-account:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_account_hover.svg')
+}
+
 #sidebar-nav a,
 #sidebar-nav a:visited {
     color: #DBE6F1;
@@ -13,6 +155,9 @@ footer .brand {
 }
 .btn-light:visited {
     color: #212529;
+}
+.homepage .jumbotron h2 {
+    margin-top: 20px;
 }
 .jumbotron .qs-link {
     margin-right: 10px;

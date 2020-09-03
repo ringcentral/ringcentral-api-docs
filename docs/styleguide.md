@@ -2,10 +2,6 @@
 
 ## Headers
 
-
-
-## Headings
-
 ### The 3rd level
 
 #### The 4th level
@@ -117,24 +113,6 @@
   sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis
   nulla. Vivamus a pharetra leo.
 
-### Definition lists
-
-Lorem ipsum dolor sit amet
-
-:   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
-    tellus non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor
-    lobortis orci, at elementum urna sodales vitae. In in vehicula nulla.
-
-    Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
-    Nam vulputate tincidunt fringilla.
-    Nullam dignissim ultrices urna non auctor.
-
-Cras arcu libero
-
-:   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
-    ut eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at
-    aliquam ac, aliquet sed mauris.
-
 ## Code blocks
 
 ### Inline
@@ -174,6 +152,8 @@ elementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla
 consectetur feugiat sodales.
 
 ## Data tables
+
+RingCentral documentation utilizes the [Bootstrap tables plugin](https://github.com/byrnereese/mkdocs-bootstrap-tables-plugin) to convert regular markdown tables into Bootstrap tables. 
 
 | Sollicitudo / Pellentesi | consectetur | adipiscing | elit    | arcu | sed |
 | ------------------------ | ----------- | ---------- | ------- | ---- | --- |
@@ -225,7 +205,15 @@ sit amet laoreet nibh.
   </tbody>
 </table>
 
-## Call Outs
+## Keys
+
+Use the [Keys extension](https://facelessuser.github.io/pymdown-extensions/extensions/keys/) to create "keys." Do not press the button:
+
+++ctrl+alt+delete++
+
+## Call Outs, a.k.a. "Admonitions"
+
+Call outs, or "admonitions," can be used to call special attention to important details or facets. They can optionally expand/collapse, and can even be nested. 
 
 The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) allows for the creation of an array of call outs.
 
@@ -309,18 +297,70 @@ The [admonitions markdown extension](https://squidfunk.github.io/mkdocs-material
          * RingOut
     6. We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.
 
+### Nested Call Outs
+
+???+ note "Open styled details"
+
+    ??? danger "Nested details!"
+        And more content again.
+
+## Tabs
+
+You can create tabs using the [Tabbed Extension](https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/).
+
+=== "Tab 1"
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec rhoncus velit. Morbi ullamcorper porta erat, aliquam condimentum eros laoreet vitae. Etiam sed tellus neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet sodales lacus, quis mollis lacus. Pellentesque laoreet augue massa, vel vestibulum erat pretium non. Aenean tincidunt, lorem non feugiat mollis, ante massa vehicula elit, ac scelerisque tellus ipsum vitae tellus.
+
+    ```python
+    foo = "100"
+    ```
+
+=== "Another Tab"
+
+    Below is a table with some text in it.
+
+    | Column 1 | Column 2 | Column 3 |
+    |-|-|-|
+    | **Some text goes here** | true | This is a description of something. |
+    | **Wait, there's more** | 1000 | Two rows! |
+
+    ```php
+    <?php
+    $foo = "100"
+    ?>
+    ```
+
+=== "Last Tab"
+
+    Aenean sodales turpis sit amet metus efficitur ultrices. Vestibulum quis eros quis libero tempus tristique mattis non lorem. Ut interdum at quam ut lacinia. Praesent et tortor vulputate lectus rhoncus imperdiet. Etiam euismod neque vitae libero iaculis, eu gravida dolor interdum. Integer ultricies justo non enim consequat bibendum. 
+
+    ```python
+    foo = "100"
+    ```
+
+    Nullam a aliquet mauris. Aliquam erat volutpat. Etiam pellentesque est vitae sodales tincidunt. Sed viverra aliquet neque. Vivamus finibus nec felis vel gravida. Nullam fringilla, odio sit amet tincidunt facilisis, eros urna vulputate tellus, eu ultrices nulla lectus at elit. Aliquam lacus lacus, faucibus at ligula nec, scelerisque ultricies leo. Cras faucibus elit quis tellus viverra, sodales rutrum magna sodales.
+
+    * List element 1
+        * Sub-element
+    * List element 2
+    * List element 3
+
 ### Tabbed Code Blocks
 
-Multiple code blocks in a row will automatically be grouped into a set of tabs. This utilizes the [superfences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/) markdown extension.
+Multiple code blocks in a row will automatically be grouped into a set of tabs with the syntax shown below. Spacing issues can occur in final results so double check all work. === "title" and then the ``` "code" ``` to complete it.
 
-```c tab=
-printf("HELLO WORLD!");
-```
+=== "C"
+	```c
+	printf("HELLO WORLD!");
+	```
 
-```java tab=
-System.out.println("HELLO WORLD!");
-```
+=== "Java"
+	```java
+	System.out.println("HELLO WORLD!");
+	```
 
-```python tab=
-print("HELLO WORLD!")
-```
+=== "Python"
+	```python
+	print("HELLO WORLD!")
+	```
