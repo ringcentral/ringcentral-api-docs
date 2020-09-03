@@ -63,4 +63,4 @@ This plugin extends the markdown language new ways of encoding text in markdown,
 * [footnotes/citations](https://squidfunk.github.io/mkdocs-material/extensions/footnotes/)
 * [HTML meta tags](https://squidfunk.github.io/mkdocs-material/extensions/metadata/)
 
-There are a number of [other Markdown extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/) available through Material as well. 
+There are a number of [other Markdown extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/) available through Material as well.

@@ -61,6 +61,7 @@ namespace Create_Meeting
     {
         const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+        const string RINGCENTRAL_PRODUCTION = false;
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -103,7 +104,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application.
 
 <a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
-

@@ -131,18 +131,20 @@ namespace setup_webhook
 {
     class Program
     {
-        private const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
-        private const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
-        private const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
-        private const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
-        private const string RINGCENTRAL_EXTENSION = "<OPTIONAL>";
-        private const string RINGCENTRAL_PASSWORD = "<RINGCENTRAL_PASSWORD>";
+        const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
+        const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
+        const string RINGCENTRAL_PRODUCTION = false;
 
-        private const string DELIVERY_ADDRESS = "<https://xxxxxxxx.ngrok.io/webhook>"";
+        const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
+        const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
+        const string RINGCENTRAL_EXTENSION = "<OPTIONAL>";
+        const string RINGCENTRAL_PASSWORD = "<RINGCENTRAL_PASSWORD>";
+
+        const string DELIVERY_ADDRESS = "<https://xxxxxxxx.ngrok.io/webhook>"";
 
         static async Task Main(string[] args)
         {
-            var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL);
+            var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_PRODUCTION);
             await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
             await rc.Restapi().Subscription().Post(new CreateSubscriptionRequest
             {
