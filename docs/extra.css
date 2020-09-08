@@ -11,6 +11,22 @@
     padding-bottom: 0;
 }
 
+.api-index [data-toggle="collapse"]:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 0.8rem;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f054";
+    transform: rotate(90deg) ;
+    transition: all linear 0.25s;
+}   
+.api-index [data-toggle="collapse"].collapsed:after {
+    transform: rotate(0deg) ;
+}
 
 .tabbed-content p {
     padding: 1rem 1rem 0 1rem;

@@ -43,13 +43,7 @@ pages:
 - 'Primary':
   - 'Voice':
     - 'Overview': 'voice/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'voice/quick-start/node.md'
-      - 'Python': 'voice/quick-start/python.md'
-      - 'PHP': 'voice/quick-start/php.md'
-      - 'Java': 'voice/quick-start/java.md'
-      - 'C#': 'voice/quick-start/c-sharp.md'
-      - 'Ruby': 'voice/quick-start/ruby.md'
+    - 'Getting Started': 'voice/quick-start.md'
     - 'Placing Calls':
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
@@ -89,13 +83,7 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'messaging/quick-start/node.md'
-      - 'Python': 'messaging/quick-start/python.md'
-      - 'PHP': 'messaging/quick-start/php.md'
-      - 'Java': 'messaging/quick-start/java.md'
-      - 'C#': 'messaging/quick-start/c-sharp.md'
-      - 'Ruby': 'messaging/quick-start/ruby.md'
+    - 'Getting Started': 'messaging/quick-start.md'
     - 'SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
@@ -122,13 +110,7 @@ pages:
 
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'team-messaging/quick-start/node.md'
-      - 'Python': 'team-messaging/quick-start/python.md'
-      - 'PHP': 'team-messaging/quick-start/php.md'
-      - 'Java': 'team-messaging/quick-start/java.md'
-      - 'C#': 'team-messaging/quick-start/c-sharp.md'
-      - 'Ruby': 'team-messaging/quick-start/ruby.md'
+    - 'Getting Started': 'team-messaging/quick-start.md'
     - 'Manual':
       - "Composing Links": 'team-messaging/manual/links.md'
     - 'Posting Glip Messages':
@@ -148,13 +130,7 @@ pages:
 
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'meetings/quick-start/node.md'
-      - 'Python': 'meetings/quick-start/python.md'
-      - 'PHP': 'meetings/quick-start/php.md'
-      - 'Java': 'meetings/quick-start/java.md'
-      - 'C#': 'meetings/quick-start/c-sharp.md'
-      - 'Ruby': 'meetings/quick-start/ruby.md'
+    - 'Getting Started': 'meetings/quick-start.md'
     - 'RingCentral Video': 'meetings/video.md'
 
   # ---- SECONDARY APIs ----
@@ -201,13 +177,7 @@ pages:
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
-    - 'Getting Started':
-      - 'JavaScript': 'authentication/quick-start/authorization-flow/node.md'
-      - 'Python': 'authentication/quick-start/authorization-flow/python.md'
-      - 'PHP': 'authentication/quick-start/authorization-flow/php.md'
-      - 'Java': 'authentication/quick-start/authorization-flow/java.md'
-      - 'C#': 'authentication/quick-start/authorization-flow/c-sharp.md'
-      - 'Ruby': 'authentication/quick-start/authorization-flow/ruby.md'
+    - 'Getting Started': 'authentication/quick-start.md'
     - 'Developer Manual':
       - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
@@ -216,26 +186,14 @@ pages:
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
-    - 'Getting Started':
-      - 'PubNub':
-        - 'JavaScript': 'notifications/quick-start/pubnub/node.md'
-        - 'Python': 'notifications/quick-start/pubnub/python.md'
-        - 'PHP': 'notifications/quick-start/pubnub/php.md'
-        - 'Java': 'notifications/quick-start/pubnub/java.md'
-        - 'C#': 'notifications/quick-start/pubnub/c-sharp.md'
-        - 'Ruby': 'notifications/quick-start/pubnub/ruby.md'
-      - 'WebHook':
-        - 'JavaScript': 'notifications/quick-start/webhook/node.md'
-        - 'Python': 'notifications/quick-start/webhook/python.md'
-        - 'PHP': 'notifications/quick-start/webhook/php.md'
-        - 'Java': 'notifications/quick-start/webhook/java.md'
-        - 'C#': 'notifications/quick-start/webhook/c-sharp.md'
-        - 'Ruby': 'notifications/quick-start/webhook/ruby.md'
-    - 'Webhooks':
-      - 'Creating Webhooks': 'notifications/manual/webhooks.md'
-      - 'Receiving Webhooks': 'notifications/manual/webhooks/receiving.md'
-      - 'Configuring TLS/SSL': 'notifications/manual/webhooks/configuring-tls-ssl.md'
-    - 'Mobile Push Notifications': 'notifications/manual/pubnub.md'
+    - 'Push Notifications':
+      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
+      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
+    - 'WebHooks':
+      - 'Getting Started': 'notifications/webhooks/quick-start.md'
+      - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
+      - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
+      - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
