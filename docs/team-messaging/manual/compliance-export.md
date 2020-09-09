@@ -213,15 +213,15 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    response = platform.get(endpoint)
 	    jsonObj = response.json()
 	    if jsonObj.status == "Completed":
-			length = len(jsonObj.datasets)
-			for i in range(length):
-		    		fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-		    		get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
+  		    length = len(jsonObj.datasets)
+			    for i in range(length):
+		          fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
+		    	    get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
 	    elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
-			time.sleep(5)
-			get_glip_compliance_export_task(taskId)
+			    time.sleep(5)
+			    get_glip_compliance_export_task(taskId)
 	    else:
-			print (jsonObj.status)
+          print (jsonObj.status)
 
 	def get_glip_report_archived_content(contentUri, zipFile):
 	    print("Save export zip file to the local machine.")
@@ -234,7 +234,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	```
 
 === "PHP"
-	```php 
+	```php
 	<?php
 	require('vendor/autoload.php');
 
@@ -363,58 +363,58 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	import java.net.URL;
 
 	public class Export_Glip_Data {
-	    static RestClient rcsdk;
-	    public static void main(String[] args) {
-		var obj = new Export_Glip_Data();
-		rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		try {
-		    rcsdk.authorize("username", "extension_number", "password");
-		    obj.create_glip_compliance_export_task();
-		} catch (RestException | IOException e) {
-		    e.printStackTrace();
-		}
-	    }
-	    public void create_glip_compliance_export_task() throws RestException, IOException {
-		var parameters = new CreateDataExportTaskRequest();
-		parameters.timeFrom = "2019-08-01T00:00:00.000Z";
-		parameters.timeTo = "2019-08-26T23:59:59.999Z";
+    static RestClient rcsdk;
+	  public static void main(String[] args) {
+		  var obj = new Export_Glip_Data();
+		  rcsdk = new RestClient("client_id", "client_secret", "server_url");
+		  try {
+		      rcsdk.authorize("username", "extension_number", "password");
+		      obj.create_glip_compliance_export_task();
+		  } catch (RestException | IOException e) {
+		      e.printStackTrace();
+		  }
+	  }
+	  public void create_glip_compliance_export_task() throws RestException, IOException {
+      var parameters = new CreateDataExportTaskRequest();
+		  parameters.timeFrom = "2019-08-01T00:00:00.000Z";
+		  parameters.timeTo = "2019-08-26T23:59:59.999Z";
 
-		var resp = rcsdk.restapi().glip().dataexport().post(parameters);
-		System.out.println("Create export task.");
-		var taskId = resp.id;
-		boolean polling = true;
-		while (polling)
-		{
+		  var resp = rcsdk.restapi().glip().dataexport().post(parameters);
+		  System.out.println("Create export task.");
+		  var taskId = resp.id;
+		  boolean polling = true;
+		  while (polling)
+		  {
 		    System.out.println("Check export task status ...");
 		    try {
-			Thread.sleep(5000);
-			resp = rcsdk.restapi().glip().dataexport(taskId).get();
-			if (!resp.status.equals("InProgress"))
-			  polling = false;
+			    Thread.sleep(5000);
+			    resp = rcsdk.restapi().glip().dataexport(taskId).get();
+			    if (!resp.status.equals("InProgress"))
+			      polling = false;
 		    } catch (InterruptedException e) {
-			e.printStackTrace();
+			    e.printStackTrace();
 		    }
-		}
-		if (resp.status.equals("Completed")) {
+		  }
+		  if (resp.status.equals("Completed")) {
 		    for (var i = 0; i < resp.datasets.length; i++)
 		    {
-			var fileName = "./src/test/resources/glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
-			var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
-			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
-				FileOutputStream fileOS = new FileOutputStream(fileName)) {
-				byte data[] = new byte[1024];
-				int byteContent;
-				while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-					fileOS.write(data, 0, byteContent);
-				}
-				System.out.println("Save report zip file to the local machine.");
-			} catch (IOException e) {
-			   // handles IO exceptions
-				System.out.println("Error!");
-			}
+    			var fileName = "./src/test/resources/glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
+    			var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
+    			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
+    				FileOutputStream fileOS = new FileOutputStream(fileName)) {
+    				byte data[] = new byte[1024];
+    				int byteContent;
+    				while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+    					fileOS.write(data, 0, byteContent);
+    				}
+    				System.out.println("Save report zip file to the local machine.");
+    			} catch (IOException e) {
+    			   // handles IO exceptions
+    				System.out.println("Error!");
+    			}
 		    }
-		}
-	    }
+		  }
+	  }
 	}
 	```
 

@@ -208,7 +208,7 @@ Select your preferred language below.
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
     * Enter project name "Create_Glip_Team"
-    * Add NuGet package RingCentral.Net (1.2.1) SDK
+    * Add NuGet package RingCentral.Net (4.1.0) SDK
 
     ### Edit the file Program.cs
 
@@ -227,6 +227,7 @@ Select your preferred language below.
         {
             const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
             const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+            const string RINGCENTRAL_PRODUCTION = false;
 
             const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
             const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -247,12 +248,11 @@ Select your preferred language below.
                 parameters.name = "Fun team";
                 parameters.description = "Let chit chat here";
 
-                var member1 = new Dictionary<string, string>();
-                member1.Add("email", "member.1@gmail.com");
-                var member2 = new Dictionary<string, string>();
-                member2.Add("email", "member.2@gmail.com");
-
-                parameters.members = new Object[] { member1, member2 };
+                var member1 = new CreateGlipMember();
+                member1.email = "member.1@gmail.com";
+                var member2 = new CreateGlipMember();
+                member2.email = "member.2@gmail.com";
+                parameters.members = new CreateGlipMember[] { member1, member2 };
 
                 var response = await restClient.Restapi().Glip().Teams().Post(parameters);
                 var jsonStr = JsonConvert.SerializeObject(response);
@@ -278,7 +278,7 @@ Select your preferred language below.
     ```json hl_lines="3",linenums="1"
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.0.0-beta10'
+        compile 'com.ringcentral:ringcentral:1.4.0'
     }
     ```
 
@@ -308,10 +308,8 @@ Select your preferred language below.
     package Create_Glip_Team;
 
     import java.io.IOException;
-
     import com.ringcentral.*;
     import com.ringcentral.definitions.*;
-    import java.util.HashMap;
 
     public class Create_Glip_Team {
         static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
@@ -339,14 +337,15 @@ Select your preferred language below.
             parameters.name = "Fun team";
             parameters.description = "Let chit chat here";
 
-            HashMap<String, String> members = new HashMap<String, String>();
-            members.put("email", "member.1@gmail.com");
-            members.put("email", "member.2@gmail.com");
-
-            parameters.members = new HashMap[] { members };
+            var member1 = new CreateGlipMember();
+            member1.email = "member.1@gmail.com";
+            var member2 = new CreateGlipMember();
+            member2.email = "member.2@gmail.com";
+            parameters.members = new CreateGlipMember[] { member1, member2 };
 
             var response = restClient.restapi().glip().teams().post(parameters);
-            String jsonStr = JSON.toJSONString(response);
+            Gson gson = new Gson();
+            String jsonStr = gson.toJson(response);
             System.out.println(jsonStr);
         }
     }
@@ -409,8 +408,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application.
 
 <a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
-
-

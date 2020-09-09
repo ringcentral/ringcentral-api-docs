@@ -11,7 +11,7 @@ The API treats a two-legged RingOut call as a resource that can be created, retr
 The two-legged RingOut call can be created via the following request:
 
 === "HTTP"
-	```http 
+	```http
 	POST /restapi/v1.0/account/~/extension/~/ringout
 	Content-Type: application/json
 	Authorization: Bearer <access-token>
@@ -24,7 +24,7 @@ The two-legged RingOut call can be created via the following request:
 	```
 
 === "Javascript"
-	```javascript 
+	```javascript
 	const RC = require('ringcentral');
 
 	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
@@ -44,7 +44,7 @@ The two-legged RingOut call can be created via the following request:
 	```
 
 === "Python"
-	```python 
+	```python
 	from ringcentral import SDK
 
 	sdk = SDK( "client_id", "client_secret", "server_url" )
@@ -61,7 +61,7 @@ The two-legged RingOut call can be created via the following request:
 	```
 
 === "PHP"
-	```php 
+	```php
 	<?php
 	require('vendor/autoload.php');
 
@@ -112,21 +112,21 @@ The two-legged RingOut call can be created via the following request:
 	```
 
 === "Java"
-	```java 
-	package Read_CallLog;
+	```java
+	package Call_RingOut;
 
 	import java.io.IOException;
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
 	public class Call_RingOut {
-	    public static void main(String[] args) {
-		try {
-		    call_ringout();
-		} catch (RestException | IOException e) {
-		    e.printStackTrace();
-		}
-	    }
+	  public static void main(String[] args) {
+			try {
+			    call_ringout();
+			} catch (RestException | IOException e) {
+			    e.printStackTrace();
+			}
+	  }
 
 		public static void call_ringout() throws RestException, IOException{
 		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
@@ -136,7 +136,7 @@ The two-legged RingOut call can be created via the following request:
 		parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13445554444" ));
 		parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13455553434" ));
 		parameters.playPrompt = true;
-		
+
 		var response = rc.restapi().account().extension().ringout().post(requestBody);
 		System.out.println("Call Placed. Call status: " + response.status.callStatus);
 	    }
@@ -144,7 +144,7 @@ The two-legged RingOut call can be created via the following request:
 	```
 
 === "Ruby"
-	```ruby 
+	```ruby
 	require 'ringcentral'
 
 	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
@@ -266,7 +266,7 @@ RingCentral does not currently support call control for outbound calls. However,
 DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434  
 ```
 
-If successful, the platform will respond with a 204. 
+If successful, the platform will respond with a 204.
 
 Deleting the RingOut is only available when the RingOut has been initiated and the call has not been connected. For example:
 
