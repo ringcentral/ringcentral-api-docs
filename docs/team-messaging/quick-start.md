@@ -358,15 +358,15 @@ Select your preferred language below.
 
 === "Ruby"
 
-    ### Install RingCentral Node JS SDK
+    ### Install RingCentral SDK gem
 
     ```bash
     $ gem install ringcentral-sdk
     ```
 
-    ### Create and Edit create-glip-team.js
+    ### Create and Edit create-glip-team.rb
 
-    Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-glip-team.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```ruby
     require 'ringcentral'
@@ -397,7 +397,7 @@ Select your preferred language below.
     You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
     ```bash
-    $ node create-glip-team.js
+    $ ruby create-glip-team.rb
     ```
 
 
