@@ -201,7 +201,7 @@ Select your preferred language below.
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
     * Enter project name "Send_SMS"
-    * Add NuGet package RingCentral.Net (1.2.1) SDK
+    * Add NuGet package RingCentral.Net (4.1.0) SDK
 
     ### Edit the file Program.cs
 
@@ -219,6 +219,7 @@ Select your preferred language below.
             const string RECIPIENT = "<ENTER PHONE NUMBER>";
             const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
             const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+            const string RINGCENTRAL_PRODUCTION = false;
 
             const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
             const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -263,7 +264,7 @@ Select your preferred language below.
         ```json
         dependencies {
             // ...
-            compile 'com.ringcentral:ringcentral:1.0.0-beta10'
+            compile 'com.ringcentral:ringcentral:1.4.0'
         }
         ```
 
@@ -291,12 +292,9 @@ Select your preferred language below.
 
     ```java
     package Send_SMS;
-
     import java.io.IOException;
-
     import com.ringcentral.*;
     import com.ringcentral.definitions.*;
-
 
     public class Send_SMS {
         static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
@@ -391,6 +389,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application.
 
 <a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>

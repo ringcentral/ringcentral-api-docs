@@ -224,8 +224,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
     * Enter project name "PubNub_Notifications"
-    * Add NuGet package RingCentral.Net (1.2.1) SDK
-    * Add NuGet package RingCentral.Net.PubNubPCL SDK
+    * Add NuGet package RingCentral.Net (4.1.0) SDK
+    * Add NuGet package RingCentral.Net.PubNubPCL (1.3.1) SDK
 
     ### Edit the file Program.cs
 
@@ -303,8 +303,8 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     ```json hl_lines="3 4",linenums="1"
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.0.0-beta10'
-        compile 'com.ringcentral:ringcentral-pubnub:1.0.0-beta10'
+        compile 'com.ringcentral:ringcentral:1.4.0'
+        compile 'com.ringcentral:ringcentral-pubnub:1.0.0'
     }
     ```
 
@@ -333,8 +333,6 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
     import java.io.IOException;
 
-    import com.alibaba.fastjson.JSON;
-    import com.alibaba.fastjson.JSONObject;
     import com.ringcentral.*;
     import com.ringcentral.definitions.*;
     import com.ringcentral.pubnub.Subscription;
@@ -342,6 +340,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     public class PubNub_Notifications {
         static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+        static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
         static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -365,12 +364,12 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
                 "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
             };
             Subscription subscription = new Subscription(restClient, eventFilters, (message) -> {
-                JSONObject jObject = JSON.parseObject(message);
-                if (jObject.getString("event").contains("instant?type=SMS")) {
-                    InstantMessageEvent notification = JSON.parseObject( message, InstantMessageEvent.class);
-                    InstantMessageEventBody body = notification.body;
-                    System.out.println(body.subject);
-                }
+              	var gs = new Gson();
+              	if (message.contains("instant?type=SMS")) {
+      	        	InstantMessageEvent notification = gs.fromJson( message, InstantMessageEvent.class);
+      	        	InstantMessageEventBody body = notification.body;
+      	        	System.out.println(body.subject);
+              	}
             });
 
             subscription.subscribe();
