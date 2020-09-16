@@ -7,6 +7,7 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 | `tel://` | RingCentral Phone | Use this scheme with a phone number to initiate a phone call on the desktop/web. |
 | `rcmobile://` | RingCentral Mobile Phone | Use this scheme with a phone number to initiate a phone call on a mobile device. | 
 | `rcapp://` | Glip | Launch the Glip Team Messaging client. |
+| `rcapp://r/` | RingCentral App | Launch the RingCentral App. |
 | `glip://` | Glip | Launch the Glip Team Messaging client. |
 | `zoomrc://` | RingCentral Meetings | Launch a RingCentral meeting. |
 
