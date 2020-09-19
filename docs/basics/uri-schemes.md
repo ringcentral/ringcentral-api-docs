@@ -4,10 +4,11 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 
 | Scheme | Application | Usage |
 |-|-|-|
-| `tel://` | RingCentral Phone | Use this scheme with a phone number to initiate a phone call on the desktop/web. |
+| `tel://` | RingCentral Phone | Use this scheme with a phone number to initiate a phone call on the desktop/web. **Deprecated** |
+| `glip://` | RingCentral App | Launch the RingCentral App. **Deprecated** |
 | `rcmobile://` | RingCentral Mobile Phone | Use this scheme with a phone number to initiate a phone call on a mobile device. | 
-| `rcapp://` | Glip | Launch the Glip Team Messaging client. |
-| `glip://` | Glip | Launch the Glip Team Messaging client. |
+| `rcapp://` | RingCentral App | Launch the RingCentral App. |
+| `rcapp://r/{phone-number}` | RingCentral App | Launch the RingCentral App, and initiate a phone call to the phone number provided. |
 | `zoomrc://` | RingCentral Meetings | Launch a RingCentral meeting. |
 
 ## See also

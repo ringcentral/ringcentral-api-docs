@@ -1,12 +1,12 @@
 # Receiving Faxes
 
-In order to get the list of received faxes, use the `message-store` API endpoint with `messageType = Fax` query parameter:
+In order to get the list of received faxes, use the `message-store` API endpoint with `direction=Inbound` and `messageType=Fax` query parameter:
 
 ```http
-GET  /restapi/v1.0/account/~/extension/~/message-store?messageType=Fax
+GET  /restapi/v1.0/account/~/extension/~/message-store?direction=Inbound&messageType=Fax
 ```
 
-The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday:
+The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday. Each fax can be retrieved as a single PDF file attachment that includes all pages sent by the sender:
 
 ```json
 {
