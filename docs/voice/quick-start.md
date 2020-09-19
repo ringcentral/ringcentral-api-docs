@@ -101,17 +101,6 @@ Select your preferred language below.
 
 === "Python"
 
-    ### Install RingCentral Python SDK
-
-    ```bash
-    $ pip install ringcentral
-    ```
-
-    ### Create and Edit sms.py
-
-    Create a file called `sms.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
-
-    ```python
     from ringcentral import SDK
 
     RECIPIENT = '<ENTER PHONE NUMBER>'
@@ -128,26 +117,35 @@ Select your preferred language below.
     platform = rcsdk.platform()
     platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-    platform.post('/restapi/v1.0/account/~/extension/~/sms',
+    resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
                   {
                       'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-                      'to'   : [ {'phoneNumber': RECIPIENT} ],
-                      'text' : 'Hello World from Python'
+                      'to'   : {'phoneNumber': RECIPIENT},
+                      'playPrompt' : False
                   })
+    print "Call placed. Call status: " + resp.json().status.callStatus              
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python ringout.py
     ```
 
 === "PHP"
 
     ### Install RingCentral PHP SDK
 
-    ```php
+    ```bash
     $ curl -sS https://getcomposer.org/installer | php
     $ php composer.phar require ringcentral/ringcentral-php
     ```
 
-    ### Create and Edit sms.php
+    ### Create and Edit ringout.php
 
-    Create a file called `sms.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called <tt>ringout.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```php
     <?php
@@ -168,13 +166,14 @@ Select your preferred language below.
     $platform = $rcsdk->platform();
     $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-    $resp = $platform->post('/account/~/extension/~/sms',
+    $resp = $platform->post('/account/~/extension/~/ring-out',
         array(
-           'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
-           'to' => array(array('phoneNumber' => $RECIPIENT)),
-           'text' => 'Hello World from PHP'
-         ));
-    print_r ("SMS sent. Message status: " . $resp->json()->messageStatus);
+          'from' => array('phoneNumber' => $RINGCENTRAL_USERNAME),
+          'to' => array('phoneNumber' => $RECIPIENT),
+          'playPrompt' => false
+        ));
+
+    print_r ("Call placed. Call status: " . $resp->json()->status->callStatus);
     ?>
     ```
 
@@ -182,8 +181,8 @@ Select your preferred language below.
 
     You are almost done. Now run your script.
 
-    ```bask
-    $ php sms.php
+    ```bash
+    $ php ringout.php
     ```
 
 === "C#"
@@ -192,8 +191,8 @@ Select your preferred language below.
 
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
-    * Enter project name "Send_SMS"
-    * Add NuGet package RingCentral.Net (4.1.0) SDK
+    * Enter project name "Call_Ringout"
+    * Add NuGet package RingCentral.Net (1.2.1) SDK
 
     ### Edit the file Program.cs
 
@@ -204,38 +203,38 @@ Select your preferred language below.
     using System.Threading.Tasks;
     using RingCentral;
 
-    namespace Send_SMS
+    namespace Call_Ringout
     {
         class Program
         {
-            const string RECIPIENT = "<ENTER PHONE NUMBER>";
-            const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-            const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-            const string RINGCENTRAL_PRODUCTION = false;
+              const string RECIPIENT = "<ENTER PHONE NUMBER>";
 
-            const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-            const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-            const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+              const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+              const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
 
-            static RestClient restClient;
+              const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+              const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+              const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
 
-            static void Main(string[] args)
-            {
-                restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-                restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-                send_sms().Wait();
-            }
-            static private async Task send_sms()
-            {
-                var parameters = new CreateSMSMessage();
-                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
-                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                parameters.text = "Hello World from C#";
+              static RestClient restClient;
 
-                var resp = await restClient.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
-            }
-        }
+              static void Main(string[] args)
+              {
+                  restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+                  restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+                  call_ringout().Wait();
+              }
+              static private async Task call_ringout()
+              {
+                  var parameters = new MakeRingOutRequest();
+                  parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
+                  parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
+                  parameters.playPrompt = false;
+
+                  var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
+                  Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
+              }
+          }
     }
     ```
 
@@ -249,13 +248,13 @@ Select your preferred language below.
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "Send_SMS"
+    * Enter project name "Call_RingOut"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
     ```json hl_lines="3",linenums="1"
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.4.0'
+        compile 'com.ringcentral:ringcentral:1.0.0-beta10'
     }
     ```
 
@@ -263,26 +262,26 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Send_SMS"
+    Select "File -> New -> Class" to create a new Java class named "Call_RingOut"
 
     ```java
-    package Send_SMS;
+    package Call_RingOut;
 
-    public class Send_SMS {
+    public class Call_RingOut {
 
-      public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        public static void main(String[] args) {
+            // TODO Auto-generated method stub
 
-      }
+        }
     }
     ```
 
-    ### Edit the file "Send_SMS.java".
+    ### Edit the file "Call_RingOut.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    package Send_SMS;
+    package Call_RingOut;
 
     import java.io.IOException;
 
@@ -290,7 +289,7 @@ Select your preferred language below.
     import com.ringcentral.definitions.*;
 
 
-    public class Send_SMS {
+    public class Call_RingOut {
         static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
 
         static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
@@ -303,23 +302,23 @@ Select your preferred language below.
 
         static RestClient restClient;
         public static void main(String[] args) {
-            var obj = new Send_SMS();
+            var obj = new Call_RingOut();
             try {
               restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
               restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.send_sms()();
+              obj.call_ringout()();
             } catch (RestException | IOException e) {
               e.printStackTrace();
             }
         }
-        public static void send_sms() throws RestException, IOException {
-            CreateSMSMessage postParameters = new CreateSMSMessage();
-            postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(RINGCENTRAL_USERNAME);
-            postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
-            postParameters.text = "Hello World from Java";
+        public void call_ringout() throws RestException, IOException {
+            MakeRingOutRequest requestBody = new MakeRingOutRequest();
+            requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
+            requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
+            requestBody.playPrompt = false;
 
-            var response = restClient.restapi().account().extension().sms().post(postParameters);
-            System.out.println("SMS sent. Message status: " + response.messageStatus);
+            var response = restClient.restapi().account().extension().ringout().post(requestBody);
+            System.out.println("Call Placed. Call status: " + response.status.callStatus);
         }
     }
     ```
@@ -336,9 +335,9 @@ Select your preferred language below.
     $ gem install ringcentral-sdk
     ```
 
-    ### Create and Edit sms.rb
+    ### Create and Edit ringout.rb
 
-    Create a file called `sms.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called <tt>ringout.rb</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```ruby
     require 'ringcentral'
@@ -356,13 +355,13 @@ Select your preferred language below.
     rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
     rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-    resp = rc.post('/restapi/v1.0/account/~/extension/~/sms', payload: {
-        to: [{phoneNumber: RECIPIENT}],
-        from: {phoneNumber: RINGCENTRAL_USERNAME},
-        text: 'Hello World from Ruby'
+    resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
+        from: { phoneNumber: RINGCENTRAL_USERNAME },
+        to: { phoneNumber: RECIPIENT },
+        playPrompt: false
     })
 
-    puts "SMS sent. Message status: " + resp.body['messageStatus']
+    puts "Call placed. Call status: " + resp.body['status']['callStatus']
     ```
 
     ### Run Your Code
@@ -370,7 +369,7 @@ Select your preferred language below.
     You are almost done. Now run your script.
 
     ```bash
-    $ ruby sms.rb
+    $ ruby ringout.rb
     ```
 
 
