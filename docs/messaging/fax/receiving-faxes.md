@@ -96,4 +96,4 @@ Then when a new message is received/sent your server will get a request with a p
 }
 ```
 
-As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also [Push Notifications](https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_overview/) for more notification delivery options and [Message Sync](https://ringcentral-api-docs.readthedocs.io/en/latest/messages_sync/) for fine-tuned synchronization.
+As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also [Push Notifications](../../../notifications/) for more notification delivery options and [Message Sync](../../message-store/message-sync/) for fine-tuned synchronization.
