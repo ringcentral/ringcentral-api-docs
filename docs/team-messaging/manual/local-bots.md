@@ -16,21 +16,32 @@ Glip bot applications must have OAuth redirect URLs that are accessible over the
 
 If every thing goes well you should see the follow screen.
 
-<img src="../../../img/ngrok-running.png" class="img-fluid">
+<img src="../../../img/ngrok-running.png" class="img-fluid" style="max-width: 400px">
 
 ## Create a Glip Bot application
 
-* Sign in to [Developer Portal](https://developer.ringcentral.com) with your account login and password. If you do not have RingCentral account, please sign up.
-* Open My Apps tab and click 'Create App' button.
-  <img src="../../../img/glip_bot_create_app.png" class="img-fluid">
-* Fill in the fields of the form 'General Settings - Create App' below:
-  <img src="../../../img/glip_bot_general_setting_step1.png" class="img-fluid">
-* Fill in the fields of the form 'General Settings - AppType & Platform'. Make sure the platform type is `Server/Bot` as below:
-  <img src="../../../img/glip_bot_general_setting_step2.png" class="img-fluid">
-* Fill in the fields of the form 'General Settings - OAuth Settings'. Add the following permissions `Glip`, `Webhook Subscription`, `Read Accounts`. In the oAuth redirect URI field, paste your ngrok forwarding address and add the /oauth endpoint at the end of the address that we opened up in our script. Click on `Create` once done.
-  <img src="../../../img/glip_bot_general_setting_step3.png" class="img-fluid">
-* If everything goes well you will see the following screen. We will use the `ClientID` and `ClientSecret` generated in this step to update the `.env` file during the installation phase.
-  <img src="../../../img/glip_bot_dashboard.png" class="img-fluid">
+With our proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Chat Bot App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Chat Bot App</a>
+<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+
+<div class="collapse" id="create-app-instructions">
+<ol>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>Go to Console/Apps and click 'Create App' button.</li>
+<li>Select "Bot App for Team Messaging" under "What type of app are you creating?"</li>
+<li>Select "Other Non-UI" under "Where will you be calling the API from?"
+<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
+<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
+  <ul>
+    <li>Glip</li>
+    <li>Webhook Subscriptions</li>
+    <li>Edit Extensions</li>
+  </ul>
+  </li>
+<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
+</ol>
+</div>
 
 ## Create a Simple Nodejs application
 
@@ -59,11 +70,11 @@ $ npm start
 
 6. Go to the `Bot` tab of the recently created app in the developer portal. Click on the `Add to Glip` button.
 
-    <img src="../../../img/glip_bot_tab.png" class="img-fluid">
+    <img src="../../../img/glip_bot_tab.png" class="img-fluid" style="max-width: 500px">
 
     This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url. `NOTE:` Bot provisioner will only use the first url specificed in the oAuth settings.
 
-    <img src="../../../img/authorization.png" class="img-fluid">
+    <img src="../../../img/authorization.png" class="img-fluid" style="max-width: 300px">
 
 7. You can now exchange the authorization code for an bot token using the code below:
 
