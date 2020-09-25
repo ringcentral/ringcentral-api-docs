@@ -49,7 +49,7 @@ Select your preferred language below.
     Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```javascript
-    const SDK = require('@ringcentral/sdk').SDK
+    const RingCentral = require('@ringcentral/sdk').SDK
 
     RECIPIENT = '<ENTER PHONE NUMBER>'
 
@@ -61,33 +61,26 @@ Select your preferred language below.
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    var rcsdk = new SDK({
-        server: RINGCENTRAL_SERVER,
-        clientId: RINGCENTRAL_CLIENTID,
-        clientSecret: RINGCENTRAL_CLIENTSECRET
-    });
+    var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
-    platform.login({
-      username: RINGCENTRAL_USERNAME,
-      password: RINGCENTRAL_PASSWORD,
-      extension: RINGCENTRAL_EXTENSION
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+    
+    platform.on(platform.events.loginSuccess, function(response){
+      call_ringout()
     })
-    .then(function(resp) {
-        call_ringout()
-    });
 
-    function call_ringout() {
-        platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
-          'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-          'to'   : {'phoneNumber': RECIPIENT},
-          'playPrompt' : false
-        })
-        .then(function(resp) {
-          return resp.json()
-        })
-        .then(function(json){
-            console.log("Call placed. Call status: " + json.status.callStatus)
-        })
+    async function call_ringout() {
+      try{
+        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
+            'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+            'to'   : {'phoneNumber': RECIPIENT},
+            'playPrompt' : false
+          })
+        var jsonObj = await resp.json()
+        console.log("Call placed. Call status: " + jsonObj.status.callStatus)
+      }catch(e){
+        console.log(e.message)
+      }
     }
     ```
 
@@ -192,7 +185,7 @@ Select your preferred language below.
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
     * Enter project name "Call_Ringout"
-    * Add NuGet package RingCentral.Net (1.2.1) SDK
+    * Add NuGet package RingCentral.Net (4.1.0) SDK
 
     ### Edit the file Program.cs
 
@@ -205,36 +198,38 @@ Select your preferred language below.
 
     namespace Call_Ringout
     {
-        class Program
+      class Program
+      {
+        const string RECIPIENT = "<ENTER PHONE NUMBER>";
+
+        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+        const string RINGCENTRAL_PRODUCTION = false;
+
+        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+
+        static RestClient restClient;
+
+        static void Main(string[] args)
         {
-              const string RECIPIENT = "<ENTER PHONE NUMBER>";
+            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+            restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+            call_ringout().Wait();
+        }
 
-              const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-              const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+        static private async Task call_ringout()
+        {
+          var parameters = new MakeRingOutRequest();
+          parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
+          parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
+          parameters.playPrompt = false;
 
-              const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-              const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-              const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-              static RestClient restClient;
-
-              static void Main(string[] args)
-              {
-                  restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-                  restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-                  call_ringout().Wait();
-              }
-              static private async Task call_ringout()
-              {
-                  var parameters = new MakeRingOutRequest();
-                  parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
-                  parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
-                  parameters.playPrompt = false;
-
-                  var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
-                  Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
-              }
-          }
+          var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
+          Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
+        }
+      }
     }
     ```
 
@@ -254,7 +249,7 @@ Select your preferred language below.
     ```json hl_lines="3",linenums="1"
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.0.0-beta10'
+        compile 'com.ringcentral:ringcentral:1.4.0'
     }
     ```
 

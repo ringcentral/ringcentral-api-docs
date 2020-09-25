@@ -57,7 +57,7 @@ Select your preferred language below.
 
     ```javascript
     var http = require('http');
-    var SDK = require('ringcentral')
+    const RingCentral = require('@ringcentral/sdk').SDK
 
     RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
     RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -95,35 +95,34 @@ Select your preferred language below.
     });
     server.listen(PORT);
 
-    var rcsdk = new SDK({
-          server: RINGCENTRAL_SERVER,
-          appKey: RINGCENTRAL_CLIENTID,
-          appSecret: RINGCENTRAL_CLIENTSECRET
-      });
+    var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
 
     var platform = rcsdk.platform();
-    platform.login({
-                username: RINGCENTRAL_USERNAME,
-                password: RINGCENTRAL_PASSWORD,
-                extension: RINGCENTRAL_EXTENSION
-            })
-            .then(function(resp) {
-                var params = {
-                  eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
-                  deliveryMode: {
-                      transportType: "WebHook",
-                      address: DELIVERY_ADDRESS
-                      }
-                  }
-                platform.post('/subscription', params)
-                  .then(function(subscriptionResponse) {
-                      console.log("Ready to receive incoming SMS via WebHook.")
-                  })
-                  .catch(function(e) {
-                      console.error(e);
-                      throw e;
-                  });
-          });
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+    
+    platform.on(platform.events.loginSuccess, function(e){
+        console.log("Login success")
+        subscribe_for_notification()
+    });
+
+    async function subscribe_for_notification(){
+      var params = {
+        eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
+        deliveryMode: {
+            transportType: "WebHook",
+            address: DELIVERY_ADDRESS
+            }
+        }
+      try {
+        var resp = await resplatform.post('/restapi/v1.0/subscription', params)
+        var jsonObj = await resp.json()
+        console.log(jsonObj.id)
+        console.log("Ready to receive incoming SMS via WebHook.")
+      }catch(e) {
+        console.error(e.message);
+        throw e;
+      }
+    }
     ```
 
     ### Run Your Code

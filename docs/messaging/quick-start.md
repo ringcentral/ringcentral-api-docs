@@ -14,7 +14,7 @@ In this Quick Start, we are going to help you send your first SMS on the platfor
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create SMS App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadAccounts&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create SMS App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -27,6 +27,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
   <ul>
     <li>SMS</li>
+    <li>ReadAccounts</li>
   </ul>
   </li>
 <li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
@@ -52,7 +53,7 @@ Select your preferred language below.
     Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```javascript
-    const SDK = require('@ringcentral/sdk').SDK
+    const RC = require('@ringcentral/sdk').SDK
 
     RECIPIENT = '<ENTER PHONE NUMBER>'
 
@@ -64,30 +65,44 @@ Select your preferred language below.
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    var rcsdk = new SDK({
-        server: RINGCENTRAL_SERVER,
-        clientId: RINGCENTRAL_CLIENTID,
-        clientSecret: RINGCENTRAL_CLIENTSECRET
-    });
+    var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
-    platform.login({
-        username: RINGCENTRAL_USERNAME,
-        password: RINGCENTRAL_PASSWORD,
-        extension: RINGCENTRAL_EXTENSION
-        })
-        .then(function(resp) {
-            send_sms()
-        });
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
 
-    function send_sms(){
-      platform.post('/restapi/v1.0/account/~/extension/~/sms', {
-           from: {'phoneNumber': RINGCENTRAL_USERNAME},
+    platform.on(platform.events.loginSuccess, function(e){
+      read_extension_phone_number()
+    });
+
+    async function read_extension_phone_number(){
+      try{
+        var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
+        var jsonObj = await resp.json()
+        for (var record of jsonObj.records){
+          if (record.usageType == "DirectNumber"){
+            for (feature of record.features){
+              if (feature == "SmsSender"){
+                return send_sms(record.phoneNumber)
+              }
+            }
+          }
+        }
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+
+    async function send_sms(fromNumber){
+      try{
+        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
+           from: {'phoneNumber': fromNumber},
            to: [{'phoneNumber': RECIPIENT}],
            text: 'Hello World from JavaScript'
          })
-         .then(function (resp) {
-            console.log("SMS sent. Message status: " + resp.json().messageStatus)
-         });
+        var jsonObj = resp.json()
+        console.log("SMS sent. Message status: " + jsonObj.messageStatus)
+      }catch(e){
+        console.log(e.message)
+      }
     }
     ```
 
@@ -128,12 +143,26 @@ Select your preferred language below.
     platform = rcsdk.platform()
     platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-    platform.post('/restapi/v1.0/account/~/extension/~/sms',
+    def read_extension_phone_number():
+      resp = platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
+      jsonObj = resp.json()
+      for record in jsonObj.records:
+      if record.usageType == "DirectNumber":
+        for feature in record.features:
+          if feature == "SmsSender":
+            return send_sms(record.phoneNumber)
+
+    def send_sms(fromNumber):
+      resp = platform.post('/restapi/v1.0/account/~/extension/~/sms',
                   {
-                      'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
+                      'from' : { 'phoneNumber': fromNumber },
                       'to'   : [ {'phoneNumber': RECIPIENT} ],
                       'text' : 'Hello World from Python'
                   })
+      jsonObj = resp.json()
+      print (jsonObj.messageStatus)
+
+    read_extension_phone_number()
     ```
 
     ### Run Your Code
@@ -161,8 +190,6 @@ Select your preferred language below.
     <?php
     require('vendor/autoload.php');
 
-    $RECIPIENT = '<ENTER PHONE NUMBER>';
-
     $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
     $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
     $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
@@ -176,13 +203,37 @@ Select your preferred language below.
     $platform = $rcsdk->platform();
     $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-    $resp = $platform->post('/account/~/extension/~/sms',
-        array(
-           'from' => array ('phoneNumber' => $RINGCENTRAL_USERNAME),
-           'to' => array(array('phoneNumber' => $RECIPIENT)),
-           'text' => 'Hello World from PHP'
-         ));
-    print_r ("SMS sent. Message status: " . $resp->json()->messageStatus);
+    function read_extension_phone_number(){
+      global $platform;
+      $resp = $platform->get("/restapi/v1.0/account/~/extension/~/phone-number");
+      $jsonObj = $resp->json();
+      foreach ($resp->json()->records as $record){
+        if ($record->usageType == "DirectNumber"){
+          foreach ($record->features as $feature){
+            if ($feature == "SmsSender"){
+              return send_sms($record->phoneNumber);
+            }
+          }
+        }
+      }
+    }
+    function send_sms($fromNumber){
+      global $platform;
+      $RECIPIENT = '<ENTER PHONE NUMBER>';
+      try {
+        $resp = $platform->post('/account/~/extension/~/sms',
+            array(
+               'from' => array ('phoneNumber' => $fromNumber),
+               'to' => array(
+                        array('phoneNumber' => $RECIPIENT)
+                      ),
+               'text' => 'Hello World from PHP'
+             ));
+        print_r ("SMS sent. Message status: " . $resp->json()->messageStatus . PHP_EOL);
+      }catch (\RingCentral\SDK\Http\ApiException $e) {
+        print '  Message: ' . $e->apiResponse->response()->error() . PHP_EOL;
+      }
+    }
     ?>
     ```
 
@@ -214,36 +265,60 @@ Select your preferred language below.
 
     namespace Send_SMS
     {
-        class Program
+      class Program
+      {
+        const string RECIPIENT = "<ENTER PHONE NUMBER>";
+        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+        const string RINGCENTRAL_PRODUCTION = false;
+
+        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+
+        static RestClient restClient;
+
+        static void Main(string[] args)
         {
-            const string RECIPIENT = "<ENTER PHONE NUMBER>";
-            const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-            const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-            const string RINGCENTRAL_PRODUCTION = false;
-
-            const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-            const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-            const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-            static RestClient restClient;
-
-            static void Main(string[] args)
-            {
-                restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-                restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-                send_sms().Wait();
-            }
-            static private async Task send_sms()
-            {
-                var parameters = new CreateSMSMessage();
-                parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = RINGCENTRAL_USERNAME };
-                parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-                parameters.text = "Hello World from C#";
-
-                var resp = await restClient.Restapi().Account().Extension().Sms().Post(parameters);
-                Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
-            }
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+          restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+          read_extension_phone_number().Wait();
         }
+        static private async Task read_extension_phone_number()
+        {
+          if (rcsdk.token.access_token.Length > 0)
+          {
+            var resp = await rcsdk.Restapi().Account().Extension().PhoneNumber().Get();
+            foreach (var record in resp.records)
+            {
+              if (record.usageType == "DirectNumber")
+              {
+                foreach(var feature in record.features)
+                {
+                  if (feature == "SmsSender")
+                  {
+                    send_sms(record.phoneNumber).Wait();
+                    goto LoopEnd;
+                  }
+                }
+              }
+            }
+          }
+          LoopEnd:
+            Console.WriteLine("\nDone.");
+        }
+
+        static private async Task send_sms(string fromNumber)
+        {
+          var parameters = new CreateSMSMessage();
+          parameters.from = new MessageStoreCallerInfoRequest { phoneNumber = fromNumber };
+          parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+          parameters.text = "Hello World from C#";
+
+          var resp = await restClient.Restapi().Account().Extension().Sms().Post(parameters);
+          Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);
+        }
+      }
     }
     ```
 
@@ -313,14 +388,31 @@ Select your preferred language below.
             try {
               restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
               restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.send_sms()();
+              obj.read_extension_phone_number()();
             } catch (RestException | IOException e) {
               e.printStackTrace();
             }
         }
-        public static void send_sms() throws RestException, IOException {
+        public void read_extension_phone_number() throws RestException, IOException{
+          var resp =  restClient.restapi().account().extension().phonenumber().get();
+          OUTERMOST: for (var record : resp.records) {
+        	  if (record.usageType.equalsIgnoreCase("DirectNumber"))
+              {
+                for(var feature : record.features)
+                {
+                  if (feature.equalsIgnoreCase("SmsSender"))
+                  {
+                    send_sms(record.phoneNumber);
+                    break OUTERMOST;
+                  }
+                }
+              }
+            }
+        }
+
+        public void send_sms(String phoneNumber) throws RestException, IOException {
             CreateSMSMessage postParameters = new CreateSMSMessage();
-            postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(RINGCENTRAL_USERNAME);
+            postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(phoneNumber);
             postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
             postParameters.text = "Hello World from Java";
 
@@ -360,16 +452,33 @@ Select your preferred language below.
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
+    $rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+    $rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-    resp = rc.post('/restapi/v1.0/account/~/extension/~/sms', payload: {
-        to: [{phoneNumber: RECIPIENT}],
-        from: {phoneNumber: RINGCENTRAL_USERNAME},
-        text: 'Hello World from Ruby'
-    })
+    def read_extension_phone_number()
+      resp = $rc.get('/restapi/v1.0/account/~/extension/~/phone-number')
+      for record in resp.body['records'] do
+        if record['usageType'] == "DirectNumber"
+          for feature in record['features'] do
+            if feature == "SmsSender"
+              return send_sms(record['phoneNumber'])
+            end
+          end
+        end
+      end
+    end
 
-    puts "SMS sent. Message status: " + resp.body['messageStatus']
+    def send_sms(phoneNumber)
+      resp = $rc.post('/restapi/v1.0/account/~/extension/~/sms', payload: {
+            from: {phoneNumber: phoneNumber},
+            to: [{phoneNumber: RECIPIENT}],
+            text: 'Hello World from Ruby'
+        })
+
+      puts "SMS sent. Message status: " + resp.body['messageStatus']
+    end
+
+    read_extension_phone_number()
     ```
 
     ### Run Your Code

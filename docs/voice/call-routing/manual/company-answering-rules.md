@@ -29,11 +29,11 @@ Finally, make a POST request to the following endpoint:
 |-|-|
 | `Operator` | Play company greeting and forward to an operator extension. |
 | `Disconnect` | Play back company greeting then hangup. |
-| `Bypass` | Skip company greeting and forward to a selected extension. | 
+| `Bypass` | Skip company greeting and forward to a selected extension. |
 
 ### Call Handling Conditions
 
-The following parameters are used for specifying call handling conditions. 
+The following parameters are used for specifying call handling conditions.
 
 * `callers`: a list of callers' phone numbers or contact names
     * `callerId`:
@@ -52,33 +52,38 @@ The following parameters are used for specifying call handling conditions.
 The following code sample shows how to create a company custom answering rule that will re-route all incoming calls to a voice mailbox during a company business hours, and then disconnect.
 
 === "JavaScript"
-	```javascript 
-	var SDK = require('ringcentral')
+	```javascript
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral(
+    {
+      server: "server_url",
+      clientId: "client_id",
+      clientSecret: "client_secret"
+    });
+    
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		create_company_custome_answering_rule()
-	    });
-	}
 
-	function create_company_custome_answering_rule() {
+  platform.on(platform.events.loginSuccess, function(response){  
+		create_company_custom_answering_rule()
+	});
+
+	async function create_company_custom_answering_rule() {
 	  var params = {
 	    enabled: true,
 	    type: "Custom",
 	    name: "Company off time",
 	    callHandlingAction: "Disconnect"
 	  }
-
-	  platform.post('/account/~/answering-rule', params)
-	  .then(function(resp){
-	      console.log(resp.json())
-	  })
-	  .catch(function(e){
-	      console.log(e)
-	  })
+    try{
+	     var resp = await platform.post('/restapi/v1.0/account/~/answering-rule', params)
+	     var jsonObj = await resp.json()
+	     console.log(jsonObj)
+	  }catch(e){
+      console.log(e.message)
+	  }
 	}
 	```
 
@@ -102,7 +107,7 @@ The following code sample shows how to create a company custom answering rule th
 	    },
 	    'callHandlingAction': "TakeMessagesOnly"
 	  }
-	resp = platform.post('/restapi/v1.0/account/~/extension/~/answering-rule', params)
+	resp = platform.post('/restapi/v1.0/account/~/answering-rule', params)
 
 	print resp.text()
 	```
@@ -129,7 +134,7 @@ The following code sample shows how to create a company custom answering rule th
 	    ),
 	    'callHandlingAction' => "TakeMessagesOnly"
 	);
-	$resp = $platform->post('/account/~/extension/~/answering-rule', $params);
+	$resp = $platform->post('/account/~/answering-rule', $params);
 
 	print_r ($resp->text());
 	```
@@ -140,44 +145,44 @@ The following code sample shows how to create a company custom answering rule th
 	using System.Threading.Tasks;
 	using RingCentral;
 
-	namespace Create_Custom_Answering_Rule
+	namespace CompanyCustomAnsweringRule
 	{
-	    class Program
-	    {
-		static void Main(string[] args)
-		{
-		    create_custom_answering_rule().Wait();
-		}
-		static private async Task create_custom_answering_rule()
-		{
+    class Program
+    {
+      static void Main(string[] args)
+      {
+		    create_company_custom_answering_rule().Wait();
+      }
+      static private async Task create_company_custom_answering_rule()
+      {
 		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
 		    await rc.Authorize("username", "extension_number", "password");
 
-		    var parameters = new CreateAnsweringRuleRequest();
+		    var parameters = new CompanyAnsweringRuleRequest();
 		    parameters.enabled = true;
 		    parameters.type = "Custom";
 		    parameters.name = "My weekly meetings";
-		    var schedule = new ScheduleInfo();
-		    var weeklyRanges = new WeeklyScheduleInfo();
-		    TimeInterval meetingTime = new TimeInterval();
+		    var schedule = new CompanyAnsweringRuleScheduleInfoRequest();
+		    var weeklyRanges = new CompanyAnsweringRuleWeeklyScheduleInfoRequest();
+		    var meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
 		    meetingTime.from = "09:00";
 		    meetingTime.to = "10:00";
-		    weeklyRanges.monday = new TimeInterval[] { meetingTime };
+		    weeklyRanges.monday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
 
-		    meetingTime = new TimeInterval();
+		    meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
 		    meetingTime.from = "10:00";
 		    meetingTime.to = "15:00";
-		    weeklyRanges.friday = new TimeInterval[] { meetingTime };
+		    weeklyRanges.friday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
 
 		    schedule.weeklyRanges = weeklyRanges;
 		    parameters.schedule = schedule;
 		    parameters.callHandlingAction = "TakeMessagesOnly";
 
-		    var response = await rc.Restapi().Account().Extension().AnsweringRule().Post(parameters);
+		    var response = await rc.Restapi().Account().AnsweringRule().Post(parameters);
 		    var jsonStr = JsonConvert.SerializeObject(response);
 		    Console.WriteLine(jsonStr);
-		}
-	    }
+      }
+    }
 	}
 	```
 
@@ -186,43 +191,42 @@ The following code sample shows how to create a company custom answering rule th
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
-	public class Export_MessageStore {
-		  public static void main(String[] args) {
+	public class CompanyCustomAnsweringRule {
+    public static void main(String[] args) {
 			try {
-				create_custom_answering_rule();
+				create_company_custom_answering_rule();
 			} catch (RestException | IOException e) {
 				e.printStackTrace();
 			}
 		}
 
-	    public static void create_custom_answering_rule() throws RestException, IOException {
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+    public static void create_company_custom_answering_rule() throws RestException, IOException {
+      RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+      rc.authorize("username", "extension_number", "password");
 
-		var parameters = new CreateAnsweringRuleRequest();
-		parameters.enabled = true;
-		parameters.type = "Custom";
-		parameters.name = "My weekly meetings";
-		var schedule = new ScheduleInfo();
-		var weeklyRanges = new WeeklyScheduleInfo();
-		TimeInterval meetingTime = new TimeInterval();
-		meetingTime.from = "09:00";
-		meetingTime.to = "10:00";
-		weeklyRanges.monday = new TimeInterval[] { meetingTime };
+  		var parameters = new CompanyAnsweringRuleRequest();
+  		parameters.enabled = true;
+  		parameters.type = "Custom";
+  		parameters.name = "My weekly meetings";
+  		var schedule = new CompanyAnsweringRuleScheduleInfoRequest();
+  		var weeklyRanges = new CompanyAnsweringRuleWeeklyScheduleInfoRequest();
+  		var meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
+  		meetingTime.from = "09:00";
+  		meetingTime.to = "10:00";
+  		weeklyRanges.monday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
 
-		meetingTime = new TimeInterval();
-		meetingTime.from = "10:00";
-		meetingTime.to = "15:00";
-		weeklyRanges.friday = new TimeInterval[] { meetingTime };
+  		meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
+  		meetingTime.from = "10:00";
+  		meetingTime.to = "15:00";
+  		weeklyRanges.friday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
 
-		schedule.weeklyRanges = weeklyRanges;
-		parameters.schedule = schedule;
-		parameters.callHandlingAction = "TakeMessagesOnly";
+  		schedule.weeklyRanges = weeklyRanges;
+  		parameters.schedule = schedule;
+  		parameters.callHandlingAction = "TakeMessagesOnly";
 
-		var response =  rc.restapi().account().extension().answeringrule().post(parameters);
-		System.out.println(JSON.toJSONString(response));
+  		var response =  rc.restapi().account().answeringrule().post(parameters);
+  		System.out.println(JSON.toJSONString(response));
 		}
-	    }
 	}
 	```
 
@@ -245,7 +249,7 @@ The following code sample shows how to create a company custom answering rule th
 	    },
 	    callHandlingAction: "TakeMessagesOnly",
 	}
-	resp = rc.post('/restapi/v1.0/account/~/extension/~/answering-rule', payload: params)
+	resp = rc.post('/restapi/v1.0/account/~/answering-rule', payload: params)
 
 	puts resp.body
 	```

@@ -49,7 +49,7 @@ Select your preferred language below.
     Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```JavaScript
-    const SDK = require('@ringcentral/sdk').SDK
+    const RingCentral = require('@ringcentral/sdk').SDK
 
     RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
     RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
@@ -59,22 +59,15 @@ Select your preferred language below.
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    var rcsdk = new SDK({
-        server: RINGCENTRAL_SERVER,
-        clientId: RINGCENTRAL_CLIENTID,
-        clientSecret: RINGCENTRAL_CLIENTSECRET
-    });
+    var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
-    platform.login({
-        username: RINGCENTRAL_USERNAME,
-        password: RINGCENTRAL_PASSWORD,
-        extension: RINGCENTRAL_EXTENSION
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+    
+    platform.on(platform.events.loginSuccess, () => {
+      create_glip_team()
     })
-    .then(function(resp) {
-        create_glip_team()
-    });
 
-    function create_glip_team(){
+    async function create_glip_team(){
         var endpoint = "/restapi/v1.0/glip/teams"
         var params = {
             public: true,
@@ -82,16 +75,13 @@ Select your preferred language below.
             members: [{ email: "member.1@gmail.com"}, {email:"member.2@gmail.com"}],
             description: "Let chit chat here"
           }
-        platform.post(endpoint, params)
-          .then(function(resp) {
-            return resp.json()
-          })
-          .then(function(json){
-              console.log(JSON.stringify(json))
-          })
-          .catch(function(e){
-              console.log(e)
-          })
+        try{
+          var resp = await platform.post(endpoint, params)
+          var jsonObj = await resp.json()
+          console.log(JSON.stringify(jsonObj))
+        }catch(e){
+          console.log(e)
+        }
     }
     ```
 

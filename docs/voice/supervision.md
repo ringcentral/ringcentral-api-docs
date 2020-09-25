@@ -12,9 +12,9 @@ Partners today have used this API to provide RingCentral customers with call ass
 * Call's `sessionId`
 * Agent's `extensionNumber`
 * Supervisor's `deviceId`
- 
+
 <img class="img-fluid" src="../../img/supervisionapi_v3.png" style="max-width:600px;">
-  
+
 ## Prerequisites
 
 Before you begin, please verify these prerequesites are met:
@@ -32,7 +32,7 @@ Due to the sensitive nature of Call Monitoring, authorization to be monitored an
 * What extensions/individuals can be monitored
 * What extensions/individuals can monitor others
 
-Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call. 
+Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call.
 
 * [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
 * [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
@@ -85,7 +85,7 @@ The Call Supervision API is used to have RingCentral initiate a call out to a re
 The following is an example request showing the required parameters to add a supervisor to an existing call session.
 
 === "Raw"
-	```HTTP 
+	```HTTP
 	POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
 	Content-Type: application/json
 	Content-Length: ACTUAL_CONTENT_LENGTH_HERE
@@ -99,14 +99,14 @@ The following is an example request showing the required parameters to add a sup
 	```
 
 === "Ruby"
-	```Ruby 
+	```Ruby
 	require 'ringcentral'
 
 	rc = RingCentral.new(
 	  'client_id',
 	  'client_secret',
 	  'https://platform.ringcentral.com')
-	  
+
 	rc.authorize username: '+16505550100',
 	  extension: '',
 	  password:  'my_password')
@@ -124,7 +124,7 @@ The following is an example request showing the required parameters to add a sup
 |-|-|-|-|
 | `accountId` | path | required | This is the unique identifier for the account associated with the request. This can be the actual id or `~` for the current `accountId`. The default `~` value is acceptable in all uses for this API. |
 | `telephonySessionId` | path | required | This is the unique identifier for the call, including all parties. See the next section on how to get a list of current telephony sessions. |
-| `deviceId` | body | required | This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device` | 
+| `deviceId` | body | required | This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device` |
 | `extensionNumber` | body | required | The extension number of the agent whose call you want to monitor. Note: In future we shall also support `extensionId`. |
 | `mode` | body (required) | Currently, the only method supported is `Listen`. |
 
@@ -139,7 +139,7 @@ The `telephonySessionId` and `extensionNumber` properties can be retrieved from 
 The following example shows how to retrieve the `telephonySessionId` uses the account-level presence API. The agent extension is in the `extension.extensionNumber` property and the `telephonySessionId` is in the `activeCalls[0].telephonySessionId` property.
 
 === "Response"
-	```json 
+	```json
 	{
 	   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
 	   "extension":{
@@ -180,7 +180,7 @@ The following example shows how to retrieve the `telephonySessionId` uses the ac
 	```
 
 === "Request"
-	```http 
+	```http
 	GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&sipData=true
 	```
 
@@ -219,7 +219,7 @@ If the request is success, two things will happen.
 1. First, the API will send a response to reflect that the supervisor has joined the agent extension with a seperate party `id`, e.g. `party-4` in this example.
 2. Next, RingCentral will then send a SIP INVITE request to the supervisor's device which will signal the device to join the existing customer-agent call session automatically with auto answer.
 
-Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below. 
+Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below.
 
 #### JSON Response from API
 
@@ -302,7 +302,7 @@ Below is a sample SIP Invite which is delivered to the supervising device. You w
 To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the `activeCalls` property. For example:
 
 === "Response"
-	```json 
+	```json
 	{
 	   "activeCalls":[
 	      {
@@ -330,7 +330,7 @@ To verify that the supervisor has joined the call use the account-level Presence
 	```
 
 === "Request"
-	```http 
+	```http
 	GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipData=true
 	```
 
@@ -339,7 +339,7 @@ To verify that the supervisor has joined the call use the account-level Presence
 
 ## Sample Call Monitoring Application
 
-In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones. 
+In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones.
 
 In this example we will cover the following topics:
 
@@ -364,14 +364,14 @@ import fs from 'fs'
 
 ### Obtain the soft phone's device ID
 
-A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID. 
+A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID.
 
 1. Get the devices attached to an extension using the [Get Devices API](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices).
 
 2. Use the SIP Registration API to get the device ID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below
 
 Code for Softphone Registration using RingCentral SDK
-     
+
 ```js
 (async () => {
     await rc.login({
@@ -389,7 +389,7 @@ Code for Softphone Registration using RingCentral SDK
 
 ### Prepare agent extension(s) for monitoring
 
-Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin. 
+Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin.
 
 ```js
 const r = await rc.get('/restapi/v1.0/account/~/extension')
@@ -441,7 +441,7 @@ softphone.on('INVITE', sipMessage => {
             console.log('live audio data received, sample rate is ', data.sampleRate)
             if (speaker === null) {
                 // wait until sample rate stable
-                if (data.sampleRate === prevSampleRate) { 
+                if (data.sampleRate === prevSampleRate) {
                     speaker = new Speaker({
 	                channels: data.channelCount,
                         bitDepth: data.bitsPerSample,
@@ -488,6 +488,5 @@ This capability mirrors that of the Supervision API. However, instead of accessi
 
 ### Additional Resources
 
-* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file. 
-* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog. 
-
+* Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file.
+* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog.

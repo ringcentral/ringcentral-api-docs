@@ -5,52 +5,39 @@ Like every other RingCentral API resource, the [Call Log](https://developers.rin
 Developers can easily determine the Permissions available for an access token by viewing the `scope` property while requesting an `access_token` from RingCentral OAuth endpoints (this works for either [ROPC]() or [Authorization Flow]()). The `scope` property will be a string which can be split on whitespace " ". The following example shows how to use the [RingCentral JS SDK](https://github.com/ringcentral/ringcentral-js) to inspect for the required API Permissions prior to executing these requests (on an ROPC `Server-Only NO UI` Platform Type application).:
 
 ```javascript
-var RC = require('ringcentral');
-var sdk = new SDK({
+const RingCentral = require('@ringcentral/sdk').SDK
+var rcsdk = new RingCentral({
     server: 'https://platform.devtest.ringcentral.com' // for Production: https://platform.ringcentral.com
-    appKey: '{{REPLACE_WITH_YOUR_APP_KEY}}',
-    appSecret: '{{REPLACE_WITH_YOUR_APP_SECRET}}'
+    clientId: '{{REPLACE_WITH_YOUR_APP_KEY}}',
+    clientSecret: '{{REPLACE_WITH_YOUR_APP_SECRET}}'
 });
-var platform = sdk.platform();
-var permissions;
 
-platform
-    .login({
+var platform = rcsdk.platform();
+var permissions = []
+
+platform.login({
         username: '{{REPLACE_WITH_YOUR_USERNAME}}',
         password: '{{REPLACE_WITH_YOUR_PASSWORD}}',
         extension: '{{OPTIONAL_REPLACE_WITH_YOUR_EXTENSION}}'
     })
-    .then(function(response) {
-        var responseJson = response.json();
-        // Sanity check
-        if(responseJson.hasOwnProperty('scope') {
-            permissions = responseJson.scope.split(" ");
-        }
-    })
-    .catch(function(e) {
-        console.error(e);
-        throw e;
-    });
 
-// Handy utility for checking if a permission exists
-function checkPermission(permissionName) {
-    return -1 === permissions.indexOf(permissionName)
-        ? false
-        : true
-        ;
-}
-
-// Example permission invalidation with ReadCallLog
-if(checkPermission('ReadCallLog')) {
-    platform
-        .get('/account/~/call-log')
-        .then(function(response) {
-            console.log('Account level call log data');
-            console.log(response.json());
-        })
-        .catch(function(e) {
-        });
-}
+platform.on(platform.events.loginSuccess, async function(response){
+  var responseJson = response.json();
+  // Sanity check
+  if (responseJson.hasOwnProperty('scope')) {
+    permissions = responseJson.scope.split(" ");
+    if (permissions.indexOf('ReadCallLog' >= 0)) {
+      try {
+        var resp = await platform.get('/restapi/v1.0/account/~/call-log')
+        var jsonObj = await resp.json()
+        console.log('Account level call log data');
+        console.log(jsonObj);
+      }catch(e) {
+        console.log(e.message)
+      }
+    }
+  }
+})
 ```
 
 ## API Permissions
