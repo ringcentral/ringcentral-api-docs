@@ -65,33 +65,32 @@ Select your preferred language below.
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    var rcsdk = new SDK({
-        server: RINGCENTRAL_SERVER,
-        clientId: RINGCENTRAL_CLIENTID,
-        clientSecret: RINGCENTRAL_CLIENTSECRET
-    });
+    var rcsdk = new SDK( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
-    platform.login({
-        username: RINGCENTRAL_USERNAME,
-        password: RINGCENTRAL_PASSWORD,
-        extension: RINGCENTRAL_EXTENSION
-        })
-        .then(function(resp) {
-      platform.post('/restapi/v1.0/account/~/extension/~/meeting', {
-                topic: 'Test Meeting',
-                meetingType: 'Instant',
-                allowJoinBeforeHost: true,
-                startHostVideo: true,
-                startParticipantsVideo: false
-            })
-            .then(function(resp) {
-              return resp.json()
-            })
-            .then(function (json) {
-                console.log('Start Your Meeting: ' + json.links.startUri )
-                console.log('Join the Meeting: ' + json.links.joinUri )
-            });
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+
+    platform.on(platform.events.loginSuccess, () => {
+          start_meeting()
     });
+
+    async function start_meeting(){
+      try{
+        var endpoint = "/restapi/v1.0/account/~/extension/~/meeting"
+        var resp = await platform.post(endpoint, {
+                  topic: 'Test Meeting',
+                  meetingType: 'Instant',
+                  allowJoinBeforeHost: true,
+                  startHostVideo: true,
+                  startParticipantsVideo: false
+
+            })
+        var jsonObj = await resp.json()
+        console.log( 'Start Your Meeting: ' + jsonObj.links.startUri )
+        console.log( 'Meeting id: ' + jsonObj.id )
+      }catch(e){
+        console.log(e.message)
+      }
+    }
     ```
 
     ### Run Your Code

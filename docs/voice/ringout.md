@@ -25,22 +25,26 @@ The two-legged RingOut call can be created via the following request:
 
 === "Javascript"
 	```javascript
-	const RC = require('ringcentral');
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	      .then(function(resp) {
-		  platform.post('/account/~/extension/~/ring-out', {
-		      'from' : { 'phoneNumber': "13445554444" },
-		      'to'   : {'phoneNumber': "13455553434"},
-		      'playPrompt' : true
-		    })
-		    .then(function(resp){
-			console.log("Call placed. Call status: " + resp.json().status.callStatus)
-		    })
-	      });
+
+	platform.on(platform.events.loginSuccess, async function(response){
+		try{
+			var resp = await platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
+					'from' : { 'phoneNumber': "13445554444" },
+					'to'   : {'phoneNumber': "13455553434"},
+					'playPrompt' : true
+				})
+			var jsonObj = await resp.json()
+			console.log("Call placed. Call status: " + jsonObj.status.callStatus)
+		}catch(e){
+			console.log(e.message)
+		}
+	})
 	```
 
 === "Python"
@@ -91,23 +95,23 @@ The two-legged RingOut call can be created via the following request:
 	{
 	    class Program
 	    {
-		static void Main(string[] args)
-		{
-		    call_ringout().Wait();
-		}
-		static private async Task call_ringout()
-		{
-		    RestClient rc = new RestClient("client_id", "client_secret", false);
-		    await rc.Authorize("username", "extension_number", "password");
-		    var parameters = new MakeRingOutRequest();
-		    parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = "13445554444" };
-		    parameters.to = new MakeRingOutCallerInfoRequestTo { phoneNumber = "13455553434" };
-		    parameters.playPrompt = true;
+				static void Main(string[] args)
+				{
+					call_ringout().Wait();
+				}
+				static private async Task call_ringout()
+				{
+					RestClient rc = new RestClient("client_id", "client_secret", false);
+					await rc.Authorize("username", "extension_number", "password");
+					var parameters = new MakeRingOutRequest();
+		    	parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = "13445554444" };
+		    	parameters.to = new MakeRingOutCallerInfoRequestTo { phoneNumber = "13455553434" };
+		    	parameters.playPrompt = true;
 
-		    var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
-		    Console.WriteLine("Call Placed. Call status: " + resp.status.callStatus);
-		}
-	    }
+		    	var resp = await rc.Restapi().Account().Extension().RingOut().Post(parameters);
+		    	Console.WriteLine("Call Placed. Call status: " + resp.status.callStatus);
+				}
+			}
 	}
 	```
 
@@ -122,24 +126,24 @@ The two-legged RingOut call can be created via the following request:
 	public class Call_RingOut {
 	  public static void main(String[] args) {
 			try {
-			    call_ringout();
+				call_ringout();
 			} catch (RestException | IOException e) {
-			    e.printStackTrace();
+				e.printStackTrace();
 			}
 	  }
 
 		public static void call_ringout() throws RestException, IOException{
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+			RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+			rc.authorize("username", "extension_number", "password");
 
-		MakeRingOutRequest requestBody = new MakeRingOutRequest();
-		parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13445554444" ));
-		parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13455553434" ));
-		parameters.playPrompt = true;
+			MakeRingOutRequest requestBody = new MakeRingOutRequest();
+			parameters.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber( "13445554444" ));
+			parameters.to(new MakeRingOutCallerInfoRequestTo().phoneNumber( "13455553434" ));
+			parameters.playPrompt = true;
 
-		var response = rc.restapi().account().extension().ringout().post(requestBody);
-		System.out.println("Call Placed. Call status: " + response.status.callStatus);
-	    }
+			var response = rc.restapi().account().extension().ringout().post(requestBody);
+			System.out.println("Call Placed. Call status: " + response.status.callStatus);
+		}
 	}
 	```
 

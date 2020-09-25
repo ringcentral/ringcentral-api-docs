@@ -21,7 +21,7 @@ Finally, make a POST request to the following endpoint:
 
 ### Call Handling Conditions
 
-The following parameters are used for specifying call handling conditions. 
+The following parameters are used for specifying call handling conditions.
 
 * `callers`: a list of callers' phone numbers or contact names
     * `callerId`:
@@ -41,7 +41,7 @@ The following parameters are used for specifying call handling conditions.
 | `UnconditionalForwarding` | Forward an incoming call immediately to a specified number. |
 | `TakeMessagesOnly` | Play back a voicemail greeting then forward an incoming call to a voice mailbox. |
 | `PlayAnnouncementOnly` | Play back a pre-recorded announcement then hang up. |
-| `TransferToExtension` | Forward an incoming call (dialed to a [Call Queue](../call-queues/) extension) to a specific extension. | 
+| `TransferToExtension` | Forward an incoming call (dialed to a [Call Queue](../call-queues/) extension) to a specific extension. |
 | `AgentQueue` | Forward an incoming call (dialed to a [Call Queue](../call-queues/) extension) to one or more specified agents. |
 
 !!! info "Required Fields"
@@ -60,39 +60,38 @@ Required permission(s): EditExtensions
 The following code sample shows how to create a user custom answering rule that will re-route all incoming calls to a voice mailbox during a user's weekly meeting times on Monday and Friday.
 
 === "JavaScript"
-	```javascript 
-	var SDK = require('ringcentral')
+	```javascript
+  const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		create_user_custom_rule()
-	    });
-	}
 
-	function create_user_custom_rule() {
+  platform.on(platform.events.loginSuccess, function(response){  
+		create_user_custom_rule()
+	});
+
+	async function create_user_custom_rule() {
 	  var params = {
 	    enabled: true,
 	    type: "Custom",
 	    name: "My weekly meetings",
 	    schedule : {
 	      weeklyRanges: {
-		monday: [ { from: "09:00", to: "10:00" } ],
-		friday: [ { from: "10:00", to: "15:00" } ]
+      		monday: [ { from: "09:00", to: "10:00" } ],
+      		friday: [ { from: "10:00", to: "15:00" } ]
 	      }
 	    },
 	    callHandlingAction: "TakeMessagesOnly"
 	  }
-
-	  platform.post('/account/~/extension/~/answering-rule', params)
-	  .then(function(resp){
-	      console.log(resp.json())
-	  })
-	  .catch(function(e){
-	      console.log(e)
-	  })
+    try {
+	     var resp = await platform.post('/restapi/v1.0/account/~/extension/~/answering-rule', params)
+       var jsonObj = await resp.json()
+	     console.log(jsonObj)
+	  }catch(e){
+      console.log(e.message)
+	  }
 	}
 	```
 
@@ -154,15 +153,15 @@ The following code sample shows how to create a user custom answering rule that 
 	using System.Threading.Tasks;
 	using RingCentral;
 
-	namespace Create_Custom_Answering_Rule
+	namespace UserCustomAnsweringRule
 	{
 	    class Program
 	    {
 		static void Main(string[] args)
 		{
-		    create_custom_answering_rule().Wait();
+		    create_user_custom_answering_rule().Wait();
 		}
-		static private async Task create_custom_answering_rule()
+		static private async Task create_user_custom_answering_rule()
 		{
 		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
 		    await rc.Authorize("username", "extension_number", "password");
@@ -200,43 +199,42 @@ The following code sample shows how to create a user custom answering rule that 
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
-	public class Export_MessageStore {
+	public class UserCustomAnsweringRule {
 		  public static void main(String[] args) {
 			try {
-				create_custom_answering_rule();
+				create_user_custom_answering_rule();
 			} catch (RestException | IOException e) {
 				e.printStackTrace();
 			}
 		}
 
-	    public static void create_custom_answering_rule() throws RestException, IOException {
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+    public static void create_user_custom_answering_rule() throws RestException, IOException {
+  		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+  		rc.authorize("username", "extension_number", "password");
 
-		var parameters = new CreateAnsweringRuleRequest();
-		parameters.enabled = true;
-		parameters.type = "Custom";
-		parameters.name = "My weekly meetings";
-		var schedule = new ScheduleInfo();
-		var weeklyRanges = new WeeklyScheduleInfo();
-		TimeInterval meetingTime = new TimeInterval();
-		meetingTime.from = "09:00";
-		meetingTime.to = "10:00";
-		weeklyRanges.monday = new TimeInterval[] { meetingTime };
+  		var parameters = new CreateUserAnsweringRuleRequest();
+  		parameters.enabled = true;
+  		parameters.type = "Custom";
+  		parameters.name = "My weekly meetings";
+  		var schedule = new ScheduleInfo();
+  		var weeklyRanges = new WeeklyScheduleInfo();
+  		TimeInterval meetingTime = new TimeInterval();
+  		meetingTime.from = "09:00";
+  		meetingTime.to = "10:00";
+  		weeklyRanges.monday = new TimeInterval[] { meetingTime };
 
-		meetingTime = new TimeInterval();
-		meetingTime.from = "10:00";
-		meetingTime.to = "15:00";
-		weeklyRanges.friday = new TimeInterval[] { meetingTime };
+  		meetingTime = new TimeInterval();
+  		meetingTime.from = "10:00";
+  		meetingTime.to = "15:00";
+  		weeklyRanges.friday = new TimeInterval[] { meetingTime };
 
-		schedule.weeklyRanges = weeklyRanges;
-		parameters.schedule = schedule;
-		parameters.callHandlingAction = "TakeMessagesOnly";
+  		schedule.weeklyRanges = weeklyRanges;
+  		parameters.schedule = schedule;
+  		parameters.callHandlingAction = "TakeMessagesOnly";
 
-		var response =  rc.restapi().account().extension().answeringrule().post(parameters);
-		System.out.println(JSON.toJSONString(response));
+  		var response =  rc.restapi().account().extension().answeringrule().post(parameters);
+  		System.out.println(JSON.toJSONString(response));
 		}
-	    }
 	}
 	```
 

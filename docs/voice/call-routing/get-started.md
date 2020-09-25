@@ -1,6 +1,6 @@
 # Get Started with Call Routing
 
-To help you get started using the Call Routing API, the following code samples have been provided. These code samples perform the simple function of listing the call answering rules associated with the current user. This code sample is based on our [Voice quick start guides](../../quick-start). If you have not completed that guide, we recommend you do so first, as this is an abbreviated version of that guide. 
+To help you get started using the Call Routing API, the following code samples have been provided. These code samples perform the simple function of listing the call answering rules associated with the current user. This code sample is based on our [Voice quick start guides](../../quick-start). If you have not completed that guide, we recommend you do so first, as this is an abbreviated version of that guide.
 
 ## Create an App
 
@@ -30,63 +30,52 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 ## Read User Call Answering Rules
 
 === "JavaScript"
-	```javascript
-	const SDK = require('@ringcentral/sdk').SDK
+    ```javascript
+  	const RingCentral = require('@ringcentral/sdk').SDK
 
-	RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-	RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-	RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+  	RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+  	RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+  	RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-	RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-	RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-	RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+  	RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+  	RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+  	RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-	var rcsdk = new SDK({
-	      server: RINGCENTRAL_SERVER,
-	      clientId: RINGCENTRAL_CLIENTID,
-	      clientSecret: RINGCENTRAL_CLIENTSECRET
-	  });
-	var platform = rcsdk.platform();
-	platform.login({
-	      username: RINGCENTRAL_USERNAME,
-	      password: RINGCENTRAL_PASSWORD,
-	      extension: RINGCENTRAL_EXTENSION
-	      })
-	      .then(function(resp) {
-		  get_user_call_answering_rules()
-	      });
+  	var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} )
 
-	function get_user_call_answering_rules() {
-	    platform.get('/restapi/v1.0/account/~/extension/~/answering-rule', {
-		'view': "Detailed",
-		'enabledOnly': false
-	      })
-	      .then(function(resp){
-		  return resp.json()
-	      }).then(function(jsonObj) {
-		for (var record of jsonObj.records){
-		  // use the record.id to read rule details
-		  get_user_call_answering_rule(record.id)
-		}
-	      })
-	      .catch(function(e){
-		  console.log(e.message)
-	      })
-	}
+  	var platform = rcsdk.platform();
 
-	function get_user_call_answering_rule(id) {
-	    platform.get('/restapi/v1.0/account/~/extension/~/answering-rule/' + id )
-		.then(function(resp){
-		  return resp.text()
-		})
-		.then(function(text) {
-		  console.log(text)
-		})
-		.catch(function(e){
-		    console.log(e.message)
-		})
-	}
-	```
+  	platform.login({username: RINGCENTRAL_USERNAME,  password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION})
+
+    platform.on(platform.events.loginSuccess, function(response){
+      get_user_call_answering_rules()
+    })
+
+  	async function get_user_call_answering_rules() {
+      try{
+  	    var resp = await platform.get('/restapi/v1.0/account/~/extension/~/answering-rule', {
+  		            'view': "Detailed",
+  		             'enabledOnly': false
+  	             })
+  	    var jsonObj = await resp.json()
+        for (var record of jsonObj.records){
+          get_user_call_answering_rule(record.id)
+        }
+      }catch(e){
+        console.log(e.message)
+      }
+  	}
+
+  	async function get_user_call_answering_rule(id) {
+      try{
+  	    var resp = await platform.get('/restapi/v1.0/account/~/extension/~/answering-rule/' + id )
+  		  var jsonObj = await resp.json()
+        console.log(jsonObj)
+  		}catch(e){
+        console.log(e.message)
+  		}
+  	}
+    ```
 
 === "PHP"
 	```php
@@ -154,99 +143,89 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 	    print(e)
 	```
 
+=== "C#"
+ ```c#
+ using System;
+ using System.Threading.Tasks;
+ using RingCentral;
+ using Newtonsoft.Json;
+
+ namespace Get_User_Call_Answering_Rules
+ {
+   class Program
+   {
+     const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+     const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+     const string RINGCENTRAL_PRODUCTION = false;
+
+     const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+     const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+     const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+
+     static RestClient restClient;
+
+     static void Main(string[] args)
+     {
+       restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+       restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+       get_user_call_answering_rules().Wait();
+     }
+
+     static private async Task get_user_call_answering_rules()
+     {
+       var parameters = new ListAnsweringRulesParameters();
+       parameters.view = "Detailed";
+       parameters.enabledOnly = "false";
+
+       var resp = await restClient.Restapi().Account().Extension().AnsweringRule().List(parameters);
+       foreach (var record in resp.records)
+       {
+         var rule = await restClient.Restapi().Account().Extension().AnsweringRule(record.id).Get();
+         Console.WriteLine(JsonConvert.SerializeObject(rule));
+       }
+     }
+   }
+ }
+ ```
+
 === "Java"
 	```java
-	package Get_User_Call_Answering_Rules;
-
-	public class Get_User_Call_Answering_Rules {
-
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-
-		}
-	}
-
-	package Get_User_Call_Answering_Rules;
-
 	import java.io.IOException;
-
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
-
 	public class Get_User_Call_Answering_Rules {
-	    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-	    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-	    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
+      static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+      static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+      static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-	    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-	    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-	    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-	    static RestClient restClient;
-		public static void main(String[] args) {
-		var obj = new Get_User_Call_Answering_Rules();
-			try {
-		  restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-			restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-		  obj.get_user_call_answering_rules();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
-	    public void get_user_call_answering_rules() throws RestException, IOException{
-			var parameters = new ListAnsweringRulesParameters();
-			parameters.view = "Detailed";
-			parameters.enabledOnly = "false";
+      static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+      static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+      static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
+      static RestClient restClient;
 
-			var response = restClient.restapi().account().extension().answeringrule().list(parameters);
-			for (var record : response.records) {
-		    var rule = restClient.restapi().account().extension().answeringrule(record.id).get();
-		    System.out.println(JSON.toJSONString(rule));
-			}
-	    }
-	}
-	```
+      public static void main(String[] args) {
+        var obj = new Get_User_Call_Answering_Rules();
+        try {
+          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+          obj.get_user_call_answering_rules();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+      }
 
-=== "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
-	using Newtonsoft.Json;
+      public void get_user_call_answering_rules() throws RestException, IOException{
+        var parameters = new ListAnsweringRulesParameters();
+        parameters.view = "Detailed";
+        parameters.enabledOnly = "false";
 
-	namespace Get_User_Call_Answering_Rules
-	{
-	    class Program
-	    {
-		const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-		const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-		const string RINGCENTRAL_PRODUCTION = false;
-		const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-		const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-		const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-		static RestClient restClient;
-
-		static void Main(string[] args)
-		{
-		    restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-		    restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-		    get_user_call_answering_rules().Wait();
-		}
-		static private async Task get_user_call_answering_rules()
-		{
-		    var parameters = new ListAnsweringRulesParameters();
-		    parameters.view = "Detailed";
-		    parameters.enabledOnly = "false";
-
-		    var resp = await restClient.Restapi().Account().Extension().AnsweringRule().List(parameters);
-		    foreach (var record in resp.records)
-		    {
-			var rule = await restClient.Restapi().Account().Extension().AnsweringRule(record.id).Get();
-			Console.WriteLine(JsonConvert.SerializeObject(rule));
-		    }
-		}
-	    }
+        var response = restClient.restapi().account().extension().answeringrule().list(parameters);
+        for (var record : response.records) {
+          var rule = restClient.restapi().account().extension().answeringrule(record.id).get();
+          System.out.println(JSON.toJSONString(rule));
+        }
+      }
 	}
 	```
 

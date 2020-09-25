@@ -58,24 +58,17 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
     RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-    var rcsdk = new SDK({
-        server: RINGCENTRAL_SERVER,
-        clientId: RINGCENTRAL_CLIENTID,
-        clientSecret: RINGCENTRAL_CLIENTSECRET
-    });
+    var rcsdk = new SDK( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
-    var subscriptions = new Subscriptions({
-       sdk: rcsdk
-    });
+
+    var subscriptions = new Subscriptions( {sdk: rcsdk} );
     var subscription = subscriptions.createSubscription({ pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000 });
 
-    platform.login({
-        username: RINGCENTRAL_USERNAME,
-        password: RINGCENTRAL_PASSWORD,
-        extension: RINGCENTRAL_EXTENSION
-    })
-    .then(function(resp) {
-        subscribe_for_SMS_notification()
+
+    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+
+    platform.on(platform.events.loginSuccess, () => {
+      subscribe_for_SMS_notification()
     });
 
     function subscribe_for_SMS_notification(){

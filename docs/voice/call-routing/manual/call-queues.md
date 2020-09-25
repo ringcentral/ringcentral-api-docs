@@ -112,49 +112,48 @@ The following code sample shows how to add 2 new members to a call queue named "
 
 === "JavaScript"
 	```javascript
-	var SDK = require('ringcentral')
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
+
+  platform.on(platform.events.loginSuccess, async function(response){  
 		get_call_queues()
-	    });
+	});
+
+	async function get_call_queues() {
+    try{
+	    var resp = await platform.get('/restapi/v1.0/account/~/call-queues')
+		  var jsonObj = await resp.json()
+		  for (var group of jsonObj.records){
+        if (group.name == "Support Department"){
+          add_new_members(group.id)
+          break
+        }
+      }
+		}catch(e){
+      console.log(e.message)
+		}
 	}
 
-	function get_call_queues() {
-	    platform.get('/restapi/v1.0/account/~/call-queues')
-		.then(function(resp){
-		    var jsonObj = resp.json()
-		    for (var group of jsonObj.records){
-		      if (group.name == "Support Department"){
-			 add_new_members(group.id)
-			 break
-		      }
-		    }
-		})
-		.catch(function(ex){
-		    console.log(ex)
-		})
-	}
-
-	function add_new_members(groupId) {
-	    var params = {
-		addedExtensionIds: ["888888888", "999999999"]
+	async function add_new_members(groupId) {
+    var params = {
+  		  addedExtensionIds: ["888888888", "999999999"]
 	    }
-	    platform.post('/restapi/v1.0/account/~/call-queues/'+groupId+'/bulk-assign', params)
-	       .then(function(resp){
-		  console.log(resp)
-	       })
-	       .catch(function(ex){
-		  console.log(ex)
-	       })
+    try{
+	    var resp = await platform.post('/restapi/v1.0/account/~/call-queues/'+groupId+'/bulk-assign', params)
+	    var jsonObj = await resp.json()
+		  console.log(jsonObj)
+    }catch(e){
+		  console.log(e.message)
+    }
 	}
 	```
 
 === "Python"
-	```python 
+	```python
 	from ringcentral import SDK
 
 	sdk = SDK( "client_id", "client_secret", "server_url" )
@@ -196,43 +195,43 @@ The following code sample shows how to add 2 new members to a call queue named "
 	```
 
 === "C#"
-	```c# 
+	```c#
 	using System;
 	using System.Threading.Tasks;
 	using RingCentral;
 
 	namespace Update_CallQueue_Members
 	{
-	    class Program
-	    {
-		static RestClient rcsdk;
-		static void Main(string[] args)
-		{
+    class Program
+    {
+      static RestClient rcsdk;
+  		static void Main(string[] args)
+      {
 		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
 		    await rcsdk.Authorize("username", "extension_number", "password");
 		    add_callqueue_members().Wait();
-		}
-		static private async Task add_callqueue_members()
-		{
+      }
+      static private async Task add_callqueue_members()
+      {
 		    var resp = await rcsdk.Restapi().Account().CallQueues().Get();
 		    foreach (var group in resp.records)
 		    {
-			if (group.name == "Support Department")
-			{
-			    var parameters = new CallQueueBulkAssignResource();
-			    parameters.addedExtensionIds = new string[] { "888888888", "999999999" };
-			    await rcsdk.Restapi().Account().CallQueues(group.id).BulkAssign().Post(parameters);
-			    Console.WriteLine("Members added");
-			    break;
-			}
-		    }
-		}
-	    }
+          if (group.name == "Support Department")
+          {
+            var parameters = new CallQueueBulkAssignResource();
+            parameters.addedExtensionIds = new string[] { "888888888", "999999999" };
+            await rcsdk.Restapi().Account().CallQueues(group.id).BulkAssign().Post(parameters);
+            Console.WriteLine("Members added");
+            break;
+          }
+        }
+      }
+    }
 	}
 	```
 
 === "Java"
-	```java 
+	```java
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
@@ -252,11 +251,11 @@ The following code sample shows how to add 2 new members to a call queue named "
 	    var resp = restClient.restapi().account().callqueues().get();
 	    for (var group : resp.records) {
 	      if (group.name.equals("Sales team")){
-		var parameters = new CallQueueBulkAssignResource();
-		parameters.addedExtensionIds = new String[] {"888888888", "999999999"};
-		restClient.restapi().account().callqueues(group.id).bulkassign().post(parameters);
-		System.out.println("Members added.");
-		break;
+          var parameters = new CallQueueBulkAssignResource();
+          parameters.addedExtensionIds = new String[] {"888888888", "999999999"};
+          restClient.restapi().account().callqueues(group.id).bulkassign().post(parameters);
+          System.out.println("Members added.");
+          break;
 	      }
 	    }
 	  }

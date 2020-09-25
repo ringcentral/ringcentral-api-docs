@@ -136,86 +136,83 @@ The following code sample shows how to call the Message Store Export APIs to exp
 
 === "JavaScript"
 	```javascript
-	var SDK = require('ringcentral')
+	const RC = require('@ringcentral/sdk').SDK
 	var fs = require('fs')
 	var https = require('https');
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RC( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		create_message_store_report()
-	    });
-	}
 
-	function create_message_store_report(){
-	    var endpoint = "/restapi/v1.0/account/~/message-store-report"
-	    var params = {
-		dateFrom: "2019-03-01T00:00:00.000Z",
-		dateTo: "2019-03-31T23:59:59.999Z"
-	      }
-	    platform.post(endpoint, params)
-	      .then(function(resp){
-		  var json = resp.json()
-		  get_message_store_report_task(json.id)
-	      })
-	      .catch(function(e){
+  platform.on(platform.events.loginSuccess, function(e){
+    create_message_store_report()
+  });
+
+	async function create_message_store_report(){
+    try{
+      var endpoint = "/restapi/v1.0/account/~/message-store-report"
+      var params = {
+                      dateFrom: "2019-03-01T00:00:00.000Z",
+                      dateTo: "2019-03-31T23:59:59.999Z"
+                   }
+      var resp = await platform.post(endpoint, params)
+  	  var jsonObj = await resp.json()
+      get_message_store_report_task(jsonObj.id)
+    }catch(e){
 		  console.log(e)
-	      })
+	  }
 	}
 
-	function get_message_store_report_task(taskId){
-	    console.log("check task creation status ...")
-	    var endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
-	    platform.get(endpoint)
-	      .then(function(resp){
-		  var json = resp.json()
-		  if (json.status == "Completed"){
-		      get_message_store_report_archive(json.id)
-		  }else {
-		      setTimeout(function(){
-			get_message_store_report_task(taskId)
-		      }, 5000);
-		  }
-	      })
-	      .catch(function(e){
+	async function get_message_store_report_task(taskId){
+    console.log("check task creation status ...")
+    try{
+      var endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
+  	  var resp = await platform.get(endpoint)
+  	  var jsonObj = await resp.json()
+      if (jsonObj.status == "Completed"){
+        get_message_store_report_archive(jsonObj.id)
+      }else {
+        setTimeout(function(){
+  			   get_message_store_report_task(taskId)
+        }, 10000);
+      }
+    }catch(e){
 		  console.log(e)
-	      })
+    }
 	}
 
-	function get_message_store_report_archive(taskId){
-	    console.log("getting report uri ...")
-	    var endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
-	    platform.get(endpoint)
-	      .then(function(resp){
-		  var json = resp.json()
+	async function get_message_store_report_archive(taskId){
+    console.log("getting report uri ...")
+    try{
+	    var endpoint = `/restapi/v1.0/account/~/message-store-report/${taskId}/archive`
+	    var resp = await platform.get(endpoint)
+	    var jsonObj = await resp.json()
 		  var date = new Date()
-		  for (var i=0; i< json.records.length; i++){
-		      var fileName = "message_store_content_" + date.toISOString() + "_" + i + ".zip"
-		      get_message_store_report_archive_content(json.records[i].uri, fileName)
+		  for (var i=0; i< jsonObj.records.length; i++){
+        var fileName = "message_store_content_" + date.toISOString() + "_" + i + ".zip"
+        get_message_store_report_archive_content(jsonObj.records[i].uri, fileName)
 		  }
-	      })
-	      .catch(function(e){
+    }catch(e){
 		  console.log(e)
-	      })
+    }
 	}
 
-	function get_message_store_report_archive_content(contentUri, fileName){
-	    var uri = platform.createUrl(contentUri, {addToken: true});
-	    download(uri, fileName, function(){
-		console.log("Save report zip file to the local machine.")
-	    })
+	async function get_message_store_report_archive_content(contentUri, fileName){
+    var uri = platform.createUrl(contentUri, {addToken: true});
+    download(uri, fileName, function(){
+      console.log("Save report zip file to the local machine.")
+    })
 	}
 
 	const download = function(uri, dest, cb) {
-	    var file = fs.createWriteStream(dest);
-	    var request = https.get(uri, function(response) {
-		response.pipe(file);
-		file.on('finish', function() {
-		    file.close(cb);
-		});
-	    });
+    var file = fs.createWriteStream(dest);
+    var request = https.get(uri, function(response) {
+  		response.pipe(file);
+  		file.on('finish', function() {
+  		    file.close(cb);
+  		});
+    });
 	}
 	```
 
@@ -358,17 +355,17 @@ The following code sample shows how to call the Message Store Export APIs to exp
 
 	namespace Export_MessageStore
 	{
-	    class Program
-	    {
-		static RestClient rcsdk;
-		static void Main(string[] args)
-		{
-		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		    await rcsdk.Authorize("username", "extension_number", "password");
-		    export_message_store().Wait();
-		}
-		static private async Task export_message_store()
-		{
+    class Program
+    {
+      static RestClient rcsdk;
+      static void Main(string[] args)
+      {
+        rcsdk = new RestClient("client_id", "client_secret", "server_url");
+        await rcsdk.Authorize("username", "extension_number", "password");
+        export_message_store().Wait();
+      }
+      static private async Task export_message_store()
+      {
 		    var parameters = new CreateMessageStoreReportRequest();
 		    parameters.dateFrom = "2019-01-01T00:00:00.000Z";
 		    parameters.dateTo = "2019-03-31T23:59:59.999Z";
@@ -379,29 +376,29 @@ The following code sample shows how to call the Message Store Export APIs to exp
 		    bool polling = true;
 		    while (polling)
 		    {
-			Console.WriteLine("check task creation status ...");
-			Thread.Sleep(5000);
-			response = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Get();
-			if (response.status != "InProgress")
-			{
-			    polling = false;
-			}
-		    }
-		    if (response.status == "Completed")
+          Console.WriteLine("check task creation status ...");
+          Thread.Sleep(5000);
+          response = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Get();
+          if (response.status != "InProgress")
+          {
+            polling = false;
+          }
+        }
+        if (response.status == "Completed")
 		    {
-			var resp = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Archive().List();
-			DateTime value = DateTime.Now;
-			var dateStr = value.ToString("yyyy-MM-dd-HH_mm");
-			for (var i = 0; i < resp.records.Length; i++)
-			{
-			    var fileName = "message_store_content_" + dateStr + "_" + i + ".zip";
-			    var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
-			    WebClient webClient = new WebClient();
-			    webClient.DownloadFile(contentUrl, fileName);
-			}
-		    }
-		}
-	    }
+          var resp = await rcsdk.Restapi().Account().MessageStoreReport(response.id).Archive().List();
+          DateTime value = DateTime.Now;
+          var dateStr = value.ToString("yyyy-MM-dd-HH_mm");
+          for (var i = 0; i < resp.records.Length; i++)
+          {
+            var fileName = "message_store_content_" + dateStr + "_" + i + ".zip";
+  			    var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
+  			    WebClient webClient = new WebClient();
+  			    webClient.DownloadFile(contentUrl, fileName);
+          }
+        }
+      }
+    }
 	}
 	```
 
@@ -415,60 +412,60 @@ The following code sample shows how to call the Message Store Export APIs to exp
 	import java.net.URL;
 
 	public class Export_MessageStore {
-	    static RestClient rcsdk;
-	    public static void main(String[] args) {
-		var obj = new Export_MessageStore();
-		rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		try {
+    static RestClient rcsdk;
+    public static void main(String[] args) {
+      var obj = new Export_MessageStore();
+      rcsdk = new RestClient("client_id", "client_secret", "server_url");
+      try {
 		    rcsdk.authorize("username", "extension_number", "password");
 		    obj.export_message_store();
-		} catch (RestException | IOException e) {
+      } catch (RestException | IOException e) {
 		    e.printStackTrace();
-		}
-	    }
+      }
+    }
 
-	    public static void export_message_store() throws RestException, IOException{
-		var parameters = new CreateMessageStoreReportRequest();
-		parameters.dateFrom = "2019-01-01T00:00:00.000Z";
-		parameters.dateTo = "2019-03-31T23:59:59.999Z";
+    public static void export_message_store() throws RestException, IOException{
+      var parameters = new CreateMessageStoreReportRequest();
+      parameters.dateFrom = "2019-01-01T00:00:00.000Z";
+      parameters.dateTo = "2019-03-31T23:59:59.999Z";
 
-		var response =  rcsdk.restapi().account().messagestorereport().post(parameters);
-		var taskId = response.id;
-		boolean polling = true;
-		while (polling)
-		{
+      var response =  rcsdk.restapi().account().messagestorereport().post(parameters);
+      var taskId = response.id;
+      boolean polling = true;
+      while (polling)
+      {
 		    System.out.println("check task creation status ...");
 		    try {
-			Thread.sleep(5000);
-			response = rcsdk.restapi().account().messagestorereport(taskId).get();
-			if (!response.status.equals("InProgress"))
-				polling = false;
+          Thread.sleep(5000);
+          response = rcsdk.restapi().account().messagestorereport(taskId).get();
+          if (!response.status.equals("InProgress"))
+            polling = false;
 		    } catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		if (response.status.equals("Completed")) {
-			SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd-HH_mm");
-			Date date = new Date(System.currentTimeMillis());
-			var dateStr = formatter.format(date);
-		    var resp = rcsdk.restapi().account().messagestorereport(response.id).archive().list();
+          e.printStackTrace();
+        }
+      }
+      if (response.status.equals("Completed")) {
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd-HH_mm");
+        Date date = new Date(System.currentTimeMillis());
+        var dateStr = formatter.format(date);
+        var resp = rcsdk.restapi().account().messagestorereport(response.id).archive().list();
 		    for (var i = 0; i < resp.records.length; i++)
 		    {
-			var fileName = "./src/test/resources/message_store_content_" + dateStr + "_" + i + ".zip";
-			var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
-			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
-				FileOutputStream fileOS = new FileOutputStream(fileName)) {
-				byte data[] = new byte[1024];
-				int byteContent;
-				while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-					fileOS.write(data, 0, byteContent);
-				}
-			} catch (IOException e) {
-			   // handles IO exceptions
-			}
-		    }
-		}
-	    }
+          var fileName = "./src/test/resources/message_store_content_" + dateStr + "_" + i + ".zip";
+          var contentUrl = resp.records[i].uri + "?access_token=" + rcsdk.token.access_token;
+          try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
+            FileOutputStream fileOS = new FileOutputStream(fileName)) {
+              byte data[] = new byte[1024];
+              int byteContent;
+              while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+                fileOS.write(data, 0, byteContent);
+              }
+          } catch (IOException e) {
+  			   // handles IO exceptions
+    			}
+        }
+      }
+    }
 	}
 	```
 
@@ -483,8 +480,8 @@ The following code sample shows how to call the Message Store Export APIs to exp
 	def create_message_store_report()
 	    endpoint = "/restapi/v1.0/account/~/message-store-report"
 	    response = $rc.post(endpoint, payload: {
-		dateFrom: "2019-01-01T00:00:00.000Z",
-		dateTo: "2019-03-31T23:59:59.999Z"
+		      dateFrom: "2019-01-01T00:00:00.000Z",
+		      dateTo: "2019-03-31T23:59:59.999Z"
 	      })
 	    puts response.body['id']
 	    puts response.body['status']
@@ -496,11 +493,11 @@ The following code sample shows how to call the Message Store Export APIs to exp
 	    endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
 	    response = $rc.get(endpoint)
 	    if response.body['status'] == "Completed"
-		get_message_store_report_archive(taskId)
+          get_message_store_report_archive(taskId)
 	    else
-		sleep(2)
-		get_message_store_report_task(taskId)
-	    end
+          sleep(2)
+          get_message_store_report_task(taskId)
+      end
 	end
 
 	def get_message_store_report_archive(taskId)
@@ -510,8 +507,8 @@ The following code sample shows how to call the Message Store Export APIs to exp
 	    length = response.body['records'].length
 	    dateLog = Time.now.strftime("%Y_%m_%d_%H_%M")
 	    for i in (0...length)
-		fileName = "message_store_content_" + dateLog + "_" + i.to_s + ".zip"
-		get_message_store_report_archive_content(response.body['records'][i]['uri'], fileName)
+		    fileName = "message_store_content_" + dateLog + "_" + i.to_s + ".zip"
+		    get_message_store_report_archive_content(response.body['records'][i]['uri'], fileName)
 	    end
 	end
 
@@ -519,9 +516,9 @@ The following code sample shows how to call the Message Store Export APIs to exp
 	    puts "Save report zip file to the local machine."
 	    uri = contentUri + "?access_token=" + $rc.token['access_token']
 	    open(uri) do |data|
-	      File.open(zipFile, "wb") do |file|
-		file.write(data.read)
-	      end
+	       File.open(zipFile, "wb") do |file|
+		     file.write(data.read)
+	       end
 	    end
 	end
 

@@ -44,30 +44,31 @@ The following code sample shows how to create a forwarding number object. The `i
 
 === "JavaScript"
 	```javascript
-	var SDK = require('ringcentral')
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
-	var platform = rcsdk.platform();
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+
+  var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		create_forwarding_number_by_number()
-	    });
-	}
 
-	function create_forwarding_number_by_number() {
-	  platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
-		phoneNumber: "11235557890",
-		type: "Other",
-		label: "My ATT number"
+  platform.on(platform.events.loginSuccess, function(response){  
+		create_forwarding_number_by_number()
+	});
+
+	async function create_forwarding_number_by_number() {
+	  try{
+      var resp = await platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
+		      phoneNumber: "11235557890",
+		      type: "Other",
+		      label: "My ATT number"
 	      })
-	      .then(function(resp){
+	    var jsonObj = await resp.sjon()
 		  console.log("Forwarding number created.")
-		  console.log("Forwarding number id: " + resp.json().id)
-	      })
-	      .catch(function(resp){
-		console.log(resp)
-	      })
+		  console.log("Forwarding number id: " + jsonObj.id)
+    }catch(e){
+      console.log(e.message)
+    }
 	}
 	```
 
@@ -119,14 +120,14 @@ The following code sample shows how to create a forwarding number object. The `i
 
 	namespace Create_ForwardingNumber
 	{
-	    class Program
-	    {
-		static void Main(string[] args)
-		{
-		    create_forwarding_number().Wait();
-		}
-		static private async Task create_forwarding_number()
-		{
+    class Program
+    {
+  		static void Main(string[] args)
+  		{
+        create_forwarding_number().Wait();
+      }
+      static private async Task create_forwarding_number()
+      {
 		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
 		    await rc.Authorize("username", "extension_number", "password");
 
@@ -139,8 +140,8 @@ The following code sample shows how to create a forwarding number object. The `i
 
 		    Console.WriteLine("Forwarding number created.");
 		    Console.WriteLine(response.id);
-		}
-	    }
+      }
+    }
 	}
 	```
 
@@ -150,7 +151,7 @@ The following code sample shows how to create a forwarding number object. The `i
 	import com.ringcentral.definitions.*;
 
 	public class Create_ForwardingNumber {
-		  public static void main(String[] args) {
+    public static void main(String[] args) {
 			try {
 				create_forwarding_number();
 			} catch (RestException | IOException e) {
@@ -158,21 +159,20 @@ The following code sample shows how to create a forwarding number object. The `i
 			}
 		}
 
-	    public static void create_forwarding_number() throws RestException, IOException {
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+    public static void create_forwarding_number() throws RestException, IOException {
+  		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+  		rc.authorize("username", "extension_number", "password");
 
-		var parameters = new CreateForwardingNumberRequest();
-		parameters.phoneNumber = "11235557890";
-		parameters.type = "Other";
-		parameters.label = "My ATT number";
+  		var parameters = new CreateForwardingNumberRequest();
+  		parameters.phoneNumber = "11235557890";
+  		parameters.type = "Other";
+  		parameters.label = "My ATT number";
 
-		var response =  rc.restapi().account().extension().forwardingnumber().post(parameters);
+  		var response =  rc.restapi().account().extension().forwardingnumber().post(parameters);
 
-		System.out.println("Forwarding number created.");
-		System.out.println(response.id);
+  		System.out.println("Forwarding number created.");
+  		System.out.println(response.id);
 		}
-	    }
 	}
 	```
 

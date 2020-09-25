@@ -116,74 +116,71 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 
 === "JavaScript"
 	```javascript
-	var SDK = require('ringcentral')
+	const RingCentral = require('@ringcentral/sdk').SDK
 	var fs = require('fs')
 	var https = require('https');
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
 	    .then(function(resp) {
-		create_glip_compliance_export_task()
+		      create_glip_compliance_export_task()
 	    });
 	}
 
-	function create_glip_compliance_export_task(){
+	async function create_glip_compliance_export_task(){
 	    console.log("Create export task.")
-	    var endpoint = "/restapi/v1.0/glip/data-export"
 	    var params = {
-		timeFrom: "2019-08-01T00:00:00.000Z",
-		timeTo: "2019-08-26T23:59:59.999Z"
+		      timeFrom: "2019-08-01T00:00:00.000Z",
+		      timeTo: "2019-08-26T23:59:59.999Z"
 	      }
-	    platform.post(endpoint, params)
-	      .then(function(resp){
-		  var json = resp.json()
-		  get_glip_compliance_export_task(json.id)
-	      })
-	      .catch(function(e){
-		  console.log(e)
-	      })
+      try {
+  	    var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
+  		  var jsonObj = await resp.json()
+  		  get_glip_compliance_export_task(jsonObj.id)
+  	  }catch(e){
+        console.log(e.message)
+	    }
 	}
 
-	function get_glip_compliance_export_task(taskId){
+	async function get_glip_compliance_export_task(taskId){
 	    console.log("Check export task status ...")
-	    var endpoint = "/restapi/v1.0/glip/data-export/" + taskId
-	    platform.get(endpoint)
-	      .then(function(resp){
-		  var json = resp.json()
-		  if (json.status == "Completed"){
-		      for (var i=0; i<json.datasets.length; i++){
-			var fileName = "glip-export-reports-" + json.creationTime + "_" + i + ".zip"
-			get_glip_report_archived_content(json.datasets[i].uri, fileName)
-		      }
-		  }else if (json.status == "Accepted" || json.status == "InProgress") {
-		      setTimeout(function(){
-			get_glip_compliance_export_task(taskId)
-		      }, 5000);
-		  }else
-		      console.log(json.status)
-	      })
-	      .catch(function(e){
-		  console.log(e)
-	      })
+	    try{
+        var resp = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`)
+        var jsonObj = await resp.json()
+        if (jsonObj.status == "Completed"){
+          for (var i=0; i<jsonObj.datasets.length; i++){
+            var fileName = `glip-export-reports-${jsonObj.creationTime}_${i}.zip`
+            get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
+          }
+        }else if (jsonObj.status == "Accepted" || jsonObj.status == "InProgress") {
+          setTimeout(function(){
+            get_glip_compliance_export_task(taskId)
+          }, 5000);
+        }else{
+          console.log(jsonObj.status)
+	      }
+      }catch(e){
+        console.log(e)
+      }
 	}
 
-	function get_glip_report_archived_content(contentUri, fileName){
-	    var uri = platform.createUrl(contentUri, {addToken: true});
-	    download(uri, fileName, function(){
-		console.log("Save report zip file to the local machine.")
-	    })
+	async function get_glip_report_archived_content(contentUri, fileName){
+    var uri = platform.createUrl(contentUri, {addToken: true});
+    download(uri, fileName, function(){
+      console.log("Save report zip file to the local machine.")
+    })
 	}
 
 	const download = function(uri, dest, cb) {
-	    var file = fs.createWriteStream(dest);
-	    var request = https.get(uri, function(response) {
-		response.pipe(file);
-		file.on('finish', function() {
-		    file.close(cb);
-		});
-	    });
+    var file = fs.createWriteStream(dest);
+    var request = https.get(uri, function(response) {
+      response.pipe(file);
+      file.on('finish', function() {
+        file.close(cb);
+      });
+    });
 	}
 	```
 

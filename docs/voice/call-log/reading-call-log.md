@@ -19,25 +19,29 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 ## Sample Code to Get Started with Call Log
 
 === "JavaScript"
-	```javascript 
-	const RC = require('ringcentral');
+	```javascript
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	      .then(function(resp) {
-		  read_user_calllog()
-	      });
 
-	function read_user_calllog(){
-	    platform.get('/account/~/extension/~/call-log', {
-		     view: 'Detailed'
-		})
-		.then(function (resp) {
-		    for (var record of resp.json().records)
-		      console.log("Call type: " + record.type)
-		});
+  platform.on(platform.events.loginSuccess, function(response){
+    read_user_calllog()
+  });
+
+  async function read_user_calllog(){
+    try{
+  	  var resp = await platform.get('/account/~/extension/~/call-log', {
+  		     view: 'Detailed'
+  		})
+  		var jsonObj = await resp.json()
+  		for (var record of jsonObj.records)
+        console.log("Call type: " + record.type)
+		}catch(e){
+      console.log(e.message)
+    }
 	}
 	```
 

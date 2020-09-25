@@ -29,30 +29,35 @@ Below is a sample response from the Presence API to illustrate the visibility it
 ## Sample Code to Get Started with Presence
 
 === "JavaScript"
-	```javascript 
-	const RC = require('ringcentral')
+	```javascript
+	const RC = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC({ server: "server_url", appKey: "client_id", appSecret: "client_secret" });
+	var rcsdk = new RC({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
 	var platform = rcsdk.platform();
 
-	platform.login({
-	username: "username", password: "password", extension: "extension_number"
-	})
-	.then(function(resp) {
-	platform.get('/account/~/presence', {
-	      detailedTelephonyState: true
-	  })
-	  .then(function (resp) {
-	      var jsonObj = resp.json()
-	      for (var record of jsonObj.records){
-		console.log(record.userStatus)
-	      }
-	  })
-	});
+	platform.login({username: "username", password: "password", extension: "extension_number"})
+
+  platform.on(platform.events.loginSuccess, function(e){
+    get_users_presence()
+  });
+
+  async function get_users_presence(){
+    try {
+      var resp = await platform.get('/restapi/v1.0/account/~/presence', {
+                  detailedTelephonyState: true
+                })
+      var jsonObj = await resp.json()
+      for (var record of jsonObj.records){
+        console.log(record.userStatus)
+      }
+    }catch(e){
+      console.log(e.message)
+    }
+  }
 	```
 
 === "Python"
-	```python 
+	```python
 	from ringcentral import SDK
 
 	rcsdk = SDK( "client_id", "client_secret", "server_url")
@@ -93,27 +98,29 @@ Below is a sample response from the Presence API to illustrate the visibility it
 
 	namespace Read_Presence
 	{
-	    class Program
-	    {
-		static void Main(string[] args)
-		{
-		    read_users_presence().Wait();
-		}
-		static private async Task read_users_presence()
-		{
-		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		    await rc.Authorize("username", "extension_number", "password");
+	  class Program
+	  {
+      static RestClient restClient;
 
-		    var parameters = new AccountPresenceParameters();
-		    parameters.detailedTelephonyState = true;
+      static void Main(string[] args)
+      {
+        restClient = new RestClient("client_id", "client_secret", "server_url");
+        await restClient.Authorize("username", "extension_number", "password");
+        read_users_presence().Wait();
+      }
 
-		    var resp = await rc.Restapi().Account().Presence().Get(parameters);
-		    foreach (var record in resp.records)
-		    {
-			Console.WriteLine(record.userStatus);
-		    }
-		}
-	    }
+      static private async Task read_users_presence()
+		  {
+        var parameters = new AccountPresenceParameters();
+        parameters.detailedTelephonyState = true;
+
+        var resp = await rc.Restapi().Account().Presence().Get(parameters);
+          foreach (var record in resp.records)
+          {
+            Console.WriteLine(record.userStatus);
+          }
+      }
+	  }
 	}
 	```
 
@@ -123,25 +130,26 @@ Below is a sample response from the Presence API to illustrate the visibility it
 	import com.ringcentral.definitions.*;
 
 	public class Read_Presence {
-		  public static void main(String[] args) {
-			try {
-				read_users_presence();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
+    static RestClient restClient;
+    public static void main(String[] args) {
+        var obj = new Read_Presence();
+        try {
+          restClient = new RestClient("client_id", "client_secret", "server_url");
+          restClient.authorize("username", "extension_number", "password");
+          obj.read_users_presence();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+    }
 
-	    public static void read_users_presence() throws RestException, IOException{
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+	  public static void read_users_presence() throws RestException, IOException{
+      var parameters = new ReadAccountPresenceParameters();
+      parameters.detailedTelephonyState = true;
 
-		var parameters = new ReadAccountPresenceParameters();
-		parameters.detailedTelephonyState = true;
-
-		var response = rc.restapi().account().presence().get(parameters);
-		for (var record : response.records)
-			 System.out.println(record.userStatus);
-	    }
+      var response = rc.restapi().account().presence().get(parameters);
+      for (var record : response.records)
+        System.out.println(record.userStatus);
+	  }
 	}
 	```
 
@@ -154,7 +162,7 @@ Below is a sample response from the Presence API to illustrate the visibility it
 
 	resp = rc.get('/restapi/v1.0/account/~/presence', payload:
 	    {
-		detailedTelephonyState: true
+		      detailedTelephonyState: true
 	    })
 
 	for record in resp.body['records'] do

@@ -34,7 +34,7 @@ The following code samples show how to send a simple single document fax.
 
 === "JavaScript"
 	```javascript
-	const RC = require('ringcentral');
+	const RC = require('@ringcentral/sdk').SDK
 
 	RECIPIENT = '<ENTER FAX NUMBER>'
 
@@ -46,22 +46,16 @@ The following code samples show how to send a simple single document fax.
 	RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
 	RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-	var rcsdk = new RC({
-	      server: RINGCENTRAL_SERVER,
-	      appKey: RINGCENTRAL_CLIENTID,
-	      appSecret: RINGCENTRAL_CLIENTSECRET
-	  });
+	var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
 	var platform = rcsdk.platform();
-	platform.login({
-	      username: RINGCENTRAL_USERNAME,
-	      password: RINGCENTRAL_PASSWORD,
-	      extension: RINGCENTRAL_EXTENSION
-	      })
-	      .then(function(resp) {
-		  send_fax()
-	      });
 
-	function send_fax() {
+	platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+  
+  platform.on(platform.events.loginSuccess, function(e){
+    send_fax()
+  });
+
+	async function send_fax() {
 	    var FormData = require('form-data');
 	    formData = new FormData();
 	    var body = {
@@ -71,16 +65,18 @@ The following code samples show how to send a simple single document fax.
 	    }
 
 	    formData.append('json', new Buffer(JSON.stringify(body)), {
-		filename: 'request.json',
-		contentType: 'application/json'
-		});
+		      filename: 'request.json',
+		      contentType: 'application/json'
+		  });
 
 	    formData.append('attachment', require('fs').createReadStream('test.jpg'));
 
-	    platform.post('/account/~/extension/~/fax', formData)
-	      .then(function (resp) {
-		 console.log("FAX sent. Message status: " + resp.json().messageStatus)
-	      })
+	    var resp = await platform.post('/account/~/extension/~/fax', formData)
+	    var jsonObj = await resp.json()
+		  console.log("FAX sent. Message status: " + jsonObj.messageStatus)
+	  }catch(e){
+      console.log(e.message)
+    }
 	}
 	```
 
@@ -160,40 +156,43 @@ The following code samples show how to send a simple single document fax.
 	import com.ringcentral.definitions.*;
 
 	public class Send_Fax {
-	    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
-	    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-	    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
 
-	    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-	    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-	    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
-		public static void main(String[] args) {
-			try {
-		  sendFax();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
+    static RestClient restClient;
+
+    public static void main(String[] args) {
+      var obj = new Send_Fax();
+      try {
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+        obj.send_fax()();
+      } catch (RestException | IOException e) {
+        e.printStackTrace();
+      }
 		}
 
 		public static void sendFax() throws RestException, IOException{
-		RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-		rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+      CreateFaxMessageRequest postParameters = new CreateFaxMessageRequest();
+      postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
+      postParameters.faxResolution = "High";
+      postParameters.coverPageText = "This is a demo Fax page from Java";
+      Attachment attachment = new Attachment();
+      attachment.fileName = "test.jpg";
+      attachment.contentType = "image/jpeg";
+      attachment.bytes = Files.readAllBytes(Paths.get("./src/test/resources/test.jpg"));
+      Attachment[] attachments = new Attachment[] { attachment };
+      postParameters.attachments = attachments;
 
-		CreateFaxMessageRequest postParameters = new CreateFaxMessageRequest();
-		    postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
-		    postParameters.faxResolution = "High";
-		    postParameters.coverPageText = "This is a demo Fax page from Java";
-		    Attachment attachment = new Attachment();
-		    attachment.fileName = "test.jpg";
-		    attachment.contentType = "image/jpeg";
-		    attachment.bytes = Files.readAllBytes(Paths.get("./src/test/resources/test.jpg"));
-		    Attachment[] attachments = new Attachment[] { attachment };
-		postParameters.attachments = attachments;
-
-		    var response = rc.restapi().account().extension().fax().post(postParameters);
-		    System.out.println("Fax sent. Delivery status: " + response.messageStatus);
-	    }
+      var response = rc.restapi().account().extension().fax().post(postParameters);
+      System.out.println("Fax sent. Delivery status: " + response.messageStatus);
+    }
 	}
 	```
 
@@ -205,38 +204,39 @@ The following code samples show how to send a simple single document fax.
 
 	namespace Send_Fax
 	{
-	    class Program
-	    {
-		const string RECIPIENT = "<ENTER PHONE NUMBER>";
-		const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-		const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+    class Program
+    {
+  		const string RECIPIENT = "<ENTER PHONE NUMBER>";
+  		const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
+  		const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
+      const string RINGCENTRAL_PRODUCTION = false;
 
-		const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-		const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-		const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
+  		const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
+  		const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
+  		const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
 
-		static void Main(string[] args)
-		{
-		    send_fax().Wait();
-		}
-		static private async Task send_fax()
-		{
-		    RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, false);
-		    await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-		    if (rc.token.access_token.Length > 0)
-		    {
-			var requestParams = new SendFaxMessageRequest();
-			var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
-			var attachments = new Attachment[] { attachment };
-			requestParams.attachments = attachments;
-			requestParams.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
-			requestParams.faxResolution = "High";
-			requestParams.coverPageText = "This is a demo Fax page from C#";
-			var resp = await rc.Restapi().Account().Extension().Fax().Post(requestParams);
-			Console.WriteLine("Fax sent. Message status: " + resp.messageStatus);
-		    }
-		}
-	    }
+      static RestClient restClient;
+
+      static void Main(string[] args)
+      {
+        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
+        restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+        send_fax().Wait();
+      }
+
+      static private async Task send_fax()
+      {
+  			var requestParams = new SendFaxMessageRequest();
+  			var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
+  			var attachments = new Attachment[] { attachment };
+  			requestParams.attachments = attachments;
+  			requestParams.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+  			requestParams.faxResolution = "High";
+  			requestParams.coverPageText = "This is a demo Fax page from C#";
+  			var resp = await rc.Restapi().Account().Extension().Fax().Post(requestParams);
+  			Console.WriteLine("Fax sent. Message status: " + resp.messageStatus);
+      }
+    }
 	}
 	```
 

@@ -43,24 +43,28 @@ The response format for active calls mirrors that of Call Log responses exactly.
 
 === "JavaScript"
 	```javascript
-	const RC = require('ringcentral');
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	      .then(function(resp) {
-		  read_active_calls()
-	      });
 
-	function read_active_calls(){
-	    platform.get('/account/~/extension/~/active-calls', {
-		     view: 'Simple'
-		})
-		.then(function (resp) {
-		    for (var record of resp.json().records)
-		      console.log("Call result: " + record.result)
-		});
+  platform.on(platform.events.loginSuccess, function(response){
+    read_active_calls()
+  });
+
+	async function read_active_calls(){
+    try{
+      var resp = await platform.get('/account/~/extension/~/active-calls', {
+  		     view: 'Simple'
+  		     })
+  		var jsonObj = await resp.json()
+  		for (var record of jsonObj.records)
+        console.log("Call result: " + record.result)
+		}catch(e){
+      console.log(e.message)
+    }
 	}
 	```
 
@@ -81,7 +85,7 @@ The response format for active calls mirrors that of Call Log responses exactly.
 	```
 
 === "PHP"
-	```php 
+	```php
 	<?php
 	require('vendor/autoload.php');
 
@@ -108,25 +112,25 @@ The response format for active calls mirrors that of Call Log responses exactly.
 
 	namespace Read_User_ActiveCalls
 	{
-	    class Program
-	    {
-		static void Main(string[] args)
-		{
-		    read_user_active_calls().Wait();
-		}
-		static private async Task read_user_active_calls()
-		{
-		    RestClient rc = new RestClient("client_id", "client_secret", false);
-		    await rc.Authorize("username", "extension_number", "password");
-		    var parameters = new ListExtensionActiveCallsParameters();
+    class Program
+    {
+      static void Main(string[] args)
+      {
+        read_user_active_calls().Wait();
+      }
+      static private async Task read_user_active_calls()
+      {
+        RestClient rc = new RestClient("client_id", "client_secret", false);
+        await rc.Authorize("username", "extension_number", "password");
+        var parameters = new ListExtensionActiveCallsParameters();
 		    parameters.view = "Simple";
 		    var resp = await rc.Restapi().Account().Extension().ActiveCalls().Get(parameters);
 		    foreach (CallLogRecord record in resp.records)
 		    {
-			Console.WriteLine("Call result: " + record.result);
-		    }
-		}
-	    }
+    			Console.WriteLine("Call result: " + record.result);
+        }
+      }
+    }
 	}
 	```
 
@@ -139,26 +143,26 @@ The response format for active calls mirrors that of Call Log responses exactly.
 	import com.ringcentral.definitions.*;
 
 	public class Read_User_ActiveCalls {
-	    public static void main(String[] args) {
-		try {
-		    read_user_activecals();
-		} catch (RestException | IOException e) {
-		    e.printStackTrace();
-		}
-	    }
+    public static void main(String[] args) {
+      try {
+        read_user_activecals();
+      } catch (RestException | IOException e) {
+        e.printStackTrace();
+      }
+    }
 
-		public static void read_user_activecals() throws RestException, IOException{
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
+    public static void read_user_activecals() throws RestException, IOException{
+      RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+      rc.authorize("username", "extension_number", "password");
 
-		var getParameters = new ListExtensionActiveCallsParameters();
-		parameters.view = "Simple"
+      var getParameters = new ListExtensionActiveCallsParameters();
+      parameters.view = "Simple"
 
-		var response = rc.restapi().account().extension().activecalls().list(parameters);
-		    for (CallLogRecord record : response.records) {
-			  System.out.println("Call result: " + record.result);
-		    }
-	    }
+      var response = rc.restapi().account().extension().activecalls().list(parameters);
+      for (CallLogRecord record : response.records) {
+        System.out.println("Call result: " + record.result);
+      }
+    }
 	}
 	```
 

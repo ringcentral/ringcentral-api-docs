@@ -56,21 +56,20 @@ The following code sample shows how to call the Message Store to display a list 
 
 === "JavaScript"
 	```javascript
-	const RC = require('ringcentral')
+	const RC = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RC( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		platform.get('/account/~/extension/~/message-store', {
+
+  platform.on(platform.events.loginSuccess, async function(e){
+    var resp = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
 		     messageType: ['SMS']
 		})
-		.then(function (response) {
-		    console.log(JSON.stringify(response.json()))
-		})
-	    });
-	}
+    var jsonObj = await resp.json()
+    console.log(jsonObj)
+  });
 	```
 
 === "Python"
