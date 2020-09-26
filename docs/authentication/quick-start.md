@@ -128,24 +128,22 @@ Select your preferred language below.
       res.redirect("/")
     })
 
-    app.get('/oauth2callback', function(req, res) {
+    app.get('/oauth2callback', async function(req, res) {
       if (req.query.code) {
+        try{
           var platform = rcsdk.platform()
-          platform.login({
+          var resp = await platform.login({
               code: req.query.code,
+              redirectUri: RINGCENTRAL_REDIRECT_URL
           })
-          .then(function(response) {
-            return response.json()
-          })
-          .then(function (token) {
-              req.session.tokens = token
-              res.redirect("/test")
-          })
-          .catch(function (e) {
-              res.send('Login error ' + e)
-          });
+          req.session.tokens = await resp.json()
+          console.log(req.session.tokens)
+          res.redirect("/test")
+        }catch(e) {
+          res.send('Login error ' + e);
+        }
       }else {
-          res.send('No Auth code');
+        res.send('No Auth code');
       }
     });
 
@@ -158,13 +156,16 @@ Select your preferred language below.
             if (isLoggedIn) {
               if (req.query.api == "extension"){
                 var endpoint = "/restapi/v1.0/account/~/extension"
-                return callGetEndpoint(platform, endpoint, res)
+                var params = {}
+                return callGetMethod(platform, endpoint, params, res)
               } else if (req.query.api == "extension-call-log"){
                 var endpoint = "/restapi/v1.0/account/~/extension/~/call-log"
-                return callGetEndpoint(platform, endpoint, res)
+                var params = {}
+                return callGetMethod(platform, endpoint, params, res)
               } if (req.query.api == "account-call-log"){
                 var endpoint = "/restapi/v1.0/account/~/call-log"
-                return callGetEndpoint(platform, endpoint, res)
+                var params = {}
+                return callGetMethod(platform, endpoint, params, res)
               }
             }
             res.redirect("/")
@@ -174,17 +175,14 @@ Select your preferred language below.
       res.redirect("/")
     });
 
-    function callGetEndpoint(platform, endpoint, res){
-        platform.get(endpoint)
-        .then(function(resp){
-          return resp.json()
-        })
-        .then(function(json) {
-          res.send(JSON.stringify(json))
-        })
-        .catch(function(e){
-            res.send("Error")
-        })
+    async function callGetMethod(platform, endpoint, params, res){
+      try{
+        var resp = await platform.get(endpoint, params)
+        var jsonObj = await resp.json()
+        res.send(JSON.stringify(jsonObj))
+      }catch(e){
+        res.send("Error: " + e.message)
+      }
     }
     ```
 
