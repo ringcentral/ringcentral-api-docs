@@ -1,0 +1,63 @@
+# RingCentral Office API Reference Index
+
+Welcome to a simple index of RingCentral Office API endpoints, provided as a convenience for those who need a quick way to find a specific endpoint. For a complete reference, check out RingCentral's [complete and interactive Office API Reference](https://developer.ringcentral.com/api-reference).
+
+{% for letter in index %}
+### {{ letter }}
+
+<table class="table api-index">
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for endpoint in index[ letter ] -%}
+    <tr>
+      <td class="method">
+        {% if endpoint['parameters']|length > 1 %}
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#{{ endpoint.id }}" aria-expanded="true" aria-controls="{{ endpoint.id }}">{{ endpoint.summary }}</a> 
+        {% else %}
+        {{ endpoint.summary }} 
+	{% endif %}
+      </td>
+      <td class="description">
+        {{- endpoint.description | markdown -}}
+      </td>
+    </tr>
+    <tr>
+      <td class="endpoint" colspan="2">
+        <p>{{ endpoint.method | upper }} {{ endpoint.path }} <a href="{{ endpoint.docs_url }}" class="external-link"><i class="fa fa-share"></i></a></p>
+	<div id="{{ endpoint.id }}" class="collapse" aria-labelledby="{{ endpoint.id }}">
+{% if endpoint['parameters']|length > 1 %}
+	  <table class="table api-index">
+	    <thead>
+	      <tr>
+	        <th scope="col">Name</th>
+		<th scope="col">Type</th>
+		<th scope="col">Default</th>
+		<th scope="col">Required</th>
+		<th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+{% for param in endpoint['parameters'] -%}
+            <tr{% if param['required'] == 'true'%} class="required"{% endif %}>
+	      <td class="n">{{ param['name'] }}</td>
+	      <td class="t">{{ param['type'] }}</td>
+	      <td class="d">{{ param['default'] }}</td>
+	      <td class="r">{{ param['required'] }}</td>
+	      <td class="de">{{ param['description'] }}</td>
+            </tr>
+{% endfor -%}
+            </tbody>
+          </table>
+{% endif -%}
+	</div>
+      </td>
+    </tr>
+{% endfor -%}
+  </tbody>
+</table>
+{% endfor -%}

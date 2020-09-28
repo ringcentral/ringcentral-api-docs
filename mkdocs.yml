@@ -10,6 +10,8 @@ plugins:
       repository: ringcentral/ringcentral-api-docs
       branch: master
   - bootstrap-tables
+  - rc-api-index:
+      outfile: docs/basics/api-index.md
 
 theme:
   name: ringcentral

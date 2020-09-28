@@ -43,6 +43,21 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 </div>
       </td>
     </tr>
+<tr>
+      <td class="method">
+        
+        Get Service Status 
+	
+      </td>
+      <td class="description"><p>Returns current PAS service status.</p></td>
+    </tr>
+    <tr>
+      <td class="endpoint" colspan="2">
+        <p>GET /restapi/v1.0/status <a href="https://developers.ringcentral.com/api-reference/API-Info/readAPIStatus" class="external-link"><i class="fa fa-share"></i></a></p>
+	<div id="readAPIStatus" class="collapse" aria-labelledby="readAPIStatus">
+</div>
+      </td>
+    </tr>
 </tbody>
 </table>
 
@@ -1462,7 +1477,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#readEmergencyLocation" aria-expanded="true" aria-controls="readEmergencyLocation">Get Emergency Location</a> 
         
       </td>
-      <td class="description"><p>Returns emergency response location by ID.</p></td>
+      <td class="description"><p>Returns emergency response location by ID</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -2715,67 +2730,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#bridgeCallParty" aria-expanded="true" aria-controls="bridgeCallParty">Bridge Call Party</a> 
-        
-      </td>
-      <td class="description"><p>Connects two parties from different call sessions.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/bridge <a href="https://developers.ringcentral.com/api-reference/Call-Control/bridgeCallParty" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="bridgeCallParty" class="collapse" aria-labelledby="bridgeCallParty">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">body</td>
-	      <td class="t"></td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Defines target call session and call party to be bridged</td>
-            </tr>
-<tr>
-	      <td class="n">partyId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a call party</td>
-            </tr>
-<tr>
-	      <td class="n">telephonySessionId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a call session</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#answerCallParty" aria-expanded="true" aria-controls="answerCallParty">Answer Call Party</a> 
         
       </td>
-      <td class="description"><p>Answers a call on a certain device by passing the corresponding device ID in request body. Supported for call forwarding, call transfer, call flip and call queues.</p></td>
+      <td class="description"><p>Answers a call on a certain device using this device identifier. Currently it is possible to answer an incoming call via this method after the following actions: call forward, call transfer or call flip.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -3116,56 +3074,6 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
       <td class="endpoint" colspan="2">
         <p>GET /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId} <a href="https://developers.ringcentral.com/api-reference/Call-Control/readCallPartyStatus" class="external-link"><i class="fa fa-share"></i></a></p>
 	<div id="readCallPartyStatus" class="collapse" aria-labelledby="readCallPartyStatus">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">partyId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a call party</td>
-            </tr>
-<tr>
-	      <td class="n">telephonySessionId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a call session</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteCallParty" aria-expanded="true" aria-controls="deleteCallParty">Delete Call Party</a> 
-        
-      </td>
-      <td class="description"><p>Deletes a party of a call session by ID. It is possible to delete only one conference participant per request.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId} <a href="https://developers.ringcentral.com/api-reference/Call-Control/deleteCallParty" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="deleteCallParty" class="collapse" aria-labelledby="deleteCallParty">
 
 	  <table class="table api-index">
 	    <thead>
@@ -4018,7 +3926,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#syncUserCallLog" aria-expanded="true" aria-controls="syncUserCallLog">Sync User Call Log</a> 
         
       </td>
-      <td class="description"><p>Synchronizes call log records.</p></td>
+      <td class="description"><p>Synchronizes call log records</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -4958,99 +4866,6 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueueInfo" aria-expanded="true" aria-controls="readCallQueueInfo">Get Call Queue</a> 
-        
-      </td>
-      <td class="description"><p>Returns basic information on a call queue group extension.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/call-queues/{groupId} <a href="https://developers.ringcentral.com/api-reference/Call-Queues/readCallQueueInfo" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="readCallQueueInfo" class="collapse" aria-labelledby="readCallQueueInfo">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-<tr>
-	      <td class="n">groupId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueueInfo" aria-expanded="true" aria-controls="updateCallQueueInfo">Update Call Queue</a> 
-        
-      </td>
-      <td class="description"><p>Updates information on a call queue group extension.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>PUT /restapi/v1.0/account/{accountId}/call-queues/{groupId} <a href="https://developers.ringcentral.com/api-reference/Call-Queues/updateCallQueueInfo" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="updateCallQueueInfo" class="collapse" aria-labelledby="updateCallQueueInfo">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-<tr>
-	      <td class="n">body</td>
-	      <td class="t"></td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-<tr>
-	      <td class="n">groupId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#listCallQueueMembers" aria-expanded="true" aria-controls="listCallQueueMembers">Get Call Queue Members</a> 
         
       </td>
@@ -5291,7 +5106,7 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 	      <td class="t">string</td>
 	      <td class="d">~</td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">body</td>
@@ -6696,11 +6511,11 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 	      <td class="de">Extension email address</td>
             </tr>
 <tr>
-	      <td class="n">extensionNumber</td>
+	      <td class="n">extensionId</td>
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">False</td>
-	      <td class="de">Number of extension to be retrieved</td>
+	      <td class="de">Extension number to retrieve</td>
             </tr>
 <tr>
 	      <td class="n">page</td>
@@ -8139,64 +7954,6 @@ In case the feature is available for the current user, <code>"available": true</
 <tr>
       <td class="method">
         
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#GetUserSetting" aria-expanded="true" aria-controls="GetUserSetting">Get Meeting User Settings</a> 
-        
-      </td>
-      <td class="description"><p>Returns user settings for meetings.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/user-settings <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetUserSetting" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="GetUserSetting" class="collapse" aria-labelledby="GetUserSetting">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">extensionId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        Get Locked Meeting Settings 
-	
-      </td>
-      <td class="description"><p>Returns information on user meeting settings that are locked on account level and therefore cannot be changed by user.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/meeting/locked-settings <a href="https://developers.ringcentral.com/api-reference/Meeting-Configuration/GetAccountLockedSetting" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="GetAccountLockedSetting" class="collapse" aria-labelledby="GetAccountLockedSetting">
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingServiceInfo" aria-expanded="true" aria-controls="readMeetingServiceInfo">Get Meeting Service Info</a> 
         
       </td>
@@ -8686,56 +8443,6 @@ In case the feature is available for the current user, <code>"available": true</
 </div>
       </td>
     </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readMeetingInvitation" aria-expanded="true" aria-controls="readMeetingInvitation">Get Meeting Invitation</a> 
-        
-      </td>
-      <td class="description"><p>Returns a meeting invitation by ID.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/invitation <a href="https://developers.ringcentral.com/api-reference/Meeting-Management/readMeetingInvitation" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="readMeetingInvitation" class="collapse" aria-labelledby="readMeetingInvitation">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">extensionId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">meetingId</td>
-	      <td class="t">integer</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral meeting</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
 </tbody>
 </table>
 
@@ -8917,7 +8624,7 @@ In case the feature is available for the current user, <code>"available": true</
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#createMessageStoreReport" aria-expanded="true" aria-controls="createMessageStoreReport">Create Message Store Report</a> 
         
       </td>
-      <td class="description"><p>Creates a task to collect all account messages within the specified time interval. Maximum number of simaltaneous tasks per account is 2.</p></td>
+      <td class="description"><p>Creates a task to collect all account messages for a specified time interval.</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -10507,7 +10214,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">page</td>
@@ -10521,7 +10228,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a paging group</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">perPage</td>
@@ -10564,7 +10271,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">page</td>
@@ -10578,7 +10285,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a paging group</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">perPage</td>
@@ -10621,7 +10328,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">body</td>
@@ -10635,7 +10342,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a paging group</td>
+	      <td class="de"></td>
             </tr>
 </tbody>
           </table>
@@ -11627,199 +11334,6 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="d"></td>
 	      <td class="r">False</td>
 	      <td class="de">Whether to return SIP data</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readCallQueuePresence" aria-expanded="true" aria-controls="readCallQueuePresence">Get Call Queue Presence</a> 
-        
-      </td>
-      <td class="description"><p>Returns presence status of the call queue members.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence <a href="https://developers.ringcentral.com/api-reference/Presence/readCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="readCallQueuePresence" class="collapse" aria-labelledby="readCallQueuePresence">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">groupId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an call queue extension</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateCallQueuePresence" aria-expanded="true" aria-controls="updateCallQueuePresence">Update Call Queue Presence</a> 
-        
-      </td>
-      <td class="description"><p>Updates presence status of the call queue members in the specified queue.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>PUT /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence <a href="https://developers.ringcentral.com/api-reference/Presence/updateCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="updateCallQueuePresence" class="collapse" aria-labelledby="updateCallQueuePresence">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">body</td>
-	      <td class="t"></td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-<tr>
-	      <td class="n">groupId</td>
-	      <td class="t">string</td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a call queue extension</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#readExtensionCallQueuePresence" aria-expanded="true" aria-controls="readExtensionCallQueuePresence">Get Agent’s Call Queue Presence</a> 
-        
-      </td>
-      <td class="description"><p>Returns a list of agent's call queues with the agent presence status (per queue)</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence <a href="https://developers.ringcentral.com/api-reference/Presence/readExtensionCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="readExtensionCallQueuePresence" class="collapse" aria-labelledby="readExtensionCallQueuePresence">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">editableMemberStatus</td>
-	      <td class="t">boolean</td>
-	      <td class="d"></td>
-	      <td class="r">False</td>
-	      <td class="de">Filtering by the flag 'Allow members to change their Queue Status'. If 'true' only queues where user can change his availability status are returned</td>
-            </tr>
-<tr>
-	      <td class="n">extensionId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an extension</td>
-            </tr>
-</tbody>
-          </table>
-</div>
-      </td>
-    </tr>
-<tr>
-      <td class="method">
-        
-        <a href="#" class="collapsed" data-toggle="collapse" data-target="#updateExtensionCallQueuePresence" aria-expanded="true" aria-controls="updateExtensionCallQueuePresence">Update Call Queue Presence</a> 
-        
-      </td>
-      <td class="description"><p>Updates availability of the agent for the call queues.</p></td>
-    </tr>
-    <tr>
-      <td class="endpoint" colspan="2">
-        <p>PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence <a href="https://developers.ringcentral.com/api-reference/Presence/updateExtensionCallQueuePresence" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="updateExtensionCallQueuePresence" class="collapse" aria-labelledby="updateExtensionCallQueuePresence">
-
-	  <table class="table api-index">
-	    <thead>
-	      <tr>
-	        <th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Default</th>
-		<th scope="col">Required</th>
-		<th scope="col">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr>
-	      <td class="n">accountId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
-            </tr>
-<tr>
-	      <td class="n">body</td>
-	      <td class="t"></td>
-	      <td class="d"></td>
-	      <td class="r">True</td>
-	      <td class="de"></td>
-            </tr>
-<tr>
-	      <td class="n">extensionId</td>
-	      <td class="t">string</td>
-	      <td class="d">~</td>
-	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an extension</td>
             </tr>
 </tbody>
           </table>
@@ -14970,7 +14484,7 @@ In case the feature is available for the current user, <code>"available": true</
         <a href="#" class="collapsed" data-toggle="collapse" data-target="#deleteExtension" aria-expanded="true" aria-controls="deleteExtension">Delete Extension</a> 
         
       </td>
-      <td class="description"><p>Deletes extension(s) by ID(s). When an extension is being deleted the default API behaviour is as follows: ⋅⋅<em> user's direct numbers are preserved by becoming additional company numbers; ⋅⋅</em> user's digital lines (both device &amp; associated phone number) are deleted. You can change this behaviour using the filters: ..<em> create unassigned extensions for each digital line of the deleted extension by setting the query parameter <code>savePhoneLines</code> to <code>true</code> in request path; ..</em> remove direct numbers of the deleted extension by setting the query parameter <code>savePhoneNumbers</code> to <code>false</code> in request path</p></td>
+      <td class="description"><p>Deletes extension(s) by ID(s).</p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14993,27 +14507,27 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">extensionId</td>
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session</td>
+	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">savePhoneLines</td>
 	      <td class="t">boolean</td>
-	      <td class="d">False</td>
-	      <td class="r">false</td>
+	      <td class="d"></td>
+	      <td class="r">False</td>
 	      <td class="de"></td>
             </tr>
 <tr>
 	      <td class="n">savePhoneNumbers</td>
 	      <td class="t">boolean</td>
-	      <td class="d">True</td>
-	      <td class="r">false</td>
+	      <td class="d"></td>
+	      <td class="r">False</td>
 	      <td class="de"></td>
             </tr>
 </tbody>
