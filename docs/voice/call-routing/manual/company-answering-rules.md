@@ -55,13 +55,8 @@ The following code sample shows how to create a company custom answering rule th
 	```javascript
 	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral(
-    {
-      server: "server_url",
-      clientId: "client_id",
-      clientSecret: "client_secret"
-    });
-    
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+
 	var platform = rcsdk.platform();
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
