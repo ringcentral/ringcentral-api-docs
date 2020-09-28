@@ -94,6 +94,7 @@ Select your preferred language below.
 
 === "Python"
 
+    ```python
     from ringcentral import SDK
 
     RECIPIENT = '<ENTER PHONE NUMBER>'
