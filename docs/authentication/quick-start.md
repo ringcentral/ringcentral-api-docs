@@ -81,52 +81,39 @@ Select your preferred language below.
     app.get('/index', function (req, res) {
       res.redirect("/")
     })
-    app.get('/', function (req, res) {
-        var platform = rcsdk.platform()
-        if (req.session.tokens != undefined){
-            var tokensObj = req.session.tokens
-            platform.auth().setData(tokensObj);
-            platform.loggedIn().then(function(isLoggedIn) {
-              if (isLoggedIn) {
-                return res.render('test')
-              }
-              res.render('index', {
-                  authorize_uri: platform.loginUrl({
-                    brandId: ''
-                  })
-              });
-            })
-            return;
+
+    app.get('/', async function (req, res) {
+      var platform = rcsdk.platform()
+      if (req.session.tokens != undefined){
+        platform.auth().setData(req.session.tokens)
+        if (await platform.loggedIn()){
+          return res.render('test')
         }
+      }else{
         res.render('index', {
-            authorize_uri: platform.loginUrl({
-              brandId: ''
-            })
+              authorize_uri: platform.loginUrl({
+                    redirectUri: RINGCENTRAL_REDIRECT_URL
+                    })
         });
+      }
     })
 
-    app.get('/logout', function(req, res) {
+    app.get('/logout', async function(req, res) {
       if (req.session.tokens != undefined){
-          var tokensObj = req.session.tokens
-          var platform = rcsdk.platform()
-          platform.auth().setData(tokensObj)
-          platform.loggedIn().then(function(isLoggedIn) {
-            if (isLoggedIn) {
-              platform.logout()
-                .then(function(resp){
-                    console.log("logged out")
-                })
-                .catch(function(e){
-                    console.log(e)
-                });
-            }
-            req.session.tokens = null
-            res.redirect("/")
-          });
-          return
+        var platform = rcsdk.platform()
+        platform.auth().setData(req.session.tokens)
+        if (platform.loggedIn()){
+          try{
+            var resp = await platform.logout()
+            console.log("logged out")
+          }catch(e){
+            console.log(e)
+          }
+        }
+        req.session.tokens = null
       }
       res.redirect("/")
-    })
+    });
 
     app.get('/oauth2callback', async function(req, res) {
       if (req.query.code) {
