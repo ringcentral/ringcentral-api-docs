@@ -81,110 +81,90 @@ Select your preferred language below.
     app.get('/index', function (req, res) {
       res.redirect("/")
     })
-    app.get('/', function (req, res) {
-        var platform = rcsdk.platform()
-        if (req.session.tokens != undefined){
-            var tokensObj = req.session.tokens
-            platform.auth().setData(tokensObj);
-            platform.loggedIn().then(function(isLoggedIn) {
-              if (isLoggedIn) {
-                return res.render('test')
-              }
-              res.render('index', {
-                  authorize_uri: platform.loginUrl({
-                    brandId: ''
-                  })
-              });
-            })
-            return;
+
+    app.get('/', async function (req, res) {
+      var platform = rcsdk.platform()
+      if (req.session.tokens != undefined){
+        platform.auth().setData(req.session.tokens)
+        if (await platform.loggedIn()){
+          return res.render('test')
         }
+      }else{
         res.render('index', {
-            authorize_uri: platform.loginUrl({
-              brandId: ''
-            })
+              authorize_uri: platform.loginUrl({
+                    redirectUri: RINGCENTRAL_REDIRECT_URL
+                    })
         });
+      }
     })
 
-    app.get('/logout', function(req, res) {
+    app.get('/logout', async function(req, res) {
       if (req.session.tokens != undefined){
-          var tokensObj = req.session.tokens
-          var platform = rcsdk.platform()
-          platform.auth().setData(tokensObj)
-          platform.loggedIn().then(function(isLoggedIn) {
-            if (isLoggedIn) {
-              platform.logout()
-                .then(function(resp){
-                    console.log("logged out")
-                })
-                .catch(function(e){
-                    console.log(e)
-                });
-            }
-            req.session.tokens = null
-            res.redirect("/")
-          });
-          return
+        var platform = rcsdk.platform()
+        platform.auth().setData(req.session.tokens)
+        if (platform.loggedIn()){
+          try{
+            var resp = await platform.logout()
+            console.log("logged out")
+          }catch(e){
+            console.log(e)
+          }
+        }
+        req.session.tokens = null
       }
       res.redirect("/")
-    })
+    });
 
-    app.get('/oauth2callback', function(req, res) {
+    app.get('/oauth2callback', async function(req, res) {
       if (req.query.code) {
+        try{
           var platform = rcsdk.platform()
-          platform.login({
+          var resp = await platform.login({
               code: req.query.code,
+              redirectUri: RINGCENTRAL_REDIRECT_URL
           })
-          .then(function(response) {
-            return response.json()
-          })
-          .then(function (token) {
-              req.session.tokens = token
-              res.redirect("/test")
-          })
-          .catch(function (e) {
-              res.send('Login error ' + e)
-          });
+          req.session.tokens = await resp.json()
+          console.log(req.session.tokens)
+          res.redirect("/test")
+        }catch(e) {
+          res.send('Login error ' + e);
+        }
       }else {
-          res.send('No Auth code');
+        res.send('No Auth code');
       }
     });
 
     app.get('/test', function(req, res) {
       if (req.session.tokens != undefined){
-          var tokensObj = req.session.tokens
-          var platform = rcsdk.platform()
-          platform.auth().setData(tokensObj)
-          platform.loggedIn().then(function(isLoggedIn) {
-            if (isLoggedIn) {
-              if (req.query.api == "extension"){
-                var endpoint = "/restapi/v1.0/account/~/extension"
-                return callGetEndpoint(platform, endpoint, res)
-              } else if (req.query.api == "extension-call-log"){
-                var endpoint = "/restapi/v1.0/account/~/extension/~/call-log"
-                return callGetEndpoint(platform, endpoint, res)
-              } if (req.query.api == "account-call-log"){
-                var endpoint = "/restapi/v1.0/account/~/call-log"
-                return callGetEndpoint(platform, endpoint, res)
-              }
-            }
-            res.redirect("/")
-          })
-          return;
+        var platform = rcsdk.platform()
+        platform.auth().setData(req.session.tokens)
+        if (platform.loggedIn()) {
+          if (req.query.api == "extension"){
+            var endpoint = "/restapi/v1.0/account/~/extension"
+            var params = {}
+            return callGetMethod(platform, endpoint, params, res)
+          } else if (req.query.api == "extension-call-log"){
+            var endpoint = "/restapi/v1.0/account/~/extension/~/call-log"
+            var params = {}
+            return callGetMethod(platform, endpoint, params, res)
+          } else if (req.query.api == "account-call-log"){
+            var endpoint = "/restapi/v1.0/account/~/call-log"
+            var params = {}
+            return callGetMethod(platform, endpoint, params, res)
+          }
+        }
       }
       res.redirect("/")
     });
 
-    function callGetEndpoint(platform, endpoint, res){
-        platform.get(endpoint)
-        .then(function(resp){
-          return resp.json()
-        })
-        .then(function(json) {
-          res.send(JSON.stringify(json))
-        })
-        .catch(function(e){
-            res.send("Error")
-        })
+    async function callGetMethod(platform, endpoint, params, res){
+      try{
+        var resp = await platform.get(endpoint, params)
+        var jsonObj = await resp.json()
+        res.send(JSON.stringify(jsonObj))
+      }catch(e){
+        res.send("Error: " + e.message)
+      }
     }
     ```
 
