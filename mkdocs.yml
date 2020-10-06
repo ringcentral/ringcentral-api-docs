@@ -10,8 +10,8 @@ plugins:
       repository: ringcentral/ringcentral-api-docs
       branch: master
   - bootstrap-tables
-#  - rc-api-index:
-#      outfile: docs/basics/api-index.md
+  - rc-api-index:
+      outfile: docs/basics/api-index.md
 
 theme:
   name: ringcentral
@@ -115,12 +115,14 @@ pages:
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md' 
     - 'Posting Messages':
-      - 'Posting via the API': 'team-messaging/manual/posting.md'
-      - 'Attaching Cards': 'team-messaging/manual/formatting.md'
-      - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
+      - 'Simple text messages': 'team-messaging/manual/posting.md'
+      - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
+      - 'Uploading and posting files': 'team-messaging/manual/attaching-files.md'
     - 'Glip Webhook URLs':
       - 'Creating a Glip Webhook': 'team-messaging/manual/webhook-creation.md'
-      - 'Using a Glip Webhook': 'team-messaging/manual/webhook-posting.md'
+      - 'Using a Glip Webhook (v2)': 'team-messaging/manual/webhook-posting.md'
+      - 'Using a Glip Webhook (v1)': 'team-messaging/manual/formatting.md'
+      - 'Testing using cURL': 'team-messaging/manual/testing-webhooks.md'
     - 'Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'

@@ -1,16 +1,37 @@
-# Attaching Files to Glip Message
+# Posting a file to a Glip chat
 
-An important part of communication within the context of collaboration is the sharing of files and images with teammates. Sharing and displaying an image or a file in a Glip message is a two-step process.
+An important part of communication within the context of collaboration is the sharing of files and images with teammates. Sharing and displaying an image or a file is done by posting the file's contents to a designated endpoint. The code below shows how to post a file to a chat, assuming you already know the chat ID. 
 
-<img src="../glip-upload.png" class="img-fluid">
+```javascript
+var rcsdk = new RC({
+    server: RINGCENTRAL_SERVER,
+    appKey: RINGCENTRAL_CLIENTID,
+    appSecret: RINGCENTRAL_CLIENTSECRET
+});
+var platform = rcsdk.platform();
+platform.login({
+    username: RINGCENTRAL_USERNAME,
+    password: RINGCENTRAL_PASSWORD,
+    extension: RINGCENTRAL_EXTENSION
+    })
+    .then(
+        function(resp) {
+	    var endpoint = "/restapi/v1.0/glip/files"
+	    bindata = fs.readFileSync('./cats.png');
+    	    platform.post( endpoint, bindata, { name: "cats.png", groupId: '367050754' } )
+                .then( function(resp) {
+                    var json = resp.json()
+                    file_id = json[0]['id']
+                    console.log( "File: " + file_id )
+                })
+        }
+    );
+}
+```
 
-Attaching files to a Glip message is a two-step process.
+This simple script will result in a file being uploaded, and a message being posted to the associated team. It will appear as follows:
 
-1. First, a file is uploaded. This adds the file automatically to the Glip team's sidebar. When a file is uploaded, it is given a File ID.
-
-2. Next, a post is created and the File ID of the uploaded file is specified as the Glip post's attachment.
-
-Posts created in this way will result in images being displayed automatically, and other non-renderable files will be displayed as a link to download the file.
+<img src="../simple-file.png" class="img-fluid">
 
 ## Uploading a File
 
@@ -52,22 +73,3 @@ It is important to make note of the file's ID as it will be used when including 
 
 * [Working with Media Content](../../../basics/media/)
 
-## Attaching a File to a Post
-
-Once this file has been uploaded using the process above, the file can be attached to a Glip message. To do so, reference the file's ID in the `attachments` field of the post message endpoint.
-
-```http
-POST /restapi/v1.0/glip/chats/{chatId}/posts
-Accept: application/json
-Authorization: Bearer {access_token}
-
-{
-  "text": "Hello World",
-  "attachments": [ {
-    "id": <id>,
-    "type": "File"
-  } ]
-}
-```
-
-If the file referenced by `id` is an image, then Glip will automatically render the image in-line. 
