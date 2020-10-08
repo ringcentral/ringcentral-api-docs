@@ -2,32 +2,11 @@
 
 An important part of communication within the context of collaboration is the sharing of files and images with teammates. Sharing and displaying an image or a file is done by posting the file's contents to a designated endpoint. The code below shows how to post a file to a chat, assuming you already know the chat ID. 
 
-```javascript
-var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
-});
-var platform = rcsdk.platform();
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
-    .then(
-        function(resp) {
-	    var endpoint = "/restapi/v1.0/glip/files"
-	    bindata = fs.readFileSync('./cats.png');
-    	    platform.post( endpoint, bindata, { name: "cats.png", groupId: '367050754' } )
-                .then( function(resp) {
-                    var json = resp.json()
-                    file_id = json[0]['id']
-                    console.log( "File: " + file_id )
-                })
-        }
-    );
-}
-```
+=== "JavaScript" 
+
+    ```javascript
+    {!> code-samples/team-messaging/upload-file.js [ln:18-] !}
+    ```
 
 This simple script will result in a file being uploaded, and a message being posted to the associated team. It will appear as follows:
 
