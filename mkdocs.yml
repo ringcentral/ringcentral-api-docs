@@ -10,6 +10,8 @@ plugins:
       repository: ringcentral/ringcentral-api-docs
       branch: master
   - bootstrap-tables
+  - rc-api-index:
+      outfile: docs/basics/api-index.md
 
 theme:
   name: ringcentral
@@ -63,6 +65,7 @@ pages:
       - 'Pre-call Control': 'voice/pre-call-control.md'
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
+      - 'Conference call': 'voice/conference.md'
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
@@ -110,22 +113,26 @@ pages:
 
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
-    - 'Getting Started': 'team-messaging/quick-start.md'
-    - 'Manual':
-      - "Composing Links": 'team-messaging/manual/links.md'
-    - 'Posting Glip Messages':
-      - 'Message Formatting': 'team-messaging/manual/formatting.md'
-      - 'Attaching Files': 'team-messaging/manual/attaching-files.md'
-      - 'Glip Webhooks': 'team-messaging/manual/webhooks.md'
-    - 'Glip Compliance Export':
+    - 'Getting Started': 'team-messaging/quick-start.md' 
+    - 'Posting Messages':
+      - 'Simple text messages': 'team-messaging/manual/posting.md'
+      - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
+      - 'Uploading and posting files': 'team-messaging/manual/attaching-files.md'
+    - 'Glip Webhook URLs':
+      - 'Creating a Glip Webhook': 'team-messaging/manual/webhook-creation.md'
+      - 'Using a Glip Webhook (v2)': 'team-messaging/manual/webhook-posting.md'
+      - 'Using a Glip Webhook (v1)': 'team-messaging/manual/formatting.md'
+      - 'Testing using cURL': 'team-messaging/manual/testing-webhooks.md'
+    - 'Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
-    - 'Glip Bots':
+    - 'Bots':
       - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
       - 'Build a Bot in Node': 'team-messaging/manual/node.md'
       - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
+    - 'Deep links': 'team-messaging/manual/links.md'
     - 'Sample Applications':
-      - 'Glip Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
+      - 'Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
       - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
 
   - 'Meetings':
