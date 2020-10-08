@@ -1,17 +1,17 @@
 no_breadcrumb:true
 style: quick-start
 
-# Create Glip Team Quick Start
+# Create Team Messaging Team Quick Start
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you create a new Glip team in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you create a new RingCentral team in just a few minutes. Let's get started.
 
 ## Create App and Get Credentials
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Glip+Team+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+Glip+team&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Glip&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Glip Team App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Glip+Team+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+Glip+team&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Glip&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Team App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -32,7 +32,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Create a Glip team
+## Create a Team
 
 Select your preferred language below.
 
@@ -44,9 +44,9 @@ Select your preferred language below.
     $ npm install @ringcentral/sdk --save
     ```
 
-    ### Create and Edit create-glip-team.js
+    ### Create and Edit create-team.js
 
-    Create a file called `create-glip-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```JavaScript
     const RingCentral = require('@ringcentral/sdk').SDK
@@ -64,10 +64,10 @@ Select your preferred language below.
     platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
     
     platform.on(platform.events.loginSuccess, () => {
-      create_glip_team()
+      create_team()
     })
 
-    async function create_glip_team(){
+    async function create_team(){
         var endpoint = "/restapi/v1.0/glip/teams"
         var params = {
             public: true,
@@ -90,7 +90,7 @@ Select your preferred language below.
     You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
     ```bash
-    $ node create-glip-team.js
+    $ node create-team.js
     ```
 
 === "Python"
@@ -101,9 +101,9 @@ Select your preferred language below.
     $ pip install ringcentral
     ```
 
-    ### Create and Edit create-glip-team.py
+    ### Create and Edit create-team.py
 
-    Create a file called `create-glip-team.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```python
     from ringcentral import SDK
@@ -136,7 +136,7 @@ Select your preferred language below.
     You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
     ```bash
-    $ python create-glip-team.py
+    $ python create-team.py
     ```
 
 === "PHP"
@@ -148,9 +148,9 @@ Select your preferred language below.
     $ php composer.phar require ringcentral/ringcentral-php
     ```
 
-    ### Create and Edit create-glip-team.php
+    ### Create and Edit create-team.php
 
-    Create a file called `create-glip-team.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```PHP
     <?php
@@ -188,7 +188,7 @@ Select your preferred language below.
     You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
     ```bash
-    $ php create-glip-team.php
+    $ php create-team.php
     ```
 
 === "C#"
@@ -197,7 +197,7 @@ Select your preferred language below.
 
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
-    * Enter project name "Create_Glip_Team"
+    * Enter project name "Create_Team"
     * Add NuGet package RingCentral.Net (4.1.0) SDK
 
     ### Edit the file Program.cs
@@ -211,7 +211,7 @@ Select your preferred language below.
     using RingCentral;
     using Newtonsoft.Json;
 
-    namespace Create_Glip_Team
+    namespace Create_Team
     {
         class Program
         {
@@ -229,9 +229,9 @@ Select your preferred language below.
             {
                 restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
                 restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-                create_glip_team().Wait();
+                create_team().Wait();
             }
-            static private async Task create_glip_team()
+            static private async Task create_team()
             {
                 var parameters = new GlipPostTeamBody();
                 parameters.@public = true;
@@ -262,7 +262,7 @@ Select your preferred language below.
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "Create_Glip_Team"
+    * Enter project name "Create_Team"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
     ```json hl_lines="3",linenums="1"
@@ -276,12 +276,12 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Create_Glip_Team"
+    Select "File -> New -> Class" to create a new Java class named "Create_Team"
 
     ```java
-    package Create_Glip_Team;
+    package Create_Team;
 
-    public class Create_Glip_Team {
+    public class Create_Team {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -290,18 +290,18 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Create_Glip_Team.java".
+    ### Edit the file "Create_Team.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    package Create_Glip_Team;
+    package Create_Team;
 
     import java.io.IOException;
     import com.ringcentral.*;
     import com.ringcentral.definitions.*;
 
-    public class Create_Glip_Team {
+    public class Create_Team {
         static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
         static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
@@ -312,16 +312,16 @@ Select your preferred language below.
 
         static RestClient restClient;
         public static void main(String[] args) {
-            var obj = new Create_Glip_Team();
+            var obj = new Create_Team();
             try {
               restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
               restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.create_glip_team()();
+              obj.create_team()();
             } catch (RestException | IOException e) {
               e.printStackTrace();
             }
         }
-        public void create_glip_team() throws RestException, IOException{
+        public void create_team() throws RestException, IOException{
             var parameters = new GlipPostTeamBody();
             parameters._public = true;
             parameters.name = "Fun team";
@@ -353,9 +353,9 @@ Select your preferred language below.
     $ gem install ringcentral-sdk
     ```
 
-    ### Create and Edit create-glip-team.rb
+    ### Create and Edit create-team.rb
 
-    Create a file called `create-glip-team.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```ruby
     require 'ringcentral'
@@ -386,7 +386,7 @@ Select your preferred language below.
     You are almost done. Now run your script. Then login to your account at https://glip-app.devtest.ringcentral.com/ to see the newly created team.
 
     ```bash
-    $ ruby create-glip-team.rb
+    $ ruby create-team.rb
     ```
 
 
