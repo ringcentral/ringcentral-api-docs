@@ -11,27 +11,7 @@ Every user within RingCentral has a permanent and unique chat that is accessible
 The code sample below queries the Chats endpoint for the chat of type "Personal." The chat id associated with that chat will be found in the response. 
 
 ```javascript
-var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
-});
-var platform = rcsdk.platform();
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
-    .then(
-        function(resp) {
-	    var endpoint = "/restapi/v1.0/glip/chats"
-	    platform.get(endpoint, { type: 'Personal' } )
-      	       .then(function(resp){
-            var json = resp.json()
-            var chat_id = json['records'][0]['id']
-            console.log("Personal chat ID: " + chat_id)
-        }
-    );
+{! code-samples/team-messaging/get-personal-chat.js [ln:12-] !}
 ```
 
 ## How to post a simple text message to a chat
@@ -39,19 +19,7 @@ platform.login({
 With a chat ID in hand, posting is done quickly and easily:
 
 ```javascript
-var CHAT_ID = "<ENTER CHAT ID>"
-var params = {
-    text: "Hello world"
-}
-platform.post('/restapi/v1.0/glip/chats/'+CHAT_ID+'/posts', params)
-    .then(function(resp){
-        var json = resp.json()
-        var id = json['id']
-        console.log("Posting message successfully, id: " + id)
-    })
-    .catch(function(e){
-        console.log(e)
-    })
+{! code-samples/team-messaging/post-text-message.js [ln:35-] !}
 ```
 
 The code above will result in a chat message that appears as follows:

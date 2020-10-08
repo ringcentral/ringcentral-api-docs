@@ -126,30 +126,30 @@ The following code sample shows how to call the Compliance Export API to export 
 
 === "JavaScript" 
     ```javascript
-    {!> code-samples/compliance-export.js !}
+    {!> code-samples/team-messaging/compliance-export.js !}
     ```
     
 === "Python"
     ```python
-    {!> code-samples/compliance-export.py !}
+    {!> code-samples/team-messaging/compliance-export.py !}
     ```
 
 === "PHP"
     ```php
-    {!> code-samples/compliance-export.php !}
+    {!> code-samples/team-messaging/compliance-export.php !}
     ```
 
 === "C#"
     ```c#
-    {!> code-samples/compliance-export.cs !}
+    {!> code-samples/team-messaging/compliance-export.cs !}
     ```
 
 === "Java"
     ```c#
-    {!> code-samples/compliance-export.java !}
+    {!> code-samples/team-messaging/compliance-export.java !}
     ```
 
 === "Ruby"
     ```c#
-    {!> code-samples/compliance-export.rb !}
+    {!> code-samples/team-messaging/compliance-export.rb !}
     ```
