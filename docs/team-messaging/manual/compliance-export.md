@@ -1,20 +1,26 @@
-# Glip Compliance Exports
+# RingCentral Team Messaging Compliance Exports
 
-Compliance Exports is a special capability specifically built for companies and regulated industries, such as financial services, with compliance requirements for using electronic communication in the workplace. This feature is also a fail-safe way of preserving business communications for legal discovery or internal review.
+Compliance Exports is a special capability specifically built for companies and regulated industries, such as financial services and health care, with compliance requirements for using electronic communication in the workplace. This feature is also a fail-safe way of preserving business communications for compliance and legal discovery or internal review.
 
-## RingCentral Data Retention Policy
+??? important "Admin priveleges are required to call the Compliance Export APIs"
+    The Compliance Export APIs run at the account level. This means that only users with the admin role are permitted to call these APIs in order to export the data of all users in the entire account.
 
-The Glip Compliance Export API allows any data retention practices to be automated and is essential for regulated industries because RingCentral does not retain customer data indefinitely. Our data retention policy is as follows, depending upon whether your account is "HIPAA enabled."
+    The Compliance Exports feature must be turned on from the RingCentral App in the Administration settings.
+
+## RingCentral's Data Retention Policy
+
+The Compliance Export API allows any data retention practices to be automated and is essential for regulated industries because RingCentral does not retain customer data indefinitely. Our data retention policy is as follows, depending upon whether your account is "HIPAA enabled" (please consult your account representative or support to inquire about your account settings).
 
 | Account | Glip Data Retention Rule |
 |-|-|
-| **Non-HIPAA** | The account admin can set the retention policy to any number of days, although there are preset options for 30, 60 and 90 days. Once a policy is set, on a nightly basis all content older than the specified number of days will be deleted. |
+| **Non-HIPAA** | The account admin can set the retention policy to one of the following: 30, 60 and 90 days. Once a policy is set, on a nightly basis all content older than the specified number of days will be deleted permanently. |
 | **HIPAA enabled** | All data will be deleted after 30 days. |
 
-!!! alert Important
-    The Glip compliance exports APIs run at the account level. This means that only users with the admin role would be able to call these APIs to export the data of all users in the entire account.
+### Changing your data retention policy
 
-    The Compliance Exports feature must be turned on from the Glip app in the Administration settings.
+The RingCentral App provides admins with a way of modifying your account's data retention policy. Login to RingCentral App, and navigate to the Settings area. Then select "Administration." There you will see "Manage data retention policy."
+
+<img class="img-fluid" src="../manage-data-retention-1.png">
 
 ## Glip Data Export Process
 
@@ -28,7 +34,11 @@ What follows is a more detailed walk-through of this process.
 
 ### Creating an Export Report Task
 
-To create an export task:
+A compliance export task can be created by administrators inside of the RingCentral client under the Administration section.
+
+<img class="img-fluid" src="../compliance-exports-ui.png" style="max-width: 450px">
+
+This is helpful to human beings, but is difficult to automate. To create an export task via the API one would need to:
 
 * Specify the period of time for the archive via the `timeFrom` and `timeTo` parameters.
 * Specify a list of users whose data you would like to export via the `contacts` parameter. A `contact` is an object and can be specified by an id number or an email address.
@@ -112,7 +122,7 @@ GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/
 
 ## Sample Code: Export Team Messaging Data
 
-The following code sample shows how to call the Glip Compliance Export APIs to export the team messaging data and save it to a local machine.
+The following code sample shows how to call the Compliance Export API to export the team messaging data and save it to a local machine.
 
 === "JavaScript"
 	```javascript
@@ -125,11 +135,11 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
 	    .then(function(resp) {
-		      create_glip_compliance_export_task()
+		      create_compliance_export_task()
 	    });
 	}
 
-	async function create_glip_compliance_export_task(){
+	async function create_compliance_export_task(){
 	    console.log("Create export task.")
 	    var params = {
 		      timeFrom: "2019-08-01T00:00:00.000Z",
@@ -138,25 +148,25 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
       try {
   	    var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
   		  var jsonObj = await resp.json()
-  		  get_glip_compliance_export_task(jsonObj.id)
+  		  get_compliance_export_task(jsonObj.id)
   	  }catch(e){
         console.log(e.message)
 	    }
 	}
 
-	async function get_glip_compliance_export_task(taskId){
+	async function get_compliance_export_task(taskId){
 	    console.log("Check export task status ...")
 	    try{
         var resp = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`)
         var jsonObj = await resp.json()
         if (jsonObj.status == "Completed"){
           for (var i=0; i<jsonObj.datasets.length; i++){
-            var fileName = `glip-export-reports-${jsonObj.creationTime}_${i}.zip`
-            get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
+            var fileName = `rc-export-reports-${jsonObj.creationTime}_${i}.zip`
+            get_report_archived_content(jsonObj.datasets[i].uri, fileName)
           }
         }else if (jsonObj.status == "Accepted" || jsonObj.status == "InProgress") {
           setTimeout(function(){
-            get_glip_compliance_export_task(taskId)
+            get_compliance_export_task(taskId)
           }, 5000);
         }else{
           console.log(jsonObj.status)
@@ -166,7 +176,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
       }
 	}
 
-	async function get_glip_report_archived_content(contentUri, fileName){
+	async function get_report_archived_content(contentUri, fileName){
     var uri = platform.createUrl(contentUri, {addToken: true});
     download(uri, fileName, function(){
       console.log("Save report zip file to the local machine.")
@@ -193,7 +203,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	platform = sdk.platform()
 	platform.login( "username", "extension", "password" )
 
-	def create_glip_compliance_export_task():
+	def create_compliance_export_task():
 	    print ("Create export task.")
 	    endpoint = "/restapi/v1.0/glip/data-export"
 	    params = {
@@ -202,9 +212,9 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	      }
 	    resp = platform.post(endpoint, params)
 	    json = resp.json()
-	    get_glip_compliance_export_task(json.id)
+	    get_compliance_export_task(json.id)
 
-	def get_glip_compliance_export_task(taskId):
+	def get_compliance_export_task(taskId):
 	    print("Check export task status ...")
 	    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
 	    response = platform.get(endpoint)
@@ -212,22 +222,22 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    if jsonObj.status == "Completed":
   		    length = len(jsonObj.datasets)
 			    for i in range(length):
-		          fileName = "glip-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-		    	    get_glip_report_archived_content(jsonObj.datasets[i].uri, fileName)
+		          fileName = "rc-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
+		    	    get_report_archived_content(jsonObj.datasets[i].uri, fileName)
 	    elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
 			    time.sleep(5)
-			    get_glip_compliance_export_task(taskId)
+			    get_compliance_export_task(taskId)
 	    else:
           print (jsonObj.status)
 
-	def get_glip_report_archived_content(contentUri, zipFile):
+	def get_report_archived_content(contentUri, zipFile):
 	    print("Save export zip file to the local machine.")
 	    uri = platform.create_url(contentUri, False, None, True);
 	    fileHandler = urllib2.urlopen(uri)
 	    with open(zipFile, 'wb') as output:
 			output.write(fileHandler.read())
 
-	create_glip_compliance_export_task()
+	create_compliance_export_task()
 	```
 
 === "PHP"
@@ -240,9 +250,9 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	$platform = $rcsdk->platform();
 	$platform->login( "username", "extension_number", "password" );
 
-	create_glip_compliance_export_task();
+	create_compliance_export_task();
 
-	function create_glip_compliance_export_task(){
+	function create_compliance_export_task(){
 	    global $platform;
 	    echo ("Create export task.\n");
 	    $endpoint = "/restapi/v1.0/glip/data-export";
@@ -253,13 +263,13 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 			'timeTo' => "2019-08-26T23:59:59.999Z",
 		    ));
 		$json = $response->json();
-		get_glip_compliance_export_task($json->id);
+		get_compliance_export_task($json->id);
 	    }catch(\RingCentral\SDK\Http\ApiException $e) {
 		echo($e);
 	    }
 	}
 
-	function get_glip_compliance_export_task($taskId){
+	function get_compliance_export_task($taskId){
 	    global $platform;
 	    echo ("Check export task status ...\n");
 	    $endpoint = "/restapi/v1.0/glip/data-export/" . $taskId;
@@ -268,12 +278,12 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 		$json = $response->json();
 		if ($json->status == "Completed"){
 		    for ($i=0; $i<count($json->datasets); $i++){
-		      $fileName = "glip-export-reports_" . $json->creationTime . "_" . $i . ".zip";
-		      get_glip_report_archived_content($json->datasets[$i]->uri, $fileName);
+		      $fileName = "rc-export-reports_" . $json->creationTime . "_" . $i . ".zip";
+		      get_report_archived_content($json->datasets[$i]->uri, $fileName);
 		    }
 		}else if ($json->status == "Accepted" || $json->status == "InProgress"){
 		    sleep(5);
-		    get_glip_compliance_export_task($taskId);
+		    get_compliance_export_task($taskId);
 		}else
 		  echo ($json->status);
 	    }catch(\RingCentral\SDK\Http\ApiException $e) {
@@ -281,7 +291,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    }
 	}
 
-	function get_glip_report_archived_content($contentUri, $fileName){
+	function get_report_archived_content($contentUri, $fileName){
 	    global $platform;
 	    echo ("Save export zip file to the local machine.\n");
 	    $uri = $platform->createUrl($contentUri, array(
@@ -299,7 +309,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	using System.Threading.Tasks;
 	using RingCentral;
 
-	namespace Export_Glip_Data
+	namespace Export_Compliance_Data
 	{
 	    class Program
 	    {
@@ -308,9 +318,9 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 		{
 		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
 		    await rcsdk.Authorize("username", "extension_number", "password");
-		    create_glip_compliance_export_task().Wait();
+		    create_compliance_export_task().Wait();
 		}
-		static private async Task create_glip_compliance_export_task()
+		static private async Task create_compliance_export_task()
 		{
 		    var parameters = new CreateDataExportTaskRequest();
 		    parameters.timeFrom = "2019-08-01T00:00:00.000Z";
@@ -334,7 +344,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 		    {
 			for (var i = 0; i < resp.datasets.Length; i++)
 			{
-			    var fileName = "glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
+			    var fileName = "rc-export-reports_" + resp.creationTime + "_" + i + ".zip";
 			    var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
 			    WebClient webClient = new WebClient();
 			    webClient.DownloadFile(contentUrl, fileName);
@@ -359,19 +369,19 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	import java.io.IOException;
 	import java.net.URL;
 
-	public class Export_Glip_Data {
+	public class Export_Compliance_Data {
     static RestClient rcsdk;
 	  public static void main(String[] args) {
-		  var obj = new Export_Glip_Data();
+		  var obj = new Export_Compliance_Data();
 		  rcsdk = new RestClient("client_id", "client_secret", "server_url");
 		  try {
 		      rcsdk.authorize("username", "extension_number", "password");
-		      obj.create_glip_compliance_export_task();
+		      obj.create_compliance_export_task();
 		  } catch (RestException | IOException e) {
 		      e.printStackTrace();
 		  }
 	  }
-	  public void create_glip_compliance_export_task() throws RestException, IOException {
+	  public void create_compliance_export_task() throws RestException, IOException {
       var parameters = new CreateDataExportTaskRequest();
 		  parameters.timeFrom = "2019-08-01T00:00:00.000Z";
 		  parameters.timeTo = "2019-08-26T23:59:59.999Z";
@@ -395,7 +405,7 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 		  if (resp.status.equals("Completed")) {
 		    for (var i = 0; i < resp.datasets.length; i++)
 		    {
-    			var fileName = "./src/test/resources/glip-export-reports_" + resp.creationTime + "_" + i + ".zip";
+    			var fileName = "./src/test/resources/export-reports_" + resp.creationTime + "_" + i + ".zip";
     			var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
     			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
     				FileOutputStream fileOS = new FileOutputStream(fileName)) {
@@ -423,17 +433,17 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
 	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-	def create_glip_compliance_export_task()
+	def create_compliance_export_task()
 	    puts "Create export task."
 	    endpoint = "/restapi/v1.0/glip/data-export"
 	    response = $rc.post(endpoint, payload: {
 		timeFrom: "2019-07-01T00:00:00.000Z",
 		timeTo: "2019-07-29T23:59:59.999Z"
 	      })
-	    get_glip_compliance_export_task(response.body['id'])
+	    get_compliance_export_task(response.body['id'])
 	end
 
-	def get_glip_compliance_export_task(taskId)
+	def get_compliance_export_task(taskId)
 	    puts "Check export task status ..."
 	    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
 	    response = $rc.get(endpoint)
@@ -441,18 +451,18 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    if body['status'] == "Completed"
 		length = body['datasets'].length
 		for i in (0...length)
-		    fileName = "glip-export-reports_" + body['creationTime'] + "_" + i.to_s + ".zip"
-		    get_glip_report_archived_content(body['datasets'][i]['uri'], fileName)
+		    fileName = "rc-export-reports_" + body['creationTime'] + "_" + i.to_s + ".zip"
+		    get_report_archived_content(body['datasets'][i]['uri'], fileName)
 		end
 	    elsif body['status'] == "Accepted" || body['status'] == "InProgress"
 		sleep(5)
-		get_glip_compliance_export_task(taskId)
+		get_compliance_export_task(taskId)
 	    else
 		puts body['status']
 	    end
 	end
 
-	def get_glip_report_archived_content(contentUri, zipFile)
+	def get_report_archived_content(contentUri, zipFile)
 	    puts "Save report zip file to the local machine."
 	    uri = contentUri + "?access_token=" + $rc.token['access_token']
 	    open(uri) do |data|
@@ -462,5 +472,5 @@ The following code sample shows how to call the Glip Compliance Export APIs to e
 	    end
 	end
 
-	create_glip_compliance_export_task()
+	create_compliance_export_task()
 	```

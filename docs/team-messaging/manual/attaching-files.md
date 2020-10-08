@@ -1,4 +1,4 @@
-# Posting a file to a Glip chat
+# Posting a file to a chat
 
 An important part of communication within the context of collaboration is the sharing of files and images with teammates. Sharing and displaying an image or a file is done by posting the file's contents to a designated endpoint. The code below shows how to post a file to a chat, assuming you already know the chat ID. 
 
@@ -40,7 +40,7 @@ To upload a file, one conducts an HTTP POST to the following URI, using the file
 | Parameter | Description |
 |-|-|
 | **name** | The name of the file. |
-| **groupId** | The Glip Group to post this file to. |
+| **groupId** | The RingCentral chat in which to post this file. |
 
 **Sample Request**
 
@@ -66,8 +66,6 @@ The response will include the file's ID and the URL at which the file can be acc
     }
 ]
 ```
-
-It is important to make note of the file's ID as it will be used when including the file in a Glip message. See below. 
 
 **See Also**
 

@@ -1,10 +1,14 @@
 # Posting simple text messages via the API
 
-To learn how to post a message to a Glip team, let's start simple with a simplest possible example: Hello World. To post a message via the API, one must first discover the ID of the chat you will be posting into. The code below demonstrates how to fetch your "Personal" chat.
+To learn how to post a message to a RingCentral team, let's start with the ubiquitous example: Hello World. To post a message via the API, one must first know the ID of the chat they wish to post to.
 
-## Finding your "Personal" chat
+To help you find an appropriate team ID to post to regardless of the environment or account you may be running within, we take advantage of a type of chat every RingCentral user has but may not know about: one's "personal" chat.
 
-Every user within Glip has a chat with themselves. This is a good chat to post to for development and testing because it is easily discoverable regardless of the environment you may be operating in.
+## Finding a safe and private chat ID in which to do development
+
+Every user within RingCentral has a permanent and unique chat that is accessible exclusively by that user. This chat is in fact a chat with a single member: you. This is an ideal chat to post to for development and testing because it is easily discoverable regardless of the environment you may be operating in, and any post traffic you generate their will not intervere with anyone else.
+
+The code sample below queries the Chats endpoint for the chat of type "Personal." The chat id associated with that chat will be found in the response. 
 
 ```javascript
 var rcsdk = new RC({
@@ -30,7 +34,7 @@ platform.login({
     );
 ```
 
-## How to post a simple text message to a Glip chat
+## How to post a simple text message to a chat
 
 With a chat ID in hand, posting is done quickly and easily:
 
@@ -54,12 +58,12 @@ The code above will result in a chat message that appears as follows:
 
 <img src="../simple-text-message.png" class="img-fluid">
 
-!!! tip "You can also post via a Glip Webhook URL"
-    [Glip Webhook URLs](../webhooks/) provide an alternative conduit by which messages can be posted to a team. Glip Webhook URLs can be input into a third-party service provider to allow them to post on your behalf.
+!!! tip "You can also post via an Incoming Webhook"
+    [Incoming Webhooks](../webhooks/) provide an alternative conduit by which messages can be posted to a team. An Incoming Webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
-## Glipdown: a Glip flavor of Markdown
+## Glipdown: a RingCentral flavor of Markdown
 
-Glip supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
+RingCentral supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
 
 <table class="table">
 <thead>

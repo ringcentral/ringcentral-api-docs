@@ -1,33 +1,33 @@
-# Using a Glip Webhook to post a message to a chat
+# Using an Incoming Webhook to post a message to a chat
 
-??? warning "This documentation is for version 2 Glip Webhook URLs. Which version am I using?"
-    Depending upon when a Glip Webhook URL was created, you may notice a slight variation in their format. These two variations represent two different versions of the the Glip Webhook URL system.
+??? warning "This documentation is for Incoming Webhooks version 2. Which version are you using?"
+    Depending upon when an Incoming Webhook was created, you may notice a slight variation in their URL format, which you can use to identify what version of Incoming Webhooks you are using:
     
     | Version | URI Scheme |
     |-|-|
     | 1 | `https://hooks.glip.com/webhook/{ webhook id }` | 
     | 2 | `https://hooks.glip.com/webhook/v2/{ webhook id }` | 
 
-    Read the documentation for [Glip Webhook URL version 1](../formatting/).
+    Read the documentation for [Incoming Webhooks version 1](../formatting/).
 
-    !!! tip "Migrating between Glip Webhook URL versions"
-        One can easily begin using version 2 Glip Webhook URLs just by inserting `v2` into the URI path between `/webhook/` and the webhook id. There is no need to create a new Glip Webhook just to migrate from one version to another.
+    !!! tip "Migrating between Incoming Webhook versions"
+        One can easily switch between using the two version by manually editing the Incoming Webhook's URL accordingly.
 
-## What is a "Glip Webhook URL?"
+## What is an "Incoming Webhook?"
 
-A Glip Webhook URL is a mechanism designed for enabling external service providers to post messages into a specific chat. Using a Glip Webhook URL for example, one can direct a service like Asana, Jira, or Pagerduty to post an event/webhook emitted by that service to a Glip Webhook URL. Then for [supported service providers](../webhook-service-providers/), Glip will convert the event payload it receives into a Glip message, and post it to the corresponding team. 
+An Incoming Webhook, historically known as a "Glip Webhook URL," is a mechanism designed to enable third-parties to post messages into a specific chat. Using an Incoming Webhook for example, one can direct a service like Asana, Jira, or Pagerduty to post an event/webhook emitted by that service to an Incoming Webhook's URL. Then for [supported service providers](../webhook-service-providers/), RingCentral will convert the event payload it receives into a message, and post it to the corresponding team. 
 
-## How to post a message via a Glip Webhook URL
+## How to post a message via an Incoming Webhook
 
-To post a Glip message via a Glip Webhook URL, one composes a [Glip message in JSON format](../posting-cards/) and then performs an `HTTP POST` to the Glip Webhook URL using the Glip JSON message as a payload. Using this methodology, one can post visually rich and information dense messages to a chat.
+To post a message via an Incoming Webhook, one composes a [JSON formatted message](../posting-cards/) and then posts that message to the Incoming Webhook's URL. Using this methodology, one can post visually rich and information dense messages to a chat.
 
-When posting a message, be sure to specify a Content-Type of `application/json` in your request.
+To post a message successfully, the Content-Type should be set to `application/json`.
 
 Cards are the most common form of post as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way.
 
-### How to compose a Glip message and card in JSON
+### How to compose a message and card in JSON
 
-A Glip message has a very simple structure. It contains a message in the `text` field, and a set of attachmemts. An attachment can be an image, a file, an event, or a card. The following example shows a sample message with a single Card attachment.
+A message has a very simple structure. It contains a message in the `text` field, and a set of attachmemts. An attachment can be an image, a file, an event, or a card. The following example shows a sample message with a single Card attachment.
 
 ```json
 {
@@ -61,7 +61,7 @@ A Glip message has a very simple structure. It contains a message in the `text` 
 }
 ```
 
-Posting the above JSON to a Glip Webhook URL will result in a message and card that appears as follows:
+Posting the above JSON to an Incoming Webhook will result in a message that appears as follows:
 
 <img src="../webhook-posting.png" class="img-fluid" style="max-width: 600px">
 

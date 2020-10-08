@@ -117,11 +117,12 @@ pages:
     - 'Posting Messages':
       - 'Simple text messages': 'team-messaging/manual/posting.md'
       - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
+      - 'Posting Images': 'team-messaging/manual/posting-images.md'
       - 'Uploading and posting files': 'team-messaging/manual/attaching-files.md'
-    - 'Glip Webhook URLs':
-      - 'Creating a Glip Webhook': 'team-messaging/manual/webhook-creation.md'
-      - 'Using a Glip Webhook (v2)': 'team-messaging/manual/webhook-posting.md'
-      - 'Using a Glip Webhook (v1)': 'team-messaging/manual/formatting.md'
+    - 'Incoming Webhooks':
+      - 'Webhook Creation': 'team-messaging/manual/webhook-creation.md'
+      - 'Webhook Posting (v2)': 'team-messaging/manual/webhook-posting.md'
+      - 'Webhook Posting (v1)': 'team-messaging/manual/formatting.md'
       - 'Testing using cURL': 'team-messaging/manual/testing-webhooks.md'
     - 'Compliance Export':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'

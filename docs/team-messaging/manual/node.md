@@ -1,8 +1,8 @@
 no_breadcrumb:true
 
-# Build a Glip Bot Using Node
+# Build a RingCentral Bot Using Node
 
-This guide will take you through the process of building your first bot for Glip using RingCentral's [Javascript Glip Bot Framework](https://github.com/ringcentral/ringcentral-chatbot-js). Let's begin! 
+This guide will take you through the process of building your first bot using RingCentral's [Javascript Bot Framework](https://github.com/ringcentral/ringcentral-chatbot-js). Let's begin! 
 
 ## Setup Your Project
 
@@ -110,7 +110,7 @@ app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 $ node -r dotenv/config express.js
 ```
 
-## Add Your Bot to Glip
+## Add Your Bot to RingCentral
 
 Login to your [Developer Console](https://developer.ringcentral.com/), click on your bot in the application listing, and navigate to the Bot tab. Then click the button labeled "Add to Glip."
 
@@ -120,7 +120,7 @@ Then follow the on-screen instructions.
 
 ## Test Your Bot
 
-Your bot will appear as a user inside of Glip. Login to the [Glip sandbox](https://glip.devtest.ringcentral.com/) and start a chat with the bot app you just added to Glip.
+Your bot will appear as a user inside of the RingCentral App. Login to the [RingCentral Team Messaging sandbox](https://glip.devtest.ringcentral.com/) and start a chat with the bot app you just added.
 
 Type "ping" and see what happens.
 

@@ -1,31 +1,31 @@
-# Using a Glip Webhook to post a message to a chat
+# Using an Incoming Webhook to post a message to a chat
 
-??? warning "This documentation is for version 1 Glip Webhook URLs. Which version am I using?"
-    Depending upon when a Glip Webhook URL was created, you may notice a slight variation in their format. These two variations represent two different versions of the the Glip Webhook URL system.
+??? warning "This documentation is for Incoming Webhooks version 1. Which version are you using?"
+    Depending upon when an Incoming Webhook was created, you may notice a slight variation in their URL format, which you can use to identify what version of Incoming Webhooks you are using:
     
     | Version | URI Scheme |
     |-|-|
     | 1 | `https://hooks.glip.com/webhook/{ webhook id }` | 
     | 2 | `https://hooks.glip.com/webhook/v2/{ webhook id }` | 
 
-    Read the documentation for [Glip Webhook URL version 2](../webhook-posting/).
+    Read the documentation for [Incoming Webhooks version 2](../webhook-posting/).
 
-    !!! tip "Migrating between Glip Webhook URL versions"
-        One can easily begin using version 2 Glip Webhook URLs just by inserting `v2` into the URI path between `/webhook/` and the webhook id. There is no need to create a new Glip Webhook just to migrate from one version to another.
+    !!! tip "Migrating between Incoming Webhook versions"
+        One can easily switch between using the two version by manually editing the Incoming Webhook's URL accordingly.
 
-Glip Webhook URLs can be used to post messages to an associated team from an external service provider. This article will guide you through the basic process of composing a message that will be posted to a team. 
+Incoming Webhooks, historically known as "Glip Webhooks," can be used to post messages to an associated chat from an external service provider. This article will guide you through the basic process of composing a message that will be posted to a chat. 
 
-## How to post a message via a Glip Webhook URL
+## How to post a message via an Incoming Webhook
 
-To post a Glip message via a Glip Webhook URL, one composes a [Glip message in JSON format](../posting-cards/) and then performs an `HTTP POST` to the Glip Webhook URL using the Glip JSON message as a payload. Using this methodology, one can post visually rich and information dense messages to a chat.
+To post a message via an Incoming Webhook, one composes [a message formatted in JSON](../posting-cards/) and then posts that message to the Incoming Webhook's URL. Using this methodology, one can post visually-rich and information dense messages to a chat.
 
 When posting a message, be sure to specify a Content-Type of `application/json` in your request.
 
-Cards are the most common form of post as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way.
+### How to compose a card in JSON
 
-### How to compose a Glip message and card in JSON
+Cards are the most common type of post used to signal that an event has occurred. They are also a more practical way of transmitting information-rich content to a reader in a screen efficient way.
 
-The following is a very simple Glip message formatted in JSON that can be used in an external tool to post messages to a Glip Webhook URL.
+The following is a very simple JSON formatted message that can be used in an external tool to post messages to an Incoming Webhook.
 
 ```json
 {
@@ -44,7 +44,7 @@ The following is a very simple Glip message formatted in JSON that can be used i
 		},
 		{
 		    "title": "What",
-		    "value": "Giant explosion",
+		    "value": "Death Star",
 		    "short": true
 		}
 	    ]
@@ -64,7 +64,7 @@ Posting the above to the REST API will result in a message and card that appears
 
 ### Posting Multiple Cards at Once
 
-The following is an example set of cards created by a single request containing three attachments. Each attachment results in its own card, and contains multiple fields. This example shows message attachments created through the [RingCentral Glip Salesforce integration](https://zapier.com/apps/glip/integrations/salesforce).
+The following is an example set of cards created by a single request containing three attachments. Each attachment results in its own card, and contains multiple fields. This example shows message attachments created through the [RingCentral Salesforce integration](https://zapier.com/apps/glip/integrations/salesforce).
 
 <img src="../../../img/glip_post_attachment_salesforce.png" class="img-fluid" style="max-width: 450px">
 
@@ -74,14 +74,14 @@ The following is an example set of cards created by a single request containing 
 
 | Property | Description |
 |-|-|
-| `fallback` | A string of default text that will be rendered in the case that the client does not support Interactive Messages (Currently there are no Glip Clients that do not support this.) |
+| `fallback` | A string of default text that will be rendered in the rarest case in which the client does not support Interactive Messages. |
 | `color` | A Hex color code that determines the color of the side border of the Interactive Message. |
 | `pretext` | A string that will display directly above the Message. |
 | `title` | The actual title string. |
 | `title_link` | Used to linkify the title. |
 | `text` | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "Glipdown," see below)
 | `fields` | An array of objects that will render indvidual subsections within a message. | 
-| `image_url` | A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. Glip only support "HTTPS" Urls. If the URL is a http url we show a placeholder. |
+| `image_url` | A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. RingCentral only support "HTTPS" Urls. If the URL is a http url we show a placeholder. |
 | `thumb_url` | A string url used to display a thumbnail to the right of a message (82x82). |
 | `footer` | A set of properties that will render a footer under the message. |
 
@@ -93,9 +93,9 @@ The following is an example set of cards created by a single request containing 
 | `value` | A string that will display under the field title (Markdown). |
 | `short` | A boolean value to indicate the width of the field. If "true," field will be narrow, allowing two field to fit in a single row. |
 
-## Glipdown: a Glip flavor of Markdown
+## Glipdown: a RingCentral flavor of Markdown
 
-Glip supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
+RingCentral supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
 
 <table class="table">
 <thead>
