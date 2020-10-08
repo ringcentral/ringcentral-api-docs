@@ -66,7 +66,7 @@ If successful, the response will contain the task ID and the status of the newly
   "specific": {
     "timeFrom":"2020-01-14T00:00:00Z",
     "timeTo":"2020-01-16T22:12:55Z"
-    }
+  }
 }
 ```
 
@@ -124,353 +124,32 @@ GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/
 
 The following code sample shows how to call the Compliance Export API to export the team messaging data and save it to a local machine.
 
-=== "JavaScript"
-	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
-	var fs = require('fs')
-	var https = require('https');
-
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-	    .then(function(resp) {
-		      create_compliance_export_task()
-	    });
-	}
-
-	async function create_compliance_export_task(){
-	    console.log("Create export task.")
-	    var params = {
-		      timeFrom: "2019-08-01T00:00:00.000Z",
-		      timeTo: "2019-08-26T23:59:59.999Z"
-	      }
-      try {
-  	    var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
-  		  var jsonObj = await resp.json()
-  		  get_compliance_export_task(jsonObj.id)
-  	  }catch(e){
-        console.log(e.message)
-	    }
-	}
-
-	async function get_compliance_export_task(taskId){
-	    console.log("Check export task status ...")
-	    try{
-        var resp = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`)
-        var jsonObj = await resp.json()
-        if (jsonObj.status == "Completed"){
-          for (var i=0; i<jsonObj.datasets.length; i++){
-            var fileName = `rc-export-reports-${jsonObj.creationTime}_${i}.zip`
-            get_report_archived_content(jsonObj.datasets[i].uri, fileName)
-          }
-        }else if (jsonObj.status == "Accepted" || jsonObj.status == "InProgress") {
-          setTimeout(function(){
-            get_compliance_export_task(taskId)
-          }, 5000);
-        }else{
-          console.log(jsonObj.status)
-	      }
-      }catch(e){
-        console.log(e)
-      }
-	}
-
-	async function get_report_archived_content(contentUri, fileName){
-    var uri = platform.createUrl(contentUri, {addToken: true});
-    download(uri, fileName, function(){
-      console.log("Save report zip file to the local machine.")
-    })
-	}
-
-	const download = function(uri, dest, cb) {
-    var file = fs.createWriteStream(dest);
-    var request = https.get(uri, function(response) {
-      response.pipe(file);
-      file.on('finish', function() {
-        file.close(cb);
-      });
-    });
-	}
-	```
-
+=== "JavaScript" 
+    ```javascript
+    {!> code-samples/compliance-export.js !}
+    ```
+    
 === "Python"
-	```python
-	from ringcentral import SDK
-	import time, urllib2
-
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	def create_compliance_export_task():
-	    print ("Create export task.")
-	    endpoint = "/restapi/v1.0/glip/data-export"
-	    params = {
-		"timeFrom": "2019-07-01T00:00:00.000Z",
-		"timeTo": "2019-07-29T23:59:59.999Z"
-	      }
-	    resp = platform.post(endpoint, params)
-	    json = resp.json()
-	    get_compliance_export_task(json.id)
-
-	def get_compliance_export_task(taskId):
-	    print("Check export task status ...")
-	    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
-	    response = platform.get(endpoint)
-	    jsonObj = response.json()
-	    if jsonObj.status == "Completed":
-  		    length = len(jsonObj.datasets)
-			    for i in range(length):
-		          fileName = "rc-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-		    	    get_report_archived_content(jsonObj.datasets[i].uri, fileName)
-	    elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
-			    time.sleep(5)
-			    get_compliance_export_task(taskId)
-	    else:
-          print (jsonObj.status)
-
-	def get_report_archived_content(contentUri, zipFile):
-	    print("Save export zip file to the local machine.")
-	    uri = platform.create_url(contentUri, False, None, True);
-	    fileHandler = urllib2.urlopen(uri)
-	    with open(zipFile, 'wb') as output:
-			output.write(fileHandler.read())
-
-	create_compliance_export_task()
-	```
+    ```python
+    {!> code-samples/compliance-export.py !}
+    ```
 
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
-
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	create_compliance_export_task();
-
-	function create_compliance_export_task(){
-	    global $platform;
-	    echo ("Create export task.\n");
-	    $endpoint = "/restapi/v1.0/glip/data-export";
-	    try {
-		$response = $platform->post($endpoint,
-		    array(
-			'timeFrom' => "2019-08-01T00:00:00.000Z",
-			'timeTo' => "2019-08-26T23:59:59.999Z",
-		    ));
-		$json = $response->json();
-		get_compliance_export_task($json->id);
-	    }catch(\RingCentral\SDK\Http\ApiException $e) {
-		echo($e);
-	    }
-	}
-
-	function get_compliance_export_task($taskId){
-	    global $platform;
-	    echo ("Check export task status ...\n");
-	    $endpoint = "/restapi/v1.0/glip/data-export/" . $taskId;
-	    try {
-		$response = $platform->get($endpoint);
-		$json = $response->json();
-		if ($json->status == "Completed"){
-		    for ($i=0; $i<count($json->datasets); $i++){
-		      $fileName = "rc-export-reports_" . $json->creationTime . "_" . $i . ".zip";
-		      get_report_archived_content($json->datasets[$i]->uri, $fileName);
-		    }
-		}else if ($json->status == "Accepted" || $json->status == "InProgress"){
-		    sleep(5);
-		    get_compliance_export_task($taskId);
-		}else
-		  echo ($json->status);
-	    }catch(\RingCentral\SDK\Http\ApiException $e) {
-		echo($e);
-	    }
-	}
-
-	function get_report_archived_content($contentUri, $fileName){
-	    global $platform;
-	    echo ("Save export zip file to the local machine.\n");
-	    $uri = $platform->createUrl($contentUri, array(
-		'addServer' => false,
-		'addMethod' => 'GET',
-		'addToken'  => true
-	    ));
-	    file_put_contents($fileName, fopen($uri, 'r'));
-	}
-	```
+    ```php
+    {!> code-samples/compliance-export.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
-
-	namespace Export_Compliance_Data
-	{
-	    class Program
-	    {
-		static RestClient rcsdk;
-		static void Main(string[] args)
-		{
-		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		    await rcsdk.Authorize("username", "extension_number", "password");
-		    create_compliance_export_task().Wait();
-		}
-		static private async Task create_compliance_export_task()
-		{
-		    var parameters = new CreateDataExportTaskRequest();
-		    parameters.timeFrom = "2019-08-01T00:00:00.000Z";
-		    parameters.timeTo = "2019-08-26T23:59:59.999Z";
-
-		    var resp = await rcsdk.Restapi().Glip().DataExport().Post(parameters);
-		    Console.WriteLine("Create export task");
-		    var taskId = resp.id;
-		    Boolean polling = true;
-		    while (polling)
-		    {
-			Console.WriteLine("Check export task status ...");
-			Thread.Sleep(5000);
-			resp = await rcsdk.Restapi().Glip().DataExport(taskId).Get();
-			if (resp.status != "InProgress")
-			{
-			    polling = false;
-			}
-		    }
-		    if (resp.status == "Completed")
-		    {
-			for (var i = 0; i < resp.datasets.Length; i++)
-			{
-			    var fileName = "rc-export-reports_" + resp.creationTime + "_" + i + ".zip";
-			    var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
-			    WebClient webClient = new WebClient();
-			    webClient.DownloadFile(contentUrl, fileName);
-			    Console.WriteLine("Save report zip file to the local machine.");
-			}
-		    }
-		    else
-		    {
-			Console.WriteLine("Error!");
-		    }
-		}
-	    }
-	}
-	```
+    ```c#
+    {!> code-samples/compliance-export.cs !}
+    ```
 
 === "Java"
-	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
-	import java.io.BufferedInputStream;
-	import java.io.FileOutputStream;
-	import java.io.IOException;
-	import java.net.URL;
-
-	public class Export_Compliance_Data {
-    static RestClient rcsdk;
-	  public static void main(String[] args) {
-		  var obj = new Export_Compliance_Data();
-		  rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		  try {
-		      rcsdk.authorize("username", "extension_number", "password");
-		      obj.create_compliance_export_task();
-		  } catch (RestException | IOException e) {
-		      e.printStackTrace();
-		  }
-	  }
-	  public void create_compliance_export_task() throws RestException, IOException {
-      var parameters = new CreateDataExportTaskRequest();
-		  parameters.timeFrom = "2019-08-01T00:00:00.000Z";
-		  parameters.timeTo = "2019-08-26T23:59:59.999Z";
-
-		  var resp = rcsdk.restapi().glip().dataexport().post(parameters);
-		  System.out.println("Create export task.");
-		  var taskId = resp.id;
-		  boolean polling = true;
-		  while (polling)
-		  {
-		    System.out.println("Check export task status ...");
-		    try {
-			    Thread.sleep(5000);
-			    resp = rcsdk.restapi().glip().dataexport(taskId).get();
-			    if (!resp.status.equals("InProgress"))
-			      polling = false;
-		    } catch (InterruptedException e) {
-			    e.printStackTrace();
-		    }
-		  }
-		  if (resp.status.equals("Completed")) {
-		    for (var i = 0; i < resp.datasets.length; i++)
-		    {
-    			var fileName = "./src/test/resources/export-reports_" + resp.creationTime + "_" + i + ".zip";
-    			var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
-    			try (BufferedInputStream inputStream = new BufferedInputStream(new URL(contentUrl).openStream());
-    				FileOutputStream fileOS = new FileOutputStream(fileName)) {
-    				byte data[] = new byte[1024];
-    				int byteContent;
-    				while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-    					fileOS.write(data, 0, byteContent);
-    				}
-    				System.out.println("Save report zip file to the local machine.");
-    			} catch (IOException e) {
-    			   // handles IO exceptions
-    				System.out.println("Error!");
-    			}
-		    }
-		  }
-	  }
-	}
-	```
+    ```c#
+    {!> code-samples/compliance-export.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
-	require "open-uri"
-
-	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-
-	def create_compliance_export_task()
-	    puts "Create export task."
-	    endpoint = "/restapi/v1.0/glip/data-export"
-	    response = $rc.post(endpoint, payload: {
-		timeFrom: "2019-07-01T00:00:00.000Z",
-		timeTo: "2019-07-29T23:59:59.999Z"
-	      })
-	    get_compliance_export_task(response.body['id'])
-	end
-
-	def get_compliance_export_task(taskId)
-	    puts "Check export task status ..."
-	    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
-	    response = $rc.get(endpoint)
-	    body = response.body
-	    if body['status'] == "Completed"
-		length = body['datasets'].length
-		for i in (0...length)
-		    fileName = "rc-export-reports_" + body['creationTime'] + "_" + i.to_s + ".zip"
-		    get_report_archived_content(body['datasets'][i]['uri'], fileName)
-		end
-	    elsif body['status'] == "Accepted" || body['status'] == "InProgress"
-		sleep(5)
-		get_compliance_export_task(taskId)
-	    else
-		puts body['status']
-	    end
-	end
-
-	def get_report_archived_content(contentUri, zipFile)
-	    puts "Save report zip file to the local machine."
-	    uri = contentUri + "?access_token=" + $rc.token['access_token']
-	    open(uri) do |data|
-	      File.open(zipFile, "wb") do |file|
-		file.write(data.read)
-	      end
-	    end
-	end
-
-	create_compliance_export_task()
-	```
+    ```c#
+    {!> code-samples/compliance-export.rb !}
+    ```
