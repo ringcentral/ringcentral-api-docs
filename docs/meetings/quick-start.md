@@ -55,42 +55,7 @@ Select your preferred language below.
     Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```javascript
-    const SDK = require('@ringcentral/sdk').SDK
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    var rcsdk = new SDK( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
-    var platform = rcsdk.platform();
-    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
-
-    platform.on(platform.events.loginSuccess, () => {
-          start_meeting()
-    });
-
-    async function start_meeting(){
-      try{
-        var endpoint = "/restapi/v1.0/account/~/extension/~/meeting"
-        var resp = await platform.post(endpoint, {
-                  topic: 'Test Meeting',
-                  meetingType: 'Instant',
-                  allowJoinBeforeHost: true,
-                  startHostVideo: true,
-                  startParticipantsVideo: false
-
-            })
-        var jsonObj = await resp.json()
-        console.log( 'Start Your Meeting: ' + jsonObj.links.startUri )
-        console.log( 'Meeting id: ' + jsonObj.id )
-      }catch(e){
-        console.log(e.message)
-      }
-    }
+    {!> code-samples/meetings/quick-start.js !}
     ```
 
     ### Run Your Code
@@ -114,33 +79,7 @@ Select your preferred language below.
     Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```python
-    from ringcentral import SDK
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    platform = rcsdk.platform()
-    platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
-    params = {
-        'topic': 'Test Meeting 1',
-        'meetingType': 'Instant',
-        'allowJoinBeforeHost': True,
-        'startHostVideo': True,
-        'startParticipantsVideo' : False
-    }
-    try:
-        resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
-        print "Start Your Meeting: " + resp.json().links.startUri
-        print "Join the Meeting: " + resp.json().links.joinUri
-    except Exception as err:
-        print("Exception: " + err.message)
+    {!> code-samples/meetings/quick-start.py !}
     ```
 
     ### Run Your Code
@@ -165,36 +104,7 @@ Select your preferred language below.
     Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```PHP
-    <?php
-    require('vendor/autoload.php');
-
-    $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
-    $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
-    $RINGCENTRAL_SERVER = 'https://platform.ringcentral.com';
-
-    $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
-    $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
-    $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
-
-    $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-
-    $platform = $rcsdk->platform();
-    $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
-
-    $params = array(
-        'topic' => 'Test Meeting',
-        'meetingType' => 'Instant',
-        'allowJoinBeforeHost' => true,
-        'startHostVideo' => true,
-        'startParticipantsVideo' => false
-        );
-    try {
-      $resp = $platform->post('/account/~/extension/~/meeting', $params);
-      print_r ('Start Your Meeting: ' . $resp->json()->links->startUri . "\n");
-      print_r ('Join the Meeting: ' . $resp->json()->links->joinUri . "\n");
-    } catch (Exception $e) {
-      print_r ("An error occurred: " . $e->getMessage() . "\n");
-    }
+    {!> code-samples/meetings/quick-start.php !}
     ```
 
     ### Run Your Code
@@ -204,7 +114,6 @@ Select your preferred language below.
     ```bash
     $ php meetings.php
     ```
-
 
 === "C#"
 
@@ -220,45 +129,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ``` c#
-    using System;
-    using System.Threading.Tasks;
-    using RingCentral;
-
-    namespace Create_Meeting
-    {
-        class Program
-        {
-            const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-            const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-            const string RINGCENTRAL_PRODUCTION = false;
-
-            const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-            const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-            const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-            static RestClient restClient;
-
-            static void Main(string[] args)
-            {
-                restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-                restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-                create_meeting().Wait();
-            }
-            static private async Task create_meeting()
-            {
-                var parameters = new MeetingRequestResource();
-                parameters.topic = "Test Meeting";
-                parameters.meetingType = "Instant";
-                parameters.allowJoinBeforeHost = true;
-                parameters.startHostVideo = true;
-                parameters.startParticipantsVideo = false;
-
-                var resp = await restClient.Restapi().Account().Extension().Meeting().Post(parameters);
-                Console.WriteLine("Start Your Meeting: " + resp.links.startUri);
-                Console.WriteLine("join the Meeting: " + resp.links.joinUri);
-            }
-        }
-    }
+    {!> code-samples/meetings/quick-start.cs !}
     ```
 
     ### Run Your Code
@@ -274,7 +145,7 @@ Select your preferred language below.
     * Enter project name "Create_Meeting"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-    ```json hl_lines="3",linenums="1"
+    ```json
     dependencies {
         // ...
         compile 'com.ringcentral:ringcentral:1.4.0'
@@ -304,47 +175,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    package Create_Meeting;
-
-    import java.io.IOException;
-    import com.ringcentral.*;
-    import com.ringcentral.definitions.*;
-
-
-    public class Create_Meeting {
-        static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
-
-        static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-        static RestClient restClient;
-
-        public static void main(String[] args) {
-            var obj = new Create_Meeting();
-            try {
-              restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-              restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.createMeeting();
-            } catch (RestException | IOException e) {
-              e.printStackTrace();
-            }
-        }
-
-        public void createMeeting() throws RestException, IOException{
-            MeetingRequestResource parameters = new MeetingRequestResource();
-            parameters.topic = "Instant Meeting";
-            parameters.meetingType = "Instant";
-            parameters.allowJoinBeforeHost = true;
-            parameters.startHostVideo = true;
-            parameters.startParticipantsVideo = false;
-
-            var response = restClient.restapi().account().extension().meeting().post(parameters);
-            System.out.println("Start Your Meeting: " + response.links.startUri);
-            System.out.println("Join the Meeting: " + response.links.joinUri);
-        }
-    }
+    {!> code-samples/meetings/quick-start.java !}
     ```
 
     ### Run Your App
@@ -364,29 +195,7 @@ Select your preferred language below.
     Create a file called `meetings.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```python
-    require 'ringcentral'
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-    resp = rc.post('/restapi/v1.0/account/~/extension/~/meeting', payload: {
-        topic: 'Ruby Meeting 1',
-        meetingType: 'Instant',
-        allowJoinBeforeHost: true,
-        startHostVideo: true,
-        startParticipantsVideo: false
-    })
-
-    puts "Start Your Meeting: " + resp.body['links']['startUri']
-    puts "Join the Meeting: " + resp.body['links']['joinUri']
+    {!> code-samples/meetings/quick-start.rb !}
     ```
 
     ### Run Your Code
