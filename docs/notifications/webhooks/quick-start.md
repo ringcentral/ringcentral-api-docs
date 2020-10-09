@@ -56,73 +56,7 @@ Select your preferred language below.
     Create a file called <tt>webhook-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```javascript
-    var http = require('http');
-    const RingCentral = require('@ringcentral/sdk').SDK
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    DELIVERY_ADDRESS= '<https://xxxxxxxx.ngrok.io/webhook>'
-
-    PORT=5000
-
-    var server = http.createServer(function(req, res) {
-        if (req.method == 'POST') {
-            if (req.url == "/webhook"){
-                if(req.headers.hasOwnProperty("validation-token")) {
-                    res.setHeader('Validation-Token', req.headers['validation-token']);
-                    res.statusCode = 200;
-                    res.end();
-                } else {
-                    var body = []
-                    req.on('data', function(chunk) {
-                        body.push(chunk);
-                    }).on('end', function() {
-                        body = Buffer.concat(body).toString();
-                        var jsonObj = JSON.parse(body)
-                        console.log(jsonObj.body);
-                    });
-                }
-            }
-        }else{
-            console.log("IGNORE OTHER METHODS")
-        }
-    });
-    server.listen(PORT);
-
-    var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
-
-    var platform = rcsdk.platform();
-    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
-    
-    platform.on(platform.events.loginSuccess, function(e){
-        console.log("Login success")
-        subscribe_for_notification()
-    });
-
-    async function subscribe_for_notification(){
-      var params = {
-        eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
-        deliveryMode: {
-            transportType: "WebHook",
-            address: DELIVERY_ADDRESS
-            }
-        }
-      try {
-        var resp = await resplatform.post('/restapi/v1.0/subscription', params)
-        var jsonObj = await resp.json()
-        console.log(jsonObj.id)
-        console.log("Ready to receive incoming SMS via WebHook.")
-      }catch(e) {
-        console.error(e.message);
-        throw e;
-      }
-    }
+    {!> code-samples/webhooks/quick-start/javascript/webhook-notification.js !} 
     ```
 
     ### Run Your Code
@@ -156,35 +90,7 @@ Select your preferred language below.
     Create a file called <tt>webhook-notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```python
-    from ringcentral import SDK
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    DELIVERY_ADDRESS= '<https://XXXXXXXX.ngrok.io/webhookcallback>'
-
-    rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    platform = rcsdk.platform()
-    platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
-    try:
-        eventFilters = ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS']
-        params = {
-            "eventFilters" : eventFilters,
-            "deliveryMode": {
-                "transportType": 'WebHook',
-                "address": DELIVERY_ADDRESS
-            }
-        }
-        res = platform.post("/subscription", params)
-        return res
-    except Exception as e:
-        return e
+    {!> code-samples/webhooks/quick-start/python/webhook-notification.py !} 
     ```
 
     ### Create and Edit webhook-server.py
@@ -192,39 +98,7 @@ Select your preferred language below.
     Create a file called <tt>webhook-server.py</tt>.
 
     ```python
-    from http.server import BaseHTTPRequestHandler, HTTPServer
-
-    class S(BaseHTTPRequestHandler):
-        def do_POST(self):
-            path = self.path
-            if path == "/webhookcallback":
-                validationToken = self.headers['Validation-Token']
-                if validationToken is not None:
-                    self.send_response(200)
-                    self.send_header('Validation-Token', validationToken)
-                    return self.end_headers()
-                else:
-                    content_len = int(self.headers.get('Content-Length'))
-                    payload = self.rfile.read(content_len)
-                    print (payload)
-                    return
-            else:
-                print ("Ignore this")
-
-
-    def run(server_class = HTTPServer, handler_class = S, port=5000):
-        server_address = ('', port)
-        httpd = server_class(server_address, handler_class)
-        print ('Starting httpd...')
-        httpd.serve_forever()
-
-    if __name__ == "__main__":
-        from sys import argv
-
-    if len(argv) == 2:
-        run(port=int(argv[1]))
-    else:
-        run()
+    {!> code-samples/webhooks/quick-start/python/webhook-server.py !} 
     ```
 
     ### Run Your Code
@@ -233,13 +107,13 @@ Select your preferred language below.
 
     Open a terminal window and run the server code.
 
-    ```bask
+    ```bash
     $ python3 webhook-server.py
     ```
 
     Open another terminal window and run the app
 
-    ```bask
+    ```bash
     $ python3 webhook-notification.py
     ```
     Now you can send an SMS message to the extension's phone number to see how you'll receive the notification.
@@ -265,48 +139,8 @@ Select your preferred language below.
 
     Create a file called <tt>webhook-notification.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-    ```
-    <?php
-    require('vendor/autoload.php');
-
-    $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    $DELIVERY_ADDRESS='<https://xxxxxxxx.ngrok.io/webhook-notification.php?webhookcallback>'
-
-    $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-    $platform = $rcsdk->platform();
-
-    if (isset($_REQUEST['webhookcallback'])){
-        if (array_key_exists('HTTP_VALIDATION_TOKEN', $_SERVER)) {
-            return header("Validation-Token: {$_SERVER['HTTP_VALIDATION_TOKEN']}");
-        }else{
-          $jsonStr = file_get_contents('php://input');
-          $jsonObj = json_decode($jsonStr, TRUE);
-          print_r($jsonObj['body']['subject']);
-        }
-    }else{
-        $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
-        $params = array(
-                'eventFilters' => array(
-                    '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'
-                    ),
-                'deliveryMode' => array(
-                    'transportType' => "WebHook",
-                    'address' => $DELIVERY_ADDRESS
-                ));
-        try {
-              $apiResponse = $platform->post('/subscription', $params);
-              print_r ("Response: " . $apiResponse->text());
-        }catch (Exception $e){
-              print_r ("Exception: " . $e->getMessage());
-        }
-    }
+    ```php
+    {!> code-samples/webhooks/quick-start/php/webhook-notification.php !} 
     ```
 
     ### Run Your Code
@@ -314,11 +148,13 @@ Select your preferred language below.
     You are almost done. Now run your script.
 
     Open a terminal window and start PHP server.
-    ```bask
+
+    ```bash
     $ php -S localhost:5000
     ```
     Open another terminal window and run the app
-    ```bask
+
+    ```bash
     $ php webhook-notification.php
     ```
 
@@ -369,43 +205,7 @@ Select your preferred language below.
     Copy the forwarding address e.g. https://54a0541a.ngrok.io and paste it into the DELIVERY_ADDRESS variable in the code below.
 
     ```java
-    package com.ringcentral;
-
-    import java.io.IOException;
-
-    import com.ringcentral.RestException;
-    import com.ringcentral.definitions.CreateSubscriptionRequest;
-    import com.ringcentral.definitions.NotificationDeliveryModeRequest;
-
-    public class SubscribeForWebHookNotification
-    {
-        public static void main(String[] args) throws IOException, RestException
-        {
-            String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-            String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-            String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
-
-            String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-            String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-            String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION";
-
-            String DELIVERY_ADDRESS = "<https://xxxxxxxxx.ngrok.io>";
-
-            RestClient rc = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER_URL);
-            rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            var eventFilters = new String[]{"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"}
-            CreateSubscriptionRequest createSubscriptionRequest = new CreateSubscriptionRequest()
-                .eventFilters(eventFilters)
-                .deliveryMode( new NotificationDeliveryModeRequest()
-                    .transportType("WebHook")
-                    .address(DELIVERY_ADDRESS)
-                    );
-            var result = rc.restapi().subscription().post(createSubscriptionRequest);
-            System.out.println(result.id);
-            System.out.println("WebHook Ready");
-            rc.revoke();
-        }
-    }
+    {!> code-samples/webhooks/quick-start/java/SubscribeForWebHookNotification.java !} 
     ```
 
     ### Create a WebHookServer
@@ -424,43 +224,7 @@ Select your preferred language below.
     Edit the `WebhookServer.java` with code below:
 
     ```Java
-    package com.ringcentral;
-
-    import java.io.IOException;
-
-    import javax.servlet.ServletException;
-    import javax.servlet.http.HttpServletRequest;
-    import javax.servlet.http.HttpServletResponse;
-
-    import org.eclipse.jetty.server.Request;
-    import org.eclipse.jetty.server.Server;
-    import org.eclipse.jetty.server.handler.AbstractHandler;
-
-    public class WebhookServer extends AbstractHandler
-    {
-        @Override
-        public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException
-        {
-            response.setStatus(HttpServletResponse.SC_OK);
-            response.setHeader("Validation-Token", request.getHeader("Validation-Token"));
-            if(request.getMethod() == "POST")
-            {
-                String body = request.getReader().lines().collect(java.util.stream.Collectors.joining(System.lineSeparator()));
-                System.out.println(body);
-            }
-            response.getWriter().println("OK");
-            baseRequest.setHandled(true);
-        }
-
-        public static void main( String[] args ) throws Exception
-        {
-            Server server = new Server(5000);
-            server.setHandler(new WebHookServer());
-            server.start();
-            server.join();
-        }
-    }
+    {!> code-samples/webhooks/quick-start/java/WebhookServer.java !} 
     ```
 
     ### Build and run the WebHook Server
@@ -502,42 +266,7 @@ Select your preferred language below.
     Edit `Startup.cs` and override its content with code below:
 
     ```c#
-    using System;
-    using System.IO;
-    using System.Text;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Primitives;
-
-    namespace webhook_server
-    {
-        public class Startup
-        {
-            public void ConfigureServices(IServiceCollection services)
-            {
-            }
-
-            public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-            {
-                if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-
-                app.Run( async (context) =>
-                {
-                    context.Request.Headers.TryGetValue("Validation-Token", out StringValues validationToken);
-                    context.Response.Headers.Add("Validation-Token", validationToken);
-                    if (context.Request.Path == "/webhook" && context.Request.Method == "POST")
-                    {
-                        using (StreamReader reader = new StreamReader(context.Request.Body, Encoding.UTF8))
-                        {
-                            var str = reader.ReadToEnd();
-                            Console.WriteLine(str);
-                        }
-                    }
-                });
-            }
-        }
-    }
+    {!> code-samples/webhooks/quick-start/c-sharp/Startup.cs !} 
     ```
 
     ### Run ngrok to create a localhost tunnel
@@ -565,44 +294,8 @@ Select your preferred language below.
 
     Edit `Program.cs` file and override its content with code below. Be sure to edit the variables in <ALL CAPS> with your app credentials.
 
-
     ```c#
-    using System;
-    using System.Threading.Tasks;
-    using RingCentral;
-
-    namespace setup_webhook
-    {
-        class Program
-        {
-            const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
-            const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
-            const string RINGCENTRAL_PRODUCTION = false;
-
-            const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
-            const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
-            const string RINGCENTRAL_EXTENSION = "<OPTIONAL>";
-            const string RINGCENTRAL_PASSWORD = "<RINGCENTRAL_PASSWORD>";
-
-            const string DELIVERY_ADDRESS = "<https://xxxxxxxx.ngrok.io/webhook>"";
-
-            static async Task Main(string[] args)
-            {
-                var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_PRODUCTION);
-                await rc.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-                await rc.Restapi().Subscription().Post(new CreateSubscriptionRequest
-                {
-                    eventFilters = new[] {"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"},
-                    deliveryMode = new NotificationDeliveryModeRequest
-                    {
-                        transportType = "WebHook",
-                        address = DELIVERY_ADDRESS
-                    }
-                });
-                Console.WriteLine("WebHook ready!");
-            }
-        }
-    }
+    {!> code-samples/webhooks/quick-start/c-sharp/Program.cs !} 
     ```
 
     ### Run Your Code
@@ -649,31 +342,7 @@ Select your preferred language below.
     Create a file called <tt>webhook-notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```ruby
-    require 'ringcentral'
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    DELIVERY_ADDRESS= '<https://xxxxxxxx.ngrok.io>'
-
-
-    rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-    r = rc.post('/restapi/v1.0/subscription', payload: {
-        eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
-        deliveryMode: { transportType: 'WebHook', address: DELIVERY_ADDRESS }
-    })
-
-    puts r.body['id']
-    puts "WebHook Ready"
-
-    rc.revoke()
+    {!> code-samples/webhooks/quick-start/ruby/webhook-notification.rb !} 
     ```
 
     ### Create and Edit webhook-server.rb
@@ -681,17 +350,7 @@ Select your preferred language below.
     Create a file called <tt>webhook-server.rb</tt>.
 
     ```ruby
-    require 'sinatra'
-    set :port, 5000
-    post '/' do
-        status 200
-        headers('Validation-Token' => request.env['HTTP_VALIDATION_TOKEN']) if request.env['HTTP_VALIDATION_TOKEN']
-        request.body.rewind
-        body = request.body.read
-        puts body
-        # do whatever with body
-        body 'OK'
-    end
+    {!> code-samples/webhooks/quick-start/ruby/webhook-server.rb !} 
     ```
 
     ### Run Your Code
@@ -711,7 +370,6 @@ Select your preferred language below.
     ```
 
     Now you can send an SMS message to the extension's phone number to see how you'll receive the notification.
-
 
 ## Graduate Your App
 
