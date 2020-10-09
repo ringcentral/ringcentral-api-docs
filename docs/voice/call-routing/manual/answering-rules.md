@@ -15,7 +15,7 @@ An answering rule is made up of two main components:
 
 Here is an example Answering Rule flow:
 
-<img class="img-fluid" src="../../../img/answering-rule-flow.png">
+<img class="img-fluid" src="../../../../img/answering-rule-flow.png">
 
 ### Rule Types
 

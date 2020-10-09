@@ -1,13 +1,12 @@
 using System;
 using System.Threading.Tasks;
 using RingCentral;
+using Newtonsoft.Json;
 
-namespace Call_Ringout
+namespace Get_User_Call_Answering_Rules
 {
 class Program
 {
-  const string RECIPIENT = "<ENTER PHONE NUMBER>";
-
   const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
   const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
   const string RINGCENTRAL_PRODUCTION = false;
@@ -22,22 +21,21 @@ class Program
   {
     restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
     restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-    call_ringout().Wait();
+    get_user_call_answering_rules().Wait();
   }
 
-  static private async Task call_ringout()
+  static private async Task get_user_call_answering_rules()
   {
-    var parameters = new MakeRingOutRequest();
-    parameters.from = new MakeRingOutCallerInfoRequestFrom {
-      phoneNumber = RINGCENTRAL_USERNAME
-    };
-    parameters.to = new MakeRingOutCallerInfoRequestTo {
-      phoneNumber = RECIPIENT
-    };
-    parameters.playPrompt = false;
+    var parameters = new ListAnsweringRulesParameters();
+    parameters.view = "Detailed";
+    parameters.enabledOnly = "false";
 
-    var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
-    Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
+    var resp = await restClient.Restapi().Account().Extension().AnsweringRule().List(parameters);
+    foreach (var record in resp.records)
+    {
+      var rule = await restClient.Restapi().Account().Extension().AnsweringRule(record.id).Get();
+      Console.WriteLine(JsonConvert.SerializeObject(rule));
+    }
   }
 }
 }

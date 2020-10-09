@@ -111,173 +111,38 @@ Required permission(s): EditExtensions
 The following code sample shows how to add 2 new members to a call queue named "Support Department". Presumed that the "Support Department" call queue exists and the new members' extension id is "888888888" and "999999999", respectively.
 
 === "JavaScript"
-	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-  platform.on(platform.events.loginSuccess, async function(response){  
-		get_call_queues()
-	});
-
-	async function get_call_queues() {
-    try{
-	    var resp = await platform.get('/restapi/v1.0/account/~/call-queues')
-		  var jsonObj = await resp.json()
-		  for (var group of jsonObj.records){
-        if (group.name == "Support Department"){
-          add_new_members(group.id)
-          break
-        }
-      }
-		}catch(e){
-      console.log(e.message)
-		}
-	}
-
-	async function add_new_members(groupId) {
-    var params = {
-  		  addedExtensionIds: ["888888888", "999999999"]
-	    }
-    try{
-	    var resp = await platform.post('/restapi/v1.0/account/~/call-queues/'+groupId+'/bulk-assign', params)
-	    var jsonObj = await resp.json()
-		  console.log(jsonObj)
-    }catch(e){
-		  console.log(e.message)
-    }
-	}
-	```
+    ```javascript
+    {!> code-samples/voice/call-queues.js !}
+    ```    
 
 === "Python"
-	```python
-	from ringcentral import SDK
 
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	resp = platform.get('/restapi/v1.0/account/~/call-queues')
-	for group in resp.json().records:
-	   	 if group.name == 'Support Department':
-			resp = platform.post('/restapi/v1.0/account/~/call-queues/'+group.id+"/bulk-assign",
-			{
-		    	'addedExtensionIds': ['888888888', '999999999']
-			})
-			print (resp.response())
-			break
-	```
+    ```python
+    {!> code-samples/voice/call-queues.py !}
+    ```
 
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$resp = $platform->get('/account/~/call-queues');
-	foreach ($resp->json()->records as $group){
-	    if ($group->name == "Support Department"){
-		$params = array(
-		  'addedExtensionIds' => array("888888888", "999999999")
-		  );
-		$resp = $platform->post('/account/~/call-queues/'.$group->id.'/bulk-assign', $params);
-		print_r($resp->response());
-		break;
-	    }
-	}
-	```
+    ```php
+    {!> code-samples/voice/call-queues.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
 
-	namespace Update_CallQueue_Members
-	{
-    class Program
-    {
-      static RestClient rcsdk;
-  		static void Main(string[] args)
-      {
-		    rcsdk = new RestClient("client_id", "client_secret", "server_url");
-		    await rcsdk.Authorize("username", "extension_number", "password");
-		    add_callqueue_members().Wait();
-      }
-      static private async Task add_callqueue_members()
-      {
-		    var resp = await rcsdk.Restapi().Account().CallQueues().Get();
-		    foreach (var group in resp.records)
-		    {
-          if (group.name == "Support Department")
-          {
-            var parameters = new CallQueueBulkAssignResource();
-            parameters.addedExtensionIds = new string[] { "888888888", "999999999" };
-            await rcsdk.Restapi().Account().CallQueues(group.id).BulkAssign().Post(parameters);
-            Console.WriteLine("Members added");
-            break;
-          }
-        }
-      }
-    }
-	}
-	```
-
+    ```c#
+    {!> code-samples/voice/call-queues.cs !}
+    ```
+    
 === "Java"
-	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
 
-	public class Update_CallQueue_Members {
-	  static RestClient rcsdk;
-	  public static void main(String[] args) {
-	    var obj = new Update_CallQueue_Members();
-	    rcsdk = new RestClient("client_id", "client_secret", "server_url");
-	    try {
-	      rcsdk.authorize("username", "extension_number", "password");
-	      obj.add_callqueue_members();
-	    } catch (RestException | IOException e) {
-	      e.printStackTrace();
-	    }
-	  }
-	  public void add_callqueue_members() throws RestException, IOException{
-	    var resp = restClient.restapi().account().callqueues().get();
-	    for (var group : resp.records) {
-	      if (group.name.equals("Sales team")){
-          var parameters = new CallQueueBulkAssignResource();
-          parameters.addedExtensionIds = new String[] {"888888888", "999999999"};
-          restClient.restapi().account().callqueues(group.id).bulkassign().post(parameters);
-          System.out.println("Members added.");
-          break;
-	      }
-	    }
-	  }
-	}
-	```
+    ```java
+    {!> code-samples/voice/call-queues.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
 
-	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+    ```ruby
+    {!> code-samples/voice/call-queues.rb !}
+    ```
 
-	response = rc.get('/restapi/v1.0/account/~/call-queues')
-	for group in response.body['records'] do
-	    if group['name'] == "Support Department"
-		params = {
-		  addedExtensionIds: ["888888888", "999999999"]
-		}
-		response = rc.post('/restapi/v1.0/account/~/call-queues/'+group['id']+'/bulk-assign', payload: params)
-		puts response.status
-		break
-	    end
-	end
-	```

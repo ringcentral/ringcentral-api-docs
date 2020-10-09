@@ -43,156 +43,40 @@ Required permission(s): EditExtensions
 The following code sample shows how to create a forwarding number object. The `id` value from the response can be used to specify a rule when [creating a custom answering rule](../user-answering-rules/).
 
 === "JavaScript"
-	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-
-  var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-  platform.on(platform.events.loginSuccess, function(response){  
-		create_forwarding_number_by_number()
-	});
-
-	async function create_forwarding_number_by_number() {
-	  try{
-      var resp = await platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', {
-		      phoneNumber: "11235557890",
-		      type: "Other",
-		      label: "My ATT number"
-	      })
-	    var jsonObj = await resp.sjon()
-		  console.log("Forwarding number created.")
-		  console.log("Forwarding number id: " + jsonObj.id)
-    }catch(e){
-      console.log(e.message)
-    }
-	}
-	```
+    ```javascript
+    {!> code-samples/voice/call-forwarding.js !}
+    ```    
 
 === "Python"
-	```python
-	from ringcentral import SDK
 
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	params = {
-	    'phoneNumber': '11235557890',
-	    'type': 'Other',
-	    'label': 'My ATT number'
-	  }
-	resp = platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', params)
-
-	print "Forwarding number created."
-	print resp.json().id
-	```
+    ```python
+    {!> code-samples/voice/call-forwarding.py !}
+    ```
 
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$params = array (
-	    'phoneNumber' => '11235557890',
-	    'type' => 'Other',
-	    'label' => 'My ATT number'
-	);
-	$resp = $platform->post('/account/~/extension/~/forwarding-number', $params);
-
-	print_r ("Forwarding number created.");
-	print_r ($resp->json()->id);
-	```
+    ```php
+    {!> code-samples/voice/call-forwarding.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
 
-	namespace Create_ForwardingNumber
-	{
-    class Program
-    {
-  		static void Main(string[] args)
-  		{
-        create_forwarding_number().Wait();
-      }
-      static private async Task create_forwarding_number()
-      {
-		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		    await rc.Authorize("username", "extension_number", "password");
-
-		    var parameters = new CreateForwardingNumberRequest();
-		    parameters.phoneNumber = "11235557890";
-		    parameters.type = "Other";
-		    parameters.label = "My ATT number";
-
-		    var response = await rc.Restapi().Account().Extension().ForwardingNumber().Post(parameters);
-
-		    Console.WriteLine("Forwarding number created.");
-		    Console.WriteLine(response.id);
-      }
-    }
-	}
-	```
-
+    ```c#
+    {!> code-samples/voice/call-forwarding.cs !}
+    ```
+    
 === "Java"
-	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
 
-	public class Create_ForwardingNumber {
-    public static void main(String[] args) {
-			try {
-				create_forwarding_number();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-    public static void create_forwarding_number() throws RestException, IOException {
-  		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-  		rc.authorize("username", "extension_number", "password");
-
-  		var parameters = new CreateForwardingNumberRequest();
-  		parameters.phoneNumber = "11235557890";
-  		parameters.type = "Other";
-  		parameters.label = "My ATT number";
-
-  		var response =  rc.restapi().account().extension().forwardingnumber().post(parameters);
-
-  		System.out.println("Forwarding number created.");
-  		System.out.println(response.id);
-		}
-	}
-	```
+    ```java
+    {!> code-samples/voice/call-forwarding.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
 
-	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-
-	params = {
-	    phoneNumber: '11235557890',
-	    type: 'Other',
-	    label: 'My ATT number'
-	}
-	resp = rc.post('/restapi/v1.0/account/~/extension/~/forwarding-number', payload: params)
-
-	puts 'Forwarding number created.'
-	puts resp.body['id']
-	```
+    ```ruby
+    {!> code-samples/voice/call-forwarding.rb !}
+    ```
 
 ## Read all Forwarding Numbers
 

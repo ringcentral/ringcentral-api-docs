@@ -21,11 +21,11 @@ public class Call_RingOut {
     public static void main(String[] args) {
         var obj = new Call_RingOut();
         try {
-          restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-          restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-          obj.call_ringout()();
+            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+            restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+            obj.call_ringout()();
         } catch (RestException | IOException e) {
-          e.printStackTrace();
+            e.printStackTrace();
         }
     }
     public void call_ringout() throws RestException, IOException {

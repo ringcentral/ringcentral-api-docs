@@ -52,214 +52,52 @@ The following parameters are used for specifying call handling conditions.
 The following code sample shows how to create a company custom answering rule that will re-route all incoming calls to a voice mailbox during a company business hours, and then disconnect.
 
 === "JavaScript"
-	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-  platform.on(platform.events.loginSuccess, function(response){  
-		create_company_custom_answering_rule()
-	});
-
-	async function create_company_custom_answering_rule() {
-	  var params = {
-	    enabled: true,
-	    type: "Custom",
-	    name: "Company off time",
-	    callHandlingAction: "Disconnect"
-	  }
-    try{
-	     var resp = await platform.post('/restapi/v1.0/account/~/answering-rule', params)
-	     var jsonObj = await resp.json()
-	     console.log(jsonObj)
-	  }catch(e){
-      console.log(e.message)
-	  }
-	}
-	```
+    ```javascript
+    {!> code-samples/voice/company-answering-rules.js !}
+    ```    
 
 === "Python"
-	```python
-	from ringcentral import SDK
 
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	params = {
-	    'enabled': True,
-	    'type': 'AfterHours',
-	    'name': "Company off time",
-	    'schedule' : {
-	      'weeklyRanges': {
-		'monday': [{ 'from': "09:00",'to': "10:00" }],
-		'friday': [{ 'from': "10:00", 'to': "15:00" }]
-	      }
-	    },
-	    'callHandlingAction': "TakeMessagesOnly"
-	  }
-	resp = platform.post('/restapi/v1.0/account/~/answering-rule', params)
-
-	print resp.text()
-	```
+    ```python
+    {!> code-samples/voice/company-answering-rules.py !}
+    ```
 
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$params = array (
-	    'enabled' => true,
-	    'type' => "Custom",
-	    'name' => "My weekly meetings",
-	    'schedule' => array (
-	      'weeklyRanges' => array (
-		'monday' => array ( array ('from' => "09:00", 'to' => "10:00")),
-		'friday' => array ( array ('from' => "10:00", 'to' => "15:00"))
-	      )
-	    ),
-	    'callHandlingAction' => "TakeMessagesOnly"
-	);
-	$resp = $platform->post('/account/~/answering-rule', $params);
-
-	print_r ($resp->text());
-	```
+    ```php
+    {!> code-samples/voice/company-answering-rules.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
 
-	namespace CompanyCustomAnsweringRule
-	{
-    class Program
-    {
-      static void Main(string[] args)
-      {
-		    create_company_custom_answering_rule().Wait();
-      }
-      static private async Task create_company_custom_answering_rule()
-      {
-		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		    await rc.Authorize("username", "extension_number", "password");
-
-		    var parameters = new CompanyAnsweringRuleRequest();
-		    parameters.enabled = true;
-		    parameters.type = "Custom";
-		    parameters.name = "My weekly meetings";
-		    var schedule = new CompanyAnsweringRuleScheduleInfoRequest();
-		    var weeklyRanges = new CompanyAnsweringRuleWeeklyScheduleInfoRequest();
-		    var meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
-		    meetingTime.from = "09:00";
-		    meetingTime.to = "10:00";
-		    weeklyRanges.monday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
-
-		    meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
-		    meetingTime.from = "10:00";
-		    meetingTime.to = "15:00";
-		    weeklyRanges.friday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
-
-		    schedule.weeklyRanges = weeklyRanges;
-		    parameters.schedule = schedule;
-		    parameters.callHandlingAction = "TakeMessagesOnly";
-
-		    var response = await rc.Restapi().Account().AnsweringRule().Post(parameters);
-		    var jsonStr = JsonConvert.SerializeObject(response);
-		    Console.WriteLine(jsonStr);
-      }
-    }
-	}
-	```
-
+    ```c#
+    {!> code-samples/voice/company-answering-rules.cs !}
+    ```
+    
 === "Java"
-	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
 
-	public class CompanyCustomAnsweringRule {
-    public static void main(String[] args) {
-			try {
-				create_company_custom_answering_rule();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-    public static void create_company_custom_answering_rule() throws RestException, IOException {
-      RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-      rc.authorize("username", "extension_number", "password");
-
-  		var parameters = new CompanyAnsweringRuleRequest();
-  		parameters.enabled = true;
-  		parameters.type = "Custom";
-  		parameters.name = "My weekly meetings";
-  		var schedule = new CompanyAnsweringRuleScheduleInfoRequest();
-  		var weeklyRanges = new CompanyAnsweringRuleWeeklyScheduleInfoRequest();
-  		var meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
-  		meetingTime.from = "09:00";
-  		meetingTime.to = "10:00";
-  		weeklyRanges.monday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
-
-  		meetingTime = new CompanyAnsweringRuleTimeIntervalRequest();
-  		meetingTime.from = "10:00";
-  		meetingTime.to = "15:00";
-  		weeklyRanges.friday = new CompanyAnsweringRuleTimeIntervalRequest[] { meetingTime };
-
-  		schedule.weeklyRanges = weeklyRanges;
-  		parameters.schedule = schedule;
-  		parameters.callHandlingAction = "TakeMessagesOnly";
-
-  		var response =  rc.restapi().account().answeringrule().post(parameters);
-  		System.out.println(JSON.toJSONString(response));
-		}
-	}
-	```
+    ```java
+    {!> code-samples/voice/company-answering-rules.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
 
-	$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+    ```ruby
+    {!> code-samples/voice/company-answering-rules.rb !}
+    ```
 
-	params = {
-	    enabled: true,
-	    type: 'Custom',
-	    name: 'My weekly meetings',
-	    schedule: {
-	      weeklyRanges: {
-		monday: [{ from: "09:00", to: "10:00" }],
-		friday: [{ from: "10:00", to: "15:00" }]
-	      }
-	    },
-	    callHandlingAction: "TakeMessagesOnly",
-	}
-	resp = rc.post('/restapi/v1.0/account/~/answering-rule', payload: params)
+Upon successful API call completion, the response contains the id (`ruleId`) and other information of the newly created rule.
 
-	puts resp.body
-	```
-
-	Upon successful API call completion, the response contains the id (`ruleId`) and other information of the newly created rule.
-
-	```json hl_lines="3", linenums="1"
-	{
-	  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009114/extension/178009114/answering-rule/227207004",
-	  "id": "227207004",
-	  "type": "Custom",
-	  "name": "My weekly meetings",
-	  ...
-	}
-	```
+```json hl_lines="3", linenums="1"
+{
+  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009114/extension/178009114/answering-rule/227207004",
+  "id": "227207004",
+  "type": "Custom",
+  "name": "My weekly meetings",
+  ...
+}
+```
 
 ### List Company Answering Rules
 

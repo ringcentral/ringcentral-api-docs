@@ -42,142 +42,37 @@ The response format for active calls mirrors that of Call Log responses exactly.
 ## Sample Code to Get Started with reading user active calls
 
 === "JavaScript"
-	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-  platform.on(platform.events.loginSuccess, function(response){
-    read_active_calls()
-  });
-
-	async function read_active_calls(){
-    try{
-      var resp = await platform.get('/account/~/extension/~/active-calls', {
-  		     view: 'Simple'
-  		     })
-  		var jsonObj = await resp.json()
-  		for (var record of jsonObj.records)
-        console.log("Call result: " + record.result)
-		}catch(e){
-      console.log(e.message)
-    }
-	}
-	```
+    ```javascript
+    {!> code-samples/voice/finding-active-calls.js !}
+    ```
 
 === "Python"
-	```python
-	from ringcentral import SDK
 
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	params = {
-	    'view' : 'Simple'
-	}
-	resp = platform.get('/restapi/v1.0/account/~/extension/~/active-calls', params)
-	for record in resp.json().records:
-	    print "Call result: " + record.result
-	```
-
+    ```python
+    {!> code-samples/voice/finding-active-calls.py !}
+    ```
+    
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$params = array(
-	   'view' => 'Simple'
-	    );
-	$resp = $platform->get('/account/~/extension/~/active-calls', $params);
-	foreach ($resp->json()->records as $record) {
-	    print_r ("Call result: ".$record->result);
-	}
-	?>
-	```
+    ```php
+    {!> code-samples/voice/finding-active-calls.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
 
-	namespace Read_User_ActiveCalls
-	{
-    class Program
-    {
-      static void Main(string[] args)
-      {
-        read_user_active_calls().Wait();
-      }
-      static private async Task read_user_active_calls()
-      {
-        RestClient rc = new RestClient("client_id", "client_secret", false);
-        await rc.Authorize("username", "extension_number", "password");
-        var parameters = new ListExtensionActiveCallsParameters();
-		    parameters.view = "Simple";
-		    var resp = await rc.Restapi().Account().Extension().ActiveCalls().Get(parameters);
-		    foreach (CallLogRecord record in resp.records)
-		    {
-    			Console.WriteLine("Call result: " + record.result);
-        }
-      }
-    }
-	}
-	```
+    ```c#
+    {!> code-samples/voice/finding-active-calls.cs !}
+    ```
 
 === "Java"
-	```java
-	package Read_User_ActiveCalls;
 
-	import java.io.IOException;
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
-
-	public class Read_User_ActiveCalls {
-    public static void main(String[] args) {
-      try {
-        read_user_activecals();
-      } catch (RestException | IOException e) {
-        e.printStackTrace();
-      }
-    }
-
-    public static void read_user_activecals() throws RestException, IOException{
-      RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-      rc.authorize("username", "extension_number", "password");
-
-      var getParameters = new ListExtensionActiveCallsParameters();
-      parameters.view = "Simple"
-
-      var response = rc.restapi().account().extension().activecalls().list(parameters);
-      for (CallLogRecord record : response.records) {
-        System.out.println("Call result: " + record.result);
-      }
-    }
-	}
-	```
+    ```java
+    {!> code-samples/voice/finding-active-calls.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
 
-	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-
-	resp = rc.get('/restapi/v1.0/account/~/extension/~/active-calls', {
-	    view: 'Simple'
-	})
-
-	for record in resp.body['records'] do
-	    puts "Call result: " + record['result']
-	end
-	```
+    ```ruby
+    {!> code-samples/voice/finding-active-calls.rb !}
+    ```    
