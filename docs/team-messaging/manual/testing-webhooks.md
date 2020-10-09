@@ -1,6 +1,6 @@
-# Testing Glip Webhook using cURL
+# Testing Incoming Webhooks using cURL
 
-A simple way to test Glip Webhooks and to make formatting messages easier is to use a simple command-line tool called cURL. Using this simple technique, you can place your message contents in a stand alone file, and then post that file to a Glip Webhook URL.
+A simple way to test an Incoming Webhook and to make formatting messages easier is to use a simple command-line tool called cURL. Using this simple technique, you can place your message contents in a stand alone file, and then post that file to the URL of an Incoming Webhook.
 
 Let's begin by creating the file `test.json` using the following contents:
 
