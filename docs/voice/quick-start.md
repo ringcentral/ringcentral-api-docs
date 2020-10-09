@@ -49,39 +49,7 @@ Select your preferred language below.
     Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```javascript
-    const RingCentral = require('@ringcentral/sdk').SDK
-
-    RECIPIENT = '<ENTER PHONE NUMBER>'
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
-    var platform = rcsdk.platform();
-    platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
-    
-    platform.on(platform.events.loginSuccess, function(response){
-      call_ringout()
-    })
-
-    async function call_ringout() {
-      try{
-        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
-            'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-            'to'   : {'phoneNumber': RECIPIENT},
-            'playPrompt' : false
-          })
-        var jsonObj = await resp.json()
-        console.log("Call placed. Call status: " + jsonObj.status.callStatus)
-      }catch(e){
-        console.log(e.message)
-      }
-    }
+    {!> code-samples/voice/quick-start.js !}
     ```
 
     ### Run Your Code
@@ -94,30 +62,18 @@ Select your preferred language below.
 
 === "Python"
 
+    ### Install RingCentral Python SDK
+
+    ```bash
+    $ pip install ringcentral
+    ```
+
+    ### Create and Edit ringout.py
+
+    Create a file called `ringout.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+
     ```python
-    from ringcentral import SDK
-
-    RECIPIENT = '<ENTER PHONE NUMBER>'
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    platform = rcsdk.platform()
-    platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
-
-    resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
-                  {
-                      'from' : { 'phoneNumber': RINGCENTRAL_USERNAME },
-                      'to'   : {'phoneNumber': RECIPIENT},
-                      'playPrompt' : False
-                  })
-    print "Call placed. Call status: " + resp.json().status.callStatus              
+    {!> code-samples/voice/quick-start.py !}
     ```
 
     ### Run Your Code
@@ -142,33 +98,7 @@ Select your preferred language below.
     Create a file called <tt>ringout.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```php
-    <?php
-    require('vendor/autoload.php');
-
-    $RECIPIENT = '<ENTER PHONE NUMBER>';
-
-    $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
-    $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
-    $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
-
-    $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
-    $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
-    $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
-
-    $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-
-    $platform = $rcsdk->platform();
-    $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
-
-    $resp = $platform->post('/account/~/extension/~/ring-out',
-        array(
-          'from' => array('phoneNumber' => $RINGCENTRAL_USERNAME),
-          'to' => array('phoneNumber' => $RECIPIENT),
-          'playPrompt' => false
-        ));
-
-    print_r ("Call placed. Call status: " . $resp->json()->status->callStatus);
-    ?>
+    {!> code-samples/voice/quick-start.php !}
     ```
 
     ### Run Your Code
@@ -193,45 +123,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ``` c#
-    using System;
-    using System.Threading.Tasks;
-    using RingCentral;
-
-    namespace Call_Ringout
-    {
-      class Program
-      {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
-
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        const string RINGCENTRAL_PRODUCTION = false;
-
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-        static RestClient restClient;
-
-        static void Main(string[] args)
-        {
-            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-            restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-            call_ringout().Wait();
-        }
-
-        static private async Task call_ringout()
-        {
-          var parameters = new MakeRingOutRequest();
-          parameters.from = new MakeRingOutCallerInfoRequestFrom { phoneNumber = RINGCENTRAL_USERNAME };
-          parameters.to = new MakeRingOutCallerInfoRequestTo {  phoneNumber = RECIPIENT } ;
-          parameters.playPrompt = false;
-
-          var resp = await restClient.Restapi().Account().Extension().RingOut().Post(parameters);
-          Console.WriteLine("Call Placed. Call status" + resp.status.callStatus);
-        }
-      }
-    }
+    {!> code-samples/voice/quick-start.cs !}
     ```
 
     ### Run Your App
@@ -247,7 +139,7 @@ Select your preferred language below.
     * Enter project name "Call_RingOut"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
-    ```json hl_lines="3",linenums="1"
+    ```json
     dependencies {
         // ...
         compile 'com.ringcentral:ringcentral:1.4.0'
@@ -277,46 +169,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    package Call_RingOut;
-
-    import java.io.IOException;
-
-    import com.ringcentral.*;
-    import com.ringcentral.definitions.*;
-
-
-    public class Call_RingOut {
-        static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
-
-        static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
-
-        static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY '101'>";
-
-        static RestClient restClient;
-        public static void main(String[] args) {
-            var obj = new Call_RingOut();
-            try {
-              restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-              restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-              obj.call_ringout()();
-            } catch (RestException | IOException e) {
-              e.printStackTrace();
-            }
-        }
-        public void call_ringout() throws RestException, IOException {
-            MakeRingOutRequest requestBody = new MakeRingOutRequest();
-            requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(RINGCENTRAL_USERNAME));
-            requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RECIPIENT_NUMBER));
-            requestBody.playPrompt = false;
-
-            var response = restClient.restapi().account().extension().ringout().post(requestBody);
-            System.out.println("Call Placed. Call status: " + response.status.callStatus);
-        }
-    }
+    {!> code-samples/voice/quick-start.java !}
     ```
 
     ### Run Your App
@@ -336,28 +189,7 @@ Select your preferred language below.
     Create a file called <tt>ringout.rb</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```ruby
-    require 'ringcentral'
-
-    RECIPIENT = '<ENTER PHONE NUMBER>'
-
-    RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-    RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-    RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-    RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-    RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-    RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-    rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-    rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-    resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
-        from: { phoneNumber: RINGCENTRAL_USERNAME },
-        to: { phoneNumber: RECIPIENT },
-        playPrompt: false
-    })
-
-    puts "Call placed. Call status: " + resp.body['status']['callStatus']
+    {!> code-samples/voice/quick-start.rb !}
     ```
 
     ### Run Your Code
