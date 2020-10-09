@@ -53,7 +53,7 @@ Select your preferred language below.
     Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```javascript
-    {!> code-samples/sms/quick-start.js !} 
+    {!> code-samples/messaging/quick-start.js !} 
     ```
 
     ### Run Your Code
@@ -77,7 +77,7 @@ Select your preferred language below.
     Create a file called `sms.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```python
-    {!> code-samples/sms/quick-start.py !}
+    {!> code-samples/messaging/quick-start.py !}
     ```
 
     ### Run Your Code
@@ -102,7 +102,7 @@ Select your preferred language below.
     Create a file called `sms.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```php
-    {!> code-samples/sms/quick-start.php !}
+    {!> code-samples/messaging/quick-start.php !}
     ```
 
     ### Run Your Code
@@ -127,7 +127,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```c#
-    {!> code-samples/sms/quick-start.cs !}
+    {!> code-samples/messaging/quick-start.cs !}
     ```
 
     ### Run Your App
@@ -174,7 +174,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/sms/quick-start.java !}
+    {!> code-samples/messaging/quick-start.java !}
     ```
 
     ### Run Your App
@@ -195,7 +195,7 @@ Select your preferred language below.
     Create a file called `sms.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```ruby
-    {!> code-samples/sms/quick-start.rb !}
+    {!> code-samples/messaging/quick-start.rb !}
     ```
 
     ### Run Your Code

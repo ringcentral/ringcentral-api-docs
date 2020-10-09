@@ -55,127 +55,40 @@ The API Reference contains a [more detailed breakdown of the structure of a mess
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
 === "JavaScript"
-	```javascript
-	const RC = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-  platform.on(platform.events.loginSuccess, async function(e){
-    var resp = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
-		     messageType: ['SMS']
-		})
-    var jsonObj = await resp.json()
-    console.log(jsonObj)
-  });
-	```
+    ```javascript
+    {!> code-samples/messaging/message-store.js !}
+    ```
 
 === "Python"
-	```python
-	from ringcentral import SDK
 
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
-		{
-		    'messageType': ['SMS']
-		})
-	print (response.text())
-	```
-
+    ```python
+    {!> code-samples/messaging/message-store.py !}
+    ```
+    
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$response = $platform->get('/account/~/extension/~/message-store',
-	    array(
-	      'messageType' => array('SMS')
-	    ));
-	print_r ($response->text());
-	```
+    ```php
+    {!> code-samples/messaging/message-store.php !}
+    ```
 
 === "C#"
-	```c#
-	using System;
-	using Newtonsoft.Json;
-	using System.Threading.Tasks;
-	using RingCentral;
 
-	namespace Read_MessageStore
-	{
-	    class Program
-	    {
-		static void Main(string[] args)
-		{
-		    read_user_message_store().Wait();
-		}
-		static private async Task read_user_message_store()
-		{
-		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		    await rc.Authorize("username", "extension_number", "password");
-
-		    var parameters = new ListMessagesParameters();
-		    parameters.messageType = string[] ("SMS");
-		    var response = await rc.Restapi().Account().Extension().MessageStore().List(parameters);
-
-		    var jsonStr = JsonConvert.SerializeObject(response);
-		    Console.WriteLine(jsonStr);
-		}
-	    }
-	}
-	```
+    ```c#
+    {!> code-samples/messaging/message-store.cs !}
+    ```
 
 === "Java"
-	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
 
-	public class Read_MessageStore {
-		  public static void main(String[] args) {
-			try {
-				read_user_message_store();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-	    public static void read_user_message_store() throws RestException, IOException{
-		RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		rc.authorize("username", "extension_number", "password");
-
-		ListMessagesParameters parameters = new ListMessagesParameters();
-		parameters.messageType = new String[] {"SMS"};
-
-		var response = rc.restapi().account().extension().messagestore().list(parameters);
-
-		String jsonStr = JSON.toJSONString(response);
-		System.out.println(jsonStr);
-	    }
-	}
-	```
+    ```java
+    {!> code-samples/messaging/message-store.java !}
+    ```
 
 === "Ruby"
-	```ruby
-	require 'ringcentral'
 
-	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-	response = rc.get('/account/~/extension/~/message-store',
-	    {
-		messageType: 'SMS'
-	    })
-	puts response.body
-	```
+    ```ruby
+    {!> code-samples/messaging/message-store.rb !}
+    ```    
 
 This example response shows the `to`, `from`, `type`, `readStatus`, `direction` and `subject` amongst other properties of an SMS message record from the message store:
 
