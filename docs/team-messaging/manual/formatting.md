@@ -72,26 +72,30 @@ The following is an example set of cards created by a single request containing 
 
 ### Attachments
 
-| Property | Description |
-|-|-|
-| `fallback` | A string of default text that will be rendered in the rarest case in which the client does not support Interactive Messages. |
-| `color` | A Hex color code that determines the color of the side border of the Interactive Message. |
-| `pretext` | A string that will display directly above the Message. |
-| `title` | The actual title string. |
-| `title_link` | Used to linkify the title. |
-| `text` | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "Glipdown," see below)
-| `fields` | An array of objects that will render indvidual subsections within a message. | 
-| `image_url` | A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. RingCentral only support "HTTPS" Urls. If the URL is a http url we show a placeholder. |
-| `thumb_url` | A string url used to display a thumbnail to the right of a message (82x82). |
-| `footer` | A set of properties that will render a footer under the message. |
+| Property | Type | Required? | Description |
+|-|-|-|-|
+| `author_name` | string | No | Small text used to display the author's name. |
+| `author_link` | string | No | A valid URL that will hyperlink the author_name text mentioned above. Will only work if author_name is present. |
+| `author_icon` | string | No | A valid URL that displays a small 16x16px image to the left of the author_name text. Will only work if author_name is present. |
+| `color` | string | No | A Hex color code that determines the color of the side border of the Interactive Message. |
+| `image_url` | string | No | A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. RingCentral only support "HTTPS" Urls. If the URL is a http url we show a placeholder. |
+| `fallback` | string | Yes | A string of default text that will be rendered in the rarest case in which the client does not support Interactive Messages. |
+| `fields` | Array | No | An array of objects that will render indvidual subsections within a message. (see Fields below) | 
+| `footer` | string | No | Add some brief text to help contextualize and identify an attachment. Limited to 300 characters. |
+| `footer_icon` | string | No | To render a small icon beside your footer text, provide a publicly accessible URL string in the footer_icon field. You must also provide a footer for the field to be recognized. (16px x16px). |
+| `pretext` | string | No | A string that will display directly above the Message. |
+| `text` | string | Yes | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "Glipdown," see below)
+| `thumb_url` | string | No | A string url used to display a thumbnail to the right of a message (82x82). |
+| `title` | string | Yes | The title is displayed as larger, bold text near the top of a message attachment. |
+| `title_link` | string | No | Used to linkify the title. |
 
 ### Fields
 
-| Property | Description |
-|-|-|
-| `title` | A string that will display as the title for an individual field. |
-| `value` | A string that will display under the field title (Markdown). |
-| `short` | A boolean value to indicate the width of the field. If "true," field will be narrow, allowing two field to fit in a single row. |
+| Property | Type | Description |
+|-|-|-|
+| `title` | string | Shown as a bold heading above the value text. It cannot contain markup and will be escaped for you. |
+| `value` | string | The text value of the field. It may contain standard markup and must be escaped as normal. May be multi-line. |
+| `short` | boolean | An optional flag indicating whether the value is short enough to be displayed side-by-side with other values. |
 
 ## Glipdown: a RingCentral flavor of Markdown
 
