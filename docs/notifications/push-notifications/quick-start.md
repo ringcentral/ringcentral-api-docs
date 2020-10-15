@@ -333,7 +333,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     public class PubNub_Notifications {
         static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
+        static bool RINGCENTRAL_PRODUCTION = false;
 
         static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -350,7 +350,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
         }
 
         public static void PubNubNotifications() throws RestException, IOException {
-            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
+            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
             restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
 
             var eventFilters = new String[] {

@@ -270,7 +270,7 @@ Select your preferred language below.
         const string RECIPIENT = "<ENTER PHONE NUMBER>";
         const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
         const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        const string RINGCENTRAL_PRODUCTION = false;
+        const bool RINGCENTRAL_PRODUCTION = false;
 
         const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
         const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
@@ -286,20 +286,17 @@ Select your preferred language below.
         }
         static private async Task read_extension_phone_number()
         {
-          if (rcsdk.token.access_token.Length > 0)
+          var resp = await restClient.Restapi().Account().Extension().PhoneNumber().Get();
+          foreach (var record in resp.records)
           {
-            var resp = await rcsdk.Restapi().Account().Extension().PhoneNumber().Get();
-            foreach (var record in resp.records)
+            if (record.usageType == "DirectNumber")
             {
-              if (record.usageType == "DirectNumber")
+              foreach(var feature in record.features)
               {
-                foreach(var feature in record.features)
+                if (feature == "SmsSender")
                 {
-                  if (feature == "SmsSender")
-                  {
-                    send_sms(record.phoneNumber).Wait();
-                    goto LoopEnd;
-                  }
+                  send_sms(record.phoneNumber).Wait();
+                  goto LoopEnd;
                 }
               }
             }
