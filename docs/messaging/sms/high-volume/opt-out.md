@@ -1,6 +1,6 @@
 # Opt-in / Opt-out
 
-RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms such a `STOP`, `UNSTOP`, `INFO`, etc. This is handled per pair of sender and recipient numbers.
+RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms `START` and `STOP`, respectively. This is handled per pair of sender and recipient numbers.
 
 While RingCentral automatically handles this and will prevent sending to numbers that have opted out, developers are recommended handle these numbers and prevent sending them to begin with.
 
@@ -16,7 +16,7 @@ While RingCentral automatically handles this and will prevent sending to numbers
 
 === "Opt-in"
 
-    When a recipient replies `unstop` or `start`, RingCentral will automatically reply to the recipient with the following message:
+    When a recipient replies `start`, RingCentral will automatically reply to the recipient with the following message:
 
         NETWORK MSG: You have replied "unstop" and will begin receiving messages again from this number.
 
@@ -95,6 +95,7 @@ In addition to real-time events, you can check on number status by calling the `
 
     puts resp.body
     ```
+
 ### Response
 
 ```json
@@ -104,7 +105,7 @@ In addition to real-time events, you can check on number status by calling the `
   "paging":
    {
      "pageToken": 'Rji2MjMwNw==',
-     "perPage": 1,
+     "perPage": 100,
      "firstPageToken": 'Rji2MjMwNw=='
   }
 }

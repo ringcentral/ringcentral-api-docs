@@ -4,7 +4,7 @@ High Volume SMS message store is separated from the normal SMS (P2P) message sto
 
 ## Read High Volume Message Store
 
-You can read the entire High Volume SMS message store then iterate through the `records` array in the response to parse each message's metadata. Use the `page` info to navigate through the entire message store if the numbers of records is greater than the maximum number of items per page.
+You can read the entire High Volume SMS message store then iterate through the `records` array in the response to parse each message's metadata. Use the `pageToken` to navigate through the entire message store if the numbers of records is greater than the maximum number of items per page.
 
 | API Endpoint | Description |
 |-|-|
