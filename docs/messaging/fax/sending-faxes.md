@@ -33,129 +33,129 @@ Bear in mind of course that each language will utilize different libraries and c
 The following code samples show how to send a simple single document fax.
 
 === "JavaScript"
-	```javascript
-	const RC = require('@ringcentral/sdk').SDK
+  ```javascript
+  const RC = require('@ringcentral/sdk').SDK
 
-	RECIPIENT = '<ENTER FAX NUMBER>'
+  RECIPIENT = '<ENTER FAX NUMBER>'
 
-	RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-	RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-	RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+  RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+  RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+  RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-	RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-	RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-	RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+  RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+  RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+  RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-	var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
-	var platform = rcsdk.platform();
+  var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
+  var platform = rcsdk.platform();
 
-	platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
-  
+  platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+
   platform.on(platform.events.loginSuccess, function(e){
     send_fax()
   });
 
-	async function send_fax() {
-	    var FormData = require('form-data');
-	    formData = new FormData();
-	    var body = {
-	      to: [{'phoneNumber': RECIPIENT}],
-	      faxResolution: 'High',
-	      coverPageText: "This is a demo Fax page from Node JS"
-	    }
-
-	    formData.append('json', new Buffer(JSON.stringify(body)), {
-		      filename: 'request.json',
-		      contentType: 'application/json'
-		  });
-
-	    formData.append('attachment', require('fs').createReadStream('test.jpg'));
-
-	    var resp = await platform.post('/account/~/extension/~/fax', formData)
-	    var jsonObj = await resp.json()
-		  console.log("FAX sent. Message status: " + jsonObj.messageStatus)
-	  }catch(e){
-      console.log(e.message)
+  async function send_fax() {
+    var FormData = require('form-data');
+    formData = new FormData();
+    var body = {
+      to: [{'phoneNumber': RECIPIENT}],
+      faxResolution: 'High',
+      coverPageText: "This is a demo Fax page from Node JS"
     }
-	}
-	```
+
+    formData.append('json', new Buffer(JSON.stringify(body)), {
+      filename: 'request.json',
+      contentType: 'application/json'
+    });
+
+    formData.append('attachment', require('fs').createReadStream('test.jpg'));
+
+    var resp = await platform.post('/account/~/extension/~/fax', formData)
+    var jsonObj = await resp.json()
+    console.log("FAX sent. Message status: " + jsonObj.messageStatus)
+  }catch(e){
+    console.log(e.message)
+  }
+  }
+  ```
 
 === "PHP"
-	```php
-	<?php
-	require('vendor/autoload.php');
+  ```php
+  <?php
+  require('vendor/autoload.php');
 
-	$RECIPIENT = '<ENTER FAX NUMBER>'
+  $RECIPIENT = '<ENTER FAX NUMBER>'
 
-	$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-	$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-	$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+  $RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+  $RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+  $RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-	$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-	$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-	$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+  $RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+  $RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+  $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-	$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+  $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
 
-	$platform = $rcsdk->platform();
-	$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+  $platform = $rcsdk->platform();
+  $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-	$request = $rcsdk->createMultipartBuilder()
-			 ->setBody(array(
-			     'to' => array(array('phoneNumber' => $RECIPIENT)),
-			     'faxResolution' => 'High',
-			 ))
-			 ->add(fopen('test.jpg', 'r'))
-			 ->request('/account/~/extension/~/fax');
+  $request = $rcsdk->createMultipartBuilder()
+  ->setBody(array(
+    'to' => array(array('phoneNumber' => $RECIPIENT)),
+    'faxResolution' => 'High',
+  ))
+  ->add(fopen('test.jpg', 'r'))
+  ->request('/account/~/extension/~/fax');
 
-	$resp = $platform->sendRequest($request);
-	print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
-	```
+  $resp = $platform->sendRequest($request);
+  print_r ("FAX sent. Message status: " . $resp->json()->messageStatus);
+  ```
 
 === "Python"
-	```python
-	from ringcentral import SDK
+  ```python
+  from ringcentral import SDK
 
-	RECIPIENT = '<ENTER FAX NUMBER>'
+  RECIPIENT = '<ENTER FAX NUMBER>'
 
-	RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-	RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-	RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+  RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
+  RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
+  RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
 
-	RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-	RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-	RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+  RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
+  RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
+  RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
-	rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-	platform = rcsdk.platform()
-	platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+  rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+  platform = rcsdk.platform()
+  platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
 
-	builder = rcsdk.create_multipart_builder()
-	builder.set_body({
-	    'to': [{'phoneNumber': RECIPIENT}],
-	    'faxResolution': "High",
-	    'coverPageText': "This is a demo Fax page from Python"
-	})
+  builder = rcsdk.create_multipart_builder()
+  builder.set_body({
+    'to': [{'phoneNumber': RECIPIENT}],
+    'faxResolution': "High",
+    'coverPageText': "This is a demo Fax page from Python"
+  })
 
-	attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
-	builder.add(attachment)
+  attachment = ('test.jpg', open('test.jpg','r').read(), 'image/jpeg')
+  builder.add(attachment)
 
-	request = builder.request('/account/~/extension/~/fax')
+  request = builder.request('/account/~/extension/~/fax')
 
-	resp = platform.send_request(request)
-	print 'Fax sent. Message status: ' + resp.json().messageStatus
-	```
+  resp = platform.send_request(request)
+  print 'Fax sent. Message status: ' + resp.json().messageStatus
+  ```
 
 === "Java"
-	```java
-	package Send_Fax;
+  ```java
+  package Send_Fax;
 
-	import java.io.IOException;
+  import java.io.IOException;
 
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
+  import com.ringcentral.*;
+  import com.ringcentral.definitions.*;
 
-	public class Send_Fax {
+  public class Send_Fax {
     static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
     static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
     static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
@@ -176,9 +176,9 @@ The following code samples show how to send a simple single document fax.
       } catch (RestException | IOException e) {
         e.printStackTrace();
       }
-		}
+    }
 
-		public static void sendFax() throws RestException, IOException{
+    public static void sendFax() throws RestException, IOException{
       CreateFaxMessageRequest postParameters = new CreateFaxMessageRequest();
       postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
       postParameters.faxResolution = "High";
@@ -193,8 +193,8 @@ The following code samples show how to send a simple single document fax.
       var response = rc.restapi().account().extension().fax().post(postParameters);
       System.out.println("Fax sent. Delivery status: " + response.messageStatus);
     }
-	}
-	```
+  }
+  ```
 
 === "C#"
 	```c#

@@ -62,7 +62,7 @@ Select your preferred language below.
     var rcsdk = new RingCentral( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
     var platform = rcsdk.platform();
     platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
-    
+
     platform.on(platform.events.loginSuccess, () => {
       create_team()
     })
@@ -217,7 +217,7 @@ Select your preferred language below.
         {
             const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
             const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-            const string RINGCENTRAL_PRODUCTION = false;
+            const bool RINGCENTRAL_PRODUCTION = false;
 
             const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
             const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
