@@ -1,7 +1,7 @@
 mkdocs>=1.1
 mkdocs-ringcentral>=0.1.7
 mkdocs-git-committers-plugin>=0.2.0
-mkdocs-ringcentral-api-index>=0.1.1
+mkdocs-ringcentral-api-index>=0.1.2
 mkdocs-bootstrap-tables-plugin>=0.1.1
 markdown_fenced_code_tabs>=1.0.3
 mkdocs-material>=3.0
