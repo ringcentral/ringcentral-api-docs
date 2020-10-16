@@ -1,5 +1,6 @@
 no_breadcrumb:true
 style: quick-start
+contributors: ylecuyer
 
 # Create Team Messaging Team Quick Start
 
