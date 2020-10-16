@@ -92,6 +92,14 @@ pages:
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+    - 'High Volume SMS':
+      - 'Overview': 'messaging/sms/high-volume/index.md'
+      - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
+      - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
+      - 'Valid High Volume SMS Numbers': 'messaging/sms/high-volume/valid-a2p-sms-numbers.md'
+      - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
+      - 'Event Notifications': 'messaging/sms/high-volume/events.md'
+      - 'Errors Description': 'messaging/sms/high-volume/handling-errors.md'
     - 'Fax':
       - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
       - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
@@ -113,7 +121,7 @@ pages:
 
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
-    - 'Getting Started': 'team-messaging/quick-start.md' 
+    - 'Getting Started': 'team-messaging/quick-start.md'
     - 'Posting Messages':
       - 'Simple text messages': 'team-messaging/manual/posting.md'
       - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
@@ -208,4 +216,3 @@ pages:
 
   - 'Downloads and SDKs': sdks.md
   - 'RingCentral Labs': labs.md
- 

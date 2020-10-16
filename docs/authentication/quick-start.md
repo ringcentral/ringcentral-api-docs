@@ -556,7 +556,7 @@ Select your preferred language below.
         {
             private const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
             private const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
-            private const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
+            private const bool RINGCENTRAL_PRODUCTION = false;
             private const string RINGCENTRAL_REDIRECT_URL = "http://localhost:5000/oauth2callback";
             private const string SESSION_TOKEN_KEY = "rc-token";
 
@@ -577,7 +577,7 @@ Select your preferred language below.
                 app.UseSession();
                 app.Run(async (context) =>
                 {
-                    var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL);
+                    var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_PRODUCTION);
                     var tokenString = context.Session.GetString(SESSION_TOKEN_KEY);
                     if (tokenString != null)
                     {
