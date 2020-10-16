@@ -1,12 +1,13 @@
 # SMS Sending Numbers
 
-RingCentral numbers have SMS and MMS capabilities depending on the account plan. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and recieve SMS from the Main Company Number. See more below on using the Main Company Number.
+RingCentral numbers have SMS and MMS capabilities depending on the account plan. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and receive SMS from the Main Company Number. See more below on using the Main Company Number.
 
-Phone numbers can have different capabilties determined by the presence of the following values in the `features` property of the Phone Number info object:
+Phone numbers can have different capabilities determined by the presence of the following values in the `features` property of the Phone Number info object:
 
 | Feature | Description |
 |-|-|
 | `SmsSender` | send and receive regular texts |
+| `A2PSmsSender` | send and receive high volume SMS. To be used with the `a2p-sms` APIs |
 | `MmsSender` | send and receive group texts and files |
 | `InternationalSmsSender` | send and receive regular texts to international numbers |
 
@@ -21,26 +22,35 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 
 === "JavaScript"
 	```javascript
-	const RC = require('ringcentral')
+	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RC( {server: "server_url", appKey: "client_id", appSecret: "client_secret"} );
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
 	var platform = rcsdk.platform();
 
-	platform.login( {username: "username", password: "password", extension: "extension_number"
-	    })
-	    .then(function(resp) {
-		platform.get('/account/~/extension/~/phone-number')
-		  .then(function (response) {
-		      var jsonObj = response.json()
-		      for (var record of jsonObj.records)
-		      {
-			  console.log("This phone number " + record.phoneNumber + " has the following features: " );
-				for (var feature of record.features) {
-					console.log("=> " + feature);
-				}
-		      }
-		  })
-	    });
+	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+
+	platform.on(platform.events.loginSuccess, function(e){
+	    console.log("Login success")
+	    detect_sms_feature()
+	});
+
+	async function detect_sms_feature(){
+	  try{
+	    var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
+	    var jsonObj = await resp.json()
+	    for (var record of jsonObj.records){
+	      if (record.usageType == "DirectNumber"){
+	        for (feature of record.features){
+	          if (feature == "SmsSender"){
+	            console.log(`This phone number ${record.phoneNumber} has SMS feature`)
+	          }
+	        }
+	      }
+	    }
+	  }catch(e){
+	    console.log(e.message)
+	  }
+	}
 	```
 
 === "Python"
@@ -53,9 +63,9 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 
 	response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
 	for record in response.json().records:
-	    print "This phone number " + record.phoneNumber + " has the following features: "
-	    for feature in record.features:
-			print " => " + feature
+		for feature in record.features:
+			if feature == "SmsSender":
+				print "This phone number " + record.phoneNumber + " has SMS feature"
 	```
 
 === "PHP"
@@ -68,10 +78,10 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 	$platform->login( "username", "extension_number", "password" );
 
 	$response = $platform->get('/account/~/extension/~/phone-number');
-	foreach ($response->json()->records as $record){
-	    print_r ("This phone number ".$record->phoneNumber." has the following features: "."\n");
-	    foreach ($record->features as $feature)
-		print_r (" => ".$feature."\n");
+	foreach ($response->json()->records as $record)
+		foreach ($record->features as $feature)
+			if ($feature == "SmsSender")
+				print_r ("This phone number" $record->phoneNumber ." has SMS feature\n");
 	```
 
 === "C#"
@@ -82,28 +92,29 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 
 	namespace Read_Phone_Number
 	{
-	    class Program
-	    {
-		static void Main(string[] args)
+		class Program
 		{
-		    detect_phone_number_feature().Wait();
-		}
-		static private async Task detect_phone_number_feature()
-		{
+			static void Main(string[] args)
+			{
+				detect_phone_number_feature().Wait();
+			}
+			static private async Task detect_phone_number_feature()
+			{
 		    RestClient rc = new RestClient("client_id", "client_secret", "server_url");
 		    await rc.Authorize("username", "extension_number", "password");
 
-		    var response = await rc.Restapi().Account().Extension().PhoneNumber().Get();
+				var response = await rc.Restapi().Account().Extension().PhoneNumber().Get();
 
 		    foreach (var record in response.records)
 		    {
-			Console.WriteLine("This phone number " + record.phoneNumber + " has the following features: " );
-			foreach (var feature in record.features) {
-				Console.WriteLine("=> " + feature);
+					foreach (var feature in record.features) {
+						if (feature == "SmsSender"){
+							Console.WriteLine("This phone number " + record.phoneNumber + " has SMS feature");
+						}
+					}
+				}
 			}
-		    }
 		}
-	    }
 	}
 	```
 
@@ -113,7 +124,7 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 	import com.ringcentral.definitions.*;
 
 	public class Read_Phone_Number {
-		  public static void main(String[] args) {
+		public static void main(String[] args) {
 			try {
 				detect_phone_number_feature();
 			} catch (RestException | IOException e) {
@@ -121,21 +132,19 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 			}
 		}
 
-	    public static void detect_phone_number_feature() throws RestException, IOException{
-		RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
-		restClient.authorize("username", "extension_number", "password");
+		public static void detect_phone_number_feature() throws RestException, IOException{
+			RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
+			restClient.authorize("username", "extension_number", "password");
 
-		restClient = new RestClient("client_id", "client_secret", "server_url");
-		restClient.authorize("username", "extension_number", "password");
-
-		var response = restClient.restapi().account().extension().phonenumber().get();
-		for (var record : response.records) {
-			System.out.println("This phone number " + record.phoneNumber + " has the following features: " );
-			for (var feature : record.features) {
-				System.out.println("=> " + feature);
+			var response = restClient.restapi().account().extension().phonenumber().get();
+			for (var record : response.records) {
+				for (var feature : record.features) {
+					if (feature == "SmsSender"){
+						System.out.println("This phone number " + record.phoneNumber + " has SMS feature");
+					}
+				}
 			}
 		}
-	    }
 	}
 	```
 
@@ -148,9 +157,10 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 	response = rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
 
 	for record in response.body['records'] do
-	    puts "This phone number " + record['phoneNumber'] + " has the following features: "
-	    for feature in record['features'] do
-		puts " => " + feature
+			for feature in record['features'] do
+				if feature == "SmsSender"
+					puts "This phone number " + record['phoneNumber'] + " has SMS feature"
+				end
 	    end
 	end
 	```

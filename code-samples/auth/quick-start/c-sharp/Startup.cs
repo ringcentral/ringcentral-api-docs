@@ -12,7 +12,7 @@ public class Startup
 {
     private const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
     private const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
-    private const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
+    private const bool RINGCENTRAL_PRODUCTION = false;
     private const string RINGCENTRAL_REDIRECT_URL = "http://localhost:5000/oauth2callback";
     private const string SESSION_TOKEN_KEY = "rc-token";
 
@@ -33,7 +33,7 @@ public class Startup
         app.UseSession();
         app.Run(async (context) =>
             {
-                var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL);
+                var rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_PRODUCTION);
                 var tokenString = context.Session.GetString(SESSION_TOKEN_KEY);
                 if (tokenString != null)
                 {
@@ -51,12 +51,12 @@ public class Startup
                 {
                 case "/":
                     await context.Response.WriteAsync(Html(@"<b><a href=""/logout"">Logout</a></b>
-                                <h2>Call APIs</h2>
-                                <ul>
-                                    <li><a href=""/test?api=extension"" target=""_blank"">Read Extension Info</a></li>
-                                    <li><a href=""/test?api=extension-call-log"" target=""_blank"">Read Extension Call Log</a></li>
-                                    <li><a href=""/test?api=account-call-log"" target=""_blank"">Read Account Call Log</a></li>
-                                </ul>"));
+                            <h2>Call APIs</h2>
+                            <ul>
+                                <li><a href=""/test?api=extension"" target=""_blank"">Read Extension Info</a></li>
+                                <li><a href=""/test?api=extension-call-log"" target=""_blank"">Read Extension Call Log</a></li>
+                                <li><a href=""/test?api=account-call-log"" target=""_blank"">Read Account Call Log</a></li>
+                            </ul>"));
                     break;
                 case "/oauth2callback":
                     context.Request.Query.TryGetValue("code", out var codes);

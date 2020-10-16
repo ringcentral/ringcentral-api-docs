@@ -1,4 +1,4 @@
-## Posting an image via a Card
+# Posting an image via a Card
 
 One can use a card to post an image to a chat as well. This method allows you to associate additional text and metadata with an image you are posting. The following is an example message containing a single image and some basic captioning. 
 

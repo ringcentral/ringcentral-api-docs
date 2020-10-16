@@ -8,7 +8,7 @@ class Program
 {
     const string RINGCENTRAL_CLIENT_ID = "<RINGCENTRAL_CLIENT_ID>";
     const string RINGCENTRAL_CLIENT_SECRET = "<RINGCENTRAL_CLIENT_SECRET>";
-    const string RINGCENTRAL_PRODUCTION = false;
+    const bool RINGCENTRAL_PRODUCTION = false;
 
     const string RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
     const string RINGCENTRAL_USERNAME = "<RINGCENTRAL_USERNAME>";
