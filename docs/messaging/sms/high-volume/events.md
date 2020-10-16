@@ -54,20 +54,21 @@ An opt-out event is sent when a user texts `stop` to one of your High Volume SMS
 You will receive an even tlike the following which indicates that the Opt-Out service is `active` for sending messages `from` a number `to` a number.
 
 === "Opt-Out Event"
-        ```json
-        {
-          "uuid":"12345678901234567890",
-          "event":"/restapi/v1.0/account/11111111/a2p-sms/opt-outs",
-          "timestamp":"2020-10-01T00:00:00.000Z",
-          "subscriptionId":"11112222-3333-4444-5555-666677778888",
-          "ownerId":"22222222",
-          "body":{
-            "from":"+16505550100",
-            "to":"+12125550100",
-            "active":true
-          }
-        }
-        ```
+
+    ```json
+    {
+      "uuid":"12345678901234567890",
+      "event":"/restapi/v1.0/account/11111111/a2p-sms/opt-outs",
+      "timestamp":"2020-10-01T00:00:00.000Z",
+      "subscriptionId":"11112222-3333-4444-5555-666677778888",
+      "ownerId":"22222222",
+      "body":{
+         "from":"+16505550100",
+         "to":"+12125550100",
+         "active":true
+      }
+    }
+    ```
 
 ### Example Opt-In Event
 
@@ -76,17 +77,18 @@ An opt-in event is sent when a user texts `start` or `unstop` to one of your Hig
 You will receive an even tlike the following which indicates that the Opt-Out service is **not** `active` for sending messages `from` a number `to` a number.
 
 === "Opt-In Event"
-        ```json
-        {
-          "uuid":"12345678901234567891",
-          "event":"/restapi/v1.0/account/11111111/a2p-sms/opt-outs",
-          "timestamp":"2020-10-01T00:00:01.000Z",
-          "subscriptionId":"11112222-3333-4444-5555-666677779999",
-          "ownerId":"22222222",
-          "body":{
-            "from":"+16505550100",
-            "to":"+12125550100",
-            "active":false
-          }
-        }
-        ```
+
+    ```json
+    {
+      "uuid":"12345678901234567891",
+      "event":"/restapi/v1.0/account/11111111/a2p-sms/opt-outs",
+      "timestamp":"2020-10-01T00:00:01.000Z",
+      "subscriptionId":"11112222-3333-4444-5555-666677779999",
+      "ownerId":"22222222",
+      "body":{
+        "from":"+16505550100",
+        "to":"+12125550100",
+        "active":false
+      }
+    }
+    ```

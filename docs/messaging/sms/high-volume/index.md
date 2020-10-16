@@ -1,30 +1,34 @@
-# High Volume SMS
+# High-Volume SMS
 
-RingCentral's High Volume SMS APIs allow you to send large numbers of SMS texts from a single number using a single API request. This can be used for popular use cases such as appointment reminders, marketing campaigns, password reset, etc. Thus, High Volume SMS enables Application-to-Person (A2P) text messaging.
+RingCentral's High-Volume SMS APIs allow you to send a large number of SMS texts from a single number using a single API request. This can be used for popular use cases such as appointment reminders, marketing campaigns, password resets, etc. Thus, High-Volume SMS enables Application-to-Person (A2P) text messaging.
 
-RingCentral supports High Volume SMS with both local numbers and toll free numbers.
+RingCentral supports High-Volume SMS with both local numbers and toll free numbers.
 
-Key features include:
+High-Volume SMS supports the following key features:
 
-* [Sending at high volumes per number](sending-highvolume-sms)
-* [Opt-in / Opt-out Handling](opt-out)
-* [Event Notifications](events)
-* [Detailed Error Codes](handling-errors)
-* Queueing. Coming soon!
-* Scheduling. Coming soon!
-* Approved for high volume use with mobile carriers
-* Supports local and toll-free numbers
-* Supports US, Canada
+* [Sending at high volumes per phone number](./sending-highvolume-sms)
+* [Opt-in / Opt-out Handling](./opt-out)
+* [Event Notifications](./events)
+* [Detailed Error Codes](./handling-errors)
+* Pre-approved for high-volume usage with mobile carriers
+* Support for local and toll-free numbers
+* Support for United States and Canada
 
-## How to provision High Volume SMS Numbers
+## How to provision High-Volume SMS Numbers
 
-  * Login your account portal and choose or purchase a number. Select "Local" or "TollFree" type
-  * Open a support ticket at devsupport@ringcentral.com
-  * Provide the account id and the phone number to be provisioned in the support ticket
-  * Wait for the our support engineer to process your request
+Phone numbers for which High-Volume SMS is enabled are acquired with the assistance of RingCentral customer support. To obtain such a phone number please follow these instructions:
 
-## Current Limitations
+1. Login to your [account portal](https://service.ringcentral.com/) and choose or purchase a number. Select either the "Local" or "TollFree" type.
 
-  * High volume SMS does not support Multi-Media messaging (MMS)
-  * High volume SMS does not group messaging
-  * High volume SMS does support international SMS messaging
+2. Next, open a support ticket by emailing [devsupport@ringcentral.com](mailto:devsupport@ringcentral.com).
+   * Be sure to provide the account ID and the phone number you wish to setup for high-volume SMS in the support ticket you file. 
+   * Wait for the support engineer to process your request
+
+!!! warning "Limitations of High-Volume SMS"
+    High-Volume SMS does not currently support the following:
+    
+    * Multi-Media messaging (MMS)
+    * Group messaging
+    * International SMS messaging
+    * Queuing
+    * Scheduling

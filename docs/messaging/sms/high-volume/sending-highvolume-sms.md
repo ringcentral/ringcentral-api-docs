@@ -1,16 +1,14 @@
 # Sending High Volume SMS
 
-The High Volume SMS API provides a very flexible way to send multiple SMS message in a single API request (aka a batch).
+The High Volume SMS API provides a very flexible way to send multiple SMS message in a single API request (a.k.a. a batch). In other words, one can send the same text message to different recipients and/or different text messages to different recipients in a single request.
 
-You can send the same text message to different recipients and/or different text messages to different recipients in a single request.
-
-!!! note
-    There is no limit of number of recipients in a batch. However, the maximum size of each batch is about 50MB.
+!!! note "There is no limit of number of recipients in a batch. However, the maximum size of each batch is about 50MB."
 
 ## Simple Broadcast Request to send the same message to 2 recipients
 
 === "HTTP"
-  	```http
+
+    ```http
     POST /restapi/v1.0/account/~/a2p-sms/batch
     Content-Type: application/json
     Accept: application/json
@@ -23,7 +21,7 @@ You can send the same text message to different recipients and/or different text
         { "to": ["+12125550100"] }
       ]
     }
-  	```
+    ```
 
 === "JavaScript"
     ```javascript
@@ -113,7 +111,7 @@ You can send the same text message to different recipients and/or different text
     puts resp.body
     ```
 
-### Response
+The code samples above would all produce a response that would appear similar to the one below.
 
 ```json
 {
@@ -234,7 +232,7 @@ You can send the same text message to different recipients and/or different text
     puts resp.body
     ```
 
-### Response
+The code samples above would all produce a response that would appear similar to the one below.
 
 ```json
 {
@@ -311,7 +309,7 @@ Sending a large batch will take some time for the server to complete. You can re
     puts resp.body
     ```
 
-### Response
+The code samples above would all produce a response that would appear similar to the one below. The batch's status is highlighted for you. 
 
 ```json hl_lines="6"
 {

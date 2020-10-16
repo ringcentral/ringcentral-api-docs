@@ -1,29 +1,29 @@
-# Opt-in / Opt-out
+# Handling Opt-in / Opt-out requests for High-Volume SMS
 
-RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms `START` and `STOP`, respectively. This is handled per pair of sender and recipient numbers.
+RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms "start" and "stop," respectively. This is handled per pair of sender and recipient numbers.
 
-While RingCentral automatically handles this and will prevent sending to numbers that have opted out, developers are recommended handle these numbers and prevent sending them to begin with.
+While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that developers make note of the numbers that have opted out, and prevent sending messages to them in the future. 
 
-=== "Opt-out"
+## Network auto-replies to opt-in/out-out requests
 
-    When a recipient replies `stop`, RingCentral will automatically reply to the recipient with the following message:
+### Opt-out requests
 
-        NETWORK MSG: You replied with the word "stop" which blocks all texts from this number.
+When a recipient replies to an SMS message with the word "stop," RingCentral will automatically reply to the recipient with the following message:
 
-        Text back "unstop" to receive messages again.
+> NETWORK MSG: You replied with the word "stop" which blocks all texts from this number.
+> Text back "unstop" to receive messages again.
 
-    If you have subscribed for the `opt-outs` event notifications, you will receive an event of this incident. See more on the `opt-outs` event in the [High Volume SMS Events page](events#opt-out-events)
+If you have subscribed to [`opt-outs` event notifications](./events/#opt-out-events), you will receive an event of this incident.
 
-=== "Opt-in"
+### "Opt-in" requests
 
-    When a recipient replies `start`, RingCentral will automatically reply to the recipient with the following message:
+When a recipient replies to an SMS message with the word "start," RingCentral will automatically reply to the recipient with the following message:
 
-        NETWORK MSG: You have replied "unstop" and will begin receiving messages again from this number.
+> NETWORK MSG: You have replied "unstop" and will begin receiving messages again from this number.
 
-    !!! note
-      There will be no event notification for opt-in incident!
+!!! note "There will be no event notification for opt-in incident."
 
-## Checking Phone Number Opt-out Status
+## Checking a phone number's opt-out status
 
 In addition to real-time events, you can check on number status by calling the `opt-outs` API. The API's response contains a list of numbers which currently opted out for receiving text messages from the "from" number.
 
