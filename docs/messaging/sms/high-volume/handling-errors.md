@@ -6,6 +6,8 @@ High-Volume SMS provides detailed error codes for reasons why a SMS may have fai
 
 Error codes are composed of a prefix and a number. The prefix identifies the error reporting party and the numeric code is aligned with HTTP response status codes.
 
+In the following example, `SMS-CAR-411`, `SMS-CAR-` is the prefix and `411` is the numeric code.
+
 ### Error Reporting Party Prefix
 
 For SMS, there are 3 parties that can return an error:
@@ -66,8 +68,8 @@ Some information is provided for informational purposes and while it may be clas
 | `SMS-CAR-432` | Message too long. |
 | `SMS-CAR-433` | Message is malformed for the carrier. |
 | `SMS-CAR-450` | P2P messaging volume violation. |
-| `SMS-CAR-460` | Destination rejected short code messaging. Currently not applicable for RC. |
+| `SMS-CAR-460` | Destination rejected short code messaging. Currently not applicable for RingCentral. |
 | `SMS-CAR-500` | Carrier reports general service failure. |
 | `SMS-RC-500` | General/Unknown internal RC error. |
-| `SMS-RC-501` | RC is making a bad upstream API call. |			
-| `SMS-RC-503` | RC provisioning error. Phone number is incorrectly provisioned by RC in the upstream. |
+| `SMS-RC-501` | RingCentral is sending a bad upstream API call. |			
+| `SMS-RC-503` | RingCentral provisioning error. Phone number is incorrectly provisioned by RingCentral in upstream. |
