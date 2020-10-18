@@ -84,40 +84,40 @@ You can read the entire High Volume SMS message store then iterate through the `
 {
   "records": [
     {
-      "id": '52511',
-      "from": '+16505550100',
-      "to": [ '+16501112222' ],
-      "createdAt": '2020-10-14T21:47:51.436491Z',
-      "lastUpdatedAt": '2020-10-14T21:47:53.032416Z',
-      "messageStatus": 'Delivered',
+      "id": "52511",
+      "from": "+16505550100",
+      "to": [ "+16501112222" ],
+      "createdAt": "2020-10-14T21:47:51.436491Z",
+      "lastUpdatedAt": "2020-10-14T21:47:53.032416Z",
+      "messageStatus": "Delivered",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52494',
-      "from": '+16505550100',
-      "to": [ '+16502223333' ],
-      "createdAt": '2020-10-14T20:21:23.979729Z',
-      "lastUpdatedAt": '2020-10-14T20:21:25.254851Z',
-      "messageStatus": 'Delivered',
+      "id": "52494",
+      "from": "+16505550100",
+      "to": [ "+16502223333" ],
+      "createdAt": "2020-10-14T20:21:23.979729Z",
+      "lastUpdatedAt": "2020-10-14T20:21:25.254851Z",
+      "messageStatus": "Delivered",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52485',
-      "from": '+16505550100',
-      "to": [ '+16503334444' ],
-      "createdAt": '2020-10-14T20:19:56.505461Z',
-      "lastUpdatedAt": '2020-10-14T22:20:01.728022Z',
-      "messageStatus": 'DeliveryFailed',
-      "errorCode": 'SMS-CAR-104',
+      "id": "52485",
+      "from": "+16505550100",
+      "to": [ "+16503334444" ],
+      "createdAt": "2020-10-14T20:19:56.505461Z",
+      "lastUpdatedAt": "2020-10-14T22:20:01.728022Z",
+      "messageStatus": "DeliveryFailed",
+      "errorCode": "SMS-CAR-104",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52484',
-      "from": '+16505550100',
-      "to": [ '+16504445555' ],
-      "createdAt": '2020-10-14T20:19:18.415601Z',
-      "lastUpdatedAt": '2020-10-14T20:19:18.668841Z',
-      "messageStatus": 'SendingFailed'
+      "id": "52484",
+      "from": "+16505550100",
+      "to": [ "+16504445555" ],
+      "createdAt": "2020-10-14T20:19:18.415601Z",
+      "lastUpdatedAt": "2020-10-14T20:19:18.668841Z",
+      "messageStatus": "SendingFailed"
     }
   ],
   "paging": {
@@ -203,13 +203,13 @@ You can read the individual message details from High Volume message store using
 ```json
 {
   {
-    "id": '52511',
-    "from": '+16505550100',
-    "to": [ '+14155550100' ],
-    "text": 'Hello Team',
-    "createdAt": '2020-10-14T21:47:51.436491Z',
-    "lastUpdatedAt": '2020-10-14T21:47:53.032416Z',
-    "messageStatus": 'Delivered',
+    "id": "52511",
+    "from": "+16505550100",
+    "to": [ "+14155550100" ],
+    "text": "Hello Team",
+    "createdAt": "2020-10-14T21:47:51.436491Z",
+    "lastUpdatedAt": "2020-10-14T21:47:53.032416Z",
+    "messageStatus": "Delivered",
     "cost": 0.007,
     "segmentCount": 1
   }
