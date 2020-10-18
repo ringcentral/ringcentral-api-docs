@@ -1,6 +1,6 @@
-# Handling High-Volume SMS Errors
+# Handling High Volume SMS Errors
 
-High-Volume SMS provides detailed error codes for reasons why a SMS may have failed sending or delivery which can be used to determine how to adjust your campaigns.
+High Volume SMS provides detailed error codes for reasons why a SMS may have failed sending or delivery which can be used to determine how to adjust your campaigns.
 
 ## Error Code Structure
 

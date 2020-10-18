@@ -1,4 +1,4 @@
-# Handling Opt-in / Opt-out requests for High-Volume SMS
+# Handling Opt-in / Opt-out requests for High Volume SMS
 
 RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms `start` and `stop`, respectively. This is handled per pair of sender and recipient numbers.
 
