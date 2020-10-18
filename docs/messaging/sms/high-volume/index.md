@@ -10,9 +10,9 @@ High-Volume SMS supports the following key features:
 * [Opt-in / Opt-out Handling](./opt-out)
 * [Event Notifications](./events)
 * [Detailed Error Codes](./handling-errors)
-* [Pre-approved for high-volume usage with mobile carriers](./local-toll-free-numbers)
-* [Support for local and toll-free numbers](./local-toll-free-numbers)
-* Support for United States and Canada
+* [Approved for high-volume usage with mobile carriers](./toll-free-sms-vs-local-numbers/#carrier-approval)
+* [Support for local and toll-free numbers](./toll-free-sms-vs-local-numbers)
+* [Support for United States and Canada](./toll-free-sms-vs-local-numbers/#supported-countries)
 
 ## How to provision High-Volume SMS Numbers
 
