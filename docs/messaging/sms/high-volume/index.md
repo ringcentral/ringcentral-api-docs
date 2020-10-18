@@ -20,8 +20,10 @@ Phone numbers for which High-Volume SMS is enabled are acquired with the assista
 
 1. Login to your [account portal](https://service.ringcentral.com/) and choose or purchase a number. Select either the "Local" or "TollFree" type.
 
+1. Login to your [deeveeloper portal](https://developers.ringcentral.com) and choose or create an application.
+
 2. Next, open a support ticket by emailing [devsupport@ringcentral.com](mailto:devsupport@ringcentral.com).
-   * Be sure to provide the account ID and the phone number you wish to setup for high-volume SMS in the support ticket you file. 
+   * Be sure to provide the account ID, the phone number, and the application client ID you wish to setup for high-volume SMS in the support ticket you file. 
    * Wait for the support engineer to process your request
 
 !!! warning "Limitations of High-Volume SMS"
