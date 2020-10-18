@@ -1,6 +1,6 @@
 # Handling Opt-in / Opt-out requests for High-Volume SMS
 
-RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms "start" and "stop," respectively. This is handled per pair of sender and recipient numbers.
+RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms `start` and `stop`, respectively. This is handled per pair of sender and recipient numbers.
 
 While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that developers make note of the numbers that have opted out, and prevent sending messages to them in the future. 
 
@@ -101,12 +101,12 @@ In addition to real-time events, you can check on number status by calling the `
 ```json
 {
   "records": [
-    { "from": '+16505550100', "to": '+12125550100' } ],
+    { "from": "+16505550100", "to": "+12125550100" } ],
   "paging":
    {
-     "pageToken": 'Rji2MjMwNw==',
+     "pageToken": "Rji2MjMwNw==",
      "perPage": 100,
-     "firstPageToken": 'Rji2MjMwNw=='
+     "firstPageToken": "Rji2MjMwNw=="
   }
 }
 ```
