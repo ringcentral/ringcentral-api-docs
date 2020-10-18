@@ -96,6 +96,7 @@ pages:
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
       - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
+      - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
       - 'Valid High Volume SMS Numbers': 'messaging/sms/high-volume/valid-a2p-sms-numbers.md'
       - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
       - 'Event Notifications': 'messaging/sms/high-volume/events.md'
