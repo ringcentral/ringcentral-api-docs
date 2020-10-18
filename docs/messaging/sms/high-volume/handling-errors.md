@@ -4,9 +4,7 @@ High-Volume SMS provides detailed error codes for reasons why a SMS may have fai
 
 ## Error Code Structure
 
-Error codes are composed of a prefix and a number. The prefix identifies the error reporting party and the numeric code is aligned with HTTP response status codes.
-
-In the following example, `SMS-CAR-411`, `SMS-CAR-` is the prefix and `411` is the numeric code.
+Error codes are composed of a prefix and a number. The prefix identifies the error reporting party and the numeric code is aligned with HTTP response status codes. In the following error code, `SMS-CAR-411`, `SMS-CAR-` is the prefix and `411` is the numeric code.
 
 ### Error Reporting Party Prefix
 

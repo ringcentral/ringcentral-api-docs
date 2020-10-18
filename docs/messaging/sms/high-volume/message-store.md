@@ -1,6 +1,6 @@
 # High Volume SMS Store
 
-High Volume SMS message store is separated from the normal SMS (P2P) message store.
+The High Volume SMS message store is separate from the normal SMS (P2P) message store to enable high volume sending.
 
 ## Read High Volume Message Store
 
