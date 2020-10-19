@@ -27,10 +27,17 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+    	clientId: "client_id",
+        clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -152,10 +159,17 @@ The code samples above would all produce a response that would appear similar to
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+	clientId: "client_id",
+	clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -254,10 +268,17 @@ Sending a large batch will take some time for the server to complete. You can re
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+	clientId: "client_id",
+	clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
