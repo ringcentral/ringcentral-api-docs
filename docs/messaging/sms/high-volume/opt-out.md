@@ -13,7 +13,7 @@ When a recipient replies to an SMS message with the word "stop," RingCentral wil
 > NETWORK MSG: You replied with the word "stop" which blocks all texts from this number.
 > Text back "unstop" to receive messages again.
 
-If you have subscribed to [`opt-outs` event notifications](./events/#opt-out-events), you will receive an event of this incident.
+If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident.
 
 ### "Opt-in" requests
 
