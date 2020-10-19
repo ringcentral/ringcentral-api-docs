@@ -10,9 +10,9 @@ The following shows click-to-schedule, the main meeting tab, and the meeting/rec
 
 <img class="img-fluid" width="80%" src="../hubspot-video.png">
 
-## Navigate to the Meetings Tab
+## Click-to-Schedule
 
-You can use `rc-adapter-navigate-to` to bring the Meetings tab to the foreground in the app. This is useful if you want to implement functionality like clicking to schedule a meeting from your web app.
+Click-to-schedule a meeting an be imiplemented by using the `rc-adapter-navigate-to` API with the `/meeting` path to bring the Meetings tab to the foreground in the app. Using thiis approach, you can allow users to schedule meetings wherever they are.
 
 === "Javascript"
     ```javascript
