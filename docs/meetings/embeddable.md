@@ -100,6 +100,6 @@ To open the Embeddable width and navigate to the meetings tab, call `window.post
     }, '*');
     ```
 
-## Show Log Button on Meeting history page
+## Log Meeting and Recording History
 
-[Go here](https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md#log-ringcentral-video-meeting-into-your-service) for full docs about adding Log button in meetings history page. And get how to get meeting record and log into your service.
+You can enable logging meeting and recordings to your app by showing the log button on the meeeting history page. This will allow you to add meeting recordings and logs into your service. Full documentation on how to do this is available on [the Embeddable repo](https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md#log-ringcentral-video-meeting-into-your-service). 
