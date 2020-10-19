@@ -2,13 +2,6 @@
 
 Send and receive SMS messages using the High Volume SMS API (`a2p-sms`) requires a phone number with the `A2PSmsSender` feature.
 
-A High Volume SMS phone number can be either a 10-DLC local number or a Toll-Free number.
-
-| paymentType | Description |
-|-|-|
-| `Local` |  |
-| `TollFree` |  |
-
 
 ## Listing Valid High Volume SMS Numbers
 
