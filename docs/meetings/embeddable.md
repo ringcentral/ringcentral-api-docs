@@ -99,3 +99,7 @@ To open the Embeddable width and navigate to the meetings tab, call `window.post
       path: '/meeting', // '/messages', '/dialer', '/history', '/settings'
     }, '*');
     ```
+
+## Show Log Button on Meeting history page
+
+[Go here](https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md#log-ringcentral-video-meeting-into-your-service) for full docs about add Log button in meetings history page. And get how to get meeting record and log into your service.
