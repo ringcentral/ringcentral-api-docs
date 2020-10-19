@@ -12,9 +12,7 @@ The following shows click-to-schedule, the main meeting tab, and the meeting/rec
 
 ## Navigate to the Meetings Tab
 
-You can use `rc-adapter-navigate-to` to bring the Meetings tab to the foreground in the app. This is useful if you want to implment functionality like clicking to schedule a meeting from your  web app.
-
-This can be used with [RingCentral's Click-to-Dial library](https://github.com/ringcentral/ringcentral-c2d) to provide a visual click-to-dial web-based tool tip, where clicking on the tool tip's meeting icon can bring up the widget and navigate to the meetings tab.
+You can use `rc-adapter-navigate-to` to bring the Meetings tab to the foreground in the app. This is useful if you want to implement functionality like clicking to schedule a meeting from your web app.
 
 === "Javascript"
     ```javascript
