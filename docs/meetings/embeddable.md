@@ -10,19 +10,9 @@ The following shows click-to-schedule, the main meeting tab, and the meeting/rec
 
 <img class="img-fluid" width="80%" src="../hubspot-video.png">
 
-## Click-to-Schedule
-
-Click-to-schedule a meeting an be imiplemented by using the `rc-adapter-navigate-to` API with the `/meeting` path to bring the Meetings tab to the foreground in the app. Using thiis approach, you can allow users to schedule meetings wherever they are.
-
-=== "Javascript"
-    ```javascript
-    document.querySelector("#rc-widget-adapter-frame").contentWindow.postMessage({
-      type: 'rc-adapter-navigate-to',
-      path: '/meeting', // '/messages', '/dialer', '/history', '/settings'
-    }, '*');
-    ```
-
 ## Schedule a meeting
+
+Click-to-schedule a meeting an be implemented by posting a `rc-adapter-message-request` message with the `/schedule-meeting` path. By ssending the meeting details, the widget will automatically pre-populate thee create meeting field with the correct info which can be reviewed and modified by the user before submisssion.
 
 === "Javascript"
     ```javascript
@@ -62,7 +52,7 @@ This is also covered in the [SDK docs for schedule a meeting](https://github.com
 
 ### Listen schedule meeting result
 
-To receive a schedule meeting result event, you can subscribe to events using `window.addEventListner` filtering on `rc-adapter-message-response`.
+To receive a schedule meeting result event, you can subscribe to events using `window.addEventListner` and filtering on `rc-adapter-message-response` message type.
 
 === "Javascript"
     ```javascript
@@ -96,4 +86,16 @@ Get meeting status and permission:
         }
       }
     });
+    ```
+
+## Navigate to Meetings Tab
+
+To open the Embeddable width and navigate to the meetings tab, call `window.postMessage` with message type `rc-adapter-navigate-to` and the `/meeting` path.
+
+=== "Javascript"
+    ```javascript
+    document.querySelector("#rc-widget-adapter-frame").contentWindow.postMessage({
+      type: 'rc-adapter-navigate-to',
+      path: '/meeting', // '/messages', '/dialer', '/history', '/settings'
+    }, '*');
     ```
