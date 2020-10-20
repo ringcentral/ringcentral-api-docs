@@ -8,10 +8,10 @@ You can read the entire High Volume SMS message store then iterate through the `
 
 | API Endpoint | Description |
 |-|-|
-| `/restapi/v1.0/account/~/a2p-sms/messages` | Read the entire High Volume message store. |
-| `/restapi/v1.0/account/~/a2p-sms/messages?pageToken={nextPageToken}` | Read messages from the next page. |
-| `/restapi/v1.0/account/~/a2p-sms/messages/{messageId}` | Read a message's details using a message id. |
-| `/restapi/v1.0/account/~/a2p-sms/messages?batchId={batchId}` | Read all messages in a batch identified by a batch id. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read the entire High Volume message store. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages?pageToken={nextPageToken}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read messages from the next page. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages/{messageId}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read a message's details using a message id. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages?batchId={batchId}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read all messages in a batch identified by a batch id. |
 
 
 === "HTTP"

@@ -24,7 +24,7 @@ Currently, High Volume SMS is supported for numbers in the United States and Can
 
 Send and receive SMS messages using the High Volume SMS API (`a2p-sms`) requires a phone number with the `A2PSmsSender` feature.
 
-To determine which numbers a user can use to send and receive High Volume SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `A2PSmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
+To determine which numbers a user can use to send and receive High Volume SMS, retrieve the user's list of phone numbers from the [`extension/phone-number` endpoint](https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers) and then filter by numbers with the `A2PSmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
 === "HTTP"
 	```http
