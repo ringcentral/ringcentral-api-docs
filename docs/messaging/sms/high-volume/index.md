@@ -24,10 +24,10 @@ RingCentral High Volume SMS supports the following key features:
 !!! warning "Limitations of High Volume SMS"
     High Volume SMS does not currently support the following:
     
-    * Numbers outside the US and Canada
     * Sending images, vcards and other files (MMS)
     * Group messaging (MMS)
     * International SMS messaging
+    * Numbers outside the US and Canada
     * Scheduling
 
     If you need to send files, communicate with a group, or send to international destinations, please consider our [standard SMS API](../../).
