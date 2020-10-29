@@ -408,4 +408,4 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application.
 
-<a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
+<a class="btn btn-success btn-lg" href="../../basics/your-first-steps/">Take your next step &raquo;</a>

@@ -1,5 +1,7 @@
 no_breadcrumb:true
 
+!!! hint "Announcing [High Volume SMS](..)"
+
 # RingCentral Office Developer Guide
 
 <div class="jumbotron pt-1">
