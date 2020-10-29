@@ -2,7 +2,7 @@
 
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with High Volume SMS!</h3>
-  <p class="lead">RingCentral's High Volume SMS API allows you to send large numbers of SMS texts from a single number using a single API request with phone numbers that meet the wireless industry guidelines for commerical SMS. This can be used for popular use cases such as appointment reminders, marketing campaigns, password resets, and more.</p>
+  <p class="lead">RingCentral's High Volume SMS API allows you to send large numbers of SMS texts from a single number using a single API request with phone numbers that meet the wireless industry guidelines for commercial SMS. This can be used for popular use cases such as appointment reminders, marketing campaigns, password resets, and more.</p>
 
 <hr class="my-4">
   <p>The following guides have been created to assist developers in getting started quickly:</p>
@@ -31,7 +31,7 @@ RingCentral High Volume SMS supports the following key features:
 
 !!! warning "Limitations of High Volume SMS"
     High Volume SMS does not currently support the following:
-    
+
     * Sending images, vcards and other files (MMS)
     * Group messaging (MMS)
     * International SMS messaging
