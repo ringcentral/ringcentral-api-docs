@@ -8,7 +8,7 @@
   <p>The following guides have been created to assist developers in getting started quickly:</p>
 
   <ul>
-    <li><a href="./toll-free-sms-vs-local-numbers#ordering-and-provisioning-high-volume-sms-numbers">Provision and validate high volume numbers</a></li>
+    <li><a href="./toll-free-sms-vs-local-numbers#ordering-and-provisioning-high-volume-sms-numbers">Provision and validate High Volume SMS numbers</a></li>
     <li><a href="./sending-highvolume-sms">Sending High Volume SMS</a></li>
     <li><a href="./message-store">Reading High Volume SMS</a></li>
     <li><a href="./opt-out">Using opt-in and opt-out handling</a></li>

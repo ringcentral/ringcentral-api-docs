@@ -21,7 +21,7 @@ Currently, High Volume SMS is supported for numbers in the United States and Can
 
 ## Ordering and Provisioning High Volume SMS Numbers
 
-To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Low Volume (P2P) or High Volume (A2P) SMS, and one type can be configured for the other, but a number cannot be both at the same time.
+To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Low Volume (P2P) or High Volume (A2P) SMS, and can be switched back and forth, but a number cannot be both at the same time.
 
 If you don't have a number already, log into the [Account Portal](https://service.ringcentral.com) and navigate to the following location to purchase a new number.
 
