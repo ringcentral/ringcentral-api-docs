@@ -9,16 +9,25 @@ Local and toll-free numbers can be used to send and receive SMS under RingCentra
 
 Both types of numbers can be purchased in the RingCentral [Account Portal](https://service.ringcentral.com) under "Phone Numbers".
 
-## Carrier Approval
+### Carrier Approval
 
 Both local and toll-free numbers enrolled in High Volume SMS can be used to send "Non-Consumer (A2P)" SMS as described in the [CTIA Messaging Principles and Best Practices guide](https://www.ctia.org/the-wireless-industry/industry-commitments/messaging-interoperability-sms-mms).
 
 Local numbers are enrolled in a Commercial Long Code / 10DLC program with wireless carriers that allows these number send at high volume.
 
-## Supported Countries
+### Supported Countries
 
 Currently, High Volume SMS is supported for numbers in the United States and Canada.
 
+## Ordering and Provisioning High Volume SMS Numbers
+
+To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Low Volume (P2P) or High Volume (A2P) SMS, and one type can be configured for the other, but a number cannot be both at the same time.
+
+If you don't have a number already, log into the [Account Portal](https://service.ringcentral.com) and navigate to the following location to purchase a new number.
+
+["Phone System" > "All Numbers" > "+ Add Number"](https://service.ringcentral.com/application/company/phoneNumbers/allNumbers)
+
+Once you have a number, it will be initially provisioned for standard P2P SMS. To configure a number for High Volume (A2P) use, enroll in the [High Volume SMS beta program](https://ringcentral.github.io/releases/high-volume-sms-beta-signup.html)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
 
 ## Listing Valid High Volume SMS Numbers
 
