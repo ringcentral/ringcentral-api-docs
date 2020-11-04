@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-!!! hint "Announcing [High Volume SMS](..)"
+!!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
 
 # RingCentral Office Developer Guide
 

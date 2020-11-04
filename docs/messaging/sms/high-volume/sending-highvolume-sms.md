@@ -155,6 +155,31 @@ The code samples above would all produce a response that would appear similar to
     }
     ```
 
+=== "HTTP2"
+    ```http
+    POST /restapi/v1.0/account/~/a2p-sms/batch
+    Content-Type: application/json
+    Accept: application/json
+
+    {
+      "from": "+16505550100",
+      "text": "Hello Friend"
+      "messages": [
+        {
+          "to": ["+14155550100"],
+          "text": "Hello Alice"
+        },
+        {
+          "to": ["+12125550100"],
+          "text": "Hello Bob"
+        },
+        {
+          "to": ["+16505550199"]
+        }
+      ]
+    }
+    ```
+
 === "JavaScript"
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
