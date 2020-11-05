@@ -27,10 +27,17 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+    	clientId: "client_id",
+        clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -148,14 +155,46 @@ The code samples above would all produce a response that would appear similar to
     }
     ```
 
+=== "HTTP2"
+    ```http
+    POST /restapi/v1.0/account/~/a2p-sms/batch
+    Content-Type: application/json
+    Accept: application/json
+
+    {
+      "from": "+16505550100",
+      "text": "Hello Friend"
+      "messages": [
+        {
+          "to": ["+14155550100"],
+          "text": "Hello Alice"
+        },
+        {
+          "to": ["+12125550100"],
+          "text": "Hello Bob"
+        },
+        {
+          "to": ["+16505550199"]
+        }
+      ]
+    }
+    ```
+
 === "JavaScript"
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+	clientId: "client_id",
+	clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -254,10 +293,17 @@ Sending a large batch will take some time for the server to complete. You can re
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
+    var rcsdk = new RingCentral( {
+    	server: "server_url",
+	clientId: "client_id",
+	clientSecret: "client_secret"} );
+	
   	var platform = rcsdk.platform();
 
-  	platform.login( {username: "username", password: "password", extension: "extension_number"} )
+  	platform.login( {
+	  username: "username",
+	  password: "password",
+	  extension: "extension_number"} )
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{

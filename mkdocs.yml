@@ -97,10 +97,10 @@ pages:
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
       - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
-      - 'Valid High Volume SMS Numbers': 'messaging/sms/high-volume/valid-a2p-sms-numbers.md'
+      - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
       - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
       - 'Event Notifications': 'messaging/sms/high-volume/events.md'
-      - 'Errors Description': 'messaging/sms/high-volume/handling-errors.md'
+      - 'Errors Handling': 'messaging/sms/high-volume/handling-errors.md'
     - 'Fax':
       - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
       - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
@@ -153,7 +153,8 @@ pages:
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
     - 'Getting Started': 'meetings/quick-start.md'
-    - 'RingCentral Video': 'meetings/video.md'
+    - 'RingCentral Video API': 'meetings/video.md'
+    - 'Embeddable': 'meetings/embeddable.md'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':

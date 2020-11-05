@@ -1,6 +1,8 @@
 contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie.chen
 no_breadcrumb:true
 
+!!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
+
 # RingCentral Office Developer Guide
 
 <div class="jumbotron pt-1">
@@ -9,7 +11,7 @@ no_breadcrumb:true
   <hr class="my-4">
   <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
   <ul>
-    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS and Fax API</strong>.</li> 
+    <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS API</strong>.</li> 
     <li><a href="./voice/quick-start/">Make a phone call</a> using Ringout in our <strong>Voice API</strong>.</li> 
     <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Team Messaging API</strong></li>
     <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>

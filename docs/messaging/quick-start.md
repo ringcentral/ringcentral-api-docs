@@ -8,7 +8,7 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
 !!! note "Also check out our SMS Best Practices Guide"
-    After you finish this quick start, be sure to read our [SMS Best Practices Guide](../../sms/best-practices/).
+    After you finish this quick start, be sure to read our [SMS Best Practices Guide](../sms/best-practices/).
 
 ## Create App and Get Credentials
 
@@ -217,4 +217,4 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application.
 
-<a class="btn btn-success btn-lg" href="../../../basics/your-first-steps/">Take your next step &raquo;</a>
+<a class="btn btn-success btn-lg" href="../../basics/your-first-steps/">Take your next step &raquo;</a>

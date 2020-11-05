@@ -1,6 +1,6 @@
 # High Volume SMS Store
 
-High Volume SMS message store is separated from the normal SMS (P2P) message store.
+The High Volume SMS message store is separate from the normal SMS (P2P) message store to enable high volume sending.
 
 ## Read High Volume Message Store
 
@@ -8,15 +8,34 @@ You can read the entire High Volume SMS message store then iterate through the `
 
 | API Endpoint | Description |
 |-|-|
-| `/restapi/v1.0/account/~/a2p-sms/messages` | Read the entire High Volume message store. |
-| `/restapi/v1.0/account/~/a2p-sms/messages?pageToken={nextPageToken}` | Read messages from the next page. |
-| `/restapi/v1.0/account/~/a2p-sms/messages/{messageId}` | Read a message's details using a message id. |
-| `/restapi/v1.0/account/~/a2p-sms/messages?batchId={batchId}` | Read all messages in a batch identified by a batch id. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read the entire High Volume message store. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages?pageToken={nextPageToken}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read messages from the next page. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages/{messageId}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read a message's details using a message id. |
+| [`/restapi/v1.0/account/~/a2p-sms/messages?batchId={batchId}`](https://developers.ringcentral.com/api-reference/High-Volume-SMS/listA2PSMS) | Read all messages in a batch identified by a batch id. |
 
 
 === "HTTP"
     ```http
     GET /restapi/v1.0/account/~/a2p-sms/messages
+    ```
+
+=== "JSON"
+    ```json
+    [
+      {
+        "id":"53095",
+        "from":"+16505550100",
+        "to":[
+          "+14155550100"
+        ],
+        "createdAt":"2020-10-21T17:26:01.072479Z",
+        "lastUpdatedAt":"2020-10-21T17:26:02.192848Z",
+        "messageStatus":"DeliveryFailed",
+        "errorCode":"SMS-UP-410",
+        "cost":0,
+        "segmentCount":1
+      }
+    ]
     ```
 
 === "JavaScript"
@@ -81,43 +100,61 @@ You can read the entire High Volume SMS message store then iterate through the `
 ### Response
 
 ```json
+[
+  {
+    "id":"53095",
+    "from":"+16505550100",
+    "to":[
+      "+14155550100"
+    ],
+    "createdAt":"2020-10-21T17:26:01.072479Z",
+    "lastUpdatedAt":"2020-10-21T17:26:02.192848Z",
+    "messageStatus":"DeliveryFailed",
+    "errorCode":"SMS-UP-410",
+    "cost":0,
+    "segmentCount":1
+  }
+]
+```
+
+```json
 {
   "records": [
     {
-      "id": '52511',
-      "from": '+16505550100',
-      "to": [ '+16501112222' ],
-      "createdAt": '2020-10-14T21:47:51.436491Z',
-      "lastUpdatedAt": '2020-10-14T21:47:53.032416Z',
-      "messageStatus": 'Delivered',
+      "id": "52511",
+      "from": "+16505550100",
+      "to": [ "+16501112222" ],
+      "createdAt": "2020-10-14T21:47:51.436491Z",
+      "lastUpdatedAt": "2020-10-14T21:47:53.032416Z",
+      "messageStatus": "Delivered",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52494',
-      "from": '+16505550100',
-      "to": [ '+16502223333' ],
-      "createdAt": '2020-10-14T20:21:23.979729Z',
-      "lastUpdatedAt": '2020-10-14T20:21:25.254851Z',
-      "messageStatus": 'Delivered',
+      "id": "52494",
+      "from": "+16505550100",
+      "to": [ "+16502223333" ],
+      "createdAt": "2020-10-14T20:21:23.979729Z",
+      "lastUpdatedAt": "2020-10-14T20:21:25.254851Z",
+      "messageStatus": "Delivered",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52485',
-      "from": '+16505550100',
-      "to": [ '+16503334444' ],
-      "createdAt": '2020-10-14T20:19:56.505461Z',
-      "lastUpdatedAt": '2020-10-14T22:20:01.728022Z',
-      "messageStatus": 'DeliveryFailed',
-      "errorCode": 'SMS-CAR-104',
+      "id": "52485",
+      "from": "+16505550100",
+      "to": [ "+16503334444" ],
+      "createdAt": "2020-10-14T20:19:56.505461Z",
+      "lastUpdatedAt": "2020-10-14T22:20:01.728022Z",
+      "messageStatus": "DeliveryFailed",
+      "errorCode": "SMS-CAR-104",
       "cost": 0.007,
       "segmentCount": 1
     },{
-      "id": '52484',
-      "from": '+16505550100',
-      "to": [ '+16504445555' ],
-      "createdAt": '2020-10-14T20:19:18.415601Z',
-      "lastUpdatedAt": '2020-10-14T20:19:18.668841Z',
-      "messageStatus": 'SendingFailed'
+      "id": "52484",
+      "from": "+16505550100",
+      "to": [ "+16504445555" ],
+      "createdAt": "2020-10-14T20:19:18.415601Z",
+      "lastUpdatedAt": "2020-10-14T20:19:18.668841Z",
+      "messageStatus": "SendingFailed"
     }
   ],
   "paging": {
@@ -203,13 +240,13 @@ You can read the individual message details from High Volume message store using
 ```json
 {
   {
-    "id": '52511',
-    "from": '+16505550100',
-    "to": [ '+14155550100' ],
-    "text": 'Hello Team',
-    "createdAt": '2020-10-14T21:47:51.436491Z',
-    "lastUpdatedAt": '2020-10-14T21:47:53.032416Z',
-    "messageStatus": 'Delivered',
+    "id": "52511",
+    "from": "+16505550100",
+    "to": [ "+14155550100" ],
+    "text": "Hello Team",
+    "createdAt": "2020-10-14T21:47:51.436491Z",
+    "lastUpdatedAt": "2020-10-14T21:47:53.032416Z",
+    "messageStatus": "Delivered",
     "cost": 0.007,
     "segmentCount": 1
   }
