@@ -19,6 +19,25 @@ You can read the entire High Volume SMS message store then iterate through the `
     GET /restapi/v1.0/account/~/a2p-sms/messages
     ```
 
+=== "JSON"
+    ```json
+    [
+      {
+        "id":"53095",
+        "from":"+16505550100",
+        "to":[
+          "+14155550100"
+        ],
+        "createdAt":"2020-10-21T17:26:01.072479Z",
+        "lastUpdatedAt":"2020-10-21T17:26:02.192848Z",
+        "messageStatus":"DeliveryFailed",
+        "errorCode":"SMS-UP-410",
+        "cost":0,
+        "segmentCount":1
+      }
+    ]
+    ```
+
 === "JavaScript"
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
@@ -79,6 +98,24 @@ You can read the entire High Volume SMS message store then iterate through the `
     ```
 
 ### Response
+
+```json
+[
+  {
+    "id":"53095",
+    "from":"+16505550100",
+    "to":[
+      "+14155550100"
+    ],
+    "createdAt":"2020-10-21T17:26:01.072479Z",
+    "lastUpdatedAt":"2020-10-21T17:26:02.192848Z",
+    "messageStatus":"DeliveryFailed",
+    "errorCode":"SMS-UP-410",
+    "cost":0,
+    "segmentCount":1
+  }
+]
+```
 
 ```json
 {

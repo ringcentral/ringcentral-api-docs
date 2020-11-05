@@ -1,5 +1,5 @@
 # Managing Conference Calls
-Conference calling enables multiple people on multiple phones to connect to the same call. A user with a RingCentral account can start a conference and bring in parties to the conference. Each party brought into the conference, whether using a RingCentral number or their own phone, can speak to others who are on the same conference. Each account has it's own conferencing line where up to 10 parties can join a call.
+Multi-way conference calling enables multiple people on multiple phones to connect to the same call. A user with a RingCentral account can start a conference and bring in parties to the conference, without the need to set up a Conference Bridge. Each party brought into the conference, whether using a RingCentral number or their own phone, can speak to others who are on the same conference. Each account has it's own conferencing line where up to 10 parties can join a call.
 
 <img class="img-fluid" src="../../img/conference-call.png">
 
