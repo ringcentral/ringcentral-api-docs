@@ -167,6 +167,7 @@ pages:
       - 'URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
       - 'API Reference Index': 'basics/api-index.md'
+
   - 'Applications':
       - 'Development Lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
