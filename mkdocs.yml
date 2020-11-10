@@ -128,6 +128,11 @@ pages:
       - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
       - 'Posting Images': 'team-messaging/manual/posting-images.md'
       - 'Uploading and posting files': 'team-messaging/manual/attaching-files.md'
+    - 'Chats, Groups, Teams':
+      - 'Chats': 'team-messaging/manual/chats.md'
+      - 'Conversations': 'team-messaging/manual/conversations.md'
+      - 'Teams': 'team-messaging/manual/teams.md'
+      - 'Pagination': 'team-messaging/manual/pagination.md'
     - 'Incoming Webhooks':
       - 'Webhook Creation': 'team-messaging/manual/webhook-creation.md'
       - 'Webhook Posting (v2)': 'team-messaging/manual/webhook-posting.md'
