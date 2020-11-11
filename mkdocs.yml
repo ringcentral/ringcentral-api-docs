@@ -29,8 +29,6 @@ markdown_extensions:
   - codehilite:
       linenums: "None"
   - mdx_include
-  - markdown_include.include:
-       base_path: docs
 
 extra_css:
 - extra.css
