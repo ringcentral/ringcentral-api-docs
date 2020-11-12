@@ -1,4 +1,4 @@
-contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie.chen
+contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie-chen
 no_breadcrumb:true
 
 !!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
