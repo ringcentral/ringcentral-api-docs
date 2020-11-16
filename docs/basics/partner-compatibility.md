@@ -69,7 +69,8 @@ When constructing a login URL to initiate the authorization process in a [3-legg
 | `3420` | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../logo-att.png"> |
 | `6010` | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../logo-avaya-sm.jpg"> |
 | `7310` | TELUS | <img alt="TELUS Logo" src="../logo-telus.png"> |
-| `7710` | BT | <img alt="BT Logo" src="../logo-bt.png"> | 
+| `7710` | BT Cloud Work | <img alt="BT Cloud Work Logo" src="../logo-bt.png"> | 
+| `2020` | Atos Unify Office | <img alt="Atos Unify Office Logo" src="../logo-atos.png"> | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 
