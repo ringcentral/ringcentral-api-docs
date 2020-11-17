@@ -11,7 +11,7 @@ plugins:
       branch: master
   - bootstrap-tables
   - ringcentral-api-index:
-      outfile: docs/basics/api-index.md
+      outfile: basics/api-index.md
 
 theme:
   name: ringcentral

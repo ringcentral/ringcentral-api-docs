@@ -8,14 +8,19 @@ A "rate limit" is a policy that affects the frequency an API can be called. They
 
 RingCentral groups APIs into four different buckets where each bucket is restricted to a different rate limit. This allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. The four groups are: 
 
-* *Light*
-* *Medium*
-* *Heavy*
-* *Auth*
+| API Group | Rate Limit | Throttle Interval | 
+|-|-|-|
+| Light | 50 requests/minute | 60 seconds |  
+| Medium | 40 requests/minute | 60 seconds |  
+| Heavy | 10 requests/minute | 60 seconds |  
+| Auth | 5 requests/minute | 60 seconds |  
 
-Every API endpoint is assigned to a different group, which can be discovered via the [API Reference](https://developer.ringcentral.com/api-reference) under the heading of "API Group."
+Every API endpoint is assigned to a different group, which can be discovered via the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "API Group."
 
-## What Are Your App Rate Limits?
+!!! hint "Your exact rate limit may vary"
+    Bear in mind that your rate limit may be different from the default values above if you have applied for and been granted a modification to your application's needs. See "What are your app rate limits" below.
+
+## What are your app rate limits?
 
 In addition to our default limits, RingCentral administrators have the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits." That will show you a page similar to the following:
 

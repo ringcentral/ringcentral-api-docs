@@ -1,6 +1,8 @@
-# RingCentral Office API Reference Index
+# RingCentral Office API Quick Reference
 
-Welcome to a simple index of RingCentral Office API endpoints, provided as a convenience for those who need a quick way to find a specific endpoint. For a complete reference, check out RingCentral's [complete and interactive Office API Reference](https://developer.ringcentral.com/api-reference).
+Welcome to a quick reference of all RingCentral Office API endpoints, provided as a convenience for those who need a convenient way to find a specific endpoint. For a complete reference, check out RingCentral's [complete and interactive Office API Reference](https://developer.ringcentral.com/api-reference).
+
+<a class="float-right btn btn-link" data-toggle="collapse" data-target=".parameters" href="#">Expand/collapse all</a>
 
 {% for letter in index %}
 ### {{ letter }}
@@ -29,9 +31,10 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
     <tr>
       <td class="endpoint" colspan="2">
         <p>{{ endpoint.method | upper }} {{ endpoint.path }} <a href="{{ endpoint.docs_url }}" class="external-link"><i class="fa fa-share"></i></a></p>
-	<div id="{{ endpoint.id }}" class="collapse" aria-labelledby="{{ endpoint.id }}">
+	<div id="{{ endpoint.id }}" class="collapse ml-4 parameters" aria-labelledby="{{ endpoint.id }}">
 {% if endpoint['parameters']|length > 1 %}
-	  <table class="table api-index">
+          <p class="h5">Request Parameters</p>
+          <table class="table api-index">
 	    <thead>
 	      <tr>
 	        <th scope="col">Name</th>
@@ -53,6 +56,8 @@ Welcome to a simple index of RingCentral Office API endpoints, provided as a con
 {% endfor -%}
             </tbody>
           </table>
+          <p class="h5">API Throttling Group</p>
+	  <p>{{ endpoint.throttling_group }} <a class="help" href="../rate-limits/"><span class="material-icons">help_outline</span></a></p>
 {% endif -%}
 	</div>
       </td>
