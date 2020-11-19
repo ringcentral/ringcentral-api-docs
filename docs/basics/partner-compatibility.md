@@ -48,6 +48,10 @@ The following images have been provided to help you construct buttons to initiat
 
 <img alt="ATT Login Button" src="../button-att.png">
 
+#### Atos Unify Office
+
+<img alt="Atos Unify Office Login Button" src="../button-atos.png">
+
 #### Avaya Cloud Office
 
 <img alt="Avaya Cloud Office Button" src="../button-avaya.png">
