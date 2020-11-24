@@ -37,7 +37,7 @@ RingCentral High Volume SMS supports the following key features:
     * Group messaging (MMS)
     * International SMS messaging
     * Numbers outside the US and Canada
-    * Scheduling
+    * Scheduling SMS in advance
     * Developer sandbox
 
     If you need to send files, communicate with a group, or send to international destinations, please consider our [standard SMS API](../../).
