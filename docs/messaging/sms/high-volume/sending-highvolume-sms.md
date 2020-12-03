@@ -155,7 +155,7 @@ The code samples above would all produce a response that would appear similar to
     }
     ```
 
-=== "HTTP2"
+=== "HTTP (example 2)"
     ```http
     POST /restapi/v1.0/account/~/a2p-sms/batch
     Content-Type: application/json
