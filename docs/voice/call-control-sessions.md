@@ -1,11 +1,11 @@
 # Detecting State Changes to an Active Call
 
-There are two primary ways in which a developer can detect a change in the status of an active all:
+There are two primary ways in which a developer can detect a change in the status of an active call:
 
-1. By monitoring the precense status of an extension on the network
+1. By monitoring the presence status of an extension on the network
 2. By subscribing to a specific call (a.k.a. telephony session) on the network
 
-What a developer subscribes to depends largely upon the use case. For example, subscribing to presence events provide a good way of establishing a call control policy that relates to a fixed extension on the network. However, perhaps call handling logic requires custom policies to be enforced on the fly depending upon the call itself. In which case, subscribing to a specific call, waiting for the call to enter a specific state is probably best. 
+What a developer subscribes to depends largely upon the use case. For example, subscribing to presence events provides a good way of establishing a call control policy that relates to a fixed extension on the network. However, perhaps call handling logic requires custom policies to be enforced on the fly depending upon the call itself. In which case subscribing to a specific call and waiting for the call to enter a specific state is probably best. 
 
 ## Creating a Subscription
 
@@ -27,7 +27,7 @@ POST /restapi/v1.0/subscription
 
 ## Subscribing to presence notifications
 
-Presence events are triggered whenever a user's availability changes. This may or may not relate to the user being on a call or not. Therefore, it is important for developers to be able to disambiguate between these different availability state changes, and respond accordingly - ignoring some (e.g. a user changes their do not disturb status), and responding to others (e.g. a user answers their phone). 
+Presence events are triggered whenever a user's availability changes. This may or may not relate to the user being on a call or not. Therefore, it is important for developers to be able to disambiguate between these different availability state changes, and respond accordingly—ignoring some (e.g. a user changes their do not disturb status), and responding to others (e.g. a user answers their phone). 
 
 ### Example presence notification
 
@@ -79,7 +79,7 @@ Presence events are triggered whenever a user's availability changes. This may o
 ```
 
 !!! note "Limitations"
-    Legacy BLF solution, might not support some complex PBX scenarios. In Release 10.2 we've added `activeCalls.telephonySessionId` and `activeCalls.partyId` to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.
+    Legacy BLF solutions might not support some complex PBX scenarios. In Release 10.2 we've added `activeCalls.telephonySessionId` and `activeCalls.partyId` to allow Customers to use Telephony API. You can also use a GET call on the Presence endpoint to get details on active calls for a current user.
 
 ## Subscribing to telephony sessions
 
@@ -153,7 +153,7 @@ Developers can receive notifications about telephony session state changes for a
 ```
 
 !!! note "Current limitations of telephony notifications"
-    In our initial implementation notification won't be delivered in the following scenarios:
+    In our initial implementation, notifications won't be delivered in the following scenarios:
     
     * if a party doesn't belong to subscriber account/extension (another RC account, PSTN, intermediate parties, etc).
     * if a party belongs to another session (transferred call, conference, etc).
