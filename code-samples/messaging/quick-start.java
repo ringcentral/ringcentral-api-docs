@@ -28,18 +28,15 @@ public class Send_SMS {
     public void read_extension_phone_number() throws RestException, IOException{
       var resp =  restClient.restapi().account().extension().phonenumber().get();
       OUTERMOST: for (var record : resp.records) {
-    	  if (record.usageType.equalsIgnoreCase("DirectNumber"))
+    	  for(var feature : record.features)
+        {
+          if (feature.equalsIgnoreCase("SmsSender"))
           {
-            for(var feature : record.features)
-            {
-              if (feature.equalsIgnoreCase("SmsSender"))
-              {
-                send_sms(record.phoneNumber);
-                break OUTERMOST;
-              }
-            }
+            send_sms(record.phoneNumber);
+            break OUTERMOST;
           }
         }
+      }
     }
 
     public void send_sms(String phoneNumber) throws RestException, IOException {

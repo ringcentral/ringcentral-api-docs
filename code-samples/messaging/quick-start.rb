@@ -16,11 +16,9 @@ $rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, 
 def read_extension_phone_number()
   resp = $rc.get('/restapi/v1.0/account/~/extension/~/phone-number')
   for record in resp.body['records'] do
-    if record['usageType'] == "DirectNumber"
-      for feature in record['features'] do
-        if feature == "SmsSender"
-          return send_sms(record['phoneNumber'])
-        end
+    for feature in record['features'] do
+      if feature == "SmsSender"
+        return send_sms(record['phoneNumber'])
       end
     end
   end
