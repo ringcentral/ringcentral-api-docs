@@ -31,6 +31,7 @@ no_breadcrumb:true
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
       <li><a href="./messaging/sms/sending-images/" class="card-link">Sending MMS</a></li>
+      <li><a href="./messaging/sms/high-volume/sending-highvolume-sms" class="card-link">Send High Volume SMS</a></li>
       </ul>
     </div>
   </div>
