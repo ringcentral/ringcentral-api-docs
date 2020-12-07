@@ -23,11 +23,9 @@ async function read_extension_phone_number(){
     var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
     var jsonObj = await resp.json()
     for (var record of jsonObj.records){
-      if (record.usageType == "DirectNumber"){
-        for (feature of record.features){
-          if (feature == "SmsSender"){
-            return send_sms(record.phoneNumber)
-          }
+      for (feature of record.features){
+        if (feature == "SmsSender"){
+          return send_sms(record.phoneNumber)
         }
       }
     }

@@ -19,11 +19,9 @@ function read_extension_phone_number(){
   $resp = $platform->get("/restapi/v1.0/account/~/extension/~/phone-number");
   $jsonObj = $resp->json();
   foreach ($resp->json()->records as $record){
-    if ($record->usageType == "DirectNumber"){
-      foreach ($record->features as $feature){
-        if ($feature == "SmsSender"){
-          return send_sms($record->phoneNumber);
-        }
+    foreach ($record->features as $feature){
+      if ($feature == "SmsSender"){
+        return send_sms($record->phoneNumber);
       }
     }
   }

@@ -227,11 +227,11 @@ The following code samples show how to send a simple single document fax.
 
         static private async Task send_fax()
         {
-          var requestParams = new SendFaxMessageRequest();
+          var requestParams = new CreateFaxMessageRequest();
           var attachment = new Attachment { fileName = "test.jpg", contentType = "image/jpeg", bytes = System.IO.File.ReadAllBytes("test.jpg") };
           var attachments = new Attachment[] { attachment };
           requestParams.attachments = attachments;
-          requestParams.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest { phoneNumber = RECIPIENT } };
+          requestParams.to = new MessageStoreCalleeInfoRequest[] { new MessageStoreCalleeInfoRequest { phoneNumber = RECIPIENT } };
           requestParams.faxResolution = "High";
           requestParams.coverPageText = "This is a demo Fax page from C#";
           var resp = await rc.Restapi().Account().Extension().Fax().Post(requestParams);

@@ -18,7 +18,6 @@ def read_extension_phone_number():
   resp = platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
   jsonObj = resp.json()
   for record in jsonObj.records:
-  if record.usageType == "DirectNumber":
     for feature in record.features:
       if feature == "SmsSender":
         return send_sms(record.phoneNumber)

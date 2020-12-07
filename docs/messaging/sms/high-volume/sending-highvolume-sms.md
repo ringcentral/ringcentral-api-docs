@@ -27,17 +27,11 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {
-    	server: "server_url",
-    	clientId: "client_id",
-        clientSecret: "client_secret"} );
-	
+    var rcsdk = new RingCentral({server: "server_url", clientId: "client_id", clientSecret: "client_secret"})
+
   	var platform = rcsdk.platform();
 
-  	platform.login( {
-	  username: "username",
-	  password: "password",
-	  extension: "extension_number"} )
+  	platform.login({username: "username", password: "password", extension: "extension_number"})
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -127,8 +121,8 @@ The code samples above would all produce a response that would appear similar to
     "batchSize": 2,
     "processedCount": 0,
     "status": "Processing",
-    "createdAt": "2020-10-12T16:59:55.053902Z",
-    "lastUpdatedAt": "2020-10-12T16:59:55.053902Z"
+    "creationTime": "2020-10-12T16:59:55.053902Z",
+    "lastModifiedTime": "2020-10-12T16:59:55.053902Z"
 }
 ```
 
@@ -184,17 +178,11 @@ The code samples above would all produce a response that would appear similar to
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {
-    	server: "server_url",
-	clientId: "client_id",
-	clientSecret: "client_secret"} );
-	
+    var rcsdk = new RingCentral({server: "server_url", clientId: "client_id", clientSecret: "client_secret"})
+
   	var platform = rcsdk.platform();
 
-  	platform.login( {
-	  username: "username",
-	  password: "password",
-	  extension: "extension_number"} )
+  	platform.login({username: "username", password: "password", extension: "extension_number"})
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -280,8 +268,8 @@ The code samples above would all produce a response that would appear similar to
     "batchSize": 2,
     "processedCount": 0,
     "status": "Processing",
-    "createdAt": "2020-10-12T16:50:35.033902Z",
-    "lastUpdatedAt": "2020-10-12T16:50:35.033902Z"
+    "creationTime": "2020-10-12T16:50:35.033902Z",
+    "lastModifiedTime": "2020-10-12T16:50:35.033902Z"
 }
 ```
 
@@ -293,17 +281,11 @@ Sending a large batch will take some time for the server to complete. You can re
     ```javascript
     const RingCentral = require('@ringcentral/sdk').SDK
 
-    var rcsdk = new RingCentral( {
-    	server: "server_url",
-	clientId: "client_id",
-	clientSecret: "client_secret"} );
-	
+    var rcsdk = new RingCentral({server: "server_url", clientId: "client_id", clientSecret: "client_secret"})
+
   	var platform = rcsdk.platform();
 
-  	platform.login( {
-	  username: "username",
-	  password: "password",
-	  extension: "extension_number"} )
+  	platform.login({username: "username", password: "password", extension: "extension_number"})
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
@@ -355,7 +337,7 @@ Sending a large batch will take some time for the server to complete. You can re
     puts resp.body
     ```
 
-The code samples above would all produce a response that would appear similar to the one below. The batch's status is highlighted for you. 
+The code samples above would all produce a response that would appear similar to the one below. The batch's status is highlighted for you.
 
 ```json hl_lines="6"
 {
@@ -364,7 +346,7 @@ The code samples above would all produce a response that would appear similar to
   "batchSize": 2,
   "processedCount": 0,
   "status": "Completed",
-  "createdAt": "2020-10-12T16:50:35.033902Z",
-  "lastUpdatedAt": "2020-10-12T16:50:39.033902Z"
+  "creationTime": "2020-10-12T16:50:35.033902Z",
+  "lastModifiedTime": "2020-10-12T16:50:39.033902Z"
 }
 ```

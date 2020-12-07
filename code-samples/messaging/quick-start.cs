@@ -28,15 +28,12 @@ class Program
     var resp = await restClient.Restapi().Account().Extension().PhoneNumber().Get();
     foreach (var record in resp.records)
     {
-      if (record.usageType == "DirectNumber")
+      foreach(var feature in record.features)
       {
-        foreach(var feature in record.features)
+        if (feature == "SmsSender")
         {
-          if (feature == "SmsSender")
-          {
-            send_sms(record.phoneNumber).Wait();
-            goto LoopEnd;
-          }
+          send_sms(record.phoneNumber).Wait();
+          goto LoopEnd;
         }
       }
     }

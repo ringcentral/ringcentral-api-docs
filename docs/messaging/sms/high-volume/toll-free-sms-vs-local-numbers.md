@@ -44,8 +44,8 @@ To determine which numbers a user can use to send and receive High Volume SMS, r
 	```javascript
 	const RingCentral = require('@ringcentral/sdk').SDK
 
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
+	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} )
+	var platform = rcsdk.platform()
 
 	platform.login( {username: "username", password: "password", extension: "extension_number"} )
 
