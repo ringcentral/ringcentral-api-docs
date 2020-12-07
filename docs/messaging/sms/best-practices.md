@@ -1,7 +1,7 @@
 # SMS Best Practices Guide
 
 !!! note "First time sending an SMS?"
-    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to reaed the following best practices as well.
+    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to read the following best practices as well.
 
 * Check API Error Status Code
 * Use Single Domain Links
@@ -9,10 +9,10 @@
 
 ## Check API Error Status Code
 
-If you are receiving errors from the RingCentral API when sending multiple messages, be ssure to check the HTTP response status code. If the status code is `429` that indicates your app is being throttled for sending too many reponses. If you run into this, slow down your app requests. Approaches include:
+If you are receiving errors from the RingCentral API when sending multiple messages, be sure to check the HTTP response status code. If the status code is `429` that indicates your app is being throttled for sending too many responses. If you run into this, slow down your app requests. Approaches include:
 
 * waiting the number of seconds specified in thee `Retry-After` header wheen a 429 status is encountered.
-* checking the `X-Rate-Limit-Remaining` header and waiting the enumbere of seconds specified in thee `X-Rate-Limit-Window` header.
+* checking the `X-Rate-Limit-Remaining` header and waiting the number of seconds specified in thee `X-Rate-Limit-Window` header.
 * you can combine the above two approaches by checking `X-Rate-Limit-Remaining` and handling `429` errors.
 
 ## Use Single Domain Links
@@ -25,7 +25,7 @@ If you use URLs in your message, the following are important considerations are 
 !!! warning "Avoid public / shared link shortener domains"
     Hosted link shorteners are easy to set up and use, however you should not use a public / shared link shortener domain as the same domains are often used by attackers to mask phishing and other URLs.
     
-    If you wish to use one for text messages, check to see the service supports ussing your own domain, sometimes called custom domains or vanity URLs.
+    If you wish to use one for text messages, check to see the service supports using your own domain, sometimes called custom domains or vanity URLs.
 
     Some common public / shared domain shorteners to avoid include:
     - bit.ly
