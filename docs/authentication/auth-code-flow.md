@@ -30,7 +30,7 @@ When your application needs to access a user's data, redirect the user to the Ri
 Below is an example login URL to initiate the authorization flow. We recommend developers use an SDK to generate this URL in a more automated fashion. 
 
 ```
-https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>&brand_id=7710&display=&prompt=
+https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>&display=&prompt=
 ```
 
 ## Step 2. User login and consent
