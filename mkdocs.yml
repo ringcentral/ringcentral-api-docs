@@ -65,6 +65,7 @@ pages:
       - 'Active-call Control': 'voice/active-call-control.md'
       - 'Call Monitoring': 'voice/supervision.md'
       - 'Conference call': 'voice/conference.md'
+      - 'Warm Transfer': 'voice/warm-transfer.md'
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
@@ -210,6 +211,9 @@ pages:
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
       - 'Using Auth Tokens': 'authentication/tokens.md'
+
+  - 'Address Book':
+    - 'Overview': 'address-book/index.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
