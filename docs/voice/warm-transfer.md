@@ -20,6 +20,9 @@ In our example, a customer is calling an operator looking for assistance. The op
 
 The first step in a warm transfer is to put the customer on hold. But before that can happen, there is some information we need to gather about the customer and the operator. We need to collect the telephony session from the operator's perspective. We can do this through the [Extension Telephony Session Event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event).
 
+!!! Note
+    An alternative option is to listen to the [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event), which will also allow you to retrieve the session ID and party ID.
+
 Follow the instructions for [setting up pubnub](../../notifications/push-notifications/quick-start#javascript). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
 
 ### Receive Event for Customer to Operator Call
@@ -151,7 +154,7 @@ The highlighted lines show you the important fields you will need.
 
 ## Bridging the Two Parties (aka Warm Transfer)
 
-Now that we've collected our two party IDs for the operator, and the two session IDs for each call, we are ready to bridge the parties together with the operator as the anchor.
+Now that we've collected our two party IDs for the operator, and the two session IDs for each call, we are ready to bridge the parties together with the operator as the anchor. This means you need both party IDs that belong to the operator.
 
 Take the party ID and the session ID of the call from the customer to the operator and put them in the path as shown.
 
