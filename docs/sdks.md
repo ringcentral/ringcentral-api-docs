@@ -15,9 +15,9 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 ## UI Widgets
 
-* [ringcentral-web-widget](https://github.com/ringcentral/ringcentral-web-widget) - Embeddable webphone widget
+* [ringcentral-embeddable](https://github.com/ringcentral/ringcentral-embeddable) - Embeddable webphone widget
 * [ringcentral-js-widgets](https://github.com/ringcentral/ringcentral-js-widgets) - React component library
-* [ringcentral-web-widget-demos](https://github.com/ringcentral-tutorials/ringcentral-web-widget-demos) - Web Widget demo apps
+* [ringcentral-embeddable-demos](https://github.com/ringcentral-tutorials/ringcentral-embeddable-demos) - Web Widget demo apps
 
 ## ChatBot Frameworks
 
