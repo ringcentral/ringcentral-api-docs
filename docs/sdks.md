@@ -4,7 +4,7 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 ## Official SDKs
 
-* [ringcentral-csharp](https://github.com/ringcentral/ringcentral.net) - .NET library
+* [RingCentral.Net](https://github.com/ringcentral/RingCentral.Net) - .NET library
 * [ringcentral-java](https://github.com/ringcentral/ringcentral-java) - Java library
 * [ringcentral-js](https://github.com/ringcentral/ringcentral-js) - JavaScript library
 * [ringcentral-php](https://github.com/ringcentral/ringcentral-php) - PHP library
