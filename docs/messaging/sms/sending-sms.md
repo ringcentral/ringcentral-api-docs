@@ -5,7 +5,7 @@
 
 SMS messages can be sent to or received from the handsets operated by most mobile carriers (all major US carriers are currently supported). Each SMS is a peer-to-peer message from one phone number to another. There is a special SMS API endpoint to create and send SMS messages.
 
-=== "Requet"
+=== "Request"
 	```http
 	POST /restapi/v1.0/account/~/extension/~/sms HTTP/1.1
 	Content-Type: application/json   

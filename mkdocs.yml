@@ -56,6 +56,7 @@ pages:
       - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
       - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
       - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
+      - 'Call Queues Presence': 'voice/call-routing/manual/call-queues-presence.md'
       - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
     - 'Call Control':
       - 'Overview': 'voice/call-control.md'
