@@ -28,7 +28,7 @@ public class Create_Team {
         var parameters = new GlipPostTeamBody();
         parameters._public = true;
         parameters.name = "Fun team";
-        parameters.description = "Let chit chat here";
+        parameters.description = "Let's chit chat here";
 
         var member1 = new CreateGlipMember();
         member1.email = "member.1@gmail.com";

@@ -22,7 +22,7 @@ async function create_team() {
     public: true,
     name: "Fun team",
     members: [{ email: "member.1@gmail.com" }, { email: "member.2@gmail.com" }],
-    description: "Let chit chat here"
+    description: "Let's chit chat here"
   }
   try {
     var resp = await platform.post(endpoint, params)

@@ -17,7 +17,7 @@ params = {
     "public": True,
     "name": "Fun team",
     "members": [{ "email": "member.1@gmail.com"}, {"email":"member.2@gmail.com"}],
-    "description": "Let chit chat here"
+    "description": "Let's chit chat here"
 }
 resp = platform.post(endpoint, params)
 print(resp.text())

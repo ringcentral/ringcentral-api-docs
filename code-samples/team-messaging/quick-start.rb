@@ -15,7 +15,7 @@ resp = rc.post('/restapi/v1.0/glip/teams', payload: {
     public: true,
     name: "Fun team",
     members: [{ email: "member.1@gmail.com"}, {email:"member.2@gmail.com"}],
-    description: "Let chit chat here"
+    description: "Let's chit chat here"
 })
 
 puts resp.body

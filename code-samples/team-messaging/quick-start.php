@@ -20,7 +20,7 @@ $params = array(
       "name" => "Fun team",
       "members" => array(array("email" => "member.1@gmail.com"),
                           array("email" => "member.2@gmail.com")),
-      "description" => "Let chit chat here"
+      "description" => "Let's chit chat here"
 );
 
 $resp = $platform->post($endpoint, $params);
