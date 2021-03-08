@@ -19,42 +19,34 @@ To create a call queue extension, login your RingCentral account at [Online Acco
 
 To read all call queue extensions from an account:
 
-* Make a GET request to the `/restapi/v1.0/account/{accountId}/extension?type=Department` endpoint.
+* Make a GET request to the `/restapi/v1.0/account/~/call-queues` endpoint.
 
 Required permission(s): ReadAccounts
 
 **Sample Response**
 ```json hl_lines="6"
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension?type=Department&page=1&perPage=100",
-  "records" : [
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646000/call-queues?page=1&perPage=100",
+  "records":[
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333",
-      "id" : 22223333,
-      "extensionNumber" : "201",
-      "contact" : {
-        "firstName" : "Sales Queue",
-        "email" : "john.doe@example.com"
-      },
-      "name" : "Sales Queue",
-      "type" : "Department",
-      "status" : "Enabled",
-      "permissions" : {
-        "admin" : {
-          "enabled" : false
-        },
-        "internationalCalling" : {
-          "enabled" : false
-        }
-      },
-      "profileImage" : {
-        "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22223333/profile-image"
-      }
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646000/extension/1081167016",
+      "id":"1081167016",
+      "extensionNumber":"11131",
+      "name":"Sale representative queue"
+    },{
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646000/extension/61986637016",
+      "id":"61986637016",
+      "extensionNumber":"11132",
+      "name":"Product support queue"
+    },{
+      ...
     }
   ],
-  "paging" : {...}
+  "paging":{...}
 }
 ```
+
+Alternatively, you can read all call queue extensions from an account using the `extension` API together with the query filter `/restapi/v1.0/account/~/extension?type=Department`
 
 ## Read Call Queue members
 
@@ -133,7 +125,7 @@ The following code sample shows how to add 2 new members to a call queue named "
     ```c#
     {!> code-samples/voice/call-queues.cs !}
     ```
-    
+
 === "Java"
 
     ```java
@@ -145,4 +137,3 @@ The following code sample shows how to add 2 new members to a call queue named "
     ```ruby
     {!> code-samples/voice/call-queues.rb !}
     ```
-
