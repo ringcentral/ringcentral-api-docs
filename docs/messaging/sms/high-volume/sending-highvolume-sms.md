@@ -320,7 +320,7 @@ Sending a large batch will take some time for the server to complete. You can re
   	$platform = $rcsdk->platform();
   	$platform->login( "username", "extension_number", "password" );
 
-  	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}');
+  	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}');
     print_r ($resp->json());
     ?>
     ```
