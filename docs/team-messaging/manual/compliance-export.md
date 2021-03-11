@@ -110,15 +110,9 @@ When successful, the response will contain the id (taskId) and the status of the
 }
 ```
 
-### Authentication and file downloads
+!!! tip "Authentication and file downloads"
 
-When an Export Task is successfully completed, make a GET request to the `uri` under the `datasets` of the object returned in the previous step.
-
-The file reference is protected and cannot be downloaded without an authentication context. To download a compliance archive file, append your authentication token (the same one you would use in your HTTP Authorization header) in a `access_token` parameter as shown below:
-
-```http
-GET https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/datasets/1?access_token=['access_token']
-```
+    When an export task has completed successfully, make a GET request to the `uri` parameter returned in the response as described in the previous step, and pass your access key via an Authorization header or access_token query parameter as described in [Accessing protected content](../../basics/media/) on *Working with media content*.
 
 ## Sample Code: Export Team Messaging Data
 

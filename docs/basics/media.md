@@ -1,6 +1,6 @@
-# Working with Media Content
+# Working with media content
 
-## Downloading Media
+## Downloading media
 
 A number of RingCentral APIs make available to developers access to media files that one may want to download, stream or embed somewhere. Here are a few examples of such media files:
 
@@ -11,7 +11,7 @@ A number of RingCentral APIs make available to developers access to media files 
 * Greetings
 * Compliance Exports
 
-### Download URLs for Media Content
+### Download URLs for media content
 
 All media files can be accessed via a URL returned via an API Call. For example, the following shows a response payload from the RingCentral Message Store which refers to a received fax document that a developer can download. *It has been truncated for brevity*. 
 
@@ -59,16 +59,35 @@ All media files can be accessed via a URL returned via an API Call. For example,
   }  
 ```
 
-!!! note "Building media content URLs"
-    While media content URLs all end predictably in `/content`, developers should not build these URLs manually. Content URLs should be fetched a response payload directly as they are subject to change. 
+### Downloading protected content
 
-### Downloading Protected Content
+Often a media asset you need to download requires authentication. Your app or script can download the file programmatically in one of the following two ways.
 
-Often a media asset you need to download requires authentication. Your app or script can download the file programmatically by appending an `access_token` parameter to the URL. The value of this parameter is your authentication token typically transmitted in your Authorization header when making API calls. For example:
+#### Authorization header
 
-    https://media.ringcentral.com/restapi/v1.0/glip/data-export/248664004-xx-yy/archive/1?access_token=U0pDMTF...3xBUQ
+The first and recommended way to pass your authentication credentials to a media URL is through an HTTP Authorization header. Use the same access key credential used to call the API to retrieve protected media content as shown below:
 
-### Downloading Partial Content
+```http
+GET https://some.server.ringcentral.com/path/to/protected/file
+Authorization: Bearer <your access key>
+```
+
+If you are downloading via cURL, the command would be:
+
+```bash
+curl -H "Authorization: Bearer <ACCESS TOKEN>" \
+    https://some.server.ringcentral.com/path/to/protected/file
+```
+
+#### Query parameter
+
+by appending an `access_token` parameter to the URL. The value of this parameter is your authentication token typically transmitted in your Authorization header when making API calls. For example:
+
+    https://media.ringcentral.com/path/to/protected/file?access_token=U0pDMTF...3xBUQ
+
+!!! warning "The access_token query parameter is only supported on media.ringcentral.com. It is not supported for Glip."
+
+### Downloading partial content
 
 There are times you may need to download large files in pieces. Perhaps your HTTP client has an aggressive timeout, or it would be a more efficient use of resources. Regardless, one can download any media resource within RingCentral in pieces by passing [HTTP Range headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests) in their request.
 
@@ -83,7 +102,7 @@ Range: bytes=0-1023
 
 Developers should also be aware of the potential that the server may respond with a 206 Partial response code indicating that only part of the file is being returned. In the event you received this header, you will need to download the file in chunks according to the [standard](https://tools.ietf.org/html/rfc7233).
 
-## Uploading Media Content
+## Uploading media content
 
 Some endpoints allow users to upload media content, in particular:
 
@@ -91,7 +110,7 @@ Some endpoints allow users to upload media content, in particular:
 * Fax API - for sending documents
 * Greetings API - for uploading audio greetings
 
-### Supported Media Types
+### Supported media types
 
 **Obviously, some media types are only relevant or possible in specific mediums. Video content for example cannot be transmitted via Fax. The list below therefore shows all the media types our platform is capable of supporting, but may not represent what media types are necessarily appropriate/relevant:**
 
