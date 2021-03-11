@@ -87,7 +87,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
       'messages' => array(
         array ("to" => array ("+14155550100")),
         array ("to" => array ("+12125550100"))
-    )
+    ));
   	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch', $requestBody);
     print_r ($resp->json());
     ?>
@@ -235,7 +235,7 @@ The code samples above would all produce a response that would appear similar to
       'messages' => array(
         array ("text" => "Hello Alice", "to" => array ("+14155550100")),
         array ("text" => "Hello Bob", "to" => array ("+12125550100"))
-    )
+    ));
   	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch', $requestBody);
     print_r ($resp->json());
     ?>
