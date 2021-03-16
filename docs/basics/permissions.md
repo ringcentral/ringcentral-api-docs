@@ -4,9 +4,12 @@ In order to work with particular RingCentral API resources the application shoul
 
 | Permission                | Description                                                    | Access Type       | Included Permissions |
 | ------------------------- | -------------------------------------------------------------- | ----------------- | -------------------- |
+| **A2P SMS**               | Sending SMS messages in large numbers                          | Special operation |                      |
 | **Accounts**              | Managing accounts: creating new accounts, viewing and updating account information, deleting existing accounts | CRUD | **EditAccounts** |
+| **Call Control**          | Manipulate and controls in progress                            | Special operation |                      |
+
 | **Contacts**              | Creating, viewing, editing and deleting user personal contacts | CRUD              | **ReadContacts**     |
-| **DirectRingOut**         | Performing direct (one-legged) ring-out phone calls            | Special operation |                      |
+| **DirectRingOut**         | Performing direct (one-legged) ring-out phone calls. *Available on request.* | Special operation |                      |
 | **EditAccounts**          | Viewing and updating user account info (including name, business name, address and phone number/account number) | Read and Update | **ReadAccounts**, **EditExtensions** |
 | **EditCallLog**           | Viewing and updating user call logs                            | Read and Update   | **ReadCallLog**      |
 | **EditCustomData**        | Viewing and updating client custom data (key-value)            | Read and Update   |                      |
@@ -14,10 +17,10 @@ In order to work with particular RingCentral API resources the application shoul
 | **EditMessages**          | Viewing and updating user messages                             | Read and Update   | **ReadMessages**     |
 | **EditPaymentInfo**       | Viewing and updating account billing settings                  | Read and Update   |                      |
 | **EditPresence**          | Getting and modifying user presence information                | Read and Update   | **ReadPresence**     |
-| **EditReportingSettings** | Viewing and updating call reporting settings                   | Read and Update   |                      |
+| **EditReportingSettings** | Viewing and updating call reporting settings. *Available on request.* | Read and Update   |                      |
 | **Faxes**	                | Sending and receiving faxes                                    | Special operation | **ReadMessages**     |
+| **Glip**	                | Read and post message, read and manage chats                   | Read and Update   |                      |
 | **InternalMessages**      | Sending and receiving intra-company text messages              | Special operation | **ReadMessages**     |
-| **Interoperability**      | Interoperation between client applications                     | Special operation |                      | 
 | **Meetings**              | Creating, viewing, editing and deleting meetings               | CRUD              |                      |
 | **NumberLookup**          | Looking-up and reserving available phone number                | Special operation |                      |
 | **ReadAccounts**          | Viewing user account info (including name, business name, address and phone number/account number) | Read Only | |
@@ -28,6 +31,8 @@ In order to work with particular RingCentral API resources the application shoul
 | **ReadMessages**          | Viewing user messages                                          | Read Only         |                      | 
 | **ReadPresence**          | Getting user presence information                              | Read Only         |                      |
 | **RingOut**               | Performing two-legged ring-out phone calls                     | Special operation |                      | 
-| **RoleManagement**        | Editing and assignment or user roles                           | Special operation |                      |
+| **RoleManagement**        | Editing and assignment or user roles. *Available on request*   | Special operation |                      |
 | **SMS**                   | Sending and receiving (SMS) text messages                      | Special operation | **ReadMessages**     |
+| **VoicemailBroadcasting** | Delivering voicemail messages to multiple internal recipients  | Special operation |                      |
 | **VoipCalling**           | Registering as VoIP device and making VoIP calls               | Special operation |                      |
+| **WebhookSubscriptions**  | Subscribing to and managing webhook notification preferences   | Special operation |                      |
