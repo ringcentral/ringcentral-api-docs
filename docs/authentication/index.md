@@ -44,6 +44,8 @@ There are several authorization flows one can use to obtain an access token to c
 
 * **[Auth Code Flow](./auth-code-flow)** (recommended) - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
 
+* **[Auth Code with PKCE Flow](./auth-code-pkce-flow)** (recommended) - enhancement for Auth Code Flow with Proof Key for Code Exchange, no client secret required, recommended for apps accessed via web single-page, mobile and desktop applications.
+
 * **[Implicit Flow](./implicit-grant-flow)** - a 2-legged authorization flow common for mobile and desktop apps.
 
 * **[Password Flow](./password-flow)** - a 2-legged authorization flow suitable for server apps used by a single user account. This is by far the easiest authentication scheme to implement, but is considered insecure as it requires servers to store username and password credentials in plain text. 
@@ -57,4 +59,4 @@ RingCentral supports OAuth 2.0 authentication flows as described in:
 * [RFC-6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)
 * [RFC-6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://tools.ietf.org/html/rfc6750)
 * [RFC-7009: OAuth 2.0 Token Revocation](https://tools.ietf.org/html/rfc7009)
-
+* [RFC-7636: Proof Key for Code Exchange by OAuth Public Clients](https://tools.ietf.org/html/rfc7636)
