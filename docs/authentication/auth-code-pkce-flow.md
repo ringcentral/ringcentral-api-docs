@@ -156,5 +156,5 @@ We can still refresh token by [Refresh Token Flow](https://developers.ringcentra
 
 Differences from `Authorization Code flow`:
 
-* Token requests don't need to include client authentication credentials in `Authorization` header. So client secret is not required.
+* Token requests don't need to include client authentication credentials in `Authorization` header.
 * Need to add `client_id` in body.
