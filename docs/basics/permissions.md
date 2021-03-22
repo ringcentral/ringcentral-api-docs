@@ -7,7 +7,6 @@ In order to work with particular RingCentral API resources the application shoul
 | **A2P SMS**               | Sending SMS messages in large numbers                          | Special operation |                      |
 | **Accounts**              | Managing accounts: creating new accounts, viewing and updating account information, deleting existing accounts | CRUD | **EditAccounts** |
 | **Call Control**          | Manipulate and controls in progress                            | Special operation |                      |
-
 | **Contacts**              | Creating, viewing, editing and deleting user personal contacts | CRUD              | **ReadContacts**     |
 | **DirectRingOut**         | Performing direct (one-legged) ring-out phone calls. *Available on request.* | Special operation |                      |
 | **EditAccounts**          | Viewing and updating user account info (including name, business name, address and phone number/account number) | Read and Update | **ReadAccounts**, **EditExtensions** |
