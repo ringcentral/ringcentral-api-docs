@@ -91,6 +91,82 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
   	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch', $requestBody);
     print_r ($resp->json());
     ?>
+    ```    
+
+=== "C#"
+    ```c#
+    using System;
+    using System.Threading.Tasks;
+    using RingCentral;
+
+    namespace HighVolume_SMS
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          send_highvolume_sms().Wait();
+        }
+        static private async Task send_highvolume_sms()
+        {
+          RestClient rc = new RestClient("client_id", "client_secret", true);
+          await rc.Authorize("username", "extension_number", "password");
+          var parameters = new CreateSMSMessageBatchRequest();
+          parameters.from = "+16505550100";
+          parameters.text = "Hello Team";
+
+          String[] numbers = new String[] { "+14155550100", "+12125550100" };
+          parameters.messages = new MessageCreateRequest[numbers.Length];
+          for (var i=0; i<numbers.Length; i++)
+          {
+            var recipient = new MessageCreateRequest();
+            recipient.to = new string[] { numbers[i] };
+            parameters.messages[i] = recipient;
+          }
+
+          var resp = await rc.Restapi().Account().A2pSms().Batch().Post(parameters);
+          Console.WriteLine(JsonConvert.SerializeObject(resp));  
+        }
+      }
+    }
+    ```
+
+=== "Java"
+    ```java
+    package HighVolume_SMS;
+
+    import java.io.IOException;
+    import com.ringcentral.*;
+    import com.ringcentral.definitions.*;
+
+    public class HighVolume_SMS {
+      public static void main(String[] args) {
+        try {
+          send_highvolume_sms();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+      }
+      public static void send_highvolume_sms() throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        CreateSMSMessageBatchRequest parameters = new CreateSMSMessageBatchRequest();
+        parameters.from = "+16505550100";
+        parameters.text = "Hello Team";
+
+        String[] numbers = new String[] {"+14155550100", "+12125550100"};
+        parameters.messages = new MessageCreateRequest[numbers.length];
+        for (int i=0; i<numbers.length; i++) {
+          MessageCreateRequest m = new MessageCreateRequest();
+          m.to = new String[] {numbers[i]};
+          parameters.messages[i] = m;
+        }     
+        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
+        System.out.println(jsonStr);
+      }
+    }
     ```
 
 === "Ruby"
@@ -122,9 +198,17 @@ The code samples above would all produce a response that would appear similar to
     "processedCount": 0,
     "status": "Processing",
     "creationTime": "2020-10-12T16:59:55.053902Z",
-    "lastModifiedTime": "2020-10-12T16:59:55.053902Z"
+    "lastModifiedTime": "2020-10-12T16:59:55.053902Z",
+    "rejected": []
 }
 ```
+
+!!!Note
+    The `rejected` field is a list of invalid numbers (if any). Each item in the `rejected` array is an object contained the index position (starting from 1) of the recipient's phone number in the "messages" array, an error code and a short description of the rejected reason. E.g.:
+    ```
+    [{"index":2,"to":["+4088070206"],"errorCode":"SMS-RC-410","description":"The recipient number is invalid"}]
+    ```
+    If your batch contains invalid phone numbers, you will receive the `rejected` list with content only from the response returned by sending a batch. Reading the batch status will always return an empty `rejected` array.
 
 ## Simple Request to send customized messages to 2 recipients
 
@@ -241,6 +325,86 @@ The code samples above would all produce a response that would appear similar to
     ?>
     ```
 
+=== "C#"
+    ```c#
+    using System;
+    using System.Threading.Tasks;
+    using RingCentral;
+
+    namespace HighVolume_SMS
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          send_highvolume_sms().Wait();
+        }
+        static private async Task send_highvolume_sms()
+        {
+          RestClient rc = new RestClient("client_id", "client_secret", true);
+          await rc.Authorize("username", "extension_number", "password");
+          var parameters = new CreateSMSMessageBatchRequest();
+          parameters.from = "+16505550100";
+          parameters.text = "Hello Team";
+
+          String[] numbers = new String[] { "+14155550100", "+12125550100" };
+          String[] names = new String[] { "Alice", "Bob" };
+          parameters.messages = new MessageCreateRequest[numbers.Length];
+          for (var i=0; i<numbers.Length; i++)
+          {
+            var m = new MessageCreateRequest();
+            m.text = "Hello " + names[i]
+            m.to = new string[] { numbers[i] };
+            parameters.messages[i] = m;
+          }
+
+          var resp = await rc.Restapi().Account().A2pSms().Batch().Post(parameters);
+          Console.WriteLine(JsonConvert.SerializeObject(resp));  
+        }
+      }
+    }
+    ```
+
+=== "Java"
+    ```java
+    package HighVolume_SMS;
+
+    import java.io.IOException;
+    import com.ringcentral.*;
+    import com.ringcentral.definitions.*;
+
+    public class HighVolume_SMS {
+      public static void main(String[] args) {
+        try {
+          send_highvolume_sms();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+      }
+      public static void send_highvolume_sms() throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        CreateSMSMessageBatchRequest parameters = new CreateSMSMessageBatchRequest();
+        parameters.from = "+16505550100";
+        parameters.text = "";
+
+        String[] numbers = new String[] {"+14155550100", "+12125550100"};
+        String[] names = new String[] {"Alice", "Bob"};
+        parameters.messages = new MessageCreateRequest[numbers.length];
+        for (int i=0; i<numbers.length; i++) {
+          MessageCreateRequest m = new MessageCreateRequest();
+          m.text = "Hello " + names[i];
+          m.to = new String[] {numbers[i]};
+          parameters.messages[i] = m;
+        }     
+        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
+        System.out.println(jsonStr);
+      }
+    }
+    ```
+
 === "Ruby"
     ```ruby
     require 'ringcentral'
@@ -269,7 +433,8 @@ The code samples above would all produce a response that would appear similar to
     "processedCount": 0,
     "status": "Processing",
     "creationTime": "2020-10-12T16:50:35.033902Z",
-    "lastModifiedTime": "2020-10-12T16:50:35.033902Z"
+    "lastModifiedTime": "2020-10-12T16:50:35.033902Z",
+    "rejected": []
 }
 ```
 
@@ -325,6 +490,59 @@ Sending a large batch will take some time for the server to complete. You can re
     ?>
     ```
 
+=== "C#"
+    ```c#
+    using System;
+    using System.Threading.Tasks;
+    using RingCentral;
+
+    namespace HighVolume_SMS
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          get_batch_result("Batch-ID").Wait();
+        }
+        static private async Task get_batch_result(string batchId)
+        {
+          RestClient rc = new RestClient("client_id", "client_secret", true);
+          await rc.Authorize("username", "extension_number", "password");
+
+          var resp = await rc.Restapi().Account().A2pSms().Batch(batchId).Get();
+          Console.WriteLine(JsonConvert.SerializeObject(resp));  
+        }
+      }
+    }
+    ```
+
+=== "Java"
+    ```java
+    package HighVolume_SMS;
+
+    import java.io.IOException;
+    import com.ringcentral.*;
+    import com.ringcentral.definitions.*;
+
+    public class HighVolume_SMS {
+      public static void main(String[] args) {
+        try {
+          get_batch_result("Batch-ID");
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+      }
+      public static void get_batch_result(String batchId) throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        var resp = restClient.restapi().account().a2psms().batch(batchId).get();
+        String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
+        System.out.println(jsonStr);
+      }
+    }
+    ```
+
 === "Ruby"
     ```ruby
     require 'ringcentral'
@@ -347,6 +565,7 @@ The code samples above would all produce a response that would appear similar to
   "processedCount": 0,
   "status": "Completed",
   "creationTime": "2020-10-12T16:50:35.033902Z",
-  "lastModifiedTime": "2020-10-12T16:50:39.033902Z"
+  "lastModifiedTime": "2020-10-12T16:50:39.033902Z",
+  "rejected": []
 }
 ```

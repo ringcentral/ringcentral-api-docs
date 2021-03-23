@@ -40,7 +40,7 @@ Notify the delivery status of outbound messages. The following event filters are
 
 ## Opt-Out Events
 
-Opt-out events are sent when a user connects to RingCentral's opt out service using standard keywords including `stop`, `unstop`, `start`, etc.
+Opt-out events are sent when a user connects to RingCentral's opt out service using standard keywords including `stop`,  `start`, etc.
 
 | Event Filter | Description |
 |-|-|
@@ -72,7 +72,7 @@ You will receive an even tlike the following which indicates that the Opt-Out se
 
 ### Example Opt-In Event
 
-An opt-in event is sent when a user texts `start` or `unstop` to one of your High Volume SMS numbers.
+An opt-in event is sent when a user texts `start` to one of your High Volume SMS numbers.
 
 You will receive an even tlike the following which indicates that the Opt-Out service is **not** `active` for sending messages `from` a number `to` a number.
 
