@@ -1,28 +1,36 @@
-# Building a RingCentral Bot Locally
+# How to build a RingCentral bot from scratch
 
-To develop a bot for the RingCentral App sign in to your RingCentral account and login into the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html#/applications).
+A RingCentral Team Messaging bot provides a conversational interface for performing common tasks. In this guide, you will learn how to build a simple ping-pong bot from scratch, giving you a closer look at the bot design pattern.
 
-## Prerequisites - ngrok
+!!! tip "Try the [RingCentral bot framework](../node/) to get up and running faster and with less code."
 
-Bot applications must have OAuth redirect URLs that are accessible over the Internet. If webhooks are used those must also be accessible over the Internet. For developing locally, a tunneling tool like ngrok is useful. To set up ngrok, use the following steps:
+Before you begin, make sure you have logged into your RingCentral developer account via the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html#/applications).
 
-* Go to [https://ngrok.com/](https://ngrok.com) and download the version that corresponds to your platform. In our case, we'll be downloading the Mac OS X 64-bit version.
-* You can extract ngrok into the folder of your preference and run ngrok from there.
-* Launch ngrok by navigating to the directory where you unzipped ngrok and starting with the port you want to expose to the public internet with the following:
+## Step 1. Start ngrok
+
+Bot servers must be accessible over the open Internet to allow RingCentral to send them messages. When developing a bot locally a tunneling tool like ngrok is useful. 
+
+??? tip "Install ngrok"
+    * Go to [https://ngrok.com/](https://ngrok.com) and download the version that corresponds to your platform. In our case, we'll be downloading the Mac OS X 64-bit version.
+    * You can extract ngrok into the folder of your preference and run ngrok from there.
+
+Launch ngrok by running the following command:
 
 ```bash 
-./ngrok http 4390
+% ngrok http 3000
 ```
 
-If every thing goes well you should see the follow screen.
+If every thing goes well you should see the following screen.
 
 <img src="../../../img/ngrok-running.png" class="img-fluid" style="max-width: 400px">
 
-## Create a Bot application
+Make note of your https forwarding URL, we will use that shortly when creating your config file. 
 
-With our proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Chat Bot App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+## Step 2. Create a bot application
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
+With our proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Bot App" button below. 
+
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -30,116 +38,95 @@ With our proxy running, we now have all the information we need to create an app
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "Bot App for Team Messaging" under "What type of app are you creating?"</li>
-<li>Select "Other Non-UI" under "Where will you be calling the API from?"
 <li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
 <li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
   <ul>
     <li>Glip</li>
     <li>Webhook Subscriptions</li>
     <li>Edit Extensions</li>
+    <li>Read Accounts</li>
   </ul>
   </li>
-<li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
 </ol>
 </div>
 
-## Create a Simple Node.js application
+### Set your OAuth redirect URL
 
-Let's set up a simple web server to processes all incoming HTTP requests.
+Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
 
-We'll be using Node.js to develop our app, so you'll need to make sure you've installed it on your machine as well.
+> https://d6b2306cdf40.ngrok.io/oauth
 
-1. Clone the sample application from [Github](https://github.com/pkvenu/developing-locally-with-Glip.git)
 
-2. Fire up the terminal window and change the path to the cloned applicaton directory and enter the command below:
+## Step 3. Clone the sample application
 
-     ```bash
-     npm install
-     ```
+To help you get started, we have a sample application that stubs out much of what you will need to create. Clone this Github repository like so:
 
-3. Create a copy of the `env.template` file and rename it to `.env`
+```bash
+% git clone https://github.com/pkvenu/ringcentral-bot-demo.git
+% cd ringcentral-bot-demo
+```
 
-4. Update the `.env` file with the values for `CLIENT_ID`, `CLIENT_SECRET` from the the bot creation step and the `REDIRECT_HOST` from ngrok. I would look something like this:
+## Step 4. Setup and start the bot server
+
+Ok, the basics are in place. Now it is time to build your bot server using node. The repository you cloned above has all the prerequisites you will need specified in `package.json`. Install them by running the following command:
+
+```bash
+% npm install
+```
+
+Next, copy the contents of `.env.template` to `.env`.
+
+```bash
+% cp .env.template .env
+```
+
+Edit the `.env` you just created and enter in the values for `CLIENT_ID` and `CLIENT_SECRET` that you received when you created the bot in the RingCentral Developer Console above. Then, set `REDIRECT_HOST` to your ngrok server URL. I would look something like this:
    
-       <img src="../../../img/envfile.png" class="img-fluid" style="max-width: 500px">
+<img src="../envfile.png" class="img-fluid" style="max-width: 500px">
 
-5. Run the following command in terminal to launch the app.
+Finally, launch your server.
 
-     ```bash
-     npm start
-     ```
+```bash
+npm start
+```
 
-6. Go to the `Bot` tab of the recently created app in the Developer Console. Click on the `Add to Glip` button.
+## Step 5. Add the bot to your RingCentral account
 
-    <img src="../../../img/glip_bot_tab.png" class="img-fluid" style="max-width: 500px">
+Return to the Developer Console and navigate to the "Bot" tab for the app you recently created. Click on the "Add to RingCentral" button.
 
-    This will trigger the installation of the bot and will respond back with `authorization code` to the oauth redirect Url.
+<img class="img-fluid" src="../add-to-glip.png" style="max-width: 600px">
 
-    !!! info "The bot provisioner will only use the first URL specificed in the oAuth settings."
+This will install the bot into your Developer Sandbox. When a bot is installed, RingCentral will attempt to verify that the bot server is running by sending it a quick message to the OAuth redirect URI.
 
-    <img src="../../../img/authorization.png" class="img-fluid" style="max-width: 300px">
+At the same time it will transmit auth credentials necessary for making future API calls. RingCentral will transmit an authorization code for public apps, and an access key for private apps.
 
-7. You can now exchange the authorization code for an bot token using the code below:
-    
-     ```javascript
-     //Authorization callback method.
-     app.get('/oauth', function (req, res) {
-         if(!req.query.code){
-             res.status(500);
-             res.send({"Error": "Looks like we're not getting code."});
-             console.log("Looks like we're not getting code.");
-         }else {
-             platform.login({
-                 code : req.query.code,
-                 redirectUri : REDIRECT_HOST + '/oauth'
-             }).then(function(authResponse){
-                 var obj = authResponse.json();
-                 bot_token = obj.access_token;
-                 res.send(obj)
-                 subscribeToEvents();
-             }).catch(function(e){
-                 console.error(e)
-                 res.send("Error: " + e);
-             })
-         }
-     });
-     ```
-     
-     The access token obtained is a `permanent` access token. It's the developer responsibility to manage access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to RingCentral.
+```js
+{!> code-samples/team-messaging/bot-app.js [ln:50-80] !}
+```
 
-8. We can now subscribe to RingCentral events using the code below:
-    
-    ```javascript
-    function subscribeToEvents(token){
-        var requestData = {
-            "eventFilters": [
-                "/restapi/v1.0/glip/posts",
-                "/restapi/v1.0/glip/groups"
-            ],
-            "deliveryMode": {
-                "transportType": "WebHook",
-                "address": REDIRECT_HOST + "/callback"
-            },
-            "expiresIn": 500000000
-        };
-        platform.post('/subscription', requestData)
-            .then(function (subscriptionResponse) {
-                console.log('Subscription Response: ',
-		   subscriptionResponse.json());
-                subscription = subscriptionResponse;
-                subscriptionId = subscriptionResponse.id;
-            }).catch(function (e) {
-                console.error(e);
-                throw e;
-            });
-    }
-    ```
+!!! info "The bot provisioner will only use the first URL specificed in the oAuth settings."
 
-9. Now login to `glip.devtest.ringcentral.com` with your credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
+<img src="../../../img/authorization.png" class="img-fluid" style="max-width: 300px">
 
-    <img src="../../../img/glip_bot_devtest.png" class="img-fluid">
+The access token obtained is a `permanent` access token. It's the developer responsibility to manage this access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to RingCentral.
 
-10. You should now see the notification messages in the console as show below:
+## Step 6. Subscribe to webhooks
+
+We can now subscribe to RingCentral events using the code below:
+
+```js
+{!> code-samples/team-messaging/bot-app.js [ln:111-134] !}
+```
+
+## Step 7. Talk to the bot
+
+Now login to `glip.devtest.ringcentral.com` using your sandbox credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
+
+<img src="../../../img/glip_bot_devtest.png" class="img-fluid">
+
+## Step 8. Receive webhook notifications
+
+When a person joins or leaves a team, or when a message is posted to a team, you should now receive an event from RingCentral which will be displayed in your console or in your ngrok inspector. 
 
 ```json
 {
@@ -159,3 +146,9 @@ We'll be using Node.js to develop our app, so you'll need to make sure you've in
     }
 }
 ```
+
+## Summary
+
+With events now being delivered to your bot server, you can begin [posting messages](../posting/) back to the team to build your conversational interface.
+
+This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](../node/) which provides a more full-featured bot server in a box. 

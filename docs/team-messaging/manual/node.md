@@ -1,8 +1,8 @@
-no_breadcrumb:true
-
 # How to build a RingCentral bot using Javascript
 
-This guide will take you through the process of building your first bot using RingCentral's [Javascript Bot Framework](https://github.com/ringcentral/ringcentral-chatbot-js). The bot we will build is very simple, but will help demonstrate the basic design pattern of setting up a server to respond to a user speaking to the bot via RingCentral team messaging. Let's begin!
+A RingCentral Team Messaging bot provides a conversational interface for performing common tasks. In this guide, you will learn how to setup one of the simplest possible bots to introduce you to the development process using the RingCentral Javascript bot framework. The bot you will create is a a ping-pong bot. 
+
+The RingCentral Javascript bot framework simplifies much of the process of creating a bot, and will help you devote more of your time to the conversational interface that powers your bot's interactions.
 
 ## Setup Your Project
 
