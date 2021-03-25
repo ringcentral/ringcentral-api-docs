@@ -2,7 +2,7 @@
 
 RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry standard terms `start` and `stop`, respectively. This is handled per pair of sender and recipient numbers.
 
-While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that developers make note of the numbers that have opted out, and prevent sending messages to them in the future. 
+While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that developers make note of the numbers that have opted out, and prevent sending messages to them in the future.
 
 ## Network auto-replies to opt-in/out-out requests
 
@@ -23,9 +23,9 @@ When a recipient replies to an SMS message with the word "start," RingCentral wi
 
 !!! note "There will be no event notification for opt-in incident."
 
-## Checking a phone number's opt-out status
+## Read opted-out phone numbers
 
-In addition to real-time events, you can check on number status by calling the `opt-outs` API. The API's response contains a list of numbers which currently opted out for receiving text messages from the "from" number.
+In addition to real-time events, you can read opted out phone numbers by calling the `opt-outs` API. The API's response contains a list of phone numbers which have been opted out for receiving text messages from your service phone number (the phone number you send text message from).
 
 === "HTTP"
     ```
@@ -80,6 +80,64 @@ In addition to real-time events, you can check on number status by calling the `
   	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/opt-outs', $params);
     print_r ($resp->json());
     ?>
+    ```
+
+=== "C#"
+    ```c#
+    using System;
+    using System.Threading.Tasks;
+    using RingCentral;
+
+    namespace HighVolume_SMS
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          get_opted_out_numbers().Wait();
+        }
+        static private async Task get_opted_out_numbers()
+        {
+          RestClient rc = new RestClient("client_id", "client_secret", true);
+          await rc.Authorize("username", "extension_number", "password");
+          ReadA2PsmsOptOutsParameters parameters = new ReadA2PsmsOptOutsParameters();
+          parameters.from = "+16505550100";
+
+          var resp = await rcsdk.Restapi().Account().A2pSms().OptOuts().Get(parameters);
+          Console.WriteLine(JsonConvert.SerializeObject(resp));  
+        }
+      }
+    }
+    ```
+
+=== "Java"
+    ```java
+    package HighVolume_SMS;
+
+    import java.io.IOException;
+    import com.ringcentral.*;
+    import com.ringcentral.definitions.*;
+
+    public class HighVolume_SMS {
+      public static void main(String[] args) {
+        try {
+          get_opted_out_numbers();
+        } catch (RestException | IOException e) {
+          e.printStackTrace();
+        }
+      }
+      public static void get_opted_out_numbers() throws RestException, IOException{
+        RestClient rc = new RestClient("client_id", "client_secret", "server_url");
+        rc.authorize("username", "extension_number", "password");
+
+        ReadA2PsmsOptOutsParameters parameters = new ReadA2PsmsOptOutsParameters();
+    		parameters.from = "+16505550100";
+
+        var resp = restClient.restapi().account().a2psms().optouts().get(parameters);
+        String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
+        System.out.println(jsonStr);
+      }
+    }
     ```
 
 === "Ruby"

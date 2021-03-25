@@ -41,7 +41,7 @@ async function send_sms(fromNumber){
        to: [{'phoneNumber': RECIPIENT}],
        text: 'Hello World from JavaScript'
      })
-    var jsonObj = resp.json()
+    var jsonObj = await resp.json()
     console.log("SMS sent. Message status: " + jsonObj.messageStatus)
   }catch(e){
     console.log(e.message)
