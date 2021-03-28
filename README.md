@@ -1,8 +1,6 @@
 # RingCentral Developer Guide Documentation
 
 [![Build Status][specs-status-svg]][specs-status-url]
-[![Docs Status][docs-status-svg]][docs-status-url]
-[![Docs][docs-svg]][docs-url]
 
  [specs-status-svg]: https://github.com/ringcentral/ringcentral-api-docs/workflows/spec%20build/badge.svg?branch=master
  [specs-status-url]: https://github.com/ringcentral/ringcentral-api-docs/actions
