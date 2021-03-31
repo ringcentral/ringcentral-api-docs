@@ -12,7 +12,7 @@ If you use "RingCentral Office" branding in your Application, replace it with "B
 
 Sample logo is shown below for BT Cloud Work. This logo can be scaled to the appropriate pixel dimensions in your App
 
-![BT logo](../logo-bt.png)
+![BT logo](../logo_bt.svg)
 
 <div style="background-color: #5514B4; width: 160px; height: 100px; color: white; padding: 15px; margin-bottom: 15px;">
 BT Purple<br>

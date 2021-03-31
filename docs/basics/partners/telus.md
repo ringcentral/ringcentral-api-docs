@@ -12,7 +12,7 @@ If you use "RingCentral Office" branding in your Application, replace it with "T
 
 Sample logo is shown below for TELUS Business Connect. This logo can be scaled to the appropriate pixel dimensions in your App
 
-![TELUS logo](../logo-telus.png)
+<img src="../logo_telus.svg" style="max-width: 400px"> 
 
 <div style="background-color: #66cc00; width: 160px; height: 100px; color: white; padding: 15px; margin-bottom: 15px;">
 TELUS Green<br>

@@ -1,14 +1,17 @@
 # Partner Compatibility Guide
 
-RingCentral works with a number of carriers and partners to deliver a cutting edge white labeled Cloud Communications service directly to their respective customers. This guide will assist developers in building apps that are aware of these partners and their brands to reach those audiences and customers.
+RingCentral works with a number of carriers and partners to deliver a cutting edge white-labeled Cloud Communications service directly to their respective customers. This guide will assist developers in building apps that are aware of these partners and their brands to reach those audiences and customers.
 
-Our partners include:
+On this page you will find information relating to all partners, including information about how to facilitate authentication with those partners and how to surface their branding when appropriate. 
 
-* AT&T Office@Hand
-* Avaya Cloud Office
-* BT Cloud Work
-* TELUS
-* Unify Office
+You can find specific brand guidance about each of our partners below:
+
+* [AT&T Office@Hand](../partners/att/)
+* [Avaya Cloud Office](../partners/aco/)
+* [BT Cloud Work](../partners/bt/)
+* [Rainbow Office](../partners/alcatel/)
+* [TELUS](../partners/telus/)
+* [Unify Office](../partners/atos/)
 
 ??? tip "Learn how to promote your app to our partners"
     Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
@@ -60,6 +63,10 @@ The following images have been provided to help you construct buttons to initiat
 
 <img alt="ATT Login Button" src="../button-bt.png">
 
+#### Rainbow Office
+
+<img alt="Rainbow Office Login Button" src="../button-rainbow.png">
+
 #### TELUS
 
 <img alt="TELUS Login Button" src="../button-telus.png">
@@ -68,13 +75,14 @@ The following images have been provided to help you construct buttons to initiat
 
 When constructing a login URL to initiate the authorization process in a [3-legged Auth Flow](../../authentication/auth-code-flow), a query string parameter called `brandId` can be added to control which partner's logo will appear on the page. The following values can be used to control the brand displayed on the RingCentral login page.
 
-| Brand Id Value | Service | Logo Displayed |
-|-|-|-|
-| `3420` | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../logo-att.png"> |
-| `6010` | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../logo-avaya-sm.jpg"> |
-| `7310` | TELUS | <img alt="TELUS Logo" src="../logo-telus.png"> |
-| `7710` | BT Cloud Work | <img alt="BT Cloud Work Logo" src="../logo-bt.png"> | 
-| `2020` | Atos Unify Office | <img alt="Atos Unify Office Logo" src="../logo-atos.png"> | 
+| Brand Id | Provider | Service Name | Logo Displayed |
+|-|-|-|-|
+| `3420` | AT&T | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../partners/logo_att.svg" style="max-width:200px"> |
+| `6010` | Avaya | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../partners/logo_aco.jpg" style="max-width:200px"> |
+| `7310` | TELUS | TELUS | <img alt="TELUS Logo" src="../partners/logo_telus.svg" style="max-width:200px;"> |
+| `7710` | BT | BT Cloud Work | <img alt="BT Cloud Work Logo" src="../partners/logo_bt.svg" style="max-width:200px"> | 
+| `2110` | Alcatel | Rainbow Office | <img alt="Rainbow Office Logo" src="../partners/logo_rainbow.png" style="max-width: 200px"> | 
+| `2020` | Atos | Unify Office | <img alt="Atos Unify Office Logo" src="../partners/logo_atos.png" style="max-width:200px"> | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 
