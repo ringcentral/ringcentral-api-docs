@@ -50,7 +50,7 @@ RingCentral Team Messaging can also be used to help with project management. In 
 * **Events** - create and share calendar events, project due-dates, co-worker vacations and more
 * **Notes** - create and share meeting notes, or maintain a scratch pad of important ideas
 
-* Learn about the [Tasks API](https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents)
-* Learn about the [Events API](https://developers.ringcentral.com/api-reference/Tasks/listChatTasks)
+* Learn about the [Events API](https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents)
+* Learn about the [Tasks API](https://developers.ringcentral.com/api-reference/Tasks/listChatTasks)
 * Learn about the [Notes API](https://developers.ringcentral.com/api-reference/Notes/listChatNotes)
 
