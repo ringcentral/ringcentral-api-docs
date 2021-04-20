@@ -11,7 +11,7 @@ To create a webhook, you'll need a webserver that listens on a specific URL for 
 3. can respond within 3000 milliseconds with 200 OK
 4. will respond with `Validation-Token` header on subscription
 
-TLS / SSL is only required to be enabled in production. For development purposes, TLS is not necessary. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS / SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](./configuring-tls-ssl/)
+TLS / SSL is only required to be enabled in production. For development purposes, TLS is not necessary. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS / SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](../configuring-tls-ssl/)
 
 **Example URL**
 
