@@ -1,4 +1,7 @@
 .help .material-icons { font-size: .9rem }
+#content table img {
+    max-width: 100%;
+}
 #main blockquote {
     padding: 10px 0 0 20px;
     border-left: 5px solid #EEE;

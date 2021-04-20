@@ -10,7 +10,7 @@ You can find specific brand guidance about each of our partners below:
 * [Avaya Cloud Office](../partners/aco/)
 * [BT Cloud Work](../partners/bt/)
 * [Rainbow Office](../partners/alcatel/)
-* [TELUS](../partners/telus/)
+* [TELUS Business Connect](../partners/telus/)
 * [Unify Office](../partners/atos/)
 
 ??? tip "Learn how to promote your app to our partners"
