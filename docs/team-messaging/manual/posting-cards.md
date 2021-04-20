@@ -35,7 +35,7 @@ Posting the contents above will result in a message that appears as follows:
 <img src="../simple-card-message.png" class="img-fluid">
 
 !!! tip "You can also post via an Incoming Webhook"
-    [Incoming Webhooks](../webhooks/) provide an alternative conduit by which messages can be posted to a team. An Incoming Webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
+    [Incoming Webhooks](../webhook-creation/) provide an alternative conduit by which messages can be posted to a team. An Incoming Webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
 !!! note "What to be aware of when using message attachments"
     * All fields except `text` have a character limit of 300 bytes.
