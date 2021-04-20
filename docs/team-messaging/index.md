@@ -38,7 +38,7 @@ app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 
 ### Build a notification app
 
-[Incoming Webhooks](./manual/webhooks/) can be used to create inputs into which a 3rd-party can post JSON formatted events or messages and have those posted directly into a chat as a [richly formatted messages](./manual/formatting). For example, the [RingCentral Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a chat of your choosing:
+[Incoming Webhooks](./manual/webhook-creation/) can be used to create inputs into which a 3rd-party can post JSON formatted events or messages and have those posted directly into a chat as a [richly formatted messages](./manual/formatting). For example, the [RingCentral Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a chat of your choosing:
 
 <img src="../img/glip_post_attachment_salesforce.png" class="img img-fluid" width="30%">
 
