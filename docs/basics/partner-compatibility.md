@@ -77,12 +77,12 @@ When constructing a login URL to initiate the authorization process in a [3-legg
 
 | Brand Id | Provider | Service Name | Logo Displayed |
 |-|-|-|-|
-| `3420` | AT&T | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../partners/logo_att.svg" style="max-width:200px"> |
-| `6010` | Avaya | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../partners/logo_aco.jpg" style="max-width:200px"> |
-| `7310` | TELUS | TELUS | <img alt="TELUS Logo" src="../partners/logo_telus.svg" style="max-width:200px;"> |
-| `7710` | BT | BT Cloud Work | <img alt="BT Cloud Work Logo" src="../partners/logo_bt.svg" style="max-width:200px"> | 
-| `2110` | Alcatel | Rainbow Office | <img alt="Rainbow Office Logo" src="../partners/logo_rainbow.png" style="max-width: 200px"> | 
-| `2020` | Atos | Unify Office | <img alt="Atos Unify Office Logo" src="../partners/logo_atos.png" style="max-width:200px"> | 
+| `3420` | AT&T | AT&T Office@Hand | <img alt="Office@Hand Logo" src="../partners/logo_att.svg"> |
+| `6010` | Avaya | Avaya Cloud Office | <img alt="Avaya Cloud Office Logo" src="../partners/logo_aco.jpg"> |
+| `7310` | TELUS | TELUS | <img alt="TELUS Logo" src="../partners/logo_telus.svg"> |
+| `7710` | BT | BT Cloud Work | <img alt="BT Cloud Work Logo" src="../partners/logo_bt.svg"> | 
+| `2110` | Alcatel | Rainbow Office | <img alt="Rainbow Office Logo" src="../partners/logo_rainbow.png"> | 
+| `2020` | Atos | Unify Office | <img alt="Atos Unify Office Logo" src="../partners/logo_atos.png"> | 
 
 Leaving `brandId` blank will result in RingCentral's logo being displayed. 
 
