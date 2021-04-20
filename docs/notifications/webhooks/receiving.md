@@ -1,6 +1,6 @@
 # Receiving Webhooks
 
-Once a [webhook has been created](../../webhooks/) then events will start being transmitted to the webhook URL you designated.
+Once a [webhook has been created](../creating-webhooks/) then events will start being transmitted to the webhook URL you designated.
 
 ## Validating incoming webhooks
 
