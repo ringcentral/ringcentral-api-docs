@@ -16,7 +16,6 @@ Batch level push notifications provide updates on batch status. A batch could ha
 | Event Filter | Description |
 |-|-|
 | `/restapi/v1.0/account/~/a2p-sms/batch` | Notification for any batch status changes on that account |
-| `/restapi/v1.0/account/~/a2p-sms/batch/{batchId}` | Notification for a specific `batchId` |
 | `/restapi/v1.0/account/~/a2p-sms/batch?from={e164PhoneNumber}` | Notification on batches from a specific From number in E.164 format, e.g. `+16505550100` |
 
 ## Inbound Message Events
