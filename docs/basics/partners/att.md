@@ -15,22 +15,18 @@ Sample logo is shown below for AT&T Office@Hand. This logo can be scaled to the 
 
 ### 2. Countries support
 
-AT&T Office@Hand is primarily supported in United States. Additionally the product may be used in the following countries per terms outlined by AT&T Office@Hand.
+AT&T Office@Hand is now supported in United States, UK, Canada and 11 EU countries, including Netherlands, Ireland, Spain, Switzerland, Sweden, Austria, Belgium, Denmark, Germany, France and Italy. 
 
-1. Cuba
-2. Israel
-3. Kenya
-4. Morocco
-5. Myanmar
-6. Taiwan
-7. Philippines
-8. Mexico
+Your App needs to be supported in the United States to qualify for AT&T Office@Hand integration. Additionally AT&T has restrictions on presence or support operation in China, Russia, and Ukraine. 
 
-Your App needs to be supported in the United States to qualify for AT&T Office@Hand integration. Additionally you may have presence or support operation in above countries. AT&T Office@Hand is not supported in any other country not listed above.
+Additional countries will be introduced on a quarterly basis which may require specific application support and/or language support to remain eligible for those countries.
 
-### 3. Language support
+### 3. Language Support
 
-AT&T Office@Hand uses US English. Your App needs to support this language and localization.
+AT&T Office@Hand supports US English as the base line. Your App needs to support this language and localization. Additionally, UK English, Canadian French, French French, German, Italian, Spanish, and Dutch are supported languages and localization for non-US countries.
+
+As additional regional coverages are introduced on a quarterly basis, additional language support may be required to remain eligible.
+
 
 ### 4. Support for AT&T Office@Hand customers
 
