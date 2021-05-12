@@ -184,18 +184,19 @@ pages:
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
           - 'Update a Profile': 'basics/update-profile.md'
           - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
-          - 'Partner compatibility': 'basics/partner-compatibility.md'
-          - 'Partner Brand Guidelines':
+      - 'Application Management':
+          - 'Using Lead Forms': 'basics/lead-forms.md'
+          - 'Install App Buttons': 'basics/install-app-button.md'
+      - 'Partner Ecosystem':
+          - 'Overview': 'basics/partner-compatibility.md'
+          - 'Technical Requirements': 'basics/partners/segregated-environments.md'
+          - 'Brand Guidelines':
              - 'AT&T Office@Hand': 'basics/partners/att.md'
              - 'Avaya Cloud Office': 'basics/partners/aco.md'
              - 'BT Cloud Work': 'basics/partners/bt.md'
              - 'Rainbow Office': 'basics/partners/alcatel.md'
              - 'TELUS Business Connect': 'basics/partners/telus.md'
              - 'Unify Office': 'basics/partners/atos.md'
-      - 'Application Management':
-          - 'Using Lead Forms': 'basics/lead-forms.md'
-          - 'Install App Buttons': 'basics/install-app-button.md'
-
   - 'Account':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
