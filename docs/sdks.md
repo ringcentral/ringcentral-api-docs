@@ -55,7 +55,6 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 
 ### Java
 
-* [ringcentral-java](https://github.com/vyshakhbabji/ringcentral-java) - A Java client library for the RingCentral REST API
 * [ringcentral-call-log-record-generator-app](https://github.com/vyshakhbabji/ringcentral-call-log-record-generator-app) - A demo app to generate call log records against an account for testing purposes
 
 ### JavaScript
