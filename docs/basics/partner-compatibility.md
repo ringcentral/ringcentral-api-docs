@@ -17,7 +17,7 @@ This guide will assist developers in building apps that are aware of these partn
 
     Learn [how to get listed in our app gallery &raquo;](../app-gallery/)
 
-!!! warning "Additional requirements for AT&T Office@Hand"
+!!! warning "Additional requirements for AT&T Office@Hand and Verizon"
     Some partners operate in a completely segregated environment and as a result require developers to adhere to [additional technical requirements](../partners/segregated-environments/) in order to maintain compatibility with those partners. 
 
 ## Tips and recommendations
@@ -96,11 +96,11 @@ https://platform.ringcentral.com/restapi/oauth/authorize\
 Remember, pay close attention to the following:
 
 * The domain you utilize may depend upon the carrier you are linking to.
-    * AT&T Office@Hand users will use a domain of `platform.ringcentral.biz`
+    * AT&T Office@Hand and Verizon users will use a domain of `platform.ringcentral.biz`
     * All other users will use a domain of `platform.ringcentral.com`
 * The `brandId` parameter will need to be customized based on the logo you want to appear on the login page.
 
-!!! warning "Additional AT&T Office@Hand Technical Requirements"
-    Working with partners operating in a segregated environment, like AT&T Office@Hand, comes with [additional technical requirements](../partners/segregated-environments/) in order to meet the compliance and security requirements mandated by the platform.
+!!! warning "Additional AT&T Office@Hand and Verizon Technical Requirements"
+    Working with partners operating in a segregated environment, like AT&T Office@Hand and Verizon, comes with [additional technical requirements](../partners/segregated-environments/) in order to meet the compliance and security requirements mandated by their products.
 
 

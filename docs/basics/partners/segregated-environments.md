@@ -12,6 +12,7 @@ These additional requirements relate to an application's ability to detect the p
 The partners that operate in our segregated environment are:
 
 * AT&T Office@Hand
+* Verizon
 
 For the purposes of this documentation, we call these partners "segregated partners."
 
@@ -33,8 +34,8 @@ When constructing the login URL used to initiate the 3-legged authorization flow
 
 * The login URL may differ depending upon the RingCentral partner a user is affiliated with. The login URL will be one of the following:
 
-   * https://login.ringcentral.com
-   * https://login.ringcentral.biz
+     * https://login.ringcentral.com
+     * https://login.ringcentral.biz
 
 * To ensure the user sees the proper branding when logging in, developers should [pass the brand ID of the partner](../../partner-compatibility/#login-page-branding) via the `brandId` query parameter. 
 
@@ -52,4 +53,3 @@ Developers should make efforts to persist whether their users are associated wit
 
 A [sample application](https://github.com/byrnereese/ringcentral-office-at-hand-sample-app) was created to help illustrate the guidelines above. It's README highlights the specific code changes you may need to make to your application to ensure compatibility with all of our partners. 
 
-API: `https://platform.ringcentral.biz/restapi/v1.0/account/~`
