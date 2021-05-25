@@ -94,7 +94,7 @@ npm start
 
 Return to the Developer Console and navigate to the "Bot" tab for the app you recently created. Click on the "Add to RingCentral" button.
 
-<img class="img-fluid" src="../add-to-glip.png" style="max-width: 600px">
+<img class="img-fluid" src="../add-to-ringcentral.png" style="max-width: 600px">
 
 This will install the bot into your Developer Sandbox. When a bot is installed, RingCentral will attempt to verify that the bot server is running by sending it a quick message to the OAuth redirect URI.
 
@@ -120,9 +120,9 @@ We can now subscribe to RingCentral events using the code below:
 
 ## Step 7. Talk to the bot
 
-Now login to `glip.devtest.ringcentral.com` using your sandbox credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
+Now login to `https://app.devtest.ringcentral.com` using your sandbox credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
 
-<img src="../../../img/glip_bot_devtest.png" class="img-fluid">
+<img src="../../../img/bot_devtest.png" class="img-fluid">
 
 ## Step 8. Receive webhook notifications
 

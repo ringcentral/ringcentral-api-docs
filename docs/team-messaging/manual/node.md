@@ -119,13 +119,13 @@ $ curl -X PUT -u admin:admin https://<CHATBOT_SERVER>/admin/setup-database
 
 Login to your [Developer Console](https://developer.ringcentral.com/), click on your bot in the application listing, and navigate to the Bot tab. Then click the button labeled "Add to RingCentral."
 
-<img class="img-fluid" src="../add-to-glip.png" style="max-width: 600px">
+<img class="img-fluid" src="../add-to-ringcentral.png" style="max-width: 600px">
 
 Then follow the on-screen instructions and pick a name for your bot.
 
 ## Test Your Bot
 
-Your bot will appear as a user inside of the RingCentral App. Login to the [RingCentral Team Messaging sandbox](https://glip.devtest.ringcentral.com/) and start a chat with the bot app you just added.
+Your bot will appear as a user inside of the RingCentral App. Login to the [RingCentral Team Messaging sandbox](https://app.devtest.ringcentral.com/) and start a chat with the bot app you just added.
 
 Type "ping" and see what happens. If successful, the bot should respond simply with "pong." 
 

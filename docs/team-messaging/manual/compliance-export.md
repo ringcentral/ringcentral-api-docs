@@ -11,7 +11,7 @@ Compliance Exports is a special capability specifically built for companies and 
 
 The Compliance Export API allows any data retention practices to be automated and is essential for regulated industries because RingCentral does not retain customer data indefinitely. Our data retention policy is as follows, depending upon whether your account is "HIPAA enabled" (please consult your account representative or support to inquire about your account settings).
 
-| Account | Glip Data Retention Rule |
+| Account | Data Retention Rule |
 |-|-|
 | **Non-HIPAA** | The account admin can set the retention policy to one of the following: 30, 60 and 90 days. Once a policy is set, on a nightly basis all content older than the specified number of days will be deleted permanently. |
 | **HIPAA enabled** | All data will be deleted after 30 days. |
@@ -22,9 +22,9 @@ The RingCentral App provides admins with a way of modifying your account's data 
 
 <img class="img-fluid" src="../manage-data-retention-1.png">
 
-## Glip Data Export Process
+## Team Messaging Data Export Process
 
-Glip Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
+Team Messaging Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
 
 1. Developer creates an "Export Report" task.
 2. Developer polls to check the status of the created "Export Report" task.

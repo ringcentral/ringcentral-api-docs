@@ -40,13 +40,13 @@ Posting the contents above will result in a message that appears as follows:
 !!! note "What to be aware of when using message attachments"
     * All fields except `text` have a character limit of 300 bytes.
     * The cummulative size limit for all attachments is 1.5M bytes. 
-    * "Glipdown," a RingCentral flavor of Markdown, provides some text formatting options (bold, italics, links, etc.)
+    * "Mini-Markdown," a RingCentral flavor of Markdown, provides some text formatting options (bold, italics, links, etc.)
 
 ### Posting Multiple Cards at Once
 
 The following is an example set of cards created by a single request containing three attachments. Each attachment results in its own card, and contains multiple fields. This example shows message attachments created through the [RingCentral Salesforce integration](https://zapier.com/apps/glip/integrations/salesforce).
 
-<img src="../../../img/glip_post_attachment_salesforce.png" class="img-fluid" style="max-width: 350px">
+<img src="../../../img/post_attachment_salesforce.png" class="img-fluid" style="max-width: 350px">
 
 ## Composing a Card
 
@@ -63,7 +63,7 @@ The following is a breakdown of the various properties of an attachment of type 
 | `author` | A set of properties that will render an author section at the top of the message. | 
 | `title` | The actual title string. |
 | `title_link` | Used to linkify the title. |
-| `text` | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "Glipdown," see below)
+| `text` | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "mini-Markdown," see below)
 | `fields` | An array of objects that will render indvidual subsections within a message. | 
 | `image_url` | A string url used to display a single image at the bottom of a message. We currently support GIF, JPEG and PNG. RingCentral only support "HTTPS" Urls. If the URL is a http url we show a placeholder. |
 | `thumb_url` | A string url used to display a thumbnail to the right of a message (82x82). |

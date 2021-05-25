@@ -1,21 +1,21 @@
-# Posting messages via a Glip Webhook URL
+# Posting messages via an Incoming Webhook URL
 
-There are two primary ways one can post a message to a team. Either developers can post directly via the REST API, or they can post via Glip Webhook URL.
+There are two primary ways one can post a message to a team. Either developers can post directly via the REST API, or they can post via an Incoming Webhook URL.
 
-## Why use a Glip Webhook URL to post a message?
+## Why use an Incoming Webhook URL to post a message?
 
-A Glip Webhook URL is a mechanism designed specifically for enabling external service providers to post messages into a specific team without having to also worry about authentication. For example, suppose you want to convert a webhook notification emitted by the issue tracking system Jira into a Glip message, and have that Glip message delivered to a specific team? To do this, one would:
+An Incoming Webhook URL is a mechanism designed specifically for enabling external service providers to post messages into a specific team without having to also worry about authentication. For example, suppose you want to convert a webhook notification emitted by the issue tracking system Jira into a message, and have that message delivered to a specific team? To do this, one would:
 
-1. Generate a Glip Webhook URL (via RingCentral App, or via the RingCentral API)
-2. Copy and paste the Glip Webhook URL into Jira where one configures webhook notifications
+1. Generate an Incoming Webhook URL (via RingCentral App, or via the RingCentral API)
+2. Copy and paste the Incoming Webhook URL into Jira where one configures webhook notifications
 
-Then, when a webhook is triggered in Jira, Jira will post a JSON event payload to the configured Glip Webhook URL. Upon receiving the webhook, Glip will convert the event into a message and post it to the Glip Webhook's corresponding team. 
+Then, when a webhook is triggered in Jira, Jira will post a JSON event payload to the configured Incoming Webhook URL. Upon receiving the webhook, RingCentral will convert the event into a message and post it to the Incoming Webhook's corresponding team. 
 
-## How to create a Glip Webhook URL
+## How to create an Incoming Webhook URL
 
 ### Using RingCentral App
 
-There are two ways to create a Glip Webhook URL. The first and most common method involves using the RingCentral App, navigating to the team into which you wish to receive messages, and clicking "Add Apps" from the conversation menu.
+There are two ways to create an Incoming Webhook URL. The first and most common method involves using the RingCentral App, navigating to the team into which you wish to receive messages, and clicking "Add Apps" from the conversation menu.
 
 <img src="../add-apps.png" class="img-fluid">
 
@@ -23,7 +23,7 @@ On the subsequent screen, you will be prompted to select the app you want to ins
 
 ### Using the RingCentral API
 
-The other way to create a Glip Webhook URL is via the API. To create a webhook URL in this fashion, a developer uses the API to create a webhook associated with a specific chat ID. Let's look at a sample request and response for how a webhook URL is generated.
+The other way to create an Incoming Webhook URL is via the API. To create a webhook URL in this fashion, a developer uses the API to create a webhook associated with a specific chat ID. Let's look at a sample request and response for how a webhook URL is generated.
 
 === "Request"
 
@@ -47,7 +47,7 @@ The other way to create a Glip Webhook URL is via the API. To create a webhook U
 	}
 	```
 
-## How to post messages via a Glip Webhook URL
+## How to post messages via an Incoming Webhook URL
 
 With a webhook URL in-hand after creating one as shown above, developers can post different types of messages into a team. Developers can post:
 
@@ -57,28 +57,28 @@ With a webhook URL in-hand after creating one as shown above, developers can pos
 
 Cards are the most common form of post as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way.
 
-### Version 1 vs Version 2 Glip Webhook URLs
+### Version 1 vs Version 2 Incoming Webhook URLs
 
-Depending upon when a Glip Webhook URL was created, you may notice a slight variation in their format. These two variations represent two different versions of the the Glip Webhook URL system.
+Depending upon when an Incoming Webhook URL was created, you may notice a slight variation in their format. These two variations represent two different versions of the the Incoming Webhook URL system.
 
 | Version | URI Scheme |
 |-|-|
 | 1 | `https://hooks.glip.com/webhook/{ webhook id }` | 
 | 2 | `https://hooks.glip.com/webhook/v2/{ webhook id }` | 
 
-Version 1 Glip Webhook URLs are more limited than their version 2 counterparts in the following ways:
+Version 1 Incoming Webhook URLs are more limited than their version 2 counterparts in the following ways:
 
 * TODO
 * TODO
 
-!!! tip "Migrating between Glip Webhook URL versions"
-    One can easily begin using version 2 Glip Webhook URLs just by inserting `v2` into the URI path between `/webhook/` and the webhook id. There is no need to create a new Glip Webhook just to migrate from one version to another.
+!!! tip "Migrating between Incoming Webhook URL versions"
+    One can easily begin using version 2 Incoming Webhook URLs just by inserting `v2` into the URI path between `/webhook/` and the webhook id. There is no need to create a new Incoming Webhook just to migrate from one version to another.
 
-### Using Glip Webhook URLs
+### Using Incoming Webhook URLs
 
 #### Version 1
 
-The following is an example message, transmitted in the POST body, posted to a version 1 Glip Webhook URL endpoint.
+The following is an example message, transmitted in the POST body, posted to a version 1 Incoming Webhook URL endpoint.
 
 ```json
 {
@@ -123,7 +123,7 @@ The following is an example message, transmitted in the POST body, posted to a v
 
 It will result in a message and card that appears a shown below:
 
-<img src="../../../img/glip_post_attachment_demo.png" class="img-fluid" style="max-width: 400px">
+<img src="../../../img/post_attachment_demo.png" class="img-fluid" style="max-width: 400px">
 
 #### Version 2
 

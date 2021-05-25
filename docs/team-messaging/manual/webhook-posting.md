@@ -15,7 +15,7 @@
 
 ## What is an "Incoming Webhook?"
 
-An Incoming Webhook, historically known as a "Glip Webhook URL," is a mechanism designed to enable third-parties to post messages into a specific chat. Using an Incoming Webhook for example, one can direct a service like Asana, Jira, or Pagerduty to post an event/webhook emitted by that service to an Incoming Webhook's URL. Then for [supported service providers](../webhook-service-providers/), RingCentral will convert the event payload it receives into a message, and post it to the corresponding team. 
+An Incoming Webhook is a mechanism designed to enable third-parties to post messages into a specific chat. Using an Incoming Webhook for example, one can direct a service like Asana, Jira, or Pagerduty to post an event/webhook emitted by that service to an Incoming Webhook's URL. Then for [supported service providers](../webhook-service-providers/), RingCentral will convert the event payload it receives into a message, and post it to the corresponding team. 
 
 ## How to post a message via an Incoming Webhook
 

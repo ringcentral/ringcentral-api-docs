@@ -3,7 +3,7 @@
 Team Messaging Notification Apps are a specialized form of app that perform the following functions for customers and developers.
 
 1. Notification Apps help convert events emitted by a service into messages that are delivered to a team.
-2. They provide developers with the means of promoting these apps directly to RingCentral Team Messaging and Glip users.
+2. They provide developers with the means of promoting these apps directly to RingCentral Team Messaging users.
 3. They allow developers to embed a setup form directly into the installation flow so that customers can make use of their integration more readily.
 
 ## Creating a Notification App
