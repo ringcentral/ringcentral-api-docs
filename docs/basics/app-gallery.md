@@ -56,7 +56,7 @@ Upon clicking "Submit for approval" you will be asked to confirm in which app ga
 <img class="img-fluid mx-auto d-block" src="../promote-3.png" style="max-width: 500px">
 
 ??? tip "Don't see the app gallery you are looking for?"
-    The list of app gallery profiles you are able to create is dependent upon what partners you enabled your app for when it was created. Unfortunately you cannot edit this list yourself after the app is created. Reach out to our [Developer Support](mailto:devsupport@ringcentral.com) for help is modifying the list of partners your app is available to. 
+    The list of app gallery profiles you are able to create is dependent upon what partners you enabled your app for when it was created. Unfortunately you cannot edit this list yourself after the app is created. To obtain help in making these changes, please [login and submit a help ticket](https://developers.ringcentral.com/support/create-case) with our Developer Support Team.
 
 ??? tip "You can only submit your application for approval, after the app has graduated."
     The [graduation process](../production/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
