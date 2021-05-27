@@ -318,13 +318,13 @@
         ],
         "defaults": {
             "githubUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/active_call_control_overview.md",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-control"
         },
         "languages": [
             {
                 "name": "Learn More",
-                "githubUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/active_call_control_overview.md",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/"
+                "githubUri": "",
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-control"
             }
         ]
     },
@@ -336,49 +336,31 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/oauth/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/authentication"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/oauth/"
-            }
-        ]
-    },
-    {
-	"title": "Granting and Revoking User Permissions",
-        "description": "<p>Learn how to view the Authorization Profile for a user extensions, and to modify the permissions associated with an extension, and user account to better manage and secure your RingCentral account.</p>",
-        "tags": [
-            "Configuration"
-        ],
-        "defaults": {
-            "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/authorization_profile/"
-        },
-        "languages": [
-            {
-                "name": "Learn More",
-                "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/authorization_profile/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/authentication"
             }
         ]
     },
     {
 	"title": "Archiving Account Activity Data",
-        "description": "<p>RingCentral does not store account activity data in perpetuity. In this tutorial you will Learn how to extend the availability of your data beyond the Data Retention Policy defined by Ring Central</p>",
+        "description": "<p>RingCentral does not store account activity data in perpetuity. In this tutorial you will Learn how to extend the availability of your data beyond the Data Retention Policy defined by RingCentral</p>",
         "tags": [
             "Data"
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/data-archival/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-log/archival"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/data-archival/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-log/archival"
             }
         ]
     },
@@ -390,13 +372,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/account_extension/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/account/extensions"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/account_extension/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/account/extensions"
             }
         ]
     },
@@ -408,31 +390,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_introduction/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-log/reading-call-log"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calllog_introduction/"
-            }
-        ]
-    },
-    {
-	"title": "Common Principles of the RingCentral API",
-        "description": "<p>This nuts-and-bolts guide walks developers through the basics that govern all of our APIs, from our URL pragma, object represention, user agents, and more.</p>",
-        "tags": [
-            "Fundamentals"
-        ],
-        "defaults": {
-            "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/overview/"
-        },
-        "languages": [
-            {
-                "name": "Learn More",
-                "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/overview/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-log/reading-call-log"
             }
         ]
     },
@@ -444,13 +408,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_pubsub/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/notifications/push-notifications/pubnub"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_pubsub/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/notifications/push-notifications/pubnub"
             }
         ]
     },
@@ -462,33 +426,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/rate_limits/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/basics/rate-limits"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/rate_limits/"
-            }
-        ]
-    },
-    {
-	"title": "Upgrading from our Legacy APIs",
-        "description": "<p>In May 2018 we announced the end-of-life of our RingOut.asp and FaxOut.asp APIs. This guide will help developers upgrade their implementations to utilize our enhanced REST APIs with zero loss of functionality.</p>",
-        "tags": [
-            "Fundamentals",
-	    "Fax",
-	    "Voice"
-        ],
-        "defaults": {
-            "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/legacy_api_upgrade/"
-        },
-        "languages": [
-            {
-                "name": "Learn More",
-                "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/legacy_api_upgrade/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/basics/rate-limits"
             }
         ]
     },
@@ -500,13 +444,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_webhooks/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/notifications/webhooks/quick-start"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/notifications_webhooks/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/notifications/webhooks/quick-start"
             }
         ]
     },
@@ -536,13 +480,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_message_attachments/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/team-messaging/manual/posting-cards"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/glip_message_attachments/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/team-messaging/manual/posting-cards"
             }
         ]
     },
@@ -555,13 +499,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/call_queue/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-routing/manual/call-queues"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/call_queue/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/call-routing/manual/call-queues"
             }
         ]
     },
@@ -573,13 +517,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_ringout/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/ringout"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_ringout/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/ringout"
             }
         ]
     },
@@ -591,13 +535,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_webrtc/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/voice/webrtc"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/calls_webrtc/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/voice/webrtc"
             }
         ]
     },
@@ -609,13 +553,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_faxes/"
+            "tutorialUri": "https://developers.ringcentral.com/guide/messaging/fax/sending-faxes"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_faxes/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/messaging/fax/sending-faxes"
             }
         ]
     },
@@ -628,13 +572,13 @@
         ],
         "defaults": {
             "githubUri": "",
-            "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction"
+            "tutorialUri": "https://developers.ringcentral.com/guide/messaging"
         },
         "languages": [
             {
                 "name": "Learn More",
                 "githubUri": "",
-                "tutorialUri": "https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction/"
+                "tutorialUri": "https://developers.ringcentral.com/guide/messaging"
             }
         ]
     },
