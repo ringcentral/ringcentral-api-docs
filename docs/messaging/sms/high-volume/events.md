@@ -16,7 +16,6 @@ Batch level push notifications provide updates on batch status. A batch could ha
 | Event Filter | Description |
 |-|-|
 | `/restapi/v1.0/account/~/a2p-sms/batch` | Notification for any batch status changes on that account |
-| `/restapi/v1.0/account/~/a2p-sms/batch/{batchId}` | Notification for a specific `batchId` |
 | `/restapi/v1.0/account/~/a2p-sms/batch?from={e164PhoneNumber}` | Notification on batches from a specific From number in E.164 format, e.g. `+16505550100` |
 
 ## Inbound Message Events
@@ -35,7 +34,6 @@ Notify the delivery status of outbound messages. The following event filters are
 | Event Filter | Description |
 |-|-|
 | `/restapi/v1.0/account/~/a2p-sms/messages?direction=Outbound` | All outbound messages in an account |
-| `/restapi/v1.0/account/~/a2p-sms/messages?direction=Outbound&batchId={batchId}` | All outbound messages from a specific batch |
 | `/restapi/v1.0/account/~/a2p-sms/messages?direction=Outbound&from={e164PhoneNumber}` | Notification on Outbound Messages from a specific phone number in E.164 format, e.g. `+16505550100` |
 
 ## Opt-Out Events
