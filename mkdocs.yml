@@ -172,7 +172,18 @@ pages:
       - 'App permissions': 'basics/permissions.md'
       - 'URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
-      - 'API Reference Index': 'basics/api-index.md'
+      - 'API Change Log':
+        - 'Preface': 'basics/changelog/index.md'
+        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+        - 'v.1.0.40 (Aug 2019)': 'basics/changelog/1_0_40.md'
+        - 'v.1.0.39 (May 2019)': 'basics/changelog/1_0_39.md'
+      - 'API Quick Reference': 'basics/api-index.md'
 
   - 'Applications':
       - 'Development Lifecycle':
