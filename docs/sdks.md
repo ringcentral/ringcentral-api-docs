@@ -32,7 +32,7 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 In addition to the official RingCentral SDKs there are a number of unofficial libraries, plugins and sample apps for a range of languages built by amazing communities of active developers. The list below includes libraries and apps for the RingCentral Platform APIs and Glip, RingCentral’s messaging service.
 
-If you’ve built your own RingCentral library, plugin, or open source app, please [get in touch](mailto:devsupport@ringcentral.com) and we’ll add it to this list.
+If you’ve built your own RingCentral library, plugin, or open source app, please [login and submit a help ticket](https://developers.ringcentral.com/support/create-case) and we’ll add it to this list.
 
 Some of these integrations may be incomplete. Feedback and bugs should be directed to their representative authors.
 
@@ -55,7 +55,6 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 
 ### Java
 
-* [ringcentral-java](https://github.com/vyshakhbabji/ringcentral-java) - A Java client library for the RingCentral REST API
 * [ringcentral-call-log-record-generator-app](https://github.com/vyshakhbabji/ringcentral-call-log-record-generator-app) - A demo app to generate call log records against an account for testing purposes
 
 ### JavaScript

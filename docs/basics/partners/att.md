@@ -6,77 +6,38 @@ This document is intended for RingCentral ISVs and developers that want to enabl
 
 The doc outlines incremental App requirements to enable for AT&T Office@Hand. It is important to comply with these requirements, in order to qualify your app for AT&T Office@Hand. If you have any questions, please reach out to your RingCentral developer support. As noted above, this doc assumes you have already enabled (or are enabling) RingCentral Office and compliant with its guidelines.
 
-### 1. Partner branding and logo
+### 1. Technical requirements
+
+AT&T Office@Hand operates within a completed segregated environment within RingCentral. As a result, all API calls made on behalf of AT&T Office@Hand customers must be directed to a different URL. 
+
+Developers must adhere to [additional technical requirements](../partners/segregated-environments/) in order to be compatible with AT&T. Furthermore, developers will be required to demonstrate compliance in order to be listed in the [AT&T Office@Hand app gallery](https://ringcentral.com/apps/office-at-hand/). 
+
+### 2. Partner branding and logo
 
 If you use "RingCentral Office" branding in your App, replace this with "AT&T Office@Hand" to reference AT&T Office@Hand product.
-Sample logo is shown below for AT&T Office@Hand. This logo can be scaled to the appropriate pixel dimensions in your App.
+
+A sample logo is shown below for AT&T Office@Hand. This logo can be scaled to the appropriate pixel dimensions in your App.
 
 <img alt="AT&amp;T Office at Hand Logo" src="../logo_att.svg">
 
-### 2. Countries support
+### 3. Countries support
 
-AT&T Office@Hand is primarily supported in United States. Additionally the product may be used in the following countries per terms outlined by AT&T Office@Hand.
+AT&T Office@Hand is now supported in United States, UK, Canada and 11 EU countries, including Netherlands, Ireland, Spain, Switzerland, Sweden, Austria, Belgium, Denmark, Germany, France and Italy. 
 
-1. Cuba
-2. Israel
-3. Kenya
-4. Morocco
-5. Myanmar
-6. Taiwan
-7. Philippines
-8. Mexico
+Your App needs to be supported in the United States to qualify for AT&T Office@Hand integration. Additionally AT&T has restrictions on presence or support operation in China, Russia, and Ukraine. 
 
-Your App needs to be supported in the United States to qualify for AT&T Office@Hand integration. Additionally you may have presence or support operation in above countries. AT&T Office@Hand is not supported in any other country not listed above.
+Additional countries will be introduced on a quarterly basis which may require specific application support and/or language support to remain eligible for those countries.
 
-### 3. Language support
+### 4. Language Support
 
-AT&T Office@Hand uses US English. Your App needs to support this language and localization.
+AT&T Office@Hand supports US English as the base line. Your App needs to support this language and localization. Additionally, UK English, Canadian French, French French, German, Italian, Spanish, and Dutch are supported languages and localization for non-US countries.
 
-### 4. Support for AT&T Office@Hand customers
+As additional regional coverages are introduced on a quarterly basis, additional language support may be required to remain eligible.
 
-You need to set up customer support for AT&T Office@Hand customers, leveraging support model you have set up for RingCentral customers. Your App specific support for AT&T Office@Hand customers should be handled by your support team. Where customers need additional AT&T Office@Hand account specific support, you may route these support requests to your existing RingCentral support channel. Specifically note/tag "AT&T Office@Hand" in your support requests, so it handled appropriately within RingCentral.
 
-## App development guidelines for AT&T Office@Hand
+### 5. Providing end-user support
 
-### Calling the API
-
-AT&T Office@Hand customers on RingCentral operate in a completely separate environment. This creates additional requirements for developers wishing to provide applications that are compatible with both RingCentral and Office@Hand customers. Primarily, developers need to architect their applications to direct their API requests to either the RingCentral or Office@Hand server environments, depending upon the customer they are acting on behalf of. The table below shows these two server environments:
-
-| Service | Domain |
-|-|-|
-| RingCentral, BT, Telus, Avaya | `https://platform.ringcentral.com/` |
-| Office@Hand | `https://platform.ringcentral.biz/` |
-
-**Response excerpt**
-
-```json
-{
-  "uri": "https://platform.ringcentral.biz/restapi/v1.0/account/12xx04",
-  "id": 12xx04,
-  "serviceInfo": {
-    "uri": "https://platform.ringcentral.biz/restapi/v1.0/account/12xx04/service-info",
-    "brand": {
-      "id": "3420",
-      "name": "AT&T Office@Hand"
-      ...
-```
-
-### Best practices and recommendations
-
-Below are a set of recommendations for developers when building their applications.
-
-1. When constructing the Login URL to initiate the 3-legged authorization flow:
-     * Developers should direct their users to the proper domain depending upon whether the user is a customer of RingCentral or Office@Hand.
-     * Developers should include the `brandId` querystring parameter and set it to `3420`.
-     * Developers wishing to use the same OAuth Redirect URI for both Office@Hand and RingCentral customers should also provide a value in the `state` querystring parameter. The `state` parameter will be returned verbatim in the redirect to complete the OAuth flow. The value provided can help developers disambiguate between a RingCentral and Office@Hand customer.
-
-2. Developers should make efforts to remember whether their users are associated with RingCentral or Office@Hand, as all subsequent API requests need to be directed to the proper server environment in order to be completed successfully.
-
-#### Sample Application
-
-A [sample application](https://github.com/byrnereese/ringcentral-office-at-hand-sample-app) was created to help illustrate the guidelines above. It's README highlights the specific code changes you may need to make to your application to ensure compatibility with all of our partners. 
-
-API: `https://platform.ringcentral.biz/restapi/v1.0/account/~`
+You need to set up customer support for AT&T Office@Hand customers, leveraging support model you have set up for RingCentral customers. Your app-specific support for AT&T Office@Hand customers should be handled by your support team. Where customers need additional AT&T Office@Hand account specific support, you may route these support requests to your existing RingCentral support channel. Specifically note/tag "AT&T Office@Hand" in your support requests, so it handled appropriately within RingCentral.
 
 ### Partner test accounts
 

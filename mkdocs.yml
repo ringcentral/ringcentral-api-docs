@@ -88,13 +88,14 @@ pages:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
-    - 'SMS':
+    - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
+      - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
       - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
       - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
       - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
@@ -172,7 +173,18 @@ pages:
       - 'App permissions': 'basics/permissions.md'
       - 'URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
-      - 'API Reference Index': 'basics/api-index.md'
+      - 'API Change Log':
+        - 'Preface': 'basics/changelog/index.md'
+        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+        - 'v.1.0.40 (Aug 2019)': 'basics/changelog/1_0_40.md'
+        - 'v.1.0.39 (May 2019)': 'basics/changelog/1_0_39.md'
+      - 'API Quick Reference': 'basics/api-index.md'
 
   - 'Applications':
       - 'Development Lifecycle':
@@ -184,17 +196,19 @@ pages:
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
           - 'Update a Profile': 'basics/update-profile.md'
           - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
-          - 'Partner compatibility': 'basics/partner-compatibility.md'
-          - 'Partner Brand Guidelines':
-             - 'AT&T Office@Hand': 'basics/partners/att.md'
-             - 'Avaya Cloud Office': 'basics/partners/aco.md'
-             - 'BT Cloud Work': 'basics/partners/bt.md'
-             - 'TELUS Business Connect': 'basics/partners/telus.md'
-             - 'Unify Office': 'basics/partners/atos.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-
+      - 'Partner Ecosystem':
+          - 'Overview': 'basics/partner-compatibility.md'
+          - 'Technical Requirements': 'basics/partners/segregated-environments.md'
+          - 'Brand Guidelines':
+             - 'AT&T Office@Hand': 'basics/partners/att.md'
+             - 'Avaya Cloud Office': 'basics/partners/aco.md'
+             - 'BT Cloud Work': 'basics/partners/bt.md'
+             - 'Rainbow Office': 'basics/partners/alcatel.md'
+             - 'TELUS Business Connect': 'basics/partners/telus.md'
+             - 'Unify Office': 'basics/partners/atos.md'
   - 'Account':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
@@ -209,6 +223,7 @@ pages:
     - 'Getting Started': 'authentication/quick-start.md'
     - 'Developer Manual':
       - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
+      - 'Auth Code Flow with PKCE': 'authentication/auth-code-pkce-flow.md'
       - 'Password Flow': 'authentication/password-flow.md'
       - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
       - 'Using Auth Tokens': 'authentication/tokens.md'

@@ -3,6 +3,8 @@ var session = require('express-session');
 var RingCentral = require('@ringcentral/sdk').SDK;
 var path = require('path')
 
+var usePKCE = false; // change to true for enabling authorization code with PKCE flow
+
 app.use(session({ secret: 'somesecretstring', tokens: '' }));
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -37,7 +39,8 @@ app.get('/', async function(req, res) {
   } else {
     res.render('index', {
       authorize_uri: platform.loginUrl({
-        redirectUri: RINGCENTRAL_REDIRECT_URL
+        redirectUri: RINGCENTRAL_REDIRECT_URL,
+        usePKCE,
       })
     });
   }

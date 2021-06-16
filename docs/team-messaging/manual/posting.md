@@ -29,7 +29,7 @@ The code above will result in a chat message that appears as follows:
 !!! tip "You can also post via an Incoming Webhook"
     [Incoming Webhooks](../webhooks/) provide an alternative conduit by which messages can be posted to a team. An Incoming Webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
-## Glipdown: a RingCentral flavor of Markdown
+## Mini-Markdown: a RingCentral flavor of Markdown
 
 RingCentral supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
 

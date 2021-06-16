@@ -2,7 +2,7 @@
 
 <div class="jumbotron pt-1">
   <h2 class="h3 display-5">Getting Started with the Team Messaging API</h2>
-  <p class="lead">RingCentral Team Messaging, a.k.a. "Glip," is a team collaboration solution that helps organize and centralize team communication. It is an exciting platform to develop for given the wide range of use cases, and integration possibilities.</p>
+  <p class="lead">RingCentral Team Messaging is a team collaboration solution that helps organize and centralize team communication. It is an exciting platform to develop for given the wide range of use cases, and integration possibilities.</p>
   <p>We invite all developers to try out our Team Messaging API by writing a simple app to create a team in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/#javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/#php" class="btn btn-light qs-link">PHP &raquo;</a>
@@ -38,9 +38,9 @@ app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 
 ### Build a notification app
 
-[Incoming Webhooks](./manual/webhooks/) can be used to create inputs into which a 3rd-party can post JSON formatted events or messages and have those posted directly into a chat as a [richly formatted messages](./manual/formatting). For example, the [RingCentral Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a chat of your choosing:
+[Incoming Webhooks](./manual/webhook-creation/) can be used to create inputs into which a 3rd-party can post JSON formatted events or messages and have those posted directly into a chat as a [richly formatted messages](./manual/formatting). For example, the [RingCentral Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a chat of your choosing:
 
-<img src="../img/glip_post_attachment_salesforce.png" class="img img-fluid" width="30%">
+<img src="../img/post_attachment_salesforce.png" class="img img-fluid" width="30%">
 
 ### Integrate with project management
 
@@ -50,7 +50,7 @@ RingCentral Team Messaging can also be used to help with project management. In 
 * **Events** - create and share calendar events, project due-dates, co-worker vacations and more
 * **Notes** - create and share meeting notes, or maintain a scratch pad of important ideas
 
-* Learn about the [Tasks API](https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents)
-* Learn about the [Events API](https://developers.ringcentral.com/api-reference/Tasks/listChatTasks)
+* Learn about the [Events API](https://developers.ringcentral.com/api-reference/Calendar-Events/listGroupEvents)
+* Learn about the [Tasks API](https://developers.ringcentral.com/api-reference/Tasks/listChatTasks)
 * Learn about the [Notes API](https://developers.ringcentral.com/api-reference/Notes/listChatNotes)
 

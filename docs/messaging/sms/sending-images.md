@@ -8,39 +8,48 @@ When assembling a multipart message, it is important to remember that the root p
 
 !!! warning "Attachment Limitations"
     * There is a combined limit of 1.5M bytes for all attachments.
-    * There is a limit of 10 attachments for any request. 
+    * There is a limit of 10 attachments for any request.
 
 === "JavaScript"
 	```javascript
-	const SDK = require('ringcentral')
+	const RingCentral = require('@ringcentral/sdk').SDK
 	const FormData = require('form-data')
-	const rcsdk = new SDK({
+
+	const rcsdk = new RingCentral({
 	  server: "server_url", appKey: "client_id", appSecret: "client_secret"
 	})
-	const platform = rcsdk.platform()
-	platform.login({
-	  username: "username", extension: "extension_number", password: "password"
-	}).then(response => {
-	  const body = {
-	    from: { phoneNumber: "username" },
-	    to: [ { phoneNumber: "recipient_number" } ],
-	    text: 'Hello world'
-	  }
-	  const formData = new FormData()
-	  file = {filename: 'request.json', contentType: 'application/json'};
-	  formData.append('json',
-			  Buffer.from(JSON.stringify(body)),
-			  {filename: 'request.json', contentType: 'application/json'})
-	  formData.append('attachment',
-			  require('fs').createReadStream('./test.jpg'))
-	  platform.post('/account/~/extension/~/sms', formData).then(response => {
-	    console.log('MMS sent: ' + response.json().id)
-	  }).catch(e => {
-	    console.error(e)
-	  })
-	}).catch(e => {
-	  console.error(e)
-	})
+
+  var platform = rcsdk.platform();
+
+  platform.login({username: "username", extension: "extension_number", password: "password"})
+
+  platform.on(platform.events.loginSuccess, async function(){
+      send_mms()
+  });
+
+  async function send_mms(){
+    var FormData = require('form-data');
+    formData = new FormData();
+    var body = {
+      from: {'phoneNumber': "user_phone_number"},
+      to: [{'phoneNumber': "recipient_phone_number"}]
+    }
+
+    formData.append('json', new Buffer.from(JSON.stringify(body)), {
+        filename: 'request.json',
+        contentType: 'application/json'
+        });
+
+    formData.append('attachment', require('fs').createReadStream('test.jpg'));
+    try {
+      var resp = await platform.post('/restapi/v1.0/account/~/extension/~/mms', formData)
+      var jsonObj = await resp.json()
+      console.log("MMS sent. Message status: " + jsonObj.messageStatus)
+      console.log('Message Id: ' + jsonObj.id)
+    }catch (e){
+      console.log(e.message)
+    }
+  }
 	```
 
 === "Python"

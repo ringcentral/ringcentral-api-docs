@@ -68,7 +68,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
         { "to": ["+12125550100"] }
       ]
     }
-  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
     print resp.text()
     ```
 

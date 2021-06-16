@@ -13,11 +13,11 @@ If you use "RingCentral Office" branding in your Application, replace it with "R
 
 Sample logo is shown below for Rainbow Office. This logo can be scaled to the appropriate pixel dimensions in your App. 
 
-<img alt="Rainbow Offcie by RingCentral logo" src="../logo_rainbow.png">
+<img alt="Rainbow Offcie by RingCentral logo" src="../logo_rainbow.png" style="max-width:400px">
 
-Atos policy dictates that apps should not utilize the Atos corporate logo, Atos color scheme, and should always position the Rainbow Office logo and name as sub-tending to your own brand and App name; e.g. APP Name for Rainbow Office is acceptable, where as Rainbow Office APP NAME is not.
+Alcatel policy dictates that apps should not utilize the Alcatel corporate logo, Alcatel color scheme, and should always position the Rainbow Office logo and name as sub-tending to your own brand and App name; e.g. APP Name for Rainbow Office is acceptable, where as Rainbow Office APP NAME is not.
 
-Furthermore, Atos policy is that App developers should not portray the App as being created, sold, delivered or supported directly by Atos in its UI design, documentation or supporting materials. Apps that do not conform to this policy will not be accepted for, or removed from, the Rainbow Office App Gallery.
+Furthermore, Alcatel policy is that App developers should not portray the App as being created, sold, delivered or supported directly by Alcatel in its UI design, documentation or supporting materials. Apps that do not conform to this policy will not be accepted for, or removed from, the Rainbow Office App Gallery.
 
 ### 2. Regional Requirements
 

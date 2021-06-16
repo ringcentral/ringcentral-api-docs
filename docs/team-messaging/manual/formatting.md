@@ -13,7 +13,7 @@
     !!! tip "Migrating between Incoming Webhook versions"
         One can easily switch between using the two version by manually editing the Incoming Webhook's URL accordingly.
 
-Incoming Webhooks, historically known as "Glip Webhooks," can be used to post messages to an associated chat from an external service provider. This article will guide you through the basic process of composing a message that will be posted to a chat. 
+Incoming Webhooks can be used to post messages to an associated chat from an external service provider. This article will guide you through the basic process of composing a message that will be posted to a chat. 
 
 ## How to post a message via an Incoming Webhook
 
@@ -60,13 +60,13 @@ Posting the above to the REST API will result in a message and card that appears
 !!! note "What to be aware of when using message attachments"
     * All fields except `text` have a character limit of 300 bytes.
     * The cummulative size limit for all attachments is 1.5M bytes. 
-    * "Glipdown," a RingCentral flavor of Markdown, provides some text formatting options (bold, italics, links, etc.)
+    * "Mini-markdown," a RingCentral flavor of Markdown, provides some text formatting options (bold, italics, links, etc.)
 
 ### Posting Multiple Cards at Once
 
 The following is an example set of cards created by a single request containing three attachments. Each attachment results in its own card, and contains multiple fields. This example shows message attachments created through the [RingCentral Salesforce integration](https://zapier.com/apps/glip/integrations/salesforce).
 
-<img src="../../../img/glip_post_attachment_salesforce.png" class="img-fluid" style="max-width: 450px">
+<img src="../../../img/post_attachment_salesforce.png" class="img-fluid" style="max-width: 450px">
 
 ## Message Properties
 
@@ -84,7 +84,7 @@ The following is an example set of cards created by a single request containing 
 | `footer` | string | No | Add some brief text to help contextualize and identify an attachment. Limited to 300 characters. |
 | `footer_icon` | string | No | To render a small icon beside your footer text, provide a publicly accessible URL string in the footer_icon field. You must also provide a footer for the field to be recognized. (16px x16px). |
 | `pretext` | string | No | A string that will display directly above the Message. |
-| `text` | string | Yes | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "Glipdown," see below)
+| `text` | string | Yes | A large string field (up to 1000 chars) to be displayed as the body of a message (utilizing "mini-Markdown," see below)
 | `thumb_url` | string | No | A string url used to display a thumbnail to the right of a message (82x82). |
 | `title` | string | Yes | The title is displayed as larger, bold text near the top of a message attachment. |
 | `title_link` | string | No | Used to linkify the title. |
@@ -97,7 +97,7 @@ The following is an example set of cards created by a single request containing 
 | `value` | string | The text value of the field. It may contain standard markup and must be escaped as normal. May be multi-line. |
 | `short` | boolean | An optional flag indicating whether the value is short enough to be displayed side-by-side with other values. |
 
-## Glipdown: a RingCentral flavor of Markdown
+## Mini-Markdown: a RingCentral flavor of Markdown
 
 RingCentral supports a simplified version of Markdown to assist in the formatting of text within a message. The following syntaxes are supported for post attachments in addition to post bodies.
 

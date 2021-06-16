@@ -72,7 +72,7 @@ The following code samples show how to send a simple single document fax.
       formData.append('attachment', require('fs').createReadStream('test.jpg'));
 
       try {
-        var resp = await platform.post('/account/~/extension/~/fax', formData)
+        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/fax', formData)
         var jsonObj = await resp.json()
         console.log("FAX sent. Message status: " + jsonObj.messageStatus)
       } catch(e) {
