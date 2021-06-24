@@ -13,8 +13,8 @@ Access to the production environment is made available after your application ha
 
 Product | URL |
 |--------|-----|
-| Glip | `https://glip.devtest.ringcentral.com` |
-| RingCentral Account Portal | `https://service.devtest.ringcentral.com` |
+| RingCentral app | `https://app.devtest.ringcentral.com` |
+| RingCentral account portal | `https://service.devtest.ringcentral.com` |
 | RingCentral API | `https://platform.devtest.ringcentral.com` |
 
 **Please note:** Glip App (mobile or desktop) does NOT have:
