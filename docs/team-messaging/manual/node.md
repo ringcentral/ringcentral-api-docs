@@ -91,7 +91,7 @@ const createApp = require('ringcentral-chatbot/dist/apps').default
 
 const handle = async event => {
   const { type, text, group, bot } = event
-  if (type === 'Message4Bot' && text === 'ping') {
+  if (type === 'TextMessage' && text === 'ping') {
     await bot.sendMessage(group.id, { text: 'pong' })
   }
 }
