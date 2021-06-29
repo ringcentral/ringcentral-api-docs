@@ -56,7 +56,7 @@ async function subscribe_for_notification() {
     }
   }
   try {
-    var resp = await resplatform.post('/restapi/v1.0/subscription', params)
+    var resp = await platform.post('/restapi/v1.0/subscription', params)
     var jsonObj = await resp.json()
     console.log(jsonObj.id)
     console.log("Ready to receive incoming SMS via WebHook.")
