@@ -404,7 +404,7 @@ Simple request to send customized messages to multiple recipients
           m.to = new String[] {numbers[i]};
           parameters.messages[i] = m;
         }     
-        var resp = rc.restapi().account().a2pSms().batch(batchId).get();
+        var resp = rc.restapi().account().a2pSms().batch().post(parameters);
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
