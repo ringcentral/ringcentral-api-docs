@@ -164,7 +164,7 @@ Simple request to broadcast the same message to multiple recipients
           m.to = new String[] {numbers[i]};
           parameters.messages[i] = m;
         }     
-        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        var resp = rc.restapi().account().a2pSms().batch().post(parameters);
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
@@ -404,7 +404,7 @@ Simple request to send customized messages to multiple recipients
           m.to = new String[] {numbers[i]};
           parameters.messages[i] = m;
         }     
-        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        var resp = rc.restapi().account().a2pSms().batch().post(parameters);
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
@@ -551,7 +551,7 @@ Sending a large batch will take some time for the server to complete. You can re
         RestClient rc = new RestClient("client_id", "client_secret", "server_url");
         rc.authorize("username", "extension_number", "password");
         String batchId = "2157ac7d-baab-4d0e-1262-deada6c7xxxx";
-        var resp = restClient.restapi().account().a2psms().batch(batchId).get();
+        var resp = rc.restapi().account().a2pSms().batch(batchId).get();
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
