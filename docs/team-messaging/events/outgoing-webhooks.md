@@ -1,4 +1,4 @@
-# Outgoing Events and Webhooks for Team Messaging
+# Outgoing events and webhooks for Team Messaging
 
 Outgoing events and webhooks refer to the events that are emitted from the RingCentral platform in response to the actions taken within our product by users or agents.
 

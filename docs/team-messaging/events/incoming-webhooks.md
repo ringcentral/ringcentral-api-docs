@@ -1,12 +1,19 @@
 # Incoming Webhook events for Team Messaging
 
-An [Incoming Webhook](../webhook-creation/) is a feature by which third-parties can easily post messages into a team associated with the incoming webhook. Each incoming webhook is some respects represents an integration associated with a given team that has been created and installed by someone. These events therefore, let developers track the addition of and/or modifications to these third-party integrations.
+An [Incoming Webhook](../webhook-creation/) is a feature by which third-parties can easily post messages into a team associated with the incoming webhook. Each incoming webhook in some respects represents an integration associated with a given team that has been created and installed by someone. These events, therefore, let developers track the addition of and/or modifications to these third-party integrations. They are useful to perform the following functions:
 
-To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must create a subscription with the following event filter:
+* Be notified when an integration is deleted so that your app can perform garbage collection, such as removing an event subscription
+* Be notified when an integration is installed to automatically setup an event subscription
+
+To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must [create a subscription](../../notifications/) with the following event filter:
 
 * `/restapi/v1.0/glip/webhooks`
 
-Admittedly, the term "webhook" alone can be confusing in this context. Which is why it is important to understand the difference. An "outgoing webhook" is an event RingCentral transmits to third-parties alerting them to events that happen within RingCentral. An "incoming webhook" on the other hand is an event/message sent to RingCentral by a developer, usually in response to an event that has been triggered outside of RingCentral, but that users of RingCentral would like to be made aware of.
+Admittedly, the term "webhook" alone can be confusing in the team messaging context, because RingCentral uses that term to refer to different types of webhooks.
+
+* An "outgoing webhook" is an event RingCentral transmits to third-parties alerting them to events that happen within RingCentral. 
+
+* An "incoming webhook" is an event/message sent to RingCentral by a developer, usually in response to an event that has been triggered outside of RingCentral, but that users of RingCentral would like to be made aware of.
 
 This document describes the outgoing webhooks sent by RingCentral about the creation of incoming webhooks. 
 
