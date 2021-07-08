@@ -11,7 +11,7 @@ Every event emitted by the RingCentral platform conforms to a simple structure, 
 
 | Property | Type | Description |
 |-|-|-|
-| `event` | string | An generalized identifier that describes the type of the evet being described. This will make clear the account and extension of the event's owner. |
+| `event` | string | An generalized identifier that describes the type of the event being described. This will make clear the account and extension of the event's owner. |
 | `subscriptionId` | string | The id of the subscription for which this event is associated. |
 | `body` | struct | The event payload that varies based on the event type. |
 | `uuid` | string | A unique identifier for this specific event being transmitted. |
