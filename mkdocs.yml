@@ -121,7 +121,7 @@ pages:
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
-    - 'Core Concepts':
+    - 'Core Terminology':
       - 'Chats': 'team-messaging/concepts/chats.md'
       - 'Conversations': 'team-messaging/concepts/conversations.md'
       - 'Teams': 'team-messaging/concepts/teams.md'
@@ -151,18 +151,12 @@ pages:
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
       
     - 'Adaptive cards':
-      - 'Containers': 'team-messaging/adaptive-cards/containers.md'
-      - 'Static Elements':
-        - 'Images & Media': 'team-messaging/adaptive-cards/media.md'
-        - 'Text & Rich Text': 'team-messaging/adaptive-cards/text.md'
-      - 'Input Elements':
-        - 'Text Inputs': 'team-messaging/adaptive-cards/text-inputs.md'
-        - 'Buttons': 'team-messaging/adaptive-cards/buttons.md'
-        - 'Pull-down menus': 'team-messaging/adaptive-cards/menus.md'
-      - 'Handling interactivity': 
-        - 'Outbound webhooks': 'team-messaging/interactivity/outbound-webhooks.md'
-        - 'Message buttons': 'team-messaging/interactivity/buttons.md'
-        - 'Form input': 'team-messaging/interactivity/forms.md'
+      - 'Introduction': 'team-messaging/adaptive-cards/index.md'
+      - 'Card layouts': 'team-messaging/adaptive-cards/containers.md'
+      - 'Static elements': 'team-messaging/adaptive-cards/static-elements.md'
+      - 'Input elements': 'team-messaging/adaptive-cards/input-elements.md'
+      - 'Actions': 'team-messaging/adaptive-cards/actions.md'
+      - 'Outbound webhooks': 'team-messaging/adaptive-cards/outbound-webhooks.md'
 
     - 'Build a RingCentral Add-in':
       - 'Creating an add-in': 'team-messaging/add-ins/creation.md' 

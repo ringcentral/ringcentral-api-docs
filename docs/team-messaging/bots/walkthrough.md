@@ -1,4 +1,4 @@
-# How to build a RingCentral bot from scratch
+# Building a RingCentral bot from scratch
 
 A RingCentral Team Messaging bot provides a conversational interface for performing common tasks. In this guide, you will learn how to build a simple ping-pong bot from scratch, giving you a closer look at the bot design pattern.
 
@@ -20,7 +20,7 @@ Launch ngrok by running the following command:
 % ngrok http 3000
 ```
 
-If every thing goes well you should see the following screen.
+If every thing goes well you should see the following output to your terminal.
 
 <img src="../../../img/ngrok-running.png" class="img-fluid" style="max-width: 400px">
 
@@ -28,7 +28,7 @@ Make note of your https forwarding URL, we will use that shortly when creating y
 
 ## Step 2. Create a bot application
 
-With our proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Bot App" button below. 
+With a proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Bot App" button below. 
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
@@ -55,6 +55,8 @@ With our proxy running, we now have all the information we need to create an app
 Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
 
 > https://d6b2306cdf40.ngrok.io/oauth
+
+This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access key for the account of the user performing the installation.
 
 
 ## Step 3. Clone the sample application
@@ -104,15 +106,17 @@ At the same time it will transmit auth credentials necessary for making future A
 {!> code-samples/team-messaging/bot-app.js [ln:50-80] !}
 ```
 
-!!! info "The bot provisioner will only use the first URL specificed in the oAuth settings."
+!!! info "If you have multiple redirect URLs specified, RingCentral will only use the first URL specificed in the oAuth settings."
 
 <img src="../../../img/authorization.png" class="img-fluid" style="max-width: 300px">
 
-The access token obtained is a `permanent` access token. It's the developer responsibility to manage this access token. For public applications this would mean storing the bot token in a database and mapping to a customerId. They would then use the customerId to retrieve the access token before posting back to RingCentral.
+The access key ultimately obtained is a `permanent` access key. It's the developer responsibility to manage this access key. For public applications this would mean storing the access key in a database and mapping it to a customer Id of some kind. 
+
+That way when a bot receives a webhook event notifying the bot of a message posted to a team, the customer Id can be used to look up the corresponding access key so the bot can post a message in response. 
 
 ## Step 6. Subscribe to webhooks
 
-We can now subscribe to RingCentral events using the code below:
+With an access key in hand, your next task is to subscribe to the events related to the chat (team, conversation, etc) the bot is installed in. We recommend you install to both post events and group events. This will allow your bot to be informed whenever a message is posted or a member joins/leaves a team for which the bot is also a member. 
 
 ```js
 {!> code-samples/team-messaging/bot-app.js [ln:111-134] !}
