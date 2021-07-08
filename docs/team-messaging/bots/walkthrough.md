@@ -114,9 +114,9 @@ The access key ultimately obtained is a `permanent` access key. It's the develop
 
 That way when a bot receives a webhook event notifying the bot of a message posted to a team, the customer Id can be used to look up the corresponding access key so the bot can post a message in response. 
 
-## Step 6. Subscribe to webhooks
+## Step 6. Subscribe to bot notifications and webhooks
 
-With an access key in hand, your next task is to subscribe to the events related to the chat (team, conversation, etc) the bot is installed in. We recommend you install to both post events and group events. This will allow your bot to be informed whenever a message is posted or a member joins/leaves a team for which the bot is also a member. 
+With an access key in hand, your next task is to subscribe to the events related to the chat (team, conversation, etc) the bot is installed in. We recommend you install both post events and group events. This will allow your bot to be informed whenever a message is posted or a member joins/leaves a team for which the bot is also a member. 
 
 ```js
 {!> code-samples/team-messaging/bot-app.js [ln:111-134] !}

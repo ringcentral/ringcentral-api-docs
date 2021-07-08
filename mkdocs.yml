@@ -121,7 +121,7 @@ pages:
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
-    - 'Core Terminology':
+    - 'Core concepts':
       - 'Chats': 'team-messaging/concepts/chats.md'
       - 'Conversations': 'team-messaging/concepts/conversations.md'
       - 'Teams': 'team-messaging/concepts/teams.md'
