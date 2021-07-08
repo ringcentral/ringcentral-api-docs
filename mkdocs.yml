@@ -127,7 +127,7 @@ pages:
       - 'Teams': 'team-messaging/concepts/teams.md'
     - 'Team Messaging API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
-      - 'Permissions': 'team-messaging/manual/permissions.md'
+#      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
     - 'Outbound events and webhooks':
       - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
