@@ -4,7 +4,9 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
 
 !!! note "There is no limit of number of recipients in a batch. However, the maximum size of each batch is about 50MB."
 
-## Simple Broadcast Request to send the same message to 2 recipients
+### Sample codes
+
+Simple request to broadcast the same message to multiple recipients
 
 === "HTTP"
 
@@ -45,7 +47,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
         }
         var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
         var jsonObj = await resp.json()
-        console.log(JSON.stringify(jsonObj))
+        console.log(jsonObj)
       }catch(e){
         console.log(e.message)
       }
@@ -68,7 +70,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
         { "to": ["+12125550100"] }
       ]
     }
-  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
     print resp.text()
     ```
 
@@ -162,7 +164,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
           m.to = new String[] {numbers[i]};
           parameters.messages[i] = m;
         }     
-        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        var resp = rc.restapi().account().a2pSms().batch().post(parameters);
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
@@ -188,6 +190,8 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
     puts resp.body
     ```
 
+### Response
+
 The code samples above would all produce a response that would appear similar to the one below.
 
 ```json
@@ -210,7 +214,9 @@ The code samples above would all produce a response that would appear similar to
     ```
     If your batch contains invalid phone numbers, you will receive the `rejected` list with content only from the response returned by sending a batch. Reading the batch status will always return an empty `rejected` array.
 
-## Simple Request to send customized messages to 2 recipients
+### Sample codes
+
+Simple request to send customized messages to multiple recipients
 
 === "HTTP"
     ```http
@@ -279,7 +285,7 @@ The code samples above would all produce a response that would appear similar to
         }
         var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
         var jsonObj = await resp.json()
-        console.log(JSON.stringify(jsonObj))
+        console.log(jsonObj)
       }catch(e){
         console.log(e.message)
       }
@@ -398,7 +404,7 @@ The code samples above would all produce a response that would appear similar to
           m.to = new String[] {numbers[i]};
           parameters.messages[i] = m;
         }     
-        var resp = restClient.restapi().account().a2psms().batch().post(parameters);
+        var resp = rc.restapi().account().a2pSms().batch().post(parameters);
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
@@ -423,11 +429,13 @@ The code samples above would all produce a response that would appear similar to
     puts resp.body
     ```
 
+### Response
+
 The code samples above would all produce a response that would appear similar to the one below.
 
 ```json
 {
-    "id": "2157ac7d-baab-4d0e-1262-deada6c757c8",
+    "id": "2157ac7d-baab-4d0e-1262-deada6c7xxxx",
     "from": "+16505550100",
     "batchSize": 2,
     "processedCount": 0,
@@ -440,7 +448,14 @@ The code samples above would all produce a response that would appear similar to
 
 ## Checking a Batch Request Status
 
-Sending a large batch will take some time for the server to complete. You can read a batch status using a batch id returned in the response after sending a batch.
+Sending a large batch will take some time for the server to complete. You can read a batch status using the batch id returned in the response after sending a batch.
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx
+    ```
 
 === "JavaScript"
     ```javascript
@@ -454,9 +469,9 @@ Sending a large batch will take some time for the server to complete. You can re
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
-        var resp = await platform.get('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}')
+        var resp = await platform.get('/restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx')
         var jsonObj = await resp.json()
-        console.log(JSON.stringify(jsonObj))
+        console.log(jsonObj)
       }catch(e){
         console.log(e.message)
       }
@@ -471,7 +486,7 @@ Sending a large batch will take some time for the server to complete. You can re
   	platform = sdk.platform()
   	platform.login( "username", "extension", "password" )
 
-  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}')
+  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx')
     print resp.text()
     ```
 
@@ -485,7 +500,7 @@ Sending a large batch will take some time for the server to complete. You can re
   	$platform = $rcsdk->platform();
   	$platform->login( "username", "extension_number", "password" );
 
-  	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}');
+  	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx');
     print_r ($resp->json());
     ?>
     ```
@@ -508,7 +523,7 @@ Sending a large batch will take some time for the server to complete. You can re
         {
           RestClient rc = new RestClient("client_id", "client_secret", true);
           await rc.Authorize("username", "extension_number", "password");
-
+          string batchId = "2157ac7d-baab-4d0e-1262-deada6c7xxxx";
           var resp = await rc.Restapi().Account().A2pSms().Batch(batchId).Get();
           Console.WriteLine(JsonConvert.SerializeObject(resp));  
         }
@@ -535,8 +550,8 @@ Sending a large batch will take some time for the server to complete. You can re
       public static void get_batch_result(String batchId) throws RestException, IOException{
         RestClient rc = new RestClient("client_id", "client_secret", "server_url");
         rc.authorize("username", "extension_number", "password");
-
-        var resp = restClient.restapi().account().a2psms().batch(batchId).get();
+        String batchId = "2157ac7d-baab-4d0e-1262-deada6c7xxxx";
+        var resp = rc.restapi().account().a2pSms().batch(batchId).get();
         String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println(jsonStr);
       }
@@ -550,22 +565,25 @@ Sending a large batch will take some time for the server to complete. You can re
     rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
   	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-  	resp = rc.get('/restapi/v1.0/account/~/a2p-sms/batch/{batchId}')
+  	resp = rc.get('/restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx')
 
     puts resp.body
     ```
 
-The code samples above would all produce a response that would appear similar to the one below. The batch's status is highlighted for you.
+### Response
+
+The code samples above would all produce a response that would appear similar to the one below. The batch's status is highlighted.
 
 ```json hl_lines="6"
 {
-  "id": "2157ac7d-baab-4d0e-1262-deada6c757c8",
+  "id": "2157ac7d-baab-4d0e-1262-deada6c7xxxx",
   "from": "+16505550100",
   "batchSize": 2,
-  "processedCount": 0,
+  "processedCount": 2,
   "status": "Completed",
   "creationTime": "2020-10-12T16:50:35.033902Z",
   "lastModifiedTime": "2020-10-12T16:50:39.033902Z",
-  "rejected": []
+  "rejected": [],
+  "cost": 0.014
 }
 ```

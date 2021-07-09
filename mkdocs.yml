@@ -7,11 +7,12 @@ docs_dir: docs
 
 plugins:
   - bootstrap-tables
-#  - git-committers:
-#      repository: ringcentral/ringcentral-api-docs
-#      branch: master
-#  - ringcentral-api-index:
-#      outfile: basics/api-index.md
+  - git-committers:
+      repository: ringcentral/ringcentral-api-docs
+      branch: master
+  - bootstrap-tables
+  - ringcentral-api-index:
+      outfile: basics/api-index.md
 
 theme:
   name: ringcentral
@@ -86,13 +87,14 @@ pages:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
-    - 'SMS':
+    - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
+      - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
       - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
       - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
       - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
