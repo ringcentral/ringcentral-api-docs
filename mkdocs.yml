@@ -6,12 +6,12 @@ edit_uri: tree/master/docs
 docs_dir: docs
 
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: master
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: master
   - bootstrap-tables
-  - ringcentral-api-index:
-      outfile: basics/api-index.md
+#  - ringcentral-api-index:
+#      outfile: basics/api-index.md
 
 theme:
   name: ringcentral
