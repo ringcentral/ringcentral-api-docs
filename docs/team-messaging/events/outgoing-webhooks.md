@@ -2,8 +2,8 @@
 
 Outgoing events and webhooks refer to the events that are emitted from the RingCentral platform in response to the actions taken within our product by users or agents.
 
-!!! info "Outgoing Webhooks vs Incoming Webhooks"
-    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [Incoming Webhooks](../webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
+!!! info "Outgoing webhooks vs incoming webhooks"
+    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
 
 ## Outgoing event structure
 

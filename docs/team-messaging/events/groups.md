@@ -1,35 +1,21 @@
-# Chat Events for Team Messaging
+# Chat events for Team Messaging
 
-When [subscribing to chat or "group" events](../outgoing-webhooks/) you will need to specify the following event filter:
-
-* `/restapi/v1.0/glip/groups`
-
-## Chat event structure
-
-Once a subscription has been setup, your application will begin receiving events at the designated URL. There are three types of chat or group events:
+Chat events, also known as "group" events, are triggered when some aspect of a chat (a conversation or team) has changed. There are four types of chat events:
 
 * Chat renamed
 * Person joined or was added to chat
 * Person left of was removed from chat
-* Group or chat name/description changed
+* Group or chat name/description changed 
 
-Each event has a unique payload and structure depending upon the event type. The payload for chat events can be seen below. 
+Each event type has a unique payload and structure depending upon the event type. The structure of a chat event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Glip-Groups-Event), but a few examples are shown below. 
 
-| Parameter | Type | Description |
-|-|-|-|
-| `creationTime` | string (dateTime) | Group creation date/time. |
-| `description` | string | Group description. |
-| `eventType` | enum | 	Group event type that can be one of the following values: `GroupRenamed`, `GroupJoined`, `GroupLeft`, `GroupChanged` |
-| `id` | string | Group identifier. |
-| `isPublic` | boolean | For Team group type only. Group access level. |
-| `lastModifiedTime` | string (dateTime) | Group last change date/time. |
-| `members` | array of string | Group member identifiers. Not returned for GroupRenamed event type. | 
-| `name` | string | Group display name.|
-| `type` | enum | Group type that can one of the following values: `PrivateChat`, `Group`, `Team`, `PersonalChat`. |
+When [subscribing](../outgoing-webhooks/) to chat events you will need to specify the following event filter:
 
-## Event Payloads
+* `/restapi/v1.0/glip/groups`
 
-### Group Renamed
+Once a subscription has been setup, your application will begin receiving events at the designated URL. 
+
+## Example chat renamed event
 
 This event is emitted when some of the group attributes changed (name, description).
 
@@ -44,7 +30,7 @@ This event is emitted when some of the group attributes changed (name, descripti
 }
 ```
 
-### Person Joined
+## Example person joined event
 
 This event is emitted when a person has joined the team or was added to the team.
 
@@ -68,7 +54,7 @@ This event is emitted when a person has joined the team or was added to the team
 }
 ```
 
-#### Person Left
+## Example person left event
 
 This event is emitted when a person has left the team or was removed from the team.
 
@@ -81,7 +67,7 @@ This event is emitted when a person has left the team or was removed from the te
 }
 ```
 
-#### Group Changed
+## Example group changed event
 
 This event is emitted when any person has joined the team, has left the team, was added to the team or removed from the team. Also when privacy ("isPublic") is changed.
 

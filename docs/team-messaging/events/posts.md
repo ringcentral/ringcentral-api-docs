@@ -1,39 +1,18 @@
-# Post Events for Team Messaging
+# Post events for Team Messaging
 
-## Subscribing to Post Events
-
-When [subscribing to post events](../outgoing-webhooks/) you will need to specify the following event filter:
-
-* `/restapi/v1.0/glip/posts`
-
-## Post event structure
-
-Once a subscription has been setup, your application will begin receiving events at the designated URL. There are three post events:
+Post events are triggered within the context of team messaging whenever some facet of a post is affected. There are three types of post events:
 
 * Post created
 * Post removed
 * Post changed
 
-Each event will have its own payload depending upon the event type. The payload for post events can be seen below. 
+Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Glip-Post-Event), but a few examples are shown below. 
 
-| Parameter | Type | Description |
-|-|-|-|
-| `eventType` | enum | Post event type which can be one of the following values: `PostAdded`, `PostChanged`, `PostRemoved` |
-| `id` | string | Post identifier |
-| `groupId` | string | Group/Team identifier |
-| `type` | enum | Post type which can be one of the following values: `TextMessage`, `PersonJoined`, `PersonLeft`, `PersonsAdded`, `PersonsRemoved` |
-| `text` | string | Message text. For TextMessage post type only. |
-| `creatorId` | string | Post author identifier. |
-| `addedPersonIds` | array | Identifiers of persons joined the group. For PersonsAdded post type only |
-| `removedPersonIds` | array | Identifiers of persons joined the group. For PersonsRemoved post type only |
-| `creationTime` | string | Post creation date/time |
-| `lastModifiedTime` | string | Post last modification date/time |
-| `attachments` | Array | List of attachments |
-| `activity` | string | Label of the Activity type. |
-| `title` | string | Title of the message. (Can be set for bot's messages only). |
-| `iconUri` | URI | URI to an image to use as the icon for this message. |
-| `iconEmoji` | URI | Emoji to use as the icon for a message. |
-| `mentions` | Array | List of mentions |
+When [subscribing](../outgoing-webhooks/) to post events you will need to specify the following event filter:
+
+* `/restapi/v1.0/glip/posts`
+
+Once a subscription has been setup, your application will begin receiving events at the designated URL. 
 
 ## Tips for how bots should handle post added events
 
@@ -51,7 +30,7 @@ When you receive a PostAdded event, here are some tips to help you when creating
 
 * Finally, every bot has a unique id. The `body.creatorId` property should be compared to the bot's id to prevent the bot from replying to its own messages. 
 
-### How to reply to a PostAdded event
+## How bots should reply to a PostAdded event
 
 Bots can respond to a PostAdded event simply by calling the [Team Messaging Post API](../posting/). For example:
 
@@ -64,9 +43,7 @@ Authorization: Bearer <access_token>
 }
 ```
 
-## Event Payloads
-
-### Post added event payload
+## Example post added event
 
 Event is emitted when new post is created.
 
@@ -90,7 +67,7 @@ Event is emitted when new post is created.
 }
 ```
 
-### Post removed event payload
+## Example post removed event
 
 Event is emitted when new post is removed.
 
@@ -102,7 +79,7 @@ Event is emitted when new post is removed.
 }
 ```
 
-### Post changed event payload
+## Example post changed event
 
 Event is emitted when new post is changed.
 
