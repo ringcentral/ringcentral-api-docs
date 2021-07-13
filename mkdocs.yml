@@ -222,11 +222,11 @@ pages:
     - 'Overview': 'authentication/index.md'
     - 'Getting Started': 'authentication/quick-start.md'
     - 'Developer Manual':
-      - '3-legged OAuth Flow': 'authentication/auth-code-flow.md'
-      - 'Auth Code Flow with PKCE': 'authentication/auth-code-pkce-flow.md'
-      - 'Password Flow': 'authentication/password-flow.md'
-      - 'Implicit Grant Flow': 'authentication/implicit-grant-flow.md'
-      - 'Using Auth Tokens': 'authentication/tokens.md'
+      - 'Auth code flow': 'authentication/auth-code-flow.md'
+      - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
+      - 'Password flow': 'authentication/password-flow.md'
+      - 'Implicit grant flow': 'authentication/implicit-grant-flow.md'
+      - 'Using auth tokens': 'authentication/tokens.md'
 
   - 'Address Book':
     - 'Overview': 'address-book/index.md'
