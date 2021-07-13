@@ -8,6 +8,18 @@
 * Update landing page for team messaging
 * Add screenshots to add-ins installation.md
 * Update quick start guides with new "detailed instructions."
+* Clarify differences between subscribing to bot events and interactive message events
+  - Investigate consolidating bot and interactive messaging events to use the same URL
+* Document asynchronous message updates
+* Document uninstalling notification apps - removing incoming webhook URLs from external systems
+* Remove bot frameworks page
+* Have paco update sample bot apps with Adaptive Cards
+
+# Questions
+
+* When you post a response asynchronously, what OAuth token do I use?
+* How do developers authorize/obtain an access key to update messages asynchronously? 
+  (for notification apps only)
 
 # New files to populate
 

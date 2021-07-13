@@ -18,9 +18,10 @@ To provide users of the RingCentral desktop app with the best possible experienc
 The installation process you implement will be delivered as a simple web app, and will be rendered to the user during the installation flow via an iframe. 
 
 **iFrame dimensions**
+
 | Width | Height |
-|-|-|
-| 570px | 260px |
+|-------|--------|
+| 570px | 260px  |
 
 ### Design and Development Guidelines
 
@@ -68,6 +69,15 @@ When an iframe is loaded, the developer must disambiguate between a user who is 
 
 Inside the iframe the user will first need to establish their identity by authenticating themselves via the OAuth protocol. 
 
+The OAuth process can be launched through a javascript command facilitated by a helper library created by RingCentral.
+
+```js
+{!> code-samples/team-messaging/installer.js !}
+```
+
+??? hint "Check out the the Notification App Helper on Github"
+    The [RingCentral Notification App Helper](https://github.com/ringcentral/ringcentral-notification-app-helper) is a Javascript library to help developers implement the necessary Javascript controls to manage their installation app. 
+
 ### Store access key 
 
 It is recommended that the application store the access key generated through the OAuth flow and associate that access key with the incoing webhook passed to the service via the iframe. This will allow users to more easily edit the application after it is installed, as the underlying service will be able to more easily lookup the webhook URL, and reconnect the service in which the URL is ultimately installed.
@@ -80,7 +90,29 @@ Take for example a notification app being created for a service like Github in w
 
 ### Install incoming webhook URL
 
-In the final step, the developer will instruct the target service, e.g. Jira in the example above, to send webhooks to the incoming webhook URL in response to the events selected in the previous step.
+To complete the installation, the developer will instruct the target service, e.g. Jira in the example above, to send webhooks to the incoming webhook URL in response to the events selected in the previous step.
+
+### Enable the install dialog's "Finish" button
+
+When the installation process is completed successfully, signal to the RingCentral desktop app that the install dialog can now be closed using the Javascript below, which toggles the enabled state of the dialog's submit/finish button.
+
+```js
+{!> code-samples/team-messaging/close-installer.js !}
+```
+
+## Handling user's uninstalling a notification app
+
+At any time, a previously installed notification app or incoming webhook can be deleted or uninstalled by an end user. It is recommended that when this happens, applications handle any necessary garbage collection - specifically the removal of any webhook that was created during the installation process. One can do this by subscribing to [event notifications related to the corresponding incoming webhook](../../events/incoming-webhooks/).
+
+
+Consider for example the following sequence. 
+
+1. Priya installs a notification app for Service Foo into Team A. 
+2. The notification app receives an incoming webhook URL from RingCentral and creates a webhook in Service Foo.
+3. Service Foo begins delivering events to the notification app. 
+4. Priya uninstalls the notification app. 
+5. The notification app receives notification that it has been uninstalled. 
+6. The notification app makes an API call to Service Foo to delete the webhook it installed previous, arresting the delivery of event notifications. 
 
 ## Transmitting messages directly or acting as a proxy
 
