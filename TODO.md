@@ -1,11 +1,10 @@
 # TODO list for interactive messaging documentation
 
 * Update all code samples to use Adaptive Cards
-* Document outgoing webhook responses
-* Document outgoing webhook event structures
 * Update posting.md with link to Post Message endpoint in API Reference
 * Update screenshots for how to create a notification app
 * Update landing page for team messaging
+* Update developer guide landing page to promote add-ins
 * Add screenshots to add-ins installation.md
 * Update quick start guides with new "detailed instructions."
 * Clarify differences between subscribing to bot events and interactive message events
@@ -14,6 +13,11 @@
 * Document uninstalling notification apps - removing incoming webhook URLs from external systems
 * Remove bot frameworks page
 * Have paco update sample bot apps with Adaptive Cards
+* Mark all old attachment formats as deprecated
+* Redirect "Incoming Webhook URL service providers" to an app gallery page
+* Condense posting documentation, Post via REST, Posting cards, Posting cards with images, etc
+* Clarify post titles: where they appear (bottom) and how they are used (notifications)
+* Remove "notification app" language from docs -> "Add in"
 
 # Questions
 

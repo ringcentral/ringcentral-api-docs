@@ -130,7 +130,7 @@ pages:
       - 'Pagination': 'team-messaging/manual/pagination.md'
 #      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
-    - 'Outbound events and webhooks':
+    - 'Team Messaging events':
       - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
       - 'Post events': 'team-messaging/events/posts.md'
       - 'Chat events': 'team-messaging/events/groups.md'

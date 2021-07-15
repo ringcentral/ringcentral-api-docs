@@ -1,6 +1,9 @@
-# Outgoing events and webhooks for Team Messaging
+# Team Messaging events
 
-Outgoing events and webhooks refer to the events that are emitted from the RingCentral platform in response to the actions taken within our product by users or agents.
+In response to the actions taken by users within our product, the RingCentral platform emits events to notify interested applications and services so that they can take the necessary action in response to those events. A common term to refer to these events is "webhook" which refers to a specific method of delivery. RingCentral actually supports multiple modes of event transmission:
+
+1. Webhooks - HTTP POST notifications.
+2. Push notifications - direct event delivery to a specific client, e.g. a specific mobile phone or Javascript client.
 
 !!! info "Outgoing webhooks vs incoming webhooks"
     Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
@@ -85,4 +88,4 @@ The payload of a webhook depends upon the event that triggered it. We support th
 
 * [Post events](../events-posts/)
 * [Chat events](../events-groups/)
-* [Incoming Webhook events](../events-incoming-webhooks/)
+* [Incoming webhook events](../events-incoming-webhooks/)
