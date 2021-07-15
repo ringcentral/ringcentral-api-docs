@@ -136,17 +136,17 @@ pages:
       - 'Chat events': 'team-messaging/events/groups.md'
       - 'Incoming webhook events': 'team-messaging/events/incoming-webhooks.md'
       - 'Interactive messaging events': 'team-messaging/events/interactive-messages.md'
+    - 'Incoming webhooks':
+      - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
+      - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
+      - 'Service providers': 'team-messaging/incoming-webhooks/service-providers.md'
+      - 'Webhook posting (v1)': 'team-messaging/incoming-webhooks/posting-v1.md'
     
     - 'Posting messages':
       - 'Methodologies': 'team-messaging/posting/index.md'
-      - 'Posting via the REST API': 'team-messaging/posting/rest-api.md'
-      - 'Posting via incoming webhooks':
-         - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
-         - 'Webhook Posting (v2)': 'team-messaging/incoming-webhooks/posting.md'
-         - 'Webhook Posting (v1)': 'team-messaging/incoming-webhooks/posting-v1.md'
-         - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
-      - 'Service providers': 'team-messaging/incoming-webhooks/service-providers.md'
-
+      - 'Posting via...':
+         - 'REST API': 'team-messaging/posting/rest-api.md'
+         - 'Incoming webhooks': 'team-messaging/incoming-webhooks/posting.md'
       - 'Posting cards': 'team-messaging/posting/cards.md'
       - 'Posting cards with images': 'team-messaging/posting/images.md'
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
