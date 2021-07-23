@@ -186,7 +186,9 @@ The server responds with an access token which can presented in subsequent reque
 
 We can still refresh token by [Refresh Token Flow](https://developers.ringcentral.com/api-reference/Get-Token#section-refresh-token-flow) as Authorization Code Flow.
 
-Differences from `Authorization Code flow`:
+> For app type "Web Browser (Javascript)", it doesn't require authorization header at token request. So app client secret is not required.
+
+Differences from `Authorization Code flow` in **Web Browser (Javascript)** app:
 
 * Token requests don't need to include client authentication credentials in `Authorization` header.
 * Need to add `client_id` in body.
