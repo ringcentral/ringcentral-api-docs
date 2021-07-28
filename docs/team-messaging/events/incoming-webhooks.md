@@ -32,7 +32,7 @@ This document describes the outgoing webhooks sent by RingCentral about the crea
 
 ## Event Payloads
 
-### Incoming Webhook Created
+### Incoming Webhook created
 
 This event is emitted when webhook has been created.
 
@@ -51,7 +51,7 @@ This event is emitted when webhook has been created.
 }
 ```
 
-### Webhook Updated
+### Webhook updated
 
 This event is emitted when webhook has been either activated or suspended.
 
@@ -75,7 +75,7 @@ This event is emitted when webhook has been either activated or suspended.
 }
 ```
 
-### Webhook Deleted
+### Webhook deleted
 
 This event is emitted when webhook has been deleted.
 

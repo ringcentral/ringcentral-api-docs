@@ -15,7 +15,9 @@ When [subscribing](../outgoing-webhooks/) to chat events you will need to specif
 
 Once a subscription has been setup, your application will begin receiving events at the designated URL. 
 
-## Example chat renamed event
+## Example chat or group events
+
+### Chat renamed event
 
 This event is emitted when some of the group attributes changed (name, description).
 
@@ -30,7 +32,7 @@ This event is emitted when some of the group attributes changed (name, descripti
 }
 ```
 
-## Example person joined event
+### Person joined event
 
 This event is emitted when a person has joined the team or was added to the team.
 
@@ -54,7 +56,7 @@ This event is emitted when a person has joined the team or was added to the team
 }
 ```
 
-## Example person left event
+### Person left event
 
 This event is emitted when a person has left the team or was removed from the team.
 
@@ -67,7 +69,7 @@ This event is emitted when a person has left the team or was removed from the te
 }
 ```
 
-## Example group changed event
+### Chat changed event
 
 This event is emitted when any person has joined the team, has left the team, was added to the team or removed from the team. Also when privacy ("isPublic") is changed.
 

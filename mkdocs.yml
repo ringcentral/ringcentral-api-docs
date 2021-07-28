@@ -139,25 +139,20 @@ pages:
     - 'Incoming webhooks':
       - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
       - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
-      - 'Service providers': 'team-messaging/incoming-webhooks/service-providers.md'
-      - 'Webhook posting (v1)': 'team-messaging/incoming-webhooks/posting-v1.md'
+      - 'Supported services': 'team-messaging/incoming-webhooks/service-providers.md'
     
     - 'Posting messages':
-      - 'Methodologies': 'team-messaging/posting/index.md'
+      - 'Overview': 'team-messaging/posting/index.md'
       - 'Posting via...':
          - 'REST API': 'team-messaging/posting/rest-api.md'
-         - 'Incoming webhooks': 'team-messaging/incoming-webhooks/posting.md'
-      - 'Posting cards': 'team-messaging/posting/cards.md'
-      - 'Posting cards with images': 'team-messaging/posting/images.md'
+         - 'Incoming webhooks': 'team-messaging/posting/incoming-webhooks.md'
+      - 'Cards and attachments': 'team-messaging/posting/cards.md'
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
       
     - 'Adaptive cards':
       - 'Introduction': 'team-messaging/adaptive-cards/index.md'
       - 'Card layouts': 'team-messaging/adaptive-cards/containers.md'
-      - 'Static elements': 'team-messaging/adaptive-cards/static-elements.md'
-      - 'Input elements': 'team-messaging/adaptive-cards/input-elements.md'
-      - 'Actions': 'team-messaging/adaptive-cards/actions.md'
-      - 'Outbound webhooks': 'team-messaging/adaptive-cards/outbound-webhooks.md'
+      - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
 
     - 'Build a RingCentral Add-in':
       - 'Creating an add-in': 'team-messaging/add-ins/creation.md' 

@@ -14,7 +14,9 @@ When [subscribing](../outgoing-webhooks/) to post events you will need to specif
 
 Once a subscription has been setup, your application will begin receiving events at the designated URL. 
 
-## Tips for how bots should handle post added events
+## How should bots handles post events?
+
+### Handling post added events
 
 When you receive a PostAdded event, here are some tips to help you when creating a bot designed to respond to post events.
 
@@ -30,9 +32,9 @@ When you receive a PostAdded event, here are some tips to help you when creating
 
 * Finally, every bot has a unique id. The `body.creatorId` property should be compared to the bot's id to prevent the bot from replying to its own messages. 
 
-## How bots should reply to a PostAdded event
+### Replying to a post added event
 
-Bots can respond to a PostAdded event simply by calling the [Team Messaging Post API](../posting/). For example:
+Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../posting/). For example:
 
 ```http
 POST <apiEntryPoint>/restapi/v1.0/glip/groups/<groupId>/posts
@@ -43,7 +45,9 @@ Authorization: Bearer <access_token>
 }
 ```
 
-## Example post added event
+## Example events
+
+### Post added event
 
 Event is emitted when new post is created.
 
@@ -67,7 +71,7 @@ Event is emitted when new post is created.
 }
 ```
 
-## Example post removed event
+### Post removed event
 
 Event is emitted when new post is removed.
 
@@ -79,7 +83,7 @@ Event is emitted when new post is removed.
 }
 ```
 
-## Example post changed event
+### Post changed event
 
 Event is emitted when new post is changed.
 

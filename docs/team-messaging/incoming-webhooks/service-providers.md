@@ -1,6 +1,9 @@
-# Supported Incoming Webhook URL Service Providers
+# Supported incoming webhook service providers
 
-RingCentral natively supports receiving events from any of the following service providers:
+RingCentral supports a number of different service providers natively, meaning the service providers below can be configured to post events directly to an incoming webhook URL, and RingCentral will render those events as messages automatically.
+
+!!! warning "These providers do not support adaptive cards"
+    While RingCentral supports events emitted by the service providers listed below, they only support our legacy messaging formats, and do *not* support Adaptive Cards, also referred to as interactive messages.
 
 * [Airbrake](https://www.ringcentral.com/apps/airbrake)
 * [AppSignal](https://www.ringcentral.com/apps/appsignal)

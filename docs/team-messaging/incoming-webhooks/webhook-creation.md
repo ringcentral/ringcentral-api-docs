@@ -1,19 +1,22 @@
-# Creating an Incoming Webhook
+# Creating and using incoming webhooks
 
-There are two primary ways one can post a message to a RingCentral chat. Either developers can post directly via the REST API, or third-parties can be authorized to post into a team in order to alert team members of key events. What enables third parties to do this is called an Incoming Webhook, which in this article, you will learn how to create. 
+There are two primary ways a developer can post a message to a RingCentral chat:
 
-## Why use an Incoming Webhook to post a message?
+1. Post directly to a chat [via the REST API](../posting/rest-api/)
+2. Post via a special URL called an "incoming webhook"
 
-An Incoming Webhook is a mechanism designed to effectively authorize a third-parties to post messages into a chat of your choice safely and securly. This simplifies the integration process. For example, suppose you want to convert a webhook notification emitted by Jira, an issue tracking system, into a RingCentral message, and have that message delivered to a specific chat? To do this, one would:
+This documentation focuses on posting via the second way in which third-parties can be authorized to post into a chat in order to alert members of that chat via an "incoming webhook."
 
-1. Generate an Incoming Webhook (via RingCentral App, or via the RingCentral API)
-2. Copy and paste the Incoming Webhook's URL into Jira [where one configures webhook notifications](https://developer.atlassian.com/server/jira/platform/webhooks/).
+## Why use an incoming webhook to post a message?
 
-Henceforth, when an event is triggered in Jira, it will post a JSON event payload to the configured URL of an Incoming Webhook. Upon receiving the webhook, RingCentral will convert the event into a message and post it to the Incoming Webhook's corresponding chat. 
+An incoming webhook is a mechanism designed to simplify the integration process with third-parties by providing them with the means to post messages into a chat of your choice safely and securely. For example, suppose you want to convert an event emitted by Jira, an issue tracking system, into a RingCentral message, and then have that message delivered to a specific chat? To do this, one would:
 
-## How to create an Incoming Webhook
+1. Generate an incoming webhook (via RingCentral App, or via the RingCentral API)
+2. Copy and paste the incoming webhook URL into Jira [where one configures webhook notifications](https://developer.atlassian.com/server/jira/platform/webhooks/).
 
-### Using RingCentral App
+Henceforth, when an event is triggered in Jira, it will post a JSON event payload to the incoming webhook URL you configed. Upon receiving the event, RingCentral will convert the event into a message and post the message into the chat corresponding to that incoming webhook.
+
+## Create an incoming webhook using the RingCentral desktop app
 
 There are two ways to create an Incoming Webhook. The first and most common method involves using the RingCentral App, navigating to the chat/team into which you wish to receive messages, and then by clicking "Add Apps" from the conversation menu.
 
@@ -23,9 +26,9 @@ On the subsequent screen, you will be prompted to select the app you want to ins
 
 !!! warning "Be aware that the RingCentral App currently generates an earlier version of Incoming Webhooks ("version 1"). [Learn more](../formatting/)."
 
-### Using the RingCentral API
+## Create an incoming webhook using the RingCentral REST API
 
-The other way to create an Incoming Webhook URL is via the REST API. First, a developer uses the RingCentral REST API to create an Incoming Webhook associated with a specified chat ID.
+The other way to create an incoming webhook is via the REST API. First, a developer uses the RingCentral REST API to create an incoming webhook associated with a specified chat ID.
 
 Here is a quick sample request and response for how an Incoming Webhook is generated.
 
@@ -39,18 +42,22 @@ Here is a quick sample request and response for how an Incoming Webhook is gener
 
 	```json 
 	{
-	    "id": "3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
-	    "creatorId": "61307231006",
-	    "groupIds": [
-		"6090227714"
-	    ],
-	    "creationTime": "2018-12-11T16:29:02.185Z",
-	    "lastModifiedTime": "2018-12-11T16:29:02.185Z",
-	    "uri": "https://hooks.glip.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
-	    "status": "Active"
+        "id": "3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
+        "creatorId": "61307231006",
+        "groupIds": [
+          "6090227714"
+        ],
+        "creationTime": "2018-12-11T16:29:02.185Z",
+        "lastModifiedTime": "2018-12-11T16:29:02.185Z",
+        "uri": "https://hooks.glip.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
+        "status": "Active"
 	}
 	```
-	
-## Learning more
 
-With an Incoming Webhook in hand, it can now be used for [posting messages](../webhook-posting/).
+## Creating an incoming webhook by installing an add-in
+
+[RingCentral add-ins](../add-ins/creation/) that can be installed directly into a team from within the RingCentral desktop app [automate the process](../add-ins/installation/) of creating and installing an incoming webhook into a third-party service on behalf of the user. If an add-in elects to implement this process the end user may never actually realize that it is via an incoming webhook that messages are posted to a chat. 
+
+## Posting messages to an incoming webhook
+
+Now that an incoming webhook has been created, messages can be composed and posted to it freely. Read more about posting messages via an incoming webhook in the [posting messages](../posting/incoming-webhooks/) section.

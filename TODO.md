@@ -48,13 +48,13 @@ team-messaging/manual/events-groups/ -> team-messaging/events/groups/
 team-messaging/manual/events-incoming-webhooks/ -> team-messaging/events/incoming-webhooks/
 team-messaging/manual/outgoing-webhooks/ -> team-messaging/events/outgoing-webhooks/
 team-messaging/manual/testing-webhooks/ -> team-messaging/incoming-webhooks/debugging/
-team-messaging/manual/formatting/ -> team-messaging/incoming-webhooks/posting-v1/
-team-messaging/manual/webhook-posting/ -> team-messaging/incoming-webhooks/posting/
+team-messaging/manual/webhook-posting/ -> team-messaging/posting/incoming-webhooks/
 team-messaging/manual/webhook-service-providers/ -> team-messaging/incoming-webhooks/service-providers/
 team-messaging/manual/webhook-creation/ -> team-messaging/incoming-webhooks/webhook-creation/
 team-messaging/manual/webhook-posting.png -> team-messaging/incoming-webhooks/webhook-posting.png
 team-messaging/manual/posting-cards/ -> team-messaging/posting/cards/
 team-messaging/manual/attaching-files/ -> team-messaging/posting/file-uploads/
-team-messaging/manual/posting-images/ -> team-messaging/posting/images/
 team-messaging/manual/posting/ -> team-messaging/posting/rest-api/
 
+team-messaging/manual/formatting/ -> team-messaging/posting/incoming-webhooks/
+team-messaging/manual/posting-images/ -> ???

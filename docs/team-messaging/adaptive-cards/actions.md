@@ -1,5 +1,14 @@
 # Handling interactivity in Adaptive Cards
 
+## Supported actions
+
+In addition to supporting the full array of display elements that aid in the rendering and presentation of a card, RingCentral currently supports the following actions:
+
+* Action.OpenUrl - when invoked, RingCentral will open the designated URL in an external web browser
+* Action.ShowCard - when invoked, RingCentral will display the designated Adaptive Card 
+* Action.Submit - when invoked, RingCentral will collect the data entered into affiliated input elements and transmit them to the client
+* Action.ToggleVisbility - when invoked, RingCentral will show and/or hide designated target elements 
+
 ## Common action parameters
 
 When defining the actions associated with a card, each action defined will contain the following parameters. Then depending upon the action, additional parameters as described below.

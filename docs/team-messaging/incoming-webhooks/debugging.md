@@ -1,6 +1,6 @@
-# Testing Incoming Webhooks using cURL
+# Testing incoming webhooks using cURL
 
-A simple way to test an Incoming Webhook and to make formatting messages easier is to use a simple command-line tool called cURL. Using this simple technique, you can place your message contents in a stand alone file, and then post that file to the URL of an Incoming Webhook.
+A simple way to test an incoming webhook and to make formatting messages easier is to use a simple command-line tool called cURL. Using this simple technique, you can place your message contents in a stand alone file, and then post that file to the URL of an incoming webhook.
 
 Let's begin by creating the file `test.json` using the following contents:
 
@@ -8,27 +8,70 @@ Let's begin by creating the file `test.json` using the following contents:
 {
     "attachments": [
 	{
-	    "type": "Card",
-	    "fallback": "Something bad happened",
-	    "color": "#00ff2a",
-	    "intro": "There was a disturbance in the force.",
-	    "author": {
-		"name": "Ben Kenobi",
-		"uri": "https://en.wikipedia.org/wiki/Obi-Wan_Kenobi",
-		"iconUri": "https://imgur.com/eaL6deH"
-	    },
-	    "title": "I felt something...",
-	    "text": "...as if millions of voices suddenly cried out in terror and were suddenly silenced.",
-	    "fields": [
+	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+	    "type": "AdaptiveCard",
+	    "version": "1.0",
+	    "body": [
 		{
-		    "title": "Where",
-		    "value": "Alderaan",
-		    "style": "Short"
+		    "type": "TextBlock",
+		    "text": "A disturbance in the force",
+		    "weight": "bolder",
+		    "size": "medium",
+		    "wrap": true
 		},
 		{
-		    "title": "What",
-		    "value": "Giant explosion",
-		    "style": "Short"
+		    "type": "ColumnSet",
+		    "columns": [
+			{
+			    "type": "Column",
+			    "width": "auto",
+			    "items": [
+				{
+				    "type": "Image",
+				    "url": "https://www4.pictures.zimbio.com/mp/ATCkWtsLsoEl.jpg",
+				    "size": "small",
+				    "style": "person"
+				}
+			    ]
+			},
+			{
+			    "type": "Column",
+			    "width": "stretch",
+			    "items": [
+				{
+				    "type": "TextBlock",
+				    "text": "Obi-Wan Kenobi",
+				    "weight": "bolder",
+				    "wrap": true
+				},
+				{
+				    "type": "TextBlock",
+				    "spacing": "none",
+				    "text": "Created {{DATE(2017-02-14T06:08:39Z, SHORT)}}",
+				    "isSubtle": true,
+				    "wrap": true
+				}
+			    ]
+			}
+		    ]
+		},
+		{
+		    "type": "TextBlock",
+		    "text": "I felt something... as if millions of voices suddenly cried out in terror and were suddenly silenced.",
+		    "wrap": true
+		},
+		{
+		    "type": "FactSet",
+		    "facts": [
+			{
+			    "title": "Current location:",
+			    "value": "On board the Millenium Falcon"
+			},
+			{
+			    "title": "Source:",
+			    "value": "Alderaan?"
+			}
+		    ]
 		}
 	    ]
 	}
@@ -36,9 +79,13 @@ Let's begin by creating the file `test.json` using the following contents:
 }
 ```
 
-Then from the same directory in which you created the above file, run the following command -- being sure to use the [Webhook URL you created on your own](../webhook-creation/). 
+Then from the same directory in which you created the above file, run the following command -- being sure to use the [webhook URL you created on your own](../webhook-creation/). 
 
 ```sh
 % curl -d @test.json -H 'Content-Type: application/json' \
      https://hooks.glip.com/webhook/v2/9e116c5c-xxxx-yyyy-zzzz-c12a85cd6063
 ```
+
+When complete, you should see a message that looks something like this:
+
+![Sample adaptive card](sample-adaptive-card.png)
