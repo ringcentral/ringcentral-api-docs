@@ -1,6 +1,6 @@
 site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-site_favicon: favicon.ico
+#site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
 edit_uri: tree/master/docs
 docs_dir: docs
@@ -34,7 +34,7 @@ extra_css:
 
 copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
-google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
+#google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
 
