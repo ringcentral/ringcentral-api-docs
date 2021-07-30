@@ -151,12 +151,14 @@ pages:
       
     - 'Adaptive cards':
       - 'Introduction': 'team-messaging/adaptive-cards/index.md'
-      - 'Card layouts': 'team-messaging/adaptive-cards/containers.md'
+      - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
+      - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
     - 'Build a RingCentral Add-in':
       - 'Creating an add-in': 'team-messaging/add-ins/creation.md' 
       - 'Integrated installation': 'team-messaging/add-ins/installation.md'
+      - 'Uninstalling an add-in': 'team-messaging/add-ins/uninstall.md'
 
     - 'Build a RingCentral Bot':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'

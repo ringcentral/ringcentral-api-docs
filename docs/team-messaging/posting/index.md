@@ -35,39 +35,17 @@ A [card](../attachments/) provides an efficient way of posting structured conten
 Cards are added to a simple text message through the use of an "attachment." When posting a card, the "text" element of a message is optional, as shown below.
 
 ```json
-{
-  "attachments": [
-    {
-      "type": "Card",
-      "fallback": "Attachment fallback text",
-      "color": "#00ff2a",
-      "intro": "Attachment intro appears before the attachment block",
-      "text": "Attachment text",
-      "fields": [
-        {
-          "title": "Field 1",
-          "value": "A short field",
-          "style": "Short"
-        },
-        {
-          "title": "Field 2",
-          "value": "[A linked short field](https://example.com)",
-          "style": "Short"
-        }
-      ]
-    }
-  ]
-}
+{!> code-samples/team-messaging/adaptive-cards/basic-columns.json !}
 ```
 
-Posting the contents above will result in a message that appears as follows:
+The above card when posted to RingCentral, will appear as shown below:
 
-<img src="./simple-card-message.png" class="img-fluid">
+![Basic columns screenshot](../adaptive-cards/basic-columns.png)
 
 ### Posting multiple cards simultaneously
 
 The following is an example set of cards created by a single request containing three attachments. Each attachment results in its own card, and contains multiple fields. This example shows message attachments created through the [RingCentral Salesforce integration](https://zapier.com/apps/glip/integrations/salesforce).
 
-<img src="../../../img/post_attachment_salesforce.png" class="img-fluid" style="max-width: 350px">
+<img src="../../img/post_attachment_salesforce.png" class="img-fluid" style="max-width: 350px">
 
 

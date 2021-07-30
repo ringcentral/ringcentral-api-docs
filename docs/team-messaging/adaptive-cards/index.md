@@ -10,3 +10,4 @@ RingCentral implements the [Adaptive Card framework](https://adaptivecards.io) v
 
 This means that if you have developed integrations for Microsoft Teams, the level of effort associated with adapting your integration for RingCentral MVP is greatly reduced. 
 
+## Designing your cards 

@@ -14,6 +14,12 @@
 
 ## What can you build using the Team Messaging API?
 
+### Create interactive messages
+
+Embue the messages you post with behavior, form elements and other kinds of interactivity. Allow users to enter data directly into a message and submit that data to your application.
+
+![Form submit message](./adaptive-cards/form-submit.png)
+
 ### Build a RingCentral Add-in
 
 RingCentral Add-ins provide developers with the means to create engaging and interactive messaging experiences that allow users to get more work done without leaving RingCentral. Add-ins can have one or more of the following capabilities:

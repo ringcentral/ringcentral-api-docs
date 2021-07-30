@@ -1,4 +1,4 @@
-# Automating notification app installation
+# Automating add-in installation
 
 To provide users of the RingCentral desktop app with the best possible experience to install your app, developers can optionally implement a web-based user interface that facilitates the installation process. This often includes the following:
 
@@ -8,7 +8,7 @@ To provide users of the RingCentral desktop app with the best possible experienc
 
 !!! warn "Third-party service prerequisites"
 
-    To create a simple form to automate the setup of a notification app, the target third-party service in question must support the following:
+    To create a simple form to automate the setup of an add-in, the target third-party service in question must support the following:
     
     * OAuth for user authentication and authorization.
     * An API for creating, updating and deleting webhooks.
@@ -39,6 +39,11 @@ To accomplish the above, developers need to create what amounts to a mini-web ap
 
 The first step of the installation flow is controlled entirely by RingCentral and allows the user performing the installation to select the chat into which the app will be installed. 
 
+<figure class="figure">
+  <img class="img-fluid figure-img rounded" style="max-width: 400px" src="../chat-selection.png">
+  <figcaption class="figure-caption">The dialog within the RingCentral desktop app where a user selects the chat to install an add-in.</figcaption>
+</figure>
+
 ### Incoming webhook URL generation
 
 Once the user has selected to chat into which they want the app installed, RingCentral will generate an [incoming webhook](../incoming-webhooks/webhook-creation/) associated with that chat. The generated URL will be transmitted to the application in the next step.
@@ -55,11 +60,16 @@ In the next step, RingCentral will render an iframe (570x260 pixels) loading the
 </iframe>
 ```
 
+<figure class="figure">
+  <img class="img-fluid figure-img rounded" style="max-width: 400px" src="../iframe.png">
+  <figcaption class="figure-caption">A screenshot of the Github add-in. The area highlighted in red is the iframe through which an app will deliver its user interface for installation.</figcaption>
+</figure>
+
 ### Lookup webhook URL locally
 
 When an iframe is loaded, the developer must disambiguate between a user who is installing a new app, or editing an existing one. The best way to do this is to lookup the webhook URL passed to the service via the iframe in a local datastore. If the webhook URL has been installed previously, then the application should in subsequent steps update the existing webhook. If this is the first time this service is encountering the webhook, then it is safe to proceed to install the webhook. 
 
-??? tip "Store the webhook locally"
+??? tip "Storing the webhook locally"
     In the subsequent step entitled "Store access key" we recommend that developers store in their database a record of every webhook URL that is installed via this process. Associated with each webhook URL developers can also store:
 	    * The access key generated through the OAuth flow.
 		* The identity of the user installing the application.
@@ -69,14 +79,19 @@ When an iframe is loaded, the developer must disambiguate between a user who is 
 
 Inside the iframe the user will first need to establish their identity by authenticating themselves via the OAuth protocol. 
 
+<figure class="figure">
+  <img class="img-fluid figure-img rounded" style="max-width: 400px" src="../add-in-oauth.png">
+  <figcaption class="figure-caption">Add-ins for third-party services may need to allow users to connect to that service via OAuth.</figcaption>
+</figure>
+
 The OAuth process can be launched through a javascript command facilitated by a helper library created by RingCentral.
 
 ```js
 {!> code-samples/team-messaging/installer.js !}
 ```
 
-??? hint "Check out the the Notification App Helper on Github"
-    The [RingCentral Notification App Helper](https://github.com/ringcentral/ringcentral-notification-app-helper) is a Javascript library to help developers implement the necessary Javascript controls to manage their installation app. 
+??? hint "Check out the the Add-in App Helper on Github"
+    The [RingCentral Add-in App Helper](https://github.com/ringcentral/ringcentral-notification-app-helper) is a Javascript library to help developers implement the necessary Javascript controls to manage their installation app. 
 
 ### Store access key 
 
@@ -86,7 +101,12 @@ It is recommended that the application store the access key generated through th
 
 It is common for applications to present users with the option to select what events specifically they would like to subscribe to. This is often required in order to designate how and when the incoming webhook URL will be triggered. 
 
-Take for example a notification app being created for a service like Github in which a user would need to first select a repository before setting up a new webhook integration. Then upon selecting a repository, the user would then elect which events (e.g. a pull request, a new comment, a commit, a comment, etc.) associated with that repository they would like to receive notifications. 
+<figure class="figure">
+  <img class="img-fluid figure-img rounded" style="max-width: 400px" src="../subscription-prefs.png">
+  <figcaption class="figure-caption">To prevent overload, users may need to select which specific events they want to receive notificatios for.</figcaption>
+</figure>
+
+Take for example an add-in being created for a service like Github in which a user would need to first select a repository before setting up a new webhook integration. Then upon selecting a repository, the user would then elect which events (e.g. a pull request, a new comment, a commit, a comment, etc.) associated with that repository they would like to receive notifications. 
 
 ### Install incoming webhook URL
 
@@ -100,38 +120,24 @@ When the installation process is completed successfully, signal to the RingCentr
 {!> code-samples/team-messaging/close-installer.js !}
 ```
 
-## Handling user's uninstalling a notification app
-
-At any time, a previously installed notification app or incoming webhook can be deleted or uninstalled by an end user. It is recommended that when this happens, applications handle any necessary garbage collection - specifically the removal of any webhook that was created during the installation process. One can do this by subscribing to [event notifications related to the corresponding incoming webhook](../../events/incoming-webhooks/).
-
-
-Consider for example the following sequence. 
-
-1. Priya installs a notification app for Service Foo into Team A. 
-2. The notification app receives an incoming webhook URL from RingCentral and creates a webhook in Service Foo.
-3. Service Foo begins delivering events to the notification app. 
-4. Priya uninstalls the notification app. 
-5. The notification app receives notification that it has been uninstalled. 
-6. The notification app makes an API call to Service Foo to delete the webhook it installed previous, arresting the delivery of event notifications. 
-
 ## Transmitting messages directly or acting as a proxy
 
-Depending upon your role as a developer building a notification service, you will either post a properly formed message to post to an incoming webhook URL, or you will act as a proxy that will convert a webhook into a properly formed message. Let's break this down to help you decide the best way to architect your notification app. 
+Depending upon your role as a developer building an add-in, you will either post a properly formed message to post to an incoming webhook URL, or you will act as a proxy that will convert a webhook into a properly formed message. Let's break this down to help you decide the best way to architect your add-in. 
 
 ### Installing the incoming webhook directly
 
-Let's say you are the proprietor of the service called "Acme" and a user is installing a notification app for Acme. In this case, you can install the incoming webhook URL directly in your service, and when an event is triggered, you can compose a message associated with that event and post it directly to the incoming webhook URL. 
+Let's say you are the proprietor of the service called "Acme" and a user is installing an add-in for Acme. In this case, you can install the incoming webhook URL directly in your service, and when an event is triggered, you can compose a message associated with that event and post it directly to the incoming webhook URL. 
 
 ### Acting as a proxy
 
-If on the other hand you are a third-party building an integration on behalf of Acme. In this case, your app will be required to instruct Acme to deliver events to your service. Then your service will effectively translate the received webhook into a properly formed message and finally transmit that message to RingCentral via the incoming webhook URL. In this architectural model your notification app acts as a proxy, receiving events on one hand, and forwarding a message to its final destination on the other. 
+If on the other hand you are a third-party building an integration on behalf of Acme. In this case, your app will be required to instruct Acme to deliver events to your service. Then your service will effectively translate the received webhook into a properly formed message and finally transmit that message to RingCentral via the incoming webhook URL. In this architectural model your add-in acts as a proxy, receiving events on one hand, and forwarding a message to its final destination on the other. 
 
 !!! tip "If you are acting as a proxy, a key requirement for the target service, in this case Acme, is that it supports a public API which can be used to install a webhook integration."
 
 ## Editing versus creating a webhook
 
-As discussed above, a user within RingCentral's desktop app can both install a new notification app, as well as edit an existing one. When editing an existing webhook, the developer should present the end user (via the iframe) with a form to edit their subscription preferences. 
+As discussed above, a user within RingCentral's desktop app can both install a new add-in, as well as edit an existing one. When editing an existing webhook, the developer should present the end user (via the iframe) with a form to edit their subscription preferences. 
 
-For example, let's say you were building a notification app for Github, and user installed a notification app that would be triggered whenever a pull request was received for the repository `mycompany/my_repos`. Then later the the user wished to update the notification app to be triggered when a pull request was received or a commit was made. In this circumstance, it is recommended that when the iframe is loaded for the associated incoming webhook, the form you would render would already have the checkbox associated with "pull requests" selected. That way the user would only need to check the box associated with "commits" before saving their preferences. 
+For example, let's say you built an add-in for Github, and a user installed and configured your add-in to send a message whenever a pull request was received for the repository `mycompany/my_repos`. Then later the the user wished to update the add-in to be triggered when a pull request was received or a commit was made. In this circumstance, it is recommended that when the iframe is loaded for the associated incoming webhook, the form you would render would already have the checkbox associated with "pull requests" selected. That way the user would only need to check the box associated with "commits" before saving their preferences. 
 
 
