@@ -1,6 +1,6 @@
 # Working with Groups and Teams in Team Messaging
 
-In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](../conversations/)". 
+In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](../conversations/)"). 
 
 ## Team visibility
 
