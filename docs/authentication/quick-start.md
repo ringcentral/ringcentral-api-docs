@@ -18,7 +18,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <ol>
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
+<li>Select "API App for RingCentral MVP™" under "What type of app are you creating?"</li>
 <li>Select "Web server" under "Where will you be calling the API from?"
 <li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
 <li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
