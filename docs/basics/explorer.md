@@ -11,14 +11,14 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 <div class="collapse" id="create-app-instructions">
 <ol>
-<li><a href="https://developers.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
-<li>Select "Other Non-UI" under "Where will you be calling the API from?"
-<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
-<li>On the third page of the create app wizard, select all permissions for your test.<br>
+<li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
+<li>Under "Authentication" select "Password-based auth flow."
+<li>Under "Security" add ALL permissions:
     <img src="../../../img/explorer_create_app.png" class="img-fluid">
 </li>
+<li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
 <li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
 </ol>
 </div>
