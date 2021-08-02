@@ -49,8 +49,6 @@ This field determines what development features will be made available to your a
 
 * **Server/No UI** - this is the only platform type that allows for password-based authentication.
 
-!!! danger "You cannot edit Platform Type after your app has been created"
-
 [Learn more about platform types in "Creating an Application" &raquo;](../create-app/)
 
 #### Permissions
