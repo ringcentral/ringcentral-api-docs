@@ -3,7 +3,7 @@ no_breadcrumb:true
 
 !!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
 
-# RingCentral Office Developer Guide
+# RingCentral MVP™ Developer Guide
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Let's build your first RingCentral app!</h3>
