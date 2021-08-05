@@ -71,6 +71,12 @@ Your Sandbox account is now ready to be used. You can now direct API calls to `h
 !!! warning "Use it or lose it"
     Sandbox accounts are provided to developers completely free of charge. As long as a sandbox is in active use, developers can rely on the sandbox being available. However, **if a sandbox account becomes idle for 60 days, the sandbox account will be deactivated** in order to free up phone numbers for others to use. 
 
+### How can I extend the life of my sandbox account?
+
+If you receive an email about your account facing deactivation, and you would like to prevent that from happening, then the quickest and easist thing one can do is use the "Try it out" feature in the [API Explorer](https://developer.ringcentral.com/api-reference) to conduct a single API call in sandbox. 
+
+A more sustainable and recommended practice however is to routinely test your app in sandbox using a CI/CD system, or some other automated process. 
+
 ### What happens if I lose access to my sandbox?
 
 If you find yourself in the circumstance where your sandbox account has been deactivated, you can easily create a new one by following the prompts inside of the Developer Console. 
