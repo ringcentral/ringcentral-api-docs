@@ -55,7 +55,7 @@ Select the authentication method your app will utilize to connect to the platfor
 
 #### What is PKCE, and when should I use it?
 
-PKCE, or Proof Key for Code Exchange, pronounced "Pixie," is an OAuth 2.0 extension designed to create a more secure way for client-only apps, like mobile apps, desktop applications, and pure javascript apps, to authenticate with the platform. If the answer to "From what type of app will you be calling the API?" is any of the following, then you are required to [implement PKCE](../authentication/auth-code-pkce-flow/):
+PKCE, or Proof Key for Code Exchange, pronounced "Pixie," is an OAuth 2.0 extension designed to create a more secure way for client-only apps, like mobile apps, desktop applications, and pure javascript apps, to authenticate with the platform. If the answer to "From what type of app will you be calling the API?" is any of the following, then you are required to [implement PKCE](../../authentication/auth-code-pkce-flow/):
 
 * Client-side web app, e.g. SPA, Javascript
 * Android mobile app
