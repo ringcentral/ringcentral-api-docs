@@ -7,7 +7,7 @@ The high volume SMS message store is separate from the standard SMS (P2P) messag
 | [`/restapi/v1.0/account/~/a2p-sms/messages`](#read-high-volume-message-store) | Read the entire high volume message store. |
 | [`/restapi/v1.0/account/~/a2p-sms/batches`](#list-batches) | List all batches basic info from the entire high volume message store. |
 | [`/restapi/v1.0/account/~/a2p-sms/batches/{batchId}`](#read-individual-batch) | Read a single batch basic info identified by the batch id. |
-| [`/restapi/v1.0/account/~/a2p-sms/statuses?batchId=[batchId]`](#read-batch-message-statuses) | Read a batch aggregate message statuses. |
+| [`/restapi/v1.0/account/~/a2p-sms/statuses`](#read-message-statuses) | Read aggregated message statuses from the message store. |
 | [`/restapi/v1.0/account/~/a2p-sms/messages/{messageId}`](#read-individual-message) | Read a single message identified by the message id. |
 
 
@@ -22,10 +22,10 @@ To avoid loading the entire message store, which could be extremely large, you c
 | Filter | Description |
 |-|-|
 | `view` | Read the A2P message store in "Simple" or "Detailed" mode. Detailed view will return the text message for each message item. Default value is "Simple". |
-| `batchId `| Return only messages belong to a single batch identified by the batch id. |
+| `batchId`| Return only messages belong to a single batch identified by the batch id. |
 | `dateFrom `| Return messages created after the start date and time, for example 2020-11-10T08:00:00.000Z. The default value is dateTo minus 24 hours. |
-| `dateTo `| Return messages created before the end date time, for example 2020-11-11T08:00:00.000Z. The default value is current time. |
-| `phoneNumber `| Return only messages which contains the specified phone numbers in either "from" or "to" field. |
+| `dateTo`| Return messages created before the end date time, for example 2020-11-11T08:00:00.000Z. The default value is current time. |
+| `phoneNumber`| Return only messages which contains the specified phone numbers in either the "from" or the "to" field. Multiple phone numbers (up to 15) are accepted.|
 | `direction` | Return messages with the specified direction. If not specified, both inbound and outbound messages are returned. Multiple values are accepted. |
 | `perPage` | Indicate the page size (number of items). Default value is 1000. |
 | `pageToken` | Return messages from a specified page. Note! Use a valid page token from the paging object. |
@@ -452,9 +452,19 @@ You can read a single batch basic info such as the status, the number of recipie
 }
 ```
 
-## Read Batch Message Statuses
+## Read Message Statuses
 
-To get a quick report on message statuses in a batch, you can call this endpoint to get the aggregate message statuses and error codes (if any). If you need to detect each individual message status, use this [endpoint](#read-high-volume-message-store) instead.
+To get a quick report on message statuses in a batch or within a period of time, you can call this endpoint to get the aggregated message statuses and error codes (if any). If you need to detect each individual message status, use this [endpoint](#read-high-volume-message-store) instead.
+
+### Query parameters
+
+| Filter | Description |
+|-|-|
+| `batchId`| Return aggregated message statuses of messages belong to a single batch identified by the batch id. |
+| `dateFrom `| Return aggregated message statuses of messages created after the start date and time, for example 2020-11-10T08:00:00.000Z. The default value is dateTo minus 24 hours. |
+| `dateTo`| Return aggregated message statues of messages created before the end date time, for example 2020-11-11T08:00:00.000Z. The default value is current time. |
+| `phoneNumber`| Return aggregated message statuses of messages which contain the specified phone numbers in either the "from" or the "to" field. Multiple phone numbers are accepted. E.g. phoneNumber: ['16501112222','16502223333']|
+| `direction` | Return aggregated message statuses of messages with the specified direction. If not specified, both inbound and outbound messages are returned. Multiple values are accepted.|
 
 ### Sample codes
 
@@ -474,7 +484,10 @@ To get a quick report on message statuses in a batch, you can call this endpoint
 
     platform.on(platform.events.loginSuccess, async function(response){
       try{
-        var resp = await platform.get('/restapi/v1.0/account/~/a2p-sms/statuses?batchId=8ba42748-0e48-4459-8262-342a7483xxxx')
+        var params = {
+          batchId: '8ba42748-0e48-4459-8262-342a7483xxxx'
+        }
+        var resp = await platform.get('/restapi/v1.0/account/~/a2p-sms/statuses', params)
         var jsonObj = await resp.json()
         console.log(JSON.stringify(jsonObj))
       }catch(e){
@@ -490,7 +503,10 @@ To get a quick report on message statuses in a batch, you can call this endpoint
     sdk = SDK( "client_id", "client_secret", "server_url" )
   	platform = sdk.platform()
   	platform.login( "username", "extension", "password" )
-  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/statuses?batchId=8ba42748-0e48-4459-8262-342a7483xxxx')
+    params = {
+      'batchId': '8ba42748-0e48-4459-8262-342a7483xxxx'
+    }
+  	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/statuses', params)
     print resp.text()
     ```
 
@@ -502,8 +518,11 @@ To get a quick report on message statuses in a batch, you can call this endpoint
   	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
 
   	$platform = $rcsdk->platform();
+    $params = array(
+      'batchId' => "8ba42748-0e48-4459-8262-342a7483xxxx"
+    );
   	$platform->login( "username", "extension_number", "password" );
-  	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/statuses?batchId=8ba42748-0e48-4459-8262-342a7483xxxx');
+  	$resp = $platform->get('/restapi/v1.0/account/~/a2p-sms/statuses', $params);
     print_r ($resp->json());
     ?>
     ```
@@ -514,7 +533,10 @@ To get a quick report on message statuses in a batch, you can call this endpoint
 
     rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
   	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-  	resp = rc.get('/restapi/v1.0/account/~/a2p-sms/statuses?batchId=8ba42748-0e48-4459-8262-342a7483xxxx')
+    params = {
+       batchId: "8ba42748-0e48-4459-8262-342a7483xxxx"
+    }
+  	resp = rc.get('/restapi/v1.0/account/~/a2p-sms/statuses')
 
     puts resp.body
     ```

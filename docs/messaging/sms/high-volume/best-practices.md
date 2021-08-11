@@ -10,7 +10,7 @@ Different wireless carriers apply different anti-spam filtering techniques, to p
 
 There is no magic or trick to fool spam detections. So the only way to avoid getting your messages blocked is not to send spam messages.
 
-Follows are some best practices and guidelines which would help you increase your SMS performance.
+Following are some best practices and guidelines which would help you increase your SMS performance.
 
 * Get recipient's permission and attention
 * Increase and maintain response rate
