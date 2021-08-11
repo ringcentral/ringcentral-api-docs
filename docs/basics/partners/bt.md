@@ -1,14 +1,14 @@
 # BT Cloud Work Brand and Developer Guidelines
 
-This document is intended for RingCentral ISVs and developers who want to enable their apps for BT Cloud Work, leveraging their App for RingCentral Office.
+This document is intended for RingCentral ISVs and developers who want to enable their apps for BT Cloud Work, leveraging their App for RingCentral MVP™.
 
 ## App requirements for BT Cloud Work
 
-The document outlines incremental App requirements to enable your application for BT Cloud Work. It is important to comply with these requirements, to qualify your app for BT Cloud Work. If you have any questions, please reach out to your RingCentral developer support. As noted above, this document assumes you have already enabled (or are enabling) your application for RingCentral Office and compliant with its guidelines.
+The document outlines incremental App requirements to enable your application for BT Cloud Work. It is important to comply with these requirements, to qualify your app for BT Cloud Work. If you have any questions, please reach out to your RingCentral developer support. As noted above, this document assumes you have already enabled (or are enabling) your application for RingCentral MVP™ and compliant with its guidelines.
 
 ### 1. Partner branding and logo
 
-If you use "RingCentral Office" branding in your Application, replace it with "BT Cloud Work" to reference BT Cloud Work product.
+If you use "RingCentral MVP™" branding in your Application, replace it with "BT Cloud Work" to reference BT Cloud Work product.
 
 Sample logo is shown below for BT Cloud Work. This logo can be scaled to the appropriate pixel dimensions in your App
 
@@ -46,7 +46,7 @@ You need to set up customer support for BT Cloud Work customers, leveraging supp
 
 ### Calling the API
 
-The API for BT Cloud Work is the same as RingCentral Office. That means you can easily re-use the same code-base used for your RingCentral application and it should be 100% compatible with BT Cloud Work. 
+The API for BT Cloud Work is the same as RingCentral MVP™. That means you can easily re-use the same code-base used for your RingCentral application and it should be 100% compatible with BT Cloud Work. 
 
 API: `https://platform.ringcentral.com/restapi/v1.0/account/~`
 
@@ -66,15 +66,15 @@ API: `https://platform.ringcentral.com/restapi/v1.0/account/~`
 
 ### Partner test accounts
 
-When you sign up for developer account and select to enable your App for RingCentral partners, you can reach out to developer support to request for partner test accounts (eg: BT Cloud Work test account), in addition to RingCentral test account. These test accounts would have usage limitations like RingCentral Office. Additionally, there may be partner specific limitations such as countries of operation, languages, etc. For example, BT Cloud Work support English and Canadian French languages and localization.
+When you sign up for developer account and select to enable your App for RingCentral partners, you can reach out to developer support to request for partner test accounts (eg: BT Cloud Work test account), in addition to RingCentral test account. These test accounts would have usage limitations like RingCentral MVP™. Additionally, there may be partner specific limitations such as countries of operation, languages, etc. For example, BT Cloud Work support English and Canadian French languages and localization.
 
 ### App Submission for BT Cloud Work
 
-Follow the same App submission process as you do for RingCentral Office. When you submit, you will need to select the partners that you want to enable the App for. By default, you will be submitting the App for RingCentral Office. Additionally, now you can select the partners you want to enable your App for.
+Follow the same App submission process as you do for RingCentral MVP™. When you submit, you will need to select the partners that you want to enable the App for. By default, you will be submitting the App for RingCentral MVP™. Additionally, now you can select the partners you want to enable your App for.
 
-You will need to submit the following resources using the same process you follow for RingCentral Office.
+You will need to submit the following resources using the same process you follow for RingCentral MVP™.
 
-* **App Gallery content page.** Once approved your App will be hosted on RingCentral App Gallery. You will need to submit the assets for your App page on the App Gallery. You can leverage the same content as RingCentral Office, except where there are differences such as branding or UI differences.
+* **App Gallery content page.** Once approved your App will be hosted on RingCentral App Gallery. You will need to submit the assets for your App page on the App Gallery. You can leverage the same content as RingCentral MVP™, except where there are differences such as branding or UI differences.
 * **App test accounts.** If applicable, provide test accounts for RingCentral approvers to login to your App & verify partner integration.
 
 Once submitted, RingCentral will review your App for compliance to BT Cloud Work requirements. You will receive pertinent feedback on steps to approval.

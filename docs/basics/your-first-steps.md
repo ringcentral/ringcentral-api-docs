@@ -43,13 +43,11 @@ This field determines what development features will be made available to your a
 
 * **Server/Web** (most common) - if you are building a web-based app, need to receive webhooks, and/or connect to another user's account, select this option. 
 
-* **Browser-based** - if you are building an app using the [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html), select this option. 
+* **Web Browser (Javascript)** - if you are building an app using the [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html), select this option. 
 
 * **Server/Bot** - if you are building an app for Glip, this is the option for you.
 
 * **Server/No UI** - this is the only platform type that allows for password-based authentication.
-
-!!! danger "You cannot edit Platform Type after your app has been created"
 
 [Learn more about platform types in "Creating an Application" &raquo;](../create-app/)
 

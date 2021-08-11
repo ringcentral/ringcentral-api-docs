@@ -1,6 +1,6 @@
 # Introduction to Address Book
 
-The RingCentral Office directory is accessible via a set of APIs to be accessed by external vendor systems and consists of the complete set of all extensions that are created on the RingCentral Unified Communication as a Service (UCaaS) site.
+The RingCentral MVP™ directory is accessible via a set of APIs to be accessed by external vendor systems and consists of the complete set of all extensions that are created on the RingCentral Unified Communication as a Service (UCaaS) site.
 
 For most users, the entire corporate directory is accessible, but there are times you will need to filter the list numbers in the address book, especially for contact center partners.
 
@@ -18,7 +18,7 @@ Most customers will be overwhelmed with the number of contacts to sort through i
 
 ### SiteID Filtering
 
-Suppose a customer has two sites: one in Atlanta and one in Paris, with its own contact center and back-office. On the RingCentral side it is possible to limit extensions in the RingCentral Office directory by siteID.
+Suppose a customer has two sites: one in Atlanta and one in Paris, with its own contact center and back-office. On the RingCentral side it is possible to limit extensions in the RingCentral MVP™ directory by siteID.
 
 ```http
 GET /restapi/v1.0/account/~/directory/entries?siteId=ATL
@@ -50,7 +50,7 @@ Authorization: Bearer <access-token>
 
 ### Directory Control Filtering
 
-There might be a need to exclude some UCaaS Users entirely, or their specific numbers, from RingCentral Office Directory, to prevent customer calls to be transferred to them by mistake. With RingCentral, it is possible to hide certain extensions from being visible in the RingCentral Office directory.
+There might be a need to exclude some UCaaS Users entirely, or their specific numbers, from RingCentral MVP™ Directory, to prevent customer calls to be transferred to them by mistake. With RingCentral, it is possible to hide certain extensions from being visible in the RingCentral MVP™ directory.
 
 As an Account Admin, go to the [RingCentral Service Web](https://service.ringcentral.com/) and configure what contact information should be hidden in the Company Directory for each User. There are 3 options for such configuration:
 
@@ -64,7 +64,7 @@ You can find user settings under **Users** tab->**Select a username**->**User De
 
 ### Not Activated Account Filtering
 
-Some extensions in RingCentral Office will be inactive. This means the extension exists, but the user has not yet activated the extension for use. These extensions are returned in the corporate directory and should be filtered from the address book as they are not needed by contact centers.
+Some extensions in RingCentral MVP™ will be inactive. This means the extension exists, but the user has not yet activated the extension for use. These extensions are returned in the corporate directory and should be filtered from the address book as they are not needed by contact centers.
 
 To filter unactivated extension, search for records where:
 
