@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Introduction to the RingCentral Analytics API
 
-!!! warning "The RingCentral MVP Analytics API is currently in beta."
+!!! warning "Please be advised: the RingCentral MVP Analytics API is currently in beta, and is subject to change."
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting Started with Analytics</h3>
@@ -60,7 +60,7 @@ You can build performance or analytics reports, and dashboards for all your call
 
 ### Is there an SDK for my favorite programming language?
 
-Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](https://developers.ringcentral.com/guide/sdks). 
+Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../sdks). 
 
 During our beta however, Java and C# programmers will need to call Analytics API endpoints directly. When this API is made available publicly, our Java and C# SDKs will be updated as well. 
 

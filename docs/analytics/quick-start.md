@@ -44,7 +44,7 @@ There are multiple ways to provide authentication support for your application f
 
 === "Command Line"
 
-    ### Obtain Access Token using RingCentral supported Authentication
+    #### Obtain Access Token using RingCentral supported Authentication
 
     In this example, we are making an API request to the RingCentral platform using [Password Flow Authentication](../../authentication/password-flow). Once the command is executed, copy the 'access_token' string from the response body.
 
@@ -59,9 +59,9 @@ There are multiple ways to provide authentication support for your application f
          --data-urlencode 'extension={{RC_EXTENSION}}'
     ```
 
-    ### Make a HTTP POST Request to get 'call performance data' 
+    #### Make a HTTP POST Request to get 'call performance data' 
 
-    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/api=reference/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
+    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/api-reference/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
 
 ```bash
    curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
@@ -173,7 +173,7 @@ If you prefer to see the API request and response in GUI, we recommend using the
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. You can reference our [Sample C# Application](../call-performance/sample-app/) or build an application from scratch.
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. You can reference our [Sample C# Application](https://github.com/ringcentral/call-performance-api-demo) or build an application from scratch.
 
 <a class="btn btn-success btn-sm" href="https://developers.ringcentral.com/guide/basics/your-first-steps">Take your next step &raquo;</a>
 
