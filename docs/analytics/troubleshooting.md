@@ -12,4 +12,4 @@ It’s important to keep credentials such as your RingCentral App ID and Auth to
 
 ### It seems I'm missing some required parameters for making API Request.
 
-Check the [API Reference](swagger-api-ref.html) to make sure you are not missing on any required fileds in your JSON Request Body. The API Path requires 'accountId' string value and the Request Body requires value for 'timeRange' & 'responseOptions' JSON objects.
+Check the [API Reference](../call-performance/api-reference/) to make sure you are not missing on any required fileds in your JSON Request Body. The API Path requires 'accountId' string value and the Request Body requires value for 'timeRange' & 'responseOptions' JSON objects.

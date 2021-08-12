@@ -62,8 +62,6 @@ To configure your Sandbox environment please follow the steps:
     * add and set devices;
     * etc.
 
-    For more details please visit our [Learning Center](http://success.ringcentral.com/RCSupportPortalLearningCenter?LCtabId=getting_0).
-
 Your Sandbox account is now ready to be used. You can now direct API calls to `https://platform.devtest.ringcentral.com`.
 
 ## Deactivation of idle sandbox accounts
