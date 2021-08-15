@@ -5,10 +5,19 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-        use-quiet-mode: 'yes'
-        use-verbose-mode: 'yes'
-        folder-path: 'docs'
-        baseUrl: 'https://ringcentral.github.io/ringcentral-api-docs/'
+    - name: Checkout
+      uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+
+    - name: Check links
+      uses: lycheeverse/lychee-action@v1.0.8
+        with:
+          args: --verbose --no-progress **/*.md **/*.html
+
+#    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+#      with:
+#        use-quiet-mode: 'yes'
+#        file-extension: 'md'
+#        use-verbose-mode: 'yes'
+#        folder-path: 'docs'
