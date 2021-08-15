@@ -14,4 +14,4 @@ jobs:
 #        use-verbose-mode: 'yes'
 #        config-file: 'mlc_config.json'
         folder-path: 'docs'
-	baseUrl: 'https://ringcentral.github.io/ringcentral-api-docs/'
+        baseUrl: 'https://ringcentral.github.io/ringcentral-api-docs/'
