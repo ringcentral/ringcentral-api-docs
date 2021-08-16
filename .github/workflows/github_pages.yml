@@ -1,7 +1,8 @@
 name: Deploy to Github Pages 
-on:
-  push:
-    branches: master
+on: workflow_dispatch
+#on:
+#  push:
+#    branches: master
 
 jobs:
   build:
