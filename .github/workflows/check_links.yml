@@ -11,7 +11,7 @@ jobs:
     - name: Check links
       uses: lycheeverse/lychee-action@v1.0.8
       with:
-        args: --verbose --github-token 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 --exclude '.*ngrok.*' --exclude 'https://platform.*' --no-progress **/*.md **/*.html
+        args: --verbose --github-token ${{ secrets.ACTION_GITHUB_TOKEN }} --exclude 'https?://[^\.]*.ngrok.io/.*' --exclude 'https?://platform.*' --no-progress **/*.md **/*.html
 
 #    - uses: gaurav-nelson/github-action-markdown-link-check@v1
 #      with:
