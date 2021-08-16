@@ -126,7 +126,7 @@ Simple request to broadcast the same message to multiple recipients
             parameters.messages[i] = recipient;
           }
 
-          var resp = await rc.Restapi().Account().A2pSms().Batches().Post(parameters);
+          var resp = await rc.Restapi().Account().A2pSms().Batch().Post(parameters);
           Console.WriteLine(JsonConvert.SerializeObject(resp));  
         }
       }
@@ -364,7 +364,7 @@ Simple request to send customized messages to multiple recipients
             parameters.messages[i] = m;
           }
 
-          var resp = await rc.Restapi().Account().A2pSms().Batches().Post(parameters);
+          var resp = await rc.Restapi().Account().A2pSms().Batch().Post(parameters);
           Console.WriteLine(JsonConvert.SerializeObject(resp));  
         }
       }
@@ -524,7 +524,7 @@ Sending a large batch will take some time for the server to complete. You can re
           RestClient rc = new RestClient("client_id", "client_secret", true);
           await rc.Authorize("username", "extension_number", "password");
           string batchId = "2157ac7d-baab-4d0e-1262-deada6c7xxxx";
-          var resp = await rc.Restapi().Account().A2pSms().Batches(batchId).Get();
+          var resp = await rc.Restapi().Account().A2pSms().Batch(batchId).Get();
           Console.WriteLine(JsonConvert.SerializeObject(resp));  
         }
       }
