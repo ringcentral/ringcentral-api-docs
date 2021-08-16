@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/supervision/">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <title>Call Monitoring - Developing with RingCentral</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../css/code-styles.css" rel="stylesheet">
+    <link href="../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../css/admonition.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/ringcentral.css" rel="stylesheet">
+    <link href="../../extra.css" rel="stylesheet">
+    <link href="../../css/mega-menu.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../fonts.js"></script>
+    <script src="https://kit.fontawesome.com/2a3737b952.js" crossorigin="anonymous"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-1', 'developers.ringcentral.com');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="office " data-spy="scroll" data-target="#toc">
+      <header>
+    <div class="top-mininav container">
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a href="https://www.ringcentral.com/apps" rel="nofollow">App Gallery</a></li>
+        <li class="nav-item"><a href="https://www.ringcentral.com/" rel="nofollow">RingCentral Home</a></li>
+      </ul>
+    </div>
+    <nav class="navbar navbar-expand-lg primary">
+      <div class="container">
+        <a class="navbar-brand" href="https://developers.ringcentral.com/" rel="nofollow">
+          <img src="../../img/logo_beta.svg" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse dpw-category-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item office active dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/">Office <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item engage dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/engage/api-products/digital">Engage</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-expand secondary">
+      <div id="secondary-nav" class="collapse navbar-collapse container">
+        <ul class="nav navbar-nav">
+          <li class="dropdown mega-dropdown products horiz-nav-item nav-item">
+            <a href="#" data-toggle="dropdown">Product</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Products</p>
+                    <p>Try all of our APIs for free in your very own secure development sandbox.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn btn-primary">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">APIs</p>
+                  <ul>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/voice" rel="nofollow">Voice</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/sms" rel="nofollow">SMS/MMS</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/team-messaging" rel="nofollow">Glip Messaging</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/meetings" rel="nofollow">Meetings</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/fax" rel="nofollow">Fax</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/data" rel="nofollow">Data</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/configuration" rel="nofollow">Configuration</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3  secondary-nav-links">
+                  <p class="h4">App Gallery</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Automation" rel="nofollow">Automation</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Bots%20%26%20Notifications" rel="nofollow">Bots & Notification</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Customer%20Support" rel="nofollow">Customer Support</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=CRM" rel="nofollow">CRM</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Healthcare" rel="nofollow">Healthcare</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">Browse all categories</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Widgets</p>
+                  <ul>
+                    <li><a href="https://developer.ringcentral.com/embeddable-voice.html" rel="nofollow">RingCentral Embeddable</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-extension-factory" rel="nofollow">Chrome Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-for-google-firefox-addon" rel="nofollow">Firefox Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-c2d" rel="nofollow">Click-to-Dial</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-1 secondary-nav-links"></li>
+              </ul>
+            </div>       
+          </li>
+          <li class="dropdown mega-dropdown resources horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/api-and-docs.html" data-toggle="dropdown">Resources</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">  
+                    <p class="h3">Resources</p>
+                    <p>Build your first app in your preferred programming language in 5 minutes or less.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Documentation</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Getting started</a></li>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Developer Guide</a></li>
+                    <li><a href="https://developers.ringcentral.com/tutorials.html" rel="nofollow">Browse tutorials</a></li>
+                    <li><a href="https://ringcentral-api-changelog.readthedocs.io/en/latest/" rel="nofollow">API changelog</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">API Reference</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Call-Log" rel="nofollow">Call log</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/RingOut" rel="nofollow">RingOut</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/SMS" rel="nofollow">SMS</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Chats" rel="nofollow">Team messaging</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Management" rel="nofollow">Meetings</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Fax" rel="nofollow">Fax</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference" rel="nofollow">See all APIs</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Downloads</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide/sdks" rel="nofollow">SDKs</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">SMS bot frameworks</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">Glip bot frameworks</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Use Cases</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/whyringcentral/casestudies.html?product=16" rel="nofollow">Case studies</a></li>
+                    <li><a href="https://www.ringcentral.com/resources/learning-center.html#whitepapers" rel="nofollow">Whitepapers</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="dropdown mega-dropdown community horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/community.html" data-toggle="dropdown">Community</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Community</p>
+                    <p>Grow your skills, earn RingCentral swag, software, conference passes, electronics, and more.</p>
+                    <a href="https://gamechanging.dev/" class="btn" rel="nofollow">Become a Game Changer</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Discuss</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://stackoverflow.com/questions/tagged/ringcentral" rel="nofollow">StackOverflow</a></li>
+                    <li><a href="https://developers.ringcentral.com/community.html" rel="nofollow">Live Chat via Glip</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Learn</p>
+                  <ul>
+                    <li><a href="https://medium.com/ringcentral-developers" rel="nofollow">Blog</a></li>
+                    <li><a href="https://developers.ringcentral.com/support/developer-events.html" rel="nofollow">Events</a></li>
+                    <li><a href="https://go.ringcentral.com/Developer-Webinar-Series-Registration.html" rel="nofollow">Webinars</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Share</p>
+                  <ul>
+                    <li><a href="https://twitter.com/RingCentralDevs" rel="nofollow">Twitter</a></li>
+                    <li><a href="https://github.com/ringcentral/" rel="nofollow">Github</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=H4n-7dBFTEc&list=PLpfipw7KaEwagUy8S4Za25usqFg4bWiAx" rel="nofollow">YouTube</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Partner</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">App Gallery</a></li>
+                    <li><a href="https://www.ringcentral.com/partner/isv.html" rel="nofollow">Partner Program</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="gamechangers horiz-nav-item nav-item"><a href="https://gamechanging.dev/" rel="nofollow">Game Changers</a></li>
+          <li class="dropdown mega-dropdown support horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/support.html" data-toggle="dropdown">Support</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Support</p>
+                    <p>Get your questions answered by our amazing community in the RingCentral Developers forum.</p>
+                    <a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow" class="btn">Post in the forum</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Support</p>
+                  <ul>
+                    <li><a href="https://ringcentral-faq.readthedocs.io/" rel="nofollow">FAQs</a></li>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/create" rel="nofollow">Create a ticket</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/check" rel="nofollow">View your tickets</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Professional Services</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/support/services.html" rel="nofollow">Let us build the perfect app for you</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="console horiz-nav-item nav-item"><a href="https://developers.ringcentral.com/my-account.html" rel="nofollow">Console</a></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-nav" aria-controls="secondary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </header>
+    <div id="content"class="container-fluid">
+      
+    <div class="row flex-nowrap"><div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="navbar navbar-default navbar-expand-md navbar-dark" role="navigation">
+  <a class="navbar-brand d-block d-md-none d-xl-none" href="#"><i class="fa fa-home fa-fw"></i> Table of Contents</a>
+  <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#sidebar-navbar-collapse" aria-controls="sidebar-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="sidebar-navbar-collapse">
+    <!-- Main navigation -->
+    <ul class="nav navbar-nav flex-column">
+      <li id="nav-item-voice" class="toplevel nav-item active" data-toggle="collapse" data-target="#voice">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Voice</span>
+        <ul id="voice" class="collapse">
+          
+<li>
+    <a href="../" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Placing Calls</span>
+  <!--<a href="#" class="">Placing Calls</a>-->
+  <ul>
+    
+<li>
+    <a href="../ringout/" class="">RingOut</a>
+</li>
+    
+<li>
+    <a href="../webrtc/" class="">WebRTC</a>
+</li>
+    
+<li>
+    <a href="../uri-scheme/" class="">URI Scheme</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Routing</span>
+  <!--<a href="#" class="">Call Routing</a>-->
+  <ul>
+    
+<li>
+    <a href="../call-routing/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../call-routing/get-started/" class="">Get Started</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/answering-rules/" class="">Answering Rules Overview</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/user-answering-rules/" class="">User Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/company-answering-rules/" class="">Company Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/call-queues/" class="">Call Queues</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/call-queues-presence/" class="">Call Queues Presence</a>
+</li>
+    
+<li>
+    <a href="../call-routing/manual/call-forwarding/" class="">Call Forwarding/Flipping</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Control</span>
+  <!--<a href="#" class="">Call Control</a>-->
+  <ul>
+    
+<li>
+    <a href="../call-control/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../finding-active-calls/" class="">Finding active calls</a>
+</li>
+    
+<li>
+    <a href="../call-control-sessions/" class="">Detecting state changes</a>
+</li>
+    
+<li>
+    <a href="../pre-call-control/" class="">Pre-call Control</a>
+</li>
+    
+<li>
+    <a href="../active-call-control/" class="">Active-call Control</a>
+</li>
+    
+<li>
+    <a href="./" class=" active">Call Monitoring</a>
+</li>
+    
+<li>
+    <a href="../conference/" class="">Conference call</a>
+</li>
+    
+<li>
+    <a href="../warm-transfer/" class="">Warm Transfer</a>
+</li>
+    
+<li>
+    <a href="../telephony-session-notifications/" class="">Telephony Session Notifications</a>
+</li>
+    
+<li>
+    <a href="https://github.com/ringcentral/ringcentral-call-control-js" class="">Call Control SDK</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Logs</span>
+  <!--<a href="#" class="">Call Logs</a>-->
+  <ul>
+    
+<li>
+    <a href="../call-log/reading-call-log/" class="">Reading Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../call-log/api/" class="">Data Types</a>
+</li>
+    
+<li>
+    <a href="../call-log/details/" class="">Detailed Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../call-log/archival/" class="">Data Archival</a>
+</li>
+    
+<li>
+    <a href="../call-log/recordings/" class="">Call Recordings</a>
+</li>
+    
+<li>
+    <a href="../call-log/sync/" class="">Synchronization</a>
+</li>
+    
+<li>
+    <a href="../call-log/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../call-log/access/" class="">Access Control</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Analytics</span>
+  <!--<a href="#" class="">Call Analytics</a>-->
+  <ul>
+    
+<li>
+    <a href="../calculating-call-time-metrics/" class="">Calculating Call Metrics</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/" class="">Building a Web Phone with WebRTC</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/" class="">Call Log Analytics for iOS</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/" class="">Call Log Visualizations</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/callrecording-notification-node/" class="">Call Recording Push Notification</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-sms-and-fax" class="toplevel nav-item" data-toggle="collapse" data-target="#sms-and-fax">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">SMS and Fax</span>
+        <ul id="sms-and-fax" class="collapse">
+          
+<li>
+    <a href="../../messaging/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../messaging/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Standard SMS</span>
+  <!--<a href="#" class="">Standard SMS</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/sms/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/sending-sms/" class="">Sending an SMS</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/sending-images/" class="">Sending an MMS</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/valid-sms-numbers/" class="">Valid SMS Numbers</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>High Volume SMS</span>
+  <!--<a href="#" class="">High Volume SMS</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/sending-highvolume-sms/" class="">Sending High Volume SMS</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/message-store/" class="">Reading High Volume Message Store</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/toll-free-sms-vs-local-numbers/" class="">Toll-Free vs. Local Numbers</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/opt-out/" class="">Opt-in / Opt-out</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/events/" class="">Event Notifications</a>
+</li>
+    
+<li>
+    <a href="../../messaging/sms/high-volume/handling-errors/" class="">Errors Handling</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Fax</span>
+  <!--<a href="#" class="">Fax</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/fax/sending-faxes/" class="">Sending Faxes</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/fax-multipart-formats/" class="">Multipart Formats</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/receiving-faxes/" class="">Receiving Faxes</a>
+</li>
+    
+<li>
+    <a href="../../messaging/fax/resending-faxes/" class="">Forwarding and Resending Faxes</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Pager Messages</span>
+  <!--<a href="#" class="">Pager Messages</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/pager/sending-pager-messages/" class="">Sending Pager Messages</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Message Store</span>
+  <!--<a href="#" class="">Message Store</a>-->
+  <ul>
+    
+<li>
+    <a href="../../messaging/message-store/messaging/" class="">Sending Messages</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/working-with-message-store/" class="">Working with Message Store</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-sync/" class="">Message Synchronization</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-histories/" class="">Modifying Message Histories</a>
+</li>
+    
+<li>
+    <a href="../../messaging/message-store/message-exports-report/" class="">Message Store Export</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/" class="">SMS Sample App Walkthrough</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/" class="">Two-factor Authentication</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="">Custom Fax Cover Pages</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-team-messaging" class="toplevel nav-item" data-toggle="collapse" data-target="#team-messaging">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Team Messaging</span>
+        <ul id="team-messaging" class="collapse">
+          
+<li>
+    <a href="../../team-messaging/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../team-messaging/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Posting Messages</span>
+  <!--<a href="#" class="">Posting Messages</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/posting/" class="">Simple text messages</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/posting-cards/" class="">Posting Cards</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/posting-images/" class="">Posting Images</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/attaching-files/" class="">Uploading and posting files</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Chats, Groups, Teams</span>
+  <!--<a href="#" class="">Chats, Groups, Teams</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/chats/" class="">Chats</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/conversations/" class="">Conversations</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/teams/" class="">Teams</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/pagination/" class="">Pagination</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Incoming Webhooks</span>
+  <!--<a href="#" class="">Incoming Webhooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/webhook-creation/" class="">Webhook Creation</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/webhook-posting/" class="">Webhook Posting (v2)</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/formatting/" class="">Webhook Posting (v1)</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/testing-webhooks/" class="">Testing using cURL</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Compliance Export</span>
+  <!--<a href="#" class="">Compliance Export</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/compliance-export/" class="">Compliance Export</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/compliance-export-structure/" class="">Export File Structure</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Bots</span>
+  <!--<a href="#" class="">Bots</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/local-bots/" class="">Building a Bot Locally</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/node/" class="">Build a Bot in Node</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/frameworks/" class="">Bot Frameworks</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Outgoing Events and Webhooks</span>
+  <!--<a href="#" class="">Outgoing Events and Webhooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../team-messaging/manual/outgoing-webhooks/" class="">Subscribing to Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/events-posts/" class="">Post Events</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/events-groups/" class="">Chat Events</a>
+</li>
+    
+<li>
+    <a href="../../team-messaging/manual/events-incoming-webhooks/" class="">Incoming Webhook Events</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+    <a href="../../team-messaging/manual/links/" class="">Deep links</a>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="">Bot using IBM Watson and Botkit</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="">Voicemail Transcription Bot</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-meetings" class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+    <a href="../../meetings/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../meetings/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+    <a href="../../meetings/video/" class="">RingCentral Video API</a>
+</li>
+          
+<li>
+    <a href="../../meetings/embeddable/" class="">Embeddable</a>
+</li>
+        </ul>
+      </li><li class="divider"><hr></li>
+      <li id="nav-item-using-the-api" class="toplevel nav-item" data-toggle="collapse" data-target="#using-the-api">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Using the API</span>
+        <ul id="using-the-api" class="collapse">
+          
+<li>
+    <a href="../../basics/uris/" class="">Methods, endpoints and parameters</a>
+</li>
+          
+<li>
+    <a href="../../basics/explorer/" class="">Exploring the API</a>
+</li>
+          
+<li>
+    <a href="../../basics/your-rc-phone/" class="">Using phones in sandbox</a>
+</li>
+          
+<li>
+    <a href="../../basics/media/" class="">Media content</a>
+</li>
+          
+<li>
+    <a href="../../basics/permissions/" class="">App permissions</a>
+</li>
+          
+<li>
+    <a href="../../basics/uri-schemes/" class="">URI schemes</a>
+</li>
+          
+<li>
+    <a href="../../basics/rate-limits/" class="">Rate limits</a>
+</li>
+          
+<li>
+  <span>API Change Log</span>
+  <!--<a href="#" class="">API Change Log</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/changelog/" class="">Preface</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_47/" class="">v.1.0.47 (May 2021)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_46/" class="">v.1.0.46 (Feb 2021)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_45/" class="">v.1.0.45 (Nov 2020)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_44/" class="">v.1.0.44 (Aug 2020)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_43/" class="">v.1.0.43 (May 2020)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_42/" class="">v.1.0.42 (Feb 2020)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_41/" class="">v.1.0.41 (Dec 2019)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_40/" class="">v.1.0.40 (Aug 2019)</a>
+</li>
+    
+<li>
+    <a href="../../basics/changelog/1_0_39/" class="">v.1.0.39 (May 2019)</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+    <a href="../../basics/api-index/" class="">API Quick Reference</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-applications" class="toplevel nav-item" data-toggle="collapse" data-target="#applications">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Applications</span>
+        <ul id="applications" class="collapse">
+          
+<li>
+  <span>Development Lifecycle</span>
+  <!--<a href="#" class="">Development Lifecycle</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/your-first-steps/" class="">Tips for your first app</a>
+</li>
+    
+<li>
+    <a href="../../basics/create-app/" class="">Create an application</a>
+</li>
+    
+<li>
+    <a href="../../basics/sandbox/" class="">Develop in sandbox</a>
+</li>
+    
+<li>
+    <a href="../../basics/production/" class="">Graduate to production</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>App Promotion</span>
+  <!--<a href="#" class="">App Promotion</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/app-gallery/" class="">Submit to the App Gallery</a>
+</li>
+    
+<li>
+    <a href="../../basics/update-profile/" class="">Update a Profile</a>
+</li>
+    
+<li>
+    <a href="../../basics/app-gallery-checklist/" class="">Checklist and Best Practices</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Application Management</span>
+  <!--<a href="#" class="">Application Management</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/lead-forms/" class="">Using Lead Forms</a>
+</li>
+    
+<li>
+    <a href="../../basics/install-app-button/" class="">Install App Buttons</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Partner Ecosystem</span>
+  <!--<a href="#" class="">Partner Ecosystem</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/partner-compatibility/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/segregated-environments/" class="">Technical Requirements</a>
+</li>
+    
+<li>
+  <span>Brand Guidelines</span>
+  <!--<a href="#" class="">Brand Guidelines</a>-->
+  <ul>
+    
+<li>
+    <a href="../../basics/partners/att/" class="">AT&T Office@Hand</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/aco/" class="">Avaya Cloud Office</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/bt/" class="">BT Cloud Work</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/alcatel/" class="">Rainbow Office</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/telus/" class="">TELUS Business Connect</a>
+</li>
+    
+<li>
+    <a href="../../basics/partners/atos/" class="">Unify Office</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-account" class="toplevel nav-item" data-toggle="collapse" data-target="#account">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Account</span>
+        <ul id="account" class="collapse">
+          
+<li>
+    <a href="../../account/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../account/extensions/" class="">Users and Extensions</a>
+</li>
+          
+<li>
+    <a href="../../account/phone-numbers/" class="">Phone Numbers</a>
+</li>
+          
+<li>
+    <a href="../../account/call-forwarding-flipping/" class="">Call Forwarding/Flipping</a>
+</li>
+          
+<li>
+    <a href="../../account/feature-flags/" class="">User Feature Flags</a>
+</li>
+          
+<li>
+    <a href="../../account/custom-fields/" class="">Custom Fields</a>
+</li>
+          
+<li>
+    <a href="../../account/presence/" class="">Presence</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-authentication" class="toplevel nav-item" data-toggle="collapse" data-target="#authentication">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Authentication</span>
+        <ul id="authentication" class="collapse">
+          
+<li>
+    <a href="../../authentication/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../authentication/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../authentication/auth-code-flow/" class="">Auth code flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/auth-code-pkce-flow/" class="">Auth code flow with PKCE</a>
+</li>
+    
+<li>
+    <a href="../../authentication/password-flow/" class="">Password flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/implicit-grant-flow/" class="">Implicit grant flow</a>
+</li>
+    
+<li>
+    <a href="../../authentication/tokens/" class="">Using auth tokens</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-address-book" class="toplevel nav-item" data-toggle="collapse" data-target="#address-book">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Address Book</span>
+        <ul id="address-book" class="collapse">
+          
+<li>
+    <a href="../../address-book/" class="">Overview</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-notifications-and-events" class="toplevel nav-item" data-toggle="collapse" data-target="#notifications-and-events">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Notifications and Events</span>
+        <ul id="notifications-and-events" class="collapse">
+          
+<li>
+    <a href="../../notifications/" class="">Overview</a>
+</li>
+          
+<li>
+  <span>Push Notifications</span>
+  <!--<a href="#" class="">Push Notifications</a>-->
+  <ul>
+    
+<li>
+    <a href="../../notifications/push-notifications/quick-start/" class="">Getting Started</a>
+</li>
+    
+<li>
+    <a href="../../notifications/push-notifications/pubnub/" class="">Using PubNub</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>WebHooks</span>
+  <!--<a href="#" class="">WebHooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../notifications/webhooks/quick-start/" class="">Getting Started</a>
+</li>
+    
+<li>
+    <a href="../../notifications/webhooks/creating-webhooks/" class="">Creating Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../notifications/webhooks/receiving/" class="">Receiving Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../notifications/webhooks/configuring-tls-ssl/" class="">Configuring TLS/SSL</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/" class="">Create SMS Push Notification</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-downloads-and-sdks" class="toplevel nav-item">
+        <a class="section-title nav-link" href="../../sdks/">Downloads and SDKs</a>
+      </li>
+      <li id="nav-item-ringcentral-labs" class="toplevel nav-item">
+        <a class="section-title nav-link" href="../../labs/">RingCentral Labs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div><div id="main" class="col" role="main">
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    
+    <li class="breadcrumb-item">Primary</li>
+    
+    
+    
+    <li class="breadcrumb-item">Voice</li>
+    
+    
+    
+    <li class="breadcrumb-item">Call Control</li>
+    
+    
+    <li class="breadcrumb-item active" aria-current="page">Call Monitoring</li>
+  </ol>
+</nav>
+
+
+<h1 id="call-supervision-monitoring-and-streaming">Call Supervision, Monitoring and Streaming</h1>
+<p><a href="https://www.ringcentral.com/office/features/call-monitoring/overview.html">RingCentral Call Monitoring</a> allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.</p>
+<p>The Call Monitoring API allows a developer to connect to an active phone call and subscribe to an audio stream programatically. Some use cases for this API include:</p>
+<ul>
+<li>To provide a real-time transcription of a call.</li>
+<li>To use NLP and AI to assist agents in helping resolve cases faster.</li>
+</ul>
+<p>Partners today have used this API to provide RingCentral customers with call assistants that provide their agents with real-time suggestions to help provide customers with rapid and accurate recommendations. This scenario is visualized below. Once the call is established, the Supervision API can be used to connect an app to a call by providing:</p>
+<ul>
+<li>Call's <code>sessionId</code></li>
+<li>Agent's <code>extensionNumber</code></li>
+<li>Supervisor's <code>deviceId</code></li>
+</ul>
+<p><img class="img-fluid" src="../../img/supervisionapi_v3.png" style="max-width:600px;"></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, please verify these prerequesites are met:</p>
+<ol>
+<li>
+<p>Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this <a href="https://support.ringcentral.com/s/article/8050?language=en_US">Knowledgebase article</a>.</p>
+</li>
+<li>
+<p>You have set up a "Call Monitoring Group" with Agents and Supervisors in the <a href="https://service.ringcentral.com">Online Account Portal</a>, or via the <a href="https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup">RingCentral API</a>.</p>
+</li>
+<li>
+<p>The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.</p>
+</li>
+</ol>
+<h2 id="call-monitoring-groups">Call Monitoring Groups</h2>
+<p>Due to the sensitive nature of Call Monitoring, authorization to be monitored and to monitor others must be specifically given to extensions within an account. To manage these permissions, a developer first creates a Call Monitoring Group, and then adds users/extensions to that group designating:</p>
+<ul>
+<li>What extensions/individuals can be monitored</li>
+<li>What extensions/individuals can monitor others</li>
+</ul>
+<p>Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call.</p>
+<ul>
+<li><a href="https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup">View Call Monitoring Groups documentation in the API Reference</a></li>
+<li><a href="https://support.ringcentral.com/s/article/8050?language=en_US">Learn how to setup call monitoring in the Admin Console</a></li>
+</ul>
+<h2 id="subscribing-to-telephony-session-events">Subscribing to Telephony Session Events</h2>
+<p>A recommended way to receive real-time events for calls is to use <a href="telephony-session-notifications">Telephony Session Notifications</a>. You will need the call event's <code>telephonySessionId</code> to call the Supervision API.</p>
+<p>You can subscribe at the account level for all extensions or specific extensions.</p>
+<ul>
+<li><a href="https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event">Account-Level Telephony Session Events</a></li>
+<li><a href="https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event">User-Level Telephony Session Events</a></li>
+</ul>
+<h3 id="1-account-level-subscription">1) Account-Level Subscription</h3>
+<p>Subscribing for events at the account level is recommended when you are subscribing for many extensions. This approach makes it much simpler to handle the number, and dynamic nature, of monitored users.</p>
+<p>You will need to maintain a list of extensions you have permission to monitor and then make Supervision API calls for call for a monitored user.</p>
+<p>Attempting to make Supervision Calls for users you do not have permissions for will result in errors. You can minimize errors but still capture callss from non-synced users by attempting to Supervise Calls for users that don't exist in your synced replica.</p>
+<h3 id="2-user-level-subscription">2) User-Level Subscription</h3>
+<p>Subscribing for events at the user level is recommended wish you have a limited number of extensions to monitor from a large set.</p>
+<p>In this case, retrieve the list of extensions to be monitored firts, and then maintain subscriptions for just those extensions.</p>
+<h3 id="retrieving-extension-you-can-monitor">Retrieving Extension You can Monitor</h3>
+<p>You can retrieve a list of extensions your user can monitor by calling the Call Monitoring Groups API.</p>
+<div class="highlight"><pre><span></span><code>GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
+</code></pre></div>
+<p>For each group in the response, call the Group Members API for the <code>groupId</code>:</p>
+<div class="highlight"><pre><span></span><code>GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
+</code></pre></div>
+<p>This API returns a list of members in the <code>records</code> property. Each member has a <code>permissions</code> property which can be set to <code>Monitoring - User</code> (for supervisor) or <code>Monitored - User</code> (for agent). Filter the groups for ones your user is has the <code>Monitoring -User</code> permisssion and then collect all the <code>Monitored - User</code> extension ids for your list.</p>
+<h2 id="using-the-call-supervision-api">Using the Call Supervision API</h2>
+<p>The Call Supervision API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.</p>
+<h3 id="request">Request</h3>
+<p>The following is an example request showing the required parameters to add a supervisor to an existing call session.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Raw</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">ACTUAL_CONTENT_LENGTH_HERE</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">&lt;YOUR_ACCESS_TOKEN&gt;</span>
+
+<span class="p">{</span>  
+   <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Listen&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;extensionNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;108&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;deviceId&quot;</span><span class="p">:</span> <span class="s2">&quot;60727004&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Ruby</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;ringcentral&#39;</span>
+
+<span class="n">rc</span> <span class="o">=</span> <span class="no">RingCentral</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+  <span class="s1">&#39;client_id&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;client_secret&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;https://platform.ringcentral.com&#39;</span><span class="p">)</span>
+
+<span class="n">rc</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span>
+  <span class="ss">username</span><span class="p">:</span> <span class="s1">&#39;+16505550100&#39;</span><span class="p">,</span>
+  <span class="ss">extension</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="ss">password</span><span class="p">:</span>  <span class="s1">&#39;my_password&#39;</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">post</span> <span class="s1">&#39;/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise&#39;</span><span class="p">,</span> <span class="ss">payload</span><span class="p">:</span> <span class="p">{</span>  
+   <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Listen&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;extensionNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;108&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;deviceId&quot;</span><span class="p">:</span> <span class="s2">&quot;60727004&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="parameters">Parameters</h4>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Location</th>
+<th scope="col">Required?</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td>path</td>
+<td>required</td>
+<td>This is the unique identifier for the account associated with the request. This can be the actual id or <code>~</code> for the current <code>accountId</code>. The default <code>~</code> value is acceptable in all uses for this API.</td>
+</tr>
+<tr>
+<td><code>telephonySessionId</code></td>
+<td>path</td>
+<td>required</td>
+<td>This is the unique identifier for the call, including all parties. See the next section on how to get a list of current telephony sessions.</td>
+</tr>
+<tr>
+<td><code>deviceId</code></td>
+<td>body</td>
+<td>required</td>
+<td>This is the <code>deviceId</code> of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API <code>/restapi/v1.0/account/~/extension/~/device</code></td>
+</tr>
+<tr>
+<td><code>extensionNumber</code></td>
+<td>body</td>
+<td>required</td>
+<td>The extension number of the agent whose call you want to monitor. Note: In future we shall also support <code>extensionId</code>.</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>body (required)</td>
+<td>Currently, the only method supported is <code>Listen</code>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-to-find-the-session-id-and-extension-number">How to find the Session ID and Extension Number</h4>
+<p>The <code>telephonySessionId</code> and <code>extensionNumber</code> properties can be retrieved from any of the following:</p>
+<ul>
+<li>Call Session Notification events</li>
+<li>Account-level Presence API</li>
+<li>Extension-level Presence API.</li>
+</ul>
+<p>The following example shows how to retrieve the <code>telephonySessionId</code> uses the account-level presence API. The agent extension is in the <code>extension.extensionNumber</code> property and the <code>telephonySessionId</code> is in the <code>activeCalls[0].telephonySessionId</code> property.</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Response</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;extension&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">62226587016</span><span class="p">,</span>
+      <span class="nt">&quot;extensionNumber&quot;</span><span class="p">:</span><span class="s2">&quot;108&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;presenceStatus&quot;</span><span class="p">:</span><span class="s2">&quot;Busy&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;telephonyStatus&quot;</span><span class="p">:</span><span class="s2">&quot;CallConnected&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;userStatus&quot;</span><span class="p">:</span><span class="s2">&quot;Available&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dndStatus&quot;</span><span class="p">:</span><span class="s2">&quot;TakeAllCalls&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;meetingStatus&quot;</span><span class="p">:</span><span class="s2">&quot;Disconnected&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;allowSeeMyPresence&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;ringOnMonitoredCall&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;pickUpCallsOnHold&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;activeCalls&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+     <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;8bd930cab325416aa054238237eb8832&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="s2">&quot;Inbound&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fromName&quot;</span><span class="p">:</span><span class="s2">&quot;ROY,DIBYENDU&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;+14083388064&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;toName&quot;</span><span class="p">:</span><span class="s2">&quot;Dibyendu Roy&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;+12055558673&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;telephonyStatus&quot;</span><span class="p">:</span><span class="s2">&quot;CallConnected&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sipData&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;toTag&quot;</span><span class="p">:</span><span class="s2">&quot;qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;fromTag&quot;</span><span class="p">:</span><span class="s2">&quot;10.13.22.25-5070-742e2a888ab14be&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteUri&quot;</span><span class="p">:</span><span class="s2">&quot;do-not-use-me-I-am-useless&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;localUri&quot;</span><span class="p">:</span><span class="s2">&quot;do-not-use-me-I-am-useless&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;sessionId&quot;</span><span class="p">:</span><span class="s2">&quot;183851523016&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="s2">&quot;2019-03-26T22:16:29.629+0000&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;partyId&quot;</span><span class="p">:</span><span class="s2">&quot;cs168629785304410134536-2&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;telephonySessionId&quot;</span><span class="p">:</span><span class="s2">&quot;XXXXXXXXXX&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="err">GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&amp;sipData=true</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="how-to-find-the-device-id">How to find the Device ID</h4>
+<p>To retrieve the <code>deviceId</code> required by this API, call the <code>extension/device</code> endpoint on the supervisor's extension as follows:</p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Response</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;60727004&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;SoftPhone&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sku&quot;</span><span class="p">:</span><span class="s2">&quot;DV-1&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Softphone - Digital Line&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;serial&quot;</span><span class="p">:</span><span class="s2">&quot;LMRC8531&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;computerName&quot;</span><span class="p">:</span><span class="s2">&quot;LMRC8531&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;Online&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;extension&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">809646016</span><span class="p">,</span>
+      <span class="nt">&quot;extensionNumber&quot;</span><span class="p">:</span><span class="s2">&quot;101&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="err">GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="response">Response</h3>
+<p>If the request is success, two things will happen.</p>
+<ol>
+<li>First, the API will send a response to reflect that the supervisor has joined the agent extension with a seperate party <code>id</code>, e.g. <code>party-4</code> in this example.</li>
+<li>Next, RingCentral will then send a SIP INVITE request to the supervisor's device which will signal the device to join the existing customer-agent call session automatically with auto answer.</li>
+</ol>
+<p>Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below.</p>
+<h4 id="json-response-from-api">JSON Response from API</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;Outbound&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;deviceId&quot;</span><span class="p">:</span> <span class="s2">&quot;60727004&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;extensionId&quot;</span><span class="p">:</span> <span class="s2">&quot;809646016&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Supervisor ABC&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;phoneNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;101&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;party-4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;muted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;accountId&quot;</span><span class="p">:</span> <span class="s2">&quot;809646016&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;extensionId&quot;</span><span class="p">:</span> <span class="s2">&quot;809646016&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;standAlone&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;Answered&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;reason&quot;</span><span class="p">:</span> <span class="s2">&quot;Supervising&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;extensionId&quot;</span><span class="p">:</span> <span class="s2">&quot;62226587016&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dibyendu Roy&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;phoneNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;108&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="sample-sip-invite-sent-to-the-supervising-device">Sample SIP Invite sent to the Supervising Device</h4>
+<p>Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:</p>
+<ul>
+<li>Line 10: <code>p-rc-api-ids</code> contains the supervisor's <code>party-id</code> and <code>session-id</code></li>
+<li>Line 26: <code>p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2</code> the party-id here is the monitored party-id.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="err">|||INVITE sip:18005557562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0</span>
+<span class="err">||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1</span>
+<span class="err">||||Max-Forwards: 69</span>
+<span class="err">||||User-Agent: RC_SIPWRP_25.111</span>
+<span class="err">||||From: &lt;sip:+16505550072@10.62.192.70&gt;;tag=10.62.25.111-5070-6ce1264681244a</span>
+<span class="err">||||To: &lt;sip:18005557562*102-c4giuv3vhjebe@192.168.12.3;ob&gt;</span>
+<span class="err">||||Contact: &lt;sip:+16508370072@10.62.192.70:5091;transport=tcp&gt;</span>
+<span class="err">||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7</span>
+<span class="err">||||CSeq: 31268 INVITE</span>
+<span class="hll"><span class="err">||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=s-cs171841903350030962</span>
+</span><span class="err">||||p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2</span>
+<span class="err">||||Alert-Info: Auto Answer</span>
+<span class="err">||||Call-Info: &lt;KyOAG0RTd5fP1WkxMAuXNw..&gt;;purpose=info;Answer-After=0</span>
+<span class="err">||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO</span>
+<span class="err">||||Supported: replaces, timer, diversion</span>
+<span class="err">||||Session-Expires: 14400;refresher=uac</span>
+<span class="err">||||Min-SE: 90</span>
+<span class="err">||||Content-Type: application/sdp</span>
+<span class="err">||||Content-Length: 510</span>
+<span class="err">||||P-Acme-VSA: 200:KyOAG0RTd5fP1WkxMAuXNw..</span>
+<span class="err">||||v=0</span>
+<span class="err">||||o=- 137800156 2016517757 IN IP4 10.62.192.70</span>
+<span class="err">||||s=SmcSip</span>
+<span class="err">||||c=IN IP4 10.62.192.70</span>
+<span class="err">||||t=0 0</span>
+<span class="hll"><span class="err">||||m=audio 50400 RTP/AVP 111 9 0 18 96 8 109 101</span>
+</span><span class="err">||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-7</span>
+<span class="err">||||a=rtpmap:111 OPUS/48000/2</span>
+<span class="err">||||a=fmtp:111 useinbandfec=1</span>
+<span class="err">||||a=rtcp-fb:111 ccm tmmbr</span>
+<span class="err">||||m=audio 50402 RTP/AVP 111 9 0 18 96 8 109 101</span>
+<span class="err">||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-8</span>
+<span class="err">||||a=rtpmap:111 OPUS/48000/2</span>
+<span class="err">||||a=fmtp:111 useinbandfec=1</span>
+<span class="err">||||a=rtcp-fb:111 ccm tmmbr</span>
+<span class="err">||||a=sendrecv</span>
+</code></pre></div>
+<h4 id="how-to-verify-the-supervisor-has-joined-the-session">How to verify the Supervisor has joined the session</h4>
+<p>To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the <code>activeCalls</code> property. For example:</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Response</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="nt">&quot;activeCalls&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+     <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aa97ce30b90441158a421ca0e9c0a233&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="s2">&quot;Outbound&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fromName&quot;</span><span class="p">:</span><span class="s2">&quot;Supervisor ABC&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;101&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;toName&quot;</span><span class="p">:</span><span class="s2">&quot;Agent&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;108&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;telephonyStatus&quot;</span><span class="p">:</span><span class="s2">&quot;CallConnected&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sipData&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;toTag&quot;</span><span class="p">:</span><span class="s2">&quot;I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;fromTag&quot;</span><span class="p">:</span><span class="s2">&quot;10.14.23.50-5070-a272ac7ba84b4a7&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteUri&quot;</span><span class="p">:</span><span class="s2">&quot;do-not-use-me-I-am-useless&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;localUri&quot;</span><span class="p">:</span><span class="s2">&quot;do-not-use-me-I-am-useless&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;sessionId&quot;</span><span class="p">:</span><span class="s2">&quot;590506730017&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="s2">&quot;2019-03-27T19:14:22.564+0000&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;partyId&quot;</span><span class="p">:</span><span class="s2">&quot;party-4&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;telephonySessionId&quot;</span><span class="p">:</span><span class="s2">&quot;XXXXXXXXXX&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+   <span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="err">GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&amp;sipData=true</span>
+</code></pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">FCC Compliance</p>
+<p>If you intend to save the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. The following <a href="https://vimeo.com/326948521">video</a> demonstrates a working example of the Supervision API using the concepts described here.</p>
+</div>
+<h2 id="sample-call-monitoring-application">Sample Call Monitoring Application</h2>
+<p>In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones.</p>
+<p>In this example we will cover the following topics:</p>
+<ol>
+<li>Getting setup</li>
+<li>Obtaining the device ID of the supervisors soft phone</li>
+<li>Setting up the supervisors device for monitoring</li>
+<li>Detecting an incoming call</li>
+<li>Invoking the Call Supervision API</li>
+</ol>
+<h3 id="setup">Setup</h3>
+<p>This sample application is written in NodeJS. Let's make sure you have installed the necessary prerequisites.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">RingCentral</span> <span class="kr">from</span> <span class="s1">&#39;@ringcentral/sdk&#39;</span>
+<span class="k">import</span> <span class="nx">Subscriptions</span> <span class="kr">from</span> <span class="s1">&#39;@ringcentral/subscriptions&#39;</span>
+<span class="k">import</span> <span class="nx">Speaker</span> <span class="kr">from</span> <span class="s1">&#39;speaker&#39;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">nonstandard</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;wrtc&#39;</span>
+<span class="k">import</span> <span class="nx">Softphone</span> <span class="kr">from</span> <span class="s1">&#39;ringcentral-softphone&#39;</span>
+<span class="k">import</span> <span class="nx">fs</span> <span class="kr">from</span> <span class="s1">&#39;fs&#39;</span>
+</code></pre></div>
+<h3 id="obtain-the-soft-phones-device-id">Obtain the soft phone's device ID</h3>
+<p>A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID.</p>
+<ol>
+<li>
+<p>Get the devices attached to an extension using the <a href="https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices">Get Devices API</a>.</p>
+</li>
+<li>
+<p>Use the SIP Registration API to get the device ID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below</p>
+</li>
+</ol>
+<p>Code for Softphone Registration using RingCentral SDK</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">rc</span><span class="p">.</span><span class="nx">login</span><span class="p">({</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RINGCENTRAL_USERNAME</span><span class="p">,</span>
+        <span class="nx">extension</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RINGCENTRAL_EXTENSION</span><span class="p">,</span>
+        <span class="nx">password</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RINGCENTRAL_PASSWORD</span>
+    <span class="p">})</span>
+    <span class="kd">const</span> <span class="nx">softphone</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Softphone</span><span class="p">(</span><span class="nx">rc</span><span class="p">)</span>
+    <span class="k">await</span> <span class="nx">softphone</span><span class="p">.</span><span class="nx">register</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Getting the device ID of a hard phone</p>
+<p>Generally speaking, the process of using a hard phone, a.k.a. BYOD, is the same. However, an API call is not necessary to obtain the device ID of the supervisors phone. Learn how to <a href="https://support.ringcentral.com/s/article/4966?language=en_US">setup a third-party device on the RingCentral network</a> and obtain a fixed device ID.</p>
+</div>
+<h3 id="prepare-agent-extensions-for-monitoring">Prepare agent extension(s) for monitoring</h3>
+<p>Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">rc</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/restapi/v1.0/account/~/extension&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">agentExt</span> <span class="o">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">records</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ext</span> <span class="p">=&gt;</span> <span class="nx">ext</span><span class="p">.</span><span class="nx">extensionNumber</span> <span class="o">===</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RINGCENTRAL_AGENT_EXT</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">subscriptions</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Subscriptions</span><span class="p">({</span>
+    <span class="nx">sdk</span><span class="o">:</span> <span class="nx">rc</span>
+<span class="p">})</span>
+<span class="kd">const</span> <span class="nx">subscription</span> <span class="o">=</span> <span class="nx">subscriptions</span><span class="p">.</span><span class="nx">createSubscription</span><span class="p">({</span>
+    <span class="nx">pollInterval</span><span class="o">:</span> <span class="mf">10</span> <span class="o">*</span> <span class="mf">1000</span><span class="p">,</span>
+    <span class="nx">renewHandicapMs</span><span class="o">:</span> <span class="mf">2</span> <span class="o">*</span> <span class="mf">60</span> <span class="o">*</span> <span class="mf">1000</span>
+<span class="p">})</span>
+<span class="nx">subscription</span><span class="p">.</span><span class="nx">setEventFilters</span><span class="p">([</span><span class="sb">`/restapi/v1.0/account/~/extension/</span><span class="si">${</span><span class="nx">agentExt</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">/telephony/sessions`</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="respond-to-an-incoming-call">Respond to an incoming call</h3>
+<p>Now, when a customer calls the monitored agent/extension, our application will be alerted allowing us to trigger the Call Supervision API, which will in turn start streaming the live audio call between the agent and the customer.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">subscription</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">subscription</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">notification</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">parties</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">p</span> <span class="p">=&gt;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="s1">&#39;Answered&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;Inbound&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">rc</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`/restapi/v1.0/account/~/telephony/sessions/</span><span class="si">${</span><span class="nx">message</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">telephonySessionId</span><span class="si">}</span><span class="sb">/supervise`</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;Listen&#39;</span><span class="p">,</span>
+            <span class="nx">supervisorDeviceId</span><span class="o">:</span> <span class="nx">softphone</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+            <span class="nx">agentExtensionNumber</span><span class="o">:</span> <span class="nx">agentExt</span><span class="p">.</span><span class="nx">extensionNumber</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>When the Call Supervision API is invoked, the Supervisor's device (SoftPhone) accepts the SIP INVITE automatically (it was pre-configured to do that) and the agent-customer call audio is streamed in real-timne to the Supervisor's device.</p>
+<p>In the sample code below, we take the additional step of saving the call to an audio file (<code>call.raw</code>) onto the local filesystem.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">softphone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;INVITE&#39;</span><span class="p">,</span> <span class="nx">sipMessage</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">softphone</span><span class="p">.</span><span class="nx">answer</span><span class="p">(</span><span class="nx">sipMessage</span><span class="p">)</span>
+    <span class="nx">softphone</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;track&#39;</span><span class="p">,</span> <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">audioSink</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">nonstandard</span><span class="p">.</span><span class="nx">RTCAudioSink</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">track</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nx">speaker</span> <span class="o">=</span> <span class="kc">null</span>
+        <span class="kd">let</span> <span class="nx">prevSampleRate</span> <span class="o">=</span> <span class="kc">null</span>
+        <span class="kd">const</span> <span class="nx">audioFilePath</span> <span class="o">=</span> <span class="s1">&#39;call.raw&#39;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">existsSync</span><span class="p">(</span><span class="nx">audioFilePath</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">fs</span><span class="p">.</span><span class="nx">unlinkSync</span><span class="p">(</span><span class="nx">audioFilePath</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="kd">const</span> <span class="nx">writeStream</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">audioFilePath</span><span class="p">,</span> <span class="p">{</span> <span class="nx">flags</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span> <span class="p">})</span>
+        <span class="nx">audioSink</span><span class="p">.</span><span class="nx">ondata</span> <span class="o">=</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;live audio data received, sample rate is &#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sampleRate</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">speaker</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// wait until sample rate stable</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">sampleRate</span> <span class="o">===</span> <span class="nx">prevSampleRate</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">speaker</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Speaker</span><span class="p">({</span>
+                    <span class="nx">channels</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">channelCount</span><span class="p">,</span>
+                        <span class="nx">bitDepth</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">bitsPerSample</span><span class="p">,</span>
+                        <span class="nx">sampleRate</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sampleRate</span><span class="p">,</span>
+                        <span class="nx">signed</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">})</span>
+                <span class="p">}</span>
+                <span class="nx">prevSampleRate</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sampleRate</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">speaker</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">samples</span><span class="p">.</span><span class="nx">buffer</span><span class="p">))</span>
+                <span class="nx">writeStream</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">samples</span><span class="p">.</span><span class="nx">buffer</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When the call is complete, you can play the file using the following command:</p>
+<p><code>play -e signed -b 16 -r 8000 -c 1 call.raw</code></p>
+<h3 id="how-to-monitor-calls-using-dual-channel-audio">How to monitor calls using dual channel audio</h3>
+<p>The Supervision API allows for <a href="https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty">dual channel call streaming</a>, one channel for each of the two parties on the call. This capability is often desirable in call/contact center implementations that require access to high quality audio streams for use with voice recognition and speech transcription systems.</p>
+<p>This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Raw</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">ACTUAL_CONTENT_LENGTH_HERE</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">&lt;YOUR_ACCESS_TOKEN&gt;</span>
+
+<span class="p">{</span>  
+   <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Listen&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;agentExtensionId&quot;</span><span class="p">:</span> <span class="s2">&quot;40001234567890&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;supervisorDeviceId&quot;</span><span class="p">:</span> <span class="s2">&quot;191888004&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Server-side vs client-side device monitoring</p>
+<p>If a RingCentral hard-phone or a WebRTC application is used as the monitoring device instead of a SIP server, then the agent's call is supervised first (streaming the agent audio stream). In other words, the device will receive the first SIP invite for the agent's party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.</p>
+</div>
+<h3 id="additional-resources">Additional Resources</h3>
+<ul>
+<li>Consult the <a href="https://github.com/tylerlong/ringcentral-call-supervise-demo">Call Supervision Demo/Sample App</a> for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file.</li>
+<li>Read <a href="https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f">Automatically Supervise Your Call Agents</a> on our blog.</li>
+</ul>
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+</div>
+      <div id="sidebar-toc" class="sidebar col-md-3">
+        <div class="repo">
+              <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/master/docs/voice/supervision.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+        </div>
+
+        
+        <div id="rating" class="nav-link">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        
+
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
+      </div>
+
+    </div>
+    </div><footer class="col-md-12">
+  <nav class="container">
+    <div class="row row-1">
+      <div class="col-6">
+	<a class="brand nav-link" href="http://developers.ringcentral.com/">Back to main site</a>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li class="nav-item"><a class="nav-link" href="http://www.ringcentral.com/legal.html" rel="nofollow">Legal</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://www.ringcentral.com/legal/privacy-notice.html" rel="nofollow">Privacy Notice</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://devcommunity.ringcentral.com/" rel="nofollow">Community</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://medium.com/ringcentral-developers" rel="nofollow">Blog</a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+	<p>&copy;1999-2020 RingCentral, Inc. All rights reserved.</p>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li><a class="nav-link footer-image-link footer-image-link-facebook" href="http://www.facebook.com/ringcentral">
+	      <i class="fa fa-facebook"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="http://twitter.com/ringcentraldevs">
+	      <i class="fa fa-twitter"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="http://www.linkedin.com/company/ringcentral">
+	      <i class="fa fa-linkedin"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="http://www.youtube.com/ringcentral">
+	      <i class="fa fa-youtube"></i></a></li>
+	</ul>
+      </div>
+  </nav>
+</footer>
+<script type="text/javascript" src="../../js/rc.js"></script>
+    <script>
+      var base_url = "../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../js/base.js" defer></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="h4 modal-title">Keyboard Shortcuts</p>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </body>
+</html>

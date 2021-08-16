@@ -1,0 +1,266 @@
+.codehilite .o, .highlight .o {
+  color: inherit; }
+
+.codehilite .ow, .highlight .ow {
+  color: inherit; }
+
+.codehilite .ge, .highlight .ge {
+  color: #000000; }
+
+.codehilite .gr, .highlight .gr {
+  color: #AA0000; }
+
+.codehilite .gh, .highlight .gh {
+  color: #999999; }
+
+.codehilite .go, .highlight .go {
+  color: #888888; }
+
+.codehilite .gp, .highlight .gp {
+  color: #555555; }
+
+.codehilite .gs, .highlight .gs {
+  color: inherit; }
+
+.codehilite .gu, .highlight .gu {
+  color: #AAAAAA; }
+
+.codehilite .gt, .highlight .gt {
+  color: #AA0000; }
+
+.codehilite .gd, .highlight .gd {
+  background-color: #FFDDDD; }
+
+.codehilite .gi, .highlight .gi {
+  background-color: #DDFFDD; }
+
+.codehilite .k, .highlight .k {
+  color: #3B78E7; }
+
+.codehilite .kc, .highlight .kc {
+  color: #A71D5D; }
+
+.codehilite .kd, .highlight .kd {
+  color: #3B78E7; }
+
+.codehilite .kn, .highlight .kn {
+  color: #3B78E7; }
+
+.codehilite .kp, .highlight .kp {
+  color: #A71D5D; }
+
+.codehilite .kr, .highlight .kr {
+  color: #3E61A2; }
+
+.codehilite .kt, .highlight .kt {
+  color: #3E61A2; }
+
+.codehilite .c, .highlight .c {
+  color: #999999; }
+
+.codehilite .cm, .highlight .cm {
+  color: #999999; }
+
+.codehilite .cp, .highlight .cp {
+  color: #666666; }
+
+.codehilite .c1, .highlight .c1 {
+  color: #999999; }
+
+.codehilite .ch, .highlight .ch {
+  color: #999999; }
+
+.codehilite .cs, .highlight .cs {
+  color: #999999; }
+
+.codehilite .na, .highlight .na {
+  color: #C2185B; }
+
+.codehilite .nb, .highlight .nb {
+  color: #C2185B; }
+
+.codehilite .bp, .highlight .bp {
+  color: #3E61A2; }
+
+.codehilite .nc, .highlight .nc {
+  color: #C2185B; }
+
+.codehilite .no, .highlight .no {
+  color: #3E61A2; }
+
+.codehilite .nd, .highlight .nd {
+  color: #666666; }
+
+.codehilite .ni, .highlight .ni {
+  color: #666666; }
+
+.codehilite .ne, .highlight .ne {
+  color: #C2185B; }
+
+.codehilite .nf, .highlight .nf {
+  color: #C2185B; }
+
+.codehilite .nl, .highlight .nl {
+  color: #3B5179; }
+
+.codehilite .nn, .highlight .nn {
+  color: #EC407A; }
+
+.codehilite .nt, .highlight .nt {
+  color: #3B78E7; }
+
+.codehilite .nv, .highlight .nv {
+  color: #3E61A2; }
+
+.codehilite .vc, .highlight .vc {
+  color: #3E61A2; }
+
+.codehilite .vg, .highlight .vg {
+  color: #3E61A2; }
+
+.codehilite .vi, .highlight .vi {
+  color: #3E61A2; }
+
+.codehilite .nx, .highlight .nx {
+  color: #EC407A; }
+
+.codehilite .m, .highlight .m {
+  color: #E74C3C; }
+
+.codehilite .mf, .highlight .mf {
+  color: #E74C3C; }
+
+.codehilite .mh, .highlight .mh {
+  color: #E74C3C; }
+
+.codehilite .mi, .highlight .mi {
+  color: #E74C3C; }
+
+.codehilite .il, .highlight .il {
+  color: #E74C3C; }
+
+.codehilite .mo, .highlight .mo {
+  color: #E74C3C; }
+
+.codehilite .s, .highlight .s {
+  color: #0D904F; }
+
+.codehilite .sb, .highlight .sb {
+  color: #0D904F; }
+
+.codehilite .sc, .highlight .sc {
+  color: #0D904F; }
+
+.codehilite .sd, .highlight .sd {
+  color: #999999; }
+
+.codehilite .s2, .highlight .s2 {
+  color: #0D904F; }
+
+.codehilite .se, .highlight .se {
+  color: #183691; }
+
+.codehilite .sh, .highlight .sh {
+  color: #183691; }
+
+.codehilite .si, .highlight .si {
+  color: #183691; }
+
+.codehilite .sx, .highlight .sx {
+  color: #183691; }
+
+.codehilite .sr, .highlight .sr {
+  color: #009926; }
+
+.codehilite .s1, .highlight .s1 {
+  color: #0D904F; }
+
+.codehilite .ss, .highlight .ss {
+  color: #0D904F; }
+
+.codehilite .err, .highlight .err {
+  color: #A61717; }
+
+.codehilite .w, .highlight .w {
+  color: transparent; }
+
+.codehilite .hll, .highlight .hll {
+  display: block;
+  margin: 0 -1.2rem;
+  padding: 0 1.2rem;
+  background-color: rgba(255, 235, 59, 0.5); }
+
+.codehilite, .highlight {
+  position: relative;
+/*  margin: 1em 0;*/
+  padding: 0;
+  border-radius: 0.2rem;
+  background-color: rgba(236, 236, 236, 0.5);
+  color: #37474F;
+  line-height: 1.4;
+  -webkit-overflow-scrolling: touch; }
+  .codehilite pre, .highlight pre,
+  .codehilite code, .highlight code {
+    display: block;
+    margin: 0;
+    padding: 1.05rem 0.5rem;
+    background-color: transparent;
+    overflow: auto;
+    vertical-align: top; }
+    .codehilite pre::-webkit-scrollbar, .highlight pre::-webkit-scrollbar,
+    .codehilite code::-webkit-scrollbar, .highlight code::-webkit-scrollbar {
+      width: 0.4rem;
+      height: 0.4rem; }
+    .codehilite pre::-webkit-scrollbar-thumb, .highlight pre::-webkit-scrollbar-thumb,
+    .codehilite code::-webkit-scrollbar-thumb, .highlight code::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.26); }
+      .codehilite pre::-webkit-scrollbar-thumb:hover, .highlight pre::-webkit-scrollbar-thumb:hover,
+      .codehilite code::-webkit-scrollbar-thumb:hover, .highlight code::-webkit-scrollbar-thumb:hover {
+        background-color: #536dfe; }
+
+pre.codehilite, pre.highlight {
+  overflow: visible; }
+  pre.codehilite code, pre.highlight code {
+    display: block;
+    padding: 1.05rem 1.2rem;
+    overflow: auto; }
+
+.codehilitetable, .highlighttable {
+  display: block;
+/*  margin: 1em 0;*/
+  border-radius: 0.2em;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden; }
+  .codehilitetable tbody, .highlighttable tbody,
+  .codehilitetable td, .highlighttable td {
+    display: block;
+    padding: 0; }
+  .codehilitetable tr, .highlighttable tr {
+    display: flex; }
+  .codehilitetable .codehilite, .highlighttable .codehilite, .codehilitetable .highlight, .highlighttable .highlight,
+  .codehilitetable .linenodiv, .highlighttable .linenodiv {
+    margin: 0;
+    border-radius: 0; }
+  .codehilitetable .linenodiv, .highlighttable .linenodiv {
+    padding: 1.05rem 1.2rem; }
+  .codehilitetable .linenos, .highlighttable .linenos {
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgba(0, 0, 0, 0.26);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .codehilitetable .linenos pre, .highlighttable .linenos pre {
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      color: inherit;
+      text-align: right; }
+  .codehilitetable .code, .highlighttable .code {
+    flex: 1;
+    overflow: hidden; }
+
+> .codehilitetable, > .highlighttable {
+    box-shadow: none; }
+

@@ -1,0 +1,60 @@
+.tabbed-set,
+.superfences-tabs {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+  max-width: 100%;
+  border-radius: .2rem;
+/*  margin-bottom: 20px;*/
+}
+
+.tabbed-set .highlight,
+.superfences-tabs .highlight {
+/*  background: #ddd;*/
+}
+
+.tabbed-set .tabbed-content,
+.superfences-tabs .superfences-content {
+  display: none;
+  order: 99;
+  width: 100%;
+  border-top: 1px solid #CCC;
+}
+
+.tabbed-set label,
+.superfences-tabs label {
+  width: auto;
+  margin: 0;
+  padding: 0.9em;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tabbed-set input,
+.superfences-tabs input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tabbed-set input:nth-child(n+1),
+.superfences-tabs input:nth-child(n+1) {
+  color: #333333;
+}
+
+.tabbed-set input:nth-child(n+1):checked + label,
+.superfences-tabs input:nth-child(n+1):checked + label {
+    color: #03a9f4;
+    border-bottom: 2px solid #03a9f4;
+}
+
+.tabbed-set input:nth-child(n+1):checked + label + .tabbed-content,
+.superfences-tabs input:nth-child(n+1):checked + label + .superfences-content {
+    display: block;
+}
+
+.tabbed-set .codehilite,
+.superfences-tabs .codehilite {
+    margin-bottom: 0;
+}

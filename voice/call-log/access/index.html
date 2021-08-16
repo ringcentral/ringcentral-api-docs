@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // Hack for scrolling window when linking to anchor tag with fixed nav header
+      var shiftWindow = function() { scrollBy(0, -75) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://github.com/ringcentral/ringcentral-api-docs/voice/call-log/access/">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    
+    <title>Access Control - Developing with RingCentral</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="../../../css/code-styles.css" rel="stylesheet">
+    <link href="../../../css/code-tabs.css" rel="stylesheet">
+    <link href="../../../css/admonition.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/ringcentral.css" rel="stylesheet">
+    <link href="../../../extra.css" rel="stylesheet">
+    <link href="../../../css/mega-menu.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../fonts.js"></script>
+    <script src="https://kit.fontawesome.com/2a3737b952.js" crossorigin="anonymous"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-57519112-1', 'developers.ringcentral.com');
+      ga('send', 'pageview');
+    </script> 
+  </head>
+  
+  <body class="office " data-spy="scroll" data-target="#toc">
+      <header>
+    <div class="top-mininav container">
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a href="https://www.ringcentral.com/apps" rel="nofollow">App Gallery</a></li>
+        <li class="nav-item"><a href="https://www.ringcentral.com/" rel="nofollow">RingCentral Home</a></li>
+      </ul>
+    </div>
+    <nav class="navbar navbar-expand-lg primary">
+      <div class="container">
+        <a class="navbar-brand" href="https://developers.ringcentral.com/" rel="nofollow">
+          <img src="../../../img/logo_beta.svg" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse dpw-category-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item office active dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/">Office <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item engage dpw-category">
+              <a class="nav-link" href="https://developers.ringcentral.com/engage/api-products/digital">Engage</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-expand secondary">
+      <div id="secondary-nav" class="collapse navbar-collapse container">
+        <ul class="nav navbar-nav">
+          <li class="dropdown mega-dropdown products horiz-nav-item nav-item">
+            <a href="#" data-toggle="dropdown">Product</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Products</p>
+                    <p>Try all of our APIs for free in your very own secure development sandbox.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn btn-primary">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">APIs</p>
+                  <ul>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/voice" rel="nofollow">Voice</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/sms" rel="nofollow">SMS/MMS</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/team-messaging" rel="nofollow">Glip Messaging</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/meetings" rel="nofollow">Meetings</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/fax" rel="nofollow">Fax</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/data" rel="nofollow">Data</a></li>
+                    <li><a class="nav-link" href="https://developer.ringcentral.com/api-products/configuration" rel="nofollow">Configuration</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3  secondary-nav-links">
+                  <p class="h4">App Gallery</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Automation" rel="nofollow">Automation</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Bots%20%26%20Notifications" rel="nofollow">Bots & Notification</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Customer%20Support" rel="nofollow">Customer Support</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=CRM" rel="nofollow">CRM</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/?appCategory=Healthcare" rel="nofollow">Healthcare</a></li>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">Browse all categories</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Widgets</p>
+                  <ul>
+                    <li><a href="https://developer.ringcentral.com/embeddable-voice.html" rel="nofollow">RingCentral Embeddable</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-extension-factory" rel="nofollow">Chrome Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-embeddable-for-google-firefox-addon" rel="nofollow">Firefox Kit</a></li>
+                    <li><a href="https://github.com/ringcentral/ringcentral-c2d" rel="nofollow">Click-to-Dial</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-1 secondary-nav-links"></li>
+              </ul>
+            </div>       
+          </li>
+          <li class="dropdown mega-dropdown resources horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/api-and-docs.html" data-toggle="dropdown">Resources</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">  
+                    <p class="h3">Resources</p>
+                    <p>Build your first app in your preferred programming language in 5 minutes or less.</p>
+                    <a href="https://developers.ringcentral.com/guide" rel="nofollow" class="btn">Get Started</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Documentation</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Getting started</a></li>
+                    <li><a href="https://developers.ringcentral.com/guide" rel="nofollow">Developer Guide</a></li>
+                    <li><a href="https://developers.ringcentral.com/tutorials.html" rel="nofollow">Browse tutorials</a></li>
+                    <li><a href="https://ringcentral-api-changelog.readthedocs.io/en/latest/" rel="nofollow">API changelog</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">API Reference</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Call-Log" rel="nofollow">Call log</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/RingOut" rel="nofollow">RingOut</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/SMS" rel="nofollow">SMS</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Chats" rel="nofollow">Team messaging</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Management" rel="nofollow">Meetings</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference/Fax" rel="nofollow">Fax</a></li>
+                    <li><a href="https://developers.ringcentral.com/api-reference" rel="nofollow">See all APIs</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Downloads</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/guide/sdks" rel="nofollow">SDKs</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">SMS bot frameworks</a></li>
+                    <li><a href="https://developers.ringcentral.com/library/chatbots.html" rel="nofollow">Glip bot frameworks</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Use Cases</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/whyringcentral/casestudies.html?product=16" rel="nofollow">Case studies</a></li>
+                    <li><a href="https://www.ringcentral.com/resources/learning-center.html#whitepapers" rel="nofollow">Whitepapers</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="dropdown mega-dropdown community horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/community.html" data-toggle="dropdown">Community</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Community</p>
+                    <p>Grow your skills, earn RingCentral swag, software, conference passes, electronics, and more.</p>
+                    <a href="https://gamechanging.dev/" class="btn" rel="nofollow">Become a Game Changer</a>
+                  </div>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Discuss</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://stackoverflow.com/questions/tagged/ringcentral" rel="nofollow">StackOverflow</a></li>
+                    <li><a href="https://developers.ringcentral.com/community.html" rel="nofollow">Live Chat via Glip</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Learn</p>
+                  <ul>
+                    <li><a href="https://medium.com/ringcentral-developers" rel="nofollow">Blog</a></li>
+                    <li><a href="https://developers.ringcentral.com/support/developer-events.html" rel="nofollow">Events</a></li>
+                    <li><a href="https://go.ringcentral.com/Developer-Webinar-Series-Registration.html" rel="nofollow">Webinars</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Share</p>
+                  <ul>
+                    <li><a href="https://twitter.com/RingCentralDevs" rel="nofollow">Twitter</a></li>
+                    <li><a href="https://github.com/ringcentral/" rel="nofollow">Github</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=H4n-7dBFTEc&list=PLpfipw7KaEwagUy8S4Za25usqFg4bWiAx" rel="nofollow">YouTube</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-2 secondary-nav-links">
+                  <p class="h4">Partner</p>
+                  <ul>
+                    <li><a href="https://www.ringcentral.com/apps/" rel="nofollow">App Gallery</a></li>
+                    <li><a href="https://www.ringcentral.com/partner/isv.html" rel="nofollow">Partner Program</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="gamechangers horiz-nav-item nav-item"><a href="https://gamechanging.dev/" rel="nofollow">Game Changers</a></li>
+          <li class="dropdown mega-dropdown support horiz-nav-item nav-item">
+            <a href="https://developers.ringcentral.com/support.html" data-toggle="dropdown">Support</a>        
+            <div class="dropdown-menu mega-dropdown-menu">
+              <ul class="row">
+                <li class="col-sm-2 secondary-nav-cta">
+                  <div class="secondary-nav-cta-content">
+                    <p class="h3">Support</p>
+                    <p>Get your questions answered by our amazing community in the RingCentral Developers forum.</p>
+                    <a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow" class="btn">Post in the forum</a>
+                  </div>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Support</p>
+                  <ul>
+                    <li><a href="https://ringcentral-faq.readthedocs.io/" rel="nofollow">FAQs</a></li>
+                    <li><a href="https://developers.ringcentral.com/go-to-community.html" rel="nofollow">Developer Forum</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/create" rel="nofollow">Create a ticket</a></li>
+                    <li><a href="https://developers.ringcentral.com/api/support-cases/check" rel="nofollow">View your tickets</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 secondary-nav-links">
+                  <p class="h4">Professional Services</p>
+                  <ul>
+                    <li><a href="https://developers.ringcentral.com/support/services.html" rel="nofollow">Let us build the perfect app for you</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>           
+          </li>
+          <li class="console horiz-nav-item nav-item"><a href="https://developers.ringcentral.com/my-account.html" rel="nofollow">Console</a></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-nav" aria-controls="secondary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </header>
+    <div id="content"class="container-fluid">
+      
+    <div class="row flex-nowrap"><div id="sidebar-nav" class="sidebar col-md-3"><nav id="sidenav" class="navbar navbar-default navbar-expand-md navbar-dark" role="navigation">
+  <a class="navbar-brand d-block d-md-none d-xl-none" href="#"><i class="fa fa-home fa-fw"></i> Table of Contents</a>
+  <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#sidebar-navbar-collapse" aria-controls="sidebar-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="sidebar-navbar-collapse">
+    <!-- Main navigation -->
+    <ul class="nav navbar-nav flex-column">
+      <li id="nav-item-voice" class="toplevel nav-item active" data-toggle="collapse" data-target="#voice">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Voice</span>
+        <ul id="voice" class="collapse">
+          
+<li>
+    <a href="../../" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Placing Calls</span>
+  <!--<a href="#" class="">Placing Calls</a>-->
+  <ul>
+    
+<li>
+    <a href="../../ringout/" class="">RingOut</a>
+</li>
+    
+<li>
+    <a href="../../webrtc/" class="">WebRTC</a>
+</li>
+    
+<li>
+    <a href="../../uri-scheme/" class="">URI Scheme</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Routing</span>
+  <!--<a href="#" class="">Call Routing</a>-->
+  <ul>
+    
+<li>
+    <a href="../../call-routing/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/get-started/" class="">Get Started</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/answering-rules/" class="">Answering Rules Overview</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/user-answering-rules/" class="">User Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/company-answering-rules/" class="">Company Answering Rules</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/call-queues/" class="">Call Queues</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/call-queues-presence/" class="">Call Queues Presence</a>
+</li>
+    
+<li>
+    <a href="../../call-routing/manual/call-forwarding/" class="">Call Forwarding/Flipping</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Control</span>
+  <!--<a href="#" class="">Call Control</a>-->
+  <ul>
+    
+<li>
+    <a href="../../call-control/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../finding-active-calls/" class="">Finding active calls</a>
+</li>
+    
+<li>
+    <a href="../../call-control-sessions/" class="">Detecting state changes</a>
+</li>
+    
+<li>
+    <a href="../../pre-call-control/" class="">Pre-call Control</a>
+</li>
+    
+<li>
+    <a href="../../active-call-control/" class="">Active-call Control</a>
+</li>
+    
+<li>
+    <a href="../../supervision/" class="">Call Monitoring</a>
+</li>
+    
+<li>
+    <a href="../../conference/" class="">Conference call</a>
+</li>
+    
+<li>
+    <a href="../../warm-transfer/" class="">Warm Transfer</a>
+</li>
+    
+<li>
+    <a href="../../telephony-session-notifications/" class="">Telephony Session Notifications</a>
+</li>
+    
+<li>
+    <a href="https://github.com/ringcentral/ringcentral-call-control-js" class="">Call Control SDK</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Logs</span>
+  <!--<a href="#" class="">Call Logs</a>-->
+  <ul>
+    
+<li>
+    <a href="../reading-call-log/" class="">Reading Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../api/" class="">Data Types</a>
+</li>
+    
+<li>
+    <a href="../details/" class="">Detailed Call Log Data</a>
+</li>
+    
+<li>
+    <a href="../archival/" class="">Data Archival</a>
+</li>
+    
+<li>
+    <a href="../recordings/" class="">Call Recordings</a>
+</li>
+    
+<li>
+    <a href="../sync/" class="">Synchronization</a>
+</li>
+    
+<li>
+    <a href="../best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="./" class=" active">Access Control</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Call Analytics</span>
+  <!--<a href="#" class="">Call Analytics</a>-->
+  <ul>
+    
+<li>
+    <a href="../../calculating-call-time-metrics/" class="">Calculating Call Metrics</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/" class="">Building a Web Phone with WebRTC</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/" class="">Call Log Analytics for iOS</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/" class="">Call Log Visualizations</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/callrecording-notification-node/" class="">Call Recording Push Notification</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-sms-and-fax" class="toplevel nav-item" data-toggle="collapse" data-target="#sms-and-fax">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">SMS and Fax</span>
+        <ul id="sms-and-fax" class="collapse">
+          
+<li>
+    <a href="../../../messaging/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../../messaging/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Standard SMS</span>
+  <!--<a href="#" class="">Standard SMS</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../messaging/sms/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/sending-sms/" class="">Sending an SMS</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/sending-images/" class="">Sending an MMS</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/valid-sms-numbers/" class="">Valid SMS Numbers</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>High Volume SMS</span>
+  <!--<a href="#" class="">High Volume SMS</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/best-practices/" class="">Best Practices</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/sending-highvolume-sms/" class="">Sending High Volume SMS</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/message-store/" class="">Reading High Volume Message Store</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/toll-free-sms-vs-local-numbers/" class="">Toll-Free vs. Local Numbers</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/opt-out/" class="">Opt-in / Opt-out</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/events/" class="">Event Notifications</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/sms/high-volume/handling-errors/" class="">Errors Handling</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Fax</span>
+  <!--<a href="#" class="">Fax</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../messaging/fax/sending-faxes/" class="">Sending Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/fax/fax-multipart-formats/" class="">Multipart Formats</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/fax/receiving-faxes/" class="">Receiving Faxes</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/fax/resending-faxes/" class="">Forwarding and Resending Faxes</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Pager Messages</span>
+  <!--<a href="#" class="">Pager Messages</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../messaging/pager/sending-pager-messages/" class="">Sending Pager Messages</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Message Store</span>
+  <!--<a href="#" class="">Message Store</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../messaging/message-store/messaging/" class="">Sending Messages</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/message-store/working-with-message-store/" class="">Working with Message Store</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/message-store/message-sync/" class="">Message Synchronization</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/message-store/message-histories/" class="">Modifying Message Histories</a>
+</li>
+    
+<li>
+    <a href="../../../messaging/message-store/message-exports-report/" class="">Message Store Export</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/" class="">SMS Sample App Walkthrough</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/" class="">Two-factor Authentication</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/" class="">Custom Fax Cover Pages</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-team-messaging" class="toplevel nav-item" data-toggle="collapse" data-target="#team-messaging">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Team Messaging</span>
+        <ul id="team-messaging" class="collapse">
+          
+<li>
+    <a href="../../../team-messaging/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../../team-messaging/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Posting Messages</span>
+  <!--<a href="#" class="">Posting Messages</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/posting/" class="">Simple text messages</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/posting-cards/" class="">Posting Cards</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/posting-images/" class="">Posting Images</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/attaching-files/" class="">Uploading and posting files</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Chats, Groups, Teams</span>
+  <!--<a href="#" class="">Chats, Groups, Teams</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/chats/" class="">Chats</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/conversations/" class="">Conversations</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/teams/" class="">Teams</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/pagination/" class="">Pagination</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Incoming Webhooks</span>
+  <!--<a href="#" class="">Incoming Webhooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/webhook-creation/" class="">Webhook Creation</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/webhook-posting/" class="">Webhook Posting (v2)</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/formatting/" class="">Webhook Posting (v1)</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/testing-webhooks/" class="">Testing using cURL</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Compliance Export</span>
+  <!--<a href="#" class="">Compliance Export</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/compliance-export/" class="">Compliance Export</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/compliance-export-structure/" class="">Export File Structure</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Bots</span>
+  <!--<a href="#" class="">Bots</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/local-bots/" class="">Building a Bot Locally</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/node/" class="">Build a Bot in Node</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/frameworks/" class="">Bot Frameworks</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Outgoing Events and Webhooks</span>
+  <!--<a href="#" class="">Outgoing Events and Webhooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../team-messaging/manual/outgoing-webhooks/" class="">Subscribing to Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/events-posts/" class="">Post Events</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/events-groups/" class="">Chat Events</a>
+</li>
+    
+<li>
+    <a href="../../../team-messaging/manual/events-incoming-webhooks/" class="">Incoming Webhook Events</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+    <a href="../../../team-messaging/manual/links/" class="">Deep links</a>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/" class="">Bot using IBM Watson and Botkit</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/ringcentral-ai-bot/" class="">Voicemail Transcription Bot</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-meetings" class="toplevel nav-item" data-toggle="collapse" data-target="#meetings">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Meetings</span>
+        <ul id="meetings" class="collapse">
+          
+<li>
+    <a href="../../../meetings/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../../meetings/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+    <a href="../../../meetings/video/" class="">RingCentral Video API</a>
+</li>
+          
+<li>
+    <a href="../../../meetings/embeddable/" class="">Embeddable</a>
+</li>
+        </ul>
+      </li><li class="divider"><hr></li>
+      <li id="nav-item-using-the-api" class="toplevel nav-item" data-toggle="collapse" data-target="#using-the-api">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Using the API</span>
+        <ul id="using-the-api" class="collapse">
+          
+<li>
+    <a href="../../../basics/uris/" class="">Methods, endpoints and parameters</a>
+</li>
+          
+<li>
+    <a href="../../../basics/explorer/" class="">Exploring the API</a>
+</li>
+          
+<li>
+    <a href="../../../basics/your-rc-phone/" class="">Using phones in sandbox</a>
+</li>
+          
+<li>
+    <a href="../../../basics/media/" class="">Media content</a>
+</li>
+          
+<li>
+    <a href="../../../basics/permissions/" class="">App permissions</a>
+</li>
+          
+<li>
+    <a href="../../../basics/uri-schemes/" class="">URI schemes</a>
+</li>
+          
+<li>
+    <a href="../../../basics/rate-limits/" class="">Rate limits</a>
+</li>
+          
+<li>
+  <span>API Change Log</span>
+  <!--<a href="#" class="">API Change Log</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/changelog/" class="">Preface</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_47/" class="">v.1.0.47 (May 2021)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_46/" class="">v.1.0.46 (Feb 2021)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_45/" class="">v.1.0.45 (Nov 2020)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_44/" class="">v.1.0.44 (Aug 2020)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_43/" class="">v.1.0.43 (May 2020)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_42/" class="">v.1.0.42 (Feb 2020)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_41/" class="">v.1.0.41 (Dec 2019)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_40/" class="">v.1.0.40 (Aug 2019)</a>
+</li>
+    
+<li>
+    <a href="../../../basics/changelog/1_0_39/" class="">v.1.0.39 (May 2019)</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+    <a href="../../../basics/api-index/" class="">API Quick Reference</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-applications" class="toplevel nav-item" data-toggle="collapse" data-target="#applications">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Applications</span>
+        <ul id="applications" class="collapse">
+          
+<li>
+  <span>Development Lifecycle</span>
+  <!--<a href="#" class="">Development Lifecycle</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/your-first-steps/" class="">Tips for your first app</a>
+</li>
+    
+<li>
+    <a href="../../../basics/create-app/" class="">Create an application</a>
+</li>
+    
+<li>
+    <a href="../../../basics/sandbox/" class="">Develop in sandbox</a>
+</li>
+    
+<li>
+    <a href="../../../basics/production/" class="">Graduate to production</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>App Promotion</span>
+  <!--<a href="#" class="">App Promotion</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/app-gallery/" class="">Submit to the App Gallery</a>
+</li>
+    
+<li>
+    <a href="../../../basics/update-profile/" class="">Update a Profile</a>
+</li>
+    
+<li>
+    <a href="../../../basics/app-gallery-checklist/" class="">Checklist and Best Practices</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Application Management</span>
+  <!--<a href="#" class="">Application Management</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/lead-forms/" class="">Using Lead Forms</a>
+</li>
+    
+<li>
+    <a href="../../../basics/install-app-button/" class="">Install App Buttons</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Partner Ecosystem</span>
+  <!--<a href="#" class="">Partner Ecosystem</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/partner-compatibility/" class="">Overview</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/segregated-environments/" class="">Technical Requirements</a>
+</li>
+    
+<li>
+  <span>Brand Guidelines</span>
+  <!--<a href="#" class="">Brand Guidelines</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../basics/partners/att/" class="">AT&T Office@Hand</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/aco/" class="">Avaya Cloud Office</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/bt/" class="">BT Cloud Work</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/alcatel/" class="">Rainbow Office</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/telus/" class="">TELUS Business Connect</a>
+</li>
+    
+<li>
+    <a href="../../../basics/partners/atos/" class="">Unify Office</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-account" class="toplevel nav-item" data-toggle="collapse" data-target="#account">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Account</span>
+        <ul id="account" class="collapse">
+          
+<li>
+    <a href="../../../account/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../../account/extensions/" class="">Users and Extensions</a>
+</li>
+          
+<li>
+    <a href="../../../account/phone-numbers/" class="">Phone Numbers</a>
+</li>
+          
+<li>
+    <a href="../../../account/call-forwarding-flipping/" class="">Call Forwarding/Flipping</a>
+</li>
+          
+<li>
+    <a href="../../../account/feature-flags/" class="">User Feature Flags</a>
+</li>
+          
+<li>
+    <a href="../../../account/custom-fields/" class="">Custom Fields</a>
+</li>
+          
+<li>
+    <a href="../../../account/presence/" class="">Presence</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-authentication" class="toplevel nav-item" data-toggle="collapse" data-target="#authentication">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Authentication</span>
+        <ul id="authentication" class="collapse">
+          
+<li>
+    <a href="../../../authentication/" class="">Overview</a>
+</li>
+          
+<li>
+    <a href="../../../authentication/quick-start/" class="">Getting Started</a>
+</li>
+          
+<li>
+  <span>Developer Manual</span>
+  <!--<a href="#" class="">Developer Manual</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../authentication/auth-code-flow/" class="">Auth code flow</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/auth-code-pkce-flow/" class="">Auth code flow with PKCE</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/password-flow/" class="">Password flow</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/implicit-grant-flow/" class="">Implicit grant flow</a>
+</li>
+    
+<li>
+    <a href="../../../authentication/tokens/" class="">Using auth tokens</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-address-book" class="toplevel nav-item" data-toggle="collapse" data-target="#address-book">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Address Book</span>
+        <ul id="address-book" class="collapse">
+          
+<li>
+    <a href="../../../address-book/" class="">Overview</a>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-notifications-and-events" class="toplevel nav-item" data-toggle="collapse" data-target="#notifications-and-events">
+	<!--<i class="nav-item-icon"></i>-->
+        <span class="section-title">Notifications and Events</span>
+        <ul id="notifications-and-events" class="collapse">
+          
+<li>
+    <a href="../../../notifications/" class="">Overview</a>
+</li>
+          
+<li>
+  <span>Push Notifications</span>
+  <!--<a href="#" class="">Push Notifications</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../notifications/push-notifications/quick-start/" class="">Getting Started</a>
+</li>
+    
+<li>
+    <a href="../../../notifications/push-notifications/pubnub/" class="">Using PubNub</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>WebHooks</span>
+  <!--<a href="#" class="">WebHooks</a>-->
+  <ul>
+    
+<li>
+    <a href="../../../notifications/webhooks/quick-start/" class="">Getting Started</a>
+</li>
+    
+<li>
+    <a href="../../../notifications/webhooks/creating-webhooks/" class="">Creating Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../../notifications/webhooks/receiving/" class="">Receiving Webhooks</a>
+</li>
+    
+<li>
+    <a href="../../../notifications/webhooks/configuring-tls-ssl/" class="">Configuring TLS/SSL</a>
+</li>
+  </ul>
+</li>
+          
+<li>
+  <span>Sample Applications</span>
+  <!--<a href="#" class="">Sample Applications</a>-->
+  <ul>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/" class="">Create SMS Push Notification</a>
+</li>
+    
+<li>
+    <a href="https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/" class="">A2P SMS Messaging</a>
+</li>
+  </ul>
+</li>
+        </ul>
+      </li>
+      <li id="nav-item-downloads-and-sdks" class="toplevel nav-item">
+        <a class="section-title nav-link" href="../../../sdks/">Downloads and SDKs</a>
+      </li>
+      <li id="nav-item-ringcentral-labs" class="toplevel nav-item">
+        <a class="section-title nav-link" href="../../../labs/">RingCentral Labs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div><div id="main" class="col" role="main">
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    
+    <li class="breadcrumb-item">Primary</li>
+    
+    
+    
+    <li class="breadcrumb-item">Voice</li>
+    
+    
+    
+    <li class="breadcrumb-item">Call Logs</li>
+    
+    
+    <li class="breadcrumb-item active" aria-current="page">Access Control</li>
+  </ol>
+</nav>
+
+
+<h1 id="call-log-access-control">Call Log Access Control</h1>
+<p>Like every other RingCentral API resource, the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html">Call Log</a> API resource has specific limitiations in place for accessing Call Log data via our API.</p>
+<p>Developers can easily determine the Permissions available for an access token by viewing the <code>scope</code> property while requesting an <code>access_token</code> from RingCentral OAuth endpoints (this works for either <a href="">ROPC</a> or <a href="">Authorization Flow</a>). The <code>scope</code> property will be a string which can be split on whitespace " ". The following example shows how to use the <a href="https://github.com/ringcentral/ringcentral-js">RingCentral JS SDK</a> to inspect for the required API Permissions prior to executing these requests (on an ROPC <code>Server-Only NO UI</code> Platform Type application).:</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">JavaScript</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">RingCentral</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@ringcentral/sdk&#39;</span><span class="p">).</span><span class="nx">SDK</span>
+<span class="kd">var</span> <span class="nx">rcsdk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">RingCentral</span><span class="p">({</span>
+  <span class="nx">server</span><span class="o">:</span> <span class="s1">&#39;https://platform.devtest.ringcentral.com&#39;</span> <span class="c1">// for Production: https://platform.ringcentral.com</span>
+  <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;{{REPLACE_WITH_YOUR_APP_KEY}}&#39;</span><span class="p">,</span>
+  <span class="nx">clientSecret</span><span class="o">:</span> <span class="s1">&#39;{{REPLACE_WITH_YOUR_APP_SECRET}}&#39;</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">platform</span> <span class="o">=</span> <span class="nx">rcsdk</span><span class="p">.</span><span class="nx">platform</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">permissions</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nx">platform</span><span class="p">.</span><span class="nx">login</span><span class="p">({</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;{{REPLACE_WITH_YOUR_USERNAME}}&#39;</span><span class="p">,</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;{{REPLACE_WITH_YOUR_PASSWORD}}&#39;</span><span class="p">,</span>
+  <span class="nx">extension</span><span class="o">:</span> <span class="s1">&#39;{{OPTIONAL_REPLACE_WITH_YOUR_EXTENSION}}&#39;</span>
+<span class="p">})</span>
+
+<span class="nx">platform</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">platform</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">loginSuccess</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="c1">// Sanity check</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">responseJson</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;scope&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">permissions</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">scope</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">permissions</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;ReadCallLog&#39;</span> <span class="o">&gt;=</span> <span class="mf">0</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/restapi/v1.0/account/~/call-log&#39;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">jsonObj</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Account level call log data&#39;</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonObj</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="api-permissions">API Permissions</h2>
+<p>There are two main API permissions developers will need to access Call Log data, <code>ReadCallLog</code> and <code>ReadCallRecording</code>.</p>
+<p>You may need to configure your application in the <a href="https://developer.ringcentral.com">RingCentral Developer Portal</a> to enable your app/integration to use the Call Log API resources. Always refer to the <a href="https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html">RingCentral API Developer Guide</a> for the most up-to-date information on accessing the Call Log API resource.</p>
+<p>The following table provides a quick outline about what API permissions the API Keys your application/integration must have associated in order to access each major category of data which Call Log provides.</p>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Category</th>
+<th scope="col">Method</th>
+<th scope="col">Requires <code>ReadCallLog</code></th>
+<th scope="col">Requires <code>ReadCallRecording</code></th>
+<th scope="col">Route</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active Calls</td>
+<td>GET</td>
+<td>YES</td>
+<td>NO</td>
+<td>/v1.0/account/{accountId}/extension/{extensionId]/active-calls</td>
+</tr>
+<tr>
+<td>Account List of Call Logs</td>
+<td>GET</td>
+<td>YES</td>
+<td>NO</td>
+<td>/v1.0/account/{accountId}/call-log</td>
+</tr>
+<tr>
+<td>Extension List of Call Logs</td>
+<td>GET</td>
+<td>YES</td>
+<td>NO</td>
+<td>/v1.0/account/{accountId}/extension/{extensionId}/call-log</td>
+</tr>
+<tr>
+<td>Call Recording Meta Data</td>
+<td>GET</td>
+<td>YES</td>
+<td>YES</td>
+<td>/v1.0/account/{accountId}/recording/{recordingId}</td>
+</tr>
+<tr>
+<td>Call Recording Content Data</td>
+<td>GET</td>
+<td>NO</td>
+<td>YES</td>
+<td>/v1.0/account/{accountId}/recording/{recordingId}/content</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-permission-errors">Common Permission Errors</h2>
+<p>If you do not have <code>ReadCallLog</code> API Permission set on an application which is submitting request which require this permission, you will receive the following HTTP 403 error response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;errorCode&quot;</span><span class="p">:</span> <span class="s2">&quot;InsufficientPermissions&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;In order to call this API endpoint, application needs to have [ReadCallLog] permission&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;errorCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CMN-401&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;In order to call this API endpoint, application needs to have [ReadCallLog] permission&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;permissionName&quot;</span><span class="p">:</span> <span class="s2">&quot;ReadCallLog&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;permissionName&quot;</span><span class="p">:</span> <span class="s2">&quot;ReadCallLog&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If you do not have <code>ReadCallRecording</code> API Permission set on an application which is submitting a request which require this permission, you will receive the following HTTP 403 error response</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;errorCode&quot;</span><span class="p">:</span> <span class="s2">&quot;InsufficientPermissions&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;In order to call this API endpoint, application needs to have [ReadCallRecording] permission&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;errorCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CMN-401&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;In order to call this API endpoint, application needs to have [ReadCallRecording] permission&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;permissionName&quot;</span><span class="p">:</span> <span class="s2">&quot;ReadCallRecording&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;permissionName&quot;</span><span class="p">:</span> <span class="s2">&quot;ReadCallRecording&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+</div>
+      <div id="sidebar-toc" class="sidebar col-md-3">
+        <div class="repo">
+              <a class="nav-link" href="https://github.com/ringcentral/ringcentral-api-docs/tree/master/docs/voice/call-log/access.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+        </div>
+
+        
+        <div id="rating" class="nav-link">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        
+
+	<nav id="toc" data-toggle="toc" class="sticky-top sticky-offset"></nav>
+      </div>
+
+    </div>
+    </div><footer class="col-md-12">
+  <nav class="container">
+    <div class="row row-1">
+      <div class="col-6">
+	<a class="brand nav-link" href="http://developers.ringcentral.com/">Back to main site</a>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li class="nav-item"><a class="nav-link" href="http://www.ringcentral.com/legal.html" rel="nofollow">Legal</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://www.ringcentral.com/legal/privacy-notice.html" rel="nofollow">Privacy Notice</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://devcommunity.ringcentral.com/" rel="nofollow">Community</a></li>
+	  <li class="nav-item"><a class="nav-link" href="https://medium.com/ringcentral-developers" rel="nofollow">Blog</a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+	<p>&copy;1999-2020 RingCentral, Inc. All rights reserved.</p>
+      </div>
+      <div class="col-6">
+	<ul class="nav flex-row ml-md-auto d-none d-md-flex pull-right">
+	  <li><a class="nav-link footer-image-link footer-image-link-facebook" href="http://www.facebook.com/ringcentral">
+	      <i class="fa fa-facebook"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-twitter" href="http://twitter.com/ringcentraldevs">
+	      <i class="fa fa-twitter"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-linkedin" href="http://www.linkedin.com/company/ringcentral">
+	      <i class="fa fa-linkedin"></i></a></li>
+	  <li><a class="nav-link footer-image-link footer-image-link-youtube" href="http://www.youtube.com/ringcentral">
+	      <i class="fa fa-youtube"></i></a></li>
+	</ul>
+      </div>
+  </nav>
+</footer>
+<script type="text/javascript" src="../../../js/rc.js"></script>
+    <script>
+      var base_url = "../../..",
+          shortcuts = ["foo"];
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js" defer></script>
+    <script src="../../../js/base.js" defer></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="h4 modal-title">Keyboard Shortcuts</p>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </body>
+</html>
