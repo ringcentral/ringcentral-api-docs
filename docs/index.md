@@ -5,6 +5,8 @@ no_breadcrumb:true
 
 # RingCentral MVP™ Developer Guide
 
+[Broken link 1](https://foobar.org/12345)
+
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Let's build your first RingCentral app!</h3>
   <p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes using one of our Quick Start Guides.</p>

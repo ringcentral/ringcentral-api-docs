@@ -28,7 +28,7 @@ RingCentral production servers are accessible on `https://platform.ringcentral.c
 
 All of RingCentral's  API resources are organized in a hierarchical manner. All resource paths start with `/restapi` followed by the version number of the API you are accessing. Let's consider a typical API resource URI:
 
-<code>https://platform.ringcentral.com/restapi/v1.0/account/<strong>159048008</strong>/extension/<strong>171857008</strong>/call-log?dateFrom=2012-08-26</code>
+`https://platform.ringcentral.com/restapi/v1.0/account/**159048008**/extension/**171857008**/call-log?dateFrom=2012-08-26`
 
 Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are `accountId` and `extensionId`. As you might expect, they identify the account and extension of a RingCentral user, accordingly, and are bolded in the example above. 
 

@@ -12,7 +12,7 @@ If you do not already have a call recording created in your Sandbox account, you
 For simplicity, we are going to step you through using the RingCentral Soft Phone (in Direct Dial Mode) to create an outbound call, and record that call.
 
 1. Open the RingCentral Soft Phone on your Desktop
-2. Set your RingCentral Soft Phone in Sandbox Mode by clicking Cntrl+F2 (for Mac Fn+Command+F2). Select 'Sandbox' in the pop-up menu and sign in with your sandbox credentials. For details please refer to [our guide on using soft phones in sandbox](../../../../basics/your-rc-phone).
+2. Set your RingCentral Soft Phone in Sandbox Mode by clicking Cntrl+F2 (for Mac Fn+Command+F2). Select 'Sandbox' in the pop-up menu and sign in with your sandbox credentials. For details please refer to [our guide on using soft phones in sandbox](../../../basics/your-rc-phone).
 3. Click the Settings Icon, and choose `Calling` from the menu
 4. In the `Calling Mode` section, set the value to `Direct Dial`
 5. Close the settings dialog window

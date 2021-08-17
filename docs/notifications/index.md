@@ -4,12 +4,12 @@
   <h3 class="display-5">Getting Started with the Subscriptions API</h3>
   <p class="lead"></p>
   <p>We invite all developers to try out our Subscriptions API by writing a simple app to create a webhook subscription when an SMS is received at your phone number. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/webhook/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/webhook/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/webhook/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/webhook/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/webhook/java/" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/webhook/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
+  <a href="webhooks/quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="webhooks/quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="webhooks/quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="webhooks/quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="webhooks/quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="webhooks/quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
 ## What are events, notifications and subscriptions?
@@ -26,7 +26,7 @@
 
 Webhooks and subscriptions in general are created exclusively via the Subscription API. There is no web interface or developer console for creating/registering webhooks.
 
-* [See how to create a webhook using the Subscription API](./manual/webhooks/)
+* [See how to create a webhook using the Subscription API](./webhooks/creating-webhooks/)
 
 ## When should I use a webhook vs PubNub?
 
@@ -38,8 +38,8 @@ RingCentral supports two primary means for delivering events/notifications: via 
 * Webhooks can be implemented at no additional cost, as PubNub is a service independent from RingCentral.
 
 
-* [Learn about Webhooks](./manual/webhooks)
-* [Learn about PubNub notifications](./manual/pubnub/)
+* [Learn about webhooks](./webhooks/creating-webhooks/)
+* [Learn about PubNub notifications](./push-notifications/pubnub/)
 
 ## What events/notifications does RingCentral support?
 

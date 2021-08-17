@@ -1,12 +1,12 @@
 # Company Answering Rules
 
-Company Answering Rules can be used to create and manage the logic for routing calls through IVR menus, as well as routing calls to extensions that not directly associated with an individual user. For example, the following are all extension types for which Company Answering Rules would be appropriate:
+Company Answering Rules can be used to create and manage the logic for routing calls through IVR menus, as well as routing calls to extensions that are not directly associated with an individual user. For example, the following are all extension types for which Company Answering Rules would be appropriate:
 
 * Call Queues
 * Department Groups
 * IVR Menu Extensions
 
-If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](../answering-rules/).
+If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](../../../voice/call-routing/manual/answering-rules/).
 
 ## Creating a Company Custom Answering Rule
 

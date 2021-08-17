@@ -10,7 +10,7 @@ The doc outlines incremental App requirements to enable for AT&T Office@Hand. It
 
 AT&T Office@Hand operates within a completed segregated environment within RingCentral. As a result, all API calls made on behalf of AT&T Office@Hand customers must be directed to a different URL. 
 
-Developers must adhere to [additional technical requirements](../partners/segregated-environments/) in order to be compatible with AT&T. Furthermore, developers will be required to demonstrate compliance in order to be listed in the [AT&T Office@Hand app gallery](https://ringcentral.com/apps/office-at-hand/). 
+Developers must adhere to [additional technical requirements](../segregated-environments/) in order to be compatible with AT&T. Furthermore, developers will be required to demonstrate compliance in order to be listed in the [AT&T Office@Hand app gallery](https://ringcentral.com/apps/office-at-hand/). 
 
 ### 2. Partner branding and logo
 
