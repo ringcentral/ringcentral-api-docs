@@ -54,10 +54,6 @@ There are three ways to get started:
 
 3. Dive into the [sample application](./call-performance/sample-app/) and use that as a springboard for your custom application.
 
-### What can you build with RingCentral Call Performance API?
-
-You can build performance or analytics reports, and dashboards for all your call related metrics. For more information about the data and metrics, please refer to this [PDF guide.](https://drive.google.com/file/d/1cv07YoBcQm9eboRsihxzpxn0eGPuQ4nW/view)
-
 ### Is there an SDK for my favorite programming language?
 
 Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../sdks). 
