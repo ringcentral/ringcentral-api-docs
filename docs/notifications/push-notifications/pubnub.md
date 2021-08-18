@@ -28,7 +28,7 @@ To use RingCentral Push Notifications the client application can create a notifi
 
 ### Authorization
 
-When a client creates a subscription it must be authenticated and authorized to use the RingCentral API. It includes, at least, application authentication. Certain event filter requires the client to be authorized to access specific extension data, so the client needs to pass a valid access token in the request. For more details please refer to the [Authentication](../../authentication/oauth) section.
+When a client creates a subscription it must be authenticated and authorized to use the RingCentral API. It includes, at least, application authentication. Certain event filter requires the client to be authorized to access specific extension data, so the client needs to pass a valid access token in the request. For more details please refer to the [Authentication](../../../authentication/auth-code-flow) section.
 
 ### Subscription Creation
 

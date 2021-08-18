@@ -5,6 +5,8 @@ no_breadcrumb:true
 
 # RingCentral MVP™ Developer Guide
 
+[Broken link 1](https://foobar.org/12345)
+
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Let's build your first RingCentral app!</h3>
   <p class="lead">New to RingCentral? Let us help you build your first RingCentral application in minutes using one of our Quick Start Guides.</p>
@@ -82,8 +84,8 @@ no_breadcrumb:true
       <h6 class="h6 card-subtitle mb-2 text-muted">Subscription API</h6>
       <p class="card-text">Receive notifications when events of interest occur within your account to create more responsive applications.</p>
       <ul>
-      <li><a href="./notifications/manual/webhooks/" class="card-link">Webhooks</a></li>
-      <li><a href="./notifications/manual/pubnub/" class="card-link">Mobile Push Notifications</a></li>
+      <li><a href="./notifications/webhooks/quick-start/" class="card-link">Webhooks</a></li>
+      <li><a href="./notifications/push-notifications/quick-start/" class="card-link">Mobile Push Notifications</a></li>
       </ul>
     </div>
   </div>

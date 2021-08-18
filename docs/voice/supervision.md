@@ -39,7 +39,7 @@ Once a Call Monitoring group has been configured, developers can use Telephony S
 
 ## Subscribing to Telephony Session Events
 
-A recommended way to receive real-time events for calls is to use [Telephony Session Notifications](telephony-session-notifications). You will need the call event's `telephonySessionId` to call the Supervision API.
+A recommended way to receive real-time events for calls is to use [Telephony Session Notifications](../telephony-session-notifications/). You will need the call event's `telephonySessionId` to call the Supervision API.
 
 You can subscribe at the account level for all extensions or specific extensions.
 

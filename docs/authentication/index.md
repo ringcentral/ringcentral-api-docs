@@ -4,12 +4,12 @@
   <h3 class="display-5">Getting Started with OAuth</h3>
   <p class="lead">RingCentral supports a number of different authentication modes to satisfy the needs of the many different types of applications built on top of our platform, from mobile to desktop, from public to private, from bots to webapps.</p>
   <p>The authentication mode we recommend developers implement is OAuth, a 3-legged auth flow that grants applications access to a user's account without exchanging a username/password with a 3rd party. The guides below will walk you through the creation of a simple OAuth flow.</p>
-  <a href="quick-start/authorization-flow/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/authorization-flow/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/authorization-flow/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/authorization-flow/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/authorization-flow/java/" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/authorization-flow/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
+  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
 !!! info "First time building an app?"

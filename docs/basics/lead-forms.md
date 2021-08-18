@@ -1,5 +1,7 @@
 # Using Lead Forms
 
+!!! info "Lead forms are available to [Premier Partners](https://www.ringcentral.com/partner/isv.html) only"
+    
 The RingCentral App Gallery is one of RingCentral's greatest assets for our developer and partner communities as it attracts thousands and thousands of potential customers from across our diverse user base, and the Internet searching for great solutions for their business. To help our customers tap into this valuable channel of business leads, we allow customers to setup a "Contact Me" button and form on their app's App Gallery profile page.
 
 <img src="../../img/lead-form-gallery.png" class="img-fluid">

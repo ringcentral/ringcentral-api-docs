@@ -48,7 +48,7 @@ SMS messages can be sent to or received from the handsets operated by most mobil
 
 ## Sending an SMS on Behalf of a Call Queue
 
-Sending SMS messages on behalf of a [call queue](../../../voice/call-queues/) (`Department` type extension) is allowed. To send an SMS message from the Department direct phone number, the user should be logged in as the department manager (with department credentials). When requesting a phone number list for a Department extension type, SmsSender flag set for department numbers is returned.
+Sending SMS messages on behalf of a [call queue](../../../voice/call-routing/manual/call-queues/) (`Department` type extension) is allowed. To send an SMS message from the Department direct phone number, the user should be logged in as the department manager (with department credentials). When requesting a phone number list for a Department extension type, SmsSender flag set for department numbers is returned.
 
 ## Sending an SMS to Disabled and Frozen Extensions
 

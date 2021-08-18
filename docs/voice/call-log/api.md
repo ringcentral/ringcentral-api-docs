@@ -190,5 +190,5 @@ Note: The following response data is for the exact same type of Simple Call Log 
 
 ## Batch Call Log Records
 
-Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](../../basics/uris.md#batch-requests).
+Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](https://developers.ringcentral.com/api-reference/Batch-Requests).
 
