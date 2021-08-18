@@ -52,7 +52,7 @@ There are three ways to get started:
 
 2. Read the [API Reference](./call-performance/api-reference/) to understand the various APIs' definition, HTTP Request and Response objects.
 
-3. Dive into the [sample application](./call-performance/sample-app/) and use that as a springboard for your custom application.
+3. Dive into the [sample application](https://github.com/ringcentral/call-performance-api-demo) and use that as a springboard for your custom application.
 
 ### Is there an SDK for my favorite programming language?
 

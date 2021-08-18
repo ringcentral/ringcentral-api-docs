@@ -19,7 +19,7 @@ This API belongs to "Light" API [Rate Limit Group](https://developers.ringcentra
 
 ### Error Handling
 
-We recommend writing your application code that tests for all use cases and gracefully handles all possible API exceptions and errors. For more information refer to the [troubleshooting guide](../troubleshooting/)
+We recommend writing your application code that tests for all use cases and gracefully handles all possible API exceptions and errors. For more information refer to the [troubleshooting guide](../../troubleshooting/)
 
 <div id="swagger-ui"></div>
 <script>

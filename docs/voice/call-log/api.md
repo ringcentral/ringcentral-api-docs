@@ -12,7 +12,7 @@ Currently there are three major data types which are contained within the Call L
     * Very useful for call recording dashboards
     * Provides the `contentUri` property which points to the actual recording
 * Call Recording Content
-    * Plug the contentUri into an [HTML5 Audio element]() to quickly make a recording player
+    * Plug the contentUri into an HTML5 Audio element to quickly make a recording player
 
 !!! note "Active Calls"
     A close cousin of the Call Log API is the Active Call API which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API. 

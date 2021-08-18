@@ -10,8 +10,6 @@ Following changes have been made to the current API Endpoint :
 
 ```https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/analytics/performance/calls/```
 
-!!! info "The '->' symbol used below signifies a nested JSON structure. Please refer to the [API Reference]('./api-reference/') for more details."
-
 #### PerformanceCallsFilters -> CallResponseType
 
 **Data Additions**
@@ -29,7 +27,7 @@ Following changes have been made to the current API Endpoint :
 * PerformanceCallsCountersResponseOptions -> callsByResponseType
 * PerformanceCallsTimersResponseOptions -> callsByResponseType
     1. QueueCalls: Helps retrieve number of queue calls answered by users & time spent on them.
-    2. TransferredCalls: Helps retrieve number of transferred calls answered by Groupby type & time spent on them.         
+    2. TransferredCalls: Helps retrieve number of transferred calls answered by Groupby type & time spent on them.
 
 #### PerformanceCallsDataOptions -> 
 
