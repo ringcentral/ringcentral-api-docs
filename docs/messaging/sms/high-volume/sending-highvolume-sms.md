@@ -11,7 +11,7 @@ Simple request to broadcast the same message to multiple recipients
 === "HTTP"
 
     ```http
-    POST /restapi/v1.0/account/~/a2p-sms/batch
+    POST /restapi/v1.0/account/~/a2p-sms/batches
     Content-Type: application/json
     Accept: application/json
 
@@ -45,7 +45,7 @@ Simple request to broadcast the same message to multiple recipients
             { to: ["+12125550100"] }
           ]
         }
-        var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+        var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
         var jsonObj = await resp.json()
         console.log(jsonObj)
       }catch(e){
@@ -70,7 +70,7 @@ Simple request to broadcast the same message to multiple recipients
         { "to": ["+12125550100"] }
       ]
     }
-  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
     print resp.text()
     ```
 
@@ -90,7 +90,7 @@ Simple request to broadcast the same message to multiple recipients
         array ("to" => array ("+14155550100")),
         array ("to" => array ("+12125550100"))
     ));
-  	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch', $requestBody);
+  	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batches', $requestBody);
     print_r ($resp->json());
     ?>
     ```    
@@ -178,7 +178,7 @@ Simple request to broadcast the same message to multiple recipients
     rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
   	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-  	resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
+  	resp = rc.post('/restapi/v1.0/account/~/a2p-sms/batches', payload: {
   	    from: "+16505550100",
         text: "Hello Team",
   	    messages: [
@@ -220,7 +220,7 @@ Simple request to send customized messages to multiple recipients
 
 === "HTTP"
     ```http
-    POST /restapi/v1.0/account/~/a2p-sms/batch
+    POST /restapi/v1.0/account/~/a2p-sms/batches
     Content-Type: application/json
     Accept: application/json
 
@@ -241,7 +241,7 @@ Simple request to send customized messages to multiple recipients
 
 === "HTTP (example 2)"
     ```http
-    POST /restapi/v1.0/account/~/a2p-sms/batch
+    POST /restapi/v1.0/account/~/a2p-sms/batches
     Content-Type: application/json
     Accept: application/json
 
@@ -283,7 +283,7 @@ Simple request to send customized messages to multiple recipients
             { to: ["+12125550100"], text: "Hello Bob" }
           ]
         }
-        var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+        var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
         var jsonObj = await resp.json()
         console.log(jsonObj)
       }catch(e){
@@ -307,7 +307,7 @@ Simple request to send customized messages to multiple recipients
         { "to": ["+12125550100"], "text": "Hello Bob" }
       ]
     }
-  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batch', requestBody)
+  	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
     print resp.text()
     ```
 
@@ -326,7 +326,7 @@ Simple request to send customized messages to multiple recipients
         array ("text" => "Hello Alice", "to" => array ("+14155550100")),
         array ("text" => "Hello Bob", "to" => array ("+12125550100"))
     ));
-  	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batch', $requestBody);
+  	$resp = $platform->post('/restapi/v1.0/account/~/a2p-sms/batches', $requestBody);
     print_r ($resp->json());
     ?>
     ```
@@ -418,7 +418,7 @@ Simple request to send customized messages to multiple recipients
     rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
   	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
 
-  	resp = rc.post('/restapi/v1.0/account/~/a2p-sms/batch', payload: {
+  	resp = rc.post('/restapi/v1.0/account/~/a2p-sms/batches', payload: {
   	    from: "+16505550100",
   	    messages: [
           { text: "Hello Alice", to: ["+14155550100"] },
