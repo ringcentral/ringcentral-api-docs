@@ -20,7 +20,7 @@ no_breadcrumb:true
 
 The Analytics API is currently in a private beta. We have made the documentation available to help developers determine for themselves whether this API would be of value to them. To request access to the beta so that you can use this API, click the button below. 
 
-<a class="btn btn-primary" href="">Request access to the Analytics API Beta &raquo;</a>
+<a class="btn btn-primary" href="https://forms.gle/hEBVJU6Y8nqRy2y16">Request access to the Analytics API Beta &raquo;</a>
 
 !!! info "Important notes about the beta"
     The Analytics API is only available in our production enviornment, and cannot yet be called in our sandbox environment where most development occurs. Therefore you will need production credentials to use this API. To obtain production credentials, please [submit a help ticket](https://developers.ringcentral.com/support/create-case) to request your application to be graduated to production.
