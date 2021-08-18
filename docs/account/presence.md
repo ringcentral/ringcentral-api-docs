@@ -29,7 +29,8 @@ Below is a sample response from the Presence API to illustrate the visibility it
 ## Sample Code to Get Started with Presence
 
 === "JavaScript"
-	```javascript
+
+```js
 	const RC = require('@ringcentral/sdk').SDK
 
 	var rcsdk = new RC({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
@@ -54,10 +55,11 @@ Below is a sample response from the Presence API to illustrate the visibility it
       console.log(e.message)
     }
   }
-	```
+```
 
 === "Python"
-	```python
+
+```python
 	from ringcentral import SDK
 
 	rcsdk = SDK( "client_id", "client_secret", "server_url")
@@ -70,10 +72,11 @@ Below is a sample response from the Presence API to illustrate the visibility it
 	    })
 	for record in resp.json().records:
 	    print record.userStatus
-	```
+```
 
 === "PHP"
-	```php
+	
+```php
 	<?php
 	require('vendor/autoload.php');
 
@@ -88,10 +91,11 @@ Below is a sample response from the Presence API to illustrate the visibility it
 	    ));
 	foreach ($resp->json()->records as $record)
 	    print_r ($record->userStatus . "\n");
-	```
+```
 
 === "C#"
-	```c#
+
+```c#
 	using System;
 	using System.Threading.Tasks;
 	using RingCentral;
@@ -122,10 +126,11 @@ Below is a sample response from the Presence API to illustrate the visibility it
       }
 	  }
 	}
-	```
+```
 
 === "Java"
-	```java
+
+```java
 	import com.ringcentral.*;
 	import com.ringcentral.definitions.*;
 
@@ -151,10 +156,11 @@ Below is a sample response from the Presence API to illustrate the visibility it
         System.out.println(record.userStatus);
 	  }
 	}
-	```
+```
 
 === "Ruby"
-	```ruby
+
+```ruby
 	require 'ringcentral'
 
 	rc = RingCentral.new("client_id", "client_secret", "server_url")
@@ -168,7 +174,7 @@ Below is a sample response from the Presence API to illustrate the visibility it
 	for record in resp.body['records'] do
 	    puts record.userStatus
 	end
-	```
+```
 
 ## Required Permissions
 
