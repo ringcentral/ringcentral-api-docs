@@ -11,7 +11,7 @@ jobs:
       with:
         ref: 'gh-pages'
     - name: Check links
-      uses: byrnereese/github-action-mkdocs-link-check@master
+      uses: byrnereese/github-action-mkdocs-link-check@main
       with:
         file-extension: '.md'
         use-verbose-mode: 'yes'
