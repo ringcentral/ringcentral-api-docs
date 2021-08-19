@@ -11,11 +11,13 @@ jobs:
       with:
         ref: 'gh-pages'
     - name: Check links
-      uses: lycheeverse/lychee-action@v1.0.8
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
+      uses: byrnereese/github-action-mkdocs-link-check@v0.9
       with:
-        args: --verbose --exclude 'https?://[^\.]*\.ngrok\.io/.*' --exclude 'https?://platform.*' --no-progress **/*.md **/*.html
+        file-extension: '.md'
+        use-verbose-mode: 'yes'
+        folder-path: 'docs'
+        synchronous: 'yes'
+        local-only: 'yes'
 
 #    - uses: gaurav-nelson/github-action-markdown-link-check@v1
 #      with:
