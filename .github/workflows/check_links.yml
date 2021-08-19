@@ -15,6 +15,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
     - name: Check links
       uses: byrnereese/github-action-mkdocs-link-check@main
       with:
