@@ -1,4 +1,4 @@
-name: Check Links
+name: Check Links (test)
 on: workflow_dispatch
 
 jobs:
