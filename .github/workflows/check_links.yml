@@ -19,7 +19,7 @@ jobs:
       uses: byrnereese/github-action-mkdocs-link-check@main
       with:
         file-extension: '.md'
-        use-verbose-mode: 'yes'
+        verbose-mode: 'yes'
         folder-path: 'docs'
         synchronous: 'yes'
         local-only: 'yes'
