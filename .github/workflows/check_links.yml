@@ -1,5 +1,8 @@
 name: Check Links
-on: workflow_dispatch
+on:
+  push:
+    branches: master
+#on: workflow_dispatch
 
 jobs:
   markdown-link-check:
