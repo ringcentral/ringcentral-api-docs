@@ -7,13 +7,8 @@ no_breadcrumb:true
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting Started with Analytics</h3>
   <p class="lead">The RingCentral Analytics API gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
-  <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-<!--  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>-->
+  <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a Quick Start : in any of the following languages:</p>
+  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
 ## Requesting access to the beta
@@ -25,11 +20,9 @@ The Analytics API is currently in a private beta. We have made the documentation
 !!! info "Important notes about the beta"
     The Analytics API is only available in our production enviornment, and cannot yet be called in our sandbox environment where most development occurs. Therefore you will need production credentials to use this API. To obtain production credentials, please [submit a help ticket](https://developers.ringcentral.com/support/create-case) to request your application to be graduated to production.
 
-## Learn more about the Analytics API
+## Learn more about the Call Performance Analytics API
 
 <iframe src="https://player.vimeo.com/video/563903824?color=ff8800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
-<iframe src="https://player.vimeo.com/video/564291528?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen><title="Intro_Video"></iframe>
 
 ## Access metrics to measure your team's performance
 
@@ -40,7 +33,7 @@ Call Performance Reports is a historical call analytics offering for RingCentral
 
 The above metrics can be broken down even further for more detailed analyis. 
 
-Learn more about [Call Performance Reports &raquo;](./call-performance/)
+Learn more about [Call Performance Data Guide &raquo;](./call-performance/)
 
 ## Frequently Asked Questions
 

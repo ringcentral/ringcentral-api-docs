@@ -1,19 +1,17 @@
 no_breadcrumb:true
 
-# Call Performance Reports
+# Data Guide
 
 ## Overview
 
-Performance Reports is a historical call performance analytics offering for RingCentral Office customers to help managers gain a comprehensive understanding of their team’s performance whether they are set up on call queues, user groups or as individual users.
+This document serves as a data guide that explains the analytics data you can access using the 'Call Performance API' or via the 'Ad-Hoc Report' dashboard.
 
-The new performance reports offers a granular data set about call activities that can be accessed via an ad-hoc reporting tool on Analytics Portal or via a public API.
-
-With new PR, there are two new metrics to assess for users, queues, groups, IVRs and sites.
+Essentially, there are two new metrics to assess for users, queues, groups, IVRs and sites:
 
 1. Calls  - aggregation of calls
 2. Time Spent - aggregation of call durations
 
-These metrics can then be further broken down for more detailed analysis. Available data are calls or time spent by:
+These metrics can then be further broken down for more detailed analysis such as by:
 
 - Origin (internal or external calls)
 - Direction (Inbound or outbound calls)
@@ -25,11 +23,9 @@ These metrics can then be further broken down for more detailed analysis. Availa
 - Company Hours
 - Various date and time ranges
 
-Please refer to the table below for details.
-
 ## Rows/PerformanceCallsGrouping
 
-These are the dimensions to which the scope of the call data to be aggregated will be limited to. In Ad-hoc reporting UI - Table Builder, it is referred to as Rows & in public API, it is GroupBy property within PerformanceCallsGrouping. Users have the following options:
+These are the dimensions to which the scope of the call data to be aggregated will be limited to. This data can be found in either our Ad-hoc reporting UI - Table Builder where it is referred to as "Rows". When accessing via the API, it is referred to as "GroupBy" property within PerformanceCallsGrouping. 
 
 | Rows (UI) | GroupBy (API)	| Description |
 |---|---|---|

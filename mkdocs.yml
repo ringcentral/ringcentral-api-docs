@@ -166,10 +166,11 @@ pages:
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
     - 'Call Performance Reports':
-      - 'Overview': 'analytics/call-performance/index.md'
-      - 'API Reference': 'analytics/call-performance/api-reference.md'
+      - 'Data Guide': 'analytics/call-performance/index.md'
+      - 'API Usage Information': 'analytics/call-performance/api-reference.md'
+      - 'API Reference' : 'analytics/call-performance/swagger-api-doc.md'
       - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
-#      - 'Call Performance API Spec (.yml)': 'analytics/api-spec-july-14.yml'
+#      - 'Call Performance API Spec (.yml)': 'analytics/api-spec-aug-12.yml'
     - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
     - 'Changelog': 'analytics/changelog.md'
 
