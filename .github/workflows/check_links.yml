@@ -1,0 +1,31 @@
+name: Check Links
+on:
+  push:
+    branches: master
+#on: workflow_dispatch
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    environment:
+      name: master
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+#    - name: Set up Python ${{ matrix.python-version }}
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: ${{ matrix.python-version }}
+    - name: Check links
+      uses: byrnereese/github-action-mkdocs-link-check@main
+      with:
+        file-extension: '.md'
+        verbose-mode: 'no'
+        folder-path: 'docs'
+        synchronous: 'yes'
+        local-only: 'yes'
+        recurse: 'yes'
+        excludes: '^(tel|rcmobile):'

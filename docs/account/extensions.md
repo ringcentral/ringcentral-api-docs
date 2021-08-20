@@ -89,7 +89,5 @@ It is also possible to [get the data about a particular extension](https://devel
 
     GET /restapi/v1.0/account/~/extension/~ 
 
-Please refer to [Extension Service Feature Info](https://developers.ringcentral.com/api-docs/latest/RefExtensionInfo.html#ExtensionServiceFeatureInfo) for more details.
-
 !!! info "System Extensions"
     Every RingCentral account has a special system extension. The user of this extension has full administrative rights for the given account. Due to internal reasons, the ID of a system extension is always the same as the ID of account itself.

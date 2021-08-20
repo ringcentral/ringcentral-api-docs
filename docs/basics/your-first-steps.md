@@ -6,7 +6,7 @@ no_breadcrumb:true
   <h3 class="display-5">Ready to build your RingCentral app?</h3>
   <p class="lead">Good work on successfully completing a Quick Start Guide! The guide below is specifically designed for developers who are ready to expand their knowledge of the RingCentral platform by building their next app for the platform.</p>
   <hr class="my-4">
-  <p>New to RingCentral? If you have not completed a RingCentral <a href="../">Quick Start Guide</a>, we recommend you start there. Then return here to begin your journey in building your app.</p>
+  <p>New to RingCentral? If you have not completed a RingCentral <a href="../../">Quick Start Guide</a>, we recommend you start there. Then return here to begin your journey in building your app.</p>
 </div>
 
 ## Setting up your "soft phone"
@@ -48,8 +48,6 @@ This field determines what development features will be made available to your a
 * **Server/Bot** - if you are building an app for Glip, this is the option for you.
 
 * **Server/No UI** - this is the only platform type that allows for password-based authentication.
-
-!!! danger "You cannot edit Platform Type after your app has been created"
 
 [Learn more about platform types in "Creating an Application" &raquo;](../create-app/)
 

@@ -178,6 +178,16 @@ pages:
     - 'RingCentral Video API': 'meetings/video.md'
     - 'Embeddable': 'meetings/embeddable.md'
 
+  - 'Analytics (Beta)':
+    - 'Overview': 'analytics/index.md'
+    - 'Getting Started': 'analytics/quick-start.md'
+    - 'Call Performance Reports':
+      - 'Data Guide': 'analytics/call-performance/index.md'
+      - 'API Reference' : 'analytics/call-performance/api-reference.md'
+      - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
+    - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
+    - 'Changelog': 'analytics/changelog.md'
+
   # ---- SECONDARY APIs ----
 - 'Secondary':
 

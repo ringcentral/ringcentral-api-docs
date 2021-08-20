@@ -12,7 +12,7 @@ Currently there are three major data types which are contained within the Call L
     * Very useful for call recording dashboards
     * Provides the `contentUri` property which points to the actual recording
 * Call Recording Content
-    * Plug the contentUri into an [HTML5 Audio element]() to quickly make a recording player
+    * Plug the contentUri into an HTML5 Audio element to quickly make a recording player
 
 !!! note "Active Calls"
     A close cousin of the Call Log API is the Active Call API which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API. 
@@ -190,5 +190,5 @@ Note: The following response data is for the exact same type of Simple Call Log 
 
 ## Batch Call Log Records
 
-Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](../../basics/uris.md#batch-requests).
+Developers are able to use __batch operations__ to retrieve multiple homogeneous call log records by their key using a single API request. This is not available for call recordings. To better understand how batch operations work with the RingCentral API, read the [Batch Requests section](https://developers.ringcentral.com/api-reference/Batch-Requests).
 

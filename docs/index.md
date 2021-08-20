@@ -3,7 +3,7 @@ no_breadcrumb:true
 
 !!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
 
-# RingCentral Office Developer Guide
+# RingCentral MVP™ Developer Guide
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Let's build your first RingCentral app!</h3>
@@ -94,8 +94,8 @@ no_breadcrumb:true
       <h6 class="h6 card-subtitle mb-2 text-muted">Subscription API</h6>
       <p class="card-text">Receive notifications when events of interest occur within your account to create more responsive applications.</p>
       <ul>
-      <li><a href="./notifications/manual/webhooks/" class="card-link">Webhooks</a></li>
-      <li><a href="./notifications/manual/pubnub/" class="card-link">Mobile Push Notifications</a></li>
+      <li><a href="./notifications/webhooks/quick-start/" class="card-link">Webhooks</a></li>
+      <li><a href="./notifications/push-notifications/quick-start/" class="card-link">Mobile Push Notifications</a></li>
       </ul>
     </div>
   </div>

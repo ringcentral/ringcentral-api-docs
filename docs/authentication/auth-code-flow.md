@@ -107,10 +107,12 @@ The server responds with an access token which can presented in subsequent reque
 	POST /restapi/oauth/token HTTP/1.1 
 	Accept: application/json 
 	Content-Type: application/x-www-form-urlencoded 
-	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==code=U0pDMTFQMDFQQVMwM
-	  XxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaHBuWHZINGM2WTdqaWlBOE
-	  VhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tl
-	  qs1s&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
+	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
+	
+	code=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaH
+	  BuWHZINGM2WTdqaWlBOEVhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3A
+	  nYOPxO0flEwO6Ffoq9Tlqs1s&grant_type=authorization_code
+	  &redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
 	```
 
 === "Response"

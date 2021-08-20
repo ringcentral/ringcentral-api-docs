@@ -4,12 +4,12 @@
   <h3 class="h3 display-5">Getting Started with the Voice API</h3>
   <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
   <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/java/" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/c-sharp/" class="btn btn-light qs-link">C# &raquo;</a>
+  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
 </div>
 
 <p class="h2">Overview</p>
@@ -28,7 +28,7 @@ The RingCentral Voice API is the primary way developers interface with, manage, 
 
 ### Make a phone call
 
-RingCentral's [Call Management API](../call-management/) provides a number of a facilities for controlling and routing incoming calls. The Voice API provides developers with some means for placing calls programmatically - mainly RingOut.
+RingCentral's [Call Management API](./call-routing/) provides a number of a facilities for controlling and routing incoming calls. The Voice API provides developers with some means for placing calls programmatically - mainly RingOut.
 
 Alternatively, developers can help users place calls via WebRTC or our [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html) product. 
 
@@ -80,7 +80,7 @@ In addition to providing metadata about a call that took place on the network, t
 
 ## How do I control my status and availability?
 
-Finally, the Voice API gives developers access to the availability, or "presence" of a user within the network through the [Presence API](./presence/). The Presence API shows the following for each user one inquires about:
+Finally, the Voice API gives developers access to the availability, or "presence" of a user within the network through the [Presence API](../account/presence/). The Presence API shows the following for each user one inquires about:
 
 * Is the user on a call?
 * Is the user in a meeting?

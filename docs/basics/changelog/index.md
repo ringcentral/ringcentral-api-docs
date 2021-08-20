@@ -1,6 +1,6 @@
 no_breadcrumb: true
 
-# RingCentral Office API Changelog
+# RingCentral MVP™ API Changelog
 
 Welcome to the RingCentral API changelog, which provides developers with a detailed list of all changes made to the API over time. This resource will help developers to:
 
