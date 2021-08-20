@@ -30,7 +30,10 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 In the RingCentral Developer Dashboard, navigate to your App -> Dashboard -> Credential and note down the following: 
 
-- App Server URL which should be https://platform.ringcentral.com . This is the URL for RingCentral Production Environment and we will be doing our development in Production Environment for this API. Please contact us to get your application graduated to production so you can access production credentials if you don't have them already.
+- App Server URL which should be https://platform.ringcentral.com . This is the URL for RingCentral Production Environment and we will be doing our development in Production Environment for this API. 
+
+Please contact us to get your application graduated to production so you can access production credentials if you don't have them already. You need to provide us the following so we can move your application to production enviornment:
+
 - Client ID
 - Client Secret
 
@@ -40,8 +43,38 @@ These will be used when making API calls either via Command Line (CURL), POSTMAN
 
 There are multiple ways to provide authentication support for your application for RingCentral users. This will depend on the type of authentication mechanism you chose when you created your application. For more information about how to use OAuth 2.0 with your application please refer to this [guide](../../authentication)
 
-### Make API Call using CURL 
+### Make the API Call C# or using CommandLine
 
+Select your preferred language below.
+
+=== "C#"
+
+    ### Create a Visual Studio project
+
+    * Choose Console Application .Net or .Net Core
+    * Select Target Framework Version
+    * Enter project name "AnalyicsAPIClient"
+    * Add NuGet package RingCentral.Net --version 5.5.0 to use it for setting up authentication
+    * Add RestSharp package to use it for HTTP Request 
+
+    Note: You need to implement authentication (OAuth, Basic Auth etc) based on how you configured your application when creating it in the RingCentral Dev Portal.
+
+    ### Edit the file 'Program.cs'
+
+    Be sure to edit the variables in ALL CAPS with your app and user credentials.
+
+    ```c#
+    {!> code-samples/analytics/quick-start.cs !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your app by typing in the command line 
+    
+    ```c# 
+    dotnet run
+    ```
+  
 === "Command Line"
 
     #### Obtain Access Token using RingCentral supported Authentication
@@ -61,109 +94,125 @@ There are multiple ways to provide authentication support for your application f
 
     #### Make a HTTP POST Request to get 'call performance data' 
 
-    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/api-reference/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
+    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/swagger-api-doc/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
 
-```bash
-   curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
+    ```bash
+    curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
         --header 'Content-Type: application/json' \
         --header 'Accept: application/json' \
         --header '{Your Access Token goes here}' \
         --data-raw '{
-          "grouping": {
-            "groupBy": "CompanyNumbers"
-          },
-          "timeRange": {
-            "timeFrom": "2021-07-23T19:18:50.450Z",
-            "timeTo": "2021-07-23T19:18:50.450Z"
-          },
-          "additionalFilters": {
-            "direction": "Inbound",
-            "origin": "Internal",
-            "callResponse": "Answered",
-            "callResponseType": [
-              "InboundDirect"
-            ],
-            "callResult": [
-              "Completed"
-            ],
-            "callSegments": [
-              {
-                "callSegment": "Ringing"
-              }
-            ],
-            "companyHours": "BusinessHours",
-            "callDuration": {
-              "minValueSeconds": 0,
-              "maxValueSeconds": 0
-            },
-            "timeSpent": {
-              "minValueSeconds": 0,
-              "maxValueSeconds": 0
-            }
-          },
-          "responseOptions": {
-            "counters": {
-              "allCalls": {
-                "aggregationType": "Sum"
-              },
-              "callsByDirection": {
-                "aggregationType": "Sum"
-              },
-              "callsByOrigin": {
-                "aggregationType": "Sum"
-              },
-              "callsByResponse": {
-                "aggregationType": "Sum"
-              },
-              "callsByResponseType": {
-                "aggregationType": "Sum"
-              },
-              "callsBySegment": {
-                "aggregationType": "Sum"
-              },
-              "callsByResult": {
-                "aggregationType": "Sum"
-              },
-              "callsByActions": {
-                "aggregationType": "Sum"
-              },
-              "callsByCompanyHours": {
-                "aggregationType": "Sum"
-              }
-            },
-            "timers": {
-              "totalCallLength": {
-                "aggregationType": "Sum"
-              },
-              "timeSpentByCallSegments": {
-                "aggregationType": "Sum"
-              },
-              "callLengthByDirection": {
-                "aggregationType": "Sum"
-              },
-              "callLengthByOrigin": {
-                "aggregationType": "Sum"
-              },
-              "callLengthByResponse": {
-                "aggregationType": "Sum"
-              },
-              "callLengthByResponseType": {
-                "aggregationType": "Sum"
-              },
-              "callLengthByResult": {
-                "aggregationType": "Sum"
-              },
-              "callsLengthByCompanyHours": {
-                "aggregationType": "Sum"
-              }
-            }
-          }
-        }'
-```
+                      "grouping": {
+                        "groupBy": "Queues",
+                        "ids": [
+                        ]
+                      },
+                      "timeRange": {
+                        "timeFrom": "2021-08-14T19:06:59.029Z",
+                        "timeTo": "2021-08-18T19:06:59.029Z"
+                      },
+                      "additionalFilters": {
+                        "direction": "Inbound",
+                        "origin": "Internal",
+                        "callResponse": "Answered",
+                        "callResponseType": [
+                          "InboundDirect"
+                        ],
+                        "callResult": [
+                          "Completed"
+                        ],
+                        "callSegments": [
+                          {
+                            "callSegment": "Ringing"
+                          }
+                        ],
+                        "callActions": [
+                          {
+                            "callAction": "HoldOff"
+                          }
+                        ],
+                        "companyHours": "BusinessHours",
+                        "callDuration": {
+                          "minValueSeconds": 0,
+                          "maxValueSeconds": 100
+                        },
+                        "timeSpent": {
+                          "minValueSeconds": 0,
+                          "maxValueSeconds": 100
+                        },
+                        "queueSla": "InSla"
+                      },
+                      "responseOptions": {
+                        "counters": {
+                          "allCalls": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByDirection": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByOrigin": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByResponse": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByResponseType": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsBySegment": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByResult": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByActions": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByCompanyHours": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsByQueueSla": {
+                            "aggregationType": "Sum"
+                          }
+                        },
+                        "timers": {
+                          "totalCallLength": {
+                            "aggregationType": "Sum"
+                          },
+                          "timeSpentByCallSegments": {
+                            "aggregationType": "Sum"
+                          },
+                          "callLengthByDirection": {
+                            "aggregationType": "Sum"
+                          },
+                          "callLengthByOrigin": {
+                            "aggregationType": "Sum"
+                          },
+                          "callLengthByResponse": {
+                            "aggregationType": "Sum"
+                          },
+                          "callLengthByResponseType": {
+                            "aggregationType": "Sum"
+                          },
+                          "callLengthByResult": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsLengthByCompanyHours": {
+                            "aggregationType": "Sum"
+                          },
+                          "callsLengthByQueueSla": {
+                            "aggregationType": "Sum"
+                          }
+                        }
+                      }
+                    }'
+    ```
+
+
 
 ## Using Postman
 
-If you prefer to see the API request and response in GUI, we recommend using the Postman Tool (free version). Click the button below to import the settings for Postman and run it there.
+If you prefer to see the API request and response in GUI, you can use Postman Tool or our API Explorer. Click the button below to import the settings for Postman and run it there.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/784c49b4d63a58c33c64?action=collection%2Fimport#?env%5BProduction%20-%20analytics%20%20(Sharable)%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5yaW5nY2VudHJhbC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6IlJDX0FQUF9LRVkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJSQ19VU0VSTkFNRSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJSQ19FWFRFTlNJT04iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibXlfYWNjZXNzX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfV0=)
 

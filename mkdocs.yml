@@ -166,10 +166,9 @@ pages:
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
     - 'Call Performance Reports':
-      - 'Overview': 'analytics/call-performance/index.md'
-      - 'API Reference': 'analytics/call-performance/api-reference.md'
+      - 'Data Guide': 'analytics/call-performance/index.md'
+      - 'API Reference' : 'analytics/call-performance/api-reference.md'
       - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
-#      - 'Call Performance API Spec (.yml)': 'analytics/api-spec-july-14.yml'
     - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
     - 'Changelog': 'analytics/changelog.md'
 

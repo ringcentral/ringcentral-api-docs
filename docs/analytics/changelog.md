@@ -1,5 +1,156 @@
 # Analytics API announcements and changelog
 
+## Aug 12, 2021
+
+This new release includes additional filters, renaming of API parameters that will result in breaking changes. It is recommended you read the "What's New" section in full in order to update your code to incorporate the latest API changes.
+
+### What's New ?
+
+Following changes have been made to the current API Endpoint :
+
+``` https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/analytics/performance/calls//aggregate/ ```
+
+---
+**NOTE**
+"->" is used below to signify nested JSON Structure. Please refer to the [API Reference Document]('swagger-api-ref.html') for more details.
+---
+
+##### 1. Actions as a filter
+
+- A new filter option has been introduced as part of,  "additionalFilters" object. 
+- When applied returns aggregation of calls by presence of specific actions by the agent    
+            during the call.
+- Available options: [ HoldOff, HoldOn, ParkOn, ParkOff, BlindTransfer, WarmTransfer, DTMFTransfer ]
+- Multiple actions will be ORed together.
+
+###### Example : This request returns aggregation of all the calls to the specified queue (groupBy) that had at least one hold during the call. 
+
+HTTP Request
+```bash
+   curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/json' \
+        --header '{Your Access Token goes here}' \
+        --header 'RCAccountId: Account Id' \  
+        --header 'RCExtensionId: Extension Id' \  
+        --data-raw '{
+                      "grouping": {
+                        "groupBy": "Queues",
+                        "ids": [
+                          "Extention"
+                        ]
+                      },
+                      "timeRange": {
+                        "timeFrom": "2021-04-04T00:00:22.528Z",
+                        "timeTo": "2021-07-27T23:59:22.528Z"
+                      },
+                      "additionalFilters": {
+                        "callActions": [
+                          {
+                            "callAction": "Holds On"
+                          }
+                        ]
+                      },
+                      "responseOptions": {
+                        "counters": {
+                          "allCalls": {
+                            "aggregationType": "Sum"
+                          }
+                        },
+                        "timers": {
+                          "totalCallLength": {
+                            "aggregationType": "Sum"
+                          }
+                        }
+                      }
+                    }'
+```
+
+##### 2. Queue SLA as a response option & filter
+
+A new response option has been added to get aggregation of all queue calls that have been answered within the specified queue SLA as well as out of SLA. Queue SLA can be specified on the RC admin portal.
+
+Example :  Similarly “inSla” and “outOfSla” can be used as part of “additionalFilters” to filter out calls.
+
+HTTP Request:
+```bash
+   curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/json' \
+        --header '{Your Access Token goes here}' \
+        --header 'RCAccountId: Account Id' \  
+        --header 'RCExtensionId: Extension Id' \  
+        --data-raw '{
+                      "grouping": {
+                        "groupBy": "Queues",
+                        "ids": [
+                          "Extention"
+                        ]
+                      },
+                      "timeRange": {
+                        "timeFrom": "2021-04-04T00:00:22.528Z",
+                        "timeTo": "2021-07-27T23:59:22.528Z"
+                      },
+                      "responseOptions": {
+                        "counters": {
+                          "allCalls": {
+                            "aggregationType": "Sum"
+                          }
+                        },
+                        "callsByQueueSla": {
+                          "aggregationType": "Sum"
+                        }
+                      },
+                      "timers": {
+                        "totalCallLength": {
+                          "aggregationType": "Sum"
+                        },
+                        "callsLengthByQueueSla": {
+                          "aggregationType": "Sum"
+                        }
+                      }
+                    }'
+```
+HTTP Response:
+```bash
+{
+  "data": { 
+    "869723004": {  
+      "timers": {
+        "callsDurationSeconds": 991, 
+        "callsByQueueSla": { 
+          "inSla": 25, 
+          "outOfSla": 36
+        }
+      },
+      "counters": { 
+        "totalCalls": 40, 
+        "callsByQueueSla": {  
+          "inSla": 2, 
+          "outOfSla": 1 
+        } 
+      }
+    }
+  }
+}
+```
+
+##### 3. Pagination
+
+Pagination support has been added to calls performance API endpoint. Now, developers can make use of two additional query parameters to specify how much data they want to retrieve per page.
+
+ * page : Defines the page number to retrieve. Only positive numbers are allowed, optional parameter, default is 1. Other values should lead to HTTP 400, Bad Request.
+
+ * perPage - Defines the page size (number of items), optional parameter, default is 100.
+
+##### 4. Additional Validations, format updates
+
+This release also includes few miscellaneous updates to functionalities and validations as follows:
+
+  - Counters no longer support Avg, Min,Max. Inclusion of this in the request will return an error
+  - Validation has been added to “timeRange” to max value specified is always greater than or equal to min value. If the specified “timeRange” max is less than time range min, an error message will be returned. 
+  - Phone numbers returned in response are updated to E164 format. Any phone numbers returned in response,will be converted to E164 format. (Ex: Before: 61280742914, Now: +61280745135)
+
 ## July 19, 2021
 
 This new release includes additional filters, renaming of API parameters that will result in breaking changes. It is recommended you read the "What's New" section in full in order to update your code to incorporate the latest API changes.
