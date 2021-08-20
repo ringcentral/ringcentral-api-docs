@@ -8,14 +8,11 @@ This new release includes additional filters, renaming of API parameters that wi
 
 Following changes have been made to the current API Endpoint :
 
-``` https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/analytics/performance/calls//aggregate/ ```
+`https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/analytics/performance/calls//aggregate/`
 
----
-**NOTE**
-"->" is used below to signify nested JSON Structure. Please refer to the [API Reference Document]('swagger-api-ref.html') for more details.
----
+!!! info "'->' is used below to signify nested JSON Structure. Please refer to the [API Reference Document](../call-performance/api-reference/) for more details."
 
-##### 1. Actions as a filter
+#### Actions as a filter
 
 - A new filter option has been introduced as part of,  "additionalFilters" object. 
 - When applied returns aggregation of calls by presence of specific actions by the agent    
@@ -23,9 +20,10 @@ Following changes have been made to the current API Endpoint :
 - Available options: [ HoldOff, HoldOn, ParkOn, ParkOff, BlindTransfer, WarmTransfer, DTMFTransfer ]
 - Multiple actions will be ORed together.
 
-###### Example : This request returns aggregation of all the calls to the specified queue (groupBy) that had at least one hold during the call. 
+**Example**
 
-HTTP Request
+This request returns aggregation of all the calls to the specified queue (groupBy) that had at least one hold during the call. 
+
 ```bash
    curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
         --header 'Content-Type: application/json' \
@@ -66,7 +64,7 @@ HTTP Request
                     }'
 ```
 
-##### 2. Queue SLA as a response option & filter
+#### Queue SLA as a response option & filter
 
 A new response option has been added to get aggregation of all queue calls that have been answered within the specified queue SLA as well as out of SLA. Queue SLA can be specified on the RC admin portal.
 
@@ -135,7 +133,7 @@ HTTP Response:
 }
 ```
 
-##### 3. Pagination
+#### Pagination
 
 Pagination support has been added to calls performance API endpoint. Now, developers can make use of two additional query parameters to specify how much data they want to retrieve per page.
 
@@ -143,7 +141,7 @@ Pagination support has been added to calls performance API endpoint. Now, develo
 
  * perPage - Defines the page size (number of items), optional parameter, default is 100.
 
-##### 4. Additional Validations, format updates
+#### Additional Validations, format updates
 
 This release also includes few miscellaneous updates to functionalities and validations as follows:
 

@@ -94,7 +94,7 @@ Select your preferred language below.
 
     #### Make a HTTP POST Request to get 'call performance data' 
 
-    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/swagger-api-doc/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
+    In this example, we are making the API request and sending the JSON describing our requirements. To understand what the various JSON properties please refer to the [API Reference](../call-performance/api-reference/). In this step, please make sure to update the "header" information with your 'access_token' string obtained in the previous step.
 
     ```bash
     curl --location --request POST 'https://platform.ringcentral.com/restapi/v1.0/account/~/analytics/performance/calls/aggregate' \
