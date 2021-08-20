@@ -1,4 +1,4 @@
-name: Check Links (test)
+name: Check Links
 on: workflow_dispatch
 
 jobs:
@@ -10,14 +10,12 @@ jobs:
     environment:
       name: master
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
+    - name: Checkout repository
+      uses: actions/checkout@v2
+#    - name: Set up Python ${{ matrix.python-version }}
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: ${{ matrix.python-version }}
     - name: Check links
       uses: byrnereese/github-action-mkdocs-link-check@main
       with:
@@ -26,10 +24,4 @@ jobs:
         folder-path: 'docs'
         synchronous: 'yes'
         local-only: 'yes'
-
-#    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-#      with:
-#        use-quiet-mode: 'yes'
-#        file-extension: 'md'
-#        use-verbose-mode: 'yes'
-#        folder-path: 'docs'
+        recurse: 'yes'
