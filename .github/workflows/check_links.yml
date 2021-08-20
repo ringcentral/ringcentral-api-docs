@@ -25,4 +25,4 @@ jobs:
         synchronous: 'yes'
         local-only: 'yes'
         recurse: 'yes'
-	excludes: '^(tel|rcmobile):'
+        excludes: '^(tel|rcmobile):'
