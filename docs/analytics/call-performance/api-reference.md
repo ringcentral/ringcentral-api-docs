@@ -12,7 +12,7 @@ HTTP METHOD : `POST`
 
 END POINT : `/restapi/v1.0/account/{accountId}/analytics/performance/calls/aggregate`
 
-##### See the [API Reference](../swagger-api-doc/) for more information.
+##### See the [API Reference](https://ringcentral-call-performance.readthedocs-hosted.com/en/latest/swagger-api-ref/) for more information.
 
 ### API Rate Limits
 
