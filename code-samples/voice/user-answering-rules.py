@@ -18,4 +18,4 @@ params = {
   }
 resp = platform.post('/restapi/v1.0/account/~/extension/~/answering-rule', params)
 
-print resp.text()
+print(resp.text())

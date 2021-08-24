@@ -22,13 +22,13 @@ def get_compliance_export_task(taskId):
     response = platform.get(endpoint)
     jsonObj = response.json()
     if jsonObj.status == "Completed":
-		    length = len(jsonObj.datasets)
-		    for i in range(length):
-	          fileName = "rc-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
-	    	    get_report_archived_content(jsonObj.datasets[i].uri, fileName)
-    elif jsonObj.status == "Accepted" || jsonObj.status == "InProgress":
-		    time.sleep(5)
-		    get_compliance_export_task(taskId)
+        length = len(jsonObj.datasets)
+        for i in range(length):
+            fileName = "rc-export-reports_" + jsonObj.creationTime + "_" + str(i) + ".zip"
+            get_report_archived_content(jsonObj.datasets[i].uri, fileName)
+    elif jsonObj.status == "Accepted" or jsonObj.status == "InProgress":
+        time.sleep(5)
+        get_compliance_export_task(taskId)
     else:
       print (jsonObj.status)
 
@@ -37,6 +37,6 @@ def get_report_archived_content(contentUri, zipFile):
     uri = platform.create_url(contentUri, False, None, True);
     fileHandler = urllib2.urlopen(uri)
     with open(zipFile, 'wb') as output:
-		output.write(fileHandler.read())
+        output.write(fileHandler.read())
 
 create_compliance_export_task()
