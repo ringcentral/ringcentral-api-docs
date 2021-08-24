@@ -224,5 +224,5 @@ If you prefer to see the API request and response in GUI, you can use Postman To
 
 When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. You can reference our [Sample C# Application](https://github.com/ringcentral/call-performance-api-demo) or build an application from scratch.
 
-<a class="btn btn-success btn-sm" href="https://developers.ringcentral.com/guide/basics/your-first-steps">Take your next step &raquo;</a>
+<a class="btn btn-success" href="https://developers.ringcentral.com/guide/basics/your-first-steps">Take your next step &raquo;</a>
 
