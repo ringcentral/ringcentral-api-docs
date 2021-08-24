@@ -24,6 +24,7 @@ try:
         }
     }
     res = platform.post("/subscription", params)
-    return res
 except Exception as e:
-    return e
+    print(f"An exception was thrown: {e}")
+else:
+    print(f'{res}')

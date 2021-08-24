@@ -9,4 +9,4 @@ params = {
 }
 resp = platform.get('/restapi/v1.0/account/~/extension/~/call-log', params)
 for record in resp.json().records:
-    print "Call type: " + record.type
+    print(f'Call type: {record.type}')
