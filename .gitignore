@@ -8,3 +8,5 @@ __pycache__
 code-samples/bin
 code-samples/lib
 code-samples/pyvenv.cfg
+composer.*
+vendor
