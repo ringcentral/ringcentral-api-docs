@@ -1,18 +1,29 @@
 <?php
+/* quick-start.py - This script helps developers send their first SMS message
+ *
+ * Variables:
+ * RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
+ * RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
+ * RECIPIENT_PHONE: The phone number to send the SMS to
+ * 
+ * License: MIT
+ * Copyright: 2021 RingCentral, Inc. */
 require('vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
+$CLIENTID     = $_ENV['RC_CLIENT_ID'];
+$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
+$SERVER       = $_ENV['RC_SERVER_URL'];
+$USERNAME     = $_ENV['RC_USERNAME'];
+$PASSWORD     = $_ENV['RC_PASSWORD'];
+$EXTENSION    = $_ENV['RC_EXTENSION'];
+$RECIPIENT    = $_ENV['RECIPIENT_PHONE'];
 
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
-
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
-
+$rcsdk = new RingCentral\SDK\SDK($CLIENTID, $CLIENTSECRET, $SERVER);
 $platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+$platform->login($USERNAME, $EXTENSION, $PASSWORD);
+read_extension_phone_number();
 
 function read_extension_phone_number(){
   global $platform;
@@ -24,11 +35,11 @@ function read_extension_phone_number(){
         return send_sms($record->phoneNumber);
       }
     }
+    exit("No phone number found with 'SmsSender' feature enabled.");
   }
 }
 function send_sms($fromNumber){
-  global $platform;
-  $RECIPIENT = '<ENTER PHONE NUMBER>';
+  global $platform,$RECIPIENT;
   try {
     $resp = $platform->post('/account/~/extension/~/sms',
         array(
@@ -38,9 +49,9 @@ function send_sms($fromNumber){
                   ),
            'text' => 'Hello World from PHP'
          ));
-    print_r ("SMS sent. Message status: " . $resp->json()->messageStatus . PHP_EOL);
-  }catch (\RingCentral\SDK\Http\ApiException $e) {
-    print '  Message: ' . $e->apiResponse->response()->error() . PHP_EOL;
+    print("SMS sent. Message status: " . $resp->json()->messageStatus . PHP_EOL);
+  } catch (\RingCentral\SDK\Http\ApiException $e) {
+    exit("Message: " . $e->message . PHP_EOL);
   }
 }
 ?>
