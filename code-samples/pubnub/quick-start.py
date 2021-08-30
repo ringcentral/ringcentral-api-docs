@@ -1,19 +1,29 @@
+#!/usr/bin/env python
+# pubnub/quick-start.py - This script helps developers subscribe to events via pubnub
+#
+# Variables:
+# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
+# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
+# 
+#
+# License: MIT
+# Copyright: 2021 RingCentral, Inc. 
+from ringcentral import SDK
 from multiprocessing import Process
 from time import sleep
 from ringcentral.subscription import Events
-from ringcentral import SDK
+import os,sys
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+CLIENTID     = os.environ.get('RC_CLIENT_ID')
+CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
+SERVER       = os.environ.get('RC_SERVER_URL')
+USERNAME     = os.environ.get('RC_USERNAME')
+PASSWORD     = os.environ.get('RC_PASSWORD')
+EXTENSION    = os.environ.get('RC_EXTENSION')
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER)
 platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+platform.login(USERNAME, EXTENSION, PASSWORD)
 
 def on_message(msg):
     print (msg)
@@ -28,6 +38,7 @@ def pubnub():
             print("Wait for notification...")
         except Exception as e:
             print (e)
+            sys.exit(1)
         while True:
             sleep(0.1)
 
@@ -40,3 +51,4 @@ try:
 except KeyboardInterrupt:
     p.terminate()
     print("Stopped by User")
+    sys.exit(1)
