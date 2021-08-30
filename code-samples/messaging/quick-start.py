@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# quick-start.py - This script helps developers send their first SMS message
+# messaging/quick-start.py - This script helps developers send their first SMS message
 #
 # Variables:
 # RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info

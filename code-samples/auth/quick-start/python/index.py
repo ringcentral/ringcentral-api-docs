@@ -1,25 +1,38 @@
+#!/usr/bin/env python
+# auth/quick-start/python/index.py - This script renders an HTML page
+#
+# Variables:
+# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
+# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
+#
+#
+# License: MIT
+# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
-import urllib
+import logging,os,sys,urllib
 from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
 app.secret_key = 'somesecretstring'
 
-RINGCENTRAL_CLIENT_ID= '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENT_SECRET= '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER_URL= 'https://platform.devtest.ringcentral.com'
-RINGCENTRAL_REDIRECT_URL= 'http://localhost:5000/oauth2callback'
+CLIENTID     = os.environ.get('RC_CLIENT_ID')
+CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
+SERVER       = os.environ.get('RC_SERVER_URL')
+USERNAME     = os.environ.get('RC_USERNAME')
+PASSWORD     = os.environ.get('RC_PASSWORD')
+EXTENSION    = os.environ.get('RC_EXTENSION')
+REDIRECT_URL = os.environ.get('RC_REDIRECT_URL')
 
-rcsdk = SDK(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL)
+rcsdk = SDK(CLIENTID, CLIENTSECRET, SERVER)
 
 @app.route('/')
 @app.route('/index')
 def login():
-    base_url = RINGCENTRAL_SERVER_URL + '/restapi/oauth/authorize'
+    base_url = SERVER + '/restapi/oauth/authorize'
     params = (
         ('response_type', 'code'),
-        ('redirect_uri', RINGCENTRAL_REDIRECT_URL),
-        ('client_id', RINGCENTRAL_CLIENT_ID),
+        ('redirect_uri', REDIRECT_URL),
+        ('client_id', CLIENTID),
         ('state', 'initialState')
     )
     auth_url = base_url + '?' + urllib.parse.urlencode(params)
@@ -29,7 +42,7 @@ def login():
 def oauth2callback():
     platform = rcsdk.platform()
     auth_code = request.values.get('code')
-    platform.login('', '', '', auth_code, RINGCENTRAL_REDIRECT_URL)
+    platform.login('', '', '', auth_code, REDIRECT_URL)
     tokens = platform.auth().data()
     session['sessionAccessToken'] = tokens
     return render_template('test.html')
@@ -61,3 +74,10 @@ def logout():
         platform.logout()
     session.pop('sessionAccessToken', None)
     return login()
+
+def main():
+    logging.info("Being run from the command line. Exiting safely.")
+    sys.exit(0)
+    
+if __name__ == "__main__":
+    main()
