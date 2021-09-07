@@ -70,6 +70,6 @@ Adaptive Cards can also be embued with behaviors to make them more interactive a
 
 Adaptive Cards can be used in any number of different RingCentral applications, including:
 
-* [Bots](./bots/walkthrough)
-* [Add-ins](./add-ins/)
-* [REST API-based apps](./posting/rest-api/)
+* [Bots](../bots/walkthrough)
+* [Add-ins](../add-ins/)
+* [REST API-based apps](../posting/rest-api/)
