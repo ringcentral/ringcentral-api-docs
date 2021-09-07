@@ -18,13 +18,20 @@ USERNAME     = os.environ.get('RC_USERNAME')
 PASSWORD     = os.environ.get('RC_PASSWORD')
 EXTENSION    = os.environ.get('RC_EXTENSION')
 
-sdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
-platform = sdk.platform()
-platform.login( USERNAME, EXTENSION, PASSWORD )
+rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+platform = rcsdk.platform()
+try:
+  platform.login(USERNAME, EXTENSION, PASSWORD)
+except:
+  sys.exit("Unable to authenticate to platform. Check credentials.")
 
-response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
-	{
-	    'messageType': ['SMS']
-	})
-print( response.text() )
-sys.exit(0)
+try:
+    response = platform.get('/restapi/v1.0/account/~/extension/~/message-store',
+	                    {
+	                        'messageType': ['SMS']
+	                    })
+except Exception as e:
+    sys.exit( e )
+else:   
+    print( response.text() )
+    sys.exit(0)

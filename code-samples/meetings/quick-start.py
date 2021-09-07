@@ -18,6 +18,13 @@ USERNAME     = os.environ.get('RC_USERNAME')
 PASSWORD     = os.environ.get('RC_PASSWORD')
 EXTENSION    = os.environ.get('RC_EXTENSION')
 
+rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+platform = rcsdk.platform()
+try:
+  platform.login(USERNAME, EXTENSION, PASSWORD)
+except:
+  sys.exit("Unable to authenticate to platform. Check credentials.")
+
 params = {
     'topic': 'Test Meeting 1',
     'meetingType': 'Instant',
@@ -25,10 +32,8 @@ params = {
     'startHostVideo': True,
     'startParticipantsVideo' : False
 }
+
 try:
-    rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
-    platform = rcsdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
     resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
     print(f'Start Your Meeting: {resp.json().links.startUri}')
     print(f'Join the Meeting: {resp.json().links.joinUri}')
