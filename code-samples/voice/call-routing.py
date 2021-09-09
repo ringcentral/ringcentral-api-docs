@@ -33,7 +33,7 @@ try:
     resp = platform.get('/account/~/extension/~/answering-rule', params)
     for record in resp.json().records:
         rule = platform.get('/account/~/extension/~/answering-rule/' + record.id)
-        print( f'Answering rule: {rule.name} is of type {rule.type}' )
+        print( f'Answering rule: {rule["name"]} is of type {rule.type}' )
 except Exception as e:
     sys.exit( e )
 else:
