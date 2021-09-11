@@ -152,14 +152,14 @@
             "Data"
         ],
         "defaults": {
-            "githubUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
-            "tutorialUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
+            "githubUri": "https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
         },
         "languages": [
             {
                 "name": "Swift",
-                "githubUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
-                "tutorialUri": " https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
+                "githubUri": "https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/"
             }
         ]
     },
@@ -170,14 +170,14 @@
             "SMS/MMS"
         ],
         "defaults": {
-            "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
-            "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
+            "githubUri": "https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
+            "tutorialUri": "https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
-                "tutorialUri": " https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
+                "githubUri": "https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/",
+                "tutorialUri": "https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/"
             }
         ]
     },
@@ -188,23 +188,23 @@
             "SMS/MMS"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa_nodejs-demo/",
+            "githubUri": "https://github.com/ringcentral-tutorials/sms-2fa-nodejs-demo",
             "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-2fa-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/"
             },
             {
                 "name": "Python",
-                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-2fa-python-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-python-demo/"
             },
             {
                 "name": "PHP",
-                "githubUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/sms-2fa-php-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/sms-2fa-php-demo/"
             }
         ]
@@ -222,7 +222,7 @@
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": "https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/index.html",
+                "githubUri": "https://github.com/ringcentral-tutorials/fax-cover-page-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/index.html"
             }
         ]
@@ -234,13 +234,13 @@
             "Auth"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/",
+            "githubUri": "https://github.com/ringcentral-tutorials/oauth-js-demo",
             "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/"
         },
         "languages": [
             {
                 "name": "JavaScript",
-                "githubUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/oauth-js-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-js-demo/"
             }
         ]
@@ -252,13 +252,13 @@
             "Auth"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/",
+            "githubUri": "https://github.com/ringcentral-tutorials/oauth-implicit-js-demo",
             "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
         },
         "languages": [
             {
                 "name": "JavaScript",
-                "githubUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/",
+                "githubUri": "https://github.com/ringcentral-tutorials/oauth-implicit-js-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
             }
         ]
@@ -270,23 +270,23 @@
             "Data"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/",
+            "githubUri": "https://github.com/ringcentral-tutorials/calllog-visualization-nodejs-demo",
             "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo",
+                "githubUri": "https://github.com/ringcentral-tutorials/calllog-visualization-nodejs-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo"
             },
             {
                 "name": "Python",
-                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo",
+                "githubUri": "https://github.com/ringcentral-tutorials/calllog-visualization-python-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-python-demo"
             },
             {
                 "name": "PHP",
-                "githubUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo",
+                "githubUri": "https://github.com/ringcentral-tutorials/calllog-visualization-php-demo",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/calllog-visualization-php-demo"
             }
         ]
@@ -299,13 +299,13 @@
             "Data"
         ],
         "defaults": {
-            "githubUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/",
+            "githubUri": "https://github.com/ringcentral-tutorials/callrecording-notification-node",
             "tutorialUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/"
         },
         "languages": [
             {
                 "name": "Node JS",
-                "githubUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/",
+                "githubUri": "https://github.com/ringcentral-tutorials/callrecording-notification-node",
                 "tutorialUri": "https://ringcentral-tutorials.github.io/callrecording-notification-node/"
             }
         ]
