@@ -50,33 +50,26 @@ platform = rcsdk.platform();
 app.post('/oauth', function (req, res) {
     if (req.body.access_token) {
         bot_token = req.body.access_token;
-	console.log("Verifying redirect URL for bot server.")
-        res.status(200);
-        res.send("")
+        console.log("Verifying redirect URL for bot server.")
 
-	// This is a bit of a hack. We are bypassing the login() method
-	// of the SDK in favor of setting the access key directly.
-	// The hack here is to set the refresh token to effectively a null
-	// value since it is not transmitted to us.
-	// There is probably a more elegant solution for this
-	var data = platform.auth().data();
-	data.token_type = "bearer"
-	data.expires_in = 1000000
-	data.access_token = bot_token
-	data.refresh_token = 'xxx'
-	data.refresh_token_expires_in = 1000000
-	platform.auth().setData(data)    
+        // Normally, the access token in the SDK is set by the login()
+        // method. Here, we bypass the login method to set the access
+        // token directly. 
+        var data = platform.auth().data();
+        data.token_type = "bearer"
+        data.expires_in = 1000000
+        data.access_token = bot_token
+        platform.auth().setData(data)    
 	
-	// Subscribe to webhooks relating to team messaging posts. This
-	// will alert your bot when a message has been posted so the bot
-	// can parse the message and respond to it. 
+        // Subscribe to webhooks relating to team messaging posts. This
+        // will alert your bot when a message has been posted so the bot
+        // can parse the message and respond to it. 
+        // You may wish to store the bot token if you intend to re-use it
+        // for other calls to the RingCentral API
         subscribeToEvents( bot_token );
-	// You may wish to store the bot token if you intend to re-use it
-	// for other calls to the RingCentral API
-	// TODO - store bot_token to make responding to future posts easier
-    } else {
-        res.send("")
     }
+    res.status(200);
+    res.send("")
 });
 
 // Callback method received after subscribing to webhook
@@ -84,26 +77,27 @@ app.post('/oauth', function (req, res) {
 // types a message to your bot. 
 app.post('/callback', function (req, res) {
     var validationToken = req.get('Validation-Token');
-    var body =[];
-    console.log("Webhook received.")
-    if(validationToken) {
-        console.log('Responding to RingCentral as last leg to create new Webhook');
+    var body = [];
+    if (validationToken) {
+        console.log('Verifying webhook.');
         res.setHeader('Validation-Token', validationToken);
         res.statusCode = 200;
         res.end();
     } else {
-        req.on('data', function(chunk) {
-            body.push(chunk);
-        }).on('end', function() {
-            body = Buffer.concat(body).toString();
-            console.log('WEBHOOK EVENT BODY: ', body);
-            var obj = JSON.parse(body);
-            res.statusCode = 200;
-            res.end(body);
-            if(obj.event == "/restapi/v1.0/subscription/~?threshold=60&interval=15"){
-                renewSubscription(obj.subscriptionId);
+        console.log("Webhook received: ", req.body);
+        if (req.body.event == "/restapi/v1.0/subscription/~?threshold=60&interval=15") {
+            console.log("Renewing subscription ID: " + req.body.subscriptionId);
+            renewSubscription(req.body.subscriptionId);
+        } else if (req.body.body.eventType == "PostAdded") {
+            console.log("Received message: " + req.body.body.text);
+            if (req.body.body.text == "ping") {
+                platform.post('/restapi/v1.0/glip/chats/'+req.body.body.groupId+'/posts', {
+                    text: "pong"
+                })
             }
-        });
+        }
+        res.statusCode = 200;
+        res.end('');
     }
 });
 

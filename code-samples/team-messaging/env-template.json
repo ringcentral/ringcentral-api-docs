@@ -1,0 +1,6 @@
+# .env file for the RingCentral Bot Walkthrough
+REDIRECT_HOST=https://4f72-xxx-206-200.ngrok.io/
+CLIENT_ID=pi8xxxxxxxgaw
+CLIENT_SECRET=rnvxxxxxxx_Cidye4dS4Q
+RINGCENTRAL_ENV=https://platform.devtest.ringcentral.com
+PORT=3000

@@ -17,7 +17,7 @@ Bot servers must be accessible over the open Internet to allow RingCentral to se
 Launch ngrok by running the following command:
 
 ```bash 
-% ngrok http 3000
+$ ngrok http 3000
 ```
 
 If every thing goes well you should see the following output to your terminal.
@@ -59,100 +59,155 @@ Before you create your bot app, you will need to set the OAuth redirect URL. Int
 This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access key for the account of the user performing the installation.
 
 
-## Step 3. Clone the sample application
+## Step 3. Clone and setup the sample application
 
 To help you get started, we have a sample application that stubs out much of what you will need to create. Clone this Github repository like so:
 
 ```bash
-% git clone https://github.com/pkvenu/ringcentral-bot-demo.git
-% cd ringcentral-bot-demo
+$ git clone https://github.com/pkvenu/ringcentral-bot-demo.git
+$ cd ringcentral-bot-demo
+$ npm install
 ```
 
-## Step 4. Setup and start the bot server
-
-Ok, the basics are in place. Now it is time to build your bot server using node. The repository you cloned above has all the prerequisites you will need specified in `package.json`. Install them by running the following command:
+Next, let's setup the environment and configuration of the bot. Copy the contents of `.env.template` to `.env`.
 
 ```bash
-% npm install
-```
-
-Next, copy the contents of `.env.template` to `.env`.
-
-```bash
-% cp .env.template .env
+$ cp .env.template .env
 ```
 
 Edit the `.env` you just created and enter in the values for `CLIENT_ID` and `CLIENT_SECRET` that you received when you created the bot in the RingCentral Developer Console above. Then, set `REDIRECT_HOST` to your ngrok server URL. I would look something like this:
    
-<img src="../envfile.png" class="img-fluid" style="max-width: 500px">
+```json
+{!> code-samples/team-messaging/env-template.json !}
+```
 
 Finally, launch your server.
 
 ```bash
-npm start
+$ npm start
 ```
 
-## Step 5. Add the bot to your RingCentral account
+## Step 4. Add the bot to your RingCentral account
 
 Return to the Developer Console and navigate to the "Bot" tab for the app you recently created. Click on the "Add to RingCentral" button.
 
-<img class="img-fluid" src="../add-to-ringcentral.png" style="max-width: 600px">
+<img class="img-fluid" src="../../manual/add-to-ringcentral.png" style="max-width: 600px">
 
-This will install the bot into your Developer Sandbox. When a bot is installed, RingCentral will attempt to verify that the bot server is running by sending it a quick message to the OAuth redirect URI.
+This will install the bot into your Developer Sandbox. When a bot is installed, RingCentral will attempt to verify that the bot server is running by sending it a quick message to the OAuth redirect URI. At the same time it will transmit auth credentials necessary for making future API calls. 
 
-At the same time it will transmit auth credentials necessary for making future API calls. RingCentral will transmit an authorization code for public apps, and an access key for private apps.
+<img src="../../manual/bot-authorization.png" class="img-fluid" style="max-width: 400px">
 
-```js
-{!> code-samples/team-messaging/bot-app.js [ln:50-80] !}
-```
+The access key ultimately obtained through the above process is a *permanent* access key. This means you do not need to worry about refreshing the token after it has been issued. It is the developer's responsibility to manage this access key. If the app was configured to be a "public" app, this would mean storing the access key in a database and mapping it to a customer Id of some kind. That way when a bot receives a webhook event notifying the bot of a message posted to a team, the customer Id can be used to look up the corresponding access key so the bot can post a message in response. 
 
-!!! info "If you have multiple redirect URLs specified, RingCentral will only use the first URL specificed in the oAuth settings."
+??? note "Discussion: walking through the code"
+    Inside the sample application, we setup a handler to respond to posts to our `/oauth` handler. This handler will not only verify to RingCentral that the bot is setup properly by responding with an HTTP status code of 200, but it will also obtain the necessary auth credentials in order for the bot to post messages in the future. 
+    ```js
+    {!> code-samples/team-messaging/bot-app.js [ln:50-73] !}
+    ```
+	In the last step above, we invoke a function to subscribe to the events our bot will be listening for.
+    ```js
+    {!> code-samples/team-messaging/bot-app.js [ln:78-90,98-102] !}
+    ```
 
-<img src="../../../img/authorization.png" class="img-fluid" style="max-width: 300px">
+## Step 5. Send your first message to the bot
 
-The access key ultimately obtained is a `permanent` access key. It's the developer responsibility to manage this access key. For public applications this would mean storing the access key in a database and mapping it to a customer Id of some kind. 
+Now login to the [RingCentral Team Messaging developer sandbox](https://app.devtest.ringcentral.com) using your sandbox credentials and start a chat with the bot you installed. 
 
-That way when a bot receives a webhook event notifying the bot of a message posted to a team, the customer Id can be used to look up the corresponding access key so the bot can post a message in response. 
+<img src="../../manual/bot-start-chat.png" class="img-fluid">
 
-## Step 6. Subscribe to bot notifications and webhooks
+Then, within the chat you just created, type something to the bot. 
 
-With an access key in hand, your next task is to subscribe to the events related to the chat (team, conversation, etc) the bot is installed in. We recommend you install both post events and group events. This will allow your bot to be informed whenever a message is posted or a member joins/leaves a team for which the bot is also a member. 
+<img src="../../manual/bot-devtest.png" class="img-fluid">
 
-```js
-{!> code-samples/team-messaging/bot-app.js [ln:111-134] !}
-```
+You will notice immediately that the bot does not yet respond to your message. We will update your bot in the final step to send a message in response. 
 
-## Step 7. Talk to the bot
-
-Now login to `https://app.devtest.ringcentral.com` using your sandbox credentials and search for the bot name. Click on the bot name and type in "Hi" to start communicating with it.
-
-<img src="../../../img/bot_devtest.png" class="img-fluid">
-
-## Step 8. Receive webhook notifications
-
-When a person joins or leaves a team, or when a message is posted to a team, you should now receive an event from RingCentral which will be displayed in your console or in your ngrok inspector. 
-
-```json
-{
-    "timestamp": "2017-03-21T18:29:27.408+0000",
-    "subscriptionId": "a45645-0001-cc71-9de3-674476722",
-    "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-    "event": "/restapi/v1.0/glip/posts",
-    "body": {
-        "eventType": "PostAdded",
-        "id": "0000001",
-        "type": "TextMessage",
-        "text": "Hi!",
-        "creatorId": "123456789",
-        "groupId": "1234",
-        "creationTime": "2017-03-21T18:29:20Z",
-        "lastModifiedTime": "2017-03-21T18:29:27Z"
+??? note "Discussion: observe the console of your local bot server"
+    Turn your attenion to your local console to see the output from your server. You will see a trace of the process so far. 
+	The first shows your server subscribing to the necessary events.
+    ```
+	> developing-locally-with-glip@0.0.1 start
+    > node app.js
+    Bot server listening on port 3000
+    Verifying redirect URL for bot server.
+    Subscribing to post and group events
+    Verifying webhook.
+    Subscription Response:  {
+      uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/subscription/1bbb4073-8235-4fe1-8730-0c535ea1364f',
+      id: '1bbb4073-8235-4fe1-8730-0c535ea1364f',
+      creationTime: '2021-09-13T23:32:57.921Z',
+      status: 'Active',
+      eventFilters: [
+        '/restapi/v1.0/subscription/~?threshold=60&interval=15',
+        '/restapi/v1.0/glip/posts',
+        '/restapi/v1.0/glip/groups'
+      ],
+      expirationTime: '2021-09-20T23:32:56.921Z',
+      expiresIn: 604798,
+      deliveryMode: {
+        transportType: 'WebHook',
+        encryption: false,
+        address: 'https://5de7-162-207-206-200.ngrok.io/callback'
+      }
     }
-}
+    ```
+	Next, you will see your bot being adding to a chat with yourself. 
+    ```
+    Webhook received:  {
+      uuid: '828140854147437394',
+      event: '/restapi/v1.0/glip/groups',
+      timestamp: '2021-09-13T23:33:20.705Z',
+      subscriptionId: '1bbb4073-8235-4fe1-8730-0c535ea1364f',
+      ownerId: '304027004',
+      body: {
+        id: '725327874',
+        name: null,
+        description: null,
+        type: 'PrivateChat',
+        status: 'Active',
+        members: [ '302434004', '304027004' ],
+        isPublic: null,
+        creationTime: '2021-09-13T23:33:20.130Z',
+        lastModifiedTime: '2021-09-13T23:33:20.130Z',
+        eventType: 'GroupJoined'
+      }
+    }
+    ```
+	Finally, you will see the message you sent to your bot in the last step.
+    ```
+    Webhook received:  {
+      uuid: '6696560186430840563',
+      event: '/restapi/v1.0/glip/posts',
+      timestamp: '2021-09-13T23:33:23.079Z',
+      subscriptionId: '1bbb4073-8235-4fe1-8730-0c535ea1364f',
+      ownerId: '304027004',
+      body: {
+        id: '5341265924',
+        groupId: '725327874',
+        type: 'TextMessage',
+        text: 'ping',
+        creatorId: '302434004',
+        addedPersonIds: null,
+        creationTime: '2021-09-13T23:33:22.858Z',
+        lastModifiedTime: '2021-09-13T23:33:22.858Z',
+        attachments: null,
+        activity: null,
+        title: null,
+        iconUri: null,
+        iconEmoji: null,
+        mentions: null,
+        eventType: 'PostAdded'
+      }
+    }
+	```
+
+## Step 6. Modify the sample application to respond to a message
+
+In the final step, we will modify the sample application to respond to a message you send the bot. Begin by editing `app.js` in your favorite editor. Edit the post handler for `/callback` as shown below to create your own bot commands. The example below responds to the message "ping" with another message "pong."
+
+```js
+{!> code-samples/team-messaging/bot-app.js [ln:78-102] !}
 ```
 
 ## Summary
-
-With events now being delivered to your bot server, you can begin [posting messages](../posting/) back to the team to build your conversational interface.
 
 This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](../node/) which provides a more full-featured bot server in a box. 
