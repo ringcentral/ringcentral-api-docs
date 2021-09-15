@@ -138,15 +138,14 @@ pages:
       - 'Interactive messaging events': 'team-messaging/events/interactive-messages.md'
     - 'Incoming webhooks':
       - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
+      - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
       - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
       - 'Supported services': 'team-messaging/incoming-webhooks/service-providers.md'
     
-    - 'Posting messages':
-      - 'Overview': 'team-messaging/posting/index.md'
-      - 'Posting via...':
-         - 'REST API': 'team-messaging/posting/rest-api.md'
-         - 'Incoming webhooks': 'team-messaging/posting/incoming-webhooks.md'
-      - 'Cards and attachments': 'team-messaging/posting/cards.md'
+    - 'Posting via REST API':
+      - 'Posting messages': 'team-messaging/posting/index.md'
+      - 'Posting cards': 'team-messaging/posting/cards.md'
+      - 'Posting events': 'team-messaging/posting/events.md'
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
       
     - 'Adaptive cards':
