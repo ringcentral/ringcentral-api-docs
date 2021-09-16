@@ -24,8 +24,12 @@ Content-Type: application/json
 
 !!! tip "Posting cards: incoming webhooks versus REST API"
     When posting cards via an incoming webhooks the card's contents is transmitted via an attachment. However, this is only supported when posting via an incoming webhook. 
-	If a card is transmitted as an attachment when posting via the REST API, you will get the following error message: "Parameter [attachments[0].type] value is invalid.
-	To [post a card via the REST API](../../posting/cards/), please use the endpoints devoted to that task."
+	
+	If a card is transmitted as an attachment when posting via the REST API, you will get the following error message: 
+	
+	`Parameter [attachments[0].type] value is invalid.`
+	
+	To [post a card via the REST API](../../posting/cards/), please use the endpoints devoted to that task.
 
 [Cards](../attachments/) are the most common form of post for third-party integrations as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way. Cards are posted in a manner similar to simple messages as shown above, except that the card's contents are transmitted via an attachment. 
 

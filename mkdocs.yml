@@ -180,7 +180,7 @@ pages:
     - 'RingCentral Video API': 'meetings/video.md'
     - 'Embeddable': 'meetings/embeddable.md'
 
-  - 'Analytics (Beta)':
+  - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
     - 'Call Performance Reports':
