@@ -16,6 +16,8 @@ A bot is an add-in that provides RingCentral customers with a conversational int
 * Post adaptive cards to a chat via the REST API
 * Update adaptive cards previously posted via the REST API
 
+[Build a bot using a step-by-step walkthrough &raquo;](../bots/walkthrough/)
+
 ### Notification apps
 
 A notification app is a type of add-in that helps build a communication bridge between a third-party service and users of RingCentral, by converting events/webhooks emitted by a service and converting them into messages and cards that are then posted to a chat to keep a team up to date. An example of a notification app that a developer can appreciate is one that would notify a team whenever a pull request is submitted for a github repository you are watching, and to expose a button to allow a recipient of that message to merge the pull request. Notification apps have the following capabilities:
@@ -26,6 +28,7 @@ A notification app is a type of add-in that helps build a communication bridge b
 
 !!! warning "Notification apps cannot yet update messages"
 
+[Create a notification app &raquo;](./creation/)
 
 ## Helping customer find and install add-ins
 
