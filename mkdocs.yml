@@ -140,12 +140,13 @@ pages:
       - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
       - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
       - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
-      - 'Supported services': 'team-messaging/incoming-webhooks/service-providers.md'
+      - 'Legacy message format': 'team-messaging/incoming-webhooks/legacy-format.md'
     
     - 'Posting via REST API':
       - 'Posting messages': 'team-messaging/posting/index.md'
       - 'Posting cards': 'team-messaging/posting/cards.md'
-      - 'Posting events': 'team-messaging/posting/events.md'
+      - 'Posting notes': 'team-messaging/posting/notes.md'
+      - 'Posting tasks': 'team-messaging/posting/tasks.md'
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
       
     - 'Adaptive cards':
@@ -154,15 +155,17 @@ pages:
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
-    - 'Build a RingCentral Add-in':
-      - 'Creating an add-in': 'team-messaging/add-ins/creation.md' 
-      - 'Integrated installation': 'team-messaging/add-ins/installation.md'
-      - 'Uninstalling an add-in': 'team-messaging/add-ins/uninstall.md'
+    - 'RingCentral Add-ins': 'team-messaging/add-ins/index.md'
 
-    - 'Build a RingCentral Bot':
+    - 'Build a notification app':
+      - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
+      - 'Integrated installation': 'team-messaging/add-ins/installation.md'
+      - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
+
+    - 'Build a bot':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
       - 'Subscribing to bot events': 'team-messaging/bots/events.md'
-      - 'Local bot development': 'team-messaging/bots/node.md'
+#      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
       - 'Sample IBM Watson bot': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
       - 'Sample Voicemail bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
@@ -211,6 +214,8 @@ pages:
         - 'v.1.0.39 (May 2019)': 'basics/changelog/1_0_39.md'
       - 'API Quick Reference': 'basics/api-index.md'
 
+  - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
+
   - 'Applications':
       - 'Development Lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
@@ -234,6 +239,7 @@ pages:
              - 'Rainbow Office': 'basics/partners/alcatel.md'
              - 'TELUS Business Connect': 'basics/partners/telus.md'
              - 'Unify Office': 'basics/partners/atos.md'
+
   - 'Account':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
