@@ -32,6 +32,14 @@ Select your preferred language below.
     {!> code-samples/team-messaging/post-note.rb !}
     ```
 
+## Notes Schema
+
+Please consult our [API Reference for creating a note](https://developers.ringcentral.com/api-reference/Notes/createChatNote) to learn more about the request and response schemas. 
+
+## Publishing your draft notes
+
+Upon creating a note, the status of the note defaults to "Draft." Therefore, if you intend to make the note immediately available to members of the chat, you will need to subseuently call the [publish note API reference](https://developers.ringcentral.com/api-reference/Notes/publishNote). 
+
 ## Keep learning
 
 Using the Notes API you can accomplish a number of tasks relating to the creation, and sharing of notes.

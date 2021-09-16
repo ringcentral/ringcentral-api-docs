@@ -34,6 +34,17 @@ Select your preferred language below.
     {!> code-samples/team-messaging/post-task.rb !}
     ```
 
+## Tasks Schema
+
+Please consult our [API Reference for creating a task](https://developers.ringcentral.com/api-reference/Tasks/createTask) to learn more about the following options:
+
+* start and due dates
+* color and appearance
+* task recurrence
+* assignees
+* attachments
+* sections/categories
+
 ## Keep learning
 
 Using the Tasks API you can do more than just create a task, you can also:
