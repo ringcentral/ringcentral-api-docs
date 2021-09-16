@@ -15,27 +15,14 @@ var platform = rcsdk.platform();
 platform.login({ username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION })
 
 platform.on(platform.events.loginSuccess, () => {
-    post_card( CHAT_ID )
+    post_note( CHAT_ID )
 })
 
-async function post_card( group ) {
+async function post_note( group ) {
     try {
-	var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/adaptive-cards', {
-	    "type": "AdaptiveCard",
-	    "body": [
-		{
-		    "type": "TextBlock",
-		    "size": "Medium",
-		    "weight": "Bolder",
-		    "text": "Adaptive Card example"
-		},
-		{
-		    "type": "Image",
-		    "url": "https://bit.ly/3nwZbRM"
-		}
-	    ],
-	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-	    "version": "1.3"
+	var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/notes', {
+	    "title": "This is a note",
+	    "body": "<strong>heading</strong><br><br>Any HTML can be entered here."
 	});
 	var jsonObj = await resp.json()
 	console.log( JSON.stringify(jsonObj) )
