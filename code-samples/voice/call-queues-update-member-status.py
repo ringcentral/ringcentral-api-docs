@@ -22,7 +22,7 @@ def update_call_queue_member_status(id):
               {
                 "member": { "id" : "111111111" },
                 "acceptCurrentQueueCalls": False
-              }
+              },
               {
                 "member": { "id" : "222222222" },
                 "acceptCurrentQueueCalls": True

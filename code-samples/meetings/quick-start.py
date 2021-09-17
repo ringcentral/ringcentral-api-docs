@@ -21,7 +21,7 @@ params = {
 }
 try:
     resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
-    print "Start Your Meeting: " + resp.json().links.startUri
-    print "Join the Meeting: " + resp.json().links.joinUri
+    print(f'Start Your Meeting: {resp.json().links.startUri}')
+    print(f'Join the Meeting: {resp.json().links.joinUri}')
 except Exception as err:
     print("Exception: " + err.message)

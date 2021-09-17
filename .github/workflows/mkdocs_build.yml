@@ -1,8 +1,8 @@
-name: Deploy to Github Pages 
-on: workflow_dispatch
-#on:
-#  push:
-#    branches: master
+name: Build site
+#on: workflow_dispatch
+on:
+  push:
+    branches: master
 
 jobs:
   build:
@@ -19,6 +19,6 @@ jobs:
         architecture: x64
     - name: Install requirements
       run: python3 -m pip install -r requirements.txt
-    - name: Deploy
-      run: python3 -m mkdocs gh-deploy --force
+    - name: Build
+      run: python3 -m mkdocs build
 

@@ -26,6 +26,6 @@ jobs:
         verbose-mode: 'no'
         folder-path: 'docs'
         synchronous: 'yes'
-        local-only: 'yes'
+        local-only: 'no'
         recurse: 'yes'
         excludes: '^(tel|rcmobile):'

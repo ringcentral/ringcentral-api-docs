@@ -11,5 +11,5 @@ params = {
   }
 resp = platform.post('/restapi/v1.0/account/~/extension/~/forwarding-number', params)
 
-print "Forwarding number created."
-print resp.json().id
+print("Forwarding number created.")
+print(resp.json().id)

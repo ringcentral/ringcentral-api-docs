@@ -20,4 +20,4 @@ resp = platform.post('/restapi/v1.0/account/~/extension/~/ring-out',
                   'to'   : {'phoneNumber': RECIPIENT},
                   'playPrompt' : False
               })
-print "Call placed. Call status: " + resp.json().status.callStatus              
+print(f'Call placed. Call status: {resp.json().status.callStatus}')

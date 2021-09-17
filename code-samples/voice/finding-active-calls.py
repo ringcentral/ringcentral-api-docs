@@ -9,4 +9,4 @@ params = {
 }
 resp = platform.get('/restapi/v1.0/account/~/extension/~/active-calls', params)
 for record in resp.json().records:
-    print "Call result: " + record.result
+    print(f'Call result: {record.result}')
