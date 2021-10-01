@@ -2,27 +2,32 @@
 
 RingCentral will automatically handle opt-in and opt-out for users on High Volume SMS using industry-standard terms `start` and `stop`, respectively. This is handled per pair of sender and recipient numbers.
 
-While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that developers make note of the numbers that have opted out, and prevent sending messages to them in the future.
+While RingCentral automatically handles this and will prevent sending to numbers that have opted out, it is recommended that your application makes note of the numbers that have opted out, and prevent sending messages to them in the future.
 
 ## Auto-replies to opt-in/out-out requests
 
 ### Opt-out requests
 Opt-out keywords: STOP,UNSUBSCRIBE,QUIT,CANCEL,END
 
-When a recipient replies to an SMS message with any of the opt-out keywords like "stop" or "cancel", Ringcentral will stop sending messages to that recipient's number from this sender. It is recommended that developers respond to this event with an immediate automatic reply to the recipient (sample message below):
+When a recipient replies to an SMS message with any of the opt-out keywords like "stop" or "cancel", Ringcentral will stop sending messages to that recipient's number from this sender. It is recommended that your application responds to this event with an immediate automatic reply to the recipient (sample message below):
 
 > SAMPLE AUTO REPLY MESSAGE: You replied with the word "stop" which blocks all texts from this number.
 > Text back "unstop" to start receiving messages again.
 
-If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident.
+If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident with "active" attribute as "true".
+
 !!! note "Some network operators may also send auto-replies to opt-out requests."
 
 ### "Opt-in" requests
 Opt-in keywords: START,SUBSCRIBE,RESUME,CONTINUE,UNSTOP
 
-When a recipient replies to an SMS message with any of the opt-in keywords like "start" or "unstop", Ringcentral will resume sending messages to that recipient's number from this sender.
+When a recipient replies to an SMS message with any of the opt-in keywords like "start" or "unstop", Ringcentral will resume sending messages to that recipient's number from this sender. It is recommended that your application responds to this event with an immediate automatic reply to the recipient (sample message below):
 
-!!! note "There will be no event notification for the opt-in incident."
+> SAMPLE AUTO REPLY MESSAGE: You have replied "unstop" and will begin receiving messages again from this number.
+> Text back "stop" to stop receiving messages again.
+
+If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident with "active" attribute as "false".
+
 !!! note "Some network operators may also send auto-replies to opt-in requests."
 
 ## Read opted-out phone numbers
