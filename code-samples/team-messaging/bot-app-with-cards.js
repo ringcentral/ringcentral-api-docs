@@ -17,6 +17,8 @@ const TOKEN_TEMP_FILE = '.bot-auth';
 var app = express();
 var platform, subscription, rcsdk, subscriptionId, bot_token;
 
+var CARD_ID_CACHE = {};
+
 app.use(bp.json());
 app.use(bp.urlencoded({
     extended: true
@@ -139,6 +141,8 @@ app.post('/callback', function(req, res) {
             console.log("Ignoring message posted by bot.");
         } else if (req.body.body.text == "ping") {
             send_message("pong", req.body.body.groupId)
+        } else if (req.body.body.text == "hello") {
+            send_card( hello_world_card(), req.body.body.groupId )
         } else {
             send_message("I do not understand '" +
                 req.body.body.text +
@@ -157,6 +161,46 @@ function send_message(msg, group) {
     }).catch(function(e) {
         console.log(e)
     });
+}
+
+function send_card(card, group) {
+    console.log("Posting card to group: " + group);
+    platform.post('/restapi/v1.0/glip/chats/' + group + '/adaptive-cards', card)
+        .then(function(resp) {
+            var jsonObj = resp.json()
+            var key = jsonObj.creator.id + '-' + group
+            CARD_ID_CACHE[key] = jsonObj.id
+        }).catch(function(e) {
+            console.log(e)
+        });
+}
+
+// This handler is called when a user submit data from an adaptive card
+app.post('/msg-callback', function(req, res) {
+    console.log("Receiving webhook about message interaction.")
+    var user_input = req.body.data.hellotext;
+    update_card(req.body.conversation.id,
+        req.body.post,
+        hello_name_card( user_input ))
+    res.statusCode = 200;
+    res.end('');
+});
+
+function update_card(group, post, card) {
+    console.log("Updating card...");
+    platform.get('/restapi/v1.0/glip/chats/' + group + '/posts/' + post.id)
+        .then(function(resp) {
+            var jsonObj = resp.json();
+            key = jsonObj.creatorId + '-' + group
+            cardId = CARD_ID_CACHE[key]
+            platform.put('/restapi/v1.0/glip/adaptive-cards/' + cardId, card)
+                .catch(function(e) {
+                    console.log(e)
+                })
+        }).catch(function(e) {
+            console.log(e)
+        });
+
 }
 
 // Method to Subscribe to Glip Events.
@@ -197,3 +241,54 @@ function renewSubscription(id) {
 }
 
 
+function hello_world_card() {
+    var HELLO_CARD = {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.3",
+        "body": [{
+                "type": "TextBlock",
+                "size": "Medium",
+                "weight": "Bolder",
+                "text": "Hello World"
+            },
+            {
+                "type": "TextBlock",
+                "text": "Enter your name in the field below so that I can say hello.",
+                "wrap": true
+            },
+            {
+                "type": "Input.Text",
+                "id": "hellotext",
+                "placeholder": "Enter your name"
+            }
+        ],
+        "actions": [{
+            "type": "Action.Submit",
+            "title": "Say Hello"
+        }]
+
+    }
+    return HELLO_CARD
+}
+
+function hello_name_card(name) {
+    var HELLO_CARD = {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.3",
+        "body": [{
+                "type": "TextBlock",
+                "size": "Medium",
+                "weight": "Bolder",
+                "text": "Hello World"
+            },
+            {
+                "type": "TextBlock",
+                "text": "Hello " + name,
+                "wrap": true
+            }
+        ]
+    }
+    return HELLO_CARD
+}

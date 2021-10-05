@@ -1,6 +1,5 @@
 site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-#site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
 edit_uri: tree/master/docs
 docs_dir: docs
@@ -23,9 +22,10 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.tabbed
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+#      linenums: true
   - pymdownx.superfences
-  - codehilite:
-      linenums: "None"
   - mdx_include
 
 extra_css:
@@ -164,6 +164,7 @@ pages:
 
     - 'Build a bot':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
+      - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
       - 'Subscribing to bot events': 'team-messaging/bots/events.md'
 #      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
