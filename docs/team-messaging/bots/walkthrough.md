@@ -30,7 +30,7 @@ Make note of your https forwarding URL, we will use that shortly when creating y
 
 With a proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Bot App" button below. 
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,TeamMessaging,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
