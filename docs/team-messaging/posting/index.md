@@ -15,7 +15,7 @@ The code above will result in a chat message that appears as follows:
 <img src="./simple-text-message.png" class="img-fluid">
 
 !!! tip "Did you know that you can also post via an incoming webhook?"
-    [Incoming webhooks](../../incoming-webhooks/webhook-creation/) provide an alternative conduit by which messages can be posted to a team. An incoming webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
+    [Incoming webhooks](../incoming-webhooks/webhook-creation/) provide an alternative conduit by which messages can be posted to a team. An incoming webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
 ## Finding a safe and private chat ID in which to do development
 
