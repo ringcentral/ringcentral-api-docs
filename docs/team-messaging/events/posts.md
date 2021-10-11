@@ -6,7 +6,7 @@ Post events are triggered within the context of team messaging whenever some fac
 * Post removed
 * Post changed
 
-Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Glip-Post-Event), but a few examples are shown below. 
+Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event), but a few examples are shown below. 
 
 When [subscribing](../outgoing-webhooks/) to post events you will need to specify the following event filter:
 

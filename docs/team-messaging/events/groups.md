@@ -7,7 +7,7 @@ Chat events, also known as "group" events, are triggered when some aspect of a c
 * Person left of was removed from chat
 * Group or chat name/description changed 
 
-Each event type has a unique payload and structure depending upon the event type. The structure of a chat event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Glip-Groups-Event), but a few examples are shown below. 
+Each event type has a unique payload and structure depending upon the event type. The structure of a chat event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Team-Messaging-Groups-Event), but a few examples are shown below. 
 
 When [subscribing](../outgoing-webhooks/) to chat events you will need to specify the following event filter:
 
