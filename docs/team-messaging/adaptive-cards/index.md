@@ -72,4 +72,4 @@ Adaptive Cards can be used in any number of different RingCentral applications, 
 
 * [Bots](../bots/walkthrough)
 * [Add-ins](../add-ins/)
-* [REST API-based apps](../posting/rest-api/)
+* [REST API-based apps](../posting/)
