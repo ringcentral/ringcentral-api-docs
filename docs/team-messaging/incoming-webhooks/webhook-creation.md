@@ -1,8 +1,8 @@
 # Creating and using incoming webhooks
 
-Incoming webhooks provide developers with the ability to post a message or [a card](../adaptive-cards/) to a specific chat via a dedicated URL. Incoming webhooks are special in that no authentication credentials are required to post a message via this URL. Incoming webhooks are therefore commonly used to integrate with third-party systems that need the ability to post content to a chat without a lot of overhead. 
+Incoming webhooks provide developers with the ability to post a message or [a card](../../adaptive-cards/) to a specific chat via a dedicated URL. Incoming webhooks are special in that no authentication credentials are required to post a message via this URL. Incoming webhooks are therefore commonly used to integrate with third-party systems that need the ability to post content to a chat without a lot of overhead. 
 
-!!! note "You can also post messages via the [REST API](../posting/messages/)"
+!!! note "You can also post messages via the [REST API](../../posting/)"
 
 ## Why use an incoming webhook to post a message?
 
@@ -17,7 +17,7 @@ Henceforth, when an event is triggered in Jira, it will post a JSON event payloa
 
 There are two ways to create an Incoming Webhook. The first and most common method involves using the RingCentral App, navigating to the chat/team into which you wish to receive messages, and then by clicking "Add Apps" from the conversation menu.
 
-<img src="../add-apps.png" class="img-fluid" style="max-width: 800px">
+<img src="../add-apps.png" class="img-fluid">
 
 On the subsequent screen, you will be prompted to select the app you want to install. Look for the app entitled "Incoming Webhook," hover over it, and click "Add" button. A dialog will appear and in it you will see the Incoming Webhook's URL. Copy and paste it into your target system.
 
@@ -53,7 +53,7 @@ Here is a quick sample request and response for how an Incoming Webhook is gener
 
 ## Creating an incoming webhook by installing an add-in
 
-[RingCentral add-ins](../add-ins/creation/) that can be installed directly into a team from within the RingCentral desktop app [automate the process](../add-ins/installation/) of creating and installing an incoming webhook into a third-party service on behalf of the user. If an add-in elects to implement this process the end user may never actually realize that it is via an incoming webhook that messages are posted to a chat. 
+[RingCentral add-ins](../../add-ins/creation/) that can be installed directly into a team from within the RingCentral desktop app [automate the process](../../add-ins/installation/) of creating and installing an incoming webhook into a third-party service on behalf of the user. If an add-in elects to implement this process the end user may never actually realize that it is via an incoming webhook that messages are posted to a chat. 
 
 ## Posting messages to an incoming webhook
 
