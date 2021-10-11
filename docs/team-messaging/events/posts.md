@@ -34,7 +34,7 @@ When you receive a PostAdded event, here are some tips to help you when creating
 
 ### Replying to a post added event
 
-Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../posting/). For example:
+Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../../posting/). For example:
 
 ```http
 POST <apiEntryPoint>/restapi/v1.0/glip/groups/<groupId>/posts
