@@ -1,11 +1,11 @@
 # Incoming Webhook events for Team Messaging
 
-An [Incoming Webhook](../webhook-creation/) is a feature by which third-parties can easily post messages into a team associated with the incoming webhook. Each incoming webhook in some respects represents an integration associated with a given team that has been created and installed by someone. These events, therefore, let developers track the addition of and/or modifications to these third-party integrations. They are useful to perform the following functions:
+An [Incoming Webhook](../../incoming-webhooks/webhook-creation/) is a feature by which third-parties can easily post messages into a team associated with the incoming webhook. Each incoming webhook in some respects represents an integration associated with a given team that has been created and installed by someone. These events, therefore, let developers track the addition of and/or modifications to these third-party integrations. They are useful to perform the following functions:
 
 * Be notified when an integration is deleted so that your app can perform garbage collection, such as removing an event subscription
 * Be notified when an integration is installed to automatically setup an event subscription
 
-To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must [create a subscription](../outgoing-webhooks/) with the following event filter:
+To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must [create a subscription](../../../notifications/webhooks/creating-webhooks/) with the following event filter:
 
 * `/restapi/v1.0/glip/webhooks`
 
