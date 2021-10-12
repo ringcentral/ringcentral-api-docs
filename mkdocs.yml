@@ -131,7 +131,7 @@ pages:
 #      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
     - 'Team Messaging events':
-      - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
+#      - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
       - 'Post events': 'team-messaging/events/posts.md'
       - 'Chat events': 'team-messaging/events/groups.md'
       - 'Incoming webhook events': 'team-messaging/events/incoming-webhooks.md'
