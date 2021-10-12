@@ -11,10 +11,14 @@ $RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
 
 $CHAT_ID = '<GROUP ID>';
 
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID,
+                                 $RINGCENTRAL_CLIENTSECRET,
+				 $RINGCENTRAL_SERVER);
 
 $platform = $rcsdk->platform();
-$platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+$platform->login($RINGCENTRAL_USERNAME,
+	         $RINGCENTRAL_EXTENSION,
+		 $RINGCENTRAL_PASSWORD);
 
 $endpoint = "/restapi/v1.0/glip/chats/"+CHAT_ID+"/notes";
 $params = array(

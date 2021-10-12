@@ -4,7 +4,7 @@ Using tasks in RingCentral, teams can better assign action items following a mee
 
 Using the RingCentral API, the creation and management of tasks can be completely automated. 
 
-<img src="../task.png" class="img-fluid" style="max-width: 800px">
+<img src="../task.png" class="img-fluid">
 
 ## Posting a task via the REST API
 
