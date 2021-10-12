@@ -21,7 +21,7 @@ There are two ways to create an Incoming Webhook. The first and most common meth
 
 On the subsequent screen, you will be prompted to select the app you want to install. Look for the app entitled "Incoming Webhook," hover over it, and click "Add" button. A dialog will appear and in it you will see the Incoming Webhook's URL. Copy and paste it into your target system.
 
-!!! warning "Be aware that the RingCentral App currently generates an earlier version of Incoming Webhooks ("version 1"). [Learn more](../formatting/)."
+!!! warning "Be aware that the RingCentral App currently generates an earlier version of Incoming Webhooks ("version 1"). [Learn more](../legacy-format/)."
 
 ## Create an incoming webhook using the RingCentral REST API
 
