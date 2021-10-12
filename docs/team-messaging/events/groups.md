@@ -9,7 +9,7 @@ Chat events, also known as "group" events, are triggered when some aspect of a c
 
 Each event type has a unique payload and structure depending upon the event type. The structure of a chat event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Team-Messaging-Groups-Event), but a few examples are shown below. 
 
-When [subscribing](../outgoing-webhooks/) to chat events you will need to specify the following event filter:
+When [subscribing](../../../notifications/webhooks/creating-webhooks/) to chat events you will need to specify the following event filter:
 
 * `/restapi/v1.0/glip/groups`
 
