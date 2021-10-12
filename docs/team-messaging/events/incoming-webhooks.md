@@ -5,7 +5,7 @@ An [Incoming Webhook](../../incoming-webhooks/webhook-creation/) is a feature by
 * Be notified when an integration is deleted so that your app can perform garbage collection, such as removing an event subscription
 * Be notified when an integration is installed to automatically setup an event subscription
 
-To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must [create a subscription](../../../notifications/webhooks/creating-webhooks/) with the following event filter:
+To subscribe to events relating to the creation, removal or deletion of an incoming webhook, one must [create a subscription](../outgoing-webhooks/#subscribing-to-an-outgoing-event) with the following event filter:
 
 * `/restapi/v1.0/glip/webhooks`
 

@@ -8,7 +8,7 @@ Post events are triggered within the context of team messaging whenever some fac
 
 Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event), but a few examples are shown below. 
 
-When [subscribing](../../../notifications/webhooks/creating-webhooks/) to post events you will need to specify the following event filter:
+When [subscribing](../outgoing-webhooks/#subscribing-to-an-outgoing-event) to post events you will need to specify the following event filter:
 
 * `/restapi/v1.0/glip/posts`
 
