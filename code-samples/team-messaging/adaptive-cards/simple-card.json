@@ -1,4 +1,6 @@
 {
+    "activity": "This will appear as the message title",
+    "iconUrl": "https://example.com/override/bot/icon.png",
     "attachments": [
 	{
 	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
