@@ -1,0 +1,29 @@
+name: Check Python code samples
+#on:
+#  push:
+#    branches: master
+on: workflow_dispatch
+
+jobs:
+  code-sample-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    environment:
+      name: master
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+#    - name: Set up Python ${{ matrix.python-version }}
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: ${{ matrix.python-version }}
+    - name: Check python code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'python'
+        verbose-mode: 'no'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
