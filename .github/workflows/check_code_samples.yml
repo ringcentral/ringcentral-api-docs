@@ -23,7 +23,7 @@ jobs:
       uses: byrnereese/github-action-code-sample-check@main
       with:
         languages: 'python'
-        verbose-mode: 'no'
+        verbose-mode: 'yes'
         folder-path: 'code-samples'
         syntax-only: 'yes'
         recurse: 'yes'
