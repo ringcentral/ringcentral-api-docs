@@ -1,4 +1,4 @@
-name: Check Python code samples
+name: Check code samples
 #on:
 #  push:
 #    branches: master
@@ -15,15 +15,19 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-#    - name: Set up Python ${{ matrix.python-version }}
-#      uses: actions/setup-python@v2
-#      with:
-#        python-version: ${{ matrix.python-version }}
     - name: Check python code samples for syntax
       uses: byrnereese/github-action-code-sample-check@main
       with:
         languages: 'python'
-        verbose-mode: 'no'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
+    - name: Check PHP code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'php'
+        verbose-mode: 'yes'
         folder-path: 'code-samples'
         syntax-only: 'yes'
         recurse: 'yes'
