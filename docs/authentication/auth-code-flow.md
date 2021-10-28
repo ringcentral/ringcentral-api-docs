@@ -69,7 +69,7 @@ Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&s
      
 After the web server receives the authorization code, it can exchange the authorization code for an access token using token endpoint `/restapi/oauth/token` (API group is *Auth*).
 
-Token requests must include client authentication credentials (see Client Authentication section).
+Token requests must include client authentication credentials (see [Client Authentication](../tokens#authenticating-your-application-to-obtain-an-access-token) section).
 
 **Request Body**
 
