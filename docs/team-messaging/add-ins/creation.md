@@ -17,7 +17,7 @@ A simple example of a notification add-in that most developers can quickly grok 
 
 When creating an app, first select the "Notification add-in" app type. 
 
-![Add-in app type](./addin-app-type.png)
+![Add-in app type](../addin-app-type.png)
 
 Creating a notification add-in is identical in most respects to [creating an app](../../../basics/create-app/) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
 
@@ -29,13 +29,13 @@ Please provide a display name and app icon for your add-in, as they are required
 
 If your add-in will support interactive messages, specifically it will make use of the `Action.Submit` element, then you will need to enable the "Interactive Messages" feature for your app. Be sure to specify an outbound webhook URL for your app so that RingCentral can deliver events to your app. 
 
-![Add-in app type](./interactive-message-options.png)
+![Add-in app type](../interactive-message-options.png)
 
 ### Integrated installation
 
 The "Integrated installation in RingCentral app" is automatically enabled for RingCentral add-ins. At a minimum, you must provide manual installation instructions so that users know how to install your add-in properly. If the [installation process can be automated](../installation/), we recommend doing so. 
 
-![Add-in app type](./install-options.png)
+![Add-in app type](../install-options.png)
 
 Preferences include:
 

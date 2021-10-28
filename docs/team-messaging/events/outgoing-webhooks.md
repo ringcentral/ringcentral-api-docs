@@ -6,7 +6,7 @@ In response to the actions taken by users within our product, the RingCentral pl
 2. Push notifications - direct event delivery to a specific client, e.g. a specific mobile phone or Javascript client.
 
 !!! info "Outgoing webhooks vs incoming webhooks"
-    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../incoming-webhooks/webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
+    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../../incoming-webhooks/webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
 
 ## Outgoing event structure
 
