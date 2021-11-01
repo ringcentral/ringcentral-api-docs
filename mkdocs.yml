@@ -250,6 +250,7 @@ pages:
     - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
     - 'Presence': 'account/presence.md'
+    - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
