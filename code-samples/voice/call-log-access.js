@@ -1,6 +1,6 @@
 const RingCentral = require('@ringcentral/sdk').SDK
 var rcsdk = new RingCentral({
-  server: 'https://platform.devtest.ringcentral.com' // for Production: https://platform.ringcentral.com
+    server: 'https://platform.devtest.ringcentral.com', // for Production: https://platform.ringcentral.com
   clientId: '{{REPLACE_WITH_YOUR_APP_KEY}}',
   clientSecret: '{{REPLACE_WITH_YOUR_APP_SECRET}}'
 });

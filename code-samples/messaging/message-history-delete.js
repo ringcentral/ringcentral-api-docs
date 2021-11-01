@@ -14,10 +14,10 @@ platform.on(platform.events.loginSuccess, async function(e) {
       const messages = jsonObj.records
       console.log(`We get of a list of ${messages.length} messages`)
       const message = messages[0]
-      var resp = await platform.delete(`/restapi/v1.0/account/~/extension/~/message-store/${message.id}`)
-      var jsonObj = wait resp.json()
+      var resp = await platform.delete( `/restapi/v1.0/account/~/extension/~/message-store/${message.id}` )
+      var jsonObj = await resp.json()
       console.log(`Message ${message.id} has been deleted`)
-    } catch (e)
-    console.error(e)
-  }
-}
+    } catch (e) {
+	console.error(e)
+    }
+})
