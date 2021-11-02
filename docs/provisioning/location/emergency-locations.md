@@ -8,9 +8,7 @@ Setting the emergency address allows you to enter your physical location with a 
 
 ```http
 PUT /restapi/v1.0/account/~/device/<deviceId>
-```
 
-```json
 {
   "street": "997 BAKER WAY",
   "street2": "5001",
@@ -29,18 +27,19 @@ PUT /restapi/v1.0/account/~/device/<deviceId>
 
 Another way to set emergency locations is through the Emergency Response Locations API. Instead of having to enter a discrete address each time you change locations, you can create location profiles for users to easily select their emergency location from a drop down list.
 
+### Checking to see if EMLs are enabled for your account
+
 A feature will be set on the account to determine if Emergencey Response Locations (ERL) are enabled. Use the following method to check if this feature is enabled on the account:
 
-### Example
-
 #### Request
+
 ```http
 GET /restapi/v1.0/account/~/extension/~/features?featureId=NewEmergencyCallingFramework
 ```
 
 #### Response
+
 ```json
-...
 {
   "id" : "NewEmergencyCallingFramework",
   "available" : true,
@@ -55,10 +54,11 @@ GET /restapi/v1.0/account/~/extension/~/features?featureId=NewEmergencyCallingFr
     }
   ]
 }
-...
 ```
 
-The parameters seen in this response have a particular meaning for Emergency Response Locations.
+If the `NewEmergencyCallingFramework` feature is set to `true`.  This means you can **not** set the discrete emergency address (street, city, country, etc) directly and must use the ERL flow instead.
+
+Also, the parameters seen in this response have a particular meaning for Emergency Response Locations.
 
 | Property | Value | Description |
 |-|-|-|
@@ -69,9 +69,7 @@ The parameters seen in this response have a particular meaning for Emergency Res
 !!! important "EME-384 Error"
     If you see an error message `EME-384`, this indicates you are not able to set the discrete emergency address anymore and must use this workflow for creating emergency response locations.
 
-Notice above that the `NewEmergencyCallingFramework` feature is set to `true`.  This means you can **not** set the discrete emergency address (street, city, country, etc) and must use this ERL flow instead.
-
-### Set Company Wide Emergency Locations
+### Set company-eide emergency locations
 
 Company wide emergency response locations are public locations available to all users on the company account. 
 
@@ -79,9 +77,7 @@ Company wide emergency response locations are public locations available to all 
 
 ```http
 POST /restapi/v1.0/account/~/emergency-locations
-```
 
-```json
 {
   "name": "San Mateo Office Location",
   "address":
@@ -100,7 +96,7 @@ POST /restapi/v1.0/account/~/emergency-locations
 
 Please see the [API Reference](https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createEmergencyLocation) for more details.
 
-### Set User Specific Emergency Locations
+### Set user-specific emergency locations
 
 User specific emergency response locations are private locations for use by the uesr (extension) only.
 
@@ -108,9 +104,7 @@ User specific emergency response locations are private locations for use by the 
 
 ```http
 POST /restapi/v1.0/account/~/extension/~/emergency-locations
-```
 
-```json
 {
   "name": "My work location",
   "address":
