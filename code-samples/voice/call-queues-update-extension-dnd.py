@@ -1,13 +1,4 @@
 #!/usr/bin/env python
-# voice/call-queues-read-call-queues.py - 
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-# 
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 import os,sys
 

@@ -1,15 +1,28 @@
-const RingCentral = require('@ringcentral/sdk').SDK
-var fs = require('fs')
+const RC  = require('@ringcentral/sdk').SDK
+var fs    = require('fs')
 var https = require('https');
+require('dotenv').config();
 
-var rcsdk = new RingCentral({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
+
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
 var platform = rcsdk.platform();
-
 platform.login({
-    username: "username",
-    password: "password",
-    extension: "extension_number"
-}).then(function(resp) {
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
+
+platform.on(platform.events.loginSuccess, () => {
     create_compliance_export_task()
 })
 

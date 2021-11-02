@@ -4,7 +4,7 @@ import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Send_SMS {
-    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
+    static String SMS_RECIPIENT = "<ENTER PHONE NUMBER>";
 
     static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
     static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
@@ -42,7 +42,7 @@ public class Send_SMS {
     public void send_sms(String phoneNumber) throws RestException, IOException {
         CreateSMSMessage postParameters = new CreateSMSMessage();
         postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(phoneNumber);
-        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
+        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(SMS_RECIPIENT)};
         postParameters.text = "Hello World from Java";
 
         var response = restClient.restapi().account().extension().sms().post(postParameters);

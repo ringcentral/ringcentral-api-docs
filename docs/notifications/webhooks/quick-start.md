@@ -40,6 +40,7 @@ Select your preferred language below.
 
     ```bash
     $ npm install ringcentral --save
+    $ npm install dotenv --save
     ```
 
     ### Run ngrok to create a localhost tunnel
@@ -48,17 +49,17 @@ Select your preferred language below.
     $ ngrok http 5000
     ```
 
-    Copy the forwarding address e.g. https://54a0541a.ngrok.io and append the path "/webhook" to the address then paste it into the DELIVERY_ADDRESS variable in the code below.
+    Copy the forwarding address, e.g. https://54a0541a.ngrok.io, and append the path "/webhook" to the address then paste it into the DELIVERY_ADDRESS variable in the code below.
 
-    ### Create and Edit webhook-notification.js
+    ### Create and edit webhook-notification.js
 
-    Create a file called <tt>webhook-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called <tt>webhook-notification.js</tt> using the contents below.
 
     ```javascript
     {!> code-samples/webhooks/quick-start/javascript/webhook-notification.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -71,7 +72,7 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
     ### Run ngrok to create a localhost tunnel
@@ -84,9 +85,9 @@ Select your preferred language below.
 
     Note: Running the demo code requires Python 3.x
 
-    ### Create and Edit webhook-notification.py
+    ### Create and edit webhook-notification.py
 
-    Create a file called <tt>webhook-notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called <tt>webhook-notification.py</tt> using the contents below.
 
     ```python
     {!> code-samples/webhooks/quick-start/python/webhook-notification.py !} 
@@ -100,7 +101,7 @@ Select your preferred language below.
     {!> code-samples/webhooks/quick-start/python/webhook-server.py !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -123,7 +124,7 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
     ### Run ngrok to create a localhost tunnel
@@ -136,13 +137,13 @@ Select your preferred language below.
 
     ### Create and Edit webhook-notification.php
 
-    Create a file called <tt>webhook-notification.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called <tt>webhook-notification.php</tt> using the contents below.
 
     ```php
     {!> code-samples/webhooks/quick-start/php/webhook-notification.php !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -297,7 +298,7 @@ Select your preferred language below.
     {!> code-samples/webhooks/quick-start/c-sharp/Program.cs !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -325,6 +326,7 @@ Select your preferred language below.
 
     ```bash
     $ gem install ringcentral-sdk
+    $ gem install dotenv
     $ gem install sinatra
     ```
 
@@ -352,7 +354,7 @@ Select your preferred language below.
     {!> code-samples/webhooks/quick-start/ruby/webhook-server.rb !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 

@@ -1,9 +1,17 @@
 require 'ringcentral'
+require 'dotenv/load'
 
-rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+CLIENTID     = ENV['RC_CLIENT_ID']
+CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
+SERVER       = ENV['RC_SERVER_URL']
+USERNAME     = ENV['RC_USERNAME']
+PASSWORD     = ENV['RC_PASSWORD']
+EXTENSION    = ENV['RC_EXTENSION']
 
-resp = rc.get('/restapi/v1.0/account/~/extension/~/call-log', {
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
+
+resp = $rc.get('/restapi/v1.0/account/~/extension/~/call-log', {
     view: 'Detailed'
 })
 

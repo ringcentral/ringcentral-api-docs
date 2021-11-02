@@ -1,20 +1,19 @@
 require 'ringcentral'
+require 'dotenv/load'
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
+CLIENTID     = ENV['RC_CLIENT_ID']
+CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
+SERVER       = ENV['RC_SERVER_URL']
+USERNAME     = ENV['RC_USERNAME']
+PASSWORD     = ENV['RC_PASSWORD']
+EXTENSION    = ENV['RC_EXTENSION']
+RECIPIENT    = ENV['RINGOUT_RECIPIENT']
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-resp = rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
-    from: { phoneNumber: RINGCENTRAL_USERNAME },
+resp = $rc.post('/restapi/v1.0/account/~/extension/~/ring-out', payload: {
+    from: { phoneNumber: USERNAME },
     to: { phoneNumber: RECIPIENT },
     playPrompt: false
 })

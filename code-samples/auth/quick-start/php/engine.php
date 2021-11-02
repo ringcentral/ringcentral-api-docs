@@ -3,11 +3,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 use RingCentral\SDK\Http\HttpException;
 use RingCentral\SDK\Http\ApiResponse;
 use RingCentral\SDK\SDK;
-require_once('configs.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+$CLIENTID     = $_ENV['RC_CLIENT_ID'];
+$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
+$SERVER       = $_ENV['RC_SERVER_URL'];
+$USERNAME     = $_ENV['RC_USERNAME'];
+$PASSWORD     = $_ENV['RC_PASSWORD'];
+$EXTENSION    = $_ENV['RC_EXTENSION'];
+$REDIRECT_URL = $_ENV['RC_REDIRECT_URL'];
+$LOCAL_SERVER = 'http://localhost:5000';
 
 session_start();
 
-$rcsdk = new SDK($RINGCENTRAL_CLIENT_ID, $RINGCENTRAL_CLIENT_SECRET, $RINGCENTRAL_SERVER_URL);
+$rcsdk = new SDK($CLIENT_ID, $CLIENT_SECRET, $SERVER_URL);
 $platform = $rcsdk->platform();
 
 if (isset($_REQUEST['oauth2callback'])){
@@ -15,26 +25,26 @@ if (isset($_REQUEST['oauth2callback'])){
       return;
   }
   $qs = $platform->parseAuthRedirectUrl($_SERVER['QUERY_STRING']);
-  $qs["redirectUri"] = $RINGCENTRAL_REDIRECT_URL;
+  $qs["redirectUri"] = $REDIRECT_URL;
 
   $platform->login($qs);
   $_SESSION['sessionAccessToken'] = $platform->auth()->data();
-  header("Location: http://localhost:5000/test.html");
+  header("Location: " + $LOCAL_SERVER + "/test.html");
 }
 
 if (!isset($_SESSION['sessionAccessToken'])) {
-    header("Location: http://localhost:5000");
+    header("Location: " + $LOCAL_SERVER);
     exit();
 }else{
     $platform->auth()->setData((array)$_SESSION['sessionAccessToken']);
     if (!$platform->loggedIn()) {
-        header("Location: http://localhost:5000");
+        header("Location: " + $LOCAL_SERVER);
         exit();
     }
     if (isset($_REQUEST['logout'])){
         unset($_SESSION['sessionAccessToken']);
         $platform->logout();
-        header("Location: http://localhost:5000");
+        header("Location: " + $LOCAL_SERVER);
         exit();
     }elseif (isset($_REQUEST['api'])){
         if ($_REQUEST['api'] == "extension") {

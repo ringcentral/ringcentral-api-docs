@@ -1,13 +1,4 @@
 #!/usr/bin/env python
-# pubnub/quick-start.py - This script helps developers subscribe to events via pubnub
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-# 
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 from multiprocessing import Process
 from time import sleep
@@ -23,7 +14,10 @@ EXTENSION    = os.environ.get('RC_EXTENSION')
 
 rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER)
 platform = rcsdk.platform()
-platform.login(USERNAME, EXTENSION, PASSWORD)
+try:
+  platform.login(USERNAME, EXTENSION, PASSWORD)
+except:
+  sys.exit("Unable to authenticate to platform. Check credentials.")
 
 def on_message(msg):
     print (msg)

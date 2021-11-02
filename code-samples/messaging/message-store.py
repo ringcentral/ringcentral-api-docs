@@ -1,15 +1,8 @@
 #!/usr/bin/env python
-# messaging/quick-start.py - This script helps developers send their first SMS message
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-# RECIPIENT_PHONE: The phone number to send the SMS to
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 import os,sys
+from dotenv import load_dotenv
+load_dotenv()
 
 CLIENTID     = os.environ.get('RC_CLIENT_ID')
 CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')

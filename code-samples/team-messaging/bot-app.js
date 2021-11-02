@@ -1,19 +1,30 @@
-require('dotenv').config();
-
-const RC    = require('ringcentral');
+const RC    = require('@ringcentral/sdk').SDK
 var express = require('express');
 var request = require('request');
 var bp      = require('body-parser')
+require('dotenv').config();
 
-// read in config parameters from environment, or .env file
-const PORT            = process.env.PORT;
-const REDIRECT_HOST   = process.env.REDIRECT_HOST;
-const CLIENT_ID       = process.env.CLIENT_ID;
-const CLIENT_SECRET   = process.env.CLIENT_SECRET;
-const RINGCENTRAL_ENV = process.env.RINGCENTRAL_ENV;
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
+
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
+var platform = rcsdk.platform();
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
 
 var app = express();
-var platform, subscription, rcsdk, subscriptionId, bot_token;
+var subscription, subscriptionId, bot_token;
 
 app.use( bp.json() );
 app.use( bp.urlencoded({
@@ -30,16 +41,6 @@ app.listen(PORT, function () {
 app.get('/', function(req, res) {
     res.send('Ngrok is working! Path Hit: ' + req.url);
 });
-
-// instantiate the RingCentral Javascript SDK
-// Be default, this will communicate with the RingCentral developer sandbox
-rcsdk = new RC({
-    server:    RINGCENTRAL_ENV,
-    appKey:    CLIENT_ID,
-    appSecret: CLIENT_SECRET
-});
-
-platform = rcsdk.platform();
 
 // Handle authorization callbacks
 // When a bot is added to an organization, a.k.a. when it is installed,

@@ -6,7 +6,7 @@ namespace Send_SMS
 {
 class Program
 {
-  const string RECIPIENT = "<ENTER PHONE NUMBER>";
+  const string SMS_RECIPIENT = "<ENTER PHONE NUMBER>";
   const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
   const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
   const bool RINGCENTRAL_PRODUCTION = false;
@@ -48,7 +48,7 @@ LoopEnd:
       phoneNumber = fromNumber
     };
     parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest {
-                        phoneNumber = RECIPIENT
+                        phoneNumber = SMS_RECIPIENT
                       } };
     parameters.text = "Hello World from C#";
 

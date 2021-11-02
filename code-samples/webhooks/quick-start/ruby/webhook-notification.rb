@@ -1,20 +1,18 @@
 require 'ringcentral'
+require 'dotenv/load'
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+CLIENTID         = ENV['RC_CLIENT_ID']
+CLIENTSECRET     = ENV['RC_CLIENRT_SECRET']
+SERVER           = ENV['RC_SERVER_URL']
+USERNAME         = ENV['RC_USERNAME']
+PASSWORD         = ENV['RC_PASSWORD']
+EXTENSION        = ENV['RC_EXTENSION']
+DELIVERY_ADDRESS = '<https://xxxxxxxx.ngrok.io>'
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
-DELIVERY_ADDRESS= '<https://xxxxxxxx.ngrok.io>'
-
-
-rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
-
-r = rc.post('/restapi/v1.0/subscription', payload: {
+r = $rc.post('/restapi/v1.0/subscription', payload: {
     eventFilters: ['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'],
     deliveryMode: { transportType: 'WebHook', address: DELIVERY_ADDRESS }
 })
@@ -22,4 +20,4 @@ r = rc.post('/restapi/v1.0/subscription', payload: {
 puts r.body['id']
 puts "WebHook Ready"
 
-rc.revoke()
+$rc.revoke()

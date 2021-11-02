@@ -1,7 +1,10 @@
-#
 # Create an app in the RingCentral Developer Console. Make sure the app has all permissions enabled.
 # Enter in the credentials for this app into the fields below.
+
+# Sandbox
 RC_SERVER_URL        = 'https://platform.devtest.ringcentral.com'
+# Production
+#RC_SERVER_URL        = 'https://platform.ringcentral.com'
 RC_CLIENT_ID         = ''
 RC_CLIENT_SECRET     = ''
 RC_USERNAME          = ''
@@ -10,10 +13,15 @@ RC_EXTENSION         = '101'
 
 # Used in messaging/quick-start.py
 # This following phone number will receive a test SMS message
-RECIPIENT_PHONE      = ""
+SMS_RECIPIENT        = ''
 
-# Used in pubnub quick start?
-# The following URL cannot be blank, and its value will have no impact on test results. 
+# Used in voice/quick-start.py
+# This following phone number will receive a phone call
+RINGOUT_RECIPIENT    = ''
+
+# Used in PubNub Quick Start
+# The following URL cannot be blank when running the PubNub Quick Start.
+# Its value will have no impact on automated test results. 
 RC_REDIRECT_URL      = 'http://localhost:5000/oauth2callback'
 
 # Used in voice/call-forwarding.py

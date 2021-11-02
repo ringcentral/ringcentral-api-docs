@@ -1,17 +1,15 @@
+const RC = require('@ringcentral/sdk').SDK
 var http = require('http');
-const RingCentral = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
+PORT             = 5000
 DELIVERY_ADDRESS = '<https://xxxxxxxx.ngrok.io/webhook>'
-
-PORT = 5000
+CLIENTID         = process.env.RC_CLIENT_ID
+CLIENTSECRET     = process.env.RC_CLIENT_SECRET
+SERVER           = process.env.RC_SERVER_URL
+USERNAME         = process.env.RC_USERNAME
+PASSWORD         = process.env.RC_PASSWORD
+EXTENSION        = process.env.RC_EXTENSION
 
 var server = http.createServer(function(req, res) {
   if (req.method == 'POST') {
@@ -37,10 +35,17 @@ var server = http.createServer(function(req, res) {
 });
 server.listen(PORT);
 
-var rcsdk = new RingCentral({ server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET });
-
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
 var platform = rcsdk.platform();
-platform.login({ username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION })
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
 
 platform.on(platform.events.loginSuccess, function(e) {
   console.log("Login success")

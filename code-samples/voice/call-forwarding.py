@@ -1,13 +1,4 @@
 #!/usr/bin/env python
-# meetings/quick-start.py - This script helps developers create a meeting
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-# RC_PHONENUMBER - the phone number to forward calls to
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 import os,sys
 

@@ -1,19 +1,9 @@
 #!/usr/bin/env python
-# auth/quick-start/python/index.py - This script renders an HTML page
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-#
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 import logging,os,sys,urllib
 from flask import Flask, render_template, request, session
-
-app = Flask(__name__)
-app.secret_key = 'somesecretstring'
+from dotenv import load_dotenv
+load_dotenv()
 
 CLIENTID     = os.environ.get('RC_CLIENT_ID')
 CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
@@ -23,7 +13,10 @@ PASSWORD     = os.environ.get('RC_PASSWORD')
 EXTENSION    = os.environ.get('RC_EXTENSION')
 REDIRECT_URL = os.environ.get('RC_REDIRECT_URL')
 
-rcsdk = SDK(CLIENTID, CLIENTSECRET, SERVER)
+rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+platform = rcsdk.platform()
+app = Flask(__name__)
+app.secret_key = 'somesecretstring'
 
 @app.route('/')
 @app.route('/index')
@@ -42,7 +35,10 @@ def login():
 def oauth2callback():
     platform = rcsdk.platform()
     auth_code = request.values.get('code')
-    platform.login('', '', '', auth_code, REDIRECT_URL)
+    try:
+        platform.login('', '', '', auth_code, REDIRECT_URL)
+    except:
+        sys.exit("Unable to authenticate to platform. Check credentials.")
     tokens = platform.auth().data()
     session['sessionAccessToken'] = tokens
     return render_template('test.html')

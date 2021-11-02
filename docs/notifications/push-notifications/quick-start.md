@@ -38,10 +38,19 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk @ringcentral/subscriptions --save
+    $ npm install @ringcentral/sdk --save
+	$ npm install @ringcentral/subscriptions --save
+	$ npm install dotenv --save
     ```
 
-    ### Create and Edit pubnub-notification.js
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+
+    ### Create and edit pubnub-notification.js
 
     Create a file called <tt>pubnub-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
@@ -49,9 +58,9 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     {!> code-samples/pubnub/quick-start.js !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
-    You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
+    You are almost done. Now run your script.
 
     ```bash
     $ node pubnub-notification.js
@@ -62,20 +71,27 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
+
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
     ### Create and Edit pubnub_notification.py
 
-    Create a file called <tt>pubnub_notification.py</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called <tt>pubnub_notification.py</tt> using the contents below.
 
     ```python
     {!> code-samples/pubnub/quick-start.py !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
-    You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
+    You are almost done. Now run your script.
 
     ```bash
     $ python pubnub_notification.py
@@ -87,20 +103,27 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Create and Edit pubnub-notification.php
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
-    Create a file called <tt>pubnub-notification.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    ### Create and edit pubnub-notification.php
+
+    Create a file called <tt>pubnub-notification.php</tt> using the contents below.
 
     ```php
-    {!> code-samples/pubnub/quick-start.php !}  
+    {!> code-samples/pubnub/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
-    You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
+    You are almost done. Now run your script.
 
     ```bask
     $ php pubnub-notification.php
@@ -124,7 +147,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     {!> code-samples/pubnub/quick-start.cs !} 
     ```
 
-    ### Run Your App
+    ### Run your app
 
     You are almost done. Now run your app from Visual Studio and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
 
@@ -169,29 +192,36 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     {!> code-samples/pubnub/quick-start.java !} 
     ```
 
-    ### Run Your App
+    ### Run your app
 
-    You are almost done. Now run your app from Eclipse and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
+    You are almost done. Now run your app from Eclipse.
 
 === "Ruby"
 
     ### Install RingCentral Ruby SDK
 
     ```bash
-    $ gem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and Edit pubnub_notification.rb
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
-    Create a file called <tt>pubnub_notification.rb</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    ### Create and edit pubnub_notification.rb
+
+    Create a file called <tt>pubnub_notification.rb</tt> using the contents below.
 
     ```ruby
     {!> code-samples/pubnub/quick-start.rb !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
-    You are almost done. Now run your script and send an SMS message to the phone number specified in the <RINGCENTRAL_USERNAME>.
+    You are almost done. Now run your script.
 
     ```bash
     $ ruby pubnub_notification.rb

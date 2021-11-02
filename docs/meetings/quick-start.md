@@ -46,18 +46,25 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk --save
+    $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Create and Edit meetings.js
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Create and edit meetings.js
 
-    Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `meetings.js` using the content below.
 
     ```javascript
     {!> code-samples/meetings/quick-start.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -70,18 +77,25 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
-    ### Create and Edit meetings.py
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Create and edit meetings.py
 
-    Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `meetings.py` using the contents below.
 
     ```python
     {!> code-samples/meetings/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -95,18 +109,25 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
     ### Create and Edit meetings.php
 
-    Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `meetings.php` using the contents below.
 
     ```PHP
     {!> code-samples/meetings/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -177,7 +198,7 @@ Select your preferred language below.
     {!> code-samples/meetings/quick-start.java !}
     ```
 
-    ### Run Your App
+    ### Run your app
 
     You are almost done. Now run your app from Eclipse.
 
@@ -186,18 +207,32 @@ Select your preferred language below.
     ### Install RingCentral Ruby SDK
 
     ```bash
-    $ rem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and Edit meetings.rb
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Create and edit meetings.rb
 
     Create a file called `meetings.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-    ```python
+    ```ruby
     {!> code-samples/meetings/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Run your code
 
     You are almost done. Now run your script.
 

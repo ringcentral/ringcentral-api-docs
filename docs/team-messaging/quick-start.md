@@ -41,18 +41,25 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk --save
+    $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Create and Edit create-team.js
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Create and edit create-team.js
 
-    Create a file called `create-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.js` using the contents below.
 
     ```JavaScript
     {!> code-samples/team-messaging/quick-start.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -65,18 +72,25 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
+
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
     ### Create and Edit create-team.py
 
-    Create a file called `create-team.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.py` using the contents below.
 
     ```python
     {!> code-samples/team-messaging/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -90,18 +104,25 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Create and Edit create-team.php
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
+    ### Create and edit create-team.php
 
-    Create a file called `create-team.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.php` using the contents below.
 
     ```PHP
     {!> code-samples/team-messaging/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -126,7 +147,7 @@ Select your preferred language below.
     {!> code-samples/team-messaging/quick-start.cs !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your app from Visual Studio. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -172,7 +193,7 @@ Select your preferred language below.
     {!> code-samples/team-messaging/quick-start.java !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done.  Now run your app from Eclipse. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -181,18 +202,25 @@ Select your preferred language below.
     ### Install RingCentral SDK gem
 
     ```bash
-    $ gem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
+    ### Download and edit a `.env` file
+	
+	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+	
     ### Create and Edit create-team.rb
 
-    Create a file called `create-team.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.rb` using the contents below.
 
     ```ruby
     {!> code-samples/team-messaging/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 

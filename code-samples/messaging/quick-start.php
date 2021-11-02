@@ -1,13 +1,4 @@
 <?php
-/* quick-start.py - This script helps developers send their first SMS message
- *
- * Variables:
- * RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
- * RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
- * RECIPIENT_PHONE: The phone number to send the SMS to
- * 
- * License: MIT
- * Copyright: 2021 RingCentral, Inc. */
 require('vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
@@ -18,11 +9,12 @@ $SERVER       = $_ENV['RC_SERVER_URL'];
 $USERNAME     = $_ENV['RC_USERNAME'];
 $PASSWORD     = $_ENV['RC_PASSWORD'];
 $EXTENSION    = $_ENV['RC_EXTENSION'];
-$RECIPIENT    = $_ENV['RECIPIENT_PHONE'];
+$RECIPIENT    = $_ENV['SMS_RECIPIENT'];
 
 $rcsdk = new RingCentral\SDK\SDK($CLIENTID, $CLIENTSECRET, $SERVER);
 $platform = $rcsdk->platform();
 $platform->login($USERNAME, $EXTENSION, $PASSWORD);
+
 read_extension_phone_number();
 
 function read_extension_phone_number(){
