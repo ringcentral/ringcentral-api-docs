@@ -40,7 +40,7 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk dotenv --save
+    $ npm install @ringcentral/sdk --save
     ```
 
     ### Download and edit a `.env` file
@@ -60,9 +60,10 @@ Select your preferred language below.
 
     ### Run your code
 
-    You are almost done. Now run your script.
+    You are almost done. Now, load your variables into your local environment, and run your script.
 
     ```bash
+	$ source .env
     $ node ringout.js
     ```
 
