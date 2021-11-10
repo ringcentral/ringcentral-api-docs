@@ -1,7 +1,8 @@
 # SMS Best Practices Guide
 
 !!! note "First time sending an SMS?"
-    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to read the following best practices as well.
+    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you to check our [SMS content policies](../sms-content-policy/)
+    We also recommend to try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to read the following best practices as well.
 
 * Check API Error Status Code
 * Use Single Domain Links

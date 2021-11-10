@@ -1,5 +1,7 @@
 # Introduction to SMS and Fax Messaging on RingCentral
 
+!!! hint "Please see [RingCentral SMS Content Policies](messaging/sms/sms-content-policy/)"
+
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting Started with SMS and Fax Messaging</h3>
   <p class="lead">Within the RingCentral Platform, Messaging encompasses a number of elements that work together to enable developers to send and receive SMS, fax, voicemail and pager messages through the network. In addition, all messages sent and received over the network are captured within the RingCentral Message Store which allows developers to download messages, access message histories, and manage user inboxes.</p>
