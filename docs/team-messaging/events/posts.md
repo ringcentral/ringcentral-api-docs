@@ -6,9 +6,9 @@ Post events are triggered within the context of team messaging whenever some fac
 * Post removed
 * Post changed
 
-Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Glip-Post-Event), but a few examples are shown below. 
+Each event type has a unique payload and structure depending upon the event type. The structure of a post event is [documented within the API Reference](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event), but a few examples are shown below. 
 
-When [subscribing](../outgoing-webhooks/) to post events you will need to specify the following event filter:
+When [subscribing](../outgoing-webhooks/#subscribing-to-an-outgoing-event) to post events you will need to specify the following event filter:
 
 * `/restapi/v1.0/glip/posts`
 
@@ -20,7 +20,7 @@ Once a subscription has been setup, your application will begin receiving events
 
 When you receive a PostAdded event, here are some tips to help you when creating a bot designed to respond to post events.
 
-* The value of Verification-Token header [should be verified](../outgoing-webhooks/#verifying-webhooks)
+* The value of Verification-Token header [should be verified](../../events/interactive-messages/#verifying-the-authenticity-of-an-event)
 
 * Messages where the `body.eventType` is not equal to "PostAdded" should be ignored so that your bot does not reply to post changed events accidentally.
 
@@ -34,7 +34,7 @@ When you receive a PostAdded event, here are some tips to help you when creating
 
 ### Replying to a post added event
 
-Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../posting/). For example:
+Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../../posting/). For example:
 
 ```http
 POST <apiEntryPoint>/restapi/v1.0/glip/groups/<groupId>/posts

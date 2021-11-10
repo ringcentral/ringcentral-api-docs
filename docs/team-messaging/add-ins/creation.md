@@ -1,22 +1,25 @@
-# Building a RingCentral Add-in
+# Building a RingCentral Notification Add-in
 
-A RingCentral Add-in is a specialized app type intended to help developers deliver messages to the teams into which these apps are installed, in response to events and triggers that happen outside of RingCentral.
+!!! alert "Notification add-ins currently in BETA"
+    There are some issues currently impacting the developer experience around the creation of notification add-ins. Specifically, it is difficult to install add-ins into the Developer sandbox. Therefore, we recommend waiting to begin development until October 28, 2021 when developers will be able to install add-ins via the Developer Console. 
 
-A simple example of an add-in that most developers can quickly grok is the Github app that posts a message to team whenever a pull request is submitted to a github respository.
+A RingCentral notification add-in is a specialized app type intended to help developers deliver messages to the teams into which these apps are installed, in response to events and triggers that happen outside of RingCentral.
 
-## Add-in features
+A simple example of a notification add-in that most developers can quickly grok is the Github app that posts a message to team whenever a pull request is submitted to a github respository.
 
-1. Add-ins are promoted directly within RingCentral's desktop client to help customers find and install them. 
-2. Add-ins optionally post interactive message elements allowing users to take action directly on a message without ever having to leave the RingCentral app. 
-3. Add-ins can optionally provide users with the means to install the app from within the RingCentral desktop client via an embedded iframe.
+## Notification add-in features
 
-## Creating an add-in
+1. Notification add-ins are promoted directly within RingCentral's desktop client to help customers find and install them. 
+2. Notification add-ins optionally post interactive message elements allowing users to take action directly on a message without ever having to leave the RingCentral app. 
+3. Notification add-ins can optionally provide users with the means to install the app from within the RingCentral desktop client via an embedded iframe.
 
-When creating an app, first select the "RingCentral Add-in" app type. 
+## Creating a notification add-in
 
-![Add-in app type](./addin-app-type.png)
+When creating an app, first select the "Notification add-in" app type. 
 
-Creating an add-in is identical in most respects to [creating an app](../../../basics/create-app/) of any other type. Add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
+![Add-in app type](../addin-app-type.png)
+
+Creating a notification add-in is identical in most respects to [creating an app](../../../basics/create-app/) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
 
 ### App preferences
 
@@ -26,18 +29,18 @@ Please provide a display name and app icon for your add-in, as they are required
 
 If your add-in will support interactive messages, specifically it will make use of the `Action.Submit` element, then you will need to enable the "Interactive Messages" feature for your app. Be sure to specify an outbound webhook URL for your app so that RingCentral can deliver events to your app. 
 
-![Add-in app type](./interactive-message-options.png)
+![Add-in app type](../interactive-message-options.png)
 
 ### Integrated installation
 
-The "Integrated installation in RingCentral app" is automatically enabled for RingCentral add-ins. At a minimum, you must provide manual installation instructions so that users know how to install your add-in properly. If the [installation process can be automated](./installation/), we recommend doing so. 
+The "Integrated installation in RingCentral app" is automatically enabled for RingCentral add-ins. At a minimum, you must provide manual installation instructions so that users know how to install your add-in properly. If the [installation process can be automated](../installation/), we recommend doing so. 
 
-![Add-in app type](./install-options.png)
+![Add-in app type](../install-options.png)
 
 Preferences include:
 
 * **Manual installation instructions** - this text will appear when a user elects to read the "manual installation instructions" associated with your app.
-* **Web-based installation** - if your app supports the customer's ability to setup/configure your app via the web, enter the URL to that flow in this field. See [Automating App Setup](./installation/).
+* **Web-based installation** - if your app supports the customer's ability to setup/configure your app via the web, enter the URL to that flow in this field. See [Automating App Setup](../installation/).
 
 #### Using `{{ WEBHOOK_URL }}` in your manual installation instructions
 

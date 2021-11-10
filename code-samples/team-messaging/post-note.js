@@ -10,10 +10,14 @@ RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 CHAT_ID = '<GROUP ID>'
 
-var rcsdk = new RingCentral({ server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET });
+var rcsdk = new RingCentral({
+    server: RINGCENTRAL_SERVER,
+    clientId: RINGCENTRAL_CLIENTID,
+    clientSecret: RINGCENTRAL_CLIENTSECRET });
 var platform = rcsdk.platform();
-platform.login({ username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION })
-
+platform.login({ username: RINGCENTRAL_USERNAME,
+		 password: RINGCENTRAL_PASSWORD,
+		 extension: RINGCENTRAL_EXTENSION })
 platform.on(platform.events.loginSuccess, () => {
     post_note( CHAT_ID )
 })

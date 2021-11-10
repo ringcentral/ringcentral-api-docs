@@ -37,9 +37,11 @@ The structure of a response should conform to the following schema:
 }
 ```
 
+<!--
 **Example error as seen within the client**
 
 !!! danger "TODO - insert a screenshot of what an error message will look like"
+-->
 
 ## Verifying the authenticity of an event
 

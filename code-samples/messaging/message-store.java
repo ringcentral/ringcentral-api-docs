@@ -1,7 +1,7 @@
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
-public class Read_MessageStore {
+class Read_MessageStore {
 	public static void main(String[] args) {
 		try {
 			read_user_message_store();
