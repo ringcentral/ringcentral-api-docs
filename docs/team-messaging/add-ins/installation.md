@@ -46,7 +46,7 @@ The first step of the installation flow is controlled entirely by RingCentral an
 
 ### Incoming webhook URL generation
 
-Once the user has selected to chat into which they want the app installed, RingCentral will generate an [incoming webhook](../incoming-webhooks/webhook-creation/) associated with that chat. The generated URL will be transmitted to the application in the next step.
+Once the user has selected to chat into which they want the app installed, RingCentral will generate an [incoming webhook](../../incoming-webhooks/webhook-creation/) associated with that chat. The generated URL will be transmitted to the application in the next step.
 
 ### Load and display iframe
 
@@ -71,9 +71,10 @@ When an iframe is loaded, the developer must disambiguate between a user who is 
 
 ??? tip "Storing the webhook locally"
     In the subsequent step entitled "Store access key" we recommend that developers store in their database a record of every webhook URL that is installed via this process. Associated with each webhook URL developers can also store:
-	    * The access key generated through the OAuth flow.
-		* The identity of the user installing the application.
-		* Any subscription preferences associated with the webhook URL. 
+	
+    * The access key generated through the OAuth flow.
+	* The identity of the user installing the application.
+	* Any subscription preferences associated with the webhook URL. 
 
 ### Authenticate user
 

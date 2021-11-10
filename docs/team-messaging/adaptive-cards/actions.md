@@ -27,7 +27,7 @@ Your first step is to design the card if you have not already done so. The examp
 
 ### Post the card
 
-To post the card, the app would utilize either the [REST API](../../posting/rest-api/) or an [incoming webhook](../../posting/incoming-webhook/), depending upon how the underlying app is architected. Bots and apps typically use the REST API, while add-ins often use incoming webhooks. 
+To post the card, the app would utilize either the [REST API](../../posting/) or an [incoming webhook](../../incoming-webhooks/posting/), depending upon how the underlying app is architected. Bots and apps typically use the REST API, while add-ins often use incoming webhooks. 
 
 *The example below reads the contents of the above message from the local filesystem.*
 

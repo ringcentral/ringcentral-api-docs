@@ -27,4 +27,4 @@ The following code sample shows a simple way to retrieve a list of chats. As you
     {!> code-samples/team-messaging/get-chats.js !}
     ```
 
-!!! hint "The example above assumed only page of results will be returned. Learn about [pagination](../pagination/) to iterate over a large result set."
+!!! hint "The example above assumed only page of results will be returned. Learn about [pagination](../../manual/pagination/) to iterate over a large result set."

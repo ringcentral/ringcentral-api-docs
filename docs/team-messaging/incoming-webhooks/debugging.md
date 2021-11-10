@@ -17,7 +17,7 @@ Then from the same directory in which you created the above file, run the follow
 
 When complete, you should see a message that looks something like this:
 
-![Sample adaptive card](sample-adaptive-card.png)
+![Sample adaptive card](../sample-adaptive-card.png)
 
 ## Creating a script
 

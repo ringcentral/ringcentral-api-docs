@@ -2,7 +2,7 @@
 
 Notes in RingCentral give teams the ability to post, collaboritively edit and share simple text files with one another. They provide a perfect way to collect and share meeting agendas and minutes, ideas for an upcoming product, todo lists and action items, and you name it. 
 
-<img src="../note.png" class="img-fluid" style="max-width: 800px">
+<img src="../note.png" class="img-fluid">
 
 ## Posting a note via the REST API
 

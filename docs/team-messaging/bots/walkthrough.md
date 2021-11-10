@@ -2,7 +2,7 @@
 
 A RingCentral Team Messaging bot provides a conversational interface for performing common tasks. In this guide, you will learn how to build a simple ping-pong bot from scratch, giving you a closer look at the bot design pattern.
 
-!!! tip "Try the [RingCentral bot framework](../node/) to get up and running faster and with less code."
+!!! tip "Try the [RingCentral bot framework](https://ringcentral.github.io/ringcentral-chatbot-js/) to get up and running faster and with less code."
 
 Before you begin, make sure you have logged into your RingCentral developer account via the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html#/applications).
 
@@ -30,7 +30,7 @@ Make note of your https forwarding URL, we will use that shortly when creating y
 
 With a proxy running, we now have all the information we need to create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Bot App" button below. 
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,Glip,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Chatbot+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+chat+bot+on+RingCentral&public=false&type=ServerBot&carriers=7710,7310,3420&permissions=ReadAccounts,SubscriptionWebhook,TeamMessaging,EditExtensions&redirectUri=" class="btn btn-primary">Create Bot App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -210,4 +210,10 @@ In the final step, we will modify the sample application to respond to a message
 
 ## Summary
 
-This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](../node/) which provides a more full-featured bot server in a box. 
+This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which provides a more full-featured bot server in a box. 
+
+## Up next: adaptive cards
+
+In part two of this developer's guide, we will extend this basic bot to include the functionality of posting adaptive cards and responding to interactive messaging events. 
+
+<a class="btn btn-primary" href="../posting-cards/">Continue to part 2</a>

@@ -10,8 +10,12 @@ RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
 
 CHAT_ID = '<GROUP ID>'
 
-rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
+rc = RingCentral.new(RINGCENTRAL_CLIENTID,
+                     RINGCENTRAL_CLIENTSECRET,
+                     RINGCENTRAL_SERVER)
+rc.authorize(username: RINGCENTRAL_USERNAME,
+             extension: RINGCENTRAL_EXTENSION,
+             password: RINGCENTRAL_PASSWORD)
 
 resp = rc.post('/restapi/v1.0/glip/chats/'+CHAT_ID+'/notes', payload: {
     "title": "This is a note",
