@@ -1,6 +1,6 @@
 # Introduction to SMS and Fax Messaging on RingCentral
 
-!!! hint "Please see [RingCentral SMS Content Policies](messaging/sms/sms-content-policy/)"
+!!! hint "Please see [RingCentral SMS Content Policies](sms/sms-content-policy/)"
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting Started with SMS and Fax Messaging</h3>
