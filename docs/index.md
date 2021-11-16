@@ -26,7 +26,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">SMS</h5>
-      <h6 class="h6 card-subtitle mb-2 text-muted">SMS ans Fax API</h6>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
