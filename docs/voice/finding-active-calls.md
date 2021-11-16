@@ -68,7 +68,7 @@ The response format for active calls mirrors that of Call Log responses exactly.
 === "Java"
 
     ```java
-    {!> code-samples/voice/finding-active-calls.java !}
+    {!> code-samples/voice/FindActiveUserCalls.java !}
     ```
 
 === "Ruby"

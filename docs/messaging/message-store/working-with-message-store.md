@@ -81,7 +81,7 @@ The following code sample shows how to call the Message Store to display a list 
 === "Java"
 
     ```java
-    {!> code-samples/messaging/message-store.java !}
+    {!> code-samples/messaging/Read_MessageStore.java !}
     ```
 
 === "Ruby"

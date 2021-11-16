@@ -252,9 +252,7 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Authorization_Flow"
 
     ```java
-    package Authentication;
-
-    public class Authorization_Flow {
+    public class AuthorizationFlow {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -268,7 +266,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/auth/quick-start/java/Authorization_Flow.java !}
+    {!> code-samples/auth/quick-start/java/AuthorizationFlow.java !}
     ```
 
     ### Run your code

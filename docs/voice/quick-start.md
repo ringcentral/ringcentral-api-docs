@@ -171,12 +171,12 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Call_RingOut"
+    Select "File -> New -> Class" to create a new Java class named "RingoutQuickStart"
 
     ```java
-    package Call_RingOut;
+    package RingoutQuickStart;
 
-    public class Call_RingOut {
+    public class RingoutQuickStart {
 
         public static void main(String[] args) {
             // TODO Auto-generated method stub
@@ -185,12 +185,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Call_RingOut.java".
+    ### Edit the file "RingoutQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/voice/quick-start.java !}
+    {!> code-samples/voice/RingoutQuickStart.java !}
     ```
 
     ### Run Your App

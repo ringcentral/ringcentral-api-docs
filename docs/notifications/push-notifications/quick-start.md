@@ -189,7 +189,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/pubnub/quick-start.java !} 
+    {!> code-samples/pubnub/PubNubQuickStart.java !} 
     ```
 
     ### Run your app

@@ -129,7 +129,7 @@ The following code sample shows how to add 2 new members to a call queue named "
 === "Java"
 
     ```java
-    {!> code-samples/voice/call-queues.java !}
+    {!> code-samples/voice/UpdateCallQueueMembers.java !}
     ```
 
 === "Ruby"

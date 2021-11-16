@@ -179,9 +179,9 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Create_Meeting"
 
     ```java
-    package Create_Meeting;
+    package MeetingsQuickStart;
 
-    public class Create_Meeting {
+    public class MeetingsQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -190,12 +190,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Create_Meeting.java".
+    ### Edit the file "MeetingsQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/meetings/quick-start.java !}
+    {!> code-samples/meetings/MeetingsQuickStart.java !}
     ```
 
     ### Run your app

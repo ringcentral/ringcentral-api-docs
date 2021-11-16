@@ -3,6 +3,7 @@
 site
 \#*
 \.\#*
+*.class
 .env
 __pycache__
 bin

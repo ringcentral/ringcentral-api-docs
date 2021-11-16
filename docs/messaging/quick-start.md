@@ -178,9 +178,9 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Send_SMS"
 
     ```java
-    package Send_SMS;
+    package SendSMSQuickStart;
 
-    public class Send_SMS {
+    public class SendSMSQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -189,12 +189,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Send_SMS.java".
+    ### Edit the file "SendSMSQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/messaging/quick-start.java !}
+    {!> code-samples/messaging/SendSMSQuickStart.java !}
     ```
 
     ### Run Your App

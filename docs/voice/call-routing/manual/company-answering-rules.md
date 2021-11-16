@@ -78,7 +78,7 @@ The following code sample shows how to create a company custom answering rule th
 === "Java"
 
     ```java
-    {!> code-samples/voice/company-answering-rules.java !}
+    {!> code-samples/voice/CreateCompanyAnsweringRule.java !}
     ```
 
 === "Ruby"

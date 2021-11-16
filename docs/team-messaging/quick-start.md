@@ -157,7 +157,7 @@ Select your preferred language below.
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "Create_Team"
+    * Enter project name "TeamMessagingQuickStart"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
     ```json
@@ -174,9 +174,9 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Create_Team"
 
     ```java
-    package Create_Team;
+    package TeamMessagingQuickStart;
 
-    public class Create_Team {
+    public class TeamMessagingQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -185,12 +185,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Create_Team.java".
+    ### Edit the file "TeamMessagingQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/team-messaging/quick-start.java !}
+    {!> code-samples/team-messaging/TeamMessagingQuickStart.java !}
     ```
 
     ### Run your code
