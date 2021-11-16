@@ -11,3 +11,4 @@ lib
 pyvenv.cfg
 composer.*
 vendor
+code-samples/**/obj/*
