@@ -66,8 +66,24 @@ $ php composer.phar require ringcentral/ringcentral-php
 ```
 
 **For Java code samples**
+
+To test java code samples, you will need to make sure you have Java installed, and your CLASSPATH has been setup properly to point to the following jar files.
+
+* RingCentral Java SDK
+* Jetty Util, Server and Servlet
+* J2EE 
+* Gson
+* FastJSON
+
 ```
-$ // TODO
+export CLASSPATH="/Users/byrne.reese/lib/ringcentral/ringcentral-2.4.0.jar"
+export CLASSPATH="$CLASSPATH:$JETTY_BASE/start.jar"
+export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-jakarta-servlet-api-5.0.2.jar"
+export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/j2ee.jar"
+export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-server-11.0.7.jar"
+export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-util-11.0.7.jar"
+export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/gson-2.8.9.jar"
+export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/fastjson-1.2.78.jar"
 ```
 
 ### Create a .env file
