@@ -31,7 +31,7 @@ Call Forwarding rules allow a developer to specify for an extension within an or
 
 Call Flipping specifically applies to active calls, and allows a call to be instantly and transparently transferred to another phone number. For example, I may be on my desk phone and need to get in my car to head home - in which case I would flip the call from my desk phone to my mobile phone without the person on the other end being away the transfer took place.
 
-* [Learn how to set call forwarding for your business hours in the Admin Console](https://support.ringcentral.com/s/article/9758?language=en_US)
+* [Learn how to set call forwarding for your business hours in the Admin Console](https://support.ringcentral.com/article/9758.html?language=en_US)
 
 ### Call Queues
 
@@ -47,8 +47,8 @@ Call Routing, or IVR ("Interactive Voice Response"), is the means by which one b
 * **Create, update and delete IVR prompts** - an IVR prompt is the recorded greeting that is played to the caller.
 * **Create, update and delete IVR menus** - an IVR menu is what is bound to an IVR prompt and is what governs what menu options will be made available to users, and what actions will be taken when those options are selected.
 
-* [Learn how to setup Multi-level IVR in the Admin Console](https://support.ringcentral.com/s/article/6562?language=en_US)
-
+* [Learn how to setup Multi-level IVR in the Admin Console](https://support.ringcentral.com/article/6562.html?language=en_US)
+                                                            
 ### Rule Management
 
 The Rule Management API allows developers to create highly customized call handling systems that seek to optimize how quickly a caller is connected to another individual within a large enterprise. The Rule Management API enables the following use cases:
