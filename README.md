@@ -86,6 +86,21 @@ export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/gson-2.8.9.jar"
 export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/fastjson-1.2.78.jar"
 ```
 
+**For DotNet and .cs code samples**
+
+Mac and Linux users can install the `dotnet-sdk` package via brew:
+
+```
+$ brew insall --cask dotnet-sdk
+```
+
+Then you will need to install the RingCentral SDK, globally:
+
+```
+$ dotnet tool install --global RingCentral.Net
+```
+
+
 ### Create a .env file
 
 Create a `.env` file in the `code-samples` directory by copying and editing the provided template. This file will make reference to an app for which all permissions have been enabled. Embed that app's credentials in your `.env` in the appropriate fields. 
