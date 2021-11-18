@@ -47,6 +47,6 @@ The code samples above will all result in posting an adaptive card similar to th
 
 Dedicated endpoints also exist for:
 
-* [Listing cards in a chat](https://developers.ringcentral.com/api-reference/Adaptive-Cards/listCards)
-* [Update card](https://developers.ringcentral.com/api-reference/Adaptive-Cards/updateCard)
-* [Delete card](https://developers.ringcentral.com/api-reference/Adaptive-Cards/deleteCard)
+* [Listing cards in a chat](https://developers.ringcentral.com/api-reference/Adaptive-Cards/getGlipAdaptiveCard)
+* [Update card](https://developers.ringcentral.com/api-reference/Adaptive-Cards/updateGlipAdaptiveCard)
+* [Delete card](https://developers.ringcentral.com/api-reference/Adaptive-Cards/deleteGlipAdaptiveCard)

@@ -19,7 +19,7 @@ In part two of our bot development guide, we round out the bot we started to bui
 
 ## Posting cards via a bot
 
-Bots post adaptive cards to a chat via the REST API, for which a different set of operations exist. To post a card to a chat, we use the [createCard](https://developers.ringcentral.com/api-reference/Cards/createCard) operation. Let's add the following method to your bot app:
+Bots post adaptive cards to a chat via the REST API, for which a different set of operations exist. To post a card to a chat, we use the [createCard](https://developers.ringcentral.com/api-reference/Adaptive-Cards/createGlipAdaptiveCard) operation. Let's add the following method to your bot app:
 
 ```js
 {!> code-samples/team-messaging/bot-app-with-cards.js [ln:166-176] !}
