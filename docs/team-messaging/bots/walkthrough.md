@@ -205,7 +205,7 @@ You will notice immediately that the bot does not yet respond to your message. W
 In the final step, we will modify the sample application to respond to a message you send the bot. Begin by editing `app.js` in your favorite editor. Edit the post handler for `/callback` as shown below to create your own bot commands. The example below responds to the message "ping" with another message "pong."
 
 ```js
-{!> code-samples/team-messaging/bot-app.js [ln:78-102] !}
+{!> code-samples/team-messaging/bot-app.js [ln:122-154] !}
 ```
 
 ## Summary

@@ -22,19 +22,19 @@ In part two of our bot development guide, we round out the bot we started to bui
 Bots post adaptive cards to a chat via the REST API, for which a different set of operations exist. To post a card to a chat, we use the [createCard](https://developers.ringcentral.com/api-reference/Adaptive-Cards/createGlipAdaptiveCard) operation. Let's add the following method to your bot app:
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:166-176] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:172-178] !}
 ```
 
 Next, we want to update the bot to respond to a new command. When a user types "hello" to the bot, the bot will respond by posting a card. Let's update our callback handler accordingly:
 
 ```js 
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:138-151] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:144-157] !}
 ```
 
 Finally, create a helper function to return the JSON for an adaptive card:
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:243-272] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:236-268] !}
 ```
 
 With the above changes made to your bot app, you will be able to post an adaptive card instead of just a text message. 
@@ -54,8 +54,8 @@ First, let's update the settings of your bot to send outbound webhooks when user
 Next, we go back to our code to add an express handler for receiving outbound webhook events. 
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:178-180] !}
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:187] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:180-182] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:188] !}
 ```
 
 ## Updating a card your bot previously posted
@@ -63,38 +63,20 @@ Next, we go back to our code to add an express handler for receiving outbound we
 Next, let's flesh out our handler to extract the form value that is submitted by the user, and then to update the card we previously posted with a new card that echos back to the user the name they typed into the form. 
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:178-187] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:180-188] !}
 ```
 
 The code above makes use of two helper functions. Here is one that will return the contents of the new adaptive card to replace the one initially posted:
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:275-294] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:270-290] !}
 ```
 
 Finally, let's add the helper function that will update an existing card:
 
 ```js
-{!> code-samples/team-messaging/bot-app-with-cards.js [ln:189-204] !}
+{!> code-samples/team-messaging/bot-app-with-cards.js [ln:190-197] !}
 ```
-
-!!! bug "Updating existing cards will get future improvements"
-    Currently, the outbound webhook associated with a user interactive with an adaptive card does not contain sufficient information for an application to identify the exact card that was interacted with. In an upcoming release this information will be added. 
-	In the meantime, the sample code here relies on an imperfect workaround, which caches card IDs in memory. This is sufficient for a demo, but not recommended for production use. 
-    The card ID cache is created:
-    ```js
-    {!> code-samples/team-messaging/bot-app-with-cards.js [ln:20] !}
-    ```
-    The card ID cache is updated:
-    ```js
-    {!> code-samples/team-messaging/bot-app-with-cards.js [ln:166-176] !}
-    ```
-    Card IDs are fetched from the cache:
-    ```js
-    {!> code-samples/team-messaging/bot-app-with-cards.js [ln:189-204] !}
-    ```
-
-    This issue will be fixed in November 2021. 
 
 ## How will your bot be different?
 

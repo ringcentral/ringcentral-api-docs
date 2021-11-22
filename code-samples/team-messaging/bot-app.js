@@ -137,8 +137,12 @@ app.post('/callback', function(req, res) {
         console.log("Received message: " + req.body.body.text);
         if (req.body.ownerId == req.body.body.creatorId) {
             console.log("Ignoring message posted by bot.");
+
         } else if (req.body.body.text == "ping") {
             send_message("pong", req.body.body.groupId)
+	// Add more bot commands here by training your bot to respond to different keywords
+        //} else if (req.body.body.text == "some keyword") {
+	    
         } else {
             send_message("I do not understand '" +
                 req.body.body.text +
