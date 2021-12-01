@@ -35,6 +35,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+
 ## Send an SMS
 
 Select your preferred language below.
@@ -46,13 +53,6 @@ Select your preferred language below.
     ```bash
     $ npm install @ringcentral/sdk dotenv --save
     ```
-
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
     ### Create and edit sms.js
 
@@ -78,13 +78,6 @@ Select your preferred language below.
     $ pip install ringcentral python-dotenv
     ```
 
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
-
     ### Create and edit sms.py
 
     Create a file called `sms.py`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
@@ -109,13 +102,6 @@ Select your preferred language below.
     $ curl -sS https://getcomposer.org/installer | php
     $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
-
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
     ### Create and edit sms.php
 
@@ -209,13 +195,6 @@ Select your preferred language below.
     ```bash
     $ gem install ringcentral-sdk dotenv
     ```
-
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
 
     ### Create and edit sms.rb
 

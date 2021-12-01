@@ -32,6 +32,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
 ## Create a Team
 
 Select your preferred language below.
@@ -44,13 +51,6 @@ Select your preferred language below.
     $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-	
     ### Create and edit create-team.js
 
     Create a file called `create-team.js` using the contents below.
@@ -74,13 +74,6 @@ Select your preferred language below.
     ```bash
     $ pip install ringcentral python-dotenv
     ```
-
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
     ### Create and Edit create-team.py
 
@@ -107,13 +100,6 @@ Select your preferred language below.
     $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-	
     ### Create and edit create-team.php
 
     Create a file called `create-team.php` using the contents below.
@@ -205,13 +191,6 @@ Select your preferred language below.
     $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Download and edit a `.env` file
-	
-	Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
-	1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-	2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
-	
     ### Create and Edit create-team.rb
 
     Create a file called `create-team.rb` using the contents below.
