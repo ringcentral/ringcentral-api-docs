@@ -16,3 +16,11 @@ To begin, copy the contents of the file below and save it to your local developm
 ```
 
 Finally, run your code sample from the command line as you would normally. The script should read in the values from this file, and set all the local configuration properties accordingly.
+
+!!! tip ".env file security"
+    Your `.env` files contain sensitive information. Here are some tips to help keep them secure. 
+    * **Keep `.env` files out of source control.** Don't check in .env files to source control. Consider using a vault instead, and add `.env` files to your `.git-ignore` (or equivalent) file. 
+    * **Don't make `.env` files web-accessible.** Do not deploy your .env file to a directory that is accessible via http. Keep these files out of your web root folder. 	
+
+
+
