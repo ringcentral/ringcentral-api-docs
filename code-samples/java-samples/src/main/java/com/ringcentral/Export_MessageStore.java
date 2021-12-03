@@ -1,3 +1,5 @@
+package com.ringcentral;
+
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 import java.io.BufferedInputStream;

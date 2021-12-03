@@ -1,4 +1,4 @@
-package com.ringcentral.com;
+package com.ringcentral;
 
 import java.io.IOException;
 import com.ringcentral.*;

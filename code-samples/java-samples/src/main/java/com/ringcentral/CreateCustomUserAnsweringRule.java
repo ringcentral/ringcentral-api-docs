@@ -1,8 +1,10 @@
+package com.ringcentral;
+
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 import java.io.IOException;
 
-public class CreateCustomUserAnsweringRule {
+public static CreateCustomUserAnsweringRule {
     static RestClient rc;
     
     public static void main(String[] args) {
