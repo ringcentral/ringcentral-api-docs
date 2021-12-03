@@ -1,8 +1,8 @@
 # Postings cards
 
-<img class="img-fluid float-right figure-img" src="../../adaptive-cards/itinerary.png" style="max-width: 400px">
-
 Cards provide developers with the means to design and create responsive, richly detailed, and well crafted messages. RingCentral's card system is powered by the [open-source community and framework](http://adaptivecards.io) known as [Adaptive Cards](../../adaptive-cards/). Using this framework and its many tools, developers and designers are free to create the experiences they want, rather than the ones hemmed in by a multitude of constraints. 
+
+<img class="img-fluid figure-img" src="../../adaptive-cards/itinerary.png" style="max-width: 400px">
 
 !!! tip "RingCentral uses Adaptive Cards"
     While RingCentral continues to support our [proprietary format](../../incoming-webhooks/legacy-format/), we encourage developers to adopt the more robust and modern [Adaptive Cards framework](../../adaptive-cards/) for composing cards and messages.
