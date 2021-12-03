@@ -1,5 +1,3 @@
-package Authentication;
-
 import com.ringcentral.RestClient;
 import com.ringcentral.RestException;
 import com.alibaba.fastjson.JSON;

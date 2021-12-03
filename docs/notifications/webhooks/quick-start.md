@@ -212,7 +212,7 @@ Select your preferred language below.
     Copy the forwarding address e.g. https://54a0541a.ngrok.io and paste it into the DELIVERY_ADDRESS variable in the code below.
 
     ```java
-    {!> code-samples/webhooks/quick-start/java/SubscribeForWebHookNotification.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/SubscribeForWebHookNotification.java !} 
     ```
 
     ### Create a WebHookServer
@@ -231,7 +231,7 @@ Select your preferred language below.
     Edit the `WebhookServer.java` with code below:
 
     ```Java
-    {!> code-samples/webhooks/quick-start/java/WebhookServer.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/WebhookServer.java !} 
     ```
 
     ### Build and run the WebHook Server

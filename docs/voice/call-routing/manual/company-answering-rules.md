@@ -78,7 +78,7 @@ The following code sample shows how to create a company custom answering rule th
 === "Java"
 
     ```java
-    {!> code-samples/voice/CreateCompanyAnsweringRule.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/CreateCompanyAnsweringRule.java !}
     ```
 
 === "Ruby"

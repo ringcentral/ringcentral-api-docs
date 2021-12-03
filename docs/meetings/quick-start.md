@@ -162,10 +162,10 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Create_Meeting"
+    Select "File -> New -> Class" to create a new Java class named "MeetingsQuickStart"
 
     ```java
-    package MeetingsQuickStart;
+    package com.ringcentral;
 
     public class MeetingsQuickStart {
 
@@ -181,7 +181,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/meetings/MeetingsQuickStart.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/MeetingsQuickStart.java !}
     ```
 
     ### Run your app

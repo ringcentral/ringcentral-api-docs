@@ -175,7 +175,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/pubnub/PubNubQuickStart.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/PubNubQuickStart.java !} 
     ```
 
     ### Run your app

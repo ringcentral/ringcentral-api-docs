@@ -4,7 +4,7 @@ import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 import java.io.IOException;
 
-public static CreateCustomUserAnsweringRule {
+public class CreateCustomUserAnsweringRule {
     static RestClient rc;
     
     public static void main(String[] args) {

@@ -180,7 +180,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/messaging/SendSMSQuickStart.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/SendSMSQuickStart.java !}
     ```
 
     ### Run Your App

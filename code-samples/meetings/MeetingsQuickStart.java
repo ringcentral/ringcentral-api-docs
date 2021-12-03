@@ -1,4 +1,3 @@
-package Create_Meeting;
 
 import java.io.IOException;
 import com.ringcentral.*;

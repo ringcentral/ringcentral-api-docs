@@ -252,7 +252,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/auth/quick-start/java/AuthorizationFlow.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/AuthorizationFlow.java !}
     ```
 
     ### Run your code

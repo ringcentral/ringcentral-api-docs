@@ -137,7 +137,7 @@ To avoid loading the entire message store, which could be extremely large, you c
 
 === "Java"
     ```java
-    package HighVolume_SMS;
+    package com.ringcentral;
 
     import java.io.IOException;
     import com.ringcentral.*;

@@ -69,7 +69,7 @@ The following code sample shows how to create a forwarding number object. The `i
 === "Java"
 
     ```java
-    {!> code-samples/voice/CreateForwardingNumber.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/CreateForwardingNumber.java !}
     ```
 
 === "Ruby"

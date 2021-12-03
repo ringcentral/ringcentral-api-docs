@@ -68,7 +68,7 @@ The response format for active calls mirrors that of Call Log responses exactly.
 === "Java"
 
     ```java
-    {!> code-samples/voice/FindActiveUserCalls.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/FindActiveUserCalls.java !}
     ```
 
 === "Ruby"
