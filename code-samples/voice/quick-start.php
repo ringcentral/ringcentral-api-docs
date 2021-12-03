@@ -3,21 +3,19 @@ require('vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-$CLIENTID     = $_ENV['RC_CLIENT_ID'];
-$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
-$SERVER       = $_ENV['RC_SERVER_URL'];
-$USERNAME     = $_ENV['RC_USERNAME'];
-$PASSWORD     = $_ENV['RC_PASSWORD'];
-$EXTENSION    = $_ENV['RC_EXTENSION'];
 $RECIPIENT    = $_ENV['RINGOUT_RECIPIENT'];
 
-$rcsdk = new RingCentral\SDK\SDK($CLIENTID, $CLIENTSECRET, $SERVER);
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
-$platform->login($USERNAME, $EXTENSION, $PASSWORD);
+$platform->login( $_ENV['RC_USERNAME'],
+                  $_ENV['RC_EXTENSION'],
+                  $_ENV['RC_PASSWORD'] );
 
 $resp = $platform->post('/account/~/extension/~/ring-out',
     array(
-      'from' => array('phoneNumber' => $RINGCENTRAL_USERNAME),
+      'from' => array('phoneNumber' => $_ENV['RC_USERNAME'] ),
       'to' => array('phoneNumber' => $RECIPIENT),
       'playPrompt' => false
     ));
