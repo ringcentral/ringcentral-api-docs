@@ -13,6 +13,8 @@ HTTP METHOD : `POST`
 
 END POINT : `/restapi/v1.0/account/{accountId}/analytics/performance/calls/aggregate`
 
+##### See the [API Reference](https://ringcentral-call-performance.readthedocs-hosted.com/en/latest/swagger-api-ref/) for more information.
+
 ### API Rate Limits
 
 This API belongs to "Light" API [Rate Limit Group](https://developers.ringcentral.com/api-reference/Usage-Plan-Groups).

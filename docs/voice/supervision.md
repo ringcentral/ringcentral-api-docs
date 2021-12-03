@@ -19,11 +19,9 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 Before you begin, please verify these prerequesites are met:
 
-1. Your RingCentral Account has the "Call Monitoring Group" feature enabled as described in this [Knowledgebase article](https://support.ringcentral.com/s/article/8050?language=en_US).
+1. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com) following the [Groups Overview](https://support.ringcentral.com/article/Department-Overview.html), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
-2. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
-
-3. The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.
+2. The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.
 
 ## Call Monitoring Groups
 

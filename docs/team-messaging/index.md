@@ -14,16 +14,32 @@
 
 ## What can you build using the Team Messaging API?
 
+### Create interactive messages
+
+Embue the messages you post with behavior, form elements and other kinds of interactivity. Allow users to enter data directly into a message and submit that data to your application.
+
+![Form submit message](./adaptive-cards/form-submit.png)
+
+### Build a RingCentral Add-in
+
+RingCentral Add-ins provide developers with the means to create engaging and interactive messaging experiences that allow users to get more work done without leaving RingCentral. Add-ins can have one or more of the following capabilities:
+
+* A fully-integrated and automated installation process. 
+* Interactive messages with buttons and other calls to action.
+* Embedded forms and input elements for easier data collection.
+
+Add-ins are a perfect solution for notifying teams about keys events that happen outside of RingCentral, and then allowing those teams to take action on those events. 
+
 ### Build a bot
 
-Bots are automated agents that users can interact with in a coversational manner. Bots are useful when one wishes:
+Bots are automated agents that users can interact with in a coversational manner. Bots are useful to:
 
-* to delivery notifications to users privately
+* deliver notifications to users privately
 * automate interactions with users in a conversational manner
 
 RingCentral [supports and offers a number of Bot frameworks](./manual/frameworks/) to help developers create bot applications. To get started creating a bot, we recommend using our [Javascript Bot Framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which enables developers to create a bot in 10 lines of code, like this "Ping Bot:"
 
-```javascript linenums="1"
+```js
 const createApp = require('ringcentral-chatbot/dist/apps').default
 
 const handle = async event => {
@@ -35,12 +51,6 @@ const handle = async event => {
 const app = createApp(handle)
 app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 ```
-
-### Build a notification app
-
-[Incoming Webhooks](./manual/webhook-creation/) can be used to create inputs into which a 3rd-party can post JSON formatted events or messages and have those posted directly into a chat as a [richly formatted messages](./manual/formatting). For example, the [RingCentral Salesforce Integration](https://zapier.com/apps/glip/integrations/salesforce) helps keep teams up to date by relaying the creation of new leads and opportunities into a chat of your choosing:
-
-<img src="../img/post_attachment_salesforce.png" class="img img-fluid" width="30%">
 
 ### Integrate with project management
 

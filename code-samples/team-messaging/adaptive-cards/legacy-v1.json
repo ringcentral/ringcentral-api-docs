@@ -1,0 +1,23 @@
+{
+    "attachments": [
+    {
+        "type": "Card",
+        "fallback": "Something bad happened",
+        "color": "#00ff2a",
+        "title": "I felt something...",
+        "text": "...as if millions of voices suddenly cried out in terror and were suddenly silenced.",
+        "fields": [
+        {
+            "title": "Where",
+            "value": "Alderaan",
+            "short": true
+        },
+        {
+            "title": "What",
+            "value": "Death Star",
+            "short": true
+        }
+        ]
+    }
+    ]
+}

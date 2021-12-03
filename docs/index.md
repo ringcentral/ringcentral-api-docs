@@ -26,7 +26,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">SMS</h5>
-      <h6 class="h6 card-subtitle mb-2 text-muted">SMS ans Fax API</h6>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
@@ -38,12 +38,12 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Fax</h5>
-      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
-      <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
+      <h5 class="h5 card-title">Interactive messages</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">Team Messaging API</h6>
+      <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>
-      <li><a href="./messaging/fax/receiving-faxes/" class="card-link">Receive a Fax</a></li>
+      <li><a href="./team-messaging/add-ins/creation/" class="card-link">Build an Add-in</a></li>
+      <li><a href="./team-messaging/adaptive-cards/" class="card-link">Learn about Adaptive Cards</a></li>
       </ul>
     </div>
   </div>
@@ -63,6 +63,18 @@ no_breadcrumb:true
 </div>
 
 <div class="card-deck">
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body pt-0 pb-0">
+      <h5 class="h5 card-title">Fax</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
+      <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
+      <ul class="pl-0 ml-4">
+      <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>
+      <li><a href="./messaging/fax/receiving-faxes/" class="card-link">Receive a Fax</a></li>
+      </ul>
+    </div>
+  </div>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">

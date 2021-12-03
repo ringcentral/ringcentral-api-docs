@@ -1,7 +1,7 @@
 name: Check Links
 on:
   push:
-    branches: master
+    branches: main
 #on: workflow_dispatch
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
       matrix:
         python-version: [3.9]
     environment:
-      name: master
+      name: main
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -26,6 +26,6 @@ jobs:
         verbose-mode: 'no'
         folder-path: 'docs'
         synchronous: 'yes'
-        local-only: 'yes'
+        local-only: 'no'
         recurse: 'yes'
         excludes: '^(tel|rcmobile):'

@@ -6,9 +6,9 @@ site
 *.class
 .env
 __pycache__
-bin
-lib
+bin/
+code-samples/vendor/
+lib/
 pyvenv.cfg
-composer.*
-vendor
-code-samples/**/obj/*
+reset.sh
+0-message_store_*.zip
