@@ -31,3 +31,19 @@ jobs:
         folder-path: 'code-samples'
         syntax-only: 'yes'
         recurse: 'yes'
+    - name: Check Ruby code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'ruby'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
+    - name: Check JavaScript code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'javascript'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
