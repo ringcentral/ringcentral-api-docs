@@ -2,13 +2,11 @@ class MainController < ActionController::Base
   require 'ringcentral'
   require 'dotenv/load'
 
-  CLIENTID     = ENV['RC_CLIENT_ID']
-  CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
-  SERVER       = ENV['RC_SERVER_URL']
-  RECIPIENT    = ENV['SMS_RECIPIENT']
   REDIRECT_URL = ENV['RC_REDIRECT_URL']
 
-  $rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+  $rc = RingCentral.new( ENV['RC_CLIENT_ID'],
+                         ENV['RC_CLIENRT_SECRET'],
+                         ENV['RC_SERVER_URL'] )
 
   def login
     base_url = $rc.authorize_uri(REDIRECT_URL, "initialState")

@@ -5,19 +5,15 @@ use RingCentral\SDK\Http\ApiResponse;
 use RingCentral\SDK\SDK;
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
+session_start();
 
-$CLIENTID     = $_ENV['RC_CLIENT_ID'];
-$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
-$SERVER       = $_ENV['RC_SERVER_URL'];
-$USERNAME     = $_ENV['RC_USERNAME'];
-$PASSWORD     = $_ENV['RC_PASSWORD'];
-$EXTENSION    = $_ENV['RC_EXTENSION'];
 $REDIRECT_URL = $_ENV['RC_REDIRECT_URL'];
 $LOCAL_SERVER = 'http://localhost:5000';
 
-session_start();
 
-$rcsdk = new SDK($CLIENT_ID, $CLIENT_SECRET, $SERVER_URL);
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
 if (isset($_REQUEST['oauth2callback'])){

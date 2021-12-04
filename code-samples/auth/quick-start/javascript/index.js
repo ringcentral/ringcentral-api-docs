@@ -10,19 +10,13 @@ app.use(session({ secret: 'somesecretstring', tokens: '' }));
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
 REDIRECT_URL = process.env.RC_REDIRECT_URL
 
 var rcsdk = new RC({
-  server: SERVER_URL,
-  clientId: CLIENT_ID,
-  clientSecret: CLIENT_SECRET,
-  redirectUri: REDIRECT_URL
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET,
+    'redirectUri':  REDIRECT_URL
 });
 
 var server = require('http').createServer(app);

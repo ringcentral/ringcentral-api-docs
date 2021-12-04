@@ -4,20 +4,17 @@ require(__DIR__ . 'vendor/autoload.php');
 use RingCentral\SDK\SDK;
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
-
 session_start();
 
-$CLIENTID     = $_ENV['RC_CLIENT_ID'];
-$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
-$SERVER       = $_ENV['RC_SERVER_URL'];
-$USERNAME     = $_ENV['RC_USERNAME'];
-$PASSWORD     = $_ENV['RC_PASSWORD'];
-$EXTENSION    = $_ENV['RC_EXTENSION'];
 $REDIRECT_URL = $_ENV['RC_REDIRECT_URL'];
 
-$rcsdk = new RingCentral\SDK\SDK($CLIENTID, $CLIENTSECRET, $SERVER);
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
-$platform->login($USERNAME, $EXTENSION, $PASSWORD);
+$platform->login( $_ENV['RC_USERNAME'],
+                  $_ENV['RC_EXTENSION'],
+                  $_ENV['RC_PASSWORD'] );
 
 // Using the authUrl to call the platform function
 $url = $platform->authUrl(array(

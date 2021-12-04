@@ -5,16 +5,13 @@ from flask import Flask, render_template, request, session
 from dotenv import load_dotenv
 load_dotenv()
 
-CLIENTID     = os.environ.get('RC_CLIENT_ID')
-CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
-SERVER       = os.environ.get('RC_SERVER_URL')
-USERNAME     = os.environ.get('RC_USERNAME')
-PASSWORD     = os.environ.get('RC_PASSWORD')
-EXTENSION    = os.environ.get('RC_EXTENSION')
 REDIRECT_URL = os.environ.get('RC_REDIRECT_URL')
 
-rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
+
 app = Flask(__name__)
 app.secret_key = 'somesecretstring'
 
@@ -25,7 +22,7 @@ def login():
     params = (
         ('response_type', 'code'),
         ('redirect_uri', REDIRECT_URL),
-        ('client_id', CLIENTID),
+        ('client_id', os.environ.get('RC_CLIENT_ID')),
         ('state', 'initialState')
     )
     auth_url = base_url + '?' + urllib.parse.urlencode(params)
