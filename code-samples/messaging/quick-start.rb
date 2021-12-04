@@ -1,16 +1,15 @@
 require 'ringcentral'
 require 'dotenv/load'
 
-CLIENTID     = ENV['RC_CLIENT_ID']
-CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
-SERVER       = ENV['RC_SERVER_URL']
-USERNAME     = ENV['RC_USERNAME']
-PASSWORD     = ENV['RC_PASSWORD']
-EXTENSION    = ENV['RC_EXTENSION']
 RECIPIENT    = ENV['SMS_RECIPIENT']
 
-$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
-$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
+$rc = RingCentral.new( ENV['RC_CLIENT_ID'],
+                       ENV['RC_CLIENRT_SECRET'],
+                       ENV['RC_SERVER_URL'] )
+
+$rc.authorize( username: ENV['RC_USERNAME'],
+               extension: ENV['RC_EXTENSION'],
+               password: ENV['RC_PASSWORD'] )
 
 def read_extension_phone_number()
   resp = $rc.get('/restapi/v1.0/account/~/extension/~/phone-number')
