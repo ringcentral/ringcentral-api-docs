@@ -14,16 +14,16 @@ public class WebhookServer extends AbstractHandler
 {
     @Override
     public void handle(String target, Request baseRequest,
-		       HttpServletRequest request, HttpServletResponse response)
-	throws IOException, ServletException
+                       HttpServletRequest request, HttpServletResponse response)
+        throws IOException, ServletException
     {
         response.setStatus(HttpServletResponse.SC_OK);
         response.setHeader("Validation-Token", request.getHeader("Validation-Token"));
         if (request.getMethod() == "POST")
         {
             String body = request.getReader().lines().collect(
-		   java.util.stream.Collectors.joining(System.lineSeparator())
-	    );
+                   java.util.stream.Collectors.joining(System.lineSeparator())
+            );
             System.out.println(body);
         }
         response.getWriter().println("OK");

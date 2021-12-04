@@ -1,17 +1,11 @@
 <?php
 require('vendor/autoload.php');
 
-$RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>';
-$RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>';
-$RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com';
-
-$RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>';
-$RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>';
-$RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">';
-
 $DELIVERY_ADDRESS='<https://xxxxxxxx.ngrok.io/webhook-notification.php?webhookcallback>';
 
-$rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRET, $RINGCENTRAL_SERVER);
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
 if (isset($_REQUEST['webhookcallback'])){
@@ -23,7 +17,9 @@ if (isset($_REQUEST['webhookcallback'])){
       print_r($jsonObj['body']['subject']);
     }
 }else{
-    $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
+    $platform->login( $_ENV['RC_USERNAME'],
+                      $_ENV['RC_EXTENSION'],
+                      $_ENV['RC_PASSWORD'] );
     $params = array(
             'eventFilters' => array(
                 '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'
