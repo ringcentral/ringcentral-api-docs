@@ -7,14 +7,6 @@ import com.ringcentral.definitions.*;
 import com.ringcentral.pubnub.Subscription;
 
 public class PubNub_Notifications {
-    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-    static bool RINGCENTRAL_PRODUCTION = false;
-
-    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
-
     static RestClient restClient;
 
     public static void main(String[] args) {
@@ -26,8 +18,14 @@ public class PubNub_Notifications {
     }
 
     public static void PubNubNotifications() throws RestException, IOException {
-        restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-        restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+	restClient = new RestClient(
+	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+	restClient.Authorize(
+	    Environment.GetEnvironmentVariable("RC_USERNAME"),
+	    Environment.GetEnvironmentVariable("RC_EXTENSION"),
+	    Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
 
         var eventFilters = new String[] {
             "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
