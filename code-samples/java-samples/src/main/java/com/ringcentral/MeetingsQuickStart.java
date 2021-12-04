@@ -1,28 +1,25 @@
+package com.ringcentral;
 
 import java.io.IOException;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
-
 
 public class MeetingsQuickStart {
     static RestClient rc;
 
     public static void main(String[] args) {
         var obj = new MeetingsQuickStart();
-        rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-                             System.getenv("RC_CLIENT_SECRET"),
-                             System.getenv("RC_SERVER_URL") );
+	      rc = new RestClient(System.getenv("RC_CLIENT_ID"), System.getenv("RC_CLIENT_SECRET"), System.getenv("RC_SERVER_URL"));
         try {
-            rc.authorize( System.getenv("RC_USERNAME"),
-                          System.getenv("RC_EXTENSION"),
-                          System.getenv("RC_PASSWORD") );
+            rc.authorize(System.getenv("RC_USERNAME"), System.getenv("RC_EXTENSION"), System.getenv("RC_PASSWORD"));
             obj.createMeeting();
-        } catch (RestException | IOException e) {
+        }
+        catch (RestException | IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void createMeeting() throws RestException, IOException{
+    public void createMeeting() throws RestException, IOException {
         MeetingRequestResource parameters = new MeetingRequestResource();
         parameters.topic = "Instant Meeting";
         parameters.meetingType = "Instant";

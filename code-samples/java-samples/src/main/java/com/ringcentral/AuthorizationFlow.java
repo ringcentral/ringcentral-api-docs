@@ -1,3 +1,5 @@
+package com.ringcentral;
+
 import com.ringcentral.RestClient;
 import com.ringcentral.RestException;
 import com.alibaba.fastjson.JSON;
@@ -22,16 +24,16 @@ public class AuthorizationFlow extends AbstractHandler {
     private static String REDIRECT_URI = "http://localhost:5000/oauth2callback";
 
     public static void main(String[] args) throws Exception {
-        rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-                             System.getenv("RC_CLIENT_SECRET"),
-                             System.getenv("RC_SERVER_URL") );
-        try {
-            rc.authorize( System.getenv("RC_USERNAME"),
-                          System.getenv("RC_EXTENSION"),
-                          System.getenv("RC_PASSWORD") );
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
+	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
+			     System.getenv("RC_CLIENT_SECRET"),
+			     System.getenv("RC_SERVER_URL") );
+	try {
+	    rc.authorize( System.getenv("RC_USERNAME"),
+			  System.getenv("RC_EXTENSION"),
+			  System.getenv("RC_PASSWORD") );
+	} catch (RestException | IOException e) {
+	    e.printStackTrace();
+	}
 
         Server server = new Server(5000);
         server.setHandler(new AuthorizationFlow());
@@ -41,8 +43,8 @@ public class AuthorizationFlow extends AbstractHandler {
 
     @Override
     public void handle(String target, Request baseRequest,
-                       HttpServletRequest request, HttpServletResponse response)
-        throws IOException {
+		       HttpServletRequest request, HttpServletResponse response)
+	throws IOException {
         response.setContentType("text/html; charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
         baseRequest.setHandled(true);
@@ -57,8 +59,8 @@ public class AuthorizationFlow extends AbstractHandler {
             rc.token = JSON.parseObject(tokenString, TokenInfo.class);
         } else if (!requestUri.equals("/oauth2callback")) {
             response.getWriter().println("<h2>RingCentral Authorization Code Flow Authentication</h2>"
-                                         + "<a href=\"" + rc.authorizeUri(REDIRECT_URI)
-                                         + "\">Login RingCentral Account</a>");
+					 + "<a href=\"" + rc.authorizeUri(REDIRECT_URI)
+					 + "\">Login RingCentral Account</a>");
             return;
         }
         System.out.println(requestUri);
@@ -90,13 +92,28 @@ public class AuthorizationFlow extends AbstractHandler {
             String result = "";
             switch (api) {
             case "extension":
-                result = JSON.toJSONString(rc.restapi().account().extension().list(), SerializerFeature.PrettyFormat);
+                    try {
+                        result = JSON.toJSONString(rc.restapi().account().extension().list(), SerializerFeature.PrettyFormat);
+                    } catch (RestException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
                 break;
             case "extension-call-log":
-                result = JSON.toJSONString(rc.restapi().account().extension().callLog().list(), SerializerFeature.PrettyFormat);
+                    try {
+                        result = JSON.toJSONString(rc.restapi().account().extension().callLog().list(), SerializerFeature.PrettyFormat);
+                    } catch (RestException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
                 break;
             case "account-call-log":
-                result = JSON.toJSONString(rc.restapi().account().callLog().list(), SerializerFeature.PrettyFormat);
+                    try {
+                        result = JSON.toJSONString(rc.restapi().account().callLog().list(), SerializerFeature.PrettyFormat);
+                    } catch (RestException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
                 break;
             }
 

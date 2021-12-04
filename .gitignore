@@ -12,3 +12,8 @@ lib/
 pyvenv.cfg
 reset.sh
 0-message_store_*.zip
+composer.*
+vendor
+code-samples/**/obj/*
+.idea/
+*.iml

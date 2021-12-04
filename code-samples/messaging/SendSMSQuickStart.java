@@ -1,4 +1,5 @@
-package SendSMSQuickStart;
+package com.ringcentral;
+
 import java.io.IOException;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;

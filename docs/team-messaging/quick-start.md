@@ -176,7 +176,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/team-messaging/TeamMessagingQuickStart.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/TeamMessagingQuickStart.java !}
     ```
 
     ### Run your code

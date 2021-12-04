@@ -75,23 +75,26 @@ To test java code samples, you will need to make sure you have Java installed, a
 * Gson
 * FastJSON
 
+
+STEPS to compile and run Java Sample Code using Maven (make sure maven build tool)
+
 ```
-export CLASSPATH="/Users/byrne.reese/lib/ringcentral/ringcentral-2.4.0.jar"
-export CLASSPATH="$CLASSPATH:$JETTY_BASE/start.jar"
-export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-jakarta-servlet-api-5.0.2.jar"
-export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/j2ee.jar"
-export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-server-11.0.7.jar"
-export CLASSPATH="$CLASSPATH:$JETTY_BASE/lib/jetty-util-11.0.7.jar"
-export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/gson-2.8.9.jar"
-export CLASSPATH="$CLASSPATH:/Users/byrne.reese/lib/fastjson-1.2.78.jar"
+git clone <this repository>
+cd ringcentral-api-docs/code-samples/java-samples
+mvn clean compile
 ```
+
+TODO (internal):
+
+1. Adjust mkdocs script for java so it no longer relies of CLASSPATH enviornment variable, instead uses maven to compile, run, test Java sample code.
+2. Add JUnit Tests
 
 **For DotNet and .cs code samples**
 
 Mac and Linux users can install the `dotnet-sdk` package via brew:
 
 ```
-$ brew insall --cask dotnet-sdk
+$ brew install --cask dotnet-sdk
 ```
 
 Then you will need to install the RingCentral SDK, globally:
