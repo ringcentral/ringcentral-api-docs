@@ -1,6 +1,4 @@
-require('dotenv').config();
-
-const RC    = require('ringcentral');
+const RC    = require('@ringcentral/sdk').SDK
 var express = require('express');
 var request = require('request');
 var bp      = require('body-parser')
@@ -15,7 +13,7 @@ const RINGCENTRAL_ENV = process.env.RINGCENTRAL_ENV;
 const TOKEN_TEMP_FILE = '.bot-auth';
 
 var app = express();
-var platform, subscription, rcsdk, subscriptionId, bot_token;
+var subscription, subscriptionId, bot_token;
 
 app.use(bp.json());
 app.use(bp.urlencoded({

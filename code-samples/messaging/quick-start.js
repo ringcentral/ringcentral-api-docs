@@ -1,18 +1,19 @@
 const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RECIPIENT = '<ENTER PHONE NUMBER>'
+const RECIPIENT    = process.env.SMS_RECIPIENT
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
 var platform = rcsdk.platform();
-platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+platform.login({
+    'username':  process.env.RC_USERNAME,
+    'password':  process.env.RC_PASSWORD,
+    'extension': process.env.RC_EXTENSION
+})
 
 platform.on(platform.events.loginSuccess, function(e){
   read_extension_phone_number()

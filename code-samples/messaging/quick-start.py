@@ -1,28 +1,20 @@
 #!/usr/bin/env python
-# quick-start.py - This script helps developers send their first SMS message
-#
-# Variables:
-# RC_CLIENT_ID, RC_CLIENT_SECRET, RC_SERVER_URL: Connection info
-# RC_USERNAME, RC_PASSWORD, RC_EXTENSION: Auth credentials
-# RECIPIENT_PHONE: The phone number to send the SMS to
-#
-# License: MIT
-# Copyright: 2021 RingCentral, Inc. 
 from ringcentral import SDK
 import os,sys
+from dotenv import load_dotenv
+load_dotenv()
 
-CLIENTID     = os.environ.get('RC_CLIENT_ID')
-CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
-SERVER       = os.environ.get('RC_SERVER_URL')
-USERNAME     = os.environ.get('RC_USERNAME')
-PASSWORD     = os.environ.get('RC_PASSWORD')
-EXTENSION    = os.environ.get('RC_EXTENSION')
-RECIPIENT    = os.environ.get('RECIPIENT_PHONE')
+RECIPIENT    = os.environ.get('SMS_RECIPIENT')
 
-rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
+
 try:
-  platform.login(USERNAME, EXTENSION, PASSWORD)
+  platform.login(os.environ.get('RC_USERNAME'),
+                 os.environ.get('RC_EXTENSION'),
+                 os.environ.get('RC_PASSWORD') )
 except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 

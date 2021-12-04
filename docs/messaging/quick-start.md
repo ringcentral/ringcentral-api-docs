@@ -37,6 +37,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+
 ## Send an SMS
 
 Select your preferred language below.
@@ -46,18 +53,18 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk --save
+    $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Create and Edit sms.js
+    ### Create and edit sms.js
 
-    Create a file called `sms.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `sms.js`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```javascript
     {!> code-samples/messaging/quick-start.js !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -70,18 +77,18 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
-    ### Create and Edit sms.py
+    ### Create and edit sms.py
 
-    Create a file called `sms.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `sms.py`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```python
     {!> code-samples/messaging/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -95,18 +102,18 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Create and Edit sms.php
+    ### Create and edit sms.php
 
-    Create a file called `sms.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `sms.php`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```php
     {!> code-samples/messaging/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -159,9 +166,9 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Send_SMS"
 
     ```java
-    package Send_SMS;
+    package SendSMSQuickStart;
 
-    public class Send_SMS {
+    public class SendSMSQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -170,12 +177,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Send_SMS.java".
+    ### Edit the file "SendSMSQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/messaging/quick-start.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/SendSMSQuickStart.java !}
     ```
 
     ### Run Your App
@@ -188,25 +195,24 @@ Select your preferred language below.
     ### Install RingCentral Ruby SDK
 
     ```bash
-    $ gem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and Edit sms.rb
+    ### Create and edit sms.rb
 
-    Create a file called `sms.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `sms.php`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```ruby
     {!> code-samples/messaging/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
     ```bash
     $ ruby sms.rb
     ```
-
 
 ## Need Help?
 

@@ -45,7 +45,7 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 === "Java"
 
     ```java
-    {!> code-samples/voice/call-log.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/ReadCallLog.java !}
     ```
 
 === "Ruby"

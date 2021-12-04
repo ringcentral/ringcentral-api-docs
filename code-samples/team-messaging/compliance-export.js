@@ -1,29 +1,44 @@
-const RingCentral = require('@ringcentral/sdk').SDK
-var fs = require('fs')
+const RC  = require('@ringcentral/sdk').SDK
+var fs    = require('fs')
 var https = require('https');
+require('dotenv').config();
 
-var rcsdk = new RingCentral({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
+
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
 var platform = rcsdk.platform();
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
 
-platform.login({ username: "username", password: "password", extension: "extension_number" })
-  .then(function(resp) {
+platform.on(platform.events.loginSuccess, () => {
     create_compliance_export_task()
-  });
-}
+})
 
 async function create_compliance_export_task() {
-  console.log("Create export task.")
-  var params = {
-    timeFrom: "2019-08-01T00:00:00.000Z",
-    timeTo: "2019-08-26T23:59:59.999Z"
-  }
-  try {
-    var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
-    var jsonObj = await resp.json()
-    get_compliance_export_task(jsonObj.id)
-  } catch (e) {
-    console.log(e.message)
-  }
+    console.log("Create export task.")
+    var params = {
+	timeFrom: "2019-08-01T00:00:00.000Z",
+	timeTo: "2019-08-26T23:59:59.999Z"
+    }
+    try {
+	var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
+	var jsonObj = await resp.json()
+	get_compliance_export_task(jsonObj.id)
+    } catch (e) {
+	console.log(e.message)
+    }
 }
 
 async function get_compliance_export_task(taskId) {

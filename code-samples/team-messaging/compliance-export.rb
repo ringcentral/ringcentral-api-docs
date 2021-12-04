@@ -1,8 +1,16 @@
 require 'ringcentral'
-require "open-uri"
+require 'open-uri'
+require 'dotenv/load'
 
-$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+CLIENTID     = ENV['RC_CLIENT_ID']
+CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
+SERVER       = ENV['RC_SERVER_URL']
+USERNAME     = ENV['RC_USERNAME']
+PASSWORD     = ENV['RC_PASSWORD']
+EXTENSION    = ENV['RC_EXTENSION']
+
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
 def create_compliance_export_task()
     puts "Create export task."
