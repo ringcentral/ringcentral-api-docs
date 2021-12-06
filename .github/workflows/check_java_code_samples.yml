@@ -1,0 +1,27 @@
+name: Check Java code samples
+#on:
+#  push:
+#    branches: main
+on: workflow_dispatch
+
+jobs:
+  code-sample-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    environment:
+      name: master
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install java prerequisites
+      run: cd /github/workspace/docs/code-samples/java-samples && mvn install
+#    - name: Check Java code samples for syntax
+#      uses: byrnereese/github-action-code-sample-check@main
+#      with:
+#        languages: 'java'
+#        verbose-mode: 'yes'
+#        folder-path: 'code-samples'
+#        syntax-only: 'yes'
+#        recurse: 'yes'
