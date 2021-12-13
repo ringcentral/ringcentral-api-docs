@@ -16,7 +16,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Install java prerequisites
-      run: sudo apt install maven && cd /github/workspace/code-samples/java-samples && mvn install
+      run: ls /github/workspace/code-samples
 #    - name: Check Java code samples for syntax
 #      uses: byrnereese/github-action-code-sample-check@main
 #      with:
