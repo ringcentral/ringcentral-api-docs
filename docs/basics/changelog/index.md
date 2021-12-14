@@ -7,7 +7,7 @@ Welcome to the RingCentral API changelog, which provides developers with a detai
 * understand how changes may have potentially impacted their code
 * learn about new APIs they might want to begin using
 
-<a href="1_0_47/" class="btn btn-primary">View lastest changelog &raquo;</a>
+<a href="1_0_49/" class="btn btn-primary">View lastest changelog &raquo;</a>
 
 RingCentral makes available here the last two years of change logs. If you would like to browse an older change log, please consult our [archive in Github](https://github.com/ringcentral/ringcentral-api-docs/tree/master/docs/basics/changelog).
 

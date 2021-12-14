@@ -113,7 +113,7 @@ The standard RingCentral Message Store and Account Data Retention Policy dictate
 * Provides specifications for development considerations with data archival
 * Has different rules for HIPAA and non-HIPAA RingCentral Accounts
 
-Please consult our Knowledge Base to view our most up-to-date [Message Storage and Account Data Retention Policy](https://support.ringcentral.com/s/article/2178).
+Please consult our Knowledge Base to view our most up-to-date [Message Storage and Account Data Retention Policy](https://support.ringcentral.com/article/2178.html).
 
 ## Common Use Cases
 

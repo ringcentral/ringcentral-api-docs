@@ -33,7 +33,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Download and edit a `.env` file
 	
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../../../basics/code-samples/). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
