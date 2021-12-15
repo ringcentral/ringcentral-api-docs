@@ -26,7 +26,8 @@ A notification app is a type of add-in that helps build a communication bridge b
 * Post messages to a chat via an incoming webhook
 * Post adaptive cards to a chat via an incoming webhook
 
-!!! warning "Notification apps cannot yet update messages"
+??? warning "Notification apps cannot yet update messages"
+    Notification apps have the limitation currently in which they can only post messages, because the installation process of a notification app does not provide the app with an auth token. As a result, notification apps cannot currently update a message they post. If your use case requires this ability, we recommend building a bot. 
 
 [Create a notification app &raquo;](./creation/)
 

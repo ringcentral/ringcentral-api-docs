@@ -156,7 +156,9 @@ pages:
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
-    - 'RingCentral Add-ins': 'team-messaging/add-ins/index.md'
+    - 'RingCentral Add-ins':
+      - 'Introduction': 'team-messaging/add-ins/index.md'
+      - 'Developer tools': 'team-messaging/add-ins/tools.md'
 
     - 'Build a notification app':
       - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
