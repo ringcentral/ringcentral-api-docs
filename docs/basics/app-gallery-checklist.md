@@ -1,7 +1,7 @@
 # App Gallery Checklist and Best Practices
 
 ??? tip "Learn more about promoting your app in the App Gallery"
-    The single best way you can help RingCentral customers discover your application is to promote it in the [RingCentral App Gallery](https://www.ringcentral.com/apps/). Doing so not only enables customers to find your app, but it is also an important step in our [Partner Program](https://www.ringcentral.com/partner/isv.html) that can further assist you in bringing your product to market.
+    The single best way you can help RingCentral customers discover your application is to promote it in the [RingCentral App Gallery](https://www.ringcentral.com/apps/). Doing so not only enables customers to find your app, but it is also an important step in our [Partner Program](https://www.ringcentral.com/partner/isv) that can further assist you in bringing your product to market.
 
     [Read more about Promoting your app in the App Gallery &raquo;](../app-gallery/)
 
@@ -31,4 +31,4 @@ A more complete and robust profile will help customers discover your app, will h
 
 * Be sure to post on your own website a clear privacy policy that outlines your internal policies and commitments with regards to your product's handling of RingCentral customer data. Then provide a link to your Privacy Policy in your App Gallery profile.
 
-* Be sure to read and be familiar with the [Ringcentral API License Agreement](https://www.ringcentral.com/legal/apilitos.html). You will be required to agree to these terms prior to publishing your app to the App Gallery. 
+* Be sure to read and be familiar with the [Ringcentral API License Agreement](https://www.ringcentral.com/legal/apilitos). You will be required to agree to these terms prior to publishing your app to the App Gallery. 
