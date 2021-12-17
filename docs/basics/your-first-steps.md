@@ -76,4 +76,4 @@ A single RingCentral application can interact with all the APIs on the RingCentr
 
 Making your idea a reality though is part of the art of software design and development. However, you are not alone in this process. If you would like to advice of experts to help you architect your solution to help you save time down the road, consult our Developer Community! Over 1,000 questions have been asked there, and it is possible you may find others before you had a similar question.
 
-[Join the RingCentral Developer Community &raquo;](https://forums.developers.ringcentral.com)
+[Join the RingCentral Developer Community &raquo;](https://community.ringcentral.com)
