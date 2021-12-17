@@ -33,9 +33,9 @@ app.get('/', function(req, res) {
 
 // Instantiate the RingCentral Javascript SDK
 rcsdk = new RC({
-    server: RINGCENTRAL_ENV,
-    appKey: CLIENT_ID,
-    appSecret: CLIENT_SECRET
+    'server': RINGCENTRAL_ENV,
+    'appKey': CLIENT_ID,
+    'appSecret': CLIENT_SECRET
 });
 
 platform = rcsdk.platform();

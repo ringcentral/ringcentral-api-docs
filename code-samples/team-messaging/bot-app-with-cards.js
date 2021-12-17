@@ -8,7 +8,7 @@ License: MIT
 */
 require('dotenv').config();
 
-const RC    = require('ringcentral');
+const RC    = require('@ringcentral/sdk').SDK
 var express = require('express');
 var request = require('request');
 var bp      = require('body-parser')
@@ -43,9 +43,9 @@ app.get('/', function(req, res) {
 
 // Instantiate the RingCentral Javascript SDK
 rcsdk = new RC({
-    server:    RINGCENTRAL_ENV,
-    appKey:    CLIENT_ID,
-    appSecret: CLIENT_SECRET
+    'server':    RINGCENTRAL_ENV,
+    'appKey':    CLIENT_ID,
+    'appSecret': CLIENT_SECRET
 });
 
 platform = rcsdk.platform();
