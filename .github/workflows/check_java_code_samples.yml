@@ -17,7 +17,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup working directory
       working-directory: ./code-samples/java-samples
-    - name: Run Maven build tool 
+      run : pwd
+    - name: Run Maven build tool
+      working-directory: ./code-samples/java-samples
       run: mvn verify
 #    - name: Check Java code samples for syntax
 #      uses: byrnereese/github-action-code-sample-check@main
