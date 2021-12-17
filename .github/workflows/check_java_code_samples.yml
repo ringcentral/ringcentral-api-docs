@@ -16,9 +16,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Navigate to Java samples
-      run: cd code-samples/java-samples
-    - name: debug 
-      run: pwd
+      run: |
+            cd code-samples/java-samples
+            pwd
+    - name: Run Maven build tool 
+      run: mvn verify
 #    - name: Check Java code samples for syntax
 #      uses: byrnereese/github-action-code-sample-check@main
 #      with:
