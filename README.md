@@ -1,9 +1,7 @@
 # RingCentral Developer Guide Documentation
 
-[![Build Status][specs-status-svg]][specs-status-url]
-
- [specs-status-svg]: https://github.com/ringcentral/ringcentral-api-docs/workflows/spec%20build/badge.svg?branch=master
- [specs-status-url]: https://github.com/ringcentral/ringcentral-api-docs/actions
+![Code Samples](https://github.com/ringcentral/ringcentral-api-docs/actions/workflows/check_code_samples.yml/badge.svg?branch=main)
+![Docs Build](https://github.com/ringcentral/ringcentral-api-docs/actions/workflows/mkdocs_build.yml/badge.svg)
 
 This repository is the home of the RingCentral Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral platform.
 
