@@ -18,9 +18,9 @@ jobs:
     - name: Setup working directory
       working-directory: ./code-samples/java-samples
       run : pwd
-    - name: Run Maven build tool
+    - name: Run Maven build tool to complie and test sample code
       working-directory: ./code-samples/java-samples
-      run: mvn verify
+      run: mvn clean compile test
 #    - name: Check Java code samples for syntax
 #      uses: byrnereese/github-action-code-sample-check@main
 #      with:
