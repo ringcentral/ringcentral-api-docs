@@ -15,10 +15,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Navigate to Java samples
-      run: |
-            cd code-samples/java-samples
-            pwd
+    - name: Setup working directory
+      working-directory: ./code-samples/java-samples
     - name: Run Maven build tool 
       run: mvn verify
 #    - name: Check Java code samples for syntax
