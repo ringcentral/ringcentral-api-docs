@@ -1,6 +1,6 @@
 # Call Supervision, Monitoring and Streaming
 
-[RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview.html) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
+[RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
 The Call Monitoring API allows a developer to connect to an active phone call and subscribe to an audio stream programatically. Some use cases for this API include:
 
@@ -19,7 +19,7 @@ Partners today have used this API to provide RingCentral customers with call ass
 
 Before you begin, please verify these prerequesites are met:
 
-1. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com) following the [Groups Overview](https://support.ringcentral.com/article/Department-Overview.html), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
+1. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Online Account Portal](https://service.ringcentral.com) following the [Groups Overview](https://support.ringcentral.com/article/Department-Overview), or via the [RingCentral API](https://developers.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup).
 
 2. The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.
 
