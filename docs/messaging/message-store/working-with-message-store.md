@@ -81,7 +81,7 @@ The following code sample shows how to call the Message Store to display a list 
 === "Java"
 
     ```java
-    {!> code-samples/messaging/Read_MessageStore.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/Read_MessageStore.java !}
     ```
 
 === "Ruby"
