@@ -31,4 +31,4 @@ A more complete and robust profile will help customers discover your app, will h
 
 * Be sure to post on your own website a clear privacy policy that outlines your internal policies and commitments with regards to your product's handling of RingCentral customer data. Then provide a link to your Privacy Policy in your App Gallery profile.
 
-* Be sure to read and be familiar with the [Ringcentral API License Agreement](https://www.ringcentral.com/legal/apilitos). You will be required to agree to these terms prior to publishing your app to the App Gallery. 
+* Be sure to read and be familiar with the [Ringcentral API License Agreement](https://ringcentral.com/legal/apilitos). You will be required to agree to these terms prior to publishing your app to the App Gallery. 
