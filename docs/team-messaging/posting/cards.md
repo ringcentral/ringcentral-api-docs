@@ -43,6 +43,20 @@ The code samples above will all result in posting an adaptive card similar to th
 
 <img src="../hello-world.png" class="img-fluid" style="max-width: 600px">
 
+## Using fallback text
+
+Fallback text is a very useful way to communicate more specifically the contents of a card in a highly abbreviated manner. Specifying fallback text is especially useful when determining what text is displayed inside of a mobile phone alert or notification when a card is posted. If no fallback text is specified, the system will default to displaying the following generic alert: "New Card Sent." 
+
+<img src="../new-card-sent.png" class="img-fluid" style="max-width: 600px">
+
+There is no doubt that a more descriptive alert would be more useful to users. For example, a Github add-in may wish to set the fallback text to, "Jane Doe has sent a pull request," or a Docusign add-in may wish to set the fallback to, "John Smith has requested your signative on SalesDeal.pdf." 
+
+To set the fallback text, add `fallbackText` to your adaptive card payload, as demonstrated below:
+
+```json
+{!> code-samples/team-messaging/adaptive-cards/fallback-text.json !}
+```
+
 ## Keep learning
 
 Dedicated endpoints also exist for:
