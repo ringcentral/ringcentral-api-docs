@@ -20,31 +20,33 @@ platform.on(platform.events.loginSuccess, function(e){
 });
 
 async function read_extension_phone_number(){
-  try{
-    var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
-    var jsonObj = await resp.json()
-    for (var record of jsonObj.records){
-      for (feature of record.features){
-        if (feature == "SmsSender"){
-          return send_sms(record.phoneNumber)
+    try {
+        var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
+        var jsonObj = await resp.json()
+        for (var record of jsonObj.records){
+            for (feature of record.features){
+                if (feature == "SmsSender"){
+                    return send_sms(record.phoneNumber)
+                }
+            }
         }
-      }
+    } catch(e) {
+        console.log(e.message)
+        process.exit(1)
     }
-  }catch(e){
-    console.log(e.message)
-  }
 }
 
 async function send_sms(fromNumber){
-  try{
-    var resp = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
-       from: {'phoneNumber': fromNumber},
-       to: [{'phoneNumber': RECIPIENT}],
-       text: 'Hello World from JavaScript'
-     })
-    var jsonObj = await resp.json()
-    console.log("SMS sent. Message status: " + jsonObj.messageStatus)
-  }catch(e){
-    console.log(e.message)
-  }
+    try {
+        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
+            from: {'phoneNumber': fromNumber},
+            to: [{'phoneNumber': RECIPIENT}],
+            text: 'Hello World from JavaScript'
+        })
+        var jsonObj = await resp.json()
+        console.log("SMS sent. Message status: " + jsonObj.messageStatus)
+    } catch(e) {
+        console.log(e.message)
+        process.exit(1)
+    }
 }
