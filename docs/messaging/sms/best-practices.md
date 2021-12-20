@@ -1,5 +1,5 @@
 # SMS Best Practices Guide
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../../sms-content-policy/)"
+!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../sms-content-policy/) and [Campaign Registry(10DLC) update](../10dlc-campaign-registry/)"
 
 !!! note "First time sending an SMS?"
     If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to read the following best practices as well.

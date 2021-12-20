@@ -1,5 +1,5 @@
 # High Volume SMS
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../../sms-content-policy/)"
+!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../sms-content-policy/) and [Campaign Registry(10DLC) update](../10dlc-campaign-registry/)"
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with High Volume SMS!</h3>
   <p class="lead">RingCentral's High Volume SMS API allows you to send up to 250,000 texts per day and 10,000 texts per API request from a single number that meets the wireless industry guidelines for commercial SMS. This can be used for popular use cases such as appointment reminders, marketing campaigns, password resets, and more.</p>

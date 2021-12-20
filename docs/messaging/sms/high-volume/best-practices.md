@@ -1,6 +1,6 @@
 # High Volume SMS Best Practices and Guidelines
 
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../../../sms-content-policy/)"
+!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../sms-content-policy/) and [Campaign Registry(10DLC) update](../10dlc-campaign-registry/)"
 
 Spam message blockages and invalid phone numbers are the most common causes of having low message deliverability - the SMS performance which you aim to reach as high as possible.
 

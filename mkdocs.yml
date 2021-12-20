@@ -86,6 +86,7 @@ pages:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'SMS Content Policies': 'messaging/sms-content-policy.md'
+    - 'Campaign Registry(10DLC)': 'messaging/10dlc-campaign-registry.md'
     - 'Getting Started': 'messaging/quick-start.md'
     - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
