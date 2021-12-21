@@ -48,19 +48,36 @@ async function get_compliance_export_task(taskId) {
   }
 }
 
-async function get_report_archived_content(contentUri, fileName) {
-  var uri = platform.createUrl(contentUri, { addToken: true });
-  download(uri, fileName, function() {
-    console.log("Save report zip file to the local machine.")
+async function get_message_store_report_archive_content(contentUri, fileName){
+  var arr = contentUri.split("//")
+  var index = arr[1].indexOf('/')
+  var domain = arr[1].substring(0, index)
+  var path = arr[1].substring(index, arr[1].length)
+  var tokenObj = await platform.auth().data()
+  var accessToken = tokenObj.access_token
+  download(domain, path, accessToken, fileName, function(){
+    console.log("Save atttachment to the local machine.")
   })
 }
 
-const download = function(uri, dest, cb) {
+const download = function(domain, path, accessToken, dest, cb) {
   var file = fs.createWriteStream(dest);
-  var request = https.get(uri, function(response) {
-    response.pipe(file);
+  var options = {
+          host: domain,
+          path: path,
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+      }
+  const req = https.request(options, res => {
+    res.pipe(file);
     file.on('finish', function() {
       file.close(cb);
     });
-  });
+  })
+  req.on('error', error => {
+    console.error(error)
+  })
+  req.end()
 }
