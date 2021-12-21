@@ -26,7 +26,7 @@ You have to implement a way of obtaining user credentials from the users of your
     
 Once your application has obtained credentials from the user, it can send a specific request to token endpoint `/restapi/oauth/token` (API group is Auth).
     
-Token requests must include client authentication (see Client Authentication section).
+Token requests must include client authentication (see [Client Authentication](../tokens#authenticating-your-application-to-obtain-an-access-token) section).
 
 **Request Header**
    

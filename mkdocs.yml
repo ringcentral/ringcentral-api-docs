@@ -1,6 +1,5 @@
 site_name: Developing with RingCentral
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/ringcentral-api-docs
 edit_uri: tree/master/docs
 docs_dir: docs
@@ -17,17 +16,16 @@ theme:
   name: ringcentral
   fluid_layout: True
   suppress_nextprev: true
-  shortcuts:
-    - foo
 
 markdown_extensions:
   - markdown.extensions.admonition
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.tabbed
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+#      linenums: true
   - pymdownx.superfences
-  - codehilite:
-      linenums: "None"
   - mdx_include
 
 extra_css:
@@ -36,7 +34,7 @@ extra_css:
 
 copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
-google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
+#google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 pages:
 
@@ -87,6 +85,7 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
+    - 'SMS Content Policies': 'messaging/sms-content-policy.md'
     - 'Getting Started': 'messaging/quick-start.md'
     - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
@@ -124,37 +123,60 @@ pages:
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
-    - 'Posting Messages':
-      - 'Simple text messages': 'team-messaging/manual/posting.md'
-      - 'Posting Cards': 'team-messaging/manual/posting-cards.md'
-      - 'Posting Images': 'team-messaging/manual/posting-images.md'
-      - 'Uploading and posting files': 'team-messaging/manual/attaching-files.md'
-    - 'Chats, Groups, Teams':
-      - 'Chats': 'team-messaging/manual/chats.md'
-      - 'Conversations': 'team-messaging/manual/conversations.md'
-      - 'Teams': 'team-messaging/manual/teams.md'
+    - 'Core concepts':
+      - 'Chats': 'team-messaging/concepts/chats.md'
+      - 'Conversations': 'team-messaging/concepts/conversations.md'
+      - 'Teams': 'team-messaging/concepts/teams.md'
+    - 'Team Messaging API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
-    - 'Incoming Webhooks':
-      - 'Webhook Creation': 'team-messaging/manual/webhook-creation.md'
-      - 'Webhook Posting (v2)': 'team-messaging/manual/webhook-posting.md'
-      - 'Webhook Posting (v1)': 'team-messaging/manual/formatting.md'
-      - 'Testing using cURL': 'team-messaging/manual/testing-webhooks.md'
-    - 'Compliance Export':
+#      - 'Permissions': 'team-messaging/manual/permissions.md'
+      - 'Composing deep links': 'team-messaging/manual/links.md'
+    - 'Team Messaging events':
+      - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
+      - 'Post events': 'team-messaging/events/posts.md'
+      - 'Chat events': 'team-messaging/events/groups.md'
+      - 'Incoming webhook events': 'team-messaging/events/incoming-webhooks.md'
+      - 'Interactive messaging events': 'team-messaging/events/interactive-messages.md'
+    - 'Incoming webhooks':
+      - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
+      - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
+      - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
+      - 'Legacy message format': 'team-messaging/incoming-webhooks/legacy-format.md'
+    
+    - 'Posting via REST API':
+      - 'Posting messages': 'team-messaging/posting/index.md'
+      - 'Posting cards': 'team-messaging/posting/cards.md'
+      - 'Posting notes': 'team-messaging/posting/notes.md'
+      - 'Posting tasks': 'team-messaging/posting/tasks.md'
+      - 'Uploading files': 'team-messaging/posting/file-uploads.md'
+      
+    - 'Adaptive cards':
+      - 'Introduction': 'team-messaging/adaptive-cards/index.md'
+      - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
+      - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
+      - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
+
+    - 'RingCentral Add-ins':
+      - 'Introduction': 'team-messaging/add-ins/index.md'
+      - 'Developer tools': 'team-messaging/add-ins/tools.md'
+
+    - 'Build a notification app':
+      - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
+      - 'Integrated installation': 'team-messaging/add-ins/installation.md'
+      - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
+
+    - 'Build a bot':
+      - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
+      - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
+#      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
+#      - 'Local bot development': 'team-messaging/bots/node.md'
+      - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
+      - 'Sample IBM Watson bot': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
+      - 'Sample Voicemail bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
+
+    - 'Data archival':
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
-    - 'Bots':
-      - 'Building a Bot Locally': 'team-messaging/manual/local-bots.md'
-      - 'Build a Bot in Node': 'team-messaging/manual/node.md'
-      - 'Bot Frameworks': 'team-messaging/manual/frameworks.md'
-    - 'Outgoing Events and Webhooks':
-      - 'Subscribing to Webhooks': 'team-messaging/manual/outgoing-webhooks.md'
-      - 'Post Events': 'team-messaging/manual/events-posts.md'
-      - 'Chat Events': 'team-messaging/manual/events-groups.md'
-      - 'Incoming Webhook Events': 'team-messaging/manual/events-incoming-webhooks.md'
-    - 'Deep links': 'team-messaging/manual/links.md'
-    - 'Sample Applications':
-      - 'Bot using IBM Watson and Botkit': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
-      - 'Voicemail Transcription Bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
 
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
@@ -162,12 +184,24 @@ pages:
     - 'RingCentral Video API': 'meetings/video.md'
     - 'Embeddable': 'meetings/embeddable.md'
 
+  - 'Analytics':
+    - 'Overview': 'analytics/index.md'
+    - 'Getting Started': 'analytics/quick-start.md'
+    - 'Call Performance Reports':
+      - 'Data Guide': 'analytics/call-performance/index.md'
+      - 'API Usage Information': 'analytics/call-performance/api-reference.md'
+      - 'API Reference' : 'https://ringcentral-call-performance.readthedocs-hosted.com/en/latest/swagger-api-ref/'
+      - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
+    - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
+    - 'Changelog': 'analytics/changelog.md'
+
   # ---- SECONDARY APIs ----
 - 'Secondary':
 
   - 'Using the API':
       - 'Methods, endpoints and parameters': 'basics/uris.md'
       - 'Exploring the API': 'basics/explorer.md'
+      - 'Running code samples': 'basics/code-samples.md'
       - 'Using phones in sandbox': 'basics/your-rc-phone.md'
       - 'Media content': 'basics/media.md'
       - 'App permissions': 'basics/permissions.md'
@@ -185,6 +219,8 @@ pages:
         - 'v.1.0.40 (Aug 2019)': 'basics/changelog/1_0_40.md'
         - 'v.1.0.39 (May 2019)': 'basics/changelog/1_0_39.md'
       - 'API Quick Reference': 'basics/api-index.md'
+
+  - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
 
   - 'Applications':
       - 'Development Lifecycle':
@@ -209,6 +245,7 @@ pages:
              - 'Rainbow Office': 'basics/partners/alcatel.md'
              - 'TELUS Business Connect': 'basics/partners/telus.md'
              - 'Unify Office': 'basics/partners/atos.md'
+
   - 'Account':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
@@ -217,6 +254,7 @@ pages:
     - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
     - 'Presence': 'account/presence.md'
+    - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
 
   - 'Authentication':
     - 'Overview': 'authentication/index.md'

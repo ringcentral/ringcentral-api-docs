@@ -1,6 +1,6 @@
 # Authorization Code Flow with Proof Key for Code Exchange
 
-The "Authorization Code Flow with Proof Key for Code Exchange" also simply "Auth code flow with PKCE" is the most recommended form of authenticating RingCentral users and exchange tokens in client side applications. It is an enhancement of [Authorization Code Flow](./auth_code_flow):
+The "Authorization Code Flow with Proof Key for Code Exchange" also simply "Auth code flow with PKCE" is the most recommended form of authenticating RingCentral users and exchange tokens in client side applications. It is an enhancement of [Authorization Code Flow](../auth-code-flow):
 
 * No client secret required in client side.
 * Exchange token with code and code verifier.
@@ -71,7 +71,7 @@ _drLS7o5FwkfUiBhlq2hwJnK_SC6yE7sKOde5O1fdzk
 
 ## Step 2. Request authorization code
 
-When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is same as URL from [Authorization Code Flow Step 1](./auth_code_flow#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in authorization URL:
+When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is same as URL from [Authorization Code Flow Step 1](../auth-code-flow#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in authorization URL:
 
 | Parameter       | Type   | Description |
 | --------------- | ------ | ----------- |
@@ -88,11 +88,11 @@ https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redi
 
 ## Step 3. User login and consent
 
-This step is same as [Authorization Code Flow Step 2](./auth_code_flow#step-2-user-login-and-consent). After user logs in and approves access request, and the browser will been redirected to the "Redirect URI" you’ve provided in the authorization request.
+This step is same as [Authorization Code Flow Step 2](../auth-code-flow#step-2-user-login-and-consent). After user logs in and approves access request, and the browser will been redirected to the "Redirect URI" you’ve provided in the authorization request.
 
 ## Step 4. Handling authorization code server response
 
-This step is same as [Authorization Code Flow Step 3](./auth_code_flow#step-3-handling-authorization-code-server-response).
+This step is same as [Authorization Code Flow Step 3](../auth-code-flow#step-3-handling-authorization-code-server-response).
 
 The authorization server responds to your application's access request by using the URL specified in the request.
 

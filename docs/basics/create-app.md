@@ -114,10 +114,6 @@ Interactive messages are a feature that allows applications to post messages int
 
 * **Shared secret**. This is a string you should consider highly confidential, and will be used by your application to verify the authenticity of any event transmitted to your outbound webhook URL. 
 
-<!--
-Learn more about [interactive messages](../../team-messaging/interactive-messages/) and [Adaptive Cards](../../team-messaging/adaptive-cards/).
--->
-
 <br clear="all">
 
 ### Integrated Installation
@@ -136,8 +132,8 @@ With your application having been created, you are now ready to begin building y
 
 To help you get started, considering using one of the following Quick Starts:
 
-* [SMS](../../sms/quick-start/)
-* [Fax](../../fax/quick-start/)
+* [SMS](../../messaging/quick-start/)
+* [Fax](../../messaging/fax/sending-faxes/)
 * [Voice](../../voice/quick-start/)
 * [Meetings](../../meetings/quick-start/)
   

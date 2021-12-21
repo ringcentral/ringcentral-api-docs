@@ -37,6 +37,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+
 ## Create a Meeting
 
 Select your preferred language below.
@@ -46,18 +53,18 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk --save
+    $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Create and Edit meetings.js
+    ### Create and edit meetings.js
 
-    Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `meetings.js` using the content below.
 
     ```javascript
     {!> code-samples/meetings/quick-start.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -70,18 +77,18 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
-    ### Create and Edit meetings.py
+    ### Create and edit meetings.py
 
-    Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `meetings.py` using the contents below.
 
     ```python
     {!> code-samples/meetings/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -95,18 +102,18 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
     ### Create and Edit meetings.php
 
-    Create a file called `meeting.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `meetings.php` using the contents below.
 
     ```PHP
     {!> code-samples/meetings/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -155,12 +162,12 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Create_Meeting"
+    Select "File -> New -> Class" to create a new Java class named "MeetingsQuickStart"
 
     ```java
-    package Create_Meeting;
+    package com.ringcentral;
 
-    public class Create_Meeting {
+    public class MeetingsQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -169,15 +176,15 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Create_Meeting.java".
+    ### Edit the file "MeetingsQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/meetings/quick-start.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/MeetingsQuickStart.java !}
     ```
 
-    ### Run Your App
+    ### Run your app
 
     You are almost done. Now run your app from Eclipse.
 
@@ -186,18 +193,18 @@ Select your preferred language below.
     ### Install RingCentral Ruby SDK
 
     ```bash
-    $ rem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and Edit meetings.rb
+    ### Create and edit meetings.rb
 
     Create a file called `meetings.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-    ```python
+    ```ruby
     {!> code-samples/meetings/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -210,7 +217,7 @@ Select your preferred language below.
 
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
-<a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=meetings">Search the forums &raquo;</a>
+<a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=meetings">Search the forums &raquo;</a>
 
 ## What's Next?
 

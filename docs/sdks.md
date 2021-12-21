@@ -74,7 +74,6 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 * [oauth2-ringcentral](https://github.com/tmannherz/oauth2-ringcentral) - Support for the PHP League’s OAuth 2.0 Client
 * [RingCentral-Call-Generator-Recordings-Downloader](https://github.com/anilkumarbp/RingCentral-Call-Generator-Recordings-Downloader) - An app to generate call logs and sync recordings to AWS S3 and Dropbox
 * [ringcentral-demos-oauth](https://github.com/grokify/ringcentral-demos-oauth/tree/master/php) - A PHP demo app using 3-legged OAuth 2.0 Authorization Code flow
-* [ringcentral-laravel](https://github.com/coxy121/ringcentral-laravel) - Laravel Package for RingCentral PHP SDK
 
 ### Python
 

@@ -162,7 +162,7 @@ The following code sample shows how to call the Message Store Export APIs to exp
 === "Java"
 
     ```java
-    {!> code-samples/messaging/message-store-export.java !}
+    {!> code-samples/messaging/Export_MessageStore.java !}
     ```
 
 === "Ruby"

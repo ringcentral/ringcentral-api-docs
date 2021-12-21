@@ -26,7 +26,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">SMS</h5>
-      <h6 class="h6 card-subtitle mb-2 text-muted">SMS ans Fax API</h6>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
@@ -38,12 +38,12 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Fax</h5>
-      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
-      <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
+      <h5 class="h5 card-title">Interactive messages</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">Team Messaging API</h6>
+      <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>
-      <li><a href="./messaging/fax/receiving-faxes/" class="card-link">Receive a Fax</a></li>
+      <li><a href="./team-messaging/add-ins/creation/" class="card-link">Build an Add-in</a></li>
+      <li><a href="./team-messaging/adaptive-cards/" class="card-link">Learn about Adaptive Cards</a></li>
       </ul>
     </div>
   </div>
@@ -66,6 +66,18 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
+      <h5 class="h5 card-title">Fax</h5>
+      <h6 class="h6 card-subtitle mb-2 text-muted">SMS and Fax API</h6>
+      <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
+      <ul class="pl-0 ml-4">
+      <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a Fax</a></li>
+      <li><a href="./messaging/fax/receiving-faxes/" class="card-link">Receive a Fax</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Authentication</h5>
       <h6 class="h6 card-subtitle mb-2 text-muted">Auth API</h6>
       <p class="card-text">The first step in making any API call is authenticating to the platform.</p>
@@ -82,8 +94,8 @@ no_breadcrumb:true
       <h6 class="h6 card-subtitle mb-2 text-muted">Subscription API</h6>
       <p class="card-text">Receive notifications when events of interest occur within your account to create more responsive applications.</p>
       <ul>
-      <li><a href="./notifications/manual/webhooks/" class="card-link">Webhooks</a></li>
-      <li><a href="./notifications/manual/pubnub/" class="card-link">Mobile Push Notifications</a></li>
+      <li><a href="./notifications/webhooks/quick-start/" class="card-link">Webhooks</a></li>
+      <li><a href="./notifications/push-notifications/quick-start/" class="card-link">Mobile Push Notifications</a></li>
       </ul>
     </div>
   </div>

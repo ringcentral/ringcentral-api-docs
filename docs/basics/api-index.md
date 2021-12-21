@@ -14699,7 +14699,7 @@ In case the feature is available for the current user, <code>"available": true</
         
       </td>
       <td class="description"><p>Returns notification settings for the current extension.
- <p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></td>
+ <p>Knowledge Article: <a href="https://support.ringcentral.com/article/9740.html">User Settings - Set up Message Notifications</a></p></p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">
@@ -14743,7 +14743,7 @@ In case the feature is available for the current user, <code>"available": true</
         
       </td>
       <td class="description"><p>Updates notification settings for the current extension.
-<p>Knowledge Article: <a href="https://success.ringcentral.com/articles/RC_Knowledge_Article/9740">User Settings - Set up Message Notifications</a></p></p></td>
+<p>Knowledge Article: <a href="https://support.ringcentral.com/article/9740.html">User Settings - Set up Message Notifications</a></p></p></td>
     </tr>
     <tr>
       <td class="endpoint" colspan="2">

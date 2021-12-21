@@ -1,16 +1,20 @@
+#!/usr/bin/env python
 from ringcentral import SDK
+import os,sys
+from dotenv import load_dotenv
+load_dotenv()
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-rcsdk = SDK( RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD)
+
+try:
+  platform.login(os.environ.get('RC_USERNAME'),
+                 os.environ.get('RC_EXTENSION'),
+                 os.environ.get('RC_PASSWORD') )
+except:
+  sys.exit("Unable to authenticate to platform. Check credentials.")
 
 params = {
     'topic': 'Test Meeting 1',
@@ -19,9 +23,13 @@ params = {
     'startHostVideo': True,
     'startParticipantsVideo' : False
 }
+
 try:
     resp = platform.post('/restapi/v1.0/account/~/extension/~/meeting', params)
-    print "Start Your Meeting: " + resp.json().links.startUri
-    print "Join the Meeting: " + resp.json().links.joinUri
+    print(f'Start Your Meeting: {resp.json().links.startUri}')
+    print(f'Join the Meeting: {resp.json().links.joinUri}')
 except Exception as err:
-    print("Exception: " + err.message)
+    sys.exit( f'An error occurred trying to post: {err}')
+else:
+    # Successful exit
+    sys.exit(0)

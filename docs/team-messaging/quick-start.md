@@ -32,6 +32,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+	
 ## Create a Team
 
 Select your preferred language below.
@@ -41,18 +48,18 @@ Select your preferred language below.
     ### Install RingCentral JavaScript SDK
 
     ```bash
-    $ npm install @ringcentral/sdk --save
+    $ npm install @ringcentral/sdk dotenv --save
     ```
 
-    ### Create and Edit create-team.js
+    ### Create and edit create-team.js
 
-    Create a file called `create-team.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.js` using the contents below.
 
     ```JavaScript
     {!> code-samples/team-messaging/quick-start.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -65,18 +72,18 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
     ### Create and Edit create-team.py
 
-    Create a file called `create-team.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.py` using the contents below.
 
     ```python
     {!> code-samples/team-messaging/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -90,18 +97,18 @@ Select your preferred language below.
 
     ```php
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Create and Edit create-team.php
+    ### Create and edit create-team.php
 
-    Create a file called `create-team.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.php` using the contents below.
 
     ```PHP
     {!> code-samples/team-messaging/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -126,7 +133,7 @@ Select your preferred language below.
     {!> code-samples/team-messaging/quick-start.cs !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your app from Visual Studio. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -136,7 +143,7 @@ Select your preferred language below.
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "Create_Team"
+    * Enter project name "TeamMessagingQuickStart"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
     ```json
@@ -153,9 +160,9 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Create_Team"
 
     ```java
-    package Create_Team;
+    package TeamMessagingQuickStart;
 
-    public class Create_Team {
+    public class TeamMessagingQuickStart {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -164,15 +171,15 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Create_Team.java".
+    ### Edit the file "TeamMessagingQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/team-messaging/quick-start.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/TeamMessagingQuickStart.java !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done.  Now run your app from Eclipse. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -181,18 +188,18 @@ Select your preferred language below.
     ### Install RingCentral SDK gem
 
     ```bash
-    $ gem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
     ### Create and Edit create-team.rb
 
-    Create a file called `create-team.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `create-team.rb` using the contents below.
 
     ```ruby
     {!> code-samples/team-messaging/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
@@ -204,7 +211,7 @@ Select your preferred language below.
 
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
-<a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=glip">Search the forums &raquo;</a>
+<a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=posting+messages">Search the forums &raquo;</a>
 
 ## What's Next?
 

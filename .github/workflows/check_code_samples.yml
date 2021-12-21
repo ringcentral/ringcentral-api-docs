@@ -1,0 +1,49 @@
+name: Check code samples
+on:
+  push:
+    branches: main
+#on: workflow_dispatch
+
+jobs:
+  code-sample-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    environment:
+      name: master
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Check python code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'python'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
+    - name: Check PHP code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'php'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
+    - name: Check Ruby code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'ruby'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'
+    - name: Check JavaScript code samples for syntax
+      uses: byrnereese/github-action-code-sample-check@main
+      with:
+        languages: 'javascript'
+        verbose-mode: 'yes'
+        folder-path: 'code-samples'
+        syntax-only: 'yes'
+        recurse: 'yes'

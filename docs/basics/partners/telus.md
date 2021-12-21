@@ -33,7 +33,7 @@ TELUS Business Connect supports English (US, CA), and Canadian French for all it
 
 ### 4. TELUS Business Connect "Service Terms" Link
 
-[TELUS Business Connect Service Terms &raquo;](http://www.telus.com/BusinessConnect/ServiceTerms)
+[TELUS Business Connect Service Terms &raquo;](https://www.telus.com/en/bc/business/support/article/business-connect-terms)
 
 ### 5. Support for TELUS Business Connect customers
 

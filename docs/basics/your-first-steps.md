@@ -6,7 +6,7 @@ no_breadcrumb:true
   <h3 class="display-5">Ready to build your RingCentral app?</h3>
   <p class="lead">Good work on successfully completing a Quick Start Guide! The guide below is specifically designed for developers who are ready to expand their knowledge of the RingCentral platform by building their next app for the platform.</p>
   <hr class="my-4">
-  <p>New to RingCentral? If you have not completed a RingCentral <a href="../">Quick Start Guide</a>, we recommend you start there. Then return here to begin your journey in building your app.</p>
+  <p>New to RingCentral? If you have not completed a RingCentral <a href="../../">Quick Start Guide</a>, we recommend you start there. Then return here to begin your journey in building your app.</p>
 </div>
 
 ## Setting up your "soft phone"
@@ -76,4 +76,4 @@ A single RingCentral application can interact with all the APIs on the RingCentr
 
 Making your idea a reality though is part of the art of software design and development. However, you are not alone in this process. If you would like to advice of experts to help you architect your solution to help you save time down the road, consult our Developer Community! Over 1,000 questions have been asked there, and it is possible you may find others before you had a similar question.
 
-[Join the RingCentral Developer Community &raquo;](https://forums.developers.ringcentral.com)
+[Join the RingCentral Developer Community &raquo;](https://community.ringcentral.com)

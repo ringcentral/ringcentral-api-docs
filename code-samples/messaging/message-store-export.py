@@ -1,8 +1,25 @@
+#!/usr/bin/env python
 from ringcentral import SDK
+from datetime import date
+from urllib.request import urlopen
+import os,sys,time
+from dotenv import load_dotenv
+load_dotenv()
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
+CLIENTID     = os.environ.get('RC_CLIENT_ID')
+CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
+SERVER       = os.environ.get('RC_SERVER_URL')
+USERNAME     = os.environ.get('RC_USERNAME')
+PASSWORD     = os.environ.get('RC_PASSWORD')
+EXTENSION    = os.environ.get('RC_EXTENSION')
+
+sdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
 platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+platform.login( USERNAME, EXTENSION, PASSWORD )
+
+today = date.today()
+dateLog = today.strftime("%Y_%m_%d_%H_%M")
+ZIPFILE= "message_store_" + dateLog  + ".zip"
 
 def create_message_store_report() :
     endpoint = "/restapi/v1.0/account/~/message-store-report"
@@ -20,29 +37,25 @@ def get_message_store_report_task(taskId):
     response = platform.get(endpoint)
     json = response.json()
     if json.status == "Completed":
-		get_message_store_report_archive(taskId)
+        return get_message_store_report_archive(taskId)
     else:
-		time.sleep(2)
-		get_message_store_report_task(taskId)
+        time.sleep(2)
+        return get_message_store_report_task(taskId)
 
 def get_message_store_report_archive(taskId):
     print("getting report uri ...")
     endpoint = "/restapi/v1.0/account/~/message-store-report/"+ taskId +"/archive"
-    response = platform.get(endpoint)
-    jsonObj = response.json()
-    length = len(jsonObj.records)
-    dateLog = datetime.datetime.today().strftime("%Y_%m_%d_%H_%M")
-    for i in range(length):
-		fileName = "message_store_content_" + dateLog + "_" + str(i) + ".zip"
-		get_message_store_report_archive_content(jsonObj.records[i].uri, fileName)
+    jsonObj = platform.get(endpoint).json()
+    for i in range( len(jsonObj.records) ):
+        get_message_store_report_archive_content( jsonObj.records[i].uri, i )
 
-def get_message_store_report_archive_content(contentUri, zipFile):
-    print("Save report zip file to the local machine.")
+def get_message_store_report_archive_content(contentUri, i):
+    zipFileName = f'{i}-' + ZIPFILE
+    print( f'Save report to: {zipFileName}')
     uri = platform.create_url(contentUri, False, None, True);
-    print (uri)
-    fileHandler = urllib2.urlopen(uri)
-    with open(zipFile, 'wb') as output:
-		output.write(fileHandler.read())
-
+    fileHandler = urlopen(uri)
+    with open(zipFileName, 'wb') as output:
+        output.write(fileHandler.read())
 
 create_message_store_report()
+sys.exit(0)

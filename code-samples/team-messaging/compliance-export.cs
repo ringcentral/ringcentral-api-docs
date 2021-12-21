@@ -6,11 +6,17 @@ namespace Export_Compliance_Data
 {
     class Program
     {
-	static RestClient rcsdk;
+	static RestClient restClient;
 	static void Main(string[] args)
 	{
-	    rcsdk = new RestClient("client_id", "client_secret", "server_url");
-	    await rcsdk.Authorize("username", "extension_number", "password");
+            restClient = new RestClient(
+		Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+		Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+		Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+            restClient.Authorize(
+		Environment.GetEnvironmentVariable("RC_USERNAME"),
+		Environment.GetEnvironmentVariable("RC_EXTENSION"),
+		Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
 	    create_compliance_export_task().Wait();
 	}
 	static private async Task create_compliance_export_task()
@@ -19,7 +25,7 @@ namespace Export_Compliance_Data
 	    parameters.timeFrom = "2019-08-01T00:00:00.000Z";
 	    parameters.timeTo = "2019-08-26T23:59:59.999Z";
 
-	    var resp = await rcsdk.Restapi().Glip().DataExport().Post(parameters);
+	    var resp = await restClient.Restapi().Glip().DataExport().Post(parameters);
 	    Console.WriteLine("Create export task");
 	    var taskId = resp.id;
 	    Boolean polling = true;
@@ -27,7 +33,7 @@ namespace Export_Compliance_Data
 	    {
 		Console.WriteLine("Check export task status ...");
 		Thread.Sleep(5000);
-		resp = await rcsdk.Restapi().Glip().DataExport(taskId).Get();
+		resp = await restClient.Restapi().Glip().DataExport(taskId).Get();
 		if (resp.status != "InProgress")
 		{
 		    polling = false;
@@ -38,7 +44,7 @@ namespace Export_Compliance_Data
 		for (var i = 0; i < resp.datasets.Length; i++)
 		{
 		    var fileName = "rc-export-reports_" + resp.creationTime + "_" + i + ".zip";
-		    var contentUrl = resp.datasets[i].uri + "?access_token=" + rcsdk.token.access_token;
+		    var contentUrl = resp.datasets[i].uri + "?access_token=" + restClient.token.access_token;
 		    WebClient webClient = new WebClient();
 		    webClient.DownloadFile(contentUrl, fileName);
 		    Console.WriteLine("Save report zip file to the local machine.");

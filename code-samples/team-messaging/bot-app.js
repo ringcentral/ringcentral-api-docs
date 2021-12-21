@@ -1,9 +1,8 @@
-require('dotenv').config();
-
-const RC    = require('ringcentral');
+const RC    = require('@ringcentral/sdk').SDK
 var express = require('express');
 var request = require('request');
 var bp      = require('body-parser')
+var fs      = require('fs');
 
 // read in config parameters from environment, or .env file
 const PORT            = process.env.PORT;
@@ -11,104 +10,159 @@ const REDIRECT_HOST   = process.env.REDIRECT_HOST;
 const CLIENT_ID       = process.env.CLIENT_ID;
 const CLIENT_SECRET   = process.env.CLIENT_SECRET;
 const RINGCENTRAL_ENV = process.env.RINGCENTRAL_ENV;
+const TOKEN_TEMP_FILE = '.bot-auth';
 
 var app = express();
-var platform, subscription, rcsdk, subscriptionId, bot_token;
+var subscription, subscriptionId, bot_token;
 
-app.use( bp.json() );
-app.use( bp.urlencoded({
-  extended: true
+app.use(bp.json());
+app.use(bp.urlencoded({
+    extended: true
 }));
 
 // Start our server
-app.listen(PORT, function () {
+app.listen(PORT, function() {
     console.log("Bot server listening on port " + PORT);
 });
 
 // This route handles GET requests to our root ngrok address and responds
-// with the same "Ngrok is working message" we used before
+// with the same "Ngrok is working message"
 app.get('/', function(req, res) {
     res.send('Ngrok is working! Path Hit: ' + req.url);
 });
 
-// instantiate the RingCentral Javascript SDK
-// Be default, this will communicate with the RingCentral developer sandbox
+// Instantiate the RingCentral Javascript SDK
 rcsdk = new RC({
-    server:    RINGCENTRAL_ENV,
-    appKey:    CLIENT_ID,
-    appSecret: CLIENT_SECRET
+    'server': RINGCENTRAL_ENV,
+    'appKey': CLIENT_ID,
+    'appSecret': CLIENT_SECRET
 });
 
 platform = rcsdk.platform();
+if (fs.existsSync(TOKEN_TEMP_FILE)) {
+    var data = JSON.parse(fs.readFileSync(TOKEN_TEMP_FILE));
+    console.log("Reusing access key from cache: " + data.access_token)
+    platform.auth().setData(data);
+}
 
-// Handle authorization callbacks
-// When a bot is added to an organization, a.k.a. when it is installed,
-// RingCentral will authorize the bot. For private apps, RingCentral will
-// transmit the access key directly. This key can be used for making other
-// API calls to RingCentral, including calling the subscription API for
-// subscribing to webhooks
-app.post('/oauth', function (req, res) {
-    if (req.body.access_token) {
-        bot_token = req.body.access_token;
-	console.log("Verifying redirect URL for bot server.")
-        res.status(200);
-        res.send("")
-
-	// This is a bit of a hack. We are bypassing the login() method
-	// of the SDK in favor of setting the access key directly.
-	// The hack here is to set the refresh token to effectively a null
-	// value since it is not transmitted to us.
-	// There is probably a more elegant solution for this
-	var data = platform.auth().data();
-	data.token_type = "bearer"
-	data.expires_in = 1000000
-	data.access_token = bot_token
-	data.refresh_token = 'xxx'
-	data.refresh_token_expires_in = 1000000
-	platform.auth().setData(data)    
-	
-	// Subscribe to webhooks relating to team messaging posts. This
-	// will alert your bot when a message has been posted so the bot
-	// can parse the message and respond to it. 
-        subscribeToEvents( bot_token );
-	// You may wish to store the bot token if you intend to re-use it
-	// for other calls to the RingCentral API
-	// TODO - store bot_token to make responding to future posts easier
+// Handle authorization for public bots
+//
+// When a public bot is installed, RingCentral transmits an auth token
+// via an HTTP GET. Here the bot receives the token and then uses that
+// token to login() to RingCentral to exchange the token for an access key.
+// Then the bot subscribes to webhooks so that it can respond to message
+// events.
+//
+// This server stores that key in memory. As a result, if the server is
+// restarted, you will need to remove and reinstall the not in order to obtain
+// a fresh API token. In a more advanced implementation, the acess key would
+// be persisted so that it can easily be re-used if the server is restarted. 
+app.get('/oauth', function(req, res) {
+    console.log("Public bot being installed");
+    if (!req.query.code) {
+        res.status(500).send({ "Error": "No authorization token received." }).end();
+        console.log("RingCentral did not transmit an authorizaton token.");
     } else {
-        res.send("")
+        var creatorId = req.query.creator_extension_id;
+        platform.login({
+            code: req.query.code,
+            redirectUri: REDIRECT_HOST + '/oauth'
+        }).then(function(authResponse) {
+            subscribeToEvents();
+        }).catch(function(e) {
+            console.error(e)
+            res.status(500).send("Error installing bot and subscribing to events: ", e).end()
+        })
     }
+    res.status(200).send("").end();
+});
+
+// Handle authorization for public bots
+//
+// When a private bot is installed, RingCentral transmits a permanent access
+// key to the bot via an HTTP POST. 
+//
+// Then the bot subscribes to webhooks so that it can respond to message
+// events.
+//
+// This server stores that key in memory. As a result, if the server is
+// restarted, you will need to remove and reinstall the not in order to obtain
+// a fresh API token. In a more advanced implementation, the acess key would
+// be persisted so that it can easily be re-used if the server is restarted. 
+app.post('/oauth', function(req, res) {
+    res.status(200);
+    if (req.body.access_token) {
+        console.log("Verifying redirect URL for bot server.")
+
+        // Normally, the access token in the SDK is set by the login()
+        // method. Here, we bypass the login method to set the access
+        // token directly.
+        var data = platform.auth().data();
+        data.token_type = "bearer"
+        data.expires_in = 100000000000;
+        data.access_token = req.body.access_token;
+        data.refresh_token = 'xxx';
+        data.refresh_token_expires_in = 10000000000;
+        platform.auth().setData(data);
+
+        console.log("Stashing access key: " + req.body.access_token)
+        fs.writeFileSync(TOKEN_TEMP_FILE, JSON.stringify(data))
+
+        try {
+            subscribeToEvents();
+        } catch (e) {
+            res.status(500).send("Error: ", e).end();
+        }
+    }
+    res.send("").end()
 });
 
 // Callback method received after subscribing to webhook
 // This method handles webhook notifications and will be invoked when a user
 // types a message to your bot. 
-app.post('/callback', function (req, res) {
+app.post('/callback', function(req, res) {
     var validationToken = req.get('Validation-Token');
-    var body =[];
-    console.log("Webhook received.")
-    if(validationToken) {
-        console.log('Responding to RingCentral as last leg to create new Webhook');
+    var body = [];
+    if (validationToken) {
+        console.log('Verifying webhook.');
         res.setHeader('Validation-Token', validationToken);
-        res.statusCode = 200;
-        res.end();
-    } else {
-        req.on('data', function(chunk) {
-            body.push(chunk);
-        }).on('end', function() {
-            body = Buffer.concat(body).toString();
-            console.log('WEBHOOK EVENT BODY: ', body);
-            var obj = JSON.parse(body);
-            res.statusCode = 200;
-            res.end(body);
-            if(obj.event == "/restapi/v1.0/subscription/~?threshold=60&interval=15"){
-                renewSubscription(obj.subscriptionId);
-            }
-        });
+
+    } else if (req.body.event == "/restapi/v1.0/subscription/~?threshold=60&interval=15") {
+        console.log("Renewing subscription ID: " + req.body.subscriptionId);
+        renewSubscription(req.body.subscriptionId);
+
+    } else if (req.body.body.eventType == "PostAdded") {
+        console.log("Received message: " + req.body.body.text);
+        if (req.body.ownerId == req.body.body.creatorId) {
+            console.log("Ignoring message posted by bot.");
+
+        } else if (req.body.body.text == "ping") {
+            send_message("pong", req.body.body.groupId)
+	// Add more bot commands here by training your bot to respond to different keywords
+        //} else if (req.body.body.text == "some keyword") {
+	    
+        } else {
+            send_message("I do not understand '" +
+                req.body.body.text +
+                "'", req.body.body.groupId)
+        }
     }
+    res.statusCode = 200;
+    res.end('');
 });
 
+// Post a message to a chat
+function send_message(msg, group) {
+    console.log("Posting response to group: " + group);
+    platform.post('/restapi/v1.0/glip/chats/' + group + '/posts', {
+        "text": msg
+    }).catch(function(e) {
+        console.log(e)
+    });
+}
+
 // Method to Subscribe to Glip Events.
-function subscribeToEvents(token){
+function subscribeToEvents(token) {
     console.log("Subscribing to post and group events")
     var requestData = {
         "eventFilters": [
@@ -123,25 +177,25 @@ function subscribeToEvents(token){
         "expiresIn": 604799
     };
     platform.post('/subscription', requestData)
-        .then(function (subscriptionResponse) {
+        .then(function(subscriptionResponse) {
             console.log('Subscription Response: ', subscriptionResponse.json());
-            subscription = subscriptionResponse;
             subscriptionId = subscriptionResponse.id;
-        }).catch(function (e) {
-            console.error('There was a problem subscribing to events. ', e);
-            throw e;
-    });
-}
-
-function renewSubscription(id){
-    console.log("Renewing Subscription");
-    platform.post('/subscription/' + id + "/renew")
-        .then(function(response){
-            var data = JSON.parse(response.text());
-            subscriptionId = data.id
-            console.log("Subscription Renewal Successfull. Next Renewal scheduled for:" + data.expirationTime);
         }).catch(function(e) {
-            console.error(e);
+            console.error('There was a problem subscribing to events. ', e);
             throw e;
         });
 }
+
+function renewSubscription(id) {
+    console.log("Renewing Subscription");
+    platform.post('/subscription/' + id + "/renew")
+        .then(function(response) {
+            var data = JSON.parse(response.text());
+            console.log("Subscription renewed. Next renewal:" + data.expirationTime);
+        }).catch(function(e) {
+            console.log("Error subscribing to bot events: ", e);
+            throw e;
+        });
+}
+
+
