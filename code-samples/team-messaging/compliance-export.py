@@ -35,9 +35,9 @@ def get_compliance_export_task(taskId):
         time.sleep(5)
         get_compliance_export_task(taskId)
     else:
-      print (jsonObj.status)
+        print (jsonObj.status)
 
-def get_report_archived_content(contentUri, zipFile):
+def get_glip_report_archived_content(contentUri, fileName):
     print("Save export zip file to the local machine.")
     uri = platform.create_url(contentUri, False, None, True);
     fileHandler = urlopen(uri)
