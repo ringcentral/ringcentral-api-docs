@@ -19,5 +19,4 @@ Icons are used throughout the changelog to help you understand at a glance more 
 |-|-|-|
 | &#x1F510; | Advanced API | API available by request. |
 | ⚠️ | Breaking change | This change may potentially break compatibility with your app. |
-| 🔧 | Bug fix | A change that should be backwards-compatible. |
-| ⭐️ | New API | |
+| 🔧 | Bug fix | A
