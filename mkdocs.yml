@@ -209,6 +209,8 @@ pages:
       - 'Rate limits': 'basics/rate-limits.md'
       - 'API Change Log':
         - 'Preface': 'basics/changelog/index.md'
+        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
         - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
         - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
         - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
