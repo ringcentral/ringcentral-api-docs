@@ -41,12 +41,12 @@ def get_compliance_export_task(taskId)
     end
 end
 
-def get_report_archived_content(contentUri, zipFile)
+def get_report_archived_content(contentUri, fileName)
     puts "Save report zip file to the local machine."
     uri = contentUri + "?access_token=" + $rc.token['access_token']
     open(uri) do |data|
-      File.open(zipFile, "wb") do |file|
-	file.write(data.read)
+      File.open(fileName, "wb") do |file|
+	       file.write(data.read)
       end
     end
 end

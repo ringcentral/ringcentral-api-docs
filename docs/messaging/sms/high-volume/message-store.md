@@ -545,14 +545,28 @@ To get a quick report on message statuses in a batch or within a period of time,
 
 ```json
 {
-  "queued": { "count": 0 },
-  "delivered": { "count": 2 },
+  "queued": {
+    "count": 0,
+    "cost": 0
+  },
+  "delivered": {
+    "count": 2,
+    "cost": 0.014
+  },
   "deliveryFailed": {
     "count": 0,
+    "cost": 0,
     "errorCodeCounts": {}
   },
-  "sent": { "count": 0 },
-  "sendingFailed": { "count": 0 }
+  "sent": {
+    "count": 0,
+    "cost": 0
+  },
+  "sendingFailed": {
+    "count": 0,
+    "cost": 0,
+    "errorCodeCounts": {}
+  }
 }
 ```
 
