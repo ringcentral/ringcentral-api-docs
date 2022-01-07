@@ -49,6 +49,15 @@ With a proxy running, we now have all the information we need to create an app i
 </ol>
 </div>
 
+!!! hint "What to build, a public or private bot?"
+    The button above will help you create a private bot. But what is the difference between a public and private bot? 
+    
+    * A **private bot** can only be installed into the account that created it, and therefore, can only correspond with users in your own personal account/organization.
+    
+    * A **public bot** on the other hand is typically listed in the App Gallery, and can be installed into any number of different RingCentral accounts. 
+    
+    Throughout this walkthrough we will highlight key differences between how you code for a public versus private bot. The button above will assist you in creating a private bot, a preference you can change if you wish. 
+
 ### Set your OAuth redirect URL
 
 Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
@@ -60,7 +69,7 @@ This URL will be invoked whenever your bot is installed, and will be the means b
 
 ## Step 3. Clone and setup the sample application
 
-To help you get started, we have a sample application that stubs out much of what you will need to create. Clone this Github repository like so:
+To help you get started, we have a [sample bot application](https://github.com/ringcentral-tutorials/ringcentral-bot-nodejs-demo) that stubs out much of what you will need to create. Clone this Github repository, and install any required libraries like so:
 
 ```bash
 $ git clone https://github.com/ringcentral-tutorials/ringcentral-bot-nodejs-demo.git
@@ -83,8 +92,14 @@ Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT
 Finally, launch your server.
 
 ```bash
-$ npm start
+$ npm start-private
 ```
+
+!!! hint "`private-bot.js` versus `public-bot.js`"
+    In the repository you cloned above, you will find two different server apps: one for public bots and one for private bots, named accordingly. If you are building a public bot, start your server using the following command:
+	```bash
+	$  npm start-public
+	```
 
 ## Step 4. Add the bot to your RingCentral account
 
@@ -119,13 +134,26 @@ A public bot access token is per user (customer) account, this means that every 
 After getting an access token, the bot must subscribe to Team Messaging event notifications in order to receive messages and important events from users and from RingCentral servers.
 
 ??? info "Code walkthrough: subscribing to bot events"
-    Sample code of a private bot subscription for Team Messaging event notifications:
+    #### Private bots
+	Calling the function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:116-118,165-193] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:116-118] !}
     ```
-    Sample code of a public bot subscription for Team Messaging event notifications:
+	
+	The function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/public-bot.js [ln:133-135,207-237] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:168-196] !}
+    ```
+
+    #### Public bots
+	Calling the function to subscribe to events
+    ```js
+    {!> code-samples/team-messaging/public-bot.js [ln:133-135] !}
+    ```
+
+	The function to subscribe to events
+    ```js
+    {!> code-samples/team-messaging/public-bot.js [ln:207-237] !}
     ```
 
 ??? tldr "Discussion: observe the console of your local bot server"
