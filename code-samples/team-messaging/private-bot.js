@@ -141,8 +141,8 @@ app.post('/webhook-callback', async function (req, res) {
     } else if (body.text == "ping") {
       send_message( body.groupId, "pong" )
     // Add more bot commands here by training your bot to respond to different keywords
-    //} else if (req.body.body.text == "some keyword") {
-      // send_message( body.groupId, "reply message" )
+    // } else if (req.body.body.text == "some keyword") {
+    //   send_message( body.groupId, "reply message" )
     } else if (body.text == "hello") {
       var card = make_hello_world_card(null)
       send_card( body.groupId, card )
