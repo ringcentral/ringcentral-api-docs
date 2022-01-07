@@ -71,7 +71,7 @@ In addition to real-time events, you can read opted-out phone numbers by calling
 
   	params = { "from": "+16505550100" }
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/opt-outs', params)
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"

@@ -79,7 +79,7 @@ To avoid loading the entire message store, which could be extremely large, you c
       'phoneNumber': ["+16505550100"]
     }
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/messages', params)
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"
@@ -297,7 +297,7 @@ You can read batches and parse the response to get a batch id and other basic in
       'dateTo': '2021-06-21T23:59:59.999Z'
     }
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batches', params)
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"
@@ -406,7 +406,7 @@ You can read a single batch basic info such as the status, the number of recipie
   	platform.login( "username", "extension", "password" )
 
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batches/b4e00b67-969f-4db4-a22d-e3ef3cecxxxx')
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"
@@ -507,7 +507,7 @@ To get a quick report on message statuses in a batch or within a period of time,
       'batchId': '8ba42748-0e48-4459-8262-342a7483xxxx'
     }
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/statuses', params)
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"
@@ -611,7 +611,7 @@ You can read an individual message details from the high volume message store us
   	platform.login( "username", "extension", "password" )
     messageId = "52511"
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/messages/' + messageId)
-    print resp.text()
+    print (resp.text())
     ```
 
 === "PHP"

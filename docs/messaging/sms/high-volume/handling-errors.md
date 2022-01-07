@@ -45,7 +45,7 @@ Different recipient wireless carriers will have different spam policies so it ma
 
 ## Expected Errors
 
-Some information is provided for informational purposes and while it may be classified as an error, may be expected from  carriers. For example, it may not possible to get delivery status from carriers as reported by `SMS-CAR-104` and `SMS-CAR-199`. When checking for delivery success and failure, you may want to verify receipt of the SMS message before classifying these as non-delivered.s
+Some information is provided for informational purposes and while it may be classified as an error, may be expected from  carriers. For example, it may not possible to get delivery status from carriers as reported by `SMS-CAR-104` and `SMS-CAR-199`. When checking for delivery success and failure, you may want to verify receipt of the SMS message before classifying these as non-delivered messages.
 
 ## Error Code List
 
