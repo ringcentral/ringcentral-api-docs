@@ -1,104 +1,96 @@
-const RC  = require('@ringcentral/sdk').SDK
-var fs    = require('fs')
-var https = require('https');
-require('dotenv').config();
+const RC  = require('@ringcentral/sdk').SDK;
+const fs    = require('fs');
+const https = require('https');
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
-
-platform.on(platform.events.loginSuccess, function(e) {
-  create_message_store_report()
 });
 
-async function create_message_store_report() {
+platform.on(platform.events.loginSuccess, createMessageStoreReport);
+
+async function createMessageStoreReport() {
   try {
-    var endpoint = "/restapi/v1.0/account/~/message-store-report"
-    var params = {
-      dateFrom: "2019-03-01T00:00:00.000Z",
-      dateTo: "2019-03-31T23:59:59.999Z"
-    }
-    var resp = await platform.post(endpoint, params)
-    var jsonObj = await resp.json()
-    get_message_store_report_task(jsonObj.id)
+    const endpoint = '/restapi/v1.0/account/~/message-store-report';
+    const params = {
+      dateFrom: '2019-03-01T00:00:00.000Z',
+      dateTo: '2019-03-31T23:59:59.999Z'
+    };
+    const response = await platform.post(endpoint, params);
+    const json = await response.json();
+    getMessageStoreReportTask(json.id);
   } catch (e) {
-    console.log(e)
+    console.error(e);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
   }
 }
 
-async function get_message_store_report_task(taskId) {
-  console.log("check task creation status ...")
+async function getMessageStoreReportTask(taskId) {
+  console.log('check task creation status ...');
   try {
-    var endpoint = "/restapi/v1.0/account/~/message-store-report/" + taskId
-    var resp = await platform.get(endpoint)
-    var jsonObj = await resp.json()
-    if (jsonObj.status == "Completed") {
-      get_message_store_report_archive(jsonObj.id)
+    const endpoint = '/restapi/v1.0/account/~/message-store-report/' + taskId;
+    const response = await platform.get(endpoint);
+    const json = await response.json();
+    if (json.status == 'Completed') {
+      getMessageStoreReportArchive(json.id);
     } else {
       setTimeout(function() {
-        get_message_store_report_task(taskId)
+        getMessageStoreReportTask(taskId)
       }, 10000);
     }
   } catch (e) {
-    console.log(e)
+    console.error(e);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
   }
 }
 
-async function get_message_store_report_archive(taskId) {
-  console.log("getting report uri ...")
+async function getMessageStoreReportArchive(taskId) {
+  console.log('getting report uri ...');
   try {
-    var endpoint = `/restapi/v1.0/account/~/message-store-report/${taskId}/archive`
-    var resp = await platform.get(endpoint)
-    var jsonObj = await resp.json()
-    var date = new Date()
-    for (var i = 0; i < jsonObj.records.length; i++) {
-      var fileName = "message_store_content_" + date.toISOString() + "_" + i + ".zip"
-      get_message_store_report_archive_content(jsonObj.records[i].uri, fileName)
+    const endpoint = `/restapi/v1.0/account/~/message-store-report/${taskId}/archive`;
+    const response = await platform.get(endpoint);
+    const json = await response.json();
+    const date = new Date();
+    for (let i = 0; i < json.records.length; i++) {
+      const fileName = 'message_store_content_' + date.toISOString() + '_' + i + '.zip';
+      getMessageStoreReportArchiveContent(json.records[i].uri, fileName);
     }
   } catch (e) {
-    console.log(e)
+    console.error(e);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
   }
 }
 
-async function get_message_store_report_archive_content(contentUri, fileName){
-  var arr = contentUri.split("//")
-  var index = arr[1].indexOf('/')
-  var domain = arr[1].substring(0, index)
-  var path = arr[1].substring(index, arr[1].length)
-  var tokenObj = await platform.auth().data()
-  var accessToken = tokenObj.access_token
-  download(domain, path, accessToken, fileName, function(){
-    console.log("Save atttachment to the local machine.")
+async function getMessageStoreReportArchiveContent(contentUri, fileName) {
+  const uri = await platform.signUrl(contentUri);
+  download(uri, fileName, function() {
+    console.log('Save report zip file to the local machine.');
   })
 }
 
-const download = function(domain, path, accessToken, dest, cb) {
-  var file = fs.createWriteStream(dest);
-  var options = {
-          host: domain,
-          path: path,
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${accessToken}`
-          }
-      }
-  const req = https.request(options, res => {
-    res.pipe(file);
+const download = function(uri, dest, cb) {
+  const file = fs.createWriteStream(dest);
+  https.get(uri, function(response) {
+    response.pipe(file);
     file.on('finish', function() {
       file.close(cb);
     });
