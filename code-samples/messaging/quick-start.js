@@ -1,52 +1,59 @@
-const RC = require('@ringcentral/sdk').SDK
-require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
-const RECIPIENT    = process.env.SMS_RECIPIENT
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
+const RECIPIENT    = process.env.SMS_RECIPIENT;
 
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+const rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const  platform = rcsdk.platform();
+
 platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
-})
-
-platform.on(platform.events.loginSuccess, function(e){
-  read_extension_phone_number()
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
 });
 
-async function read_extension_phone_number(){
+platform.on(platform.events.loginSuccess, readExtensionPhoneNumber);
+
+async function readExtensionPhoneNumber() {
     try {
-        var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
-        var jsonObj = await resp.json()
-        for (var record of jsonObj.records){
-            for (feature of record.features){
-                if (feature == "SmsSender"){
-                    return send_sms(record.phoneNumber)
+        const response = await platform.get('/restapi/v1.0/account/~/extension/~/phone-number');
+        const json = await response.json();
+        for (let record of json.records) {
+            for (feature of record.features) {
+                if (feature == 'SmsSender') {
+                    return sendSms(record.phoneNumber);
                 }
             }
         }
     } catch(e) {
-        console.log(e.message)
-        process.exit(1)
+        console.error(e)
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
     }
 }
 
-async function send_sms(fromNumber){
+async function sendSms(fromNumber) {
     try {
-        var resp = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
+        const response = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
             from: {'phoneNumber': fromNumber},
             to: [{'phoneNumber': RECIPIENT}],
             text: 'Hello World from JavaScript'
         })
-        var jsonObj = await resp.json()
-        console.log("SMS sent. Message status: " + jsonObj.messageStatus)
+        const json = await response.json()
+        console.log('SMS sent. Message status: ' + json.messageStatus)
     } catch(e) {
-        console.log(e.message)
-        process.exit(1)
+        console.error(e)
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
     }
 }
