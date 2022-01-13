@@ -1,42 +1,41 @@
-# Password Flow
+# Password auth flow
 
-Password Flow (Resource Owner Password Credentials) is the simplest OAuth 2.0 authorization flow to implement. It is suitable mostly for server apps which will be used by a single user. Typically the user enters credentials in the form which is provided by the application itself or specifies them in app configuration file (instead of being redirected to the RingCentral website to enter credentials through Web Browser).
+The password-based authorization flow is among the simplest OAuth 2.0 authorization flows to implement. It is suitable mostly for apps that both lack a user interface, and/or that use a single set of credentials to act on behalf of everyone within an account. 
 
-!!! warning "Password Flow cannot be used if Single Sign-On is enforced"
-    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. 
+This authorization flow presumes you are in possession of a user's login credentials. If so, then obtaining an access token is a two-step process:
 
-!!! warning "Password Flow is rarely recommended"
-    The Password Flow is considered by many to be less secure because it requires an app to store a username and password in plain text by the server or client utilizing it. Utilizing the password flow requires an additional level of trust between you and the application.
-
-This authorization flow uses Resource Owner Password Credentials OAuth grant type. Two steps are required for this flow:
-
-1.  The application by itself obtains user credentials from the user.
+1.  The application requests and access token by presenting a user's login credentials to the platform.. 
     
-2.  The application supplies user credentials and application credentials in a request to a token endpoint. Once the credentials are successfully verified, the application receives the access token and the refresh token in an HTTP response.
+2.  Once the credentials are successfully verified, the platform responds with the access and refresh tokens.
 
-Resource Owner Password Credentials flow used by RingCentral results in obtaining an access token from API server. The general ROPC flow looks like this:
-
-<img src="../../img/password_flow.png" class="img-fluid">
+<img src="../oauth-password-flow.png" class="img-fluid" style="max-width: 700px">
 
 Below find the step-by-step instructions on how to perform two-legged authorization using the RingCentral API.
 
-## Step 1. Request access token
-    
-You have to implement a way of obtaining user credentials from the users of your application.
-    
-Once your application has obtained credentials from the user, it can send a specific request to token endpoint `/restapi/oauth/token` (API group is Auth).
-    
-Token requests must include client authentication (see [Client Authentication](../tokens#authenticating-your-application-to-obtain-an-access-token) section).
+### When should I use the password auth flow?
 
-**Request Header**
-   
-The `Content-Type` header should be specified as `application/x-www-form-urlencoded`. **Please note:** Request body should be encoded appropriately. For example email `john+doe@example.com` as username parameter should be specified so - `john%2Bdoe%40example.com`.
-    
-**Request Body**
+The password auth flow is used most often by apps that lack a frontend user interface, such as a script, cronjob, etc. 
 
-```http
-Content Type: application/x-www-form-urlencoded
-```
+!!! warning "We recommend using the JWT authorization flow"
+    The password grant flow for OAuth is discouraged as it requires developers to store username and password information on their servers, which if compromised, would give others full access to their account. A safer and recommended form of authentication is the [JWT auth flow](../jwt-flow).
+
+!!! warning "Password auth flow does not work with Single Sign-On"
+    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. Instead, we recommend using the [JWT auth flow](../jwt-flow) which does not have this restriction.
+
+## Technical discussion
+
+There is only one call to make in the password authorizaton flow: the call to request an access token. This call is described below.
+
+### Access token request
+
+**HTTP Headers**
+
+| Header           | Value                                                      |
+| ---------------- | ---------------------------------------------------------- |
+| `Content-type`   | `application/x-www-form-urlencoded`                        |
+| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+
+**POST parameters**
 
 | Parameter           | Type    | Description |
 | ------------------- | ------- | ----------- |
@@ -47,13 +46,20 @@ Content Type: application/x-www-form-urlencoded
 | `extension`         | string  | Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator |
 | `password`          | string  | Required. User's password |
 	
-## Step 2. Handling token server response
-
-**Response Body**
+**Sample Request**
 
 ```http
-Content Type: application/json
+POST /restapi/oauth/token HTTP/1.1 
+Accept: application/json 
+Content-Type: application/x-www-form-urlencoded 
+Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
+
+grant_type=password&username=18559100010&extension=101&password=121212
 ```
+
+### Access token response
+
+**Response parameters**
 
 | Parameter                  | Type    | Description |
 | -------------------------- | ------- | ----------- |
@@ -64,28 +70,18 @@ Content Type: application/json
 | `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
 | `owner_id`                 | string  | Extension identifier |
 	
-**Example**
+**Sample Response**
 
-=== "Request"
-	```http
-	POST /restapi/oauth/token HTTP/1.1 
-	Accept: application/json 
-	Content-Type: application/x-www-form-urlencoded 
-	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
-	grant_type=password&username=18559100010&extension=101&password=121212             
-	```
-
-=== "Response"
-	```http
-	HTTP/1.1 200 OK
-	Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
 		
-	{
-	   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-	   "token_type" : "bearer",
-	   "expires_in" : 7199,
-	   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
-	   "refresh_token_expires_in" : 604799,
-	   "owner_id" : "256440016"
-	}
-	```
+{
+    "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+	"token_type" : "bearer",
+	"expires_in" : 7199,
+	"refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+	"refresh_token_expires_in" : 604799,
+	"owner_id" : "256440016"
+}
+```
