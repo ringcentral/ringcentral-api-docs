@@ -130,7 +130,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ``` c#
-    {!> code-samples/voice/Call_Ringout/Program.cs !}
+    {!> code-samples/voice/Call_RingOut/Program.cs !}
     ```
 
     ### Run Your App
