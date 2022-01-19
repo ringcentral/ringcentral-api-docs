@@ -86,7 +86,7 @@ In other words, JWTs are a way developers can obtain more reliable access to a u
 
 JWT credentials are bound to the environment specified when they were created. A JWT configured for sandbox cannot be used to authenticate in production, and vice versa. 
 
-Furthermore, JWT credentials are owned by a specific individual. So, if a user does not have an account in their sandbox environment, they will be unable to generate a JWT in sandbox. To fix this problem, navigate to your [sandbox accounts page](https://developers-dpw02.lab.nordigy.ru/console/sandbox) and look for the section entitled, "Your login credentials." Click the create sandbox account link as instructed to create an account for yourself within the sandbox environment.
+Furthermore, JWT credentials are owned by a specific individual. So, if a user does not have an account in their sandbox environment, they will be unable to generate a JWT in sandbox. To fix this problem, navigate to your [sandbox accounts page](https://developers.ringcentral.com/console/sandbox) and look for the section entitled, "Your login credentials." Click the create sandbox account link as instructed to create an account for yourself within the sandbox environment.
 
 ### Using an SDK to perform the JWT auth flow
 
