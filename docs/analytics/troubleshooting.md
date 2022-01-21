@@ -4,7 +4,7 @@ no_breadcrumb:true
 
 ### Is there an SDK for my favorite programming language ?
 
-Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../sdks). 
+Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../../sdks/). 
 
 During our beta however, Java and C# programmers will need to call Analytics API endpoints directly. When this API is made available publicly, our Java and C# SDKs will be updated as well. 
 
