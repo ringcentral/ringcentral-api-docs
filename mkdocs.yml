@@ -257,12 +257,13 @@ pages:
   - 'Authentication':
     - 'Overview': 'authentication/index.md'
     - 'Getting Started': 'authentication/quick-start.md'
-    - 'Developer Manual':
+    - 'Supported auth flows':
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
+      - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
-      - 'Implicit grant flow': 'authentication/implicit-grant-flow.md'
-      - 'Using auth tokens': 'authentication/tokens.md'
+    - 'Using access tokens': 'authentication/tokens.md'
+    - 'Using refresh tokens': 'authentication/refresh-tokens.md'
 
   - 'Address Book':
     - 'Overview': 'address-book/index.md'
