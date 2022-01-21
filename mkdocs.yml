@@ -187,14 +187,10 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Call Performance Reports':
-      - 'Data Guide': 'analytics/call-performance/index.md'
-      - 'API Usage Information': 'analytics/call-performance/api-reference.md'
-      - 'API Reference' : 'https://ringcentral-call-performance.readthedocs-hosted.com/en/latest/swagger-api-ref/'
-      - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
-    - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
-    - 'Changelog': 'analytics/changelog.md'
-
+    - 'Data Guide': 'analytics/api-guide.md'
+    - 'Frequently Asked Questions (FAQ)': 'analytics/troubleshooting.md'
+    - 'API Reference' : https://developers.ringcentral.com/api-reference/analytics
+   
   # ---- SECONDARY APIs ----
 - 'Secondary':
 
