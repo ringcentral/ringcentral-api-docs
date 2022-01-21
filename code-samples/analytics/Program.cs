@@ -20,14 +20,19 @@ namespace WebAPIClient {
     static void Main(string[] args){
       rcClient = new RingCentral.RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
       rcClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
-      getAggregateData(rcClient.token);
+      getAggregateData(rcClient);
+      getTimelineData(rcClient);
     }   
-    private static async void getAggregateData(TokenInfo token) {
-      rcClient = new RingCentral.RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-      rcClient.token = token;
+    private static async void getAggregateData(RingCentral.RestClient restClient) {
       var jsonRequestObject = loadJson("aggregate-data-request.json");
       var response = await rcClient.Post("/analytics/phone/performance/v1/accounts/~/calls/aggregate", jsonRequestObject);
       Console.WriteLine("---- Aggregate Data ----");
+      Console.WriteLine(await response.Content.ReadAsStringAsync());
+    }
+    private static async void getTimelineData(RingCentral.RestClient rcClient) {     
+      var jsonRequestObject = loadJson("timeline-data-request.json");
+      var response = await rcClient.Post("/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Day", jsonRequestObject);
+      Console.WriteLine("---- TimeLine Data ----");
       Console.WriteLine(await response.Content.ReadAsStringAsync());
     }
 

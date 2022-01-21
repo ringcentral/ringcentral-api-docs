@@ -17,7 +17,7 @@ public class App {
   static String RINGCENTRAL_EXTENSION = "";
 
   private static final String AGGREGATE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/aggregate";
-
+  private static final String TIMELINE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Week";
   // Update the URL based on if you're running using RingCentral Sandbox or Production Credentials. Currently set for sandbox
   private static String RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
 
@@ -28,13 +28,19 @@ public class App {
     String accessToken = token.access_token;
 
     String aggregate_json_file_path = "src/main/resources/aggregate-request-body.json";
+    String timeline_json_file_path = "src/main/resources/timeline-request-body.json";
     String aggregateJsonStr = App.readFileAsString(aggregate_json_file_path);
+    String timelineJsonStr = App.readFileAsString(timeline_json_file_path);
 
     try {
       HttpResponse<String> aggreageteHttpResponse = getData(aggregateJsonStr, AGGREGATE_API_PATH, accessToken);
       System.out.println("---AGGREGATE API RESPONSE---");
       System.out.println(aggreageteHttpResponse.statusCode());
       System.out.println(aggreageteHttpResponse.body());
+      HttpResponse<String> timelineHttpResponse = getData(timelineJsonStr, TIMELINE_API_PATH, accessToken);
+      System.out.println("---TIMELINE API RESPONSE---");
+      System.out.println(timelineHttpResponse.statusCode());
+      System.out.println(timelineHttpResponse.body());
     }
     catch (Exception e) {
       e.printStackTrace();

@@ -187,10 +187,10 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Data Guide': 'analytics/api-guide.md'
-    - 'Frequently Asked Questions (FAQ)': 'analytics/troubleshooting.md'
+    - 'API Data Guide': 'analytics/api-guide.md'
     - 'API Reference' : https://developers.ringcentral.com/api-reference/analytics
-   
+    - 'Frequently Asked Questions (FAQ)': 'analytics/troubleshooting.md'
+
   # ---- SECONDARY APIs ----
 - 'Secondary':
 

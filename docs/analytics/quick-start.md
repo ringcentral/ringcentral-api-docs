@@ -41,7 +41,7 @@ There are multiple ways to provide authentication support for your application f
 
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values using the application credentials from the app you created previously.
 
-### Calling Call Performance Aggregate API
+### Calling Analytics APIs (Aggreagte & Timeline)
 
 === "Javascript"
 
@@ -57,7 +57,7 @@ There are multiple ways to provide authentication support for your application f
     $ npm install @ringcentral/sdk dotenv
     ```
 
-    ### Create and edit "index.js" file
+    ### Create and edit 'index.js' file
 
     Create a file called `index.js`. Be sure the values in your `.env` file have been set properly as that is where your credentials will be loaded. 
 
@@ -75,18 +75,20 @@ There are multiple ways to provide authentication support for your application f
 
 === "C#"
 
-    ### Create a Visual Studio project
+    ### Create a C# project
 
     * Choose Console Application .Net or .Net Core
     * Select Target Framework Version
     * Enter project name "WebAPIClient"
-    * Add NuGet package RingCentral.Net SDK --version 5.9.0 or newer
+    * Add NuGet package [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net) version 5.9.0 or newer
+    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body"
 
     ### Edit the file 'Program.cs'
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
-    ```c#
+    ```C#
     {!> code-samples/analytics/Program.cs !}
     ```
 
@@ -94,19 +96,22 @@ There are multiple ways to provide authentication support for your application f
 
     You are almost done. Now run your app by typing in the command line 
     
-    ```c# 
-    dotnet run
+    ```bash
+    $ cd WebAPIClient
+    $ dotnet run
     ```
   
 === "Java"
 
     ### Create a Java Gradle/Maven project
 
-    * Install RC Java SDK from GitHub or Maven Central
+    * Make sure you have JDK 11 or newer installed in our machine
+    * Install RC Java SDK 2.2.0 or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
     * Create a new Java Class called "App.java"
-    * Create a .json file in the following path inside your project "src/main/resources/aggregate-request-body.json"
+    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json" that can be referenced in "JSON Request Body"
 
-    #### App.java
+    ### Edit the file 'App.java'
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
@@ -118,17 +123,25 @@ There are multiple ways to provide authentication support for your application f
 
     You are almost done. Now run your app by typing in the command line 
       
-    ```java 
-      javac App.java
-      java App
+    ```bash 
+    $ javac App.java
+    $ java App
     ```
 
 === "JSON Request Body"
 
-    Create a file called `aggreate-request-body.json`. Make sure to edit this file based on your needs.
+    Sample post request body is provided below in two seperate .json files. Edit these files as per your needs.
+
+    ### `aggreate-request-body.json`
 
     ```json
     {!> code-samples/analytics/aggregate-request-body.json !} 
+    ```
+
+    ### `timeline-request-body.json`
+
+    ```json
+    {!> code-samples/analytics/timeline-request-body.json !} 
     ```
 
 ## Sample Applications on GitHub
@@ -138,4 +151,3 @@ You can reference the following sample applications from GitHub in case you're l
 - [Sample Node.js App](https://github.com/ringcentral/call-performance-api-demo)
 - [Sample C# App](https://github.com/ringcentral/call-performance-api-demo)
 - [Sample Java App](https://github.com/ringcentral/call-performance-api-demo)
-
