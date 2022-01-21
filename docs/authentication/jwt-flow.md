@@ -21,6 +21,8 @@ Using a JSON Web Token for app authentication is ideal in the following circumst
 * You need a way for users to grant access to their account using a credential that doesn't expire.
 * You need a way to access an account that doesn't rely on token refreshing.
 
+{! docs/authentication/jwt-vs-password.inc !} 
+
 ### How do I configure an app to use JWT authentication?
 
 To configure an app for JWT authentication, follow these steps:
@@ -36,9 +38,9 @@ To configure an app for JWT authentication, follow these steps:
 
 ### How do I generate a JWT credential used for authentication?
 
-To create a JWT used for app authentication, follow these steps:
+JWT tokens are created exclusively within the RingCentral Developer Console. For this reason, JWT credentials can only be created by users who have a valid developer account or role. To create a JWT used for app authentication, follow these steps:
 
-1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/console).
+1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/console). If you do not have access to the Developer Console, please reach out to your account administrator to request access. 
 
 2. Hover your mouse over your name in the upper righthand corner, and select "Credentials."
 
@@ -49,6 +51,12 @@ To create a JWT used for app authentication, follow these steps:
 4. Configure your JWT and click "Create." 
 
     <img src="../jwt-auth-create.png" class="img-fluid" style="max-width:500px">
+
+In this way, JWT credentials are associated with a specific user within an organization. The user a JWT credential is associated with determines what features and capabilities can be performed using that credential. For example, if a user Luke does not have permission to edit accounts, and Luke's credential is used to edit an account, then that API call will fail because Luke's account lacks the necessary permission. 
+
+??? hint "Special considerations for Developer Admins"
+    Developers with the role of "Developer Admin" have the ability to not only manage their own JWT credentials, but also the JWT credentials of other developers within their organization. 
+	To manage another developer's credentials, click on "Organization" in the navigation. Then select the developer whose credentials you would like to manage, and finally click on "Credentials" in the navigation. 
 
 #### How to restrict access for your JWT
 
@@ -78,9 +86,13 @@ To learn more, see "Technical discussion" below.
 
 ### Do JSON Web Tokens expire or do they need to be refreshed?
 
-While JWTs can be configured to never expire, the access tokens obtained via a JWT will always expire unless they are properly refreshed. However, unlike the traditional auth token flow in which a user must re-enter their username and password in order for the application to obtain a new access token, a JWT can easily be represented to the platform in order to obtain a new and fresh access token. 
+While JWTs can be configured to never expire, the access tokens obtained via a JWT will always expire unless they are properly refreshed. However, unlike the traditional auth token flow in which a user must re-enter their username and password in order for the application to obtain a new access token, a JWT can easily be presented to the platform again in order to obtain a new and fresh access token. 
 
 In other words, JWTs are a way developers can obtain more reliable access to a user's account for the purposes of calling the API on their behalf. And in the event that an access token expires, a new one can be quickly generated without the need for a human to re-enter their login credentials. 
+
+!!! info "JWT credentials and rate limiting"
+    JWT credentials are used to obtain an access token by calling the Auth API, and are therefore subject to the same rate limits as any other means of authentication/authorization. To avoid being throttled by a rate limit, developers should re-use the access token they obtain until an appropriate time to dispose of it. 
+
 
 ### Using JWT in sandbox and production
 
@@ -113,7 +125,7 @@ JSON web tokens, or JWTs are a form of user credential that can be presented in 
 | Header           | Value                                                      |
 | ---------------- | ---------------------------------------------------------- |
 | `Content-type`   | `application/x-www-form-urlencoded`                        |
-| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" + Client Secret ) |
 
 **POST Parameters**
 

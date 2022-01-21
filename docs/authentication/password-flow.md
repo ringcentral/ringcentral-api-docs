@@ -22,6 +22,8 @@ The password auth flow is used most often by apps that lack a frontend user inte
 !!! warning "Password auth flow does not work with Single Sign-On"
     If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. Instead, we recommend using the [JWT auth flow](../jwt-flow) which does not have this restriction.
 
+{! docs/authentication/jwt-vs-password.inc !} 
+
 ## Technical discussion
 
 There is only one call to make in the password authorizaton flow: the call to request an access token. This call is described below.
@@ -33,7 +35,7 @@ There is only one call to make in the password authorizaton flow: the call to re
 | Header           | Value                                                      |
 | ---------------- | ---------------------------------------------------------- |
 | `Content-type`   | `application/x-www-form-urlencoded`                        |
-| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" + Client Secret ) |
 
 **POST parameters**
 
