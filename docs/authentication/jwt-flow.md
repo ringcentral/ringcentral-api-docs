@@ -110,10 +110,22 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     {!> code-samples/auth/jwt.js !} 
 	```
 
+=== "Python"
+
+    ```php
+    {!> code-samples/auth/jwt.py !} 
+    ```
+
 === "PHP"
 
     ```php
     {!> code-samples/auth/jwt.php !} 
+    ```
+
+=== "Ruby"
+
+    ```php
+    {!> code-samples/auth/jwt.rb !} 
     ```
 
 ## Technical discussion
