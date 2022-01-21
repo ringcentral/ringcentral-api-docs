@@ -1,58 +1,78 @@
 no_breadcrumb:true
 
-# Introduction to the RingCentral Analytics API
-
-!!! warning "Please be advised: the RingCentral MVP Analytics API is currently in beta, and is subject to change."
+# Introduction to the RingCentral Line of Business Analytics APIs
 
 <div class="jumbotron pt-1">
-  <h3 class="h3 display-5">Getting Started with Analytics</h3>
-  <p class="lead">The RingCentral Analytics API gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
+  <h3 class="h3 display-5">Getting Started with Analytics APIs</h3>
+  <p class="lead">The RingCentral Line of Business (LOB) Analytics APIs gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
   <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a Quick Start : in any of the following languages:</p>
+  <a href="quick-start/#Javascript" class="btn btn-light qs-link">JavaScript &raquo;</a>
   <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
+  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
 </div>
 
-## Requesting access to the beta
+## Overview
 
-The Analytics API is currently in a private beta. We have made the documentation available to help developers determine for themselves whether this API would be of value to them. To request access to the beta so that you can use this API, click the button below. 
+Line Of Business (LOB) Analytics is a historical call performance analytics offering for RingCentral Office customers, to help functional managers gain a comprehensive understanding of their team’s performance whether they are set up on call queues, user groups, or as individual users.
 
-<a class="btn btn-primary" href="https://forms.gle/hEBVJU6Y8nqRy2y16">Request access to the Analytics API Beta &raquo;</a>
+There are two APIs that provides insight into :
 
-!!! info "Important notes about the beta"
-    The Analytics API is only available in our production enviornment, and cannot yet be called in our sandbox environment where most development occurs. Therefore you will need production credentials to use this API. To obtain production credentials, please [submit a help ticket](https://developers.ringcentral.com/support/create-case) to request your application to be graduated to production.
+- Performance data around call handling
+- Call handling patterns
+- Call volume distribution
 
-## Learn more about the Call Performance Analytics API
 
-<iframe src="https://player.vimeo.com/video/563903824?color=ff8800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+#### [API Reference](https://developers.ringcentral.com/api-reference/analytics)
+#### [API Data Guide](api-guide)
 
-## Access metrics to measure your team's performance
+## Use Cases
 
-Call Performance Reports is a historical call analytics offering for RingCentral MVP customers to help managers gain a comprehensive understanding of their team’s performance whether they are set up on call queues, user groups or as individual users. This product provides direct access to granular data behind our Analytics Portal via an API. There are two primary metrics summarized and accessible through this API:
+### Team & individual Performance assessment
+Managers who have teams setup on call queues, user groups or in departments to handle customer queries need to closely monitor the performance of their teams as well as members of the teams to identify areas of improvement.
 
-* **Calls** - an aggregation of the number of calls a person is on
-* **Time Spent** - an aggregation of time spent on calls
+### Operational decision making such as staffing and training
+Managers who are responsible for the customer experience, need to ensure customers are being sent in the right direction and are served in a timely manner.  
 
-The above metrics can be broken down even further for more detailed analyis. 
+### Analyze communication effectiveness vs business outcomes
+Managers can also look at the above-mentioned metrics in conjunction with other business lifecycle data to assess the effectiveness of each of the team members in driving the business outcomes.
 
-Learn more about [Call Performance Data Guide &raquo;](./call-performance/)
+## Public APIs (Beta) :
 
-## Frequently Asked Questions
+BASE URI : 
 
-### How do I get started ?
+  - Production: `https://platform.ringcentral.com` 
+  - Sandbox: `https://platform.devtest.ringcentral.com`
 
-There are three ways to get started:
+HTTP METHOD : `POST`
 
-1. Follow the step-by-step [Quick Start](./quick-start/) in order to build a command-line application or test the API using Postman.
+API ENDPOINTS :
 
-2. Read the [API Reference](./call-performance/api-reference/) to understand the various APIs' definition, HTTP Request and Response objects.
+1. Call Performance Aggregate API `/analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate/` : It provides an aggregation of the number of calls a user was on.
 
-3. Dive into the [sample application](https://github.com/ringcentral/call-performance-api-demo) and use that as a springboard for your custom application.
+2. Timeline API `/analytics/phone/performance/v1/accounts/{accountId}/calls/timeline/interval={interval}` : It provides an aggregation of time spent (duration) on call related metrics.
 
-### Is there an SDK for my favorite programming language?
+These metrics can then be further broken down to get detailed reports by:
 
-Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../sdks). 
+- Origin (internal or external calls)
+- Direction (Inbound or outbound calls)
+- Answered and Not Answered calls 
+- Types of calls answered & reasons for not answering 
+- Time  spent by the caller in  phases of the call such as ringing, IVR prompt, live talk, hold etc.
+- The times agents put the caller on hold, park, transferred during the call
+- How the call ended, did it end after live talk at specified extn or got transferred, or sent to VM etc.
+- Company Hours
+- Various date and time ranges
 
-During our beta however, Java and C# programmers will need to call Analytics API endpoints directly. When this API is made available publicly, our Java and C# SDKs will be updated as well. 
+## Get Started
 
-### What permission does my application need to have?
+You can get started by any of the following ways:
 
-Currently, the Call Performance API doesn't require any particular permission from your application so it should work as long as you have the  credentials for production enviornment.
+1. [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/ec998118d5bd3d56e4b6?action=collection%2Fimport#?env%5BRC%20Sharable%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5kZXZ0ZXN0LnJpbmdjZW50cmFsLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoicGxhdGZvcm0uZGV2dGVzdC5yaW5nY2VudHJhbC5jb20iLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5IjoiUkNfQVBQX0tFWSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoiUkNfVVNFUk5BTUUiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX0VYVEVOU0lPTiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjZ9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fV0=)
+
+
+3. Follow the step-by-step [Quick Start](./quick-start/) in order to build a command-line application in JavaScript/Java/C#.
+
+4. Play with one of our sample applications on GitHub for [Node.JS - JavaScript](https://github.com/ringcentral/call-performance-analytics-demo-node), [C#](https://github.com/ringcentral/call-performance-analytics-demo-csharp) and [Java](https://github.com/ringcentral/call-performance-analytics-demo-java). You can also use these as a springboard to develop/modify based on your needs.
+
+
+
