@@ -6,7 +6,7 @@ RingCentral supports the OAuth 2.0 authorization code flow, one of the most comm
 2. A grant is exchanged for an access token via an API call.
 3. The access token is used to call the API to access a protected resource.
 
-<img src="../oauth-auth-token-flow.png" class="img-fluid" style="max-width: 700px">
+<img src="../oauth-auth-token-flow.png" class="img-fluid">
 
 !!! hint "Developers are encouraged to implement the nearly identical [PKCE auth code flow](../auth-code-pkce-flow/) for better security."
 

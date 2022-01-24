@@ -9,7 +9,7 @@ RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) f
 
 At a high-level, the JWT auth flow is as follows:
 
-<img src="../oauth-password-flow.png" class="img-fluid" style="max-width: 700px">
+<img src="../oauth-password-flow.png" class="img-fluid">
 
 For a deeper dive of this flow, see "Technical discussion" below. 
 
@@ -27,7 +27,7 @@ Using a JSON Web Token for app authentication is ideal in the following circumst
 
 To configure an app for JWT authentication, follow these steps:
 
-1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/console/). 
+1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html). 
 2. Select "Apps" from the left-hand navigation.
 3. Click "Create App."
 4. Select the "REST API App" app type, and click Next.

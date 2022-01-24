@@ -2,7 +2,7 @@
 
 The Authorization code flow with Proof Key for Code Exchange, or simply "Auth code flow with PKCE" is the recommended form of authenticating RingCentral users and exchanging tokens in client-side applications. It is considered a more secure version of the more widely used [Authorization code flow](../auth-code-flow). The flow is as follows:
 
-<img src="../oauth-auth-token-pkce-flow.png" class="img-fluid" style="max-width: 700px">
+<img src="../oauth-auth-token-pkce-flow.png" class="img-fluid">
 
 ### What are the benefits of using the authorization code flow?
 
