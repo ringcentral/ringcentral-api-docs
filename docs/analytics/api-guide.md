@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # API Data Guide
 
-## Call performance aggregate API:
+## Call Performance Aggregate API:
 
 **API Endpoint**
 
@@ -218,7 +218,7 @@ Supported time interval values are Hour, Day, Week, and Month. For example, this
 
 Compared to aggregate end point, 1 additional point that needs to be answered in timeline endpoint is the TimeFrame (preferred interval). 
 
-#### HTTP Request
+### HTTP Request
 
 - Grouping: Allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. In API request structure, it can be specified in groupby section on top. This is similar to aggregate end point along with providing data at different timeframe split.
 
