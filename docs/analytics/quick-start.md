@@ -4,9 +4,12 @@ no_breadcrumb:true
 
 In this quick start guide, we are going to access call performance data via the command line using CURL utility in just a few minutes. Let's get started.
 
-### Create an App if you don't have one already
+!!! hint "Analytics API is in beta - please request access"
+    To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+## Create App and Get Credentials
+
+The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Analytics App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
@@ -26,22 +29,30 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 </ol>
 </div>
 
-#### Get Application credentials
-
-In the RingCentral Developer Dashboard, navigate to your App -> Dashboard -> Credential and note down the following. We will use Sandbox credentials for this example: 
-
-- App Server URL which should be https://platform.devetst.ringcentral.com . This is the URL for RingCentral Sandbox Environment and we will be doing our development in Production Environment for this API. 
-
-
-### Authentication
-
-There are multiple ways to provide authentication support for your application for RingCentral users. This will depend on the type of authentication mechanism you chose when you created your application. For more information about how to use OAuth 2.0 with your application please refer to this [guide](../../authentication). For this example, we will assume you are using Application that is setup for [Password flow based authentication](../../authentication/password-flow/)
-
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
-2. Edit your newly downloaded `.env` file, setting its variables with the proper values using the application credentials from the app you created previously.
+## Download your request template
 
-### Calling Analytics APIs (Aggreagte & Timeline)
+The payload for an Analytics API request in non-trivial given the many filtering and reporting options available to developers. To assist you in making your first API call, we have provided you with two sample requests that the quick start sample code make use of by reading their contents off of the filesystem. Download these files to the same directory as your quick start script. 
+
+=== "aggreate-request-body.json"
+
+    ```json
+    {!> code-samples/analytics/aggregate-request-body.json !} 
+    ```
+
+=== "timeline-request-body.json"
+
+    ```json
+    {!> code-samples/analytics/timeline-request-body.json !} 
+    ```
+
+### Call the Analytics API
 
 === "Javascript"
 
@@ -126,22 +137,6 @@ There are multiple ways to provide authentication support for your application f
     ```bash 
     $ javac App.java
     $ java App
-    ```
-
-=== "JSON Request Body"
-
-    Sample post request body is provided below in two seperate .json files. Edit these files as per your needs.
-
-    ### `aggreate-request-body.json`
-
-    ```json
-    {!> code-samples/analytics/aggregate-request-body.json !} 
-    ```
-
-    ### `timeline-request-body.json`
-
-    ```json
-    {!> code-samples/analytics/timeline-request-body.json !} 
     ```
 
 ## Sample Applications on GitHub

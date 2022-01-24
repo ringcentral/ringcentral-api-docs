@@ -9,70 +9,53 @@ no_breadcrumb:true
   <a href="quick-start/#Javascript" class="btn btn-light qs-link">JavaScript &raquo;</a>
   <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
   <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="https://god.postman.co/run-collection/ec998118d5bd3d56e4b6?action=collection%2Fimport#?env%5BRC%20Sharable%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5kZXZ0ZXN0LnJpbmdjZW50cmFsLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoicGxhdGZvcm0uZGV2dGVzdC5yaW5nY2VudHJhbC5jb20iLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5IjoiUkNfQVBQX0tFWSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoiUkNfVVNFUk5BTUUiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX0VYVEVOU0lPTiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjZ9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fV0=" class="btn btn-light qs-link">Run in Postman &raquo;</a>
 </div>
 
-## Overview
+Line of Business (LOB) Analytics is a historical call performance analytics offering for RingCentral MVP customers, to help functional managers increase their understanding of their team’s performance across call queues, user groups, and individuals. There are currently two operations that comprise the Analytics API to help manage assess:
 
-Line Of Business (LOB) Analytics is a historical call performance analytics offering for RingCentral Office customers, to help functional managers gain a comprehensive understanding of their team’s performance whether they are set up on call queues, user groups, or as individual users.
+* Call handling performance
+* Call handling patterns
+* Call volume distribution
 
-There are two APIs that provides insight into :
-
-- Performance data around call handling
-- Call handling patterns
-- Call volume distribution
+!!! hint "Analytics API is in beta - please request access"
+    To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
 
 
-#### [API Reference](https://developers.ringcentral.com/api-reference/analytics)
-#### [API Data Guide](api-guide)
+## What can the Analytics API be used for?
 
-## Use Cases
+### Team and individual performance assessment
 
-### Team & individual Performance assessment
 Managers who have teams setup on call queues, user groups or in departments to handle customer queries need to closely monitor the performance of their teams as well as members of the teams to identify areas of improvement.
 
-### Operational decision making such as staffing and training
-Managers who are responsible for the customer experience, need to ensure customers are being sent in the right direction and are served in a timely manner.  
+### Operational performance optimization
 
-### Analyze communication effectiveness vs business outcomes
+Managers who are responsible for the customer experience need to ensure customers are being sent in the right direction and are served in a timely manner.
+
+### Communication effectiveness vs business outcome analysis
+
 Managers can also look at the above-mentioned metrics in conjunction with other business lifecycle data to assess the effectiveness of each of the team members in driving the business outcomes.
 
-## Public APIs (Beta) :
+## What reports can the Analytics API help generate?
 
-BASE URI : 
+The Analytics API current supports creating two types of reports:
 
-  - Production: `https://platform.ringcentral.com` 
-  - Sandbox: `https://platform.devtest.ringcentral.com`
+1. The [Call Performance API](./performance/) aggregates the number of calls a user was on. 
 
-HTTP METHOD : `POST`
+2. The [Timeline API](./timeline/) aggregates the time spent on call related metrics.
 
-API ENDPOINTS :
-
-1. Call Performance Aggregate API `/analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate/` : It provides an aggregation of the number of calls a user was on.
-
-2. Timeline API `/analytics/phone/performance/v1/accounts/{accountId}/calls/timeline/interval={interval}` : It provides an aggregation of time spent (duration) on call related metrics.
-
-These metrics can then be further broken down to get detailed reports by:
+These reports can be further broken down to get detailed reports by:
 
 - Origin (internal or external calls)
 - Direction (Inbound or outbound calls)
-- Answered and Not Answered calls 
-- Types of calls answered & reasons for not answering 
-- Time  spent by the caller in  phases of the call such as ringing, IVR prompt, live talk, hold etc.
+- Answered and not answered calls 
+- Types of calls answered and reasons for not answering 
+- Time  spent by the caller in phases of the call such as ringing, IVR prompt, live talk, hold etc.
 - The times agents put the caller on hold, park, transferred during the call
-- How the call ended, did it end after live talk at specified extn or got transferred, or sent to VM etc.
+- How the call ended, did it end after live talk at specified extension or got transferred, or sent to voicemail etc.
 - Company Hours
 - Various date and time ranges
 
-## Get Started
+### How is LOB Analytics API different than Call Log API ? 
 
-You can get started by any of the following ways:
-
-1. [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/ec998118d5bd3d56e4b6?action=collection%2Fimport#?env%5BRC%20Sharable%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5kZXZ0ZXN0LnJpbmdjZW50cmFsLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoicGxhdGZvcm0uZGV2dGVzdC5yaW5nY2VudHJhbC5jb20iLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5IjoiUkNfQVBQX0tFWSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoiUkNfVVNFUk5BTUUiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX0VYVEVOU0lPTiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjZ9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fV0=)
-
-
-3. Follow the step-by-step [Quick Start](./quick-start/) in order to build a command-line application in JavaScript/Java/C#.
-
-4. Play with one of our sample applications on GitHub for [Node.JS - JavaScript](https://github.com/ringcentral/call-performance-analytics-demo-node), [C#](https://github.com/ringcentral/call-performance-analytics-demo-csharp) and [Java](https://github.com/ringcentral/call-performance-analytics-demo-java). You can also use these as a springboard to develop/modify based on your needs.
-
-
-
+The Call Log API is suitable for hop-by-hop call analysis on individual call basis. The Analtics API is suitable for aggregate call analysis. The Analytics API also provides an easy way to filter out data by conditional logic such as filter calls on time spent in ringing, holds etc.

@@ -187,9 +187,10 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'API Data Guide': 'analytics/api-guide.md'
-    - 'API Reference' : https://developers.ringcentral.com/api-reference/analytics
-    - 'Frequently Asked Questions (FAQ)': 'analytics/troubleshooting.md'
+    - 'Performance reports': 'analytics/call-performance.md'
+    - 'Timeline reports': 'analytics/timeline.md'
+    - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
+    - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
 
   # ---- SECONDARY APIs ----
 - 'Secondary':

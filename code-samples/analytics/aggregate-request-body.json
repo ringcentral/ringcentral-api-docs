@@ -2,7 +2,7 @@
   "grouping": {
     "groupBy": "CompanyNumbers",
     "ids": []
-   },
+  },
   "timeSettings": {
     "timeRange": {
       "timeFrom": "2021-08-25T05:52:17.745Z",
