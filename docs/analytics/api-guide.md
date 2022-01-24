@@ -1,20 +1,16 @@
 no_breadcrumb:true
 
-## API Data Guide
-
-### API Rate Limits
-
-Line of Business Analytics APIs belongs to "Light" API [Rate Limit Group](https://developers.ringcentral.com/api-reference/Usage-Plan-Groups).
+# API Data Guide
 
 ## Call performance aggregate API:
 
-#### API Endpoint: `/analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate`
+**API Endpoint**
 
-This API allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
+`/analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate`
 
-For example, this end point will provide aggregated data for specified grouping over the period of time . Like sum of Answered calls by users for the period of entire week 
+This API allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes. For example, this endpoint will provide aggregated data for specified grouping over the period of time. Like sum of answered calls by users for the period of entire week.
 
-#### HTTP Request
+### HTTP Request
 
 - Grouping: Allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. In API request structure, it can be specified in groupby section on top
 
@@ -44,7 +40,8 @@ No grouping specified, i/e null or unstable | It will return one record with dat
 
 In the below example, under advancedTimeSettings, timeZone can be specified, include Days will allow users to add weekdays of choice, and Includehours will allow users to filter data for custom hours (format hh: mm) for specified date-time range under timeRange section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer by timeframes
 
-#### Example
+**Example**
+
   ```json
   "timeSettings": {
     "timeRange": {
@@ -66,13 +63,14 @@ In the below example, under advancedTimeSettings, timeZone can be specified, inc
   }
   ```
 
-#### Response Options: 
+#### Response options
 
 Allows users to specify call aggregation breakdown and it’s data aggregation types for API response. These Response options will get sliced and diced by using additional filters section in API request
 
   - Counters: Provides aggregation on Call volume by specified metrics. The metrics can be provided in the counter section under the response option. Every response section has an option to specify aggregation type & Interval. The supported types are Sum, Average, Min, Max, Percent, and Interval is Hour, Day, Week, Month.
 
-#### Example
+**Example**
+
   ```json
   "responseOptions": {
       "counters": {
@@ -99,7 +97,8 @@ Allows users to specify call aggregation breakdown and it’s data aggregation t
 
   - Timers: Provides aggregation for time spent on the call. The metrics can be provided in the timer section under the response option which will provide duration details. Every response section has an option to specify aggregation type & Interval. The supported types are Sum, Average, Min, Max, Percent and Interval is Hour, Day, Week, Month.
 
-#### Example
+**Example**
+
   ```json
   "responseOptions": {
     "timers": {
@@ -123,6 +122,7 @@ Allows users to specify call aggregation breakdown and it’s data aggregation t
       }
     }
   ```
+  
 ### Data Dictionary
 
 |CounterResponseOptions (API)| TimerResponseOptions (API)| Description |
@@ -163,7 +163,7 @@ queueSla | This filter allows to get aggregation of calls that were either withi
 
 These filters can be applied to slice & dice the data as needed and can be done in additionalfilters section. 
 
-#### Example
+**Example**
 
   ```json
   "additionalFilters": {
@@ -206,13 +206,15 @@ These filters can be applied to slice & dice the data as needed and can be done 
   }
   ```
 
-## Call Performance Timeline API:     
+## Call Performance Timeline API
 
-#### API Endpoint: `/analytics/phone/performance/v1/accounts/{accountId}/calls/timeline/interval={interval}`
+**API Endpoint**
+
+`/analytics/phone/performance/v1/accounts/{accountId}/calls/timeline/interval={interval}`
 
 This API users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. 
 
-Supported time interval values are Hour, Day, Week, and Month.''For example, this end point will provided aggregated data for specified grouping divided by mentioned time frame. Like sum of Answered calls by users for the period of the week with daily time frame to get the timeline view. Similarly, splits can be hourly, weekly, monthly as per the date scope selected.
+Supported time interval values are Hour, Day, Week, and Month. For example, this end point will provided aggregated data for specified grouping divided by mentioned time frame. Like sum of Answered calls by users for the period of the week with daily time frame to get the timeline view. Similarly, splits can be hourly, weekly, monthly as per the date scope selected.
 
 Compared to aggregate end point, 1 additional point that needs to be answered in timeline endpoint is the TimeFrame (preferred interval). 
 
@@ -262,6 +264,7 @@ In the below example, under advancedTimeSettings, timeZone can be specified, inc
     }
   },
 ```
+
 #### Response Options
 
 Allows users to specify call aggregation breakdown and it’s data aggregation types for API response
@@ -270,7 +273,8 @@ Allows users to specify call aggregation breakdown and it’s data aggregation t
 
  - Timers: Provides aggregation for time spent on the call.  The metrics can be provided in the timer section under response option which will provide duration details by specified metrics for set Time Interval split .
 
-#### Example
+**Example**
+
 ```json
 "responseOptions": {
   "counters": {
@@ -296,7 +300,8 @@ Allows users to specify call aggregation breakdown and it’s data aggregation t
   }
 }
 ```
-### Data Dictionary:
+
+### Data Dictionary
 
 |CounterResponseOptions (API)| TimerResponseOptions (API)| Description |
 |---|---|---|
@@ -336,7 +341,8 @@ Allows users to filter out the data and specify the granular scope to call break
 
 These filters can be applied to slice & dice the data as needed and can be done in additionalfilters section shown below 
 
-#### Example
+**Example**
+
 ```json
 "additionalFilters": {
   "direction": "Inbound",
