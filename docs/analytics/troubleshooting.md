@@ -4,13 +4,11 @@ no_breadcrumb:true
 
 ### Is there an SDK for my favorite programming language ?
 
-Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](../../sdks/). 
-
-During our beta however, Java and C# programmers will need to call Analytics API endpoints directly. When this API is made available publicly, our Java and C# SDKs will be updated as well. 
+Yes, RingCentral offers developers a number of [SDKs for the most popular programming languages](https://developers.ringcentral.com/guide/sdks). 
 
 ### What permission does my application need to have ?
 
-Your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your Application's Client ID and request 'Analytics' permission to be added.
+Your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can [reach out to our support team](https://developers.ringcentral.com/support/create-case) with your Application's Client ID and request 'Analytics' permission to be added.
 
 ### How is LOB Analytics API different than Call Log API ? 
 
