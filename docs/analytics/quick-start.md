@@ -143,6 +143,6 @@ The payload for an Analytics API request in non-trivial given the many filtering
 
 You can reference the following sample applications from GitHub in case you're looking for a completed project or run into any errors:
 
-- [Sample Node.js App](https://github.com/ringcentral/call-performance-api-demo)
+- [Sample Node.js App](https://github.com/ringcentral/call-performance-analytics-demo-node)
 - [Sample C# App](https://github.com/ringcentral/call-performance-api-demo)
-- [Sample Java App](https://github.com/ringcentral/call-performance-api-demo)
+- [Sample Java App](https://github.com/ringcentral/call-performance-analytics-demo-java)

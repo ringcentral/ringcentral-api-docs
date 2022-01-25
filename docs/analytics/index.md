@@ -12,11 +12,12 @@ no_breadcrumb:true
   <a href="https://god.postman.co/run-collection/ec998118d5bd3d56e4b6?action=collection%2Fimport#?env%5BRC%20Sharable%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5kZXZ0ZXN0LnJpbmdjZW50cmFsLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoicGxhdGZvcm0uZGV2dGVzdC5yaW5nY2VudHJhbC5jb20iLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5IjoiUkNfQVBQX0tFWSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoiUkNfVVNFUk5BTUUiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX0VYVEVOU0lPTiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjZ9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fV0=" class="btn btn-light qs-link">Run in Postman &raquo;</a>
 </div>
 
-Line of Business (LOB) Analytics is a historical call performance analytics offering for RingCentral MVP customers, to help functional managers increase their understanding of their team’s performance across call queues, user groups, and individuals. There are currently two operations that comprise the Analytics API to help manage assess:
+Line of Business (LOB) Analytics is a historical call performance analytics offering for RingCentral MVP customers, to help functional managers increase their understanding of their team’s performance across call queues, user groups, and individuals. There are currently two operations that comprise the Analytics APIs to help assess:
 
-* Call handling performance
+* Team’s performance
 * Call handling patterns
-* Call volume distribution
+* Call volume distribution by multiple time intervals
+
 
 !!! hint "Analytics API is in beta - please request access"
     To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
@@ -40,9 +41,9 @@ Managers can also look at the above-mentioned metrics in conjunction with other 
 
 The Analytics API current supports creating two types of reports:
 
-1. The [Call Performance API](./performance/) aggregates the number of calls a user was on. 
+1. The [Call Performance Aggregate API](./performance/) aggregates the number of calls a user was on. 
 
-2. The [Timeline API](./timeline/) aggregates the time spent on call related metrics.
+2. The [Call Performance Timeline API](./timeline/) aggregates the time spent on call related metrics.
 
 These reports can be further broken down to get detailed reports by:
 
