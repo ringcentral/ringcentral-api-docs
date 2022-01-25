@@ -1,8 +1,6 @@
-# Using the Analytics API to assess call performance 
+# Using the Analytics APIs to access call performance aggregate and timeline data
 
-The Call Performance API allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes. For example, this endpoint will provide aggregated data for specified grouping over the period of time, e.g. the sum of answered calls by users for the period of entire week.
-
-## Composing a request to the Call Performance API
+## Composing a request to the Call Performance Aggregate API
 
 ### Controlling what to aggregate/group data by
 

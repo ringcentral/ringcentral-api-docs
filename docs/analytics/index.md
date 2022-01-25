@@ -39,13 +39,13 @@ Managers can also look at the above-mentioned metrics in conjunction with other 
 
 ## What reports can the Analytics API help generate?
 
-The Analytics API current supports creating two types of reports:
+The Analytics APIs current supports creating two types of reports:
 
-1. The [Call Performance Aggregate API](./performance/) aggregates the number of calls a user was on. 
+1. The [Call Performance Aggregate API](./performance/) allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
 
-2. The [Call Performance Timeline API](./timeline/) aggregates the time spent on call related metrics.
+2. The [Call Performance Timeline API](./timeline/) allow users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month 
 
-These reports can be further broken down to get detailed reports by:
+Theese APIs can be used to analyze various call related metrics as stated below:
 
 - Origin (internal or external calls)
 - Direction (Inbound or outbound calls)

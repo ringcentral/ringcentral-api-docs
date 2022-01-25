@@ -1,8 +1,8 @@
 no_breadcrumb:true
 
-# RingCentral Call Performance API Quick Start
+# RingCentral Line of Business Analytics APIs Quick Start
 
-In this quick start guide, we are going to access call performance data via the command line using CURL utility in just a few minutes. Let's get started.
+In this quick start guide, we are going to access call performance data via using Java/C# or Node.JS based command line application.
 
 !!! hint "Analytics API is in beta - please request access"
     To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
