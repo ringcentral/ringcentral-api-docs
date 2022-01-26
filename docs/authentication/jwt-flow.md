@@ -40,7 +40,7 @@ To configure an app for JWT authentication, follow these steps:
 
 JWT tokens are created exclusively within the RingCentral Developer Console. For this reason, JWT credentials can only be created by users who have a valid developer account or role. To create a JWT used for app authentication, follow these steps:
 
-1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/console). If you do not have access to the Developer Console, please reach out to your account administrator to request access. 
+1. Login to the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html). If you do not have access to the Developer Console, please reach out to your account administrator to request access. 
 
 2. Hover your mouse over your name in the upper righthand corner, and select "Credentials."
 
