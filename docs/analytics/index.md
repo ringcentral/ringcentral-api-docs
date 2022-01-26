@@ -41,7 +41,7 @@ Managers can also look at the above-mentioned metrics in conjunction with other 
 
 The Analytics APIs current supports creating two types of reports:
 
-1. The [Call Performance Aggregate API](./performance/) allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
+1. The [Call Performance Aggregate API](./call-performance/) allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
 
 2. The [Call Performance Timeline API](./timeline/) allow users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month 
 

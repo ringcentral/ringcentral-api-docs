@@ -1,4 +1,5 @@
 # SMS Best Practices Guide
+
 !!! info "Important:Please read [RingCentral's SMS content and messaging policies](../../sms-content-policy/)"
 
 !!! note "First time sending an SMS?"

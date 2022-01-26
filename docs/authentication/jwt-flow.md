@@ -1,6 +1,6 @@
 # JWT authorization code flow
 
-RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) for using JSON Web Tokens ("JWT", pronounced "JAW-t") in an OAuth authorization flow. A JWT credential can be generated within the [RingCentral Developers Console](https://developers.ringcentral.com/console/), and be used in place of a username and password when establishing an authenticated connection to RingCentral servers to call the API. Using a JWT in this way has the following benefits:
+RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) for using JSON Web Tokens ("JWT", pronounced "JAW-t") in an OAuth authorization flow. A JWT credential can be generated within the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html), and be used in place of a username and password when establishing an authenticated connection to RingCentral servers to call the API. Using a JWT in this way has the following benefits:
 
 * Credentials do not expire (unless you elect otherwise)
 * Credentials are persistent and cannot be changed once generated
