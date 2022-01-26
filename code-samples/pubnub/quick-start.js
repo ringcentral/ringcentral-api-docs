@@ -14,7 +14,7 @@ platform.login({
     'extension': process.env.RC_EXTENSION
 })
 
-var subscriptions = new Subscriptions({ sdk: rcsdk });
+var subscriptions = new Subs({ sdk: rcsdk });
 var subscription = subscriptions.createSubscription({
     pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000
 });
