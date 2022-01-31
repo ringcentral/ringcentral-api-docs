@@ -1,4 +1,5 @@
 const RC = require('@ringcentral/sdk').SDK;
+require('dotenv').config();
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -21,24 +22,30 @@ platform.login({
     extension: EXTENSION
 });
 
-platform.on(platform.events.loginSuccess, async function() {
+platform.on(platform.events.loginSuccess, deleteMessageHistory);
+
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    process.exit(1);
+});
+
+async function deleteMessageHistory() {
     try {
       let response = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
         dateFrom: '2018-04-20T06:33:00.000Z'
-      })
-      let json = await response.json()
-      const messages = json.records
-      console.log(`We get of a list of ${messages.length} messages`)
+      });
+      let json = await response.json();
+      const messages = json.records;
+      console.log(`We got a list of ${messages.length} messages`)
       if (!messages.length) {
-        console.log(`No messages available to delete`);
+        console.log('No messages available to delete');
         return;    
       }
-      const message = messages[0]
-      response = await platform.delete(`/restapi/v1.0/account/~/extension/~/message-store/${message.id}`)
-      console.log(`Message ${message.id} has been deleted`)
+      const message = messages[0];
+      response = await platform.delete(`/restapi/v1.0/account/~/extension/~/message-store/${message.id}`);
+      console.log(`Message ${message.id} has been deleted`);
     } catch (e) {
-	    console.error(e);
-        // Remove the below line if you are running this in the browser
+	    console.error(`Failed to delete message history : ${e.message}`);
         process.exit(1);
     }
-});
+}

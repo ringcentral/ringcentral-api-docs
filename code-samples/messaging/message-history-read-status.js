@@ -1,4 +1,5 @@
 const RC = require('@ringcentral/sdk').SDK;
+require('dotenv').config();
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -21,18 +22,25 @@ platform.login({
     extension: EXTENSION
 });
 
-platform.on(platform.events.loginSuccess, async function() {
+platform.on(platform.events.loginSuccess, changeMessageReadStatus)
+
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    process.exit(1);
+});
+
+async function changeMessageReadStatus() {
     try {
         let response = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
             dateFrom: '2018-04-20T06:33:00.000Z'
         });
         let json = await response.json();
         const messages = json.records;
-        console.log(`We get of a list of ${messages.length} messages`);
+        console.log(`We got a list of ${messages.length} messages`);
         if (!messages.length) {
             console.log(`No messages available to read`);
             return;    
-          }
+        }
         const message = messages[0];
         response = await platform.put(`/restapi/v1.0/account/~/extension/~/message-store/${message.id}`, {
             readStatus: 'Read'
@@ -40,8 +48,7 @@ platform.on(platform.events.loginSuccess, async function() {
         json = await response.json();
         console.log(`Message readStatus has been changed to ${json.readStatus}`);
     } catch (e) {
-        console.error(e);
-        // Remove the below line if you are running this in the browser
+        console.error(`Failed to change message read status : ${e.message}`);
         process.exit(1);
     }
-});
+}

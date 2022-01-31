@@ -1,4 +1,5 @@
 const RC = require('@ringcentral/sdk').SDK;
+require('dotenv').config();
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -23,6 +24,11 @@ platform.login({
 
 platform.on(platform.events.loginSuccess, startMeeting);
 
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    process.exit(1);
+});
+
 async function startMeeting() {
     try {
         const endpoint = '/restapi/v1.0/account/~/extension/~/meeting'
@@ -31,15 +37,13 @@ async function startMeeting() {
             meetingType: 'Instant',
             allowJoinBeforeHost: true,
             startHostVideo: true,
-            startParticipantsVideo: false
-            
-        })
+            startParticipantsVideo: false  
+        });
         const json = await response.json();
-        console.log( 'Start Your Meeting: ' + json.links.startUri )
-        console.log( 'Meeting id: ' + json.id )
+        console.log(`Start Your Meeting: ${json.links.startUri}`);
+        console.log(`Meeting id: ${json.id}`);
     } catch(e) {
-        console.error(e);
-        // Remove the below line if you are running this in the browser
+        console.error(`Failed to start meeting : ${e.message}`);
         process.exit(1);
     }
 }

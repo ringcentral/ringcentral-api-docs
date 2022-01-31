@@ -29,12 +29,18 @@ const subscription = subscriptions.createSubscription({
 
 platform.on(platform.events.loginSuccess, subscribeForSMSNotification);
 
-function subscribeForSMSNotification() {
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
+});
+
+async function subscribeForSMSNotification() {
   try {
-      subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS']).register();
+      await subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS']).register();
       console.log('Ready to receive incoming SMS via PubNub.')
   } catch (e) {
-    console.error(e);
+    console.error(`Failed to register for message store notification : ${e.message}`);
     // Remove the below line if you are running this in the browser
     process.exit(1);
   }
