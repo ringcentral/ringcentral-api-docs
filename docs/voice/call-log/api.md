@@ -1,25 +1,25 @@
-# Call Log Data Types
+# Call Log data types
 
 Currently there are three major data types which are contained within the Call Log API resource (for the latest information, please check the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html):
 
-* Account and Extension Level Call Log Records
+* Account and extension-level call log records
     * The **tome** of Call Log knowledge for your RingCentral Acccount
     * Can obtain filtered call log data
     * Detailed Call Log data provides greater granularity for all legs of a call
-* Call Recording Meta Data
+* Call recording metadata
     * IS NOT the call recording itself
     * Filterable Call Log property
     * Very useful for call recording dashboards
     * Provides the `contentUri` property which points to the actual recording
-* Call Recording Content
+* Call recording content
     * Plug the contentUri into an HTML5 Audio element to quickly make a recording player
 
 !!! note "Active Calls"
-    A close cousin of the Call Log API is the Active Call API which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API. 
+    A close cousin of the Call Log API is the [Active Call API](../../finding-active-calls/) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
 
-All of Call Log data types have two levels of access, Admin (aka: Account) and User (aka: Extension). Account level access, is achieved by authenticating (obtaining an access_token) using RingCentral Admin user credentials. Account level response data will include records across an account, as compared to User/Extension level response data which is scoped ONLY to the **currently authenticated user**.
+All of Call Log data types have two levels of access, Admin (aka: Account) and User (aka: Extension). Account-level access, is achieved by authenticating (obtaining an access_token) using RingCentral Admin user credentials. Account-level response data will include records across an account, as compared to User/Extension level response data which is scoped ONLY to the **currently authenticated user**.
 
-## Call Log Records
+## Call log records
 
 Developers should consider Call Logs to be the database of authority as it relates to actions (both inbound and outbound) for a RingCentral Account. The data contained can be queried in a variety of ways using filters as well as exposing deeper granualarity for all legs of a call (such as the case with a RingOut or forwarded calls).
 
@@ -27,7 +27,7 @@ The session_id value should be used if you want to associate multiple Call Logs 
 
 Call logs can be searched across an entire account by authenticating (obtaining an access_token) using Admin level credentials.
 
-### Account Level Call Log List
+### Account-level call log list
 
 Developers can access the Call Logs for an entire account. This requires an Admin account to authenticate and obtain the access_token used for this request.
 

@@ -68,8 +68,8 @@ pages:
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
-      - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
-      - 'Data Types': 'voice/call-log/api.md'
+      - 'Overview': 'voice/call-log/reading-call-log.md'
+      - 'Call Log data types': 'voice/call-log/api.md'
       - 'Detailed Call Log Data': 'voice/call-log/details.md'
       - 'Data Archival': 'voice/call-log/archival.md'
       - 'Call Recordings': 'voice/call-log/recordings.md'
