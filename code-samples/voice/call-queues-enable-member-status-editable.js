@@ -1,60 +1,72 @@
-const RC = require('@ringcentral/sdk').SDK
-require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
-
-platform.on(platform.events.loginSuccess, async function(response) {
-  get_call_queues()
 });
 
-async function get_call_queues() {
-  try {
-    var resp = await platform.get('/restapi/v1.0/account/~/call-queues')
-    var jsonObj = await resp.json()
-    for (var group of jsonObj.records) {
-      get_call_queue_config(record.id)
+platform.on(platform.events.loginSuccess, getCallQueues);
+
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
+});
+
+async function getCallQueues() {
+    try {
+        const response = await platform.get('/restapi/v1.0/account/~/call-queues');
+        const json = await response.json();
+        for (let record of json.records) {
+            getCallQueueConfig(record.id);
+        }
+    } catch (e) {
+        console.error(`Failed to get call queues : ${e.message}`);
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
     }
-  } catch (e) {
-    console.log(e.message)
-  }
 }
 
-async function get_call_queue_config(id){
-  try{
-    var resp = await platform.get(`/restapi/v1.0/account/~/call-queues/${id}`)
-    var jsonObj = await resp.json()
-    if (jsonObj.editableMemberStatus == false)
-      enable_call_queue_editable(jsonObj.id)
-  }catch(e){
-    console.log(e.message)
-  }
+async function getCallQueueConfig(id) {
+    try {
+        const response = await platform.get(`/restapi/v1.0/account/~/call-queues/${id}`);
+        const json = await response.json();
+        if (json.editableMemberStatus == false)
+        enableCallQueueEditable(json.id);
+    } catch(e) {
+        console.error(`Failed to get call queue config : ${e.message}`);
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
+    }
 }
 
-async function enable_call_queue_editable(id){
-  try{
-    var params = {
-      editableMemberStatus: true
+async function enableCallQueueEditable(id) {
+    try {
+        const params = {
+            editableMemberStatus: true
+        };
+        const response = await platform.put(`/restapi/v1.0/account/~/call-queues/${id}`, params);
+        await response.json();
+        console.log(`Updated call queue with id - ${id} successfullt`)
+    } catch(e) {
+        console.error(`Failed to update call queue : ${e.message}`);
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
     }
-    var resp = await platform.put(`/restapi/v1.0/account/~/call-queues/${id}`, params)
-    var jsonObj = await resp.json()
-  }catch(e){
-    console.log(e.message)
-  }
 }
