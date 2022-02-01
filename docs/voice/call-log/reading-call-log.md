@@ -4,7 +4,7 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 
 * **Archive and/or download call log data to an external system** - Since RingCentral does not store Call Log data indefinitely, developers use the Call Log API to download Call Log data into customer-owned, long-term, persistent storage.
 
-* **Reporting and analytics** - Developers use the Call Log API to analyze call histories, agent performance, answer rates, and more - with a desire and intent to improve company operations and performance. Developers may also consider using the [Analytics API](../../analytics/) to access aggregated data about an organizations call history. 
+* **Reporting and analytics** - Developers use the Call Log API to analyze call histories, agent performance, answer rates, and more - with a desire and intent to improve company operations and performance. Developers may also consider using the [Analytics API](../../../analytics/) to access aggregated data about an organizations call history. 
 
 * **Integration with third-party services, especially CRMs** - Developers can use Call Log data to help augment 3rd party systems with customer interaction histories and more.
 
