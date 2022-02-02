@@ -1,7 +1,7 @@
-const RC  = require('@ringcentral/sdk').SDK;
+require('dotenv').config();
+const RC    = require('@ringcentral/sdk').SDK;
 const fs    = require('fs');
 const https = require('https');
-require('dotenv').config();
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -73,10 +73,10 @@ async function getMessageStoreReportArchive(taskId) {
     const response = await platform.get(endpoint);
     const json = await response.json();
     const date = new Date();
-    for (let i = 0; i < json.records.length; i++) {
-      const fileName = `message_store_content_${date.toISOString()}_${i}.zip`;
-      getMessageStoreReportArchiveContent(json.records[i].uri, fileName);
-    }
+    json.records.forEach((record, i) => {
+        const fileName = `message_store_content_${date.toISOString()}_${i}.zip`;
+        getMessageStoreReportArchiveContent(record.uri, fileName);
+    });
   } catch (e) {
     console.error(`Failed to get message store report archive : ${e.message}`);
     process.exit(1);
@@ -86,18 +86,16 @@ async function getMessageStoreReportArchive(taskId) {
 async function getMessageStoreReportArchiveContent(contentUri, fileName) {
     try {
         const uri = await platform.signUrl(contentUri);
-        download(uri, fileName, function() {
-            console.log('Save report zip file to the local machine.');
-        })
+        download(uri, fileName, () => console.log('Save report zip file to the local machine.'));
     } catch (e) {
         console.error(`Failed to generate signed url : ${e.message}`);
         process.exit(1);
     }
 }
 
-const download = function(uri, dest, cb) {
+function download (uri, dest, cb) {
   const file = fs.createWriteStream(dest);
-  const request = https.get(uri, function(response) {
+  https.get(uri, function(response) {
     response.pipe(file);
     file.on('finish', function() {
       file.close(cb);

@@ -1,39 +1,51 @@
-const RingCentral = require('@ringcentral/sdk').SDK
+require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
+const CHATID       = process.env.CHAT_ID;
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+const rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
 
-CHAT_ID = '<GROUP ID>'
+const platform = rcsdk.platform();
 
-var rcsdk = new RingCentral({ server: RINGCENTRAL_SERVER,
-			      clientId: RINGCENTRAL_CLIENTID,
-			      clientSecret: RINGCENTRAL_CLIENTSECRET });
-var platform = rcsdk.platform();
-platform.login({ username: RINGCENTRAL_USERNAME,
-		 password: RINGCENTRAL_PASSWORD,
-		 extension: RINGCENTRAL_EXTENSION })
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+});
 
-platform.on(platform.events.loginSuccess, () => {
-    post_task( CHAT_ID )
-})
+platform.on(platform.events.loginSuccess, postTask);
 
-async function post_task( group ) {
+async function getCurrentUserId() {
+    const response = await platform.get('/restapi/v1.0/account/~/extension/~');
+    const json = await response.json();
+    return json.id;
+}
+
+async function postTask() {
     try {
-	var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/tasks', {
-	    "subject": "You need to do X",
-	    "assignees": {
-		"id": "<ID>"
-	    },
-	    "description": "In this task assignees will need to do x, y and z."
-	});
-	var jsonObj = await resp.json()
-	console.log( JSON.stringify(jsonObj) )
+        const currentUserId = await getCurrentUserId();
+        const response = await platform.post(`/restapi/v1.0/glip/chats/${CHATID}/tasks`, {
+            subject: 'Destroy the Rebel Alliance',
+            assignees: [{
+                id: `${currentUserId}`
+            }],
+            description: 'In this task assignees the Sith Lord needs to come up with a plan to crush the Rebel Alliance'
+        });
+        const json = await response.json();
+        console.log('Task posted to chat');
+        console.log(json)
     } catch (e) {
-	console.log(e)
+        console.log(`Failed to post task: ${e.message}`);
+        process.exit(1);
     }
 }

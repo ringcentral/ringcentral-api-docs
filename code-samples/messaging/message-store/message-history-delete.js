@@ -1,5 +1,5 @@
-const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -32,7 +32,7 @@ platform.on(platform.events.loginError, (e) => {
 async function deleteMessageHistory() {
     try {
       let response = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
-        dateFrom: '2018-04-20T06:33:00.000Z'
+        dateFrom: '2020-12-01T00:00:00.000Z'
       });
       let json = await response.json();
       const messages = json.records;

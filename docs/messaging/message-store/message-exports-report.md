@@ -16,13 +16,13 @@ RingCentral message store data retention rule is based on the account's setting:
 
 #### Account Data Retention for HIPAA enabled Accounts
 
-| Data | Duration | Count/Size |
-|---|---|---|
-| Inbox (Fax / Voice Messages) | 30 days | 200 messages |
-| Sent (Fax Messages) | 30 days | -- |
-| Outbox (Fax Messages) | n/a | n/a |
-| Text Messages (SMS/MMS) | No limit | 5,000 messages per folder, per User (Inbox, Outbox, Sent, Deleted) |
-||||
+| Data                         | Duration | Count/Size                                                         |
+| ---------------------------- | -------- | ------------------------------------------------------------------ |
+| Inbox (Fax / Voice Messages) | 30 days  | 200 messages                                                       |
+| Sent (Fax Messages)          | 30 days  | --                                                                 |
+| Outbox (Fax Messages)        | n/a      | n/a                                                                |
+| Text Messages (SMS/MMS)      | No limit | 5,000 messages per folder, per User (Inbox, Outbox, Sent, Deleted) |
+|                              |          |                                                                    |
 
 !!! Important
     The message store exports APIs run at the account level. This means that only users with the admin role would be able to call these APIs and export the message store of all extensions in the entire account.
@@ -138,7 +138,7 @@ The following code sample shows how to call the Message Store Export APIs to exp
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-store-export.js !}
+    {!> code-samples/messaging/message-store/message-store-export.js !}
     ```
 
 === "Python"

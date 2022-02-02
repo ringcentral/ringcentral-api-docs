@@ -1,5 +1,5 @@
-const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;

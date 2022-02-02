@@ -1,41 +1,40 @@
-const RC = require('@ringcentral/sdk').SDK
 require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
+});
 
-platform.on(platform.events.loginSuccess, () => {
-  get_personal_meeting_id()
-})
+platform.on(platform.events.loginSuccess, getPersonalChats);
 
-async function get_personal_meeting_id() {
-    console.log("Getting personal chat")
-    var endpoint = "/restapi/v1.0/glip/chats"
-    var params = {
-	type: 'Personal'
-    }
+async function getPersonalChats() {
     try {
-	var resp = await platform.get( endpoint, params )
-	var json = await resp.json()
-	var chat_id = json['records'][0]['id']
-	console.log("Personal chat ID: " + chat_id)
+        const response = await platform.get('/restapi/v1.0/glip/chats', {
+            type: 'Personal'
+        });
+        const json = await response.json()
+        json.records.forEach((record) => {
+            console.log(`Personal chat with chatId: ${record.id} found`)
+        });
     } catch (e) {
-        console.log("Error: " + e.message);
+        console.log(`Failed to get personal chats: ${e.message}`);
+        process.exit(1);
     }
 }
