@@ -57,7 +57,7 @@ The following code sample shows how to call the Message Store to display a list 
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-store.js !}
+    {!> code-samples/messaging/message-store/message-store.js !}
     ```
 
 === "Python"

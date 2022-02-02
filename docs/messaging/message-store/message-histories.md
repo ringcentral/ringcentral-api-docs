@@ -13,7 +13,7 @@ Individual messages can also be modified.
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-history-read-status.js !}
+    {!> code-samples/messaging/message-store/message-history-read-status.js !}
     ```
 
 ## Deleting a Message
@@ -23,5 +23,5 @@ One or more messages can be deleted as well. Deleting messages is a two-step pro
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-history-delete.js !} 
+    {!> code-samples/messaging/message-store/message-history-delete.js !} 
     ```

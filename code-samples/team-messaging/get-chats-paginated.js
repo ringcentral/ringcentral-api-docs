@@ -1,5 +1,5 @@
-const RC = require('ringcentral')
 require('dotenv').config();
+const RC = require('ringcentral')
 
 CLIENTID     = process.env.RC_CLIENT_ID
 CLIENTSECRET = process.env.RC_CLIENT_SECRET

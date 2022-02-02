@@ -1,37 +1,48 @@
-const RC    = require('@ringcentral/sdk').SDK
-var   fs    = require('fs')
-var   https = require('https');
+require('dotenv').config();
+const RC       = require('@ringcentral/sdk').SDK;
+const path     = require('path');
+const fs       = require('fs');
+const FormData = require('form-data');
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
+const CHATID       = process.env.CHAT_ID;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
+});
 
-platform.on(platform.events.loginSuccess, () => {
-    var endpoint = "/restapi/v1.0/glip/files"
-    bindata = fs.readFileSync('./cats.png');
-    platform.post( endpoint, bindata, {
-        name: "cats.png", groupId: '367050754'
-    })
-        .then( function(resp) {
-            var json = resp.json()
-            file_id = json[0]['id']
-            console.log( "Uploaded file. File ID: " + file_id )
-        })
-})
+platform.on(platform.events.loginSuccess, uploadFile);
+
+async function uploadFile() {
+    try {
+        const formData = new FormData();
+        const attachmentPath = path.resolve(__dirname, '../data/attachment.jpeg');
+        formData.append('body', fs.createReadStream(attachmentPath));
+        const response = await platform.post('/restapi/v1.0/glip/files', formData, {
+            name: 'kitten.jpeg', groupId: CHATID
+        });
+        const json = response.json();
+        console.log(json);
+        console.log('File uploaded to chat');
+    } catch (e) {
+        console.log(`Failed to upoad file: ${e.message}`);
+        process.exit(1);
+    }
+}
 
 

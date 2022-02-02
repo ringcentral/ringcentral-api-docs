@@ -1,81 +1,90 @@
-const RC  = require('@ringcentral/sdk').SDK
+require('dotenv').config();
+const RC  = require('@ringcentral/sdk').SDK;
 var fs    = require('fs')
 var https = require('https');
-require('dotenv').config();
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
+});
 
-platform.on(platform.events.loginSuccess, () => {
-    create_compliance_export_task()
-})
+platform.on(platform.events.loginSuccess, createComplianceExporTask);
 
-async function create_compliance_export_task() {
-    console.log("Create export task.")
-    var params = {
-	timeFrom: "2019-08-01T00:00:00.000Z",
-	timeTo: "2019-08-26T23:59:59.999Z"
-    }
+async function createComplianceExporTask() {
+    console.log('Create export task');
     try {
-	var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
-	var jsonObj = await resp.json()
-	get_compliance_export_task(jsonObj.id)
+        const response = await platform.post('/restapi/v1.0/glip/data-export', {
+            timeFrom: '2021-09-01T00:00:00.000Z',
+            timeTo: '2022-02-01T23:59:59.999Z'
+        });
+        const json = await response.json();
+        getComplianceExportTask(json.id);
     } catch (e) {
-	console.log(e.message)
+        console.error(`Failed to generate compliance export task : ${e.message}`);
+        process.exit(1);
     }
 }
 
-async function get_compliance_export_task(taskId) {
-  console.log("Check export task status ...")
-  try {
-    var resp = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`)
-    var jsonObj = await resp.json()
-    if (jsonObj.status == "Completed") {
-      for (var i = 0; i < jsonObj.datasets.length; i++) {
-        var fileName = `rc-export-reports-${jsonObj.creationTime}_${i}.zip`
-        get_report_archived_content(jsonObj.datasets[i].uri, fileName)
-      }
-    } else if (jsonObj.status == "Accepted" || jsonObj.status == "InProgress") {
-      setTimeout(function() {
-        get_compliance_export_task(taskId)
-      }, 5000);
-    } else {
-      console.log(jsonObj.status)
+async function getComplianceExportTask(taskId) {
+    console.log('Check export task status ...');
+    try {
+        const response = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);
+        const json = await response.json();
+        switch (json.status) {
+            case 'Completed': {
+                json.datasets.forEach((dataset, i) => {
+                    const fileName = `rc-export-reports-${json.creationTime}_${i}.zip`;
+                    getReportArchivedContent(dataset.uri, fileName);
+                });
+                break;
+            }
+            case 'Accepted':
+            case 'InProgress': {
+                setTimeout(() => getComplianceExportTask(taskId), 5000);
+                break;
+            }
+            default: {
+                console.log(json.status)
+            }
+        }
+    } catch (e) {
+        console.log(`Failed to get compliance task details: ${e.message}`);
+        process.exit(1);
     }
-  } catch (e) {
-    console.log(e)
-  }
 }
 
-async function get_report_archived_content(contentUri, fileName) {
-  var uri = platform.createUrl(contentUri, { addToken: true });
-  download(uri, fileName, function() {
-    console.log("Save report zip file to the local machine.")
-  })
+async function getReportArchivedContent(contentUri, fileName) {
+    try {
+        const uri = await platform.signUrl(contentUri);
+        download(uri, fileName, () => console.log('Save report zip file to the local machine.'));
+    } catch (e) {
+        console.error(`Failed to generate signed url : ${e.message}`);
+        process.exit(1);
+    }
 }
 
-const download = function(uri, dest, cb) {
-  var file = fs.createWriteStream(dest);
-  var request = https.get(uri, function(response) {
-    response.pipe(file);
-    file.on('finish', function() {
-      file.close(cb);
+function download (uri, dest, cb) {
+    const file = fs.createWriteStream(dest);
+    https.get(uri, function(response) {
+      response.pipe(file);
+      file.on('finish', function() {
+        file.close(cb);
+      });
     });
-  });
-}
+  }
