@@ -198,6 +198,7 @@ pages:
   - 'Using the API':
       - 'Methods, endpoints and parameters': 'basics/uris.md'
       - 'Exploring the API': 'basics/explorer.md'
+      - 'Callaborating with developers': 'basics/inviting-developers.md'
       - 'Running code samples': 'basics/code-samples.md'
       - 'Using phones in sandbox': 'basics/your-rc-phone.md'
       - 'Media content': 'basics/media.md'
