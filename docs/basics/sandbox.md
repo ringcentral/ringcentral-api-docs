@@ -28,6 +28,44 @@ Sandbox accounts are currently shared across all users within the same account. 
 
 If you need to simulate two different users from two different organizations during development, you may need to create additional RingCentral accounts in order to do so. 
 
+## Using Phones in Sandbox
+
+Every sandbox account is provisioned a different main company phone number and user that is different than ones used in production. Additional phone numbers and users can also be configured in your sandbox account. Some use cases supported by these communication apps include:
+
+* RingOut - to receive calls at a sandbox phone number.
+* Voicemail - to retrieve, listen to, and delete voicemails.
+* Call Control - to hang-up, hold, flip, forward calls placed to sandbox numbers. 
+
+RingCentral phones can be used with your sandbox account to make and receive calls.
+
+1. [Embeddable Widget](https://ringcentral.github.io/ringcentral-embeddable/). This is a full-featured, production ready developer tool that can be used to integrate RingCentral functionality with your web app.
+1. [WebRTC Demo App](https://ringcentral.github.io/ringcentral-web-phone/). This is a WebRTC voice endpoint that implements inbound and outbound calls with various call controls.
+
+More information is available below on using and configuring these endpoints to work in Sandbox and to configure your app if needed.
+
+### Embeddable Web Widget and the Sandbox Environmnet
+
+The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. In addition to doing development with it, there is a hosted demo you can configure and use.
+
+To use the demo app, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app. To use with your sandbox account, use the credentials for your sandbox account.
+
+Read more below:
+
+* [Overview](https://developers.ringcentral.com/embeddable-voice.html)
+* [Docs and Software](https://github.com/ringcentral/ringcentral-embeddable)
+* [Demo App (read to configure)](https://ringcentral.github.io/ringcentral-embeddable)
+
+### WebRTC Demo App and the Sandbox Environmnet
+
+To use the WebRTC Demo App is provided with the RingCentral WebRTC SDK. In addition to doing development with it, there is a hosted demo you can configure and use.
+
+To use the demo app, you need to configure the Embeddable with your Client ID, Client Secret and Server URL. You also need to add the demo's OAuth 2.0 Redirect URL to your app. To use with your sandbox account, use the credentials for your sandbox account.
+
+Read more below:
+
+* [Docs and Software](https://github.com/ringcentral/ringcentral-web-phone)
+* [Demo (read docs to configure)](http://ringcentral.github.io/ringcentral-web-phone)
+
 ##  Limitations
 
 In order to ensure that our sandbox environment is used for testing purposes only, we add the following watermarks to messages and voice calls eminating from that environment:
