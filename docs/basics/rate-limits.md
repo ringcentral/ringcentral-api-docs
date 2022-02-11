@@ -6,7 +6,9 @@ A "rate limit" is a policy that affects the frequency an API can be called. They
 
 ## How are rate limits calculated?
 
-Every RingCentral API is assigned one of four different groups which determines the baseline rate limit. This allows each API to be assigned a rate limit based upon the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. The four basic rate limit groups are: 
+Every RingCentral API is assigned to a different "API Group" which determines the default rate limit that an application will be subject to when called that API. This allows each API to be assigned a rate limit based upon the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. 
+
+The four basic rate limit groups are below. Please note that the rate limits and throttle intervals are provided as an example only, as they can be customized and therefore may vary from app to app.
 
 | API Group | Rate Limit | Throttle Interval | 
 |-|-|-|
@@ -14,6 +16,10 @@ Every RingCentral API is assigned one of four different groups which determines 
 | Medium | 40 requests/minute | 60 seconds |
 | Heavy | 10 requests/minute | 60 seconds |
 | Auth | 5 requests/minute | 60 seconds |
+
+Rate limits can be customized and vary in the following ways:
+* Rate limits can be assigned to different time intervals, e.g. n calls per minute, per hour, per 5 minutes, etc. 
+* API Groups may also support multiple limits per group, based upon the unique needs and the APIs called by an app.
 
 ## How do I determine the rate limit associated with an API?
 
@@ -38,7 +44,7 @@ In addition, other HTTP headers are returned to signal to the developer what the
 
 ### Rate limit response headers
 
-Rate Limits are returned in specific headers in response for each request, unless the request is unlimited. Those headers are:
+Rate limits are communicated via specific HTTP headers that should be returned in a response for each request (although may not be present in 100% of responses), unless the request is unlimited. Those headers are:
 
 | Header | Description |
 |-|-|
@@ -46,6 +52,7 @@ Rate Limits are returned in specific headers in response for each request, unles
 | `X-Rate-Limit-Limit` | current rate limit for the given request |
 | `X-Rate-Limit-Remaining` | the number of requests left for the time interval (window) of this rate limit |
 | `X-Rate-Limit-Window` | time interval in seconds for the given request rate limit |
+| `Retry-After` | the number of seconds to wait before attempting to make the same API call again |
 
 !!! warning "`X-Rate-Limit-Group` header values subject to change"
     Developers should be aware that the API group names may vary from app to app, and therefore developers should not create logic in their products that assumes the API group will be exclusively "Light," "Medium," "Heavy," or "Auth."
