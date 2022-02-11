@@ -28,4 +28,4 @@ jobs:
         synchronous: 'yes'
         local-only: 'no'
         recurse: 'yes'
-        excludes: '^(tel|rcmobile):'
+        excludes: '^(tel:|rcmobile:|https://marketplace.visualstudio.com)'
