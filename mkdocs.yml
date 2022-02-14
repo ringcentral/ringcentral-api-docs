@@ -85,7 +85,6 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
-    - 'SMS Content Policies': 'messaging/sms-content-policy.md'
     - 'Getting Started': 'messaging/quick-start.md'
     - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
