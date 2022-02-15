@@ -21,15 +21,25 @@ Your application and its users must be authorized by RingCentral in order to eli
 
 In general, the steps your app needs to take to use RingCentral APIs (including authorization) are as follows:
 
-1. Create an app, and obtain the app's credentials from your [Developer Portal account](https://developer.ringcentral.com/my-account.html).
+1. Create an app, and obtain the app's credentials from your [Developer Console account](https://developer.ringcentral.com/my-account.html).
 
-2. Obtain an access token using either the [Authorization Code Flow](./auth-code-flow) or the [Password Flow](./password-flow).
+2. Obtain an access token using either the [authorization code flow](./auth-code-flow) or the [JWT Flow](./jwt-flow).
 
 3. Use the access token when calling a RingCentral API.
 
 4. Refresh your access token when necessary, as they can expire. 
 
 ## What auth flow is right for my app?
+
+There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. 
+
+* **[Auth Code Flow](./auth-code-flow)** - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
+
+* **[Auth Code with PKCE Flow](./auth-code-pkce-flow)** (recommended) - enhancement for Auth Code Flow with Proof Key for Code Exchange, no client secret required, recommended for apps accessed via web single-page, mobile and desktop applications.
+
+* **[JWT Flow](./jwt-flow)** - a 2-legged authorization flow suitable for server apps used by a single user account. 
+
+* **[Refresh Token Flow](./refresh-tokens/)** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Auth Code or Password flows for obtaining new access tokens.
 
 ??? warning "App Settings Impact What Auth Flows You Can Use"
     How an application is configured will determine what authorization flows can be used to obtain an access token. This restriction has been known to trip-up many a developer. Please be aware of the following restrictions:
@@ -40,17 +50,6 @@ In general, the steps your app needs to take to use RingCentral APIs (including 
     
     You can check which flows are available for your app on your app's Setting page.
 
-There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. 
-
-* **[Auth Code Flow](./auth-code-flow)** (recommended) - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
-
-* **[Auth Code with PKCE Flow](./auth-code-pkce-flow)** (recommended) - enhancement for Auth Code Flow with Proof Key for Code Exchange, no client secret required, recommended for apps accessed via web single-page, mobile and desktop applications.
-
-* **[Implicit Flow](./implicit-grant-flow)** - a 2-legged authorization flow common for mobile and desktop apps.
-
-* **[Password Flow](./password-flow)** - a 2-legged authorization flow suitable for server apps used by a single user account. This is by far the easiest authentication scheme to implement, but is considered insecure as it requires servers to store username and password credentials in plain text. 
-
-* **Refresh Token Flow** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Auth Code or Password flows for obtaining new access tokens.
 
 ### Learn More
 
@@ -60,3 +59,4 @@ RingCentral supports OAuth 2.0 authentication flows as described in:
 * [RFC-6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://tools.ietf.org/html/rfc6750)
 * [RFC-7009: OAuth 2.0 Token Revocation](https://tools.ietf.org/html/rfc7009)
 * [RFC-7636: Proof Key for Code Exchange by OAuth Public Clients](https://tools.ietf.org/html/rfc7636)
+* [RFC 7523: JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523)

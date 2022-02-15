@@ -12,18 +12,23 @@ Setting the emergency address allows you to enter your physical location with a 
 PUT /restapi/v1.0/account/~/device/<deviceId>
 
 {
-  "emergencyServiceAddress": {
-    "street":"997 BAKER WAY",
-    "city":"SAN MATEO",
-    "zip":"94404",
-    "customerName":"RingCentral",
-    "state":"CA",
-    "country":"US"
+  "emergency": {
+    "address": {
+      "street":"997 BAKER WAY",
+      "city":"SAN MATEO",
+      "zip":"94404",
+      "customerName":"RingCentral",
+      "state":"CA",
+      "country":"US"
+    }
   }
 }
 ```
 
-Using the example above, updating the `emergencyServiceAddress` updates both the `emergencyServiceAddress` and the `emergency` properties.
+Using the example above, updating the `emergency.address` updates both the `emergency.address` and the `emergencyServiceAddress` objects.
+
+!!! note "Two Ways to Update Location by Device"
+    Please note there are two ways to update the emergency location by device: `emergencyServiceAddress` can be used or the object `emergency.address` can be used to set the emergency address. Be sure to leave the `emergency.location.id` out as the new Emergency Response Locations API should be used instead.
 
 !!! important "Changes due to RAY BAUM's Act"
     Setting emergency address flow has been changed due to legislation (Section 506 of the RAY BAUM's Act) which may cause errors while trying to set the emergency address. Eventually it won’t be possible to set the emergency address via updating a device method shown above.
@@ -35,7 +40,7 @@ Using the example above, updating the `emergencyServiceAddress` updates both the
 
 Another way to set emergency locations is through the Emergency Response Locations API. Instead of having to enter a discrete address each time you change locations, you can create location profiles for users to easily select their emergency location from a drop down list.
 
-### Checking to see if EMLs are enabled for your account
+### Checking to see if ERLs are enabled for your account
 
 A feature will be set on the account to determine if Emergencey Response Locations (ERL) are enabled. Use the following method to check if this feature is enabled on the account:
 
@@ -125,3 +130,6 @@ POST /restapi/v1.0/account/~/extension/~/emergency-locations
 ```
 
 Please see the [API Reference](https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createExtensionEmergencyLocation) for more details.
+
+!!! important "CMN-109 Error"
+    If you see an error message `CMN-109`, this indicates you are not able to set the emergency response location yet and must use the [update location by device](../emergency-locations/#method-1-update-location-by-device) API instead.

@@ -102,4 +102,4 @@ To retrieve a list of webhooks, make a `GET` call to the subscription endpoint. 
 | `GET` | `v1.0/subscription` | Read a webhook list |
 
 !!! info "SUB-525 Webhook server response is invalid"
-    When conducting a token validation request from RingCentral, be sure to transmit the HTTP header of "Content-type: application/json", even if your response's body is empty. [Learn more](https://forums.developers.ringcentral.com/questions/1097/sub-525-sandbox-webhook-subscription-failure.html#reply_19553895)
+    When conducting a token validation request from RingCentral, be sure to transmit the HTTP header of "Content-type: application/json", even if your response's body is empty. [Learn more](https://community.ringcentral.com/questions/1097/sub-525-sandbox-webhook-subscription-failure.html#reply_19553895)

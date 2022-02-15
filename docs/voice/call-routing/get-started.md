@@ -55,7 +55,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 === "Java"
 
     ```java
-    {!> code-samples/voice/call-routing.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/ReadUserAnsweringRules.java !}
     ```
 
 === "Ruby"

@@ -1,18 +1,26 @@
-const RingCentral = require('@ringcentral/sdk').SDK
-var rcsdk = new RingCentral({
-  server: 'https://platform.devtest.ringcentral.com' // for Production: https://platform.ringcentral.com
-  clientId: '{{REPLACE_WITH_YOUR_APP_KEY}}',
-  clientSecret: '{{REPLACE_WITH_YOUR_APP_SECRET}}'
+const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
+
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
+
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
 });
-
 var platform = rcsdk.platform();
-var permissions = []
-
 platform.login({
-  username: '{{REPLACE_WITH_YOUR_USERNAME}}',
-  password: '{{REPLACE_WITH_YOUR_PASSWORD}}',
-  extension: '{{OPTIONAL_REPLACE_WITH_YOUR_EXTENSION}}'
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
 })
+
+var permissions = []
 
 platform.on(platform.events.loginSuccess, async function(response) {
   var responseJson = response.json();

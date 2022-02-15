@@ -1,9 +1,8 @@
 # RingCentral Developer Guide Documentation
 
-[![Build Status][specs-status-svg]][specs-status-url]
-
- [specs-status-svg]: https://github.com/ringcentral/ringcentral-api-docs/workflows/spec%20build/badge.svg?branch=master
- [specs-status-url]: https://github.com/ringcentral/ringcentral-api-docs/actions
+![Build](https://github.com/ringcentral/ringcentral-api-docs/actions/workflows/mkdocs_build.yml/badge.svg)
+![Code Samples](https://github.com/ringcentral/ringcentral-api-docs/actions/workflows/check_code_samples.yml/badge.svg?branch=main)
+![Links](https://github.com/ringcentral/ringcentral-api-docs/actions/workflows/check_links.yml/badge.svg?branch=main)
 
 This repository is the home of the RingCentral Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral platform.
 
@@ -22,7 +21,7 @@ RingCentral's [Tutorials](https://ringcentral.github.io/tutorials/) index aggreg
 
 If you would like to contribute to the RingCentral documentation effort, fork this repository, make your desired edits and contributions, and issue a pull request accordingly.
 
-### Running the Developer Guide Locally
+### Running the Developer Guide locally
 
 The Developer Guide is built on top of Mkdocs, a self-contained documentation server. Writers are encourages to install Mkdocs locally so that you can edit files and preview your changes before they are pushed to production servers. 
 
@@ -30,13 +29,97 @@ The Developer Guide is built on top of Mkdocs, a self-contained documentation se
 $ git clone https://github.com/ringcentral/ringcentral-api-docs.git
 $ cd ringcentral-api-docs
 $ pip install mkdocs
-$ pip install mkdocs-ringcentral
+$ pip install --upgrade mkdocs-ringcentral
 $ mkdocs serve
 ```
 
 Then you should be able to load http://localhost:8000 to view the documentation.
 
 Please be aware that the local version of the Developer Guide utilizes a Mkdocs theme that *mimics* our main documentation site, but it is not the same -- hence some of the visual differences you may observe. When the Developer Guide is published officially, mkdocs is used to generate HTML files, and those HTML files are then loaded into a different presentation framework. 
+
+## How to test and verify code samples
+
+First, let's setup our python virtual environment within which the code checking framework will be run. We will do this from the root directory of `ringcentral-api-docs`. Then we will install the code checking framework within that virtual environment. 
+
+```
+$ cd $GITHUB/ringcentral-api-docs
+$ python3 -m venv .
+$ source ./bin/activate
+$ python3 -m pip install --upgrade pip
+$ pip3 install mkdocs-codecheck
+```
+
+The code checking framework can be installed via pip ([mkdocs-codecheck](https://pypi.org/project/mkdocs-codecheck)), or the bleeding edge version can be downloaded and installed from [github](https://github.com/byrnereese/codechecker-mkdocs). 
+
+Next, you need to install all the various libraries and other prerequisites used within the code samples for all of the languages we support. 
+
+**For python code samples**
+```
+$ pip install ringcentral
+$ pip install python-dotenv
+```
+
+**For PHP code samples**
+```
+$ php composer.phar require ringcentral/ringcentral-php
+```
+
+**For Java code samples**
+
+To test java code samples, you will need to make sure you have Java installed, and your CLASSPATH has been setup properly to point to the following jar files.
+
+* RingCentral Java SDK
+* Jetty Util, Server and Servlet
+* J2EE 
+* Gson
+* FastJSON
+
+
+STEPS to compile and run Java Sample Code using Maven (make sure maven build tool)
+
+```
+git clone <this repository>
+cd ringcentral-api-docs/code-samples/java-samples
+mvn clean compile
+```
+
+TODO (internal):
+
+1. Adjust mkdocs script for java so it no longer relies of CLASSPATH enviornment variable, instead uses maven to compile, run, test Java sample code.
+2. Add JUnit Tests
+
+**For DotNet and .cs code samples**
+
+Mac and Linux users can install the `dotnet-sdk` package via brew:
+
+```
+$ brew install --cask dotnet-sdk
+```
+
+Then you will need to install the RingCentral SDK, globally:
+
+```
+$ dotnet tool install --global RingCentral.Net
+```
+
+
+### Create a .env file
+
+Create a `.env` file in the `code-samples` directory by copying and editing the provided template. This file will make reference to an app for which all permissions have been enabled. Embed that app's credentials in your `.env` in the appropriate fields. 
+
+``` 
+$ cp code-samples/env-template code-samples/.env
+```
+
+### Run the testing framework
+
+With all necessary software installed, you can now run the script. Run the script from the root directory of `ringcentral-api-docs` and be sure your python virtual environment is activated.
+
+```
+$ cd $GITHUB/ringcentral-api-docs
+$ sh ./bin/activate
+$ mkdocs-codecheck --verbose --recurse --dotenv ./code-samples/.env ./code-samples
+```
 
 ## Tips for Styling Documentation
 

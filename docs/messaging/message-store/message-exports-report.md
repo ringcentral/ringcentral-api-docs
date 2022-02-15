@@ -113,7 +113,8 @@ Upon successful API call completion, the response is a list of records. Each rec
 The archival files are .zip compression files. To download the file, append a valid access token to the URI and make an HTTP GET request to the URI.
 
 ```http
-GET https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/[taskId]]/archive/0?access_token=['access_token']
+GET https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/[taskId]]/archive/0
+Authorization: Bearer [access_token]
 ```
 
 The archival report is consisted of two main parts; the archived message metadata and the archived message attachments. If the size of the archived message attachments file is greater than 1GB, the system will generate multiple URIs for message attachment archival files, each file size is max 1GB.
@@ -145,7 +146,7 @@ The following code sample shows how to call the Message Store Export APIs to exp
     ```python
     {!> code-samples/messaging/message-store-export.py !}
     ```
-    
+
 === "PHP"
 
     ```php
@@ -161,7 +162,7 @@ The following code sample shows how to call the Message Store Export APIs to exp
 === "Java"
 
     ```java
-    {!> code-samples/messaging/message-store-export.java !}
+    {!> code-samples/messaging/Export_MessageStore.java !}
     ```
 
 === "Ruby"

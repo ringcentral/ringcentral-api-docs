@@ -31,6 +31,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+
 ## Place a Call
 
 Select your preferred language below.
@@ -43,19 +50,20 @@ Select your preferred language below.
     $ npm install @ringcentral/sdk --save
     ```
 
-    ### Create and Edit ringout.js
+    ### Create and edit ringout.js
 
-    Create a file called <tt>ringout.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
 
     ```javascript
     {!> code-samples/voice/quick-start.js !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
-    You are almost done. Now run your script.
+    You are almost done. Now, load your variables into your local environment, and run your script.
 
     ```bash
+	$ source .env
     $ node ringout.js
     ```
 
@@ -64,18 +72,18 @@ Select your preferred language below.
     ### Install RingCentral Python SDK
 
     ```bash
-    $ pip install ringcentral
+    $ pip install ringcentral python-dotenv
     ```
 
-    ### Create and Edit ringout.py
+    ### Create and edit ringout.py
 
-    Create a file called `ringout.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
 
     ```python
     {!> code-samples/voice/quick-start.py !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -89,18 +97,18 @@ Select your preferred language below.
 
     ```bash
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
-    ### Create and Edit ringout.php
+    ### Create and edit ringout.php
 
-    Create a file called <tt>ringout.php</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
 
     ```php
     {!> code-samples/voice/quick-start.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -122,7 +130,7 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ``` c#
-    {!> code-samples/voice/quick-start.cs !}
+    {!> code-samples/voice/Call_RingOut/Program.cs !}
     ```
 
     ### Run Your App
@@ -149,12 +157,12 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Call_RingOut"
+    Select "File -> New -> Class" to create a new Java class named "RingoutQuickStart"
 
     ```java
-    package Call_RingOut;
+    package RingoutQuickStart;
 
-    public class Call_RingOut {
+    public class RingoutQuickStart {
 
         public static void main(String[] args) {
             // TODO Auto-generated method stub
@@ -163,12 +171,12 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Call_RingOut.java".
+    ### Edit the file "RingoutQuickStart.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
 
     ```java
-    {!> code-samples/voice/quick-start.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/RingoutQuickStart.java !}
     ```
 
     ### Run Your App
@@ -180,18 +188,18 @@ Select your preferred language below.
     ### Install RingCentral Ruby SDK
 
     ```bash
-    $ gem install ringcentral-sdk
+    $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and Edit ringout.rb
+    ### Create and edit ringout.rb
 
-    Create a file called <tt>ringout.rb</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
 
     ```ruby
     {!> code-samples/voice/quick-start.rb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -199,12 +207,11 @@ Select your preferred language below.
     $ ruby ringout.rb
     ```
 
-
 ## Need Help?
 
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
-<a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=voice">Search the forums &raquo;</a>
+<a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=ringout">Search the forums &raquo;</a>
 
 ## What's Next?
 

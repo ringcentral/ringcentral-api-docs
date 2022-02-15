@@ -1,8 +1,16 @@
 require 'ringcentral'
-require "open-uri"
+require 'open-uri'
+require 'dotenv/load'
 
-$rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-$rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
+CLIENTID     = ENV['RC_CLIENT_ID']
+CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
+SERVER       = ENV['RC_SERVER_URL']
+USERNAME     = ENV['RC_USERNAME']
+PASSWORD     = ENV['RC_PASSWORD']
+EXTENSION    = ENV['RC_EXTENSION']
+
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
 def create_compliance_export_task()
     puts "Create export task."
@@ -33,12 +41,12 @@ def get_compliance_export_task(taskId)
     end
 end
 
-def get_report_archived_content(contentUri, zipFile)
+def get_report_archived_content(contentUri, fileName)
     puts "Save report zip file to the local machine."
     uri = contentUri + "?access_token=" + $rc.token['access_token']
     open(uri) do |data|
-      File.open(zipFile, "wb") do |file|
-	file.write(data.read)
+      File.open(fileName, "wb") do |file|
+	       file.write(data.read)
       end
     end
 end

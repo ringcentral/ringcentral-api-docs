@@ -1,0 +1,115 @@
+{
+  "grouping": {
+    "groupBy": "CompanyNumbers",
+    "ids": []
+  },
+  "timeSettings": {
+    "timeRange": {
+      "timeFrom": "2021-08-25T05:52:17.745Z",
+      "timeTo": "2021-10-27T05:52:17.745Z"
+    },
+    "advancedTimeSettings": {
+      "timeZone": "Europe/Moscow",
+      "includeDays": [
+        "Sunday"
+      ],
+      "includeHours": [
+        {
+          "from": "00:00",
+          "to": "23:59"
+        }
+      ]
+    }
+  },
+  "additionalFilters": {
+    "direction": "Inbound",
+    "origin": "Internal",
+    "callResponse": "Answered",
+    "callResult": [
+      "Completed"
+    ],
+    "callSegments": [
+      {
+        "callSegment": "Ringing",
+        "callSegmentLength": {
+          "minValueSeconds": 0,
+          "maxValueSeconds": 200
+        }
+      }
+    ],
+    "callActions": [
+      {
+        "callAction": "HoldOff"
+      }
+    ],
+    "companyHours": "BusinessHours",
+    "callDuration": {
+      "minValueSeconds": 0,
+      "maxValueSeconds": 200
+    },
+    "timeSpent": {
+      "minValueSeconds": 0,
+      "maxValueSeconds": 200
+    },
+    "callerExtensionIds": [],
+    "calledExtensionIds": [],
+    "calledNumbers": []
+  },
+  "responseOptions": {
+    "counters": {
+      "allCalls": {
+        "aggregationType": "Sum"
+      },
+      "callsByDirection": {
+        "aggregationType": "Sum"
+      },
+      "callsByOrigin": {
+        "aggregationType": "Sum"
+      },
+      "callsByResponse": {
+        "aggregationType": "Sum"
+      },
+      "callsSegments": {
+        "aggregationType": "Sum"
+      },
+      "callsByResult": {
+        "aggregationType": "Sum"
+      },
+      "callsByCompanyHours": {
+        "aggregationType": "Sum"
+      },
+      "callsByActions": {
+        "aggregationType": "Sum"
+      },
+      "callsByType": {
+        "aggregationType": "Sum"
+      }
+    },
+    "timers": {
+      "allCallsDuration": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByDirection": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByOrigin": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByResponse": {
+        "aggregationType": "Sum"
+      },
+      "callsSegmentsDuration": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByResult": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByCompanyHours": {
+        "aggregationType": "Sum"
+      },
+      "callsDurationByType": {
+        "aggregationType": "Sum"
+      }
+    }
+  }
+}

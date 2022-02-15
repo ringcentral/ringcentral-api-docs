@@ -140,7 +140,7 @@ The following code sample shows how to call the Compliance Export API to export 
 
 === "Java"
     ```c#
-    {!> code-samples/team-messaging/compliance-export.java !}
+    {!> code-samples/team-messaging/ComplianceDataExport.java !}
     ```
 
 === "Ruby"

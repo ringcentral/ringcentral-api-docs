@@ -1,4 +1,4 @@
-# Using Phones in Sandbox
+# Using Phones in Sandbox - (Deprecated)
 
 Every sandbox account is provisioned a different main company phone number and user that is different than ones used in production. Additional phone numbers and users can also be configured in your sandbox account. Some use cases supported by these communication apps include:
 
