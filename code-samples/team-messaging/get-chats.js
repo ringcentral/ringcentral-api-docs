@@ -1,38 +1,36 @@
-const RC = require('ringcentral')
-var fs = require('fs')
-var https = require('https');
-var FormData = require('form-data');
+const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
 
 var rcsdk = new RC({
-    server: RINGCENTRAL_SERVER,
-    appKey: RINGCENTRAL_CLIENTID,
-    appSecret: RINGCENTRAL_CLIENTSECRET
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
 });
 var platform = rcsdk.platform();
 platform.login({
-        username: RINGCENTRAL_USERNAME,
-        password: RINGCENTRAL_PASSWORD,
-        extension: RINGCENTRAL_EXTENSION
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
+
+platform.on(platform.events.loginSuccess, () => {
+    platform.get("/restapi/v1.0/glip/chats", { 
+        "recordCount": 20 
     })
-    .then(
-        platform.get("/restapi/v1.0/glip/chats", { 
-            "recordCount": 20 
-        })
         .then(function(resp) {
             var json = resp.json()
             var records = json['records']
             for (i = 0; i < records.length; i++) {
                 r = records[i]
                 console.log(r["type"] + " chat with " 
-                    + r["members"].length + " members")
+			    + r["members"].length + " members")
             }
         })
-    );
+})

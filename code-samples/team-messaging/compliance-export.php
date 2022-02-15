@@ -1,10 +1,18 @@
 <?php
 require('vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+$CLIENTID     = $_ENV['RC_CLIENT_ID'];
+$CLIENTSECRET = $_ENV['RC_CLIENT_SECRET'];
+$SERVER       = $_ENV['RC_SERVER_URL'];
+$USERNAME     = $_ENV['RC_USERNAME'];
+$PASSWORD     = $_ENV['RC_PASSWORD'];
+$EXTENSION    = $_ENV['RC_EXTENSION'];
 
+$rcsdk = new RingCentral\SDK\SDK($CLIENTID, $CLIENTSECRET, $SERVER);
 $platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+$platform->login($USERNAME, $EXTENSION, $PASSWORD);
 
 create_compliance_export_task();
 

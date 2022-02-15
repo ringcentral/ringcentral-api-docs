@@ -88,7 +88,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 }
 ```
 
-Setting up and Using Park Locations via [Service Site](https://support.ringcentral.com/s/article/8355) or via [Ringcentral API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html).
+Setting up and Using Park Locations via [Service Site](https://support.ringcentral.com/s/article/8355.html) or via [Ringcentral API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefParkLocationUsers.html).
 
 ## Recording a call
 

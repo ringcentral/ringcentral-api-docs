@@ -1,17 +1,19 @@
 require 'ringcentral'
+require 'dotenv/load'
 
-rc = RingCentral.new(
-  'client_id',
-  'client_secret',
-  'https://platform.ringcentral.com')
+CLIENTID     = ENV['RC_CLIENT_ID']
+CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
+SERVER       = ENV['RC_SERVER_URL']
+USERNAME     = ENV['RC_USERNAME']
+PASSWORD     = ENV['RC_PASSWORD']
+EXTENSION    = ENV['RC_EXTENSION']
 
-rc.authorize(
-  username: '+16505550100',
-  extension: '',
-  password:  'my_password')
+$rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
+$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
-res = rc.post '/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise', payload: {  
-   "mode": "Listen",
-   "extensionNumber": "108",
-   "deviceId": "60727004"
-}
+res = $rc.post('/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise',
+               payload: {  
+                 mode: "Listen",
+                 extensionNumber: "108",
+                 deviceId: "60727004"
+               })

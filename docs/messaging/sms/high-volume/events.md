@@ -15,8 +15,8 @@ Batch level push notifications provide updates on batch status. A batch could ha
 
 | Event Filter | Description |
 |-|-|
-| `/restapi/v1.0/account/~/a2p-sms/batch` | Notification for any batch status changes on that account |
-| `/restapi/v1.0/account/~/a2p-sms/batch?from={e164PhoneNumber}` | Notification on batches from a specific From number in E.164 format, e.g. `+16505550100` |
+| `/restapi/v1.0/account/~/a2p-sms/batches` | Notification for any batch status changes on that account |
+| `/restapi/v1.0/account/~/a2p-sms/batches?from={e164PhoneNumber}` | Notification on batches from a specific From number in E.164 format, e.g. `+16505550100` |
 
 ## Inbound Message Events
 
@@ -49,7 +49,7 @@ Opt-out events are sent when a user connects to RingCentral's opt out service us
 
 An opt-out event is sent when a user texts `stop` to one of your High Volume SMS numbers.
 
-You will receive an even tlike the following which indicates that the Opt-Out service is `active` for sending messages `from` a number `to` a number.
+You will receive an event like the following which indicates that the Opt-Out service is `active` for sending messages `from` a number `to` a number.
 
 === "Opt-Out Event"
 
@@ -72,7 +72,7 @@ You will receive an even tlike the following which indicates that the Opt-Out se
 
 An opt-in event is sent when a user texts `start` to one of your High Volume SMS numbers.
 
-You will receive an even tlike the following which indicates that the Opt-Out service is **not** `active` for sending messages `from` a number `to` a number.
+You will receive an event like the following which indicates that the Opt-Out service is **not** `active` for sending messages `from` a number `to` a number.
 
 === "Opt-In Event"
 

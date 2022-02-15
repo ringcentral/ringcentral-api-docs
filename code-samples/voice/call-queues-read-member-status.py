@@ -1,24 +1,38 @@
+#!/usr/bin/env python
 from ringcentral import SDK
+import os,sys
 
-sdk = SDK( "client_id", "client_secret", "server_url" )
-platform = sdk.platform()
-platform.login( "username", "extension", "password" )
+CLIENTID     = os.environ.get('RC_CLIENT_ID')
+CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
+SERVER       = os.environ.get('RC_SERVER_URL')
+USERNAME     = os.environ.get('RC_USERNAME')
+PASSWORD     = os.environ.get('RC_PASSWORD')
+EXTENSION    = os.environ.get('RC_EXTENSION')
+
+rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+platform = rcsdk.platform()
+try:
+  platform.login(USERNAME, EXTENSION, PASSWORD)
+except:
+  sys.exit("Unable to authenticate to platform. Check credentials.")
 
 def get_account_call_queues():
-    try:
-        resp = platform.get('/restapi/v1.0/account/~/call-queues')
-        jsonObj = resp.json()
-        for record in jsonObj.records:
-            if record.name == "Demo call queue":
-                read_call_queue_member_status(record.id)
-    except ApiException as e:
-        print (e)
+    resp = platform.get('/restapi/v1.0/account/~/call-queues')
+    jsonObj = resp.json()
+    return jsonObj.records
 
-def read_call_queue_member_status(id):
-    try:
-        resp = platform.get('/restapi/v1.0/account/~/call-queues/' + id + "/presence")
-        print (resp.text())
-    except ApiException as e:
-        print (e)
+def print_call_queue_member_status( id ):
+    resp = platform.get('/restapi/v1.0/account/~/call-queues/' + id + "/presence")
+    for r in resp.json().records:
+        for m in r.members:
+            print( f'- {m.name}: {m.acceptCurrentQueueCalls}' )
 
-get_account_call_queues()
+try:
+    queues = get_account_call_queues()
+    for q in queues:
+        print( f'Found call queue: {q.name}' )
+        print_call_queue_member_status( q.id )
+except ApiException as e:
+    sys.exit(e)
+else:
+    sys.exit(0)

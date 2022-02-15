@@ -1,11 +1,26 @@
-const RC = require('@ringcentral/sdk').SDK
-var fs = require('fs')
+const RC  = require('@ringcentral/sdk').SDK
+var fs    = require('fs')
 var https = require('https');
+require('dotenv').config();
 
-var rcsdk = new RC({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
+CLIENTID     = process.env.RC_CLIENT_ID
+CLIENTSECRET = process.env.RC_CLIENT_SECRET
+SERVER       = process.env.RC_SERVER_URL
+USERNAME     = process.env.RC_USERNAME
+PASSWORD     = process.env.RC_PASSWORD
+EXTENSION    = process.env.RC_EXTENSION
+
+var rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
+});
 var platform = rcsdk.platform();
-
-platform.login({ username: "username", password: "password", extension: "extension_number" })
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+})
 
 platform.on(platform.events.loginSuccess, function(e) {
   create_message_store_report()
@@ -60,19 +75,36 @@ async function get_message_store_report_archive(taskId) {
   }
 }
 
-async function get_message_store_report_archive_content(contentUri, fileName) {
-  var uri = platform.createUrl(contentUri, { addToken: true });
-  download(uri, fileName, function() {
-    console.log("Save report zip file to the local machine.")
+async function get_message_store_report_archive_content(contentUri, fileName){
+  var arr = contentUri.split("//")
+  var index = arr[1].indexOf('/')
+  var domain = arr[1].substring(0, index)
+  var path = arr[1].substring(index, arr[1].length)
+  var tokenObj = await platform.auth().data()
+  var accessToken = tokenObj.access_token
+  download(domain, path, accessToken, fileName, function(){
+    console.log("Save atttachment to the local machine.")
   })
 }
 
-const download = function(uri, dest, cb) {
+const download = function(domain, path, accessToken, dest, cb) {
   var file = fs.createWriteStream(dest);
-  var request = https.get(uri, function(response) {
-    response.pipe(file);
+  var options = {
+          host: domain,
+          path: path,
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+      }
+  const req = https.request(options, res => {
+    res.pipe(file);
     file.on('finish', function() {
       file.close(cb);
     });
-  });
+  })
+  req.on('error', error => {
+    console.error(error)
+  })
+  req.end()
 }

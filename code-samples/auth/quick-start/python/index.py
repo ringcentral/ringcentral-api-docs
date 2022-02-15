@@ -1,25 +1,28 @@
+#!/usr/bin/env python
 from ringcentral import SDK
-import urllib
+import logging,os,sys,urllib
 from flask import Flask, render_template, request, session
+from dotenv import load_dotenv
+load_dotenv()
+
+REDIRECT_URL = os.environ.get('RC_REDIRECT_URL')
+
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
+platform = rcsdk.platform()
 
 app = Flask(__name__)
 app.secret_key = 'somesecretstring'
 
-RINGCENTRAL_CLIENT_ID= '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENT_SECRET= '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER_URL= 'https://platform.devtest.ringcentral.com'
-RINGCENTRAL_REDIRECT_URL= 'http://localhost:5000/oauth2callback'
-
-rcsdk = SDK(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL)
-
 @app.route('/')
 @app.route('/index')
 def login():
-    base_url = RINGCENTRAL_SERVER_URL + '/restapi/oauth/authorize'
+    base_url = SERVER + '/restapi/oauth/authorize'
     params = (
         ('response_type', 'code'),
-        ('redirect_uri', RINGCENTRAL_REDIRECT_URL),
-        ('client_id', RINGCENTRAL_CLIENT_ID),
+        ('redirect_uri', REDIRECT_URL),
+        ('client_id', os.environ.get('RC_CLIENT_ID')),
         ('state', 'initialState')
     )
     auth_url = base_url + '?' + urllib.parse.urlencode(params)
@@ -29,7 +32,10 @@ def login():
 def oauth2callback():
     platform = rcsdk.platform()
     auth_code = request.values.get('code')
-    platform.login('', '', '', auth_code, RINGCENTRAL_REDIRECT_URL)
+    try:
+        platform.login('', '', '', auth_code, REDIRECT_URL)
+    except:
+        sys.exit("Unable to authenticate to platform. Check credentials.")
     tokens = platform.auth().data()
     session['sessionAccessToken'] = tokens
     return render_template('test.html')
@@ -61,3 +67,10 @@ def logout():
         platform.logout()
     session.pop('sessionAccessToken', None)
     return login()
+
+def main():
+    logging.info("Being run from the command line. Exiting safely.")
+    sys.exit(0)
+    
+if __name__ == "__main__":
+    main()

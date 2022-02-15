@@ -86,7 +86,7 @@ The following code sample shows how to create a user custom answering rule that 
 === "Java"
 
     ```java
-    {!> code-samples/voice/user-answering-rules.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/CreateCustomUserAnsweringRule.java !}
     ```
 
 === "Ruby"

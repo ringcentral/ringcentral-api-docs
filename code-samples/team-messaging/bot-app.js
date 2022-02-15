@@ -1,6 +1,4 @@
-require('dotenv').config();
-
-const RC    = require('ringcentral');
+const RC    = require('@ringcentral/sdk').SDK
 var express = require('express');
 var request = require('request');
 var bp      = require('body-parser')
@@ -15,7 +13,7 @@ const RINGCENTRAL_ENV = process.env.RINGCENTRAL_ENV;
 const TOKEN_TEMP_FILE = '.bot-auth';
 
 var app = express();
-var platform, subscription, rcsdk, subscriptionId, bot_token;
+var subscription, subscriptionId, bot_token;
 
 app.use(bp.json());
 app.use(bp.urlencoded({
@@ -35,9 +33,9 @@ app.get('/', function(req, res) {
 
 // Instantiate the RingCentral Javascript SDK
 rcsdk = new RC({
-    server: RINGCENTRAL_ENV,
-    appKey: CLIENT_ID,
-    appSecret: CLIENT_SECRET
+    'server': RINGCENTRAL_ENV,
+    'appKey': CLIENT_ID,
+    'appSecret': CLIENT_SECRET
 });
 
 platform = rcsdk.platform();
@@ -137,8 +135,12 @@ app.post('/callback', function(req, res) {
         console.log("Received message: " + req.body.body.text);
         if (req.body.ownerId == req.body.body.creatorId) {
             console.log("Ignoring message posted by bot.");
+
         } else if (req.body.body.text == "ping") {
             send_message("pong", req.body.body.groupId)
+	// Add more bot commands here by training your bot to respond to different keywords
+        //} else if (req.body.body.text == "some keyword") {
+	    
         } else {
             send_message("I do not understand '" +
                 req.body.body.text +

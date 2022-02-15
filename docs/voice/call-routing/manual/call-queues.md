@@ -10,10 +10,49 @@ As an extension, a call queue has a name, an extension number and can be assigne
 
 ## Create a Call Queue
 
-To create a call queue extension, login your RingCentral account at [Online Account Portal](https://service.ringcentral.com), choose the "Phone System" tab then go under the Group(s) option. Click the "New Call Queue" button to start creating a new one.
+Typically, to create a call queue extension, an administrator would login to your RingCentral account at [Online Account Portal](https://service.ringcentral.com), choose the "Phone System" tab then go under the Group(s) option. Click the "New Call Queue" button to start creating a new one.
+
+However, you can create a call queue by using the `extension` API:
+
+* Make a POST request to the `/restapi/v1.0/account/~/extension` endpoint.
+
+Required permission(s): EditAccounts
+
+=== "Sample JSON Body"
+    ```json
+    {
+      "extensionNumber": "307",
+      "type": "Department",
+      "contact": {
+        "firstName": "Marketing Q",
+        "email": "marketing@example.com"  }
+    }
+    ```
 
 !!! Note
-    There is no API to create a call queue extension!
+    Make sure you set the `type` to "Department" to create a queue instead of an extension.
+
+**Sample Response**
+```json 
+{
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
+    "id": 11112222,
+    "extensionNumber": "307",
+    "contact": {
+        "firstName": "Marketing Q",
+        "email": "marketing@example.com",
+        "pronouncedName": {
+            "type": "Default",
+            "text": "Marketing Q"
+        }
+    },
+    "name": "Marketing Q",
+    "type": "Department",
+    "status": "NotActivated",
+    ...
+    "hidden": false
+}
+```
 
 ## Read Call Queue List
 
@@ -129,7 +168,7 @@ The following code sample shows how to add 2 new members to a call queue named "
 === "Java"
 
     ```java
-    {!> code-samples/voice/call-queues.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/UpdateCallQueueMembers.java !}
     ```
 
 === "Ruby"

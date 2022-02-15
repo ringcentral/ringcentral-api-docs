@@ -33,6 +33,13 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+## Download and edit a `.env` file
+	
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+	
+1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+
 ## Authorization Flow
 
 Select your preferred language below.
@@ -43,14 +50,15 @@ Select your preferred language below.
 
     ```bash
     $ npm install @ringcentral/sdk --save
+    $ npm install dotenv --save
     $ npm install express --save
     $ npm install express-session --save
     $ npm install ejs --save
     ```
 
-    ### Create and Edit index.js
+    ### Create and edit index.js
 
-    Create a file called <tt>index.js</tt>. Be sure to edit the variables in &lt;ALL CAPS> with your app credentials. In this file, we'll implement code to start a Web server and a few functions to handle express routing.
+    Create a file called `index.js` using the contents below.
 
     ```javascript
     {!> code-samples/auth/quick-start/javascript/index.js !} 
@@ -70,7 +78,7 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/javascript/test.ejs !} 
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -86,12 +94,13 @@ Select your preferred language below.
 
     ```bash
     $ pip install ringcentral
+    $ pip install python-dotenv
     $ pip install flask
     ```
 
     ### Create an index.py
 
-    Create a file called <tt>index.py</tt>. Be sure to edit the variables in &lt;ALL CAPS> with your app credentials.
+    Create a file called <tt>index.py</tt> using the contents below.
 
     ```python
     {!> code-samples/auth/quick-start/python/index.py !}
@@ -111,7 +120,7 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/python/test.html !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -127,14 +136,7 @@ Select your preferred language below.
 
     ``` bash
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php
-    ```
-    ### Create a configs.php file
-
-    Create a file called <tt>configs.php</tt>. Be sure to edit the variables value in &lt;ALL CAPS> with your app credentials.
-
-    ``` PHP
-    {!> code-samples/auth/quick-start/php/configs.php !}
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
     ```
 
     ### Create an index.php
@@ -146,6 +148,7 @@ Select your preferred language below.
     ```
 
     ### Create a test.html file
+	
     Create a file called <tt>test.html</tt>. In this file we'll add a few API call test cases and a logout button.
 
     ``` html
@@ -160,7 +163,7 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/php/engine.php !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -198,7 +201,7 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/c-sharp/Startup.cs !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your app.
 
@@ -235,9 +238,7 @@ Select your preferred language below.
     Select "File -> New -> Class" to create a new Java class named "Authorization_Flow"
 
     ```java
-    package Authentication;
-
-    public class Authorization_Flow {
+    public class AuthorizationFlow {
 
       public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -251,10 +252,10 @@ Select your preferred language below.
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/auth/quick-start/java/Authorization_Flow.java !}
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/AuthorizationFlow.java !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your app from Eclipse. Then Open a Web browser and enter localhost:5000.
 
@@ -266,6 +267,7 @@ Select your preferred language below.
     $ rails new authorization-flow
     $ cd authorization-flow
     $ bundle add ringcentral-sdk
+    $ bundle add dotenv
     ```
 
     ### Create a new controller
@@ -311,7 +313,7 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/ruby/test.html.erb !}
     ```
 
-    ### Run Your Code
+    ### Run your code
 
     You are almost done. Now run your script.
 
@@ -320,6 +322,12 @@ Select your preferred language below.
     ```
 
     Open a Web browser and load localhost:5000/main/login
+
+## Need Help?
+
+Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
+
+<a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=authentication">Search the forums &raquo;</a>
 
 ## Graduate Your App
 

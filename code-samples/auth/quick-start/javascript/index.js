@@ -1,7 +1,8 @@
 var app = require('express')();
 var session = require('express-session');
-var RingCentral = require('@ringcentral/sdk').SDK;
+const RC = require('@ringcentral/sdk').SDK
 var path = require('path')
+require('dotenv').config();
 
 var usePKCE = false; // change to true for enabling authorization code with PKCE flow
 
@@ -9,16 +10,13 @@ app.use(session({ secret: 'somesecretstring', tokens: '' }));
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-const RINGCENTRAL_CLIENT_ID = '<ENTER CLIENT ID>'
-const RINGCENTRAL_CLIENT_SECRET = '<ENTER CLIENT SECRET>'
-const RINGCENTRAL_SERVER_URL = 'https://platform.devtest.ringcentral.com'
-const RINGCENTRAL_REDIRECT_URL = 'http://localhost:5000/oauth2callback'
+REDIRECT_URL = process.env.RC_REDIRECT_URL
 
-var rcsdk = new RingCentral({
-  server: RINGCENTRAL_SERVER_URL,
-  clientId: RINGCENTRAL_CLIENT_ID,
-  clientSecret: RINGCENTRAL_CLIENT_SECRET,
-  redirectUri: RINGCENTRAL_REDIRECT_URL
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET,
+    'redirectUri':  REDIRECT_URL
 });
 
 var server = require('http').createServer(app);
@@ -39,7 +37,7 @@ app.get('/', async function(req, res) {
   } else {
     res.render('index', {
       authorize_uri: platform.loginUrl({
-        redirectUri: RINGCENTRAL_REDIRECT_URL,
+        redirectUri: REDIRECT_URL,
         usePKCE,
       })
     });
@@ -69,7 +67,7 @@ app.get('/oauth2callback', async function(req, res) {
       var platform = rcsdk.platform()
       var resp = await platform.login({
         code: req.query.code,
-        redirectUri: RINGCENTRAL_REDIRECT_URL
+        redirectUri: REDIRECT_URL
       })
       req.session.tokens = await resp.json()
       console.log(req.session.tokens)

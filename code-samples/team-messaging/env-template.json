@@ -1,6 +1,8 @@
 # .env file for the RingCentral Bot Walkthrough
-REDIRECT_HOST=https://4f72-xxx-206-200.ngrok.io/
-CLIENT_ID=pi8xxxxxxxgaw
-CLIENT_SECRET=rnvxxxxxxx_Cidye4dS4Q
-RINGCENTRAL_ENV=https://platform.devtest.ringcentral.com
+RINGCENTRAL_CLIENT_ID=nrLCG6S9TH2MYSarxxxxxx
+RINGCENTRAL_CLIENT_SECRET=ZPEpgGuPRlidSANQp1trcgHVfBvfBuTIScaZXoxxxxxx
+RINGCENTRAL_SERVER_URL=https://platform.devtest.ringcentral.com
+
+RINGCENTRAL_OAUTH_REDIRECT_URI=https://80c2-xx-yyy-201-33.ngrok.io/oauth
+WEBHOOKS_DELIVERY_ADDRESS=https://80c2-xx-yyy-201-33.ngrok.io/webhook-callback
 PORT=3000
