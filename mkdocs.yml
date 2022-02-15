@@ -187,7 +187,7 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Call Aggregate reports': 'analytics/call-performance.md'
+    - 'Call Aggregate reports': 'analytics/aggregate.md'
     - 'Call Timeline reports': 'analytics/timeline.md'
     - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
     - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
