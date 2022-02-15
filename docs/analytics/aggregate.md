@@ -4,7 +4,7 @@
 
 ### Controlling what to aggregate/group data by
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. In API request structure, it can be specified in groupby section on top
+The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by "CompanyNumbers".
 
 |GroupBy (API)	| Description |
 |---|---|
@@ -22,6 +22,15 @@ The `groupBy` element allows users to specify data scope. All the data retrieved
 | Shared Lines | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
 | No grouping specified, i/e null or unstable | It will return one record with data aggregated by the whole company.|
 |
+
+**Example**
+
+```json
+"grouping": {
+  "groupBy": "Users",
+  "ids": []
+}
+```
 
 ### Setting the timeframe of your request
 
