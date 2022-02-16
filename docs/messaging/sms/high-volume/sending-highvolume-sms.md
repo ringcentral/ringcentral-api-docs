@@ -584,6 +584,6 @@ The code samples above would all produce a response that would appear similar to
   "creationTime": "2020-10-12T16:50:35.033902Z",
   "lastModifiedTime": "2020-10-12T16:50:39.033902Z",
   "rejected": [],
-  "cost": 0.014
+  "cost": 0.017
 }
 ```

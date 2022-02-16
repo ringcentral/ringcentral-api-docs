@@ -1,6 +1,6 @@
 # High Volume SMS Message Store
 
-The high volume SMS message store is separate from the standard SMS (P2P) message store. Use the APIs in the table below to access your high volume SMS message store.
+The high volume SMS message store is separate from the standard SMS(Enhanced Business SMS) message store. Use the APIs in the table below to access your high volume SMS message store.
 
 | API Endpoint | Description |
 |-|-|
@@ -198,7 +198,7 @@ To avoid loading the entire message store, which could be extremely large, you c
       "creationTime": "2021-01-14T21:47:51.436491Z",
       "lastModifiedTime": "2021-01-14T21:47:53.032416Z",
       "messageStatus": "Delivered",
-      "cost": 0.007,
+      "cost": 0.0085,
       "segmentCount": 1
     },{
       "id": "52494",
@@ -207,7 +207,7 @@ To avoid loading the entire message store, which could be extremely large, you c
       "creationTime": "2021-01-14T20:21:23.979729Z",
       "lastModifiedTime": "2021-01-14T20:21:25.254851Z",
       "messageStatus": "Delivered",
-      "cost": 0.007,
+      "cost": 0.0085,
       "segmentCount": 1
     },{
       "id": "52485",
@@ -217,7 +217,7 @@ To avoid loading the entire message store, which could be extremely large, you c
       "lastModifiedTime": "2021-01-14T22:20:01.728022Z",
       "messageStatus": "DeliveryFailed",
       "errorCode": "SMS-CAR-104",
-      "cost": 0.007,
+      "cost": 0.0085,
       "segmentCount": 1
     },{
       "id": "52484",
@@ -551,7 +551,7 @@ To get a quick report on message statuses in a batch or within a period of time,
   },
   "delivered": {
     "count": 2,
-    "cost": 0.014
+    "cost": 0.017
   },
   "deliveryFailed": {
     "count": 0,
@@ -706,7 +706,7 @@ You can read an individual message details from the high volume message store us
     "createdAt": "2020-10-14T21:47:51.436491Z",
     "lastUpdatedAt": "2020-10-14T21:47:53.032416Z",
     "messageStatus": "Delivered",
-    "cost": 0.007,
+    "cost": 0.0085,
     "segmentCount": 1
   }
 }
