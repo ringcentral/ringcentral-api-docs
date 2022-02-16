@@ -4,7 +4,7 @@
 
 ### Controlling what to aggregate/group data by
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by "CompanyNumbers".
+The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type.  If this field is undefined or null, the response will contain one record with data aggregated by whole company.
 
 |GroupBy (API)	| Description |
 |---|---|
