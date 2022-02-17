@@ -35,11 +35,6 @@ Send and receive SMS messages using the High Volume SMS API (`a2p-sms`) requires
 
 To determine which numbers a user can use to send and receive High Volume SMS, retrieve the user's list of phone numbers from the [`extension/phone-number` endpoint](https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers) and then filter by numbers with the `A2PSmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
-=== "HTTP"
-	```http
-	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
-	```
-
 === "JavaScript"
 	```javascript
     {!> code-samples/messaging/high-volume/list.js !} 
@@ -68,6 +63,11 @@ To determine which numbers a user can use to send and receive High Volume SMS, r
 === "Ruby"
 	```ruby
     {!> code-samples/messaging/high-volume/list.rb !} 
+	```
+
+=== "HTTP"
+	```http
+	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 	```
 
 ### Response
