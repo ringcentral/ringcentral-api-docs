@@ -228,8 +228,8 @@ pages:
           - 'Graduate to production': 'basics/production.md'
       - 'App Promotion':
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
-          - 'Update a Profile': 'basics/update-profile.md'
-          - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
+          - 'Updating a profile': 'basics/update-profile.md'
+          - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
       - 'Application Management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
