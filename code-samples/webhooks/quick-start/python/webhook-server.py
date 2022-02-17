@@ -7,6 +7,7 @@ class S(BaseHTTPRequestHandler):
             validationToken = self.headers['Validation-Token']
             if validationToken is not None:
                 self.send_response(200)
+                self.send_header('Content-type', 'application/json')
                 self.send_header('Validation-Token', validationToken)
                 return self.end_headers()
             else:
