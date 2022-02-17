@@ -21,13 +21,13 @@ Currently, High Volume SMS is supported for numbers in the United States and Can
 
 ## Ordering and Provisioning High Volume SMS Numbers
 
-To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Enhanced Business SMS (Consumer) or High Volume SMS(Non Consumer-A2P), and can be switched back and forth, but a number cannot be both at the same time.
+To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Enhanced Business SMS (consumer) or High Volume SMS (non-consumer-A2P), and can be switched back and forth, but a number cannot be both at the same time.
 
 If you don't have a number already, log into the [Account Portal](https://service.ringcentral.com) and navigate to the following location to purchase a new number.
 
 ["Phone System" > "All Numbers" > "+ Add Number"](https://service.ringcentral.com/application/company/phoneNumbers/allNumbers)
 
-Once you have a number, it will be initially provisioned for standard SMS(Enhanced Business SMS). To configure a number for High Volume (Non Consumer-A2P) use, enroll in the [High Volume SMS beta program](https://gamechanging.dev/sms)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
+Once you have a number, it will be initially provisioned for standard SMS (Enhanced Business SMS). To configure a number for High Volume (non-consumer-A2P) use, enroll in the [High Volume SMS beta program](https://gamechanging.dev/sms)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
 
 ## Listing Valid High Volume SMS Numbers
 
