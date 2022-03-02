@@ -12,6 +12,7 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 ## RingCentral App schemes
 
 | Scheme | Usage |
+|-|-|
 | `rcapp://` | Launch the RingCentral App. |
 | `rcapp://r/signin` | Force a user to sign-in to the RingCentral App. |
 | `rcapp://r/call?number=<phone number>` | Place a phone call with RingCentral App. |
