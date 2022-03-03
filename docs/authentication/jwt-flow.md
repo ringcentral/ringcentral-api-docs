@@ -1,6 +1,6 @@
 # JWT authorization code flow
 
-!!! hint "New to JWT authentication? Checkout our [getting started guide](../jwt/get-started/)."
+!!! hint "New to JWT authentication? Checkout our [getting started guide](../jwt/quick-start/)."
 
 RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) for using JSON Web Tokens ("JWT", pronounced "JAW-t") in an OAuth authorization flow. A JWT credential can be generated within the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html), and be used in place of a username and password when establishing an authenticated connection to RingCentral servers to call the API. Using a JWT in this way has the following benefits:
 
@@ -29,7 +29,7 @@ Using a JSON Web Token for app authentication is ideal in the following circumst
 
 To use a JWT, the app you wish to present your JWT credentials to must first be configured to accept JWT tokens as a means of authentication.
 
-* [How to configure an app for JWT &raquo;](../jwt/config-jwt/)
+* [How to configure an app for JWT &raquo;](../jwt/config-app/)
 
 ### How do I generate a JWT credential used for authentication?
 
