@@ -3,7 +3,7 @@
 <div class="jumbotron pt-1">
   <h3 class="display-5">Chomping at the bit and just want to get started?</h3>
   <p class="lead">RingCentral supports a number of different authentication modes to satisfy the needs of the many different types of applications built on top of our platform, from mobile to desktop, from public to private, from bots to webapps.</p>
-  <p>The authentication mode we recommend developers use in production is a <a href="../quick-start/">3-legged auth flow</a> that grants applications access to a user's account without exchanging a username/password with a 3rd party. But the easiest and fastest way to get started is to use JWT:</p>
+  <p>The authentication mode we recommend developers use in production is a <a href="./quick-start/">3-legged auth flow</a> that grants applications access to a user's account without exchanging a username/password with a 3rd party. But the easiest and fastest way to get started is to use JWT:</p>
   <a href="jwt/quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="jwt/quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="jwt/quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>

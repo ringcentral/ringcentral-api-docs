@@ -36,11 +36,11 @@ For added security, especially when you intend to share your JWT with a third-pa
 
 Then check "Only specific apps of my choice" under "What apps are permitted to use this credential?" and copy and paste the client ID you received into the text field. 
 
-![JWT App Config](../jwt-auth-clientid.png)
+<img src="../jwt-auth-clientid.png" class="img-fluid" style="max-width:500px">
 
 Click "Add app." If the app was found, a table will appear showing the current list of apps authorized to use this token. 
 
-![JWT App Config](../jwt-auth-app-access.png)
+<img src="../jwt-auth-app-access.png" class="img-fluid" style="max-width:500px">
 
 Click "Create" or "Save."
 
