@@ -155,18 +155,19 @@ pages:
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
-    - 'RingCentral Add-ins':
+    - 'RingCentral add-ins':
       - 'Introduction': 'team-messaging/add-ins/index.md'
       - 'Developer tools': 'team-messaging/add-ins/tools.md'
 
-    - 'Build a notification app':
+    - 'Notification apps':
       - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
       - 'Integrated installation': 'team-messaging/add-ins/installation.md'
       - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
 
-    - 'Build a bot':
+    - 'Bots':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
       - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
+      - 'Installing/removing bots': 'team-messaging/bots/installing-bots.md'
 #      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
 #      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
