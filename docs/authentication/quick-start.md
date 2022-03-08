@@ -215,19 +215,25 @@ Select your preferred language below.
 
 === "Java"
 
-    ### Create a Java project (using Eclipse IDE)
+    ### Create a Java project (Using Eclipse Java Servlet)
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "Authentication"
-    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK, Javax Servlet, and Jetty to the project as shown below:
+    * Enter project name "oauth-demo"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK and other libraries under dependencies as shown below
 
-    ```json hl_lines="3 4 5",linenums="3"
+    ```json
+
+    apply plugin: 'application'
+
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.0.0-beta13'
-        compile 'javax.servlet:javax.servlet-api:4.0.1'
-        compile 'org.eclipse.jetty:jetty-server:9.4.19.v20190610'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+        implementation group: 'com.ringcentral', name: 'ringcentral', version: '2.8.2'
+        implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.79'
+        implementation group: 'org.eclipse.jetty', name: 'jetty-server', version: '11.0.8'
+        compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     }
     ```
 
@@ -235,7 +241,7 @@ Select your preferred language below.
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "Authorization_Flow"
+    Select "File -> New -> Class" to create a new Java class named "AuthorizationFlow"
 
     ```java
     public class AuthorizationFlow {
@@ -247,7 +253,7 @@ Select your preferred language below.
     }
     ```
 
-    ### Edit the file "Authorization_Flow.java"
+    ### Edit the file "AuthorizationFlow.java"
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
@@ -257,7 +263,8 @@ Select your preferred language below.
 
     ### Run your code
 
-    You are almost done. Now run your app from Eclipse. Then Open a Web browser and enter localhost:5000.
+    You are almost done. Now run your app using gradle `gradle run` command. 
+    Open a Web browser and enter localhost:5000, you should see 'Login with RingCentral' link, click on that and follow the login process using your sandbox credentials to access the secure page where you can call RingCentral APIs. 
 
 === "Ruby"
 
