@@ -1,38 +1,45 @@
-const RC = require('@ringcentral/sdk').SDK
-require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK;
 
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
 
-var rcsdk = new RC({
+const rcsdk = new RC({
     server:       SERVER,
     clientId:     CLIENTID,
     clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
+
+const platform = rcsdk.platform();
+
 platform.login({
     username:  USERNAME,
     password:  PASSWORD,
     extension: EXTENSION
-})
-
-platform.on(platform.events.loginSuccess, async function(response) {
-  update_extension_dnd_status()
 });
 
-async function update_extension_dnd_status(){
-  try {
-    var params = {
-      dndStatus: "DoNotAcceptDepartmentCalls"
+platform.on(platform.events.loginSuccess, updateExtensionDndStatus);
+
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    // Remove the below line if you are running this in the browser
+    process.exit(1);
+});
+
+async function updateExtensionDndStatus(){
+    try {
+        const params = {
+            dndStatus: 'DoNotAcceptDepartmentCalls'
+        }
+        const response = await platform.put(`/restapi/v1.0/account/~/extension/~/presence`, params);
+        const json = await response.json();
+        console.log(json);
+    } catch(e) {
+        console.error(`Failed to update DND status : ${e.message}`);
+        // Remove the below line if you are running this in the browser
+        process.exit(1);
     }
-    var resp = await platform.put(`/restapi/v1.0/account/~/extension/~/presence`, params)
-    var jsonObj = await resp.json()
-    console.log(jsonObj)
-  }catch(e){
-    console.log(e.message)
-  }
 }

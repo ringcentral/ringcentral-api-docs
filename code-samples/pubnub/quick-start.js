@@ -1,38 +1,48 @@
-const RC   = require('@ringcentral/sdk').SDK
-const Subs = require('@ringcentral/subscriptions').Subscriptions
 require('dotenv').config();
+const RC            = require('@ringcentral/sdk').SDK;
+const Subscriptions = require('@ringcentral/subscriptions').Subscriptions;
 
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+const CLIENTID     = process.env.RC_CLIENT_ID;
+const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
+const SERVER       = process.env.RC_SERVER_URL;
+const USERNAME     = process.env.RC_USERNAME;
+const PASSWORD     = process.env.RC_PASSWORD;
+const EXTENSION    = process.env.RC_EXTENSION;
+
+const rcsdk = new RC({
+    server:       SERVER,
+    clientId:     CLIENTID,
+    clientSecret: CLIENTSECRET
 });
-var platform = rcsdk.platform();
-platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
-})
 
-var subscriptions = new Subscriptions({ sdk: rcsdk });
-var subscription = subscriptions.createSubscription({
+const platform = rcsdk.platform();
+
+platform.login({
+    username:  USERNAME,
+    password:  PASSWORD,
+    extension: EXTENSION
+});
+
+const subscriptions = new Subscriptions({ sdk: rcsdk });
+const subscription = subscriptions.createSubscription({
     pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000
 });
 
-platform.on(platform.events.loginSuccess, () => {
-  subscribe_for_SMS_notification()
+platform.on(platform.events.loginSuccess, subscribeForSMSNotification);
+
+platform.on(platform.events.loginError, (e) => {
+    console.error(`User login failed : ${e.message}`);
+    process.exit(1);
 });
 
-function subscribe_for_SMS_notification() {
-  subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'])
-    .register()
-    .then(function(subscriptionResponse) {
-      console.log("Ready to receive incoming SMS via PubNub.")
-    })
-    .catch(function(e) {
-      console.error(e);
-      throw e;
-    });
+async function subscribeForSMSNotification() {
+  try {
+      await subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS']).register();
+      console.log('Ready to receive incoming SMS via PubNub.');
+  } catch (e) {
+    console.error(`Failed to register for message store notification : ${e.message}`);
+    process.exit(1);
+  }
 }
 
 subscription.on(subscription.events.notification, function(msg) {

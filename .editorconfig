@@ -1,0 +1,13 @@
+root = true
+
+[*]
+end_of_line = lf
+
+[*.{cs,php,rb,java,js,py}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[{*.json,.*.yml}]
+indent_style = space
+indent_size = 2

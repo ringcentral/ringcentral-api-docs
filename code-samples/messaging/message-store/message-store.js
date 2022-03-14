@@ -1,4 +1,5 @@
-const RC = require('@ringcentral/sdk').SDK;
+require('dotenv').config();
+const RC  = require('@ringcentral/sdk').SDK;
 
 const CLIENTID     = process.env.RC_CLIENT_ID;
 const CLIENTSECRET = process.env.RC_CLIENT_SECRET;
@@ -21,22 +22,22 @@ platform.login({
     extension: EXTENSION
 });
 
-platform.on(platform.events.loginSuccess, getCallQueues);
+platform.on(platform.events.loginSuccess, readSMS);
 
 platform.on(platform.events.loginError, (e) => {
     console.error(`User login failed : ${e.message}`);
-    // Remove the below line if you are running this in the browser
     process.exit(1);
 });
 
-async function getCallQueues() {
+async function readSMS() {
     try {
-        const response = await platform.get('/restapi/v1.0/account/~/call-queues')
-        const json = await response.json()
-        console.log(json)
+        const response = await platform.get('/restapi/v1.0/account/~/extension/~/message-store', {
+            messageType: ['SMS']
+        });
+        const json = await response.json();
+        console.log(json);
     } catch (e) {
-        console.error(`Failed to get call queues : ${e.message}`);
-        // Remove the below line if you are running this in the browser
+        console.error(`Failed to read sms from message store : ${e.message}`);
         process.exit(1);
     }
-};
+}
