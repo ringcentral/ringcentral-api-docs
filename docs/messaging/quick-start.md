@@ -3,7 +3,7 @@ style: quick-start
 
 # SMS Quick Start
 
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
+!!! info "Developers should familiarize themselves with RingCentral's [SMS price changes](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html) and [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
