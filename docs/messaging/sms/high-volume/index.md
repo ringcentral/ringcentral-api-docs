@@ -1,6 +1,6 @@
 # High Volume SMS
 
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
+!!! info "Developers should familiarize themselves with [RingCentral's SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
 
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with High Volume SMS!</h3>
