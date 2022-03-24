@@ -1,6 +1,6 @@
 # Emergency Locations
 
-In North America, a system is used to automatically provide the caller's location to 911 dispatchers. The 911 dispatcher's comupter receives information from the telephone company about the physical address or geographic coordinates of the caller. This information is used to dispatch police, fire, medical and other services as needed.  There are two methods to update emergency locations at RingCentral.
+In North America, a system is used to automatically provide the caller's location to 911 dispatchers. The 911 dispatcher's comupter receives information from the telephone company about the physical address or geographic coordinates of the caller. This information is used to dispatch police, fire, medical and other services as needed.  There are two methods to update emergency locations at RingCentral. Method 1 outlines how emergency locations are set today. However, the process for setting emergency locations is changing and method 2 should be used in the future once the feature is enabled. Keep reading to find out more.
 
 ## Method 1: Update Location by Device
 
@@ -132,4 +132,4 @@ POST /restapi/v1.0/account/~/extension/~/emergency-locations
 Please see the [API Reference](https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createExtensionEmergencyLocation) for more details.
 
 !!! important "CMN-109 Error"
-    If you see an error message `CMN-109`, this indicates you are not able to set the emergency response location yet and must use the [update location by device](../emergency-locations/#method-1-update-location-by-device) API instead.
+    If you see an error message `CMN-109`, this indicates you are not able to set the Emergency Response Location (ERL) yet and must use the [update location by device](../emergency-locations/#method-1-update-location-by-device) API instead.
