@@ -21,13 +21,13 @@ Currently, High Volume SMS is supported for numbers in the United States and Can
 
 ## Ordering and Provisioning High Volume SMS Numbers
 
-To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Low Volume (P2P) or High Volume (A2P) SMS, and can be switched back and forth, but a number cannot be both at the same time.
+To use High Volume SMS, you must have one or more phone numbers configured for it. RingCentral SMS-enabled phone numbers can be configured for either Enhanced Business SMS (consumer) or High Volume SMS (non-consumer-A2P), and can be switched back and forth, but a number cannot be both at the same time.
 
 If you don't have a number already, log into the [Account Portal](https://service.ringcentral.com) and navigate to the following location to purchase a new number.
 
 ["Phone System" > "All Numbers" > "+ Add Number"](https://service.ringcentral.com/application/company/phoneNumbers/allNumbers)
 
-Once you have a number, it will be initially provisioned for standard P2P SMS. To configure a number for High Volume (A2P) use, enroll in the [High Volume SMS beta program](https://ringcentral.github.io/releases/high-volume-sms-beta-signup.html)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
+Once you have a number, it will be initially provisioned for standard SMS (Enhanced Business SMS). To configure a number for High Volume (non-consumer-A2P) use, enroll in the [High Volume SMS beta program](https://gamechanging.dev/sms)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
 
 ## Listing Valid High Volume SMS Numbers
 
@@ -35,181 +35,39 @@ Send and receive SMS messages using the High Volume SMS API (`a2p-sms`) requires
 
 To determine which numbers a user can use to send and receive High Volume SMS, retrieve the user's list of phone numbers from the [`extension/phone-number` endpoint](https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers) and then filter by numbers with the `A2PSmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
 
-=== "HTTP"
-	```http
-	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
-	```
-
 === "JavaScript"
 	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
-
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} )
-	var platform = rcsdk.platform()
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-	platform.on(platform.events.loginSuccess, function(e){
-			console.log("Login success")
-			detect_high_volume_sms_feature()
-	});
-
-	async function detect_high_volume_sms_feature(){
-		try{
-			var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
-			var jsonObj = await resp.json()
-			for (var record of jsonObj.records){
-				for (var feature of record.features){
-					if (feature == "A2PSmsSender"){
-						if (record.paymentType == "TollFree")
-							console.log(`This phone number ${record.phoneNumber} is a toll-free number and provisioned for using to send high volume SMS`)
-						else
-							console.log(`This phone number ${record.phoneNumber} is a local 10-DLC number and provisioned for using to send high volume SMS`)
-					}
-				}
-			}
-		}catch(e){
-			console.log(e.message)
-		}
-	}
+    {!> code-samples/messaging/high-volume/list.js !} 
 	```
 
 === "Python"
 	```python
-	from ringcentral import SDK
-
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
-	for record in response.json().records:
-		print "This phone number " + record.phoneNumber + " has the following features: "
-		for feature in record.features:
-			if feature == "A2PSmsSender":
-				if record.paymentType == "TollFree":
-					print (" This phone number " + record['phoneNumber'] + " is a toll-free number and provisioned for using to send high volume SMS")
-				else:
-					print (" This phone number " + record['phoneNumber'] + " is a 10-DCL local number and provisioned for using to send high volume SMS")
+    {!> code-samples/messaging/high-volume/list.py !} 
 	```
 
 === "PHP"
 	```php
-	<?php
-	require('vendor/autoload.php');
-
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-
-	$response = $platform->get('/account/~/extension/~/phone-number');
-	foreach ($response->json()->records as $record){
-		foreach ($record->features as $feature){
-			if ($feature == "A2PSmsSender"){
-				if ($record->paymentType == "TollFree")
-					print_r ("This phone number ".$record->phoneNumber." is a toll-free number and provisioned for using to send high volume SMS\n");
-				else
-					print_r ("This phone number ".$record->phoneNumber." is a 10-DLC local number and provisioned for using to send high volume SMS\n");
-			}
-		}
-	}
+    {!> code-samples/messaging/high-volume/list.php !} 
 	```
 
 === "C#"
 	```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
-
-	namespace Read_Phone_Number
-	{
-		class Program
-		{
-			static void Main(string[] args)
-			{
-				detect_phone_number_feature().Wait();
-			}
-			static private async Task detect_phone_number_feature()
-			{
-				RestClient rc = new RestClient("client_id", "client_secret", "server_url");
-		    await rc.Authorize("username", "extension_number", "password");
-
-		    var response = await rc.Restapi().Account().Extension().PhoneNumber().Get();
-
-		    foreach (var record in response.records)
-		    {
-					foreach (var feature in record.features) {
-						if (feature == "A2PSmsSender")
-						{
-							if (record.paymentType == "TollFree")
-							{
-								Console.WriteLine("This phone number " + record.phoneNumber + " is a toll-free number and provisioned for using to send high volume SMS" );
-							}
-							else
-							{
-								Console.WriteLine("This phone number " + record.phoneNumber + " is a 10-DLC local number and provisioned for using to send high volume SMS" );
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+    {!> code-samples/messaging/high-volume/list.cs !} 
 	```
 
 === "Java"
 	```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
-
-	public class Read_Phone_Number {
-		public static void main(String[] args) {
-			try {
-				detect_phone_number_feature();
-			} catch (RestException | IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		public static void detect_phone_number_feature() throws RestException, IOException{
-			RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
-			restClient.authorize("username", "extension_number", "password");
-
-			var response = restClient.restapi().account().extension().phonenumber().get();
-			for (var record : response.records) {
-				for (var feature : record.features) {
-					if (feature == "A2PSmsSender"){
-						if (record.paymentType == "TollFree") {
-							System.out.println("This phone number " + record.phoneNumber + " is a toll-free number and provisioned for using to send high volume SMS" );
-						}else{
-							System.out.println("This phone number " + record.phoneNumber + " is a 10-DLC local number and provisioned for using to send high volume SMS" );
-						}
-					}
-				}
-			}
-		}
-	}
+    {!> code-samples/messaging/high-volume/list.java !} 
 	```
 
 === "Ruby"
 	```ruby
-	require 'ringcentral'
+    {!> code-samples/messaging/high-volume/list.rb !} 
+	```
 
-	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-	response = rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
-
-	for record in response.body['records'] do
-	    for feature in record['features'] do
-					if feature == "A2PSmsSender"
-							if record.paymentType == "TollFree"
-									puts "This phone number " + record['phoneNumber'] + " is a toll-free number and provisioned for using to send high volume SMS"
-							else
-									puts "This phone number " + record['phoneNumber'] + " is a 10-DLC local number and provisioned for using to send high volume SMS"
-							end
-					end
-	    end
-	end
+=== "HTTP"
+	```http
+	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 	```
 
 ### Response

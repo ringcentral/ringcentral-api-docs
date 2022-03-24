@@ -4,20 +4,30 @@
 
 ### Controlling what to aggregate/group data by
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. In API request structure, it can be specified in groupby section on top. This is similar to aggregate end point along with providing data at different timeframe split.
+The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by whole company.
 
 |GroupBy (API)	| Description |
 |---|---|
-| Users | This grouping will return call data for individual mailboxes. When users are added in the grouping, then response provides call data aggregated at user level. |
+| Users | This grouping will return call data for individual mailboxes. When users are added in the grouping, then response provides call data aggregated at user level.  |
+| DepartmentMembers | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
+| UserGroupMembers | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
+| QueueAgents | This grouping will return call data for individual users under Queues. Specify Ids of queues along with this grouping which will provide aggregated call data for users under those queues.
+| SiteMembers | This grouping will return call data for individual users under Sites. Specify Ids of Sites along with this grouping which will provide aggregated call data for users under those Sites. |
+| UserGroups | This grouping will return call data for  User Groups setup on Admin Portal. |
+| Departments | This grouping will return call data for users labeled with the same Department on Admin Portal. |
 | Queues | This grouping will return call data for Queue Extns. |
 | IVRs | This grouping will return call data for IVR extensions. |
-| SharedLines | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
+| Sites | This grouping will return call data for Site Extns when an account is using the multi-site feature. |
+| CompanyNumbers | This grouping will return call data for direct numbers set up under Phone Systems - > Phone Numbers on Admin Portal. |
+| Shared Lines | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
+| No grouping specified, i/e null or unstable | It will return one record with data aggregated by the whole company.|
+|
 
 **Example**
 
 ```json
 "grouping": {
-  "groupBy": "Users",
+  "groupBy": "Departments",
   "ids": []
 }
 ```

@@ -4,16 +4,49 @@ RingCentral is a platform that gives developers access to hundreds of thousands 
 
 !!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../update-profile/)"
 
-??? info "Customizing your app for our partner ecosystem"
+??? info "How to customize your app for our partner ecosystem"
     To best position and market your product to our brand and distribution partners, learn about their brand guidelines, and how to compose connect buttons for them.
     
     AT&T Office@Hand and Verizon have [additional technical requirements](../partners/segregated-environments/) developers should be aware of as well.
     
     Read our [Partner compatibility guide](../partner-compatibility/) to learn more.
 
-## Getting listed in the RingCentral App Gallery
+## Things to do before you submit your app profile to the app gallery
+
+Developers are encouraged to begin producing their app profile as soon as they are able. However, a profile cannot be submitted for approval until the following prerequisites are met:
+
+* The app has been graduated to production. 
+* All required data has been provided about the app. 
+
+## How do I invite someone from my marketing team to create a profile?
+
+Not all software developers are the ideal individual within an organization to compose and manage an app's profile which serves a marketing function in the RingCentral App Gallery. 
+
+Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../inviting-developers/).
+
+## How do I publish my profile in the App Gallery?
 
 We recommend you get started by successfully creating and publishing an App Gallery Profile for the official RingCentral App Gallery. Let's begin. Login to the RingCentral Developer Console, then from your list of application, select the one you would like to promote, and then click the "App Gallery" tab. Then follow the steps below. 
+
+### Design your app's "app card"
+
+An app card is a tile that is shown through out the RingCentral app gallery ecosystem in collections, categories, and other pages where apps are listed together. An app card consists of three components:
+
+1. App icon
+2. Display name
+3. Short description
+
+<figure class="figure">
+  <img class="img-fluid mx-auto d-block" src="../app-card.png" style="max-width: 500px">
+  <figcaption class="figure-caption text-center">Example app card</figcaption>
+</figure>
+
+An app card can be edited in two locations: the app's settings screen, and the app's profile editing screen. 
+
+<figure class="figure">
+  <img class="img-fluid mx-auto d-block" src="../app-card-editor.png" style="max-width: 500px">
+  <figcaption class="figure-caption text-center">App card editor as seen in app settings</figcaption>
+</figure>
 
 ### Create an app gallery profile
 
@@ -25,15 +58,82 @@ If you have already published an app gallery profile, you will see an option to 
 
 <img class="img-fluid mx-auto d-block" src="../promote-1b.png" style="max-width: 500px">
 
-Finally, some developers may still be using our legacy profile editing experience, which requires developers to manage each app gallery listing independently. You will know if your app is still using this legacy system if your App Gallery tab looks like the following screenshot.
-
-<img class="img-fluid mx-auto d-block" src="../promote-1.png" style="max-width: 400px">
-
 ### Tell us about your app
 
-Use the app gallery profile editor to compose a profile that is both informative and attractive to potential customers. Our editor will prompt you not only for content that will be displayed publicly in the app gallery, but also information RingCentral administrators will use to help you promote your app throughout our app gallery network. 
+Use the profile editor to compose a profile that is both informative and attractive to potential customers. Our editor will prompt you not only for content that will be displayed publicly in the app gallery, but also information RingCentral administrators will use to help you promote your app throughout our app gallery network. 
 
-<img class="img-fluid mx-auto d-block" src="../promote-2.png" style="max-width: 500px">
+#### Enter basic organizational info
+
+The name we publish as the developer of the app is determined by your organization's developer profile. That name is easily edited by navigating to the "Organization" tab within the Developer Console. 
+
+<img class="img-fluid mx-auto d-block" src="../profile-org-info.png" style="max-width: 500px">
+
+You will also need to provide us with your company's website URL in the "Organization info" section of the editor. 
+
+Some developers may also see a "Lead email" field. This field is made available exclusively to Premier Partners and allows partners to collect and download leads from people who visit and share their information via the App Gallery. 
+
+<img class="img-fluid mx-auto d-block" src="../profile-info.png" style="max-width: 500px">
+
+#### Upload screenshots and videos
+
+Arguably one of the most important aspects of your app's profile is the set of screenshots and videos you will upload. This will help customers visualize your product and how it specifically integrates with RingCentral. 
+
+<img class="img-fluid mx-auto d-block" src="../profile-screenshots.png" style="max-width: 500px">
+
+!!! hint "Screenshot and media best practices"
+    The following will help you know what types of media lead to the best conversion rates with customers:
+	
+	* **Showcase your integration**. It is not enough to only showcase your own product without also showing the functionality that is introduced once integrated with RingCentral.
+	* **Videos are king**. Customers want to see the integration in action so they understand how they will use it, and how it will bring them value. 
+	* **Augment screenshots with text**. Tell the story of your integration's experience with words and pictures. Highlight the values you bring with text. 
+	* **Clear, hires images matter**. Take care to produce high-quality screenshots. Don't be afraid to zoom-in to highlight a specific part of your UI. Make sure your screenshots are high-resolution and don't pixelate. Quality really does matter.
+
+#### Provide a name and detailed description
+
+Your detailed description starts with a "profile name." This is the title as it will appear to search engines and to customers when they visit your profile. Whereas your app's display name is how your app will be present internally within our app (on app cards, in OAuth flows, and elsewhere). We differentiate between profile and display names, to allow the page used for marketing purposes (the profile) to contain a richer, more complete name. This provides for greater SEO to help customers find your app via search. We recommend a profile name that follows this pattern:
+
+    <Name of app> for {{ PARTNER_NAME }}
+
+When the profile is published, `{{ PARTNER_NAME }}` will be substituted with the name of the partner's app gallery, as an app can be promoted within multiple app galleries. For example:
+
+    My app name for {{ PARTNER_NAME }}
+
+Will produce profiles with the following names:
+
+* "My app name for RingCentral"
+* "My app name for Office@Hand"
+* "My app name for Avaya Cloud Office"
+* etc. 
+
+The detailed description of your integration tells customers what your integration does, what value and benefits it provides, and how it does it. It not only helps to market your integration, but also serves as your integration's documentation. Therefore, the more information you provide, the better. 
+
+<img class="img-fluid mx-auto d-block" src="../profile-description.png" style="max-width: 500px">
+
+!!! hint "Description best practices"
+    Treat your detailed description as you would your integration's documentation. As such, be sure to include the following:
+	
+	* A list of your integration's benefits
+	* A list of features your integration provides
+	* Installation instructions
+	* How to use your integration
+	* Prerequisites admins should know about prior to using your integration
+
+#### Share helpful links and documents
+
+RingCentral will display a set of links and resources alongside your profile. We consider all of these links to be essential, even if they are not required. Please provide a link to your app's documentation, terms of service, your privacy policy, and a link to where customers can get support. 
+
+You can optionally link to other documents as you see fit. These could be whitepapers, support resources and knowledge base articles, marketplaces, and more. 
+
+#### Help us promote your app in the right place
+
+Finally, you can help RingCentral promote your app through the right channels by telling us where and how best to do that. Use the Promotion area to:
+
+* Which [partners and app galleries](../partner-compatibility/) to promote your app within
+* If you app has implemented the [additional technical requirements](../partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
+* Any categories your app should be promoted within (select up to 3)
+* What products your integration is meant to specifically extend
+
+<img class="img-fluid mx-auto d-block" src="../profile-promotion.png" style="max-width: 500px">
 
 Click "Save as draft" to save your work and come back later to finish. When you are finished, click "Submit for approval" to continue on to the next step. 
 

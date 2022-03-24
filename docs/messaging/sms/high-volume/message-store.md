@@ -1,6 +1,6 @@
 # High Volume SMS Message Store
 
-The high volume SMS message store is separate from the standard SMS (P2P) message store. Use the APIs in the table below to access your high volume SMS message store.
+The high volume SMS message store is separate from the standard SMS(Enhanced Business SMS) message store. Use the APIs in the table below to access your high volume SMS message store.
 
 | API Endpoint | Description |
 |-|-|

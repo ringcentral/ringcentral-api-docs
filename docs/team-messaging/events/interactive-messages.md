@@ -13,11 +13,14 @@ Currently, the only event RingCentral will transmit to your app is one relating 
 
 ## Responding to interactive message events
 
-Upon receiving an interactive messaging event, applications should respond with an HTTP status code of 200 in order to acknowledge receipt of the event. A developer should respond this way even if an error occurred while processing the event. If a developer includes a payload in their response, then RingCentral will assume an error occurred, and will look to the payload to determine what message should be displayed to the user. 
+Upon receiving an interactive messaging event, applications should respond with an HTTP status code of 200 in order to acknowledge receipt of the event. A developer should respond this way even if an error occurred while processing the event. If a developer includes a payload in their response, then RingCentral will assume an error occurred and display an error indicator to the user. 
+
+<!--
 
 If an app responds with any other HTTP status code other than 200, the body of the response (typically a simple plain text string) will be displayed to the user in the client, and the entire transaction will be considered a failure. 
 
 If an app fails to acknowledge receipt within five seconds of an interactive messaging event, RingCentral will interpret that delivery a failure. RingCentral will *not* attempt any redelivery of an event. 
+
 
 ### Response schema
 
@@ -37,10 +40,6 @@ The structure of a response should conform to the following schema:
 }
 ```
 
-<!--
-**Example error as seen within the client**
-
-!!! danger "TODO - insert a screenshot of what an error message will look like"
 -->
 
 ## Verifying the authenticity of an event

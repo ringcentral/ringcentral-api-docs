@@ -85,7 +85,6 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
-    - 'SMS Content Policies': 'messaging/sms-content-policy.md'
     - 'Getting Started': 'messaging/quick-start.md'
     - 'Standard SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
@@ -156,18 +155,19 @@ pages:
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
-    - 'RingCentral Add-ins':
+    - 'RingCentral add-ins':
       - 'Introduction': 'team-messaging/add-ins/index.md'
       - 'Developer tools': 'team-messaging/add-ins/tools.md'
 
-    - 'Build a notification app':
+    - 'Notification apps':
       - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
       - 'Integrated installation': 'team-messaging/add-ins/installation.md'
       - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
 
-    - 'Build a bot':
+    - 'Bots':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
       - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
+      - 'Installing/removing bots': 'team-messaging/bots/installing-bots.md'
 #      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
 #      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
@@ -187,10 +187,23 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Call Aggregate reports': 'analytics/call-performance.md'
+    - 'Call Aggregate reports': 'analytics/aggregate.md'
     - 'Call Timeline reports': 'analytics/timeline.md'
     - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
     - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
+
+  - 'Accounts and Users':
+    - 'Overview': 'account/index.md'
+    - 'Users and Extensions': 'account/extensions.md'
+    - 'Phone Numbers': 'account/phone-numbers.md'
+    - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
+    - 'User Feature Flags': 'account/feature-flags.md'
+    - 'Custom Fields': 'account/custom-fields.md'
+    - 'Presence': 'account/presence.md'
+    - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
+    - 'Address Book':
+      - 'Overview': 'address-book/index.md'
+
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
@@ -222,52 +235,41 @@ pages:
   - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
 
   - 'Applications':
-      - 'Development Lifecycle':
+      - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
           - 'Create an application': 'basics/create-app.md'
           - 'Develop in sandbox': 'basics/sandbox.md'
           - 'Graduate to production': 'basics/production.md'
-      - 'App Promotion':
+      - 'App promotion':
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
-          - 'Update a Profile': 'basics/update-profile.md'
-          - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
-      - 'Application Management':
+          - 'Updating a profile': 'basics/update-profile.md'
+          - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
+      - 'Application management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Partner Ecosystem':
-          - 'Overview': 'basics/partner-compatibility.md'
-          - 'Technical Requirements': 'basics/partners/segregated-environments.md'
-          - 'Brand Guidelines':
-             - 'AT&T Office@Hand': 'basics/partners/att.md'
-             - 'Avaya Cloud Office': 'basics/partners/aco.md'
-             - 'BT Cloud Work': 'basics/partners/bt.md'
-             - 'Rainbow Office': 'basics/partners/alcatel.md'
-             - 'TELUS Business Connect': 'basics/partners/telus.md'
-             - 'Unify Office': 'basics/partners/atos.md'
-
-  - 'Account':
-    - 'Overview': 'account/index.md'
-    - 'Users and Extensions': 'account/extensions.md'
-    - 'Phone Numbers': 'account/phone-numbers.md'
-    - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
-    - 'User Feature Flags': 'account/feature-flags.md'
-    - 'Custom Fields': 'account/custom-fields.md'
-    - 'Presence': 'account/presence.md'
-    - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
+      - 'Partner ecosystem':
+          - 'Overview': 'basics/partners/index.md'
+          - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
+          - 'Authentication guidance': 'basics/partners/auth.md'
+          - 'Technical requirements': 'basics/partners/segregated-environments.md'
 
   - 'Authentication':
-    - 'Overview': 'authentication/index.md'
-    - 'Getting Started': 'authentication/quick-start.md'
-    - 'Supported auth flows':
+    - 'Choosing the best auth': 'authentication/index.md'
+    - 'JWT grant type':
+      - 'Getting started': 'authentication/jwt/quick-start.md'
+      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
+      - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
+      - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
+    - 'Auth code grant type':
+      - 'Getting Started': 'authentication/quick-start.md'
+      - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
+    - 'Using access tokens': 'authentication/tokens.md'
+    - 'Using refresh tokens': 'authentication/refresh-tokens.md'
+    - 'Technical deep-dives':
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
-    - 'Using access tokens': 'authentication/tokens.md'
-    - 'Using refresh tokens': 'authentication/refresh-tokens.md'
-
-  - 'Address Book':
-    - 'Overview': 'address-book/index.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'

@@ -1,26 +1,34 @@
-# RingCentral API Rate Limits
+# RingCentral API rate limits
 
-## What is a Rate Limit?
+## What is a rate limit?
 
-A "rate limit" is a policy that affects the frequency an API can be called. They are put in place to protect server infrastructure from being abused or misused. RingCentral employs them to enable consistent load allocation with our platform.
+A "rate limit" is a policy that affects the frequency an API can be called. They are put in place to protect server infrastructure from abuse or misuse. RingCentral employs rate limits to enable consistent load allocation across our platform.
 
-## Applying Rate Limits
+## How are rate limits calculated?
 
-RingCentral groups APIs into four different buckets where each bucket is restricted to a different rate limit. This allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. The four groups are: 
+Every RingCentral API is assigned to a different "API Group" which determines the default rate limit that an application will be subject to when called that API. This allows each API to be assigned a rate limit based upon the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. 
+
+The four basic rate limit groups are below. Please note that the rate limits and throttle intervals are provided as an example only, as they can be customized and therefore may vary from app to app.
 
 | API Group | Rate Limit | Throttle Interval | 
 |-|-|-|
-| Light | 50 requests/minute | 60 seconds |  
-| Medium | 40 requests/minute | 60 seconds |  
-| Heavy | 10 requests/minute | 60 seconds |  
-| Auth | 5 requests/minute | 60 seconds |  
+| Light | 50 requests/minute | 60 seconds |
+| Medium | 40 requests/minute | 60 seconds |
+| Heavy | 10 requests/minute | 60 seconds |
+| Auth | 5 requests/minute | 60 seconds |
 
-Every API endpoint is assigned to a different group, which can be discovered via the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "API Group."
+Rate limits can be customized and vary in the following ways:
+* Rate limits can be assigned to different time intervals, e.g. n calls per minute, per hour, per 5 minutes, etc. 
+* API Groups may also support multiple limits per group, based upon the unique needs and the APIs called by an app.
+
+## How do I determine the rate limit associated with an API?
+
+Every API endpoint is assigned to a different "API group." The API group for every API is disclosed on its corresponding page in the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "API Group."
 
 !!! hint "Your exact rate limit may vary"
     Bear in mind that your rate limit may be different from the default values above if you have applied for and been granted a modification to your application's needs. See "What are your app rate limits" below.
 
-## What are your app rate limits?
+## What are the specific rate limits associated with my app?
 
 In addition to our default limits, RingCentral administrators have the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits." That will show you a page similar to the following:
 
@@ -28,20 +36,26 @@ In addition to our default limits, RingCentral administrators have the ability t
 
 Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute. If you exceed these limitations the server returns the `429 Too Many Requests` HTTP error code. It means that the client is throttled by the server due to high request rate. The retry period (in seconds) after which more requests can be sent, is specified in `Retry-After` response header.
 
-## How best to detect and respond to rate limits
+## How do I detect and respond to my app being throttled?
 
-### Rate Limits Response Headers
+When an app exceeds its rate limit, the platform will begin to throttle the app, prohibiting more API calls from being made. When this happens, any call to the API will result in a failure, with an HTTP status code of 429 being returned. 
 
-Rate Limits are returned in specific headers in response for each request, unless the request is unlimited. Those headers are:
+In addition, other HTTP headers are returned to signal to the developer what their limits are, and when they will be reset. This allows developers to code defensively around these potential failure conditions and implement retry logic as needed. 
+
+### Rate limit response headers
+
+Rate limits are communicated via specific HTTP headers that should be returned in a response for each request (although may not be present in 100% of responses), unless the request is unlimited. Those headers are:
 
 | Header | Description |
 |-|-|
-| `X-Rate-Limit-Group` | API group of the given request (*Light*, *Medium*, *Heavy*, *Auth*) | 
+| `X-Rate-Limit-Group` | API group of the given request (*Light*, *Medium*, *Heavy*, *Auth*). | 
 | `X-Rate-Limit-Limit` | current rate limit for the given request |
 | `X-Rate-Limit-Remaining` | the number of requests left for the time interval (window) of this rate limit |
 | `X-Rate-Limit-Window` | time interval in seconds for the given request rate limit |
+| `Retry-After` | the number of seconds to wait before attempting to make the same API call again |
 
-These headers are returned in order to enable apps to preemptively respond to circumstances in which their app may be impacted by a rate limit enforcement.
+!!! warning "`X-Rate-Limit-Group` header values subject to change"
+    Developers should be aware that the API group names may vary from app to app, and therefore developers should not create logic in their products that assumes the API group will be exclusively "Light," "Medium," "Heavy," or "Auth."
 
 #### Example
 

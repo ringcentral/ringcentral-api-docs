@@ -1,5 +1,8 @@
 # Password auth flow
 
+!!! warning "Please use the JWT auth flow"
+    In January 2022, RingCentral released a more secure alternative to the password grant type called "JWT." We recommend all developers use the [JWT flow](../jwt-flow/) going forward as eventually the password auth flow will be deprecated.
+
 The password-based authorization flow is among the simplest OAuth 2.0 authorization flows to implement. It is suitable mostly for apps that both lack a user interface, and/or that use a single set of credentials to act on behalf of everyone within an account. 
 
 This authorization flow presumes you are in possession of a user's login credentials. If so, then obtaining an access token is a two-step process:
