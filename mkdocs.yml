@@ -200,6 +200,7 @@ pages:
     - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
     - 'Presence': 'account/presence.md'
+    - 'Audit Trail': 'account/audit-trail.md'
     - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
     - 'Address Book':
       - 'Overview': 'address-book/index.md'
