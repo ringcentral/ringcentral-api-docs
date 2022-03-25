@@ -1,6 +1,5 @@
-# Introduction to SMS and fax messaging on RingCentral
-
-!!! info "Developers should familiarize themselves with [RingCentral's SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
+# Introduction to SMS and Fax Messaging on RingCentral
+!!! info "Developers should familiarize themselves with RingCentral's [SMS price changes](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html) and [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting started with SMS and Fax messaging</h3>
