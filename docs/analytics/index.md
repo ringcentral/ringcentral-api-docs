@@ -51,16 +51,16 @@ Theese APIs can be used to analyze various call related metrics as stated below:
 - Direction (Inbound or outbound calls)
 - Answered and not answered calls 
 - Types of calls answered and reasons for not answering 
-- Time  spent by the caller in phases of the call such as ringing, IVR prompt, live talk, hold etc.
+- Time spent by the caller in phases of the call such as Setup, Ringing, IVR prompt, Live Talk, Hold etc.
 - The times agents put the caller on hold, park, transferred during the call
 - How the call ended, did it end after live talk at specified extension or got transferred, or sent to voicemail etc.
 - Company Hours
-- The APIs provide data from the current dateime till previous 184 days for which you can set custom date and time ranges.
+- The APIs provide data from the current dateime till previous 184 days for which you can set custom date and time ranges
 
 
 ### How is LOB Analytics API different than Call Log API ?
 
-!!! info "Please beware of the known discrepencies between Call Log and Analytics APIs"
+!!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
     
 The Call Log API is suitable for hop-by-hop call analysis on individual call basis. The Analytics API is suitable for aggregate call analysis. The Analytics API also provides an easy way to filter out data by conditional logic such as filter calls on time spent in ringing, holds etc.
 
