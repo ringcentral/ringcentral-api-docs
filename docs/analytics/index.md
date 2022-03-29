@@ -62,6 +62,6 @@ Theese APIs can be used to analyze various call related metrics as stated below:
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
     
-The Call Log API is suitable for hop-by-hop call analysis on individual call basis. The Analytics API is suitable for aggregate call analysis. The Analytics API also provides an easy way to filter out data by conditional logic such as filter calls on time spent in ringing, holds etc.
+The Call Log APIs are suitable for detailed analysis on individual call. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely however, we are working towards minimizing the gap during beta stages of Analytics APIs.
 
 
