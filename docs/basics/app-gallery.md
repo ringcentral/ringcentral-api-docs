@@ -9,7 +9,7 @@ RingCentral is a platform that gives developers access to hundreds of thousands 
     
     AT&T Office@Hand and Verizon have [additional technical requirements](../partners/segregated-environments/) developers should be aware of as well.
     
-    Read our [Partner compatibility guide](../partner-compatibility/) to learn more.
+    Read our [Partner compatibility guide](../partners/) to learn more.
 
 ## Things to do before you submit your app profile to the app gallery
 
@@ -128,7 +128,7 @@ You can optionally link to other documents as you see fit. These could be whitep
 
 Finally, you can help RingCentral promote your app through the right channels by telling us where and how best to do that. Use the Promotion area to:
 
-* Which [partners and app galleries](../partner-compatibility/) to promote your app within
+* Which [partners and app galleries](../partners/) to promote your app within
 * If you app has implemented the [additional technical requirements](../partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
 * Any categories your app should be promoted within (select up to 3)
 * What products your integration is meant to specifically extend
