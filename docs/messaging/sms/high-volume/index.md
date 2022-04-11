@@ -37,9 +37,10 @@ RingCentral High Volume SMS supports the following key features:
 
     * Sending images, vcards and other files (MMS)
     * Group messaging (MMS)
-    * International SMS messaging
-    * Numbers outside the US and Canada
+    * International SMS messaging from US numbers
+    * SMS originating from numbers outside of the US and Canada
+    * Sending SMSes between US and Canada from 10DLC numbers is not supported (It's supported for Toll Free numbers)
     * Scheduling SMS in advance
-    * Developer sandbox
+    * Developer sandbox (to test and use the HV SMS APIs, you would need to request your application to be moved to production directly)
 
-    If you need to send files, communicate with a group, or send to international destinations, please consider our [standard SMS API](../../).
+    If you need to send files, communicate with a group, or send to international destinations, please consider our [Enhanced Business SMS API](../../).
