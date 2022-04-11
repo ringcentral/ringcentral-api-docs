@@ -2,7 +2,7 @@
 
 ## Customizing the branding of the login page
 
-When constructing a login URL to initiate the authorization process in a [3-legged Auth Flow](../../authentication/auth-code-flow), a query string parameter called `brandId` can be added to control which partner's logo will appear on the page as illustrated below.
+When constructing a login URL to initiate the authorization process in a [3-legged Auth Flow](../../../authentication/auth-code-flow), a query string parameter called `brandId` can be added to control which partner's logo will appear on the page as illustrated below.
 
 <img src="../login-avaya.png" class="img-fluid mx-auto" style="max-width: 350px">
 <img src="../login-unify-office.png" class="img-fluid mx-auto" style="max-width: 350px">
@@ -30,7 +30,7 @@ Remember, pay close attention to the following:
 * The `brandId` parameter will need to be customized based on the logo you want to appear on the login page.
 
 !!! warning "Additional AT&T Office@Hand and Verizon Technical Requirements"
-    Working with partners operating in a segregated environment, like AT&T Office@Hand and Verizon, comes with [additional technical requirements](../partners/segregated-environments/) in order to meet the compliance and security requirements mandated by their products.
+    Working with partners operating in a segregated environment, like AT&T Office@Hand and Verizon, comes with [additional technical requirements](../segregated-environments/) in order to meet the compliance and security requirements mandated by their products.
 
 ## Appendix: custom login buttons
 

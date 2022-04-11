@@ -25,7 +25,7 @@ RingCentral has forged strategic relationships with a number of service provider
 | Service Name       | Brand Id | Provider | Primary Color | Languages  | Geographies | Logo                                                                               |
 |--------------------|----------|----------|---------------|------------|-------------|------------------------------------------------------------------------------------|
 | AT&T Office@Hand   | `3420`   | AT&T     | #0A6EBE       | US English, UK English, Canadian French, French French, German, Italian, Spanish, and Dutch | United States, UK, Canada and 11 EU countries, including Netherlands, Ireland, Spain, Switzerland, Sweden, Austria, Belgium, Denmark, Germany, France and Italy. | <img alt="Office@Hand Logo" src="../logo_att.svg" style="max-width: 200px">        |
-| Avaya Cloud Office | `6010`   | Avaya    | #DA291C       | US English | United States  | <img alt="Avaya Cloud Office Logo" src="../logo_aco.jpg" style="max-width: 200px"> |
+| Avaya Cloud Office | `6010`   | Avaya    | #DA291C       | US English | United States  | <img alt="Avaya Cloud Office Logo" src="../logo_aco.jpg" width="200"> |
 | BT Cloud Work      | `7710`   | BT       | #5514B4       | UK English | United Kingdom | <img alt="BT Cloud Work Logo" src="../logo_bt.svg" style="max-width: 200px">       |
 | Rainbow Office     | `2110`   | Alcatel  | #6B489D       | US English, French, German  | France and Germany | <img alt="Rainbow Office Logo" src="../logo_rainbow.png" style="max-width: 200px"> |
 | TELUS Business Connect | `7310` | TELUS  | #66cc00       | US English, Canadian French | Canada      | <img alt="TELUS Logo" src="../logo_telus.svg" style="max-width: 200px">            |

@@ -9,7 +9,7 @@ RingCentral is a platform that gives developers access to hundreds of thousands 
     
     AT&T Office@Hand and Verizon have [additional technical requirements](../partners/segregated-environments/) developers should be aware of as well.
     
-    Read our [Partner compatibility guide](../partner-compatibility/) to learn more.
+    Read our [Partner compatibility guide](../partners/) to learn more.
 
 ## Things to do before you submit your app profile to the app gallery
 
@@ -88,9 +88,22 @@ Arguably one of the most important aspects of your app's profile is the set of s
 	* **Augment screenshots with text**. Tell the story of your integration's experience with words and pictures. Highlight the values you bring with text. 
 	* **Clear, hires images matter**. Take care to produce high-quality screenshots. Don't be afraid to zoom-in to highlight a specific part of your UI. Make sure your screenshots are high-resolution and don't pixelate. Quality really does matter.
 
-#### Provide a detailed description
+#### Provide a name and detailed description
 
-Your detailed description starts with a "profile name." This is the title as it will appear to search engines and to customers when they visit your profile. Whereas your app's display name is how your app will be present internally within our app, your profile name is how it will appear to the outside world. In this way, it is often beneficial to use a richer name to describe your integration. 
+Your detailed description starts with a "profile name." This is the title as it will appear to search engines and to customers when they visit your profile. Whereas your app's display name is how your app will be present internally within our app (on app cards, in OAuth flows, and elsewhere). We differentiate between profile and display names, to allow the page used for marketing purposes (the profile) to contain a richer, more complete name. This provides for greater SEO to help customers find your app via search. We recommend a profile name that follows this pattern:
+
+    <Name of app> for {{ PARTNER_NAME }}
+
+When the profile is published, `{{ PARTNER_NAME }}` will be substituted with the name of the partner's app gallery, as an app can be promoted within multiple app galleries. For example:
+
+    My app name for {{ PARTNER_NAME }}
+
+Will produce profiles with the following names:
+
+* "My app name for RingCentral"
+* "My app name for Office@Hand"
+* "My app name for Avaya Cloud Office"
+* etc. 
 
 The detailed description of your integration tells customers what your integration does, what value and benefits it provides, and how it does it. It not only helps to market your integration, but also serves as your integration's documentation. Therefore, the more information you provide, the better. 
 
@@ -115,7 +128,7 @@ You can optionally link to other documents as you see fit. These could be whitep
 
 Finally, you can help RingCentral promote your app through the right channels by telling us where and how best to do that. Use the Promotion area to:
 
-* Which [partners and app galleries](../partner-compatibility/) to promote your app within
+* Which [partners and app galleries](../partners/) to promote your app within
 * If you app has implemented the [additional technical requirements](../partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
 * Any categories your app should be promoted within (select up to 3)
 * What products your integration is meant to specifically extend
