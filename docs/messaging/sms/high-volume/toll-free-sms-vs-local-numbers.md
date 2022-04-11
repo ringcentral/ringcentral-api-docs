@@ -27,7 +27,7 @@ If you don't have a number already, log into the [Account Portal](https://servic
 
 ["Phone System" > "All Numbers" > "+ Add Number"](https://service.ringcentral.com/application/company/phoneNumbers/allNumbers)
 
-Once you have a number, it will be initially provisioned for standard SMS (Enhanced Business SMS). To configure a number for High Volume (non-consumer-A2P) use, enroll in the [High Volume SMS beta program](https://gamechanging.dev/sms)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
+Once you have a number, it will be initially provisioned for Enhanced Business SMS. To configure a number for High Volume (non-consumer-A2P) use, enroll in the [High Volume SMS beta program](https://gamechanging.dev/sms)</a> and indicate which numbers you want to convert. After your number has been provisioned for High Volume SMS, you can verify the configuration with the steps in the next section on listing valid High Volume SMS numbers.
 
 ## Listing Valid High Volume SMS Numbers
 
