@@ -94,7 +94,7 @@ Next, determine who will have access to your application. The terms "public" and
 If you are creating a public application that will be marketed exclusively to RingCentral customers, then we strongly recommend you select "make available to all current and future RingCentral carrier and brand partners." Doing so will ensure your app will be promoted to the largest possible customer base around the world. 
 
 !!! tip "Maximize the reach of your application!"
-    RingCentral works with a number of partners who white-label the RingCentral platform for their respective markets. Our partners include BT, Telus, Avaya and AT&T. [Learn more about about building apps for these partners &raquo;](../partner-compatibility/)
+    RingCentral works with a number of partners who white-label the RingCentral platform for their respective markets. Our partners include BT, Telus, Avaya and AT&T. [Learn more about about building apps for these partners &raquo;](../partners/)
 
 Select "make available only to specific carrier and brand partners" only if your app should be restricted to be used with one partner or another. 
 
