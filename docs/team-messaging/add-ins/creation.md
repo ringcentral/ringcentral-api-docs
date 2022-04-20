@@ -1,8 +1,5 @@
 # Building a RingCentral Notification Add-in
 
-!!! alert "Notification add-ins currently in BETA"
-    There are some issues currently impacting the developer experience around the creation of notification add-ins. Specifically, it is difficult to install add-ins into the Developer sandbox. Therefore, we recommend waiting to begin development until October 28, 2021 when developers will be able to install add-ins via the Developer Console. 
-
 A RingCentral notification add-in is a specialized app type intended to help developers deliver messages to the teams into which these apps are installed, in response to events and triggers that happen outside of RingCentral.
 
 A simple example of a notification add-in that most developers can quickly grok is the Github app that posts a message to team whenever a pull request is submitted to a github respository.
