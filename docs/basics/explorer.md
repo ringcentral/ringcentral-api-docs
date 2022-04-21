@@ -35,6 +35,9 @@ Scroll to the "SMS section" of the API Explorer. You should see this:
 
 Click the "Sign-in to try it out" button, and login to your developer account. When you are done, click the "Change App" button.
 
+!!! warning "Apps configured for JWT auth will not work"
+    Currently, apps configured for JWT authentication cannot be used to call to call the API from within the API Reference. Please select an app configured for the Auth code flow. 
+
 <img src="../../../img/api-expl-change.png" class="img-fluid">
 
 Then select the app your created in the first step.
