@@ -9,7 +9,7 @@ no_breadcrumb:true
 
   <div class="card bg-light bg-gradient" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Build your first app!</h5>
+      <h5 class="h3 card-title">Build your first app</h5>
       <h6 class="h4 card-subtitle mt-0 mb-2">New to RingCentral? Build your first application in minutes with a Quick Start Guide.</h6>
       <p class="card-text">The following guides assist developers in getting started in each of our major APIs:</p>
       <ul class="pl-0 ml-4 pb-2">
@@ -23,7 +23,7 @@ no_breadcrumb:true
 
   <div class="card bg-light bg-gradient" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Introducing the Add-in Framework!</h5>
+      <h5 class="h3 card-title">Create an add-in</h5>
       <h6 class="h4 card-subtitle mt-0 mb-2">Add-ins deliver meaningful and interactive content to messaging teams where people can take action on it.</h6>
       <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4 pb-2">

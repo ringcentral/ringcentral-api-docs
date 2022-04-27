@@ -36,7 +36,7 @@ copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
 #google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
-pages:
+nav:
 
 # ---- CORE APIs ----
 - 'Primary':
