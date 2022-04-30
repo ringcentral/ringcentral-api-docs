@@ -92,18 +92,20 @@ Arguably one of the most important aspects of your app's profile is the set of s
 
 Your detailed description starts with a "profile name." This is the title as it will appear to search engines and to customers when they visit your profile. Whereas your app's display name is how your app will be present internally within our app (on app cards, in OAuth flows, and elsewhere). We differentiate between profile and display names, to allow the page used for marketing purposes (the profile) to contain a richer, more complete name. This provides for greater SEO to help customers find your app via search. We recommend a profile name that follows this pattern:
 
-    <Name of app> for {{ PARTNER_NAME }}
+    <Name of app> for {{ partner.full_name }}
 
-When the profile is published, `{{ PARTNER_NAME }}` will be substituted with the name of the partner's app gallery, as an app can be promoted within multiple app galleries. For example:
+When the profile is published, `{{ partner.full_name }}` will be substituted with the name of the partner's app gallery, as an app can be promoted within multiple app galleries. For example:
 
-    My app name for {{ PARTNER_NAME }}
+    My app name for {{ partner.full_name }}
 
 Will produce profiles with the following names:
 
 * "My app name for RingCentral"
-* "My app name for Office@Hand"
+* "My app name for AT&T Office@Hand"
 * "My app name for Avaya Cloud Office"
 * etc. 
+
+Learn more about these "[profile variables](../app-gallery-variables/)."
 
 The detailed description of your integration tells customers what your integration does, what value and benefits it provides, and how it does it. It not only helps to market your integration, but also serves as your integration's documentation. Therefore, the more information you provide, the better. 
 
