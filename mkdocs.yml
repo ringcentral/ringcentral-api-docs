@@ -244,6 +244,7 @@ nav:
           - 'Graduate to production': 'basics/production.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
+          - 'Using profile variables': 'basics/app-gallery-variables.md'
           - 'Updating a profile': 'basics/update-profile.md'
           - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
       - 'Application management':
