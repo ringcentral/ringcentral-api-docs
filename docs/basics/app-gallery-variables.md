@@ -27,9 +27,22 @@ These variables can be utilized within conditional statements as well, like so:
     This text only appears on the Office@Hand App Gallery profile.
     {{/if}}
 
+We currently support the following conditional operators:
+
+* `eq` or equal to
+* `ne` or not equal to
+
+
 Variables can also be manipulated using a wide array of [handlebar helpers](). The helper below for example will change the partner's name to all uppercase. 
 
-    {{loud partner.full_name}}
+    {{uppercase partner.full_name}}
+
+Here are list of helpers:
+
+* `lowercase`
+* `uppercase` 
+* `replace`
+* `replaceAll`
 
 ## Recipes
 
@@ -67,3 +80,13 @@ Perhaps you would like to link to a login page that contains the partner's brand
 Those URL's are constructed like so:
 
     https://login.ringcentral.com/?brandId={{partner.id}}
+
+### Simple string replacement
+
+You can perform string replacement using two different helpers.
+
+    {{replace partner.full_name '@' 'at'}}
+
+Replace all spaces with hyphens:
+
+    {{replaceAll partner.full_name ' ' '-'}} 
