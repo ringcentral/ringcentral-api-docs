@@ -24,6 +24,30 @@ Not all software developers are the ideal individual within an organization to c
 
 Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../inviting-developers/).
 
+## In what app galleries will my profile appear?
+
+Your profile once submitted and approved will automatically be published in the app galleries associated with the partners your app is configured for. To change where your app is promoted, login to the Developer Console, and edit your app's settings.
+
+### Making your app available to all customers (recommended)
+
+By default, your app will be made available to all RingCentral customers, brand partners, and carrier partners. We recommend this setting for most apps to maximize the distribution potential for your product. 
+
+<figure class="figure">
+  <img class="img-fluid mx-auto d-block" src="../app-gallery-public-app.png" style="max-width: 500px">
+  <figcaption class="figure-caption text-center">Your app will be made available to <em>all partners and app galleries</em></figcaption>
+</figure>
+
+### Making your app available to only select carriers and partners
+
+If you wish to only make your app available to specific partners, then expand "Advanced settings", and select "Make available only to specific service providers and brand partners." Then, select the partners you wish to make your app available to. By selecting a partner, you authorize RingCentral to promote your app in that partner's app gallery. 
+
+<figure class="figure">
+  <img class="img-fluid mx-auto d-block" src="../app-gallery-partners.png" style="max-width: 500px">
+  <figcaption class="figure-caption text-center">Your app will be made available to select partners only</figcaption>
+</figure>
+
+!!! tip "Customize your profile for each partner using [variables](../app-gallery-variables/)"
+
 ## How do I publish my profile in the App Gallery?
 
 We recommend you get started by successfully creating and publishing an App Gallery Profile for the official RingCentral App Gallery. Let's begin. Login to the RingCentral Developer Console, then from your list of application, select the one you would like to promote, and then click the "App Gallery" tab. Then follow the steps below. 
@@ -152,13 +176,6 @@ Be sure to save your app profile often as you go, and to preview it to see what 
 ### Submit your application for review
 
 Before your app can be listed in an app gallery, the RingCentral team will first review your app and will make recommendations to help you improve your app profile to better reach our customer base.
-
-Upon clicking "Submit for approval" you will be asked to confirm in which app galleries you would like your profile published.
-
-<img class="img-fluid mx-auto d-block" src="../promote-3.png" style="max-width: 500px">
-
-??? tip "Don't see the app gallery you are looking for?"
-    The list of app gallery profiles you are able to create is dependent upon what partners you enabled your app for when it was created. Unfortunately you cannot edit this list yourself after the app is created. To obtain help in making these changes, please [login and submit a help ticket](https://developers.ringcentral.com/support/create-case) with our Developer Support Team.
 
 ??? tip "You can only submit your application for approval, after the app has graduated."
     The [graduation process](../production/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
