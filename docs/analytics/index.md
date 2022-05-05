@@ -5,7 +5,7 @@ no_breadcrumb:true
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Getting Started with Analytics APIs</h3>
   <p class="lead">The RingCentral Line of Business (LOB) Analytics APIs gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
-  <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a Quick Start : in any of the following languages:</p>
+  <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a quick start guide in any of the following languages:</p>
   <a href="quick-start/#Javascript" class="btn btn-light qs-link">JavaScript &raquo;</a>
   <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
   <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
