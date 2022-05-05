@@ -1,8 +1,12 @@
-# Using the Analytics API to assess performance during specific time periods
+# Call Timeline Reports
 
-## Composing a request to the Call Performance Timeline API
+It is quite common to acquire and segment analytics data based on time realted metrics. Call Performance Timeline API provides ability to segment call realted data in various ways such as by getting call duration based on response or actions etc. For more information regarding common use cases, please refer to the [overview section](index.md) and for detailed information regarding how to compose API Request, please refer to the data guide below.
 
-Please refer to our [API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/performanceReportCallsTimeline) for details about Timeline API Endpoint.
+## Composing a request using RingCentral API Reference
+
+One can use our [interactive API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/performanceReportCallsTimeline) to not only create API Request but also run it interactively and see the response.
+
+## API Definition Guide
 
 ### Controlling what to aggregate/group data by
 
@@ -10,6 +14,7 @@ The `groupBy` element allows users to specify data scope. All the data retrieved
 
 |GroupBy (API)	| Description |
 |---|---|
+| WholeCompany | This grouping will return call data for the entire company. |
 | Users | This grouping will return call data for individual mailboxes. When users are added in the grouping, then response provides call data aggregated at user level.  |
 | DepartmentMembers | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
 | UserGroupMembers | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
