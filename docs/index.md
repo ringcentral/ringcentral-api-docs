@@ -14,8 +14,8 @@ no_breadcrumb:true
       <p class="card-text">The following guides assist developers in getting started in each of our major APIs:</p>
       <ul class="pl-0 ml-4 pb-2">
       <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS API</strong>.</li> 
-      <li><a href="./voice/quick-start/">Make a phone call</a> using Ringout in our <strong>Voice API</strong>.</li> 
-      <li><a href="./team-messaging/quick-start/">Create a team chat</a> using our <strong>Team Messaging API</strong></li>
+      <li><a href="./voice/quick-start/">Make a phone call</a> using our <strong>Voice API</strong>.</li> 
+      <li><a href="./team-messaging/quick-start/">Create a team</a> with our <strong>Team Messaging API</strong></li>
       <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
       </ul>
     </div>
