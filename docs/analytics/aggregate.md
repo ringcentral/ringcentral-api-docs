@@ -1,16 +1,28 @@
-# Using the Analytics APIs to access call performance aggregate data
+# Obtaining Aggregate Call Performance Data
 
-## Composing a request to the Call Performance Aggregate API
+It is quite common to acquire and segment call related data for reporting or analysis. Call Performance Aggregate API provides the ability to aggregate call related data in various ways such as by summing, averaging, getting minimum or maximum or percentage of data etc. Line of business managers can make incentive, allocation, or training decisions by looking at total answered calls vs not answered calls per agent, or by looking at the average abandonment rate for an agent, or by checking the total handle time for each agent.
 
-Please refer to our [API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/aggregatePerformanceReportCalls) for details about Aggregate API Endpoint.
+Example Use Cases:
 
-### Controlling what to aggregate/group data by
+- How many calls are being answered over a particular period?
+- What does the abandonment rate look like?
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type.  If this field is undefined or null, the response will contain one record with data aggregated by whole company.
+For more information, please refer to the [overview section](index.md).
+
+## Composing a request using RingCentral API Reference
+
+One can use our [interactive API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/aggregatePerformanceReportCalls) to not only create API Request but also run it interactively and see the response.
+
+## API Definition Guide
+
+### Controlling what to group data by
+
+The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type.  If this field is undefined or null, the response will contain one record with data aggregated by the whole company.
 
 |GroupBy (API)	| Description |
 |---|---|
-| Users | This grouping will return call data for individual mailboxes. When users are added in the grouping, then response provides call data aggregated at user level.  |
+| WholeCompany | This grouping will return call data for the entire company. |
+| Users | This grouping will return call data for individual mailboxes. When users are added to the grouping, the response provides call data aggregated at the user level.  |
 | DepartmentMembers | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
 | UserGroupMembers | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
 | QueueAgents | This grouping will return call data for individual users under Queues. Specify Ids of queues along with this grouping which will provide aggregated call data for users under those queues.
@@ -34,13 +46,13 @@ The `groupBy` element allows users to specify data scope. All the data retrieved
 }
 ```
 
-### Setting the timeframe of your request
+### Setting the timeframe of the request
 
 The `timeSettings` element allows users to specify the datetime range for which the calls will be aggregated. The call is considered to be within time range if it was started within that range. 
 
-The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability include/exclude weekdays and set timezone and working hours. 
+The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set timezone and working hours. 
 
-In the below example, under advancedTimeSettings, timeZone can be specified, include Days will allow users to add weekdays of choice, and Includehours will allow users to filter data for custom hours (format hh: mm) for specified date-time range under timeRange section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer by timeframes
+In the below example, under `advancedTimeSettings`, `timeZone` can be specified, `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add `grouping` as necessary to make sure that the data received is aggregated by counter & timer.
 
 **Example**
 
@@ -65,9 +77,9 @@ In the below example, under advancedTimeSettings, timeZone can be specified, inc
 }
 ```
 
-### Response options
+### Customizing Data Response
 
-The `responseOptions` element allows users to specify call aggregation breakdown and it’s data aggregation types for API response. These response options will get sliced and diced by using additional filters section in API request.
+The `responseOptions` element allows users to specify call aggregation breakdown and its data aggregation types for API response. These response options will get sliced and diced by using the additional filters section in the API request.
 
 The `counters` element provides aggregation on Call volume by specified metrics. The metrics can be provided in the counter section under the response option. Every response section has an option to specify aggregation type & Interval. The supported types are Sum, Average, Min, Max, Percent, and Interval is Hour, Day, Week, Month.
 
@@ -125,27 +137,25 @@ The `timers` element provides aggregation for time spent on the call. The metric
   
 ### Filtering your dataset even more
 
-The `additionalFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both counter and timer section. Detailed splits of these section can be found in Data Dictionary below.
+The `additionalFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both `counter` and `timer` section. Detailed splits of these sections can be found in Data Dictionary below.
 
 |Filters list|Purpose|
 |---|---|
-| direction | Specifies whether the call was inbound or outbound relative to the scope specified in grouping object. Not applicable to internal calls with company scope (when grouping is not specified).|
+| direction | Specifies whether the call was inbound or outbound relative to the scope specified in the grouping object. Not applicable to internal calls with company scope (when grouping is not specified).|
 | origin | Specifies whether an external party was present in the initial segment of the call. |
-| callResponse | Aggregation of calls by first response. |
+| callResponse | Aggregation of calls by the first response action. |
 | callResult | Aggregation of calls by the nature of call result. |
-| callSegments | Aggregation of calls by presence of specific segment. |
-| callActions | Aggregation of calls by presence of specific action. |
+| callSegments | Aggregation of calls by the presence of specific segment. |
+| callActions | Aggregation of calls by the presence of specific action. |
 | companyHours | Aggregation of calls by company's business hours or after hours. |
 | callDuration | aggregation of calls based on the overall call length
-| timeSpent | aggregation of calls based on the time spent by specified mailbox(es) on call. |
+| timeSpent | aggregation of calls based on the time spent by the specified mailbox(es) on call. |
 | callerExtensionIds | List of extension Ids from which users specified in groupBy received calls. |
 | calledExtensionIds | List of extension Ids to which users specified in groupBy placed calls. |
 | calledNumbers | The direct company numbers the caller called. |
-queueSla | This filter allows to get aggregation of calls that were either within or out of queue SLA. |
-| callType | Allows to get aggregation of calls based on how the call started from the callee perspective. |
+queueSla | To get aggregate of calls that were either in or out of a particular queueSLA. |
+| callType | To get aggregate of calls based on how the call started from the callee perspective. |
 |
-
-These filters can be applied to slice and dice the data as needed and can be done in additionalfilters section. 
 
 **Example**
 
