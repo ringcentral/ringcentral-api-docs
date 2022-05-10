@@ -23,45 +23,47 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 
 ### Running the Developer Guide locally
 
-The Developer Guide is built on top of Mkdocs, a self-contained documentation server. Writers are encourages to install Mkdocs locally so that you can edit files and preview your changes before they are pushed to production servers. 
+The Developer Guide is built on top of Mkdocs, a self-contained documentation server. Writers are encouraged to install Mkdocs locally so that you can edit files and preview your changes before they are pushed to production servers.
 
+```shell
+git clone https://github.com/ringcentral/ringcentral-api-docs.git
+cd ringcentral-api-docs
+pip install mkdocs
+pip install --upgrade mkdocs-ringcentral
+mkdocs serve
 ```
-$ git clone https://github.com/ringcentral/ringcentral-api-docs.git
-$ cd ringcentral-api-docs
-$ pip install mkdocs
-$ pip install --upgrade mkdocs-ringcentral
-$ mkdocs serve
-```
 
-Then you should be able to load http://localhost:8000 to view the documentation.
+Then you should be able to load <http://localhost:8000> to view the documentation.
 
-Please be aware that the local version of the Developer Guide utilizes a Mkdocs theme that *mimics* our main documentation site, but it is not the same -- hence some of the visual differences you may observe. When the Developer Guide is published officially, mkdocs is used to generate HTML files, and those HTML files are then loaded into a different presentation framework. 
+Please be aware that the local version of the Developer Guide utilizes a Mkdocs theme that *mimics* our main documentation site, but it is not the same -- hence some of the visual differences you may observe. When the Developer Guide is published officially, mkdocs is used to generate HTML files, and those HTML files are then loaded into a different presentation framework.
 
 ## How to test and verify code samples
 
-First, let's setup our python virtual environment within which the code checking framework will be run. We will do this from the root directory of `ringcentral-api-docs`. Then we will install the code checking framework within that virtual environment. 
+First, let's setup our python virtual environment within which the code checking framework will be run. We will do this from the root directory of `ringcentral-api-docs`. Then we will install the code checking framework within that virtual environment.
 
+```shell
+cd $GITHUB/ringcentral-api-docs
+python3 -m venv .
+source ./bin/activate
+python3 -m pip install --upgrade pip
+pip3 install mkdocs-codecheck
 ```
-$ cd $GITHUB/ringcentral-api-docs
-$ python3 -m venv .
-$ source ./bin/activate
-$ python3 -m pip install --upgrade pip
-$ pip3 install mkdocs-codecheck
-```
 
-The code checking framework can be installed via pip ([mkdocs-codecheck](https://pypi.org/project/mkdocs-codecheck)), or the bleeding edge version can be downloaded and installed from [github](https://github.com/byrnereese/codechecker-mkdocs). 
+The code checking framework can be installed via pip ([mkdocs-codecheck](https://pypi.org/project/mkdocs-codecheck)), or the bleeding edge version can be downloaded and installed from [github](https://github.com/byrnereese/codechecker-mkdocs).
 
-Next, you need to install all the various libraries and other prerequisites used within the code samples for all of the languages we support. 
+Next, you need to install all the various libraries and other prerequisites used within the code samples for all of the languages we support.
 
 **For python code samples**
-```
-$ pip install ringcentral
-$ pip install python-dotenv
+
+```shell
+pip install ringcentral
+pip install python-dotenv
 ```
 
 **For PHP code samples**
-```
-$ php composer.phar require ringcentral/ringcentral-php
+
+```shell
+php composer.phar require ringcentral/ringcentral-php
 ```
 
 **For Java code samples**
@@ -70,14 +72,13 @@ To test java code samples, you will need to make sure you have Java installed, a
 
 * RingCentral Java SDK
 * Jetty Util, Server and Servlet
-* J2EE 
+* J2EE
 * Gson
 * FastJSON
 
-
 STEPS to compile and run Java Sample Code using Maven (make sure maven build tool)
 
-```
+```shell
 git clone <this repository>
 cd ringcentral-api-docs/code-samples/java-samples
 mvn clean compile
@@ -85,47 +86,46 @@ mvn clean compile
 
 TODO (internal):
 
-1. Adjust mkdocs script for java so it no longer relies of CLASSPATH enviornment variable, instead uses maven to compile, run, test Java sample code.
+1. Adjust mkdocs script for Java so it no longer relies on CLASSPATH environment variable, instead uses maven to compile, run, test Java sample code.
 2. Add JUnit Tests
 
-**For DotNet and .cs code samples**
+### For DotNet and .cs code samples
 
 Mac and Linux users can install the `dotnet-sdk` package via brew:
 
-```
-$ brew install --cask dotnet-sdk
+```shell
+brew install --cask dotnet-sdk
 ```
 
 Then you will need to install the RingCentral SDK, globally:
 
+```shell
+dotnet tool install --global RingCentral.Net
 ```
-$ dotnet tool install --global RingCentral.Net
-```
-
 
 ### Create a .env file
 
-Create a `.env` file in the `code-samples` directory by copying and editing the provided template. This file will make reference to an app for which all permissions have been enabled. Embed that app's credentials in your `.env` in the appropriate fields. 
+Create a `.env` file in the `code-samples` directory by copying and editing the provided template. This file will make reference to an app for which all permissions have been enabled. Embed that app's credentials in your `.env` in the appropriate fields.
 
-``` 
-$ cp code-samples/env-template code-samples/.env
+```shell
+cp code-samples/env-template code-samples/.env
 ```
 
 ### Run the testing framework
 
 With all necessary software installed, you can now run the script. Run the script from the root directory of `ringcentral-api-docs` and be sure your python virtual environment is activated.
 
-```
-$ cd $GITHUB/ringcentral-api-docs
-$ sh ./bin/activate
-$ mkdocs-codecheck --verbose --recurse --dotenv ./code-samples/.env ./code-samples
+```shell
+cd $GITHUB/ringcentral-api-docs
+sh ./bin/activate
+mkdocs-codecheck --verbose --recurse --dotenv ./code-samples/.env ./code-samples
 ```
 
 ## Tips for Styling Documentation
 
 ### View our styleguide
 
-Our [styleguide](https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/styleguide.md) serves as a reference for the various documentaton syntaxes to help writers format their documentation and utilize markdown to its fullest extent. The styleguide demonstrates the following styles:
+Our [styleguide](https://github.com/ringcentral/ringcentral-api-docs/blob/master/docs/styleguide.md) serves as a reference for the various documentation syntaxes to help writers format their documentation and utilize markdown to its fullest extent. The styleguide demonstrates the following styles:
 
 * Fenced Code Blocks
 * Admonitions, or call outs
@@ -141,7 +141,7 @@ For local development, mkdocs uses a [RingCentral Mkdocs Theme](https://github.c
 
 To override locally, consult the mkdocs documentation on creating a [custom theme](https://www.mkdocs.org/user-guide/custom-themes/). The process involves overriding theme files with your own custom files. This requires you understand the underlying theme structure, so consult the structure of [mkdocs-ringcentral](https://github.com/byrnereese/mkdocs-ringcentral).
 
-To make a change globally, you can also submit a pull request to [mkdocs-ringcentral](https://github.com/byrnereese/mkdocs-ringcentral) and the change can be propogated across all documentation projects that utilize it.
+To make a change globally, you can also submit a pull request to [mkdocs-ringcentral](https://github.com/byrnereese/mkdocs-ringcentral) and the change can be propagated across all documentation projects that utilize it.
 
 ### Utilizing components from Bootstrap
 
@@ -153,7 +153,7 @@ Our documentation is all based on the open-source CSS framework called Bootstrap
 
 Our documentation also makes use of the [Mkdocs Material Plugin](https://squidfunk.github.io/mkdocs-material/). This plugin is what renders admonitions for example.
 
-```
+```text
 !!! note "Phasellus posuere in sem ut cursus"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod.
 ```
@@ -172,9 +172,9 @@ Inside of this repository is a `code-samples` directory, into which is placed al
 
 Writers can then include content from a code sample using the following syntax:
 
-     ```javascript
-     {! code-samples/path/to/code-sample.js [ln:35-48] !}
-     ```
+```javascript
+{! code-samples/path/to/code-sample.js [ln:35-48] !}
+```
 
 The above example includes the file referenced, but only lines 35 through 48. This makes it possible to only include fragments of a code sample, while maintaining the integrity of the code sample's ability to be run as a stand-alone script.
 
