@@ -31,6 +31,7 @@ There are several authorization flows one can use to obtain an access token to c
 If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](./auth-code-pkce-flow). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](./auth-code-flow).
 
 These flows are ideal for apps that:
+
 * Have a frontend user interface.
 * Need to validate that the current user has a valid RingCentral account.
 * Need to call the API on behalf of a multitude of different users. 
