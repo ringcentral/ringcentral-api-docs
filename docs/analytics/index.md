@@ -27,11 +27,11 @@ Line of Business (LOB) Analytics is a historical call performance analytics offe
 
 ### Team and individual performance assessment
 
-Managers who have teams setup on call queues, user groups or in departments to handle customer queries need to closely monitor the performance of their teams as well as members of the teams to identify areas of improvement.
+Managers who have teams set up on call queues, user groups or departments to handle customer queries need to closely monitor the performance of their teams as well as members of the teams to identify areas of improvement.
 
 ### Operational performance optimization
 
-Managers who are responsible for the customer experience need to ensure customers are being sent in the right direction and are served in a timely manner.
+Managers who are responsible for the customer experience need to ensure customers are being sent in the right direction and are served on time.
 
 ### Communication effectiveness vs business outcome analysis
 
@@ -43,25 +43,24 @@ The Analytics APIs current supports creating two types of reports:
 
 1. The [Call Performance Aggregate API](./aggregate/) allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
 
-2. The [Call Performance Timeline API](./timeline/) allow users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month 
+2. The [Call Performance Timeline API](./timeline/) allows users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month 
 
-Theese APIs can be used to analyze various call related metrics as stated below:
+These APIs can be used to analyze various call-related metrics as stated below:
 
 - Origin (internal or external calls)
 - Direction (Inbound or outbound calls)
 - Answered and not answered calls 
 - Types of calls answered and reasons for not answering 
 - Time spent by the caller in phases of the call such as Setup, Ringing, IVR prompt, Live Talk, Hold etc.
-- The times agents put the caller on hold, park, transferred during the call
-- How the call ended, did it end after live talk at specified extension or got transferred, or sent to voicemail etc.
+- The time's agents put the caller on hold, park, transferred during the call
+- How the call end, did it end after 'livetalk' at a specified extension or got transferred, or sent to voicemail etc.
 - Company Hours
-- The APIs provide data from the current dateime till previous 184 days for which you can set custom date and time ranges
+- The APIs provide data from the current datetime to the past 184 days for which you can set custom date and time ranges
 
 
-### How is LOB Analytics API different than Call Log API ?
+### How is LOB Analytics API different than Call Log API?
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
     
-The Call Log APIs are suitable for detailed analysis on individual call. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely however, we are working towards minimizing the gap during beta stages of Analytics APIs.
-
+The Call Log APIs are suitable for detailed analysis of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
 

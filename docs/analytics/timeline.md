@@ -1,28 +1,40 @@
-# Using the Analytics API to assess performance during specific time periods
+# Obtaining Timeline Call Performance Data
 
-## Composing a request to the Call Performance Timeline API
+It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Performance Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times. 
 
-Please refer to our [API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/performanceReportCallsTimeline) for details about Timeline API Endpoint.
+Example Use Cases:
 
-### Controlling what to aggregate/group data by
+- Get average 'Call Handle Time' for all calls daily.
+- Calculate the 'Average Time to Answer' for all calls hourly.
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by whole company.
+For more information, please refer to the [overview section](index.md).
+
+## Composing a request using RingCentral API Reference
+
+One can use our [interactive API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/performanceReportCallsTimeline) to not only create an API Request but also run it interactively and see the response.
+
+## API Definition Guide
+
+### Controlling what to group data by
+
+The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by the whole company.
 
 |GroupBy (API)	| Description |
 |---|---|
-| Users | This grouping will return call data for individual mailboxes. When users are added in the grouping, then response provides call data aggregated at user level.  |
+| WholeCompany | This grouping will return call data for the entire company. |
+| Users | This grouping will return call data for individual mailboxes. When users are added to the grouping, the response provides call data aggregated at the user level.  |
 | DepartmentMembers | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
 | UserGroupMembers | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
 | QueueAgents | This grouping will return call data for individual users under Queues. Specify Ids of queues along with this grouping which will provide aggregated call data for users under those queues.
 | SiteMembers | This grouping will return call data for individual users under Sites. Specify Ids of Sites along with this grouping which will provide aggregated call data for users under those Sites. |
 | UserGroups | This grouping will return call data for  User Groups setup on Admin Portal. |
 | Departments | This grouping will return call data for users labeled with the same Department on Admin Portal. |
-| Queues | This grouping will return call data for Queue Extns. |
+| Queues | This grouping will return call data for Queue extension. |
 | IVRs | This grouping will return call data for IVR extensions. |
-| Sites | This grouping will return call data for Site Extns when an account is using the multi-site feature. |
+| Sites | This grouping will return call data for Site extension when an account is using the multi-site feature. |
 | CompanyNumbers | This grouping will return call data for direct numbers set up under Phone Systems - > Phone Numbers on Admin Portal. |
 | Shared Lines | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
-| No grouping specified, i/e null or unstable | It will return one record with data aggregated by the whole company.|
+| No grouping specified i.e. null or unstable | It will return one record with data aggregated by the whole company.|
 |
 
 **Example**
@@ -34,13 +46,13 @@ The `groupBy` element allows users to specify data scope. All the data retrieved
 }
 ```
 
-### Setting the timeframe of your request
+### Setting the timeframe of the request
 
-The `timeSettings/timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate end point along with providing data at different timeframe splits.
+The `timeSettings/timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate endpoint along with providing data at different timeframe splits.
 
-The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability include/exclude weekdays and set timezone and working hours. 
+The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours. 
 
-In the below example, under advancedTimeSettings, timeZone can be specified, include Days will allow users to add weekdays of choice, and Includehours will allow users to filter data for custom hours (format hh: mm) for specified date-time range under timeRange section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer  by timeframes.
+In the below example, under `advancedTimeSettings`, `timeZone` can be specified, `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer.
 
 **Example**
 
@@ -65,13 +77,13 @@ In the below example, under advancedTimeSettings, timeZone can be specified, inc
 }
 ```
 
-### Controlling what aggregations are returned
+### Customizing Data Response
 
-The `responseOptions` element allows users to specify call aggregation breakdown and it’s data aggregation types for API responses.
+The `responseOptions` element allows users to specify call aggregation breakdown and its data aggregation types for API responses.
 
-The `counters` element pProvides aggregation on Call volume by specified metrics for set Time Interval split. The metrics can be provided in the counter section under response option. 
+The `counters` element provides aggregation on Call volume by specified metrics for set Time Interval split. The metrics can be provided in the counter section under the `responseOptions`. 
 
-The `timers` element provides aggregation for time spent on the call.  The metrics can be provided in the timer section under response option which will provide duration details by specified metrics for set Time Interval splits.
+The `timers` element provides aggregation for time spent on the call.  The metrics can be provided in the timer section under `responseOptions` which will provide duration details by specified metrics for set Time Interval splits.
 
 **Example**
 
@@ -101,29 +113,27 @@ The `timers` element provides aggregation for time spent on the call.  The metri
 }
 ```
 
-### Filtering your dataset even more
+### Filtering your dataset further
 
-The `additionalFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both counter and timer section by time interval splits. Details of the metrics can be found in Data Dictionary below.
+The `additionalFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both `counter` and `timer` sections by time interval splits. Details of the metrics can be found in Data Dictionary below.
 
 |Filters list| Purpose |
 |---|---|
-| direction | Specifies whether the call was inbound or outbound relative to the scope specified in grouping object. Not applicable to internal calls with company scope (when grouping is not specified). |
+| direction | Specifies whether the call was inbound or outbound relative to the scope specified in `grouping` object. Not applicable to internal calls with company scope (when grouping is not specified). |
 | origin | Specifies whether an external party was present in the initial segment of the call. |
-| callResponse | Aggregation of calls by first response. |
+| callResponse | Aggregation of calls by the first response action. |
 | callResult | Aggregation of calls by the nature of call result. |
-| callSegments | Aggregation of calls by presence of specific segment. |
-| callActions | Aggregation of calls by presence of specific action. |
+| callSegments | Aggregation of calls by the presence of a specific segment. |
+| callActions | Aggregation of calls by the presence of specific action. |
 | companyHours | Aggregation of calls by company's business hours or after hours. |
 | callDuration | Aggregation of calls based on the overall call length. |
-| timeSpent | Aggregation of calls based on the time spent by specified mailbox(es) on call. |
+| timeSpent | Aggregation of calls based on the time spent by the specified mailbox(es) on call. |
 | callerExtensionIds | List of extension Ids from which users specified in groupBy received calls. |
 | calledExtensionIds | List of extension Ids to which users specified in groupBy placed calls. |
 | calledNumbers | The direct company numbers the caller called. |
-| queueSla | This filter allows to get aggregation of calls that were either within or out of queue SLA. |
-| callType | Allows to get aggregation of calls based on how the call started from the callee perspective. |
+| queueSla | To get aggregate of calls that were either in or out of a particular queueSLA. |
+| callType | To get aggregate of calls based on how the call started from the callee perspective. |
 |
-
-These filters can be applied to slice & dice the data as needed and can be done in additionalfilters section shown below 
 
 **Example**
 
@@ -172,14 +182,14 @@ These filters can be applied to slice & dice the data as needed and can be done 
 
 |CounterResponseOptions (API)| TimerResponseOptions (API)| Description |
 |---|---|---|
-| allCalls | allCallsDuration | The combined total of all the calls involving the specified groupby dimension. Counter will return aggregration of total calls by time intervals. Timer will return call duration aggregation for total calls by time intervals. |
-| callsByOrigin | callsDurationByOrigin | <p> Breaks down of calls that happened within or outside of the account. </p> <ul><li><b>Internal:</b> Calls that originated inside the account. </li> <li><b>External:</b> Calls that originated outside the account. </li></ul> Counter will return aggregration of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
-| callsByDirection | callsDurationByDirection | <p>Aggregates all the calls based on the direction of the call with reference to the specified row type. </p> <ul><li><b>Outbound:</b> Calls made from extn are represented as "Outbound". </li> <li><b>Inbound:</b> Calls received on extn are "Inbound". </li></ul> Counter will return aggregration of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
-| callsByResponse | callsDurationByResponse | <p> Breakdown of the response to the calls by the selected dimension. Gives a higher level aggregation of how many were: </p> <ul><li><b>answered:</b> Calls picked & answered by user. </li> <li><b>notanswered:</b> Calls not answered by user. </li> <li><b>connected:</b> Only applicable to outbound calls and aggregates all the calls that got connected to the called number. </li> <li><b>notConnected:</b> Only applicable to outbound calls and aggregates all the calls that did not get connected to the called number. </li></ul> Counter will return aggregration of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
-| callsByType | callsDurationByType | <p> Aggregation based on the types of calls that are handled by users. </p> <ul><li><b>direct:</b> Direct calls answered by the user. </li> <li><b>fromQueue:</b> Queue calls that are answered by the user.<li><b>parkRetrieval:</b> Calls answered by the user after retrieving a parked call. </li> <li><b>transferred:</b> Transferred calls that were answered by the user. </li> <li><b>outbound:</b> Calls made from the extension numbers. </li></ul> Counter will return aggregration of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
-| CallsByActions | Not Applicable | <p> Aggregation of actions taken by the user on all the calls they handled. </p> holdson: Number of times user placed the calls on hold.<ul><li><b>holdsoff:</b> Number of times user removed calls from hold. </li> <li><b>parkson:</b> Number of times user placed the calls on park location. </li> <li><b>parksoff:</b> Number of times user retrieved calls from park location blindTransfer:Type of call transfer where a call is transferred to another agent without any prior information. </li> <li><b>warmTransfer:</b> Type of transfer where a call is transferred to another agent with prior information about the transfer. </li> <li><b>dtmfTransfer:Type of transfer where a call is transferred vis dtmf sequence. </li></ul> Counter will return aggregration of calls for these actions by time intervals. Not applicable for Timer. |
-| CallsByResult | callsDurationByResult | <p> End result of the calls. Describes how the calls that came to specified Groupby ended. </p> <p> For Answered: </p> <ul><li><b>Completed:</b> Call ended normally after a live talk with the user. It is possible calls may not have ended at this level and got transferred or forwarded out or abandoned during hold in which case even after a calls were answered not all were completed. </li> <li><b>Abandoned:</b> Caller hung up before the user could answer or during hold.</li> <li><b>Voicemail: Call reached the voicemail of the user or group. </li></ul><p> <p>For Not Answered:</p>  <ul><li><b>Missed:</b> Calls that  rang to max time/rings as per the setup and was not answered by the user </li> <li><b>Accepted:</b> Calls that were responded by a system such as automated response or VM and disconnected </li> <li><b>Unknown:</b> for outbound pstn calls, result is unknown for calls connected/Not connected </li></ul> Counter will return aggregration of total calls for these Results by time intervals. Timer will return call duration aggregation for the same calls by time intervals. |
-| callsSegments | callsSegmentsDuration | <p> Aggregates the times spent by the caller in different stages of the call. These are the calls that came to the dimensions specified by GroupBy. The data received will be by time intervals split pre applied (hour, day, week, month). </p> <ul><li><b>setup:</b> It is when the phone system is connecting to callee's device. This is when caller is calling  via RC App and system says "Please wait while I try to connect you"  before the beeps starts. </li> <li><b>ringing:</b> Duration for which calls spent ringing to the Extn/No & can be found under Timer. When selected under counter, it returns, the number of calls that had a ringing phase. </li> <li><b>ivrPrompts:</b> Duration for which calls spent in IVR Prompt before reaching the Extn/No. When selected as “Calls” returns, the number of calls that had IVR Prompt phase. </li> <li><b>livetalk:</b> Duration for which callers were having a live talk with Extn/No & can be found under Timer. When selected under counter, it returns number of calls that had a Live Talk phase. </li> <li><b>holds:</b> Duration for which callers were put on hold by Extn/No & can be found under Timer. When selected under counter, it returns, number of calls that had a Hold phase. </li> <li><b>parks:</b> Duration for which callers spent in a parked state after being parked by Extn/No & can be found under Timer. When selected under counter, it returns, number of calls that were parked by Extn/No. </li> <li><b>transfers:</b> Duration for which caller was being transferred by Extn/No & can be found under Timer. When selected under counter, it returns, number of calls that were transferred by Extn/No. </li> <li><b>vmGreeting:</b> Duration for which callers spent listening to VM greeting & can be found under Timer. When selected under counter, it returns, number of calls that had VM greeting phase. </li> <li><b>voicemail:</b> Duration for which callers spent in Voicemail & can be found under Timer. When selected under counter, it returns number of calls that had Voicemail Phase. </li></ul> |
-| callsByCompanyHours | callsDurationByCompanyHours | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on admin portal. </p> Counter will return aggregration of calls for Business Hours & After Hours by time intervals. Timer will return call duration aggregation for same by time intervals. |
-| callsByQueueSla | callsDurationByQueueSla | <p> Provides count of calls and their duration details for calls answered within sla for Queues grouping only. Not applicable for rest of the groupby available. </p><ul><li><b>inSla:</b> Calls answered withing SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregration of calls for these metrics by time intervals. Timer will return call duration aggregation for same by time intervals. |
+| allCalls | allCallsDuration | The combined total of all the calls involving the specified groupby dimension. Counter will return  of total calls by time intervals. Timer will return call duration aggregation for total calls by time intervals. |
+| callsByOrigin | callsDurationByOrigin | <p>Breaks down of calls that happened within or outside of the account. </p><ul><li><b>Internal:</b> Calls that originated inside the account. </li> <li><b>External:</b> Calls that originated outside the account. </li></ul> Counter will return aggregation of calls for these breakdown by time intervals. Timer will return call duration aggregation for the same by time intervals. |
+| callsByDirection | callsDurationByDirection | <p>Aggregates all the calls based on the direction of the call with reference to the specified row type. </p> <ul><li><b>Outbound:</b> Calls made from extension are represented as "Outbound". </li> <li><b>Inbound:</b> Calls received on extension are "Inbound". </li></ul> Counter will return aggregation of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
+| callsByResponse | callsDurationByResponse | <p> Breakdown of the response to the calls by the selected dimension. Gives a higher level aggregation of how many were: </p> <ul><li><b>answered:</b> Calls picked & answered by the user. </li> <li><b>notanswered:</b> Calls not answered by the user. </li> <li><b>connected:</b> Only applicable to outbound calls and aggregates all the calls that got connected to the called number. </li> <li><b>notConnected:</b> Only applicable to outbound calls and aggregates all the calls that did not get connected to the called number. </li></ul> Counter will return aggregation of calls for these breakdowns by time intervals. Timer will return call duration aggregation for the same by time intervals. |
+| callsByType | callsDurationByType | <p> Aggregation is based on the types of calls that are handled by users. </p> <ul><li><b>direct:</b> Direct calls answered by the user. </li> <li><b>fromQueue:</b> Queue calls that are answered by the user.<li><b>parkRetrieval:</b> Calls answered by the user after retrieving a parked call. </li> <li><b>transferred:</b> Transferred calls that were answered by the user. </li> <li><b>outbound:</b> Calls made from the extension numbers. </li></ul> Counter will return aggregation of calls for these breakdown by time intervals. Timer will return call duration aggregation for same by time intervals. |
+| CallsByActions | Not Applicable | <p> Aggregation of actions taken by the user on all the calls they handled. </p> holdson: Number of times the user placed the calls on hold.<ul><li><b>holdsoff:</b> Number of times the user removed calls from hold. </li> <li><b>parkson:</b> Number of times the user placed the calls on park location. </li> <li><b>parksoff:</b> Number of times the user retrieved calls from park location blindTransfer: Type of call transfer where a call is transferred to another agent without any prior information. </li> <li><b>warmTransfer:</b> Type of transfer where a call is transferred to another agent with prior information about the transfer. </li> <li><b>dtmfTransfer: Type of transfer where a call is transferred vis dtmf sequence. </li></ul> Counter will return aggregation of calls for these actions by time intervals. Not applicable for Timer. |
+| CallsByResult | callsDurationByResult | <p> End result of the calls. Describes how the calls that came to specified Groupby ended. </p> <p> For Answered: </p> <ul><li><b>Completed:</b> Call ended normally after a live talk with the user. It is possible calls may not have ended at this level and got transferred or forwarded out or abandoned during the hold in which case even after calls were answered not all were completed. </li> <li><b>Abandoned:</b> The caller hung up before the user could answer or during the hold.</li> <li><b>Voicemail: Call reached the voicemail of the user or group. </li></ul><p> <p>For Not Answered:</p>  <ul><li><b>Missed:</b> Calls that  rang to max time/rings as per the setup and were not answered by the user </li> <li><b>Accepted:</b> Calls that were responded by a system such as automated response or VM and disconnected </li> <li><b>Unknown:</b> for outbound pstn calls, the result is unknown for calls connected/Not connected </li></ul> Counter will return aggregation of total calls for these Results by time intervals. Timer will return call duration aggregation for the same calls by time intervals. |
+| callsSegments | callsSegmentsDuration | <p> Aggregates the times spent by the caller in different stages of the call. These are the calls that came to the dimensions specified by GroupBy. The data received will be by time intervals split pre-applied (hour, day, week, month). </p> <ul><li><b>setup:</b> It is when the phone system is connecting to callee's device. This is when the caller is calling  via RC App and the system says "Please wait while I try to connect you" before the beeps start. </li> <li><b>ringing:</b> Duration for which calls spent ringing to the Extn/No & can be found under Timer. When selected under counter, it returns, the number of calls that had a ringing phase. </li> <li><b>ivrPrompts:</b> Duration for which calls are spent in IVR Prompt before reaching the Extn/No. When selected as “Calls” returns, the number of calls that had IVR Prompt phase. </li> <li><b>livetalk:</b> Duration for which callers were having a live talk with Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that had a Live Talk phase. </li> <li><b>holds:</b> Duration for which callers were put on hold by Extn/No & can be found under Timer. When selected under counter, it returns, number of calls that had a Hold phase. </li> <li><b>parks:</b> Duration for which callers spent in a parked state after being parked by Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that were parked by Extn/No. </li> <li><b>transfers:</b> Duration for which caller was being transferred by Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that were transferred by Extn/No. </li> <li><b>vmGreeting:</b> Duration for which callers spent listening to VM greeting & can be found under Timer. When selected under counter, it returns the number of calls that had VM greeting phase. </li> <li><b>voicemail:</b> Duration for which callers spent in Voicemail & can be found under Timer. When selected under counter, it returns number of calls that had Voicemail Phase. </li></ul> |
+| callsByCompanyHours | callsDurationByCompanyHours | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on the admin portal. </p> Counter will return aggregation of calls for Business Hours & After Hours by time intervals. Timer will return call duration aggregation for the same by time intervals. |
+| callsByQueueSla | callsDurationByQueueSla | <p> Provides the count of calls and their duration details for calls answered within SLA for Queues grouping only. Not applicable for the rest of the groupby available. </p><ul><li><b>inSla:</b> Calls answered within SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregation of calls for these metrics by time intervals. Timer will return call duration aggregation for the same by time intervals. |
 | 
