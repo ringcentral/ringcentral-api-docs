@@ -1,49 +1,50 @@
 const RC_SDK = require('@ringcentral/sdk').SDK
 require('dotenv').config();
-const fs = require("fs");
 
-RINGCENTRAL_CLIENTID = process.env.RC_CLIENT_ID;
-RINGCENTRAL_CLIENTSECRET = process.env.RC_CLIENT_SECRET;
-RINGCENTRAL_SERVER = RC_SDK.server.sandbox;
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
+var platform = rcsdk.platform();
+platform.login({
+    'username':  process.env.RC_USERNAME,
+    'password':  process.env.RC_PASSWORD,
+    'extension': process.env.RC_EXTENSION
+})
 
-RINGCENTRAL_USERNAME = process.env.RC_USERNAME;
-RINGCENTRAL_PASSWORD = process.env.RC_PASSWORD;
-RINGCENTRAL_EXTENSION = process.env.RC_EXTENSION;
+let FROM_DATE = '2022-04-12T07:00:00.000Z'
+let TO_DATE   = '2022-05-11T07:00:00.000Z'
 
-let rcsdk = new RC_SDK({
-  server: RINGCENTRAL_SERVER,
-  clientId: RINGCENTRAL_CLIENTID,
-  clientSecret: RINGCENTRAL_CLIENTSECRET
+platform.on(platform.events.loginSuccess, function(e){
+    run_report( FROM_DATE, TO_DATE )
 });
 
-let platform = rcsdk.platform();
-
-platform.login({
-  username: RINGCENTRAL_USERNAME,
-  password: RINGCENTRAL_PASSWORD,
-  extension: RINGCENTRAL_EXTENSION
-  }).then(async function(){
+async function run_report( from_time, to_time ) {
     try {
-      let aggregateJSONString = fs.readFileSync("aggregate-request-body.json");
-      let aggregateJSONBody = JSON.parse(aggregateJSONString);
-      let aggregateResult = await platform.post("/analytics/phone/performance/v1/accounts/~/calls/aggregate", aggregateJSONBody);
-      let response = await aggregateResult.json();
-      console.log("-----AGGREGATE DATA------");
-      console.log(response.data[0]);
+	let options = {
+	    "grouping":{
+		"groupBy":"Users"
+	    },
+	    "timeSettings":{
+		"timeRange":{
+		    "timeFrom": from_time,
+		    "timeTo": to_time
+		}
+	    },
+	    "responseOptions":{
+		"counters":{
+		    "allCalls":{
+			"aggregationType":"Sum"
+		    }
+		}
+	    }
+	}
+	let result = await platform.post("/analytics/phone/performance/v1/accounts/~/calls/aggregate",
+					 options);
+	let response = await result.json();
+	console.log(response.data[0]);
+    } catch (e) {
+	console.log(e.message);
     }
-    catch (e) {
-      console.log(e.message);
-    }
-  }).then(async function(){
-  try {
-      let timelineJSONString = fs.readFileSync("timeline-request-body.json");
-      let timelineJSONBody = JSON.parse(timelineJSONString);
-      let timelineResult = await platform.post("/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Week", timelineJSONBody);
-      let response = await timelineResult.json();
-      console.log("-----TIMELINE DATA------");
-      console.log(response.data[0]);
-    }
-    catch (e) {
-      console.log(e.message);
-    }
-  });
+}

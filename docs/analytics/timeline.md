@@ -183,3 +183,9 @@ These filters can be applied to slice & dice the data as needed and can be done 
 | callsByCompanyHours | callsDurationByCompanyHours | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on admin portal. </p> Counter will return aggregration of calls for Business Hours & After Hours by time intervals. Timer will return call duration aggregation for same by time intervals. |
 | callsByQueueSla | callsDurationByQueueSla | <p> Provides count of calls and their duration details for calls answered within sla for Queues grouping only. Not applicable for rest of the groupby available. </p><ul><li><b>inSla:</b> Calls answered withing SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregration of calls for these metrics by time intervals. Timer will return call duration aggregation for same by time intervals. |
 | 
+
+## Full example of an Analytics Timeline Report
+
+```json
+{!> code-samples/analytics/timeline-request-body.json !} 
+```

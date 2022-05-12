@@ -36,23 +36,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
-## Download your request template
-
-The payload for an Analytics API request in non-trivial given the many filtering and reporting options available to developers. To assist you in making your first API call, we have provided you with two sample requests that the quick start sample code make use of by reading their contents off of the filesystem. Download these files to the same directory as your quick start script. 
-
-=== "aggreate-request-body.json"
-
-    ```json
-    {!> code-samples/analytics/aggregate-request-body.json !} 
-    ```
-
-=== "timeline-request-body.json"
-
-    ```json
-    {!> code-samples/analytics/timeline-request-body.json !} 
-    ```
-
-### Call the Analytics API
+## Call the Analytics API
 
 === "Javascript"
 
@@ -68,12 +52,12 @@ The payload for an Analytics API request in non-trivial given the many filtering
     $ npm install @ringcentral/sdk dotenv
     ```
 
-    ### Create and edit 'index.js' file
+    ### Create and edit 'analytics.js' file
 
-    Create a file called `index.js`. Be sure the values in your `.env` file have been set properly as that is where your credentials will be loaded. 
+    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
 
     ```javascript
-    {!> code-samples/analytics/index.js !} 
+    {!> code-samples/analytics/quick-start.js !} 
     ```
 
     ### Run your code
@@ -81,7 +65,56 @@ The payload for an Analytics API request in non-trivial given the many filtering
     You are almost done. Now run your script.
 
     ```bash
-    $ node index.js
+    $ node analytics.js
+    ```
+
+=== "Python"
+
+    ### Install RingCentral Python SDK
+
+    ```bash
+    $ pip install ringcentral python-dotenv
+    ```
+
+    ### Create and edit analytics.py
+
+    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+
+    ```python
+    {!> code-samples/analytics/quick-start.py !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python analytics.py
+    ```
+
+=== "PHP"
+
+    ### Install RingCentral PHP SDK
+
+    ```php
+    $ curl -sS https://getcomposer.org/installer | php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
+    ```
+
+    ### Create and edit analytics.php
+
+    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+
+    ```php
+    {!> code-samples/analytics/quick-start.php !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ php analytics.php
     ```
 
 === "C#"
@@ -137,6 +170,30 @@ The payload for an Analytics API request in non-trivial given the many filtering
     ```bash 
     $ javac App.java
     $ java App
+    ```
+
+=== "Ruby"
+
+    ### Install RingCentral Ruby SDK
+
+    ```bash
+    $ gem install ringcentral-sdk dotenv
+    ```
+
+    ### Create and edit analytics.rb
+
+    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+
+    ```ruby
+    {!> code-samples/analytics/quick-start.rb !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ ruby analytics.rb
     ```
 
 ## Sample Applications on GitHub
