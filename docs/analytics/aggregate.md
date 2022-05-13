@@ -7,7 +7,7 @@ Example Use Cases:
 - How many calls are being answered over a particular period?
 - What does the abandonment rate look like?
 
-For more information, please refer to the [overview section](index.md).
+For more information, please refer to the [overview section](../).
 
 ## Composing a request using RingCentral API Reference
 

@@ -7,7 +7,7 @@ Example Use Cases:
 - Get average 'Call Handle Time' for all calls daily.
 - Calculate the 'Average Time to Answer' for all calls hourly.
 
-For more information, please refer to the [overview section](index.md).
+For more information, please refer to the [overview section](../).
 
 ## Composing a request using RingCentral API Reference
 

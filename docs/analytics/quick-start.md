@@ -73,7 +73,7 @@ The payload for an Analytics API request in non-trivial given the many filtering
     Create a file called `index.js`. Be sure the values in your `.env` file have been set properly as that is where your credentials will be loaded. 
 
     ```javascript
-    {!> code-samples/analytics/index.js !} 
+    {!> code-samples/analytics/quick-start.js !} 
     ```
 
     ### Run your code

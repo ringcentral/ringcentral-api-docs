@@ -33,7 +33,7 @@ We currently support the following conditional operators:
 * `ne` or not equal to
 
 
-Variables can also be manipulated using a wide array of [handlebar helpers](). The helper below for example will change the partner's name to all uppercase. 
+Variables can also be manipulated using [handlebar helpers](https://handlebarsjs.com/guide/builtin-helpers.html). The helper below for example will change the partner's name to all uppercase. 
 
     {{uppercase partner.full_name}}
 
