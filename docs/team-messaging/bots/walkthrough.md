@@ -125,7 +125,7 @@ After getting an access token, the bot must subscribe to Team Messaging events n
     ```
     Sample code of a public bot subscription for Team Messaging events notification
     ```js
-    {!> code-samples/team-messaging/public-bot.js [ln:133-135,207-237] !}
+    {!> code-samples/team-messaging/public-bot.js [ln:133-135,203-237] !}
     ```
 
 ??? note "Discussion: observe the console of your local bot server"
