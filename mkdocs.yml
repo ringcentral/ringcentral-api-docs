@@ -128,7 +128,7 @@ nav:
       - 'Teams': 'team-messaging/concepts/teams.md'
     - 'Team Messaging API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
-#      - 'Permissions': 'team-messaging/manual/permissions.md'
+      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Mentions': 'team-messaging/manual/mentions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
     - 'Team Messaging events':
@@ -154,6 +154,7 @@ nav:
       - 'Introduction': 'team-messaging/adaptive-cards/index.md'
       - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
+      - 'Modal dialogs': 'team-messaging/adaptive-cards/modal-dialogs.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
     - 'RingCentral add-ins':

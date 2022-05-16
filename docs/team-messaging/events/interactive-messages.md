@@ -6,14 +6,22 @@ Interactive messaging events are also unique in that applications are expected t
 
 ## What interactive messaging events are supported?
 
-Currently, the only event RingCentral will transmit to your app is one relating to a user submitting a form contained by a message posted by the corresponding app. 
+Currently, the only event RingCentral will transmit to your app is one relating to a user submitting a form contained by an adaptive card posted by the corresponding app. Forms are submitted via users clicking buttons associated with actions of type `Action.Submit`. 
 
 * See [Adaptive Cards](../../adaptive-cards/)
 * See [Creating an Add-in](../../add-ins/creation/)
 
 ## Responding to interactive message events
 
-Upon receiving an interactive messaging event, applications should respond with an HTTP status code of 200 in order to acknowledge receipt of the event. A developer should respond this way even if an error occurred while processing the event. If a developer includes a payload in their response, then RingCentral will assume an error occurred and display an error indicator to the user. 
+Upon receiving an interactive messaging event, applications should respond with an HTTP status code of 200 in order to acknowledge receipt of the event. A developer should respond this way even if an error occurred while processing the event. 
+
+In the payload of your response, you can optionally transmit a dialog to cause RingCentral to spawn a dialog. The contents of a modal dialog can either be an adaptive card, or an iframe to an external website. If the payload of the response is anything else, the response will be ignored. 
+
+Finally, dialogs will appear only to the person who interacted with the card that spawned the dialog. In this way, dialogs create a private interaction between the user who clicked an adaptive card's submit button, and a bot or add-in. 
+
+<img src="../modal.png" class="img-fluid" style="max-width: 500px" />
+
+Learn more about [Modal Dialogs &raquo;](../../adaptive-cards/modal-dialogs/)
 
 <!--
 

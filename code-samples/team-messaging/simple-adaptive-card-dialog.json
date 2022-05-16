@@ -1,0 +1,22 @@
+{
+    "type": "dialog",
+    "dialog": {
+        "title": "this is a title",
+        "size": "medium",
+        "iconUrl": "https://www.kindpng.com/picc/m/255-2554719_a-generic-square-placeholder-image-with-rounded-corners.png",
+        "card": {
+            "type": "AdaptiveCard",
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.3",
+            "body": [
+                {
+                  "type": "TextBlock",
+                  "text": "Hello.",
+                  "wrap": true,
+                  "size": "ExtraLarge",
+                  "weight": "Bolder"
+                }
+            ]
+        }
+    }
+}

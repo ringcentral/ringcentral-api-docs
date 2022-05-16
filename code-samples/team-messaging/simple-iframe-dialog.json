@@ -1,0 +1,9 @@
+{
+    "type": "dialog",
+    "dialog": {
+        "title": "this is a title",
+        "size": "medium",
+        "iconUrl": "https://www.kindpng.com/picc/m/255-2554719_a-generic-square-placeholder-image-with-rounded-corners.png",
+        "iframeUrl": "https://www.ringcentral.com/"
+    }
+}
