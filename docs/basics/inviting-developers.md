@@ -28,8 +28,8 @@ First, the developer you wish to invite needs to be registered as a user in your
 
 <img class="img-fluid" src="../collab-invite-user.png">
 
-??? hint "What if I don't see the Users tab?"
-    If you don't see the Users tab inside of the Admin Console it means that you have not been granted the Manage Users permission. To add a user to your account, you will need to contact your local system administrator. 
+??? hint "What if I don't see the Users tab, or the Features section?"
+    If you don't see the Users tab inside of the Admin Console, or if you don't see the "Features" permission group, it means that you have not been granted the right access permissions. To add a user to your account, you will need to contact your local system administrator with Super Admin priviledges. . 
 
 Add the user following the on-screen instructions if the user you wish to invite does not already have an account. 
 
