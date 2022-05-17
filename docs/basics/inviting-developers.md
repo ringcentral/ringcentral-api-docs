@@ -28,6 +28,9 @@ First, the developer you wish to invite needs to be registered as a user in your
 
 <img class="img-fluid" src="../collab-invite-user.png">
 
+??? hint "What if I don't see the Users tab?"
+    If you don't see the Users tab inside of the Admin Console it means that you have not been granted the Manage Users permission. To add a user to your account, you will need to contact your local system administrator. 
+
 Add the user following the on-screen instructions if the user you wish to invite does not already have an account. 
 
 Next, you will need to make sure the role they are assigned in the RingCentral Admin Console has the "Developer Portal Access" permission. This will allow them to login to the Developer Console. Look for this permission under the "Features" permission group. 
