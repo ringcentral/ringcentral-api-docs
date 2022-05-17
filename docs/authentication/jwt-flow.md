@@ -62,6 +62,13 @@ In other words, JWTs are a way developers can obtain more reliable access to a u
 
 JSON web tokens, or JWTs are a form of user credential that can be presented in RingCentral's OAuth flow to obtain an access token. There is only one call to make in JWT authentication: the call to request an access token. This call is described below.
 
+**Auth URLs**
+
+| Environment      | Value                                                          |
+| ---------------- | ----------------------------------------------------------     |
+| Sandbox          | `https://platform.devtest.ringcentral.com/restapi/oauth/token` |
+| Production       | `https://platform.ringcentral.com/restapi/oauth/token`         |
+
 **HTTP Headers**
 
 | Header           | Value                                                      |
