@@ -2,7 +2,7 @@
 
 A wide range of telecommunication tools are used by business today: cell phones, desk phones, laptops, PDAs, fax machines, voice mailboxes, etc. The RingCentral service functions as a unified messaging system and provides customers with a seamless interface to interact with various communication media. Using the API you can create applications enabled to work with all kinds of messages available to the RingCentral customers:
 
-- *SMS* — text messages sent via standard SMS communication technology;
+- *SMS* — text messages sent via enhanced business SMS communication technology;
 
 - *Fax* — facsimile messages sent via fax-rendering system;
 
