@@ -58,6 +58,13 @@ You can also use this [Postman 2.1 Environment](../specs/ringcentral_environment
 | **`RINGCENTRAL_PASSWORD`** | RingCentral user's password. Note, this needs to be using the RingCentral passsword system and not SSO for this Postman spec. |
 | **`RINGCENTRAL_JWT`** | RingCentral user's JWT token from User's Profile -> Credentials |
 
+!!! note "Regarding Authentication"
+    If you are using authentication based on password flow, you would need to fill in RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION(optional) and RINGCENTRAL_PASSWORD only. No need to fill in RC_JWT.
+
+    If you are using authentication based on JWT flow, you would need to fill in RINGCENTRAL_JWT only.
+
+    See the Developer Guide for information on several [authentication methods that your app can use](../../../authentication).
+
 ### Making an API call
 
 To test the Postman collection, let's call the "Send SMS" API.
