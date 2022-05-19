@@ -22,13 +22,13 @@ Product | URL |
 * Support for the RingCentral Sandbox API (cannot switch to 'developer mode')
 * Support for a 'Sandbox version'
 
-### How Sandbox Accounts Are Organized
+### How Sandbox accounts are organized
 
 Sandbox accounts are currently shared across all users within the same account. We do not currently support creating multiple **user level** Sandbox accounts within a single **RingCentral account**. Within that account, developers can easily collaborate on the applications created within that account.
 
 If you need to simulate two different users from two different organizations during development, you may need to create additional RingCentral accounts in order to do so. 
 
-## Using Phones in Sandbox
+## Using phones in Sandbox
 
 Every sandbox account is provisioned a different main company phone number and user that is different than ones used in production. Additional phone numbers and users can also be configured in your sandbox account. Some use cases supported by these communication apps include:
 
@@ -43,7 +43,7 @@ RingCentral phones can be used with your sandbox account to make and receive cal
 
 More information is available below on using and configuring these endpoints to work in Sandbox and to configure your app if needed.
 
-### Embeddable Web Widget and the Sandbox Environmnet
+### Embeddable web widget and the Sandbox environmnet
 
 The RingCentral Embeddable Web Widget is a fully-functional web client that developers can embed in their app. In addition to doing development with it, there is a hosted demo you can configure and use.
 
@@ -67,6 +67,14 @@ Read more below:
 * [Demo (read docs to configure)](http://ringcentral.github.io/ringcentral-web-phone)
 
 ##  Limitations
+
+### Restrictions
+
+To help contain costs and curb abuse, the following restrictions are placed on sandbox accounts:
+
+* Telephony and voice APIs are restricted to US phone calls only. In other words, RingOut and other voice APIs that initiate calls do not work with non-US/international numbers. 
+
+### Sandbox watermarks
 
 In order to ensure that our sandbox environment is used for testing purposes only, we add the following watermarks to messages and voice calls eminating from that environment:
 
