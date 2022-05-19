@@ -86,11 +86,12 @@ nav:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
-    - 'Standard SMS':
+    - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+      - 'Postman': 'messaging/sms/postman.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
