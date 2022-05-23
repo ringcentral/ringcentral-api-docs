@@ -6,7 +6,7 @@ Access and refresh tokens expire according to the following schedule:
 
 | Token | TTL |
 |-|-|
-| Access token | 24 hours |
+| Access token | 1 hour |
 | Refresh token | 7 days |
 
 Key facts about refresh tokens:
