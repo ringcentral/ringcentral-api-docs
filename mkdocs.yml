@@ -129,7 +129,7 @@ nav:
       - 'Teams': 'team-messaging/concepts/teams.md'
     - 'Team Messaging API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
-      - 'Permissions': 'team-messaging/manual/permissions.md'
+#      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Mentions': 'team-messaging/manual/mentions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
     - 'Team Messaging events':
