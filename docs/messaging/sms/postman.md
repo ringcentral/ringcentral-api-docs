@@ -4,7 +4,7 @@ For easy testing using [Postman](https://www.getpostman.com/), RingCentral provi
 
 The collection is available here:
 
-* [Postman 2.1 Collection](../specs/ringcentral_sms_rest_apis.postman_collection.json)
+* [Postman 2.1 Collection](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_sms_rest_apis.postman_collection.json)
 <!--* [Postman 2.1 Environment](../specs/ringcentral_environment.postman_environment.json)-->
 
 This document describes how to install and use the Postman 2.1 Collection.
@@ -32,7 +32,7 @@ Use the following steps to import the Postman collection.
 
 1. In the upper left corner of the Postman application click the "Import" button.
 2. Click the "Import from Link" tab.
-3. Paste in the following URL where it says "Enter a URL and press import": [`https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/spec/ringcentral_sms_rest_apis.postman_collection.json`](../specs/ringcentral_sms_rest_apis.postman_collection.json)
+3. Paste in the following URL where it says "Enter a URL and press import": [`https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_sms_rest_apis.postman_collection.json`](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_sms_rest_apis.postman_collection.json)
 4. Click the "Continue" button
 
 ## Configuring Your Postman Environment
@@ -44,7 +44,7 @@ The Postman Collection uses environment variables for authentication and authori
 3. Choose a name of your choice.
 4. Enter your enviroment variables as described below.
 5. Click the "Add" button to finish adding this environment.
-You can also use this [Postman 2.1 Environment](../specs/ringcentral_environment.postman_environment.json) export as reference. 
+You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_environment.postman_environment.json) export as reference. 
 
 <img class="img-fluid" width="100%" src="../../../img/postman_ringcentral_environment.png">
 
