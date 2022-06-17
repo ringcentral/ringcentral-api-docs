@@ -53,6 +53,28 @@ For security puroses, all iFrame URLs used within modal dialogs must be specific
 | `https://www.somedomain.com` | Approve all URLs from www.somedomain.com | 
 | `https://*.somedomain.com` | Approve all subdomans from somedomain.com | 
 
+## Passing data from an adaptive card to a dialog
+
+To trigger a dialog to appear, one must issue a response to an incoming interactive messaging event (as described above), which itself is triggered by a user clicking a button associated with the `Action.Submit` action. Given that there could be any number of buttons associated with the `Action.Submit` action, how does a developer identify the button clicked, and how does a developer optionally transmit other key information associated with that button click?
+
+Data is transmitted to an add-in via an incoming message event. The data that is transmitted comes from one of two sources:
+
+* Input form elements contained within the card, e.g. `Input.Text`, `Input.Date`, `Input.Time`, `Input.Number`, `Input.ChoiceSet` and `Input.Toggle`. 
+* Values contained within the `data` element that is a sibling of the `Action.Submit` element. 
+
+For example, the following card will transmit two key/value pairs in the payload of the incoming interactive messaging event:
+
+```js
+{!> code-samples/team-messaging/adaptive-cards/transmit-data.json !}
+```
+
+The two key/value pairs will be:
+
+* `staticValue` = "foo"
+* `textField` = <determined by user> 
+
+Consult our documentation on [input and interactivity](../actions/) to better understand the payload of an interactive messaging event and how to access the data that is transmitted to your add-in. 
+
 ## Dialog attributes
 
 ### Title and icon

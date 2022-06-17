@@ -218,9 +218,10 @@ nav:
       - 'Callaborating with developers': 'basics/inviting-developers.md'
       - 'Running code samples': 'basics/code-samples.md'
       - 'Media content': 'basics/media.md'
-      - 'App permissions': 'basics/permissions.md'
+      - 'App scopes/permissions': 'basics/permissions.md'
       - 'URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
+      - 'Errors': 'basics/errors.md'
       - 'API Change Log':
         - 'Preface': 'basics/changelog/index.md'
         - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
