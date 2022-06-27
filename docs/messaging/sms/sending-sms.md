@@ -87,7 +87,7 @@ Select your preferred language below.
     Create a file called `sms.py`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```python
-    {!> code-samples/messaging/send-sms.js !}
+    {!> code-samples/messaging/send-sms.py !}
     ```
 
     ### Run your code
