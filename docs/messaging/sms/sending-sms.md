@@ -45,6 +45,59 @@ SMS messages can be sent to or received from the handsets operated by most mobil
 	   "lastModifiedTime": "2012-10-16T06:34:59.000Z"
 	}
 	```
+	
+## Send an SMS
+
+Select your preferred language below.
+
+=== "Javascript"
+
+    ### Install RingCentral JavaScript SDK
+
+    ```bash
+    $ npm install @ringcentral/sdk dotenv --save
+    ```
+
+    ### Create and edit sms.js
+
+    Create a file called `sms.js`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
+
+    ```javascript
+    {!> code-samples/messaging/send-sms.js !} 
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ node sms.js
+    ```
+
+=== "Python"
+
+    ### Install RingCentral Python SDK
+
+    ```bash
+    $ pip install ringcentral python-dotenv
+    ```
+
+    ### Create and edit sms.py
+
+    Create a file called `sms.py`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
+
+    ```python
+    {!> code-samples/messaging/send-sms.js !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python sms.py
+    ```
+
 
 ## Sending an SMS on Behalf of a Call Queue
 
