@@ -13,46 +13,16 @@ When assembling a multipart message, it is important to remember that the root p
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/send-sms.js !} 
+    {!> code-samples/messaging/send-mms.js !} 
     ```
 
 === "Python"
-	```python
-	from ringcentral import SDK
-	sdk = SDK( "client id", "client_secret", "server_url" );
-	platform = sdk.platform()
-	platform.login( "username", "extnsion_number", "password" )
-	builder = sdk.create_multipart_builder()
-	builder.set_body({
-	    'from': {'phoneNumber': "username"},
-	    'to': [{'phoneNumber': "recipient_number"}],
-	    'text': "Hello World"
-	})
-	image = open ('test.jpg', 'rb')
-	attachment = ('test.jpg', image, 'image/jpeg')
-	builder.add(attachment)
-	try:
-	    request = builder.request('/account/~/extension/~/sms')
-	    response = platform.send_request(request)
-	except Exception as e:
-	    print(e)
-	```
+	
+    ```python
+    {!> code-samples/messaging/send-mms.py !}
+    ```
 
 === "PHP"
-	```php
-	<?php
-	$rcsdk = new RingCentral\SDK\SDK("client id","client_secret","server_url");
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
-	$body = array(
-	   'from' => array( 'phoneNumber' => "username" ),
-	   'to'   => array( array('phoneNumber' => "receiver" ) ),
-	   'text' => 'Hello world'
-	);
-	$request = $rcsdk->createMultipartBuilder()
-	    ->setBody( $body )
-	    ->add(fopen(__DIR__.'/test.jpg', 'r'))
-	    ->request('/account/~/extension/~/sms');
-	$r = $platform->sendRequest($request);
-	?>
-	```
+    ```php
+    {!> code-samples/messaging/send-mms.php !}
+    ```
