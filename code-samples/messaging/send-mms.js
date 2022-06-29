@@ -37,7 +37,8 @@ async function read_extension_phone_number(){
   }
 }
 
-
+/*Send the actual MMS message by providing the 'recipient_phone_number'. This 'recipient_phone_number' can be 
+any working phone number*/
 async function send_mms(){
 var FormData = require('form-data');
 fd = new FormData();
@@ -51,6 +52,7 @@ fd.append('json', new Buffer.from(JSON.stringify(body)), {
     contentType: 'application/json'
     });
 
+//Choose an image to send within the message
 fd.append('attachment', require('fs').createReadStream('TestImage.jpg'));
 try {
   var resp = await platform.post('/restapi/v1.0/account/~/extension/~/mms', fd)
