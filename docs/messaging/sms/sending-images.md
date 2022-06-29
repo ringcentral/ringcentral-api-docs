@@ -11,7 +11,8 @@ When assembling a multipart message, it is important to remember that the root p
     * There is a limit of 10 attachments for any request.
 
 === "JavaScript"
-	    ```javascript
+
+    ```javascript
     {!> code-samples/messaging/send-sms.js !} 
     ```
 
