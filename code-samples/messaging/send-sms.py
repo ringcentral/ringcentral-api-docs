@@ -20,7 +20,7 @@ except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 
 #On login success fetch the 'from_number' that the logged in user is allowed to 
-#send SMS from by looking for "SmsmSender"feature
+#send SMS from by looking for "SmsSender"feature
 def read_extension_phone_number():
   try:
     resp = platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
