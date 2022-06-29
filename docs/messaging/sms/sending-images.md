@@ -23,6 +23,7 @@ When assembling a multipart message, it is important to remember that the root p
     ```
 
 === "PHP"
+
     ```php
     {!> code-samples/messaging/send-mms.php !}
     ```
