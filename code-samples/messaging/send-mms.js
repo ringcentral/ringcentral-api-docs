@@ -7,7 +7,7 @@ const RingCentral = require('@ringcentral/sdk').SDK
   */
 var rcsdk = new RingCentral({server: "server_url", clientId: "client_id", clientSecret: "client_secret"})
 
-//Create a platform instance to access the SMS APIs
+//Create a platform instance to access the MMS APIs
 var platform = rcsdk.platform();
 
 /*Provide the RingCentral username(phone number/email id), account password and phone number extension.
@@ -19,7 +19,7 @@ platform.on(platform.events.loginSuccess, function(e){
 });
 
 /*On login success fetch the 'from_number' that the logged in user is allowed to send SMS from by looking for 
-"SmsmSender"feature*/
+"MmsSender" feature*/
 async function read_extension_phone_number(){
   try {
       var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
@@ -40,26 +40,26 @@ async function read_extension_phone_number(){
 /*Send the actual MMS message by providing the 'recipient_phone_number'. This 'recipient_phone_number' can be 
 any working phone number*/
 async function send_mms(){
-var FormData = require('form-data');
-fd = new FormData();
-var body = {
-  from: {'phoneNumber': fromNumber},
-  to: [{'phoneNumber': "recipient_phone_number"}],
-}
+    var FormData = require('form-data');
+    fd = new FormData();
+    var body = {
+    from: {'phoneNumber': fromNumber},
+    to: [{'phoneNumber': "recipient_phone_number"}],
+    }
 
-fd.append('json', new Buffer.from(JSON.stringify(body)), {
+    fd.append('json', new Buffer.from(JSON.stringify(body)), {
 
-    contentType: 'application/json'
-    });
+        contentType: 'application/json'
+        });
 
-//Choose an image to send within the message
-fd.append('attachment', require('fs').createReadStream('TestImage.jpg'));
-try {
-  var resp = await platform.post('/restapi/v1.0/account/~/extension/~/mms', fd)
-  var jsonObj = await resp.json()
-  console.log("MMS sent. Message status: " + jsonObj.messageStatus)
-  console.log('Message Id: ' + jsonObj.id)
-}catch (e){
-  console.log(e.message)
-}
+    //Choose an image to send within the message
+    fd.append('attachment', require('fs').createReadStream('TestImage.jpg'));
+    try {
+    var resp = await platform.post('/restapi/v1.0/account/~/extension/~/mms', fd)
+    var jsonObj = await resp.json()
+    console.log("MMS sent. Message status: " + jsonObj.messageStatus)
+    console.log('Message Id: ' + jsonObj.id)
+    }catch (e){
+    console.log(e.message)
+    }
 }
