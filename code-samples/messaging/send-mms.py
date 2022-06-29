@@ -11,7 +11,8 @@ rcsdk = SDK( 'client_id',
              'client_secret',
              'server_url' )
 platform = rcsdk.platform()
-
+#Provide the RingCentral username(phone number/email id), account password and phone number extension.
+#You get these parameters from your sandbox account on the developer portal https://developers.ringcentral.com/ */
 try:
   platform.login('username',
                 'extension_number',
