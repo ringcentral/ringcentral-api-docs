@@ -19,7 +19,7 @@ platform.on(platform.events.loginSuccess, function(e){
 });
 
 /*On login success fetch the 'from_number' that the logged in user is allowed to send SMS from by looking for 
-"SmsmSender"feature*/
+"SmsSender"feature*/
 async function read_extension_phone_number(){
     try {
         var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
