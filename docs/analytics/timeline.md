@@ -193,3 +193,9 @@ The `additionalFilters` element allows users to filter out the data and specify 
 | callsByCompanyHours | callsDurationByCompanyHours | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on the admin portal. </p> Counter will return aggregation of calls for Business Hours & After Hours by time intervals. Timer will return call duration aggregation for the same by time intervals. |
 | callsByQueueSla | callsDurationByQueueSla | <p> Provides the count of calls and their duration details for calls answered within SLA for Queues grouping only. Not applicable for the rest of the groupby available. </p><ul><li><b>inSla:</b> Calls answered within SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregation of calls for these metrics by time intervals. Timer will return call duration aggregation for the same by time intervals. |
 | 
+
+## Full example of an Analytics Timeline Report
+
+```json
+{!> code-samples/analytics/timeline-request-body.json !} 
+```

@@ -147,22 +147,6 @@ Select your preferred language below.
     {!> code-samples/auth/quick-start/php/index.php !}
     ```
 
-    ### Create a test.html file
-	
-    Create a file called <tt>test.html</tt>. In this file we'll add a few API call test cases and a logout button.
-
-    ``` html
-    {!> code-samples/auth/quick-start/php/test.html !}
-    ```
-
-    ### Create an __engine.php__ file
-
-    Create a file called <tt>engine.php</tt>. In this file we'll handle the <b>OAuth2 callback</b> and RingCentral API calls.
-
-    ``` php
-    {!> code-samples/auth/quick-start/php/engine.php !}
-    ```
-
     ### Run your code
 
     You are almost done. Now run your script.

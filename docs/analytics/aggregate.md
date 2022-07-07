@@ -215,3 +215,9 @@ queueSla | To get aggregate of calls that were either in or out of a particular 
 | callsByCompanyHours | callsDurationByCompanyHours. | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on admin portal. </p> Counter will return aggregration of calls for Business Hours & After Hours. Timer will return call duration aggregation for same. |
 | callsByQueueSla | callsDurationByQueueSla | <p> Provides count of calls and their duration details for calls answered within SLA for Queues grouping only. Not applicable for rest of the grouping available. </p> <ul><li><b>inSla:</b> Calls answered withing SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregration of calls for these metrics. Timer will return call duration aggregation for same. |
 |
+
+## Full sample request for Analytics Aggregate Report
+
+```json
+{!> code-samples/analytics/aggregate-request-body.json !} 
+```
