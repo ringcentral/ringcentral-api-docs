@@ -9,14 +9,13 @@ namespace Read_MessageStore
     {
 	static void Main(string[] args)
 	{
-            restClient = new RestClient(
-		Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-		Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-		Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-            restClient.Authorize(
-		Environment.GetEnvironmentVariable("RC_USERNAME"),
-		Environment.GetEnvironmentVariable("RC_EXTENSION"),
-		Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
+        restClient = new RestClient(
+                    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+                    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+                    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+
+        restClient.Authorize(
+                    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
 	    read_user_message_store().Wait();
 	}
 	static private async Task read_user_message_store()

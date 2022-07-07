@@ -127,15 +127,15 @@ Select your preferred language below.
     ### Create a Visual Studio project
 
     * Choose Console Application .Net Core -> App
-    * Select Target Framework .NET Core 2.1
+    * Select Target Framework .NET Core 5.x or 6.x
     * Enter project name "Send_SMS"
-    * Add NuGet package RingCentral.Net (4.1.0) SDK
+    * Add NuGet package [RingCentral.Net SDK](https://www.nuget.org/packages/RingCentral.Net)
 
-    ### Edit the file Program.cs
+    ### Edit the file "Program.cs"
 
-    Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Be sure to have all the enviornment variables set in your OS as shown in ALL CAPS for your app, user credentials and recipeint phone number.
 
-    ```c#
+    ```C#
     {!> code-samples/messaging/quick-start.cs !}
     ```
 
@@ -156,7 +156,7 @@ Select your preferred language below.
         ```json
         dependencies {
             // ...
-            compile 'com.ringcentral:ringcentral:1.4.0'
+            implementation 'com.ringcentral:ringcentral:2.8.6'
         }
         ```
 
@@ -180,7 +180,7 @@ Select your preferred language below.
 
     ### Edit the file "SendSMSQuickStart.java".
 
-    Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+    Be sure to have all the enviornment variables set in your OS as shown in ALL CAPS for your app, user credentials and recipeint phone number.
 
     ```java
     {!> code-samples/java-samples/src/main/java/com/ringcentral/SendSMSQuickStart.java !}

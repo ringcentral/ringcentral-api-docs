@@ -10,9 +10,7 @@ var rcsdk = new RC({
 });
 var platform = rcsdk.platform();
 platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
+    'jwt':  process.env.RC_JWT
 })
 
 platform.on(platform.events.loginSuccess, function(e){

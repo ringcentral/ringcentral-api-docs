@@ -15,9 +15,7 @@ namespace Send_SMS
                 Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
                 Environment.GetEnvironmentVariable("RC_SERVER_URL"));
             restClient.Authorize(
-                Environment.GetEnvironmentVariable("RC_USERNAME"),
-                Environment.GetEnvironmentVariable("RC_EXTENSION"),
-                Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
+                Environment.GetEnvironmentVariable("RC_JWT")).Wait();
             read_extension_phone_number().Wait();
         }
         static private async Task read_extension_phone_number()

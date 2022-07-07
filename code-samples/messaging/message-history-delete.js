@@ -5,9 +5,7 @@ RECIPIENT    = process.env.RECIPIENT_PHONE
 CLIENTID     = process.env.RC_CLIENT_ID
 CLIENTSECRET = process.env.RC_CLIENT_SECRET
 SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+JWT          = process.env.RC_JWT
 
 var rcsdk = new RC({
     server:       SERVER,
@@ -16,9 +14,7 @@ var rcsdk = new RC({
 });
 var platform = rcsdk.platform();
 platform.login({
-    username:  USERNAME,
-    password:  PASSWORD,
-    extension: EXTENSION
+    'jwt':  JWT
 })
 
 platform.on(platform.events.loginSuccess, async function(e) {

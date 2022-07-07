@@ -88,10 +88,12 @@ The payload for an Analytics API request in non-trivial given the many filtering
 
     ### Create a C# project
 
-    * Choose Console Application .Net or .Net Core
-    * Select Target Framework Version
-    * Enter project name "WebAPIClient"
-    * Add NuGet package [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net) version 5.9.0 or newer
+    * Create Console Application .Net or .Net Core for the latest .Net Framework
+    ```bash
+    $ dotnet new console --framework net6.0
+    ```
+    * Optionally, give a project name such as "WebAPIClient"
+    * Add NuGet package for latest [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net)
     * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body"
     * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body"
 
@@ -108,7 +110,7 @@ The payload for an Analytics API request in non-trivial given the many filtering
     You are almost done. Now run your app by typing in the command line 
     
     ```bash
-    $ cd WebAPIClient
+    $ cd <project name>
     $ dotnet run
     ```
   
@@ -117,8 +119,8 @@ The payload for an Analytics API request in non-trivial given the many filtering
     ### Create a Java Gradle/Maven project
 
     * Make sure you have JDK 11 or newer installed in our machine
-    * Install RC Java SDK 2.2.0 or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
-    * Create a new Java Class called "App.java"
+    * Install RC Java SDK v2.x or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
+    * Create a new Java Maven or Gradle based CLI App and name the main class "App.java"
     * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json" that can be referenced in "JSON Request Body"
     * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json" that can be referenced in "JSON Request Body"
 

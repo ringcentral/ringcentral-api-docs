@@ -7,3 +7,4 @@ lib/.*
 bin/.*
 vendor/.*
 include/.*
+code-samples/.env

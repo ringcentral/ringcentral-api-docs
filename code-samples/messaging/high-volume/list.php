@@ -1,9 +1,11 @@
 <?php
 require('vendor/autoload.php');
 
-$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
-$platform->login( "username", "extension_number", "password" );
+$platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
 
 $response = $platform->get('/account/~/extension/~/phone-number');
 foreach ($response->json()->records as $record){

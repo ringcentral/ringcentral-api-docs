@@ -1,8 +1,12 @@
 require 'ringcentral'
 
-rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-response = rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
+$rc = RingCentral.new( ENV['RC_CLIENT_ID'],
+                       ENV['RC_CLIENRT_SECRET'],
+                       ENV['RC_SERVER_URL'] )
+
+$rc.authorize(jwt: ENV['RC_JWT'])
+
+response = $rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
 
 for record in response.body['records'] do
   for feature in record['features'] do

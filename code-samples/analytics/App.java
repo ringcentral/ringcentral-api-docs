@@ -12,9 +12,8 @@ public class App {
 
   static String RINGCENTRAL_CLIENT_ID = "";
   static String RINGCENTRAL_CLIENT_SECRET = "";
-  static String RINGCENTRAL_USERNAME = "";
-  static String RINGCENTRAL_PASSWORD = "";
-  static String RINGCENTRAL_EXTENSION = "";
+  static String RINGCENTRAL_JWT = "";
+
 
   private static final String AGGREGATE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/aggregate";
   private static final String TIMELINE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Week";
@@ -24,7 +23,7 @@ public class App {
   public static void main(String[] args) throws Exception {
 
     RestClient rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL);
-    TokenInfo token = rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+    TokenInfo token = rc.authorize(RINGCENTRAL_JWT);
     String accessToken = token.access_token;
 
     String aggregate_json_file_path = "src/main/resources/aggregate-request-body.json";

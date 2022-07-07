@@ -11,8 +11,12 @@ public class Read_Phone_Number {
     }
     
     public static void detect_phone_number_feature() throws RestException, IOException{
-		RestClient restClient = new RestClient("client_id", "client_secret", "server_url");
-		restClient.authorize("username", "extension_number", "password");
+		RestClient restClient = new RestClient( 
+                                System.getenv("RC_CLIENT_ID"),
+                                System.getenv("RC_CLIENT_SECRET"),
+                                System.getenv("RC_SERVER_URL") );
+
+		restClient.authorize(System.getenv("RC_JWT"));
 	
 		var response = restClient.restapi().account().extension().phonenumber().get();
 		for (var record : response.records) {

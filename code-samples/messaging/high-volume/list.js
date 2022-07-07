@@ -1,9 +1,15 @@
 const RingCentral = require('@ringcentral/sdk').SDK
 
-var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} )
-var platform = rcsdk.platform()
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
+var platform = rcsdk.platform();
 
-platform.login( {username: "username", password: "password", extension: "extension_number"} )
+platform.login({
+    'jwt':  process.env.RC_JWT
+})
 
 platform.on(platform.events.loginSuccess, function(e){
     console.log("Login success")

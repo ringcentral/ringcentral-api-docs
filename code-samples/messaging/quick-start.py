@@ -12,9 +12,7 @@ rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
 platform = rcsdk.platform()
 
 try:
-  platform.login(os.environ.get('RC_USERNAME'),
-                 os.environ.get('RC_EXTENSION'),
-                 os.environ.get('RC_PASSWORD') )
+  platform.login( jwt=os.environ.get('RC_JWT') )
 except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 

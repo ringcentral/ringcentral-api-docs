@@ -5,12 +5,10 @@ require 'dotenv/load'
 CLIENTID     = ENV['RC_CLIENT_ID']
 CLIENTSECRET = ENV['RC_CLIENRT_SECRET']
 SERVER       = ENV['RC_SERVER_URL']
-USERNAME     = ENV['RC_USERNAME']
-PASSWORD     = ENV['RC_PASSWORD']
-EXTENSION    = ENV['RC_EXTENSION']
+JWT          = ENV['RC_JWT']
 
 $rc = RingCentral.new(CLIENTID, CLIENTSECRET, SERVER)
-$rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
+$rc.authorize(jwt: JWT)
 
 def create_message_store_report()
     endpoint = "/restapi/v1.0/account/~/message-store-report"
