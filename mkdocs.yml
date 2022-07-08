@@ -287,6 +287,7 @@ nav:
       - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
       - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
+      - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
