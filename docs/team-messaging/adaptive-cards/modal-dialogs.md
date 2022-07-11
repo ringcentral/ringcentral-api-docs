@@ -22,7 +22,7 @@ The response to an interactive messaging event contains the following elements:
 |-|-|
 | `title` | The title that will be displayed in the header of the dialog. | 
 | `iconUrl` | The icon that will be displayed in the header of the dialog. |
-| `card` or `iframeUrl` | The contents of the dialog. Either an adaptive card or an iframe respectively. |
+| `card` or `iframeURL` | The contents of the dialog. Either an adaptive card or an iframe respectively. |
 
 ### Adaptive card dialogs
 
