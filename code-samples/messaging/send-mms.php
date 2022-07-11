@@ -1,24 +1,34 @@
 	<?php
-    //Import RC SDK
-    /*Provide the server_url, your client_id and client_secret.
-    You get these parameters from your application dashbord in your developer account, for example
-    server_url for production: https://platform.ringcentral.com
-    server_url for sandbox: https://platform.devtest.ringcentral.com
-    */
-	$rcsdk = new RingCentral\SDK\SDK("client_id","client_secret","server_url");
+
+	require('vendor/autoload.php');
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+	$dotenv->load();
+
+	//Make sure you provide RECIPIENT in the .env file.
+	const RECIPIENT = $_ENV['SMS_RECIPIENT'] 
+
+	/*Make sure you provide the RC_SERVER_URL, your RC_CLIENT_ID and RC_CLIENT_SECRET in the .env file.
+	You get these parameters from your application dashbord in your developer account.
+	*/
+	$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
+	$_ENV['RC_CLIENT_SECRET'],
+	$_ENV['RC_SERVER_URL'] );
 
     //Create a platform instance to access the SMS APIs
 	$platform = $rcsdk->platform();
 
-    /*Provide the RingCentral username(phone number/email id), account password and phone number extension.
-    You get these parameters from your sandbox account on the developer portal https://developers.ringcentral.com/ */
-	$platform->login( "username", "extension_number", "password" );
+    /*Provide the RingCentral RC_USERNAME(phone number/email id), RC_PASSWORD and RC_EXTENSION.
+    You get these parameters from your sandbox account on the developer portal 
+	https://developers.ringcentral.com/ */
+	$platform->login( $_ENV['RC_USERNAME'],
+	$_ENV['RC_EXTENSION'],
+	$_ENV['RC_PASSWORD'] );
 	
-    /*Provide 'recipient_phone_number'. This 'recipient_phone_number' can be 
+    /*Provide RECIPIENT. This RECIPIENT can be 
     any working phone number*/
     $body = array(
 	   'from' => array( 'phoneNumber' => "username" ),
-	   'to'   => array( array('phoneNumber' => "recipient_phone_number" ) ),
+	   'to'   => array( array('phoneNumber' => RECIPIENT ) ),
 	   'text' => 'Hello world'
 	);
 
