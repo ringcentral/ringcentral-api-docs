@@ -265,6 +265,7 @@ nav:
       - 'Getting started': 'authentication/jwt/quick-start.md'
       - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
       - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
+      - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
     - 'Auth code grant type':
       - 'Getting Started': 'authentication/quick-start.md'
