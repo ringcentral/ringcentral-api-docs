@@ -30,6 +30,14 @@ JWT tokens are created exclusively within the RingCentral Developer Console. For
     Developers with the role of "Developer Admin" have the ability to not only manage their own JWT credentials, but also the JWT credentials of other developers within their organization. 
 	To manage another developer's credentials, click on "Organization" in the navigation. Then select the developer whose credentials you would like to manage, and finally click on "Credentials" in the navigation. 
 
+### Configuring the apps permitted to use a credential
+
+Giving someone a JWT credential is akin to you giving someone your username and password, as a JWT credential is, in a sense, a key that unlocks your account via the REST API. In light of this, options have been given to help you protect your credentials and limit the harm they may cause if compromised in some way. When you create a credential you have one of two options:
+
+1. **Restrict the credential to be used only by apps within your organization**. This is a convenient way to create a single key that can be shared broadly within the trusted confines of a company. It is ideal for developers who work on a lot of private apps and don't want the hassle of having to generate separate credentials for each app. 
+
+2. **Restrict the credential to be used by a specific list of trusted applications**. This is the best and only way to create a credential that can be safely shared with someone outside your company. It is "safe" because you have to explicitly grant an application permission to use it, so even if the credential was compromised, it can't be used to connect to your account easily. 
+
 ## How to restrict usage of a JWT to an specific application
 
 For added security, especially when you intend to share your JWT with a third-party, we recommend you restrict your JWT to be used with a finite list of apps. To restrict a JWT to be used with only a specific app, you will need to ask the application developer for the client ID of their application. 

@@ -5,15 +5,18 @@ JWT credentials provide developers building applications for the RingCentral App
 1. Application provider would instruct customer to login to the Developer Console and create an app with specific URLs and permissions. 
 2. Customer would provide application provider with a client ID, and client secret for the app they created. 
 3. Customer would provide application provider with a username and password to login to the app they created. 
+4. Application provider would store client ID, client secret, username and password in their system in order to access customer's account. 
 
-The above technique was necessary because username and password auth was only permitted with private applications, and developer's often felt that username/password auth grant types provided them with a more reliable way to access a customer's account. However, with the introduction of JWT credentials this process is now obsolete and is actively discouraged as it is very insecure. 
+The above technique was necessary because the password grant type was only permitted to be used with private applications, and developers often felt that the password grant type provided them with a more reliable way to access a customer's account. 
+
+The introduction of JWT credentials renders this process obsolete and is actively discouraged as it is fundamentally very insecure. 
 
 ## How to connect to a public app using JWT authentication
 
-Now, application providers can provide customers with access to the applicatons they build using a much easier methodology.
+Application providers can provide customers with access to the applicatons they build using the following process and methodology.
 
 1. Application provider creates a public app with all the proper settings and set to use JWT auth.
-2. Application provider instructs customer to create a JWT credential via the Developer Console that is restricted to a single app using the client ID the application provider gave to the customer.
+2. Application provider instructs customer to create a JWT credential via the Developer Console that can only be used by the application provider's application.
 3. Application provider prompts the customer to copy and paste the newly created JWT credential into a web form so that is can be stored for re-use later by the application provider. 
 
 If successful, the customer would see something like the following for the JWT they created.
@@ -35,9 +38,13 @@ JWT credentials can be restricted to an application, but that does not mean that
 	
 ## Helping customers provision a JWT credential for your application
 
-If you are an application provider wishing to setup a server-to-server communication between your service and a RingCentral customer's account, then JWT authentication is a perfect way to facilitate that. In order to connect to a customer's account, they will need to create a JWT credential and transmit it to you. Then you will need to store that credential in your system so that you can use it to authenticate to their account. 
+If you are an application provider wishing to setup a server-to-server communication between your service and a RingCentral customer's account, then JWT authentication is a perfect way to facilitate that. In order to connect to a customer's account, they will need to create a JWT credential and transmit it to you. 
 
-To help the customer create a JWT credential restricted to your application, you can use the link pragma below:
+Once they send you the credential they have created, you will need to store it in your system so that you can use it to authenticate to their account. 
+
+The customer, when creating the JWT credential, must specifically grant your application permission to use the credential. This is done by having them select "Only specific apps of my choice" under "who is permitted to use this credential?" And then having the customer enter in the Client ID of your application is the appropriate field. 
+
+To streamline this process and help the customer create a JWT credential restricted to your application, you can use the link pragma below:
 
 ```
 https://developers.ringcentral.com/console/my-credentials/create?client_id=<ENTER YOUR CLIENT ID>
