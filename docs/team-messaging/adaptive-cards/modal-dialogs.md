@@ -50,8 +50,8 @@ For security puroses, all iFrame URLs used within modal dialogs must be specific
 
 | URL | Description |
 |-|-|
-| `https://www.somedomain.com` | Approve all URLs from www.somedomain.com | 
-| `https://*.somedomain.com` | Approve all subdomans from somedomain.com | 
+| `www.somedomain.com` | Approve all URLs from www.somedomain.com | 
+| `*.somedomain.com` | Approve all subdomans from somedomain.com | 
 
 ## Passing data from an adaptive card to a dialog
 
