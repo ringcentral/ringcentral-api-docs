@@ -5,7 +5,7 @@ For easy testing using [Postman](https://www.getpostman.com/), RingCentral provi
 The collection is available here:
 
 * [Postman 2.1 Collection](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_sms_rest_apis.postman_collection.json)
-<!--* [Postman 2.1 Environment](../specs/ringcentral_environment.postman_environment.json)-->
+
 
 This document describes how to install and use the Postman 2.1 Collection.
 
