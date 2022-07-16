@@ -7,7 +7,7 @@ app.post('/ringcentral/webhooks', (req, res) => {
         "type": "dialog",
         "dialog": {
             "title": "I openned a dialog", "size": "small",
-            "iconUrl": "https://somedomain.com/icon.png",
+            "iconURL": "https://somedomain.com/icon.png",
             "card": {
                 "type": "AdaptiveCard", "version": "1.3",
                 "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
