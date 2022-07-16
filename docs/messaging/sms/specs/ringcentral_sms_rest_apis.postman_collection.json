@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0466f641-f31f-4101-872a-9f60e8328f7b",
+		"_postman_id": "5fa24900-4c8b-4a7e-8051-845500601635",
 		"name": "RingCentral SMS REST APIs",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2749842"
 	},
 	"item": [
 		{
@@ -126,8 +127,8 @@
 								"exec": [
 									"// Populate the Postman environment with:",
 									"// RC_SERVER_HOSTNAME, RC_APP_KEY, RC_APP_SECRET,",
-									"var appKey = environment[\"RC_CLIENT_ID\"];",
-									"var appSecret = environment[\"RC_CLIENT_SECRET\"];",
+									"var appKey = environment[\"RINGCENTRAL_CLIENT_ID\"];",
+									"var appSecret = environment[\"RINGCENTRAL_CLIENT_SECRET\"];",
 									"var apiKey = encodeBasicAuthHeader(appKey, appSecret);",
 									"",
 									"postman.setEnvironmentVariable(\"basic_auth_header\", \"Basic \".concat(apiKey));",
@@ -167,16 +168,15 @@
 								},
 								{
 									"key": "assertion",
-									"value": "{{RC_JWT}}",
+									"value": "{{RINGCENTRAL_JWT}}",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://{{RC_SERVER_HOSTNAME}}/restapi/oauth/token",
-							"protocol": "https",
+							"raw": "{{RINGCENTRAL_SERVER_URL}}/restapi/oauth/token",
 							"host": [
-								"{{RC_SERVER_HOSTNAME}}"
+								"{{RINGCENTRAL_SERVER_URL}}"
 							],
 							"path": [
 								"restapi",
@@ -269,12 +269,7 @@
 									"type": "file",
 									"src": "/Users/gurpreet.singh/Desktop/RingCentral_logo_fullcolor.jpg"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{RINGCENTRAL_SERVER_URL}}/restapi/v1.0/account/~/extension/~/mms",
