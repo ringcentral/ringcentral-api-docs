@@ -1,4 +1,7 @@
-# Using Phones in Sandbox
+# Using Phones in Sandbox - (Deprecated)
+
+!!! danger "RingCentral Phone is no longer supported"
+    To test your applications in our Developer sandbox environment using the newer and more modern [RingCentral app](https://www.ringcentral.com/apps/rc-app), please consult [Developing in Sandbox](../sandbox) for different instructions.
 
 Every sandbox account is provisioned a different main company phone number and user that is different than ones used in production. Additional phone numbers and users can also be configured in your sandbox account. Some use cases supported by these communication apps include:
 

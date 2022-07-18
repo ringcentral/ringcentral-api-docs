@@ -2,7 +2,7 @@ name: Check Links
 on:
   push:
     branches: main
-#on: workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   markdown-link-check:
@@ -15,10 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-#    - name: Set up Python ${{ matrix.python-version }}
-#      uses: actions/setup-python@v2
-#      with:
-#        python-version: ${{ matrix.python-version }}
     - name: Check links
       uses: byrnereese/github-action-mkdocs-link-check@main
       with:
@@ -28,4 +24,4 @@ jobs:
         synchronous: 'yes'
         local-only: 'no'
         recurse: 'yes'
-        excludes: '^(tel|rcmobile):'
+        excludes: '(tel:|rcmobile:|https://marketplace.visualstudio.com|INSERT PERSON ID|INSERT TEAM ID|https://developer.ringcentral.com/new-app)'

@@ -1,58 +1,59 @@
-# Authorization Flows on RingCentral
+# Chosing the auth method that is best for my app
 
 <div class="jumbotron pt-1">
-  <h3 class="display-5">Getting Started with OAuth</h3>
+  <h3 class="display-5">Chomping at the bit and just want to get started?</h3>
   <p class="lead">RingCentral supports a number of different authentication modes to satisfy the needs of the many different types of applications built on top of our platform, from mobile to desktop, from public to private, from bots to webapps.</p>
-  <p>The authentication mode we recommend developers implement is OAuth, a 3-legged auth flow that grants applications access to a user's account without exchanging a username/password with a 3rd party. The guides below will walk you through the creation of a simple OAuth flow.</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
+  <p>The authentication mode we recommend developers use in production is a <a href="./quick-start/">3-legged auth flow</a> that grants applications access to a user's account without exchanging a username/password with a 3rd party. But the easiest and fastest way to get started is to use JWT:</p>
+  <a href="jwt/quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <a href="jwt/quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="jwt/quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="jwt/quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
 </div>
-
-!!! info "First time building an app?"
-    Before you begin implementing a full 3-legged auth flow, we recommend you complete any one of our Quick Start guides which utilize our [Password Flow](./password-flow/). While password based auth is not recommended for most applications, we recognize that it is in many respects the easiest to implement. Start there, and when you have successfully made your first API call, come back to improve the security of your application by implementing our [Authorization Code Flow](./auth-code-flow/). 
-
-## Overview
 
 Your application and its users must be authorized by RingCentral in order to eliminate any possibility of abuse. The RingCentral API uses the [OAuth 2.0 protocol](http://oauth.net/2/) for authentication and authorization, which is widely supported by the majority of cloud API providers.
 
 In general, the steps your app needs to take to use RingCentral APIs (including authorization) are as follows:
 
-1. Create an app, and obtain the app's credentials from your [Developer Portal account](https://developer.ringcentral.com/my-account.html).
+1. Create an app, and obtain the app's credentials from your [Developer Console account](https://developer.ringcentral.com/my-account.html).
 
-2. Obtain an access token using either the [Authorization Code Flow](./auth-code-flow) or the [Password Flow](./password-flow).
+2. Obtain an access token using either the [authorization code flow](./auth-code-flow) or the [JWT Flow](./jwt-flow).
 
-3. Use the access token when calling a RingCentral API.
+3. Use the access token in your HTTP Authorization header when calling a RingCentral API.
 
 4. Refresh your access token when necessary, as they can expire. 
 
 ## What auth flow is right for my app?
 
-??? warning "App Settings Impact What Auth Flows You Can Use"
-    How an application is configured will determine what authorization flows can be used to obtain an access token. This restriction has been known to trip-up many a developer. Please be aware of the following restrictions:
-    
-       * 'Public' apps are not allowed to use the [Password Flow](./password-flow)
-       * 'Private' apps with a platform type of 'Browser-Based' or 'Server/Web' are not allows to use the [Password Flow](./password-flow)
-       * Apps with no user interface are not allowed to use [Auth Code Flow](./auth-code-flow)
-    
-    You can check which flows are available for your app on your app's Setting page.
+There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. Here are some questions you need to ask yourself:
 
-There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. 
+### Does your app have a user interface, and will each of your users need to connect to RingCentral?
 
-* **[Auth Code Flow](./auth-code-flow)** (recommended) - a 3-legged authorization flow common for apps accessed via the web, mobile and desktop applications. 
+If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](./auth-code-pkce-flow). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](./auth-code-flow).
 
-* **[Auth Code with PKCE Flow](./auth-code-pkce-flow)** (recommended) - enhancement for Auth Code Flow with Proof Key for Code Exchange, no client secret required, recommended for apps accessed via web single-page, mobile and desktop applications.
+These flows are ideal for apps that:
 
-* **[Implicit Flow](./implicit-grant-flow)** - a 2-legged authorization flow common for mobile and desktop apps.
+* Have a frontend user interface.
+* Need to validate that the current user has a valid RingCentral account.
+* Need to call the API on behalf of a multitude of different users. 
 
-* **[Password Flow](./password-flow)** - a 2-legged authorization flow suitable for server apps used by a single user account. This is by far the easiest authentication scheme to implement, but is considered insecure as it requires servers to store username and password credentials in plain text. 
+The following are examples of the kinds of apps these auth flows are ideal for:
 
-* **Refresh Token Flow** — a flow used to refresh existing access token regardless of the authorization flow (Authorization Code or Password) that was used for obtaining this access token. If refresh token flow is **not** available for your app, you should be using Auth Code or Password flows for obtaining new access tokens.
+* An CRM app that initiates a phone call for one or more different users.
+* A scheduling assistant app that schedules meetings for one or more different users. 
 
-### Learn More
+!!! hint "Use refresh tokens"
+    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](./refresh-tokens/) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
+
+### Does your app lack a user interface, and/or does it act on behalf of all users within an organization?
+
+Apps that lack a user interface, or are run from the command line are typically utility apps that act on behalf of all users within an organization simultaneously. These apps often utilize a "service user" account that possesses administrative priveleges that allow it to act on behalf of all or any user in the organization. For these types of apps, we recommend the [JWT auth flow](./jwt-flow/).
+
+The following are examples of the kinds of apps these auth flows are ideal for:
+
+* A script that runs every night at midnight to download and archive all phone calls in an organization.
+* A service that periodically gather call analytics to assess performance across am organization. 
+
+### Further reading and relevant specifications
 
 RingCentral supports OAuth 2.0 authentication flows as described in:
 
@@ -60,3 +61,4 @@ RingCentral supports OAuth 2.0 authentication flows as described in:
 * [RFC-6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://tools.ietf.org/html/rfc6750)
 * [RFC-7009: OAuth 2.0 Token Revocation](https://tools.ietf.org/html/rfc7009)
 * [RFC-7636: Proof Key for Code Exchange by OAuth Public Clients](https://tools.ietf.org/html/rfc7636)
+* [RFC 7523: JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523)

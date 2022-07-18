@@ -49,6 +49,15 @@ With a proxy running, we now have all the information we need to create an app i
 </ol>
 </div>
 
+!!! hint "What to build, a public or private bot?"
+    The button above will help you create a private bot. But what is the difference between a public and private bot?
+
+    * A **private bot** can only be installed into the account that created it, and therefore, can only correspond with users in your own personal account/organization.
+
+    * A **public bot** on the other hand is typically listed in the App Gallery, and can be installed into any number of different RingCentral accounts.
+
+    Throughout this walkthrough we will highlight key differences between how you code for a public versus private bot. The button above will assist you in creating a private bot, a preference you can change if you wish.
+
 ### Set your OAuth redirect URL
 
 Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
@@ -60,7 +69,7 @@ This URL will be invoked whenever your bot is installed, and will be the means b
 
 ## Step 3. Clone and setup the sample application
 
-To help you get started, we have a sample application that stubs out much of what you will need to create. Clone this Github repository like so:
+To help you get started, we have a [sample bot application](https://github.com/ringcentral-tutorials/ringcentral-bot-nodejs-demo) that stubs out much of what you will need to create. Clone this Github repository, and install any required libraries like so:
 
 ```bash
 $ git clone https://github.com/ringcentral-tutorials/ringcentral-bot-nodejs-demo.git
@@ -83,8 +92,14 @@ Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT
 Finally, launch your server.
 
 ```bash
-$ npm start
+$ npm start-private
 ```
+
+!!! hint "`private-bot.js` versus `public-bot.js`"
+    In the repository you cloned above, you will find two different server apps: one for public bots and one for private bots, named accordingly. If you are building a public bot, start your server using the following command:
+	```bash
+	$  npm start-public
+	```
 
 ## Step 4. Add the bot to your RingCentral account
 
@@ -92,47 +107,60 @@ Return to the Developer Console and navigate to the "Bot" tab for the app you re
 
 <img class="img-fluid" src="../../manual/add-to-ringcentral.png" style="max-width: 600px">
 
-This will install the bot into your developer sandbox account. RingCentral bot installation is a procedure that RingCentral will first create a special extension (a bot extension) into the RingCentral account, in which the bot is being installed. Then RingCentral will attempt to generate an access token for the bot extension.
+This will install the bot into your developer sandbox account. The RingCentral bot installation process first creates a special virtual user within your account, a.k.a. a "bot extension." Then RingCentral will attempt to generate an access token for this bot extension.
 
-  - If the bot app is a private app, the access token will be generated and sent to the bot server via an HTTP POST request to the specified OAuth redirect URI.
+  - If the bot app is a **private app**, the access token will be generated and sent to the bot server via an HTTP POST request to the specified OAuth redirect URI.
 
-  - If the bot app is a public app, an authorization code will be generated and sent to the bot server via an HTTP GET request to the specified OAuth redirect URI. The bot server will need to send a request to exchange the authorization code for an access token.
+  - If the bot app is a **public app**, an authorization code will be generated and sent to the bot server via an HTTP GET request to the specified OAuth redirect URI. The bot server will need to send a request to exchange the authorization code for an access token.
 
-Both private and public bots will need the access token to subscribe for Team Messaging events notification, and to call Team Messaging API to post messages.
+Both private and public bots will need the access token to subscribe to Team Messaging event notifications, and also to call the Team Messaging API to post messages.
 
 <img src="../../manual/bot-authorization.png" class="img-fluid" style="max-width: 400px">
 
-The access token ultimately obtained through the above process is a *permanent* access token. This means you do not need to worry about refreshing the token after it has been issued. It is the developer's responsibility to manage and sustain the access token.
+The access token ultimately obtained through the above process is a *permanent* access token. This means you do not need to worry about refreshing the token after it has been issued. It is the developer's responsibility to manage and persist the access token.
 
 A public bot access token is per user (customer) account, this means that every time a new RingCentral account installs the bot, the authorization procedure above will be repeated to generate an access token for the new user account. Thus, a public bot server must be able to keep multiple accounts' access tokens and use the access token to interact with each user account accordingly.
 
-??? note "Discussion: walking through the code"
-    Sample code of a private bot authentication handler
+??? info "Code walkthrough: bot authorization"
+    Sample code of a private bot auth handler:
     ```js
     {!> code-samples/team-messaging/private-bot.js [ln:78-122] !}
     ```
-  	Sample code of a public bot authentication handler
+  	Sample code of a public bot auth handler:
     ```js
     {!> code-samples/team-messaging/public-bot.js [ln:80-141] !}
     ```
 
-After getting an access token, the bot must subscribe to Team Messaging events notification in order to receive messages and important events from users and from RingCentral server.
+After getting an access token, the bot must subscribe to Team Messaging event notifications in order to receive messages and important events from users and from RingCentral servers.
 
-??? note "Discussion: walking through the code"
-    Sample code of a private bot subscription for Team Messaging events notification
+??? info "Code walkthrough: subscribing to bot events"
+    #### Private bots
+	Calling the function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:116-118,165-193] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:116-118] !}
     ```
-    Sample code of a public bot subscription for Team Messaging events notification
+
+	The function to subscribe to events
+    ```js
+    {!> code-samples/team-messaging/private-bot.js [ln:168-196] !}
+    ```
+
+    #### Public bots
+	Calling the function to subscribe to events
+    ```js
+    {!> code-samples/team-messaging/public-bot.js [ln:133-135] !}
+    ```
+
+	The function to subscribe to events
     ```js
     {!> code-samples/team-messaging/public-bot.js [ln:133-135,203-237] !}
     ```
 
-??? note "Discussion: observe the console of your local bot server"
-    Turn your attention to your local console to see the output from your server. You will see a trace of the process so far.
-	The first shows your server subscribing to the necessary events.
+??? tldr "Discussion: observe the console of your local bot server"
+    Turn your attention to your console to see the output from your server. You will see a trace of the process so far in which your server is subscribing to the necessary events.
+
     ```
-	> ringcentral-bot-nodejs-demo % node private-bot
+	ringcentral-bot-nodejs-demo % node private-bot
     Bot server listening on port 3000
     Your bot has not been installed or the saved access token was lost!
     Login to developers.ringcentral.com, open the bot app and install it by selecting the Bot menu and at the 'General Settings' section, click the 'Add to RingCentral' button.
@@ -145,15 +173,20 @@ After getting an access token, the bot must subscribe to Team Messaging events n
     Team Messaging events notifications subscribed successfully.
     Your bot is ready for conversations ...
     ```
-	Next, you will see a few events including an event of a bot extension is created, an event of your bot being creating its personal chat room for you to join later. And an event of the bot has joined the default 'All Employees' group.
-    ```
-    Event type: Create
+
+	Soon, your server will begin receiving events, including events corresponding to your bot extension being created, the creation of a personal chat with the bot, and bot joining the default 'All Employees' group. These events look something like this.
+
+    Event: Bot extension being created
+    ```json
     {
       extensionId: '707406005',
       eventType: 'Create',
       hints: [ 'ExtensionInfo' ]
     }
-    Event type: GroupJoined
+	```
+
+    Event: A personal chat being created for the bot
+	```json
     {
       id: '765657090',
       name: null,
@@ -166,7 +199,10 @@ After getting an access token, the bot must subscribe to Team Messaging events n
       lastModifiedTime: '2022-01-06T18:09:50.936Z',
       eventType: 'GroupJoined'
     }
-    Event type: GroupJoined
+	```
+
+    Event: The bot being added to the "All Employees" group
+	```json
     {
       id: '45113350',
       name: 'All Employees',
@@ -187,29 +223,35 @@ After getting an access token, the bot must subscribe to Team Messaging events n
     ```
 
 ## Step 5. Send your first message to the bot
-Now login to the [RingCentral app for sandbox account](https://app.devtest.ringcentral.com) using your sandbox user credentials and start a chat with the bot you installed.
+
+Now, login to the [RingCentral app sandbox](https://app.devtest.ringcentral.com/) using your sandbox user credentials and start a chat with the bot you installed.
 
 <img src="../../manual/bot-start-chat.png" class="img-fluid">
 
-Then, within the chat you just created, type 'ping' and send to the bot.
+Then, within the chat you just created, type 'ping' and send it to the bot.
 
 <img src="../../manual/bot-devtest.png" class="img-fluid">
 
 You will notice that the bot responds 'pong' to your message.
 
-??? note "Discussion: walking through the code"
-    Sample code of a private bot receiving user's message and responding to the user with a message
+??? info "Code walkthrough: sending and receiving bot messages"
+    The sample code below shows a private bot receiving a user's message and responding to the user with a message.
+
     ```js
     {!> code-samples/team-messaging/private-bot.js [ln:124-127,135-142,166,244-253] !}
     ```
-    Sample code of a public bot receiving user's message and responding to the user with a message. As you can see, the difference in a public bot is that we need to detect a user account of a user who interacts with the bot, and load the correct access token of that account to a message message back to that user accordingly.
+
+    The sample code below shows a public bot receiving a user's message and responding to the user with a message. A key difference between a public and private bot is that a public bot needs to load the correct access token corresponding to the account they will need to post a message back to. If the wrong access token is used, then you will receive an error.
+
     ```js
     {!> code-samples/team-messaging/public-bot.js [ln:143-146,160-172,201,286-296] !}
     ```
 
-??? note "Discussion: observe the console of your local bot server"
-    Turn your attention to your local console to see the output from your server. You will see more trace with the message you sent to your bot and the bot's response message in the last step.
-    ```
+??? tldr "Discussion: observe your bot sending and receiving messages"
+    Turn your attention to your console to see the output from your server. Along with a number of other log messages, You will begin to see events corresponding to your bot receiving and posting messages.
+
+    Event: Bot receiving a message
+    ```json
     {
       uuid: '8987221663935761370',
       event: '/restapi/v1.0/glip/posts',
@@ -234,8 +276,10 @@ You will notice that the bot responds 'pong' to your message.
         eventType: 'PostAdded'
       }
     }
-    Received user's message: ping
-    Posting response to group: 765714434
+	```
+
+	Event: bot sending a message
+	```json
     {
       uuid: '4474463302007747908',
       event: '/restapi/v1.0/glip/posts',
@@ -260,13 +304,11 @@ You will notice that the bot responds 'pong' to your message.
         eventType: 'PostAdded'
       }
     }
-    Received user's message: pong
-    Ignoring message posted by bot.
-    ```
+	```
 
-## Step 6. Modify the sample application to respond to more message
+## Step 6. Enhance the app to respond to more message
 
-In the final step, we will modify the sample application to respond to your custom message sending to the bot. Begin by editing the `private-bot.js` or the `public-bot.js` in your favorite editor. Uncomment the *else if* and *send_message* lines below and give your own 'keyword' and a reply message.
+In the final step, we will modify the sample application to respond to your sending of custom messages to the bot. Begin by editing either the `private-bot.js` or the `public-bot.js` file in your favorite editor. Uncomment the *else if* and *send_message* lines below. Then select your own custom command or "keyword" your bot will respond to, and then post a reply when that keyword is received.
 
 ```js
 {!> code-samples/team-messaging/private-bot.js [ln:127,143-145,166] !}
@@ -274,7 +316,7 @@ In the final step, we will modify the sample application to respond to your cust
 
 ## Summary
 
-This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which provides a more full-featured bot server in a box.
+This guide has walked you through the creation of a simple bot server using Javascript. The bot server itself is rudimentary, but should help you to understand the basic underlying components and functions your bot server will be responsible for. If you are a Javascript developer, be sure to checkout RingCentral's [Javascript bot framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which provides a more full-featured bot server right out of the box.
 
 ## Up next: adaptive cards
 

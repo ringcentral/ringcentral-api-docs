@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from ringcentral import SDK
 import os,sys
+from dotenv import load_dotenv
+load_dotenv()
 
 rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
              os.environ.get('RC_CLIENT_SECRET'),

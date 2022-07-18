@@ -2,7 +2,7 @@
 
 Active Calls provides developers with time-sensitive insights into what is (or has recently) occurred in your RingCentral Account. We can perform this lookup at the Account Level or at the Extension Level depending upon the role of the user who has authenticated and obtained an access_token.
 
-Active Calls are not `real time`. There is some latency between the time when a call has terminated and when it shows up in the records returned, this latency differs but it is typically 3-10 seconds.
+Active Calls are not **real-time**. There is some latency between the time when a call has terminated and when it shows up in the records returned, this latency differs but it is typically 3-10 seconds.
 
 Active Calls are created to work as a tool for developers who need to lookup call log data to append notes, and sentiment for things such as CRM integrations. Active Calls are a handy tool for looking up this time-sensitive information, but this can also be confusing for developers expecting this Call Log data type to represent `real time` active calls. For `real-time` or `near real-time` call data developers will want to either use [Webhooks](http://ringcentral-quickstart.readthedocs.io/en/latest/webhooks/) or [Push Notification](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefNotifications.html).
 

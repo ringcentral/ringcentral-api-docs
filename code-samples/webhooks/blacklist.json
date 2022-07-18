@@ -1,0 +1,27 @@
+{
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/subscription",
+    "records": [
+        {
+            "uri": "https://platform.ringcentral.com/restapi/v1.0/subscription/1423e408-e25c-4421-8dd1-5f754e2f5648",
+            "id": "1423e408-e25c-4421-8dd1-5f754e2f5648",
+            "creationTime": "2022-03-18T01:45:30.573Z",
+            "status": "Blacklisted",
+            "eventFilters": [
+                "/restapi/v1.0/account/37439510/extension/2253168021",
+                "/restapi/v1.0/glip/posts",
+                "/restapi/v1.0/glip/groups"
+            ],
+            "expirationTime": "2037-03-14T01:45:30.573Z",
+            "expiresIn": 464203396,
+            "deliveryMode": {
+                "transportType": "WebHook",
+                "encryption": false,
+                "address": "https://google-drive-add-in.integration.ringcentral.com/bot/webhook"
+            },
+            "blacklistedData": {
+                "reason": "I/O operation is failed. Details: [Read timed out]",
+                "blacklistedAt": "2022-06-28T05:24:00.720Z"
+            }
+        }
+    ]
+}

@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "0466f641-f31f-4101-872a-9f60e8328f7b",
+		"name": "RingCentral SMS REST APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth via Password Flow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Contains an access_token\"] = jsonData.hasOwnProperty('access_token');",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"postman.setEnvironmentVariable(\"my_access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Populate the Postman environment with:",
+									"// RC_SERVER_HOSTNAME, RC_APP_KEY, RC_APP_SECRET,",
+									"// RC_USERNAME, RC_EXTENSION, RC_PASSWORD",
+									"var appKey = environment[\"RINGCENTRAL_CLIENT_ID\"];",
+									"var appSecret = environment[\"RINGCENTRAL_CLIENT_SECRET\"];",
+									"var apiKey = encodeBasicAuthHeader(appKey, appSecret);",
+									"",
+									"postman.setEnvironmentVariable(\"basic_auth_header\", \"Basic \".concat(apiKey));",
+									"",
+									"function encodeBasicAuthHeader(appKey, appSecret) {",
+									"    var apiKey = appKey + ':' + appSecret;",
+									"    return btoa(apiKey);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{basic_auth_header}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{RINGCENTRAL_USERNAME}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{RINGCENTRAL_PASSWORD}}",
+									"type": "text"
+								},
+								{
+									"key": "extension",
+									"value": "{{RINGCENTRAL_EXTENSION}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RINGCENTRAL_SERVER_URL}}/restapi/oauth/token",
+							"host": [
+								"{{RINGCENTRAL_SERVER_URL}}"
+							],
+							"path": [
+								"restapi",
+								"oauth",
+								"token"
+							]
+						},
+						"description": "Fetch access_token from DevTest environment as Admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth via JWT Flow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Contains an access_token\"] = jsonData.hasOwnProperty('access_token');",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"postman.setEnvironmentVariable(\"my_access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Populate the Postman environment with:",
+									"// RC_SERVER_HOSTNAME, RC_APP_KEY, RC_APP_SECRET,",
+									"var appKey = environment[\"RC_CLIENT_ID\"];",
+									"var appSecret = environment[\"RC_CLIENT_SECRET\"];",
+									"var apiKey = encodeBasicAuthHeader(appKey, appSecret);",
+									"",
+									"postman.setEnvironmentVariable(\"basic_auth_header\", \"Basic \".concat(apiKey));",
+									"",
+									"function encodeBasicAuthHeader(appKey, appSecret) {",
+									"    var apiKey = appKey + ':' + appSecret;",
+									"    return btoa(apiKey);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{basic_auth_header}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+									"type": "text"
+								},
+								{
+									"key": "assertion",
+									"value": "{{RC_JWT}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{RC_SERVER_HOSTNAME}}/restapi/oauth/token",
+							"protocol": "https",
+							"host": [
+								"{{RC_SERVER_HOSTNAME}}"
+							],
+							"path": [
+								"restapi",
+								"oauth",
+								"token"
+							]
+						},
+						"description": "Fetch access_token from DevTest environment as Admin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APIs",
+			"item": [
+				{
+					"name": "Send SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{my_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": {\n        \"phoneNumber\": \"{{from_number}}\"\n    },\n    \"to\": [\n        {\n            \"phoneNumber\": \"{{to_number}}\"\n        }\n    ],\n    \"text\": \"Hello World SMS from RC number\"\n}\n"
+						},
+						"url": {
+							"raw": "{{RINGCENTRAL_SERVER_URL}}/restapi/v1.0/account/~/extension/~/sms",
+							"host": [
+								"{{RINGCENTRAL_SERVER_URL}}"
+							],
+							"path": [
+								"restapi",
+								"v1.0",
+								"account",
+								"~",
+								"extension",
+								"~",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send MMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{my_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"value": "{\"from\":{\"phoneNumber\":\"{{from_number}}\"},\"to\":[{\"phoneNumber\":\"{{to_number}}\"}],\"text\":\"Hello World MMS from RC number\"}",
+									"contentType": "application/json",
+									"description": "This is the JSON portion of the body",
+									"type": "text"
+								},
+								{
+									"key": "RingCentral_logo_fullcolor.jpg",
+									"contentType": "image/jpeg",
+									"description": "This is multimedia portaion of the body",
+									"type": "file",
+									"src": "/Users/gurpreet.singh/Desktop/RingCentral_logo_fullcolor.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RINGCENTRAL_SERVER_URL}}/restapi/v1.0/account/~/extension/~/mms",
+							"host": [
+								"{{RINGCENTRAL_SERVER_URL}}"
+							],
+							"path": [
+								"restapi",
+								"v1.0",
+								"account",
+								"~",
+								"extension",
+								"~",
+								"mms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

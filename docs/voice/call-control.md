@@ -99,7 +99,7 @@ Authorization: Bearer <access-token>
 ## Learn more
 
 * Control an incoming a call before it is accepted: [Pre-call Controll](../pre-call-control/)
-* Control an active call already in progress: [Actice Call Control](../active-call-control/)
+* Control an active call already in progress: [Active Call Control](../active-call-control/)
 * Detect changes in the status of a call: [Telephony Session Notifications](../telephony-session-notifications/)
 
 

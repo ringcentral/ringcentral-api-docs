@@ -65,17 +65,25 @@ First, let's update the settings of your bot to send outbound Webhook when users
 
 Next, we go back to our code to add an express handler for receiving adaptive card events.
 
+**Sample code of a private bot**
+
 ```js
 {!> code-samples/team-messaging/private-bot.js [ln:230-242] !}
 ```
-Sample code of a private bot
+
+**Sample code of a public bot**
 
 ```js
 {!> code-samples/team-messaging/public-bot.js [ln:265-284] !}
 ```
-Sample code of a public bot. As you can see, the difference in a public bot is that we need to detect a user account of a user who interacts with the bot, and load the correct access token of that account to post a card back to that user accordingly.
 
-In this example, we demonstrate how to send response in a new card and how to update a card with the response. There are 2 buttons in our sample card, one for sending response in a new card, one for updating the existing card specified in the `data.path` value. When we receive a *user-submit* event, we will detect the `data.path` value and decide to post back accordingly.
+The main difference between a public bot and a private bot is that a private bot always posts messages to the same account, while a public bot could be posting messages to any number of different RingCentral accounts. For this reason, a private bot only needs to keep track of one access token (the one corresponding to your account), and a public bot needs to maintain a mapping of accounts and access tokens. 
+
+Then, when a public bot receives a message, it first determines the poster's account Id, then looks up the access token corresponding to that account, and then uses that access token to post or update a message in that user's account. 
+
+In this example, we demonstrate both how to send a response by posting a new card, and how to update a card that was previously posted. 
+
+You will observe that the card we posted contains two buttons, one to instruct the server to post a response as a new card, and one to instruct the server to update the existing card specified in the `data.path` value. When we receive a *user-submit* event, we will detect the `data.path` value and decide to post back accordingly.
 
 ```js
 {!> code-samples/team-messaging/private-bot.js [ln:298-318] !}

@@ -36,7 +36,7 @@ copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
 #google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
-pages:
+nav:
 
 # ---- CORE APIs ----
 - 'Primary':
@@ -68,8 +68,8 @@ pages:
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
-      - 'Reading Call Log Data': 'voice/call-log/reading-call-log.md'
-      - 'Data Types': 'voice/call-log/api.md'
+      - 'Overview': 'voice/call-log/reading-call-log.md'
+      - 'Call Log data types': 'voice/call-log/api.md'
       - 'Detailed Call Log Data': 'voice/call-log/details.md'
       - 'Data Archival': 'voice/call-log/archival.md'
       - 'Call Recordings': 'voice/call-log/recordings.md'
@@ -85,13 +85,13 @@ pages:
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
-    - 'SMS Content Policies': 'messaging/sms-content-policy.md'
     - 'Getting Started': 'messaging/quick-start.md'
-    - 'Standard SMS':
+    - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+      - 'Postman': 'messaging/sms/postman.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
@@ -130,6 +130,7 @@ pages:
     - 'Team Messaging API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
 #      - 'Permissions': 'team-messaging/manual/permissions.md'
+      - 'Mentions': 'team-messaging/manual/mentions.md'
       - 'Composing deep links': 'team-messaging/manual/links.md'
     - 'Team Messaging events':
       - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
@@ -154,20 +155,22 @@ pages:
       - 'Introduction': 'team-messaging/adaptive-cards/index.md'
       - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
       - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
+      - 'Modal dialogs': 'team-messaging/adaptive-cards/modal-dialogs.md'
       - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
 
-    - 'RingCentral Add-ins':
+    - 'RingCentral add-ins':
       - 'Introduction': 'team-messaging/add-ins/index.md'
       - 'Developer tools': 'team-messaging/add-ins/tools.md'
 
-    - 'Build a notification app':
+    - 'Notification apps':
       - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
       - 'Integrated installation': 'team-messaging/add-ins/installation.md'
       - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
 
-    - 'Build a bot':
+    - 'Bots':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
       - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
+      - 'Installing/removing bots': 'team-messaging/bots/installing-bots.md'
 #      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
 #      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
@@ -187,66 +190,12 @@ pages:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Call Performance Reports':
-      - 'Data Guide': 'analytics/call-performance/index.md'
-      - 'API Usage Information': 'analytics/call-performance/api-reference.md'
-      - 'API Reference' : 'https://ringcentral-call-performance.readthedocs-hosted.com/en/latest/swagger-api-ref/'
-      - 'Sample Application': 'https://github.com/ringcentral/call-performance-api-demo'
-    - 'Troubleshooting Guide': 'analytics/troubleshooting.md'
-    - 'Changelog': 'analytics/changelog.md'
+    - 'Aggregate Performance Data': 'analytics/aggregate.md'
+    - 'Timeline Timeline Data': 'analytics/timeline.md'
+    - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
+    - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
 
-  # ---- SECONDARY APIs ----
-- 'Secondary':
-
-  - 'Using the API':
-      - 'Methods, endpoints and parameters': 'basics/uris.md'
-      - 'Exploring the API': 'basics/explorer.md'
-      - 'Running code samples': 'basics/code-samples.md'
-      - 'Using phones in sandbox': 'basics/your-rc-phone.md'
-      - 'Media content': 'basics/media.md'
-      - 'App permissions': 'basics/permissions.md'
-      - 'URI schemes': 'basics/uri-schemes.md'
-      - 'Rate limits': 'basics/rate-limits.md'
-      - 'API Change Log':
-        - 'Preface': 'basics/changelog/index.md'
-        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
-        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
-        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
-        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
-        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
-        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
-        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
-        - 'v.1.0.40 (Aug 2019)': 'basics/changelog/1_0_40.md'
-        - 'v.1.0.39 (May 2019)': 'basics/changelog/1_0_39.md'
-      - 'API Quick Reference': 'basics/api-index.md'
-
-  - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
-
-  - 'Applications':
-      - 'Development Lifecycle':
-          - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Create an application': 'basics/create-app.md'
-          - 'Develop in sandbox': 'basics/sandbox.md'
-          - 'Graduate to production': 'basics/production.md'
-      - 'App Promotion':
-          - 'Submit to the App Gallery': 'basics/app-gallery.md'
-          - 'Update a Profile': 'basics/update-profile.md'
-          - 'Checklist and Best Practices': 'basics/app-gallery-checklist.md'
-      - 'Application Management':
-          - 'Using Lead Forms': 'basics/lead-forms.md'
-          - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Partner Ecosystem':
-          - 'Overview': 'basics/partner-compatibility.md'
-          - 'Technical Requirements': 'basics/partners/segregated-environments.md'
-          - 'Brand Guidelines':
-             - 'AT&T Office@Hand': 'basics/partners/att.md'
-             - 'Avaya Cloud Office': 'basics/partners/aco.md'
-             - 'BT Cloud Work': 'basics/partners/bt.md'
-             - 'Rainbow Office': 'basics/partners/alcatel.md'
-             - 'TELUS Business Connect': 'basics/partners/telus.md'
-             - 'Unify Office': 'basics/partners/atos.md'
-
-  - 'Account':
+  - 'Accounts and Users':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
     - 'Phone Numbers': 'account/phone-numbers.md'
@@ -254,20 +203,80 @@ pages:
     - 'User Feature Flags': 'account/feature-flags.md'
     - 'Custom Fields': 'account/custom-fields.md'
     - 'Presence': 'account/presence.md'
+    - 'Audit Trail': 'account/audit-trail.md'
     - 'Emergency Locations' : 'provisioning/location/emergency-locations.md'
+    - 'Address Book':
+      - 'Overview': 'address-book/index.md'
+
+
+  # ---- SECONDARY APIs ----
+- 'Secondary':
+
+  - 'Using the API':
+      - 'Methods, endpoints and parameters': 'basics/uris.md'
+      - 'Exploring the API': 'basics/explorer.md'
+      - 'Callaborating with developers': 'basics/inviting-developers.md'
+      - 'Running code samples': 'basics/code-samples.md'
+      - 'Media content': 'basics/media.md'
+      - 'App scopes/permissions': 'basics/permissions.md'
+      - 'URI schemes': 'basics/uri-schemes.md'
+      - 'Rate limits': 'basics/rate-limits.md'
+      - 'Errors': 'basics/errors.md'
+      - 'API Change Log':
+        - 'Preface': 'basics/changelog/index.md'
+        - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
+        - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
+        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
+        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+      - 'API Quick Reference': 'basics/api-index.md'
+
+  - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
+
+  - 'Applications':
+      - 'Development lifecycle':
+          - 'Tips for your first app': 'basics/your-first-steps.md'
+          - 'Create an application': 'basics/create-app.md'
+          - 'Develop in sandbox': 'basics/sandbox.md'
+          - 'Graduate to production': 'basics/production.md'
+      - 'App promotion':
+          - 'Submit to the App Gallery': 'basics/app-gallery.md'
+          - 'Using profile variables': 'basics/app-gallery-variables.md'
+          - 'Updating a profile': 'basics/update-profile.md'
+          - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
+      - 'Application management':
+          - 'Using Lead Forms': 'basics/lead-forms.md'
+          - 'Install App Buttons': 'basics/install-app-button.md'
+      - 'Partner ecosystem':
+          - 'Overview': 'basics/partners/index.md'
+          - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
+          - 'Authentication guidance': 'basics/partners/auth.md'
+          - 'Technical requirements': 'basics/partners/segregated-environments.md'
 
   - 'Authentication':
-    - 'Overview': 'authentication/index.md'
-    - 'Getting Started': 'authentication/quick-start.md'
-    - 'Developer Manual':
+    - 'Choosing the best auth': 'authentication/index.md'
+    - 'JWT grant type':
+      - 'Getting started': 'authentication/jwt/quick-start.md'
+      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
+      - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
+      - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
+      - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
+    - 'Auth code grant type':
+      - 'Getting Started': 'authentication/quick-start.md'
+      - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
+    - 'Using access tokens': 'authentication/tokens.md'
+    - 'Using refresh tokens': 'authentication/refresh-tokens.md'
+    - 'Technical deep-dives':
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
+      - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
-      - 'Implicit grant flow': 'authentication/implicit-grant-flow.md'
-      - 'Using auth tokens': 'authentication/tokens.md'
-
-  - 'Address Book':
-    - 'Overview': 'address-book/index.md'
 
   - 'Notifications and Events':
     - 'Overview': 'notifications/index.md'
@@ -279,9 +288,10 @@ pages:
       - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
       - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
+      - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
     - 'Sample Applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 
   - 'Downloads and SDKs': sdks.md
-  - 'RingCentral Labs': labs.md
+  - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'

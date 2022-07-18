@@ -3,14 +3,15 @@ style: quick-start
 
 # SMS Quick Start
 
-!!! info "Important:Please read [RingCentral's SMS content and messaging policies](../sms-content-policy/)"
+!!! info "Things to know before you begin"
+    
+    * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html).
+	* Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant.
+	* When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/).
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
-
-!!! note "Also check out our SMS Best Practices Guide"
-    After you finish this quick start, be sure to read our [SMS Best Practices Guide](../sms/best-practices/).
 
 ## Create App and Get Credentials
 
@@ -117,7 +118,7 @@ Select your preferred language below.
 
     You are almost done. Now run your script.
 
-    ```bask
+    ```bash
     $ php sms.php
     ```
 
@@ -200,7 +201,7 @@ Select your preferred language below.
 
     ### Create and edit sms.rb
 
-    Create a file called `sms.php`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
+    Create a file called `sms.rb`. Be sure the values in your `.env` file have been set properly, including the `SMS_RECIPIENT` variable. 
 
     ```ruby
     {!> code-samples/messaging/quick-start.rb !}
