@@ -1,132 +1,147 @@
-# Authorization Code Flow
+# Authorization code flow
 
-The "Authorization Code Flow," also referred to as a "3-legged authorization flow" or simply "OAuth" is the most common and recommended form of authenticating RingCentral users within the context of an application. This process conforms to the OAuth 2.0 standard and works to:
+RingCentral supports the OAuth 2.0 authorization code flow, one of the most common authorization methods used by app developers to request and gain access to another user's account via an API. You may see it referred to as a "3-legged authorization flow" because it involves three distinct steps in obtaining an access token used to call the API. Those steps are:
 
-* Keep a user's auth credentials secure, and out of the hands of a third-party.
+1. Authorization is requested and granted via a user interface.
+2. A grant is exchanged for an access token via an API call.
+3. The access token is used to call the API to access a protected resource.
+
+<img src="../oauth-auth-token-flow.png" class="img-fluid">
+
+!!! hint "Developers are encouraged to implement the nearly identical [PKCE auth code flow](../auth-code-pkce-flow/) for better security."
+
+### What are the benefits of using the authorization code flow?
+
+The auth code flow works to:
+
+* Keep a user's personal login credentials secure, and out of the hands of a third-party.
 * Disclose what permissions an app requires.
-* Prompt the user to explicitly authorize an app to access their data.
-* Provide the developer with a token that can used to by their application to act on a user's behalf. 
+* Prompt users to explicitly authorize an app to access their data.
+* Provide developers with a token that can used to by their applications to act on another user's behalf. 
 
-The general flow looks like this:
+### When should I use the authorization code flow?
 
-<img src="../../img/auth_code_flow.png" class="img-fluid">
+The auth code flow is the most common form of OAuth used on the Internet, and is ideal in the following scenarios:
 
-The step-by-step details of this flow are explained below.
+* Your application is web-based. 
+* Your application has a server component capable of receiving HTTP requests from RingCentral.
+* Your application exposes a user interface via which users can initiate the login process.
+* Your application requires access to a specific user's account.
 
-## Step 1. Request authorization code
+## Authorization code flow in detail
 
-When your application needs to access a user's data, redirect the user to the RingCentral API server. Generate a URL to request access from endpoint `/restapi/oauth/authorize`. This request must be in the `application/x-www-form-urlencoded` format and must contain the following parameters in the HTTP request body:
-	
-| Parameter       | Type   | Description |
-| --------------- | ------ | ----------- |
-| `response_type` | string | Must be set to `code` |
-| `client_id`     | string | Required. Enter your application key (Production or Sandbox) here |
-| `redirect_uri`  |URI     | Required. This is a callback URI which determines where the response will be sent to. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration. This URI can be HTTP/HTTPS address for web applications or custom scheme URI for mobile or desktop applications. |
-| `state`         | string | Optional, recommended. An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client. The parameter should be used for preventing cross-site request forgery |
-| `brandId`       | integer | Optional. A number identifying the RingCentral Carrier Partner logo to display on the login page. See [RingCentral Partner Compatibility Guide](../../basics/partner-compatibility/).
+### Step 1. Compose a "request authorization" URL
+
+The authorization process is initiated by an end user clicking a URL composed by the application requesting access to theirRingCentral account. This URL will contain the following query parameters: 
+
+{! docs/authentication/login-url-params.inc !} 
 
 **Example Login URL**
 
-Below is an example login URL to initiate the authorization flow. We recommend developers use an SDK to generate this URL in a more automated fashion. 
+Below is an example URL to initiate the authorization flow. 
 
 ```
-https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>&display=&prompt=
+https://platform.ringcentral.com/restapi/oauth/authorize?response_type=code&redirect_uri=<my_uri>&client_id=<client_id>
 ```
 
-## Step 2. User login and consent
+#### Using an SDK to generate a login URL
 
-On this step your app’s user is redirected by the browser to a RingCentral authorization page, where user can view the list of permissions your app is asking for.
-	
-<img src="../../img/user_login.png" class="img-fluid">
+We recommend developers use an SDK to generate a login URL to ensure it is composed properly.
 
-<img src="../../img/user_consent.png" class="img-fluid">
+=== "Javascript" 
 
-After confirming the permissions, the user enters their RingCentral credentials, and the browser is then redirected to the "Redirect URI" you’ve provided in the request.
+    ```javascript
+    {!> code-samples/auth/login-url.js !} 
+    ```
 
-## Step 3. Handling authorization code server response
+### Step 2. User login and consent
 
-The authorization server responds to your application's access request by using the URL specified in the request.
+On this step your app’s user is redirected by the browser to a RingCentral authorization page, where the user is first asked to login if they have not already.
 
-* If the user approves the access request, then the response contains an authorization code.
-* If the user does not approve the request, the response contains an error message.
+Once they have logged in, RingCentral will prompt the user with an "Access Request" in which the permissions the app is requesting is disclosed. 
 
-An authorization code response contains:
+<img src="../user-consent.png" class="img-fluid" style="max-width: 500px">
 
-| Parameter    | Type    | Description |
-| ------------ | ------- | ----------- |
-| `code`       | string  | The authorization code returned for your application |
-| `expires_in` | integer | The remaining lifetime of the authorization code |
-| `state`      | string  | This parameter will be included in response if it was specified in the client authorization request. The value will be copied from the one received from the client |
-	
-If authentication has been passed successfully, your application will get a response similar to the following:
+When the user clicks "Authorize," the user is then redirected to the `redirect_uri` that was passed in via the login URL constructed above. At the same time, RingCentral will add the following query parameters to the redirect URI, which your application will need in subsequent steps. 
+
+{! docs/authentication/auth-code-params.inc !} 
+
+!!! warning "For security purposes, the `redirect_uri` must exactly match at least one of the Redirect URIs provided by the developer when the app was created."
+
+#### Example OAuth redirect
 	
 ```http
 HTTP/1.1 302 Found
 Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&state=xyz&expires_in=60
 ```
 
-## Step 4. Exchange code for token
+### Step 3. Exchange auth code for access token
      
-After the web server receives the authorization code, it can exchange the authorization code for an access token using token endpoint `/restapi/oauth/token` (API group is *Auth*).
+The 'code' your application receives at your Redirect URI is a temporary authorization code that is used to obtain an access token to call the API. If the token is not redeemed in the alotted time, the user will need to go through the login and authorization process again. This is the final step in the process before your app can call the RingCentral API. 
 
-Token requests must include client authentication credentials (see [Client Authentication](../tokens#authenticating-your-application-to-obtain-an-access-token) section).
+To exchange an auth code for an access token, developers will call the RingCentral API accordingly:
 
-**Request Body**
+#### Auth token request
+
+**HTTP Headers**
+
+| Header           | Value                                                      |
+| ---------------- | ---------------------------------------------------------- |
+| `Content-type`   | `application/x-www-form-urlencoded`                        |
+| `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+
+**POST Parameters**
+
+{! docs/authentication/auth-token-params.inc !} 
+
+**Sample Request**
 
 ```http
-Content Type: application/x-www-form-urlencoded
+POST /restapi/oauth/token HTTP/1.1 
+Accept: application/json 
+Content-Type: application/x-www-form-urlencoded 
+Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
+
+code=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaH
+  BuWHZINGM2WTdqaWlBOEVhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3A
+  nYOPxO0flEwO6Ffoq9Tlqs1s&grant_type=authorization_code
+  &redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect
 ```
 
-| Parameter           | Type     | Description |
-| ------------------- | -------- | ----------- |
-| `grant_type`        | string   | Required. Must be set to `authorization_code` for authorization code flow |
-| `code`              | string   | Required. Provide your authorization code received in the previous step |
-| `client_id`         | string   | Required. Enter your application key (Production or Sandbox) here |
-| `redirect_uri`      | URI      | Required. This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration. |
-| `access_token_ttl`  | integer  | Optional. Access token lifetime in seconds; the possible values are from 600 sec (10 min) to 3600 sec (1 hour). The default value is 3600 sec. If the value specified exceeds the default one, the default value is set. If the value specified is less than 600 seconds, the minimum value (600 sec) is set |
-| `refresh_token_ttl` | integer  | Optional. Refresh token lifetime in seconds. The default value depends on the client application, but as usual it equals to 7 days. If the value specified exceeds the default one, the default value is applied
-	
-## Step 5. Handling token server response
+#### Auth token response
 
 The server responds with an access token which can presented in subsequent requests in the HTTP Authorization header to authenticate API Calls. The response will contain the following parameters: 
 
-| Parameter                  | Type    | Description |
-| -------------------------- | ------- | ----------- |
-| `access_token`             | string  | Access token to pass to subsequent API requests |
-| `expires_in`               | integer | Issued access token TTL (time to live), in seconds |
-| `refresh_token`            | string  | Refresh token to get a new access token, when the issued one expires |
-| `refresh_token_expires_in` | integer | Issued refresh token TTL (time to live), in seconds |
-| `scope`                    | string  | List of permissions allowed with this access token, white-space separated |
-| `token_type`               | string  | Type of token. The only possible value supported is 'Bearer'. This value should be used when specifying access token in `Authorization` header of subsequent API requests |
-| `owner_id`                 | string  | Extension identifier |
+{! docs/authentication/auth-token-response.inc !} 
+
     
-**Example**
+**Sample Response**
 
-=== "Request"
-	```http
-	POST /restapi/oauth/token HTTP/1.1 
-	Accept: application/json 
-	Content-Type: application/x-www-form-urlencoded 
-	Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==
-	
-	code=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaH
-	  BuWHZINGM2WTdqaWlBOEVhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFWZk9SMm5lek0tWnF5d3h8C3A
-	  nYOPxO0flEwO6Ffoq9Tlqs1s&grant_type=authorization_code
-	  &redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect              
-	```
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+    
+{
+   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
+   "token_type" : "bearer",
+   "expires_in" : 7199,
+   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
+   "refresh_token_expires_in" : 604799,
+   "scope" : "AccountInfo CallLog ExtensionInfo Messages SMS",
+   "owner_id" : "256440016"
+}
+```
 
-=== "Response"
-	```http
-	HTTP/1.1 200 OK
-	Content-Type: application/json
-	    
-	{
-	   "access_token" : "U1BCMDFUMDRKV1MwMXxzLFSvXdw5PHMsVLEn_MrtcyxUsw",
-	   "token_type" : "bearer",
-	   "expires_in" : 7199,
-	   "refresh_token" : "U1BCMDFUMDRKV1MwMXxzLFL4ec6A0XMsUv9wLriecyxS_w",
-	   "refresh_token_expires_in" : 604799,
-	   "scope" : "AccountInfo CallLog ExtensionInfo Messages SMS",
-	   "owner_id" : "256440016"
-	}
-	```
+### Step 4. Make your API calls
+
+With an access token in hand, you can now call the API to access the authorizing user's account. The access token is transmitted to the API via the HTTP Authorization header as shown below.
+
+```http
+POST /restapi/oauth/token HTTP/1.1 
+Accept: application/json 
+Content-Type: application/json
+Authorization: Bearer U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFm
+  WnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0MzUTdYRDdSTURiaHBuWHZINGM2
+  WTdqaWlBOEVhRHNxRWdJVUNYQjd4dmJsWHJoVVlWQVN2SFo2YWJPanJsRkFW
+  Zk9SMm5lek0tWnF5d3h8C3AnYOPxO0flEwO6Ffoq9Tlqs1s
+```

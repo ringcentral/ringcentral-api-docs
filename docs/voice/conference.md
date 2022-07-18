@@ -5,7 +5,7 @@ Multi-way conference calling enables multiple people on multiple phones to conne
 
 The Conference Call API allows a developer to automatically:
 
-* Start a conference Call
+* Start a conference call
 * Bring-in a call party to a conference call
 * Remove a call party from a conference call
 
@@ -34,7 +34,10 @@ The Conference API is used to initiate a conference call on the specified accoun
     }
     ```
 
-This will return a `voiceCallToken` which is the call token for entering the conference call. You'll bring in your first caller via a Session Initiation Protocol (SIP) INVITE.
+This will return a `voiceCallToken` which is the call token for entering the conference call.
+You'll also receive a telephony session ID (`id`) that will be used in the following calls to add and remove parties from the call.
+
+To bring in the first caller to the conference call, you need to send a Session Initiation Protocol (SIP) INVITE using the SIP WebRTC implementation being used by the client.
 
 !!! Important
     A SIP INVITE is required to bring in parties to the conference call, otherwise you will receive a 403 error.  The conference call will wait 38 seconds for the SIP INVITE to complete or else the conference will be terminated.
@@ -46,7 +49,17 @@ To: <sip:conf_732d34366432356138383138353334323263396636313439376336663736613332
 From: <sip:17203861294*11101@sip.ringcentral.com>
 ```
 
-You'll also receive a telephony session ID (`id`) that will be used in the following calls to add and remove parties from the call.
+If you are using the [RingCentral WebPhone SDK](https://github.com/ringcentral/ringcentral-web-phone), you can add the first user to the conference call (as the logged in user) using the code below. The code will send a SIP INVITE as stated above. Refer to the [RingCentral WebPhone SDK](https://github.com/ringcentral/ringcentral-web-phone) docs for more details
+
+```
+const webPhoneConfig = {...}
+const webPhone = new WebPhoneSdk(registrationData, webPhoneConfig)
+const session = webPhone.userAgent.invite(voiceCallToken, {
+  fromNumber: 'xxxxxxxx'
+});
+```
+
+The same can be tried using the RingCentral WebPhone Online Demo by logging into https://ringcentral.github.io/ringcentral-web-phone/ and making a phone call to the `webPhoneConfig` using the UI
 
 !!! Important
     A SIP INVITE takes time to complete, during which time a bring-in command or presence command will not operate properly.  Please make sure to include a timeout to delay bring-in or presence commands before the SIP INVITE is ready. Or listen instead for the presence event when the conference call is connected.

@@ -44,7 +44,7 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
-      <version>9.4.19.v20190610</version>
+      <version>10.0.10</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -55,7 +55,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
-      <version>1.2.78</version>
+      <version>1.2.83</version>
     </dependency>
   </dependencies>
 

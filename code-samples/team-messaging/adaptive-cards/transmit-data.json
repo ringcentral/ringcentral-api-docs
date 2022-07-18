@@ -1,0 +1,22 @@
+{
+    "type": "AdaptiveCard",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "View",
+            "data": {
+                "staticValue": "foo"
+            }
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Input.Text",
+            "placeholder": "Enter a value",
+            "label": "A form element",
+            "id": "textField"
+        }
+    ]
+}

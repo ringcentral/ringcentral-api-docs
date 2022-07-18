@@ -11,7 +11,7 @@ Teams can be either public or private. A public team is discoverable by everyone
 Create a team by posting to the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeam). You can specify the name, description, its membership, and its visibility within the organization. 
 
 ```js
-{!> code-samples/team-messaging/create-team.js [ln:19-40] !}
+{!> code-samples/team-messaging/create-team.js [ln:1-38] !}
 ```
 
 When specifying the members of a team, one can provide a mix of either person IDs and/or email addresses. If the email address refers to someone outside the organization that person will be added to the team as a guest, and invoke an email onboarding flow for that user. 
@@ -21,7 +21,7 @@ When specifying the members of a team, one can provide a mix of either person ID
 A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeam). Long lists can be [iterated over using page tokens](../../manual/pagination/). 
 
 ```js
-{!> code-samples/team-messaging/get-chats-paginated.js [ln:31-51] !}
+{!> code-samples/team-messaging/get-chats-paginated.js [ln:1-47] !}
 ```
 
 ## Finding the members of a teams

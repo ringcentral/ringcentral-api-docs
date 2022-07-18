@@ -45,15 +45,15 @@ Different recipient wireless carriers will have different spam policies so it ma
 
 ## Expected Errors
 
-Some information is provided for informational purposes and while it may be classified as an error, may be expected from  carriers. For example, it may not possible to get delivery status from carriers as reported by `SMS-CAR-104` and `SMS-CAR-199`. When checking for delivery success and failure, you may want to verify receipt of the SMS message before classifying these as non-delivered messages.
+Some information is provided for informational purposes and while it may be classified as an error, may be expected from  carriers. For example, it may not possible to get delivery status from carriers as reported by `SMS-CAR-104` and `SMS-CAR-199`. When checking for delivery success and failure, you may want to verify receipt of the SMS message before classifying these as non-delivered.s
 
 ## Error Code List
 
 | Code | Description |
 |-|-|
-| `SMS-UP-410` | Destination number invalid, unallocated, or does not support this kind of messaging. |
-| `SMS-UP-430` | Spam content detected. |
-| `SMS-UP-431` | Number blacklisted due to spam. |
+| `SMS-UP-410` | Destination number is invalid, unallocated, or does not support this kind of messaging. |
+| `SMS-UP-430` | This message has been filtered and blocked by a upstream carrier for spam. |
+| `SMS-UP-431` | From number is blacklisted due to spam or other violations. |
 | `SMS-UP-500` | General upstream error. Upstream is malfunctioning. |
 | `SMS-CAR-104` | Carrier has not reported delivery status. |
 | `SMS-CAR-199` | Carrier reports unknown message status. |
@@ -61,15 +61,16 @@ Some information is provided for informational purposes and while it may be clas
 | `SMS-CAR-411` | Destination number invalid, unallocated, or does not support this kind of messaging. |
 | `SMS-CAR-412` | Destination subscriber unavailable. |
 | `SMS-CAR-413` | Destination subscriber opted out. |
-| `SMS-CAR-430` | Message is spam. |
+| `SMS-CAR-430` | This message has been filtered and blocked by a recipient's carrier for spam. |
 | `SMS-CAR-431` | Message rejected by carrier with no specific reason. |
 | `SMS-CAR-432` | Message too long. |
 | `SMS-CAR-433` | Message is malformed for the carrier. |
-| `SMS-CAR-450` | P2P messaging volume violation. |
+| `SMS-CAR-450` | P2P messaging volume violation. Please contact RingCentral support to review your account settings and ensure you are utilizing the appropriate A2P provisioning for high volume traffic |
 | `SMS-CAR-460` | Destination rejected short code messaging. Currently not applicable for RingCentral. |
 | `SMS-CAR-500` | Carrier reports general service failure. |
 | `SMS-RC-410` | Destination number unsupported. |
 | `SMS-RC-413` | Destination subscriber opted out. |
+| `SMS-RC-430` |This message has been filtered and blocked by a RingCentral's message filtering system for spam. |
 | `SMS-RC-500` | General/Unknown internal RC error. |
-| `SMS-RC-501` | RingCentral is sending a bad upstream API call. |			
+| `SMS-RC-501` | RingCentral is sending an invalid upstream API call. Please raise a support ticket with RingCentral developer support.|			
 | `SMS-RC-503` | RingCentral provisioning error. Phone number is incorrectly provisioned by RingCentral in upstream. |

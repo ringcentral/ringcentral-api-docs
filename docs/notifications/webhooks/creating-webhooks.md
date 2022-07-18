@@ -19,26 +19,30 @@ To subscribe, the webhook URL must return a `Validation-Token` header when it is
 
 Here are some minimal examples:
 
-```php tab="PHP"
-<?php
-$v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
-if (strlen($v)>0) {
-  header("Validation-Token: {$v}");
-}
-?>
-```
+=== "PHP"
 
-```ruby tab="Ruby"
-require 'sinatra'
+    ```php
+    <?php
+    $v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : '';
+    if (strlen($v)>0) {
+      header("Validation-Token: {$v}");
+    }
+    ?>
+    ```
 
-post '/webhook' do
-  v = request.env['HTTP_VALIDATION_TOKEN']
-  unless v.nil? || v.length == 0
-    headers['Validation-Token'] = v
-    return
-  end
-end
-```
+=== "Ruby"
+
+    ```ruby
+    require 'sinatra'
+
+    post '/webhook' do
+      v = request.env['HTTP_VALIDATION_TOKEN']
+      unless v.nil? || v.length == 0
+        headers['Validation-Token'] = v
+        return
+      end
+    end
+    ```
 
 ## Create a Webhook
 

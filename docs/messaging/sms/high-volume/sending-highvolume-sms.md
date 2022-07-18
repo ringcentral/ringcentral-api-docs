@@ -71,7 +71,7 @@ Simple request to broadcast the same message to multiple recipients
       ]
     }
   	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
-    print (resp.text())
+    print resp.text()
     ```
 
 === "PHP"
@@ -308,7 +308,7 @@ Simple request to send customized messages to multiple recipients
       ]
     }
   	resp = platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
-    print (resp.text())
+    print resp.text()
     ```
 
 === "PHP"
@@ -487,7 +487,7 @@ Sending a large batch will take some time for the server to complete. You can re
   	platform.login( "username", "extension", "password" )
 
   	resp = platform.get('/restapi/v1.0/account/~/a2p-sms/batches/2157ac7d-baab-4d0e-1262-deada6c7xxxx')
-    print (resp.text())
+    print resp.text()
     ```
 
 === "PHP"

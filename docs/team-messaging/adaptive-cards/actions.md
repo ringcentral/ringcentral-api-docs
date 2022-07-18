@@ -13,7 +13,7 @@ Only the `Action.Submit` action requires a developer to implement handlers and w
 
 ## Handling a form submission
 
-If your application posts cards that utilize the `Action.Submit` action, in other words, if the card contains input elements and allows users to submit a form, then your app will need to implement the following sequence.
+If your application posts cards that utilize the `Action.Submit` action, or in other words, if the card contains input elements and allows users to submit a form, then your app will need to implement the following sequence.
 
 ### Design the card
 
@@ -21,18 +21,18 @@ Your first step is to design the card if you have not already done so. The examp
 
 *Excluded from this example, is how this message below is triggered. Presumably when the add-in is installed, the add-in would subscribe to an [Extension Telephony Session event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event) so that it can be notified when a call with the installing user has ended. Upon receiving that event, the add-in would then post the message below.*
 
+To make editing and loading this adaptive card a little easier, we will place the contents of this card into its own dedicated file called `callNotesCard.json`. 
+
 ```json
 {!> code-samples/team-messaging/adaptive-cards/form-submit.json !}
 ```
 
 ### Post the card
 
-To post the card, the app would utilize either the [REST API](../../posting/) or an [incoming webhook](../../incoming-webhooks/posting/), depending upon how the underlying app is architected. Bots and apps typically use the REST API, while add-ins often use incoming webhooks. 
-
-*The example below reads the contents of the above message from the local filesystem.*
+To post the card, the app would utilize either the [REST API](../../posting/cards) to post the card. In the code excerpt below, the contents of the card are read off of the filesystem and processed through a templating system to replace variables found in the card template with values passed in at runtime. 
 
 ```js
-{!> code-samples/team-messaging/post-card.js [ln:12-31] !}
+{!> code-samples/team-messaging/post-card-using-template.js [ln:21-] !}
 ```
 
 The above card when posted to RingCentral, will appear as shown below:

@@ -23,6 +23,8 @@ When posting a card, you receive an error message saying that it "does not match
 
 The most likely explanation is that your adaptive card is not properly formed. It may be syntactically valid, but not semantically valid. Copy and paste your message into the [message designer](https://adaptivecards.io/designer/) and look for validation errors. 
 
+Another popular tool used internally at RingCentral is Microsoft's [Visual Studio Code](https://code.visualstudio.com/). Install the [Adaptive Card Studio](https://marketplace.visualstudio.com/items?itemName=madewithcardsio.adaptivecardsstudiobeta) plugin and it will highlight any schema errors you have and tell you how to fix them. 
+
 ## Outgoing webhook not being sent
 
 **Problem**

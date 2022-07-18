@@ -10,7 +10,8 @@ $platform = $rcsdk->platform();
 
 if (isset($_REQUEST['webhookcallback'])){
     if (array_key_exists('HTTP_VALIDATION_TOKEN', $_SERVER)) {
-        return header("Validation-Token: {$_SERVER['HTTP_VALIDATION_TOKEN']}");
+       header("Content-type: application/json");
+       return header("Validation-Token: {$_SERVER['HTTP_VALIDATION_TOKEN']}");
     }else{
       $jsonStr = file_get_contents('php://input');
       $jsonObj = json_decode($jsonStr, TRUE);

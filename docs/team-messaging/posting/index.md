@@ -17,6 +17,9 @@ The code above will result in a chat message that appears as follows:
 !!! tip "Did you know that you can also post via an incoming webhook?"
     [Incoming webhooks](../incoming-webhooks/webhook-creation/) provide an alternative conduit by which messages can be posted to a team. An incoming webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
+!!! warning "Posting limits imposed on REST API"
+    Users are limited to posting 2,500 messages per day via the API. In this scenario, applications should receive a 500 error with the text, "You have exceeded your limits for this action."
+
 ## Finding a safe and private chat ID in which to do development
 
 In the example above, we assume that you know the chat ID you want to post a message into. But what do you do if you don't know a chat ID off the top of your head? To help you find an appropriate chat ID to post to regardless of the environment or account you may be running within, we take advantage of a type of chat every RingCentral user has but may not know about: one's "personal" chat.

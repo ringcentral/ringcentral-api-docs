@@ -23,7 +23,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>Under "Authentication" select "Password-based auth flow."
 <li>Under "Security" add the following permissions:
   <ul>
-    <li>Glip</li>
+    <li>Team Messaging</li>
   </ul>
 </li>
 <li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
