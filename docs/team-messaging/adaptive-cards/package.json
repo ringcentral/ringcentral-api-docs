@@ -1,0 +1,26 @@
+{
+  "name": "RingCentral-HubSpot-Bot",
+  "version": "0.7.0",
+  "description": "Create call reports and interact with HubSpot CRM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "keywords": [
+    "RingCentral"
+  ],
+  "author": "Phong-Vu",
+  "license": "MIT",
+  "dependencies": {
+    "ringcentral-chatbot": "",
+    "axios": "",
+    "@ringcentral/sdk": "",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "pg": "^8.5.0"
+  },
+  "engines": {
+    "node": "12.20.2"
+  }
+}
