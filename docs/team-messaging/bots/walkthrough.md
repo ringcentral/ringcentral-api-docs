@@ -92,13 +92,13 @@ Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT
 Finally, launch your server.
 
 ```bash
-$ npm start-private
+$ npm start private
 ```
 
 !!! hint "`private-bot.js` versus `public-bot.js`"
     In the repository you cloned above, you will find two different server apps: one for public bots and one for private bots, named accordingly. If you are building a public bot, start your server using the following command:
 	```bash
-	$  npm start-public
+	$  npm start public
 	```
 
 ## Step 4. Add the bot to your RingCentral account
