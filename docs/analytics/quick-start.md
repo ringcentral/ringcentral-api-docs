@@ -77,13 +77,8 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
 
-<<<<<<< HEAD
-    ```javascript
-    {!> code-samples/analytics/quick-start.js !} 
-=======
     ```python
     {!> code-samples/analytics/quick-start.py !}
->>>>>>> 2e70340c738c1fc8db5cb7d5ce39efe2861d1798
     ```
 
     ### Run your code
@@ -127,8 +122,8 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Select Target Framework Version
     * Enter project name "WebAPIClient"
     * Add NuGet package [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net) version 5.9.0 or newer
-    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body"
-    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/aggregate-data-request.json).
+    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/timeline-data-request.json).
 
     ### Edit the file 'Program.cs'
 
@@ -154,8 +149,8 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Make sure you have JDK 11 or newer installed in our machine
     * Install RC Java SDK 2.2.0 or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
     * Create a new Java Class called "App.java"
-    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json" that can be referenced in "JSON Request Body"
-    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/aggregate-request-body.json).
+    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/timeline-request-body.json).
 
     ### Edit the file 'App.java'
 
