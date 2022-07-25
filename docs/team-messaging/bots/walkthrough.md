@@ -77,7 +77,7 @@ $ cd ringcentral-bot-nodejs-demo
 $ npm install
 ```
 
-Next, let's setup the environment and configuration of the bot. Copy the contents of `.env.template` to `.env`.
+Next, let's setup the environment and configuration of the bot. Copy the contents of `env.template` to `.env`.
 
 ```bash
 $ cp env-template .env
