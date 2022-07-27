@@ -1,23 +1,31 @@
-#!/usr/bin/env python
-from ringcentral import SDK
-import os,sys
+#You get the environment parameters from your 
+#application dashbord in your developer account 
+#https://developers.ringcentral.com/
+
+import os
+import sys
+ 
 from dotenv import load_dotenv
+from ringcentral import SDK
+ 
 load_dotenv()
-
-RECIPIENT    = os.environ.get('SMS_RECIPIENT')
-
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+ 
+ 
+rcsdk = SDK(os.environ.get('RC_CLIENT_ID'),
              os.environ.get('RC_CLIENT_SECRET'),
              os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
-
+ 
+print(platform)
+ 
 try:
-  platform.login(os.environ.get('RC_USERNAME'),
-                 os.environ.get('RC_EXTENSION'),
-                 os.environ.get('RC_PASSWORD') )
-except:
-  sys.exit("Unable to authenticate to platform. Check credentials.")
+  platform.login(jwt=os.environ.get('RC_JWT'))
+except Exception as e:
+  sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
+ 
+print(f'Login with JWT successful.')
 
+RECIPIENT    = os.environ.get('SMS_RECIPIENT')
 def read_extension_phone_number():
   try:
     resp = platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
@@ -36,7 +44,7 @@ def send_sms(fromNumber):
               {
                   'from' : { 'phoneNumber': fromNumber },
                   'to'   : [ {'phoneNumber': RECIPIENT} ],
-                  'text' : 'Hello World from Python'
+                  'text' : 'Hello World from Python CODE !!! YESS ! GOOO'
               })
     jsonObj = resp.json()
   except:
