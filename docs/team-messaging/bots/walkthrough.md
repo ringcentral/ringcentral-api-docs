@@ -62,7 +62,7 @@ With a proxy running, we now have all the information we need to create an app i
 
 Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
 
-> https://d6b2306cdf40.ngrok.io/oauth
+> https://77c83694.ngrok.io/oauth
 
 This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access key for the account of the user performing the installation.
 
@@ -77,10 +77,10 @@ $ cd ringcentral-bot-nodejs-demo
 $ npm install
 ```
 
-Next, let's setup the environment and configuration of the bot. Copy the contents of `.env.template` to `.env`.
+Next, let's setup the environment and configuration of the bot. Copy the contents of `env.template` to `.env`.
 
 ```bash
-$ cp .env.template .env
+$ cp env-template .env
 ```
 
 Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT_ID` and `RINGCENTRAL_CLIENT_SECRET` that you received when you created the bot in the RingCentral Developer Console above. Then, set `RINGCENTRAL_OAUTH_REDIRECT_URI` to your ngrok server URL. It would look something like this:
@@ -92,13 +92,13 @@ Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT
 Finally, launch your server.
 
 ```bash
-$ npm start-private
+$ npm start private
 ```
 
 !!! hint "`private-bot.js` versus `public-bot.js`"
     In the repository you cloned above, you will find two different server apps: one for public bots and one for private bots, named accordingly. If you are building a public bot, start your server using the following command:
 	```bash
-	$  npm start-public
+	$  npm start public
 	```
 
 ## Step 4. Add the bot to your RingCentral account

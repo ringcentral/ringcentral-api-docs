@@ -19,9 +19,8 @@ Line of Business (LOB) Analytics is a historical call performance analytics offe
 * Call volume distribution by multiple time intervals
 
 
-!!! hint "Analytics API is in beta - please request access"
-    To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
-
+!!! warning "Analytics API - upcoming breaking change alert!"
+    Analytics APIs (Beta) will be getting an update that will break the current APIs on Aug 4, 2022. Please make sure to review the documentation and test the API changes in your enviornment before deploying to production.
 
 ## What can the Analytics API be used for?
 
