@@ -4,9 +4,6 @@ no_breadcrumb:true
 
 In this quick start guide, we are going to access call performance data via using Java/C# or Node.JS based command line application.
 
-!!! hint "Analytics API is in beta - please request access"
-    To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
-
 ## Create App and Get Credentials
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
@@ -30,9 +27,9 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 </div>
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
@@ -54,10 +51,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit 'analytics.js' file
 
-    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```javascript
-    {!> code-samples/analytics/quick-start.js !} 
+    {!> code-samples/analytics/quick-start.js !}
     ```
 
     ### Run your code
@@ -78,15 +75,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.py
 
-    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
-<<<<<<< HEAD
-    ```javascript
-    {!> code-samples/analytics/quick-start.js !} 
-=======
     ```python
     {!> code-samples/analytics/quick-start.py !}
->>>>>>> 2e70340c738c1fc8db5cb7d5ce39efe2861d1798
     ```
 
     ### Run your code
@@ -108,7 +100,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.php
 
-    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```php
     {!> code-samples/analytics/quick-start.php !}
@@ -130,8 +122,8 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Select Target Framework Version
     * Enter project name "WebAPIClient"
     * Add NuGet package [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net) version 5.9.0 or newer
-    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body"
-    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/aggregate-data-request.json).
+    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/timeline-data-request.json).
 
     ### Edit the file 'Program.cs'
 
@@ -143,13 +135,13 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Run Your Code
 
-    You are almost done. Now run your app by typing in the command line 
-    
+    You are almost done. Now run your app by typing in the command line
+
     ```bash
     $ cd WebAPIClient
     $ dotnet run
     ```
-  
+
 === "Java"
 
     ### Create a Java Gradle/Maven project
@@ -157,22 +149,22 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Make sure you have JDK 11 or newer installed in our machine
     * Install RC Java SDK 2.2.0 or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
     * Create a new Java Class called "App.java"
-    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json" that can be referenced in "JSON Request Body"
-    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json" that can be referenced in "JSON Request Body"
+    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/aggregate-request-body.json).
+    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/timeline-request-body.json).
 
     ### Edit the file 'App.java'
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/analytics/App.java !} 
+    {!> code-samples/analytics/App.java !}
     ```
 
     ### Build & Run Your Code
 
-    You are almost done. Now run your app by typing in the command line 
-      
-    ```bash 
+    You are almost done. Now run your app by typing in the command line
+
+    ```bash
     $ javac App.java
     $ java App
     ```
@@ -187,7 +179,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.rb
 
-    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```ruby
     {!> code-samples/analytics/quick-start.rb !}

@@ -50,19 +50,19 @@ With a proxy running, we now have all the information we need to create an app i
 </div>
 
 !!! hint "What to build, a public or private bot?"
-    The button above will help you create a private bot. But what is the difference between a public and private bot? 
-    
+    The button above will help you create a private bot. But what is the difference between a public and private bot?
+
     * A **private bot** can only be installed into the account that created it, and therefore, can only correspond with users in your own personal account/organization.
-    
-    * A **public bot** on the other hand is typically listed in the App Gallery, and can be installed into any number of different RingCentral accounts. 
-    
-    Throughout this walkthrough we will highlight key differences between how you code for a public versus private bot. The button above will assist you in creating a private bot, a preference you can change if you wish. 
+
+    * A **public bot** on the other hand is typically listed in the App Gallery, and can be installed into any number of different RingCentral accounts.
+
+    Throughout this walkthrough we will highlight key differences between how you code for a public versus private bot. The button above will assist you in creating a private bot, a preference you can change if you wish.
 
 ### Set your OAuth redirect URL
 
 Before you create your bot app, you will need to set the OAuth redirect URL. Into that URL enter in the ngrok URL from above, with `/oauth` appended to the end. For example:
 
-> https://d6b2306cdf40.ngrok.io/oauth
+> https://77c83694.ngrok.io/oauth
 
 This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access key for the account of the user performing the installation.
 
@@ -77,10 +77,10 @@ $ cd ringcentral-bot-nodejs-demo
 $ npm install
 ```
 
-Next, let's setup the environment and configuration of the bot. Copy the contents of `.env.template` to `.env`.
+Next, let's setup the environment and configuration of the bot. Copy the contents of `env.template` to `.env`.
 
 ```bash
-$ cp .env.template .env
+$ cp env-template .env
 ```
 
 Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT_ID` and `RINGCENTRAL_CLIENT_SECRET` that you received when you created the bot in the RingCentral Developer Console above. Then, set `RINGCENTRAL_OAUTH_REDIRECT_URI` to your ngrok server URL. It would look something like this:
@@ -92,13 +92,13 @@ Edit the `.env` you just created and enter in the values for `RINGCENTRAL_CLIENT
 Finally, launch your server.
 
 ```bash
-$ npm start-private
+$ npm start private
 ```
 
 !!! hint "`private-bot.js` versus `public-bot.js`"
     In the repository you cloned above, you will find two different server apps: one for public bots and one for private bots, named accordingly. If you are building a public bot, start your server using the following command:
 	```bash
-	$  npm start-public
+	$  npm start public
 	```
 
 ## Step 4. Add the bot to your RingCentral account
@@ -107,7 +107,7 @@ Return to the Developer Console and navigate to the "Bot" tab for the app you re
 
 <img class="img-fluid" src="../../manual/add-to-ringcentral.png" style="max-width: 600px">
 
-This will install the bot into your developer sandbox account. The RingCentral bot installation process first creates a special virtual user within your account, a.k.a. a "bot extension." Then RingCentral will attempt to generate an access token for this bot extension. 
+This will install the bot into your developer sandbox account. The RingCentral bot installation process first creates a special virtual user within your account, a.k.a. a "bot extension." Then RingCentral will attempt to generate an access token for this bot extension.
 
   - If the bot app is a **private app**, the access token will be generated and sent to the bot server via an HTTP POST request to the specified OAuth redirect URI.
 
@@ -139,7 +139,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
     ```js
     {!> code-samples/team-messaging/private-bot.js [ln:116-118] !}
     ```
-	
+
 	The function to subscribe to events
     ```js
     {!> code-samples/team-messaging/private-bot.js [ln:168-196] !}
@@ -158,7 +158,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
 
 ??? tldr "Discussion: observe the console of your local bot server"
     Turn your attention to your console to see the output from your server. You will see a trace of the process so far in which your server is subscribing to the necessary events.
-	
+
     ```
 	ringcentral-bot-nodejs-demo % node private-bot
     Bot server listening on port 3000
@@ -173,9 +173,9 @@ After getting an access token, the bot must subscribe to Team Messaging event no
     Team Messaging events notifications subscribed successfully.
     Your bot is ready for conversations ...
     ```
-	
-	Soon, your server will begin receiving events, including events corresponding to your bot extension being created, the creation of a personal chat with the bot, and bot joining the default 'All Employees' group. These events look something like this. 
-	
+
+	Soon, your server will begin receiving events, including events corresponding to your bot extension being created, the creation of a personal chat with the bot, and bot joining the default 'All Employees' group. These events look something like this.
+
     Event: Bot extension being created
     ```json
     {
@@ -184,7 +184,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
       hints: [ 'ExtensionInfo' ]
     }
 	```
-	
+
     Event: A personal chat being created for the bot
 	```json
     {
@@ -200,7 +200,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
       eventType: 'GroupJoined'
     }
 	```
-	
+
     Event: The bot being added to the "All Employees" group
 	```json
     {
@@ -236,20 +236,20 @@ You will notice that the bot responds 'pong' to your message.
 
 ??? info "Code walkthrough: sending and receiving bot messages"
     The sample code below shows a private bot receiving a user's message and responding to the user with a message.
-	
+
     ```js
     {!> code-samples/team-messaging/private-bot.js [ln:124-127,135-142,166,244-253] !}
     ```
-	
-    The sample code below shows a public bot receiving a user's message and responding to the user with a message. A key difference between a public and private bot is that a public bot needs to load the correct access token corresponding to the account they will need to post a message back to. If the wrong access token is used, then you will receive an error. 
-	
+
+    The sample code below shows a public bot receiving a user's message and responding to the user with a message. A key difference between a public and private bot is that a public bot needs to load the correct access token corresponding to the account they will need to post a message back to. If the wrong access token is used, then you will receive an error.
+
     ```js
     {!> code-samples/team-messaging/public-bot.js [ln:143-146,160-172,201,286-296] !}
     ```
 
 ??? tldr "Discussion: observe your bot sending and receiving messages"
-    Turn your attention to your console to see the output from your server. Along with a number of other log messages, You will begin to see events corresponding to your bot receiving and posting messages. 
-	
+    Turn your attention to your console to see the output from your server. Along with a number of other log messages, You will begin to see events corresponding to your bot receiving and posting messages.
+
     Event: Bot receiving a message
     ```json
     {
@@ -277,7 +277,7 @@ You will notice that the bot responds 'pong' to your message.
       }
     }
 	```
-	
+
 	Event: bot sending a message
 	```json
     {

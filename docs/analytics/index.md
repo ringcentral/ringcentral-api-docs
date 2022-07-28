@@ -19,9 +19,8 @@ Line of Business (LOB) Analytics is a historical call performance analytics offe
 * Call volume distribution by multiple time intervals
 
 
-!!! hint "Analytics API is in beta - please request access"
-    To call the Analytics API your application needs to have 'Analytics' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Analytics' permission be added](https://developers.ringcentral.com/support/create-case).
-
+!!! warning "Analytics API - upcoming breaking change alert!"
+    Analytics APIs (Beta) will be getting an update that will break the current APIs on Aug 4, 2022. Please make sure to review the documentation and test the API changes in your enviornment before deploying to production.
 
 ## What can the Analytics API be used for?
 
@@ -43,14 +42,14 @@ The Analytics APIs current supports creating two types of reports:
 
 1. The [Call Performance Aggregate API](./aggregate/) allows users to get the aggregation of calls count (counter) and time spent (timer) on calls for specified data scopes.
 
-2. The [Call Performance Timeline API](./timeline/) allows users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month 
+2. The [Call Performance Timeline API](./timeline/) allows users to get the view of the count of calls (counter) or time spent on calls (timer) broken down by time frames for specified data scopes. Supported timeframes are  Hour, Day, Week, and Month
 
 These APIs can be used to analyze various call-related metrics as stated below:
 
 - Origin (internal or external calls)
 - Direction (Inbound or outbound calls)
-- Answered and not answered calls 
-- Types of calls answered and reasons for not answering 
+- Answered and not answered calls
+- Types of calls answered and reasons for not answering
 - Time spent by the caller in phases of the call such as Setup, Ringing, IVR prompt, Live Talk, Hold etc.
 - The time's agents put the caller on hold, park, transferred during the call
 - How the call end, did it end after 'livetalk' at a specified extension or got transferred, or sent to voicemail etc.
@@ -61,6 +60,5 @@ These APIs can be used to analyze various call-related metrics as stated below:
 ### How is LOB Analytics API different than Call Log API?
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
-    
-The Call Log APIs are suitable for detailed analysis of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
 
+The Call Log APIs are suitable for detailed analysis of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
