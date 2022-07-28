@@ -4,9 +4,7 @@ Modal dialogs are windows that developers can cause to be opened and that float 
 
 ## Responding to an interactive messaging event
 
-Dialogs can only be spawned (or opened) in response to an [interactive messaging event](../../events/interactive-messages/), or more specifically when a user clicks an adaptive card button with the action type of `Action.Submit`.
-
-!!! note "Dialogs cannot be opened via the REST API!"
+Dialogs can only be spawned (or opened) in response to an [interactive messaging event](../../events/interactive-messages/), or more specifically when a user clicks an adaptive card button with the action type of `Action.Submit`. Do remember that Dialogs cannot be opened via the REST API!
 
 To spawn a dialog, have your application respond to a RingCentral outbound webhook with a `200` HTTP status code, return a Content-type of `application/json` and finally, set the contents of the response to one of the dialog payloads below.
 
