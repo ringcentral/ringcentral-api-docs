@@ -86,19 +86,22 @@ nav:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
+    - 'Best Practices': 'messaging/best-practices.md'
+    - 'Valid SMS Numbers': 'messaging/valid-sms-numbers - EB.md'
+    - 'Toll-Free vs. Local Numbers': 'messaging/toll-free-sms-vs-local-numbers.md'
+
     - 'Enhanced Business SMS':
-      - 'Best Practices': 'messaging/sms/best-practices.md'
-      - 'Sending an SMS': 'messaging/sms/sending-sms.md'
-      - 'Sending an MMS': 'messaging/sms/sending-images.md'
-      - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
-      - 'Postman': 'messaging/sms/postman.md'
+      - 'Overview': 'messaging/sms/standard-sms/index.md'
+      - 'Sending an SMS': 'messaging/sms/standard-sms/sending-sms.md'
+      - 'Sending an MMS': 'messaging/sms/standard-sms/sending-mms.md'
+      - 'Valid SMS Numbers': 'messaging/sms/standard-sms/valid-sms-numbers.md'
+      - 'Postman': 'messaging/sms/standard-sms/postman.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
-      - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
+      - 'Valid SMS Numbers': 'messaging/sms/high-volume/valid-sms-numbers.md'
       - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
-      - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
-      - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
       - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
+      - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
       - 'Event Notifications': 'messaging/sms/high-volume/events.md'
       - 'Errors Handling': 'messaging/sms/high-volume/handling-errors.md'
     - 'Fax':

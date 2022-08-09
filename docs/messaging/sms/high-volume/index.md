@@ -17,7 +17,7 @@
     <li><a href="./handling-errors">Using detailed message status</a></li>
   </ul>
   <hr class="my-4">
-  <p><a class="btn btn-primary" href="https://gamechanging.dev/sms">Enroll in High Volume SMS beta &raquo;</a></p> <p><a class="btn btn-primary" href="https://www.ringcentral.com/office/plansandpricing.html">See pricing &raquo;</a></p>
+  <p><a class="btn btn-primary" href="https://gamechanging.dev/sms">Enroll in High Volume SMS beta &raquo;</a></p> <p><a class="btn btn-primary" href="https://developers.ringcentral.com/guide/messaging">See pricing &raquo;</a></p>
 </div>
 
 ## Key SMS Features
