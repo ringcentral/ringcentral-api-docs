@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from ringcentral import SDK
-import os,sys
+import os,sys,json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -13,9 +13,7 @@ rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
 platform = rcsdk.platform()
 
 try:
-  platform.login(os.environ.get('RC_USERNAME'),
-                 os.environ.get('RC_EXTENSION'),
-                 os.environ.get('RC_PASSWORD') )
+  platform.login(jwt=os.environ.get('RC_JWT'))
 except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 
@@ -26,6 +24,7 @@ def fetch_aggregate_report( from_time, to_time ):
         "groupBy":"Users"
       },
       "timeSettings":{
+        "timeZone": "US/Pacific",
         "timeRange":{
           "timeFrom": from_time,
           "timeTo": to_time
@@ -39,11 +38,11 @@ def fetch_aggregate_report( from_time, to_time ):
         }
       }
     }
-    resp = platform.post('/analytics/phone/performance/v1/accounts/~/calls/aggregate', options)
-    jsonObj = resp.json()
+    resp = platform.post('/analytics/calls/v1/accounts/~/aggregation/fetch', options)
+    jsonObj = resp.json_dict()
   except Exception as err:
     sys.exit("Unable to fetch analytics", err)
 
-  print(jsonObj)
+  print(json.dumps(jsonObj, indent=2, sort_keys=True))
     
 fetch_aggregate_report( FROM_DATE, TO_DATE )

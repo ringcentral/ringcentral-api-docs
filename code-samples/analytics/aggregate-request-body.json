@@ -1,15 +1,15 @@
 {
   "grouping": {
     "groupBy": "CompanyNumbers",
-    "ids": []
+    "keys": []
   },
   "timeSettings": {
+    "timeZone": "US/Pacific",
     "timeRange": {
       "timeFrom": "2022-03-01T05:52:17.745Z",
       "timeTo": "2022-05-01T05:52:17.745Z"
     },
     "advancedTimeSettings": {
-      "timeZone": "Europe/Moscow",
       "includeDays": [
         "Sunday"
       ],
@@ -21,38 +21,48 @@
       ]
     }
   },
-  "additionalFilters": {
-    "direction": "Inbound",
-    "origin": "Internal",
-    "callResponse": "Answered",
-    "callResult": [
+  "callFilters": {
+    "directions": [
+      "Inbound"
+    ],
+    "origins": [
+      "Internal"
+    ],
+    "callResponses": [
+      "Answered"
+    ],
+    "callResults": [
       "Completed"
     ],
     "callSegments": [
       {
-        "callSegment": "Ringing",
-        "callSegmentLength": {
-          "minValueSeconds": 0,
-          "maxValueSeconds": 200
+        "segment": "Ringing",
+        "length": {
+          "minSeconds": 0,
+          "maxSeconds": 200
         }
       }
     ],
     "callActions": [
-      {
-        "callAction": "HoldOff"
-      }
+      "HoldOff"
     ],
-    "companyHours": "BusinessHours",
+    "companyHours": [
+      "BusinessHours"
+    ],
     "callDuration": {
-      "minValueSeconds": 0,
-      "maxValueSeconds": 200
+      "minSeconds": 0,
+      "maxSeconds": 200
     },
     "timeSpent": {
-      "minValueSeconds": 0,
-      "maxValueSeconds": 200
+      "minSeconds": 0,
+      "maxSeconds": 200
     },
-    "callerExtensionIds": [],
-    "calledExtensionIds": [],
+    "callFilters": {
+      "extensionFilters": {
+        "fromIds": [],
+        "toIds": []
+      }
+    },
     "calledNumbers": []
   },
   "responseOptions": {

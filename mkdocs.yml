@@ -191,7 +191,7 @@ nav:
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
     - 'Aggregate Performance Data': 'analytics/aggregate.md'
-    - 'Timeline Timeline Data': 'analytics/timeline.md'
+    - 'Timeline Data': 'analytics/timeline.md'
     - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
     - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
 

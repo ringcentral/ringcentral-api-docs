@@ -1,16 +1,14 @@
 const RC_SDK = require('@ringcentral/sdk').SDK
 require('dotenv').config();
 
-var rcsdk = new RC({
+var rcsdk = new RC_SDK({
     'server':       process.env.RC_SERVER_URL,
     'clientId':     process.env.RC_CLIENT_ID,
     'clientSecret': process.env.RC_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
 platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
+	  'jwt':  process.env.RC_JWT
 })
 
 let FROM_DATE = '2022-04-12T07:00:00.000Z'
@@ -24,26 +22,27 @@ async function run_report( from_time, to_time ) {
     try {
 	let options = {
 	    "grouping":{
-		"groupBy":"Users"
+				"groupBy":"Users"
 	    },
 	    "timeSettings":{
-		"timeRange":{
-		    "timeFrom": from_time,
-		    "timeTo": to_time
+				"timeZone": "US/Pacific",
+				"timeRange":{
+		    	"timeFrom": from_time,
+		    	"timeTo": to_time
 		}
 	    },
 	    "responseOptions":{
-		"counters":{
-		    "allCalls":{
-			"aggregationType":"Sum"
+				"counters":{
+		    	"allCalls":{
+						"aggregationType":"Sum"
 		    }
 		}
 	    }
 	}
-	let result = await platform.post("/analytics/phone/performance/v1/accounts/~/calls/aggregate",
+	let result = await platform.post("/analytics/calls/v1/accounts/~/aggregation/fetch",
 					 options);
 	let response = await result.json();
-	console.log(response.data[0]);
+	console.dir(response, {depth: null});
     } catch (e) {
 	console.log(e.message);
     }

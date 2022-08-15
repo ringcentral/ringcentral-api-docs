@@ -1,5 +1,8 @@
 # Obtaining Timeline Call Performance Data
 
+!!! warning "Analytics API - breaking change alert!"
+    Analytics API aggregate path has changed to `POST /analytics/calls/v1/accounts/~/timeline/fetch`
+
 It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Performance Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times. 
 
 Example Use Cases:
@@ -17,32 +20,44 @@ One can use our [interactive API Reference](https://developers.ringcentral.com/a
 
 ### Controlling what to group data by
 
-The `groupBy` element allows users to specify data scope. All the data retrieved will represent the portion of the calls that involved the specified GroupBy type. GroupBy types cannot be mixed in one request, there can only be one type. If this field is undefined or null, the response will contain one record with data aggregated by the whole company.
+There are two options to group by. The `groupBy` element allows users to perform direct grouping. The `groupByMembers` element allows users to group by individual users with the selected option.  All the data retrieved will represent the portion of the calls that involved the specified `groupBy` or `groupByMember` type. GroupBy types cannot be mixed in one request, there can only be one type.  If this field is undefined or null, the response will contain one record with data aggregated by the whole company.
 
-|GroupBy (API)	| Description |
+#### Direct Grouping (groupBy)
+
+|groupBy (API)	| Description |
 |---|---|
-| WholeCompany | This grouping will return call data for the entire company. |
-| Users | This grouping will return call data for individual mailboxes. When users are added to the grouping, the response provides call data aggregated at the user level.  |
-| DepartmentMembers | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
-| UserGroupMembers | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
-| QueueAgents | This grouping will return call data for individual users under Queues. Specify Ids of queues along with this grouping which will provide aggregated call data for users under those queues.
-| SiteMembers | This grouping will return call data for individual users under Sites. Specify Ids of Sites along with this grouping which will provide aggregated call data for users under those Sites. |
-| UserGroups | This grouping will return call data for  User Groups setup on Admin Portal. |
-| Departments | This grouping will return call data for users labeled with the same Department on Admin Portal. |
-| Queues | This grouping will return call data for Queue extension. |
-| IVRs | This grouping will return call data for IVR extensions. |
-| Sites | This grouping will return call data for Site extension when an account is using the multi-site feature. |
-| CompanyNumbers | This grouping will return call data for direct numbers set up under Phone Systems - > Phone Numbers on Admin Portal. |
-| Shared Lines | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
-| No grouping specified i.e. null or unstable | It will return one record with data aggregated by the whole company.|
-|
+| `Company` | This grouping will return call data for the entire company. |
+| `CompanyNumbers` | This grouping will return call data for direct numbers set up under Phone Systems - > Phone Numbers on Admin Portal. |
+| `Users` | This grouping will return call data for individual mailboxes. When users are added to the grouping, the response provides call data aggregated at the user level.  |
+| `Queues` | This grouping will return call data for Queue extensions. |
+| `IVRs` | This grouping will return call data for IVR extensions. |
+| `SharedLines` | This grouping will return Call data for the calls made to one phone number that can be answered by up to 16 phones within a designated group. |
+| `UserGroups` | This grouping will return call data for  User Groups setup on Admin Portal. |
+| `Sites` | This grouping will return call data for Site extensions when an account is using the multi-site feature. |
+| `Departments` | This grouping will return call data for users labeled with the same Department on Admin Portal. |
+
+#### Group by Memebers (groupByMembers)
+
+|groupByMember (API)	| Description |
+|---|---|
+| `Department` | This grouping will return call data for individual users under Departments. Specify Ids of departments along with this grouping which will provide aggregated call data for users under those departments. |
+| `UserGroup` | This grouping will return call data for individual users under User Groups. Specify Ids of user groups along with this grouping which will provide aggregated call data for users under those user groups. |
+| `Queue` | This grouping will return call data for individual users under Queues. Specify Ids of queues along with this grouping which will provide aggregated call data for users under those queues.
+| `Site` | This grouping will return call data for individual users under Sites. Specify Ids of Sites along with this grouping which will provide aggregated call data for users under those Sites. |
 
 **Example**
 
 ```json
 "grouping": {
-  "groupBy": "Departments",
-  "ids": []
+  "groupBy": "Users",
+  "keys": []
+}
+
+or
+
+"grouping": {
+  "groupByMember": "Site",
+  "keys": []
 }
 ```
 
@@ -115,67 +130,97 @@ The `timers` element provides aggregation for time spent on the call.  The metri
 
 ### Filtering your dataset further
 
-The `additionalFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both `counter` and `timer` sections by time interval splits. Details of the metrics can be found in Data Dictionary below.
+The `callFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both `counter` and `timer` section. Detailed splits of these sections can be found in Data Dictionary below.
 
-|Filters list| Purpose |
-|---|---|
-| direction | Specifies whether the call was inbound or outbound relative to the scope specified in `grouping` object. Not applicable to internal calls with company scope (when grouping is not specified). |
-| origin | Specifies whether an external party was present in the initial segment of the call. |
-| callResponse | Aggregation of calls by the first response action. |
-| callResult | Aggregation of calls by the nature of call result. |
-| callSegments | Aggregation of calls by the presence of a specific segment. |
-| callActions | Aggregation of calls by the presence of specific action. |
-| companyHours | Aggregation of calls by company's business hours or after hours. |
-| callDuration | Aggregation of calls based on the overall call length. |
-| timeSpent | Aggregation of calls based on the time spent by the specified mailbox(es) on call. |
-| callerExtensionIds | List of extension Ids from which users specified in groupBy received calls. |
-| calledExtensionIds | List of extension Ids to which users specified in groupBy placed calls. |
-| calledNumbers | The direct company numbers the caller called. |
-| queueSla | To get aggregate of calls that were either in or out of a particular queueSLA. |
-| callType | To get aggregate of calls based on how the call started from the callee perspective. |
-|
+|Filters list| type | Purpose|
+|---|---|---|
+| `directions` | array[string] | Specifies whether the call was inbound or outbound relative to the scope specified in the grouping object. Not applicable to internal calls with company scope (when grouping is not specified).|
+| `origins` | array[string] | Specifies whether an external party was present in the initial segment of the call. |
+| `callResponses` | array[string] | Aggregation of calls by the first response action. |
+| `callResults` | array[string] | Aggregation of calls by the nature of call result. |
+| `callSegments` | array[object] | Aggregation of calls by the presence of specific segment. |
+| `callActions` | array[object] | Aggregation of calls by the presence of specific action. |
+| `companyHours` | array[string] | Aggregation of calls by company's business hours or after hours. |
+| `callDuration` | object | aggregation of calls based on the overall call length
+| `timeSpent` | object | aggregation of calls based on the time spent by the specified mailbox(es) on call. |
+| `extensionFilters.fromIds` | array[string] | List of extension Ids from which users specified in groupBy received calls. |
+| `extensionFilters.toIds` | array[string] | List of extension Ids to which users specified in groupBy placed calls. |
+| `calledNumbers` | array[string] | The direct company numbers the caller called. |
+| `queueSla` | array[string] | To get aggregate of calls that were either in or out of a particular queueSLA. |
+| `callTypes` | array[string] | To get aggregate of calls based on how the call started from the callee perspective. |
 
 **Example**
 
 ```json
-"additionalFilters": {
-  "direction": "Inbound",
-  "origin": "Internal",
-  "callResponse": "Answered",
-  "callResult": [
-    "Completed"
-  ],
-  "callSegments": [
-    {
-      "callSegment": "Ringing",
-      "callSegmentLength": {
-        "minValueSeconds": 0,
-        "maxValueSeconds": 200
+  "callFilters": {
+    "directions": [ "Inbound", "Outbound" ],
+    "origins": [ "Internal" ],
+    "callResponses": [ "Answered" ],
+    "callResults": [
+      "Completed"
+    ],
+    "callSegments": [
+      {
+        "segment": "Ringing",
+        "length": {
+          "minSeconds": 0,
+          "maxSeconds": 200
+        }
       }
-    }
-  ],
-  "callActions": [
-    {
-      "callAction": "HoldOff"
-    }
-  ],
-  "companyHours": "BusinessHours",
-  "callDuration": {
-    "minValueSeconds": 0,
-    "maxValueSeconds": 200
-  },
-  "timeSpent": {
-    "minValueSeconds": 0,
-    "maxValueSeconds": 200
-  },
-  "callerExtensionIds": [],
-  "calledExtensionIds": [],
-  "calledNumbers": [],
-  "queueSla": "InSla",
-  "callType": [
-    "Direct"
-  ]
-}
+    ],
+    "callActions": [
+      {
+        "callAction": "HoldOff"
+      }
+    ],
+    "companyHours": "BusinessHours",
+    "callDuration": {
+      "minSeconds": 0,
+      "maxSeconds": 200
+    },
+    "timeSpent": {
+      "minSeconds": 0,
+      "maxSeconds": 200
+    },
+    "extensionFilters": {
+      "fromIds": [
+        "123",
+        "432"
+      ],
+      "toIds": [
+        "345",
+        "654"
+      ]
+    },
+    "calledNumbers": [
+      "+16505551212"
+    ],
+    "queueSla": [
+      "InSla"
+    ],
+    "callTypes" : [
+      "Direct"
+    ]
+  }
+```
+
+### Pagination
+
+Analytics can produce a lot of results so you may want to paginate your results to enable easier processing. Pagination is done with two additional query parameters: `page` and `perPage`. For timeline reports, you can also specify the `interval` as a query parameter.
+
+| Pagination (API) | Description |
+|-|-| 
+| `page` | The page you wish to start with. For example, start on page 2. |
+| `perPage` | The number of results return on each page. For example, you want 10 results on the first page and an additional 10 on the second page. Note: timeline reports have a max limit of `20` per page. |
+
+**Example**
+
+``` http
+POST /analytics/calls/v1/accounts/~/timeline/fetch?interval=Week&page=2&perPage=10
+Host: platform.ringcentral.com
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
 ```
 
 ## Data dictionary

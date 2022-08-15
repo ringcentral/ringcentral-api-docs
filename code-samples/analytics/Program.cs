@@ -25,13 +25,13 @@ namespace WebAPIClient {
     }   
     private static async void getAggregateData(RingCentral.RestClient restClient) {
       var jsonRequestObject = loadJson("aggregate-data-request.json");
-      var response = await rcClient.Post("/analytics/phone/performance/v1/accounts/~/calls/aggregate", jsonRequestObject);
+      var response = await rcClient.Post("/analytics/calls/v1/accounts/~/aggregation/fetch", jsonRequestObject);
       Console.WriteLine("---- Aggregate Data ----");
       Console.WriteLine(await response.Content.ReadAsStringAsync());
     }
     private static async void getTimelineData(RingCentral.RestClient rcClient) {     
       var jsonRequestObject = loadJson("timeline-data-request.json");
-      var response = await rcClient.Post("/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Day", jsonRequestObject);
+      var response = await rcClient.Post("/analytics/calls/v1/accounts/~/timeline/fetch?interval=Day", jsonRequestObject);
       Console.WriteLine("---- TimeLine Data ----");
       Console.WriteLine(await response.Content.ReadAsStringAsync());
     }

@@ -16,8 +16,8 @@ public class App {
   static String RINGCENTRAL_PASSWORD = "";
   static String RINGCENTRAL_EXTENSION = "";
 
-  private static final String AGGREGATE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/aggregate";
-  private static final String TIMELINE_API_PATH = "/analytics/phone/performance/v1/accounts/~/calls/timeline?interval=Week";
+  private static final String AGGREGATE_API_PATH = "/analytics/calls/v1/accounts/~/aggregation/fetch";
+  private static final String TIMELINE_API_PATH = "/analytics/calls/v1/accounts/~/timeline/fetch?interval=Week";
   // Update the URL based on if you're running using RingCentral Sandbox or Production Credentials. Currently set for sandbox
   private static String RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
 
