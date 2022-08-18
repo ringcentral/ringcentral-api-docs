@@ -35,24 +35,7 @@ function run_report( $from_date, $to_date ){
       )
     )
   );
-  #$options = {
-  #    "grouping":{
-  #      "groupBy":"Users"
-  #    },
-  #    "timeSettings":{
-  #      "timeRange":{
-  #        "timeFrom": $from_date,
-  #        "timeTo": $to_date
-  #      }
-  #    },
-  #    "responseOptions":{
-  #      "counters":{
-  #        "allCalls":{
-  #          "aggregationType":"Sum"
-  #        }
-  #      }
-  #   }
-  #};
+
   $resp = $platform->post('/analytics/calls/v1/accounts/~/aggregation/fetch',
                           $options);
   $jsonObj = $resp->json();
