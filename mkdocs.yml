@@ -143,14 +143,14 @@ nav:
       - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
       - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
       - 'Legacy message format': 'team-messaging/incoming-webhooks/legacy-format.md'
-    
+
     - 'Posting via REST API':
       - 'Posting messages': 'team-messaging/posting/index.md'
       - 'Posting cards': 'team-messaging/posting/cards.md'
       - 'Posting notes': 'team-messaging/posting/notes.md'
       - 'Posting tasks': 'team-messaging/posting/tasks.md'
       - 'Uploading files': 'team-messaging/posting/file-uploads.md'
-      
+
     - 'Adaptive cards':
       - 'Introduction': 'team-messaging/adaptive-cards/index.md'
       - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
@@ -163,7 +163,7 @@ nav:
       - 'Developer tools': 'team-messaging/add-ins/tools.md'
 
     - 'Notification apps':
-      - 'Creating a notification app': 'team-messaging/add-ins/creation.md' 
+      - 'Creating a notification app': 'team-messaging/add-ins/creation.md'
       - 'Integrated installation': 'team-messaging/add-ins/installation.md'
       - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
 

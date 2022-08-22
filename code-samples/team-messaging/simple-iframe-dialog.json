@@ -1,7 +1,7 @@
 {
     "type": "dialog",
     "dialog": {
-        "title": "this is a title",
+        "title": "This is a dialog on an iFrame",
         "size": "medium",
         "iconURL": "https://www.kindpng.com/picc/m/255-2554719_a-generic-square-placeholder-image-with-rounded-corners.png",
         "iframeURL": "https://www.ringcentral.com/"

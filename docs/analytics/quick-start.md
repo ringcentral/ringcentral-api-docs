@@ -27,9 +27,9 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 </div>
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
@@ -51,10 +51,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit 'analytics.js' file
 
-    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```javascript
-    {!> code-samples/analytics/quick-start.js !} 
+    {!> code-samples/analytics/quick-start.js !}
     ```
 
     ### Run your code
@@ -75,7 +75,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.py
 
-    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```python
     {!> code-samples/analytics/quick-start.py !}
@@ -100,7 +100,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.php
 
-    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```php
     {!> code-samples/analytics/quick-start.php !}
@@ -135,13 +135,13 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Run Your Code
 
-    You are almost done. Now run your app by typing in the command line 
-    
+    You are almost done. Now run your app by typing in the command line
+
     ```bash
     $ cd WebAPIClient
     $ dotnet run
     ```
-  
+
 === "Java"
 
     ### Create a Java Gradle/Maven project
@@ -157,14 +157,14 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/analytics/App.java !} 
+    {!> code-samples/analytics/App.java !}
     ```
 
     ### Build & Run Your Code
 
-    You are almost done. Now run your app by typing in the command line 
-      
-    ```bash 
+    You are almost done. Now run your app by typing in the command line
+
+    ```bash
     $ javac App.java
     $ java App
     ```
@@ -179,7 +179,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.rb
 
-    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables. 
+    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
 
     ```ruby
     {!> code-samples/analytics/quick-start.rb !}
