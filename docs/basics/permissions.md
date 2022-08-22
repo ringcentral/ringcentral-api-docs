@@ -1,6 +1,13 @@
-# Application Permissions
+# Application permissions and scopes
 
-In order to work with particular RingCentral API resources the application should have the corresponding permissions. Required API permissions are generally declared at the stage of application registration and confirmed by the user on authentication stage. The following permissions are available:
+In order to work with particular RingCentral API resources the application should have the corresponding permissions, also referred to as the application "scopes." Required scopes are generally declared at the stage of application registration and confirmed by the user on authentication stage.
+
+Adding and removing scopes is accomplished in the Developer Console by editing the application's settings. 
+
+!!! hint "Application vs user permissions"
+    Setting an application's scope does not by itself confer upon a user of that application the ability to perform the associated action. Setting the scope merely declares that an application needs the ability to perform a specific action in order to function properly. Therefore, in order for a user of an application to perform a given operation, the app must declare the corresponding scope, and the user must have been assigned a role that possesses the corresponding user permission as well. 
+
+The following scopes are available:
 
 | Permission                | Description                                                    | Access Type       | Included Permissions |
 | ------------------------- | -------------------------------------------------------------- | ----------------- | -------------------- |
