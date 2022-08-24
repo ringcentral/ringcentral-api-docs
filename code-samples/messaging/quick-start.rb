@@ -1,3 +1,9 @@
+#!usr/bin/ruby
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
 require 'ringcentral'
 require 'dotenv/load'
 
@@ -26,7 +32,7 @@ def send_sms(phoneNumber)
   resp = $rc.post('/restapi/v1.0/account/~/extension/~/sms', payload: {
         from: {phoneNumber: phoneNumber},
         to: [{phoneNumber: RECIPIENT}],
-        text: 'Hello World from Ruby'
+        text: 'Hello World!'
     })
 
   puts "SMS sent. Message status: " + resp.body['messageStatus']
