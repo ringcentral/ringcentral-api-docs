@@ -1,6 +1,6 @@
-/*You get the environment parameters from your 
-application dashbord in your developer account 
-https://developers.ringcentral.com/ */
+/* You get the environment parameters from your 
+   application dashbord in your developer account 
+   https://developers.ringcentral.com */
 
 const RC = require('@ringcentral/sdk').SDK
 require('dotenv').config();
@@ -44,11 +44,10 @@ async function read_extension_phone_number(){
 
 async function send_sms(fromNumber){
     try {
-        
         var resp = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
             from: {'phoneNumber': fromNumber},
             to: [{'phoneNumber': RECIPIENT}],
-            text: 'Hello World from JavaScript!'
+            text: 'Hello World!'
         })
         var jsonObj = await resp.json()
         console.log("SMS sent. Message status: " + jsonObj.messageStatus)

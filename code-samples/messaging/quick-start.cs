@@ -2,6 +2,10 @@ using System;
 using System.Threading.Tasks;
 using RingCentral;
 
+/* You get the environment parameters from your 
+   application dashbord in your developer account 
+   https://developers.ringcentral.com */
+
 namespace Send_SMS
 {
     class Program
@@ -47,7 +51,7 @@ namespace Send_SMS
             parameters.to = new MessageStoreCallerInfoRequest[] { new MessageStoreCallerInfoRequest {
                     phoneNumber = Environment.GetEnvironmentVariable("SMS_RECIPIENT")
                 } };
-            parameters.text = "Hello World from C#";
+            parameters.text = "Hello World!";
             
             var resp = await restClient.Restapi().Account().Extension().Sms().Post(parameters);
             Console.WriteLine("SMS sent. Message status: " + resp.messageStatus);

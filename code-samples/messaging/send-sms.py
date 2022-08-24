@@ -1,7 +1,8 @@
-#!/usr/bin/env python
-#You get the environment parameters from your 
-#application dashbord in your developer account 
-#https://developers.ringcentral.com/
+#!/usr/bin/python
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
 
 from ringcentral import SDK
 import os,sys
@@ -38,11 +39,11 @@ def read_extension_phone_number():
 def send_sms(fromNumber):
   try:
     resp = platform.post('/restapi/v1.0/account/~/extension/~/sms',
-              {
-                  'from' : { 'phoneNumber': fromNumber },
-                  'to'   : [ {'phoneNumber': RECIPIENT} ],
-                  'text' : 'Hello World from Python!'
-              })
+    {
+        'from' : { 'phoneNumber': fromNumber },
+        'to'   : [ {'phoneNumber': RECIPIENT} ],
+        'text' : 'Hello World!'
+    })
     jsonObj = resp.json()
   except:
     sys.exit("Unable to send SMS")

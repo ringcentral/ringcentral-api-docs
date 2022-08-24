@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-#You get the environment parameters from your 
-#application dashbord in your developer account 
-#https://developers.ringcentral.com/
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
 
 from ringcentral import SDK
 import os,sys
@@ -38,8 +39,9 @@ def read_extension_phone_number():
 def send_mms(fromNumber):
     builder = rcsdk.create_multipart_builder()
     builder.set_body({
-    'from': {'phoneNumber': fromNumber},
-    'to': [{'phoneNumber': RECIPIENT}],
+      'from' : { 'phoneNumber': fromNumber },
+      'to'   : [ {'phoneNumber': RECIPIENT} ],
+      'text' : 'Hello World!'
     })
     image = open ('TestImage.jpg', 'rb')
     attachment = ('TestImage.jpg', image, 'image/jpeg')
