@@ -76,7 +76,7 @@ JSON web tokens, or JWTs are a form of user credential that can be presented in 
 | `Content-type`   | `application/x-www-form-urlencoded`                        |
 | `Authorization`  | `Basic ` + base64_encoded( Client ID + ":" + Client Secret ) |
 
-**POST Parameters**
+**POST Body**
 
 | Parameter           | Type     | Description                                                             |
 | ------------------- | -------- | -----------                                                             |
