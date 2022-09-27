@@ -57,9 +57,9 @@ The library bases on RingCentral WebPhone Client library and Call Control RESTfu
 
 ## Defining a WebRTC Application
 
-To use the Web Phone client library (or to create your own custom application) you will need to define a new application in the Ring Central Developer Portal.
+To use the Web Phone client library (or to create your own custom application) you will need to define a new application in the RingCentral Developer Console.
 
-* Login to the [Developer Portal](https://developers.ringcentral.com)
+* Login to the [Developer Console](https://developers.ringcentral.com)
 * Create a new app - provide a useful name/description
 * **Application Type:** Private
 * **Platform Type:** Browser-Based (required)

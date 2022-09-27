@@ -181,6 +181,16 @@ nav:
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
 
+  - 'Video':
+    - 'REST API':
+      - 'Getting Started': 'video/quick-start.md'
+      - 'Creating meeting bridges': 'video/create-meetings.md'
+      - 'Scheduling on behalf of': 'video/meeting-delegates.md'
+    - 'Video Client SDK':
+      - 'Overview': 'video/client-sdk/index.md'
+      - 'Getting Started': 'video/client-sdk/quick-start.md'
+      - 'Download': 'video/client-sdk/download.md'
+
   - 'Meetings':
     - 'Overview': 'meetings/index.md'
     - 'Getting Started': 'meetings/quick-start.md'
@@ -197,7 +207,8 @@ nav:
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
-    - 'Users and Extensions': 'account/extensions.md'
+    - 'Users and extensions': 'account/extensions.md'
+    - 'Creating users': 'account/creating-users.md'    
     - 'Phone Numbers': 'account/phone-numbers.md'
     - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
     - 'User Feature Flags': 'account/feature-flags.md'

@@ -50,6 +50,17 @@
     padding-left: 1rem;
 }
 
+.tabbed-content .highlight,
+.tabbed-content .admonition {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#content #main a.btn {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
 #sidebar-nav .nav li.nav-item > ul {
     list-style: none;
 }

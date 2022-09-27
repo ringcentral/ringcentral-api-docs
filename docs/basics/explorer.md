@@ -2,9 +2,9 @@
 
 The [RingCentral API Explorer](https://developers.ringcentral.com/api-reference) serves not only as a reference, but also as a test bench for all of RingCentral's APIs. The Explorer allows one to make calls with zero code. Let's use the API Explorer to send an SMS message without writing any code. 
 
-## Create an App
+## Create an app
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create RingCentral App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create RingCentral App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developers.ringcentral.com/new-app?name=API+Explorer+App&desc=A+generic+app+to+demo+API+calls+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Contacts,EditExtensions,EditMessages,EditPresence,Faxes,Glip,InternalMessages,Meetings,ReadAccounts,ReadCallLog,ReadCallRecording,ReadContacts,ReadMessages,ReadPresence,RingOut,SMS,SubscriptionWebhook&redirectUri=" class="btn btn-primary">Create RingCentral App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
