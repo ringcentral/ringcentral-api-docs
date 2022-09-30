@@ -1,5 +1,7 @@
 # Meeting delegates and scheduling on behalf of another
 
+!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+
 By default, the host of the meeting is set to the person scheduling the meeting (or calling the API). However, sometimes you need to schedule a meeting on behalf of another. This is a common need for services that operate a centralized booking agent, whereby a single user is acting on behalf of everyone else in the organization to help schedule meetings with customers, clients, patients, etc. 
 
 To schedule a meeting on behalf of someone else, one need only set the `accountId` and `extensionId` parameters in the create meeting request to the corresponding values of the host. 

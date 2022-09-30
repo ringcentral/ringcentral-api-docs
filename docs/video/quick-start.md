@@ -1,45 +1,38 @@
-no_breadcrumb:true
+# RingCentral Video REST API Quick Start
 
-# RingCentral Video Quick Start
+!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
 In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
-??? warning "This is for RingCentral Video. Looking for the RingCentral Meetings API?"
-     This Quick Start is designed for **RingCentral Video**, RingCentral's built-from-the-ground-up meetings platform. If you are looking to get started using our older RingCentral Meetings API, we have just the [RingCentral Meetings guide for you](../rcm/create-meeting/). 
-
-??? check "Meetings Permission Required"
-     In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
-
-## Create an App
+## Create an app
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Meetings App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Meetings App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
-<li>Select "API App for RingCentral Office" under "What type of app are you creating?"</li>
-<li>Select "Other Non-UI" under "Where will you be calling the API from?"
-<li>Select "Only members of my organization/company" under "Who will be authorized to access your app?"
-<li>On the second page of the create app wizard, enter your app's name and description. Then select the following permissions:
+<li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
+<li>Under "Authentication" select "Password-based auth flow."
+<li>Under "Security" add the following permissions:
   <ul>
     <li>Meetings</li>
   </ul>
-  </li>
-<li>We are using Password Flow authentication, so leave "OAuth Redirect URI" blank.</li>
+</li>
+<li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
 </ol>
 </div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Create a Meeting
+## Create a meeting bridge
 
-=== "Javascript(Node.js)"
+=== "Javascript"
 
     ### Install RingCentral Node.js SDK
 
@@ -135,9 +128,15 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     $ ruby meetings.rb
     ```
 
-### Note about Java & C# Suport
+=== "C#"
 
-If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentra's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+    !!! warning "C# and .NET SDKs are not currently available"
+	    If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentra's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+
+=== "Java" 
+
+    !!! warning "A Java SDK is not currently available"
+        If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentra's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
 
 ## Need Help?
 

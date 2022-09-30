@@ -18,13 +18,14 @@ rcsdk = SDK(os.environ.get('RC_CLIENT_ID'),
 platform = rcsdk.platform()
  
 try:
-  platform.login(jwt=os.environ.get('RC_JWT'))
+  platform.login(os.environ.get('RC_USERNAME'),
+                 os.environ.get('RC_EXTENSION'),
+                 os.environ.get('RC_PASSWORD') )
 except Exception as e:
   sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
- 
-print(f'Login with JWT successful.')
 
 RECIPIENT    = os.environ.get('SMS_RECIPIENT')
+
 def read_extension_phone_number():
   try:
     resp = platform.get("/restapi/v1.0/account/~/extension/~/phone-number")

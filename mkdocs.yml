@@ -182,10 +182,16 @@ nav:
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
 
   - 'Video':
-    - 'REST API':
+    - 'Overview': 'video/index.md'
+    - 'Using the REST API':
       - 'Getting Started': 'video/quick-start.md'
       - 'Creating meeting bridges': 'video/create-meetings.md'
       - 'Scheduling on behalf of': 'video/meeting-delegates.md'
+      - 'Creating a "personal" meeting': 'video/personal-meetings.md'
+      - 'Get PTSN dial-in numbers': 'video/dialing-in.md'
+      - 'Past meetings and recordings': 'video/meeting-history.md'
+      - 'Selecting meetings service': 'video/meeting-config.md'
+      - 'Troubleshooting': 'video/troubleshooting.md'
     - 'Video Client SDK':
       - 'Overview': 'video/client-sdk/index.md'
       - 'Download': 'video/client-sdk/download.md'
@@ -194,12 +200,10 @@ nav:
          - 'Android': https://developers.ringcentral.com/video-client-sdk/android/latest/
          - 'iOS': https://developers.ringcentral.com/video-client-sdk/ios/latest/
          - 'Javascript': https://developers.ringcentral.com/video-client-sdk/javascript/latest/
-
-  - 'Meetings':
-    - 'Overview': 'meetings/index.md'
-    - 'Getting Started': 'meetings/quick-start.md'
-    - 'RingCentral Video API': 'meetings/video.md'
-    - 'Embeddable': 'meetings/embeddable.md'
+    - 'Meetings (legacy API)':
+      - 'Overview': 'meetings/index.md'
+      - 'Getting Started': 'meetings/quick-start.md'
+      - 'Embeddable': 'meetings/embeddable.md'
 
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
