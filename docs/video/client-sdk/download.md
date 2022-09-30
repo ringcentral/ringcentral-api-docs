@@ -1,5 +1,7 @@
 # Download the RingCentral Video Client SDK
 
+!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+
 The RingCentral Video Client SDK is currently in **private beta** and is only available to select developers. If you would like to add your name to the list of beta testers, begin by filling out a [brief questionnaire](https://forms.gle/H3QxfhqAhujkktXa6) to help us better understand your use case and needs. 
 
 <a class="btn btn-primary btn-lg" href="https://forms.gle/H3QxfhqAhujkktXa6">Join the Private Beta &raquo;</a>

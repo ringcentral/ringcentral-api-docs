@@ -3,6 +3,8 @@ style: quick-start
 
 # RingCentral Video Client SDK Quick Start
 
+!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system, developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and video.
 
 In this Quick Start, we are going to help you create your first application powered by a RingCentral Video Client SDK in just a few minutes. Let's get started.

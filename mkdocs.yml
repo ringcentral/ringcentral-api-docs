@@ -200,6 +200,7 @@ nav:
          - 'Android': https://developers.ringcentral.com/video-client-sdk/android/latest/
          - 'iOS': https://developers.ringcentral.com/video-client-sdk/ios/latest/
          - 'Javascript': https://developers.ringcentral.com/video-client-sdk/javascript/latest/
+      - 'Release notes': 'video/client-sdk/release-notes.md'
     - 'Meetings (legacy API)':
       - 'Overview': 'meetings/index.md'
       - 'Getting Started': 'meetings/quick-start.md'

@@ -1,4 +1,6 @@
-## API Changelog
+# API Changelog
+
+!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
 
 ### June 2022 API Changes
 

@@ -1,5 +1,3 @@
-no_breadcrumb:true
-
 # Scheduling and creating a meeting bridge
 
 !!! warning "The RingCentral Video REST API and Video SDKs are in beta"

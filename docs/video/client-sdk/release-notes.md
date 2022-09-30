@@ -1,6 +1,4 @@
-no_breadcrumb:true
-
-# Release Notes for RingCentral Android and iOS SDKs
+# Release Notes for Video Client SDKs
 
 ### v.0.1.0.003
 
