@@ -11,7 +11,7 @@ Check to make sure you have all of the following prerequisites:
 
 ### Edit the sample application config file
 
-1. Unpack the SDK you downloaded in the previous step. 
+1. Unpack the SDK you downloaded in the steps above. 
 1. Navigate to `RingCentral_Video_iOS_Client_SDK_<version>/samples/RcvSwiftSample1v1meeting/RcvSwiftSample1v1meeting/`
 1. Edit `AppInfo.swift`
 1. Enter in values for the following variables:
@@ -24,11 +24,8 @@ Check to make sure you have all of the following prerequisites:
 The Video Client SDK you downloaded above, comes with a number of sample applications. Follow these steps to build the sample app.
 
 1. Open Xcode
-1. Open the sample app by clicking "File" > "Open." Then, open the `samples/RCVSample` folder
+1. Open the sample app by clicking "File" > "Open." Then, open the `samples/RcvSwiftSample1v1meeting` folder
 1. Ensure your Apple Developer "Team" is populated under "Signing & Capabilities"
-1. Edit the file `samples/RCVSample/RCVSample/AppInfo.swift`:
-     * Enter the `ClientID` and `ClientSecret` associated with the application you created above
-     * Enter the `JWT` you saved to your clipboard in the step above.
 1. Select your target device (if you don't see your device, make sure it is physically connected to your development machine)
 1. Click the "Build" button (the right triangle)
 1. After the app has successfully started, join a meeting. To do that, enter the web pin of the meeting bridge you created in a previous step.

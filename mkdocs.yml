@@ -188,8 +188,12 @@ nav:
       - 'Scheduling on behalf of': 'video/meeting-delegates.md'
     - 'Video Client SDK':
       - 'Overview': 'video/client-sdk/index.md'
-      - 'Getting Started': 'video/client-sdk/quick-start.md'
       - 'Download': 'video/client-sdk/download.md'
+      - 'Getting Started': 'video/client-sdk/quick-start.md'
+      - 'API Reference':
+         - 'Android': https://developers.ringcentral.com/video-client-sdk/android/latest/
+         - 'iOS': https://developers.ringcentral.com/video-client-sdk/ios/latest/
+         - 'Javascript': https://developers.ringcentral.com/video-client-sdk/javascript/latest/
 
   - 'Meetings':
     - 'Overview': 'meetings/index.md'

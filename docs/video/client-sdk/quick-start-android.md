@@ -1,30 +1,30 @@
 ### Check prerequisites
 
+Check to make sure you have all of the following prerequisites:
+
 - Android Studio 4.2.+
 - Physical Android device (Phone and Tablet) with Android OS 7.0+
-- [RingCentral Video Account](https://developers.ringcentral.com)
 
-### Install the RingCentral Android SDK in your application
+### Edit the sample application config file
 
-- Navigate to and open the directory where the SDK is located
-- The RingCentral Android SDK needs to be integrated in an existing application of yours. For our demo purpose, we will use the existing, so open Android Studio and then open `RCVSample` located under the "samples" folder. Open Once open, let "gradle" sync the dependencies for the project.
-- Copy the AAR package "rcv-sdk-22.2.20.2-beta.aar" located in the "libs" directory to the "libs" directory of the sample app in Android Studio. 
+1. Unpack the SDK you downloaded in the steps above. 
+1. Navigate to `RingCentral_Video_Android_Client_SDK_<version>/samples/RcvAndroidSample1v1meeting/app/src/main/res/values/`
+1. Edit `strings.xml`
+1. Look for the following `<string>` elements and enter the appropriate values for each of the following:
+    * `<string name="clientId"></string>`
+	* `<string name="clientSecret"></string>`
+	* `<string name="jwt"></string>`
 
-### Get the access token
+### Build and run the sample application
 
-- Follow this [guide](app-create-auth.md) to create or use your existing application and get the "access_token".
+1. In Android Studio open the `samples/RcvAndroidSample1v1meeting` folder found in the SDK.
+1. Let gradle download and sync the dependencies for the project.
+1. Copy the AAR package `libs/rcv-client-sdk-<version>.aar` to the `libs` directory found in the sample app in Android Studio. 
+1. From Android Studio's menu bar, click on "Build > Clean Project." Confirm there are no errors and then select your Android Device or AVD and click "Run app." 
+1. Give time for the sample application to launch on your device, then tap on "Start."
+1. Invite a friend or colleague to join the meeting you created. 
 
-### Edit and run the Android App to start/join the meeting session
-
-1. Switch to Android Studio and paste the `access_token` inside of `app/src/main/res/values/strings.xml` -> `<string name="ringcentral_video_access_token"></string>` and paste the accessToken you got in the previous step.
-
-2. from the menu bar, click on `Build -> Clean Project` and make sure there are no errors. Select your Android Device or AVD and click “Run app”. 
-
-3. The sample application should launch in your device and tap on `Start Meeting` to start the meeting as a host.
-
-![Android](../images/android-app-screenshot.png)
-
-4. To join the meeting, you will need `Meeting ID` and optionally `Meeting Usename`, `Meeting Password` that you can obtain from the host and then tap tap on `Join Meeting` button to enter the meeting as attendee.
+<img src="../android-app-screenshot.png" style="max-width: 200px">
 
 
 
