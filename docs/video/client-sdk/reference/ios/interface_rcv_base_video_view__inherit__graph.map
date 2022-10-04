@@ -1,0 +1,8 @@
+<map id="RcvBaseVideoView" name="RcvBaseVideoView">
+<area shape="rect" id="node1" title=" " alt="" coords="182,93,325,280"/>
+<area shape="rect" id="node4" href="$interface_rcv_metal_video_view.html" title=" " alt="" coords="5,328,149,368"/>
+<area shape="rect" id="node5" href="$interface_rcv_open_g_l_video_view.html" title=" " alt="" coords="174,328,333,368"/>
+<area shape="rect" id="node6" href="$interface_rcv_sample_buffer_video_view.html" title=" " alt="" coords="357,328,547,368"/>
+<area shape="rect" id="node2" title=" " alt="" coords="144,5,213,45"/>
+<area shape="rect" id="node3" title=" " alt="" coords="237,5,421,45"/>
+</map>

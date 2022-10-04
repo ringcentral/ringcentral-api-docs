@@ -1,0 +1,28 @@
+var interface_rcv_instant_meeting_settings =
+[
+    [ "create", "interface_rcv_instant_meeting_settings.html#a30267b434d65786df09e717fb7404c2b", null ],
+    [ "getAudioMuted", "interface_rcv_instant_meeting_settings.html#a5869b6a927d74ef0931088daefa5bdab", null ],
+    [ "getMeetingName", "interface_rcv_instant_meeting_settings.html#a1b2567e96fb589a7294d3287f4b7d7b6", null ],
+    [ "getMeetingPassword", "interface_rcv_instant_meeting_settings.html#af12285eea57be0cc6fe38485d21dcde5", null ],
+    [ "getVideoMuted", "interface_rcv_instant_meeting_settings.html#a48347fd6599a3ec0f9e9ac23991e7ed2", null ],
+    [ "getWaitingRoomMode", "interface_rcv_instant_meeting_settings.html#a315abcb1138d6bd92f4e55f80af56f4f", null ],
+    [ "isAllowJoinBeforeHost", "interface_rcv_instant_meeting_settings.html#a8065cdbe7f0d431e402f2b17f01f7121", null ],
+    [ "isAllowScreenSharing", "interface_rcv_instant_meeting_settings.html#ac6a37d512ce089d3b583145a2678fd42", null ],
+    [ "isE2eeEnabled", "interface_rcv_instant_meeting_settings.html#aa79c191f0595d91af991c03ecb52e9f7", null ],
+    [ "isOnlyAuthUserCanJoin", "interface_rcv_instant_meeting_settings.html#ab30a51c05642a5f8100035bb077ff0fb", null ],
+    [ "isOnlyCoworkersCanJoin", "interface_rcv_instant_meeting_settings.html#a87ce34193a62cf424cdac4438eed39ef", null ],
+    [ "isPasswordRequired", "interface_rcv_instant_meeting_settings.html#ac42cd8bc86c058a3273ebcf73712a289", null ],
+    [ "isWaitingRoomEnabled", "interface_rcv_instant_meeting_settings.html#a6d1f442ff0ba063cd3c2fb4e41b96b6c", null ],
+    [ "setAllowJoinBeforeHost:", "interface_rcv_instant_meeting_settings.html#a52daff36945bd347b8826568f11be9b4", null ],
+    [ "setAllowScreenSharing:", "interface_rcv_instant_meeting_settings.html#a2eedcd0b32d0f4b83e8a4a2e328b8e0c", null ],
+    [ "setEnableE2ee:", "interface_rcv_instant_meeting_settings.html#a7c6b0c319f32ceef50eb2fc434e51d53", null ],
+    [ "setEnableWaitingRoom:", "interface_rcv_instant_meeting_settings.html#ae94e903e89e6a2553ec93573e5e5253c", null ],
+    [ "setMeetingName:", "interface_rcv_instant_meeting_settings.html#ae85dc5ad4a1ed975d16794575e6b185d", null ],
+    [ "setMeetingPassword:", "interface_rcv_instant_meeting_settings.html#a9c4b490cf2c35aa6b6b9c064b5c1cdb6", null ],
+    [ "setMuteAudio:", "interface_rcv_instant_meeting_settings.html#a95aa70206c55407e64555d765fd01ed1", null ],
+    [ "setMuteVideo:", "interface_rcv_instant_meeting_settings.html#a31d23c11d7a9b413730cdba5802d3890", null ],
+    [ "setOnlyAuthUserCanJoin:", "interface_rcv_instant_meeting_settings.html#a386dfa7325322aa0d13276961fce3816", null ],
+    [ "setOnlyCoworkersCanJoin:", "interface_rcv_instant_meeting_settings.html#a7be7f9974599c1b50f74aa2510e08220", null ],
+    [ "setRequirePassword:", "interface_rcv_instant_meeting_settings.html#a3021f3cc4ba08f5b6b172c1709f96973", null ],
+    [ "setWaitingRoomMode:", "interface_rcv_instant_meeting_settings.html#a3523f2ded83471d1350e4dd852848ac6", null ]
+];
