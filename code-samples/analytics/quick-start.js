@@ -19,31 +19,30 @@ platform.on(platform.events.loginSuccess, function(e){
 });
 
 async function run_report( from_time, to_time ) {
-    try {
-	let options = {
-	    "grouping":{
-				"groupBy":"Users"
-	    },
-	    "timeSettings":{
-				"timeZone": "US/Pacific",
-				"timeRange":{
-		    	"timeFrom": from_time,
-		    	"timeTo": to_time
+	try {
+		let options = {
+				"grouping":{
+					"groupBy":"Users"
+				},
+				"timeSettings":{
+					"timeZone": "US/Pacific",
+					"timeRange":{
+						"timeFrom": from_time,
+						"timeTo": to_time
+			}
+				},
+				"responseOptions":{
+					"counters":{
+						"allCalls":{
+							"aggregationType":"Sum"
+					}
+			}
+				}
 		}
-	    },
-	    "responseOptions":{
-				"counters":{
-		    	"allCalls":{
-						"aggregationType":"Sum"
-		    }
-		}
-	    }
+		let result = await platform.post("/analytics/calls/v1/accounts/~/aggregation/fetch", options);
+		let response = await result.json();
+		console.dir(response, {depth: null});
+	} catch (e) {
+			console.log(e.message);
 	}
-	let result = await platform.post("/analytics/calls/v1/accounts/~/aggregation/fetch",
-					 options);
-	let response = await result.json();
-	console.dir(response, {depth: null});
-    } catch (e) {
-	console.log(e.message);
-    }
 }
