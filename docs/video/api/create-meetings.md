@@ -1,6 +1,6 @@
 # Scheduling and creating a meeting bridge
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! docs/video/beta-notice.md !}
 
 ## What is difference between a meeting and a bridge?
 

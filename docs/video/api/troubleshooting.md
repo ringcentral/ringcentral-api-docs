@@ -1,6 +1,6 @@
 # Frequently asked questions & common problems for RingCentral Video developers
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! docs/video/beta-notice.md !}
 
 ### Is a RingCentral developer account free?
 

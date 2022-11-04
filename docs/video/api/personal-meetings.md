@@ -1,6 +1,6 @@
 # Finding your personal meeting ID
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! docs/video/beta-notice.md !}
 
 Every RingCentral Video account holder has a "Personal Meeting ID." This personal meeting ID is a persistent location in which to hold meetings. It is often used for having a quick ad-hoc meeting with a group of people. Developers may need to find a user's personal meeting ID when building user flows that allow users to schedule meetings -- often you may want to ask, "use your personal meeting ID?"
 

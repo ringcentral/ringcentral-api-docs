@@ -1,11 +1,11 @@
 # Determining the correct meetings API to call
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! docs/video/beta-notice.md !}
 
 RingCentral is commited to supporting both of our meeting solutions for the foreseeable future. These products are:
 
-* RingCentral Meetings - our classic meetings solution built on top of Zoom
-* RingCentral Video - our next-generation, built-from-the-ground-up meetings platform
+* [RingCentral Meetings](../../meetings/) - our classic meetings solution built on top of Zoom
+* [RingCentral Video](../) - our next-generation, built-from-the-ground-up meetings platform
 
 Every account can be configured for either one meetings product or the other. It is important to know what meetings solution an account is configured for if you are to build an integration successfully for the platform.
 

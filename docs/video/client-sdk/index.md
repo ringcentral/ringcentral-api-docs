@@ -1,37 +1,112 @@
 # Introduction to the RingCentral Video Client SDKs
 
-!!! warning "RingCentral Video Client SDKs are in private beta"
-    The RingCentral Video Client SDKs are currently only available through a private beta. If you would like to request access, please contact [rcv-partners@ringcentral.com](mailto:rcv-partners@ringcentral.com). Developers should be aware that the SDKs are still subject to change, and are not yet recommended for use in production. 
+{! docs/video/beta-notice.md !}
 
-RingCentral's Video Client SDKs are designed to help developers in creating applications that utilize RingCentral Video in highly customized and deeply integrated video and other real-time commuication experiences. The following Video Client SDKs are available:
+<div class="jumbotron pt-1">
+  <h3 class="h3 display-5">Build highly customized meeting and video applications!</h3>
+  <p class="lead">The RingCentral Video Client SDKs are designed to help developers in creating applications that utilize RingCentral Video in highly customized and deeply integrated video and other real-time commuication experiences. The following Video Client SDKs are available in the following languages:</p>
+  <ul>
+  <li>Javascript</li>
+  <li>Native iOS</li>
+  <li>Native Android</li>
+  </ul>
+  <a href="./download/" class="btn btn-primary qs-link">Download the Video Client SDK</a>
+</div>
 
-* Javascript, perfect for creating video applications on the web or in a browser
-* Native iOS, for use on an iPhone
-* Native Android, for use on Android devices
+## Currently supported features
 
-Using these SDKs, developers can create applications with the following capabilities:
+The RingCentral Video Client SDK is currently in beta. The latest version supports the following features:
 
-* Start and/or join a meeting
-* Toggle a user's video/camera on and off
-* Mute and unmute a user's microphone
-* Select or modify the video device currently being used
-* Obtain a participant or participant list
-* Receive and/or display active video and audio streams
-* Toggle cloud recording on and off
-* Access meeting events, including:
-  * Meeting started, joined and leave events
-  * Participant joined and left events
-  * Audio enabled/disabled events
-  * Audio muted/unmuted events
-  * Video enabled/disabled events
+<div class="table">
+  <table class="table table-striped text-successtable-border border-light">
+    <thead class="border-light">
+      <tr>
+        <th scope="col">Feature</th>
+        <th scope="col"><strong>Availability</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Start and/or join a meeting</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Toggle a user's video/camera on and off</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Mute and unmute a user's microphone</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Select or modify the video device currently being used</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Obtain a participant or participant list</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Receive and/or display active video and audio streams</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Toggle cloud recording on and off</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Meeting started, joined and leave callbacks</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Participant joined and left callbacks</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Audio mute/unmute/enabled/disabled callbacks</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Video enabled/disabled callbacks</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">HIPPA compliance</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">GDPR compliance</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Noise cancellation</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">PSTN dial-in support</th>
+        <td><i class="fas fa-check text-success"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Access to a live transcription of the meeting</th>
+        <td>Coming soon to future beta build</td>
+      </tr>
+      <tr>
+        <th scope="row">Closed captioning</th>
+        <td>Coming soon to future beta build</td>
+      </tr>
+      <tr>
+        <th scope="row">Toggle end-to-end encryption on/off</th>
+        <td>Coming soon to future beta build</td>
+      </tr>
+      <tr>
+        <th scope="row">Access to the screen sharing annotations data feed</th>
+        <td>Coming soon to future beta build</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Known issues and limitations
 
 * RingCentral Video does not currently support mobile web browsers, including mobile Safari and Chrome. Therefore the Video Client Javascript SDK is not currently supported on mobile devices. However, apps built using the iOS and Android SDKs are supported.
 
-### Contact Us
-
-For the RingCentral Video beta developer program, reach our team by email as follows:
-
-- Sign Up: Currently we have very early versions of our Android and iOS SDKs available for limited partners. If you would like to request access to the same, please email [rcv-partners@ringcentral.com](mailto:rcv-partners@ringcentral.com)
-- Dev Support & Feedback: For feedback, questions or suggestions around SDK please email [videosdkfeedback@ringcentral.com](mailto:videosdkfeedback@ringcentral.com)

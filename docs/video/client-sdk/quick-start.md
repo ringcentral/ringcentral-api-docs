@@ -11,7 +11,7 @@ In this Quick Start, we are going to help you create your first application powe
 
 ## Download the Video Client SDK
 
-[Download the latest version](../download/) of the Video Client SDK. Ability to download the SDK is limited to members of the private beta. To request to join the private beta, please [fill out our onboarding questionnaire](https://forms.gle/H3QxfhqAhujkktXa6).
+[Download the latest version](../download/) of the Video Client SDK. 
 
 ## Create an application and obtain app credentials
 

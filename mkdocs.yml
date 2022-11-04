@@ -183,15 +183,16 @@ nav:
 
   - 'Video':
     - 'Overview': 'video/index.md'
-    - 'Using the REST API':
-      - 'Getting Started': 'video/quick-start.md'
-      - 'Creating meeting bridges': 'video/create-meetings.md'
-      - 'Scheduling on behalf of': 'video/meeting-delegates.md'
-      - 'Creating a "personal" meeting': 'video/personal-meetings.md'
-      - 'Get PTSN dial-in numbers': 'video/dialing-in.md'
-      - 'Past meetings and recordings': 'video/meeting-history.md'
-      - 'Selecting meetings service': 'video/meeting-config.md'
-      - 'Troubleshooting': 'video/troubleshooting.md'
+    - 'Video REST API':
+      - 'Overview': 'video/api/index.md'
+      - 'Getting Started': 'video/api/quick-start.md'
+      - 'Creating meeting bridges': 'video/api/create-meetings.md'
+      - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
+      - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
+      - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
+      - 'Past meetings and recordings': 'video/api/meeting-history.md'
+      - 'Selecting meetings service': 'video/api/meeting-config.md'
+      - 'Troubleshooting': 'video/api/troubleshooting.md'
     - 'Video Client SDK':
       - 'Overview': 'video/client-sdk/index.md'
       - 'Download': 'video/client-sdk/download.md'
@@ -201,10 +202,10 @@ nav:
          - 'iOS': 'video/client-sdk/reference/ios/index.html'
          - 'Javascript': 'video/client-sdk/reference/js/index.html'
       - 'Release notes': 'video/client-sdk/release-notes.md'
+    - 'Using RingCentral Embeddable': 'video/embeddable.md'
     - 'Meetings (legacy API)':
       - 'Overview': 'meetings/index.md'
       - 'Getting Started': 'meetings/quick-start.md'
-      - 'Embeddable': 'meetings/embeddable.md'
 
   - 'Analytics':
     - 'Overview': 'analytics/index.md'

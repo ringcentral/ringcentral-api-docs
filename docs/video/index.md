@@ -1,70 +1,45 @@
 no_breadcrumb:true
 
-# Introduction to the RingCentral Video API
+# Welcome to the RingCentral Video Platform
 
-!!! warning "RingCentral Video REST API and Video SDKs are in beta"
-    The RingCentral Video REST API and Client SDKs are currently in beta. Developers should be aware of the following:
-	
-       * Their feature sets are not reflective of the planned scope.
-       * Backwards compatibility is not guaranteed from one release to the next.
+{! docs/video/beta-notice.md !}
 
-!!! tip "What you need to know before you begin"
+The RingCentral Video platform is available to RingCentral MVP customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The video platform is made up of a number of products that can help developers:
 
-    Use the following quick steps to get started.
+* Create and schedule meetings
+* Analyze and report on meeting histories
+* Download and store meeting recordings
+* Build unique meeting experiences powered by RingCentral Video
 
-    #### 1. If you are not an existing RingCentral customer, create a free RingCentral Video Pro account 
-
-    To build with the RingCentral Video API, you need a RingCentral Video Pro account, as our more standard "free developer account" does not support RingCentral Video. If you do not have one, [create a free RingCentral account](https://app.ringcentral.com/signup) now.
-
-    #### 2. Create an application
-
-    Login to the [Developer Console](https://developers.ringcentral.com/login.html#/) and create an app with at least the "Meeting" permission, or click the button below:
-    
-    <a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+video+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
-
-    #### 3. Contact us to graduate your app to production
-
-    RingCentral applications need to be graduated before they can be used in the production environment. During this phase of our beta program, there is no developer sandbox support for RingCentral Video. Therefore, all development will be done in production. To obtain production credentials, request graduation below:
-    
-    <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
-
-<div class="jumbotron pt-1">
-  <h3 class="h3 display-5">See the RingCentral Video REST API in action!</h3>
-  <p class="lead">The RingCentral Video API gives developers the ability to create and schedule meetings, as well as to access meeting history and recordings.</p>
-  <p>We invite all developers to check out the RingCentral Video API by looking at a simple app to schedule a meeting in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="https://god.postman.co/run-collection/e021788b7335a0ba15ec?action=collection%2Fimport#?env%5BRC%20PasswordFlow%20(Sharable)%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5yaW5nY2VudHJhbC5jb20iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6InBsYXRmb3JtLnJpbmdjZW50cmFsLmNvbSIsInNlc3Npb25JbmRleCI6MH0seyJrZXkiOiJSQ19BUFBfS0VZIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6MX0seyJrZXkiOiJSQ19BUFBfU0VDUkVUIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Mn0seyJrZXkiOiJSQ19VU0VSTkFNRSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjN9LHsia2V5IjoiUkNfRVhURU5TSU9OIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6NH0seyJrZXkiOiJSQ19QQVNTV09SRCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjV9LHsia2V5IjoibXlfYWNjZXNzX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJiYXNpY19hdXRoX2hlYWRlciIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjd9XQ==" class="btn btn-light qs-link">Postman &raquo;</a>
-</div>
+## Which RingCentral Video product is right for you?
 
 <div class="card-deck">
-  <div class="card" style="width: 18rem;">
+  <div class="card bg-light" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Call the REST API</h5>
-      <p class="card-text">Use RingCentral REST APIs to schedule meetings and retrieve meeting history with recordings and summaries.</p>
+      <h4 class="card-title">Manage RingCentral Video meetings, history and data</h4>
+      <p class="card-text">Use RingCentral Video REST APIs to schedule meetings and retrieve meeting history with recordings and summaries.</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./create-meetings/" class="card-link">Creating Meetings</a></li>
-      <li><a href="./meeting-history/" class="card-link">Get Recordings</a></li>
+      <li><a href="./create-meetings/" class="card-link">Create and schedule meetings</a></li>
+      <li><a href="./meeting-history/" class="card-link">Access and download recordings</a></li>
       </ul>
+	  <a class="btn btn-primary" href="./api/">Learn more about the REST API &raquo;</a>
     </div>
   </div>
-  <div class="card" style="width: 18rem;">
+  <div class="card bg-light" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="card-title">Embed video in your app</h5>
-      <p class="card-text">Use our client SDKs to create your own custom video experiences powered by RingCentral Video.</p>
+      <h4 class="card-title">Embed RingCentral Video-powered meetings directly in your apps</h4>
+      <p class="card-text">Use our client SDKs to create your own custom video experiences powered by RingCentral Video. Our SDKs are available in the following languages:</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./client-sdk/quick-start/#Android" class="card-link">Getting started with Android</a></li>
-      <li><a href="./client-sdk/quick-start/#iOS" class="card-link">Getting started on iOS</a></li>
-      <li><a href="./client-sdk/quick-start/#Javascript" class="card-link">Getting started with Javascript</a></li>
+      <li><a href="./client-sdk/quick-start/#Android" class="card-link">Android</a></li>
+      <li><a href="./client-sdk/quick-start/#iOS" class="card-link">iOS</a></li>
+      <li><a href="./client-sdk/quick-start/#Javascript" class="card-link">Javascript</a></li>
       </ul>
+	  <a class="btn btn-primary" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
     </div>
   </div>
 </div>
 
-## RingCentral Video concepts
+## Learn more about key RingCentral Video concepts
 
 ### What is a "meeting bridge?"
 

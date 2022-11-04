@@ -1,6 +1,6 @@
 # RingCentral Video REST API Quick Start
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! docs/video/beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -10,7 +10,7 @@ In this Quick Start, we are going to help you create your first meeting on the p
 
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Meetings App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Meetings&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -19,16 +19,17 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "Password-based auth flow."
-<li>Under "Security" add the following permissions:
-  <ul>
-    <li>Meetings</li>
-  </ul>
-</li>
 <li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
 </ol>
 </div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
+
+## Request help from support
+
+Access to the RingCentral Video API currently requires help from support in order to grant the "Video" application scope to your application, and graduate it to production. 
+
+<a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 
 ## Create a meeting bridge
 
@@ -138,13 +139,13 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
     !!! warning "A Java SDK is not currently available"
         If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentra's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
 
-## Need Help?
+## Need help?
 
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
 <a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=meetings">Search the forums &raquo;</a>
 
-## What's Next?
+## What's next?
 
 When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. Have a look at our private sample (please provide us your GitHub username to allow access to this repo) [Node.JS application](https://github.com/ringcentral/ringcentral-video-js-demo) for reference purpose.
 
