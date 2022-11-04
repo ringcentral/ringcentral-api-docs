@@ -16,25 +16,26 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
 <div class="card-deck">
   <div class="card bg-light" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h4 class="card-title">Manage RingCentral Video meetings, history and data</h4>
-      <p class="card-text">Use RingCentral Video REST APIs to schedule meetings and retrieve meeting history with recordings and summaries.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./create-meetings/" class="card-link">Create and schedule meetings</a></li>
-      <li><a href="./meeting-history/" class="card-link">Access and download recordings</a></li>
-      </ul>
-	  <a class="btn btn-primary" href="./api/">Learn more about the REST API &raquo;</a>
-    </div>
-  </div>
-  <div class="card bg-light" style="width: 18rem;">
-    <div class="card-body pt-0 pb-0">
-      <h4 class="card-title">Embed RingCentral Video-powered meetings directly in your apps</h4>
+      <h4 class="card-title">Embed custom RingCentral Video meetings in your app</h4>
       <p class="card-text">Use our client SDKs to create your own custom video experiences powered by RingCentral Video. Our SDKs are available in the following languages:</p>
       <ul class="pl-0 ml-4">
       <li><a href="./client-sdk/quick-start/#Android" class="card-link">Android</a></li>
       <li><a href="./client-sdk/quick-start/#iOS" class="card-link">iOS</a></li>
       <li><a href="./client-sdk/quick-start/#Javascript" class="card-link">Javascript</a></li>
       </ul>
-	  <a class="btn btn-primary" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
+	  <a class="btn btn-primary mb-3" href="https://forms.gle/H3QxfhqAhujkktXa6">Join the Client SDK beta &raquo;</a>
+	  <a class="btn-link mb-3" role="button" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
+    </div>
+  </div>
+  <div class="card bg-light" style="width: 18rem;">
+    <div class="card-body pt-0 pb-0">
+      <h4 class="card-title">Manage RingCentral Video meetings, history and data</h4>
+      <p class="card-text">Use RingCentral Video REST APIs to schedule meetings and retrieve meeting history with recordings and summaries.</p>
+      <ul class="pl-0 ml-4">
+      <li><a href="./api/create-meetings/" class="card-link">Create and schedule meetings</a></li>
+      <li><a href="./api/meeting-history/" class="card-link">Access and download recordings</a></li>
+      </ul>
+	  <a class="btn btn-primary" href="./api/quick-start/">Try out the REST API &raquo;</a>
     </div>
   </div>
 </div>
