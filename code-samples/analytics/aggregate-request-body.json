@@ -70,7 +70,10 @@
       "allCalls": {
         "aggregationType": "Sum"
       },
-      "callsByDirection": {
+      "queueOpportunities": {
+        "aggregationType": "Sum"
+      },
+        "callsByDirection": {
         "aggregationType": "Sum"
       },
       "callsByOrigin": {

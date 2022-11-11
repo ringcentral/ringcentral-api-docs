@@ -9,7 +9,7 @@ Dialogs can only be spawned (or opened) in response to an [interactive messaging
 To spawn a dialog, have your application respond to a RingCentral outbound webhook with a `200` HTTP status code, return a Content-type of `application/json` and finally, set the contents of the response to one of the dialog payloads below.
 
 ??? info "Code walkthrough: open dialog"
-    The example Javascript below is an expansion to the [Walkthrough example ](../bots/posting-cards/) to demonstrate a simple Add-in app which opens a dialog in response to a user's submit event.
+    The example Javascript below is an expansion to the [Walkthrough example ](../../bots/posting-cards/) to demonstrate a simple Add-in app which opens a dialog in response to a user's submit event.
 
     ```js
     {!> code-samples/team-messaging/open-dialog.js !}

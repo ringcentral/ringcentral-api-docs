@@ -210,10 +210,8 @@ nav:
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
-    - 'Aggregate Performance Data': 'analytics/aggregate.md'
+    - 'Aggregate Data': 'analytics/aggregate.md'
     - 'Timeline Data': 'analytics/timeline.md'
-    - 'Javascript sample app': https://github.com/ringcentral/call-performance-analytics-demo-node
-    - 'Java sample app': https://github.com/ringcentral/call-performance-analytics-demo-java
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'

@@ -74,6 +74,7 @@
   "responseOptions": {
     "counters": {
       "allCalls": true,
+      "queueOpportunities": true,
       "callsByDirection": true,
       "callsByOrigin": true,
       "callsByResponse": true,
