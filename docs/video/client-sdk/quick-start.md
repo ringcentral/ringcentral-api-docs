@@ -1,4 +1,3 @@
-no_breadcrumb:true
 style: quick-start
 
 # RingCentral Video Client SDK Quick Start

@@ -197,6 +197,7 @@ nav:
       - 'Overview': 'video/client-sdk/index.md'
       - 'Download': 'video/client-sdk/download.md'
       - 'Getting Started': 'video/client-sdk/quick-start.md'
+      - 'Authentication': 'video/client-sdk/authentication.md'
       - 'API Reference':
          - 'Android': 'video/client-sdk/reference/android/index.html'
          - 'iOS': 'video/client-sdk/reference/ios/index.html'
