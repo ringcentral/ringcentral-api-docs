@@ -8,6 +8,7 @@ var protocol_rcv_remote_video_stats_p =
     [ "getHeight", "protocol_rcv_remote_video_stats-p.html#ada32444e971f3f860b1ce28ddb2c5236", null ],
     [ "getPacketsLost", "protocol_rcv_remote_video_stats-p.html#afcef1e261acaa8694536d9adf1feb1d0", null ],
     [ "getPacketsReceived", "protocol_rcv_remote_video_stats-p.html#a94b6b1a2c161839582857b030980c072", null ],
+    [ "getParticipant", "protocol_rcv_remote_video_stats-p.html#aa1b9dd7cf18932b8ff336ac270206f97", null ],
     [ "getPliCount", "protocol_rcv_remote_video_stats-p.html#a09cc4d09f0d9757740523cc2ed9a089a", null ],
     [ "getWidth", "protocol_rcv_remote_video_stats-p.html#aaca0f1f8bbcccedddb3a432e7af0e86f", null ]
 ];

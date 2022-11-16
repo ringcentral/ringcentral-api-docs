@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -98,14 +105,22 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>getAccountId&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a0477a52357e34a2afdeb7ecd7c5f09dc">RcvMeetingBridgeInfo</a></li>
 <li>getActiveDeviceCount&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a6374155bc4fed0fc9a0052025775853c">RcvIParticipant</a></li>
+<li>getActiveVideoUser&#160;:&#160;<a class="el" href="interface_rcv_meeting_user_controller.html#a8f81ecdd97d2abcca5c1e377e0845ee3">RcvMeetingUserController</a></li>
+<li>getAliases&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a0b7f5dbb8cf55377a38e05c1bd51fd82">RcvMeetingBridgeInfo</a></li>
+<li>getAllowJoinBeforeHost&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a592e346986d215f519e48be8a86db4f5">RcvMeetingBridgeInfo</a></li>
+<li>getAllowScreenSharing&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a259209eaf26c06819a70dbd55b2f1ffb">RcvMeetingBridgeInfo</a></li>
 <li>getAudioController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#af2099a50498aa33abd1b2f80a25b0e24">RcvMeetingController</a></li>
 <li>getAudioMuted&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a5869b6a927d74ef0931088daefa5bdab">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a84412e691bfb89e7d5d2e2d610b0b7d1">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a7b7f1c697adecc27a3807b340a40caad">RcvScheduleMeetingSettings</a></li>
+<li>getAutoRefresh&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#ad48a8324175b7db3dfca3bb71fcfea6e">RcvOauthOptions</a></li>
 <li>getBitrate&#160;:&#160;<a class="el" href="protocol_rcv_remote_audio_stats-p.html#ab9afe14347bfed0fe47a5fae22118d42">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#af0a77fc674063bc4aeb4d9eaf66c60d3">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getBytesReceived&#160;:&#160;<a class="el" href="protocol_rcv_remote_audio_stats-p.html#ad8d66ce36e40eea46a9657494642680b">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#aeccdecf5ce9e1ef0502ae89ffa827826">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getBytesSent&#160;:&#160;<a class="el" href="protocol_rcv_local_audio_stats-p.html#ac3d8bb4e5097800c926b9266481fb777">&lt;RcvLocalAudioStats&gt;</a>, <a class="el" href="protocol_rcv_local_video_stats-p.html#a4dc37235024361b2b6135b914bd6c0ca">&lt;RcvLocalVideoStats&gt;</a></li>
 <li>getChatType&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_message.html#afb1ffcc9c29a5c99c9fd18104e6c1a9c">RcvMeetingChatMessage</a></li>
 <li>getClockRate&#160;:&#160;<a class="el" href="protocol_rcv_local_audio_stats-p.html#a0a582594f50bc83ee11eb7df6d667150">&lt;RcvLocalAudioStats&gt;</a>, <a class="el" href="protocol_rcv_local_video_stats-p.html#a3e35c7f2558b41f96c3abe79285b3964">&lt;RcvLocalVideoStats&gt;</a></li>
+<li>getClosedCaptionsController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a19cc4020eb52c2d8412da1734f1566d9">RcvMeetingController</a></li>
+<li>getClosedCaptionsState&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_controller.html#abebc5de94383ecc495340080602100b0">RcvClosedCaptionsController</a></li>
 <li>getCodec&#160;:&#160;<a class="el" href="protocol_rcv_local_audio_stats-p.html#a1414fa6685cb9689b57a9b37055bc6af">&lt;RcvLocalAudioStats&gt;</a>, <a class="el" href="protocol_rcv_local_video_stats-p.html#ae04cba88f6f45ddb0bfc69ae01762fb9">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_audio_stats-p.html#a5b96aa661e8516d2e147137e77cb0474">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#abd9e4c6d95a5e692c8a95bbc57abfcf3">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getCompany&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#ae26b9412efc272512799f3ef6149c8f8">RcvIParticipant</a></li>
 <li>getContactId&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#abd9381b9313ace36fef24d84031d3bfa">RcvIParticipant</a></li>
@@ -113,68 +128,96 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getCustomStatus&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#aa2f8359a613ea8122a1d7e7a037c97b5">RcvIParticipant</a></li>
 <li>getDepartment&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a5288333000bf43c135ac2693943a28ee">RcvIParticipant</a></li>
 <li>getDevice&#160;:&#160;<a class="el" href="interface_rcv_video_device_manager.html#a8dde4400e6b7d06b26e470d6c93caab0">RcvVideoDeviceManager</a></li>
+<li>getEchoLeakType&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a353f5d9ae34c3b28d859856bef0fc88c">RcvIParticipant</a></li>
 <li>getEmail&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#abf34607e6eba5815d0b8f4de7a9003cc">RcvIParticipant</a></li>
+<li>getEndToEndEncryptionState&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#ac6690122673125113d776b1e97763a43">RcvMeetingController</a></li>
 <li>getErrorType:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a880f349b5471043f7841651508129ce5">RcvEngine</a></li>
+<li>getExtensionId&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a9dc39edbb205c98cf70410f037871709">RcvMeetingBridgeInfo</a></li>
 <li>getFirCount&#160;:&#160;<a class="el" href="protocol_rcv_local_video_stats-p.html#a789752ab20b9d6b882bc1bad428f634e">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#a03bfc2c04bc654649581e9838e01deae">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getFps&#160;:&#160;<a class="el" href="protocol_rcv_remote_video_stats-p.html#a7b77b15a0d763f4016fe3bfedd6e8b12">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getFrom&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_message.html#a3645f807104395d157ed8f444fbd2735">RcvMeetingChatMessage</a></li>
+<li>getGrantType&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#a527d2aa00db4af64049ccdb0d67beeaf">RcvOauthOptions</a></li>
 <li>getHeadshotColor&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a78f6fa561dcefcd4b753353971e82337">RcvIParticipant</a></li>
 <li>getHeadshotUrl&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a7cc2b2e10a2954b4dae20ab4bedfece1">RcvIParticipant</a></li>
 <li>getHeadshotUrlWithSize:&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#abc880ffba817bbcfbdafa8a3839f7e1e">RcvIParticipant</a></li>
 <li>getHeight&#160;:&#160;<a class="el" href="protocol_rcv_local_video_stats-p.html#a1aeb6519e28fba21c08377813ca94510">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#ada32444e971f3f860b1ce28ddb2c5236">&lt;RcvRemoteVideoStats&gt;</a></li>
-<li>getHostCode&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#af00bdc20d56f650c2e111cf77184be7a">RcvPersonalMeetingSettings</a></li>
+<li>getHostCode&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#aa9125dc8aab5251c419e87f1963b1bfd">RcvMeetingBridgeInfo</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#af00bdc20d56f650c2e111cf77184be7a">RcvPersonalMeetingSettings</a></li>
 <li>getId&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a3d332daf5a2506be3dcdd861464bb6a5">RcvIParticipant</a></li>
+<li>getIdentifier&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a94c70835ad9889935e82e298c892e61e">RcvMeetingBridgeInfo</a></li>
 <li>getInitialsAvatarName&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#ab8288484bbc1fbed4a0c9166a57adc33">RcvIParticipant</a></li>
+<li>getIsE2eeEnabled&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a49d248d7dbdb13507348e979c3a2967d">RcvMeetingBridgeInfo</a></li>
+<li>getIsMeetingSecret&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#ade0391f829e2328d4422f5df8796a320">RcvMeetingBridgeInfo</a></li>
+<li>getIsOnlyAuthUserJoin&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#af9596d0dfd44b5168d967b00ce08a36f">RcvMeetingBridgeInfo</a></li>
+<li>getIsOnlyCoworkersJoin&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a2cd59f0734bec32da2027f11ef96b1d1">RcvMeetingBridgeInfo</a></li>
 <li>getJobTitle&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a56eadaa217b5cbdd4f3e8148e8180bbb">RcvIParticipant</a></li>
+<li>getJoinUrl&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#af0b067943f1f93907f6335699270de16">RcvMeetingBridgeInfo</a></li>
+<li>getJwt&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#a6213dbbcc7f9aebf4cb6482a52ad7031">RcvOauthOptions</a></li>
 <li>getLastError&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a89993be2442be46c91a5067175cb5111">RcvMeetingController</a></li>
 <li>getLink&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#a71bd61a316c3b7b2b59cab93b3cf050c">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a3cea5c0bee21dfcc19b69ce0827bc34a">RcvScheduleMeetingSettings</a></li>
 <li>getLocalAudioStreamState&#160;:&#160;<a class="el" href="interface_rcv_audio_controller.html#a0f24b7a63c38311c7633638ed0853ea7">RcvAudioController</a></li>
 <li>getLocalPreviewStream&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a90b8d1d0e4d962d3675de0b69f857a8e">RcvIParticipant</a></li>
 <li>getMediaReconnection&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a9e78bf619251372a7861fc236f51efd9">RcvIParticipant</a></li>
 <li>getMediaStream&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a74751776be965bbc389b8be0adfe7c59">RcvIParticipant</a></li>
+<li>getMeetingBridge:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#ab7ffaee298042835da960286cfd90827">RcvEngine</a></li>
 <li>getMeetingChatController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a88649c12bdf4221435adc16cd6ce0f30">RcvMeetingController</a></li>
 <li>getMeetingContextController&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a7208d4653c3178a9e44f61cc4a857596">RcvEngine</a></li>
 <li>getMeetingController:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a030a4fabf9e8b3ac52ccbd2cea66a070">RcvEngine</a></li>
 <li>getMeetingInfo&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a3b1d039bbfd425adfc732f11d1e17bd2">RcvMeetingController</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a598fb42d1e4f6861033ea6fb8d81b0d9">RcvScheduleMeetingSettings</a></li>
 <li>getMeetingName&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a1b2567e96fb589a7294d3287f4b7d7b6">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#af23879a1a59afbb51be2c52823b848fd">RcvScheduleMeetingSettings</a></li>
-<li>getMeetingPassword&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#af12285eea57be0cc6fe38485d21dcde5">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a97a8c6b3b16d6feb1c8a89d4f91cd94f">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a8834ae5bd10272b0051dca9d365ed667">RcvScheduleMeetingSettings</a></li>
+<li>getMeetingPassword&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#af12285eea57be0cc6fe38485d21dcde5">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_meeting_bridge_info.html#a61e4bf7ad5fb404f06f67d0fa81424de">RcvMeetingBridgeInfo</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a97a8c6b3b16d6feb1c8a89d4f91cd94f">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a8834ae5bd10272b0051dca9d365ed667">RcvScheduleMeetingSettings</a></li>
+<li>getMeetingPasswordMasked&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a23b3831680b6d6542e72a52639d0f10d">RcvMeetingBridgeInfo</a></li>
+<li>getMeetingPasswordPstn&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a3a3efeb990a4beab7e5c41f09dbbedb1">RcvMeetingBridgeInfo</a></li>
+<li>getMeetingState&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#ac9d9f704eff8365e13849947b796d7a5">RcvMeetingController</a></li>
+<li>getMeetingType&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#ad37f3d218b274629f16df5c9042844bf">RcvMeetingBridgeInfo</a></li>
 <li>getMeetingUserById:&#160;:&#160;<a class="el" href="interface_rcv_meeting_user_controller.html#a341f78e27a1ea5ef819e9c5108aaa593">RcvMeetingUserController</a></li>
 <li>getMeetingUserController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a0082beead7478585001df3618d08da50">RcvMeetingController</a></li>
 <li>getMeetingUserList&#160;:&#160;<a class="el" href="interface_rcv_meeting_user_controller.html#a4ef49a9bbe9345b007ee3d3f85d22166">RcvMeetingUserController</a></li>
 <li>getMessage&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_message.html#a7e4de8751bcc025d2c2f125128ddcc09">RcvMeetingChatMessage</a></li>
 <li>getModelId&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#ae7aafe9f25d3dc21fdc1fd669cddba0d">RcvIParticipant</a></li>
+<li>getMusicOnHold&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#ab8354f565530a59a1a22a780c03f2f6d">RcvMeetingBridgeInfo</a></li>
+<li>getMuteAudio&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a25edf45fe01c7efe07522e71030a44f5">RcvMeetingBridgeInfo</a></li>
+<li>getMuteVideo&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a7f9608ba01dc79918f37bf1b86dce66c">RcvMeetingBridgeInfo</a></li>
 <li>getMyself&#160;:&#160;<a class="el" href="interface_rcv_meeting_user_controller.html#a58b7e6a5a0dc9dfca114df52fbffcc8c">RcvMeetingUserController</a></li>
+<li>getName&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a3fdba7a30a74362520c7af841610849a">RcvMeetingBridgeInfo</a></li>
 <li>getNetworkQuality&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a0fdd634fb91e0b26feb5cf89e6e32fe8">RcvIParticipant</a></li>
 <li>getNqiStatus&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a895d3952d1966c8582e78c19b9d89d24">RcvIParticipant</a></li>
 <li>getPacketsLost&#160;:&#160;<a class="el" href="protocol_rcv_local_audio_stats-p.html#a181c074b5e2666f031cd5b84afda727c">&lt;RcvLocalAudioStats&gt;</a>, <a class="el" href="protocol_rcv_local_video_stats-p.html#a5fa0b8bae9893b2621200739f482f283">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_audio_stats-p.html#ad5e3f0784cd9ee02b94ae8f902e53e81">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#afcef1e261acaa8694536d9adf1feb1d0">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getPacketsReceived&#160;:&#160;<a class="el" href="protocol_rcv_remote_audio_stats-p.html#a9a74e1e5dc93b7975f5214cb6a402e5a">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#a94b6b1a2c161839582857b030980c072">&lt;RcvRemoteVideoStats&gt;</a></li>
 <li>getPacketsSent&#160;:&#160;<a class="el" href="protocol_rcv_local_audio_stats-p.html#a8b9d802051a16f04d46935f1ef46d6d6">&lt;RcvLocalAudioStats&gt;</a>, <a class="el" href="protocol_rcv_local_video_stats-p.html#a998110d157501f7082a63fb46be16a75">&lt;RcvLocalVideoStats&gt;</a></li>
-<li>getParticipantCode&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#ac4b38eba7af5e87c1fb48db4cf6a0927">RcvPersonalMeetingSettings</a></li>
+<li>getParticipant&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_data.html#a087fc8f5ef220c86f63656b0e17c0ece">RcvClosedCaptionsData</a>, <a class="el" href="protocol_rcv_remote_audio_stats-p.html#a1b0a359d44f96e06d93e9758cbfef8ca">&lt;RcvRemoteAudioStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#aa1b9dd7cf18932b8ff336ac270206f97">&lt;RcvRemoteVideoStats&gt;</a></li>
+<li>getParticipantCode&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a81fceeb9ad5f1d17504b62417a666c6f">RcvMeetingBridgeInfo</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#ac4b38eba7af5e87c1fb48db4cf6a0927">RcvPersonalMeetingSettings</a></li>
 <li>getParticipantJoinTime&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a5536631c2f48a15a5de93cb503bed2b1">RcvIParticipant</a></li>
 <li>getParticipantMedia&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a0208e0cd761e30586b92af7e909a6cc8">RcvIParticipant</a></li>
-<li>getPassword&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#a1c4b906646be82b7a94ba6fe1c515b11">RcvMeetingOptions</a></li>
+<li>getPassword&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#a1c4b906646be82b7a94ba6fe1c515b11">RcvMeetingOptions</a>, <a class="el" href="interface_rcv_oauth_options.html#a4b83a32ae579b782cb04a3d1b4324a0e">RcvOauthOptions</a></li>
 <li>getPersonalRoomName&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#a90458f53492e205b7412b3695ccbe1ee">RcvPersonalMeetingSettings</a></li>
 <li>getPhoneNumber&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#a3a17cb7351bcff3baf42c839e56c0733">RcvPersonalMeetingSettings</a></li>
 <li>getPid&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a81089af1fde3e6353282f0802cbd0b77">RcvIParticipant</a></li>
 <li>getPlaybackDevice&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#af4c2ab2112f2353d8c39819e05851c32">RcvAudioDeviceManager</a></li>
 <li>getPlaybackDeviceVolume&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#ada86cceb8a5cea2df03eaf56eae0cda7">RcvAudioDeviceManager</a></li>
+<li>getPlayTonesMode&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a594c311bbd395bf093b48c4488dd6f76">RcvMeetingBridgeInfo</a></li>
 <li>getPliCount&#160;:&#160;<a class="el" href="protocol_rcv_local_video_stats-p.html#a1e5a1cd8163d0466c296d6d322769394">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#a09cc4d09f0d9757740523cc2ed9a089a">&lt;RcvRemoteVideoStats&gt;</a></li>
+<li>getPromptAnnouncement&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a080bfb5c622cb62359a7ce6d895e47ba">RcvMeetingBridgeInfo</a></li>
+<li>getPromptParticipants&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#ac94fba78e8c0a408b5913e372cf5466a">RcvMeetingBridgeInfo</a></li>
 <li>getRcAccountId&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a2617b0fb747ec77c36e470c098a52414">RcvIParticipant</a></li>
 <li>getReactionStatus&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a0d81378b85acab385509f9dff5bfbfe8">RcvIParticipant</a></li>
 <li>getRecordingController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a13a1158e7d150aa491511d9c8cd1bef8">RcvMeetingController</a></li>
 <li>getRecordingDevice&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#aed2a225c35684353b82d1381b4978066">RcvAudioDeviceManager</a></li>
 <li>getRecordingDeviceVolume&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#a007aca59abf9c265eda6bff090591010">RcvAudioDeviceManager</a></li>
 <li>getRecordingDuration&#160;:&#160;<a class="el" href="interface_rcv_recording_controller.html#a7eb7e9b6476a42bcfdb46ccfdeab56e1">RcvRecordingController</a></li>
+<li>getRecordingMode&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#aecc27285510ad21145c0ae7a37e8e634">RcvMeetingBridgeInfo</a></li>
 <li>getRecordingState&#160;:&#160;<a class="el" href="interface_rcv_recording_controller.html#a6df9b766acb23e59c9ab66cb794771d8">RcvRecordingController</a></li>
 <li>getRenderer&#160;:&#160;<a class="el" href="interface_rcv_base_video_view.html#aafb3bad26a9828d6034c8842e2484e8e">RcvBaseVideoView</a></li>
-<li>getRenderMode&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#a7c5b3b319013e4b6f13a3af0fbf413e3">&lt;RcvVideoCanvas&gt;</a></li>
+<li>getRenderMode&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a27252ff61922a3e90a64675a1697dd76">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#a7c5b3b319013e4b6f13a3af0fbf413e3">&lt;RcvVideoCanvas&gt;</a></li>
 <li>getSharingController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a123fdeb6fd9efea50b5bfdb115598ef3">RcvMeetingController</a></li>
+<li>getShortId&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#a7cbe5c34190828a781463f6ede35ed53">RcvMeetingBridgeInfo</a></li>
 <li>getShortIdentifier&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#ad77ab750040153869f5f648a46bcc2b9">RcvPersonalMeetingSettings</a></li>
 <li>getShowGreenFrame&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a715c9d6905793f5cc6e130e27fa04ad0">RcvIParticipant</a></li>
-<li>getTimestamp&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_message.html#a8f70e11d4ef5677e67900cc1c57b09ef">RcvMeetingChatMessage</a></li>
+<li>getTimestamp&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_data.html#af544532ef29d26d1fbb74db1abb4c568">RcvClosedCaptionsData</a>, <a class="el" href="interface_rcv_meeting_chat_message.html#a8f70e11d4ef5677e67900cc1c57b09ef">RcvMeetingChatMessage</a></li>
 <li>getTo&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_message.html#a69b4bf770380add8e440dcbd2a10bad0">RcvMeetingChatMessage</a></li>
-<li>getUid&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#ac6d6671c2a576b3e467db887d4d2d28c">&lt;RcvVideoCanvas&gt;</a></li>
-<li>getUserName&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#ae1c06c3e862a54c6bf6aeff08ce45cb4">RcvMeetingOptions</a></li>
+<li>getTranscript&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_data.html#a564b51385bbfbf4ba87e8a3ed4808a98">RcvClosedCaptionsData</a></li>
+<li>getTranscriptionsMode&#160;:&#160;<a class="el" href="interface_rcv_meeting_bridge_info.html#acd385df77a8657705648addf20b6ede4">RcvMeetingBridgeInfo</a></li>
+<li>getUid&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a09d7789dd070bb078f22276f9cb84366">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#ac6d6671c2a576b3e467db887d4d2d28c">&lt;RcvVideoCanvas&gt;</a></li>
+<li>getUserName&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#ae1c06c3e862a54c6bf6aeff08ce45cb4">RcvMeetingOptions</a>, <a class="el" href="interface_rcv_oauth_options.html#a91b654d6cc4cd63ccd6d029826b24fa3">RcvOauthOptions</a></li>
 <li>getVideo&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#acb38200c8931916bede9c1f0006e5442">RcvIParticipant</a></li>
 <li>getVideoController&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a6f4582f5ab7c1bd9a2228da0c133066c">RcvMeetingController</a></li>
 <li>getVideoFrame&#160;:&#160;<a class="el" href="interface_r_c_video_view.html#a9bae3158f0b5937ed32de757bc9312e2">RCVideoView</a></li>
@@ -182,7 +225,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getVideoSize&#160;:&#160;<a class="el" href="interface_rcv_base_video_view.html#a4463274322315b38812e28ef2937c59b">RcvBaseVideoView</a>, <a class="el" href="interface_r_c_video_view.html#a9f0e25b300c95ad6446fbd091ca90d17">RCVideoView</a></li>
 <li>getVideoSource&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a2b7c6975b4ae2029e13d45e07effd6ac">RcvIParticipant</a></li>
 <li>getVideoTrack&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a7ecfe08e9dde014b0ae4c48ad6b8e6ab">RcvIParticipant</a></li>
-<li>getWaitingRoomMode&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a315abcb1138d6bd92f4e55f80af56f4f">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a3afc7e39fddd15260fb7a4af70390eea">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#af73085837ebfeff2beb2f25f9cfa4e94">RcvScheduleMeetingSettings</a></li>
+<li>getWaitingRoomMode&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a315abcb1138d6bd92f4e55f80af56f4f">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_meeting_bridge_info.html#a328cf1e338f4e53afa3109e6ec24f2ec">RcvMeetingBridgeInfo</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a3afc7e39fddd15260fb7a4af70390eea">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#af73085837ebfeff2beb2f25f9cfa4e94">RcvScheduleMeetingSettings</a></li>
 <li>getWidth&#160;:&#160;<a class="el" href="protocol_rcv_local_video_stats-p.html#a7e092a269792f3c949a80dccd020d47b">&lt;RcvLocalVideoStats&gt;</a>, <a class="el" href="protocol_rcv_remote_video_stats-p.html#aaca0f1f8bbcccedddb3a432e7af0e86f">&lt;RcvRemoteVideoStats&gt;</a></li>
 </ul>
 </div><!-- contents -->

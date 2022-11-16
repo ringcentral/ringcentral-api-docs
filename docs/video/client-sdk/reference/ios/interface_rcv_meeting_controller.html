@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,13 +113,13 @@ $(document).ready(function(){initNavTree('interface_rcv_meeting_controller.html'
 <div class="dynheader">
 Inheritance diagram for RcvMeetingController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_meeting_controller__inherit__graph.svg" width="194" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_meeting_controller__inherit__graph.svg" width="279" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RcvMeetingController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_meeting_controller__coll__graph.svg" width="194" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_meeting_controller__coll__graph.svg" width="279" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -120,18 +127,34 @@ Collaboration diagram for RcvMeetingController:</div>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a89993be2442be46c91a5067175cb5111"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a89993be2442be46c91a5067175cb5111">getLastError</a></td></tr>
 <tr class="separator:a89993be2442be46c91a5067175cb5111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d9f704eff8365e13849947b796d7a5"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2">RcvMeetingState</a>)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ac9d9f704eff8365e13849947b796d7a5">getMeetingState</a></td></tr>
+<tr class="separator:ac9d9f704eff8365e13849947b796d7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4b2bd4b52786394b225cc0af41b548"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a5d4b2bd4b52786394b225cc0af41b548">registerEventHandler:</a></td></tr>
 <tr class="separator:a5d4b2bd4b52786394b225cc0af41b548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad694615b8a20ef443912fe9d2ef79c1d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ad694615b8a20ef443912fe9d2ef79c1d">unregisterEventHandler:</a></td></tr>
 <tr class="separator:ad694615b8a20ef443912fe9d2ef79c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b25a48074812c238c18d723594a543c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a3b25a48074812c238c18d723594a543c">registerMeetingStatisticEventHandler:</a></td></tr>
+<tr class="separator:a3b25a48074812c238c18d723594a543c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5677cc159994bf121fa56f8d0c69fae7"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a5677cc159994bf121fa56f8d0c69fae7">unregisterMeetingStatisticEventHandler:</a></td></tr>
+<tr class="separator:a5677cc159994bf121fa56f8d0c69fae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34c6216f76d1e9692bb1a4128ed6018"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ac34c6216f76d1e9692bb1a4128ed6018">leaveMeeting</a></td></tr>
 <tr class="separator:ac34c6216f76d1e9692bb1a4128ed6018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae09cd5aedf2374cc6c9de12dc7aa90b3"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ae09cd5aedf2374cc6c9de12dc7aa90b3">endMeeting</a></td></tr>
 <tr class="separator:ae09cd5aedf2374cc6c9de12dc7aa90b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a124c345a73d08d625c87c39590e4897a"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a124c345a73d08d625c87c39590e4897a">lockMeeting:</a></td></tr>
-<tr class="separator:a124c345a73d08d625c87c39590e4897a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fba4858fb8cc8b793c159b4880ee5b"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a65fba4858fb8cc8b793c159b4880ee5b">lockMeeting</a></td></tr>
+<tr class="separator:a65fba4858fb8cc8b793c159b4880ee5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33c3cb717c71aca00aa17e54607529e"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ad33c3cb717c71aca00aa17e54607529e">unlockMeeting</a></td></tr>
+<tr class="separator:ad33c3cb717c71aca00aa17e54607529e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39ca0b79fb10e1f980128e593bc74f1a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a39ca0b79fb10e1f980128e593bc74f1a">isMeetingLocked</a></td></tr>
 <tr class="separator:a39ca0b79fb10e1f980128e593bc74f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2ccd2739d0e48a324f7ac182bbb1d7"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#aeb2ccd2739d0e48a324f7ac182bbb1d7">enableEndToEndEncryption</a></td></tr>
+<tr class="separator:aeb2ccd2739d0e48a324f7ac182bbb1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355eeade6bff8cc112686851dcdadb5d"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a355eeade6bff8cc112686851dcdadb5d">disableEndToEndEncryption</a></td></tr>
+<tr class="separator:a355eeade6bff8cc112686851dcdadb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6690122673125113d776b1e97763a43"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="_rcv_end_to_end_encryption_state_8h.html#ac0eb7c1b36b4dafb8cb90290315251ce">RcvEndToEndEncryptionState</a>)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#ac6690122673125113d776b1e97763a43">getEndToEndEncryptionState</a></td></tr>
+<tr class="separator:ac6690122673125113d776b1e97763a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b85eedfc58d7b3b34359889746de4bb"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a0b85eedfc58d7b3b34359889746de4bb">isEndToEndEncryptionAllowed</a></td></tr>
+<tr class="separator:a0b85eedfc58d7b3b34359889746de4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0082beead7478585001df3618d08da50"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_rcv_meeting_user_controller.html">RcvMeetingUserController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a0082beead7478585001df3618d08da50">getMeetingUserController</a></td></tr>
 <tr class="separator:a0082beead7478585001df3618d08da50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13a1158e7d150aa491511d9c8cd1bef8"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_rcv_recording_controller.html">RcvRecordingController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a13a1158e7d150aa491511d9c8cd1bef8">getRecordingController</a></td></tr>
@@ -144,12 +167,56 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a123fdeb6fd9efea50b5bfdb115598ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88649c12bdf4221435adc16cd6ce0f30"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_rcv_meeting_chat_controller.html">RcvMeetingChatController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a88649c12bdf4221435adc16cd6ce0f30">getMeetingChatController</a></td></tr>
 <tr class="separator:a88649c12bdf4221435adc16cd6ce0f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19cc4020eb52c2d8412da1734f1566d9"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_rcv_closed_captions_controller.html">RcvClosedCaptionsController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a19cc4020eb52c2d8412da1734f1566d9">getClosedCaptionsController</a></td></tr>
+<tr class="separator:a19cc4020eb52c2d8412da1734f1566d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b1d039bbfd425adfc732f11d1e17bd2"><td class="memItemLeft" align="right" valign="top">(nullable id&lt; <a class="el" href="protocol_rcv_meeting_info-p.html">RcvMeetingInfo</a> &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_meeting_controller.html#a3b1d039bbfd425adfc732f11d1e17bd2">getMeetingInfo</a></td></tr>
 <tr class="separator:a3b1d039bbfd425adfc732f11d1e17bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="interface_rcv_meeting_controller.html">RcvMeetingController</a></b> class is the main class for managing in-meeting actions, the application can use it to lock or leave/end the meeting and obtains sub-controllers to do more in-meeting actions. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a id="a355eeade6bff8cc112686851dcdadb5d" name="a355eeade6bff8cc112686851dcdadb5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355eeade6bff8cc112686851dcdadb5d">&#9670;&#160;</a></span>disableEndToEndEncryption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) disableEndToEndEncryption </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Disables the end-to-end encryption in the meeting.</p>
+<p >A successful call of disableEndToEndEncryption triggers the onEndToEndEncryptionStateChanged event callback for all meeting users.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aeb2ccd2739d0e48a324f7ac182bbb1d7" name="aeb2ccd2739d0e48a324f7ac182bbb1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2ccd2739d0e48a324f7ac182bbb1d7">&#9670;&#160;</a></span>enableEndToEndEncryption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) enableEndToEndEncryption </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Enables the end-to-end encryption in the meeting dynamically.</p>
+<p >A successful call of enableEndToEndEncryption triggers the onEndToEndEncryptionStateChanged event callback for all meeting users.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ae09cd5aedf2374cc6c9de12dc7aa90b3" name="ae09cd5aedf2374cc6c9de12dc7aa90b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae09cd5aedf2374cc6c9de12dc7aa90b3">&#9670;&#160;</a></span>endMeeting</h2>
 
@@ -187,6 +254,45 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 <p >Gets the <b><a class="el" href="interface_rcv_audio_controller.html">RcvAudioController</a></b> instance.</p>
 <dl class="section return"><dt>Returns</dt><dd>The <b><a class="el" href="interface_rcv_audio_controller.html">RcvAudioController</a></b> instance or Null otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a19cc4020eb52c2d8412da1734f1566d9" name="a19cc4020eb52c2d8412da1734f1566d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19cc4020eb52c2d8412da1734f1566d9">&#9670;&#160;</a></span>getClosedCaptionsController</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable <a class="el" href="interface_rcv_closed_captions_controller.html">RcvClosedCaptionsController</a> *) getClosedCaptionsController </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Gets the <b><a class="el" href="interface_rcv_closed_captions_controller.html">RcvClosedCaptionsController</a></b> instance</p>
+<dl class="section return"><dt>Returns</dt><dd>The <b><a class="el" href="interface_rcv_closed_captions_controller.html">RcvClosedCaptionsController</a></b> instance or Null otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ac6690122673125113d776b1e97763a43" name="ac6690122673125113d776b1e97763a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6690122673125113d776b1e97763a43">&#9670;&#160;</a></span>getEndToEndEncryptionState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="_rcv_end_to_end_encryption_state_8h.html#ac0eb7c1b36b4dafb8cb90290315251ce">RcvEndToEndEncryptionState</a>) getEndToEndEncryptionState </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Get the current end-to-end encryption meeting state.</p>
+<dl class="section return"><dt>Returns</dt><dd>The end-to-end encryption meeting state </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_rcv_end_to_end_encryption_state_8h.html#ac0eb7c1b36b4dafb8cb90290315251ce">RcvEndToEndEncryptionState</a> </dd></dl>
 
 </div>
 </div>
@@ -244,6 +350,24 @@ Instance Methods</h2></td></tr>
 <p >Gets the current active meeting details.</p>
 <dl class="section return"><dt>Returns</dt><dd>The meeting information object or Null otherwise </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="protocol_rcv_meeting_info-p.html">RcvMeetingInfo</a> </dd></dl>
+
+</div>
+</div>
+<a id="ac9d9f704eff8365e13849947b796d7a5" name="ac9d9f704eff8365e13849947b796d7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d9f704eff8365e13849947b796d7a5">&#9670;&#160;</a></span>getMeetingState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2">RcvMeetingState</a>) getMeetingState </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns current meeting state. </p>
 
 </div>
 </div>
@@ -323,6 +447,25 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a0b85eedfc58d7b3b34359889746de4bb" name="a0b85eedfc58d7b3b34359889746de4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b85eedfc58d7b3b34359889746de4bb">&#9670;&#160;</a></span>isEndToEndEncryptionAllowed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEndToEndEncryptionAllowed </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Indicates whether the end-to-end encryption is allowed in the meeting..</p>
+<dl class="section return"><dt>Returns</dt><dd>True means the end-to-end encryption is allowed or otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a39ca0b79fb10e1f980128e593bc74f1a" name="a39ca0b79fb10e1f980128e593bc74f1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39ca0b79fb10e1f980128e593bc74f1a">&#9670;&#160;</a></span>isMeetingLocked</h2>
 
@@ -362,17 +505,16 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a124c345a73d08d625c87c39590e4897a" name="a124c345a73d08d625c87c39590e4897a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a124c345a73d08d625c87c39590e4897a">&#9670;&#160;</a></span>lockMeeting:</h2>
+<a id="a65fba4858fb8cc8b793c159b4880ee5b" name="a65fba4858fb8cc8b793c159b4880ee5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fba4858fb8cc8b793c159b4880ee5b">&#9670;&#160;</a></span>lockMeeting</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) lockMeeting: </td>
+          <td class="memname">- (int64_t) lockMeeting </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>lock</em></td>
+          <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
@@ -380,12 +522,6 @@ Instance Methods</h2></td></tr>
 <p >Locks or unlocks meetings.</p>
 <p >A successful call of <b>lockMeeting</b> triggers the <b>onMeetingLockStateChanged</b> event callback to all meeting participants.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">locked</td><td>True means to lock the meeting, otherwise unlock the meeting </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
@@ -416,6 +552,53 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a3b25a48074812c238c18d723594a543c" name="a3b25a48074812c238c18d723594a543c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b25a48074812c238c18d723594a543c">&#9670;&#160;</a></span>registerMeetingStatisticEventHandler:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) registerMeetingStatisticEventHandler: </td>
+          <td></td>
+          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_meeting_statistic_event_handler-p.html">RcvMeetingStatisticEventHandler</a> &gt;)&#160;</td>
+          <td class="paramname"><em>handler</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Registers the meeting statistic event handler of the meeting.</p>
+<p >The RingCentral video client SDK uses the **RcvMeetingStatisticEventHandler ** interface class to send meeting-statistic event callbacks to the application, and the application inherits the methods of this interface class to retrieve those event callbacks.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler</td><td>The meeting statistic event handler instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad33c3cb717c71aca00aa17e54607529e" name="ad33c3cb717c71aca00aa17e54607529e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33c3cb717c71aca00aa17e54607529e">&#9670;&#160;</a></span>unlockMeeting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unlockMeeting </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Unlocks meetings.</p>
+<p >A successful call of <b>unlockMeeting</b> triggers the <b>onMeetingLockStateChanged</b> event callback to all meeting participants.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ad694615b8a20ef443912fe9d2ef79c1d" name="ad694615b8a20ef443912fe9d2ef79c1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad694615b8a20ef443912fe9d2ef79c1d">&#9670;&#160;</a></span>unregisterEventHandler:</h2>
 
@@ -435,6 +618,31 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handler</td><td>The meeting event handler instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5677cc159994bf121fa56f8d0c69fae7" name="a5677cc159994bf121fa56f8d0c69fae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5677cc159994bf121fa56f8d0c69fae7">&#9670;&#160;</a></span>unregisterMeetingStatisticEventHandler:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) unregisterMeetingStatisticEventHandler: </td>
+          <td></td>
+          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_meeting_statistic_event_handler-p.html">RcvMeetingStatisticEventHandler</a> &gt;)&#160;</td>
+          <td class="paramname"><em>handler</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Unregisters the event handler of the meeting.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler</td><td>The meeting statistic event handler instance </td></tr>
   </table>
   </dd>
 </dl>

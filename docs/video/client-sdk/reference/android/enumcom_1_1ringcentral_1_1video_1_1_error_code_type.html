@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -198,6 +205,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a073136a751d89417a3af624f85b98bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8731144201e19404b542d01e21d89d91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a8731144201e19404b542d01e21d89d91">ERR_UPDATING_PERSONAL_MEETING_SETTINGS</a> =(35L)</td></tr>
 <tr class="separator:a8731144201e19404b542d01e21d89d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6509132c78d0baca6036ee76ebd075f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a6509132c78d0baca6036ee76ebd075f1">ERR_END_TO_END_ENCRYPTION_ENABLED</a> =(10018L)</td></tr>
+<tr class="separator:a6509132c78d0baca6036ee76ebd075f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ad2dd92d9e1d25039f17a12ad70350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a87ad2dd92d9e1d25039f17a12ad70350">ERR_END_TO_END_ENCRYPTION_ENABLE_RESTRICTED</a> =(10019L)</td></tr>
+<tr class="separator:a87ad2dd92d9e1d25039f17a12ad70350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5cffc40ce3e21fda8a66f70d06f592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a0b5cffc40ce3e21fda8a66f70d06f592">ERR_SHARING_IS_ONGOING</a> =(70002L)</td></tr>
+<tr class="separator:a0b5cffc40ce3e21fda8a66f70d06f592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Global error code for RCV SDK </p>
@@ -414,6 +427,36 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a87ad2dd92d9e1d25039f17a12ad70350" name="a87ad2dd92d9e1d25039f17a12ad70350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ad2dd92d9e1d25039f17a12ad70350">&#9670;&#160;</a></span>ERR_END_TO_END_ENCRYPTION_ENABLE_RESTRICTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.ringcentral.video.ErrorCodeType.ERR_END_TO_END_ENCRYPTION_ENABLE_RESTRICTED =(10019L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Indicates that enabling end-to-end encryption is restricted because some functions are already enabled, such as recording is already started, etc. </p>
+
+</div>
+</div>
+<a id="a6509132c78d0baca6036ee76ebd075f1" name="a6509132c78d0baca6036ee76ebd075f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6509132c78d0baca6036ee76ebd075f1">&#9670;&#160;</a></span>ERR_END_TO_END_ENCRYPTION_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.ringcentral.video.ErrorCodeType.ERR_END_TO_END_ENCRYPTION_ENABLED =(10018L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Indicates that the action is denied because the end-to-end encryption has been enabled, such as starting closed captions </p>
+
+</div>
+</div>
 <a id="a0f230e43e29850a24fe53c3e64c00a20" name="a0f230e43e29850a24fe53c3e64c00a20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f230e43e29850a24fe53c3e64c00a20">&#9670;&#160;</a></span>ERR_FAILED</h2>
 
@@ -502,7 +545,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p >The token is invalid due to one of the following reasons:</p><ul>
 <li>The App Certificate for the project is enabled in Console, but the user is still using the App ID. Once the App Certificate is enabled, the user must use a token.</li>
-<li>The uid is mandatory, and users must set the same uid as the one set in the <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a12a3de2f41eec250ff13c9f10a126944">RcvEngine::joinMeeting</a> method. </li>
+<li>The uid is mandatory, and users must set the same uid as the one set in the <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ae4b6fed44276ea3b9031e4f95da9bf5e">RcvEngine::joinMeeting</a> method. </li>
 </ul>
 
 </div>
@@ -519,7 +562,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p >The request to join the meeting is rejected.</p><ul>
-<li>This error usually occurs when the user is already in the meeting, and still calls the method to join the meeting, for example, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a12a3de2f41eec250ff13c9f10a126944">RcvEngine::joinMeeting</a></li>
+<li>This error usually occurs when the user is already in the meeting, and still calls the method to join the meeting, for example, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ae4b6fed44276ea3b9031e4f95da9bf5e">RcvEngine::joinMeeting</a></li>
 <li>The user tries to join the meeting with a token that is expired. </li>
 </ul>
 
@@ -799,6 +842,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p >The sharing already unlocked </p>
+
+</div>
+</div>
+<a id="a0b5cffc40ce3e21fda8a66f70d06f592" name="a0b5cffc40ce3e21fda8a66f70d06f592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5cffc40ce3e21fda8a66f70d06f592">&#9670;&#160;</a></span>ERR_SHARING_IS_ONGOING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.ringcentral.video.ErrorCodeType.ERR_SHARING_IS_ONGOING =(70002L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns when trying to start another type of sharing (for example, share camera) but without stopping the previous sharing session (for example, share screen). </p>
 
 </div>
 </div>

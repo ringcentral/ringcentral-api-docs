@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -116,28 +123,53 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ab8c0102767bbab1edbb475e260e16f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a947a675fab4e9bcd49be84647952b6df"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a947a675fab4e9bcd49be84647952b6df">onMeetingLeave:errorCode:reason:</a></td></tr>
 <tr class="separator:a947a675fab4e9bcd49be84647952b6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a77f7917a94c559c19105036787878"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a53a77f7917a94c559c19105036787878">onMeetingStateChanged:state:</a></td></tr>
-<tr class="separator:a53a77f7917a94c559c19105036787878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a42c614c439268628089fceb9dba8c9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a8a42c614c439268628089fceb9dba8c9">onAuthTokenRenew:newTokenJsonStr:</a></td></tr>
-<tr class="separator:a8a42c614c439268628089fceb9dba8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d2183f66ca74f7a79fbb7749140bae"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a08d2183f66ca74f7a79fbb7749140bae">onAuthTokenError:</a></td></tr>
-<tr class="separator:a08d2183f66ca74f7a79fbb7749140bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a631e184ae18a49ed30494ab15beff2d4"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a631e184ae18a49ed30494ab15beff2d4">onAuthorization:</a></td></tr>
+<tr class="separator:a631e184ae18a49ed30494ab15beff2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932a82c15a195109476e530ec3eab784"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a932a82c15a195109476e530ec3eab784">onAuthorizationError:</a></td></tr>
+<tr class="separator:a932a82c15a195109476e530ec3eab784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39baed49ac21a0e83df73a1d6aa835aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a39baed49ac21a0e83df73a1d6aa835aa">onPersonalMeetingSettingsUpdate:settings:</a></td></tr>
 <tr class="separator:a39baed49ac21a0e83df73a1d6aa835aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a816603215961296aba5c8b1ea345ef18"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#a816603215961296aba5c8b1ea345ef18">onMeetingSchedule:settings:</a></td></tr>
 <tr class="separator:a816603215961296aba5c8b1ea345ef18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06a5a9e4923840284999208a00f1a83"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_engine_event_handler-p.html#ae06a5a9e4923840284999208a00f1a83">onMeetingBridge:</a></td></tr>
+<tr class="separator:ae06a5a9e4923840284999208a00f1a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="protocol_rcv_engine_event_handler-p.html">RcvEngineEventHandler</a></b> class is an interface class to send the engine-level event callbacks to the application. The application inherits the methods of this interface class to get those event callbacks. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a id="a08d2183f66ca74f7a79fbb7749140bae" name="a08d2183f66ca74f7a79fbb7749140bae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d2183f66ca74f7a79fbb7749140bae">&#9670;&#160;</a></span>onAuthTokenError:</h2>
+<a id="a631e184ae18a49ed30494ab15beff2d4" name="a631e184ae18a49ed30494ab15beff2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a631e184ae18a49ed30494ab15beff2d4">&#9670;&#160;</a></span>onAuthorization:</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) onAuthTokenError: </td>
+          <td class="memname">- (void) onAuthorization: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>newTokenJsonStr</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Occurs when get token pair action is finished.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newTokenJsonStr</td><td>The new authentication token JSON string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a932a82c15a195109476e530ec3eab784" name="a932a82c15a195109476e530ec3eab784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932a82c15a195109476e530ec3eab784">&#9670;&#160;</a></span>onAuthorizationError:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onAuthorizationError: </td>
           <td></td>
           <td class="paramtype">(int64_t)&#160;</td>
           <td class="paramname"><em>errorCode</em></td>
@@ -155,36 +187,25 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a8a42c614c439268628089fceb9dba8c9" name="a8a42c614c439268628089fceb9dba8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a42c614c439268628089fceb9dba8c9">&#9670;&#160;</a></span>onAuthTokenRenew:newTokenJsonStr:</h2>
+<a id="ae06a5a9e4923840284999208a00f1a83" name="ae06a5a9e4923840284999208a00f1a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06a5a9e4923840284999208a00f1a83">&#9670;&#160;</a></span>onMeetingBridge:</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) onAuthTokenRenew: </td>
+          <td class="memname">- (void) onMeetingBridge: </td>
           <td></td>
-          <td class="paramtype">(int64_t)&#160;</td>
-          <td class="paramname"><em>errorCode</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">newTokenJsonStr:</td>
+          <td class="paramtype">(nullable <a class="el" href="interface_rcv_meeting_bridge_info.html">RcvMeetingBridgeInfo</a> *)&#160;</td>
+          <td class="paramname"><em>info</em></td>
           <td></td>
-          <td class="paramtype">(nonnull NSString *)&#160;</td>
-          <td class="paramname"><em>newTokenJsonStr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Occurs when renewing token pair action is finished.</p>
+<p >Occurs when getting a meeting bridge information is finished.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">errorCode</td><td>0 means the action succeeds or fails otherwise </td></tr>
-    <tr><td class="paramname">newTokenJsonStr</td><td>The new authentication token JSON string </td></tr>
+    <tr><td class="paramname">info</td><td>The meeting bridge info </td></tr>
   </table>
   </dd>
 </dl>
@@ -300,42 +321,6 @@ Instance Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">errorCode</td><td>0 means the action succeeds or fails otherwise </td></tr>
     <tr><td class="paramname">settings</td><td>The schedule meeting settings object </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a53a77f7917a94c559c19105036787878" name="a53a77f7917a94c559c19105036787878"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53a77f7917a94c559c19105036787878">&#9670;&#160;</a></span>onMeetingStateChanged:state:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onMeetingStateChanged: </td>
-          <td></td>
-          <td class="paramtype">(nonnull NSString *)&#160;</td>
-          <td class="paramname"><em>meetingId</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">state:</td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2">RcvMeetingState</a>)&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when the meeting state is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">meetingId</td><td>The meeting short id </td></tr>
-    <tr><td class="paramname">state</td><td>The latest meeting state of the users </td></tr>
   </table>
   </dd>
 </dl>

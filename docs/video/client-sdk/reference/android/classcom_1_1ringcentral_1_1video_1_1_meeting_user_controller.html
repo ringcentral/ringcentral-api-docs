@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,12 +112,16 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_m
 <div class="dynheader">
 Collaboration diagram for com.ringcentral.video.MeetingUserController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller__coll__graph.svg" width="295" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller__coll__graph.svg" width="295" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad324b76d9dbafa931f12435b13cbd743"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#ad324b76d9dbafa931f12435b13cbd743">registerEventHandler</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_event_handler.html">MeetingUserEventHandler</a> handler)</td></tr>
+<tr class="separator:ad324b76d9dbafa931f12435b13cbd743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b6a4e881d757ad5d20d61de7e33370"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a25b6a4e881d757ad5d20d61de7e33370">unregisterEventHandler</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_event_handler.html">MeetingUserEventHandler</a> handler)</td></tr>
+<tr class="separator:a25b6a4e881d757ad5d20d61de7e33370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade9de45aa9d9bc68cd744223d72a911"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#aade9de45aa9d9bc68cd744223d72a911">assignModerators</a> (ArrayList&lt; Long &gt; uids)</td></tr>
 <tr class="separator:aade9de45aa9d9bc68cd744223d72a911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c01f2bf0cc609b2f237d520352459b0"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a7c01f2bf0cc609b2f237d520352459b0">revokeModerators</a> (ArrayList&lt; Long &gt; uids)</td></tr>
@@ -121,6 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a870db45a3f3ecf7704dd6c4b225933c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a126db07cc6c4b6a6eb5218a236b9898a"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a126db07cc6c4b6a6eb5218a236b9898a">getMyself</a> ()</td></tr>
 <tr class="separator:a126db07cc6c4b6a6eb5218a236b9898a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674707b224ec93d198274b42832b0bab"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a674707b224ec93d198274b42832b0bab">getActiveVideoUser</a> ()</td></tr>
+<tr class="separator:a674707b224ec93d198274b42832b0bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf5c2fa9a7543a64e1433d9e443ae8d"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a9bf5c2fa9a7543a64e1433d9e443ae8d">admitUser</a> (long uid)</td></tr>
 <tr class="separator:a9bf5c2fa9a7543a64e1433d9e443ae8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88769d2d09a9ddb9fdd44fc6e4fcfa8b"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a88769d2d09a9ddb9fdd44fc6e4fcfa8b">admitAll</a> ()</td></tr>
@@ -272,6 +285,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a674707b224ec93d198274b42832b0bab" name="a674707b224ec93d198274b42832b0bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a674707b224ec93d198274b42832b0bab">&#9670;&#160;</a></span>getActiveVideoUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> com.ringcentral.video.MeetingUserController.getActiveVideoUser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the active video user object.</p>
+<dl class="section return"><dt>Returns</dt><dd>The active video user object or Null otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a870db45a3f3ecf7704dd6c4b225933c7" name="a870db45a3f3ecf7704dd6c4b225933c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a870db45a3f3ecf7704dd6c4b225933c7">&#9670;&#160;</a></span>getMeetingUserById()</h2>
 
@@ -397,6 +437,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad324b76d9dbafa931f12435b13cbd743" name="ad324b76d9dbafa931f12435b13cbd743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad324b76d9dbafa931f12435b13cbd743">&#9670;&#160;</a></span>registerEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.MeetingUserController.registerEventHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_event_handler.html">MeetingUserEventHandler</a>&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Registers the event handler of the meeting user controller.</p>
+<p >The RingCentral video client SDK uses the <b><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_event_handler.html">MeetingUserEventHandler</a></b> interface class to send meeting user event callbacks to the application, and the application inherits the methods of this interface class to retrieve those event callbacks.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler</td><td>The meeting user event handler instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af4869a83b709393ce5144307dc9f9d9b" name="af4869a83b709393ce5144307dc9f9d9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4869a83b709393ce5144307dc9f9d9b">&#9670;&#160;</a></span>removeUser()</h2>
 
@@ -466,6 +540,39 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a25b6a4e881d757ad5d20d61de7e33370" name="a25b6a4e881d757ad5d20d61de7e33370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b6a4e881d757ad5d20d61de7e33370">&#9670;&#160;</a></span>unregisterEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.MeetingUserController.unregisterEventHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_event_handler.html">MeetingUserEventHandler</a>&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Unregisters the event handler of the meeting.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler</td><td>The meeting user event handler instance </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

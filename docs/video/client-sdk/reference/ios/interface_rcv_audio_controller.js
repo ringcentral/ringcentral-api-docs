@@ -7,10 +7,12 @@ var interface_rcv_audio_controller =
     [ "getLocalAudioStreamState", "interface_rcv_audio_controller.html#a0f24b7a63c38311c7633638ed0853ea7", null ],
     [ "isMuted", "interface_rcv_audio_controller.html#a222cb6c19fa0f3a914b0a97aaf802494", null ],
     [ "isSpeakerphoneEnabled", "interface_rcv_audio_controller.html#ad00de34ffa3b455419980d43ada150ab", null ],
-    [ "muteAllRemoteAudioStreams:", "interface_rcv_audio_controller.html#acc1895e9dd521141936160d2d17d0db6", null ],
-    [ "muteLocalAudioStream:", "interface_rcv_audio_controller.html#adaecd82c06c2aa53a66efcb358fb5a35", null ],
-    [ "muteRemoteAudioStream:mute:", "interface_rcv_audio_controller.html#ae1967bae68bfb19f1e719b4bfe289fba", null ],
+    [ "muteAllRemoteAudioStreams:", "interface_rcv_audio_controller.html#a49f689c54f9d6962aaa9b4c38180483f", null ],
+    [ "muteLocalAudioStream", "interface_rcv_audio_controller.html#a712952cae9b36fd2c77025000400d20a", null ],
+    [ "muteRemoteAudioStream:", "interface_rcv_audio_controller.html#a6f696197821a56001438b9874d6dfeba", null ],
     [ "registerEventHandler:", "interface_rcv_audio_controller.html#ad47a3ff9e6f7fa6bb1c6c15f1569dbab", null ],
-    [ "setDefaultAudioRouteToSpeakerphone:", "interface_rcv_audio_controller.html#abbdd9cb6b141f4a52dc1b47d5cc70211", null ],
+    [ "unmuteAllRemoteAudioStreams", "interface_rcv_audio_controller.html#a26a57367f075d2eede3ea10739482d50", null ],
+    [ "unmuteLocalAudioStream", "interface_rcv_audio_controller.html#ae369f06e00c27b64dd929bf9f3709baa", null ],
+    [ "unmuteRemoteAudioStream:", "interface_rcv_audio_controller.html#a00c9599d644df1c6d852d666936eecb6", null ],
     [ "unregisterEventHandler:", "interface_rcv_audio_controller.html#a823e5b881c226270f6c6f47d893567c4", null ]
 ];

@@ -11,6 +11,7 @@ var interface_rcv_i_participant =
     [ "getContactId", "interface_rcv_i_participant.html#abd9381b9313ace36fef24d84031d3bfa", null ],
     [ "getCustomStatus", "interface_rcv_i_participant.html#aa2f8359a613ea8122a1d7e7a037c97b5", null ],
     [ "getDepartment", "interface_rcv_i_participant.html#a5288333000bf43c135ac2693943a28ee", null ],
+    [ "getEchoLeakType", "interface_rcv_i_participant.html#a353f5d9ae34c3b28d859856bef0fc88c", null ],
     [ "getEmail", "interface_rcv_i_participant.html#abf34607e6eba5815d0b8f4de7a9003cc", null ],
     [ "getHeadshotColor", "interface_rcv_i_participant.html#a78f6fa561dcefcd4b753353971e82337", null ],
     [ "getHeadshotUrl", "interface_rcv_i_participant.html#a7cc2b2e10a2954b4dae20ab4bedfece1", null ],

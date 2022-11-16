@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -101,12 +108,12 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_e
 
 <p>This is the complete list of members for <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a7670c08f0dad5ab4dea99b0c8b2bc0d1">onAuthTokenError</a>(long errorCode)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a505d0a0e3a255843f824cd6ba1650e5e">onAuthTokenRenew</a>(long errorCode, String newTokenJsonStr)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a2f8f95ac359ef75e48ae615695f8310d">onMeetingJoin</a>(String meetingId, long errorCode)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a3fc04ce3b89c3f581819cf27c54f161d">onMeetingLeave</a>(String meetingId, long errorCode, LeaveReason reason)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a1e77272c7cdb45e40d7a7c2e68c23d25">onMeetingSchedule</a>(long errorCode, ScheduleMeetingSettings settings)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a1f5cb68907c9c39eb15e1869068caa5b">onMeetingStateChanged</a>(String meetingId, MeetingState state)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#ae926ee93c7d8d4ab91fd4b66b20b2ac5">onAuthorization</a>(String newTokenJsonStr)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a37e565d7b7c67f11d2d67eb776a86a6e">onAuthorizationError</a>(long errorCode)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a38ffd45d1919fc45f59955202249652a">onMeetingBridge</a>(MeetingBridgeInfo info)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a2f8f95ac359ef75e48ae615695f8310d">onMeetingJoin</a>(String meetingId, long errorCode)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a3fc04ce3b89c3f581819cf27c54f161d">onMeetingLeave</a>(String meetingId, long errorCode, LeaveReason reason)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a1e77272c7cdb45e40d7a7c2e68c23d25">onMeetingSchedule</a>(long errorCode, ScheduleMeetingSettings settings)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a934227cf53e5cd3f2085ee13e36c0cac">onPersonalMeetingSettingsUpdate</a>(long errorCode, PersonalMeetingSettings settings)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">com.ringcentral.video.EngineEventHandler</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->

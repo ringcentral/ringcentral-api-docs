@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -107,13 +114,13 @@ $(document).ready(function(){initNavTree('interface_rcv_engine.html',''); initRe
 <div class="dynheader">
 Inheritance diagram for RcvEngine:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_engine__inherit__graph.svg" width="211" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_engine__inherit__graph.svg" width="211" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RcvEngine:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_engine__coll__graph.svg" width="211" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_engine__coll__graph.svg" width="211" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -145,6 +152,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a2a8d1e577b32bccfe77037142caf6e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af63998cb6d247701e03e7287f6a05e1b"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_engine.html#af63998cb6d247701e03e7287f6a05e1b">setAppGroupName:</a></td></tr>
 <tr class="separator:af63998cb6d247701e03e7287f6a05e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2359c6d1fd9773b3237715f79fdfd6"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_engine.html#acf2359c6d1fd9773b3237715f79fdfd6">authorize:</a></td></tr>
+<tr class="separator:acf2359c6d1fd9773b3237715f79fdfd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ffaee298042835da960286cfd90827"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_engine.html#ab7ffaee298042835da960286cfd90827">getMeetingBridge:</a></td></tr>
+<tr class="separator:ab7ffaee298042835da960286cfd90827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
@@ -158,6 +169,34 @@ Class Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="interface_rcv_engine.html">RcvEngine</a></b> class is the entry point of the RingCentral video client SDK that empowers the applications to easily and quickly build real-time audio and video communication. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a id="acf2359c6d1fd9773b3237715f79fdfd6" name="acf2359c6d1fd9773b3237715f79fdfd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2359c6d1fd9773b3237715f79fdfd6">&#9670;&#160;</a></span>authorize:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) authorize: </td>
+          <td></td>
+          <td class="paramtype">(nullable <a class="el" href="interface_rcv_oauth_options.html">RcvOauthOptions</a> *)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Authorizes the users and get token</p>
+<p >A successful call of authorize triggers the onAuthorization callback which includes the auth tokens or the onAuthorizationError event callback if any issue occurs.</p>
+<dl class="section note"><dt>Note</dt><dd>This method is for authorizes the users to obtain the authentication tokens through the password or JWT flow.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">The</td><td>current request params </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
+
+</div>
+</div>
 <a id="af7ed8ba29af7fe5a2aa92c36d0176006" name="af7ed8ba29af7fe5a2aa92c36d0176006"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7ed8ba29af7fe5a2aa92c36d0176006">&#9670;&#160;</a></span>create:clientSecret:</h2>
 
@@ -236,6 +275,33 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RcvErrorCodeType. Unregisters the event handler of the <b><a class="el" href="interface_rcv_engine.html">RcvEngine</a></b>. </dd></dl>
+
+</div>
+</div>
+<a id="ab7ffaee298042835da960286cfd90827" name="ab7ffaee298042835da960286cfd90827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ffaee298042835da960286cfd90827">&#9670;&#160;</a></span>getMeetingBridge:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) getMeetingBridge: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>meetingID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the RCV meeting bridge information.</p>
+<p >A successful call of get meeting bridge triggers the onMeetingBridge callback which includes the meeting bridge info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>meeting id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
 
 </div>
 </div>
@@ -386,7 +452,7 @@ Class Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Refreshes the auth token pair immediately.</p>
-<p >A successful call of <b>renewAuthToken</b> triggers the <b>onAuthTokenRenew</b> event callback which includes the new auth token pair or the <b>onAuthTokenError</b> event callback if any issue occurs.</p>
+<p >A successful call of <b>renewAuthToken</b> triggers the <b>onAuthorization</b> event callback which includes the new auth token pair or the <b>onAuthorizationError</b> event callback if any issue occurs.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">refreshToken</td><td>The authentication refresh token string.</td></tr>
@@ -454,7 +520,7 @@ Class Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tokenJsonStr</td><td>The authentication access token and refresh token pair JSON string </td></tr>
-    <tr><td class="paramname">autoRefresh</td><td>Default value is TRUE. If it's TRUE, the access token will be refreshed automatically once it expired and the new token pair will be returned by the <b>onAuthTokenRenew</b> event callback, otherwise, an error will be returned by the <b>onAuthTokenError</b> event callback.</td></tr>
+    <tr><td class="paramname">autoRefresh</td><td>Default value is TRUE. If it's TRUE, the access token will be refreshed automatically once it expired and the new token pair will be returned by the <b>onAuthorization</b> event callback, otherwise, an error will be returned by the <b>onAuthorizationError</b> event callback.</td></tr>
   </table>
   </dd>
 </dl>

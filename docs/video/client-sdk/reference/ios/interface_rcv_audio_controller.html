@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,13 +113,13 @@ $(document).ready(function(){initNavTree('interface_rcv_audio_controller.html','
 <div class="dynheader">
 Inheritance diagram for RcvAudioController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_audio_controller__inherit__graph.svg" width="274" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_audio_controller__inherit__graph.svg" width="231" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RcvAudioController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_audio_controller__coll__graph.svg" width="274" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_audio_controller__coll__graph.svg" width="231" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -128,16 +135,20 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ab80cbf3e9f3a357c47cb3c379e9e76e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f24b7a63c38311c7633638ed0853ea7"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="_rcv_local_audio_stream_state_8h.html#a7005dff4fb9af251d6dd5e82914d62cc">RcvLocalAudioStreamState</a>)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a0f24b7a63c38311c7633638ed0853ea7">getLocalAudioStreamState</a></td></tr>
 <tr class="separator:a0f24b7a63c38311c7633638ed0853ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaecd82c06c2aa53a66efcb358fb5a35"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#adaecd82c06c2aa53a66efcb358fb5a35">muteLocalAudioStream:</a></td></tr>
-<tr class="separator:adaecd82c06c2aa53a66efcb358fb5a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1967bae68bfb19f1e719b4bfe289fba"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#ae1967bae68bfb19f1e719b4bfe289fba">muteRemoteAudioStream:mute:</a></td></tr>
-<tr class="separator:ae1967bae68bfb19f1e719b4bfe289fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712952cae9b36fd2c77025000400d20a"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a712952cae9b36fd2c77025000400d20a">muteLocalAudioStream</a></td></tr>
+<tr class="separator:a712952cae9b36fd2c77025000400d20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae369f06e00c27b64dd929bf9f3709baa"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#ae369f06e00c27b64dd929bf9f3709baa">unmuteLocalAudioStream</a></td></tr>
+<tr class="separator:ae369f06e00c27b64dd929bf9f3709baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f696197821a56001438b9874d6dfeba"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a6f696197821a56001438b9874d6dfeba">muteRemoteAudioStream:</a></td></tr>
+<tr class="separator:a6f696197821a56001438b9874d6dfeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c9599d644df1c6d852d666936eecb6"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a00c9599d644df1c6d852d666936eecb6">unmuteRemoteAudioStream:</a></td></tr>
+<tr class="separator:a00c9599d644df1c6d852d666936eecb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222cb6c19fa0f3a914b0a97aaf802494"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a222cb6c19fa0f3a914b0a97aaf802494">isMuted</a></td></tr>
 <tr class="separator:a222cb6c19fa0f3a914b0a97aaf802494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc1895e9dd521141936160d2d17d0db6"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#acc1895e9dd521141936160d2d17d0db6">muteAllRemoteAudioStreams:</a></td></tr>
-<tr class="separator:acc1895e9dd521141936160d2d17d0db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbdd9cb6b141f4a52dc1b47d5cc70211"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#abbdd9cb6b141f4a52dc1b47d5cc70211">setDefaultAudioRouteToSpeakerphone:</a></td></tr>
-<tr class="separator:abbdd9cb6b141f4a52dc1b47d5cc70211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f689c54f9d6962aaa9b4c38180483f"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a49f689c54f9d6962aaa9b4c38180483f">muteAllRemoteAudioStreams:</a></td></tr>
+<tr class="separator:a49f689c54f9d6962aaa9b4c38180483f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a57367f075d2eede3ea10739482d50"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a26a57367f075d2eede3ea10739482d50">unmuteAllRemoteAudioStreams</a></td></tr>
+<tr class="separator:a26a57367f075d2eede3ea10739482d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69e355b1d5879272ac855f209cbaafae"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a69e355b1d5879272ac855f209cbaafae">enableSpeakerphone</a></td></tr>
 <tr class="separator:a69e355b1d5879272ac855f209cbaafae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3494a25afb4b2a35f1267cadd8c144e3"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_audio_controller.html#a3494a25afb4b2a35f1267cadd8c144e3">disableSpeakerphone</a></td></tr>
@@ -287,8 +298,8 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="acc1895e9dd521141936160d2d17d0db6" name="acc1895e9dd521141936160d2d17d0db6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc1895e9dd521141936160d2d17d0db6">&#9670;&#160;</a></span>muteAllRemoteAudioStreams:</h2>
+<a id="a49f689c54f9d6962aaa9b4c38180483f" name="a49f689c54f9d6962aaa9b4c38180483f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f689c54f9d6962aaa9b4c38180483f">&#9670;&#160;</a></span>muteAllRemoteAudioStreams:</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,16 +308,16 @@ Instance Methods</h2></td></tr>
           <td class="memname">- (int64_t) muteAllRemoteAudioStreams: </td>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em></td>
+          <td class="paramname"><em>allowUnmute</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the audio stream of all meeting users.</p>
+<p >Stops subscribing to the audio stream of all meeting users.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the audio stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">allowUnmute</td><td>Sets whether to allow other users to do the unmute action.</td></tr>
   </table>
   </dd>
 </dl>
@@ -314,35 +325,28 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="adaecd82c06c2aa53a66efcb358fb5a35" name="adaecd82c06c2aa53a66efcb358fb5a35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaecd82c06c2aa53a66efcb358fb5a35">&#9670;&#160;</a></span>muteLocalAudioStream:</h2>
+<a id="a712952cae9b36fd2c77025000400d20a" name="a712952cae9b36fd2c77025000400d20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712952cae9b36fd2c77025000400d20a">&#9670;&#160;</a></span>muteLocalAudioStream</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) muteLocalAudioStream: </td>
+          <td class="memname">- (int64_t) muteLocalAudioStream </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em></td>
+          <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes publishing the local audio stream.</p>
+<p >Stops publishing the local audio stream.</p>
 <p >A successful call of <b>muteLocalAudioStream</b> triggers the <b>onLocalAudioMuteChanged</b> event callback to the local user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop publishing the local audio stream. True means stop publishing, false means resume publishing</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
 </div>
-<a id="ae1967bae68bfb19f1e719b4bfe289fba" name="ae1967bae68bfb19f1e719b4bfe289fba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1967bae68bfb19f1e719b4bfe289fba">&#9670;&#160;</a></span>muteRemoteAudioStream:mute:</h2>
+<a id="a6f696197821a56001438b9874d6dfeba" name="a6f696197821a56001438b9874d6dfeba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f696197821a56001438b9874d6dfeba">&#9670;&#160;</a></span>muteRemoteAudioStream:</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,27 +356,16 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(int64_t)&#160;</td>
           <td class="paramname"><em>uid</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">mute:</td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the audio stream of a remote user.</p>
+<p >Stops subscribing to the audio stream of a remote user.</p>
 <p >A successful call of <b>muteRemoteAudioStream</b> triggers the <b>onLocalAudioMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteAudioMuteChanged</em> event notification.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user </td></tr>
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the audio stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
   </table>
   </dd>
 </dl>
@@ -406,26 +399,67 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="abbdd9cb6b141f4a52dc1b47d5cc70211" name="abbdd9cb6b141f4a52dc1b47d5cc70211"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbdd9cb6b141f4a52dc1b47d5cc70211">&#9670;&#160;</a></span>setDefaultAudioRouteToSpeakerphone:</h2>
+<a id="a26a57367f075d2eede3ea10739482d50" name="a26a57367f075d2eede3ea10739482d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a57367f075d2eede3ea10739482d50">&#9670;&#160;</a></span>unmuteAllRemoteAudioStreams</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) setDefaultAudioRouteToSpeakerphone: </td>
+          <td class="memname">- (int64_t) unmuteAllRemoteAudioStreams </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>defaultToSpeaker</em></td>
+          <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Sets the default audio playback route to the speakerphone.</p>
-<dl class="section note"><dt>Note</dt><dd>This method only works on mobile platforms, and the value is stored in the memory of the engine instance.</dd></dl>
+<p >Resumes subscribing to the audio stream of all meeting users.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae369f06e00c27b64dd929bf9f3709baa" name="ae369f06e00c27b64dd929bf9f3709baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae369f06e00c27b64dd929bf9f3709baa">&#9670;&#160;</a></span>unmuteLocalAudioStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unmuteLocalAudioStream </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Resumes publishing the local audio stream.</p>
+<p >A successful call of <b>unmuteLocalAudioStream</b> triggers the <b>onLocalAudioMuteChanged</b> event callback to the local user.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a00c9599d644df1c6d852d666936eecb6" name="a00c9599d644df1c6d852d666936eecb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c9599d644df1c6d852d666936eecb6">&#9670;&#160;</a></span>unmuteRemoteAudioStream:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unmuteRemoteAudioStream: </td>
+          <td></td>
+          <td class="paramtype">(int64_t)&#160;</td>
+          <td class="paramname"><em>uid</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Resumes subscribing to the audio stream of a remote user.</p>
+<p >A successful call of <b>unmuteRemoteAudioStream</b> triggers the <b>onLocalAudioMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteAudioMuteChanged</em> event notification.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">defaultToSpeaker</td><td>True means set speakerphone as the default audio route, False means switching back to phone</td></tr>
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
   </table>
   </dd>
 </dl>

@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -190,7 +197,7 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Registers the event handler.</p>
-<p >The RingCentral video client SDK uses the <b><a class="el" href="protocol_rcv_video_device_event_handler-p.html">RcvVideoDeviceEventHandler</a></b> interface class to send vdieo device relevant event callbacks to the application, and the application inherits the methods of this interface class to retrieve those event callbacks.</p>
+<p >The RingCentral video client SDK uses the <b><a class="el" href="protocol_rcv_video_device_event_handler-p.html">RcvVideoDeviceEventHandler</a></b> interface class to send video device relevant event callbacks to the application, and the application inherits the methods of this interface class to retrieve those event callbacks.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handler</td><td>The video device event handler instance </td></tr>

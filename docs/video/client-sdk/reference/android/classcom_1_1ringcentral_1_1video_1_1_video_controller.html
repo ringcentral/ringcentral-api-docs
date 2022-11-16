@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,7 +112,7 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_v
 <div class="dynheader">
 Collaboration diagram for com.ringcentral.video.VideoController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_video_controller__coll__graph.svg" width="254" height="286"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_video_controller__coll__graph.svg" width="254" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -115,12 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5017a47d14d2ad6d5d4616cf80512379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d00d975ab991870f32a5534385ec35d"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a8d00d975ab991870f32a5534385ec35d">unregisterEventHandler</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_event_handler.html">VideoEventHandler</a> handler)</td></tr>
 <tr class="separator:a8d00d975ab991870f32a5534385ec35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88976ecae567b4cd6098610a03195248"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a88976ecae567b4cd6098610a03195248">muteLocalVideoStream</a> (boolean mute)</td></tr>
-<tr class="separator:a88976ecae567b4cd6098610a03195248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31887ab75d6ed3d78a0808ebc58ab92"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#ae31887ab75d6ed3d78a0808ebc58ab92">muteRemoteVideoStream</a> (long uid, boolean mute)</td></tr>
-<tr class="separator:ae31887ab75d6ed3d78a0808ebc58ab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40695a04fbaa0b0997dbee425c308bb3"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a40695a04fbaa0b0997dbee425c308bb3">muteAllRemoteVideoStream</a> (boolean mute)</td></tr>
-<tr class="separator:a40695a04fbaa0b0997dbee425c308bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f51843be0a976ce6a6cc39df2848bca"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a1f51843be0a976ce6a6cc39df2848bca">muteLocalVideoStream</a> ()</td></tr>
+<tr class="separator:a1f51843be0a976ce6a6cc39df2848bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f235040c3c087bbfc6d0b951eccae28"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0f235040c3c087bbfc6d0b951eccae28">unmuteLocalVideoStream</a> ()</td></tr>
+<tr class="separator:a0f235040c3c087bbfc6d0b951eccae28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52189e9d2bdf65e56eb295351683a974"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a52189e9d2bdf65e56eb295351683a974">muteRemoteVideoStream</a> (long uid)</td></tr>
+<tr class="separator:a52189e9d2bdf65e56eb295351683a974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0adc220f46e937d0d85126b2dd532a5a"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0adc220f46e937d0d85126b2dd532a5a">unmuteRemoteVideoStream</a> (long uid)</td></tr>
+<tr class="separator:a0adc220f46e937d0d85126b2dd532a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a9845705618b0ec5d65e29f7c03656"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a81a9845705618b0ec5d65e29f7c03656">muteAllRemoteVideoStreams</a> (boolean allowUnmute)</td></tr>
+<tr class="separator:a81a9845705618b0ec5d65e29f7c03656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5109a8bf911d76376b81a9387daf5a"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a7d5109a8bf911d76376b81a9387daf5a">unmuteAllRemoteVideoStreams</a> ()</td></tr>
+<tr class="separator:a7d5109a8bf911d76376b81a9387daf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed39cece00ae3f82d979c45b65648773"><td class="memItemLeft" align="right" valign="top">abstract boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#aed39cece00ae3f82d979c45b65648773">isMuted</a> ()</td></tr>
 <tr class="separator:aed39cece00ae3f82d979c45b65648773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ddd5006b3465d718c8041783ca7149"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a15ddd5006b3465d718c8041783ca7149">setupLocalVideo</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_canvas.html">VideoCanvas</a> canvas)</td></tr>
@@ -201,8 +214,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a40695a04fbaa0b0997dbee425c308bb3" name="a40695a04fbaa0b0997dbee425c308bb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40695a04fbaa0b0997dbee425c308bb3">&#9670;&#160;</a></span>muteAllRemoteVideoStream()</h2>
+<a id="a81a9845705618b0ec5d65e29f7c03656" name="a81a9845705618b0ec5d65e29f7c03656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81a9845705618b0ec5d65e29f7c03656">&#9670;&#160;</a></span>muteAllRemoteVideoStreams()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,10 +224,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract long com.ringcentral.video.VideoController.muteAllRemoteVideoStream </td>
+          <td class="memname">abstract long com.ringcentral.video.VideoController.muteAllRemoteVideoStreams </td>
           <td>(</td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>mute</em></td><td>)</td>
+          <td class="paramname"><em>allowUnmute</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -224,11 +237,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the video stream of all meeting users.</p>
+<p >Stops subscribing to the video stream of all meeting users.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the audio stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">allowUnmute</td><td>Sets whether to allow other users to do the unmute action.</td></tr>
   </table>
   </dd>
 </dl>
@@ -236,8 +249,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a88976ecae567b4cd6098610a03195248" name="a88976ecae567b4cd6098610a03195248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88976ecae567b4cd6098610a03195248">&#9670;&#160;</a></span>muteLocalVideoStream()</h2>
+<a id="a1f51843be0a976ce6a6cc39df2848bca" name="a1f51843be0a976ce6a6cc39df2848bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f51843be0a976ce6a6cc39df2848bca">&#9670;&#160;</a></span>muteLocalVideoStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,8 +261,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">abstract long com.ringcentral.video.VideoController.muteLocalVideoStream </td>
           <td>(</td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>mute</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -259,20 +271,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Stops or resumes publishing the local video stream.</p>
+<p >Stops publishing the local video stream.</p>
 <p >A successful call of <b>muteLocalVideoStream</b> triggers the <b>onLocalVideoMuteChanged</b> event callback to the local user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop publishing the local video stream. True means stop publishing, false means resume publishing</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
 </div>
-<a id="ae31887ab75d6ed3d78a0808ebc58ab92" name="ae31887ab75d6ed3d78a0808ebc58ab92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae31887ab75d6ed3d78a0808ebc58ab92">&#9670;&#160;</a></span>muteRemoteVideoStream()</h2>
+<a id="a52189e9d2bdf65e56eb295351683a974" name="a52189e9d2bdf65e56eb295351683a974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52189e9d2bdf65e56eb295351683a974">&#9670;&#160;</a></span>muteRemoteVideoStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,18 +290,8 @@ Public Member Functions</h2></td></tr>
           <td class="memname">abstract long com.ringcentral.video.VideoController.muteRemoteVideoStream </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>uid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>uid</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>mute</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -304,13 +300,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the video stream of a remote user.</p>
+<p >Stops subscribing to the video stream of a remote user.</p>
 <p >A successful call of <b>muteRemoteVideoStream</b> triggers the <b>onlocalVideoMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteVideoMuteChanged</em> event notification.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user </td></tr>
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the video stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
   </table>
   </dd>
 </dl>
@@ -611,6 +606,98 @@ Public Member Functions</h2></td></tr>
 <p >Switches between the front and rear cameras.</p>
 <dl class="section note"><dt>Note</dt><dd>This method only works on mobile platforms.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a7d5109a8bf911d76376b81a9387daf5a" name="a7d5109a8bf911d76376b81a9387daf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5109a8bf911d76376b81a9387daf5a">&#9670;&#160;</a></span>unmuteAllRemoteVideoStreams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract long com.ringcentral.video.VideoController.unmuteAllRemoteVideoStreams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Resumes subscribing to the video stream of all meeting users.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0f235040c3c087bbfc6d0b951eccae28" name="a0f235040c3c087bbfc6d0b951eccae28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f235040c3c087bbfc6d0b951eccae28">&#9670;&#160;</a></span>unmuteLocalVideoStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract long com.ringcentral.video.VideoController.unmuteLocalVideoStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Resumes publishing the local video stream.</p>
+<p >A successful call of <b>unmuteLocalVideoStream</b> triggers the <b>onLocalVideoMuteChanged</b> event callback to the local user.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0adc220f46e937d0d85126b2dd532a5a" name="a0adc220f46e937d0d85126b2dd532a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0adc220f46e937d0d85126b2dd532a5a">&#9670;&#160;</a></span>unmuteRemoteVideoStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract long com.ringcentral.video.VideoController.unmuteRemoteVideoStream </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>uid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Resumes subscribing to the video stream of a remote user.</p>
+<p >A successful call of <b>unmuteRemoteVideoStream</b> triggers the <b>onlocalVideoMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteVideoMuteChanged</em> event notification.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
 </div>

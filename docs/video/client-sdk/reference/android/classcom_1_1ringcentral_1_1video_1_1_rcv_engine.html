@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,7 +112,7 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_r
 <div class="dynheader">
 Collaboration diagram for com.ringcentral.video.RcvEngine:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_rcv_engine__coll__graph.svg" width="230" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_rcv_engine__coll__graph.svg" width="230" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -113,6 +120,8 @@ Collaboration diagram for com.ringcentral.video.RcvEngine:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a82dda9023162b1c0c1e0d7a3b00a1acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a82dda9023162b1c0c1e0d7a3b00a1acc">destroy</a> ()</td></tr>
 <tr class="separator:a82dda9023162b1c0c1e0d7a3b00a1acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64fe1671fb46a2fefe83bf6d4d5b266"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ab64fe1671fb46a2fefe83bf6d4d5b266">authorize</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_oauth_options.html">OauthOptions</a> options)</td></tr>
+<tr class="separator:ab64fe1671fb46a2fefe83bf6d4d5b266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afab21a8113d20cbfc6f38dfd98aacc61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#afab21a8113d20cbfc6f38dfd98aacc61">registerEventHandler</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">EngineEventHandler</a> handler)</td></tr>
 <tr class="separator:afab21a8113d20cbfc6f38dfd98aacc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e27291128e0bac36b33488bd7489ab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a2e27291128e0bac36b33488bd7489ab9">unregisterEventHandler</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">EngineEventHandler</a> handler)</td></tr>
@@ -121,22 +130,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7719727bdc155e6fb1dac80b8f4c0004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb984c5a30853e21678a914f3f82005a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#acb984c5a30853e21678a914f3f82005a">startInstantMeeting</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_instant_meeting_settings.html">InstantMeetingSettings</a> settings, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_options.html">MeetingOptions</a> options)</td></tr>
 <tr class="separator:acb984c5a30853e21678a914f3f82005a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a3de2f41eec250ff13c9f10a126944"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a12a3de2f41eec250ff13c9f10a126944">joinMeeting</a> (String meetingId, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_options.html">MeetingOptions</a> options)</td></tr>
-<tr class="separator:a12a3de2f41eec250ff13c9f10a126944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b47a60ab35479ec51d9cd77e110e5be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a4b47a60ab35479ec51d9cd77e110e5be">getMeetingController</a> (String meetingId)</td></tr>
-<tr class="separator:a4b47a60ab35479ec51d9cd77e110e5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b6fed44276ea3b9031e4f95da9bf5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ae4b6fed44276ea3b9031e4f95da9bf5e">joinMeeting</a> (@NotNull String meetingId, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_options.html">MeetingOptions</a> options)</td></tr>
+<tr class="separator:ae4b6fed44276ea3b9031e4f95da9bf5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb7082bff3aee1bbb7386fa4cf9721c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#aaeb7082bff3aee1bbb7386fa4cf9721c">getMeetingController</a> (@NotNull String meetingId)</td></tr>
+<tr class="separator:aaeb7082bff3aee1bbb7386fa4cf9721c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f69d3d0ed97398d26b61d84ce34cab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_context_controller.html">MeetingContextController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ad3f69d3d0ed97398d26b61d84ce34cab">getMeetingContextController</a> ()</td></tr>
 <tr class="separator:ad3f69d3d0ed97398d26b61d84ce34cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebc31786ff5c7944b1a904394dba235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#acebc31786ff5c7944b1a904394dba235">setLocalAudioProcessor</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_processor.html">AudioProcessor</a> processor)</td></tr>
 <tr class="separator:acebc31786ff5c7944b1a904394dba235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30c48295618ffd3fc13d93fbb00c6d80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a30c48295618ffd3fc13d93fbb00c6d80">setLocalVideoProcessor</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_processor.html">VideoProcessor</a> processor)</td></tr>
 <tr class="separator:a30c48295618ffd3fc13d93fbb00c6d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab0d1a8cb600abd0daad7d2cafb66be9"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#aab0d1a8cb600abd0daad7d2cafb66be9">setAuthToken</a> (String tokenJsonStr, boolean autoRefresh)</td></tr>
-<tr class="separator:aab0d1a8cb600abd0daad7d2cafb66be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37742ad4918433d89e62448f598c21e9"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a37742ad4918433d89e62448f598c21e9">renewAuthToken</a> (String refreshToken)</td></tr>
-<tr class="separator:a37742ad4918433d89e62448f598c21e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6c0221ac8e26626e5ac105a7c679f8"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a4d6c0221ac8e26626e5ac105a7c679f8">setAuthToken</a> (@NotNull String tokenJsonStr, boolean autoRefresh)</td></tr>
+<tr class="separator:a4d6c0221ac8e26626e5ac105a7c679f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16b1bc0a7ad4e086f7f31b3aef487c9"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ac16b1bc0a7ad4e086f7f31b3aef487c9">renewAuthToken</a> (@NotNull String refreshToken)</td></tr>
+<tr class="separator:ac16b1bc0a7ad4e086f7f31b3aef487c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a900bb05b52e01296a197bbaa12f7469c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a900bb05b52e01296a197bbaa12f7469c">setScreenCaptureIntent</a> (Intent intent)</td></tr>
 <tr class="separator:a900bb05b52e01296a197bbaa12f7469c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7755fa2f47f728c2726611f99d763036"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a7755fa2f47f728c2726611f99d763036">getMeetingBridge</a> (@NotNull String MeetingId)</td></tr>
+<tr class="separator:a7755fa2f47f728c2726611f99d763036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -148,8 +159,45 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a8d8328161bc0ad8980fcfddc4cef4c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >The <b><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a></b> class is the entry point of the RingCentral video client SDK that empowers the applications to easily and quickly build real-time audio and video communication. <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a> is the base interface class of the RCV SDK that provides the main RCV SDK methods invoked by your application. Enable the RCV SDK's communication functionality through the <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a> instance, then call the methods of this object. </p>
+<div class="textblock"><p >The <b><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a></b> class is the entry point of the RingCentral video client SDK that empowers the applications to easily and quickly build real-time audio and video communication.</p>
+<p ><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a> is the base interface class of the RCV SDK that provides the main RCV SDK methods invoked by your application. Enable the RCV SDK's communication functionality through the <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html">RcvEngine</a> instance, then call the methods of this object. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab64fe1671fb46a2fefe83bf6d4d5b266" name="ab64fe1671fb46a2fefe83bf6d4d5b266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64fe1671fb46a2fefe83bf6d4d5b266">&#9670;&#160;</a></span>authorize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.ringcentral.video.RcvEngine.authorize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_oauth_options.html">OauthOptions</a>&#160;</td>
+          <td class="paramname"><em>options</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Authorizes the users and get token</p>
+<p >A successful call of authorize triggers the onAuthorization callback which includes the auth tokens or the onAuthorizationError event callback if any issue occurs.</p>
+<dl class="section note"><dt>Note</dt><dd>This method is for authorizes the users to obtain the authentication tokens through the password or JWT flow.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">options</td><td>current request params </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a9f034cf05f368e26214c362e49f6ceac" name="a9f034cf05f368e26214c362e49f6ceac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f034cf05f368e26214c362e49f6ceac">&#9670;&#160;</a></span>create()</h2>
 
@@ -260,6 +308,41 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a7755fa2f47f728c2726611f99d763036" name="a7755fa2f47f728c2726611f99d763036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7755fa2f47f728c2726611f99d763036">&#9670;&#160;</a></span>getMeetingBridge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.ringcentral.video.RcvEngine.getMeetingBridge </td>
+          <td>(</td>
+          <td class="paramtype">@NotNull String&#160;</td>
+          <td class="paramname"><em>MeetingId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns the RCV meeting bridge information.</p>
+<p >A successful call of get meeting bridge triggers the onMeetingBridge callback which includes the meeting bridge info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>meeting id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ad3f69d3d0ed97398d26b61d84ce34cab" name="ad3f69d3d0ed97398d26b61d84ce34cab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3f69d3d0ed97398d26b61d84ce34cab">&#9670;&#160;</a></span>getMeetingContextController()</h2>
 
@@ -287,8 +370,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a4b47a60ab35479ec51d9cd77e110e5be" name="a4b47a60ab35479ec51d9cd77e110e5be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b47a60ab35479ec51d9cd77e110e5be">&#9670;&#160;</a></span>getMeetingController()</h2>
+<a id="aaeb7082bff3aee1bbb7386fa4cf9721c" name="aaeb7082bff3aee1bbb7386fa4cf9721c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb7082bff3aee1bbb7386fa4cf9721c">&#9670;&#160;</a></span>getMeetingController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,7 +382,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a> com.ringcentral.video.RcvEngine.getMeetingController </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
+          <td class="paramtype">@NotNull String&#160;</td>
           <td class="paramname"><em>meetingId</em></td><td>)</td>
           <td></td>
         </tr>
@@ -349,8 +432,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a12a3de2f41eec250ff13c9f10a126944" name="a12a3de2f41eec250ff13c9f10a126944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12a3de2f41eec250ff13c9f10a126944">&#9670;&#160;</a></span>joinMeeting()</h2>
+<a id="ae4b6fed44276ea3b9031e4f95da9bf5e" name="ae4b6fed44276ea3b9031e4f95da9bf5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b6fed44276ea3b9031e4f95da9bf5e">&#9670;&#160;</a></span>joinMeeting()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,7 +444,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html">MeetingController</a> com.ringcentral.video.RcvEngine.joinMeeting </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
+          <td class="paramtype">@NotNull String&#160;</td>
           <td class="paramname"><em>meetingId</em>, </td>
         </tr>
         <tr>
@@ -431,8 +514,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a37742ad4918433d89e62448f598c21e9" name="a37742ad4918433d89e62448f598c21e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37742ad4918433d89e62448f598c21e9">&#9670;&#160;</a></span>renewAuthToken()</h2>
+<a id="ac16b1bc0a7ad4e086f7f31b3aef487c9" name="ac16b1bc0a7ad4e086f7f31b3aef487c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16b1bc0a7ad4e086f7f31b3aef487c9">&#9670;&#160;</a></span>renewAuthToken()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,7 +526,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">long com.ringcentral.video.RcvEngine.renewAuthToken </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
+          <td class="paramtype">@NotNull String&#160;</td>
           <td class="paramname"><em>refreshToken</em></td><td>)</td>
           <td></td>
         </tr>
@@ -455,7 +538,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p >Refreshes the auth token pair immediately.</p>
-<p >A successful call of <b>renewAuthToken</b> triggers the <b>onAuthTokenRenew</b> event callback which includes the new auth token pair or the <b>onAuthTokenError</b> event callback if any issue occurs.</p>
+<p >A successful call of <b>renewAuthToken</b> triggers the <b>onAuthorization</b> event callback which includes the new auth token pair or the <b>onAuthorizationError</b> event callback if any issue occurs.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">refreshToken</td><td>The authentication refresh token string.</td></tr>
@@ -466,8 +549,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aab0d1a8cb600abd0daad7d2cafb66be9" name="aab0d1a8cb600abd0daad7d2cafb66be9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0d1a8cb600abd0daad7d2cafb66be9">&#9670;&#160;</a></span>setAuthToken()</h2>
+<a id="a4d6c0221ac8e26626e5ac105a7c679f8" name="a4d6c0221ac8e26626e5ac105a7c679f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d6c0221ac8e26626e5ac105a7c679f8">&#9670;&#160;</a></span>setAuthToken()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +561,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">long com.ringcentral.video.RcvEngine.setAuthToken </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
+          <td class="paramtype">@NotNull String&#160;</td>
           <td class="paramname"><em>tokenJsonStr</em>, </td>
         </tr>
         <tr>
@@ -504,7 +587,7 @@ Here is the call graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tokenJsonStr</td><td>The authentication access token and refresh token pair JSON string </td></tr>
-    <tr><td class="paramname">autoRefresh</td><td>Default value is TRUE. If it's TRUE, the access token will be refreshed automatically once it expired and the new token pair will be returned by the <b>onAuthTokenRenew</b> event callback, otherwise, an error will be returned by the <b>onAuthTokenError</b> event callback.</td></tr>
+    <tr><td class="paramname">autoRefresh</td><td>Default value is TRUE. If it's TRUE, the access token will be refreshed automatically once it expired and the new token pair will be returned by the <b>onAuthorization</b> event callback, otherwise, an error will be returned by the <b>onAuthorizationError</b> event callback.</td></tr>
   </table>
   </dd>
 </dl>

@@ -29,6 +29,6 @@ var searchData=
   ['localvideostats_2ejava_26',['LocalVideoStats.java',['../_local_video_stats_8java.html',1,'']]],
   ['location_27',['location',['../classcom_1_1ringcentral_1_1video_1_1_meeting_dial_info.html#a1390fbb3ae35db8cd54b5ae3391cfda7',1,'com::ringcentral::video::MeetingDialInfo']]],
   ['locked_28',['LOCKED',['../enumcom_1_1ringcentral_1_1video_1_1_sharing_settings.html#a05bfa68e78ee4f247ddccb12a3399c0e',1,'com::ringcentral::video::SharingSettings']]],
-  ['lockmeeting_29',['lockMeeting',['../classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#ad28bf7a77317dc45af06553fb4b24c0e',1,'com::ringcentral::video::MeetingController']]],
-  ['locksharing_30',['lockSharing',['../classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#a4e46b904e9644ee09e0e351f01d1cf0b',1,'com::ringcentral::video::SharingController']]]
+  ['lockmeeting_29',['lockMeeting',['../classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#a5a51fe8f399773bc8d9124b541068753',1,'com::ringcentral::video::MeetingController']]],
+  ['locksharing_30',['lockSharing',['../classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#aea2be76a987d262458ecdf1c87252b37',1,'com::ringcentral::video::SharingController']]]
 ];

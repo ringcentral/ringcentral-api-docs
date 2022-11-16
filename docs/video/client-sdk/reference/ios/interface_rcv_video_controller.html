@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,13 +113,13 @@ $(document).ready(function(){initNavTree('interface_rcv_video_controller.html','
 <div class="dynheader">
 Inheritance diagram for RcvVideoController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_video_controller__inherit__graph.svg" width="232" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_video_controller__inherit__graph.svg" width="231" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RcvVideoController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_video_controller__coll__graph.svg" width="232" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_video_controller__coll__graph.svg" width="231" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -122,12 +129,18 @@ Instance Methods</h2></td></tr>
 <tr class="separator:aa77f56788d5d28b40063271530e7fbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0af50fa19c6245cf6150dd40ff3bfc3"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#af0af50fa19c6245cf6150dd40ff3bfc3">unregisterEventHandler:</a></td></tr>
 <tr class="separator:af0af50fa19c6245cf6150dd40ff3bfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122cb99c14b8dbad3de5d0d146334e29"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#a122cb99c14b8dbad3de5d0d146334e29">muteLocalVideoStream:</a></td></tr>
-<tr class="separator:a122cb99c14b8dbad3de5d0d146334e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b479a5fbaad50ec14ebf1ed01b8a9c1"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#a8b479a5fbaad50ec14ebf1ed01b8a9c1">muteRemoteVideoStream:mute:</a></td></tr>
-<tr class="separator:a8b479a5fbaad50ec14ebf1ed01b8a9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa12c20eeabe3b2c3b78c23ecc9b18c5b"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#aa12c20eeabe3b2c3b78c23ecc9b18c5b">muteAllRemoteVideoStream:</a></td></tr>
-<tr class="separator:aa12c20eeabe3b2c3b78c23ecc9b18c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae378f92f09a5e9ed16e5d1c1615d772a"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#ae378f92f09a5e9ed16e5d1c1615d772a">muteLocalVideoStream</a></td></tr>
+<tr class="separator:ae378f92f09a5e9ed16e5d1c1615d772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60df55b91b4c275a75778fd9df73324"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#ac60df55b91b4c275a75778fd9df73324">unmuteLocalVideoStream</a></td></tr>
+<tr class="separator:ac60df55b91b4c275a75778fd9df73324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58850180ce2c01a8405a6c10b42ab2ff"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#a58850180ce2c01a8405a6c10b42ab2ff">muteRemoteVideoStream:</a></td></tr>
+<tr class="separator:a58850180ce2c01a8405a6c10b42ab2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc61b870b2be6c6dbd78c9d56accc13"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#aabc61b870b2be6c6dbd78c9d56accc13">unmuteRemoteVideoStream:</a></td></tr>
+<tr class="separator:aabc61b870b2be6c6dbd78c9d56accc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87a3268136ca41f6288fa045268421a"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#aa87a3268136ca41f6288fa045268421a">muteAllRemoteVideoStreams:</a></td></tr>
+<tr class="separator:aa87a3268136ca41f6288fa045268421a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8594e3438ee50f96796038c00c3375f"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#af8594e3438ee50f96796038c00c3375f">unmuteAllRemoteVideoStreams</a></td></tr>
+<tr class="separator:af8594e3438ee50f96796038c00c3375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee39a9b95423574b734cc90265fe64f3"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#aee39a9b95423574b734cc90265fe64f3">isMuted</a></td></tr>
 <tr class="separator:aee39a9b95423574b734cc90265fe64f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b440c7f0497bcb1128b1f60cd57af55"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_video_controller.html#a3b440c7f0497bcb1128b1f60cd57af55">setupLocalVideo:</a></td></tr>
@@ -192,26 +205,26 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aa12c20eeabe3b2c3b78c23ecc9b18c5b" name="aa12c20eeabe3b2c3b78c23ecc9b18c5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa12c20eeabe3b2c3b78c23ecc9b18c5b">&#9670;&#160;</a></span>muteAllRemoteVideoStream:</h2>
+<a id="aa87a3268136ca41f6288fa045268421a" name="aa87a3268136ca41f6288fa045268421a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87a3268136ca41f6288fa045268421a">&#9670;&#160;</a></span>muteAllRemoteVideoStreams:</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) muteAllRemoteVideoStream: </td>
+          <td class="memname">- (int64_t) muteAllRemoteVideoStreams: </td>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em></td>
+          <td class="paramname"><em>allowUnmute</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the video stream of all meeting users.</p>
+<p >Stops subscribing to the video stream of all meeting users.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the audio stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">allowUnmute</td><td>Sets whether to allow other users to do the unmute action.</td></tr>
   </table>
   </dd>
 </dl>
@@ -219,35 +232,28 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a122cb99c14b8dbad3de5d0d146334e29" name="a122cb99c14b8dbad3de5d0d146334e29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a122cb99c14b8dbad3de5d0d146334e29">&#9670;&#160;</a></span>muteLocalVideoStream:</h2>
+<a id="ae378f92f09a5e9ed16e5d1c1615d772a" name="ae378f92f09a5e9ed16e5d1c1615d772a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae378f92f09a5e9ed16e5d1c1615d772a">&#9670;&#160;</a></span>muteLocalVideoStream</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) muteLocalVideoStream: </td>
+          <td class="memname">- (int64_t) muteLocalVideoStream </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em></td>
+          <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes publishing the local video stream.</p>
+<p >Stops publishing the local video stream.</p>
 <p >A successful call of <b>muteLocalVideoStream</b> triggers the <b>onLocalVideoMuteChanged</b> event callback to the local user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mute</td><td>Sets whether to stop publishing the local video stream. True means stop publishing, false means resume publishing</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
 </div>
-<a id="a8b479a5fbaad50ec14ebf1ed01b8a9c1" name="a8b479a5fbaad50ec14ebf1ed01b8a9c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b479a5fbaad50ec14ebf1ed01b8a9c1">&#9670;&#160;</a></span>muteRemoteVideoStream:mute:</h2>
+<a id="a58850180ce2c01a8405a6c10b42ab2ff" name="a58850180ce2c01a8405a6c10b42ab2ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58850180ce2c01a8405a6c10b42ab2ff">&#9670;&#160;</a></span>muteRemoteVideoStream:</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,27 +263,16 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(int64_t)&#160;</td>
           <td class="paramname"><em>uid</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">mute:</td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>mute</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Stops or resumes subscribing to the video stream of a remote user.</p>
+<p >Stops subscribing to the video stream of a remote user.</p>
 <p >A successful call of <b>muteRemoteVideoStream</b> triggers the <b>onlocalVideoMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteVideoMuteChanged</em> event notification.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user </td></tr>
-    <tr><td class="paramname">mute</td><td>Sets whether to stop subscribing to the video stream. True means stop subscribing, false means resume subscribing</td></tr>
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
   </table>
   </dd>
 </dl>
@@ -498,6 +493,74 @@ Instance Methods</h2></td></tr>
 <p >Switches between the front and rear cameras.</p>
 <dl class="section note"><dt>Note</dt><dd>This method only works on mobile platforms.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="af8594e3438ee50f96796038c00c3375f" name="af8594e3438ee50f96796038c00c3375f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8594e3438ee50f96796038c00c3375f">&#9670;&#160;</a></span>unmuteAllRemoteVideoStreams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unmuteAllRemoteVideoStreams </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Resumes subscribing to the video stream of all meeting users.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ac60df55b91b4c275a75778fd9df73324" name="ac60df55b91b4c275a75778fd9df73324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60df55b91b4c275a75778fd9df73324">&#9670;&#160;</a></span>unmuteLocalVideoStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unmuteLocalVideoStream </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Resumes publishing the local video stream.</p>
+<p >A successful call of <b>unmuteLocalVideoStream</b> triggers the <b>onLocalVideoMuteChanged</b> event callback to the local user.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aabc61b870b2be6c6dbd78c9d56accc13" name="aabc61b870b2be6c6dbd78c9d56accc13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc61b870b2be6c6dbd78c9d56accc13">&#9670;&#160;</a></span>unmuteRemoteVideoStream:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unmuteRemoteVideoStream: </td>
+          <td></td>
+          <td class="paramtype">(int64_t)&#160;</td>
+          <td class="paramname"><em>uid</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Resumes subscribing to the video stream of a remote user.</p>
+<p >A successful call of <b>unmuteRemoteVideoStream</b> triggers the <b>onlocalVideoMuteChanged</b> event callback to the specified remote user, other meeting users will retrieve the <em>onRemoteVideoMuteChanged</em> event notification.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>The unique id of the specified remote user</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
 </div>

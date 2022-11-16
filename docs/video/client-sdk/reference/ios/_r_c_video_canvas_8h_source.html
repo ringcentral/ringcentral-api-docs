@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -107,31 +114,55 @@ $(document).ready(function(){initNavTree('_r_c_video_canvas_8h_source.html','');
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#import &quot;<a class="code" href="_rcv_video_canvas_8h.html">RcvVideoCanvas.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#import &quot;<a class="code" href="_rcv_base_video_view_8h.html">RcvBaseVideoView.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#import &quot;<a class="code" href="_rcv_base_video_view_8h.html">RcvBaseVideoView.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#import &quot;<a class="code" href="_rcv_video_canvas_8h.html">RcvVideoCanvas.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html">   13</a></span><span class="keyword">@interface </span><a class="code hl_interface" href="interface_r_c_video_canvas.html">RCVideoCanvas</a> : NSObject&lt;<a class="code hl_protocol" href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas</a>&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html">   13</a></span><span class="keyword">@interface </span><a class="code hl_interface" href="interface_r_c_video_canvas.html">RCVideoCanvas</a> : NSObject &lt;<a class="code hl_protocol" href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas</a>&gt;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a740356c2ed84a62c83ee9296dd77dbbd">   15</a></span><span class="keyword">@property</span> (assign, nonatomic) int64_t <a class="code hl_property" href="interface_r_c_video_canvas.html#a740356c2ed84a62c83ee9296dd77dbbd">uid</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a41fb648a21de0a8b55fbb38ec5e5fdbf">   16</a></span><span class="keyword">@property</span> (assign, nonatomic) <a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a> <a class="code hl_property" href="interface_r_c_video_canvas.html#a41fb648a21de0a8b55fbb38ec5e5fdbf">renderMode</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a0f0f9a00410b1170812b7b2480314987">   17</a></span><span class="keyword">@property</span> (assign, nonatomic) BOOL <a class="code hl_property" href="interface_r_c_video_canvas.html#abf4bd016b7b0ef6c5dc7a4150ad70039">mirrorMode</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a740356c2ed84a62c83ee9296dd77dbbd">   15</a></span><span class="keyword">@property</span>(assign, nonatomic) int64_t <a class="code hl_property" href="interface_r_c_video_canvas.html#a740356c2ed84a62c83ee9296dd77dbbd">uid</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a41fb648a21de0a8b55fbb38ec5e5fdbf">   16</a></span><span class="keyword">@property</span>(assign, nonatomic) <a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a> <a class="code hl_property" href="interface_r_c_video_canvas.html#a41fb648a21de0a8b55fbb38ec5e5fdbf">renderMode</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="interface_r_c_video_canvas.html#a0f0f9a00410b1170812b7b2480314987">   17</a></span><span class="keyword">@property</span>(assign, nonatomic) BOOL <a class="code hl_property" href="interface_r_c_video_canvas.html#abf4bd016b7b0ef6c5dc7a4150ad70039">mirrorMode</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>- (instancetype)<a class="code hl_function" href="interface_r_c_video_canvas.html#a28663731ea6ecbb8cdb52064ebdb73cd">init</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>- (instancetype)init <a class="code hl_function" href="interface_r_c_video_canvas.html#ab8f28a97e1fc10b2b3d28c2cbd12049f">NS_UNAVAILABLE</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>- (instancetype)initWithUid:(int64_t)uid;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>- (instancetype)initWithView:(nullable UIView*)view;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>- (void)attachView:(UIView *)view;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>- (instancetype)initWithView:(nullable UIView*)view Uid:(int64_t)uid;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>- (void)<a class="code hl_function" href="interface_r_c_video_canvas.html#acfa60dca91ac8fe49b8e426ce717bd40">detachView</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>- (instancetype)initWithView:(nullable UIView*)view Uid:(int64_t)uid RenderMode:(<a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a>)renderMode;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">@end</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>- (instancetype)initWithView:(nullable UIView*)view</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                         Uid:(int64_t)uid</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                  RenderMode:(<a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a>)renderMode</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                isMirrorMode:(BOOL)isMirrorMode;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>- (void)setUid:(int64_t)uid;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>- (int64_t)<a class="code hl_function" href="interface_r_c_video_canvas.html#a09d7789dd070bb078f22276f9cb84366">getUid</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>- (void)setRenderMode:(<a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a>)mode;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>- (<a class="code hl_enumeration" href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a>)<a class="code hl_function" href="interface_r_c_video_canvas.html#a27252ff61922a3e90a64675a1697dd76">getRenderMode</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>- (void)setMirrorMode:(BOOL)isMirror;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>- (BOOL)<a class="code hl_function" href="interface_r_c_video_canvas.html#a04ef51ff720b0cf2abe1de68de285199">isMirrorMode</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>- (void)attachView:(UIView*)view;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>- (void)<a class="code hl_function" href="interface_r_c_video_canvas.html#acfa60dca91ac8fe49b8e426ce717bd40">detachView</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">@end</span></div>
 <div class="ttc" id="a_rcv_base_video_view_8h_html"><div class="ttname"><a href="_rcv_base_video_view_8h.html">RcvBaseVideoView.h</a></div></div>
 <div class="ttc" id="a_rcv_render_mode_8h_html_a574672eedc887d002c9f4fe6f0dfbf5d"><div class="ttname"><a href="_rcv_render_mode_8h.html#a574672eedc887d002c9f4fe6f0dfbf5d">RcvRenderMode</a></div><div class="ttdeci">RcvRenderMode</div><div class="ttdef"><b>Definition:</b> RcvRenderMode.h:8</div></div>
 <div class="ttc" id="a_rcv_video_canvas_8h_html"><div class="ttname"><a href="_rcv_video_canvas_8h.html">RcvVideoCanvas.h</a></div></div>
 <div class="ttc" id="ainterface_r_c_video_canvas_html"><div class="ttname"><a href="interface_r_c_video_canvas.html">RCVideoCanvas</a></div><div class="ttdef"><b>Definition:</b> RCVideoCanvas.h:13</div></div>
-<div class="ttc" id="ainterface_r_c_video_canvas_html_a28663731ea6ecbb8cdb52064ebdb73cd"><div class="ttname"><a href="interface_r_c_video_canvas.html#a28663731ea6ecbb8cdb52064ebdb73cd">-[RCVideoCanvas init]</a></div><div class="ttdeci">instancetype init()</div></div>
+<div class="ttc" id="ainterface_r_c_video_canvas_html_a04ef51ff720b0cf2abe1de68de285199"><div class="ttname"><a href="interface_r_c_video_canvas.html#a04ef51ff720b0cf2abe1de68de285199">-[RCVideoCanvas isMirrorMode]</a></div><div class="ttdeci">BOOL isMirrorMode()</div></div>
+<div class="ttc" id="ainterface_r_c_video_canvas_html_a09d7789dd070bb078f22276f9cb84366"><div class="ttname"><a href="interface_r_c_video_canvas.html#a09d7789dd070bb078f22276f9cb84366">-[RCVideoCanvas getUid]</a></div><div class="ttdeci">int64_t getUid()</div></div>
+<div class="ttc" id="ainterface_r_c_video_canvas_html_a27252ff61922a3e90a64675a1697dd76"><div class="ttname"><a href="interface_r_c_video_canvas.html#a27252ff61922a3e90a64675a1697dd76">-[RCVideoCanvas getRenderMode]</a></div><div class="ttdeci">RcvRenderMode getRenderMode()</div></div>
 <div class="ttc" id="ainterface_r_c_video_canvas_html_a41fb648a21de0a8b55fbb38ec5e5fdbf"><div class="ttname"><a href="interface_r_c_video_canvas.html#a41fb648a21de0a8b55fbb38ec5e5fdbf">RCVideoCanvas::renderMode</a></div><div class="ttdeci">RcvRenderMode renderMode</div><div class="ttdef"><b>Definition:</b> RCVideoCanvas.h:16</div></div>
 <div class="ttc" id="ainterface_r_c_video_canvas_html_a740356c2ed84a62c83ee9296dd77dbbd"><div class="ttname"><a href="interface_r_c_video_canvas.html#a740356c2ed84a62c83ee9296dd77dbbd">RCVideoCanvas::uid</a></div><div class="ttdeci">int64_t uid</div><div class="ttdef"><b>Definition:</b> RCVideoCanvas.h:15</div></div>
+<div class="ttc" id="ainterface_r_c_video_canvas_html_ab8f28a97e1fc10b2b3d28c2cbd12049f"><div class="ttname"><a href="interface_r_c_video_canvas.html#ab8f28a97e1fc10b2b3d28c2cbd12049f">-[RCVideoCanvas NS_UNAVAILABLE]</a></div><div class="ttdeci">instancetype NS_UNAVAILABLE()</div></div>
 <div class="ttc" id="ainterface_r_c_video_canvas_html_abf4bd016b7b0ef6c5dc7a4150ad70039"><div class="ttname"><a href="interface_r_c_video_canvas.html#abf4bd016b7b0ef6c5dc7a4150ad70039">RCVideoCanvas::mirrorMode</a></div><div class="ttdeci">BOOL mirrorMode</div><div class="ttdef"><b>Definition:</b> RCVideoCanvas.h:17</div></div>
 <div class="ttc" id="ainterface_r_c_video_canvas_html_acfa60dca91ac8fe49b8e426ce717bd40"><div class="ttname"><a href="interface_r_c_video_canvas.html#acfa60dca91ac8fe49b8e426ce717bd40">-[RCVideoCanvas detachView]</a></div><div class="ttdeci">void detachView()</div></div>
 <div class="ttc" id="aprotocol_rcv_video_canvas-p_html"><div class="ttname"><a href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas-p</a></div><div class="ttdef"><b>Definition:</b> RcvVideoCanvas.h:10</div></div>

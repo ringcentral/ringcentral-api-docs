@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -104,18 +111,17 @@ $(document).ready(function(){initNavTree('interface_rcv_sharing_controller.html'
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a33d0a388479b1307feb19083707e3edc">isLocalSharing</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a84964d7aa92fd7a21838d1d1fbfd5178">isRemoteSharing</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a2193583deedb0060b21df68c9f98ee41">isSharingLocked</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#aefb1006ae28de211beb06bdfb51523ac">lockSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#ad5ae0f3dcce4a4d29318caccfa468a3e">lockSharing</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#aaf03b42e3ccf2c2a9d432799d3e17479">registerEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#aa826f5128f037747a7662d0fb98554ab">removeLocalSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a0c37a9df4fbc13da3f007102b2ffa78b">removeRemoteSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#af2c2cfb180144da644003ebc291441e9">setupLocalSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a0c37a9df4fbc13da3f007102b2ffa78b">removeRemoteSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#ae2e2d57f03aefe3b584af50aae7fb9bc">setupRemoteSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#ac3b8f770a2f6572280a33ae8e13b452d">startShareCamera:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a2ba0287b9df5393767a2bf16f57be1c3">startShareScreen</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a5d62949aa55c56ba02ee3e02d7fcda21">stopRemoteSharing:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a31441a6bb4a22e4cc8148f7749409944">stopSharing</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a6faf8841b948796d7fa8b94a1529ce06">switchShareCamera</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a1f149eee30e717e221c72a0b9233f758">unregisterEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#ac5d9b9432b82ccb3ea8bbf70984f9865">unlockSharing</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_sharing_controller.html#a1f149eee30e717e221c72a0b9233f758">unregisterEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_sharing_controller.html">RcvSharingController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

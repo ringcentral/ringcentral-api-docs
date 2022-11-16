@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['videocanvas_0',['VideoCanvas',['../classcom_1_1ringcentral_1_1video_1_1_video_canvas.html',1,'com::ringcentral::video']]],
-  ['videoconsumer_1',['VideoConsumer',['../classcom_1_1ringcentral_1_1video_1_1_video_consumer.html',1,'com::ringcentral::video']]],
-  ['videocontroller_2',['VideoController',['../classcom_1_1ringcentral_1_1video_1_1_video_controller.html',1,'com::ringcentral::video']]],
-  ['videodeviceeventhandler_3',['VideoDeviceEventHandler',['../classcom_1_1ringcentral_1_1video_1_1_video_device_event_handler.html',1,'com::ringcentral::video']]],
-  ['videodevicemanager_4',['VideoDeviceManager',['../classcom_1_1ringcentral_1_1video_1_1_video_device_manager.html',1,'com::ringcentral::video']]],
-  ['videoeventhandler_5',['VideoEventHandler',['../classcom_1_1ringcentral_1_1video_1_1_video_event_handler.html',1,'com::ringcentral::video']]],
-  ['videoprocessor_6',['VideoProcessor',['../classcom_1_1ringcentral_1_1video_1_1_video_processor.html',1,'com::ringcentral::video']]]
+  ['rcvengine_0',['RcvEngine',['../classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html',1,'com::ringcentral::video']]],
+  ['rcvtextureviewrenderer_1',['RcvTextureViewRenderer',['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html',1,'com::ringcentral::video']]],
+  ['rcvvideocanvas_2',['RcvVideoCanvas',['../classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html',1,'com::ringcentral::video']]],
+  ['rcvvideoview_3',['RcvVideoView',['../classcom_1_1ringcentral_1_1video_1_1_rcv_video_view.html',1,'com::ringcentral::video']]],
+  ['recordingcontroller_4',['RecordingController',['../classcom_1_1ringcentral_1_1video_1_1_recording_controller.html',1,'com::ringcentral::video']]],
+  ['recordingmode_5',['RecordingMode',['../enumcom_1_1ringcentral_1_1video_1_1_recording_mode.html',1,'com::ringcentral::video']]],
+  ['recordingstate_6',['RecordingState',['../enumcom_1_1ringcentral_1_1video_1_1_recording_state.html',1,'com::ringcentral::video']]],
+  ['remoteaudiostats_7',['RemoteAudioStats',['../classcom_1_1ringcentral_1_1video_1_1_remote_audio_stats.html',1,'com::ringcentral::video']]],
+  ['remotevideostats_8',['RemoteVideoStats',['../classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html',1,'com::ringcentral::video']]],
+  ['rendermode_9',['RenderMode',['../enumcom_1_1ringcentral_1_1video_1_1_render_mode.html',1,'com::ringcentral::video']]]
 ];

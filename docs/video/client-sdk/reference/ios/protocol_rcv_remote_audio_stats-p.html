@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,12 +113,14 @@ $(document).ready(function(){initNavTree('protocol_rcv_remote_audio_stats-p.html
 <div class="dynheader">
 Collaboration diagram for &lt;RcvRemoteAudioStats&gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="protocol_rcv_remote_audio_stats-p__coll__graph.svg" width="187" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="protocol_rcv_remote_audio_stats-p__coll__graph.svg" width="187" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a1b0a359d44f96e06d93e9758cbfef8ca"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_remote_audio_stats-p.html#a1b0a359d44f96e06d93e9758cbfef8ca">getParticipant</a></td></tr>
+<tr class="separator:a1b0a359d44f96e06d93e9758cbfef8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b96aa661e8516d2e147137e77cb0474"><td class="memItemLeft" align="right" valign="top">(nonnull NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_remote_audio_stats-p.html#a5b96aa661e8516d2e147137e77cb0474">getCodec</a></td></tr>
 <tr class="separator:a5b96aa661e8516d2e147137e77cb0474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a74e1e5dc93b7975f5214cb6a402e5a"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_remote_audio_stats-p.html#a9a74e1e5dc93b7975f5214cb6a402e5a">getPacketsReceived</a></td></tr>
@@ -213,6 +222,24 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Returns the received audio packets count </p>
+
+</div>
+</div>
+<a id="a1b0a359d44f96e06d93e9758cbfef8ca" name="a1b0a359d44f96e06d93e9758cbfef8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0a359d44f96e06d93e9758cbfef8ca">&#9670;&#160;</a></span>getParticipant</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *) getParticipant </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the participant that send this video stats packet </p>
 
 </div>
 </div>

@@ -2,8 +2,8 @@ var searchData=
 [
   ['accepted_0',['ACCEPTED',['../enumcom_1_1ringcentral_1_1video_1_1_meeting_api_execute_result.html#af280ff02eb88eb3796e57184bed822dd',1,'com::ringcentral::video::MeetingApiExecuteResult']]],
   ['accesscode_1',['accessCode',['../classcom_1_1ringcentral_1_1video_1_1_meeting_dial_info.html#a06fe4abe84a3410b476b05d2ccd04dc7',1,'com::ringcentral::video::MeetingDialInfo']]],
-  ['active_2',['ACTIVE',['../enumcom_1_1ringcentral_1_1video_1_1_e_stream_activity.html#a447bf7f55d5ec8ab551fdd0616fb9939',1,'com.ringcentral.video.EStreamActivity.ACTIVE()'],['../enumcom_1_1ringcentral_1_1video_1_1_e_participant_status.html#ae98ae825bcdf1bd93a83071201ab42ec',1,'com.ringcentral.video.EParticipantStatus.ACTIVE()']]],
-  ['addframelistener_3',['addFrameListener',['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#ada2c141d60e9d9519fa6611a0495bbe0',1,'com.ringcentral.video.RcvTextureViewRenderer.addFrameListener(EglRenderer.FrameListener listener, float scale, RendererCommon.GlDrawer drawerParam)'],['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#a12b5b484925790d21790b56a9a3ba780',1,'com.ringcentral.video.RcvTextureViewRenderer.addFrameListener(EglRenderer.FrameListener listener, float scale)']]],
+  ['active_2',['ACTIVE',['../enumcom_1_1ringcentral_1_1video_1_1_e_participant_status.html#ae98ae825bcdf1bd93a83071201ab42ec',1,'com.ringcentral.video.EParticipantStatus.ACTIVE()'],['../enumcom_1_1ringcentral_1_1video_1_1_e_stream_activity.html#a447bf7f55d5ec8ab551fdd0616fb9939',1,'com.ringcentral.video.EStreamActivity.ACTIVE()']]],
+  ['addframelistener_3',['addFrameListener',['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#a12b5b484925790d21790b56a9a3ba780',1,'com.ringcentral.video.RcvTextureViewRenderer.addFrameListener(EglRenderer.FrameListener listener, float scale)'],['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#ada2c141d60e9d9519fa6611a0495bbe0',1,'com.ringcentral.video.RcvTextureViewRenderer.addFrameListener(EglRenderer.FrameListener listener, float scale, RendererCommon.GlDrawer drawerParam)']]],
   ['admitall_4',['admitAll',['../classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a88769d2d09a9ddb9fdd44fc6e4fcfa8b',1,'com::ringcentral::video::MeetingUserController']]],
   ['admituser_5',['admitUser',['../classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a9bf5c2fa9a7543a64e1433d9e443ae8d',1,'com::ringcentral::video::MeetingUserController']]],
   ['android_2dreadme_2emd_6',['Android-README.md',['../_android-_r_e_a_d_m_e_8md.html',1,'']]],
@@ -33,5 +33,7 @@ var searchData=
   ['audioprocessor_2ejava_30',['AudioProcessor.java',['../_audio_processor_8java.html',1,'']]],
   ['audioroutetype_31',['AudioRouteType',['../enumcom_1_1ringcentral_1_1video_1_1_audio_route_type.html',1,'com::ringcentral::video']]],
   ['audioroutetype_2ejava_32',['AudioRouteType.java',['../_audio_route_type_8java.html',1,'']]],
-  ['audioservermute_33',['audioServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aed81e28017b29d4422e1bc2249c82075',1,'com::ringcentral::video::IParticipant']]]
+  ['audioservermute_33',['audioServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aed81e28017b29d4422e1bc2249c82075',1,'com::ringcentral::video::IParticipant']]],
+  ['authorize_34',['authorize',['../classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ab64fe1671fb46a2fefe83bf6d4d5b266',1,'com::ringcentral::video::RcvEngine']]],
+  ['auto_35',['AUTO',['../enumcom_1_1ringcentral_1_1video_1_1_recording_mode.html#a75ae817982fa5116eae0e17ef6151640',1,'com.ringcentral.video.RecordingMode.AUTO()'],['../enumcom_1_1ringcentral_1_1video_1_1_transcriptions_mode.html#abca29056188b67546dc44ceff7739001',1,'com.ringcentral.video.TranscriptionsMode.AUTO()']]]
 ];

@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,100 +113,36 @@ $(document).ready(function(){initNavTree('protocol_rcv_meeting_event_handler-p.h
 <div class="dynheader">
 Collaboration diagram for &lt;RcvMeetingEventHandler&gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="protocol_rcv_meeting_event_handler-p__coll__graph.svg" width="280" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="protocol_rcv_meeting_event_handler-p__coll__graph.svg" width="280" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a33617caecaa22c428c88913762670d0f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a33617caecaa22c428c88913762670d0f">onUserJoined:</a></td></tr>
-<tr class="separator:a33617caecaa22c428c88913762670d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a785b7e5d7d6fb7154750664a215a325f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a785b7e5d7d6fb7154750664a215a325f">onUserUpdated:</a></td></tr>
-<tr class="separator:a785b7e5d7d6fb7154750664a215a325f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e3766ef81fddf46476c63f670867531"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a9e3766ef81fddf46476c63f670867531">onUserLeave:</a></td></tr>
-<tr class="separator:a9e3766ef81fddf46476c63f670867531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94257e4fa7f91a7440c8edccad310e9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ac94257e4fa7f91a7440c8edccad310e9">onUserRoleChanged:</a></td></tr>
-<tr class="separator:ac94257e4fa7f91a7440c8edccad310e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff20eb55c0cf2e35751d1bfc3e9a9420"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#aff20eb55c0cf2e35751d1bfc3e9a9420">onMeetingStateChanged:</a></td></tr>
+<tr class="separator:aff20eb55c0cf2e35751d1bfc3e9a9420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48b85e1093b0b0fba5ea0e8f1b48d6c6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a48b85e1093b0b0fba5ea0e8f1b48d6c6">onRecordingStateChanged:</a></td></tr>
 <tr class="separator:a48b85e1093b0b0fba5ea0e8f1b48d6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9aaffccb669d30c82dec4e5faee6b2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a0b9aaffccb669d30c82dec4e5faee6b2">onRecordingAllowChanged:</a></td></tr>
+<tr class="separator:a0b9aaffccb669d30c82dec4e5faee6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af90eefcdd81555be7dfe6c1ddee3aaf5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#af90eefcdd81555be7dfe6c1ddee3aaf5">onMeetingApiExecuted:errorCode:result:</a></td></tr>
 <tr class="separator:af90eefcdd81555be7dfe6c1ddee3aaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff8d0d55efb074b62f922ea7f813f37e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#aff8d0d55efb074b62f922ea7f813f37e">onMeetingLockStateChanged:</a></td></tr>
 <tr class="separator:aff8d0d55efb074b62f922ea7f813f37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a994e7bdc01452ac4676ae99db472261f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a994e7bdc01452ac4676ae99db472261f">onActiveSpeakerUserChanged:</a></td></tr>
-<tr class="separator:a994e7bdc01452ac4676ae99db472261f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85d2835461dc1c27b1cb1f77ea9f9c5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ab85d2835461dc1c27b1cb1f77ea9f9c5">onLocalAudioStats:</a></td></tr>
-<tr class="separator:ab85d2835461dc1c27b1cb1f77ea9f9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05b8ec4ebe99c0fb59ca81bbd73536c2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a05b8ec4ebe99c0fb59ca81bbd73536c2">onLocalVideoStats:</a></td></tr>
-<tr class="separator:a05b8ec4ebe99c0fb59ca81bbd73536c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60d87b5a444fff6ff043cef6e992f999"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a60d87b5a444fff6ff043cef6e992f999">onRemoteAudioStats:</a></td></tr>
-<tr class="separator:a60d87b5a444fff6ff043cef6e992f999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d55f6d525ae9aa820da54f36f4bfc86"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a5d55f6d525ae9aa820da54f36f4bfc86">onRemoteVideoStats:</a></td></tr>
-<tr class="separator:a5d55f6d525ae9aa820da54f36f4bfc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990af8724d6ec80b5d61f3adb2c7ae17"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a990af8724d6ec80b5d61f3adb2c7ae17">onMeetingEncryptionStateChanged:</a></td></tr>
+<tr class="separator:a990af8724d6ec80b5d61f3adb2c7ae17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d6d635aa34fff27499e152714667d9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ab5d6d635aa34fff27499e152714667d9">onChatMessageSend:errorCode:</a></td></tr>
 <tr class="separator:ab5d6d635aa34fff27499e152714667d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66804f19c51d221dbc0108922eb48f8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ad66804f19c51d221dbc0108922eb48f8">onChatMessageReceived:</a></td></tr>
 <tr class="separator:ad66804f19c51d221dbc0108922eb48f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4bafd6d7a5e5c6b61545b6af6254426"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ab4bafd6d7a5e5c6b61545b6af6254426">onLocalNetworkQuality:</a></td></tr>
-<tr class="separator:ab4bafd6d7a5e5c6b61545b6af6254426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1714b3c02ce1b127f956aee8f77f0a1"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#aa1714b3c02ce1b127f956aee8f77f0a1">onRemoteNetworkQuality:state:</a></td></tr>
-<tr class="separator:aa1714b3c02ce1b127f956aee8f77f0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab692da1765c0fed9119d8221a065e13d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#ab692da1765c0fed9119d8221a065e13d">onActiveVideoUserChanged:</a></td></tr>
-<tr class="separator:ab692da1765c0fed9119d8221a065e13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5dbdcb84fd08bd59618f0c98ff4e38"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#a4b5dbdcb84fd08bd59618f0c98ff4e38">onClosedCaptionsData:</a></td></tr>
+<tr class="separator:a4b5dbdcb84fd08bd59618f0c98ff4e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdacedaa99e03c157a85a527163e4b7"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_rcv_meeting_event_handler-p.html#aefdacedaa99e03c157a85a527163e4b7">onClosedCaptionsStateChanged:</a></td></tr>
+<tr class="separator:aefdacedaa99e03c157a85a527163e4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="protocol_rcv_meeting_event_handler-p.html">RcvMeetingEventHandler</a></b> class is an interface class to send the meeting-level event callbacks to the application. The application inherits the methods of this interface class to get those event callbacks. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a id="a994e7bdc01452ac4676ae99db472261f" name="a994e7bdc01452ac4676ae99db472261f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a994e7bdc01452ac4676ae99db472261f">&#9670;&#160;</a></span>onActiveSpeakerUserChanged:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onActiveSpeakerUserChanged: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when the active speaker user is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object of the new active speaker </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab692da1765c0fed9119d8221a065e13d" name="ab692da1765c0fed9119d8221a065e13d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab692da1765c0fed9119d8221a065e13d">&#9670;&#160;</a></span>onActiveVideoUserChanged:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onActiveVideoUserChanged: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when the active video user is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object of the current active video user </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ad66804f19c51d221dbc0108922eb48f8" name="ad66804f19c51d221dbc0108922eb48f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad66804f19c51d221dbc0108922eb48f8">&#9670;&#160;</a></span>onChatMessageReceived:</h2>
 
@@ -261,78 +204,55 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ab85d2835461dc1c27b1cb1f77ea9f9c5" name="ab85d2835461dc1c27b1cb1f77ea9f9c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab85d2835461dc1c27b1cb1f77ea9f9c5">&#9670;&#160;</a></span>onLocalAudioStats:</h2>
+<a id="a4b5dbdcb84fd08bd59618f0c98ff4e38" name="a4b5dbdcb84fd08bd59618f0c98ff4e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5dbdcb84fd08bd59618f0c98ff4e38">&#9670;&#160;</a></span>onClosedCaptionsData:</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) onLocalAudioStats: </td>
+          <td class="memname">- (void) onClosedCaptionsData: </td>
           <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_local_audio_stats-p.html">RcvLocalAudioStats</a> &gt;)&#160;</td>
-          <td class="paramname"><em>stats</em></td>
+          <td class="paramtype">(nonnull NSArray&lt; <a class="el" href="interface_rcv_closed_captions_data.html">RcvClosedCaptionsData</a> * &gt; *)&#160;</td>
+          <td class="paramname"><em>data</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Reports the statistics of the local audio stream.</p>
+<p >Occurs when the meeting closed captions data are received.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stats</td><td>The local audio stream stats instance </td></tr>
+    <tr><td class="paramname">data</td><td>The closed captions data </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_rcv_closed_captions_data.html">RcvClosedCaptionsData</a> </dd></dl>
 
 </div>
 </div>
-<a id="ab4bafd6d7a5e5c6b61545b6af6254426" name="ab4bafd6d7a5e5c6b61545b6af6254426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4bafd6d7a5e5c6b61545b6af6254426">&#9670;&#160;</a></span>onLocalNetworkQuality:</h2>
+<a id="aefdacedaa99e03c157a85a527163e4b7" name="aefdacedaa99e03c157a85a527163e4b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefdacedaa99e03c157a85a527163e4b7">&#9670;&#160;</a></span>onClosedCaptionsStateChanged:</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) onLocalNetworkQuality: </td>
+          <td class="memname">- (void) onClosedCaptionsStateChanged: </td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="_rcv_nqi_state_8h.html#a5db1e5cda1cea038d9023ed326fa952a">RcvNqiState</a>)&#160;</td>
+          <td class="paramtype">(<a class="el" href="_rcv_closed_captions_state_8h.html#a9970bfb02e320b66806496da9f377da7">RcvClosedCaptionsState</a>)&#160;</td>
           <td class="paramname"><em>state</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Reports the network quality of the local user.</p>
+<p >Occurs when the meeting closed captions state changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td>Indicates the network quality of the local user </td></tr>
+    <tr><td class="paramname">state</td><td>The closed captions state </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a05b8ec4ebe99c0fb59ca81bbd73536c2" name="a05b8ec4ebe99c0fb59ca81bbd73536c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05b8ec4ebe99c0fb59ca81bbd73536c2">&#9670;&#160;</a></span>onLocalVideoStats:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onLocalVideoStats: </td>
-          <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_local_video_stats-p.html">RcvLocalVideoStats</a> &gt;)&#160;</td>
-          <td class="paramname"><em>stats</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Reports the statistics of the uploading local video stream.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The local video stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_rcv_closed_captions_state_8h.html#a9970bfb02e320b66806496da9f377da7">RcvClosedCaptionsState</a> </dd></dl>
 
 </div>
 </div>
@@ -380,6 +300,32 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a990af8724d6ec80b5d61f3adb2c7ae17" name="a990af8724d6ec80b5d61f3adb2c7ae17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990af8724d6ec80b5d61f3adb2c7ae17">&#9670;&#160;</a></span>onMeetingEncryptionStateChanged:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onMeetingEncryptionStateChanged: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_rcv_end_to_end_encryption_state_8h.html#ac0eb7c1b36b4dafb8cb90290315251ce">RcvEndToEndEncryptionState</a>)&#160;</td>
+          <td class="paramname"><em>state</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Occurs when the meeting end-to-end encryption state changes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Indicates end-to-end encryption meeting state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_rcv_end_to_end_encryption_state_8h.html#ac0eb7c1b36b4dafb8cb90290315251ce">RcvEndToEndEncryptionState</a> </dd></dl>
+
+</div>
+</div>
 <a id="aff8d0d55efb074b62f922ea7f813f37e" name="aff8d0d55efb074b62f922ea7f813f37e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff8d0d55efb074b62f922ea7f813f37e">&#9670;&#160;</a></span>onMeetingLockStateChanged:</h2>
 
@@ -399,6 +345,56 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">locked</td><td>Indicates meeting is locked or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff20eb55c0cf2e35751d1bfc3e9a9420" name="aff20eb55c0cf2e35751d1bfc3e9a9420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff20eb55c0cf2e35751d1bfc3e9a9420">&#9670;&#160;</a></span>onMeetingStateChanged:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onMeetingStateChanged: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2">RcvMeetingState</a>)&#160;</td>
+          <td class="paramname"><em>state</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Occurs when the meeting state is changed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The latest meeting state of the users </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b9aaffccb669d30c82dec4e5faee6b2" name="a0b9aaffccb669d30c82dec4e5faee6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9aaffccb669d30c82dec4e5faee6b2">&#9670;&#160;</a></span>onRecordingAllowChanged:</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onRecordingAllowChanged: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>allowed</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Occurs when the meeting recording privilege changes. For example, when a user assigns as the moderator..</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowed</td><td>Indicates recording privilege is allowed or not </td></tr>
   </table>
   </dd>
 </dl>
@@ -428,192 +424,6 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_rcv_recording_state_8h.html#a1913de6b6a88d387d9119e7786081585">RcvRecordingState</a> </dd></dl>
-
-</div>
-</div>
-<a id="a60d87b5a444fff6ff043cef6e992f999" name="a60d87b5a444fff6ff043cef6e992f999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60d87b5a444fff6ff043cef6e992f999">&#9670;&#160;</a></span>onRemoteAudioStats:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onRemoteAudioStats: </td>
-          <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_remote_audio_stats-p.html">RcvRemoteAudioStats</a> &gt;)&#160;</td>
-          <td class="paramname"><em>stats</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Reports the statistics of the audio stream from each remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The remote audio stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa1714b3c02ce1b127f956aee8f77f0a1" name="aa1714b3c02ce1b127f956aee8f77f0a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1714b3c02ce1b127f956aee8f77f0a1">&#9670;&#160;</a></span>onRemoteNetworkQuality:state:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onRemoteNetworkQuality: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">state:</td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="_rcv_nqi_state_8h.html#a5db1e5cda1cea038d9023ed326fa952a">RcvNqiState</a>)&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Reports the network quality of the remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object </td></tr>
-    <tr><td class="paramname">state</td><td>Indicates the network quality of the remote user </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5d55f6d525ae9aa820da54f36f4bfc86" name="a5d55f6d525ae9aa820da54f36f4bfc86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d55f6d525ae9aa820da54f36f4bfc86">&#9670;&#160;</a></span>onRemoteVideoStats:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onRemoteVideoStats: </td>
-          <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_remote_video_stats-p.html">RcvRemoteVideoStats</a> &gt;)&#160;</td>
-          <td class="paramname"><em>stats</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Reports the statistics of the video stream from each remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The remote video stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a33617caecaa22c428c88913762670d0f" name="a33617caecaa22c428c88913762670d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33617caecaa22c428c88913762670d0f">&#9670;&#160;</a></span>onUserJoined:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onUserJoined: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when a new user joins a meeting.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object who is joining the meeting </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9e3766ef81fddf46476c63f670867531" name="a9e3766ef81fddf46476c63f670867531"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e3766ef81fddf46476c63f670867531">&#9670;&#160;</a></span>onUserLeave:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onUserLeave: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when a user leaves or disconnects from a meeting.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object who is leaving the meeting </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac94257e4fa7f91a7440c8edccad310e9" name="ac94257e4fa7f91a7440c8edccad310e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac94257e4fa7f91a7440c8edccad310e9">&#9670;&#160;</a></span>onUserRoleChanged:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onUserRoleChanged: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when a user role has changed, such as a user being assigned as the moderator.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object whose role is changed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a785b7e5d7d6fb7154750664a215a325f" name="a785b7e5d7d6fb7154750664a215a325f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a785b7e5d7d6fb7154750664a215a325f">&#9670;&#160;</a></span>onUserUpdated:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) onUserUpdated: </td>
-          <td></td>
-          <td class="paramtype">(nullable <a class="el" href="interface_rcv_i_participant.html">RcvIParticipant</a> *)&#160;</td>
-          <td class="paramname"><em>participant</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Occurs when a user's state changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object whose state is changed. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

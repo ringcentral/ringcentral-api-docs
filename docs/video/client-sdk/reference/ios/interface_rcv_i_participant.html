@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -256,6 +263,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:af0c9af82561338151e990ac2c29985d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0293989efbb68c749029ffc8b24a31c0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_i_participant.html#a0293989efbb68c749029ffc8b24a31c0">isFirstTimeAudioConnected</a></td></tr>
 <tr class="separator:a0293989efbb68c749029ffc8b24a31c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353f5d9ae34c3b28d859856bef0fc88c"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="_rcv_e_echo_leak_type_8h.html#aa88e7704c635e42b57e8f4988fb45a8d">RcvEEchoLeakType</a>)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_i_participant.html#a353f5d9ae34c3b28d859856bef0fc88c">getEchoLeakType</a></td></tr>
+<tr class="separator:a353f5d9ae34c3b28d859856bef0fc88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >IParticipant interface used to manage Participant </p>
@@ -438,6 +447,23 @@ Instance Methods</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">- (nonnull NSString *) getDepartment </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a353f5d9ae34c3b28d859856bef0fc88c" name="a353f5d9ae34c3b28d859856bef0fc88c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353f5d9ae34c3b28d859856bef0fc88c">&#9670;&#160;</a></span>getEchoLeakType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="_rcv_e_echo_leak_type_8h.html#aa88e7704c635e42b57e8f4988fb45a8d">RcvEEchoLeakType</a>) getEchoLeakType </td>
           <td></td>
           <td class="paramname"></td>
           <td></td>

@@ -10,6 +10,7 @@ var searchData=
   ['didchangevideoservermute_7',['didChangeVideoServerMute',['../interface_rcv_i_participant.html#a61d284146eb9f394342380a69d2d43bb',1,'RcvIParticipant']]],
   ['didreceivefirstframe_8',['didReceiveFirstFrame',['../protocol_r_c_video_view_delegate-p.html#ace22c497a7effad20a6a997c04b1a5a1',1,'RCVideoViewDelegate-p']]],
   ['disableaudio_9',['disableAudio',['../interface_rcv_audio_controller.html#ab80cbf3e9f3a357c47cb3c379e9e76e5',1,'RcvAudioController']]],
-  ['disablespeakerphone_10',['disableSpeakerphone',['../interface_rcv_audio_controller.html#a3494a25afb4b2a35f1267cadd8c144e3',1,'RcvAudioController']]],
-  ['displayname_11',['displayName',['../interface_rcv_i_participant.html#a28bd12a3b90ccd7c3529ca282cf64ef5',1,'RcvIParticipant']]]
+  ['disableendtoendencryption_10',['disableEndToEndEncryption',['../interface_rcv_meeting_controller.html#a355eeade6bff8cc112686851dcdadb5d',1,'RcvMeetingController']]],
+  ['disablespeakerphone_11',['disableSpeakerphone',['../interface_rcv_audio_controller.html#a3494a25afb4b2a35f1267cadd8c144e3',1,'RcvAudioController']]],
+  ['displayname_12',['displayName',['../interface_rcv_i_participant.html#a28bd12a3b90ccd7c3529ca282cf64ef5',1,'RcvIParticipant']]]
 ];

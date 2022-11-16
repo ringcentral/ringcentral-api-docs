@@ -10,6 +10,6 @@ var _rcv_e_participant_status_8h =
       [ "RcvEParticipantStatusACTIVE", "_rcv_e_participant_status_8h.html#aee48121231d0f28492ed2dd7b6ce9025a2f6f199d2270f8b48bd455cacd64881f", null ],
       [ "RcvEParticipantStatusINWAITINGROOM", "_rcv_e_participant_status_8h.html#aee48121231d0f28492ed2dd7b6ce9025a9f02fb65d4fa7d10178d36f1bcf5a489", null ],
       [ "RcvEParticipantStatusWAITINGROOMJOINING", "_rcv_e_participant_status_8h.html#aee48121231d0f28492ed2dd7b6ce9025a1f26d2e0297271bae7882127800149a0", null ],
-      [ "RcvEParticipantStatusINVISIBALE", "_rcv_e_participant_status_8h.html#aee48121231d0f28492ed2dd7b6ce9025aa5cff0116ab4ac2676b2b25b2d60fb78", null ]
+      [ "RcvEParticipantStatusINVISIBLE", "_rcv_e_participant_status_8h.html#aee48121231d0f28492ed2dd7b6ce9025a057d587328d5075acf8574d38a5022cb", null ]
     ] ]
 ];

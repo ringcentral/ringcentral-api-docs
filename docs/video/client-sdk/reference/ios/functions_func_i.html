@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -100,15 +107,19 @@ $(document).ready(function(){initNavTree('functions_func_i.html',''); initResiza
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>id&#160;:&#160;<a class="el" href="protocol_rcv_meeting_dial_country_info-p.html#a8382b33596d0d715ad2b56546d9aa95d">&lt;RcvMeetingDialCountryInfo&gt;</a></li>
 <li>inAudioStreamActivity&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a8d00e5e678fb9a3cd5456b1cd4b7422c">RcvIParticipant</a></li>
-<li>init&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a28663731ea6ecbb8cdb52064ebdb73cd">RCVideoCanvas</a></li>
-<li>initWithUid:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#aa0bb7c07918e25f010942aad57dcd12b">RCVideoCanvas</a></li>
+<li>initWithView:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a1dd92783d7ad45b1ac305641075f5727">RCVideoCanvas</a></li>
+<li>initWithView:Uid:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a4888dc2b8f40282a54b114825ac0dea7">RCVideoCanvas</a></li>
+<li>initWithView:Uid:RenderMode:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a69544febe7e26ce1e77b1d34dbc88b9b">RCVideoCanvas</a></li>
+<li>initWithView:Uid:RenderMode:isMirrorMode:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#abc018e3182c4a4bbbfc458d736e9d796">RCVideoCanvas</a></li>
 <li>instance&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a71a44df103bcd9d5fe347f2981ff584e">RcvEngine</a></li>
 <li>isAllowJoinBeforeHost&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a8065cdbe7f0d431e402f2b17f01f7121">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a65b02a544551afd60bf77aaf9d735217">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#ad3e2a0cc7a51384709369397884ab4a5">RcvScheduleMeetingSettings</a></li>
 <li>isAllowScreenSharing&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#ac6a37d512ce089d3b583145a2678fd42">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a1e3b1af6ff67bc5d867a816fa80caa04">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a5d97a3749c7bb5f7b6678e501fcae4f9">RcvScheduleMeetingSettings</a></li>
 <li>isAllowUmuteAudio&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#ace20131c50db8c304734b38e4b68f819">RcvIParticipant</a></li>
 <li>isAllowUmuteVideo&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#acec19e645b8253cf8b45a7025a2c1092">RcvIParticipant</a></li>
+<li>isClosedCaptionsAllowed&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_controller.html#a20379032b7c2e0e50ac7744411550784">RcvClosedCaptionsController</a></li>
 <li>isDeleted&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a36476452608b2eca7f10ed8c4d46c476">RcvIParticipant</a></li>
 <li>isE2eeEnabled&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#aa79c191f0595d91af991c03ecb52e9f7">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#abddf3f4c781ca32de43977b24eb29cb3">RcvScheduleMeetingSettings</a></li>
+<li>isEndToEndEncryptionAllowed&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a0b85eedfc58d7b3b34359889746de4bb">RcvMeetingController</a></li>
 <li>isFirstTimeAudioConnected&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a0293989efbb68c749029ffc8b24a31c0">RcvIParticipant</a></li>
 <li>isGuest&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#adab9b3694f9dc1b8017ec76ef9d7245b">RcvIParticipant</a></li>
 <li>isHidden&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#af0c9af82561338151e990ac2c29985d8">RcvIParticipant</a></li>
@@ -117,7 +128,7 @@ $(document).ready(function(){initNavTree('functions_func_i.html',''); initResiza
 <li>isLocalSharing&#160;:&#160;<a class="el" href="interface_rcv_sharing_controller.html#a33d0a388479b1307feb19083707e3edc">RcvSharingController</a></li>
 <li>isMe&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a6fe49c64901a0aeb9aca6fcf57391588">RcvIParticipant</a></li>
 <li>isMeetingLocked&#160;:&#160;<a class="el" href="interface_rcv_meeting_controller.html#a39ca0b79fb10e1f980128e593bc74f1a">RcvMeetingController</a></li>
-<li>isMirrorMode&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#a1110d47abd4a4e1d95d695d5d6ce9258">&lt;RcvVideoCanvas&gt;</a></li>
+<li>isMirrorMode&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a04ef51ff720b0cf2abe1de68de285199">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#a1110d47abd4a4e1d95d695d5d6ce9258">&lt;RcvVideoCanvas&gt;</a></li>
 <li>isMobileUser&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a7303a517caa84fab6a680a1322ea59ee">RcvIParticipant</a></li>
 <li>isModerator&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a00f21d3e035cd53dd38db000b3f4de5e">RcvIParticipant</a></li>
 <li>isMuted&#160;:&#160;<a class="el" href="interface_rcv_audio_controller.html#a222cb6c19fa0f3a914b0a97aaf802494">RcvAudioController</a>, <a class="el" href="interface_rcv_video_controller.html#aee39a9b95423574b734cc90265fe64f3">RcvVideoController</a></li>

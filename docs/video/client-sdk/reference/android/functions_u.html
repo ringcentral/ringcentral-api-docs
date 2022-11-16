@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -98,11 +105,21 @@ $(document).ready(function(){initNavTree('functions_u.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>UNACTIVATED&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_recording_state.html#a5df7bedf82ff7f6c21a0baf487ae04f5">com.ringcentral.video.RecordingState</a></li>
-<li>UNKNOWN&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_e_nqi_status.html#aa8899c87692f25dcb601c5f63d2ed6cb">com.ringcentral.video.ENqiStatus</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_e_stream_activity.html#ab2fe1c2eebe6dd9bcd978963d64600c5">com.ringcentral.video.EStreamActivity</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_leave_reason.html#ad71e91ada338c87048e6a1767f19f1c0">com.ringcentral.video.LeaveReason</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html#ad28a61551b2b59b52f485fed7b6782a0">com.ringcentral.video.NqiState</a></li>
+<li>UNACTIVATED&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_closed_captions_state.html#a6a9fa18db699ba89b1ab38bcf686264d">com.ringcentral.video.ClosedCaptionsState</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_recording_state.html#a5df7bedf82ff7f6c21a0baf487ae04f5">com.ringcentral.video.RecordingState</a></li>
+<li>UNKNOWN&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_e_nqi_status.html#aa8899c87692f25dcb601c5f63d2ed6cb">com.ringcentral.video.ENqiStatus</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_e_stream_activity.html#ab2fe1c2eebe6dd9bcd978963d64600c5">com.ringcentral.video.EStreamActivity</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_leave_reason.html#ad71e91ada338c87048e6a1767f19f1c0">com.ringcentral.video.LeaveReason</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html#ac445ded02352d7bf38bc1dcef64c82ac">com.ringcentral.video.MeetingState</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html#ad28a61551b2b59b52f485fed7b6782a0">com.ringcentral.video.NqiState</a></li>
 <li>UNLOCKED&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_sharing_settings.html#aa0c6d0575cfca3db86674ea6c0978d70">com.ringcentral.video.SharingSettings</a></li>
-<li>unregisterEventHandler()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ac7d539c8ab0d27fb3454bad33ea41db8">com.ringcentral.video.AudioController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_device_manager.html#a1f6aa6ec80d597638f1d7dbd06673624">com.ringcentral.video.AudioDeviceManager</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#aea6f56f3a63e3e00bec8b62608ca30b0">com.ringcentral.video.MeetingController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a2e27291128e0bac36b33488bd7489ab9">com.ringcentral.video.RcvEngine</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#a88e9fd292dc0d9b4cbeb2ee8aaf73119">com.ringcentral.video.SharingController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a8d00d975ab991870f32a5534385ec35d">com.ringcentral.video.VideoController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_device_manager.html#a456a6d8111512360e219dd72195322b2">com.ringcentral.video.VideoDeviceManager</a></li>
+<li>unlockMeeting()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#a16289fbb724bb86dc250f972254e0d0e">com.ringcentral.video.MeetingController</a></li>
+<li>unlockSharing()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#a8b55b64a58dbe8717495a737ae70db16">com.ringcentral.video.SharingController</a></li>
+<li>unmuteAllRemoteAudioStreams()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#af9232eb19fc0add690488cc26525afd8">com.ringcentral.video.AudioController</a></li>
+<li>unmuteAllRemoteVideoStreams()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a7d5109a8bf911d76376b81a9387daf5a">com.ringcentral.video.VideoController</a></li>
+<li>unmuteLocalAudioStream()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ad79d95ddd4d8b3f68f9bbf0234728b77">com.ringcentral.video.AudioController</a></li>
+<li>unmuteLocalVideoStream()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0f235040c3c087bbfc6d0b951eccae28">com.ringcentral.video.VideoController</a></li>
+<li>unmuteRemoteAudioStream()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a1447038a2cf1a527995206d7ca671bde">com.ringcentral.video.AudioController</a></li>
+<li>unmuteRemoteVideoStream()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0adc220f46e937d0d85126b2dd532a5a">com.ringcentral.video.VideoController</a></li>
+<li>unregisterEventHandler()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ac7d539c8ab0d27fb3454bad33ea41db8">com.ringcentral.video.AudioController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_device_manager.html#a1f6aa6ec80d597638f1d7dbd06673624">com.ringcentral.video.AudioDeviceManager</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#aea6f56f3a63e3e00bec8b62608ca30b0">com.ringcentral.video.MeetingController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_user_controller.html#a25b6a4e881d757ad5d20d61de7e33370">com.ringcentral.video.MeetingUserController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a2e27291128e0bac36b33488bd7489ab9">com.ringcentral.video.RcvEngine</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#a88e9fd292dc0d9b4cbeb2ee8aaf73119">com.ringcentral.video.SharingController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a8d00d975ab991870f32a5534385ec35d">com.ringcentral.video.VideoController</a>, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_device_manager.html#a456a6d8111512360e219dd72195322b2">com.ringcentral.video.VideoDeviceManager</a></li>
+<li>unregisterMeetingStatisticEventHandler()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#a72bd952d0b6ce38241c55358e09200ae">com.ringcentral.video.MeetingController</a></li>
 <li>updatePersonalMeetingSettings()&#160;:&#160;<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_context_controller.html#a62a494171bd04f08dfae73e6b507b1b1">com.ringcentral.video.MeetingContextController</a></li>
+<li>USER&#160;:&#160;<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_recording_mode.html#a1bf033f56e0a9dd9eefc5753de1845f6">com.ringcentral.video.RecordingMode</a>, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_transcriptions_mode.html#a0af06c928a72b5ea2761ee075533b9ef">com.ringcentral.video.TranscriptionsMode</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

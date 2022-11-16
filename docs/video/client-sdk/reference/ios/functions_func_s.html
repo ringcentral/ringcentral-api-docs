@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,42 +112,44 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>setAllowScreenSharing:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a2eedcd0b32d0f4b83e8a4a2e328b8e0c">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a78a545caf5c6b59e9a4b4ffb0f1e30f2">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#ae2abaa69fa762cf243fe8fae3cb11bad">RcvScheduleMeetingSettings</a></li>
 <li>setAppGroupName:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#af63998cb6d247701e03e7287f6a05e1b">RcvEngine</a></li>
 <li>setAuthToken:autoRefresh:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#aa6e087f04c1bb2377a178b8f2b1febe8">RcvEngine</a></li>
+<li>setAutoRefresh:&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#ad3e5b2a08821c1578a56c3ad8bc3944a">RcvOauthOptions</a></li>
 <li>setChatPrivilege:&#160;:&#160;<a class="el" href="interface_rcv_meeting_chat_controller.html#abbf9d8c0ad8b2356d9eca15e0a9501b4">RcvMeetingChatController</a></li>
-<li>setDefaultAudioRouteToSpeakerphone:&#160;:&#160;<a class="el" href="interface_rcv_audio_controller.html#abbdd9cb6b141f4a52dc1b47d5cc70211">RcvAudioController</a></li>
 <li>setDevice:&#160;:&#160;<a class="el" href="interface_rcv_video_device_manager.html#a58f56d401ac176b9b8a7f66abe4282cf">RcvVideoDeviceManager</a></li>
 <li>setEnableE2ee:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a7c6b0c319f32ceef50eb2fc434e51d53">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#ad73639d37849df181425303d131749ce">RcvScheduleMeetingSettings</a></li>
 <li>setEnableWaitingRoom:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#ae94e903e89e6a2553ec93573e5e5253c">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#ad5795f82e5e74c1139e9697643750597">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a3b0f2097ad870213668323fc463dcb9a">RcvScheduleMeetingSettings</a></li>
+<li>setGrantType:&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#ac22cfc83392b743705e6099e04fa1a87">RcvOauthOptions</a></li>
+<li>setJwt:&#160;:&#160;<a class="el" href="interface_rcv_oauth_options.html#a7fa90a02b916d777f50b91cce94dec44">RcvOauthOptions</a></li>
 <li>setLocalAudioProcessor:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a9de5d14315a4a18f68081780ce4b7131">RcvEngine</a></li>
 <li>setLocalVideoProcessor:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#aa7ed0eef72f1bb4fdb96a8d4fa9aa514">RcvEngine</a></li>
 <li>setMeetingName:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#ae85dc5ad4a1ed975d16794575e6b185d">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a58ed6568a20145142b927436ea432501">RcvScheduleMeetingSettings</a></li>
 <li>setMeetingPassword:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a9c4b490cf2c35aa6b6b9c064b5c1cdb6">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a40a413a7395b5cfe4285109df03cea36">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a80a82d67c828788c576cca93081e13f7">RcvScheduleMeetingSettings</a></li>
-<li>setMirrorMode:&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#a67fab169d455d3ca437fa127e79ba14d">&lt;RcvVideoCanvas&gt;</a></li>
+<li>setMirrorMode:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a3abcd014a6522b3ac615204adf653fcf">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#a67fab169d455d3ca437fa127e79ba14d">&lt;RcvVideoCanvas&gt;</a></li>
 <li>setMuteAudio:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a95aa70206c55407e64555d765fd01ed1">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a0961181b08681ce0a1cef68544cea4fc">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#ac2f0fbe5af76652b1cb7603526322b58">RcvScheduleMeetingSettings</a></li>
 <li>setMuteVideo:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a31d23c11d7a9b413730cdba5802d3890">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#ad77375c06d97d3ff947d584b9c4ce4a0">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#afe1d8805516cc5e84d5bd2eb0cac8b04">RcvScheduleMeetingSettings</a></li>
 <li>setOnlyAuthUserCanJoin:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a386dfa7325322aa0d13276961fce3816">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a061fecb95d617845be09da9b98d5d11d">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a0cd8ba07a5ad8df57532b25ff08eb558">RcvScheduleMeetingSettings</a></li>
 <li>setOnlyCoworkersCanJoin:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a7be7f9974599c1b50f74aa2510e08220">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a2cb571469759c07f1f7300b2bcac68a2">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a5e9828d909f19f685b8d7a4fd60738f5">RcvScheduleMeetingSettings</a></li>
-<li>setPassword:&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#aa14421195e27549d9200d5a089f07db9">RcvMeetingOptions</a></li>
+<li>setPassword:&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#aa14421195e27549d9200d5a089f07db9">RcvMeetingOptions</a>, <a class="el" href="interface_rcv_oauth_options.html#a80bef864de7c839e341b92273a988a8a">RcvOauthOptions</a></li>
 <li>setPersonalRoomName:&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#af023f8930cc8d1e51f7ae392807145da">RcvPersonalMeetingSettings</a></li>
 <li>setPlaybackDevice:&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#aa61e420f77ea24b0f7f17e92a71dd7d1">RcvAudioDeviceManager</a></li>
 <li>setPlaybackDeviceVolume:&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#aff5272d8031636065a3d3b4e91d58317">RcvAudioDeviceManager</a></li>
 <li>setRecordingDevice:&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#a6d1c46c1122eafe4b83c32b1721c4036">RcvAudioDeviceManager</a></li>
 <li>setRecordingDeviceVolume:&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#ab184afa778554d4f2cb6f984bfb94937">RcvAudioDeviceManager</a></li>
 <li>setRemoteViewHidden:&#160;:&#160;<a class="el" href="interface_r_c_video_view.html#ac584feffb205901e75af442cf3c08123">RCVideoView</a></li>
-<li>setRenderMode:&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#a78344bb2d3058664d8085bdf23908533">&lt;RcvVideoCanvas&gt;</a></li>
+<li>setRenderMode:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a6ef90df235a2cf9cabf594af023be5b5">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#a78344bb2d3058664d8085bdf23908533">&lt;RcvVideoCanvas&gt;</a></li>
 <li>setRequirePassword:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a3021f3cc4ba08f5b6b172c1709f96973">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a6b1c33e8d304b723763e38cbb7ad139e">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a4f4062f2e6de78c22b27ccaad138b490">RcvScheduleMeetingSettings</a></li>
 <li>setShortIdentifier:&#160;:&#160;<a class="el" href="interface_rcv_personal_meeting_settings.html#ab8045f742ef9945fe2da86e97d28330d">RcvPersonalMeetingSettings</a></li>
-<li>setUid:&#160;:&#160;<a class="el" href="protocol_rcv_video_canvas-p.html#ab8e66b4597bd3a892db8303ac0145f4d">&lt;RcvVideoCanvas&gt;</a></li>
+<li>setUid:&#160;:&#160;<a class="el" href="interface_r_c_video_canvas.html#a928f408e1db4cfea40a47008fe9b4f42">RCVideoCanvas</a>, <a class="el" href="protocol_rcv_video_canvas-p.html#ab8e66b4597bd3a892db8303ac0145f4d">&lt;RcvVideoCanvas&gt;</a></li>
 <li>setupActiveVideo:&#160;:&#160;<a class="el" href="interface_rcv_video_controller.html#a047f7aec675eff104299036e9540ad2f">RcvVideoController</a></li>
-<li>setupLocalSharing:&#160;:&#160;<a class="el" href="interface_rcv_sharing_controller.html#af2c2cfb180144da644003ebc291441e9">RcvSharingController</a></li>
 <li>setupLocalVideo:&#160;:&#160;<a class="el" href="interface_rcv_video_controller.html#a3b440c7f0497bcb1128b1f60cd57af55">RcvVideoController</a></li>
 <li>setupRemoteSharing:&#160;:&#160;<a class="el" href="interface_rcv_sharing_controller.html#ae2e2d57f03aefe3b584af50aae7fb9bc">RcvSharingController</a></li>
 <li>setupRemoteVideo:&#160;:&#160;<a class="el" href="interface_rcv_video_controller.html#aa0d57edc86666b08bcef707016c9e085">RcvVideoController</a></li>
 <li>setUsePmi:&#160;:&#160;<a class="el" href="interface_rcv_schedule_meeting_settings.html#adeaffde7724559f5c056c64a1a459559">RcvScheduleMeetingSettings</a></li>
-<li>setUserName:&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#a55551e07211ecefa0ab9dc3ffc6facdd">RcvMeetingOptions</a></li>
+<li>setUserName:&#160;:&#160;<a class="el" href="interface_rcv_meeting_options.html#a55551e07211ecefa0ab9dc3ffc6facdd">RcvMeetingOptions</a>, <a class="el" href="interface_rcv_oauth_options.html#ad8f10d996cf46c6f90fdf0c63dda3b65">RcvOauthOptions</a></li>
 <li>setWaitingRoomMode:&#160;:&#160;<a class="el" href="interface_rcv_instant_meeting_settings.html#a3523f2ded83471d1350e4dd852848ac6">RcvInstantMeetingSettings</a>, <a class="el" href="interface_rcv_personal_meeting_settings.html#a7250415cb36747084935ffad6c333d4d">RcvPersonalMeetingSettings</a>, <a class="el" href="interface_rcv_schedule_meeting_settings.html#a7b5b355f35294920057e632e459aaac3">RcvScheduleMeetingSettings</a></li>
 <li>setWaitingRoomUmi:&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a51cc5bb58793b07d1a405723f5db18eb">RcvIParticipant</a></li>
 <li>setWaitingRoomUmiBeforeBR:&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a4ce260533bb41efee4cd3b52acec89d7">RcvIParticipant</a></li>
 <li>showRenderer&#160;:&#160;<a class="el" href="interface_rcv_base_video_view.html#aa4f07649c8b7897b78354810255bf952">RcvBaseVideoView</a></li>
+<li>startClosedCaptions&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_controller.html#a324dde1f328ce0073003875aba4dd54c">RcvClosedCaptionsController</a></li>
 <li>startDeviceTest:&#160;:&#160;<a class="el" href="interface_rcv_video_device_manager.html#abf44b1a392b96a4b3bb9a36788115900">RcvVideoDeviceManager</a></li>
 <li>startInstantMeeting&#160;:&#160;<a class="el" href="interface_rcv_engine.html#aee5898d6a12ac897e4e8df31b7ec09bc">RcvEngine</a></li>
 <li>startInstantMeeting:options:&#160;:&#160;<a class="el" href="interface_rcv_engine.html#a5f46abd52e0fac4834112b4b1a97af1d">RcvEngine</a></li>
@@ -151,6 +160,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>startShareCamera:&#160;:&#160;<a class="el" href="interface_rcv_sharing_controller.html#ac3b8f770a2f6572280a33ae8e13b452d">RcvSharingController</a></li>
 <li>startShareScreen&#160;:&#160;<a class="el" href="interface_rcv_sharing_controller.html#a2ba0287b9df5393767a2bf16f57be1c3">RcvSharingController</a></li>
 <li>status&#160;:&#160;<a class="el" href="interface_rcv_i_participant.html#a0e46ddaa1524bc1ddda33e3ebfb92e96">RcvIParticipant</a></li>
+<li>stopClosedCaptions&#160;:&#160;<a class="el" href="interface_rcv_closed_captions_controller.html#acce78a466aca09a9c5de7315b5cae1b3">RcvClosedCaptionsController</a></li>
 <li>stopDeviceTest&#160;:&#160;<a class="el" href="interface_rcv_video_device_manager.html#a8877b91b4acb0276dfe43f1ac6d9e586">RcvVideoDeviceManager</a></li>
 <li>stopPlaybackDeviceTest&#160;:&#160;<a class="el" href="interface_rcv_audio_device_manager.html#a0441c5f4a4caa9cd815859d774f47068">RcvAudioDeviceManager</a></li>
 <li>stopPreview&#160;:&#160;<a class="el" href="interface_rcv_video_controller.html#afbd1a3313160fe45774517e6a28cddb2">RcvVideoController</a></li>

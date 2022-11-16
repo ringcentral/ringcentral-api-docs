@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -114,22 +121,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2f8f95ac359ef75e48ae615695f8310d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fc04ce3b89c3f581819cf27c54f161d"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a3fc04ce3b89c3f581819cf27c54f161d">onMeetingLeave</a> (String meetingId, long errorCode, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_leave_reason.html">LeaveReason</a> reason)</td></tr>
 <tr class="separator:a3fc04ce3b89c3f581819cf27c54f161d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f5cb68907c9c39eb15e1869068caa5b"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a1f5cb68907c9c39eb15e1869068caa5b">onMeetingStateChanged</a> (String meetingId, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html">MeetingState</a> state)</td></tr>
-<tr class="separator:a1f5cb68907c9c39eb15e1869068caa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a505d0a0e3a255843f824cd6ba1650e5e"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a505d0a0e3a255843f824cd6ba1650e5e">onAuthTokenRenew</a> (long errorCode, String newTokenJsonStr)</td></tr>
-<tr class="separator:a505d0a0e3a255843f824cd6ba1650e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7670c08f0dad5ab4dea99b0c8b2bc0d1"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a7670c08f0dad5ab4dea99b0c8b2bc0d1">onAuthTokenError</a> (long errorCode)</td></tr>
-<tr class="separator:a7670c08f0dad5ab4dea99b0c8b2bc0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae926ee93c7d8d4ab91fd4b66b20b2ac5"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#ae926ee93c7d8d4ab91fd4b66b20b2ac5">onAuthorization</a> (String newTokenJsonStr)</td></tr>
+<tr class="separator:ae926ee93c7d8d4ab91fd4b66b20b2ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e565d7b7c67f11d2d67eb776a86a6e"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a37e565d7b7c67f11d2d67eb776a86a6e">onAuthorizationError</a> (long errorCode)</td></tr>
+<tr class="separator:a37e565d7b7c67f11d2d67eb776a86a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934227cf53e5cd3f2085ee13e36c0cac"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a934227cf53e5cd3f2085ee13e36c0cac">onPersonalMeetingSettingsUpdate</a> (long errorCode, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_personal_meeting_settings.html">PersonalMeetingSettings</a> settings)</td></tr>
 <tr class="separator:a934227cf53e5cd3f2085ee13e36c0cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e77272c7cdb45e40d7a7c2e68c23d25"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a1e77272c7cdb45e40d7a7c2e68c23d25">onMeetingSchedule</a> (long errorCode, <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_schedule_meeting_settings.html">ScheduleMeetingSettings</a> settings)</td></tr>
 <tr class="separator:a1e77272c7cdb45e40d7a7c2e68c23d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ffd45d1919fc45f59955202249652a"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html#a38ffd45d1919fc45f59955202249652a">onMeetingBridge</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_bridge_info.html">MeetingBridgeInfo</a> info)</td></tr>
+<tr class="separator:a38ffd45d1919fc45f59955202249652a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_engine_event_handler.html">EngineEventHandler</a></b> class is an interface class to send the engine-level event callbacks to the application. The application inherits the methods of this interface class to get those event callbacks. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7670c08f0dad5ab4dea99b0c8b2bc0d1" name="a7670c08f0dad5ab4dea99b0c8b2bc0d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7670c08f0dad5ab4dea99b0c8b2bc0d1">&#9670;&#160;</a></span>onAuthTokenError()</h2>
+<a id="ae926ee93c7d8d4ab91fd4b66b20b2ac5" name="ae926ee93c7d8d4ab91fd4b66b20b2ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae926ee93c7d8d4ab91fd4b66b20b2ac5">&#9670;&#160;</a></span>onAuthorization()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +145,40 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onAuthTokenError </td>
+          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onAuthorization </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newTokenJsonStr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Occurs when get token pair action is finished.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newTokenJsonStr</td><td>The new authentication token JSON string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a37e565d7b7c67f11d2d67eb776a86a6e" name="a37e565d7b7c67f11d2d67eb776a86a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e565d7b7c67f11d2d67eb776a86a6e">&#9670;&#160;</a></span>onAuthorizationError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onAuthorizationError </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>errorCode</em></td><td>)</td>
@@ -161,8 +201,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a505d0a0e3a255843f824cd6ba1650e5e" name="a505d0a0e3a255843f824cd6ba1650e5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505d0a0e3a255843f824cd6ba1650e5e">&#9670;&#160;</a></span>onAuthTokenRenew()</h2>
+<a id="a38ffd45d1919fc45f59955202249652a" name="a38ffd45d1919fc45f59955202249652a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ffd45d1919fc45f59955202249652a">&#9670;&#160;</a></span>onMeetingBridge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,21 +211,11 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onAuthTokenRenew </td>
+          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onMeetingBridge </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>errorCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_bridge_info.html">MeetingBridgeInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>newTokenJsonStr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -194,11 +224,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Occurs when renewing token pair action is finished.</p>
+<p >Occurs when getting a meeting bridge information is finished.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">errorCode</td><td>0 means the action succeeds or fails otherwise </td></tr>
-    <tr><td class="paramname">newTokenJsonStr</td><td>The new authentication token JSON string </td></tr>
+    <tr><td class="paramname">info</td><td>The meeting bridge info </td></tr>
   </table>
   </dd>
 </dl>
@@ -338,50 +367,6 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">errorCode</td><td>0 means the action succeeds or fails otherwise </td></tr>
     <tr><td class="paramname">settings</td><td>The schedule meeting settings object </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1f5cb68907c9c39eb15e1869068caa5b" name="a1f5cb68907c9c39eb15e1869068caa5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f5cb68907c9c39eb15e1869068caa5b">&#9670;&#160;</a></span>onMeetingStateChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.EngineEventHandler.onMeetingStateChanged </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>meetingId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html">MeetingState</a>&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when the meeting state is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">meetingId</td><td>The meeting short id </td></tr>
-    <tr><td class="paramname">state</td><td>The latest meeting state of the users </td></tr>
   </table>
   </dd>
 </dl>

@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -103,9 +110,9 @@ $(document).ready(function(){initNavTree('interface_rcv_video_controller.html','
 <table class="directory">
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#aee39a9b95423574b734cc90265fe64f3">isMuted</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a6d17e73b3c860118c41cd2f4bdb4493e">isPreviewMode</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#aa12c20eeabe3b2c3b78c23ecc9b18c5b">muteAllRemoteVideoStream:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a122cb99c14b8dbad3de5d0d146334e29">muteLocalVideoStream:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a8b479a5fbaad50ec14ebf1ed01b8a9c1">muteRemoteVideoStream:mute:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#aa87a3268136ca41f6288fa045268421a">muteAllRemoteVideoStreams:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#ae378f92f09a5e9ed16e5d1c1615d772a">muteLocalVideoStream</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a58850180ce2c01a8405a6c10b42ab2ff">muteRemoteVideoStream:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#aa77f56788d5d28b40063271530e7fbec">registerEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a285686e2f78b4d40119cf9c165afabd3">removeActiveVideo</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a341088927d4485aed921cba9238ee2f3">removeLocalVideo</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
@@ -116,7 +123,10 @@ $(document).ready(function(){initNavTree('interface_rcv_video_controller.html','
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a5a9c54c04345034c5fe2d84acd7342ec">startPreview:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#afbd1a3313160fe45774517e6a28cddb2">stopPreview</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#a0162b3bd6d48a684d3a6c722698affca">switchCamera</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#af0af50fa19c6245cf6150dd40ff3bfc3">unregisterEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#af8594e3438ee50f96796038c00c3375f">unmuteAllRemoteVideoStreams</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#ac60df55b91b4c275a75778fd9df73324">unmuteLocalVideoStream</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#aabc61b870b2be6c6dbd78c9d56accc13">unmuteRemoteVideoStream:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_rcv_video_controller.html#af0af50fa19c6245cf6150dd40ff3bfc3">unregisterEventHandler:</a></td><td class="entry"><a class="el" href="interface_rcv_video_controller.html">RcvVideoController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

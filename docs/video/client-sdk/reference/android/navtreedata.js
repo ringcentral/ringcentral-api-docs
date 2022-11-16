@@ -55,9 +55,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_audio_consumer_8java.html",
-"classcom_1_1ringcentral_1_1video_1_1_meeting_chat_message.html#a90fdd6ce24df5b8f9697be31a0cf457d",
-"classcom_1_1ringcentral_1_1video_1_1_sharing_controller.html#a88e9fd292dc0d9b4cbeb2ee8aaf73119",
-"enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html#a531623b67a3499c8c695561c1448ce8c"
+"classcom_1_1ringcentral_1_1video_1_1_local_audio_stats.html",
+"classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html#a5d10eaf4d080986cab263e402c632073",
+"enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#aa40713052a34e506b5e93e8d5a939311",
+"namespaces.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -106,13 +113,13 @@ $(document).ready(function(){initNavTree('interface_rcv_sharing_controller.html'
 <div class="dynheader">
 Inheritance diagram for RcvSharingController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_sharing_controller__inherit__graph.svg" width="186" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_sharing_controller__inherit__graph.svg" width="186" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RcvSharingController:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_sharing_controller__coll__graph.svg" width="186" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_rcv_sharing_controller__coll__graph.svg" width="186" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -136,14 +143,12 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a33d0a388479b1307feb19083707e3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84964d7aa92fd7a21838d1d1fbfd5178"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#a84964d7aa92fd7a21838d1d1fbfd5178">isRemoteSharing</a></td></tr>
 <tr class="separator:a84964d7aa92fd7a21838d1d1fbfd5178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefb1006ae28de211beb06bdfb51523ac"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#aefb1006ae28de211beb06bdfb51523ac">lockSharing:</a></td></tr>
-<tr class="separator:aefb1006ae28de211beb06bdfb51523ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ae0f3dcce4a4d29318caccfa468a3e"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#ad5ae0f3dcce4a4d29318caccfa468a3e">lockSharing</a></td></tr>
+<tr class="separator:ad5ae0f3dcce4a4d29318caccfa468a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d9b9432b82ccb3ea8bbf70984f9865"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#ac5d9b9432b82ccb3ea8bbf70984f9865">unlockSharing</a></td></tr>
+<tr class="separator:ac5d9b9432b82ccb3ea8bbf70984f9865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2193583deedb0060b21df68c9f98ee41"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#a2193583deedb0060b21df68c9f98ee41">isSharingLocked</a></td></tr>
 <tr class="separator:a2193583deedb0060b21df68c9f98ee41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2c2cfb180144da644003ebc291441e9"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#af2c2cfb180144da644003ebc291441e9">setupLocalSharing:</a></td></tr>
-<tr class="separator:af2c2cfb180144da644003ebc291441e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa826f5128f037747a7662d0fb98554ab"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#aa826f5128f037747a7662d0fb98554ab">removeLocalSharing:</a></td></tr>
-<tr class="separator:aa826f5128f037747a7662d0fb98554ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e2d57f03aefe3b584af50aae7fb9bc"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#ae2e2d57f03aefe3b584af50aae7fb9bc">setupRemoteSharing:</a></td></tr>
 <tr class="separator:ae2e2d57f03aefe3b584af50aae7fb9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c37a9df4fbc13da3f007102b2ffa78b"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_rcv_sharing_controller.html#a0c37a9df4fbc13da3f007102b2ffa78b">removeRemoteSharing:</a></td></tr>
@@ -209,17 +214,16 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aefb1006ae28de211beb06bdfb51523ac" name="aefb1006ae28de211beb06bdfb51523ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefb1006ae28de211beb06bdfb51523ac">&#9670;&#160;</a></span>lockSharing:</h2>
+<a id="ad5ae0f3dcce4a4d29318caccfa468a3e" name="ad5ae0f3dcce4a4d29318caccfa468a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ae0f3dcce4a4d29318caccfa468a3e">&#9670;&#160;</a></span>lockSharing</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (int64_t) lockSharing: </td>
+          <td class="memname">- (int64_t) lockSharing </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>lock</em></td>
+          <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
@@ -227,12 +231,6 @@ Instance Methods</h2></td></tr>
 <p >Locks sharing function.</p>
 <p >If the sharing function is locked and a participant is sharing, then the current sharing will stop right away and participants unable to start the sharing again. However, the host or moderator is still able to start the sharing.</p>
 <dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lock</td><td>Sets whether locks the sharing function. True means lock it, False means not</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>
@@ -263,26 +261,6 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aa826f5128f037747a7662d0fb98554ab" name="aa826f5128f037747a7662d0fb98554ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa826f5128f037747a7662d0fb98554ab">&#9670;&#160;</a></span>removeLocalSharing:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (int64_t) removeLocalSharing: </td>
-          <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas</a> &gt;)&#160;</td>
-          <td class="paramname"><em>canvas</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Unbinds the sharing view with the local user.</p>
-<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
-
-</div>
-</div>
 <a id="a0c37a9df4fbc13da3f007102b2ffa78b" name="a0c37a9df4fbc13da3f007102b2ffa78b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c37a9df4fbc13da3f007102b2ffa78b">&#9670;&#160;</a></span>removeRemoteSharing:</h2>
 
@@ -299,33 +277,6 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Unbinds the sharing view with the remote user.</p>
-<dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
-
-</div>
-</div>
-<a id="af2c2cfb180144da644003ebc291441e9" name="af2c2cfb180144da644003ebc291441e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2c2cfb180144da644003ebc291441e9">&#9670;&#160;</a></span>setupLocalSharing:</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (int64_t) setupLocalSharing: </td>
-          <td></td>
-          <td class="paramtype">(nullable id&lt; <a class="el" href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas</a> &gt;)&#160;</td>
-          <td class="paramname"><em>canvas</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Binds the sharing view with the local user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">canvas</td><td>The video canvas for binding with the local user </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="protocol_rcv_video_canvas-p.html">RcvVideoCanvas</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means success or fails otherwise </dd></dl>
 
 </div>
@@ -467,6 +418,27 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Switches the sharing camera in an active meeting.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ac5d9b9432b82ccb3ea8bbf70984f9865" name="ac5d9b9432b82ccb3ea8bbf70984f9865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d9b9432b82ccb3ea8bbf70984f9865">&#9670;&#160;</a></span>unlockSharing</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int64_t) unlockSharing </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Unlocks sharing function.</p>
+<p >If the sharing function is locked and a participant is sharing, then the current sharing will stop right away and participants unable to start the sharing again. However, the host or moderator is still able to start the sharing.</p>
+<dl class="section note"><dt>Note</dt><dd>Only the meeting host or moderator has permission to invoke this method.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>0 means the action succeeds or fails otherwise </dd></dl>
 
 </div>

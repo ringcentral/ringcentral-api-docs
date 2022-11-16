@@ -47,7 +47,7 @@ var NAVTREE =
         [ "All", "globals.html", "globals_dup" ],
         [ "Variables", "globals_vars.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ]
+        [ "Enumerator", "globals_eval.html", "globals_eval" ]
       ] ]
     ] ]
   ] ]
@@ -56,9 +56,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_r_c_video_canvas_8h.html",
-"_rcv_meeting_error_type_8h.html#a55ed2742e8f24fdcf884ee022ebb9583acec0c6dd039ac200076ecc53f032ef70",
-"interface_rcv_base_video_view.html#aec28747d126583b82bd2fb7c1dde4c5b",
-"interface_rcv_sharing_controller.html#aaf03b42e3ccf2c2a9d432799d3e17479"
+"_rcv_meeting_error_type_8h.html#a55ed2742e8f24fdcf884ee022ebb9583a493d411aff4ffab57aa72dde47412759",
+"globals_r.html",
+"interface_rcv_meeting_context_controller.html",
+"protocol_rcv_meeting_event_handler-p.html#aff8d0d55efb074b62f922ea7f813f37e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

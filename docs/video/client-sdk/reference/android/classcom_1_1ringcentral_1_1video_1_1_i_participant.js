@@ -11,6 +11,7 @@ var classcom_1_1ringcentral_1_1video_1_1_i_participant =
     [ "getContactId", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#ad0a7448f189d71ca010a425b88828fb8", null ],
     [ "getCustomStatus", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aad7ca462b52740ceff935253126166a9", null ],
     [ "getDepartment", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a57fc51a2aeee77648a7e2f3dbe76993f", null ],
+    [ "getEchoLeakType", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a8e8180f4c94ae2bdc064a1d6a04b0d0b", null ],
     [ "getEmail", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a8df8449c396496c0b2a37696f7e6ebad", null ],
     [ "getHeadshotColor", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a10a2c15f84c90df35801d6149e8a78e1", null ],
     [ "getHeadshotUrl", "classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a3aab7b6ebb097c6460ba3d162e390fdb", null ],

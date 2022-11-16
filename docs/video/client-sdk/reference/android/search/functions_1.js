@@ -9,5 +9,6 @@ var searchData=
   ['attachtrack_6',['attachTrack',['../classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html#ae12f5ccac8eb8d67db7d983152d59185',1,'com.ringcentral.video.RcvVideoCanvas.attachTrack()'],['../classcom_1_1ringcentral_1_1video_1_1_video_canvas.html#a6652d764e272caec9efebb7d5035914c',1,'com.ringcentral.video.VideoCanvas.attachTrack()']]],
   ['attachview_7',['attachView',['../classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html#a9edf6c42cd96e303e616dc1a1c266893',1,'com::ringcentral::video::RcvVideoCanvas']]],
   ['audiolocalmute_8',['audioLocalMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a4b328baa05156cacc69b7582826b7e0e',1,'com::ringcentral::video::IParticipant']]],
-  ['audioservermute_9',['audioServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aed81e28017b29d4422e1bc2249c82075',1,'com::ringcentral::video::IParticipant']]]
+  ['audioservermute_9',['audioServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aed81e28017b29d4422e1bc2249c82075',1,'com::ringcentral::video::IParticipant']]],
+  ['authorize_10',['authorize',['../classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ab64fe1671fb46a2fefe83bf6d4d5b266',1,'com::ringcentral::video::RcvEngine']]]
 ];

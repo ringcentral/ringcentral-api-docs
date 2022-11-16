@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -110,7 +117,7 @@ Include dependency graph for RcvMeetingState.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_rcv_meeting_state_8h__dep__incl.svg" width="376" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_rcv_meeting_state_8h__dep__incl.svg" width="640" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -119,13 +126,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a27d5f6a927e7afbcad97b4fbad400dd2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2">RcvMeetingState</a> : NSInteger { <br />
-&#160;&#160;<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a506f2fd49688b89650d32999cb6722f9">RcvMeetingStateJoining</a>
-, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a31de54cda81513cb41348716375a3934">RcvMeetingStateInWaitingRoom</a>
-, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2adbe628484ee2002a519c26d49476786e">RcvMeetingStateDeniedFromWaitingRoom</a>
-, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2afff43738f6da3a60e641f4e4810485d2">RcvMeetingStateWaitingHost</a>
+&#160;&#160;<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a8513b34ff06c2955ece97dea2f277126">RcvMeetingStateUnknown</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a05aa136e1b0bd14081a36dc7489bef5c">RcvMeetingStateConnecting</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a34521019d41c52dce1bd7d82b0d3e56b">RcvMeetingStateReconnecting</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a9c93c6c9d8533bd0d5660740bbfbdf31">RcvMeetingStateDisconnecting</a>
 , <br />
-&#160;&#160;<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf">RcvMeetingStateInMeeting</a>
-, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2aa251089d747f05a72b0016712b915c9e">RcvMeetingStateEnded</a>
+&#160;&#160;<a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a31de54cda81513cb41348716375a3934">RcvMeetingStateInWaitingRoom</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf">RcvMeetingStateInMeeting</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2afff43738f6da3a60e641f4e4810485d2">RcvMeetingStateWaitingHost</a>
+, <a class="el" href="_rcv_meeting_state_8h.html#a27d5f6a927e7afbcad97b4fbad400dd2a75d674f2fe6a56e872ab3f4925261146">RcvMeetingStateFailed</a>
 <br />
  }</td></tr>
 <tr class="separator:a27d5f6a927e7afbcad97b4fbad400dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,17 +153,21 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p >The enumeration class for the meeting state. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a506f2fd49688b89650d32999cb6722f9" name="a27d5f6a927e7afbcad97b4fbad400dd2a506f2fd49688b89650d32999cb6722f9"></a>RcvMeetingStateJoining&#160;</td><td class="fielddoc"><p >Indicates joining a meeting </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a8513b34ff06c2955ece97dea2f277126" name="a27d5f6a927e7afbcad97b4fbad400dd2a8513b34ff06c2955ece97dea2f277126"></a>RcvMeetingStateUnknown&#160;</td><td class="fielddoc"><p >Unknown </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a05aa136e1b0bd14081a36dc7489bef5c" name="a27d5f6a927e7afbcad97b4fbad400dd2a05aa136e1b0bd14081a36dc7489bef5c"></a>RcvMeetingStateConnecting&#160;</td><td class="fielddoc"><p >Indicates joining a meeting </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a34521019d41c52dce1bd7d82b0d3e56b" name="a27d5f6a927e7afbcad97b4fbad400dd2a34521019d41c52dce1bd7d82b0d3e56b"></a>RcvMeetingStateReconnecting&#160;</td><td class="fielddoc"><p >Indicates reconnecting a meeting </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a9c93c6c9d8533bd0d5660740bbfbdf31" name="a27d5f6a927e7afbcad97b4fbad400dd2a9c93c6c9d8533bd0d5660740bbfbdf31"></a>RcvMeetingStateDisconnecting&#160;</td><td class="fielddoc"><p >Indicates leaving/ending a meeting </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a31de54cda81513cb41348716375a3934" name="a27d5f6a927e7afbcad97b4fbad400dd2a31de54cda81513cb41348716375a3934"></a>RcvMeetingStateInWaitingRoom&#160;</td><td class="fielddoc"><p >Indicates users currently in the waiting room </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2adbe628484ee2002a519c26d49476786e" name="a27d5f6a927e7afbcad97b4fbad400dd2adbe628484ee2002a519c26d49476786e"></a>RcvMeetingStateDeniedFromWaitingRoom&#160;</td><td class="fielddoc"><p >Indicates the meeting host denied the user to join the meeting while that user was in the waiting room </p>
+<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf" name="a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf"></a>RcvMeetingStateInMeeting&#160;</td><td class="fielddoc"><p >Indicates users join a meeting successfully </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2afff43738f6da3a60e641f4e4810485d2" name="a27d5f6a927e7afbcad97b4fbad400dd2afff43738f6da3a60e641f4e4810485d2"></a>RcvMeetingStateWaitingHost&#160;</td><td class="fielddoc"><p >Indicates that the host has not started the meeting yet and users have to wait until the meeting is started </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf" name="a27d5f6a927e7afbcad97b4fbad400dd2abef48bc48871134825cd17cae9013aaf"></a>RcvMeetingStateInMeeting&#160;</td><td class="fielddoc"><p >Indicates users join a meeting successfully </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2aa251089d747f05a72b0016712b915c9e" name="a27d5f6a927e7afbcad97b4fbad400dd2aa251089d747f05a72b0016712b915c9e"></a>RcvMeetingStateEnded&#160;</td><td class="fielddoc"><p >Indicates the meeting is ended </p>
+<tr><td class="fieldname"><a id="a27d5f6a927e7afbcad97b4fbad400dd2a75d674f2fe6a56e872ab3f4925261146" name="a27d5f6a927e7afbcad97b4fbad400dd2a75d674f2fe6a56e872ab3f4925261146"></a>RcvMeetingStateFailed&#160;</td><td class="fielddoc"><p >Indicates join/start a meeting failed </p>
 </td></tr>
 </table>
 

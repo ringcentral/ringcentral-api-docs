@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,12 +112,14 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_r
 <div class="dynheader">
 Collaboration diagram for com.ringcentral.video.RemoteVideoStats:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats__coll__graph.svg" width="275" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats__coll__graph.svg" width="275" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a757bf7a80f9674197908e1395eaa4435"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html#a757bf7a80f9674197908e1395eaa4435">getParticipant</a> ()</td></tr>
+<tr class="separator:a757bf7a80f9674197908e1395eaa4435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4b74a108c2d8066b5f3b181e94e5920"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html#af4b74a108c2d8066b5f3b181e94e5920">getCodec</a> ()</td></tr>
 <tr class="separator:af4b74a108c2d8066b5f3b181e94e5920"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a001c98534a755a3065d4e703aad5ae65"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html#a001c98534a755a3065d4e703aad5ae65">getFirCount</a> ()</td></tr>
@@ -340,6 +349,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p >Returns the received video packets count </p>
+
+</div>
+</div>
+<a id="a757bf7a80f9674197908e1395eaa4435" name="a757bf7a80f9674197908e1395eaa4435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757bf7a80f9674197908e1395eaa4435">&#9670;&#160;</a></span>getParticipant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> com.ringcentral.video.RemoteVideoStats.getParticipant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns the participant that send this video stats packet </p>
 
 </div>
 </div>

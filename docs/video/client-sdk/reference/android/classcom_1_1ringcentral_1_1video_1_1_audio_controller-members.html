@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -108,11 +115,13 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_a
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a1d0e88e7aa95afc0025c51e0bd754c0b">getLocalAudioStreamState</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ab33abe7458981defc267034b56919353">isMuted</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a7844445cbff032a08504226d11b1ed19">isSpeakerphoneEnabled</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a65e7f3c60e9fcc79e8811113bc11eec0">muteAllRemoteAudioStreams</a>(boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a862597dc3396216f02943e8de93f93e5">muteLocalAudioStream</a>(boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ad0e0daaf57e52632d3df1debefa3f4cb">muteRemoteAudioStream</a>(long uid, boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a9169ed2e1f72c7e1f4005b284db88325">muteAllRemoteAudioStreams</a>(boolean allowUnmute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a572791a0daa2be38d0612d5bfc7f694c">muteLocalAudioStream</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ae8129c8f032622ceacc210992f5b9ac8">muteRemoteAudioStream</a>(long uid)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a6de3303ceff09b037fb0f657b3e5727a">registerEventHandler</a>(AudioEventHandler handler)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#af6fea0c500399851b32d34d238369282">setDefaultAudioRouteToSpeakerphone</a>(boolean defaultToSpeaker)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#af9232eb19fc0add690488cc26525afd8">unmuteAllRemoteAudioStreams</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ad79d95ddd4d8b3f68f9bbf0234728b77">unmuteLocalAudioStream</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a1447038a2cf1a527995206d7ca671bde">unmuteRemoteAudioStream</a>(long uid)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#ac7d539c8ab0d27fb3454bad33ea41db8">unregisterEventHandler</a>(AudioEventHandler handler)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_audio_controller.html">com.ringcentral.video.AudioController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->

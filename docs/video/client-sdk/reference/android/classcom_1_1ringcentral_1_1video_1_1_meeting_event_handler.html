@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -104,116 +111,36 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_m
 <div class="dynheader">
 Collaboration diagram for com.ringcentral.video.MeetingEventHandler:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler__coll__graph.svg" width="290" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler__coll__graph.svg" width="290" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a89fa175b6223b1b79394df98da32edbc"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a89fa175b6223b1b79394df98da32edbc">onUserJoined</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:a89fa175b6223b1b79394df98da32edbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36544c51d0f6446d3d5b552d9592868d"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a36544c51d0f6446d3d5b552d9592868d">onUserUpdated</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:a36544c51d0f6446d3d5b552d9592868d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bda0a9be5d86f451678571fec665bde"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a0bda0a9be5d86f451678571fec665bde">onUserLeave</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:a0bda0a9be5d86f451678571fec665bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99907cb69423f65602d8bc6627e10574"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a99907cb69423f65602d8bc6627e10574">onUserRoleChanged</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:a99907cb69423f65602d8bc6627e10574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3fc8be3ecded3f8476126bface2d5d"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a3f3fc8be3ecded3f8476126bface2d5d">onMeetingStateChanged</a> (<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html">MeetingState</a> state)</td></tr>
+<tr class="separator:a3f3fc8be3ecded3f8476126bface2d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6928108eb6431ef2808c2f43275b20a6"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a6928108eb6431ef2808c2f43275b20a6">onRecordingStateChanged</a> (<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_recording_state.html">RecordingState</a> state)</td></tr>
 <tr class="separator:a6928108eb6431ef2808c2f43275b20a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3095e0e882415e17a72ea8a39c954d"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a7f3095e0e882415e17a72ea8a39c954d">onRecordingAllowChanged</a> (boolean allowed)</td></tr>
+<tr class="separator:a7f3095e0e882415e17a72ea8a39c954d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83be5d9963f31d8af514b68807a8719f"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a83be5d9963f31d8af514b68807a8719f">onMeetingApiExecuted</a> (String method, long errorCode, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_api_execute_result.html">MeetingApiExecuteResult</a> result)</td></tr>
 <tr class="separator:a83be5d9963f31d8af514b68807a8719f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff92c84b536d0cc6fec8661525bdcd3"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a2ff92c84b536d0cc6fec8661525bdcd3">onMeetingLockStateChanged</a> (boolean locked)</td></tr>
 <tr class="separator:a2ff92c84b536d0cc6fec8661525bdcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79404c19c18a48df77660310030b826"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#aa79404c19c18a48df77660310030b826">onActiveSpeakerUserChanged</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:aa79404c19c18a48df77660310030b826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf42e8ec050b937d5883a67a0b7fac97"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#abf42e8ec050b937d5883a67a0b7fac97">onLocalAudioStats</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_local_audio_stats.html">LocalAudioStats</a> stats)</td></tr>
-<tr class="separator:abf42e8ec050b937d5883a67a0b7fac97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd9ca3142d035eb87355b3530c14f97"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a5fd9ca3142d035eb87355b3530c14f97">onLocalVideoStats</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_local_video_stats.html">LocalVideoStats</a> stats)</td></tr>
-<tr class="separator:a5fd9ca3142d035eb87355b3530c14f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc10d6c4728eb3fbc96977701643ce89"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#abc10d6c4728eb3fbc96977701643ce89">onRemoteAudioStats</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_audio_stats.html">RemoteAudioStats</a> stats)</td></tr>
-<tr class="separator:abc10d6c4728eb3fbc96977701643ce89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5932eb605472ac1da0ee5e7187a7675f"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a5932eb605472ac1da0ee5e7187a7675f">onRemoteVideoStats</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html">RemoteVideoStats</a> stats)</td></tr>
-<tr class="separator:a5932eb605472ac1da0ee5e7187a7675f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e5d8e095ca8feb704429ad6cb4f28be"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a0e5d8e095ca8feb704429ad6cb4f28be">onMeetingEncryptionStateChanged</a> (<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_end_to_end_encryption_state.html">EndToEndEncryptionState</a> state)</td></tr>
+<tr class="separator:a0e5d8e095ca8feb704429ad6cb4f28be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a549023655e5b8c7fc66b3bb8160ae2e0"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a549023655e5b8c7fc66b3bb8160ae2e0">onChatMessageSend</a> (int messageId, long errorCode)</td></tr>
 <tr class="separator:a549023655e5b8c7fc66b3bb8160ae2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20c77c68bd3f22fce724daead2f4de9a"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a20c77c68bd3f22fce724daead2f4de9a">onChatMessageReceived</a> (ArrayList&lt; <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_chat_message.html">MeetingChatMessage</a> &gt; meetingChatMessage)</td></tr>
 <tr class="separator:a20c77c68bd3f22fce724daead2f4de9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f402918bcf1276840a948ee5e75770"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#ad6f402918bcf1276840a948ee5e75770">onLocalNetworkQuality</a> (<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html">NqiState</a> state)</td></tr>
-<tr class="separator:ad6f402918bcf1276840a948ee5e75770"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adadd13f0459a54a68e615b6cebb5f046"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#adadd13f0459a54a68e615b6cebb5f046">onRemoteNetworkQuality</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant, <a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html">NqiState</a> state)</td></tr>
-<tr class="separator:adadd13f0459a54a68e615b6cebb5f046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af74e462113834c25bdc4c1e68bfdcc6e"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#af74e462113834c25bdc4c1e68bfdcc6e">onActiveVideoUserChanged</a> (<a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a> participant)</td></tr>
-<tr class="separator:af74e462113834c25bdc4c1e68bfdcc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c7c83f050f457794e55c333c978ea8"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#ae3c7c83f050f457794e55c333c978ea8">onClosedCaptionsData</a> (ArrayList&lt; <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_closed_captions_data.html">ClosedCaptionsData</a> &gt; data)</td></tr>
+<tr class="separator:ae3c7c83f050f457794e55c333c978ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c1cbbeb2d9f701fd5c4fad6b824c731"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html#a7c1cbbeb2d9f701fd5c4fad6b824c731">onClosedCaptionsStateChanged</a> (<a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_closed_captions_state.html">ClosedCaptionsState</a> state)</td></tr>
+<tr class="separator:a7c1cbbeb2d9f701fd5c4fad6b824c731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <b><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_meeting_event_handler.html">MeetingEventHandler</a></b> class is an interface class to send the meeting-level event callbacks to the application. The application inherits the methods of this interface class to get those event callbacks. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa79404c19c18a48df77660310030b826" name="aa79404c19c18a48df77660310030b826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa79404c19c18a48df77660310030b826">&#9670;&#160;</a></span>onActiveSpeakerUserChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onActiveSpeakerUserChanged </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when the active speaker user is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object of the new active speaker </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af74e462113834c25bdc4c1e68bfdcc6e" name="af74e462113834c25bdc4c1e68bfdcc6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af74e462113834c25bdc4c1e68bfdcc6e">&#9670;&#160;</a></span>onActiveVideoUserChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onActiveVideoUserChanged </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when the active video user is changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object of the current active video user </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a20c77c68bd3f22fce724daead2f4de9a" name="a20c77c68bd3f22fce724daead2f4de9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20c77c68bd3f22fce724daead2f4de9a">&#9670;&#160;</a></span>onChatMessageReceived()</h2>
 
@@ -291,8 +218,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abf42e8ec050b937d5883a67a0b7fac97" name="abf42e8ec050b937d5883a67a0b7fac97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf42e8ec050b937d5883a67a0b7fac97">&#9670;&#160;</a></span>onLocalAudioStats()</h2>
+<a id="ae3c7c83f050f457794e55c333c978ea8" name="ae3c7c83f050f457794e55c333c978ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c7c83f050f457794e55c333c978ea8">&#9670;&#160;</a></span>onClosedCaptionsData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,10 +228,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onLocalAudioStats </td>
+          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onClosedCaptionsData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_local_audio_stats.html">LocalAudioStats</a>&#160;</td>
-          <td class="paramname"><em>stats</em></td><td>)</td>
+          <td class="paramtype">ArrayList&lt; <a class="el" href="classcom_1_1ringcentral_1_1video_1_1_closed_captions_data.html">ClosedCaptionsData</a> &gt;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -314,18 +241,19 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Reports the statistics of the local audio stream.</p>
+<p >Occurs when the meeting closed captions data are received.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stats</td><td>The local audio stream stats instance </td></tr>
+    <tr><td class="paramname">data</td><td>The closed captions data </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_closed_captions_data.html">ClosedCaptionsData</a> </dd></dl>
 
 </div>
 </div>
-<a id="ad6f402918bcf1276840a948ee5e75770" name="ad6f402918bcf1276840a948ee5e75770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6f402918bcf1276840a948ee5e75770">&#9670;&#160;</a></span>onLocalNetworkQuality()</h2>
+<a id="a7c1cbbeb2d9f701fd5c4fad6b824c731" name="a7c1cbbeb2d9f701fd5c4fad6b824c731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c1cbbeb2d9f701fd5c4fad6b824c731">&#9670;&#160;</a></span>onClosedCaptionsStateChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,9 +262,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onLocalNetworkQuality </td>
+          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onClosedCaptionsStateChanged </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html">NqiState</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_closed_captions_state.html">ClosedCaptionsState</a>&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
@@ -347,46 +275,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Reports the network quality of the local user.</p>
+<p >Occurs when the meeting closed captions state changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td>Indicates the network quality of the local user </td></tr>
+    <tr><td class="paramname">state</td><td>The closed captions state </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a5fd9ca3142d035eb87355b3530c14f97" name="a5fd9ca3142d035eb87355b3530c14f97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fd9ca3142d035eb87355b3530c14f97">&#9670;&#160;</a></span>onLocalVideoStats()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onLocalVideoStats </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_local_video_stats.html">LocalVideoStats</a>&#160;</td>
-          <td class="paramname"><em>stats</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Reports the statistics of the uploading local video stream.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The local video stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_closed_captions_state.html">ClosedCaptionsState</a> </dd></dl>
 
 </div>
 </div>
@@ -442,6 +338,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0e5d8e095ca8feb704429ad6cb4f28be" name="a0e5d8e095ca8feb704429ad6cb4f28be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5d8e095ca8feb704429ad6cb4f28be">&#9670;&#160;</a></span>onMeetingEncryptionStateChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onMeetingEncryptionStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_end_to_end_encryption_state.html">EndToEndEncryptionState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Occurs when the meeting end-to-end encryption state changes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Indicates end-to-end encryption meeting state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_end_to_end_encryption_state.html">EndToEndEncryptionState</a> </dd></dl>
+
+</div>
+</div>
 <a id="a2ff92c84b536d0cc6fec8661525bdcd3" name="a2ff92c84b536d0cc6fec8661525bdcd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ff92c84b536d0cc6fec8661525bdcd3">&#9670;&#160;</a></span>onMeetingLockStateChanged()</h2>
 
@@ -469,6 +399,72 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">locked</td><td>Indicates meeting is locked or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f3fc8be3ecded3f8476126bface2d5d" name="a3f3fc8be3ecded3f8476126bface2d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3fc8be3ecded3f8476126bface2d5d">&#9670;&#160;</a></span>onMeetingStateChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onMeetingStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_meeting_state.html">MeetingState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Occurs when the meeting state is changed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The latest meeting state of the users </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7f3095e0e882415e17a72ea8a39c954d" name="a7f3095e0e882415e17a72ea8a39c954d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3095e0e882415e17a72ea8a39c954d">&#9670;&#160;</a></span>onRecordingAllowChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onRecordingAllowChanged </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>allowed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Occurs when the meeting recording privilege changes. For example, when a user assigns as the moderator..</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowed</td><td>Indicates recording privilege is allowed or not </td></tr>
   </table>
   </dd>
 </dl>
@@ -506,248 +502,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_recording_state.html">RecordingState</a> </dd></dl>
-
-</div>
-</div>
-<a id="abc10d6c4728eb3fbc96977701643ce89" name="abc10d6c4728eb3fbc96977701643ce89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc10d6c4728eb3fbc96977701643ce89">&#9670;&#160;</a></span>onRemoteAudioStats()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onRemoteAudioStats </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_audio_stats.html">RemoteAudioStats</a>&#160;</td>
-          <td class="paramname"><em>stats</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Reports the statistics of the audio stream from each remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The remote audio stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="adadd13f0459a54a68e615b6cebb5f046" name="adadd13f0459a54a68e615b6cebb5f046"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adadd13f0459a54a68e615b6cebb5f046">&#9670;&#160;</a></span>onRemoteNetworkQuality()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onRemoteNetworkQuality </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="enumcom_1_1ringcentral_1_1video_1_1_nqi_state.html">NqiState</a>&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Reports the network quality of the remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object </td></tr>
-    <tr><td class="paramname">state</td><td>Indicates the network quality of the remote user </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5932eb605472ac1da0ee5e7187a7675f" name="a5932eb605472ac1da0ee5e7187a7675f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5932eb605472ac1da0ee5e7187a7675f">&#9670;&#160;</a></span>onRemoteVideoStats()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onRemoteVideoStats </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_remote_video_stats.html">RemoteVideoStats</a>&#160;</td>
-          <td class="paramname"><em>stats</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Reports the statistics of the video stream from each remote user.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stats</td><td>The remote video stream stats instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a89fa175b6223b1b79394df98da32edbc" name="a89fa175b6223b1b79394df98da32edbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89fa175b6223b1b79394df98da32edbc">&#9670;&#160;</a></span>onUserJoined()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onUserJoined </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when a new user joins a meeting.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object who is joining the meeting </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0bda0a9be5d86f451678571fec665bde" name="a0bda0a9be5d86f451678571fec665bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bda0a9be5d86f451678571fec665bde">&#9670;&#160;</a></span>onUserLeave()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onUserLeave </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when a user leaves or disconnects from a meeting.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object who is leaving the meeting </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a99907cb69423f65602d8bc6627e10574" name="a99907cb69423f65602d8bc6627e10574"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99907cb69423f65602d8bc6627e10574">&#9670;&#160;</a></span>onUserRoleChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onUserRoleChanged </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when a user role has changed, such as a user being assigned as the moderator.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object whose role is changed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a36544c51d0f6446d3d5b552d9592868d" name="a36544c51d0f6446d3d5b552d9592868d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36544c51d0f6446d3d5b552d9592868d">&#9670;&#160;</a></span>onUserUpdated()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void com.ringcentral.video.MeetingEventHandler.onUserUpdated </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_i_participant.html">IParticipant</a>&#160;</td>
-          <td class="paramname"><em>participant</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Occurs when a user's state changed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">participant</td><td>The user object whose state is changed. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

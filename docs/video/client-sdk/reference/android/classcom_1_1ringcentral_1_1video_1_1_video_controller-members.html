@@ -21,6 +21,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -103,9 +110,9 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_v
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#aed39cece00ae3f82d979c45b65648773">isMuted</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a3dff360fb06c17c7ba28a44f636794f9">isPreviewMode</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a40695a04fbaa0b0997dbee425c308bb3">muteAllRemoteVideoStream</a>(boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a88976ecae567b4cd6098610a03195248">muteLocalVideoStream</a>(boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#ae31887ab75d6ed3d78a0808ebc58ab92">muteRemoteVideoStream</a>(long uid, boolean mute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a81a9845705618b0ec5d65e29f7c03656">muteAllRemoteVideoStreams</a>(boolean allowUnmute)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a1f51843be0a976ce6a6cc39df2848bca">muteLocalVideoStream</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a52189e9d2bdf65e56eb295351683a974">muteRemoteVideoStream</a>(long uid)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a5017a47d14d2ad6d5d4616cf80512379">registerEventHandler</a>(VideoEventHandler handler)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#afb3f91129d3b536a721dbe034162f518">removeActiveVideo</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#ac5abf493888f32859e07224b24c6bd3c">removeLocalVideo</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
@@ -116,7 +123,10 @@ $(document).ready(function(){initNavTree('classcom_1_1ringcentral_1_1video_1_1_v
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a662a6c39e0af515786e2d29fe9eef12f">startPreview</a>(VideoCanvas canvas)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a2667676eee46fd451cb22483b098a989">stopPreview</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a794fcd4099fc3c7076c65ce19a1dc7bf">switchCamera</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a8d00d975ab991870f32a5534385ec35d">unregisterEventHandler</a>(VideoEventHandler handler)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a7d5109a8bf911d76376b81a9387daf5a">unmuteAllRemoteVideoStreams</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0f235040c3c087bbfc6d0b951eccae28">unmuteLocalVideoStream</a>()</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a0adc220f46e937d0d85126b2dd532a5a">unmuteRemoteVideoStream</a>(long uid)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html#a8d00d975ab991870f32a5534385ec35d">unregisterEventHandler</a>(VideoEventHandler handler)</td><td class="entry"><a class="el" href="classcom_1_1ringcentral_1_1video_1_1_video_controller.html">com.ringcentral.video.VideoController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

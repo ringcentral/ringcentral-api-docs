@@ -36,6 +36,9 @@ var _rcv_error_code_type_8h =
       [ "RcvErrorCodeTypeErrSendMeetingChatMessageFailed", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fcadbccb40992083035829bd7a17321351e", null ],
       [ "RcvErrorCodeTypeErrChatIsDisabled", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca78f50eed101bd0e895faff63d6ca1ff0", null ],
       [ "RcvErrorCodeTypeErrNotLoadedPmi", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca53429ac5169215b421dfeffd356b1347", null ],
-      [ "RcvErrorCodeTypeErrUpdatingPersonalMeetingSettings", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca532be99568643cb3c34717192dc6e138", null ]
+      [ "RcvErrorCodeTypeErrUpdatingPersonalMeetingSettings", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca532be99568643cb3c34717192dc6e138", null ],
+      [ "RcvErrorCodeTypeErrEndToEndEncryptionEnabled", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca822863e2ed7567c31813e1103d5721e1", null ],
+      [ "RcvErrorCodeTypeErrEndToEndEncryptionEnableRestricted", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fca89b2cd6858e672aff480935f0d960204", null ],
+      [ "RcvErrorCodeTypeErrSharingIsOnGoing", "_rcv_error_code_type_8h.html#a7be093902d7e384ace0b42e6ad8bf0fcad155d8bb0a1cde6077890a1d966f2df7", null ]
     ] ]
 ];

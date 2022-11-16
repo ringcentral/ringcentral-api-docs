@@ -9,7 +9,8 @@ var searchData=
   ['didchangeservermute_6',['didChangeServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#aa5d69990d9ac70d33b150a1453501994',1,'com::ringcentral::video::IParticipant']]],
   ['didchangevideoservermute_7',['didChangeVideoServerMute',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#af4c1854159674451823d09983c479ff4',1,'com::ringcentral::video::IParticipant']]],
   ['disableaudio_8',['disableAudio',['../classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a51b6e5f7ffc73ff1b65df08df1e3d779',1,'com::ringcentral::video::AudioController']]],
-  ['disablefpsreduction_9',['disableFpsReduction',['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#a39b3fe42cc75ccfea5e2ebce8e32911c',1,'com::ringcentral::video::RcvTextureViewRenderer']]],
-  ['disablespeakerphone_10',['disableSpeakerphone',['../classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a229b2fc6cf5d8e3909f987f610edfc0e',1,'com::ringcentral::video::AudioController']]],
-  ['displayname_11',['displayName',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a054bc30af04170b347ccd0ca86651d0e',1,'com::ringcentral::video::IParticipant']]]
+  ['disableendtoendencryption_9',['disableEndToEndEncryption',['../classcom_1_1ringcentral_1_1video_1_1_meeting_controller.html#a51a505d7eae4a2368e5a28c8566154ae',1,'com::ringcentral::video::MeetingController']]],
+  ['disablefpsreduction_10',['disableFpsReduction',['../classcom_1_1ringcentral_1_1video_1_1_rcv_texture_view_renderer.html#a39b3fe42cc75ccfea5e2ebce8e32911c',1,'com::ringcentral::video::RcvTextureViewRenderer']]],
+  ['disablespeakerphone_11',['disableSpeakerphone',['../classcom_1_1ringcentral_1_1video_1_1_audio_controller.html#a229b2fc6cf5d8e3909f987f610edfc0e',1,'com::ringcentral::video::AudioController']]],
+  ['displayname_12',['displayName',['../classcom_1_1ringcentral_1_1video_1_1_i_participant.html#a054bc30af04170b347ccd0ca86651d0e',1,'com::ringcentral::video::IParticipant']]]
 ];
