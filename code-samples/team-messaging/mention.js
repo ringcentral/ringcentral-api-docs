@@ -6,12 +6,21 @@ var rcsdk = new RingCentral({
   clientSecret: RINGCENTRAL_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-try {
-    var personId = "1234";
-    var groupId = "5678";
-    await platform.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
-        "text": `Here is a mention: ![:Person](${personId})`
-    })
-} catch(e) {
-    console.log(e)
-}
+platform.login({
+    'username':  process.env.RC_USERNAME,
+    'password':  process.env.RC_PASSWORD,
+    'extension': process.env.RC_EXTENSION
+})
+
+platform.on(platform.events.loginSuccess, () => {
+    try {
+        var personId = "1234";
+        var groupId = "5678";
+        await platform.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
+            "text": `Here is a mention: ![:Person](${personId})`
+        })
+    } catch(e) {
+        console.log(e)
+    }
+})
+
