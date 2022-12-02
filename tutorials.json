@@ -246,24 +246,6 @@
         ]
     },
     {
-        "title": "OAuth Implicit Grant Flow in web page",
-        "description": "<p>In this tutorial, you will learn how to use RingCentral OAuth Implicit grant flow in web page with javascript SDK by a quick demo.</p>",
-        "tags": [
-            "Auth"
-        ],
-        "defaults": {
-            "githubUri": "https://github.com/ringcentral-tutorials/oauth-implicit-js-demo",
-            "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
-        },
-        "languages": [
-            {
-                "name": "JavaScript",
-                "githubUri": "https://github.com/ringcentral-tutorials/oauth-implicit-js-demo",
-                "tutorialUri": "https://ringcentral-tutorials.github.io/oauth-implicit-js-demo/"
-            }
-        ]
-    },
-    {
         "title": "Call Log Visualization",
         "description": "<p>In this tutorial, you will learn how to access your RingCentral call log database by using the call-log API and the RingCentral Node JS SDK. You will learn how to parse the response, process the data and display the information on Google charts.</p>",
         "tags": [

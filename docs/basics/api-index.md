@@ -9855,7 +9855,7 @@ In case the feature is available for the current user, <code>"available": true</
 	      <td class="t">string</td>
 	      <td class="d"></td>
 	      <td class="r">True</td>
-	      <td class="de">Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant</td>
+	      <td class="de">Determines authorization flow: **code** - Authorization Code</td>
             </tr>
 <tr>
 	      <td class="n">scope</td>
