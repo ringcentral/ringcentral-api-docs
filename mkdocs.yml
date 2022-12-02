@@ -193,6 +193,22 @@ nav:
     - 'Aggregate Data': 'analytics/aggregate.md'
     - 'Timeline Data': 'analytics/timeline.md'
 
+  - 'Conversational Intelligence':
+    - 'Overview': 'ai/index.md'
+    - 'Getting started': 'ai/quick-start.md'
+    - 'Sample files for development': 'ai/sample-files.md'
+    - 'Frequently Asked Questions': 'ai/faq.md'
+    - 'Audio Analysis':
+      - 'Interaction analytics': 'ai/interaction-analytics-api.md'
+      - 'Speech-to-text': 'ai/speech-to-text-api.md'
+      - 'Speaker enrollment': 'ai/speaker-enrollment-api.md'
+      - 'Speaker diarization': 'ai/speaker-diarization-api.md'
+      - 'Speaker identification': 'ai/speaker-identification-api.md'
+      #- 'Emotion analysis': 'ai/emotion-recognition-api.md'
+    - 'Text Analysis':
+      - 'Conversation summaries': 'ai/text-summary-api.md'
+      - 'Smart punctuation': 'ai/text-punctuation-api.md'
+
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
     - 'Users and Extensions': 'account/extensions.md'
