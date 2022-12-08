@@ -1,7 +1,8 @@
 const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
 
-WEBHOOK_ADDRESS = "<NGROK_SERVER_URL>/webhook";
+MEDIA_URL   = '<INSERT URL TO MEDIA FILE>';
+WEBHOOK_URL = '<INSERT YOUR WEBHOOK URL>';
 
 // Initialize the RingCentral SDK and Platform
 const rcsdk = new RC({
@@ -11,8 +12,13 @@ const rcsdk = new RC({
 });
 
 const platform = rcsdk.platform();
-platform.login({'jwt':  process.env.RC_JWT})
 
+// Authenticate with RingCentral Developer Platdorm using Developer's JWT Credential
+platform.login({
+    'jwt': process.env.RC_JWT
+});
+
+// Call the Speech to Text API right after login asynchronously
 platform.on(platform.events.loginSuccess, () => {
     speechToText();
 })
@@ -21,7 +27,7 @@ async function speechToText() {
     try {
         console.log("Calling RingCentral Speech To Text API");
         let resp = await platform.post("/ai/audio/v1/async/speech-to-text?webhook=" + WEBHOOK_ADDRESS, {
-            "contentUri": "https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/sample1.wav?raw=true",
+            "contentUri":               MEDIA_URL,
             "encoding":                 "Wav",
             "languageCode":             "en-US",
             "source":                   "RingCentral",
@@ -29,13 +35,7 @@ async function speechToText() {
             "enablePunctuation":        true,
             "enableSpeakerDiarization": false
         });
-        console.log("Speech To Text Job " + resp.statusText + " with HTTP status code " + resp.status);
-        if(resp.status == 202){
-            console.log("Ready to receive incoming response via WebHook: " + WEBHOOK_ADDRESS + ":" + PORT);
-        }
-        else{
-            console.log("Some error occured. Pls review and try again.");
-        }
+        console.log("Job is " + resp.statusText + " with HTTP status code " + resp.status);
     } 
     catch (e) {
         console.log("An Error Occurred : " + e.message);

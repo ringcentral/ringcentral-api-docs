@@ -1,7 +1,4 @@
 const http = require('http');
-
-const NGROK_URL   = "<INSERT NGROK SERVER URL>";
-const WEBHOOK_URL = NGROK_URL + "/webhook";
 const PORT        = 5000;
 
 // Create a server to receive callback from RingCentral
@@ -28,4 +25,4 @@ const server = http.createServer( function(req, res) {
 
 // Start the server
 server.listen(PORT);
-console.log("Conversational Intelligence response server running at: " + WEBHOOK_URL)
+console.log("Conversational Intelligence response server running at: https://localhost:" + PORT)

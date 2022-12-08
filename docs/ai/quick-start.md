@@ -39,9 +39,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 	
 ## Setup a server to process the response asynchronously
 
-The Conversational Intelligence APIs provide responses in an asynchronous manner by posting the response to a given request to a URL specified by the developer when the request is made. Therefore, the first step is setting up a simple web server to receive the response from RingCentral. The server below is written in Javascript and uses [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to your local development machine. To keep things simple for your first application, this server does nothing more than acknowledge receipt and echo the payload of amything it receives to the console. 
+The Conversational Intelligence APIs provide responses in an asynchronous manner by posting responses to a URL specified by the developer when the request is made. Our first step therefore is setting up a simple web server to display the response we will receive from RingCentral. The server below is written in Javascript and uses [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to your local development machine. To keep your first application simple, this server does nothing more than acknowledge receipt and echo the payload of anything it receives to the console. 
 
-### Start the ngrok web server
+### Start ngrok
 
 Download and install [ngrok](https://ngrok.com/download) if you have not already. Then start your ngrok server and make note of its https URL. You will enter that URL in the server you create in the next step. 
 
@@ -76,6 +76,8 @@ $ node server.js
     $ npm install dotenv
     $ touch index.js
     ```
+
+	Finally, add your `.env` file you created earlier to your project directory. 
 
     #### Create and edit `index.js`
 

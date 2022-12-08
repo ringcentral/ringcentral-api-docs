@@ -1,0 +1,22 @@
+{
+    "utterances": [
+        {
+            "start": 0,
+            "end": 6,
+            "speakerId": "ringcentral_test",
+            "confidence": 35.42294
+        },
+        {
+            "start": 6,
+            "end": 12,
+            "speakerId": "ringcentral_test",
+            "confidence": 36.98796
+        },
+        {
+            "start": 12,
+            "end": 18.0,
+            "speakerId": "ringcentral_test",
+            "confidence": 25.51731
+        }
+    ]
+}

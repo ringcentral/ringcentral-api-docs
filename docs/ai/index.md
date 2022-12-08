@@ -2,16 +2,10 @@
 
 {! docs/ai/beta-notice.md !}
 
-Welcome to the RingCentral Conversational Intelligence APIs. You can use these APIs to build next generation AI-enabled apps. There are a lot of use cases like detecting the engagement level with talk to listen ratios, enhancing the post meeting experience, automatically creating agenda for the next meeting, or doing sentiment/emotional analysis at uttrance level, to name a few. These APIs can be used across different verticals like Retail, ECommerce, HealthCare, Aerospace, Defence, Real Estate, etc  where "business conversation" is the context. Examples would be Sales meeting, Customer care calls, HR-Employee meeting, Cross functional meeting, Daily standup, Product road mapping etc.
-
-This developer portal provides a variety of resources for using these APIs, sample code, API Reference and quick start guide to help you jump-start your integration. 
-
-Current set of APIs offers a variety of insights & analytics capabilities for two types of data `text` & `audio`. 
-
 <div class="jumbotron pt-1">
   <h2 class="h3 display-5">Getting Started with the Conversational Intelligence API</h2>
-  <p class="lead">The RingCentral Conversational Intelligence API</p>
-  <p>We invite all developers to try out our Conversational Intelligence API by writing a simple app to process a simple media file. Get started using a Quick Start in any of the following languages:</p>
+  <p class="lead">The RingCentral Conversational Intelligence API helps developers process and extract meaningful insights from media files. This not only includes creating a transcript, but also aids in performing sentiment and emotion analysis, speaker identification, and speaker diarization. It also aids in the extraction and generation of key content, like content summaries and action items.</p>
+  <p>We invite all developers to try out our Conversational Intelligence API by writing a simple app to process a small media file to produce a transcript. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/#javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/#php" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/#python" class="btn btn-light qs-link">Python &raquo;</a>
@@ -62,6 +56,14 @@ RingCentral supports various audio formats for ease of integration. We support a
 * PCM (signed/unsigned) (8/16/32/64 bit) (big/little endian)
 * WAV
 * WMV (Windows Media Video)
+
+### What languages are supported for media input? i.e English, German, Spanish?
+
+Speaker identification itself is language-agnostic, but for all other APIs we currently only support English. Support for other languages is planned prior to the end of our beta period. 
+
+### What is speaker enrollment, and how does it work?
+
+[Speaker enrollment](./speaker-enrollment/) is the process by which identities are associated with a voice or accoustic signature. This ultimately allows for RingCentral to identify who is speaking, and pass that identity information on its reports. 
 
 ### Tips on how to get the best results from media files
 

@@ -196,18 +196,19 @@ nav:
   - 'Conversational Intelligence':
     - 'Overview': 'ai/index.md'
     - 'Getting started': 'ai/quick-start.md'
-    - 'Sample files for development': 'ai/sample-files.md'
-    - 'Frequently Asked Questions': 'ai/faq.md'
-    - 'Audio Analysis':
-      - 'Interaction analytics': 'ai/interaction-analytics-api.md'
-      - 'Speech-to-text': 'ai/speech-to-text-api.md'
-      - 'Speaker enrollment': 'ai/speaker-enrollment-api.md'
-      - 'Speaker diarization': 'ai/speaker-diarization-api.md'
-      - 'Speaker identification': 'ai/speaker-identification-api.md'
-      #- 'Emotion analysis': 'ai/emotion-recognition-api.md'
-    - 'Text Analysis':
-      - 'Conversation summaries': 'ai/text-summary-api.md'
-      - 'Smart punctuation': 'ai/text-punctuation-api.md'
+    - 'Developer basics':
+      - 'Asynchronous responses': 'ai/asynchronous-responses.md'
+      - 'Sample media files': 'ai/sample-files.md'
+    - 'Audio analysis':
+      - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
+      - 'Interaction analytics': 'ai/interaction-analytics.md'
+    - 'Speaker analysis':
+      - 'Speaker enrollment': 'ai/speaker-enrollment.md'
+      - 'Speaker identification': 'ai/speaker-identification.md'
+      - 'Speaker diarization': 'ai/speaker-diarization.md'
+    - 'Text analysis':
+      - 'Conversation summaries': 'ai/text-summary.md'
+      - 'Smart punctuation': 'ai/text-punctuation.md'
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
