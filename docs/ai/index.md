@@ -7,11 +7,13 @@
   <p class="lead">The RingCentral Conversational Intelligence API helps developers process and extract meaningful insights from media files. This not only includes creating a transcript, but also aids in performing sentiment and emotion analysis, speaker identification, and speaker diarization. It also aids in the extraction and generation of key content, like content summaries and action items.</p>
   <p>We invite all developers to try out our Conversational Intelligence API by writing a simple app to process a small media file to produce a transcript. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/#javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
+  <!--
   <a href="quick-start/#php" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/#python" class="btn btn-light qs-link">Python &raquo;</a>
   <a href="quick-start/#ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
   <a href="quick-start/#java" class="btn btn-light qs-link">Java &raquo;</a>
   <a href="quick-start/#c#" class="btn btn-light qs-link">C# &raquo;</a>
+  -->
   <a href="https://god.postman.co/run-collection/3d14640ee8edc23e10b6?action=collection%2Fimport#?env%5BRC%20Enviornment%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5yaW5nY2VudHJhbC5jb20iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6InBsYXRmb3JtLnJpbmdjZW50cmFsLmNvbSIsInNlc3Npb25JbmRleCI6MH0seyJrZXkiOiJSQ19DYWxsYmFja19VUkwiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjoxfSx7ImtleSI6IlJDX0FQUF9LRVkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjoyfSx7ImtleSI6IlJDX0FQUF9TRUNSRVQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX1VTRVJOQU1FIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6NH0seyJrZXkiOiJSQ19FWFRFTlNJT04iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6IlJDX1BBU1NXT1JEIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJSQ19KV1QiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjh9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo5fV0=" class="btn btn-light qs-link">Postman &raquo;</a>
 </div>
 
