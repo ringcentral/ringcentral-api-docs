@@ -71,17 +71,15 @@ $ node server.js
     #### Setup your project
 
     ```bash
-    $ npm init
     $ npm install @ringcentral/sdk
     $ npm install dotenv
-    $ touch index.js
     ```
 
 	Finally, add your `.env` file you created earlier to your project directory. 
 
     #### Create and edit `index.js`
 
-    Copy and paste the code from below in `index.js` and makesure to edit the variables in ALL CAPS with your app and user credentials for 'production' enviornment.
+   Copy and paste the code from below in `index.js`. Be sure the values in your `.env` file have been set properly, including the `RC_MEDIA_URL` variable. 
 
     ```js
     {!> code-samples/ai/quick-start.js !}
@@ -93,6 +91,58 @@ $ node server.js
   
     ```bash
     $ node index.js
+    ```
+
+=== "Python"
+
+    #### Setup your project
+
+    ```bash
+    $ pip install ringcentral
+    $ pip install python-dotenv
+    ```
+
+	Finally, add your `.env` file you created earlier to your project directory. 
+
+    #### Create and edit `index.py`
+
+    Copy and paste the code from below in `index.py`. Be sure the values in your `.env` file have been set properly, including the `RC_MEDIA_URL` variable. 
+	
+    ```js
+    {!> code-samples/ai/quick-start.py !}
+    ```
+
+    #### Run your code
+
+    You are almost done. Now run your script above to send the request to RingCentral and recive the response.
+  
+    ```bash
+    $ python index.py
+    ```
+
+=== "PHP"
+
+    ### Install RingCentral PHP SDK
+
+    ```php
+    $ curl -sS https://getcomposer.org/installer | php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
+    ```
+
+    ### Create and edit index.php
+
+    Create a file called `index.php`. Be sure the values in your `.env` file have been set properly, including the `RC_MEDIA_URL` variable. 
+
+    ```php
+    {!> code-samples/messaging/quick-start.php !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ php index.php
     ```
 
 ## Await receipt of a response from RingCentral
