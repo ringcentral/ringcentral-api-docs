@@ -7,6 +7,7 @@ var classcom_1_1ringcentral_1_1video_1_1_rcv_engine =
     [ "getMeetingBridge", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a7755fa2f47f728c2726611f99d763036", null ],
     [ "getMeetingContextController", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ad3f69d3d0ed97398d26b61d84ce34cab", null ],
     [ "getMeetingController", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#aaeb7082bff3aee1bbb7386fa4cf9721c", null ],
+    [ "getPreferenceController", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a621a0d7065ba32d34ebab6b081b8c1a3", null ],
     [ "instance", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#a96528883b5a084f909f19dcc1c6b4b23", null ],
     [ "joinMeeting", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#ae4b6fed44276ea3b9031e4f95da9bf5e", null ],
     [ "registerEventHandler", "classcom_1_1ringcentral_1_1video_1_1_rcv_engine.html#afab21a8113d20cbfc6f38dfd98aacc61", null ],

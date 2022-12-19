@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a98a4729b561fe7ab2f57d992994b7bfe":[7,0,0,0,0,19,42],
 "enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#aa40713052a34e506b5e93e8d5a939311":[7,0,0,0,0,19,8],
 "enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#aa84c54acd65ddf453748d46c1bdec92a":[7,0,0,0,0,19,9],
 "enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#aa886f4e3645ff60ca32d80e90ff97a2a":[7,0,0,0,0,19,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "index.html#autotoc_md7":[5],
 "interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_first_frame_listener.html":[7,0,0,0,0,56,0],
 "interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_first_frame_listener.html#a0e742d3d6a96cced4338e0558ca1f076":[7,0,0,0,0,56,0,0],
-"interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener.html":[7,0,0,0,0,56,1],
-"interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener.html#ab7e0af66bbb234d27b603c0880115832":[7,0,0,0,0,56,1,0]
+"interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener.html":[7,0,0,0,0,56,1]
 };

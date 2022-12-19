@@ -56,9 +56,9 @@ var NAVTREEINDEX =
 [
 "_audio_consumer_8java.html",
 "classcom_1_1ringcentral_1_1video_1_1_local_audio_stats.html",
-"classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html#a5d10eaf4d080986cab263e402c632073",
-"enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#aa40713052a34e506b5e93e8d5a939311",
-"namespaces.html"
+"classcom_1_1ringcentral_1_1video_1_1_rcv_video_canvas.html#a49573662306cdc544ebf2c0e86433ff2",
+"enumcom_1_1ringcentral_1_1video_1_1_error_code_type.html#a98a4729b561fe7ab2f57d992994b7bfe",
+"interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener.html#ab7e0af66bbb234d27b603c0880115832"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
