@@ -1,0 +1,51 @@
+{
+  "id": "iad41-c04-ndb256065cf14ae6a1832389d9c2e",
+  "name": "Weekly Meeting with Joseph",
+  "type": "Instant",
+  "host": {
+    "accountId": "664287016",
+    "extensionId": "664307016"
+  },
+  "pins": {
+    "pstn": {
+      "host": "432331057631",
+      "participant": "013409241367"
+    },
+    "web": "018209241352",
+    "aliases": [
+      "joseph1990",
+      "qa_team_2_lead"
+    ]
+  },
+  "security": {
+    "passwordProtected": true,
+    "password": {
+      "plainText": "Wq123ygs15",
+      "pstn": "7492486829",
+      "joinQuery": "99e4f8e6a241fc71279449a9c8f46eef"
+    },
+    "noGuests": false,
+    "sameAccount": false,
+    "e2ee": false
+  },
+  "preferences": {
+    "join": {
+      "audioMuted": false,
+      "videoMuted": false,
+      "waitingRoomRequired": "Nobody",
+      "pstn": {
+        "promptAnnouncement": true,
+        "promptParticipants": true
+      }
+    },
+    "playTones": "Off",
+    "musicOnHold": true,
+    "joinBeforeHost": true,
+    "screenSharing": true,
+    "recordingsMode": "User",
+    "transcriptionsMode": "User"
+  },
+  "discovery": {
+    "web": "https://v.ringcentral.com/join/018209241352?pw=99e4f8e6a241fc71279449a9c8f46eef"
+  }
+}

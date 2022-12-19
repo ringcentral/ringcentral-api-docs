@@ -181,11 +181,32 @@ nav:
       - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
 
-  - 'Meetings':
-    - 'Overview': 'meetings/index.md'
-    - 'Getting Started': 'meetings/quick-start.md'
-    - 'RingCentral Video API': 'meetings/video.md'
-    - 'Embeddable': 'meetings/embeddable.md'
+  - 'Video':
+    - 'Overview': 'video/index.md'
+    - 'Video REST API':
+      - 'Overview': 'video/api/index.md'
+      - 'Getting Started': 'video/api/quick-start.md'
+      - 'Creating meeting bridges': 'video/api/create-meetings.md'
+      - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
+      - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
+      - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
+      - 'Past meetings and recordings': 'video/api/meeting-history.md'
+      - 'Selecting meetings service': 'video/api/meeting-config.md'
+      - 'Troubleshooting': 'video/api/troubleshooting.md'
+    - 'Video Client SDK':
+      - 'Overview': 'video/client-sdk/index.md'
+      - 'Download': 'video/client-sdk/download.md'
+      - 'Getting Started': 'video/client-sdk/quick-start.md'
+      - 'Authentication': 'video/client-sdk/authentication.md'
+      - 'API Reference':
+         - 'Android': 'video/client-sdk/reference/android/index.html'
+         - 'iOS': 'video/client-sdk/reference/ios/index.html'
+         - 'Javascript': 'video/client-sdk/reference/js/index.html'
+      - 'Release notes': 'video/client-sdk/release-notes.md'
+    - 'Using RingCentral Embeddable': 'video/embeddable.md'
+    - 'Meetings (legacy API)':
+      - 'Overview': 'meetings/index.md'
+      - 'Getting Started': 'meetings/quick-start.md'
 
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
@@ -195,7 +216,8 @@ nav:
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
-    - 'Users and Extensions': 'account/extensions.md'
+    - 'Users and extensions': 'account/extensions.md'
+    - 'Creating users': 'account/creating-users.md'    
     - 'Phone Numbers': 'account/phone-numbers.md'
     - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
     - 'User Feature Flags': 'account/feature-flags.md'

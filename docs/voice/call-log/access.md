@@ -14,7 +14,7 @@ Developers can easily determine the permissions available for an access token by
 
 There are two main API permissions developers will need to access Call Log data, `ReadCallLog` and `ReadCallRecording`.
 
-You may need to configure your application in the [RingCentral Developer Portal](https://developer.ringcentral.com) to enable your app/integration to use the Call Log API resources. Always refer to the [RingCentral API Developer Guide](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html) for the most up-to-date information on accessing the Call Log API resource.
+You may need to configure your application in the [RingCentral Developer Console](https://developer.ringcentral.com) to enable your app/integration to use the Call Log API resources. Always refer to the [RingCentral API Developer Guide](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html) for the most up-to-date information on accessing the Call Log API resource.
 
 The following table provides a quick outline about what API permissions the API Keys your application/integration must have associated in order to access each major category of data which Call Log provides.
 

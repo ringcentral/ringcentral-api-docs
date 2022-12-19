@@ -1,0 +1,62 @@
+{
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/402533461008/extension/402533467008",
+    "id": 402533467008,
+    "extensionNumber": "106",
+    "contact": {
+        "firstName": "Frank",
+        "lastName": "Davis",
+        "email": "frank.davis@example.com",
+        "emailAsLoginName": true,
+        "pronouncedName": {
+            "type": "Default",
+            "text": "Frank Davis"
+        }
+    },
+    "name": "Frank Davis",
+    "type": "User",
+    "status": "NotActivated",
+    "regionalSettings": {
+        "timezone": {
+            "uri": "https://platform.ringcentral.com/restapi/v1.0/dictionary/timezone/58",
+            "id": "58",
+            "name": "US/Pacific",
+            "description": "Pacific Time (US & Canada)",
+            "bias": "-480"
+        },
+        "homeCountry": {
+            "uri": "https://platform.ringcentral.com/restapi/v1.0/dictionary/country/1",
+            "id": "1",
+            "name": "United States",
+            "isoCode": "US",
+            "callingCode": "1"
+        },
+        "language": {
+            "id": "1033",
+            "name": "English (United States)",
+            "localeCode": "en-US"
+        },
+        "greetingLanguage": {
+            "id": "1033",
+            "name": "English (United States)",
+            "localeCode": "en-US"
+        },
+        "formattingLocale": {
+            "id": "1033",
+            "name": "English (United States)",
+            "localeCode": "en-US"
+        },
+        "timeFormat": "24h"
+    },
+    "setupWizardState": "NotStarted",
+    "permissions": {
+        "admin": {
+            "enabled": false
+        },
+        "internationalCalling": {
+            "enabled": true
+        }
+    },
+    "profileImage": {
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/account/402533461008/extension/402533467008/profile-image"
+    }
+}

@@ -50,6 +50,17 @@
     padding-left: 1rem;
 }
 
+.tabbed-content .highlight,
+.tabbed-content .admonition {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#content #main a.btn {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
 #sidebar-nav .nav li.nav-item > ul {
     list-style: none;
 }
@@ -154,6 +165,12 @@
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting.svg');
 }
 #sidebar-nav #nav-item-meetings:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting_hover.svg');
+}
+#sidebar-nav #nav-item-video {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting.svg');
+}
+#sidebar-nav #nav-item-video:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_meeting_hover.svg');
 }
 #sidebar-nav #nav-item-using-the-api {

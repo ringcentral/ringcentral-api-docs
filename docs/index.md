@@ -27,7 +27,7 @@ no_breadcrumb:true
       <h6 class="h4 card-subtitle mt-0 mb-2">Add-ins deliver meaningful and interactive content to messaging teams where people can take action on it.</h6>
       <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4 pb-2">
-	  <li><a href="https://www.ringcentral.com/us/en/blog/ringcentral-add-ins-connects-all-your-apps-in-one-place/" class="card-link">Read the accouncement</a></li>
+    <li><a href="https://www.ringcentral.com/us/en/blog/ringcentral-add-ins-connects-all-your-apps-in-one-place/" class="card-link">Read the accouncement</a></li>
       <li><a href="./team-messaging/add-ins/" class="card-link">What is an add-in?</a></li>
       <li><a href="./team-messaging/bots/walkthrough/" class="card-link">Create your first bot</a></li>
       <li><a href="./team-messaging/adaptive-cards/" class="card-link">Learn about Adaptive Cards</a></li>
@@ -160,7 +160,7 @@ no_breadcrumb:true
       <h5 class="h5 card-title">Call Log</h5>
       <p class="card-text">Get a detailed accounting of every call made in your organizaton.</p>
       <ul class="pl-0 ml-4">
-	  <li><a href="./voice/call-log/details" class="card-link">Trace calls flowing across the network</a></li>
+    <li><a href="./voice/call-log/details" class="card-link">Trace calls flowing across the network</a></li>
       <li><a href="./voice/call-log/recordings" class="card-link">Access call recordings</a></li>
       <li><a href="./voice/call-log/archival" class="card-link">Archive call histories</a></li>
       </ul>

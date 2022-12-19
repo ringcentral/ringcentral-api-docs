@@ -1,0 +1,64 @@
+{
+    "meetings": [
+    {
+        "id": "0fd2ae49-10a0-4db0-8dd1-61d340e97461!us-11-pdx10@us-11",
+        "bridgeId": "sjc01-c04-ndb4461eb1fc4f6efb310088b1681",
+        "shortId": "114771428",
+        "startTime": "2022-01-27T00:03:34.906Z",
+        "displayName": "Questions we need to discuss",
+        "type": "Meeting",
+        "status": "Done",
+        "hostInfo":
+        {
+            "accountId": "37455510",
+            "extensionId": "1585550021",
+            "displayName": "Byrne Reese"
+        },
+        "duration": 2223,
+        "rights": ["download", "share", "delete"],
+        "participants": [
+        {
+            "type": "Leave",
+            "id": "5f9e_6679",
+            "accountId": "37555510",
+            "extensionId": "1585550021",
+            "displayName": "Byrne Reese"
+        },
+        {
+            "type": "Leave",
+            "id": "4b23_6680",
+            "accountId": "37455510",
+            "extensionId": "2105556020",
+            "displayName": "Michael Throssel"
+        },
+        {
+            "type": "InConference",
+            "id": "fb79_6662",
+            "accountId": "37555510",
+            "extensionId": "2105555020",
+            "displayName": "Becky Hensley"
+        }],
+        "recordings": [
+        {
+            "id": "554d06ea-5d44-498a-93e9-0978bfa73ecd",
+            "availabilityStatus": "Alive",
+            "startTime": 1643242400003,
+            "mediaURL": "/rcvideo/v1/recordings/tSq3o_xxxx_j0YUA==",
+            "url": "https://media.ringcentral.com/rcvideo/v1/recordings/tSq3o_xxx_j0YUA==",
+            "metadata": {
+                "duration": 1638,
+                "fileSize": 66484597
+            },
+            "status": "Processed",
+            "longSummary": "",
+            "shortSummary": "The participants are looking for an opportunity \
+			       in aha that is associated with an account.",
+            "keywords": ["multiple deals", "potential revenue", "logic", 
+			             "sales force", "opportunity", "account", "customer",
+						 "stage menu", "specific status"]
+        }]
+    }],
+    "paging": {
+        "currentPageToken": "ewogICJ0IiA6IDE1ODA5MzAxxxxIKfQ=="
+    }
+}

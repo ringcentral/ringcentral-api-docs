@@ -1,0 +1,29 @@
+{
+  phoneNumbers: [
+    {
+      phoneNumber: '+16504191505',
+      country: [Object],
+      default: true,
+      location: 'San Mateo, CA'
+    },
+    { phoneNumber: '+18885110509', country: [Object], default: false },
+    {
+      phoneNumber: '+541159842371',
+      country: [Object],
+      default: false,
+      location: 'Buenos Aires'
+    },
+    {
+      phoneNumber: '+61862450610',
+      country: [Object],
+      default: false,
+      location: 'Perth'
+    },
+    {
+      phoneNumber: '+61283104136',
+      country: [Object],
+      default: false,
+      location: 'Sydney'
+    }
+  ]
+}

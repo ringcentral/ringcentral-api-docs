@@ -1,9 +1,6 @@
-# Users and Extensions
+# Users and extensions
 
-The term "extension" in RingCentral refers to both addressable phone lines within a company, as well as to users within the organization. The term is conflated due to the fact that every user within the system is assigned an extension, yet their are other specialized forms of extensions used for other purposes on the network.
-
-??? check "Users == Extensions"
-    When you see the term "extension" used throughout our documentation, remind yourself that the term "extension" is often used interchangably with "user."
+The term "extension" in RingCentral refers to both addressable phone lines within a company, as well as to users within the organization. The term is conflated due to the fact that every user within the system is assigned an extension, yet there are other specialized forms of extensions used for other purposes on the network, the most common example being a call queue. Call queues have an extension associated with them,but are obviously not associated with an individual user. 
 
 ## Extension Types
 
@@ -11,18 +8,18 @@ Each extension has a "type" that defines the capabilities of that extension. Her
 
 | Extension Type | Description |
 |-|-|
-| **User** | A user's primary extension. | 
-| **FaxUser** | An extension that can be used for faxes only. | 
-| **VirtualUser** | An extension that can be used for placing calls and faxes only. | 
-| **DigitalUser** | An extension that be used for placing calls, faxes, and desk phones.  | 
-| **Department** | A department extension allows you to distribute calls to department member extensions based on the number of calls they’ve taken, how long they’ve waited to take a call or their experience. You may also have the calls distributed in random order. | 
-| **TakeMessageOnly** (or Voicemail) | The Messages-Only Extension is one that is dedicated specifically to receive messages. All calls routed to this extension will automatically be directed to the extension's voicemail box. | 
-| **AnnouncementOnly** | An Announcements-Only Extension is dedicated to play an announcement for your callers. Configuring this extension allows you to record a message that gets played each time a call comes into your phone system. | 
-| **SharedLinesGroup** | A Shared Lines Group allows calls made to one phone number to be answered by multiple phone devices. Answered calls can be handed off to other phones sharing the same phone number. |
-| **PagingOnlyGroup** | A Paging Only group is a collection of paging devices and/or desk phones that can receive a paging call. It allows a business to make a real-time announcement to multiple desk phones and/or overhead paging devices. | 
-| **IvrMenu** | An IvrMenu extension is dedicated to an Auto-Receptionist. When called, a greeting is played and users will be able to navigate a system of menus. | 
-| **ParkLocation** | Park Locations allow a specific group of people to park a call in a private location that only specific individuals can pick up. |
-| **ApplicationExtension** | | 
+| `User`             | A user's primary extension. | 
+| `FaxUser`          | An extension that can be used for faxes only. | 
+| `VirtualUser`      | An extension that can be used for placing calls and faxes only. | 
+| `DigitalUser`      | An extension that be used for placing calls, faxes, and desk phones.  | 
+| `Department`       | A department extension allows you to distribute calls to department member extensions based on the number of calls they’ve taken, how long they’ve waited to take a call or their experience. You may also have the calls distributed in random order. | 
+| `TakeMessageOnly` (or Voicemail) | The Messages-Only Extension is one that is dedicated specifically to receive messages. All calls routed to this extension will automatically be directed to the extension's voicemail box. | 
+| `AnnouncementOnly` | An Announcements-Only Extension is dedicated to play an announcement for your callers. Configuring this extension allows you to record a message that gets played each time a call comes into your phone system. | 
+| `SharedLinesGroup` | A Shared Lines Group allows calls made to one phone number to be answered by multiple phone devices. Answered calls can be handed off to other phones sharing the same phone number. |
+| `PagingOnlyGroup`  | A Paging Only group is a collection of paging devices and/or desk phones that can receive a paging call. It allows a business to make a real-time announcement to multiple desk phones and/or overhead paging devices. | 
+| `IvrMenu`          | An IvrMenu extension is dedicated to an Auto-Receptionist. When called, a greeting is played and users will be able to navigate a system of menus. | 
+| `ParkLocation`     | Park Locations allow a specific group of people to park a call in a private location that only specific individuals can pick up. |
+| `ApplicationExtension` | | 
 
 !!! info "What extensions are available to you?"
     Be aware that the extension types available to your organization will depend upon your current service plan. 

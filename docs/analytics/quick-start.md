@@ -4,7 +4,7 @@ no_breadcrumb:true
 
 In this quick start guide, we are going to access call performance data via using Java/C# or Node.JS based command line application.
 
-## Create App and Get Credentials
+## Create app and obtain credentials
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 

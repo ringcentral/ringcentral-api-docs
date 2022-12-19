@@ -193,7 +193,7 @@ Partners receive a number of benefits, one of the most valuable being featured i
 ??? info "Reference: App Gallery Fields"
     | Field Name | Description |
     |------------|-------------|
-    | Application Name  | The name of your app as you wish it to appear in the directory. This may be different from the app name in the Developer Portal. |
+    | Application Name  | The name of your app as you wish it to appear in the directory. This may be different from the app name in the Developer Console. |
     | Free or Paid  | How does your application make money? This information will be displayed publicly. |
     | Get App URL  | Choose between accessing the app directly from within the App Gallery (common for bots), or provide a URL at which someone can download/access your application.  |
     | Publisher  | The name of the publisher as it will appear on the profile.  |
