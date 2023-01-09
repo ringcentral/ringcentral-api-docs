@@ -11,7 +11,7 @@ Each event type has a unique payload and structure depending upon the event type
 
 When [subscribing](../outgoing-webhooks/#subscribing-to-an-outgoing-event) to chat events you will need to specify the following event filter:
 
-* `/restapi/v1.0/glip/groups`
+* `/team-messaging/v1/groups`
 
 Once a subscription has been setup, your application will begin receiving events at the designated URL. 
 

@@ -254,7 +254,7 @@ You will notice that the bot responds 'pong' to your message.
     ```json
     {
       uuid: '8987221663935761370',
-      event: '/restapi/v1.0/glip/posts',
+      event: '/team-messaging//v1/posts',
       timestamp: '2022-01-06T19:10:51.808Z',
       subscriptionId: '56b8f636-1b1a-4255-9479-84a30c0f9d23',
       ownerId: '707525005',
@@ -282,7 +282,7 @@ You will notice that the bot responds 'pong' to your message.
 	```json
     {
       uuid: '4474463302007747908',
-      event: '/restapi/v1.0/glip/posts',
+      event: '/team-messaging/v1/posts',
       timestamp: '2022-01-06T19:10:53.916Z',
       subscriptionId: '56b8f636-1b1a-4255-9479-84a30c0f9d23',
       ownerId: '707525005',

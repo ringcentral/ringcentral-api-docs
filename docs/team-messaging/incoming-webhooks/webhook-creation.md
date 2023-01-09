@@ -32,7 +32,7 @@ Here is a quick sample request and response for how an Incoming Webhook is gener
 === "Request"
 
 	```http
-	POST https://platform.ringcentral.com/restapi/v1.0/glip/groups/6090227714/webhooks
+	POST https://platform.ringcentral.com/team-messaging/v1/groups/6090227714/webhooks
 	```
 
 === "Response"
@@ -46,7 +46,7 @@ Here is a quick sample request and response for how an Incoming Webhook is gener
         ],
         "creationTime": "2018-12-11T16:29:02.185Z",
         "lastModifiedTime": "2018-12-11T16:29:02.185Z",
-        "uri": "https://hooks.glip.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
+        "uri": "https://hooks.ringcentral.com/webhook/v2/3053f6cf-b6de-418c-a6cd-2eb222cdab4e",
         "status": "Active"
 	}
 	```

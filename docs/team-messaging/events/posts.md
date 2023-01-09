@@ -37,7 +37,7 @@ When you receive a PostAdded event, here are some tips to help you when creating
 Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../../posting/). For example:
 
 ```http
-POST <apiEntryPoint>/restapi/v1.0/glip/groups/<groupId>/posts
+POST /team-messaging/v1/groups/<groupId>/posts
 Authorization: Bearer <access_token>
   
 {

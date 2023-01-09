@@ -12,7 +12,7 @@ Then from the same directory in which you created the above file, run the follow
 
 ```sh
 % curl -d @test.json -H 'Content-Type: application/json' \
-     https://hooks.glip.com/webhook/v2/9e116c5c-xxxx-yyyy-zzzz-c12a85cd6063
+     https://hooks.ringcentral.com/webhook/v2/9e116c5c-xxxx-yyyy-zzzz-c12a85cd6063
 ```
 
 When complete, you should see a message that looks something like this:

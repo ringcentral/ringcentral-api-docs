@@ -24,7 +24,7 @@ To upload a file, one conducts an HTTP POST to the following URI, using the file
 **Sample Request**
 
 ```http
-POST /restapi/v1.0/glip/files?name="My file"&groupId=101500
+POST /team-messaging/v1/files?name="My file"&groupId=101500
 Content-Type: audio/wav
 Accept: application/json
 Authorization: Bearer {access_token}

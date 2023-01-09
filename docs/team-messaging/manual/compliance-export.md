@@ -43,18 +43,18 @@ This is helpful to human beings, but is difficult to automate. To create an expo
 * Specify the period of time for the archive via the `timeFrom` and `timeTo` parameters.
 * Specify a list of users whose data you would like to export via the `contacts` parameter. A `contact` is an object and can be specified by an id number or an email address.
 * Specify a list of teams/conversations to export via the `chatIds` parameter.
-* Finally, make a POST request to the `/restapi/v1.0/glip/data-export` endpoint.
+* Finally, make a POST request to the `/team-messaging/v1/data-export` endpoint.
 
 !!! hint "How to find IDs to filter by"
     Valid `chatIds` can be retrieved using the [Get Chats API](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) to read all teams/chats/conversations.
 
-Required permission(s):  Glip
+Required permission(s):  Team Messaging
 
 If successful, the response will contain the task ID and the status of the newly created task as shown below.
 
 ```json hl_lines="3"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
+  "uri":"https://platform.ringcentral.com/team-messaging/v1/data-export/809646016-xx-yy",
   "id":"809646016-xx-yy",
   "creationTime":"2020-01-16T22:12:55Z",
   "lastModifiedTime":"2020-01-16T22:12:55Z",
@@ -82,13 +82,13 @@ To archive a large data export report (for a long period of time or for an accou
 * Completed
 * Cancelled
 
-To check the status of a task, make a GET request to `/restapi/v1.0/glip/data-export/[taskId]` endpoint. Where the `taskId` is the value of the `id` returned in the previous step. If the report is ready, the task status is marked as "Completed."
+To check the status of a task, make a GET request to `/team-messaging/v1/data-export/[taskId]` endpoint. Where the `taskId` is the value of the `id` returned in the previous step. If the report is ready, the task status is marked as "Completed."
 
 When successful, the response will contain the id (taskId) and the status of the newly created task.
 
 ```json hl_lines="3 6"
 {
-  "uri":"https://platform.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy",
+  "uri":"https://platform.ringcentral.com/team-messaging/v1/data-export/809646016-xx-yy",
   "id":"809646016-xx-yy",
   "creationTime":"2020-01-16T22:12:55Z",
   "lastModifiedTime":"2020-01-16T22:12:55Z",
@@ -105,7 +105,7 @@ When successful, the response will contain the id (taskId) and the status of the
     {
       "id":"1",
       "size":3434,
-      "uri":"https://media.ringcentral.com/restapi/v1.0/glip/data-export/809646016-xx-yy/datasets/1"
+      "uri":"https://media.ringcentral.com/team-messaging/v1/data-export/809646016-xx-yy/datasets/1"
     }]
 }
 ```

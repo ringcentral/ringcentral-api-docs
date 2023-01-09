@@ -45,7 +45,7 @@ This event is emitted when webhook has been created.
       ],
       "creationTime": "2018-01-25T10:40:23.748Z",
       "lastModifiedTime": "2018-01-25T10:40:23.748Z",
-      "uri": "https://hooks.glip.com/webhook/v2/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
+      "uri": "https://hooks.ringcentral.com/webhook/v2/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
       "status": "Active",
       "eventType": "WebhookCreated"
 }
@@ -68,7 +68,7 @@ This event is emitted when webhook has been either activated or suspended.
         ],
         "creationTime": "2018-01-25T10:40:23.748Z",
         "lastModifiedTime": "2018-01-25T10:40:23.748Z",
-        "uri": "https://hooks.glip.com/webhook/v2/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
+        "uri": "https://hooks.ringcentral.com/webhook/v2/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
         "status": "Suspended"
       },
       "eventType": "WebhookUpdated"
@@ -88,7 +88,7 @@ This event is emitted when webhook has been deleted.
       ],
       "creationTime": "2018-01-25T10:40:23.748Z",
       "lastModifiedTime": "2018-01-25T10:40:23.748Z",
-      "uri": "https://hooks.glip.com/webhook/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
+      "uri": "https://hooks.ringcentral.com/webhook/1a7fc5f1-38b7-4c3b-8251-c3f1de5e5c68",
       "status": "Deleted",
       "eventType": "WebhookDeleted"
 }
