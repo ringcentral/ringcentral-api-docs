@@ -1,0 +1,32 @@
+{
+    "status": "Success",
+    "response": {
+        "summaries": [
+            {
+                "name": "Extractive",
+                "values": [
+                    {
+                        "value": "Commonly referred to as a “self-service” solution, a knowledge base. 
+                                  Lets your customers find answers to their support questions without 
+                                  having to speak to a person on your team and taking up their precious 
+                                  time.",
+                        "start": 0.12,
+                        "end": 1.12,
+                        "speakerId": "",
+                        "confidence": 0.5238
+                    },
+                    {
+                        "value": "A knowledge base can include any variety of resources that help 
+                                  customers get the most from a product or service, including howto 
+                                  guides, video tutorials, Faqs, white papers, case studies and even 
+                                  user forums.",
+                        "start": 0.12,
+                        "end": 1.12,
+                        "speakerId": "",
+                        "confidence": 0.5143
+                    }
+                ]
+            }
+        ]
+    }
+}

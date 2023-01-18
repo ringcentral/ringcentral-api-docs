@@ -1,0 +1,64 @@
+{
+    "status": "Success",
+    "response": {
+        "transcript": "Could produce large hail isolated tornadoes and heavy rain.",
+        "confidence": 0.87,
+        "words": [
+            {
+                "word": "could",
+                "start": 2.4,
+                "end": 2.8,
+                "confidence": 0.804
+            },
+            {
+                "word": "produce",
+                "start": 2.8,
+                "end": 3.12,
+                "confidence": 0.965
+            },
+            {
+                "word": "large",
+                "start": 3.12,
+                "end": 3.44,
+                "confidence": 0.859
+            },
+            {
+                "word": "hail",
+                "start": 3.6,
+                "end": 3.92,
+                "confidence": 0.812
+            },
+            {
+                "word": "isolated",
+                "start": 4.16,
+                "end": 4.48,
+                "confidence": 0.841
+            },
+            {
+                "word": "tornadoes",
+                "start": 4.56,
+                "end": 5.2,
+                "confidence": 0.897
+            },
+            {
+                "word": "and",
+                "start": 5.2,
+                "end": 5.36,
+                "confidence": 0.979
+            },
+            {
+                "word": "heavy",
+                "start": 5.44,
+                "end": 5.76,
+                "confidence": 0.867
+            },
+            {
+                "word": "rain",
+                "start": 5.84,
+                "end": 5.92,
+                "confidence": 0.904
+            }
+        ],
+        "audio_duration": 7.096599
+    }
+}
