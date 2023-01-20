@@ -2,7 +2,7 @@
 
 Speaker enrollment is the process by which an identity becomes associated with a voice or accoustic signature. This allows RingCentral to include those identities in any reports it generates about the speakers within a media file. 
 
-Our Speaker Enrollment API can be used to register speakers and their voices before calling our other speaker-related APIs such as [speaker identification](./speaker-identification/), and [speaker diarization](./speaker-diarization/). The speaker enrollment process is *content agnostic*, meaning there are no specific requirements or restrictions on what the speaker says in order generate their audio signature. However, for the best results, obey the following guidelines:
+Our Speaker Enrollment API can be used to register speakers and their voices before calling our other speaker-related APIs such as [speaker identification](../speaker-identification/), and [speaker diarization](../speaker-diarization/). The speaker enrollment process is *content agnostic*, meaning there are no specific requirements or restrictions on what the speaker says in order generate their audio signature. However, for the best results, obey the following guidelines:
 
 * Use audio samples that are 12-24 seconds in length. Samples with less than six or more than 30 seconds will be rejected. 
 * Ensure the sample include continuous speech, no silence, and no background noise if possible. 

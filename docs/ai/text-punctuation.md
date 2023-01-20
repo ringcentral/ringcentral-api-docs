@@ -1,6 +1,6 @@
 # Smart punctuation
 
-The Smart Punctuation API takes a block of text and augments it with proper punctuation using artificial intelligence, and is specifically optimized in the processing of [speech recognition](../text-to-speech/) output. The API will augment text with the following punctuation:
+The Smart Punctuation API takes a block of text and augments it with proper punctuation using artificial intelligence, and is specifically optimized in the processing of [speech recognition](../speech-to-text/) output. The API will augment text with the following punctuation:
 
 * Periods, full-stop: `.`
 * Commas: `,`

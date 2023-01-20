@@ -13,7 +13,7 @@ CHAT_ID = '<GROUP ID>'
 rc = RingCentral.new(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER)
 rc.authorize(username: RINGCENTRAL_USERNAME, extension: RINGCENTRAL_EXTENSION, password: RINGCENTRAL_PASSWORD)
 
-resp = rc.post('/restapi/v1.0/glip/chats/'+CHAT_ID+'/adpative-cards', payload: {
+resp = rc.post('/team-messaging/v1/chats/'+CHAT_ID+'/adpative-cards', payload: {
     "type": "AdaptiveCard",
     "body": [
 	{

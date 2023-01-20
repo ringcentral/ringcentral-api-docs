@@ -14,7 +14,7 @@ Each instance of the Client SDK must establish a session on behalf of each parti
 
 Using a RingCentral auth code, obtained through an OAuth flow, offers end users with the best and easiest-to-use authentication option. For this reason, we recommend this method be used in production. If you are familiar with OAuth grant types and flows, the process is relatively straight-forward. 
 
-Start the process by initiating the [RingCentral auth code grant type flow](../../authentication/auth-code-flow/). When the user is redirected back to your application after logging in, you will receive an auth code from RingCentral. Provide this auth code to the Client SDK and it will complete the auth process for you. 
+Start the process by initiating the [RingCentral auth code grant type flow](../../../authentication/auth-code-flow/). When the user is redirected back to your application after logging in, you will receive an auth code from RingCentral. Provide this auth code to the Client SDK and it will complete the auth process for you. 
 
 ### Guest authentication
 
@@ -33,7 +33,7 @@ Guest auth is accomplished by providing no credentials (apart from the app's Cli
 
 ### JWT credential
 
-A [JWT credential](../../authentication/jwt/) can be input into the SDK to authenticate a user. JWT credentials are currently obtained through the RingCentral Developer Console and are associated with an individual user. JWT credentials are an ideal way to authenticate to the RingCentral REST API for scheduling meetings, but they do not necessarily offer the best user experience in client applications because the current process of obtaining a JWT through the Developer Console may intimidate a casual end-user. That being said, many developers consider them ideal to use during development because they are quick and easy for developers to generate, and it avoids having to implement a more complex authentication flow just to get started. 
+A [JWT credential](../../../authentication/jwt/create-jwt/) can be input into the SDK to authenticate a user. JWT credentials are currently obtained through the RingCentral Developer Console and are associated with an individual user. JWT credentials are an ideal way to authenticate to the RingCentral REST API for scheduling meetings, but they do not necessarily offer the best user experience in client applications because the current process of obtaining a JWT through the Developer Console may intimidate a casual end-user. That being said, many developers consider them ideal to use during development because they are quick and easy for developers to generate, and it avoids having to implement a more complex authentication flow just to get started. 
 
 The following code sample shows how JWT authentication is accomplished across our three SDKs.
 

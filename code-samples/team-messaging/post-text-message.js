@@ -21,7 +21,7 @@ platform.login({
 })
 
 platform.on(platform.events.loginSuccess, () => {
-    var endpoint = "/restapi/v1.0/glip/chats"
+    var endpoint = "/team-messaging/v1/chats"
     platform.get(endpoint, { type: 'Personal' } )
 	.then(function(resp){
 	    var json = resp.json()
@@ -32,7 +32,7 @@ platform.on(platform.events.loginSuccess, () => {
 })
 
 function post_text_message(chat_id) {
-    platform.post('/restapi/v1.0/glip/chats/'+chat_id+'/posts', {
+    platform.post('/team-messaging/v1/chats/'+chat_id+'/posts', {
 	text: "Hello World"
     })
 	.then(function(resp){

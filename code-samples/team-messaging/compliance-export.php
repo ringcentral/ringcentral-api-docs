@@ -19,7 +19,7 @@ create_compliance_export_task();
 function create_compliance_export_task(){
     global $platform;
     echo ("Create export task.\n");
-    $endpoint = "/restapi/v1.0/glip/data-export";
+    $endpoint = "/team-messaging/v1/data-export";
     try {
 	$response = $platform->post($endpoint,
 	    array(
@@ -36,7 +36,7 @@ function create_compliance_export_task(){
 function get_compliance_export_task($taskId){
     global $platform;
     echo ("Check export task status ...\n");
-    $endpoint = "/restapi/v1.0/glip/data-export/" . $taskId;
+    $endpoint = "/team-messaging/v1/data-export/" . $taskId;
     try {
 	$response = $platform->get($endpoint);
 	$json = $response->json();

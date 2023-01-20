@@ -162,7 +162,7 @@ app.post('/callback', function (req, res) {
 // Post a message to a chat
 function send_message( msg, group ) {
     console.log("Posting response to group: " + group);
-    platform.post('/restapi/v1.0/glip/chats/'+group+'/posts', {
+    platform.post('/team-messaging/v1/chats/'+group+'/posts', {
 	"text": msg
     }).catch( function (e) {
 	console.log(e)
@@ -171,7 +171,7 @@ function send_message( msg, group ) {
 
 function send_card( card, group ) {
     console.log("Posting card to group: " + group);
-    platform.post('/restapi/v1.0/glip/chats/'+group+'/adaptive-cards', card)
+    platform.post('/team-messaging/v1/chats/'+group+'/adaptive-cards', card)
 	.catch( function (e) {
 	    console.log(e)
 	});
@@ -189,13 +189,13 @@ app.post('/msg-callback', function (req, res) {
 
 function update_card( group, card, content ) {
     console.log("Updating card...");
-    platform.put('/restapi/v1.0/glip/adaptive-cards/'+card, content)
+    platform.put('/team-messaging/v1/adaptive-cards/'+card, content)
 	.catch( function (e) {
 	    console.log(e)
 	});
 }
 
-// Method to Subscribe to Glip Events.
+// Method to Subscribe to Team Messaging Events.
 function subscribeToEvents(token){
     console.log("Subscribing to post and group events")
     var requestData = {

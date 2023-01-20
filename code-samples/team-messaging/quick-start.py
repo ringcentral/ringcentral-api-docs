@@ -16,7 +16,7 @@ try:
 except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 
-endpoint = "/restapi/v1.0/glip/teams"
+endpoint = "/team-messaging/v1/teams"
 params = {
     "public": True,
     "name": "Fun team",

@@ -18,7 +18,7 @@ platform.login(RINGCENTRAL_USERNAME,
                RINGCENTRAL_EXTENSION,
                RINGCENTRAL_PASSWORD)
 
-endpoint = "/restapi/v1.0/glip/chats/" + CHAT_ID + '/tasks'
+endpoint = "/team-messaging/v1/chats/" + CHAT_ID + '/tasks'
 note = {
     "title": "This is a note",
     "body": "<strong>heading</strong><br><br>Any HTML can be entered here."

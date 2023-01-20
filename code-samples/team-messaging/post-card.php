@@ -16,7 +16,7 @@ $rcsdk = new RingCentral\SDK\SDK($RINGCENTRAL_CLIENTID, $RINGCENTRAL_CLIENTSECRE
 $platform = $rcsdk->platform();
 $platform->login($RINGCENTRAL_USERNAME, $RINGCENTRAL_EXTENSION, $RINGCENTRAL_PASSWORD);
 
-$endpoint = "/restapi/v1.0/glip/chats/"+CHAT_ID+"/adaptive-cards";
+$endpoint = "/team-messaging/v1/chats/"+CHAT_ID+"/adaptive-cards";
 $params = array(
     "type" => "AdaptiveCard",
     "$schema" => "http://adaptivecards.io/schemas/adaptive-card.json",

@@ -12,7 +12,7 @@ EXTENSION    = os.environ.get('RC_EXTENSION')
 
 def create_compliance_export_task():
     print("Create export task.")
-    endpoint = "/restapi/v1.0/glip/data-export"
+    endpoint = "/team-messaging/v1/data-export"
     params = {
 	"timeFrom": "2021-01-01T00:00:00.000Z",
 	"timeTo": "2021-01-31T23:59:59.999Z"
@@ -23,7 +23,7 @@ def create_compliance_export_task():
 
 def get_compliance_export_task(taskId):
     print("Check export task status ...")
-    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
+    endpoint = "/team-messaging/v1/data-export/" + taskId
     response = platform.get(endpoint)
     jsonObj = response.json()
     if jsonObj.status == "Completed":

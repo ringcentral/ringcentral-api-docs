@@ -17,7 +17,7 @@ rc.authorize(username: RINGCENTRAL_USERNAME,
              extension: RINGCENTRAL_EXTENSION,
              password: RINGCENTRAL_PASSWORD)
 
-resp = rc.post('/restapi/v1.0/glip/chats/'+CHAT_ID+'/notes', payload: {
+resp = rc.post('/team-messaging/v1/chats/'+CHAT_ID+'/notes', payload: {
     "title": "This is a note",
     "body": "<strong>heading</strong><br><br>Any HTML can be entered here."
 })

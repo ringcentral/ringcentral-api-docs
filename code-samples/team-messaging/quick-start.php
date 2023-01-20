@@ -11,7 +11,7 @@ $platform->login( $_ENV['RC_USERNAME'],
                   $_ENV['RC_EXTENSION'],
                   $_ENV['RC_PASSWORD'] );
 
-$endpoint = "/restapi/v1.0/glip/teams";
+$endpoint = "/team-messaging/v1/teams";
 $params = array(
       "public" => true,
       "name" => "Fun team",

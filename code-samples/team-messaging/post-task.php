@@ -20,7 +20,7 @@ $platform->login($RINGCENTRAL_USERNAME,
 	         $RINGCENTRAL_EXTENSION,
 		 $RINGCENTRAL_PASSWORD);
 
-$endpoint = "/restapi/v1.0/glip/chats/"+CHAT_ID+"/notes";
+$endpoint = "/team-messaging/v1/chats/"+CHAT_ID+"/notes";
 $params = array(
     "subject" => "You need to do X",
     "assignees" => array( "id" => "<ID>" ),

@@ -9,7 +9,7 @@ $rc.authorize(username: ENV['RC_USERNAME'],
               extension: ENV['RC_EXTENSION'],
               password: ENV['RC_PASSWORD'])
 
-resp = $rc.post('/restapi/v1.0/glip/teams', payload: {
+resp = $rc.post('/team-messaging/v1/teams', payload: {
     public: true,
     name: "Fun team",
     members: [{ email: "member.1@gmail.com"}, {email:"member.2@gmail.com"}],

@@ -14,7 +14,7 @@ $rc.authorize(username: USERNAME, extension: EXTENSION, password: PASSWORD)
 
 def create_compliance_export_task()
     puts "Create export task."
-    endpoint = "/restapi/v1.0/glip/data-export"
+    endpoint = "/team-messaging/v1/data-export"
     response = $rc.post(endpoint, payload: {
 	timeFrom: "2019-07-01T00:00:00.000Z",
 	timeTo: "2019-07-29T23:59:59.999Z"
@@ -24,7 +24,7 @@ end
 
 def get_compliance_export_task(taskId)
     puts "Check export task status ..."
-    endpoint = "/restapi/v1.0/glip/data-export/" + taskId
+    endpoint = "/team-messaging/v1/data-export/" + taskId
     response = $rc.get(endpoint)
     body = response.body
     if body['status'] == "Completed"

@@ -10,7 +10,7 @@ The emotion categories are based on the [Plutchik Wheel of Emotions](https://www
 
 
 
-In case you are looking for emotion recognition per utterance per speaker, you would need to use [Interaction Analytics](interaction-analytics-api.md) as this API doesn't provide speech-to-text and speaker diarization capabilities. This /recognize-emotion API provides a pure time-sliced emotion detection capability on an audio/video recording.
+In case you are looking for emotion recognition per utterance per speaker, you would need to use [Interaction Analytics](../interaction-analytics/) as this API doesn't provide speech-to-text and speaker diarization capabilities. This /recognize-emotion API provides a pure time-sliced emotion detection capability on an audio/video recording.
 
 
 
@@ -24,7 +24,7 @@ In case you are looking for emotion recognition per utterance per speaker, you w
 
 #### Pre-requisite
 
-First you need acquire your application's 'production' credentials from Developer Console in the [Developer Portal](https://developers.ringcentral.com) and then obtain the JWT token. Refer to this guide to create and obtain [JWT Credentials.](https://developers.ringcentral.com/guide/authentication/jwt/quick-start) 
+First you need acquire your application's 'production' credentials from Developer Console in the [Developer Portal](https://developers.ringcentral.com) and then obtain the JWT token. Refer to this guide to create and obtain [JWT Credentials](https://developers.ringcentral.com/guide/authentication/jwt/quick-start). 
 
 === "JavaScript"
 
@@ -311,7 +311,7 @@ Open a terminal window to make the request,
 
 | Parameter  | Type   | Description                                                        | Notes                 |
 | ---------- | ------ | -------------------------------------------------------------------| ----------------------|
-| response   | Object | List [Emotion-Object] or [errors](./errors.md) in case of failures |                       |
+| response   | Object | List [Emotion-Object] or errors in case of failures |                       |
 | status     | Enum   | Options: Success, Fail                                             |                       |
 
 ### Emotion-Object
@@ -325,6 +325,3 @@ Response is the list of emotion scores. The parameters in emotion scores are as 
 | end       | Float  | end of the audio segment.                       |       |
  
 
-#### More Information
-
-Please refer to the API Reference document for [detailed description.](swagger-api-ref.md)

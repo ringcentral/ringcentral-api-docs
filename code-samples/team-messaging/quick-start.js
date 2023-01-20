@@ -18,7 +18,7 @@ platform.on(platform.events.loginSuccess, () => {
 })
 
 async function create_team() {
-  var endpoint = "/restapi/v1.0/glip/teams"
+  var endpoint = "/team-messaging/v1/teams"
   var params = {
     public: true,
     name: "Fun team",

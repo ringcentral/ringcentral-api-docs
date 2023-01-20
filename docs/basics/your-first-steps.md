@@ -63,14 +63,14 @@ Selecting permissions you may not actually need can impede access to production 
 
 **Does your app have a user interface, and will each of your users need to connect to RingCentral?**
 
-If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](./auth-code-pkce-flow). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](./auth-code-flow).
+If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](../../authentication/auth-code-pkce-flow). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](../../authentication/auth-code-flow).
 
 !!! hint "Use refresh tokens"
-    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](./refresh-tokens/) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
+    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](../../authentication/refresh-tokens/) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
 
 **Does your app lack a user interface, and/or does it act on behalf of all users within an organization?**
 
-Apps that lack a user interface, or are run from the command line are typically utility apps that act on behalf of all users within an organization simultaneously. These apps often utilize a "service user" account that possesses administrative priveleges that allow it to act on behalf of all or any user in the organization. For these types of apps, we recommend the [JWT auth flow](./jwt-flow/).
+Apps that lack a user interface, or are run from the command line are typically utility apps that act on behalf of all users within an organization simultaneously. These apps often utilize a "service user" account that possesses administrative priveleges that allow it to act on behalf of all or any user in the organization. For these types of apps, we recommend the [JWT auth flow](../../authentication/jwt-flow/).
 
 [Learn more about Authentication on RingCentral &raquo;](../../authentication/)
 

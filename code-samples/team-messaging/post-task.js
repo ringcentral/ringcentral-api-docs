@@ -24,7 +24,7 @@ platform.on(platform.events.loginSuccess, () => {
 
 async function post_task( group ) {
     try {
-	var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/tasks', {
+	var resp = await platform.post('/team-messaging/v1/chats/'+group+'/tasks', {
 	    "subject": "You need to do X",
 	    "assignees": {
 		"id": "<ID>"

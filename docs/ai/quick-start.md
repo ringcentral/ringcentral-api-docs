@@ -153,6 +153,3 @@ In time, when RingCentral has fully processed the request, a response will be po
 {! code-samples/ai/quick-start-response.json !}
 ```
 
-### What Next ?
-
-We recommend reading the ["API Reference"](swagger-api-ref.md) to understand the various APIs definition, HTTP Rquest and Response objects. You can also refer to the detail guides for various AI APIs from the left side navigation.

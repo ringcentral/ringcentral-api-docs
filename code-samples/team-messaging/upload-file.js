@@ -22,7 +22,7 @@ platform.login({
 })
 
 platform.on(platform.events.loginSuccess, () => {
-    var endpoint = "/restapi/v1.0/glip/files"
+    var endpoint = "/team-messaging/v1/files"
     bindata = fs.readFileSync('./cats.png');
     platform.post( endpoint, bindata, {
         name: "cats.png", groupId: '367050754'

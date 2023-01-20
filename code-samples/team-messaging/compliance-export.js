@@ -33,7 +33,7 @@ async function create_compliance_export_task() {
 	timeTo: "2019-08-26T23:59:59.999Z"
     }
     try {
-	var resp = await platform.post("/restapi/v1.0/glip/data-export", params)
+	var resp = await platform.post("/team-messaging/v1/data-export", params)
 	var jsonObj = await resp.json()
 	get_compliance_export_task(jsonObj.id)
     } catch (e) {
@@ -44,7 +44,7 @@ async function create_compliance_export_task() {
 async function get_compliance_export_task(taskId) {
   console.log("Check export task status ...")
   try {
-    var resp = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`)
+    var resp = await platform.get(`/team-messaging/v1/data-export/${taskId}`)
     var jsonObj = await resp.json()
     if (jsonObj.status == "Completed") {
       for (var i = 0; i < jsonObj.datasets.length; i++) {
