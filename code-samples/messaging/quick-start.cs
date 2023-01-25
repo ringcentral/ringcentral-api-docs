@@ -34,12 +34,11 @@ namespace Send_SMS
                     if (feature == "SmsSender")
                     {
                         send_sms(record.phoneNumber).Wait();
-                        goto LoopEnd;
+                        Console.WriteLine("\nDone.");
+                        return;
                     }
                 }
             }
-            LoopEnd:
-            Console.WriteLine("\nDone.");
         }
         
         static private async Task send_sms(string fromNumber)
