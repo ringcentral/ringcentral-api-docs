@@ -1,0 +1,12 @@
+{
+  "eventFilters": [
+    "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true",
+    "/restapi/v1.0/account/~/extension/~/message-store",
+    "/restapi/v1.0/account/~/extension/~/presence/line",
+    "/restapi/v1.0/account/~/extension"
+  ],
+  "deliveryMode": {
+    "transportType": "WebHook",
+    "address": "https://myapp.ngrok.io/hook?auth_token=MySecureToken"
+  }
+}

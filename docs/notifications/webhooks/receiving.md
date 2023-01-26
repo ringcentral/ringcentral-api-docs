@@ -2,23 +2,6 @@
 
 Once a [webhook has been created](../creating-webhooks/) then events will start being transmitted to the webhook URL you designated.
 
-## Validating incoming webhooks
-
-To ensure that the endpoints RingCentral interfaces with via webhooks are designed for RingCentral, "validation tokens" are transmitted amongst the HTTP request headers. It is the expectation of RingCentral that your webhook handler echo back this validation token in the response via an HTTP response header. 
-
-Below is an example of how validation tokens should be echoed in a trivial PHP app.
-
-```php
-<?php
-// Get validation token
-$v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : ‘’;
-// Return validation token as header
-if (strlen($v) > 0) {
-  header("Validation-Token: {$v}");
-}
-?>
-```
-
 ## Verifying incoming webhooks are authorized
 
 Verification tokens are an optional way of further verifying/validating an incoming webhooks and are specifically designed to deflect man-in-the-middle attacks.
