@@ -41,19 +41,19 @@ When you are done, you will be taken to the app's dashboard. Make note of the ap
 Your application will need to be able to call the RingCentral API. The sample application you will be using in this quick start, will authenticate via JWT. [Create a JWT credential](../../../authentication/jwt/create-jwt), and copy it to your clipboard. 
 
 !!! info "Using JWT credentials"
-    JWT credentials are associated with an individual and are created in the [Developer Console](https://developers.ringcentral.com/) in your Credetials area. The individual with whom the credential is associated will be the host for all the meetings initiated by this quick start guide. In real life, you would want to either prompt users to login using the OAuth auth code flow to obtain an access key for each of your users, or [schedule your meetings on behalf of others](../../meeting-delegates/) so that they are assigned as the host of the meetings being initiated. 
+    JWT credentials are associated with an individual and are created in the [Developer Console](https://developers.ringcentral.com/) in your Credetials area. The individual with whom the credential is associated will be the host for all the meetings initiated by this quick start guide. In real life, you would want to either prompt users to login using the OAuth auth code flow to obtain an access key for each of your users, or [schedule your meetings on behalf of others](../../api/meeting-delegates/) so that they are assigned as the host of the meetings being initiated. 
 
 ## Graduate your application to production
 
 !!! info "RingCentral Video does not have a developer sandbox"
-    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../basics/sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
+    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../../basics/sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
 
 ## Create a meeting bridge
 
 This quick start will allow you to join a meeting. Therefore, you will need to first create a meeting bridge in which a meeting will be hosted. You can think of a "meeting bridge" as a virtual room in which meetings occur. One can create a meeting bridge in one of two ways:
 
 * **RingCentral App** (recommended). The [RingCentral App](https://www.ringcentral.com/apps/rc-app) is our unified communications client, and provides a way for anyone to create a bridge using a simple user interface. 
-* **REST API**. Using the REST API, developers can [create a bridge](../../create-meetings/) in which a meeting will be hosted using a few lines of code.
+* **REST API**. Using the REST API, developers can [create a bridge](../../api/create-meetings/) in which a meeting will be hosted using a few lines of code.
 
 To join a meeting you will need to know the meeting's "web PIN." The bridge's pin is a numeric code often found at the end of the bridge's join URL. For example, if the bridge's join URL is:
 
