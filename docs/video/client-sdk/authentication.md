@@ -45,7 +45,7 @@ The following code sample shows how JWT authentication is accomplished across ou
 
 === "iOS"
 
-    ```
+    ```swift
     {!> code-samples/video/sdk-auth-jwt.swift !} 
 	```
 
