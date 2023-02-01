@@ -199,9 +199,9 @@ nav:
       - 'Getting Started': 'video/client-sdk/quick-start.md'
       - 'Authentication': 'video/client-sdk/authentication.md'
       - 'API Reference':
-         - 'Android': 'video/client-sdk/reference/android/index.html'
-         - 'iOS': 'video/client-sdk/reference/ios/index.html'
-         - 'Javascript': 'video/client-sdk/reference/js/index.html'
+         - 'Android': 'https://ringcentral.github.io/ringcentral-videosdk-android/'
+         - 'iOS': 'https://ringcentral.github.io/ringcentral-videosdk-ios/'
+         - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
       - 'Release notes': 'video/client-sdk/release-notes.md'
     - 'Using RingCentral Embeddable': 'video/embeddable.md'
     - 'Meetings (legacy API)':

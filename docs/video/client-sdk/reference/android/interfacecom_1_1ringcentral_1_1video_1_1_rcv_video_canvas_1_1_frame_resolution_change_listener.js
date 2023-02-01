@@ -1,4 +1,0 @@
-var interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener =
-[
-    [ "onFrameResolutionChanged", "interfacecom_1_1ringcentral_1_1video_1_1_rcv_video_canvas_1_1_frame_resolution_change_listener.html#ab7e0af66bbb234d27b603c0880115832", null ]
-];
