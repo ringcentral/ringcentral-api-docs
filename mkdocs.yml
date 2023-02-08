@@ -7,7 +7,7 @@ docs_dir: docs
 plugins:
   - git-committers:
       repository: ringcentral/ringcentral-api-docs
-      branch: master
+      branch: main
   - bootstrap-tables
   - ringcentral-api-index:
       outfile: basics/api-index.md

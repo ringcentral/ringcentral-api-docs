@@ -36,7 +36,7 @@ Users are clicking the `Action.Submit` button in an adaptive card, but my app is
 Check the following:
 
 * Make sure the application posting the message has the "Interactive Messages" feature enabled. Login to the Developer Console, edit the app, and toggle "Interactive Messages." Finally, enter an Outbound Webhook URL. 
-   ![Interactive Messages enabled](../interactive-messages-enabled.png)
+   ![Interactive Messages enabled](./interactive-messages-enabled.png)
    
 * Make sure you are not posting to a generic incoming webhook URL. If the incoming webhook you are posting to was created by installing the app entitled "Incoming webhook," then interactive messages will not work because RingCentral has no outbound webhook URL to which to deliver notifications. 
 
