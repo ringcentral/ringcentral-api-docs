@@ -1,12 +1,12 @@
-# Handling asynchronous responses from the Conversational Intelligence API
+# Handling asynchronous responses from the Artificial Intelligence API
 
-The Conversational Intelligence API operates in an asynchronous manner. Meaning the results of its operations are not returned in the HTTP response associated with the HTTP request performing the operation. Instead, developers specific a URL in their request, and when the operation completes, the response payload will be posted to the specified URL. 
+The Artificial Intelligence API operates in an asynchronous manner. Meaning the results of its operations are not returned in the HTTP response associated with the HTTP request performing the operation. Instead, developers specific a URL in their request, and when the operation completes, the response payload will be posted to the specified URL. 
 
-Th asynchronous nature of the Conversational Intelligence API requires developers to setp a simple web server in order to process results and run sample code in this Developer Guide. Below, you will find simple web servers in a variety of languages to help you in this process. 
+Th asynchronous nature of the Artificial Intelligence API requires developers to setp a simple web server in order to process results and run sample code in this Developer Guide. Below, you will find simple web servers in a variety of languages to help you in this process. 
 
 ## Passing the `webhook` parameter in your requests
 
-Many endpoints in the Conversational Intelligence API take as input a query parameter called `webhook`. When you pass a URL to the API via this query parameter, the server will then transmit the results of the corresponding operation to the provided URL when the operation completes. This will allow the server to process the operation in the background without tying up resources in the process. 
+Many endpoints in the Artificial Intelligence API take as input a query parameter called `webhook`. When you pass a URL to the API via this query parameter, the server will then transmit the results of the corresponding operation to the provided URL when the operation completes. This will allow the server to process the operation in the background without tying up resources in the process. 
 
 ### Correlating requests and responses
 
@@ -27,7 +27,7 @@ Then you will pass that URL to RingCentral via the `webhook` parameter as follow
 
 ### Install and setup ngrok
 
-If you are doing development on your local laptop, or on a machine that is not publicly accessible on the Internet, then we recommend you download and install [ngrok](https://ngrok.com/download) if you have not already. Once installed, start your ngrok server and make note of its https URL. You will need to use this URL later when specifying the `webhook` in Conversation Intelligence API requests. 
+If you are doing development on your local laptop, or on a machine that is not publicly accessible on the Internet, then we recommend you download and install [ngrok](https://ngrok.com/download) if you have not already. Once installed, start your ngrok server and make note of its https URL. You will need to use this URL later when specifying the `webhook` in Artificial Intelligence API requests. 
 
 ```bash
 $ ngrok http 5000

@@ -5,6 +5,7 @@ site
 \.\#*
 *.class
 .env
+.git/**
 __pycache__
 bin/
 code-samples/vendor/

@@ -214,7 +214,7 @@ nav:
     - 'Aggregate Data': 'analytics/aggregate.md'
     - 'Timeline Data': 'analytics/timeline.md'
 
-  - 'Conversational Intelligence':
+  - 'Artificial Intelligence':
     - 'Overview': 'ai/index.md'
     - 'Getting started': 'ai/quick-start.md'
     - 'Developer basics':
@@ -227,6 +227,7 @@ nav:
       - 'Speaker enrollment': 'ai/speaker-enrollment.md'
       - 'Speaker identification': 'ai/speaker-identification.md'
       - 'Speaker diarization': 'ai/speaker-diarization.md'
+      - 'Emotion recognition': 'ai/emotion-recognition.md'
     - 'Text analysis':
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'

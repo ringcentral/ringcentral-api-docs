@@ -29,4 +29,4 @@ try {
 } catch (e) {
     console.log("There was a problem starting the server: " + e)
 }
-console.log("Conversational Intelligence response server running at: https://localhost:" + PORT)
+console.log("Artificial Intelligence response server running at: https://localhost:" + PORT)

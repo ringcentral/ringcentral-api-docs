@@ -1,4 +1,4 @@
-# Conversational Intelligence API Quick Start Guide
+# Artificial Intelligence API Quick Start Guide
 
 {! docs/ai/beta-notice.md !}
 
@@ -25,7 +25,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 ## Request help from support
 
-Access to the RingCentral Conversational API currently requires help from support in order to grant the "AI" application scope to your application, and graduate it to production. 
+Access to the RingCentral Artificial API currently requires help from support in order to grant the "AI" application scope to your application, and graduate it to production. 
 
 <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 
@@ -39,7 +39,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 	
 ## Setup a server to process the response asynchronously
 
-The Conversational Intelligence APIs provide responses in an asynchronous manner by posting responses to a URL specified by the developer when the request is made. Our first step therefore is setting up a simple web server to display the response we will receive from RingCentral. The server below is written in Javascript and uses [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to your local development machine. To keep your first application simple, this server does nothing more than acknowledge receipt and echo the payload of anything it receives to the console. 
+The Artificial Intelligence APIs provide responses in an asynchronous manner by posting responses to a URL specified by the developer when the request is made. Our first step therefore is setting up a simple web server to display the response we will receive from RingCentral. The server below is written in Javascript and uses [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to your local development machine. To keep your first application simple, this server does nothing more than acknowledge receipt and echo the payload of anything it receives to the console. 
 
 ### Start ngrok
 

@@ -113,6 +113,12 @@
 #sidebar-nav #nav-item-api-reference:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/api-reference-hover.svg')
 }
+#sidebar-nav #nav-item-artificial-intelligence {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/conversational-intelligence.svg')
+}
+#sidebar-nav #nav-item-artificial-intelligence:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/conversational-intelligence-hover.svg')
+}
 #sidebar-nav #nav-item-address-book {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/address-book.svg')
 }

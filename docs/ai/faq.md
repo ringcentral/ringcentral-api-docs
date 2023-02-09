@@ -5,7 +5,7 @@ no_breadcrumb:true
 ### General Platform Related FAQs:
 ### How do I get started ?
 
-It's a simple 3 step process to use Conversational Intelligence APIs.
+It's a simple 3 step process to use Artificial Intelligence APIs.
 
 Step 1: Use your existing RingCentral MVP/Video Pro account or create a new one.
 
@@ -26,11 +26,11 @@ For using these APIs with only RCV recordings, you can create a video only accou
 It depends on your plan, RingCentral Video comes in both free and paid plans. Please refer to [this page for more information](https://www.ringcentral.com/office/plansandpricing.html#video). For testing purpose, you're welcome to create a free [RingCentral Video Pro account](https://www.ringcentral.com/signup.html).
 
 ### I receive an error when calling the API in the sandbox environment...
-The RingCentral Conversational Intelligence API is not currently available in our sandbox. We ask developers to do their development in production. To gain access to production, please contact us as described in [Prerequisites](prerequisites.md)
+The RingCentral Artificial Intelligence API is not currently available in our sandbox. We ask developers to do their development in production. To gain access to production, please contact us as described in [Prerequisites](prerequisites.md)
 
 
-### Conversational Intelligence API Related FAQs:
-### What are Conversational Intelligence APIs?
+### Artificial Intelligence API Related FAQs:
+### What are Artificial Intelligence APIs?
 
 These APIs provide ability to add intelligence to your 
 
@@ -45,7 +45,7 @@ These APIs provide ability to add intelligence to your
 i.e. automated call/meeting transcripts, interaction analysis, summaries, emotion detection, etc
 
 
-### What capabilities these Conversational Intelligence APIs don't provide today?
+### What capabilities these Artificial Intelligence APIs don't provide today?
 
 Below are the capabilities that are not provided out of the box today (and may come in later)
 
@@ -56,9 +56,9 @@ Below are the capabilities that are not provided out of the box today (and may c
 3. Automated Voice bots
 
 
-### What can you build with Conversational Intelligence APIs ?
+### What can you build with Artificial Intelligence APIs ?
 
-You can build next-generation AI-enabled analytics applications using our Conversational Intelligence APIs. There are some "hero" use cases that we have identified:
+You can build next-generation AI-enabled analytics applications using our Artificial Intelligence APIs. There are some "hero" use cases that we have identified:
 
 1. As a meeting admin or attendee in a corporate setup, I need enhanced post-meeting experience by automatically getting searchable transcript, summary, highlights, and actionable tasks to the attendees and getting them auto tracked.
 
@@ -99,7 +99,7 @@ Use `CallCenter` if the audio stream has 2-3 speakers. For 4-6 speakers use `Mee
 
 ### Why my webhook callback URL from an async request takes upto 30 minutes sometimes? 
 
-Yes, this happens, and it depends on the the amount of requests being processed in the cloud for conversational AI. Most of the times, response should come in first 5-10 minutes, but in some exceptional cases it may take upto 30 mins as well. We are planning to add a status API, where you can check status of your job/request in case the response doesn't come back in 10-15 minutes.
+Yes, this happens, and it depends on the the amount of requests being processed in the cloud for the AI API. Most of the times, response should come in first 5-10 minutes, but in some exceptional cases it may take upto 30 mins as well. We are planning to add a status API, where you can check status of your job/request in case the response doesn't come back in 10-15 minutes.
 
 ### What audio formats are supported?
 

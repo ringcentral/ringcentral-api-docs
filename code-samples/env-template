@@ -33,6 +33,6 @@ RC_REDIRECT_URL      = 'http://localhost:5000/oauth2callback'
 # The following phone number will be set as a forwarding number. 
 RC_FORWARDING_NUMBER = ''
 
-# Used throughout ai/* (Conversational Intelligence API)
+# Used throughout ai/* (Artificial Intelligence API)
 # The following phone number will be set as a forwarding number. 
 RC_MEDIA_URL = 'https://github.com/ringcentral/ringcentral-api-docs/blob/conv-ai-docs/resources/sample1.wav?raw=true'
