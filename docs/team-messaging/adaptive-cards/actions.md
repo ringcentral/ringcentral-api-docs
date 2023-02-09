@@ -37,7 +37,7 @@ To post the card, the app would utilize either the [REST API](../../posting/card
 
 The above card when posted to RingCentral, will appear as shown below:
 
-![Basic form submission](../form-submit.png)
+![Basic form submission](./form-submit.png)
 
 ### Receive interactive message webhook
 

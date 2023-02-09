@@ -38,7 +38,7 @@ Containers provide the basic building blocks for laying out text, images and for
 
 The above card when posted to RingCentral, will appear as shown below:
 
-![Basic columns screenshot](../basic-columns.png)
+![Basic columns screenshot](./basic-columns.png)
 
 ## Elements
 
@@ -58,7 +58,7 @@ Elements comprise the core content of a card. They are static and uneditable. Th
 
 The above card when posted to RingCentral, will appear as shown below:
 
-![Basic rich text screenshot](../rich-text.png)
+![Basic rich text screenshot](./rich-text.png)
 
 ### Actions
 
@@ -88,7 +88,7 @@ Input elements comprise all of the form elements that allow users to input data 
 
 The above card when posted to RingCentral, will appear as shown below:
 
-![Basic input elements screenshot](../input-elements.png)
+![Basic input elements screenshot](./input-elements.png)
 
 ## Additional resources
 
