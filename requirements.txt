@@ -1,5 +1,5 @@
 mkdocs>=1.1
-mkdocs-ringcentral>=0.1.22
+mkdocs-ringcentral>=0.1.23
 markdown_fenced_code_tabs>=1.0.3
 mkdocs-markdown-filter>=0.1.1
 mkdocs-pymdownx-material-extras==1.0b11
