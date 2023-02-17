@@ -15,7 +15,7 @@ const RECIPIENT    = process.env.SMS_RECIPIENT
 
 var platform = rcsdk.platform();
 
- platform.login({
+platform.login({
     'username':  process.env.RC_USERNAME,
     'password':  process.env.RC_PASSWORD,
     'extension': process.env.RC_EXTENSION

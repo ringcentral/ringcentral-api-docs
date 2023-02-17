@@ -45,7 +45,7 @@ After you have setup a [simple web server to process the response](../asynchrono
 ### Sample response
 
     ```json
-    {!> code-samples/ai/emotion-detection.json !}
+    {!> code-samples/ai/emotion-detection-response.json !}
     ```
 
 The response contains an array of `Emotion-Object` described below.

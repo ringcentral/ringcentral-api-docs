@@ -1,16 +1,16 @@
-# RingCentral Video REST API Quick Start
+# RingCentral Webinar API Quick Start
 
-{! docs/video/beta-notice.md !}
+{! docs/webinar/beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
-In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you create your first webinar on the platform in just a few minutes. Let's get started.
 
 ## Create an app
 
-The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Video App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
+The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Webinar App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Video&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Meetings+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Webinar&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -27,26 +27,26 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Request help from support
 
-Access to the RingCentral Video API currently requires help from support in order to grant the "Video" application scope to your application, and graduate it to production. 
+Access to the RingCentral Webinar API currently requires help from support in order to grant the "Webinar" application scope to your application, and graduate it to production. 
 
 <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 
-## Create a meeting bridge
+## Create a webinar
 
 === "Javascript"
 
     ### Install RingCentral Node.js SDK
 
     ```bash
-    $ npm install @ringcentral/sdk
+    $ npm install @ringcentral/sdk dotenv
     ```
 
-    ### Create and edit meetings.js
+    ### Create and edit webinar.js
 
-    Create a file called `meetings.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `webinar.js`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```js
-	{!> code-samples/video/meetings.js !}
+	{!> code-samples/webinar/quick-start.js !}
 	```
 
     ### Run Your Code
@@ -54,7 +54,7 @@ Access to the RingCentral Video API currently requires help from support in orde
     You are almost done. Now run your script.
 
     ```bash
-    $ node meetings.js
+    $ node webinar.js
     ```
 
 === "Python"
@@ -65,12 +65,12 @@ Access to the RingCentral Video API currently requires help from support in orde
     $ pip install ringcentral
     ```
 
-    ### Create and edit meetings.py
+    ### Create and edit webinar.py
 
-    Create a file called `meetings.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `webinar.py`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```python
-    {!> code-samples/video/meetings.py !}
+    {!> code-samples/webinar/quick-start.py !}
     ```
 
     ### Run Your Code
@@ -78,7 +78,7 @@ Access to the RingCentral Video API currently requires help from support in orde
     You are almost done. Now run your script.
 
     ```bash
-    $ python meetings.py
+    $ python webinar.py
     ```
 
 === "PHP"
@@ -90,12 +90,12 @@ Access to the RingCentral Video API currently requires help from support in orde
     $ php composer.phar require ringcentral/ringcentral-php
     ```
 
-    ### Create and edit meetings.php
+    ### Create and edit webinar.php
 
-    Create a file called `meetings.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. 
+    Create a file called `webinar.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. 
 
     ```php
-    {!> code-samples/video/meetings.php !}
+    {!> code-samples/webinar/quick-start.php !}
     ```
 
     ### Run Your Code
@@ -103,7 +103,7 @@ Access to the RingCentral Video API currently requires help from support in orde
     You are almost done. Now run your script.
 
     ```bash
-    $ php meetings.php
+    $ php webinar.php
     ```
 === "Ruby"
 
@@ -113,12 +113,12 @@ Access to the RingCentral Video API currently requires help from support in orde
     $ gem install ringcentral-sdk
     ```
 
-    ### Create and edit meetings.rb
+    ### Create and edit webinar.rb
 
-    Create a file called `meetings.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called `webinar.rb`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```ruby
-	{!> code-samples/video/meetings.rb !}
+	{!> code-samples/webinar/quick-start.rb !}
     ```
 
     ### Run Your Code
@@ -126,18 +126,18 @@ Access to the RingCentral Video API currently requires help from support in orde
     You are almost done. Now run your script.
 
     ```bash
-    $ ruby meetings.rb
+    $ ruby webinar.rb
     ```
 
 === "C#"
 
     !!! warning "C# and .NET SDKs are not currently available"
-	    If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+	    If you are looking to call RingCentral Webinar APIs using Java or C#, RingCentral Webinar APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
 
 === "Java" 
 
     !!! warning "A Java SDK is not currently available"
-        If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+        If you are looking to call RingCentral Webinar APIs using Java or C#, RingCentral Webinar APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
 
 ## Need help?
 
@@ -147,7 +147,7 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. Have a look at our private sample (please provide us your GitHub username to allow access to this repo) [Node.JS application](https://github.com/ringcentral/ringcentral-video-js-demo) for reference purpose.
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. 
 
 <a class="btn btn-success btn-lg" href="https://ringcentral-ringcentral-video-api-docs.readthedocs-hosted.com/en/latest/sample-app">Take your next step &raquo;</a>
 

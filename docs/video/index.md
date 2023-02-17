@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Welcome to the RingCentral Video Platform
+# Introduction to the RingCentral Video Platform
 
 {! docs/video/beta-notice.md !}
 

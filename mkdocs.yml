@@ -208,6 +208,13 @@ nav:
       - 'Overview': 'meetings/index.md'
       - 'Getting Started': 'meetings/quick-start.md'
 
+  - 'Webinar':
+    - 'Overview': 'webinar/index.md'
+    - 'Getting Started': 'webinar/quick-start.md'
+#    - 'Webinar management': 'webinar/management.md'
+#    - 'Webinar registrations': 'webinar/registration.md'
+#    - 'Webinar attendees': 'webinar/attendees.md'
+
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
     - 'Getting Started': 'analytics/quick-start.md'
