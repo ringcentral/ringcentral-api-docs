@@ -1,7 +1,8 @@
 contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie-chen
 no_breadcrumb:true
 
-!!! hint "Announcing [High Volume SMS](messaging/sms/high-volume)"
+!!! hint "[Join the RingCentral Video Client SDK beta](https://forms.gle/H3QxfhqAhujkktXa6)"
+    The RingCentral [Video Client SDK](./video/client-sdk/) is a product to help developers build fully customized and branded video experiences. Quickly deploy custom branded meetings for your company, ideal for healthcare providers and educators. 
 
 # RingCentral MVP™ Developer Guide
 
