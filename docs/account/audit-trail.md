@@ -3,7 +3,7 @@
 Audit Trail allows you to track configuration changes made to a RingCentral online account. If other Administrators are working on the same account, you need a change log to provide coordinated support. Additionally, failed logins and locked accounts are viewable through the Audit Trail API.
 
 !!! hint "Audit Trail API is in beta - please request access"
-    To call the Audit Trail API your application needs to have 'Read Audit Trail' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [request that the 'Read Audit Trail' permission be added](https://developers.ringcentral.com/support/create-case).
+    To call the Audit Trail API your application needs to have 'Read Audit Trail' permission. If you are using an application that doesn't have that permission, you can reach out to our support team with your application's Client ID and [fill out the following form](https://forms.gle/uAiekJWr2rK8vX2u9).
 
 
 ## Configuration Changes to Track
