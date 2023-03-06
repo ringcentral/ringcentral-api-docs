@@ -21,7 +21,7 @@ platform.login({
     extension: RINGCENTRAL_EXTENSION
     })
     .then(function(resp) {
-        platform.get('/rcvideo/v1/dial-in-numbers')
+        platform.get('/restapi/v1.0/account/~/extension/~/conferencing')
         .then(function(resp) {
            console.log( resp.json() )
         })
