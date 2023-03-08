@@ -1,27 +1,31 @@
-### Check prerequisites
+#### Clone the Video Client SDK sample application repository
 
-Make sure you have the following prerequisites installed:
+```shell
+% git clone https://github.com/ringcentral/ringcentral-videosdk-js-samples.git
+```
 
-* yarn
-* Node JS
+#### Install the SDK and prerequisites
 
-### Edit the sample application config file
+```shell
+% cd ringcentral-videosdk-js-samples/basicMeeting
+% yarn install
+```
 
-1. Unpack the SDK you downloaded in the steps above.
-1. Navigate to `RingCentral_Video_Web_Client_SDK_<version>/samples/basicMeeting/`
-1. Edit `app.config.js`
-1. Look for the following variables and enter the appropriate values for each of the following:
-    * `clientId`
-    * `clientSecret`
-    * `jwt`
+#### Edit `app.config.js`
+
+Look for the variables below and enter the appropriate values you obtained above for each of the following:
+
+* `clientId`
+* `clientSecret`
+* `jwt`
 
 ### Run the sample applicaton
 
-1. Run the following commands:
-     ```shell
-     yarn install
-     yarn run dev
-     ```
-2. Open your browser to [https://localhost:9000/](https://localhost:9000/)
+```shell
+yarn install
+yarn run dev
+```
+
+Finally, open your browser to [https://localhost:9000/](https://localhost:9000/) to create or join a meeting.
 
 

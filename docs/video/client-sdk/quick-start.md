@@ -8,10 +8,6 @@ Welcome to the RingCentral Platform. RingCentral is the leading unified communic
 
 In this Quick Start, we are going to help you create your first application powered by a RingCentral Video Client SDK in just a few minutes. Let's get started.
 
-## Download the Video Client SDK
-
-[Download the latest version](../download/) of the Video Client SDK. 
-
 ## Create an application and obtain app credentials
 
 The first thing you need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Video App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
