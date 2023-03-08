@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide pb-5" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -8,8 +8,8 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
 	
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="./img/carousel-sms@2x.png" class="d-block mx-lg-auto img-fluid" alt="Send an SMS" width="700" height="500" loading="lazy">
       </div>
@@ -26,8 +26,8 @@
     </div>
     <div class="carousel-item">
 
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="./img/carousel-video@2x.png" class="d-block mx-lg-auto img-fluid" alt="Video Client SDK" width="700" height="500" loading="lazy">
       </div>
@@ -45,8 +45,8 @@
     </div>
     <div class="carousel-item">
 
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="./img/carousel-embeddable@2x.png" class="d-block mx-lg-auto img-fluid" alt="RingCentral Embeddable" width="700" height="500" loading="lazy">
       </div>
@@ -64,8 +64,8 @@
 
     <div class="carousel-item">
 
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="./img/carousel-addins@2x.png" class="d-block mx-lg-auto img-fluid" alt="RingCentral Add-in Framework" width="700" height="500" loading="lazy">
       </div>
