@@ -1,51 +1,54 @@
 contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie-chen
 no_breadcrumb:true
 
+<!--
 !!! hint "[Join the RingCentral Video Client SDK beta](https://forms.gle/H3QxfhqAhujkktXa6)"
     The RingCentral [Video Client SDK](./video/client-sdk/) is a product to help developers build fully customized and branded video experiences. Quickly deploy custom branded meetings for your company, ideal for healthcare providers and educators. 
+-->
 
 # RingCentral MVP™ Developer Guide
+
+{! docs/carousel.md !}
+
+## Popular use cases
 
 <div class="card-deck">
 
   <div class="card bg-light bg-gradient" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Build your first app</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">New to RingCentral? Build your first application in minutes with a Quick Start Guide.</h6>
-      <p class="card-text">The following guides assist developers in getting started in each of our major APIs:</p>
+      <h5 class="h3 card-title">Send and receive SMS messages</h5>
+      <h6 class="h4 card-subtitle mt-0 mb-2">Stay connected and engaged with customers at scale through messaging automation.</h6>
+      <p class="card-text">Use RingCentral to send and receive SMS, and access your SMS message history.</p>
       <ul class="pl-0 ml-4 pb-2">
-      <li><a href="./messaging/quick-start/">Send an SMS</a> using our <strong>SMS API</strong>.</li> 
-      <li><a href="./voice/quick-start/">Make a phone call</a> using our <strong>Voice API</strong>.</li> 
-      <li><a href="./team-messaging/quick-start/">Create a team</a> with our <strong>Team Messaging API</strong></li>
-      <li><a href="./meetings/quick-start/">Create a meeting</a> using our <strong>Meetings API</strong></li>
+        <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
+        <li><a href="./messaging/sms/sending-images/" class="card-link">Send images over SMS</a></li>
+        <li><a href="./messaging/sms/high-volume/sending-highvolume-sms" class="card-link">Send High Volume SMS</a></li>
       </ul>
     </div>
   </div>
 
   <div class="card bg-light bg-gradient" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Create an add-in</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">Add-ins deliver meaningful and interactive content to messaging teams where people can take action on it.</h6>
-      <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
+      <h5 class="h3 card-title">Synchronize call history</h5>
+      <h6 class="h4 card-subtitle mt-0 mb-2">Download and process your entire company's call history for compliance and analytics.</h6>
+      <p class="card-text">Learn how to access your company's communication history:</p>
       <ul class="pl-0 ml-4 pb-2">
-    <li><a href="https://www.ringcentral.com/us/en/blog/ringcentral-add-ins-connects-all-your-apps-in-one-place/" class="card-link">Read the accouncement</a></li>
-      <li><a href="./team-messaging/add-ins/" class="card-link">What is an add-in?</a></li>
-      <li><a href="./team-messaging/bots/walkthrough/" class="card-link">Create your first bot</a></li>
-      <li><a href="./team-messaging/adaptive-cards/" class="card-link">Learn about Adaptive Cards</a></li>
-      <li><a href="./team-messaging/adaptive-cards/actions/" class="card-link">Make messages interactive</a></li>
+        <li><a href="./voice/call-log/details" class="card-link">Trace calls flowing across the network</a></li>
+        <li><a href="./voice/call-log/recordings" class="card-link">Access call recordings</a></li>
+        <li><a href="./voice/call-log/archival" class="card-link">Archive call histories</a></li>
       </ul>
     </div>
   </div>
 
   <div class="card bg-light bg-gradient" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Embed a phone in your app</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">RingCentral Embeddable is a javascript framework that embeds a phone and messenging client into any web page</h6>
-      <p class="card-text">Use RingCentral to enable a "click-to-dial" experience, and to manage calls in progress.</p>
+      <h5 class="h3 card-title">Analyze call and meeting recordings</h5>
+      <h6 class="h4 card-subtitle mt-0 mb-2">Archive and extract key data and insights from call recordings</h6>
+      <p class="card-text">RingCentral securely stores all media you generate and makes it available to you through an API.</p>
       <ul class="pl-0 ml-4 pb-2">
-      <li><a href="./voice/ringout/" class="card-link">RingOut</a></li>
-      <li><a href="./voice/call-control/" class="card-link">Active Call Control</a></li>
-      <li><a href="./voice/call-log/recordings/" class="card-link">Call Recordings</a></li>
+        <li><a href="./voice/call-log/recordings/" class="card-link">Access call recordings</a></li>
+        <li><a href="./video/api/meeting-history/" class="card-link">Access meeting recordings</a></li>
+        <li><a href="./messaging/message-store/working-with-message-store/" class="card-link">Access voicemails</a></li>
       </ul>
     </div>
   </div>
@@ -86,19 +89,19 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">SMS</h5>
-      <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
+      <h5 class="h5 card-title">Artificial intelligence</h5>
+      <p class="card-text">Generate transcripts and extract conversion insights from any media file.</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
-      <li><a href="./messaging/sms/sending-images/" class="card-link">Send images over SMS</a></li>
-      <li><a href="./messaging/sms/high-volume/sending-highvolume-sms" class="card-link">Send High Volume SMS</a></li>
+        <li><a href="./ai/speech-to-text/" class="card-link">Create a transcript</a></li>
+        <li><a href="./ai/speaker-diaization/" class="card-link">Know who spoke and when</a></li>
+        <li><a href="./ai/text-summary/" class="card-link">Generate a summary of a conversation</a></li>
       </ul>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Team Messaging</h5>
+      <h5 class="h5 card-title">Team messaging</h5>
       <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./team-messaging/add-ins/creation/" class="card-link">Build an add-in</a></li>
@@ -137,7 +140,7 @@ no_breadcrumb:true
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Meetings and video</h5>
-      <p class="card-text">Foo</p>
+      <p class="card-text">Create meetings and invite others to join.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./meetings/quick-start/" class="card-link">Schedule a meeting</a></li>
       <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="card-link">Access meeting recordings</a></li>
@@ -158,19 +161,17 @@ no_breadcrumb:true
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Call Log</h5>
-      <p class="card-text">Get a detailed accounting of every call made in your organizaton.</p>
+      <h5 class="h5 card-title">Webinar</h5>
+      <p class="card-text">Automate webinar messaging and integrate with your CRM.</p>
       <ul class="pl-0 ml-4">
-    <li><a href="./voice/call-log/details" class="card-link">Trace calls flowing across the network</a></li>
-      <li><a href="./voice/call-log/recordings" class="card-link">Access call recordings</a></li>
-      <li><a href="./voice/call-log/archival" class="card-link">Archive call histories</a></li>
+        <li><a href="./webinar/quick-start/" class="card-link">Get started</a></li>
       </ul>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Call Handling</h5>
+      <h5 class="h5 card-title">Call handling</h5>
       <p class="card-text">Manage active calls as they are happening in real-time</p>
       <ul class="pl-0 ml-4">
       <li><a href="./voice/call-routing" class="card-link">Route calls to the right place</a></li>
