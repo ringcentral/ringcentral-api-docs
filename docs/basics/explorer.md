@@ -16,7 +16,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "Password-based auth flow."
 <li>Under "Security" add ALL permissions:
-    <img src="../../../img/explorer_create_app.png" class="img-fluid">
+    <img src="../../img/explorer_create_app.png" class="img-fluid">
 </li>
 <li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
 <li>Leave "OAuth Redirect URI" blank for now. We will come back and edit that later.</li>
@@ -29,7 +29,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 
 Scroll to the "SMS section" of the API Explorer. You should see this:
 
-<img src="../../../img/api-expl-sms.png" class="img-fluid">
+<img src="../../img/api-expl-sms.png" class="img-fluid">
 
 ### Sign-in and Select Your App
 
@@ -38,7 +38,7 @@ Click the "Sign-in to try it out" button, and login to your developer account. W
 !!! warning "Apps configured for JWT auth will not work"
     Currently, apps configured for JWT authentication cannot be used to call to call the API from within the API Reference. Please select an app configured for the Auth code flow. 
 
-<img src="../../../img/api-expl-change.png" class="img-fluid">
+<img src="../../img/api-expl-change.png" class="img-fluid">
 
 Then select the app your created in the first step.
 
@@ -50,12 +50,12 @@ Now, set the API call parameters for the "from," "to" and "text" fields. For the
 
     You should notice that the `curl` command displayed in the right-hand column changes as you enter in parameters. You should be able to copy and paste this command to your console and execute the API call that way as well. 
 
-<img src="../../../img/api-expl-params.png" class="img-fluid">
+<img src="../../img/api-expl-params.png" class="img-fluid">
 
 ### Try It Out
 
 Click the "Try it out" button to send yourself an SMS. You can see the response on the right-hand side pane.
 
-<img src="../../../img/api-expl-result.png" class="img-fluid">
+<img src="../../img/api-expl-result.png" class="img-fluid">
 
 <a class="btn btn-primary" href="https://developers.ringcentral.com/api-reference">Try the API Explorer Now</a>
