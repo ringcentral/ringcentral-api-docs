@@ -45,6 +45,9 @@ Of course, you can use the `recordings[item].uri` property to obtain the Call Re
 
 You can now use the `contentUri` (notice that the subdomain is different in some cases as `media...` instead of `platform...`) to obtain the Call Recording Content.
 
+!!! note "Rate Limits"
+    Please note that media resources may have different rate limit plans. Retrieving call recordings using the API is subject to throttling so please analyze the `X-Rate-Limit-Group` header to understand the limit to the call recording you are trying to retrieve.
+
 ## Embedding Call Recordings in a Web Page
 
 If you would like, you can use HTML5 supported browsers and the `<audio>` tag in a web page, and set the `src` property of the `<audio>` tag to the `recordings[item].contentUri` value (make sure to include the access_token query parameter with a valid access_token), and play back the recording in the browser.
