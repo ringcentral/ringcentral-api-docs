@@ -6,9 +6,10 @@ no_breadcrumb:true
 
 # RingCentral MVP™ Developer Guide
 
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-md-3 mb-3">
+  <div class="col">
 
-  <div class="card bg-light bg-gradient" style="width: 18rem;">
+  <div class="card bg-light bg-gradient h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h3 card-title">Build your first app</h5>
       <h6 class="h4 card-subtitle mt-0 mb-2">New to RingCentral? Build your first application in minutes with a Quick Start Guide.</h6>
@@ -22,7 +23,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card bg-light bg-gradient" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card bg-light bg-gradient h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h3 card-title">Create an add-in</h5>
       <h6 class="h4 card-subtitle mt-0 mb-2">Add-ins deliver meaningful and interactive content to messaging teams where people can take action on it.</h6>
@@ -37,7 +41,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card bg-light bg-gradient" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card bg-light bg-gradient h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h3 card-title">Embed a phone in your app</h5>
       <h6 class="h4 card-subtitle mt-0 mb-2">RingCentral Embeddable is a javascript framework that embeds a phone and messenging client into any web page</h6>
@@ -49,13 +56,16 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
+
+  </div>
 </div>
 
 ## Check out these popular developer topics
 
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-md-2 mb-3">
+  <div class="col">
 
-  <div class="card" style="width: 18rem;">
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Authentication</h5>
       <p class="card-text">Every app needs to authenticate to the RingCentral platform. Learn what auth method is best for your app.</p>
@@ -67,7 +77,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Webhooks and events</h5>
       <p class="card-text">Get notified when key events occur so that your app can respond to events in real-time.</p>
@@ -78,13 +91,16 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
+
+  </div>
 </div>
 
 ## Explore our APIs
 
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-md-4 mb-3">
+  <div class="col">
 
-  <div class="card" style="width: 18rem;">
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">SMS</h5>
       <p class="card-text">Use RingCentral to send and receive SMS and MMS.</p>
@@ -96,7 +112,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Team Messaging</h5>
       <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
@@ -107,7 +126,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Voice and telephony</h5>
       <p class="card-text">Use RingCentral to enable a "click-to-dial" experience, and to manage calls in progress.</p>
@@ -119,7 +141,10 @@ no_breadcrumb:true
     </div>
   </div>
   
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+  
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Fax</h5>
       <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
@@ -130,14 +155,16 @@ no_breadcrumb:true
     </div>
   </div>
   
+  </div>
 </div>
 
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-md-4 mb-3">
+  <div class="col">
 
-  <div class="card" style="width: 18rem;">
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Meetings and video</h5>
-      <p class="card-text">Foo</p>
+      <p class="card-text">Schedule meetings and access meeting history and recordings.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./meetings/quick-start/" class="card-link">Schedule a meeting</a></li>
       <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="card-link">Access meeting recordings</a></li>
@@ -145,7 +172,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Analytics</h5>
       <p class="card-text">Extract meaning insights into one's usage of the RingCentral communications platform.</p>
@@ -156,7 +186,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Call Log</h5>
       <p class="card-text">Get a detailed accounting of every call made in your organizaton.</p>
@@ -168,7 +201,10 @@ no_breadcrumb:true
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
+  </div>
+  <div class="col">
+  
+  <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Call Handling</h5>
       <p class="card-text">Manage active calls as they are happening in real-time</p>
@@ -180,7 +216,8 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
-
+  
+  </div>
 </div>
 
 ## Getting Help
@@ -193,20 +230,28 @@ If on your way to building your first RingCentral application you encounter diff
 
 ## Resources
 
-<div class="card-deck">
-  <div class="card">
+<div class="row row-cols-1 row-cols-md-2 mb-3">
+  <div class="col">
+
+  <div class="card h-100">
     <div class="card-body">
       <h5 class="h5 card-title">API Reference</h5>
       <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
       <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
     </div>
   </div>
-  <div class="card">
+  
+  </div>
+  <div class="col">
+  
+  <div class="card h-100">
     <div class="card-body">
       <h5 class="h5 card-title">SDKs</h5>
       <p class="card-text">We offer development libraries in a number of languages (C#, Java, Python, PHP, Javascript and more) to made building apps easier.</p>
       <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
     </div>
+  </div>
+  
   </div>
 </div>
 

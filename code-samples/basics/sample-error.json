@@ -1,0 +1,13 @@
+{
+    "errors": [
+	{
+	    "errorCode": "ABC-123",    
+	    "message": "Error message",
+	    "additionalInfo": "value",  // additional attribute for this error, e.g "parameterName": "extensionId"
+	},
+	{
+	    "errorCode": "XYZ-321",
+	    "message": "Second error message"
+	}
+    ]
+}

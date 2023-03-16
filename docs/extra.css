@@ -1,3 +1,14 @@
+/* Jumbotrons retired in bootstrap 5, this is for backwards compat */
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+}
+.jumbotron .display-5 {
+    font-size: 2rem;
+}
+
 .help .material-icons { font-size: .9rem }
 #content table img {
     max-width: 100%;
@@ -50,7 +61,8 @@
     padding-left: 1rem;
 }
 
-.tabbed-content .highlight,
+/*
+.tabbed-content .highlight, */
 .tabbed-content .admonition {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -88,6 +100,9 @@
     padding-bottom: 3px;
     font-size: 14px;
     text-transform: none;
+}
+#sidebar-nav .nav-item > a {
+    padding-left: 35px;
 }
 #sidebar-nav .nav-item {
     background-repeat: no-repeat;

@@ -30,7 +30,6 @@ markdown_extensions:
 
 extra_css:
 - extra.css
-- css/mega-menu.css
 
 copyright: "1999-2020 RingCentral, Inc. All rights reserved."
 
@@ -202,7 +201,7 @@ nav:
          - 'Android': 'https://ringcentral.github.io/ringcentral-videosdk-android/'
          - 'iOS': 'https://ringcentral.github.io/ringcentral-videosdk-ios/'
          - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
-	 - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
+         - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
 #      - 'Release notes': 'video/client-sdk/release-notes.md'
     - 'Using RingCentral Embeddable': 'video/embeddable.md'
     - 'Meetings (legacy API)':

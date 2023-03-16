@@ -13,8 +13,10 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
 
 ## Which RingCentral Video product is right for you?
 
-<div class="card-deck">
-  <div class="card bg-light" style="width: 18rem;">
+<div class="row row-cols-1 row-cols-md-2 mb-3">
+  <div class="col">
+
+  <div class="card bg-light h-100">
     <div class="card-body pt-0 pb-0">
       <h4 class="card-title">Embed custom RingCentral Video meetings in your app</h4>
       <p class="card-text">Use our client SDKs to create your own custom video experiences powered by RingCentral Video. Our SDKs are available in the following languages:</p>
@@ -27,7 +29,11 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
 	  <a class="btn-link mb-3" role="button" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
     </div>
   </div>
-  <div class="card bg-light" style="width: 18rem;">
+  
+  </div>
+  <div class="col">
+  
+  <div class="card bg-light h-100">
     <div class="card-body pt-0 pb-0">
       <h4 class="card-title">Manage RingCentral Video meetings, history and data</h4>
       <p class="card-text">Use RingCentral Video REST APIs to schedule meetings and retrieve meeting history with recordings and summaries.</p>
@@ -37,6 +43,8 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
       </ul>
 	  <a class="btn btn-primary" href="./api/quick-start/">Try out the REST API &raquo;</a>
     </div>
+  </div>
+
   </div>
 </div>
 
