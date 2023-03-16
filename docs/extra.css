@@ -1,14 +1,3 @@
-/* Jumbotrons retired in bootstrap 5, this is for backwards compat */
-.jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: .3rem;
-}
-.jumbotron .display-5 {
-    font-size: 2rem;
-}
-
 .help .material-icons { font-size: .9rem }
 #content table img {
     max-width: 100%;
