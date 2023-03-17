@@ -50,7 +50,8 @@
     padding-left: 1rem;
 }
 
-.tabbed-content .highlight,
+/*
+.tabbed-content .highlight, */
 .tabbed-content .admonition {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -88,6 +89,9 @@
     padding-bottom: 3px;
     font-size: 14px;
     text-transform: none;
+}
+#sidebar-nav .nav-item > a {
+    padding-left: 35px;
 }
 #sidebar-nav .nav-item {
     background-repeat: no-repeat;

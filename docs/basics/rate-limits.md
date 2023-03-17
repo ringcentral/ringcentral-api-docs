@@ -42,6 +42,13 @@ When an app exceeds its rate limit, the platform will begin to throttle the app,
 
 In addition, other HTTP headers are returned to signal to the developer what their limits are, and when they will be reset. This allows developers to code defensively around these potential failure conditions and implement retry logic as needed. 
 
+There are a few other instances in which your application might also receive a 429 error code, including:
+
+* Account-level limit set 
+* Any custom rate limit provided by API service
+
+In these circumstances, the error message you receive may not communicate what your specific and custom rate limit might be. Therefore we recommend consulting the Developer Console to see the actual rate limits configured for your application. 
+
 ### Rate limit response headers
 
 Rate limits are communicated via specific HTTP headers that should be returned in a response for each request (although may not be present in 100% of responses), unless the request is unlimited. Those headers are:
