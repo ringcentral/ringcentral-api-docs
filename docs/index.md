@@ -167,11 +167,7 @@ no_breadcrumb:true
   <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Meetings and video</h5>
-<<<<<<< HEAD
-      <p class="card-text">Create meetings and invite others to join.</p>
-=======
       <p class="card-text">Schedule meetings and access meeting history and recordings.</p>
->>>>>>> 13e79085dea27cb69458bb3cf894e577838b0496
       <ul class="pl-0 ml-4">
       <li><a href="./meetings/quick-start/" class="card-link">Schedule a meeting</a></li>
       <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="card-link">Access meeting recordings</a></li>
