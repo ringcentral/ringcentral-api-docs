@@ -106,3 +106,69 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     ```ruby
     {!> code-samples/auth/jwt.rb !} 
     ```
+
+=== "C#"
+
+    ### Create a Visual Studio project
+
+    * Choose Console Application .Net Core -> App
+    * Select Target Framework .NET Core 2.1
+    * Enter project name "JWT_Auth"
+    * Add NuGet package RingCentral.Net (4.1.0) SDK
+
+    ### Edit the file Program.cs
+
+    Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
+
+    ``` c#
+    {!> code-samples/auth/jwt.cs !}
+    ```
+
+    ### Run Your App
+
+    You are almost done. Now run your app from Visual Studio.
+
+=== "Java"
+
+    ### Create a Java project (using Eclipse IDE)
+
+    * Create a new Java project
+    * Select the Gradle Project wizard
+    * Enter project name "JWT_QuickStart"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+
+    ```json
+    dependencies {
+        // ...
+        compile 'com.ringcentral:ringcentral:1.4.0'
+    }
+    ```
+
+    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
+    ### Create a new Java Class
+
+    Select "File -> New -> Class" to create a new Java class named "JWTQuickStart"
+
+    ```java
+    package JWTQuickStart;
+
+    public class JWTQuickStart {
+
+        public static void main(String[] args) {
+            // TODO Auto-generated method stub
+
+        }
+    }
+    ```
+
+    ### Edit the file "JWTQuickStart.java".
+
+    ```java
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/JWTQuickStart.java !}
+    ```
+
+    ### Run Your App
+
+    You are almost done. Now run your app from Eclipse.
+

@@ -1,25 +1,15 @@
-const RC    = require('@ringcentral/sdk').SDK
+const RC = require('@ringcentral/sdk').SDK
 var   fs    = require('fs')
 var   https = require('https');
-
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
+require('dotenv').config();
 
 var rcsdk = new RC({
-    server:       SERVER,
-    clientId:     CLIENTID,
-    clientSecret: CLIENTSECRET
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({
-    username:  USERNAME,
-    password:  PASSWORD,
-    extension: EXTENSION
-})
+platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
     var endpoint = "/team-messaging/v1/files"

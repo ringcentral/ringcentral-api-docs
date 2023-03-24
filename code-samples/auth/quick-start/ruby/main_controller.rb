@@ -1,3 +1,9 @@
+#!usr/bin/ruby
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
 class MainController < ActionController::Base
   require 'ringcentral'
   require 'dotenv/load'

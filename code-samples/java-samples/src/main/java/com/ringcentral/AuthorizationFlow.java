@@ -19,13 +19,13 @@ import java.util.stream.Collectors;
 public class AuthorizationFlow extends AbstractHandler {
   static RestClient rc;
   private static String TOKEN_KEY = "rc-token";
-  private static String CLIENT_ID = "YOUR_CLIENT_ID";
-  private static String CLIENT_SECRET = "YOUR_CLIENT_SECRET";
-  private static String REDIRECT_URI = "http://localhost:5000/oauth2callback"; // Make sure this is the same URL as the one in the Application Settings
-  private static String SERVER_URL = "https://platform.devtest.ringcentral.com"; // Using RingCentral Sandbox Server URL
+  // Make sure this is the same URL as the one i
+  private static String REDIRECT_URI = System.getenv("RC_REDIRECT_URL"); 
 
   public static void main(String[] args) throws Exception {
-    rc = new RestClient(CLIENT_ID,CLIENT_SECRET, SERVER_URL);
+    rc = new RestClient( System.getenv("RC_CLIENT_ID"),
+			 System.getenv("RC_CLIENT_SECRET"),
+			 System.getenv("RC_SERVER_URL") );
     try {
       Server server = new Server(5000);
       server.setHandler(new AuthorizationFlow());

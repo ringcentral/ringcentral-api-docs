@@ -1,24 +1,15 @@
-const SDK = require('@ringcentral/sdk').SDK
-require('dotenv').config();
+const RC = require('@ringcentral/sdk').SDK
 
-RINGCENTRAL_CLIENTID     = process.env.RINGCENTRAL_CLIENTID
-RINGCENTRAL_CLIENTSECRET = process.env.RINGCENTRAL_CLIENTSECRET
-RINGCENTRAL_SERVER       = process.env.RINGCENTRAL_SERVER
-RINGCENTRAL_USERNAME     = process.env.RINGCENTRAL_USERNAME
-RINGCENTRAL_EXTENSION    = process.env.RINGCENTRAL_EXTENSION
-RINGCENTRAL_PASSWORD     = process.env.RINGCENTRAL_PASSWORD
+const CALLER       = process.env.RINGOUT_CALLER
+const RECIPIENT    = process.env.RINGOUT_RECIPIENT
 
-var rcsdk = new SDK({
-    server: RINGCENTRAL_SERVER,
-    clientId: RINGCENTRAL_CLIENTID,
-    clientSecret: RINGCENTRAL_CLIENTSECRET
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-})
+platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     create_webinar()

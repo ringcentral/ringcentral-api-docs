@@ -2,8 +2,14 @@ const RC = require('@ringcentral/sdk').SDK
 var http = require('http');
 require('dotenv').config();
 
-PORT             = 5000
 DELIVERY_ADDRESS = '<https://xxxxxxxx.ngrok.io/webhook>'
+PORT             = 5000
+
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
 
 var server = http.createServer(function(req, res) {
   if (req.method == 'POST') {
@@ -30,18 +36,8 @@ var server = http.createServer(function(req, res) {
 });
 server.listen(PORT);
 
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
-});
 var platform = rcsdk.platform();
-platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
-})
-
+platform.login({ 'jwt':  process.env.RC_JWT })
 platform.on(platform.events.loginSuccess, function(e) {
   console.log("Login success")
   subscribe_for_notification()

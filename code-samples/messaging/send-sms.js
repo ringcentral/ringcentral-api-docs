@@ -15,11 +15,7 @@ var rcsdk = new SDK({
 
 var platform = rcsdk.platform();
 
-  platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
-})
+  platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     read_extension_phone_number()

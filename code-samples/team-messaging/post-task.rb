@@ -1,21 +1,19 @@
+#!usr/bin/ruby
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
 require 'ringcentral'
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+require 'dotenv/load'
 
 CHAT_ID = '<GROUP ID>'
 
-rc = RingCentral.new(RINGCENTRAL_CLIENTID,
-                     RINGCENTRAL_CLIENTSECRET,
-                     RINGCENTRAL_SERVER)
-rc.authorize(username: RINGCENTRAL_USERNAME,
-             extension: RINGCENTRAL_EXTENSION,
-             password: RINGCENTRAL_PASSWORD)
+$rc = RingCentral.new(ENV['RC_CLIENT_ID'],
+                      ENV['RC_CLIENRT_SECRET'],
+                      ENV['RC_SERVER_URL'])
+
+$rc.authorize(jwt: ENV['RC_JWT'])
 
 resp = rc.post('/team-messaging/v1/chats/'+CHAT_ID+'/tasks', payload: {
     "subject": "You need to do X",

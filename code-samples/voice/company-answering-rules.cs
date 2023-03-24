@@ -13,10 +13,8 @@ namespace CompanyCustomAnsweringRule
 		Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
 		Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
 		Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-            restClient.Authorize(
-		Environment.GetEnvironmentVariable("RC_USERNAME"),
-		Environment.GetEnvironmentVariable("RC_EXTENSION"),
-		Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
+	    restClient.Authorize(
+		Environment.GetEnvironmentVariable("RC_JWT")).Wait();
 	    create_company_custom_answering_rule().Wait();
 	}
 	static private async Task create_company_custom_answering_rule()

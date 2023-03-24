@@ -1,21 +1,26 @@
-#!/usr/bin/env python
-from ringcentral import SDK
-import os,sys
+#!/usr/bin/python
 
-CLIENTID     = os.environ.get('RC_CLIENT_ID')
-CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
-SERVER       = os.environ.get('RC_SERVER_URL')
-USERNAME     = os.environ.get('RC_USERNAME')
-PASSWORD     = os.environ.get('RC_PASSWORD')
-EXTENSION    = os.environ.get('RC_EXTENSION')
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
+import os
+import sys
+ 
+from dotenv import load_dotenv
+from ringcentral import SDK
+load_dotenv()
+
 FORWARDING   = os.environ.get('RC_FORWARDING_NUMBER')
 
-rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
 try:
-  platform.login(USERNAME, EXTENSION, PASSWORD)
-except:
-  sys.exit("Unable to authenticate to platform. Check credentials.")
+  platform.login( jwt=os.environ.get('RC_JWT') )
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
 
 params = {
     'phoneNumber': FORWARDING,

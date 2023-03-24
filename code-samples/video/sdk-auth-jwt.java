@@ -20,7 +20,7 @@ class SampleApplication: Application() {
 
         /*
          * There are two options to do the authentication.
-         * (1) Using the JWT or password OAuth flow,
+         * (1) Using the JWT OAuth flow,
          * (2) Passing the access key acquired separately directly to the SDK
          */
         val oauthOptions = OauthOptions.create()

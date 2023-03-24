@@ -6,16 +6,13 @@ import os,sys,time
 from dotenv import load_dotenv
 load_dotenv()
 
-CLIENTID     = os.environ.get('RC_CLIENT_ID')
-CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
-SERVER       = os.environ.get('RC_SERVER_URL')
-USERNAME     = os.environ.get('RC_USERNAME')
-PASSWORD     = os.environ.get('RC_PASSWORD')
-EXTENSION    = os.environ.get('RC_EXTENSION')
-
-sdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
-platform = sdk.platform()
-platform.login( USERNAME, EXTENSION, PASSWORD )
+rcsdk = SDK(os.environ.get('RC_CLIENT_ID'),
+            os.environ.get('RC_CLIENT_SECRET'),
+            os.environ.get('RC_SERVER_URL') )
+platform = rcsdk.platform()
+ 
+try:
+  platform.login( jwt=os.environ.get('RC_JWT') )
 
 today = date.today()
 dateLog = today.strftime("%Y_%m_%d_%H_%M")

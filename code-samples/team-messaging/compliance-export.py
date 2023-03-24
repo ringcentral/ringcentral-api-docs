@@ -1,14 +1,29 @@
-#!/usr/bin/env python
-from ringcentral import SDK
-import os,sys,time
-from urllib.request import urlopen
+#!/usr/bin/python
 
-CLIENTID     = os.environ.get('RC_CLIENT_ID')
-CLIENTSECRET = os.environ.get('RC_CLIENT_SECRET')
-SERVER       = os.environ.get('RC_SERVER_URL')
-USERNAME     = os.environ.get('RC_USERNAME')
-PASSWORD     = os.environ.get('RC_PASSWORD')
-EXTENSION    = os.environ.get('RC_EXTENSION')
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
+import os
+import sys
+import time
+ 
+from dotenv import load_dotenv
+from urllib.request import urlopen
+from ringcentral import SDK
+load_dotenv()
+
+CHAT_ID = '<GROUP ID>'
+
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
+platform = rcsdk.platform()
+try:
+  platform.login( jwt=os.environ.get('RC_JWT') )
+
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
 
 def create_compliance_export_task():
     print("Create export task.")
@@ -45,9 +60,11 @@ def get_glip_report_archived_content(contentUri, fileName):
         output.write(fileHandler.read())
 
 try:
-    rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+    rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+                 os.environ.get('RC_CLIENT_SECRET'),
+                 os.environ.get('RC_SERVER_URL') )
     platform = rcsdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
+    platform.login( jwt=os.environ.get('RC_JWT') )
     create_compliance_export_task()
 except Exception as e:
     sys.exit( f'Could not generate export: {e}' )

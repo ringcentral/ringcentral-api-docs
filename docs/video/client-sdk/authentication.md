@@ -55,20 +55,6 @@ The following code sample shows how JWT authentication is accomplished across ou
     {!> code-samples/video/sdk-auth-jwt.java !} 
     ```
 
-### Username/password
-
-One can also input a username and password via the SDK as a way to authenticate a user into a meeting. This has the advantage of being very easy to use if people know their RingCentral username and password. However, we do not encourage developers to use this model because best practices generally instruct users not to share usernames and passwords directly with third parties. 
-
-Authenticating via a username and password is almost identical to using a JWT credential. The code sample below demonstrates username and password based authentication. 
-
-```js
-{!> code-samples/video/sdk-auth-password.js !} 
-```
-
-Developers should be aware of the following limitations associated with using username/password: all meeting participants must belong to the same RingCentral account, and they must also belong to the same account in which the app’s client ID and secret were generated. In this way username and password auth is limited to "private applications" or applications that are intended to used by users who all are managed under the same RingCentral account. 
-
-JWT credentials free developers from this limitation, however, JWT credentials can only be generated within the Developer Console, which is not ideal for most users. For this reason, the auth methodology we recommend for production use is a RingCentral auth token.
-
 ## Can I provide my own authentication layer?
 
 The default assumption of the RingCentral Video Client SDK is that all the meeting participants joining a meeting via the SDK are RingCentral customers who possess RingCentral login credentials. What if, on the other hand, you want to build an app intended to be used primarily by non-RingCentral users? In this modality, applications should authenticate meeting participants independently, and employ the guest auth mode to pass into the SDK the user's name from the authentication provider. 

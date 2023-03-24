@@ -10,27 +10,25 @@ import com.ringcentral.definitions.TokenInfo;
 
 public class App {
 
-  static String RINGCENTRAL_CLIENT_ID = "";
-  static String RINGCENTRAL_CLIENT_SECRET = "";
-  static String RINGCENTRAL_USERNAME = "";
-  static String RINGCENTRAL_PASSWORD = "";
-  static String RINGCENTRAL_EXTENSION = "";
+  static String RC_CLIENT_ID = "";
+  static String RC_CLIENT_SECRET = "";
+  static String RC_JWT = "";
 
   private static final String AGGREGATE_API_PATH = "/analytics/calls/v1/accounts/~/aggregation/fetch";
   private static final String TIMELINE_API_PATH = "/analytics/calls/v1/accounts/~/timeline/fetch?interval=Week";
-  // Update the URL based on if you're running using RingCentral Sandbox or Production Credentials. Currently set for sandbox
-  private static String RINGCENTRAL_SERVER_URL = "https://platform.devtest.ringcentral.com";
 
   public static void main(String[] args) throws Exception {
 
-    RestClient rc = new RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET, RINGCENTRAL_SERVER_URL);
-    TokenInfo token = rc.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
+    RestClient rc = new RestClient( System.getenv("RC_CLIENT_ID"),
+                                    System.getenv("RC_CLIENT_SECRET"),
+                                    System.getenv("RC_SERVER_URL") );
+    rc.authorize(System.getenv("RC_JWT_TOKEN"));
     String accessToken = token.access_token;
 
     String aggregate_json_file_path = "src/main/resources/aggregate-request-body.json";
-    String timeline_json_file_path = "src/main/resources/timeline-request-body.json";
-    String aggregateJsonStr = App.readFileAsString(aggregate_json_file_path);
-    String timelineJsonStr = App.readFileAsString(timeline_json_file_path);
+    String timeline_json_file_path  = "src/main/resources/timeline-request-body.json";
+    String aggregateJsonStr         = App.readFileAsString(aggregate_json_file_path);
+    String timelineJsonStr          = App.readFileAsString(timeline_json_file_path);
 
     try {
       HttpResponse<String> aggreageteHttpResponse = getData(aggregateJsonStr, AGGREGATE_API_PATH, accessToken);

@@ -8,21 +8,14 @@ License: MIT
 */
 require('dotenv').config();
 
-var RingCentral = require('@ringcentral/sdk').SDK;
-
+var RC      = require('@ringcentral/sdk').SDK;
 var express = require('express');
 var bp      = require('body-parser')
 var fs      = require('fs');
 
 // read in config parameters from environment, or .env file
-const PORT            = process.env.PORT;
-const RINGCENTRAL_CLIENT_ID       = process.env.RINGCENTRAL_CLIENT_ID_PUBLIC;
-const RINGCENTRAL_CLIENT_SECRET   = process.env.RINGCENTRAL_CLIENT_SECRET_PUBLIC;
-const RINGCENTRAL_SERVER_URL = process.env.RINGCENTRAL_SERVER_URL;
-const RINGCENTRAL_OAUTH_REDIRECT_URI = process.env.RINGCENTRAL_OAUTH_REDIRECT_URI
-const WEBHOOKS_DELIVERY_ADDRESS = process.env.WEBHOOKS_DELIVERY_ADDRESS
-
-const TOKEN_TEMP_FILE = '.public-bot-auth';
+const WEBHOOK_URL               = process.env.RC_BOT_WEBHOOK_URL
+const TOKEN_TEMP_FILE           = '.public-bot-auth';
 const SUBSCRIPTION_ID_TEMP_FILE = '.public-bot-subscription';
 
 var app = express();
@@ -33,8 +26,8 @@ app.use( bp.urlencoded({
 }));
 
 // Start our server
-app.listen(PORT, function () {
-    console.log("Bot server listening on port " + PORT);
+app.listen(process.env.PORT, function () {
+    console.log("Bot server listening on port " + process.env.PORT);
     // Bot start/restart, check if there are saved tokens
     loadSavedTokens()
 });
@@ -46,11 +39,11 @@ app.get('/', function(req, res) {
 });
 
 // Instantiate the RingCentral JavaScript SDK
-var rcsdk = new RingCentral({
-  server: RINGCENTRAL_SERVER_URL,
-  clientId: RINGCENTRAL_CLIENT_ID,
-  clientSecret: RINGCENTRAL_CLIENT_SECRET,
-  redirectUri: RINGCENTRAL_OAUTH_REDIRECT_URI
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET,
+    'redirectUri':  process.env.RC_REDIRECT_URL
 });
 
 // Keep a list of account's access tokens in memory so we can use them to post messages
@@ -100,8 +93,8 @@ app.get('/oauth', async function (req, res) {
         var creatorId = req.query.creator_extension_id;
         try {
           var params = {
-              code : req.query.code,
-              redirectUri : RINGCENTRAL_OAUTH_REDIRECT_URI
+              code        : req.query.code,
+              redirectUri : process.env.RC_REDIRECT_URL
           }
           var platform = rcsdk.platform()
           var resp = await platform.login(params)
@@ -116,8 +109,8 @@ app.get('/oauth', async function (req, res) {
           // Bot access token is almost permanent. Thus, there is no refresh token associated with the access token!
           // However, before saving the access token for reuse, we assign fake refresh token values to satify
           // the SDK's tokens syntax.
-        	tokens['refresh_token'] = 'xxx';
-        	tokens['refresh_token_expires_in'] = 10000000000;
+          tokens['refresh_token'] = 'xxx';
+          tokens['refresh_token_expires_in'] = 10000000000;
 
           // Make an account token object for reuse
           var accountTokenObj = {
@@ -212,7 +205,7 @@ async function subscribeToEvents(p, accountTokenObj){
         ],
         "deliveryMode": {
             "transportType": "WebHook",
-            "address": WEBHOOKS_DELIVERY_ADDRESS
+            "address": WEBHOOK_URL
         },
         "expiresIn": 604799
     };

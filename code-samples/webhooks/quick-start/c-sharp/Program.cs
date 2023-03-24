@@ -16,9 +16,7 @@ namespace setup_webhook
                 Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
                 Environment.GetEnvironmentVariable("RC_SERVER_URL"));
             restClient.Authorize(
-                Environment.GetEnvironmentVariable("RC_USERNAME"),
-                Environment.GetEnvironmentVariable("RC_EXTENSION"),
-                Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
+                Environment.GetEnvironmentVariable("RC_JWT")).Wait();
             await rc.Restapi().Subscription().Post(new CreateSubscriptionRequest
             {
                 eventFilters = new[] {"/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"},

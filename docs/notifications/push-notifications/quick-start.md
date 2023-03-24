@@ -11,7 +11,7 @@ In this Quick Start, we are going to help you subscribe for PubNub push notifica
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Notifications App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Push+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Notifications App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Push+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&grantType=JWT&&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Notifications App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -19,9 +19,10 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
-<li>Under "Authentication" select "Password-based auth flow."
+<li>Under "Auth" select "JWT auth flow."
 <li>Under "Security" add the following permissions:
   <ul>
+    <li>WebhookSubscriptions</li>
     <li>SMS</li>
   </ul>
 </li>
@@ -37,6 +38,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_JWT` - set to the [JWT credential you created](../../../authentication/jwt/create-jwt) for yourself
 
 ## Subscribe to a push notification
 

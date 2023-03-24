@@ -1,7 +1,7 @@
 const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
 
-const MEDIA_URL   = '<INSERT URL TO MEDIA FILE>';
+const MEDIA_URL   = process.env.RC_MEDIA_URL;
 const WEBHOOK_URL = '<INSERT YOUR WEBHOOK URL>';
 
 // Initialize the RingCentral SDK and Platform

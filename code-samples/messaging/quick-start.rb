@@ -7,15 +7,14 @@
 require 'ringcentral'
 require 'dotenv/load'
 
+SENDER       = ENV['SMS_SENDER']
 RECIPIENT    = ENV['SMS_RECIPIENT']
 
 $rc = RingCentral.new( ENV['RC_CLIENT_ID'],
                        ENV['RC_CLIENRT_SECRET'],
                        ENV['RC_SERVER_URL'] )
 
-$rc.authorize( username: ENV['RC_USERNAME'],
-               extension: ENV['RC_EXTENSION'],
-               password: ENV['RC_PASSWORD'] )
+$rc.authorize( jwt: ENV['RC_JWT'] )
 
 def read_extension_phone_number()
   resp = $rc.get('/restapi/v1.0/account/~/extension/~/phone-number')
@@ -30,7 +29,7 @@ end
 
 def send_sms(phoneNumber)
   resp = $rc.post('/restapi/v1.0/account/~/extension/~/sms', payload: {
-        from: {phoneNumber: phoneNumber},
+        from: {phoneNumber: SENDER},
         to: [{phoneNumber: RECIPIENT}],
         text: 'Hello World!'
     })

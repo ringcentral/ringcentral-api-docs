@@ -5,23 +5,19 @@
 RC_SERVER_URL        = 'https://platform.devtest.ringcentral.com'
 # Production
 #RC_SERVER_URL        = 'https://platform.ringcentral.com'
+
 RC_CLIENT_ID         = ''
 RC_CLIENT_SECRET     = ''
-
-# These credentials are used for password-grant types
-RC_USERNAME          = ''
-RC_PASSWORD          = ''
-RC_EXTENSION         = '101'
-
-# This credential is used for JWT-grant types
 RC_JWT               = ''
 
 # Used in messaging/quick-start.py
 # This following phone number will receive a test SMS message
+SMS_SENDER           = ''
 SMS_RECIPIENT        = ''
 
 # Used in voice/quick-start.py
 # This following phone number will receive a phone call
+RINGOUT_CALLER       = ''
 RINGOUT_RECIPIENT    = ''
 
 # Used in PubNub Quick Start
@@ -36,3 +32,7 @@ RC_FORWARDING_NUMBER = ''
 # Used throughout ai/* (Artificial Intelligence API)
 # The following phone number will be set as a forwarding number. 
 RC_MEDIA_URL = 'https://github.com/ringcentral/ringcentral-api-docs/blob/conv-ai-docs/resources/sample1.wav?raw=true'
+
+# Used in the Team Messaging bot code samples 
+# The following URL is where bot webhooks will be delivered
+RC_BOT_WEBHOOK_URL = ''

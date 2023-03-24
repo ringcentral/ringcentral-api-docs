@@ -5,6 +5,16 @@
     
     This is helpful as developers should know because it keeps your code separate from the preferences ands data that govern your code's behavior. This is how most modern CI/CD system are architected today, and makes it much easier for developers to containerize their code.
 
+## Creating a JWT credential
+
+All code samples within the RingCentral Developer Guide utilize JWT authentication, which requires developers to first create a JWT credential. A JWT auth works similarly to username and password auth by following the same basic sequence of calls:
+
+* Developer presents JWT credential to `/restapi/oath/token`
+* RingCentral responds with an access key
+* Developer presents access key in HTTP Authorization header to call the API
+
+To execute code samples in the Developer Guide, please [create a JWT credential](../../authentication/jwt/create-jwt/) now. 
+
 ## Your RingCentral .env file
 
 Each code sample found within this Developer Guide is designed to use the variables found within a `.env` file to properly configure itself to run. 

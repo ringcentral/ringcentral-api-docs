@@ -13,12 +13,10 @@ export default function App({ config }) {
         }
         
         const login = async (rcsdk) => {
-            const { userName: username, password } = config
+            const { jwt } = config
             await rcsdk
                 .login({
-                    username,
-                    extension: '',
-                    password
+                    jwt: ''
                 })
                 .then((response) => {
                     return response.json()

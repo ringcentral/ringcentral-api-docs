@@ -7,20 +7,17 @@ require('vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
+const SENDER    = $_ENV['SMS_SENDER'] 
 const RECIPIENT = $_ENV['SMS_RECIPIENT'] 
 
 $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-$_ENV['RC_CLIENT_SECRET'],
-$_ENV['RC_SERVER_URL'] );
-
+                                  $_ENV['RC_CLIENT_SECRET'],
+                                  $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
-
-$platform->login( $_ENV['RC_USERNAME'],
-$_ENV['RC_EXTENSION'],
-$_ENV['RC_PASSWORD'] );
+$platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
 
 $body = array(
-	'from' => array( 'phoneNumber' => "username" ),
+	'from' => array( 'phoneNumber' => SENDER ),
 	'to'   => array( array('phoneNumber' => RECIPIENT ) ),
 	'text' => 'Hello World!'
 );

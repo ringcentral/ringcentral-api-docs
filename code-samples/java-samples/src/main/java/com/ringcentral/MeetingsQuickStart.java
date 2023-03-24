@@ -9,9 +9,11 @@ public class MeetingsQuickStart {
 
     public static void main(String[] args) {
         var obj = new MeetingsQuickStart();
-	      rc = new RestClient(System.getenv("RC_CLIENT_ID"), System.getenv("RC_CLIENT_SECRET"), System.getenv("RC_SERVER_URL"));
+	      rc = new RestClient(System.getenv("RC_CLIENT_ID"),
+				  System.getenv("RC_CLIENT_SECRET"),
+				  System.getenv("RC_SERVER_URL"));
         try {
-            rc.authorize(System.getenv("RC_USERNAME"), System.getenv("RC_EXTENSION"), System.getenv("RC_PASSWORD"));
+            rc.authorize( System.getenv("RC_JWT") );
             obj.createMeeting();
         }
         catch (RestException | IOException e) {

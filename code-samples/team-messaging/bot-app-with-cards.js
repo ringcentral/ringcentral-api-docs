@@ -14,16 +14,19 @@ var request = require('request');
 var bp      = require('body-parser')
 var fs      = require('fs');
 
-// read in config parameters from environment, or .env file
-const PORT            = process.env.PORT;
 const REDIRECT_HOST   = process.env.REDIRECT_HOST;
-const CLIENT_ID       = process.env.CLIENT_ID;
-const CLIENT_SECRET   = process.env.CLIENT_SECRET;
-const RINGCENTRAL_ENV = process.env.RINGCENTRAL_ENV;
 const TOKEN_TEMP_FILE = '.bot-auth';
 
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
+var platform = rcsdk.platform();
+platform.login({ 'jwt':  process.env.RC_JWT })
+
 var app = express();
-var platform, subscription, rcsdk, subscriptionId, bot_token;
+var subscription, rcsdk, subscriptionId, bot_token;
 
 app.use( bp.json() );
 app.use( bp.urlencoded({
@@ -31,8 +34,8 @@ app.use( bp.urlencoded({
 }));
 
 // Start our server
-app.listen(PORT, function () {
-    console.log("Bot server listening on port " + PORT);
+app.listen(process.env.PORT, function () {
+    console.log("Bot server listening on port " + process.env.PORT);
 });
 
 // This route handles GET requests to our root ngrok address and responds
@@ -41,14 +44,6 @@ app.get('/', function(req, res) {
     res.send('Ngrok is working! Path Hit: ' + req.url);
 });
 
-// Instantiate the RingCentral Javascript SDK
-rcsdk = new RC({
-    'server':    RINGCENTRAL_ENV,
-    'appKey':    CLIENT_ID,
-    'appSecret': CLIENT_SECRET
-});
-
-platform = rcsdk.platform();
 if (fs.existsSync( TOKEN_TEMP_FILE )) {
     var data = JSON.parse( fs.readFileSync( TOKEN_TEMP_FILE ) );
     console.log( "Reusing access key from cache: " + data.access_token )

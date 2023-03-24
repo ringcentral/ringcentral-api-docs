@@ -1,5 +1,8 @@
 # Password auth flow
 
+!!! warning "Password grant type is deprecated"
+    Starting in 2023, RingCentral will begin a careful and deliberative process of removing support for the username/password auth flow on the Platform. As a result, all developers are strongly encouraged to migrate their applications to [JWT](../jwt-flow). 
+
 !!! warning "Please use the JWT auth flow"
     In January 2022, RingCentral released a more secure alternative to the password grant type called "JWT." We recommend all developers use the [JWT flow](../jwt-flow/) going forward as eventually the password auth flow will be deprecated.
 

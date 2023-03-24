@@ -1,20 +1,24 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
+import os
+import sys
+ 
+from dotenv import load_dotenv
 from ringcentral import SDK
-import os,sys
+load_dotenv()
 
-CLIENTID     = 'RC_CLIENT_ID'
-CLIENTSECRET = 'RC_CLIENT_SECRET'
-SERVER       = 'RC_SERVER_URL'
-USERNAME     = 'RC_USERNAME'
-PASSWORD     = 'RC_PASSWORD'
-EXTENSION    = 'RC_EXTENSION'
-
-rcsdk = SDK( CLIENTID, CLIENTSECRET, SERVER )
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
 try:
-  platform.login(USERNAME, EXTENSION, PASSWORD)
-except:
-  sys.exit("Unable to authenticate to platform. Check credentials.")
+  platform.login( jwt=os.environ.get('RC_JWT') )
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
 
 params = {
     'name': 'Test Meeting'

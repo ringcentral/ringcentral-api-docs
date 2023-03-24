@@ -14,9 +14,7 @@ namespace Call_Ringout
                 Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
                 Environment.GetEnvironmentVariable("RC_SERVER_URL"));
             restClient.Authorize(
-                Environment.GetEnvironmentVariable("RC_USERNAME"),
-                Environment.GetEnvironmentVariable("RC_EXTENSION"),
-                Environment.GetEnvironmentVariable("RC_PASSWORD")).Wait();
+                Environment.GetEnvironmentVariable("RC_JWT")).Wait();
             call_ringout().Wait();
         }
         
@@ -24,7 +22,7 @@ namespace Call_Ringout
         {
             var parameters = new MakeRingOutRequest();
             parameters.from = new MakeRingOutCallerInfoRequestFrom {
-                phoneNumber = Environment.GetEnvironmentVariable("RC_USERNAME")
+                phoneNumber = Environment.GetEnvironmentVariable("RINGOUT_CALLER")
             };
             parameters.to = new MakeRingOutCallerInfoRequestTo {
                 phoneNumber = Environment.GetEnvironmentVariable("RINGOUT_RECIPIENT")

@@ -6,21 +6,11 @@ https://developers.ringcentral.com/guide/team-messaging/bots/walkthrough/
 Copyright: 2021 - RingCentral, Inc.
 License: MIT
 */
+const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
-
-var RingCentral = require('@ringcentral/sdk').SDK;
-
 var express = require('express');
 var bp      = require('body-parser')
 var fs      = require('fs');
-
-// read in config parameters from environment, or .env file
-const PORT            = process.env.PORT;
-const RINGCENTRAL_CLIENT_ID       = process.env.RINGCENTRAL_CLIENT_ID_PRIVATE;
-const RINGCENTRAL_CLIENT_SECRET   = process.env.RINGCENTRAL_CLIENT_SECRET_PRIVATE;
-const RINGCENTRAL_SERVER_URL = process.env.RINGCENTRAL_SERVER_URL;
-const RINGCENTRAL_OAUTH_REDIRECT_URI = process.env.RINGCENTRAL_OAUTH_REDIRECT_URI
-const WEBHOOKS_DELIVERY_ADDRESS = process.env.WEBHOOKS_DELIVERY_ADDRESS
 
 const TOKEN_TEMP_FILE = '.private-bot-auth';
 const SUBSCRIPTION_ID_TEMP_FILE = '.private-bot-subscription';
@@ -45,13 +35,12 @@ app.get('/', function(req, res) {
 });
 
 // Instantiate the RingCentral JavaScript SDK
-var rcsdk = new RingCentral({
-  server: RINGCENTRAL_SERVER_URL,
-  clientId: RINGCENTRAL_CLIENT_ID,
-  clientSecret: RINGCENTRAL_CLIENT_SECRET,
-  redirectUri: RINGCENTRAL_OAUTH_REDIRECT_URI
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET,
+    'redirectUri':  process.env.RC_REDIRECT_URL
 });
-
 var platform = rcsdk.platform();
 
 // Bot starts/restarts => check if there is a saved token
@@ -177,7 +166,7 @@ async function subscribeToEvents(){
     ],
     deliveryMode: {
       transportType: "WebHook",
-      address: WEBHOOKS_DELIVERY_ADDRESS
+      address: process.env.RC_BOT_WEBHOOK_URL
     },
     expiresIn: 604799
   };

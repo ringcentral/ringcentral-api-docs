@@ -1,7 +1,7 @@
 const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
 
-MEDIA_URL   = '<INSERT URL TO MEDIA FILE>';
+MEDIA_URL   = process.env.RC_MEDIA_URL;
 WEBHOOK_URL = '<INSERT YOUR WEBHOOK URL>';
 SPEAKERS = [
     "ringcentral_test",

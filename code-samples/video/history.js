@@ -1,34 +1,29 @@
-const SDK = require('@ringcentral/sdk').SDK
+const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>"
-RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>"
-RINGCENTRAL_SERVER = "https://platform.ringcentral.com"
-
-RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER or EMAIL>"
-RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>"
-RINGCENTRAL_EXTENSION = "" // optional, you can leave this as empty string or provide <YOUR EXTENSION NUMBER>
-
-const rcsdk = new SDK({
-    server: RINGCENTRAL_SERVER,
-    clientId: RINGCENTRAL_CLIENTID,
-    clientSecret: RINGCENTRAL_CLIENTSECRET
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
 });
-const platform = rcsdk.platform();
+var platform = rcsdk.platform();
+platform.login({ 'jwt':  process.env.RC_JWT })
 
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
-    .then(function(resp) {
-        platform.get('/rcvideo/v1/history/meetings')
-        .then(function(resp) {
-            var jsonObj = await resp.json()
-            for (var meeting of jsonObj.meetings){
-                console.log("Meeting:")
-                console.log("  name: " + record.displayName)
-                console.log("  start time: " + record.startTime)
-                console.log("  end time: " + record.endTime)
-            }
-        })
+platform.on(platform.events.loginSuccess, () => {
+    fetch_history()
+})
+
+async function fetch_history() {
+    try {
+	var resp = await platform.get('/rcvideo/v1/history/meetings')
+	var jsonObj = await resp.json()
+        for (var meeting of jsonObj.meetings){
+            console.log("Meeting:")
+            console.log("  name: " + record.displayName)
+            console.log("  start time: " + record.startTime)
+            console.log("  end time: " + record.endTime)
+        }
+    } catch (e) {
+	console.log(e.message)
+    }
 });

@@ -1,25 +1,15 @@
-const RC  = require('ringcentral')
+const RC = require('@ringcentral/sdk').SDK
 require('dotenv').config();
 
 CHAT_ID      = '<CHAT TO ADD MEMBERS TO>'
-CLIENTID     = process.env.RC_CLIENT_ID
-CLIENTSECRET = process.env.RC_CLIENT_SECRET
-SERVER       = process.env.RC_SERVER_URL
-USERNAME     = process.env.RC_USERNAME
-PASSWORD     = process.env.RC_PASSWORD
-EXTENSION    = process.env.RC_EXTENSION
 
 var rcsdk = new RC({
-    server:       SERVER,
-    clientId:     CLIENTID,
-    clientSecret: CLIENTSECRET
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({
-    username:  USERNAME,
-    password:  PASSWORD,
-    extension: EXTENSION
-})
+platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
     platform.post("/restapi/v1.0/glip/teams/" + CHAT_ID + "/add", {

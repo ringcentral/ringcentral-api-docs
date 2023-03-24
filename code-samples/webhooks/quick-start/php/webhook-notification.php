@@ -1,5 +1,11 @@
 <?php
+/* You get the environment parameters from your 
+   application dashbord in your developer account 
+   https://developers.ringcentral.com */
+   
 require('vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 $DELIVERY_ADDRESS='<https://xxxxxxxx.ngrok.io/webhook-notification.php?webhookcallback>';
 
@@ -17,22 +23,20 @@ if (isset($_REQUEST['webhookcallback'])){
       $jsonObj = json_decode($jsonStr, TRUE);
       print_r($jsonObj['body']['subject']);
     }
-}else{
-    $platform->login( $_ENV['RC_USERNAME'],
-                      $_ENV['RC_EXTENSION'],
-                      $_ENV['RC_PASSWORD'] );
+} else {
+    $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
     $params = array(
-            'eventFilters' => array(
-                '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'
-                ),
-            'deliveryMode' => array(
-                'transportType' => "WebHook",
-                'address' => $DELIVERY_ADDRESS
-            ));
+        'eventFilters' => array(
+            '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'
+        ),
+        'deliveryMode' => array(
+            'transportType' => "WebHook",
+            'address' => $DELIVERY_ADDRESS
+        ));
     try {
-          $apiResponse = $platform->post('/subscription', $params);
-          print_r ("Response: " . $apiResponse->text());
-    }catch (Exception $e){
-          print_r ("Exception: " . $e->getMessage());
+        $apiResponse = $platform->post('/subscription', $params);
+        print_r ("Response: " . $apiResponse->text());
+    } catch (Exception $e) {
+        print_r ("Exception: " . $e->getMessage());
     }
 }

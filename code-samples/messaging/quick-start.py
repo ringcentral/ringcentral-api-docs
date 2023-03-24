@@ -11,20 +11,20 @@ from dotenv import load_dotenv
 from ringcentral import SDK
  
 load_dotenv()
- 
+
+SENDER       = os.environ.get('SMS_SENDER')
+RECIPIENT    = os.environ.get('SMS_RECIPIENT')
+
 rcsdk = SDK(os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
-             os.environ.get('RC_SERVER_URL') )
+            os.environ.get('RC_CLIENT_SECRET'),
+            os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
  
 try:
-  platform.login(os.environ.get('RC_USERNAME'),
-                 os.environ.get('RC_EXTENSION'),
-                 os.environ.get('RC_PASSWORD') )
+  platform.login( jwt=os.environ.get('RC_JWT') )
+
 except Exception as e:
   sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
-
-RECIPIENT    = os.environ.get('SMS_RECIPIENT')
 
 def read_extension_phone_number():
   try:
@@ -42,7 +42,7 @@ def send_sms(fromNumber):
   try:
     resp = platform.post('/restapi/v1.0/account/~/extension/~/sms',
     {
-        'from' : { 'phoneNumber': fromNumber },
+        'from' : { 'phoneNumber': SENDER },
         'to'   : [ {'phoneNumber': RECIPIENT} ],
         'text' : 'Hello World!'
     })

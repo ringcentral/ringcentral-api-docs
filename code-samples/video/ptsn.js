@@ -1,28 +1,28 @@
-const SDK = require('@ringcentral/sdk').SDK
+const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>"
-RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>"
-RINGCENTRAL_SERVER = "https://platform.ringcentral.com"
+const CALLER       = process.env.RINGOUT_CALLER
+const RECIPIENT    = process.env.RINGOUT_RECIPIENT
 
-RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER or EMAIL>"
-RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>"
-RINGCENTRAL_EXTENSION = "" // optional, you can leave this as empty string or provide <YOUR EXTENSION NUMBER>
-
-const rcsdk = new SDK({
-    server: RINGCENTRAL_SERVER,
-    clientId: RINGCENTRAL_CLIENTID,
-    clientSecret: RINGCENTRAL_CLIENTSECRET
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
 });
-const platform = rcsdk.platform();
+var platform = rcsdk.platform();
+platform.login({ 'jwt':  process.env.RC_JWT })
 
-platform.login({
-    username: RINGCENTRAL_USERNAME,
-    password: RINGCENTRAL_PASSWORD,
-    extension: RINGCENTRAL_EXTENSION
-    })
-    .then(function(resp) {
-        platform.get('/restapi/v1.0/account/~/extension/~/conferencing')
-        .then(function(resp) {
-           console.log( resp.json() )
-        })
-});
+platform.on(platform.events.loginSuccess, () => {
+  call_ringout()
+})
+
+async function call_ringout() {
+    try {
+	var resp = await platform.get('/restapi/v1.0/account/~/extension/~/conferencing')
+	var jsonObj = await resp.json()
+	console.log( jsonObj )
+    } catch (e) {
+	console.log(e.message)
+    }
+}
+

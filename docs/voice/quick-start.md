@@ -11,7 +11,7 @@ In this Quick Start, we are going to help you connect two people in a live phone
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create RingOut App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=RingOut+Quick+Start+App&desc=A+simple+app+to+demo+placing+a+call+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=RingOut&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create RingOut App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=RingOut+Quick+Start+App&desc=A+simple+app+to+demo+placing+a+call+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=RingOut&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create RingOut App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -19,7 +19,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
-<li>Under "Authentication" select "Password-based auth flow."
+<li>Under "Auth" select "JWT auth flow."
 <li>Under "Security" add the following permissions:
   <ul>
     <li>RingOut</li>
@@ -36,7 +36,12 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
+     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
+     * `RINGOUT_SENDER` - set to a RingCentral phone number you wish to place the call from in this code sample
+     * `RINGOUT_RECIPIENT` - set to a phone number you wish to call in this code sample
 
 ## Place a Call
 
@@ -52,7 +57,7 @@ Select your preferred language below.
 
     ### Create and edit ringout.js
 
-    Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly.
 
     ```javascript
     {!> code-samples/voice/quick-start.js !}
@@ -114,6 +119,30 @@ Select your preferred language below.
 
     ```bash
     $ php ringout.php
+    ```
+
+=== "Ruby"
+
+    ### Install RingCentral Ruby SDK
+
+    ```bash
+    $ gem install ringcentral-sdk dotenv
+    ```
+
+    ### Create and edit ringout.rb
+
+    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+
+    ```ruby
+    {!> code-samples/voice/quick-start.rb !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ ruby ringout.rb
     ```
 
 === "C#"
@@ -183,29 +212,6 @@ Select your preferred language below.
 
     You are almost done. Now run your app from Eclipse.
 
-=== "Ruby"
-
-    ### Install RingCentral Ruby SDK
-
-    ```bash
-    $ gem install ringcentral-sdk dotenv
-    ```
-
-    ### Create and edit ringout.rb
-
-    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
-
-    ```ruby
-    {!> code-samples/voice/quick-start.rb !}
-    ```
-
-    ### Run your code
-
-    You are almost done. Now run your script.
-
-    ```bash
-    $ ruby ringout.rb
-    ```
 
 ## Need Help?
 

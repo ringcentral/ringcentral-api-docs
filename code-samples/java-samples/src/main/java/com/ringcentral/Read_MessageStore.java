@@ -17,9 +17,7 @@ public class Read_MessageStore {
 	RestClient rc = new RestClient( System.getenv("RC_CLIENT_ID"),
 				        System.getenv("RC_CLIENT_SECRET"),
 				        System.getenv("RC_SERVER_URL") );
-	rc.authorize( System.getenv("RC_USERNAME"),
-		      System.getenv("RC_EXTENSION"),
-		      System.getenv("RC_PASSWORD") );
+	rc.authorize( System.getenv("RC_JWT") );
 	
 	ListMessagesParameters parameters = new ListMessagesParameters();
 	parameters.messageType = new String[] {"SMS"};

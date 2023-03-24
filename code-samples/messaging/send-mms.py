@@ -10,6 +10,7 @@ import os,sys
 from dotenv import load_dotenv
 load_dotenv()
 
+SENDER       = os.environ.get('SMS_SENDER')
 RECIPIENT    = os.environ.get('SMS_RECIPIENT')
 
 rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
@@ -18,9 +19,8 @@ rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
 platform = rcsdk.platform()
 
 try:
-  platform.login(os.environ.get('RC_USERNAME'),
-                 os.environ.get('RC_EXTENSION'),
-                 os.environ.get('RC_PASSWORD') )
+  platform.login( jwt=os.environ.get('RC_JWT') )
+
 except:
   sys.exit("Unable to authenticate to platform. Check credentials.")
 
@@ -39,7 +39,7 @@ def read_extension_phone_number():
 def send_mms(fromNumber):
     builder = rcsdk.create_multipart_builder()
     builder.set_body({
-      'from' : { 'phoneNumber': fromNumber },
+      'from' : { 'phoneNumber': SENDER },
       'to'   : [ {'phoneNumber': RECIPIENT} ],
       'text' : 'Hello World!'
     })

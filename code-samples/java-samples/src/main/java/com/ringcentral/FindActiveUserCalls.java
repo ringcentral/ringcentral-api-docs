@@ -13,9 +13,7 @@ public class FindActiveUserCalls {
 			     System.getenv("RC_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_USERNAME"),
-			  System.getenv("RC_EXTENSION"),
-			  System.getenv("RC_PASSWORD") );
+	    rc.authorize( System.getenv("RC_JWT") );
 	    obj.read_user_active_calls();
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();

@@ -10,9 +10,7 @@ const rcsdk = new RC({
 const platform = rcsdk.platform();
 
 platform.login({
-    'username':  process.env.RC_USERNAME,
-    'password':  process.env.RC_PASSWORD,
-    'extension': process.env.RC_EXTENSION
+    'jwt':  process.env.RC_JWT 
 }).then(() => {
     let userObject = {
         "contact": {

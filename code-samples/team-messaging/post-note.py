@@ -1,22 +1,26 @@
+#!/usr/bin/python
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
+import os
+import sys
+ 
+from dotenv import load_dotenv
 from ringcentral import SDK
-
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
-
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
+load_dotenv()
 
 CHAT_ID = '<GROUP ID>'
 
-rcsdk = SDK( RINGCENTRAL_CLIENTID,
-             RINGCENTRAL_CLIENTSECRET,
-             RINGCENTRAL_SERVER)
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
-platform.login(RINGCENTRAL_USERNAME,
-               RINGCENTRAL_EXTENSION,
-               RINGCENTRAL_PASSWORD)
+try:
+  platform.login( jwt=os.environ.get('RC_JWT') )
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
 
 endpoint = "/team-messaging/v1/chats/" + CHAT_ID + '/notes'
 note = {

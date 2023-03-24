@@ -3,6 +3,7 @@ import com.ringcentral.definitions.*;
 import java.io.IOException;
 
 public class RingoutQuickStart {
+    static String RINGOUT_CALLER    = System.getenv("RINGOUT_CALLER");
     static String RINGOUT_RECIPIENT = System.getenv("RINGOUT_RECIPIENT");
     static RestClient rc;
 
@@ -12,9 +13,7 @@ public class RingoutQuickStart {
                              System.getenv("RC_CLIENT_SECRET"),
                              System.getenv("RC_SERVER_URL") );
         try {
-            rc.authorize( System.getenv("RC_USERNAME"),
-                          System.getenv("RC_EXTENSION"),
-                          System.getenv("RC_PASSWORD") );
+	    rc.authorize(System.getenv("RC_JWT"));
             obj.call_ringout();
         } catch (RestException | IOException e) {
             e.printStackTrace();
@@ -23,9 +22,9 @@ public class RingoutQuickStart {
     public void call_ringout() throws RestException, IOException {
         MakeRingOutRequest requestBody = new MakeRingOutRequest();
         requestBody.from(new MakeRingOutCallerInfoRequestFrom().phoneNumber(
-                                                                 System.getenv("RC_USERNAME")
-        ));
-        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(RINGOUT_RECIPIENT));
+              RINGOUT_CALLER ));
+        requestBody.to(new MakeRingOutCallerInfoRequestTo().phoneNumber(
+	      RINGOUT_RECIPIENT));
         requestBody.playPrompt = false;
 
         var response = rc.restapi().account().extension().ringOut().post(requestBody);
