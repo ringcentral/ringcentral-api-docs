@@ -139,11 +139,11 @@ The following code sample shows how to call the Compliance Export API to export 
     ```
 
 === "Java"
-    ```c#
-    {!> code-samples/team-messaging/ComplianceDataExport.java !}
+    ```java
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/ComplianceDataExport.java !}
     ```
 
 === "Ruby"
-    ```c#
+    ```ruby
     {!> code-samples/team-messaging/compliance-export.rb !}
     ```

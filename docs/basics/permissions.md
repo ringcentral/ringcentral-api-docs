@@ -4,7 +4,7 @@ In order to work with particular RingCentral API resources the application shoul
 
 Adding and removing scopes is accomplished in the Developer Console by editing the application's settings. 
 
-![Setting app scopes via Developer Console](./add-app-scopes.png)
+![Setting app scopes via Developer Console](./create-app-scopes.png)
 
 !!! hint "Application vs user permissions"
     Setting an application's scope does not by itself confer upon a user of that application the ability to perform the associated action. Setting the scope merely declares that an application needs the ability to perform a specific action in order to function properly. Therefore, in order for a user of an application to perform a given operation, the app must declare the corresponding scope, and the user must have been assigned a role that possesses the corresponding user permission as well. 

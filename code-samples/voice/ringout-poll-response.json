@@ -1,0 +1,9 @@
+{
+    "id": 234343434,
+    "uri": "/restapi/v1.0/account/~/extension/~/ringout/234343434",
+    "status": {
+        "callStatus": "Success",
+        "callerStatus": "Success",
+        "calleeStatus": "Success"
+    }
+}
