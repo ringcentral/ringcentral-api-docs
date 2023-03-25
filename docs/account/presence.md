@@ -30,151 +30,39 @@ Below is a sample response from the Presence API to illustrate the visibility it
 
 === "JavaScript"
 
-```js
-	const RC = require('@ringcentral/sdk').SDK
-
-	var rcsdk = new RC({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
-	var platform = rcsdk.platform();
-
-	platform.login({username: "username", password: "password", extension: "extension_number"})
-
-  platform.on(platform.events.loginSuccess, function(e){
-    get_users_presence()
-  });
-
-  async function get_users_presence(){
-    try {
-      var resp = await platform.get('/restapi/v1.0/account/~/presence', {
-                  detailedTelephonyState: true
-                })
-      var jsonObj = await resp.json()
-      for (var record of jsonObj.records){
-        console.log(record.userStatus)
-      }
-    }catch(e){
-      console.log(e.message)
-    }
-  }
-```
+    ```js
+    {!> code-samples/account/presence.js !} 
+    ```
 
 === "Python"
 
-```python
-	from ringcentral import SDK
-
-	rcsdk = SDK( "client_id", "client_secret", "server_url")
-	platform = rcsdk.platform()
-	platform.login("username", "extension_number", "password")
-
-	resp = platform.get('/restapi/v1.0/account/~/presence',
-	    {
-		'detailedTelephonyState' : True
-	    })
-	for record in resp.json().records:
-	    print record.userStatus
-```
+    ```python
+    {!> code-samples/account/presence.py !} 
+    ```
 
 === "PHP"
 	
-```php
-	<?php
-	require('vendor/autoload.php');
-
-	$rcsdk = new RingCentral\SDK\SDK("client_id", "client_secret", "server_url");
-
-	$platform = $rcsdk->platform();
-	$platform->login("username", "extension_number", "password");
-
-	$resp = $platform->get('/account/~/presence',
-	    array(
-		'detailedTelephonyState' => true
-	    ));
-	foreach ($resp->json()->records as $record)
-	    print_r ($record->userStatus . "\n");
-```
+    ```php
+    {!> code-samples/account/presence.php !} 
+    ```
 
 === "C#"
 
-```c#
-	using System;
-	using System.Threading.Tasks;
-	using RingCentral;
-
-	namespace Read_Presence
-	{
-	  class Program
-	  {
-      static RestClient restClient;
-
-      static void Main(string[] args)
-      {
-        restClient = new RestClient("client_id", "client_secret", "server_url");
-        await restClient.Authorize("username", "extension_number", "password");
-        read_users_presence().Wait();
-      }
-
-      static private async Task read_users_presence()
-		  {
-        var parameters = new AccountPresenceParameters();
-        parameters.detailedTelephonyState = true;
-
-        var resp = await rc.Restapi().Account().Presence().Get(parameters);
-          foreach (var record in resp.records)
-          {
-            Console.WriteLine(record.userStatus);
-          }
-      }
-	  }
-	}
-```
+    ```c#
+    {!> code-samples/account/presence.cs !} 
+    ```
 
 === "Java"
 
-```java
-	import com.ringcentral.*;
-	import com.ringcentral.definitions.*;
-
-	public class Read_Presence {
-    static RestClient restClient;
-    public static void main(String[] args) {
-        var obj = new Read_Presence();
-        try {
-          restClient = new RestClient("client_id", "client_secret", "server_url");
-          restClient.authorize("username", "extension_number", "password");
-          obj.read_users_presence();
-        } catch (RestException | IOException e) {
-          e.printStackTrace();
-        }
-    }
-
-	  public static void read_users_presence() throws RestException, IOException{
-      var parameters = new ReadAccountPresenceParameters();
-      parameters.detailedTelephonyState = true;
-
-      var response = rc.restapi().account().presence().get(parameters);
-      for (var record : response.records)
-        System.out.println(record.userStatus);
-	  }
-	}
-```
+    ```java
+    {!> code-samples/account/presence.java !} 
+    ```
 
 === "Ruby"
 
-```ruby
-	require 'ringcentral'
-
-	rc = RingCentral.new("client_id", "client_secret", "server_url")
-	rc.authorize(username: "username", extension: "extension_number", password: "password")
-
-	resp = rc.get('/restapi/v1.0/account/~/presence', payload:
-	    {
-		      detailedTelephonyState: true
-	    })
-
-	for record in resp.body['records'] do
-	    puts record.userStatus
-	end
-```
+    ```ruby
+    {!> code-samples/account/presence.rb !} 
+    ```
 
 ## Required Permissions
 

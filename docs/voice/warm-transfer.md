@@ -25,64 +25,12 @@ The first step in a warm transfer is to put the customer on hold. But before tha
 
 Follow the instructions for [setting up pubnub](../../notifications/push-notifications/quick-start#javascript). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
 
-### Receive Event for Customer to Operator Call
+### Receive event for customer-to-operator call
 
 You'll start to receive event messages for connected calls. The following is an example of an event showing the customer call being `answered` by the operator.
 
 ```json hl_lines="11 18 46"
-{
-  "body": {
-    "eventTime": "2020-12-10T23:48:49.972Z",
-    "origin": {
-      "type": "Call"
-    },
-    "parties": [
-      {
-        "accountId": "684349005",
-        "direction": "Inbound",
-        "extensionId": "684351005",
-        "from": {
-          "deviceId": "801538264005",
-          "extensionId": "684349005",
-          "name": "Craig Chan",
-          "phoneNumber": "101"
-        },
-        "id": "p-a39d666edaab42fdaa476135027819bc-2",
-        "missedCall": false,
-        "muted": false,
-        "park": {},
-        "standAlone": false,
-        "status": {
-          "code": "Answered",
-          "mobilePickupData": {
-            "ccMailboxes": [
-              "684351005"
-            ],
-            "sid": "35195775561837",
-            "srvLvl": "-149699523",
-            "srvLvlExt": "406",
-            "to": "#374005@sip.devtest.ringcentral.com:5060"
-          },
-          "rcc": false
-        },
-        "to": {
-          "extensionId": "684351005",
-          "name": "Agent J",
-          "phoneNumber": "102"
-        }
-      }
-    ],
-    "sequence": 6,
-    "serverId": "10.29.20.121.TAM",
-    "sessionId": "11403473005",
-    "telephonySessionId": "s-a39d666edaab42fdaa476135027819bc"
-  },
-  "event": "/restapi/v1.0/account/684349005/extension/684351005/telephony/sessions",
-  "ownerId": "684351005",
-  "subscriptionId": "41ce2002-063c-4c17-9132-758de6e0bd38",
-  "timestamp": "2020-12-10T23:48:50.138Z",
-  "uuid": "9213733942374901991"
-}
+{!> code-samples/voice/cust-to-oper-event.json !}
 ```
 
 The highlighted lines show you the important fields you will need.
@@ -93,55 +41,12 @@ The highlighted lines show you the important fields you will need.
 | `"id": "p-a39d666edaab42fdaa476135027819bc-2"` | This party ID is linked to the ID for the extension ID above (the operator). |
 | `"telephonySessionId": "s-a39d666edaab42fdaa476135027819bc"` | This is the telephony session ID for the call, or how the call between the customer and the operator is identified. |
 
-### Receive Event for Operator to Consult Call
+### Receive event for operator-to-customer call
 
 Next, you'll want to find the event for the operator calling and connecting to the consult. The following is an example of an event showing the operator call being `answered` by the consult.
 
 ```json hl_lines="11 18 37"
-{
-  "body": {
-    "eventTime": "2020-12-11T04:14:31.388Z",
-    "origin": {
-      "type": "Call"
-    },
-    "parties": [
-      {
-        "accountId": "684349005",
-        "direction": "Outbound",
-        "extensionId": "684351005",
-        "from": {
-          "deviceId": "801536579005",
-          "extensionId": "684351005",
-          "name": "Agent J",
-          "phoneNumber": "+19293831896"
-        },
-        "id": "p-9d11ac1bba524888bffaaef0488557c3-1",
-        "missedCall": false,
-        "muted": false,
-        "park": {},
-        "standAlone": false,
-        "status": {
-          "code": "Answered",
-          "rcc": false
-        },
-        "to": {
-          "extensionId": "684352005",
-          "name": "Agent K",
-          "phoneNumber": "103"
-        }
-      }
-    ],
-    "sequence": 4,
-    "serverId": "10.29.20.87.TAM",
-    "sessionId": "11405259005",
-    "telephonySessionId": "s-9d11ac1bba524888bffaaef0488557c3"
-  },
-  "event": "/restapi/v1.0/account/684349005/extension/684351005/telephony/sessions",
-  "ownerId": "684351005",
-  "subscriptionId": "41ce2002-063c-4c17-9132-758de6e0bd38",
-  "timestamp": "2020-12-11T04:14:31.451Z",
-  "uuid": "929553803676667008"
-}
+{!> code-samples/voice/oper-to-cust-event.json !}
 ```
 
 The highlighted lines show you the important fields you will need.

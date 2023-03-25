@@ -7,7 +7,7 @@ To learn how to post a message to a RingCentral chat, let's start with the ubiqu
 With a chat ID in hand, posting is done with a simple REST API call, shown below.
 
 ```javascript
-{! code-samples/team-messaging/post-text-message.js [ln:35-] !}
+{! code-samples/team-messaging/post-text-message.js [ln:23-] !}
 ```
 
 The code above will result in a chat message that appears as follows:

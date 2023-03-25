@@ -1,0 +1,53 @@
+{
+  "body": {
+    "eventTime": "2020-12-10T23:48:49.972Z",
+    "origin": {
+      "type": "Call"
+    },
+    "parties": [
+      {
+        "accountId": "684349005",
+        "direction": "Inbound",
+        "extensionId": "684351005",
+        "from": {
+          "deviceId": "801538264005",
+          "extensionId": "684349005",
+          "name": "Craig Chan",
+          "phoneNumber": "101"
+        },
+        "id": "p-a39d666edaab42fdaa476135027819bc-2",
+        "missedCall": false,
+        "muted": false,
+        "park": {},
+        "standAlone": false,
+        "status": {
+          "code": "Answered",
+          "mobilePickupData": {
+            "ccMailboxes": [
+              "684351005"
+            ],
+            "sid": "35195775561837",
+            "srvLvl": "-149699523",
+            "srvLvlExt": "406",
+            "to": "#374005@sip.devtest.ringcentral.com:5060"
+          },
+          "rcc": false
+        },
+        "to": {
+          "extensionId": "684351005",
+          "name": "Agent J",
+          "phoneNumber": "102"
+        }
+      }
+    ],
+    "sequence": 6,
+    "serverId": "10.29.20.121.TAM",
+    "sessionId": "11403473005",
+    "telephonySessionId": "s-a39d666edaab42fdaa476135027819bc"
+  },
+  "event": "/restapi/v1.0/account/684349005/extension/684351005/telephony/sessions",
+  "ownerId": "684351005",
+  "subscriptionId": "41ce2002-063c-4c17-9132-758de6e0bd38",
+  "timestamp": "2020-12-10T23:48:50.138Z",
+  "uuid": "9213733942374901991"
+}

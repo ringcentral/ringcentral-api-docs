@@ -5,7 +5,7 @@ An important part of communication within the context of collaboration is the sh
 === "JavaScript" 
 
     ```javascript
-    {!> code-samples/team-messaging/upload-file.js [ln:18-] !}
+    {!> code-samples/team-messaging/upload-file.js [ln:14-] !}
     ```
 
 This simple script will result in a file being uploaded, and a message being posted to the associated team. It will appear as follows:

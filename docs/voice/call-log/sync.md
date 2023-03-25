@@ -68,16 +68,9 @@ Initial synchronization is performed when the client requests FSync. The request
 
 - `statusGroup` - the two possible values are 'Missed' or 'All'. The default value is 'All'.
 
-Let's consider the example:
+Let's consider the following sample request:
 
-```
-GET /restapi/v1.0/account/~/extension/~/call-log-sync?syncType=FSync&statusGroup=All&recordCount=5 HTTP/1.1
-Accept: application/json
-Authorization: Bearer U0pDMDFQMDFKV1MwMnxP3hoMRwMfRUcddWnqi3yz4UuxSg   
-
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 1811
+```json
 {
   "uri" : "https:.../account/400151109008/extension/400151111008/call-log-sync?statusGroup=All&syncType=FSync&recordCount=3",
   "records" : [ {
@@ -148,17 +141,9 @@ Subsequent synchronization requests are performed when the client requests ISync
 
 - `recordCount` - for 'ISync' it specifies with how many records to extend sync frame to the past and how many new records should be returned.
 
-Let's consider the example:
+Let's consider the following sample request:
 
-```
-GET /restapi/v1.0/account/~/extension/~/call-log-sync?syncType=ISync&syncToken=FAsDAwAAAT8KmvmABAAAAT8KnB54CAAAAF0q3WVgCQEKAQwAAAAeDQAAAF3UKkrownkpOg HTTP/1.1
-Accept: application/json
-Authorization: Bearer U0pDMDFQMDFKV1MwMnxP3hoMRwMfRUcddWnqi3yz4UuxS
-
-HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-Content-Type: application/json
-Content-Length: 936
+```json
 {
   "uri" : "https:.../account/400151109008/extension/400151111008/call-log-sync?syncType=ISync&syncToken=FAsDAwAAAT8KmvmABAAAAT8KnB54CAAAAF0q3WVgCQEKAQwAAAAeDQAAAF3UKkrownkpOg",
   "records" : [ {

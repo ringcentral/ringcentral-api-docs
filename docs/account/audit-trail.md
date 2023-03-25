@@ -31,44 +31,12 @@ This means if you have more than 10,000 records within 30 days, then you have hi
 
 Also, this API belongs to the Heavy usage plan and is rate limited by it.
 
-## Sample Python Code
+## Sample code
 
 To get you started, here is some sample python code to retrieve audit logs from your account.  This sample code assumes you have built an `envjwt.py` file with your own environment variables
 
+=== "Python"
+
 ``` python
-from ringcentral import SDK
-import json
-import envjwt
-
-CLIENT_ID = envjwt.RC_APP_CLIENT_ID
-CLIENT_SECRET = envjwt.RC_APP_CLIENT_SECRET
-SERVER = envjwt.RC_SERVER
-JWT_TOKEN = envjwt.RC_JWT_TOKEN
-
-sdk = SDK(CLIENT_ID, CLIENT_SECRET, SERVER)
-
-try:
-    platform = sdk.platform()
-    platform.login(jwt=JWT_TOKEN)
-
-    res = platform.get('/account/~/extension/~')
-except Exception as e:
-    print (e)
-
-try:
-    endpoint = "/restapi/v1.0/account/~/audit-trail/search"
-    data = {}
-    data['eventTimeFrom'] = "2021-08-01T00:00:00.52Z"
-    data['eventTimeTo'] = "2021-08-31T00:00:00.52Z"
-    data['page'] = 2
-    data['perPage'] = 10
-    data['includeAdmins'] = True
-    data['includeHidden'] = True
-    data['searchParameters'] = []
-
-    res = platform.post(endpoint, data)
-    print( json.dumps(res.json_dict(), indent=2, sort_keys=True) )
-    print('search results')
-except Exception as e:
-    print (e)
+{!> code-samples/account/audit-trail.py !} 
 ```

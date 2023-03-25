@@ -26,32 +26,9 @@ Simple request to broadcast the same message to multiple recipients
     ```
 
 === "JavaScript"
+
     ```javascript
-    const RingCentral = require('@ringcentral/sdk').SDK
-
-    var rcsdk = new RingCentral({server: "server_url", clientId: "client_id", clientSecret: "client_secret"})
-
-  	var platform = rcsdk.platform();
-
-  	platform.login({username: "username", password: "password", extension: "extension_number"})
-
-    platform.on(platform.events.loginSuccess, async function(response){
-      try{
-        var requestBody = {
-          from: "+16505550100",
-          text: "Hello Team",
-          messages: [
-            { to: ["+14155550100"] },
-            { to: ["+12125550100"] }
-          ]
-        }
-        var resp = await platform.post('/restapi/v1.0/account/~/a2p-sms/batches', requestBody)
-        var jsonObj = await resp.json()
-        console.log(jsonObj)
-      }catch(e){
-        console.log(e.message)
-      }
-    });
+    {!> code-samples/messaging/high-volume/send.js !}
     ```
 
 === "Python"

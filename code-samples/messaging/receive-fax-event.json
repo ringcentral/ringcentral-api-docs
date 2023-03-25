@@ -1,0 +1,17 @@
+{
+  "timestamp": "2018-10-07T12:05:00.408+0000",
+  "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
+  "event": "/restapi/v1.0/account/230919004/extension/230919004/message-store",
+  "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
+  "body": {
+    "extensionId": 230919004,
+    "lastUpdated": "2018-10-07T12:05:00.531+0000",
+    "changes": [
+      {
+        "type": "Fax",
+        "updatedCount": 0,
+        "newCount": 1
+      }
+    ]
+  }
+}

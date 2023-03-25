@@ -1,0 +1,41 @@
+{
+  "uuid": "1823485288313944239",
+  "event": "/restapi/v1.0/account/809646016/extension/809646016/telephony/sessions",
+  "timestamp": "2020-06-14T19:27:18.390Z",
+  "subscriptionId": "53300e7c-5e69-42bf-ab4d-179aabc6e869",
+  "ownerId": "809646016",
+  "body": {
+    "sequence": 3,
+    "sessionId": "425008160016",
+    "telephonySessionId": "s-a6abd24ca6774373a8120a3390d3cbe8",
+    "serverId": "10.13.22.28.TAM",
+    "eventTime": "2020-06-14T19:27:18.340Z",
+    "parties": [
+      {
+        "accountId": "809646016",
+        "extensionId": "809646016",
+        "id": "p-a6abd24ca6774373a8120a3390d3cbe8-2",
+        "direction": "Inbound",
+        "to": {
+          "phoneNumber": "+19043014558",
+          "name": "TESTER Babji",
+          "extensionId": "809646016"
+        },
+        "from": {
+          "phoneNumber": "+14083388064"
+        },
+        "status": {
+          "code": "Setup",
+          "rcc": false
+        },
+        "park": {},
+        "missedCall": false,
+        "standAlone": false,
+        "muted": false
+      }
+    ],
+    "origin": {
+      "type": "Call"
+    }
+  }
+}

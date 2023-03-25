@@ -1,0 +1,44 @@
+{
+  "body": {
+    "eventTime": "2020-12-11T04:14:31.388Z",
+    "origin": {
+      "type": "Call"
+    },
+    "parties": [
+      {
+        "accountId": "684349005",
+        "direction": "Outbound",
+        "extensionId": "684351005",
+        "from": {
+          "deviceId": "801536579005",
+          "extensionId": "684351005",
+          "name": "Agent J",
+          "phoneNumber": "+19293831896"
+        },
+        "id": "p-9d11ac1bba524888bffaaef0488557c3-1",
+        "missedCall": false,
+        "muted": false,
+        "park": {},
+        "standAlone": false,
+        "status": {
+          "code": "Answered",
+          "rcc": false
+        },
+        "to": {
+          "extensionId": "684352005",
+          "name": "Agent K",
+          "phoneNumber": "103"
+        }
+      }
+    ],
+    "sequence": 4,
+    "serverId": "10.29.20.87.TAM",
+    "sessionId": "11405259005",
+    "telephonySessionId": "s-9d11ac1bba524888bffaaef0488557c3"
+  },
+  "event": "/restapi/v1.0/account/684349005/extension/684351005/telephony/sessions",
+  "ownerId": "684351005",
+  "subscriptionId": "41ce2002-063c-4c17-9132-758de6e0bd38",
+  "timestamp": "2020-12-11T04:14:31.451Z",
+  "uuid": "929553803676667008"
+}
