@@ -10,8 +10,12 @@ namespace Read_Presence
 	
 	static void Main(string[] args)
 	{
-	    restClient = new RestClient("client_id", "client_secret", "server_url");
-	    await restClient.Authorize("username", "extension_number", "password");
+            restClient = new RestClient(
+                Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+                Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+                Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+            restClient.Authorize(
+                Environment.GetEnvironmentVariable("RC_JWT")).Wait();
 	    read_users_presence().Wait();
 	}
 	

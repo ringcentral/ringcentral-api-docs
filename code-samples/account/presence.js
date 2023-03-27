@@ -1,9 +1,21 @@
-const RC = require('@ringcentral/sdk').SDK
+/* You get the environment parameters from your 
+   application dashbord in your developer account 
+   https://developers.ringcentral.com */
 
-var rcsdk = new RC({ server: "server_url", clientId: "client_id", clientSecret: "client_secret" });
+const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
+
+const RECIPIENT    = process.env.SMS_RECIPIENT
+
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
+
 var platform = rcsdk.platform();
 
-platform.login({username: "username", password: "password", extension: "extension_number"})
+platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     get_users_presence()

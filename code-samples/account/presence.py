@@ -1,12 +1,27 @@
+#!/usr/bin/python
+
+# You get the environment parameters from your 
+# application dashbord in your developer account 
+# https://developers.ringcentral.com
+
+import os
+import sys
+ 
+from dotenv import load_dotenv
 from ringcentral import SDK
+load_dotenv()
 
-rcsdk = SDK( "client_id", "client_secret", "server_url")
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
-platform.login("username", "extension_number", "password")
+try:
+  platform.login( jwt=os.environ.get('RC_JWT') )
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
 
-resp = platform.get('/restapi/v1.0/account/~/presence',
-	            {
-		        'detailedTelephonyState' : True
-	            })
+endpoint = "/restapi/v1.0/account/~/presence"
+payload = { 'detailedTelephonyState' : True }
+resp = platform.get($endpoint, $payload)
 for record in resp.json().records:
     print record.userStatus

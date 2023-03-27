@@ -5,9 +5,11 @@ public class Read_Presence {
     static RestClient restClient;
     public static void main(String[] args) {
         var obj = new Read_Presence();
+        rc = new RestClient( System.getenv("RC_CLIENT_ID"),
+                             System.getenv("RC_CLIENT_SECRET"),
+                             System.getenv("RC_SERVER_URL") );
         try {
-            restClient = new RestClient("client_id", "client_secret", "server_url");
-            restClient.authorize("username", "extension_number", "password");
+	    rc.authorize(System.getenv("RC_JWT"));
             obj.read_users_presence();
         } catch (RestException | IOException e) {
             e.printStackTrace();
