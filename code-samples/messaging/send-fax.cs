@@ -6,21 +6,15 @@ namespace Send_Fax
 {
     class Program
     {
-        const string RECIPIENT = "<ENTER PHONE NUMBER>";
-        const string RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-        const string RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-        const string RINGCENTRAL_PRODUCTION = false;
-        
-        const string RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-        const string RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-        const string RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
-        
         static RestClient restClient;
-        
         static void Main(string[] args)
         {
-            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_PRODUCTION);
-            restClient.Authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD).Wait();
+            restClient = new RestClient(
+                Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+                Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+                Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+            restClient.Authorize(
+                Environment.GetEnvironmentVariable("RC_JWT")).Wait();
             send_fax().Wait();
         }
         

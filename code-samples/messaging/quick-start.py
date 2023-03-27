@@ -22,7 +22,6 @@ platform = rcsdk.platform()
  
 try:
   platform.login( jwt=os.environ.get('RC_JWT') )
-
 except Exception as e:
   sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
 

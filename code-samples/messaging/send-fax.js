@@ -1,19 +1,21 @@
+/* You get the environment parameters from your 
+   application dashbord in your developer account 
+   https://developers.ringcentral.com */
+
 const RC = require('@ringcentral/sdk').SDK
+require('dotenv').config();
 
-RECIPIENT = '<ENTER FAX NUMBER>'
+const RECIPIENT    = process.env.FAX_RECIPIENT
 
-RINGCENTRAL_CLIENTID = '<ENTER CLIENT ID>'
-RINGCENTRAL_CLIENTSECRET = '<ENTER CLIENT SECRET>'
-RINGCENTRAL_SERVER = 'https://platform.devtest.ringcentral.com'
+var rcsdk = new RC({
+    'server':       process.env.RC_SERVER_URL,
+    'clientId':     process.env.RC_CLIENT_ID,
+    'clientSecret': process.env.RC_CLIENT_SECRET
+});
 
-RINGCENTRAL_USERNAME = '<YOUR ACCOUNT PHONE NUMBER>'
-RINGCENTRAL_PASSWORD = '<YOUR ACCOUNT PASSWORD>'
-RINGCENTRAL_EXTENSION = '<YOUR EXTENSION, PROBABLY "101">'
-
-var rcsdk = new RC( {server: RINGCENTRAL_SERVER, clientId: RINGCENTRAL_CLIENTID, clientSecret: RINGCENTRAL_CLIENTSECRET} );
 var platform = rcsdk.platform();
 
-platform.login( {username: RINGCENTRAL_USERNAME, password: RINGCENTRAL_PASSWORD, extension: RINGCENTRAL_EXTENSION} )
+platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     send_fax()

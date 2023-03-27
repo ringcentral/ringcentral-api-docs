@@ -10,12 +10,16 @@ RC_CLIENT_ID         = ''
 RC_CLIENT_SECRET     = ''
 RC_JWT               = ''
 
-# Used in messaging/quick-start.py
+# Used in messaging/quick-start.*
 # This following phone number will receive a test SMS message
 SMS_SENDER           = ''
 SMS_RECIPIENT        = ''
 
-# Used in voice/quick-start.py
+# Used in messaging/send-fax.*
+# This following phone number will receive a test fax message
+FAX_RECIPIENT        = ''
+
+# Used in voice/quick-start.*
 # This following phone number will receive a phone call
 RINGOUT_CALLER       = ''
 RINGOUT_RECIPIENT    = ''

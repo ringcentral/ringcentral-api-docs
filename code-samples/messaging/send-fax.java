@@ -6,31 +6,25 @@ import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Send_Fax {
-    static String RECIPIENT_NUMBER = "<ENTER PHONE NUMBER>";
-    static String RINGCENTRAL_CLIENTID = "<ENTER CLIENT ID>";
-    static String RINGCENTRAL_CLIENTSECRET = "<ENTER CLIENT SECRET>";
-    static String RINGCENTRAL_SERVER = "https://platform.devtest.ringcentral.com";
-    
-    static String RINGCENTRAL_USERNAME = "<YOUR ACCOUNT PHONE NUMBER>";
-    static String RINGCENTRAL_PASSWORD = "<YOUR ACCOUNT PASSWORD>";
-    static String RINGCENTRAL_EXTENSION = "<YOUR EXTENSION, PROBABLY ";
-    
+    static String RECIPIENT = System.getenv("FAX_RECIPIENT");
     static RestClient restClient;
-    
+  
     public static void main(String[] args) {
         var obj = new Send_Fax();
-        try {
-            restClient = new RestClient(RINGCENTRAL_CLIENTID, RINGCENTRAL_CLIENTSECRET, RINGCENTRAL_SERVER);
-            restClient.authorize(RINGCENTRAL_USERNAME, RINGCENTRAL_EXTENSION, RINGCENTRAL_PASSWORD);
-            obj.send_fax()();
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
+	restClient = new RestClient( System.getenv("RC_CLIENT_ID"),
+				     System.getenv("RC_CLIENT_SECRET"),
+				     System.getenv("RC_SERVER_URL") );
+	try {
+	    restClient.authorize( System.getenv("RC_JWT") );
+            obj.sendFax();
+	} catch (RestException | IOException e) {
+	    e.printStackTrace();
+	}
     }
     
     public static void sendFax() throws RestException, IOException{
         CreateFaxMessageRequest postParameters = new CreateFaxMessageRequest();
-        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT_NUMBER)};
+        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(RECIPIENT)};
         postParameters.faxResolution = "High";
         postParameters.coverPageText = "This is a demo Fax page from Java";
         Attachment attachment = new Attachment();
