@@ -117,6 +117,12 @@
 #sidebar-nav #nav-item-api-reference:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/api-reference-hover.svg')
 }
+#sidebar-nav #nav-item-webinar {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/webinar.svg')
+}
+#sidebar-nav #nav-item-webinar:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/webinar-hover.svg')
+}
 #sidebar-nav #nav-item-artificial-intelligence {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/conversational-intelligence.svg')
 }
