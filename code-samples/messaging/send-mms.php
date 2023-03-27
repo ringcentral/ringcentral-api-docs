@@ -7,8 +7,8 @@ require('vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-const SENDER    = $_ENV['SMS_SENDER'] 
-const RECIPIENT = $_ENV['SMS_RECIPIENT'] 
+$SENDER    = $_ENV['SMS_SENDER'];
+$RECIPIENT = $_ENV['SMS_RECIPIENT'];
 
 $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
                                   $_ENV['RC_CLIENT_SECRET'],

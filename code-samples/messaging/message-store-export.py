@@ -13,7 +13,9 @@ platform = rcsdk.platform()
  
 try:
   platform.login( jwt=os.environ.get('RC_JWT') )
-
+except Exception as e:
+  sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
+  
 today = date.today()
 dateLog = today.strftime("%Y_%m_%d_%H_%M")
 ZIPFILE= "message_store_" + dateLog  + ".zip"

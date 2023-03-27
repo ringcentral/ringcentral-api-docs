@@ -17,7 +17,7 @@ def conversationalSummary():
         "summaryType": "Extractive",
         "utterances": [
             {
-                "text": "A knowledge base is an online support library that contains useful 
+                "text": """A knowledge base is an online support library that contains useful 
                         information about your product or service and any related topics. 
                         Commonly referred to as a 'self-service' solution, a knowledge base 
                         lets your customers find answers to their support questions without 
@@ -31,7 +31,7 @@ def conversationalSummary():
                         customer service.  For example, you might include in-depth 
                         documentation about how to troubleshoot different product issues, 
                         as well as knowledge base articles explaining your payment structures 
-                        and refund policies."
+                        and refund policies."""
             }
         ]
     }

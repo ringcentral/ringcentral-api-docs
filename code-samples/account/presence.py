@@ -22,6 +22,6 @@ except Exception as e:
 
 endpoint = "/restapi/v1.0/account/~/presence"
 payload = { 'detailedTelephonyState' : True }
-resp = platform.get($endpoint, $payload)
+resp = platform.get( endpoint, payload)
 for record in resp.json().records:
-    print record.userStatus
+    print(record.userStatus)
