@@ -109,7 +109,7 @@ no_breadcrumb:true
       <p class="card-text">Generate transcripts and extract conversion insights from any media file.</p>
       <ul class="pl-0 ml-4">
         <li><a href="./ai/speech-to-text/" class="card-link">Create a transcript</a></li>
-        <li><a href="./ai/speaker-diaization/" class="card-link">Know who spoke and when</a></li>
+        <li><a href="./ai/speaker-diarization/" class="card-link">Know who spoke and when</a></li>
         <li><a href="./ai/text-summary/" class="card-link">Generate a summary of a conversation</a></li>
       </ul>
     </div>

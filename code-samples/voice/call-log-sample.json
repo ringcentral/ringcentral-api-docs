@@ -1,0 +1,26 @@
+{
+    "uri": "https://platform.ringcentral.com/restapi/..snip../ASaxDDkSZ5s42MA?view=Simple",
+    "id": "ASaxDDkSZ5s42MA",
+    "sessionId": "13916417004",
+    "startTime": "2016-06-06T23:07:20.000Z",
+    "duration": 55,
+    "type": "Voice",
+    "direction": "Inbound",
+    "action": "Phone Call",
+    "result": "Accepted",
+    "to": {
+        "phoneNumber": "+15625555778",
+        "name": "SDK Engineer Candidate"
+    },
+    "from": {
+        "phoneNumber": "+14155555908",
+        "name": "SAN FRANCSCO CA",
+        "location": "San Francisco (South), CA"
+    },
+    "recording": {
+        "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1662272004",
+        "id": "1662272004",
+        "type": "OnDemand",
+        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../recording/1662272004/content"
+    }
+}

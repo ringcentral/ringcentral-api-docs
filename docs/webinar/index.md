@@ -6,7 +6,8 @@ no_breadcrumb:true
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">See the RingCentral Webinar API in action!</h3>
-  <p class="lead">The RingCentral Webinar API is designed to help companies integrate RingCentral webinars deeply into their company's marketing and sales operations. It enables developers to create and manage webinars, registrants for upcoming webinars, and the participants of active and past webinars. The APIs are ideally suited to be integrated into a CRM or marketing automation software.</p>
+  <p class="lead">As ISV or Developer you can use the RingCentral Webinar APIs to create valued-added integrations that permit the exchange of data between RingCentral Webinar and third-party software. Once you create these integrations, RingCentral can showcase them in our App Gallery to customers and users, thereby driving more usage for your integrations.</p>
+  <p class="lead">Using the RingCentral Webinar APIs, these integrations are super-easy to create. The APIs span core workflows for creating and managing webinars as well as exchanging registrant and attendee data for webinars.</p>
   <p>All developers are invited to create a simple app that creates a webinar using the RingCentral Webinar API. Once complete, developers will have all the basic building blocks in place to build more complex integrations. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
