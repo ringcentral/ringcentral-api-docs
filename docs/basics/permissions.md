@@ -4,10 +4,21 @@ In order to work with particular RingCentral API resources the application shoul
 
 Adding and removing scopes is accomplished in the Developer Console by editing the application's settings. 
 
-![Setting app scopes via Developer Console](./add-app-scopes.png)
+![Setting app scopes via Developer Console](./create-app-scopes.png)
 
-!!! hint "Application vs user permissions"
-    Setting an application's scope does not by itself confer upon a user of that application the ability to perform the associated action. Setting the scope merely declares that an application needs the ability to perform a specific action in order to function properly. Therefore, in order for a user of an application to perform a given operation, the app must declare the corresponding scope, and the user must have been assigned a role that possesses the corresponding user permission as well. 
+## Application vs user permissions
+
+Setting an application's scope does not by itself confer upon a user of that application the ability to perform the associated action. Setting the scope merely declares that an application needs the ability to perform a specific action in order to function properly. Therefore, in order for a user of an application to perform a given operation, the app must declare the corresponding scope, and the user must have been assigned a role that possesses the corresponding user permission as well. 
+
+## Requesting access to restricted app scopes
+
+As you are adding scopes to your application, you may notice some scopes have the text "(requires permission)" next to them. This indicates an application scope that is restricted in some way, often for an abundance of caution and concerns for security. When you add a restricted app scope to your app, you will be prompted to provide a justification for why your app requires the ability to perform the actions associated with that app scope. Then, when you save the settings of that app, a request will be filed with the support to review your petition, and approve (or reject) your request accordingly. 
+
+To maximize the likelihood of your request being approved, please provide a detailed, well-written response to the justification prompt. 
+
+![Setting app scopes via Developer Console](./restricted-perms.png)
+
+## Available application scopes
 
 The following scopes are available:
 
@@ -17,9 +28,9 @@ The following scopes are available:
 | **Accounts**              | Managing accounts: creating new accounts, viewing and updating account information, deleting existing accounts | CRUD | **EditAccounts** |
 | **AI**                    | Analyze audio and text. Also supports view and update analysis info including speaker samples. | Read only         |                      |
 | **Analytics**             | Access call analytics data via the Analytics product           | Read only         |                      |
-| **CallControl**          | Manipulate and controls in progress                            | Special operation |                      |
+| **CallControl**           | Manipulate and controls in progress                            | Special operation |                      |
 | **Contacts**              | Creating, viewing, editing and deleting user personal contacts | CRUD              | **ReadContacts**     |
-| **ControlWebinars**      |    | Special operation |                      |
+| **ControlWebinars**       |                                                                | Special operation |                      |
 | **DirectRingOut**         | Performing direct (one-legged) ring-out phone calls. *Available on request.* | Special operation |                      |
 | **EditAccounts**          | Viewing and updating user account info (including name, business name, address and phone number/account number) | Read and Update | **ReadAccounts**, **EditExtensions** |
 | **EditCallLog**           | Viewing and updating user call logs                            | Read and Update   | **ReadCallLog**      |
@@ -29,7 +40,7 @@ The following scopes are available:
 | **EditPaymentInfo**       | Viewing and updating account billing settings                  | Read and Update   |                      |
 | **EditPresence**          | Getting and modifying user presence information                | Read and Update   | **ReadPresence**     |
 | **EditReportingSettings** | Viewing and updating call reporting settings. *Available on request.* | Read and Update   |                      |
-| **EditWebinars**         |    | Special operation |                      |
+| **EditWebinars**          |    | Special operation |                      |
 | **Faxes**	                | Sending and receiving faxes                                    | Special operation | **ReadMessages**     |
 | **Glip**	                | Read and post message, read and manage chats                   | Read and Update   |                      |
 | **InternalMessages**      | Sending and receiving intra-company text messages, a.k.a. pager messages | Special operation | **ReadMessages**     |
@@ -42,7 +53,7 @@ The following scopes are available:
 | **ReadContacts**          | Viewing user personal contacts                                 | Read Only         |                      |	 
 | **ReadMessages**          | Viewing user messages                                          | Read Only         |                      | 
 | **ReadPresence**          | Getting user presence information                              | Read Only         |                      |
-| **ReadWebinars**         |    | Special operation |                      |
+| **ReadWebinars**          |    | Special operation |                      |
 | **RingOut**               | Performing two-legged ring-out phone calls                     | Special operation |                      | 
 | **RoleManagement**        | Editing and assignment or user roles. *Available on request*   | Special operation |                      |
 | **SMS**                   | Sending and receiving (SMS) text messages                      | Special operation | **ReadMessages**     |
@@ -51,3 +62,4 @@ The following scopes are available:
 | **Video**                 | Creating, viewing, editing and deleting meetings via RingCentral Video | CRUD      |                      |
 | **Voicemail**             | Delivering voicemail messages to multiple internal recipients  | Special operation |                      |
 | **VoipCalling**           | Registering as VoIP device and making VoIP calls               | Special operation |                      |
+
