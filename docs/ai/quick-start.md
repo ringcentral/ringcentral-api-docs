@@ -79,7 +79,7 @@ $ node server.js
 
     #### Create and edit `index.js`
 
-   Copy and paste the code from below in `index.js`. Be sure the values in your `.env` file have been set properly, including the `RC_MEDIA_URL` variable. 
+    Copy and paste the code from below in `index.js`. Be sure the values in your `.env` file have been set properly, including the `RC_MEDIA_URL` variable. 
 
     ```js
     {!> code-samples/ai/quick-start.js !}

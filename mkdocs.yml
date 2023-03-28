@@ -225,6 +225,7 @@ nav:
     - 'Getting started': 'ai/quick-start.md'
     - 'Developer basics':
       - 'Asynchronous responses': 'ai/asynchronous-responses.md'
+      - 'Accessing media files': 'ai/media-files.md'
       - 'Sample media files': 'ai/sample-files.md'
     - 'Audio analysis':
       - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
