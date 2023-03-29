@@ -10,18 +10,13 @@ Many endpoints in the Artificial Intelligence API take as input a query paramete
 
 ### Correlating requests and responses
 
-It is recommended that when composing a webhook URL to receive a response, you generate and include a request ID and include in the URL you generate. Doing so will allow you to correlate an incoming webhook with the request that originated it. For example, you may create a server that accepts webhooks from RingCentral at a URL like the following:
+When processing files asynchronously, it is important to correlate every request with the proper response, as there is no guarantee in which order a response will be received. To help with this, a `jobId` is returned in the response body of every request, like so:
 
-    https://my.server.com/conversations/webhooks
-	
-You could then generate a request ID and append it to the URL as follows:
+```json
+{"jobId":"a919924e-ce4e-11ed-xxxx-0050568c48bc"}
+```
 
-    https://my.server.com/conversations/webhooks/1234567890
-	
-Then you will pass that URL to RingCentral via the `webhook` parameter as follows:
-
-    https://platform.ringcentral.com/ai/audio/v1/async/speech-to-text?
-	     webhook=https%3A%2F%2Fmy.server.com%2Fconversations%2Fwebhooks%2F1234567890
+You should parse this response, and store the jobId associated with the media file being processed so that you can reliably associate the response that will come later to the file for which it pertains. 
 
 ## Working with asynchronous responses in development
 

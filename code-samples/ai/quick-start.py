@@ -8,7 +8,7 @@ load_dotenv()
 # https://developers.ringcentral.com/guide/basics/code-samples
 NGROK       = "<INSERT NGROK URL>"
 WEBHOOK_URL = NGROK + "/webhook"
-CONTENT_URI = os.environ.get('RC_MEDIA_URL')
+CONTENT_URI = 'https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/sample1.wav?raw=true'
 
 rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
              os.environ.get('RC_CLIENT_SECRET'),
@@ -29,9 +29,10 @@ resp = platform.post("/ai/audio/v1/async/speech-to-text?webhook=" + urllib.parse
   "enableSpeakerDiarization": False
 })
 
-print(f'Speech To Text job {resp.response().reason} with HTTP status code {resp.response().status_code}');
-
+print(f'Request:     {resp.response().reason}');
+print(f'Status code: {resp.response().status_code}');
 if resp.response().status_code == 202:
+  print(f'Job ID:      {resp.json().jobId}');
   print(f'Ready to receive response at: {WEBHOOK_URL}');
 else:
   print(f'An error occurred posting the request.');

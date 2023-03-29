@@ -60,17 +60,47 @@ $ ngrok http 5000
 
 ### Create and start your server
 
-Create a file called `server.js` using the contents below. Edit `server.js` to properly reference the `NGROK_URL` generated in the previous step.
+=== "Javascript" 
 
-```js
-{! code-samples/ai/quick-start-server.js !}
-```
+    First, install the prerequisites.
 
-Finally, start your server.
+    ```bash
+    $ npm install @ringcentral/sdk
+    $ npm install dotenv
+    ```
 
-```bash
-$ node server.js
-```
+    Create a file called `server.js` using the contents below. Edit `server.js` to properly reference the `NGROK_URL` generated in the previous step.
+
+    ```js
+    {!> code-samples/ai/quick-start-server.js !}
+    ```
+
+    Finally, start your server.
+
+    ```bash
+    $ node server.js
+    ```
+
+=== "Python" 
+
+    First, install the prerequisites.
+
+    ```bash
+    $ pip install pprintpp
+    ```
+	
+    Create a file called `server.py` using the contents below. Edit `server.py` to properly reference the `NGROK_URL` generated in the previous step.
+
+
+    ```js
+    {!> code-samples/ai/quick-start-server.py !}
+    ```
+
+    Finally, start your server.
+
+    ```bash
+    $ python server.py
+    ```
 
 ## Convert speech to text
 

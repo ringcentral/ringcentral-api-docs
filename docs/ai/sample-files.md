@@ -4,12 +4,12 @@ The following media files can be used to assist developers as they begin the pro
 
 | Filename                   | Encoding |                                                                                                                                |
 |----------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------|
-| Meeting Audio Recording    | wav      | [Download](https://github.com/suyashjoshi/ringcentral-api-docs/blob/master/resources/sample1.wav?raw=true)                     |
-| 3-person conversation      | mp3      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Conversation_Sample.mp3?raw=true)      |
-| Speaker enrollment sample1 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample1.wav?raw=true) |
-| Speaker enrollment sample2 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample2.wav?raw=true) |
-| Speaker enrollment sample3 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample3.wav?raw=true) |
-| Speaker enrollment sample4 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample4.wav?raw=true) |
-| Speaker enrollment sample5 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample5.wav?raw=true) |
-| Speaker enrollment sample6 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample6.wav?raw=true) |
-| Speaker enrollment sample7 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/master/resources/RC_Speaker_Training_Sample7.wav?raw=true) |
+| Meeting Audio Recording    | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/sample1.wav?raw=true)                       |
+| 3-person conversation      | mp3      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Conversation_Sample.mp3?raw=true)      |
+| Speaker enrollment sample1 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample1.wav?raw=true) |
+| Speaker enrollment sample2 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample2.wav?raw=true) |
+| Speaker enrollment sample3 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample3.wav?raw=true) |
+| Speaker enrollment sample4 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample4.wav?raw=true) |
+| Speaker enrollment sample5 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample5.wav?raw=true) |
+| Speaker enrollment sample6 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample6.wav?raw=true) |
+| Speaker enrollment sample7 | wav      | [Download](https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/RC_Speaker_Training_Sample7.wav?raw=true) |

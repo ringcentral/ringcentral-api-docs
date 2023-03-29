@@ -5,7 +5,7 @@ require('dotenv').config();
 // https://developers.ringcentral.com/guide/basics/code-samples
 NGROK       = "<INSERT NGROK URL>"
 WEBHOOK_URL = NGROK + "/webhook";
-CONTENT_URI = process.env.RC_MEDIA_URL;
+CONTENT_URI = 'https://github.com/ringcentral/ringcentral-api-docs/blob/main/resources/sample1.wav?raw=true'
 
 // Initialize the RingCentral SDK and Platform
 const rcsdk = new RC({
@@ -16,7 +16,6 @@ const rcsdk = new RC({
 
 const platform = rcsdk.platform();
 platform.login({'jwt':  process.env.RC_JWT})
-
 platform.on(platform.events.loginSuccess, () => {
     speechToText();
 })
@@ -33,8 +32,11 @@ async function speechToText() {
             "enablePunctuation":        true,
             "enableSpeakerDiarization": false
         });
-        console.log("Speech To Text Job " + resp.statusText + " with HTTP status code " + resp.status);
+	let json = await resp.json();
+        console.log("Request: " + resp.statusText);
+	console.log("Status code: " + resp.status);
         if (resp.status == 202) {
+	    console.log("Job ID: " + json.jobId);
             console.log("Ready to receive response at: " + WEBHOOK_URL);
         } else {
             console.log("An error occurred posting the request.");
