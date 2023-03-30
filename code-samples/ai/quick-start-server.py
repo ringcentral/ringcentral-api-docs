@@ -4,7 +4,9 @@ import requests
 from pprint import pprint
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-PORT = 5000
+# Server config
+HOSTNAME = "localhost"
+PORT     = 5000
 
 # Handle Incoming HTTP requests
 class S(BaseHTTPRequestHandler):
@@ -22,7 +24,7 @@ class S(BaseHTTPRequestHandler):
 
 def run(server_class=HTTPServer, handler_class=S, port=8080):
     logging.basicConfig(level=logging.INFO)
-    server_address = ('', port)
+    server_address = (HOSTNAME, port)
     httpd = server_class(server_address, handler_class)
     logging.info('Starting httpd...\n')
     try:
