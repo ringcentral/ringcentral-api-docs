@@ -47,7 +47,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 	
 ## Setup a server to process the response asynchronously
 
-The Artificial Intelligence APIs provide responses in an asynchronous manner by posting responses to a URL specified by the developer when the request is made. Our first step therefore is setting up a simple web server to display the response we will receive from RingCentral. The server below is written in Javascript and uses [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to your local development machine. To keep your first application simple, this server does nothing more than acknowledge receipt and echo the payload of anything it receives to the console. 
+The Artificial Intelligence APIs provide responses in an asynchronous manner by posting responses to a URL specified by the developer when the request is made. Our first step therefore is setting up a simple web server to display the response we will receive from RingCentral. Two sample servers are provided below in Javascript and Python. Both use [ngrok](https://ngrok.com/download) to proxy requests from RingCentral to the server running on your local development machine. To keep your first application simple, this server does nothing more than acknowledge receipt and echo the payload of anything it receives to the console. You are free to use these sample servers, or setup your own web server to process the responses transmitted by RingCentral.
 
 ### Start ngrok
 
