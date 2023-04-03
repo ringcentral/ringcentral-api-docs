@@ -25,7 +25,7 @@ platform.on(platform.events.loginSuccess, () => {
 
 async function analyzeInteraction() {
     try {
-        let resp = await platform.post("/ai/insights/v1/async/analyze-interaction?webhook=" + WEBHOOK_ADDRESS,{
+        let resp = await platform.post("/ai/insights/v1/async/analyze-interaction?webhook=" + WEBHOOK_URL,{
             "contentUri":                   MEDIA_URL,
             "encoding":                     "Wav",
             "languageCode":                 "en-US",
