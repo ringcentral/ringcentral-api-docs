@@ -45,7 +45,6 @@ The following scopes are available:
 | **Glip**	                | Read and post message, read and manage chats                   | Read and Update   |                      |
 | **InternalMessages**      | Sending and receiving intra-company text messages, a.k.a. pager messages | Special operation | **ReadMessages**     |
 | **Meetings**              | Creating, viewing, editing and deleting meetings via RingCentral Meetings | CRUD   |                      |
-| **NumberLookup**          | Looking-up and reserving available phone number                | Special operation |                      |
 | **ReadAccounts**          | Viewing user account info (including name, business name, address and phone number/account number) | Read Only | |
 | **ReadCallLog**           | Viewing user call logs                                         | Read Only         |                      |	 
 | **ReadCallRecording**     | Downloading call recording content                             | Read Only         | **ReadCallLog**      |
