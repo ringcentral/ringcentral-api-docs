@@ -1,8 +1,8 @@
 # Handling asynchronous responses from the Artificial Intelligence API
 
-The Artificial Intelligence API operates in an asynchronous manner. Meaning the results of its operations are not returned in the HTTP response associated with the HTTP request performing the operation. Instead, developers specific a URL in their request, and when the operation completes, the response payload will be posted to the specified URL. 
+The Artificial Intelligence API operates in an asynchronous manner. Meaning the results of its operations are not returned in the HTTP response associated with the HTTP request performing the operation. Instead, developers specify a URL in their request, and when the operation completes, the response payload will be posted to the specified URL. 
 
-Th asynchronous nature of the Artificial Intelligence API requires developers to setp a simple web server in order to process results and run sample code in this Developer Guide. Below, you will find simple web servers in a variety of languages to help you in this process. 
+Th asynchronous nature of the Artificial Intelligence API requires developers to setup a simple web server in order to process results and run sample code found in this Developer Guide. Below, you will find simple web servers in a variety of languages to help you in this process. 
 
 ## Passing the `webhook` parameter in your requests
 
@@ -16,7 +16,7 @@ When processing files asynchronously, it is important to correlate every request
 {"jobId":"a919924e-ce4e-11ed-xxxx-0050568c48bc"}
 ```
 
-You should parse this response, and store the jobId associated with the media file being processed so that you can reliably associate the response that will come later to the file for which it pertains. 
+You should parse this response, and store the `jobId` associated with the media file being processed so that you can reliably associate the response that will be delivered in a `webhook` later to the file for which it pertains. 
 
 ## Working with asynchronous responses in development
 
@@ -25,15 +25,17 @@ You should parse this response, and store the jobId associated with the media fi
 If you are doing development on your local laptop, or on a machine that is not publicly accessible on the Internet, then we recommend you download and install [ngrok](https://ngrok.com/download) if you have not already. Once installed, start your ngrok server and make note of its https URL. You will need to use this URL later when specifying the `webhook` in Artificial Intelligence API requests. 
 
 ```bash
-$ ngrok http 5000
-  Forwarding https://xxx-yyy-zzz.ngrok.io -> https://localhost:5000
+$ ngrok http 8080
+  Forwarding https://xxx-yyy-zzz.ngrok.io -> http://localhost:8080
 ```
 
 ### Create and start a simple web server
 
-Create a file called `server.js` using the contents below. Edit `server.js` to properly reference the `NGROK_URL` generated in the previous step.
+Let's create a simple web server on your local machine to receive `webhook` notifications when your Artificial Intelligence API file is processed and ready to be recevied.
 
 === "Javascript"
+
+    Create a file called `server.js` using the contents below. Edit `server.js` to properly reference the `NGROK_URL` generated in the previous step.
 
     ```js
     {!> code-samples/ai/quick-start-server.js !}
@@ -47,6 +49,8 @@ Create a file called `server.js` using the contents below. Edit `server.js` to p
 
 === "Python"
 
+    Create a file called `server.py` using the contents below. Edit `server.py` to properly reference the `NGROK_URL` generated in the previous step.
+
     ```python
     {!> code-samples/ai/quick-start-server.py !}
     ```
@@ -54,7 +58,7 @@ Create a file called `server.js` using the contents below. Edit `server.js` to p
     Finally, start your server.
 
     ```bash
-    $ node server.py
+    $ python server.py
     ```
 
 With your web server up and running, and a way to route requests to it via ngrok, you are now ready to run code samples. 

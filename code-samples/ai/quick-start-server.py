@@ -1,12 +1,12 @@
 import os,sys
 import logging
 import requests
-from pprint import pprint
+import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-# Server config
+# Server config. Set this to your local server and port
 HOSTNAME = "localhost"
-PORT     = 5000
+PORT     = 8080
 
 # Handle Incoming HTTP requests
 class S(BaseHTTPRequestHandler):
@@ -18,23 +18,22 @@ class S(BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers['Content-Length']) 
         post_data = self.rfile.read(content_length) 
-        if self.path == '/webhook':
-            pp.pprint(post_data)
+        print( json.dumps(json.loads(post_data), indent=2, sort_keys=True))
         self._set_response()
 
-def run(server_class=HTTPServer, handler_class=S, port=8080):
+def run(server_class=HTTPServer, handler_class=S, hostName='localhost', port=8080):
     logging.basicConfig(level=logging.INFO)
     server_address = (HOSTNAME, port)
     httpd = server_class(server_address, handler_class)
-    logging.info('Starting httpd...\n')
+    logging.info('Artificial Intelligence response server running at: https://%s:%s\n', hostName, port)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
         pass
     httpd.server_close()
-    logging.info('Stopping httpd...\n')
+    logging.info('Artificial Intelligence response server stopping...\n')
 
 try:
-    run( port=PORT )
+    run( hostName = HOSTNAME, port=PORT )
 except Exception as e:
     print(e)
