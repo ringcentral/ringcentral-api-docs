@@ -16,4 +16,4 @@ except Exception as e:
   sys.exit("Unable to authenticate to platform: " + str(e))
 
 auth = platform.auth()
-print(f'Access key: {auth.access_token()}')
+print('Access key: {auth.access_token()}')
