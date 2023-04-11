@@ -86,8 +86,8 @@ This however does create the responsibility for third-party developers to fulfil
 2. A person comes to the registration page and registers for the webinar. 
 3. Company receives request for person to join the webinar, and calls the Webinar API to create a registrant. The registrant is assigned an ID of "5678" by RingCentral.
 4. Company, when creating a registrant, also specifies the URL the customer will access to join the webinar, and/or cancel their registration. These URLs identify not only the webinar by its ID (e.g. 1234), but also the registrant by their ID (e.g. 5678). These URLs might look like this:
-   * https://acme.com/webinar/1234/join?id=5678
-   * https://acme.com/webinar/1234/cancel?id=5678
+     * https://acme.com/webinar/1234/join?id=5678
+     * https://acme.com/webinar/1234/cancel?id=5678
 5. Subsequently, the user wishes to cancel their registration and visits the corresponding URL above.
 6. Company receives cancellation request and calls the Webinar API to cancel the registrant associated with id "5678."
 
