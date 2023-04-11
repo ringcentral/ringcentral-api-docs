@@ -69,7 +69,8 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 |--------|-------------|
 | `GET` | Retrieves the object represented by the resource that is specified in the request body. It may be the call log information for an extension, the address book with contacts, etc. |
 | `POST` | Creates a new object represented by the resource that is specified in the request. In the response body the server sends the representation of the created object, as if there is an immediate `GET` request for it.
-| `PUT` | Modifies the already existing object represented by the resource that is specified in the request body. If the object was successfully modified, the server responds with the representation of the changed resource in the response body. The request body may contain only the modified properties of the resource. The response returns the entire resource representation with all of the properties, as in case of the `GET` request. |
+| `PUT` | Modifies an already existing object represented by the resource that is specified in the request body, by replacing the existing resource with the resource defined in the request body. If the object was successfully modified, the server responds with the representation of the changed resource in the response body. The request body may contain only the modified properties of the resource. The response returns the entire resource representation with all of the properties, as in case of the `GET` request. |
+| `PATCH` | Modifies an already existing object represented by the resource that is specified in the request body by modifying only those properties contained within the request body. Any property not explicitly referenced in the request body will be left unaltered. In this way, patching a resource is similar to a partial update of that resource. | 
 | `DELETE` | Removes the object represented by the resource that is specified in the request body. |
 
 ### Example

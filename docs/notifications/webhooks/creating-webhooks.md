@@ -37,76 +37,13 @@ Below is an example of how validation tokens should be echoed in a trivial PHP a
 
 ## Subscribing to events via a webhook
 
-Webhook subscriptions are created using our [Subscription API](https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription). Our API Reference is the definitive source for all the required fields in creating a subscription. The following sample request however should help you understand at a high-level how a webhook subscription is created. 
+Webhook subscriptions are created using our [Subscription API](https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription). The specific events you wish to receive a webhook for is specified via the `eventFilters` parameter. Each event filter corresponded to a different event you wish to be notified of. Furthermore, some event filters can be further refined via an event filter parameter which can further constrain the set of events you subscribe to, e.g. "I only want to receive to events pertaining to this specific webinar" (as opposed to all webinars). 
+
+Our API Reference is the definitive source for all the required fields in creating a subscription. The following sample request should however help you better understand at a high-level how a webhook subscription is created. 
 
 ```json
 {!> code-samples/webhooks/create-webhook-request.json !} 
 ```
-
-## How to select the events you want to be receive as webhooks
-
-For any given account, RingCentral can generate literally hundreds if not thousands of events. Such a flood of events could easily overwhelm a server. Developers therefore should specify an event filter to determine which specific events they would like to be notified of. A [complete list of event filters](https://developers.ringcentral.com/api-reference/Account-Presence-Event) can be found in our API Reference, but a list is provided below for some of the more common events developers subscribe to.
-
-### SMS Events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/instant?type=SMS` | [Inbound SMS Event](https://developers.ringcentral.com/api-reference/Instant-Message-Event) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/batches` | [Message Batch Event](https://developers.ringcentral.com/api-reference/Message-Batch-Event) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/batches/{batchId}` | [Specific Message Batch Event](https://developers.ringcentral.com/api-reference/Specific-Message-Batch-Event) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/messages` | [Batch Messages Event](https://developers.ringcentral.com/api-reference/Batch-Messages-Event) |
-| `/restapi/v1.0/account/~/a2p-sms/opt-outs` | [Batch Message Opt-Out Event](https://developers.ringcentral.com/api-reference/Batch-Message-Opt-Out-Event) |
-
-### Fax, voicemail and other message events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax?direction=Inbound` | [Inbound Fax Event](https://developers.ringcentral.com/api-reference/Inbound-Fax-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store` | [Message Event](https://developers.ringcentral.com/api-reference/Message-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/voicemail` | [Voicemail Message Event](https://developers.ringcentral.com/api-reference/Voicemail-Message-Event) |
-
-### Contact Center events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCenterNumber` | [Contact Center Phone Number Event](https://developers.ringcentral.com/api-reference/Contact-Center-Phone-Number-Event) |
-
-### Telephony events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/telephony/sessions` | [Account Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event) |
-
-### Presence events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/presence` | [Account Presence Event](https://developers.ringcentral.com/api-reference/Account-Presence-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/telephony/sessions` | [Extension Telephony Sessions Event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/dnd` | [Extension DND Status Event](https://developers.ringcentral.com/api-reference/Extension-DND-Status-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence` | [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite/presence` | [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line` | [Extension Presence Line Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Line-Event) |
-
-### Team messaging and chat events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/glip/posts` | [Team Messaging Post Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event) |
-| `/restapi/v1.0/glip/groups` | [Team Messaging Groups Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Groups-Event) |
-
-### Account events
-
-| Filter | Description |
-|--------|-------------|
-| `/restapi/v1.0/account/{accountId}/directory/entries` | [Company Directory Event](https://developers.ringcentral.com/api-reference/Company-Directory-Event) |
-| `/restapi/v1.0/account/{accountId}/device/{deviceId}/emergency-address` | [Emergency Address Event](https://developers.ringcentral.com/api-reference/Emergency-Address-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite` | [Extension Favorites Event](https://developers.ringcentral.com/api-reference/Extension-Favorites-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant` | [Extension Grant List Event](https://developers.ringcentral.com/api-reference/Extension-Grant-List-Event) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId} ` | [Extension Info Event](https://developers.ringcentral.com/api-reference/Extension-Info-Event) |
-| `/restapi/v1.0/account/{accountId}/extension` | [Extension List Event](https://developers.ringcentral.com/api-reference/Extension-List-Event) |
-
 
 ## Renewing webhooks that are about to expire
 

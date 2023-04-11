@@ -13,7 +13,7 @@ The two-legged RingOut call can be created via the following request:
 === "HTTP"
 
 	```http
-	POST /restapi/v1.0/account/~/extension/~/ringout
+	POST /restapi/v1.0/account/~/extension/~/ring-out
 	Content-Type: application/json
 	Authorization: Bearer <access-token>
 
@@ -124,7 +124,7 @@ Failed call:
 
 You can poll the RingOut endpoint to get the status of an ongoing outbound RingOut call.
 
-    GET /restapi/v1.0/account/~/extension/~/ringout/234343434
+    GET /restapi/v1.0/account/~/extension/~/ring-out/234343434
 
 The response will be similar to the following:
 
@@ -137,7 +137,7 @@ The response will be similar to the following:
 RingCentral does not currently support call control for outbound calls. However, you can cancel a RingOut call while the callee's party status is `InProgress` by making a `DELETE` request to the RingOut endpoint as shown below:
 
 ```
-DELETE /restapi/v1.0/account/~/extension/~/ringout/234343434
+DELETE /restapi/v1.0/account/~/extension/~/ring-out/234343434
 ```
 
 If successful, the platform will respond with a 204.

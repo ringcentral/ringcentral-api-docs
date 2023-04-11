@@ -24,7 +24,7 @@ Use the following quick steps to get started.
 
 Login to the [Developer Console](https://developers.ringcentral.com/login.html#/) and create an app with all the permissions you will need, or click the "Create Webinar App" button below. 
     
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+video+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Webinar&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Webinar&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
 
 #### 2. Contact us to graduate your app to production
 
@@ -32,14 +32,19 @@ During our beta program, access to the API is carefully controlled, and there is
     
 <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 
+#### 3. Join the Webinar Partner Developer Program
+
+Partners wishing to build integrations to be used by RingCentral customers and are promoted within the RingCentral [App Gallery](https://ringcentral.com/apps/) should apply to the Webinar Partner Developer Program in order to receive additional benefits, including a free developer license to RingCentral Webinar. 
+    
+<a target="_new" class="btn btn-primary" href="https://forms.gle/dMRNtnuFnonLQgsu7">Join the Webinar Partner Developer Program</a>
+
 ## What can I use the Webinar API for?
 
 The RingCentral Webinar API is optimized to help developers and organizations integrate RingCentral Webinars more deeply into the sales and marketing apps they use, such as CRMs, marketing automation tools and event management solutions. Using the Webinar API developers can do the following:
 
 * Create, schedule and manage webinars
 * Register people for an upcoming webinar
-* Initiate an invitation to someone to register
-* Manage hosts, co-hosts and participants for a webinar
+* Initiate an invitation to someone to help facilitate the webinar as a host, cohost or panelist
 * Access a list of attendees for an active or past webinar
 * Access webinar recordings
 

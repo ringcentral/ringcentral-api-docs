@@ -9,14 +9,25 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
-    create_webinar()
+    subscribe_to_webinar_webhook()
 });
 
-async function create_webinar(){
+async function subscribe_to_webinar_webhook(){
     try {
-	platform.post('/webinar/configuration/v1/webinars', {
-	    title: "My first webinar",
-	    description: "This webinar was created via the Webinar Quick Start guide for developers"
+	console.log('fetching preference...')
+	var webinarId   = '<INSERT WEBINAR ID>'
+	var eventFilter = '/webinar/configuration/v1/company/sessions?webinarId=' + webinarId
+	var webhookUrl  = 'https://acme.com/app/webhooks'
+	var endpoint    = '/webinar/notifications/v1/subscriptions'
+	platform.post(endpoint, {
+	    "eventFilters": [
+		eventFilter
+	    ],
+	    "deliveryMode": {
+		"transportType": "WebHook",
+		"address": webhookUrl
+	    },
+	    "expiresIn": 100000
 	})
         .then(function(resp) {
           return resp.json()

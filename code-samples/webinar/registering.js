@@ -9,14 +9,20 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
-    create_webinar()
+    register_user_for_webinar()
 });
 
-async function create_webinar(){
+async function register_user_for_webinar(){
     try {
-	platform.post('/webinar/configuration/v1/webinars', {
-	    title: "My first webinar",
-	    description: "This webinar was created via the Webinar Quick Start guide for developers"
+	console.log('fetching preference...')
+	var sessionId = '<INSERT SESSION ID>'
+	var endpoint = '/webinar/registration/v1/sessions/'+sessionId+'/registrants'
+	platform.post(endpoint, {
+	    'firstName': 'Luke',
+	    'lastName': 'Skywalker',
+	    'email': 'luke.skywalker@jedi.org',
+	    'externalId': 1,
+	    'source': 'website-campaign-123'
 	})
         .then(function(resp) {
           return resp.json()
