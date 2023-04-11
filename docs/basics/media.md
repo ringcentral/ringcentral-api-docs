@@ -15,6 +15,9 @@ A number of RingCentral APIs make available to developers access to media files 
 
 All media files can be accessed via a URL returned via an API Call. For example, the following shows a response payload from the RingCentral Message Store which refers to a received fax document that a developer can download. *It has been truncated for brevity*. 
 
+!!! note "Rate Limits"
+    Please note that media resources may have different rate limit plans. Retrieving call recordings using the API is subject to throttling so please analyze the `X-Rate-Limit-Group` header to understand the limit to the call recording you are trying to retrieve.
+
 ```json hl_lines="21 22"
 {
   "uri" : "https://platform.ringcentral.com/restapi/v1.0\
