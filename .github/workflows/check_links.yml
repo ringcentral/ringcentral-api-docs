@@ -22,6 +22,6 @@ jobs:
         verbose-mode: 'no'
         folder-path: 'docs'
         synchronous: 'yes'
-        local-only: 'no'
+        local-only: 'yes'
         recurse: 'yes'
         excludes: '(tel:|rcmobile:|https://marketplace.visualstudio.com|INSERT PERSON ID|INSERT TEAM ID|https://developer.ringcentral.com/new-app)'
