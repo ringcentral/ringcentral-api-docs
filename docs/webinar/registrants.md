@@ -20,7 +20,7 @@ To register a person for a webinar, one would need to create the webinar registr
     {!> code-samples/webinar/inviting.js !}
     ```
 
-### Using the `externalId` propoerty to correlate a registrant within an external system
+### Using the `externalId` property to correlate a registrant within an external system
 
 The `externalId` parameter is intended to be used to help correlate a registrant for a webinar with an identity stored in a third-party identity provider. For example you may wish to store the ID of a contact, lead or opportunity in your CRM so that the registrant/attendee can easily be associated with a record in that system. Using this field effectively can help you more efficiently perform follow up tasks when a webinar has concluded, such as updating lead records, or triggering marketing campaigns managed by a third-party. 
 
