@@ -22,3 +22,5 @@ A webinar "session" on the other hand is associated with a date and time in whic
 * The current runtime status of the webinar session, e.g. active, scheduled or finished
 * The scheduled vs actual start and end time
 * The bridge ID of the webinar, used by participants to join a webinar
+
+{! docs/webinar/session-limits.md !}
