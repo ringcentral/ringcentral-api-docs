@@ -20,6 +20,21 @@ To register a person for a webinar, one would need to create the webinar registr
     {!> code-samples/webinar/inviting.js !}
     ```
 
+### Using the `externalId` propoerty to correlate a registrant within an external system
+
+The `externalId` parameter is intended to be used to help correlate a registrant for a webinar with an identity stored in a third-party identity provider. For example you may wish to store the ID of a contact, lead or opportunity in your CRM so that the registrant/attendee can easily be associated with a record in that system. Using this field effectively can help you more efficiently perform follow up tasks when a webinar has concluded, such as updating lead records, or triggering marketing campaigns managed by a third-party. 
+
+There are few constraints on the value of the `externalId` field, meaning it is actually possible to store multiple values in the `externalId` field. For example, one may encode multiple key value pairs in the `externalId` using a simple query string syntax. Consider for example that you need to store two different values, like a contact ID and an opportunity ID. One can encode these values in the following way:
+
+1. Consider have a lead ID of "123" and an opportunity ID of "4@56"
+2. Convert these values into a set of key/value pairs, e.g. "lid=123" and "oid=4@56"
+3. Encode these values into a single query string, e.g. "lid=123&iod=4%4056"
+4. Then set the `externalId` to this encoded value. 
+
+Then [reverse the process](https://measureschool.com/how-to-use-query-strings/) to access the individual values again. 
+
+See "Correlating a registrant with an external namespace" below, and our documentation on [analyzing past webinars](../past-webinars/). 
+
 ### Hosting a custom webinar registration page
 
 Webinar hosts wishing to host their own sign-up page for a webinar can do so easily by capturing sign-ups via their own web form, and then invoking the Webinar APIs to register attendees via backend code and logic. Processing registrations in this manner gives webinar hosts complete control over the entire end-to-end user experience including:
@@ -44,6 +59,17 @@ Regardless of how far in advance an attendees learns of a webinar, all attendees
 * Track from where a user may have heard of a webinar
 * Provide each attendee with a unique join URL
 * Correlate an attendee of a webinar to an identity in some external system
+
+## Managing your registration preferences
+
+The RingCentral Webinar client application can be used to easily edit and manage webinars, sessions and their settings. However, those same settings can also be managed programmatically via the [update registration session](https://developers.ringcentral.com/api-reference/Registration-Management/rcwRegUpdateSession) preferences operation. Here are some of the registration preferences you can manage in this way:
+
+* Turn on/off registration via the `registrationStatus` preference
+* Obtain a quick summary of how many people have registered via the `registrantCount` property
+* Determine if the webinar session has any "real" registrants (non-test registrants)
+* Cause registration to close after a certain number of registrants via the `autoCloseLimit` preference
+* Suppress RingCentral from sending any registration emails via the `suppressEmails` preference
+* Enable/prevent attendees from joining from multiple devices using the `preventMultipleDeviceJoins` preference
 
 ## Hosting a custom join webinar or cancel registration page
 
