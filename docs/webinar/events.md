@@ -36,5 +36,3 @@ The following filter parameters are supported:
 | `hostUserId`     | Subscribe to only the events pertaining to a single host.      |
 | `webinarId`      | Subscribe to only the events pertaining to a specific webinar. |
 
-## Receiving a webinar webhook
-
