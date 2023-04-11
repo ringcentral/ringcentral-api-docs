@@ -19,7 +19,7 @@ Each webinar session that has been recorded will have those recordings made avai
 Recordings and their metadata can also be retrieved using the following operations:
 
 * [Get webinar session](https://developers.ringcentral.com/api-reference/Webinars-and-Sessions/rcwConfigGetSession)
-* [List past webinar sessions](https://developers.ringcentral.com/api-reference/Historical-Webinars/rcwHistoryListAllSessions)]
+* [List past webinar sessions](https://developers.ringcentral.com/api-reference/Historical-Webinars/rcwHistoryListAllSessions)
 
 ### Retrieving the webinar recording media file
 
