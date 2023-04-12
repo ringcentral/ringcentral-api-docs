@@ -210,9 +210,17 @@ nav:
   - 'Webinar':
     - 'Overview': 'webinar/index.md'
     - 'Getting Started': 'webinar/quick-start.md'
-#    - 'Webinar management': 'webinar/management.md'
-#    - 'Webinar registrations': 'webinar/registration.md'
-#    - 'Webinar attendees': 'webinar/attendees.md'
+    - 'Core concepts':
+      - 'Use cases': 'webinar/use-cases.md'
+      - 'Sessions': 'webinar/sessions.md'
+      - 'Roles': 'webinar/roles.md'
+      - 'Terminology': 'webinar/terminology.md'
+    - 'Creating webinars': 'webinar/creation.md'
+    - 'Inviting hosts and cohosts': 'webinar/invitees.md'
+    - 'Registering attendees': 'webinar/registrants.md'
+    - 'Analyzing past webinars': 'webinar/past-webinars.md'
+    - 'Events and notifications': 'webinar/events.md'
+#    - 'Webinar recordings': 'webinar/recordings.md'
 
   - 'Analytics':
     - 'Overview': 'analytics/index.md'
@@ -323,18 +331,19 @@ nav:
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
 
-  - 'Notifications and Events':
+  - 'Notifications and events':
     - 'Overview': 'notifications/index.md'
-    - 'Push Notifications':
+    - 'Push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'
       - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
-    - 'WebHooks':
+    - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
+      - 'Available webhooks': 'notifications/webhooks/event-filters.md'
       - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
       - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
-    - 'Sample Applications':
+    - 'Sample applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 

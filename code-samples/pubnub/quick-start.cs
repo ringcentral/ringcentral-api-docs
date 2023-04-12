@@ -1,52 +1,48 @@
-package PubNub_Notifications;
+using System;
+using System.Threading.Tasks;
+using RingCentral;
+using dotenv.net;
 
-import java.io.IOException;
+DotEnv.Load();
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
-import com.ringcentral.pubnub.Subscription;
-
-public class PubNub_Notifications {
+namespace PubNub_Notifications
+{
+class Program
+{
     static RestClient restClient;
-
-    public static void main(String[] args) {
-        try {
-            PubNubNotifications();
-        } catch (RestException | IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void PubNubNotifications() throws RestException, IOException {
+    static void Main(string[] args)
+    {
 	restClient = new RestClient(
 	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
 	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
 	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 	restClient.Authorize(
 	    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
-
-        var eventFilters = new String[] {
-            "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
-        };
-        Subscription subscription = new Subscription(restClient, eventFilters, (message)->{
-            var gs = new Gson();
-            if (message.contains("instant?type=SMS")) {
-                InstantMessageEvent notification = gs.fromJson( message, InstantMessageEvent.class);
-                InstantMessageEventBody body = notification.body;
-                System.out.println(body.subject);
-            }
-        });
-
-        subscription.subscribe();
-        System.out.println("Ready to receive incoming SMS via PubNub.");
-
-        try {
-            while (true)
+        pubnub_notification().Wait();
+    }
+    static private async Task pubnub_notification()
+    {
+        try
+        {
+	    var pubNubExtension = new PubNubExtension();
+	    await rc.InstallExtension(pubNubExtension);
+            var eventFilters = new[]
             {
-                Thread.sleep(10000);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+                "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
+            };
+	    var subscription = await pubNubExtension.Subscribe(eventFilters, message =>
+	    {
+		Console.WriteLine("I got a notification:");
+		Console.WriteLine(message);
+	    });
+	    // Wait for 60 seconds before the app exits
+	    // In the mean time, send SMS to trigger a notification for testing purpose
+	    await Task.Delay(60000);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
         }
     }
+}
 }

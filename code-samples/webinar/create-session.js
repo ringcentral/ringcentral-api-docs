@@ -1,5 +1,7 @@
 const RC = require('@ringcentral/sdk').SDK
 
+const WEBINAR = process.env.WEBINAR_ID
+
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
     'clientId':     process.env.RC_CLIENT_ID,
@@ -9,14 +11,16 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
-    create_webinar()
+    create_webinar_session()
 });
 
-async function create_webinar(){
+async function create_webinar_session(){
     try {
-	platform.post('/webinar/configuration/v1/webinars', {
-	    title: "My first webinar",
-	    description: "This webinar was created via the Webinar Quick Start guide for developers"
+	let endpoint = '/webinar/configuration/v1/webinars/' + WEBINAR + '/sessions'
+	platform.post(endpoint, {
+	    scheduledStartTime: "2023-05-10T09:00:00.000Z",
+	    scheduledDuration: 7200, // 2 hours, expressed in seconds
+	    timezone: "America/New_York"
 	})
         .then(function(resp) {
           return resp.json()
