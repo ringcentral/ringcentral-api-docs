@@ -1,5 +1,8 @@
-no_breadcrumb:true
-style: quick-start
+---
+tags:
+  - QuickStart
+  - SMS
+---
 
 # SMS Quick Start
 

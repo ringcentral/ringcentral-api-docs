@@ -1,3 +1,6 @@
+tags:
+  - QuickStart
+  - RingOut
 no_breadcrumb:true
 style: quick-start
 
