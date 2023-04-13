@@ -18,12 +18,12 @@ Some limits may be placed upon your ability to access and modify this informatio
 
 What actions you are allowed to perform via the Account API will depend upon the permissions granted to your application when it was initially setup. Here are the app permissions relevant to managing phone numbers and extensions:
 
-| Permission | Description |
-|-|-|
-| `ReadAccounts` | Enables retrieving account and extension data. |
-| `EditExtensions` | Enables modifying extension settings and everything under `ReadAccounts`. |
-| `EditAccounts` | Enables modifying account settings, including creating, modifying and deletion of extensions, and everything under `EditExtensions`. | 
-| `Accounts` | Enables the creating of new accounts and everything under `EditAccounts`. |
+| Permission       | Description                                                                                                                          |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------|
+| `ReadAccounts`   | Enables retrieving account and extension data.                                                                                       |
+| `EditExtensions` | Enables modifying extension settings and everything under `ReadAccounts`.                                                            |
+| `EditAccounts`   | Enables modifying account settings, including creating, modifying and deletion of extensions, and everything under `EditExtensions`. |
+| `Accounts`       | Enables the creating of new accounts and everything under `EditAccounts`.                                                            |
 
 ## How do I retrieve account data?
 

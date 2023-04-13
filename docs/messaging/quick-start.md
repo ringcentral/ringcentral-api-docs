@@ -1,4 +1,5 @@
 ---
+title: Get started sending SMS on RingCentral
 tags:
   - QuickStart
   - SMS

@@ -1,8 +1,8 @@
-site_name: Developing with RingCentral
+site_name: RingCentral Developer Guide
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-repo_url: https://github.com/ringcentral/ringcentral-api-docs
+#repo_url: https://github.com/ringcentral/ringcentral-api-docs
 repo_name: ringcentral/ringcentral-api-docs
-edit_uri: tree/master/docs
+edit_uri: https://github.com/ringcentral/ringcentral-api-docsedit/main/docs/
 docs_dir: docs
 
 plugins:
@@ -16,22 +16,23 @@ plugins:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 #  - minify:
 #      minify_html: true
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - tags:
-      tags_file: tags.md
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#  - tags:
+#      tags_file: tags.md
 
 theme:
   name: material
   icon:
     repo: fontawesome/brands/github
+  logo: img/rcdev-logo-white.svg
   features:
     - announce.dismiss
     - content.action.edit
     - content.action.view
     - content.code.annotate
     - content.code.copy
-    # - content.tabs.link
+    - content.tabs.link
     - content.tooltips
     # - header.autohide
     - navigation.expand
@@ -128,8 +129,8 @@ extra:
 #  - pymdownx.superfences
 #  - mdx_include
 
-#extra_css:
-#- extra.css
+extra_css:
+- extra.css
 
 copyright: "1999-2023 RingCentral, Inc. All rights reserved."
 
@@ -139,30 +140,77 @@ nav:
 
 # ---- CORE APIs ----
 - 'Getting started':
-  - 'Basics':
-      - 'Methods, endpoints and parameters': 'basics/uris.md'
-      - 'Exploring the API': 'basics/explorer.md'
-      - 'Callaborating with developers': 'basics/inviting-developers.md'
-      - 'Running code samples': 'basics/code-samples.md'
-      - 'Media content': 'basics/media.md'
-      - 'App scopes/permissions': 'basics/permissions.md'
-      - 'URI schemes': 'basics/uri-schemes.md'
-      - 'Rate limits': 'basics/rate-limits.md'
-      - 'Errors': 'basics/errors.md'
-      - 'API Change Log':
-        - 'Preface': 'basics/changelog/index.md'
-        - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
-        - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
-        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
-        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
-        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
-        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
-        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
-        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
-        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
-        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
-        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
-      - 'API Quick Reference': 'basics/api-index.md'
+  - 'Making your first API call': 'basics/first-api-call.md'
+  - 'Creating an app': 'basics/create-app.md'
+  - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
+  - 'Setting up a .env file': 'foo.md'
+  - 'Developing in sandbox': 'basics/sandbox.md'
+  - 'Graduating to production': 'basics/production.md'
+  - 'Promoting your app in the gallery': 'basics/app-gallery.md'
+
+- 'Basics':
+  - 'Authentication':
+    - 'Choosing the best auth': 'authentication/index.md'
+    - 'JWT grant type':
+      - 'Getting started': 'authentication/jwt/quick-start.md'
+      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
+      - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
+      - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
+      - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
+    - 'Auth code grant type':
+      - 'Getting Started': 'authentication/quick-start.md'
+      - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
+    - 'Using access tokens': 'authentication/tokens.md'
+    - 'Using refresh tokens': 'authentication/refresh-tokens.md'
+    - 'Technical deep-dives':
+      - 'Auth code flow': 'authentication/auth-code-flow.md'
+      - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
+      - 'JWT flow': 'authentication/jwt-flow.md'
+      - 'Password flow': 'authentication/password-flow.md'
+  - 'Notifications and events':
+    - 'Overview': 'notifications/index.md'
+    - 'Push notifications':
+      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
+      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
+    - 'Webhooks':
+      - 'Getting Started': 'notifications/webhooks/quick-start.md'
+      - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
+      - 'Available webhooks': 'notifications/webhooks/event-filters.md'
+      - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
+      - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
+      - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
+    - 'Sample applications':
+      - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
+      - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+  - 'Partner ecosystem':
+      - 'Overview': 'basics/partners/index.md'
+      - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
+      - 'Authentication guidance': 'basics/partners/auth.md'
+      - 'Technical requirements': 'basics/partners/segregated-environments.md'
+
+  - 'Methods, endpoints and parameters': 'basics/uris.md'
+  - 'Exploring the API': 'basics/explorer.md'
+  - 'Callaborating with developers': 'basics/inviting-developers.md'
+  - 'Running code samples': 'basics/code-samples.md'
+  - 'Media content': 'basics/media.md'
+  - 'App scopes/permissions': 'basics/permissions.md'
+  - 'URI schemes': 'basics/uri-schemes.md'
+  - 'Rate limits': 'basics/rate-limits.md'
+  - 'Errors': 'basics/errors.md'
+  - 'API Change Log':
+    - 'Preface': 'basics/changelog/index.md'
+    - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
+    - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
+    - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+    - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
+    - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+    - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+    - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+    - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+    - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+    - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+    - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+  - 'API Quick Reference': 'basics/api-index.md'
 
   - 'Applications':
       - 'Development lifecycle':
@@ -178,34 +226,9 @@ nav:
       - 'Application management':
           - 'Using Lead Forms': 'basics/lead-forms.md'
           - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Partner ecosystem':
-          - 'Overview': 'basics/partners/index.md'
-          - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
-          - 'Authentication guidance': 'basics/partners/auth.md'
-          - 'Technical requirements': 'basics/partners/segregated-environments.md'
 
   - 'Downloads and SDKs': sdks.md
   - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'
-
-
-- 'Authentication':
-  - 'Choosing the best auth': 'authentication/index.md'
-  - 'JWT grant type':
-    - 'Getting started': 'authentication/jwt/quick-start.md'
-    - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
-    - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
-    - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
-    - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
-  - 'Auth code grant type':
-    - 'Getting Started': 'authentication/quick-start.md'
-    - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
-  - 'Using access tokens': 'authentication/tokens.md'
-  - 'Using refresh tokens': 'authentication/refresh-tokens.md'
-  - 'Technical deep-dives':
-    - 'Auth code flow': 'authentication/auth-code-flow.md'
-    - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
-    - 'JWT flow': 'authentication/jwt-flow.md'
-    - 'Password flow': 'authentication/password-flow.md'
 
 - 'Voice':
   - 'Overview': 'voice/index.md'
@@ -394,7 +417,7 @@ nav:
     - 'Conversation summaries': 'ai/text-summary.md'
     - 'Smart punctuation': 'ai/text-punctuation.md'
 
-- 'Other APIs':
+- 'More APIs':
 
   - 'Accounts & Users':
     - 'Overview': 'account/index.md'
@@ -429,19 +452,3 @@ nav:
     - 'Analyzing past webinars': 'webinar/past-webinars.md'
     - 'Events and notifications': 'webinar/events.md'
   #    - 'Webinar recordings': 'webinar/recordings.md'
-
-  - 'Notifications and events':
-    - 'Overview': 'notifications/index.md'
-    - 'Push notifications':
-      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
-      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
-    - 'Webhooks':
-      - 'Getting Started': 'notifications/webhooks/quick-start.md'
-      - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
-      - 'Available webhooks': 'notifications/webhooks/event-filters.md'
-      - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
-      - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
-      - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
-    - 'Sample applications':
-      - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
-      - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'

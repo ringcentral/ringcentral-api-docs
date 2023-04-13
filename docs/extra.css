@@ -1,3 +1,11 @@
+typeset code {
+    word-break: none;
+}
+
+:root {
+    --md-primary-fg-color: #002755;
+}
+
 .help .material-icons { font-size: .9rem }
 #content table img {
     max-width: 100%;
