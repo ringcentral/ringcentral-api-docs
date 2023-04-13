@@ -17,10 +17,10 @@
 * **Events** - events are synonymous with notifications, and refer to a message that is sent after it is triggered by an action, or state-change on the platform.
 
 * **Subscription** - a subscription refers to how an event notification is delivered to an application. A subscription contains the following metadata:
-  * How the event is delivered, e.g. via webhook, pubnub, APNS, etc.
-  * Address - where the notification is delivered
-  * Expiry - when the subscription will end
-  * The set of events being listened for/subscribed to
+    * How the event is delivered, e.g. via webhook, pubnub, APNS, etc.
+    * Address - where the notification is delivered
+    * Expiry - when the subscription will end
+    * The set of events being listened for/subscribed to
 
 ## How do I create a subscription, or a webhook?
 
