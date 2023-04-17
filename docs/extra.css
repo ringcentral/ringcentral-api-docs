@@ -1,10 +1,11 @@
-typeset code {
-    word-break: none;
-}
-
 :root {
     --md-primary-fg-color: #002755;
 }
+
+typeset code {
+    word-break: none;
+}
+.md-header__topic { display: none; }
 
 .help .material-icons { font-size: .9rem }
 #content table img {
