@@ -2,6 +2,9 @@
 
 {! docs/video/beta-notice.md !}
 
+??? info "RingCentral Video Client SDK will be a paid product"
+    During the beta and/or during development of your application, the RingCentral Client SDK is free to use. However, once the product is GA, the RCV Client SDK will be a paid product. Developers will be charged on a participant minute basis. In addition, the RCV Client SDK makes use of RingCentral's Artificial Intelligence APIs which may have costs of their own. If you have any questions, please reach out to us via [rcv-partners@ringcentral.com](mailto:rcv-partners@ringcentral.com). 
+	
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">Build highly customized meeting and video applications!</h3>
   <p class="lead">The RingCentral Video Client SDKs are designed to help developers in creating applications that utilize RingCentral Video in highly customized and deeply integrated video and other real-time commuication experiences. The following Video Client SDKs are available in the following languages:</p>
