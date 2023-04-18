@@ -32,97 +32,97 @@ The RingCentral Video Client SDK is currently in beta. The latest version suppor
     <tbody>
       <tr>
         <th scope="row">Start and/or join a meeting</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Toggle a user's video/camera on and off</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Mute and unmute a user's microphone</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Select or modify the video device currently being used</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Obtain a participant or participant list</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Receive and/or display active video and audio streams</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Toggle cloud recording on and off</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Meeting started, joined and leave callbacks</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Participant joined and left callbacks</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Audio mute/unmute/enabled/disabled callbacks</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Video enabled/disabled callbacks</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">HIPPA compliance</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">GDPR compliance</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Noise cancellation</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">PSTN dial-in support</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Toggle end-to-end encryption on/off</th>
-        <td><i class="fas fa-check text-success"></i></td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Access to a live transcription of the meeting</th>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
         <td>Coming soon to future beta build</td>
       </tr>
       <tr>
         <th scope="row">Closed captioning</th>
         <td>Coming soon to future beta build</td>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Access to the screen sharing annotations data feed</th>
-        <td><i class="fas fa-check text-success"></i></td>
+        <td class="text-success ps-5">✓</td>
         <td>Coming soon to future beta build</td>
       </tr>
     </tbody>
