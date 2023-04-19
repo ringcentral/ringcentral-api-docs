@@ -48,8 +48,8 @@ For any given account, RingCentral can generate literally hundreds if not thousa
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/glip/posts` | [Team Messaging Post Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event) |
-| `/restapi/v1.0/glip/groups` | [Team Messaging Groups Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Groups-Event) |
+| `/team-messaging/v1/posts`  | [Team Messaging Post Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Post-Event) |
+| `/team-messaging/v1/groups` | [Team Messaging Groups Event](https://developers.ringcentral.com/api-reference/Team-Messaging-Groups-Event) |
 
 ### Account events
 
