@@ -45,6 +45,7 @@ Possible error codes for each API method are listed in method description under 
 | 401                 | OAU-149    | Unparsable access token                                                                                                     |
 | 400                 | OAU-150    | The value of query parameter [${queryParameterName}] should be equal to parameter [${requestParameterName}] in request body |
 | 401                 | OAU-151    | Authorization method not supported                                                                                          |
+| 401                 | OAU-168    | Password grant is not allowed because MFA is required.                                                                      |
 
 ## Rate-limit related error codes
 
