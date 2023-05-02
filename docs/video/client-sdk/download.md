@@ -1,6 +1,6 @@
 # Download the RingCentral Video Client SDK
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! mdx_includes/video-beta-notice.md !}
 
 ## Request access
 

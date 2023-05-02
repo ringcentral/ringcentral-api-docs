@@ -1,6 +1,6 @@
 # Authenticating with the Client SDK
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 ## What is a Client ID and Client Secret used for?
 

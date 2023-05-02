@@ -2,7 +2,7 @@ style: quick-start
 
 # RingCentral Video Client SDK Quick Start
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! mdx_includes/video-beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system, developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and video.
 
@@ -64,13 +64,13 @@ Then the web PIN is `0123456789`. Make note of this pin, as you will use it late
 
 === "Javascript"
    
-    {!> docs/video/client-sdk/quick-start-js.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-js.md !} 
 
 === "iOS"
    
-    {!> docs/video/client-sdk/quick-start-ios.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-ios.md !} 
 
 === "Android"
    
-    {!> docs/video/client-sdk/quick-start-android.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-android.md !} 
 

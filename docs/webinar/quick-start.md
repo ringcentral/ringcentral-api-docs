@@ -1,6 +1,6 @@
 # RingCentral Webinar API Quick Start
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 

@@ -1,6 +1,6 @@
 # Artificial Intelligence API Quick Start Guide
 
-{! docs/ai/beta-notice.md !}
+{! mdx_includes/ai-beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 In this Quick Start, we are going to help you create your first "Speech to Text" application on the RingCentral platform in just a few minutes. Let's get started.

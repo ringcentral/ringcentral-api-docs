@@ -1,6 +1,6 @@
 # Obtaining production app credentials
 
-{! docs/getting-started/first-api-call-reminder.md !}
+{! mdx_includes/first-api-call-reminder.md !}
 
 If you have gotten this far, it is safe to assume that you have successfully built an application and used that application to call the RingCentral API. In order for this app to be used in our production environment, it must first go through a process we call "graduation." Upon graduation, your application will be granted a client ID and client secret that can be used to access the production environment. 
 

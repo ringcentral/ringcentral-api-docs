@@ -1,6 +1,6 @@
 # Introduction to the RingCentral Artificial Intelligence APIs
 
-{! docs/ai/beta-notice.md !}
+{! mdx_includes/ai-beta-notice.md !}
 
 <div class="jumbotron pt-1">
   <h2 class="h3 display-5">Getting Started with the Artificial Intelligence API</h2>

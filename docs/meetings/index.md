@@ -1,6 +1,6 @@
 # Introduction to the RingCentral Meetings API
 
-{! docs/meetings/deprecation-notice.md !}
+{! mdx_includes/rcm-deprecation-notice.md !}
 
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with Meetings</h3>

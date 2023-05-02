@@ -1,6 +1,6 @@
 # Creating a personal JWT credential
 
-{! docs/getting-started/first-api-call-reminder.md !}
+{! mdx_includes/first-api-call-reminder.md !}
 
 When you are first getting started it is common to build a private app that will be used only by you to try out the API. The most expedient and convenient way to connect such apps to the platform is to use a personal JWT authentication credential, which we will cover in detail below. 
 

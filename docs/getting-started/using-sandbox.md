@@ -1,6 +1,6 @@
 # Developing and testing your app in sandbox
 
-{! docs/getting-started/first-api-call-reminder.md !}
+{! mdx_includes/first-api-call-reminder.md !}
 
 RingCentral provides developers with both a sandbox and production environment. Sandbox is used to develop and test your app, while production is used to run your app.
 

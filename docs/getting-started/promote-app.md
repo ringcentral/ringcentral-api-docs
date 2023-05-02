@@ -1,5 +1,7 @@
 # Promoting your application in the RingCentral App Gallery
 
+{! mdx_includes/first-api-call-reminder.md !}
+
 RingCentral is a platform that gives developers access to hundreds of thousands of customers across some of the largest brands in the world, including AT&T, Avaya, BT, Telus, Verizon, and more. This guide will help you reach these customers by promoting your app within each brand's dedicated App Gallery. Let's get started!
 
 !!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../../basics/update-profile/)"

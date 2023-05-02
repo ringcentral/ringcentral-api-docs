@@ -1,6 +1,6 @@
 # Registering an application
 
-{! docs/getting-started/first-api-call-reminder.md !}
+{! mdx_includes/first-api-call-reminder.md !}
 
 Registering an application results in the platform provisioning to your application a set of credentials that will be used to identify your application on the network. Through the process of registration developers will also be given a way to configure their application so that the platform can support it successfully as it operates on our network. 
 
