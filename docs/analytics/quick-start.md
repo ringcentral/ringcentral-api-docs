@@ -1,5 +1,3 @@
-no_breadcrumb:true
-
 # RingCentral Line of Business Analytics APIs Quick Start
 
 In this quick start guide, we are going to access call performance data via using Java/C# or Node.JS based command line application.

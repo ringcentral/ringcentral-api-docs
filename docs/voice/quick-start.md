@@ -1,4 +1,3 @@
-no_breadcrumb:true
 style: quick-start
 
 # RingOut Quick Start

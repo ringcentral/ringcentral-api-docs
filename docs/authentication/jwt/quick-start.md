@@ -2,7 +2,7 @@
 
 ## Create a JWT
 
-The key first step in getting started is to [generate the JWT token](../create-jwt/) you will be using to authenticate. 
+The key first step in getting started is to [generate the JWT token](../../../getting-started/create-credential/) you will be using to authenticate. 
 
 ## Create an app and obtain credentials
 

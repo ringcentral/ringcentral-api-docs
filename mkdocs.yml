@@ -39,6 +39,14 @@ nav:
 
 # ---- CORE APIs ----
 - 'Primary':
+  - 'Getting Started':
+    - 'Your first API call': 'getting-started/index.md'
+    - 'Register an app': 'getting-started/register-app.md'
+    - 'Create an auth credential': 'getting-started/create-credential.md'
+    - 'Access sandbox': 'getting-started/using-sandbox.md'
+    - 'Build an app': 'getting-started/code-app.md'
+    - 'Obtain production credentials': 'getting-started/graduate-app.md'
+    - 'Promote your app': 'getting-started/promote-app.md'
   - 'Voice':
     - 'Overview': 'voice/index.md'
     - 'Getting Started': 'voice/quick-start.md'
@@ -67,7 +75,8 @@ nav:
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
-      - 'Overview': 'voice/call-log/reading-call-log.md'
+      - 'Overview': 'voice/call-log/index.md'
+      - 'Getting started': 'voice/call-log/quick-start.md'
       - 'Call Log data types': 'voice/call-log/api.md'
       - 'Detailed Call Log Data': 'voice/call-log/details.md'
       - 'Data Archival': 'voice/call-log/archival.md'
@@ -295,9 +304,7 @@ nav:
   - 'Applications':
       - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Create an application': 'basics/create-app.md'
           - 'Develop in sandbox': 'basics/sandbox.md'
-          - 'Graduate to production': 'basics/production.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'basics/app-gallery.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
@@ -316,7 +323,6 @@ nav:
     - 'Choosing the best auth': 'authentication/index.md'
     - 'JWT grant type':
       - 'Getting started': 'authentication/jwt/quick-start.md'
-      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
       - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
       - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
