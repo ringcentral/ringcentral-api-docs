@@ -343,6 +343,9 @@ nav:
     - 'Web Sockets':
       - 'Getting Started': 'notifications/web-sockets/quick-start.md'
       - 'Subscribing via Web Sockets': 'notifications/web-sockets/subscribing.md'
+      - 'Receiving events': 'notifications/web-sockets/receiving.md'
+      - 'Session recovery': 'notifications/web-sockets/session-recovery.md'
+      - 'Heart beats': 'notifications/web-sockets/heart-beats.md'
     - 'PubNub push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'
       - 'Using PubNub': 'notifications/push-notifications/pubnub.md'

@@ -1,7 +1,8 @@
-no_breadcrumb:true
 style: quick-start
 
-# PubNub Notifications JavaScript Quick Start
+# PubNub notifications Quick Start
+
+{! mdx_includes/pubnub-deprecation.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
