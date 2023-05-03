@@ -23,7 +23,7 @@ function subscribe_for_SMS_notification() {
   subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'])
     .register()
     .then(function(subscriptionResponse) {
-      console.log("Ready to receive incoming SMS via PubNub.")
+      console.log("Ready to receive incoming SMS via WebSockets.")
     })
     .catch(function(e) {
       console.error(e);

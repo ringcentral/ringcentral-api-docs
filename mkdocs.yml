@@ -341,11 +341,11 @@ nav:
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
       - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
     - 'Web Sockets':
-      - 'Getting Started': 'notifications/web-sockets/quick-start.md'
-      - 'Subscribing via Web Sockets': 'notifications/web-sockets/subscribing.md'
-      - 'Receiving events': 'notifications/web-sockets/receiving.md'
-      - 'Session recovery': 'notifications/web-sockets/session-recovery.md'
-      - 'Heart beats': 'notifications/web-sockets/heart-beats.md'
+      - 'Getting Started': 'notifications/websockets/quick-start.md'
+      - 'Subscribing via Web Sockets': 'notifications/websockets/subscribing.md'
+      - 'Receiving events': 'notifications/websockets/receiving.md'
+      - 'Session recovery': 'notifications/websockets/session-recovery.md'
+      - 'Keep-alives': 'notifications/websockets/heart-beats.md'
     - 'PubNub push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'
       - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
