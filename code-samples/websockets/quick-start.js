@@ -1,5 +1,5 @@
 const RC = require('@ringcentral/sdk').SDK
-const Subs = require('@ringcentral/subscriptions').Subscriptions
+const Subscriptions = require('@ringcentral/subscriptions').Subscriptions
 require('dotenv').config();
 
 var rcsdk = new RC({
@@ -10,7 +10,7 @@ var rcsdk = new RC({
 var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
-var subscriptions = new Subs({ sdk: rcsdk });
+var subscriptions = new Subscriptions({ sdk: rcsdk });
 var subscription = subscriptions.createSubscription({
     pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000
 });
@@ -20,14 +20,21 @@ platform.on(platform.events.loginSuccess, () => {
 });
 
 function subscribe_for_SMS_notification() {
-  subscription.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'])
-    .register()
-    .then(function(subscriptionResponse) {
-      console.log("Ready to receive incoming SMS via WebSockets.")
-    })
-    .catch(function(e) {
-      console.error(e);
-      throw e;
+    const subscription = subscriptions.createSubscription();
+    subscription.on(subscription.events.notification, evt => {
+	console.log(JSON.stringify(evt, null, 2));
+    });
+    await subscription
+	.setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store'])
+	.register();
+    
+    // trigger an event, optional
+    const r = await platform.get('/restapi/v1.0/account/~/extension/~');
+    const ext = await r.json();
+    platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
+	from: {extensionId: ext.id},
+	to: [{extensionId: ext.id}],
+	text: 'Hello world!',
     });
 }
 
