@@ -340,12 +340,13 @@ nav:
       - 'Receiving webhooks': 'notifications/webhooks/receiving.md'
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
       - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
-    - 'Web Sockets':
+    - 'WebSockets':
       - 'Getting Started': 'notifications/websockets/quick-start.md'
       - 'Subscribing via Web Sockets': 'notifications/websockets/subscribing.md'
       - 'Receiving events': 'notifications/websockets/receiving.md'
       - 'Session recovery': 'notifications/websockets/session-recovery.md'
       - 'Keep-alives': 'notifications/websockets/heart-beats.md'
+      - 'Migration guide': 'notifications/websockets/migration.md'
     - 'PubNub push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'
       - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
