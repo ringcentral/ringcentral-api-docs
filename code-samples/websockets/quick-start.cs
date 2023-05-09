@@ -1,48 +1,43 @@
-using System;
-using System.Threading.Tasks;
+// ref: https://github.com/tylerlong/RingCentral.WebSocket.Demo
+
 using RingCentral;
 using dotenv.net;
+using RingCentral.Net.WebSocket;
 
-DotEnv.Load();
+var envVars = DotEnv.Read();
 
-namespace PubNub_Notifications
+var rc = new RestClient(envVars["RINGCENTRAL_CLIENT_ID"], envVars["RINGCENTRAL_CLIENT_SECRET"], envVars["RINGCENTRAL_SERVER_URL"]);
+await rc.Authorize(envVars["RINGCENTRAL_JWT_TOKEN"]);
+Console.WriteLine(rc.token.access_token);
+
+var wsExtension = new WebSocketExtension(new WebSocketOptions
 {
-class Program
+    debugMode = true
+});
+await rc.InstallExtension(wsExtension);
+await wsExtension.Subscribe(new string[] {"/restapi/v1.0/account/~/extension/~/message-store"}, message =>
 {
-    static RestClient restClient;
-    static void Main(string[] args)
+    Console.WriteLine(message);
+});
+
+// Trigger some notifications for testing purpose
+var timer = new PeriodicTimer(TimeSpan.FromMinutes(10));
+while (await timer.WaitForNextTickAsync())
+{
+    await rc.Refresh();
+    await rc.Restapi().Account().Extension().CompanyPager().Post(new CreateInternalTextMessageRequest
     {
-	restClient = new RestClient(
-	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-	restClient.Authorize(
-	    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
-        pubnub_notification().Wait();
-    }
-    static private async Task pubnub_notification()
-    {
-        try
+        text = "Hello world",
+        from = new PagerCallerInfoRequest
         {
-	    var pubNubExtension = new PubNubExtension();
-	    await rc.InstallExtension(pubNubExtension);
-            var eventFilters = new[]
-            {
-                "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS"
-            };
-	    var subscription = await pubNubExtension.Subscribe(eventFilters, message =>
-	    {
-		Console.WriteLine("I got a notification:");
-		Console.WriteLine(message);
-	    });
-	    // Wait for 60 seconds before the app exits
-	    // In the mean time, send SMS to trigger a notification for testing purpose
-	    await Task.Delay(60000);
-        }
-        catch (Exception ex)
+            extensionId = rc.token.owner_id
+        },
+        to = new []{ new PagerCallerInfoRequest
         {
-            Console.WriteLine(ex);
-        }
-    }
+            extensionId = rc.token.owner_id
+        }}
+    });
+    Console.WriteLine("Pager sent");
 }
-}
+
+await rc.Revoke();
