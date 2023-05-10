@@ -130,12 +130,36 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/WebSocketsQuickStart.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/WebSocketQuickStart.java !} 
     ```
 
     ### Run your app
 
     You are almost done. Now run your app from Eclipse.
+
+=== "Ruby"
+
+    ### Install RingCentral Ruby SDK
+
+    ```bash
+    $ gem install ringcentral-sdk dotenv
+    ```
+
+    ### Create and edit websockets.rb
+
+    Create a file called <tt>websockets.rb</tt> using the contents below.
+
+    ```ruby
+    {!> code-samples/websockets/quick-start.rb !} 
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ ruby websockets.rb
+    ```
 
 <!--
 === "Python"
@@ -186,31 +210,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     ```bask
     $ php websockets.php
     ```
-
-=== "Ruby"
-
-    ### Install RingCentral Ruby SDK
-
-    ```bash
-    $ gem install ringcentral-sdk dotenv
-    ```
-
-    ### Create and edit websockets.rb
-
-    Create a file called <tt>websockets.rb</tt> using the contents below.
-
-    ```ruby
-    {!> code-samples/websockets/quick-start.rb !} 
-    ```
-
-    ### Run your code
-
-    You are almost done. Now run your script.
-
-    ```bash
-    $ ruby websockets.rb
-    ```
-
 -->
 
 ## Test your WebSocket subscription
