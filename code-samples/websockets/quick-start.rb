@@ -6,7 +6,9 @@
 
 require 'ringcentral'
 require 'subscription'
-require 'dotenv/load'
+require 'dotenv'
+
+Dotenv.load
 
 $rc = RingCentral.new(ENV['RC_CLIENT_ID'],
                       ENV['RC_CLIENRT_SECRET'],
@@ -14,21 +16,15 @@ $rc = RingCentral.new(ENV['RC_CLIENT_ID'],
 
 $rc.authorize(jwt: ENV['RC_JWT'])
 
-def createSubscription(callback)
-    events = [
-        '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
-    ]
-    subscription = PubNub.new($rc, events, lambda { |message|
-        callback.call(message)
-    })
-    subscription.subscribe()
-    puts "Waiting for incoming SMS message ..."
-    while 1
-        sleep(5)
-    end
-end
-
-createSubscription(lambda { |msg|
-    puts msg
+events = [
+  '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
+]
+subscription = WS.new($rc, events, lambda { |message|
+  puts message
 })
+subscription.subscribe()
 
+puts "Waiting for incoming SMS message ..."
+while 1
+    sleep(5)
+end
