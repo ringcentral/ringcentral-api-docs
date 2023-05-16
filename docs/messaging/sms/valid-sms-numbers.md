@@ -1,6 +1,6 @@
-# SMS Sending Numbers
+# RingCentral Phone Number Features
 
-RingCentral numbers have SMS and MMS capabilities depending on the account plan. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and receive SMS from the Main Company Number. See more below on using the Main Company Number.
+RingCentral phone numbers have SMS and MMS capabilities depending on the account phone number configuration. Users can send and receive SMS from enabled phone numbers assigned to their extension. The operator extension can further send and receive SMS from the Main Company Number or company numbers. See more below on using the Main Company Number.
 
 Phone numbers can have different capabilities determined by the presence of the following values in the `features` property of the Phone Number info object:
 
@@ -13,78 +13,38 @@ Phone numbers can have different capabilities determined by the presence of the 
 
 ## Listing Valid SMS Numbers
 
-To determine which numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature. The `extension/phone-number` is as follows where `{accountId}` and `{extensionId}` can be replaced by actual values or `~` for the current user's account and extension values.
-
-=== "HTTP"
-	```http
-	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
-	```
+To determine which numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the `extension/phone-number` endpoint and then filter by numbers with the `SmsSender` and/or `MmsSender` feature.
 
 === "JavaScript"
+
 	```javascript
-	const RingCentral = require('@ringcentral/sdk').SDK
-
-	var rcsdk = new RingCentral( {server: "server_url", clientId: "client_id", clientSecret: "client_secret"} );
-	var platform = rcsdk.platform();
-
-	platform.login( {username: "username", password: "password", extension: "extension_number"} )
-
-	platform.on(platform.events.loginSuccess, function(e){
-	    console.log("Login success")
-	    detect_sms_feature()
-	});
-
-	async function detect_sms_feature(){
-	  try{
-	    var resp = await platform.get("/restapi/v1.0/account/~/extension/~/phone-number")
-	    var jsonObj = await resp.json()
-	    for (var record of jsonObj.records){
-	      if (record.usageType == "DirectNumber"){
-	        for (feature of record.features){
-	          if (feature == "SmsSender"){
-	            console.log(`This phone number ${record.phoneNumber} has SMS feature`)
-	          }
-	        }
-	      }
-	    }
-	  }catch(e){
-	    console.log(e.message)
-	  }
-	}
+	{!> code-samples/messaging/code-snippets-headers/header.js [ln:1-9] !}
+	{!> code-samples/messaging/code-snippets/number-features.js [ln:10-] !}
 	```
 
 === "Python"
+
 	```python
-	from ringcentral import SDK
-
-	sdk = SDK( "client_id", "client_secret", "server_url" )
-	platform = sdk.platform()
-	platform.login( "username", "extension", "password" )
-
-	response = platform.get('/restapi/v1.0/account/~/extension/~/phone-number')
-	for record in response.json().records:
-		for feature in record.features:
-			if feature == "SmsSender":
-				print "This phone number " + record.phoneNumber + " has SMS feature"
+	{!> code-samples/messaging/code-snippets/number-features.py !}
+	{!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-7]!}
 	```
 
 === "PHP"
+
 	```php
-	<?php
-	require('vendor/autoload.php');
+	{!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13] !}
+	{!> code-samples/messaging/code-snippets/number-features.php [ln:2-] !}
+	```
 
-	$rcsdk = new RingCentral\SDK\SDK( "client_id", "client_secret", "server_url" );
-	$platform = $rcsdk->platform();
-	$platform->login( "username", "extension_number", "password" );
+=== "Ruby"
 
-	$response = $platform->get('/account/~/extension/~/phone-number');
-	foreach ($response->json()->records as $record)
-		foreach ($record->features as $feature)
-			if ($feature == "SmsSender")
-				print_r ("This phone number" $record->phoneNumber ." has SMS feature\n");
+	```ruby
+	{!> code-samples/messaging/code-snippets/number-features.rb !}
+	{!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-7]!}
 	```
 
 === "C#"
+
 	```c#
 	using System;
 	using System.Threading.Tasks;
@@ -148,23 +108,6 @@ To determine which numbers a user can use to send and receive SMS, retrieve the 
 	}
 	```
 
-=== "Ruby"
-	```ruby
-	require 'ringcentral'
-
-	rc = RingCentral.new( 'client_id', 'client_secret', 'server_url')
-	rc.authorize( username:  'username', extension: 'extension_number', password:  'password')
-	response = rc.get ('/restapi/v1.0/account/~/extension/~/phone-number')
-
-	for record in response.body['records'] do
-			for feature in record['features'] do
-				if feature == "SmsSender"
-					puts "This phone number " + record['phoneNumber'] + " has SMS feature"
-				end
-	    end
-	end
-	```
-
 This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSender` features:
 
 ```json hl_lines="12 13 14"
@@ -196,4 +139,4 @@ This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSe
 
 ## SMS and the Main Company Number
 
-You can send and receive SMS messages from the main company phone number when authorized as the Operator Extension. By default, the Operator Extension is set to extension 101. This can be edited and assigned to other extensions in the Online Account Portal under "Auto-Receptionist" > "Operator Extension.""
+You can send and receive SMS messages from the main company phone number when authorized as the Operator Extension. By default, the Operator Extension is set to extension 101. This can be edited and assigned to other extensions in the Online Account Portal under "Auto-Receptionist" > "General Settings"

@@ -1,0 +1,98 @@
+{
+  "grouping": {
+    "groupBy": "Users",
+    "keys": []
+  },
+  "timeSettings": {
+    "timeZone": "US/Pacific",
+    "timeRange": {
+      "timeFrom": "2022-03-01T00:00:00.877Z",
+      "timeTo": "2022-05-01T04:01:33.877Z"
+    },
+    "advancedTimeSettings": {
+      "includeDays": [
+        "Sunday"
+      ],
+      "includeHours": [
+        {
+          "from": "00:00",
+          "to": "23:59"
+        }
+      ]
+    }
+  },
+  "callFilters": {
+    "directions": [
+      "Inbound"
+    ],
+    "origins": [
+      "Internal"
+    ],
+    "callResponses": [
+      "Answered"
+    ],
+    "callResults": [
+      "Completed"
+    ],
+    "callSegments": [
+      {
+        "segment": "Ringing",
+        "length": {
+          "minSeconds": 0,
+          "maxSeconds": 200
+        }
+      }
+    ],
+    "callActions": [
+      "HoldOff"
+    ],
+    "companyHours": [
+      "BusinessHours"
+    ],
+    "callDuration": {
+      "minSeconds": 0,
+      "maxSeconds": 200
+    },
+    "timeSpent": {
+      "minSeconds": 0,
+      "maxSeconds": 200
+    },
+    "callFilters": {
+      "extensionFilters": {
+        "fromIds": [],
+        "toIds": []
+      }
+    },
+    "calledNumbers": [],
+    "queueSla": [
+      "InSla"
+    ],
+    "callTypes" : [
+      "Direct"
+    ]
+  },
+  "responseOptions": {
+    "counters": {
+      "allCalls": true,
+      "queueOpportunities": true,
+      "callsByDirection": true,
+      "callsByOrigin": true,
+      "callsByResponse": true,
+      "callsSegments": true,
+      "callsByResult": true,
+      "callsByCompanyHours": true,
+      "callsByActions": true,
+      "callsByType": true
+    },
+    "timers": {
+      "allCallsDuration": true,
+      "callsDurationByDirection": true,
+      "callsDurationByOrigin": true,
+      "callsDurationByResponse": true,
+      "callsSegmentsDuration": true,
+      "callsDurationByResult": true,
+      "callsDurationByCompanyHours": true,
+      "callsDurationByType": true
+    }
+  }
+}

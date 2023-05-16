@@ -33,15 +33,15 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
      * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
-	
+
 ## Create a Team
 
 Select your preferred language below.
@@ -59,12 +59,12 @@ Select your preferred language below.
     Create a file called `create-team.js` using the contents below.
 
     ```JavaScript
-    {!> code-samples/team-messaging/quick-start.js !}
+    {!> code-samples/team-messaging/quick-start.js [ln:1-48] !}
     ```
 
     ### Run your code
 
-    You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
+    You are almost done. Now run your script.
 
     ```bash
     $ node create-team.js
@@ -83,12 +83,12 @@ Select your preferred language below.
     Create a file called `create-team.py` using the contents below.
 
     ```python
-    {!> code-samples/team-messaging/quick-start.py !}
+    {!> code-samples/team-messaging/quick-start.py [ln:1-43] !}
     ```
 
     ### Run your code
 
-    You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
+    You are almost done. Now run your script.
 
     ```bash
     $ python create-team.py
@@ -108,83 +108,16 @@ Select your preferred language below.
     Create a file called `create-team.php` using the contents below.
 
     ```PHP
-    {!> code-samples/team-messaging/quick-start.php !}
+    {!> code-samples/team-messaging/quick-start.php [ln:1-48] !}
     ```
 
     ### Run your code
 
-    You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
+    You are almost done. Now run your script.
 
     ```bash
     $ php create-team.php
     ```
-
-=== "C#"
-
-    ### Create a Visual Studio project
-
-    * Choose Console Application .Net Core -> App
-    * Select Target Framework .NET Core 2.1
-    * Enter project name "Create_Team"
-    * Add NuGet package RingCentral.Net (4.1.0) SDK
-
-    ### Edit the file Program.cs
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
-
-    ```c#
-    {!> code-samples/team-messaging/quick-start.cs !}
-    ```
-
-    ### Run your code
-
-    You are almost done. Now run your app from Visual Studio. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
-
-=== "Java"
-
-    ### Create a Java project (using Eclipse IDE)
-
-    * Create a new Java project
-    * Select the Gradle Project wizard
-    * Enter project name "TeamMessagingQuickStart"
-    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
-
-    ```json
-    dependencies {
-        // ...
-        compile 'com.ringcentral:ringcentral:1.4.0'
-    }
-    ```
-
-    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
-
-    ### Create a new Java Class
-
-    Select "File -> New -> Class" to create a new Java class named "Create_Team"
-
-    ```java
-    package TeamMessagingQuickStart;
-
-    public class TeamMessagingQuickStart {
-
-      public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
-      }
-    }
-    ```
-
-    ### Edit the file "TeamMessagingQuickStart.java".
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials. Be sure to also set the recipient's phone number.
-
-    ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/TeamMessagingQuickStart.java !}
-    ```
-
-    ### Run your code
-
-    You are almost done.  Now run your app from Eclipse. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
 
 === "Ruby"
 
@@ -199,16 +132,75 @@ Select your preferred language below.
     Create a file called `create-team.rb` using the contents below.
 
     ```ruby
-    {!> code-samples/team-messaging/quick-start.rb !}
+    {!> code-samples/team-messaging/quick-start.rb [ln:1-42] !}
     ```
 
     ### Run your code
 
-    You are almost done. Now run your script. Then login to your account at https://app.devtest.ringcentral.com/ to see the newly created team.
+    You are almost done. Now run your script.
 
     ```bash
     $ ruby create-team.rb
     ```
+
+=== "C#"
+
+    ### Create a Visual Studio project
+
+    * Choose Console Application .Net Core -> App
+    * Select Target Framework .NET Core 2.1 or higher version
+    * Enter project name "Create_Team"
+    * Add NuGet package RingCentral.Net (6.0.0) SDK
+
+    ### Edit the file Program.cs
+
+    ```c#
+    {!> code-samples/team-messaging/quick-start.cs !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your app from Visual Studio.
+
+=== "Java"
+
+    ### Create a Java project (using Eclipse IDE)
+
+    * Create a new Java project
+    * Select the Gradle Project wizard
+    * Enter project name "CreateTeam"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+
+    ```json
+    dependencies {
+        // ...
+        implementation 'com.ringcentral:ringcentral:3.0.0'
+    }
+    ```
+
+    * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
+        - RC_CLIENT_ID
+        - RC_CLIENT_SECRET
+        - RC_SERVER_URL
+        - RC_JWT
+
+    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
+    ### Edit the file 'CreateTeam.java'
+
+    ```java
+    {!> code-samples/team-messaging/quick-start.java !}
+    ```
+
+    ### Build & Run Your Code
+
+    You are almost done. Now run your app from Eclipse.
+
+
+### Check the newly created team
+
+Login to your account at https://app.devtest.ringcentral.com (use https://app.ringcentral.com if you test on your production) to see the newly created team.
+
 
 ## Need Help?
 
