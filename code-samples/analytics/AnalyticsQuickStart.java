@@ -12,17 +12,17 @@ public class AnalyticsQuickStart {
 
     public static void main(String[] args) {
       var obj = new AnalyticsQuickStart();
-  		try {
+      try {
         restClient = new RestClient(System.getenv("RC_CLIENT_ID"), System.getenv("RC_CLIENT_SECRET"), System.getenv("RC_SERVER_URL"));
-			  restClient.authorize(System.getenv("RC_JWT"));
+        restClient.authorize(System.getenv("RC_JWT"));
 
         obj.read_analytics_aggregate_data();
 
       } catch (RestException e) {
-  			System.out.println(e.getMessage());
-  		} catch (IOException e) {
-  			e.printStackTrace();
-  		}
+        System.out.println(e.getMessage());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
     /*
       Read aggregate analytics data for a period of time and grouped by users

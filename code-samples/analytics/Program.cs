@@ -11,19 +11,26 @@ namespace AnalyticsQuickStart {
     static RestClient restClient;
 
     static async Task Main(string[] args){
-      const string envFileName = ".env";
-      // Remember to modify the path of your .env file location!
-      String root = Directory.GetCurrentDirectory();
-      DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { Path.Combine(root, envFileName) }));
+      try
+      {
+        const string envFileName = ".env";
+        // Remember to modify the path of your .env file location!
+        String root = Directory.GetCurrentDirectory();
+        DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { Path.Combine(root, envFileName) }));
 
-      restClient = new RestClient(
-          Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-          Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-          Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+        restClient = new RestClient(
+            Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+            Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+            Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 
-      await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
+        await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
 
-      await read_analytics_aggregate_data();
+        await read_analytics_aggregate_data();
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
     /*
       Read aggregate analytics data for a period of time and grouped by users
