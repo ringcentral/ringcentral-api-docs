@@ -21,7 +21,7 @@ Below is an example JSON representation of a message that would be returned by t
 ```json
 {
     "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/4xxx8/extension/4xxx8/message-store/4xxx8",
-    "id" : 402406984008,
+    "id" : 402406985008,
     "type" : "VoiceMail",
     "to" : [ {
         "name" : "Jane Smith"
@@ -34,7 +34,7 @@ Below is an example JSON representation of a message that would be returned by t
     "readStatus" : "Unread",
     "priority" : "Normal",
     "attachments" : [ {
-        "id" : 402406984008,
+        "id" : 402406985008,
         "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/4xxx8/extension/4xxx8/message-store/4xxx8/content/4xxx8",
         "type" : "AudioRecording",
         "contentType" : "audio/x-wav",
@@ -54,41 +54,49 @@ The API Reference contains a [more detailed breakdown of the structure of a mess
 
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
+!!! note "Running the code"
+    * If you have tried the [SMS quick start]((../../quick-start/)), you can just copy all the functions below and add them to the quick start project then call the `read_extension_message_store()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-store.js !}
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-12] !}
+    {!> code-samples/messaging/code-snippets/message-store.js [ln:10-] !}
     ```
 
 === "Python"
 
     ```python
-    {!> code-samples/messaging/message-store.py !}
+    {!> code-samples/messaging/code-snippets/message-store.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5] !}
     ```
-    
+
 === "PHP"
 
     ```php
-    {!> code-samples/messaging/message-store.php !}
-    ```
-
-=== "C#"
-
-    ```c#
-    {!> code-samples/messaging/message-store.cs !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/Read_MessageStore.java !}
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-15] !}
+    {!> code-samples/messaging/code-snippets/message-store.php [ln:2-] !}
     ```
 
 === "Ruby"
 
     ```ruby
-    {!> code-samples/messaging/message-store.rb !}
-    ```    
+    {!> code-samples/messaging/code-snippets/message-store.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/messaging/code-snippets/message-store.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/messaging/code-snippets/message-store.java !}
+    ```
 
 This example response shows the `to`, `from`, `type`, `readStatus`, `direction` and `subject` amongst other properties of an SMS message record from the message store:
 

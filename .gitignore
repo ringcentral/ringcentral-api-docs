@@ -16,5 +16,7 @@ reset.sh
 composer.*
 vendor
 code-samples/**/obj/*
+*.csproj
+*.sln
 .idea/
 *.iml

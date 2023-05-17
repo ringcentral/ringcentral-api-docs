@@ -89,7 +89,7 @@ nav:
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
-      - 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md'
+      #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
       - 'Postman': 'messaging/sms/postman.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
@@ -250,7 +250,7 @@ nav:
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
     - 'Users and extensions': 'account/extensions.md'
-    - 'Creating users': 'account/creating-users.md'    
+    - 'Creating users': 'account/creating-users.md'
     - 'Phone Numbers': 'account/phone-numbers.md'
     - 'Call Forwarding/Flipping': 'account/call-forwarding-flipping.md'
     - 'User Feature Flags': 'account/feature-flags.md'
