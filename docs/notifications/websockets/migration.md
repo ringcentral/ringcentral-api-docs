@@ -109,3 +109,7 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
 	     callback.call(message) })
     res = s.subscribe()
 	```
+
+## Remove the PubNubSubscription app scope from your application
+
+The final step in your migration is to remove the PubNub Subscription app scope from your app via the Developer Console. When this is done, PubNub will be disabled in your account, and your migration will be complete. 
