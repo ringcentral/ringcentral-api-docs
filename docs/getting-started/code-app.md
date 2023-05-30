@@ -132,10 +132,16 @@ If you have been successful doing all the steps that have preceded this one, the
   </div>
 </div>
 
+## Will your app be sending SMS messages?
+
+If your application will be sending SMS messages then you will be required to meet and comply with a number of regulations and policies to help combat fraud. This is accomplished through the TCR process. If this applies to you, please familiarize yourself with this process next.
+
+<a class="btn btn-lg btn-primary" href="../sms/">Setup your account to send SMS</a>
+
 ## Next step: graduating your application to production
 
 Now that you have successfully called the API via an application that you have built, you can begin a process we call "graduation" which is how a developer obtains credentials for our production environment. This is among the final steps before you can officially use an application using real production data.
 
 <a class="btn btn-lg btn-primary" href="../graduate-app/">Graduate your application</a>
-  
+
 

@@ -45,6 +45,7 @@ nav:
     - 'Create an auth credential': 'getting-started/create-credential.md'
     - 'Access sandbox': 'getting-started/using-sandbox.md'
     - 'Build an app': 'getting-started/code-app.md'
+    - 'Sending SMS': 'getting-started/sms.md'
     - 'Obtain production credentials': 'getting-started/graduate-app.md'
     - 'Promote your app': 'getting-started/promote-app.md'
   - 'Voice':
