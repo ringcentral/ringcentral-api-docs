@@ -49,12 +49,10 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
 
 === "PHP"
 
-    Upgrade [ringcentral-php]() to version 3.0.0 or later.
+    Upgrade [ringcentral-php](https://github.com/ringcentral/ringcentral-php) to version 3.0.0 or later.
 	
 	**Before**
-	```php
-<?php
-
+```php
 use RingCentral\SDK\Subscription\Events\NotificationEvent;
 use RingCentral\SDK\Subscription\Subscription;
 
@@ -71,10 +69,10 @@ $subscription->addListener(Subscription::EVENT_NOTIFICATION, function (Notificat
 });
 $subscription->setKeepPolling(true);
 $subscription->register();
-	```
+```
 	
 	**After**
-	```php
+```php
 <?php
 
 use RingCentral\SDK\WebSocket\WebSocket;
@@ -96,7 +94,7 @@ $subscription->addListener(Subscription::EVENT_NOTIFICATION, function (Notificat
     print 'Notification ' . print_r($e->payload(), true) . PHP_EOL;
 });
 $subscription->register();
-	```
+```
 
 === "Java"
 
