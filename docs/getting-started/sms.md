@@ -4,7 +4,7 @@ In order to send SMS messages in our production environment, companies must firs
 
 1. **Register your brand**. This first step helps to establish your company's identity and lets carriers know who is responsible for the sending of SMS within your company, both legally and operationally. Most companies only need to register a single brand. 
 2. **Register your campaign**. Once your brand has been successfully created, the next step is to register a campaign through which SMS messages will be sent.
-3. **Assign phone numbers to a campaign**. The last step is to assign phone numbers to the campaigns for which they are associated. 
+3. **Assign phone numbers to a campaign**. The last step is to assign phone numbers to the campaigns for which they are associated. This step will also enable your phone number to be used for SMS in production.
 
 **Completing the entire TCR process can take up to 25 days.** Therefore, we recommend starting the TCR registration process as soon as possible, so that when the time comes to graduate your application to production and begin sending SMS, everything will already be setup for you. 
 
@@ -16,6 +16,8 @@ In order to send SMS messages in our production environment, companies must firs
 The TCR registration process helps to establish you as a trusted entity within the Business SMS ecosystem, which in-turn helps to improve deliverability rates for the SMS messages your business sends.
 
 <iframe src="https://player.vimeo.com/video/786397152?h=ba43d1e7a0&color=ff7a00&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+Have more questions? Check out our [TCR FAQ](https://support.ringcentral.com/article-v2/TCR-business-registration-FAQ.html?brand=RingCentral&product=MVP&language=en_US) to find answers to common questions. 
 
 ### Is TCR registration required for my business, even if I am not sending marketing messages?
 
@@ -34,9 +36,10 @@ Read [Setting up TCR registration and assigning numbers to your SMS campaigns &r
 
 ### Toll-free numbers
 
-If your business needs the ability to send SMS from a toll-free number, the process is a litte different in that it requires help from RingCentral support to complete. 
+If your business needs the ability to send SMS from a toll-free number, the process is a litte different in that it requires help from RingCentral support to complete. You will need to do the following two steps:
 
-Read [Verifying your toll-free number for SMS &raquo;](https://support.ringcentral.com/article-v2/Verifying-your-toll-free-number-for-SMS.html?brand=RingCentral&product=MVP&language=en_US)
+1. [Add a toll-free number to a user](https://support.ringcentral.com/article-v2/10649-admin-add-direct-number-user-toll-free.html?brand=RC_US&product=RingCentral_MVP&language=en_US) via the Admin Console. 
+2. [Enable SMS for the toll-free number](https://support.ringcentral.com/article-v2/Verifying-your-toll-free-number-for-SMS.html?brand=RingCentral&product=MVP&language=en_US) and then get it verified via support.
 
 ### Short-codes
 
