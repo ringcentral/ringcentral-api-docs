@@ -1,15 +1,12 @@
-no_breadcrumb:true
 style: quick-start
 
 # SMS Quick Start
 
 !!! info "Things to know before you begin"
-
-  * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html).
-	* Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant.
-	* When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/).
-
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+    
+    * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html)
+    * Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant
+    * When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/)
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
