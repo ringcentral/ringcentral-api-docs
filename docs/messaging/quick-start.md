@@ -2,6 +2,8 @@ style: quick-start
 
 # SMS Quick Start
 
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
+
 !!! info "Things to know before you begin"
     
     * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html).
