@@ -1,6 +1,6 @@
 # Introduction to the Custom Fields API
 
-## What are Custom Fields?
+## What are custom fields?
 
 A custom field is an additional piece of information or metadata that can be associated with a RingCentral user (a.k.a. an extension). A maximum of 5 custom fields can be created and associated with a user per account. In order to use custom fields, an admin must first be [enable them for your account](https://support.ringcentral.com/s/article/11285-Configure-Custom-Fields?language=en_US).
 
@@ -12,17 +12,49 @@ Custom fields can be used any time you need to extend the user object to store a
 * **Ad tracking**. Track and manage marketing campaigns by assigning campaign IDs to user records, and then track calls received per campaign.
 * **Manage Your Organization**. Group users based on custom categories.
 
-## How to uses the Custom Fields APIs?
+## Using custom fields in a federated account
 
-The Custom Fields API is a REST-based interface that enables developers to create, update, delete and fetch custom fields programatically.
+Some RingCentral customers utilize a federated account model in which a single company managed multiple distinct accounts for their business. This is more common with large businesses in which there are practical or technical limitations that may exist that make managing tens of thousands of users, their extensions, and policies impractical. For businesses operating in this manner, custom fields are NOT shared across accounts and sub-accounts. If you wish to create a custom field across all accounts, then you will need to create that field independently in each. 
 
-Once the custom fields have been created, they can be populated, edited and deleted in the user's extension property.
-  
-## Explore Custom Fields API sample code
+## How to insert and update a custom field value for a user's extension?
 
-### Create custom fields on User Extension
+Once the custom fields are created developers can insert and update custom fields value for user extensions using the Update Extension API.
+
+Only an Admin User can change and view the custom field values for other extensions. Standard users can only view custom field value on their assigned extensions.
+
+=== "Python"
+
+    ```python
+    {!> code-samples/account/custom-fields-update-value.py !}
+    ```
+
+## How to find and display a user's custom field values?
+
+Once the custom field is created on a user extension, developers can use the Get Extension API to see custom field details on that extension.
+
+=== "Python"
+
+    ```python
+    {!> code-samples/account/custom-fields-read.py !}
+    ```
+
+**Sample response**
+
+```json
+{!> code-samples/account/custom-fields-response.json !}
+```
+
+## How to manage custom field definitions using the Custom Fields API
+
+### How to create a custom field on all users' extensions
 
 Developers can use this API to create a custom field on a user extension object. Maximum of 5 custom fields can be created.
+
+=== "Python"
+
+    ```python
+    {!> code-samples/account/custom-fields-create.py !}
+    ```
 
 === "Raw"
 
@@ -32,69 +64,21 @@ Developers can use this API to create a custom field on a user extension object.
     Content-Length: ACTUAL_CONTENT_LENGTH_HERE
     Authorization: Bearer <YOUR_ACCESS_TOKEN>
 
-    {  
+    {
        "category": "User",
        "displayName": "HRCODE-TEST3"
     }
     ```
 
-=== "Python"
-
-    ```python
-    from ringcentral import SDK
-    from ringcentral.http.api_exception import ApiException
-
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-
-    body ={
-        "category": "User",
-        "displayName": "HRCODE-TEST3"
-        }
-
-    try:
-        response =  platform.post('/account/~/custom-fields', body)
-        print("Custom Field Created")
-    except ApiException as e:
-        print("Error while creating custom fields" + e)
-    ```
-
-
-### Fetch Custom fields
-
-Developers can use this API to fetch all the custom fields created on a RingCentral Account.
-
-=== "Raw"
-
-    ```http 
-    GET /restapi/v1.0/account/{accountId}/custom-fields HTTP/1.1
-    Authorization: Bearer <YOUR_ACCESS_TOKEN>
-    ```
-
-=== "Python"
-
-    ```python
-    from ringcentral import SDK
-    from ringcentral.http.api_exception import ApiException
-
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-
-    response = platform.get('/account/~/custom-fields')
-    custom_fields = response.json()
-    try:
-        for x in range(len(custom_fields.records)):
-            print('Display Name- ' + custom_fields.records[x].displayName + ' id- ' +custom_fields.records[x].id + ' Category- '+custom_fields.records[x].category + '\n' )
-        except ApiException as e:
-            print("Error while fetching custom fields" + e)
-            
-    ```
-
-### Update Custom fields
+### How to update custom field data
 
 Developers can use this API to rename an existing custom field by specifying the custom field id in the query path parameter.
+
+=== "Python"
+
+    ```python
+    {!> code-samples/account/custom-fields-update.py !}
+    ```
 
 === "Raw"
 
@@ -104,30 +88,32 @@ Developers can use this API to rename an existing custom field by specifying the
 
     ```
 
+### How to fetch/read custom fields
+
+Developers can use this API to fetch all the custom fields created on a RingCentral Account.
+
 === "Python"
 
     ```python
-    from ringcentral import SDK
-    from ringcentral.http.api_exception import ApiException
-
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-
-    body ={
-        "displayName": "HRCODE"
-        }
-
-    try:
-        response =  platform.put('/account/~/custom-fields/{}'.format(id), body)
-        print(response.json().displayName)
-    except ApiException as e:
-        print("Error while creating custom fields" + e)
+    {!> code-samples/account/custom-fields-list.py !}
     ```
 
-### Delete Custom fields
+=== "Raw"
+
+    ```http 
+    GET /restapi/v1.0/account/{accountId}/custom-fields HTTP/1.1
+    Authorization: Bearer <YOUR_ACCESS_TOKEN>
+    ```
+
+### How to delete custom fields
 
 Developers can delete one or more existing custom field by passing the custom field id in the query parameter (separate by comma in case of multiple custom fields)
+
+=== "Python"
+
+    ```python
+    {!> code-samples/account/custom-fields-delete.py !}
+    ```
 
 === "Raw"
 
@@ -136,105 +122,3 @@ Developers can delete one or more existing custom field by passing the custom fi
     Authorization: Bearer <YOUR_ACCESS_TOKEN>
     ```
 
-=== "Python"
-
-    ```python
-    from ringcentral import SDK
-    from ringcentral.http.api_exception import ApiException
-
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-
-    try:
-        response =  platform.delete('/account/~/custom-fields/{}'.format(id))
-        print("Deleted")
-        print("Custom Field Deleted")
-    except ApiException as e:
-        print("Error while creating custom fields" + e)
-    ```
-
-## How to insert and update the Custom fields Value for User Extensions?
-
-Once the custom fields are created developers can insert and update custom fields value for user extensions using the Update Extension API.
-
-Only an Admin User can change and view the custom field values for other extensions. Standard users can only view custom field value on their assigned extensions.
-
-=== "Python"
-
-    ```python
-    from __future__ import print_function
-
-    from ringcentral.http.api_exception import ApiException
-    from ringcentral import SDK
-    from config import USERNAME, EXTENSION, PASSWORD, APP_KEY, APP_SECRET, SERVER
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-     
-    # POST Body
-    body =  {
-               "customFields": [
-                   {
-                     "id":"64016",
-                      "value":"Test for Update"
-                   }
-                              ]
-            }
-    try:
-        response =  platform.put('/account/~/extension/~', body)
-        user = response.json()
-        print('Custom Field value updated for Custom Field id 64016')
-        for x in user.customFields:
-             print('Custom Field Display Name -'+ x.displayName +  ' |  Custom Field Value - ' + x.value + ' | id - ' +  x.id)
-
-    except ApiException as e:
-        print("Error while updatibg custom field value" + e)
-    ```
-
-## How to find the Custom fields Value from User Extensions?
-
-Once the custom field is created on a user extension, developers can use the Get Extension API to see custom field details on that extension
-
-=== "Python"
-
-    ```python
-    from __future__ import print_function
-
-    from ringcentral.http.api_exception import ApiException
-    from ringcentral import SDK
-    from config import USERNAME, EXTENSION, PASSWORD, APP_KEY, APP_SECRET, SERVER
-    sdk = SDK(APP_KEY, APP_SECRET, SERVER)
-    platform = sdk.platform()
-    platform.login(USERNAME, EXTENSION, PASSWORD)
-            try:
-                response = platform.get('/account/~/extension/~')
-                user = response.json()
-                for x in user.customFields:
-                    print(x.value)
-        
-        except ApiException as e:
-                print("Error fetching Custom Fields" + e)
-    ```
-
-=== "Response"
-
-    ```json
-    {
-      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222",
-      "id":22222222,
-      "extensionNumber":"222",
-      "customFields":[
-        {
-          "id":"33333",
-          "displayName":"Salesforce User",
-          "value":"https://example.my.salesforce.com/003800000123456"
-        },
-        {
-          "id":"44444",
-          "displayName":"LinkedIn URL",
-          "value":"https://www.linkedin.com/in/example/"
-        }
-      ]
-    }
-    ```
