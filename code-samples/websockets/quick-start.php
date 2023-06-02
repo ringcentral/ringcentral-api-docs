@@ -4,7 +4,7 @@
    https://developers.ringcentral.com */
    
 require('vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 use RingCentral\SDK\WebSocket\WebSocket;
