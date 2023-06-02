@@ -186,6 +186,8 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ python websockets.py
     ```
 
+-->
+
 === "PHP"
 
     ### Install RingCentral PHP SDK
@@ -210,7 +212,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     ```bask
     $ php websockets.php
     ```
--->
 
 ## Test your WebSocket subscription
 
