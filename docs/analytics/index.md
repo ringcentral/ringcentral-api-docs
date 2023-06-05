@@ -7,8 +7,11 @@ no_breadcrumb:true
   <p class="lead">The RingCentral Line of Business (LOB) Analytics APIs gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
   <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a quick start guide in any of the following languages:</p>
   <a href="quick-start/#Javascript" class="btn btn-light qs-link">JavaScript &raquo;</a>
+  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
   <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
+  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
   <a href="https://god.postman.co/run-collection/ec998118d5bd3d56e4b6?action=collection%2Fimport#?env%5BRC%20Sharable%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5kZXZ0ZXN0LnJpbmdjZW50cmFsLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoicGxhdGZvcm0uZGV2dGVzdC5yaW5nY2VudHJhbC5jb20iLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5IjoiUkNfQVBQX0tFWSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiUkNfQVBQX1NFQ1JFVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoiUkNfVVNFUk5BTUUiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4IjozfSx7ImtleSI6IlJDX0VYVEVOU0lPTiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiUkNfUEFTU1dPUkQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6Im15X2FjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjZ9LHsia2V5IjoiYmFzaWNfYXV0aF9oZWFkZXIiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fV0=" class="btn btn-light qs-link">Run in Postman &raquo;</a>
 </div>
 
@@ -18,9 +21,6 @@ Line of Business (LOB) Analytics is a historical call performance analytics offe
 * Call handling patterns
 * Call volume distribution by multiple time intervals
 
-
-!!! warning "Analytics API - upcoming breaking change alert!"
-    Analytics APIs (Beta) will be getting an update that will break the current APIs on Aug 4, 2022. Please make sure to review the documentation and test the API changes in your enviornment before deploying to production.
 
 ## What can the Analytics API be used for?
 
@@ -51,14 +51,14 @@ These APIs can be used to analyze various call-related metrics as stated below:
 - Answered and not answered calls
 - Types of calls answered and reasons for not answering
 - Time spent by the caller in phases of the call such as Setup, Ringing, IVR prompt, Live Talk, Hold etc.
-- The time's agents put the caller on hold, park, transferred during the call
+- The time duration agents put the caller on hold, park, transferred during the call
 - How the call end, did it end after 'livetalk' at a specified extension or got transferred, or sent to voicemail etc.
 - Company Hours
-- The APIs provide data from the current datetime to the past 184 days for which you can set custom date and time ranges
+- The APIs provide data from the current date and time to the past 184 days for which you can set custom date and time ranges
 
 
 ### How is LOB Analytics API different than Call Log API?
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
 
-The Call Log APIs are suitable for detailed analysis of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
+The Call Log APIs are suitable for getting metadata of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
