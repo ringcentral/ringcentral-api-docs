@@ -1,5 +1,7 @@
 # Getting started using JWT credentials
 
+Before you get started, make sure you are using the [best authentication method](../) for your application. JWT is ideally suited for developers just getting started, and for server-to-server authentication. If you need to authenticate individual users, we strongly recommend the more common [OAuth flow](../quick-start/).
+
 ## Create a JWT
 
 The key first step in getting started is to [generate the JWT token](../../../getting-started/create-credential/) you will be using to authenticate. 

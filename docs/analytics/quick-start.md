@@ -8,7 +8,7 @@ In this quick start guide, we are going to access call performance data via usin
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Analytics App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Analytics&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Analytics App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -16,7 +16,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
-<li>Under "Auth" select "JWT auth flow."
+<li>Under "Authentication" select "JWT auth flow"
 <li>Under "Security" add the following permissions:
   <ul>
     <li>Analytics</li>
@@ -32,9 +32,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
 
 ## Call the Analytics API
 
@@ -54,10 +51,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit 'analytics.js' file
 
-    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
+    Create a file called `analytics.js`. Be sure the values in your `.env` file have been set properly.
 
     ```javascript
-    {!> code-samples/analytics/quick-start.js !}
+    {!> code-samples/analytics/quick-start.js [ln:1-64]!}
     ```
 
     ### Run your code
@@ -78,10 +75,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.py
 
-    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
+    Create a file called `analytics.py`. Be sure the values in your `.env` file have been set properly.
 
     ```python
-    {!> code-samples/analytics/quick-start.py !}
+    {!> code-samples/analytics/quick-start.py [ln:1-59]!}
     ```
 
     ### Run your code
@@ -103,10 +100,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.php
 
-    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
+    Create a file called `analytics.php`. Be sure the values in your `.env` file have been set properly.
 
     ```php
-    {!> code-samples/analytics/quick-start.php !}
+    {!> code-samples/analytics/quick-start.php [ln:1-60]!}
     ```
 
     ### Run your code
@@ -115,61 +112,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ```bash
     $ php analytics.php
-    ```
-
-=== "C#"
-
-    ### Create a C# project
-
-    * Choose Console Application .Net or .Net Core
-    * Select Target Framework Version
-    * Enter project name "WebAPIClient"
-    * Add NuGet package [RingCentral.Net SDK](https://github.com/ringcentral/RingCentral.Net) version 5.9.0 or newer
-    * Create a JSON file "aggregate-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/aggregate-data-request.json).
-    * Create a JSON file "timeline-request-body.json" that can be referenced in "JSON Request Body". Refer to the content of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-csharp/blob/master/WebAPIClient/timeline-data-request.json).
-
-    ### Edit the file 'Program.cs'
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials.
-
-    ```C#
-    {!> code-samples/analytics/Program.cs !}
-    ```
-
-    ### Run Your Code
-
-    You are almost done. Now run your app by typing in the command line
-
-    ```bash
-    $ cd WebAPIClient
-    $ dotnet run
-    ```
-
-=== "Java"
-
-    ### Create a Java Gradle/Maven project
-
-    * Make sure you have JDK 11 or newer installed in our machine
-    * Install RC Java SDK 2.2.0 or latest from [GitHub](https://github.com/ringcentral/ringcentral-java/releases/tag/2.2.0) or [Maven Central](https://search.maven.org/search?q=a:ringcentral)
-    * Create a new Java Class called "App.java"
-    * Create a JSON file in the following path inside your project "src/main/resources/aggregate-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/aggregate-request-body.json).
-    * Create a JSON file in the following path inside your project "src/main/resources/timeline-request-body.json". Refer to the contents of this [sample JSON file](https://github.com/ringcentral/call-performance-analytics-demo-java/blob/master/app/src/main/resources/timeline-request-body.json).
-
-    ### Edit the file 'App.java'
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials.
-
-    ```java
-    {!> code-samples/analytics/App.java !}
-    ```
-
-    ### Build & Run Your Code
-
-    You are almost done. Now run your app by typing in the command line
-
-    ```bash
-    $ javac App.java
-    $ java App
     ```
 
 === "Ruby"
@@ -182,10 +124,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit analytics.rb
 
-    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly, including the `FROM_DATE` and `TO_DATE` variables.
+    Create a file called `analytics.rb`. Be sure the values in your `.env` file have been set properly.
 
     ```ruby
-    {!> code-samples/analytics/quick-start.rb !}
+    {!> code-samples/analytics/quick-start.rb [ln:1-59]!}
     ```
 
     ### Run your code
@@ -195,6 +137,61 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     ```bash
     $ ruby analytics.rb
     ```
+
+=== "C#"
+
+    ### Create a C# project using Visual Studio
+
+    * Choose Console Application .Net Core -> App
+    * Select Target Framework .NET Core 2.1 or a higher version
+    * Enter project name "AnalyticsQuickStart"
+    * Add NuGet package RingCentral.Net (6.0.0) SDK
+
+    ### Edit the file 'Program.cs'
+
+    Be sure to edit the variables in ALL CAPS with your app and user credentials.
+
+    ```c#
+    {!> code-samples/analytics/Program.cs !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your app from Visual Studio.
+
+=== "Java"
+
+    ### Create a Java project (using Eclipse IDE)
+
+    * Create a new Java project
+    * Select the Gradle Project wizard
+    * Enter project name "AnalyticsQuickStart"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+
+    ```json
+    dependencies {
+        // ...
+        implementation 'com.ringcentral:ringcentral:3.0.0'
+    }
+    ```
+
+    * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
+        - RC_CLIENT_ID
+        - RC_CLIENT_SECRET
+        - RC_SERVER_URL
+        - RC_JWT
+
+    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
+    ### Edit the file 'AnalyticsQuickStart.java'
+
+    ```java
+    {!> code-samples/analytics/AnalyticsQuickStart.java !}
+    ```
+
+    ### Build & Run Your Code
+
+    You are almost done. Now run your app from Eclipse.
 
 ## Sample Applications on GitHub
 

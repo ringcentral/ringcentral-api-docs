@@ -1,43 +1,69 @@
 using System;
 using System.IO;
-
+using System.Threading.Tasks;
+using System.Collections.Generic;
 using RingCentral;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using dotenv.net;
 
-namespace WebAPIClient {
+namespace AnalyticsQuickStart {
   class Program {
-    static RingCentral.RestClient rcClient;
-    static void Main(string[] args){
-	rcClient = new RestClient(
-	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-	rcClient.Authorize(
-	    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
-	getAggregateData(rcClient);
-	getTimelineData(rcClient);
-    }   
-    private static async void getAggregateData(RingCentral.RestClient rcClient) {
-	var jsonRequestObject = loadJson("aggregate-data-request.json");
-	var response = await rcClient.Post("/analytics/calls/v1/accounts/~/aggregation/fetch", jsonRequestObject);
-	Console.WriteLine("---- Aggregate Data ----");
-	Console.WriteLine(await response.Content.ReadAsStringAsync());
+    static RestClient restClient;
+
+    static async Task Main(string[] args){
+      try
+      {
+        const string envFileName = ".env";
+        // Remember to modify the path of your .env file location!
+        String root = Directory.GetCurrentDirectory();
+        DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { Path.Combine(root, envFileName) }));
+
+        restClient = new RestClient(
+            Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+            Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+            Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+
+        await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
+
+        await read_analytics_aggregate_data();
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
-      private static async void getTimelineData(RingCentral.RestClient rcClient) {     
-	  var jsonRequestObject = loadJson("timeline-data-request.json");
-	  var response = await rcClient.Post("/analytics/calls/v1/accounts/~/timeline/fetch?interval=Day", jsonRequestObject);
-	  Console.WriteLine("---- TimeLine Data ----");
-	  Console.WriteLine(await response.Content.ReadAsStringAsync());
+    /*
+      Read aggregate analytics data for a period of time and grouped by users
+    */
+    static private async Task read_analytics_aggregate_data()
+    {
+      try
+      {
+        var bodyParams = new AggregationRequest();
+        bodyParams.grouping = new Grouping();
+        bodyParams.grouping.groupBy = "Users";
+        bodyParams.timeSettings = new TimeSettings();
+        bodyParams.timeSettings.timeZone = "America/Los_Angeles";
+        bodyParams.timeSettings.timeRange = new TimeRange();
+        // Change the "timeFrom" value accordingly so that it does not exceed 184 days from the current date and time
+        // The specified time is UTC time. If you want the timeFrom and timeTo your local time, you have to convert
+        // your local time to UTC time!
+        bodyParams.timeSettings.timeRange.timeFrom = "2023-01-01T00:00:00.000Z";
+        bodyParams.timeSettings.timeRange.timeTo = "2023-02-15T23:59:59.999Z";
+        bodyParams.responseOptions = new AggregationResponseOptions();
+        bodyParams.responseOptions.counters = new AggregationResponseOptionsCounters();
+        bodyParams.responseOptions.counters.allCalls = new AggregationResponseOptionsCountersAllCalls();
+        bodyParams.responseOptions.counters.allCalls.aggregationType = "Sum";
+
+        var queryParams = new AnalyticsCallsAggregationFetchParameters();
+        queryParams.perPage = 100;
+        var response = await restClient.Analytics().Calls().V1().Accounts("~").Aggregation().Fetch().Post(bodyParams, queryParams);
+        Console.WriteLine(JsonConvert.SerializeObject(response, Formatting.Indented));
       }
-      
-      // Helper function to load the JSON file, make sure to edit this based on your requirements
-      private static JObject loadJson(string filePath) {
-	  string result = string.Empty;
-	  using (StreamReader r = new StreamReader(filePath)) {
-	      var jsonString = r.ReadToEnd();
-	      JObject jsonObject = JObject.Parse(jsonString);
-	      return jsonObject;
-	  }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
       }
+    }
   }
 }

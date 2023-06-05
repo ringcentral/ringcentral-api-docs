@@ -1,6 +1,6 @@
 # Fax Multipart Formats
 
-Fax documents can be packaged using two different MIME formats: `multipart/form-data` and `multipart/mixed`. The distinction between these two formats is nuanced. If you are using a RingCentral SDK then it is not entirely necessary to know the difference as the SDK takes care of packaging for you. However, if you are writing your own client to transmit faxes, then this guide will help you encode your MIME attachments properly. 
+Fax documents can be packaged using two different MIME formats: `multipart/form-data` and `multipart/mixed`. The distinction between these two formats is nuanced. If you are using a RingCentral SDK then it is not entirely necessary to know the difference as the SDK takes care of packaging for you. However, if you are writing your own client to transmit faxes, then this guide will help you encode your MIME attachments properly.
 
 ## Send a Fax Using multipart/form-data
 
@@ -99,4 +99,3 @@ Hello, World!
 
 --Boundary_1_14413901_1361871080888--
 ```
-

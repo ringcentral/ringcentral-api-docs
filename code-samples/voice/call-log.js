@@ -15,7 +15,7 @@ platform.on(platform.events.loginSuccess, () => {
 
 async function read_user_calllog() {
   try {
-    var resp = await platform.get('/account/~/extension/~/call-log', {
+    var resp = await platform.get('/restapi/v1.0/account/~/extension/~/call-log', {
       view: 'Detailed'
     })
     var jsonObj = await resp.json()
