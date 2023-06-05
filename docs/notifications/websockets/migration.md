@@ -37,14 +37,16 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
     
 === "Python"
 
-    Upgrade [ringcentral-python](https://pypi.org/project/ringcentral/) to version TODO or later.
-    
-    **Before** 
+    Upgrade [ringcentral-python](https://pypi.org/project/ringcentral/) to version 0.8.0 or later.
+	
+	**Before**
     ```python
+    {!> code-samples/websockets/migration-before.py !} 
     ```
-    
+   
     **After**
     ```python
+    {!> code-samples/websockets/migration-after.py !} 
     ```
 
 === "PHP"

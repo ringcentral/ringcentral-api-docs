@@ -9,6 +9,9 @@ plugins:
       repository: ringcentral/ringcentral-api-docs
       branch: main
   - bootstrap-tables
+  - exclude:
+      regex:
+        - '^#.*'
   - ringcentral-api-index:
       outfile: basics/api-index.md
 
