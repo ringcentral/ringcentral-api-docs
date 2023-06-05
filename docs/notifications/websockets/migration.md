@@ -37,15 +37,98 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
 	
 === "Python"
 
-    Upgrade [ringcentral-python](https://pypi.org/project/ringcentral/) to version TODO or later.
+    Upgrade [ringcentral-python](https://pypi.org/project/ringcentral/) to version 0.8.0 or later.
 	
 	**Before**
-	```js
-	```
-	
-	**After**
-	```js
-	```
+```python
+import os
+import sys
+
+from dotenv import load_dotenv
+from ringcentral import SDK
+from multiprocessing import Process
+from time import sleep
+from ringcentral.subscription import Events
+load_dotenv()
+
+rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
+             os.environ.get('RC_CLIENT_SECRET'),
+             os.environ.get('RC_SERVER_URL') )
+platform = rcsdk.platform()
+try:
+  platform.login( jwt=os.environ.get('RC_JWT') )
+except Exception as e:
+  sys.exit("Unable to authenticate to platform: " + str(e))
+
+def on_message(msg):
+    print (msg)
+
+def pubnub():
+    try:
+        s = rcsdk.create_subscription()
+        s.add_events([{FILTERS}]) # replace {FILTERS} with filter urls
+        s.on(Events.notification, on_message)
+        res = s.register()
+        try:
+            print("Wait for notification...")
+        except Exception as e:
+            print (e)
+            sys.exit(1)
+        while True:
+            sleep(0.1)
+
+    except KeyboardInterrupt:
+        print("Pubnub listener stopped...")
+
+p = Process(target=pubnub)
+try:
+    p.start()
+except KeyboardInterrupt:
+    p.terminate()
+    print("Stopped by User")
+    sys.exit(1)
+```
+
+**After**
+```python
+from ringcentral import SDK
+from dotenv import load_dotenv
+import asyncio
+import os
+from ringcentral.websocket.events import WebSocketEvents
+
+def on_notification(message):
+    print(message)
+
+def on_sub_created(sub):
+    print(sub.get_subscription_info())
+
+def on_ws_created(web_socket_client):
+    print(web_socket_client.get_connection_info())
+
+async def subscribe():
+    load_dotenv(override=True)
+    sdk = SDK(
+        os.environ['RINGCENTRAL_CLIENT_ID'],
+        os.environ["RINGCENTRAL_CLIENT_SECRET"],
+        os.environ["RINGCENTRAL_SERVER_URL"],
+    )
+    platform = sdk.platform()
+    platform.login(jwt=os.environ["RINGCENTRAL_JWT_TOKEN"])
+
+    try:
+        web_socket_client = sdk.create_web_socket_client()
+        web_socket_client.on(WebSocketEvents.connectionCreated, on_ws_created)
+        web_socket_client.on(WebSocketEvents.subscriptionCreated, on_sub_created)
+        web_socket_client.on(WebSocketEvents.receiveSubscriptionNotification, on_notification)
+        await asyncio.gather(
+            web_socket_client.create_new_connection(), 
+            web_socket_client.create_subscription([{FILTERS}]) # replace {FILTERS} with filter urls
+        )
+    except KeyboardInterrupt:
+        print("Stopped by User")
+
+```
 
 === "PHP"
 

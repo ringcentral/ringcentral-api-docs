@@ -1,52 +1,50 @@
-#!/usr/bin/python
+# Need a .env file with following fields
+# RINGCENTRAL_SERVER_URL=
+# RINGCENTRAL_CLIENT_ID=
+# RINGCENTRAL_CLIENT_SECRET=
+# RINGCENTRAL_JWT_TOKEN=
 
-# You get the environment parameters from your 
-# application dashbord in your developer account 
-# https://developers.ringcentral.com
-
-import os
-import sys
- 
-from dotenv import load_dotenv
 from ringcentral import SDK
-from multiprocessing import Process
-from time import sleep
-from ringcentral.subscription import Events
-load_dotenv()
+from dotenv import load_dotenv
+import asyncio
+import os
+from ringcentral.websocket.events import WebSocketEvents
 
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
-             os.environ.get('RC_SERVER_URL') )
-platform = rcsdk.platform()
-try:
-  platform.login( jwt=os.environ.get('RC_JWT') )
-except Exception as e:
-  sys.exit("Unable to authenticate to platform: " + str(e))
+def on_notification(message):
+    print("\n Subscription notification:\n")
+    print(message)
 
-def on_message(msg):
-    print (msg)
+def on_sub_created(sub):
+    print("\n Subscription created:\n")
+    print(sub.get_subscription_info())
+    print("\n Please go and change your user status \n")
 
-def pubnub():
+def on_ws_created(web_socket_client):
+    print("\n New WebSocket connection created:")
+    print(web_socket_client.get_connection_info())
+
+async def main():
+    load_dotenv(override=True)
+    sdk = SDK(
+        os.environ['RINGCENTRAL_CLIENT_ID'],
+        os.environ["RINGCENTRAL_CLIENT_SECRET"],
+        os.environ["RINGCENTRAL_SERVER_URL"],
+    )
+    platform = sdk.platform()
+    platform.login(jwt=os.environ["RINGCENTRAL_JWT_TOKEN"])
+
     try:
-        s = rcsdk.create_subscription()
-        s.add_events(['/account/~/extension/~/message-store/instant?type=SMS'])
-        s.on(Events.notification, on_message)
-        res = s.register()
-        try:
-            print("Wait for notification...")
-        except Exception as e:
-            print (e)
-            sys.exit(1)
-        while True:
-            sleep(0.1)
-
+        web_socket_client = sdk.create_web_socket_client()
+        web_socket_client.on(WebSocketEvents.connectionCreated, on_ws_created)
+        web_socket_client.on(WebSocketEvents.subscriptionCreated, on_sub_created)
+        web_socket_client.on(WebSocketEvents.receiveSubscriptionNotification, on_notification)
+        await asyncio.gather(
+            web_socket_client.create_new_connection(), 
+            web_socket_client.create_subscription(["/restapi/v1.0/account/~/extension/~/presence"])
+        )
     except KeyboardInterrupt:
-        print("Pubnub listener stopped...")
+        print("Stopped by User")
 
-p = Process(target=pubnub)
-try:
-    p.start()
-except KeyboardInterrupt:
-    p.terminate()
-    print("Stopped by User")
-    sys.exit(1)
+
+if __name__ == "__main__":
+    asyncio.get_event_loop().run_until_complete(main())

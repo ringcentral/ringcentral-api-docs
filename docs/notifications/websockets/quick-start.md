@@ -161,7 +161,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ ruby websockets.rb
     ```
 
-<!--
 === "Python"
 
     ### Install RingCentral Python SDK
@@ -170,23 +169,25 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ pip install ringcentral python-dotenv
     ```
 
-    ### Create and edit websockets.py
+    ### Create and edit websocket_quick_start.py
 
-    Create a file called <tt>websockets.py</tt> using the contents below.
+    Create a file called <tt>websocket_quick_start.py</tt> using the contents below.
 
     ```python
     {!> code-samples/websockets/quick-start.py !} 
     ```
+
+    ### fill in .env file
+
+    You'll need RINGCENTRAL_SERVER_URL, RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET and RINGCENTRAL_JWT_TOKEN. All of them can be generated from developer portal.
 
     ### Run your code
 
     You are almost done. Now run your script.
 
     ```bash
-    $ python websockets.py
+    $ python websocket_quick_start.py
     ```
-
--->
 
 === "PHP"
 
