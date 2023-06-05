@@ -131,5 +131,5 @@ The RingCentral Video Client SDK is currently in beta. The latest version suppor
 
 ## Known issues and limitations
 
-* RingCentral Video does not currently support mobile web browsers, including mobile Safari and Chrome. Therefore the Video Client Javascript SDK is not currently supported on mobile devices. However, apps built using the iOS and Android SDKs are supported. If you require mobile web support, please [cast your vote in our Ideas Portal](https://ideas.ringcentral.com/ideas/CUSTCOM-I-402).
+* RingCentral Video does not currently support mobile the mobile Saafari web browser. Therefore the Video Client Javascript SDK is not currently supported on iOS devices. However, apps built using the iOS and Android SDKs are supported. If you require mobile web support, please [cast your vote in our Ideas Portal](https://ideas.ringcentral.com/ideas/CUSTCOM-I-402).
 
