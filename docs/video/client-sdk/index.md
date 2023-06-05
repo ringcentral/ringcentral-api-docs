@@ -113,11 +113,11 @@ The RingCentral Video Client SDK is currently in beta. The latest version suppor
       <tr>
         <th scope="row">Access to a live transcription of the meeting</th>
         <td class="text-success ps-5">✓</td>
-        <td>Coming soon to future beta build</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Closed captioning</th>
-        <td>Coming soon to future beta build</td>
+        <td class="text-success ps-5">✓</td>
         <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
