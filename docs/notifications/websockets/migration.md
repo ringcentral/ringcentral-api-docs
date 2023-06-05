@@ -32,120 +32,72 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
 === "Javascript"
 
     Upgrade [ringcentral-js](https://www.npmjs.com/package/@ringcentral/sdk) to version TODO or later.
-	
-    There are no code changes you will need to make. When you upgrade to the latest version of the SDK, it will automatically begin using WebSockets if you were once using PubNub. 
-	
+    
+    There are no code changes you will need to make. When you upgrade to the latest version of the SDK, it will automatically begin using WebSockets if you were once using PubNub.
+    
 === "Python"
 
     Upgrade [ringcentral-python](https://pypi.org/project/ringcentral/) to version TODO or later.
-	
-	**Before**
-	```js
-	```
-	
-	**After**
-	```js
-	```
+    
+    **Before** 
+    ```python
+    ```
+    
+    **After**
+    ```python
+    ```
 
 === "PHP"
 
     Upgrade [ringcentral-php](https://github.com/ringcentral/ringcentral-php) to version 3.0.0 or later.
-	
-	**Before**
-```php
-use RingCentral\SDK\Subscription\Events\NotificationEvent;
-use RingCentral\SDK\Subscription\Subscription;
-
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
-                                  $_ENV['RC_SERVER_URL'] );
-$platform = $rcsdk->platform();
-$platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
-
-$subscription = $rcsdk->createSubscription('Pubnub');
-$subscription->addEvents(array('/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'));
-$subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) {
-    print_r($e->payload()['body']);
-});
-$subscription->setKeepPolling(true);
-$subscription->register();
-```
-	
-	**After**
-```php
-<?php
-
-use RingCentral\SDK\WebSocket\WebSocket;
-use RingCentral\SDK\WebSocket\Subscription;
-use RingCentral\SDK\WebSocket\Events\NotificationEvent;
-
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
-                                  $_ENV['RC_SERVER_URL'] );
-$platform = $rcsdk->platform();
-$platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
-
-$websocket = $rcsdk->initWebSocket();
-$websocket->connect();
-
-$subscription = $rcsdk->createSubscription();
-$subscription->addEvents(array('/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'));
-$subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) {
-    print 'Notification ' . print_r($e->payload(), true) . PHP_EOL;
-});
-$subscription->register();
-```
+    
+    **Before**
+    ```php
+    {!> code-samples/websockets/migration-before.php !} 
+    ```
+    
+    **After**
+    ```php
+    {!> code-samples/websockets/migration-after.php !} 
+    ```
 
 === "Java"
 
     Upgrade [ringcentral-java](https://mvnrepository.com/artifact/com.ringcentral/ringcentral) to version TODO or later.
-	
-	**Before**
-	```js
-	```
-	
-	**After**
-	```js
-	```
+    
+    **Before**
+    ```java
+    ```
+    
+    **After**
+    ```java
+    ```
 
 === "C#"
 
     Upgrade [ringcentral-???]() to version TODO or later.
-	
-	**Before**
-	```js
-	```
-	
-	**After**
-	```js
-	```
+    
+    **Before**
+    ```c#
+    ```
+    
+    **After**
+    ```c#
+    ```
 
 === "Ruby"
 
     Upgrade [ringcentral-ruby](https://rubygems.org/gems/ringcentral-sdk/versions/0.8.1) to version TODO or later.
-	
-	**Before**
-	```js
-    events = [
-        '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
-    ]
-    subscription = PubNub.new($rc, events, lambda { |message|
-        callback.call(message)
-    })
-    subscription.subscribe()
-	```
-	
-	**After**
-	```js
-    events = [
-        '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
-    ]
-    s = rcsdk.create_subscription()
-    s.add_events( events )
-    s.on( Events.notification, lambda { |message| 
-	     callback.call(message) })
-    res = s.subscribe()
-	```
+    
+    **Before**
+    ```ruby
+    {!> code-samples/websockets/migration-before.rb !} 
+    ```
+    
+    **After**
+    ```ruby
+    {!> code-samples/websockets/migration-after.rb !} 
+    ```
 
 ## Remove the PubNubSubscription app scope from your application
 
