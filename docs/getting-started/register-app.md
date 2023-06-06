@@ -62,11 +62,11 @@ Select the authentication method your app will utilize to connect to the platfor
 
 #### Should I enable refresh tokens?
 
-Access keys issued through the OAuth authorization flow expire automatically after a short period of time. Refresh tokens are used to keep access keys you have stored locally active. If you desire users to authenticate once to your platform, and not be asked to login again, then you should enable refresh tokens.
+Access tokens issued through the OAuth authorization flow expire automatically after a short period of time. Refresh tokens are used to keep access tokens you have stored locally active. If you desire users to authenticate once to your platform, and not be asked to login again, then you should enable refresh tokens.
 
-When refresh tokens are enabled, an additional "refresh token" will be issued to your application. This token can be presented to RingCentral in order to obtain a new access key, which can then replace the previously issued access key. 
+When refresh tokens are enabled, an additional "refresh token" will be issued to your application. This token can be presented to RingCentral in order to obtain a new access token, which can then replace the previously issued access token. 
 
-To keep access keys from ever expiring, developers should implement a recurring background task that will wake up at leasrt once per day, iterate over all access keys stored locally, and exchange their refresh token for a new access key. If this is reliably done, then users will not need to relogin because their auth session will remain fresh and active. 
+To keep access tokens from ever expiring, developers should implement a recurring background task that will wake up at leasrt once per day, iterate over all access tokens stored locally, and exchange their refresh token for a new access token. If this is reliably done, then users will not need to relogin because their auth session will remain fresh and active. 
 
 ## Configure your app's security settings
 

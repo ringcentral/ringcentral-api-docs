@@ -1,7 +1,7 @@
-# Using access keys
+# Using access tokens
 
 !!! info "Need help authenticating your application?"
-    This guide is intended to assist developers in using access keys once they have been acquired by going through one of authorization flows:
+    This guide is intended to assist developers in using access tokens once they have been acquired by going through one of authorization flows:
           
     * [Auth code flow](../auth-code-flow/)
     * [Auth code with PKCE flow](../auth-code-pkce-flow/)
@@ -9,11 +9,11 @@
 
 Tokens are used to provide a context in each request for authorization or authentication. It is important to understand distinctions between token types:
 
-* An **access key** is a token issued by authorization server and used by the application to make requests to all endpoints which require authentication.
+* An **access token** is a token issued by authorization server and used by the application to make requests to all endpoints which require authentication.
 
-* A **refresh token** can be provided alongside the access key during authorization. It is a single-use token used to fetch a new access key before it expires. The refresh token itself cannot be used to access protected resources.
+* A **refresh token** can be provided alongside the access token during authorization. It is a single-use token used to fetch a new access token before it expires. The refresh token itself cannot be used to access protected resources.
 
-## Access key expiration and invalidation
+## Access token expiration and invalidation
 
 Tokens may be invalidated for any of the following reasons:
 
@@ -23,9 +23,9 @@ Tokens may be invalidated for any of the following reasons:
 
 In an expired or invalidated token is used, RingCentral will respond with an HTTP error of "401 Unauthorized."
 
-When tokens expire or are invalidated, applications must obtain a new access key. 
+When tokens expire or are invalidated, applications must obtain a new access token. 
 
-## Access key revocation
+## Access token revocation
 
 There are some situations when the user may want to revoke the already granted access in order to stop application activity. To revoke access/refresh token the following request is used:
 
@@ -55,13 +55,13 @@ token=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0
   nYOPxO0flEwO6Ffoq9Tlqs1s
 ```
 
-## Using access keys to call RingCentral APIs
+## Using access tokens to call RingCentral APIs
 
 Once an access token is obtained, it should be transmitted with each call to the RingCentral API using one of the following methods:
 
 #### Option 1: Bearer (recommended)
 
-Transmit the access key by way of the HTTP Bearer authentication scheme. For example:
+Transmit the access token by way of the HTTP Bearer authentication scheme. For example:
 
 ```http hl_lines="2"
 GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828
@@ -73,7 +73,7 @@ Connection: keep-alive
 
 #### Option 2. Access token query parameter
 
-Transmit the access key as a query parameter specified as a value. For example:
+Transmit the access token as a query parameter specified as a value. For example:
 
 ```http hl_lines="1-2"
 GET /restapi/v1.0/account/1110475004/extension/1110475004/address-book/contact/29874662828

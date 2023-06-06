@@ -4,7 +4,7 @@ Every app needs to first authenticate itself and the user it will be acting on b
 
 ## What auth flow is right for my app?
 
-There are two primary authorization flows a developer can use to obtain an access key to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. These two methods are:
+There are two primary authorization flows a developer can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. These two methods are:
 
 1. **OAuth**. Best for authenticating individual users an app may act on behalf of
 2. **JWT**. Best for authenticating a server connecting to the API

@@ -117,7 +117,7 @@ Here are a few other things you may consider implementing for your bot:
 
 * Respond to a UserAdded event, and when you detect that the bot has been added to a chat, post a message to that chat introducing the bot to everyone.
 * Implement a `help` command that will respond with a list of commands your bot is capable of responding to.
-* If your bot will be installed by users outside of your own organization, you will need to implement a persistence layer to store the API access keys associated with each of the organizations that have installed your bot.
+* If your bot will be installed by users outside of your own organization, you will need to implement a persistence layer to store the API access tokens associated with each of the organizations that have installed your bot.
 
 !!! tip "Fork this bot on Github"
     Feel free to save time by forking the bot discussed in this walkthrough at [Github](https://github.com/ringcentral-tutorials/ringcentral-bot-nodejs-demo.git).

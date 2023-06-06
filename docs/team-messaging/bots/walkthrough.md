@@ -64,7 +64,7 @@ Before you create your bot app, you will need to set the OAuth redirect URL. Int
 
 > https://77c83694.ngrok.io/oauth
 
-This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access key for the account of the user performing the installation.
+This URL will be invoked whenever your bot is installed, and will be the means by which you obtain an access token for the account of the user performing the installation.
 
 
 ## Step 3. Clone and setup the sample application
