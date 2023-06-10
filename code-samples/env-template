@@ -44,4 +44,4 @@ RC_BOT_WEBHOOK_URL = ''
 
 # Used in the Webhook notification code samples
 # The following URL is your webhook delivery address
-WEBHOOK_DELEVERY_ADDRESS = ''
+WEBHOOK_DELIVERY_ADDRESS = ''
