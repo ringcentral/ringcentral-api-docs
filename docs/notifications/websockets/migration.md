@@ -54,37 +54,41 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
     Upgrade [ringcentral-php](https://github.com/ringcentral/ringcentral-php) to version 3.0.0 or later.
     
     **Before**
-    ```php
+    ```php hl_lines="11 16"
     {!> code-samples/websockets/migration-before.php !} 
     ```
     
     **After**
-    ```php
+    ```php hl_lines="2 12-13 15"
     {!> code-samples/websockets/migration-after.php !} 
     ```
 
 === "Java"
 
-    Upgrade [ringcentral-java](https://mvnrepository.com/artifact/com.ringcentral/ringcentral) to version TODO or later.
+    Upgrade [ringcentral-java](https://mvnrepository.com/artifact/com.ringcentral/ringcentral) to version 3.0 or later.
     
     **Before**
-    ```java
+    ```java hl_lines="7"
+    {!> code-samples/websockets/migration-before.java !} 
     ```
     
     **After**
-    ```java
+    ```java hl_lines="7"
+    {!> code-samples/websockets/migration-after.java !} 
     ```
 
 === "C#"
 
-    Upgrade [ringcentral-???]() to version TODO or later.
+    Upgrade [RingCentral.Net](https://github.com/ringcentral/RingCentral.Net) to version 6.0 or later.
     
     **Before**
-    ```c#
+    ```c# hl_lines="10 18-19 22"
+    {!> code-samples/websockets/migration-before.cs !} 
     ```
     
     **After**
-    ```c#
+    ```c# hl_lines="3 10 18-19 22"
+    {!> code-samples/websockets/migration-after.cs !} 
     ```
 
 === "Ruby"

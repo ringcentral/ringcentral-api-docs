@@ -5,4 +5,4 @@ s = rcsdk.create_subscription()
 s.add_events( events )
 s.on( Events.notification, lambda { |message| 
         callback.call(message) })
-res = s.subscribe()
+s.subscribe()

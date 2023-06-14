@@ -1,5 +1,4 @@
 <?php
-
 use RingCentral\SDK\WebSocket\WebSocket;
 use RingCentral\SDK\WebSocket\Subscription;
 use RingCentral\SDK\WebSocket\Events\NotificationEvent;
