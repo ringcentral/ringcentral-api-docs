@@ -1,0 +1,19 @@
+[
+  {
+    "type": "ConnectionDetails",
+    "messageId": "XXX",
+    "status": 200,
+    
+    "wsc": {
+        "sequence": 1,                 
+        "token": "G86G3HLB9HJH45MU7D"
+       }
+  },
+  {
+    "creationTime": "2020-01-15T12:00:01Z",
+    "recoveryState": "Successful",       
+    "recoveryTimeout": 30,           
+    "recoveryBufferSize": 100,
+    ... 
+  }
+]

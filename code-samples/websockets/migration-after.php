@@ -1,14 +1,7 @@
 <?php
-/* You get the environment parameters from your 
-   application dashbord in your developer account 
-   https://developers.ringcentral.com */
-   
-require('vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-use RingCentral\SDK\Subscription\Events\NotificationEvent;
-use RingCentral\SDK\Subscription\Subscription;
+use RingCentral\SDK\WebSocket\WebSocket;
+use RingCentral\SDK\WebSocket\Subscription;
+use RingCentral\SDK\WebSocket\Events\NotificationEvent;
 
 $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
                                   $_ENV['RC_CLIENT_SECRET'],
@@ -16,11 +9,12 @@ $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
 $platform = $rcsdk->platform();
 $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
 
-$subscription = $rcsdk->createSubscription('Pubnub');
+$websocket = $rcsdk->initWebSocket();
+$websocket->connect();
+
+$subscription = $rcsdk->createSubscription();
 $subscription->addEvents(array('/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'));
 $subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) {
-    print_r($e->payload()['body']);
+    print 'Notification ' . print_r($e->payload(), true) . PHP_EOL;
 });
-$subscription->setKeepPolling(true);
 $subscription->register();
-?>

@@ -1,0 +1,6 @@
+[
+  {
+    "type": "Heartbeat",
+    "messageId": "<message_id>"
+  }
+]

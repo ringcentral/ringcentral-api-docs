@@ -1,0 +1,17 @@
+[
+  {
+    "type" : "ClientRequest",
+    "messageId" : "11618510-987d-442e-8dcf-0640b82e4ff5",
+    "method" : "POST",
+    "path" : "/restapi/v1.0/subscription/"
+  },
+  {
+    "eventFilters": [
+      "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS",
+      "/restapi/v1.0/account/~/extension/~/voicemail"
+    ],
+    "deliveryMode": {
+      "transportType": "WebSocket"
+    }
+  }
+]

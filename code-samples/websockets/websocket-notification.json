@@ -1,0 +1,33 @@
+[
+  {
+    "type": "ServerNotification",
+    "messageId": "2661273919712564939",
+    "status": 200,
+    "headers": {
+      "RCRequestId": "265348d0-xxxx-xxxx-xxxx-005056a62c0c"
+    }
+  },
+  {
+    "uuid": "2661273919712564939",
+    "event": "/restapi/v1.0/account/233676004/extension/233676004/message-store",
+    "timestamp": "2023-04-18T20:25:24.611Z",
+    "subscriptionId": "2db5fcc4-xxxx-xxxx-xxxx-fa9b78dd9a55",
+    "ownerId": "233676004",
+    "body": {
+      "accountId": 233676004,
+      "extensionId": 233676004,
+      "lastUpdated": "2023-04-18T20:25:15.775Z",
+      "changes": [
+        {
+          "type": "Pager",
+          "newCount": 2,
+          "updatedCount": 0,
+          "newMessageIds": [
+            12756735005,
+            12756737005
+          ]
+        }
+      ]
+    }
+  }
+]
