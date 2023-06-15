@@ -46,6 +46,15 @@ Giving someone a JWT credential is akin to you giving someone your username and 
 
 2. **Restrict the credential to be used by a specific list of trusted applications**. This is the best and only way to create a credential that can be safely shared with someone outside your company. It is "safe" because you have to explicitly grant an application permission to use it, so even if the credential was compromised, it can't be used to connect to your account easily. 
 
+### Creating JWT credentials on behalf of others
+
+Developer Admins have the ability to create JWT auth credentials on behalf of other developers. To create a JWT credential for someone else, that person must first login to the Developer Console. Then the admin can:
+
+* Click the "Organization" tab from the Developer Console dashboard
+* In the list of developers, click the name of the developer who needs a credential
+* Click the "Credentials" tab from the user's profile page
+* Create a credential as usual
+
 ## How to restrict usage of a JWT to an specific application
 
 For added security, especially when you intend to share your JWT with a third-party, we recommend you restrict your JWT to be used with a finite list of apps. To restrict a JWT to be used with only a specific app, you will need to ask the application developer for the client ID of their application. 
