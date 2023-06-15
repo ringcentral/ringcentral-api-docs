@@ -1,5 +1,7 @@
 # Subscribing to Real-time Push Notifications
 
+{! mdx_includes/pubnub-deprecation.md !}
+
 The typical subscription flow is performed as follows:
 
 - A client application subscribes to the required events through the RingCentral API. In response the server provides all necessary information for the application to connect to the transport facilities that deliver the notifications: channel address; if required - credentials to access the channel, and notification payload encryption keys.

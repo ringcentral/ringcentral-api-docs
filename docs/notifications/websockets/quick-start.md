@@ -1,6 +1,6 @@
 style: quick-start
 
-# PubNub notifications Quick Start
+# WebSockets Quick Start
 
 {! mdx_includes/pubnub-deprecation.md !}
 
@@ -12,7 +12,7 @@ In this Quick Start, we are going to help you subscribe for PubNub push notifica
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Notifications App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Push+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+an+SMS+Notification+RingCentral&grantType=JWT&&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Notifications App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Push+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+subscribing+to+events+via+Web+Sockets&grantType=JWT&&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=WebSocketsSubscriptions&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create WebSockets App</a>
 <a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
@@ -23,8 +23,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li>Under "Auth" select "JWT auth flow."
 <li>Under "Security" add the following permissions:
   <ul>
-    <li>WebhookSubscriptions</li>
-    <li>SMS</li>
+    <li>WebSocketsSubscriptions</li>
   </ul>
 </li>
 <li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
@@ -43,7 +42,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
      * `RC_JWT` - set to the [JWT credential you created](../../../authentication/jwt/create-jwt) for yourself
 
-## Subscribe to a push notification
+## Subscribe to an event via WebSockets
 
 === "Javascript"
 
@@ -55,12 +54,12 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 	$ npm install dotenv --save
     ```
 
-    ### Create and edit pubnub-notification.js
+    ### Create and edit websockets.js
 
-    Create a file called <tt>pubnub-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
+    Create a file called <tt>websockets.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```javascript
-    {!> code-samples/pubnub/quick-start.js !} 
+    {!> code-samples/websockets/quick-start.js !} 
     ```
 
     ### Run your code
@@ -68,56 +67,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     You are almost done. Now run your script.
 
     ```bash
-    $ node pubnub-notification.js
-    ```
-
-=== "Python"
-
-    ### Install RingCentral Python SDK
-
-    ```bash
-    $ pip install ringcentral python-dotenv
-    ```
-
-    ### Create and Edit pubnub_notification.py
-
-    Create a file called <tt>pubnub_notification.py</tt> using the contents below.
-
-    ```python
-    {!> code-samples/pubnub/quick-start.py !} 
-    ```
-
-    ### Run your code
-
-    You are almost done. Now run your script.
-
-    ```bash
-    $ python pubnub_notification.py
-    ```
-
-=== "PHP"
-
-    ### Install RingCentral PHP SDK
-
-    ```php
-    $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
-    ```
-
-    ### Create and edit pubnub-notification.php
-
-    Create a file called <tt>pubnub-notification.php</tt> using the contents below.
-
-    ```php
-    {!> code-samples/pubnub/quick-start.php !}
-    ```
-
-    ### Run your code
-
-    You are almost done. Now run your script.
-
-    ```bask
-    $ php pubnub-notification.php
+    $ node websockets.js
     ```
 
 === "C#"
@@ -135,7 +85,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```c#
-    {!> code-samples/pubnub/quick-start.cs !} 
+    {!> code-samples/websockets/quick-start.cs !} 
     ```
 
     ### Run your app
@@ -161,12 +111,12 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create a new Java Class
 
-    Select "File -> New -> Class" to create a new Java class named "PubNub_Notifications"
+    Select "File -> New -> Class" to create a new Java class named "WebSockets_Notifications"
 
     ```java
-    package PubNub_Notifications;
+    package WebSockets_Notifications;
 
-    public class PubNub_Notifications {
+    public class WebsSockets_Notifications {
 
         public static void main(String[] args) {
             // TODO Auto-generated method stub
@@ -175,12 +125,12 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     }
     ```
 
-    ### Edit the file "PubNub_Notifications.java".
+    ### Edit the file "WebSockets_Notifications.java".
 
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/PubNubQuickStart.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/WebSocketQuickStart.java !} 
     ```
 
     ### Run your app
@@ -195,12 +145,12 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ gem install ringcentral-sdk dotenv
     ```
 
-    ### Create and edit pubnub_notification.rb
+    ### Create and edit websockets.rb
 
-    Create a file called <tt>pubnub_notification.rb</tt> using the contents below.
+    Create a file called <tt>websockets.rb</tt> using the contents below.
 
     ```ruby
-    {!> code-samples/pubnub/quick-start.rb !} 
+    {!> code-samples/websockets/quick-start.rb !} 
     ```
 
     ### Run your code
@@ -208,9 +158,62 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     You are almost done. Now run your script.
 
     ```bash
-    $ ruby pubnub_notification.rb
+    $ ruby websockets.rb
     ```
 
-## Graduate Your App
+=== "Python"
 
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.
+    ### Install RingCentral Python SDK
+
+    ```bash
+    $ pip install ringcentral python-dotenv
+    ```
+
+    ### Create and edit websocket_quick_start.py
+
+    Create a file called <tt>websocket_quick_start.py</tt> using the contents below.
+
+    ```python
+    {!> code-samples/websockets/quick-start.py !} 
+    ```
+
+    ### fill in .env file
+
+    You'll need RINGCENTRAL_SERVER_URL, RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET and RINGCENTRAL_JWT_TOKEN. All of them can be generated from developer portal.
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python websocket_quick_start.py
+    ```
+
+=== "PHP"
+
+    ### Install RingCentral PHP SDK
+
+    ```php
+    $ curl -sS https://getcomposer.org/installer | php
+    $ php composer.phar require ringcentral/ringcentral-php vlucas/phpdotenv
+    ```
+
+    ### Create and edit websockets.php
+
+    Create a file called <tt>websockets.php</tt> using the contents below.
+
+    ```php
+    {!> code-samples/websockets/quick-start.php !}
+    ```
+
+    ### Run your code
+
+    You are almost done. Now run your script.
+
+    ```bask
+    $ php websockets.php
+    ```
+
+## Test your WebSocket subscription
+
+Now that your sample app is running, trigger a notification by sending yourself an SMS. 

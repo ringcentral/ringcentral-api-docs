@@ -1,6 +1,6 @@
-# Selecting the events you want to be receive as webhooks
+# Selecting the events you want to subscribe to
 
-For any given account, RingCentral can generate literally hundreds if not thousands of events. Such a flood of events could easily overwhelm a server. Developers therefore should specify an event filter to determine which specific events they would like to be notified of. A [complete and authoritative list of event filters](https://developers.ringcentral.com/api-reference/Account-Presence-Event) can be found in our API Reference. The list below shows some of the more common events developers subscribe to.
+For any given account, RingCentral can generate literally hundreds, if not thousands of events. Such a flood of events could easily overwhelm a server. Developers therefore should specify an event filter to determine which specific events they would like to be notified of. A [complete and authoritative list of event filters](https://developers.ringcentral.com/api-reference/Account-Presence-Event) can be found in our API Reference. The list below shows some of the more common events developers subscribe to.
 
 ### SMS Events
 
