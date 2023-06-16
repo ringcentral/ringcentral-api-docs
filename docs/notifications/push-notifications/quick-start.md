@@ -51,7 +51,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ```bash
     $ npm install @ringcentral/sdk --save
-	$ npm install @ringcentral/subscriptions --save
+	$ npm install @ringcentral/subscriptions-deprecated --save
 	$ npm install dotenv --save
     ```
 

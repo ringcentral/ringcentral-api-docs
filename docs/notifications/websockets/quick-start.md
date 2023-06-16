@@ -46,9 +46,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 === "Javascript"
 
-    ### Install RingCentral JavaScript SDK
+    ### Install RingCentral JavaScript SDK 5.0.0+
 
     ```bash
+    $ npm init # init npm project
     $ npm install @ringcentral/sdk --save
 	$ npm install @ringcentral/subscriptions --save
 	$ npm install dotenv --save
