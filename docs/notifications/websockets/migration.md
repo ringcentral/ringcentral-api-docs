@@ -31,7 +31,7 @@ If you use a [RingCentral SDK](../../sdks/), then you will need to update the mo
 
 === "Javascript"
 
-    Upgrade [ringcentral-js](https://www.npmjs.com/package/@ringcentral/sdk) to version TODO or later.
+    Upgrade [ringcentral-js](https://www.npmjs.com/package/@ringcentral/sdk) to version 5.0.0 or later.
     
     There are no code changes you will need to make. When you upgrade to the latest version of the SDK, it will automatically begin using WebSockets if you were once using PubNub.
     
