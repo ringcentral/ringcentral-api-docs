@@ -42,6 +42,15 @@ nav:
 
 # ---- CORE APIs ----
 - 'Primary':
+  - 'Getting Started':
+    - 'Your first API call': 'getting-started/index.md'
+    - 'Register an app': 'getting-started/register-app.md'
+    - 'Create an auth credential': 'getting-started/create-credential.md'
+    - 'Access sandbox': 'getting-started/using-sandbox.md'
+    - 'Build an app': 'getting-started/code-app.md'
+    - 'Sending SMS': 'getting-started/sms.md'
+    - 'Obtain production credentials': 'getting-started/graduate-app.md'
+    - 'Promote your app': 'getting-started/promote-app.md'
   - 'Voice':
     - 'Overview': 'voice/index.md'
     - 'Getting Started': 'voice/quick-start.md'
@@ -70,7 +79,8 @@ nav:
       - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
     - 'Call Logs':
-      - 'Overview': 'voice/call-log/reading-call-log.md'
+      - 'Overview': 'voice/call-log/index.md'
+      - 'Getting started': 'voice/call-log/quick-start.md'
       - 'Call Log data types': 'voice/call-log/api.md'
       - 'Detailed Call Log Data': 'voice/call-log/details.md'
       - 'Data Archival': 'voice/call-log/archival.md'
@@ -298,11 +308,9 @@ nav:
   - 'Applications':
       - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Create an application': 'basics/create-app.md'
-          - 'Develop in sandbox': 'basics/sandbox.md'
-          - 'Graduate to production': 'basics/production.md'
+          - 'Develop in sandbox': 'getting-started/using-sandbox.md'
       - 'App promotion':
-          - 'Submit to the App Gallery': 'basics/app-gallery.md'
+          - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
           - 'Updating a profile': 'basics/update-profile.md'
           - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
@@ -319,14 +327,14 @@ nav:
     - 'Choosing the best auth': 'authentication/index.md'
     - 'JWT grant type':
       - 'Getting started': 'authentication/jwt/quick-start.md'
-      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
       - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
       - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
     - 'Auth code grant type':
       - 'Getting Started': 'authentication/quick-start.md'
+      - 'Keeping access keys fresh': 'authentication/session-keep-alive.md'
       - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
-    - 'Using access tokens': 'authentication/tokens.md'
+    - 'Using access keys': 'authentication/tokens.md'
     - 'Using refresh tokens': 'authentication/refresh-tokens.md'
     - 'Technical deep-dives':
       - 'Auth code flow': 'authentication/auth-code-flow.md'

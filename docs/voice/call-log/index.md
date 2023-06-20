@@ -24,44 +24,6 @@ It can take anywhere between 15-30 seconds for a completed phone call to appear 
 * The [Account Telephony Sessions event](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event) is an event that is triggered whenever the state of a call is changed. This is a more reliably real-time event for determining when calls begin and end. 
 * The [Extension Telephony Sessions event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event) is similar to the Account Telephony Sessions event, but is scoped to a specific user or extension. 
 
-## Get started with the Call Log API
-
-=== "JavaScript"
-
-    ```javascript
-    {!> code-samples/voice/call-log.js !}
-    ```
-
-=== "Python"
-
-    ```python
-    {!> code-samples/voice/call-log.py !}
-    ```
-    
-=== "PHP"
-
-    ```php
-    {!> code-samples/voice/call-log.php !}
-    ```
-
-=== "C#"
-
-    ```c#
-    {!> code-samples/voice/call-log.cs !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/ReadCallLog.java !}
-    ```
-
-=== "Ruby"
-
-    ```ruby
-    {!> code-samples/voice/call-log.rb !}
-    ```    
-
 ## Call Log API Permissions
 
 There are various API Permissions your application will be required to use depending upon the type of call log data developers need to access from the RingCentral API.

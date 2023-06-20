@@ -1,6 +1,6 @@
 # Webinars and webinar sessions
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 Among the first things to learn about the RingCentral Webinar system, is how webinars are structured. Unlike other webinar products, RingCentral has webinars that are heirarchical in nature. Meaning, that if you are hosting a webinar that is part of a series, then one would create a single webinar comprised of multiple sessions. Some examples of a webinar series might be:
 
@@ -23,4 +23,4 @@ A webinar "session" on the other hand is associated with a date and time in whic
 * The scheduled vs actual start and end time
 * The bridge ID of the webinar, used by participants to join a webinar
 
-{! docs/webinar/session-limits.md !}
+{! mdx_includes/webinar-session-limits.md !}

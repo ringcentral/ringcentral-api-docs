@@ -1,15 +1,17 @@
 # Promoting your application in the RingCentral App Gallery
 
+{! mdx_includes/first-api-call-reminder.md !}
+
 RingCentral is a platform that gives developers access to hundreds of thousands of customers across some of the largest brands in the world, including AT&T, Avaya, BT, Telus, Verizon, and more. This guide will help you reach these customers by promoting your app within each brand's dedicated App Gallery. Let's get started!
 
-!!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../update-profile/)"
+!!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../../basics/update-profile/)"
 
 ??? info "How to customize your app for our partner ecosystem"
     To best position and market your product to our brand and distribution partners, learn about their brand guidelines, and how to compose connect buttons for them.
     
-    AT&T Office@Hand and Verizon have [additional technical requirements](../partners/segregated-environments/) developers should be aware of as well.
+    AT&T Office@Hand and Verizon have [additional technical requirements](../../basics/partners/segregated-environments/) developers should be aware of as well.
     
-    Read our [Partner compatibility guide](../partners/) to learn more.
+    Read our [Partner compatibility guide](../../basics/partners/) to learn more.
 
 ## Things to do before you submit your app profile to the app gallery
 
@@ -22,7 +24,7 @@ Developers are encouraged to begin producing their app profile as soon as they a
 
 Not all software developers are the ideal individual within an organization to compose and manage an app's profile which serves a marketing function in the RingCentral App Gallery. 
 
-Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../inviting-developers/).
+Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../../basics/inviting-developers/).
 
 ## In what app galleries will my profile appear?
 
@@ -33,7 +35,7 @@ Your profile once submitted and approved will automatically be published in the 
 By default, your app will be made available to all RingCentral customers, brand partners, and carrier partners. We recommend this setting for most apps to maximize the distribution potential for your product. 
 
 <figure class="figure">
-  <img class="img-fluid mx-auto d-block" src="../app-gallery-public-app.png" style="max-width: 500px">
+  <img class="img-fluid mx-auto d-block" src="../../basics/app-gallery-public-app.png" style="max-width: 500px">
   <figcaption class="figure-caption text-center">Your app will be made available to <em>all partners and app galleries</em></figcaption>
 </figure>
 
@@ -42,7 +44,7 @@ By default, your app will be made available to all RingCentral customers, brand 
 If you wish to only make your app available to specific partners, then expand "Advanced settings", and select "Make available only to specific service providers and brand partners." Then, select the partners you wish to make your app available to. By selecting a partner, you authorize RingCentral to promote your app in that partner's app gallery. 
 
 <figure class="figure">
-  <img class="img-fluid mx-auto d-block" src="../app-gallery-partners.png" style="max-width: 500px">
+  <img class="img-fluid mx-auto d-block" src="../../basics/app-gallery-partners.png" style="max-width: 500px">
   <figcaption class="figure-caption text-center">Your app will be made available to select partners only</figcaption>
 </figure>
 
@@ -61,14 +63,14 @@ An app card is a tile that is shown through out the RingCentral app gallery ecos
 3. Short description
 
 <figure class="figure">
-  <img class="img-fluid mx-auto d-block" src="../app-card.png" style="max-width: 500px">
+  <img class="img-fluid mx-auto d-block" src="../../basics/app-card.png" style="max-width: 500px">
   <figcaption class="figure-caption text-center">Example app card</figcaption>
 </figure>
 
 An app card can be edited in two locations: the app's settings screen, and the app's profile editing screen. 
 
 <figure class="figure">
-  <img class="img-fluid mx-auto d-block" src="../app-card-editor.png" style="max-width: 500px">
+  <img class="img-fluid mx-auto d-block" src="../../basics/app-card-editor.png" style="max-width: 500px">
   <figcaption class="figure-caption text-center">App card editor as seen in app settings</figcaption>
 </figure>
 
@@ -76,11 +78,11 @@ An app card can be edited in two locations: the app's settings screen, and the a
 
 If you have not yet created an app gallery profile, you will be prompted to create one as shown in the following screenshot.
 
-<img class="img-fluid mx-auto d-block" src="../promote-1a.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/promote-1a.png" style="max-width: 500px">
 
 If you have already published an app gallery profile, you will see an option to edit your profile, as well as a list of all the app galleries your profile is currently published within.
 
-<img class="img-fluid mx-auto d-block" src="../promote-1b.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/promote-1b.png" style="max-width: 500px">
 
 ### Tell us about your app
 
@@ -90,19 +92,19 @@ Use the profile editor to compose a profile that is both informative and attract
 
 The name we publish as the developer of the app is determined by your organization's developer profile. That name is easily edited by navigating to the "Organization" tab within the Developer Console. 
 
-<img class="img-fluid mx-auto d-block" src="../profile-org-info.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/profile-org-info.png" style="max-width: 500px">
 
 You will also need to provide us with your company's website URL in the "Organization info" section of the editor. 
 
 Some developers may also see a "Lead email" field. This field is made available exclusively to Premier Partners and allows partners to collect and download leads from people who visit and share their information via the App Gallery. 
 
-<img class="img-fluid mx-auto d-block" src="../profile-info.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/profile-info.png" style="max-width: 500px">
 
 #### Upload screenshots and videos
 
 Arguably one of the most important aspects of your app's profile is the set of screenshots and videos you will upload. This will help customers visualize your product and how it specifically integrates with RingCentral. 
 
-<img class="img-fluid mx-auto d-block" src="../profile-screenshots.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/profile-screenshots.png" style="max-width: 500px">
 
 !!! hint "Screenshot and media best practices"
     The following will help you know what types of media lead to the best conversion rates with customers:
@@ -129,11 +131,11 @@ Will produce profiles with the following names:
 * "My app name for Avaya Cloud Office"
 * etc. 
 
-Learn more about these "[profile variables](../app-gallery-variables/)."
+Learn more about these "[profile variables](../../basics/app-gallery-variables/)."
 
 The detailed description of your integration tells customers what your integration does, what value and benefits it provides, and how it does it. It not only helps to market your integration, but also serves as your integration's documentation. Therefore, the more information you provide, the better. 
 
-<img class="img-fluid mx-auto d-block" src="../profile-description.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/profile-description.png" style="max-width: 500px">
 
 !!! hint "Description best practices"
     Treat your detailed description as you would your integration's documentation. As such, be sure to include the following:
@@ -154,12 +156,12 @@ You can optionally link to other documents as you see fit. These could be whitep
 
 Finally, you can help RingCentral promote your app through the right channels by telling us where and how best to do that. Use the Promotion area to:
 
-* Which [partners and app galleries](../partners/) to promote your app within
-* If you app has implemented the [additional technical requirements](../partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
+* Which [partners and app galleries](../../basics/partners/) to promote your app within
+* If you app has implemented the [additional technical requirements](../../basics/partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
 * Any categories your app should be promoted within (select up to 3)
 * What products your integration is meant to specifically extend
 
-<img class="img-fluid mx-auto d-block" src="../profile-promotion.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/profile-promotion.png" style="max-width: 500px">
 
 Click "Save as draft" to save your work and come back later to finish. When you are finished, click "Submit for approval" to continue on to the next step. 
 
@@ -171,25 +173,25 @@ Be sure to save your app profile often as you go, and to preview it to see what 
 * Upload a number of detailed screenshots.
 * Provide us with sufficient content for the Support and Installation areas. 
 
-<img class="img-fluid mx-auto d-block" src="../promote-4.png" style="max-width: 500px">
+<img class="img-fluid mx-auto d-block" src="../../basics/promote-4.png" style="max-width: 500px">
 
 ### Submit your application for review
 
 Before your app can be listed in an app gallery, the RingCentral team will first review your app and will make recommendations to help you improve your app profile to better reach our customer base.
 
 ??? tip "You can only submit your application for approval, after the app has graduated."
-    The [graduation process](../production/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
+    The [graduation process](../../basics/production/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
 
 ??? warning "Please note special technical requirements for AT&T Office@Hand and Verizon"
-    To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../partners/segregated-environments/) to learn more. 
+    To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../../basics/partners/segregated-environments/) to learn more. 
 
 After you have entered all the information describing your brand new app, you can preview it by clicking the 'Save and preview' button.
 
+<!--
 ## Become a partner
 
 Partners receive a number of benefits, one of the most valuable being featured in the RingCentral App Gallery. To join the CP3 program as a Premier Partner, please fill out our [partner application form](https://www.ringcentral.com/partner/isvagentform.html). Being featured is at the discretion of our Connect Platform Partner team.
 
-<!--
 ??? info "Reference: App Gallery Fields"
     | Field Name | Description |
     |------------|-------------|

@@ -1,6 +1,6 @@
 # Generate a list of past meetings
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 The RingCentral Video API makes it possible to fetch the meeting history associated with the user in the current authentication context. The meeting history contains all the meetings that user attended, and each meeting record may contain a meeting recording if one was made for the meeting. The sample code below will help you construct a call to access this meeting history. 
 

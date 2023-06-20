@@ -1,6 +1,6 @@
 # Introduction to the RingCentral Video REST API
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">See the RingCentral Video REST API in action!</h3>

@@ -1,10 +1,16 @@
 # Obtaining production app credentials
 
-When you are finished developing your application, and ready to deploy the app to the RingCentral production environment, you will need to go through our "app graduation process" to obtain the credentials your app will need in production. 
+{! mdx_includes/first-api-call-reminder.md !}
 
-## What is the graduation process?
+If you have gotten this far, it is safe to assume that you have successfully built an application and used that application to call the RingCentral API. In order for this app to be used in our production environment, it must first go through a process we call "graduation." Upon graduation, your application will be granted a client ID and client secret that can be used to access the production environment. 
 
-The RingCentral app graduation process is a proving ground where apps demonstrate their reliability and quality prior to being allowed to operate in our production environment and given access to live customer data (with proper authorization from customers of course). By requiring apps to go through this process, we elevate the quality of all apps on the platform, heighten customer trust in the apps they use, and reduce risk to the platform as a whole. 
+## Why do we have a graduation process?
+
+The RingCentral app graduation process is a proving ground where apps demonstrate their reliability and quality prior to being allowed to operate in our production environment and given access to live customer data (with proper authorization from customers of course). By requiring apps to go through this process, we:
+
+* elevate the quality of all apps on the platform
+* heighten customer trust in the apps they use
+* reduce risk to the platform as a whole 
 
 ## What can I do to ensure a smooth graduation process?
 
@@ -85,3 +91,8 @@ If you find that you have inadvertently configured more permissions than your ap
 
 You have requested three permissions when you created your app: `ReadCallLog`, `SMS` and `ReadMessages`. After you have completed development, you realized that your app uses `SMS` and `ReadMessages` permissions, but you are not going to be using `ReadCallLog` permission in the first version of your app. To graduate your app, you should remove the `ReadCallLog` permission from your app and make at least one API call per each of the permissions you need (within the last two days).
 
+## Final step: promote your app in the RingCentral App Gallery
+
+For some developers graduating their app to production is the last step of their development process. However, for developers and partners who are building an application that is intended to be used by all RingCentral customers, you have one more step: to add your application to the RingCentral App Gallery so that it can be promoted to the RingCentral customer base. 
+
+<a class="btn btn-lg btn-primary" href="../promote-app/">Promote your application in the App Gallery</a>

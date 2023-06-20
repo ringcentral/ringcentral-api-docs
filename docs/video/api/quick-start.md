@@ -1,10 +1,10 @@
 # RingCentral Video REST API Quick Start
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../../getting-started/)."
 
-In this Quick Start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
+In this quick start, we are going to help you create your first meeting on the platform in just a few minutes. Let's get started.
 
 ## Create an app
 

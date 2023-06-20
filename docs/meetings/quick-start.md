@@ -1,9 +1,8 @@
-no_breadcrumb:true
 style: quick-start
 
 # Meetings Quick Start
 
-{! docs/meetings/deprecation-notice.md !}
+{! mdx_includes/rcm-deprecation-notice.md !}
 
 ??? check "Paid RingCentral account and Meetings app scope required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.

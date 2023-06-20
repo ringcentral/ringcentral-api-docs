@@ -1,6 +1,14 @@
-# How to create a JWT credential
+# Creating a personal JWT credential
 
-The [JWT Auth flow](../../jwt-flow/) is a secure and easy way for authenticating a user on the RingCentral platform. A JWT credential operates in the same way that a username and password do, in that:
+{! mdx_includes/first-api-call-reminder.md !}
+
+When you are first getting started it is common to build a private app that will be used only by you to try out the API. The most expedient and convenient way to connect such apps to the platform is to use a personal JWT authentication credential, which we will cover in detail below. 
+
+If your application is configured to use the [three-legged auth code flow](../../authentication/auth-code-flow/), then a JWT credential is not needed.
+
+## What is a JWT auth credential?
+
+The [JWT auth flow](../../authentication/jwt-flow/) is a easy-to-implement and secure way to authenticate a user on the RingCentral platform. At a protocol level, a JWT credential operates in the same way that a username and password do:
 
 * An app presents a JWT credential to the Auth API.
 * The Auth API responds with an access token.
@@ -16,15 +24,15 @@ JWT tokens are created exclusively within the RingCentral Developer Console. For
 
 2. Hover your mouse over your name in the upper righthand corner, and select "Credentials."
 
-    <img src="../../jwt-credentials-menu.png" class="img-fluid" style="max-width:300px">
+    <img src="../../authentication/jwt-credentials-menu.png" class="img-fluid" style="max-width:300px">
 
 3. Click "Create JWT."
 
-    <img src="../../jwt-auth-list.png" class="img-fluid" style="max-width:600px">
+    <img src="../../authentication/jwt-auth-list.png" class="img-fluid" style="max-width:600px">
 
 4. Configure your JWT and click "Create." 
 
-    <img src="../../jwt-auth-create.png" class="img-fluid" style="max-width:500px">
+    <img src="../../authentication/jwt-auth-create.png" class="img-fluid" style="max-width:500px">
 
 ??? hint "Special considerations for Developer Admins"
     Developers with the role of "Developer Admin" have the ability to not only manage their own JWT credentials, but also the JWT credentials of other developers within their organization. 
@@ -38,17 +46,26 @@ Giving someone a JWT credential is akin to you giving someone your username and 
 
 2. **Restrict the credential to be used by a specific list of trusted applications**. This is the best and only way to create a credential that can be safely shared with someone outside your company. It is "safe" because you have to explicitly grant an application permission to use it, so even if the credential was compromised, it can't be used to connect to your account easily. 
 
+### Creating JWT credentials on behalf of others
+
+Developer Admins have the ability to create JWT auth credentials on behalf of other developers. To create a JWT credential for someone else, that person must first login to the Developer Console. Then the admin can:
+
+* Click the "Organization" tab from the Developer Console dashboard
+* In the list of developers, click the name of the developer who needs a credential
+* Click the "Credentials" tab from the user's profile page
+* Create a credential as usual
+
 ## How to restrict usage of a JWT to an specific application
 
 For added security, especially when you intend to share your JWT with a third-party, we recommend you restrict your JWT to be used with a finite list of apps. To restrict a JWT to be used with only a specific app, you will need to ask the application developer for the client ID of their application. 
 
 Then check "Only specific apps of my choice" under "What apps are permitted to use this credential?" and copy and paste the client ID you received into the text field. 
 
-<img src="../../jwt-auth-clientid.png" class="img-fluid" style="max-width:500px">
+<img src="../../authentication/jwt-auth-clientid.png" class="img-fluid" style="max-width:500px">
 
 Click "Add app." If the app was found, a table will appear showing the current list of apps authorized to use this token. 
 
-<img src="../../jwt-auth-app-access.png" class="img-fluid" style="max-width:500px">
+<img src="../../authentication/jwt-auth-app-access.png" class="img-fluid" style="max-width:500px">
 
 Click "Create" or "Save."
 
@@ -57,4 +74,10 @@ Click "Create" or "Save."
 JWT credentials are bound to the environment specified when they were created. A JWT configured for sandbox cannot be used to authenticate in production, and vice versa. 
 
 Furthermore, JWT credentials are owned by a specific individual. So, if a user does not have an account in their sandbox environment, they will be unable to generate a JWT in sandbox. To fix this problem, navigate to your [sandbox accounts page](https://developers.ringcentral.com/console/sandbox) and look for the section entitled, "Your login credentials." Click the create sandbox account link as instructed to create an account for yourself within the sandbox environment.
+
+## Next step: developing and testing your application in the sandbox environment
+
+With a JWT credential in hand, you now have all that you need to begin coding your application and conducting API calls in our sandbox environment. Keep reading to learn more about how to best use sandbox to develop and test your application. 
+
+<a class="btn btn-lg btn-primary" href="../using-sandbox/">Learning how to access sandbox</a>
 

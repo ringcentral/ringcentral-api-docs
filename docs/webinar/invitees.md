@@ -1,6 +1,6 @@
 # Inviting people to cohost a webinar
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 The invitiation process for webinars facilitates the recruitment and signup of hosts, cohosts and panelists for a webinar. The process helps to not only register the user for the webinar, but also assigns the appropriate role to those registrants. Those invited through this process will be sent a special join URL to be used exclusively by those who will be helpng to facilitate the webinar session. The join URL will allow invitees to access the webinar's bridge, which enables them to broadcast their video and audio, as well as share their screen with webinar attendees. 
 

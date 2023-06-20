@@ -1,6 +1,6 @@
 # Determining the correct meetings API to call
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 RingCentral is commited to supporting both of our meeting solutions for the foreseeable future. These products are:
 

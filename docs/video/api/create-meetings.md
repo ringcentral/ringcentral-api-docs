@@ -1,6 +1,6 @@
 # Scheduling and creating a meeting bridge
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 ## What is difference between a meeting and a bridge?
 
