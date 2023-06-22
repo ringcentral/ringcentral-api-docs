@@ -68,6 +68,16 @@ Sandbox accounts are currently shared across all users within the same account. 
 
 If you need to simulate two different users from two different organizations during development, we recommend that you create additional RingCentral accounts in order to do so, then using those accounts login to the Developer Console in order to provision an additional sandbox account. 
 
+## Sending SMS in sandbox
+
+Sandbox accounts can be used to send SMS messages. These messages will be augmented with a text watermark indicating that it was sent via the sandbox environment. Developers do not* need to register with TCR in order to send messages in sandbox. 
+
+Developers should be aware of certain challenges with regards to sending SMS within sandbox. These challenges ultimately stem from the limitation that sandbox accounts are only provisioned and permitted to have a single phone number, and only the owner of that phone number (usually extension 101, or the Super Admin on the account) and a user in the Operator role are able to send SMS messages from that number. 
+
+Here are two recommendations to assist developers in working around this limitation so that more developers are able to send SMS successfully via the API in sandbox:
+* create an additional free developer account using a unique email 
+* have the admin in the account create and share a [JWT credential](../create-credential/) with all developers in the organization
+
 ## Using phones in sandbox
 
 Every sandbox account is provisioned a different main company phone number and user that is different than ones used in production. Additional phone numbers and users can also be configured in your sandbox account. Some use cases supported by these communication apps include:
