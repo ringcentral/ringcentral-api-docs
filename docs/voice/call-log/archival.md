@@ -55,7 +55,7 @@ This is data for the entire account. Please note that call recording meta data a
 The Message Store API enables developers to send Fax, Pager, and SMS messages. The Message Store API also exposes development resources for retrieving data to archive, and to delete that data from RingCentral.
 
 Developers will need to obtain the list of messages from an extension mailbox first (unless you already have a specific messageId on-hand):
-See the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefGetMessageList) for complete information about the various query parameters which can be used to filter the data returned in the list.
+See the [API Reference](https://developers.ringcentral.com/api-reference/Message-Store/listMessages) for complete information about the various query parameters which can be used to filter the data returned in the list.
 
 * /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
@@ -90,7 +90,7 @@ Message Store API Groups:
 * Get Message by ID: **Light**
 * Get Message Attachment: **Medium**
 
-[Read API Developer Guide - API Rate Limits](https://developers.ringcentral.com/api-docs/latest/index.html#!#RateLimitDetails.html) to understand the rate limits for the Usage Plan assigned to your organization, and the limitations code must address.
+[Read API Developer Guide - API Rate Limits](../../../basics/rate-limits/) to understand the rate limits for the Usage Plan assigned to your organization, and the limitations code must address.
 
 ## Non-Progammatic Ways to Access Data used in Archival
 

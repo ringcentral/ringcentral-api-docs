@@ -13,7 +13,7 @@ All code samples within the RingCentral Developer Guide utilize JWT authenticati
 * RingCentral responds with an access token
 * Developer presents access token in HTTP Authorization header to call the API
 
-To execute code samples in the Developer Guide, please [create a JWT credential](../../authentication/jwt/create-jwt/) now. 
+To execute code samples in the Developer Guide, please [create a JWT credential](../../getting-started/create-credential/) now. 
 
 ## Your RingCentral .env file
 

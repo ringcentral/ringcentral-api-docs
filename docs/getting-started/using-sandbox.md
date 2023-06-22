@@ -38,7 +38,7 @@ Every RingCentral application is provisioned a client ID and secret for sandbox.
 
 ### Obtaining authentication credentials
 
-If you are using [JWT auth](../../authentication/jwt/) be sure the JWT auth credential you are using is for the sandbox environment. If you are using the auth code or traditional OAuth flow, be sure the username and password used to login are ones that belong to your sandbox environment. For most people this is your email address and the sandbox password you selected for yourself when logging into the Developer Console for the first time. 
+If you are using [JWT auth](../../authentication/jwt-flow/) be sure the JWT auth credential you are using is for the sandbox environment. If you are using the auth code or traditional OAuth flow, be sure the username and password used to login are ones that belong to your sandbox environment. For most people this is your email address and the sandbox password you selected for yourself when logging into the Developer Console for the first time. 
 
 ### Directing API calls to sandbox server URLs
 

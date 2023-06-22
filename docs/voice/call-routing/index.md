@@ -12,7 +12,7 @@ Calls that are placed into a RingCentral account can be managed and routed a num
 
 Developers can designate a schedule for both users and companies to reflect when a user or company is able to receive calls. Once a set of business hours are defined, a [Call Handling Rule](./manual/answering-rules/) can be setup to determine what actions should be taken during business hours and outside of business hours.
 
-* [Set up your business hours using the Admin Console](https://success.ringcentral.com/lc/cms/AdminSettings?pageid=a6C34000000TNFzEAO&isotope=a6734000000Go56AAC)
+* [Set up your business hours using the Admin Console](https://support.ringcentral.com/app/admin/desktop-web/setting-up-company-business-hours-ringcentral-app-desktop-web.html)
 
 ### Call Blocking
 

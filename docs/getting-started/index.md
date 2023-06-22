@@ -17,5 +17,5 @@ The RingCentral getting started experience will help developers successfully do 
 
 Once you have successfully called the RingCentral API using the sample app we have provided, return to this guide to continue your learning journey on the platform. In the sections that follow, we will take a deeper dive into all of the fundamentals of the RingCentral platform to help you get up and running builing your first custom app on the platform. We will begin that journey by learning how to register an app to obtain credentials for that app.
 
-<a class="btn btn-secondary" href="./create-app/">Register an application</a>
+<a class="btn btn-secondary" href="./register-app/">Register an application</a>
 

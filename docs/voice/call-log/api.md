@@ -3,7 +3,7 @@
 ??? note "Are you looking to get a list of currently active calls?"
     A close cousin of the Call Log API is the [Active Call API](../../finding-active-calls/) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
 
-There are three major data types which are contained within the Call Log API resource (for the latest information, please check the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html):
+There are three major data types which are contained within the Call Log API resource:
 
 * Account and extension-level call log records
     * The **tome** of Call Log knowledge for your RingCentral Acccount
@@ -45,7 +45,7 @@ GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 
 ## Filtering call log records
 
-Filters (query parameters) improve the value of Call Log data for developers. For a current list of the filter values available, please refer to the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefGetExtensionCallLog). 
+Filters (query parameters) improve the value of Call Log data for developers. For a current list of the filter values available, please refer to the [API Reference](https://developers.ringcentral.com/api-reference/Call-Log/readUserCallLog). 
 
 Following standard RESTful API best practices, all filters are used as part of the query string since all Call Log routes are GET routes.
 

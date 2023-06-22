@@ -43,7 +43,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
      * `RC_MEDIA_URL` - set to a publicly accessible URL for a file you want to transcribe (a functioning default value has been provided for you)
 	
 ## Setup a server to process the response asynchronously

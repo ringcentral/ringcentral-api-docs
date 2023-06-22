@@ -1,1 +1,1 @@
-!!! danger "PubNub support is deprecated. Please migrate to [WebSockets](../../web-sockets/subscribing/)."
+!!! danger "PubNub support is deprecated. Please migrate to [WebSockets](../../websockets/subscribing/)."

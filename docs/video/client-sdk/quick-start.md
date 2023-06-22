@@ -34,7 +34,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the ap
 
 ### Obtain a JWT credential
 
-Your application will need to be able to call the RingCentral API. The sample application you will be using in this quick start, will authenticate via JWT. [Create a JWT credential](../../../authentication/jwt/create-jwt), and copy it to your clipboard. 
+Your application will need to be able to call the RingCentral API. The sample application you will be using in this quick start, will authenticate via JWT. [Create a JWT credential](../../../getting-started/create-credential), and copy it to your clipboard. 
 
 !!! info "Using JWT credentials"
     JWT credentials are associated with an individual and are created in the [Developer Console](https://developers.ringcentral.com/) in your Credetials area. The individual with whom the credential is associated will be the host for all the meetings initiated by this quick start guide. In real life, you would want to either prompt users to login using the OAuth auth code flow to obtain an access token for each of your users, or [schedule your meetings on behalf of others](../../api/meeting-delegates/) so that they are assigned as the host of the meetings being initiated. 

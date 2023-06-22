@@ -15,7 +15,7 @@ RingCentral hosts all downloadable [media content](../../basics/media/) on a pro
 
 ### Sample call log entry
 
-Here is an excerpt from a call to the [Call Log API](../../voice/call-log/reading-call-log/) and shows an entry that contains a reference to a recording of a phone call. 
+Here is an excerpt from a call to the [Call Log API](../../voice/call-log/) and shows an entry that contains a reference to a recording of a phone call. 
 
 ```json hl_lines="24"
 {!> code-samples/voice/call-log-sample.json !}

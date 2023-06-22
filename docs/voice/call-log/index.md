@@ -4,7 +4,7 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 
 * **Archive and/or download call log data to an external system** - Since RingCentral does not store Call Log data indefinitely, developers use the Call Log API to download Call Log data into customer-owned, long-term, persistent storage.
 
-* **Reporting and analytics** - Developers use the Call Log API to analyze call histories, agent performance, answer rates, and more - with a desire and intent to improve company operations and performance. Developers may also consider using the [Analytics API](../../../analytics/) to access aggregated data about an organizations call history. 
+* **Reporting and analytics** - Developers use the Call Log API to analyze call histories, agent performance, answer rates, and more - with a desire and intent to improve company operations and performance. Developers may also consider using the [Analytics API](../../analytics/) to access aggregated data about an organizations call history. 
 
 * **Integration with third-party services, especially CRMs** - Developers can use Call Log data to help augment 3rd party systems with customer interaction histories and more.
 
@@ -20,7 +20,7 @@ RingCentral's Call Log is one of the platform's most utilized resources as it en
 
 It can take anywhere between 15-30 seconds for a completed phone call to appear in the call log. Developers who need more real-time access to events that may relate to or impact a company's call log can look to one of the following solutions:
 
-* The [Active Call API](../../finding-active-calls/) is an alternative API to help developers find calls that are currently in process. The Active Call API is **not a real-time API**, however, but it can be a more expedient way to find calls in progress. 
+* The [Active Call API](../finding-active-calls/) is an alternative API to help developers find calls that are currently in process. The Active Call API is **not a real-time API**, however, but it can be a more expedient way to find calls in progress. 
 * The [Account Telephony Sessions event](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event) is an event that is triggered whenever the state of a call is changed. This is a more reliably real-time event for determining when calls begin and end. 
 * The [Extension Telephony Sessions event](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event) is similar to the Account Telephony Sessions event, but is scoped to a specific user or extension. 
 

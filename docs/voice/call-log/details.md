@@ -1,10 +1,10 @@
-# Working with Detailed Call Log Data
+# Working with detailed call log data
 
 In this tutorial, you will learn how to navigate and make use of more detailed and comprehensive call log data. In case you don't have a lot of data in your account to work with, we will begin by creating some test data.  
 
 ## Create Test Data
 
-1. There are a few ways you can do this, but the easiest way is to put your [RingCentral Soft Phone in Sandbox Mode](../../../basics/your-rc-phone/), and then make a test call using to your RingCentral Soft Phone from an outside number.
+1. There are a few ways you can do this, but the easiest way is to login to the RingCentral [unified app sandbox](https://app.devtest.ringcentral.com/) via the web and to place and receive calls from that phone.
 
 2. Make sure to record one of these calls by pressing the `Record` button in the soft phone and ensuring the call lasts for at least 30-60 seconds, then click the `Record` button again to stop the recording.
 

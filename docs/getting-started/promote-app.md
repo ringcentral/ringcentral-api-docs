@@ -48,7 +48,7 @@ If you wish to only make your app available to specific partners, then expand "A
   <figcaption class="figure-caption text-center">Your app will be made available to select partners only</figcaption>
 </figure>
 
-!!! tip "Customize your profile for each partner using [variables](../app-gallery-variables/)"
+!!! tip "Customize your profile for each partner using [variables](../../basics/app-gallery-variables/)"
 
 ## How do I publish my profile in the App Gallery?
 
@@ -180,7 +180,7 @@ Be sure to save your app profile often as you go, and to preview it to see what 
 Before your app can be listed in an app gallery, the RingCentral team will first review your app and will make recommendations to help you improve your app profile to better reach our customer base.
 
 ??? tip "You can only submit your application for approval, after the app has graduated."
-    The [graduation process](../../basics/production/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
+    The [graduation process](../graduate-app/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
 
 ??? warning "Please note special technical requirements for AT&T Office@Hand and Verizon"
     To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../../basics/partners/segregated-environments/) to learn more. 

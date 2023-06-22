@@ -34,7 +34,7 @@ The first step in making your application available to our partner's customers i
 
 Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
 
-Learn [how to get listed in our app gallery &raquo;](../app-gallery/)
+Learn [how to get listed in our app gallery &raquo;](../../getting-started/promote-app/)
 
 ## Understanding the additional requirements for AT&T Office@Hand and Verizon
 

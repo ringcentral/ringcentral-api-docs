@@ -1,4 +1,4 @@
-# Managing Warm Transfers
+# Managing warm transfers
 
 During an active call with a customer, the agent may need to transfer the customer to another agent or supervisor. In the case of a warm transfer, the agent first puts the customer on hold and then calls another agent or supervisor. Once connected, the agent can have a conversation first with another agent or supervisor before completing the transfer. Completing the transfer means connecting another agent or supervisor with the customer and dropping the original agent from the call.
 
@@ -23,7 +23,7 @@ The first step in a warm transfer is to put the customer on hold. But before tha
 !!! Note
     An alternative option is to listen to the [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event), which will also allow you to retrieve the session ID and party ID.
 
-Follow the instructions for [setting up pubnub](../../notifications/push-notifications/quick-start#javascript). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
+Follow the instructions for [setting up WebSockets](../../notifications/websockets/quick-start). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
 
 ### Receive event for customer-to-operator call
 

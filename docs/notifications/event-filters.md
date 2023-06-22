@@ -64,7 +64,7 @@ For any given account, RingCentral can generate literally hundreds, if not thous
 
 ### Webinar events
 
-!!! hint "Webinar events are subscribed to using a similar, but distinct API endpoint. See [our webinar documentation](../../../webinar/events/) to learn more."
+!!! hint "Webinar events are subscribed to using a similar, but distinct API endpoint. See [our webinar documentation](../../webinar/events/) to learn more."
 
 | Filter                                                  | Description                                                                            |
 |---------------------------------------------------------|----------------------------------------------------------------------------------------|

@@ -27,7 +27,7 @@ Even if you do not use a RingCentral SDK, we strongly recommend using a third-pa
 
 #### Upgrading your RingCentral SDK
 
-If you use a [RingCentral SDK](../../sdks/), then you will need to update the most recent version of that SDK, and make a few changes to your source code. The following will provide the SDK-specific instructions to guide you in this process. 
+If you use a [RingCentral SDK](../../../sdks/), then you will need to update the most recent version of that SDK, and make a few changes to your source code. The following will provide the SDK-specific instructions to guide you in this process. 
 
 === "Javascript"
 

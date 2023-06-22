@@ -33,7 +33,7 @@ There is an alias `/mms` endpoint for sending MMS messages, but you can also cal
 When creating a multipart message, it is important to remember that the root part, or first part of the request is always the request body or payload. Subsequently you attach media files to the request. In the following example we will send an image named `test.jpg` along with the text message, "Hello world"
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start]((../../quick-start/)), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_mms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_mms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"
