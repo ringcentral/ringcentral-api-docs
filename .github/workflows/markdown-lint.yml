@@ -13,5 +13,5 @@ jobs:
       uses: articulate/actions-markdownlint@v1.1.0
       with:
         files: 'docs/**/*.md'
-        ignore: node_modules
-	version: 0.29.0
+        ignore: 'node_modules'
+        version: 0.29.0
