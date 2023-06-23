@@ -14,4 +14,4 @@ jobs:
       with:
         files: 'docs/**/*.md'
         ignore: 'node_modules'
-        version: 0.29.0
+        version: 0.35.0
