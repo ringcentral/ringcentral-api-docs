@@ -1,0 +1,21 @@
+name: Link markdown
+#on:
+#  push:
+#    branches: main
+on: workflow_dispatch
+jobs:
+  lint-changelog:
+    name: Lint markdown documentation
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Lint docs directory
+      uses: articulate/actions-markdownlint@v1
+        with:
+          files: 'docs/**/*.md'
+          ignore: node_modules
+#          config: markdownlint-config.json
+#          version: 0.28.1
+
