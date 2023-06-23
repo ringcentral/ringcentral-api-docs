@@ -1,7 +1,4 @@
 name: Link markdown
-#on:
-#  push:
-#    branches: main
 on: workflow_dispatch
 jobs:
   lint-changelog:
@@ -13,9 +10,9 @@ jobs:
 
     - name: Lint docs directory
       uses: articulate/actions-markdownlint@v1
-        with:
-          files: 'docs/**/*.md'
-          ignore: node_modules
-#          config: markdownlint-config.json
-#          version: 0.28.1
+      with:
+        files: 'docs/**/*.md'
+        ignore: node_modules
+#        config: markdownlint-config.json
+#        version: 0.28.1
 
