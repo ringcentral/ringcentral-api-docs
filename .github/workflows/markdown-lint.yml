@@ -14,5 +14,5 @@ jobs:
       with:
         files: 'docs/**/*.md'
         ignore: 'node_modules'
-        config: '.markdownlist.json'
+        config: '.markdownlint.json'
 
