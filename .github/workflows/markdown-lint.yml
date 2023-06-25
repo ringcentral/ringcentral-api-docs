@@ -14,5 +14,7 @@ jobs:
       - name: Lint docs directory
         uses: DavidAnson/markdownlint-cli2-action@v11
         with:
-          globs: "docs/**/*.md"
-          config: ".markdownlint-cli2.cjs"
+          globs: |
+            docs/**/*.md 
+            !**/styleguide.md
+          config: .markdownlint-cli2.cjs
