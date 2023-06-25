@@ -6,13 +6,13 @@ jobs:
     name: Lint markdown documentation
     environment:
       name: main
+    env:
+      NODE_ENV: cli
     steps:
-    - name: Checkout repositroy
-      uses: actions/checkout@v2
-    - name: Lint docs directory
-      uses: articulate/actions-markdownlint@v1.1.0
-      with:
-        files: 'docs/**/*.md'
-        ignore: 'node_modules'
-        config: '.markdownlint-cli2.cjs'
-
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Lint docs directory
+        uses: DavidAnson/markdownlint-cli2-action@v11
+        with:
+          globs: "docs/**/*.md"
+          config: ".markdownlint-cli2.cjs"
