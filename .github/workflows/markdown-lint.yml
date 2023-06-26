@@ -1,5 +1,8 @@
 name: Lint markdown
 on: workflow_dispatch
+on:
+  push:
+    branches: main
 jobs:
   lint-markdown-files:
     runs-on: ubuntu-latest
