@@ -2,7 +2,7 @@ name: Build site
 #on: workflow_dispatch
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
