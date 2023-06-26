@@ -42,7 +42,7 @@ Your application will need to be able to call the RingCentral API. The sample ap
 ## Graduate your application to production
 
 !!! info "RingCentral Video does not have a developer sandbox"
-    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../../basics/sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
+    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../../getting-started/using-sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
 
 ## Create a meeting bridge
 
