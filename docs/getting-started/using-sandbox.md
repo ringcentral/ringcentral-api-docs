@@ -70,13 +70,9 @@ If you need to simulate two different users from two different organizations dur
 
 ## Sending SMS in sandbox
 
-Sandbox accounts can be used to send SMS messages. These messages will be augmented with a text watermark indicating that it was sent via the sandbox environment. Developers do not* need to register with TCR in order to send messages in sandbox. 
+Developers may find that they are unable to send SMS using their sandbox account. All sandbox accounts have the ability to send SMS messages, but developers should familiarize themselves with how to work around certain limitations they may face.
 
-Developers should be aware of certain challenges with regards to sending SMS within sandbox. These challenges ultimately stem from the limitation that sandbox accounts are only provisioned and permitted to have a single phone number, and only the owner of that phone number (usually extension 101, or the Super Admin on the account) and a user in the Operator role are able to send SMS messages from that number. 
-
-Here are two recommendations to assist developers in working around this limitation so that more developers are able to send SMS successfully via the API in sandbox:
-* create an additional free developer account using a unique email 
-* have the admin in the account create and share a [JWT credential](../create-credential/) with all developers in the organization
+See "[Sending test SMS in the developer sandbox](../sms/)".
 
 ## Using phones in sandbox
 
