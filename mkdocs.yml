@@ -217,8 +217,8 @@ nav:
          - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
       - 'Sample apps':
          - 'Javascript': 'https://github.com/ringcentral/ringcentral-videosdk-js-samples'
-	 - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
-	 - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
+         - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
+         - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
     - 'Using RingCentral Embeddable': 'video/embeddable.md'
     - 'Meetings (legacy API)':
       - 'Overview': 'meetings/index.md'
