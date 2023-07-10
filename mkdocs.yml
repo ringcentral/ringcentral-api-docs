@@ -335,6 +335,7 @@ nav:
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
     - 'Auth code grant type':
       - 'Getting Started': 'authentication/quick-start.md'
+      - 'Generating an auth request': 'authentication/oauth-request.md'
       - 'Keeping access keys fresh': 'authentication/session-keep-alive.md'
       - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
     - 'Using access keys': 'authentication/tokens.md'
