@@ -288,7 +288,6 @@ nav:
       - 'Callaborating with developers': 'basics/inviting-developers.md'
       - 'Running code samples': 'basics/code-samples.md'
       - 'Media content': 'basics/media.md'
-      - 'App scopes/permissions': 'basics/permissions.md'
       - 'URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
       - 'Errors': 'basics/errors.md'
@@ -340,6 +339,7 @@ nav:
       - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
     - 'Using access keys': 'authentication/tokens.md'
     - 'Using refresh tokens': 'authentication/refresh-tokens.md'
+    - 'App scopes': 'basics/permissions.md'
     - 'Technical deep-dives':
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
