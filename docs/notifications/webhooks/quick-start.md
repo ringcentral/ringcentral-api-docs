@@ -356,7 +356,7 @@ Select your preferred language below.
     Copy the forwarding address, e.g. https://1058-69-181-202-32.ngrok-free.app, and paste it to your .env file. Or paste it directly into the DELIVERY_ADDRESS variable in the code below.
 
     ```java
-    {!> code-samples/webhooks/WebHookNotification.java !}
+    {!> code-samples/webhooks/WebhookNotification.java !}
     ```
 
     Now first run the WebhookServer app, then run the WebHookNotification app from Eclipse.
