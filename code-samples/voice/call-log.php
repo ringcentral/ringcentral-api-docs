@@ -17,7 +17,7 @@ $params = array(
    'view' => 'Detailed'
     );
 
-$resp = $platform->get('/account/~/extension/~/call-log', $params);
+$resp = $platform->get('/account/~/call-log', $params);
 foreach ($resp->json()->records as $record) {
     print_r ("Call type: ".$record->type);
 }

@@ -22,7 +22,7 @@ class Program
 		var parameters = new ReadUserCallLogParameters();
 		parameters.view = "Detailed";
 
-		var resp = await restClient.Restapi().Account().Extension().CallLog().List(parameters);
+		var resp = await restClient.Restapi().Account().CallLog().List(parameters);
 		foreach (CallLogRecord record in resp.records)
 		{
 			Console.WriteLine("Call type: " + record.type);
