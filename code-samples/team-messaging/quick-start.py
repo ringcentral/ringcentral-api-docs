@@ -13,9 +13,9 @@ def create_team():
         'name': "Python Team",
         # Add internal members using their extension ids
         # Get your user extension id by calling the /restapi/v1.0/account/~/extension endpoint!
-        'members': [{id: "590490017"}, {id: "595861017"}],
+        'members': [{'id': "590490017"}, {'id': "595861017"}],
         # You can also add members using their email address, especially for guest members who are not under your account company.
-        # members: [{email: "member.1@gmail.com"}, { email: "member.2@gmail.com"}, {id: "[extensionId]"}],
+        # members: [{'email': "member.1@gmail.com"}, { 'email': "member.2@gmail.com"}, {'id': "[extensionId]"}],
         'description': "Let's talk about Python"
     }
     endpoint = "/team-messaging/v1/teams"
