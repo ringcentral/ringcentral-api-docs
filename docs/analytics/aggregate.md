@@ -1,9 +1,9 @@
-# Obtaining Aggregate Call Line of Business Data
+# Obtaining Aggregate Call Business Analytics Data
 
 !!! warning "Analytics API - breaking change alert!"
     Analytics API aggregate path has changed to `POST /analytics/calls/v1/accounts/~/aggregation/fetch`
 
-It is quite common to acquire and segment call related data for reporting or analysis. Call Performance Aggregate API provides the ability to aggregate call related data in various ways such as by summing, averaging, getting minimum or maximum or percentage of data etc. Line of business managers can make incentive, allocation, or training decisions by looking at total answered calls vs not answered calls per agent, or by looking at the average abandonment rate for an agent, or by checking the total handle time for each agent.
+It is quite common to acquire and segment call related data for reporting or analysis. Call Aggregate API provides the ability to aggregate call related data in various ways such as by summing, averaging, getting minimum or maximum or percentage of data etc. Line of business managers can make incentive, allocation, or training decisions by looking at total answered calls vs not answered calls per agent, or by looking at the average abandonment rate for an agent, or by checking the total handle time for each agent.
 
 Example Use Cases:
 

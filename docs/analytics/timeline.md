@@ -1,6 +1,6 @@
-# Obtaining Timeline Call Line of Business Data
+# Obtaining Timeline Call Business Analytics Data
 
-It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Performance Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times.
+It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times.
 
 Example Use Cases:
 

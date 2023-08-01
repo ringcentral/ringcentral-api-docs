@@ -1,4 +1,4 @@
-# RingCentral Line of Business Analytics APIs Quick Start
+# RingCentral Business Analytics APIs Quick Start
 
 !!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
 
