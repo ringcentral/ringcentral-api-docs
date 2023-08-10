@@ -4,10 +4,10 @@
     "keys": []
   },
   "timeSettings": {
-    "timeZone": "US/Pacific",
+    "timeZone": "America/Los_Angeles",
     "timeRange": {
-      "timeFrom": "2022-03-01T00:00:00.877Z",
-      "timeTo": "2022-05-01T04:01:33.877Z"
+      "timeFrom": "2023-01-01T00:00:00.000Z",
+      "timeTo": "2023-02-15T23:59:59.999Z"
     },
     "advancedTimeSettings": {
       "includeDays": [

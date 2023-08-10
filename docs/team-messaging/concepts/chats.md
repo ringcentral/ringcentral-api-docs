@@ -15,7 +15,7 @@ The following table provides a description of the various types of chats support
 
 ## Listing Chats
 
-The [chats endpoint](https://developers.ringcentral.com/api-reference/Chats/listGlipChats) is useful in that it returns a list of every chat in the system regardless of type. This can be helpful when generating a list of chats a person belongs to. However, because not all chats have a name (only teams have names), extra work may be needed in order to construct a human-readable handle to help people identify every chat in the list. 
+The [chats endpoint](https://developers.ringcentral.com/api-reference/Chats/listGlipChatsNew) is useful in that it returns a list of every chat in the system regardless of type. This can be helpful when generating a list of chats a person belongs to. However, because not all chats have a name (only teams have names), extra work may be needed in order to construct a human-readable handle to help people identify every chat in the list. 
 
 Furthermore, the chats endpoint does not return a list of members. To obtain a list of members, additional API calls should be made to the endpoints specific to that type.
 

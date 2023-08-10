@@ -1,7 +1,10 @@
 const RC = require('@ringcentral/sdk').SDK
 var fs    = require('fs')
-var https = require('https');
-require('dotenv').config();
+var https = require('https')
+var url = require('url')
+const path = require('path')
+// Remember to modify the path to where you saved your .env file!
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
@@ -15,30 +18,38 @@ platform.on(platform.events.loginSuccess, () => {
     create_compliance_export_task()
 })
 
+/*
+* Create a task to export the Team Messaging store for a period of time.
+*/
 async function create_compliance_export_task() {
     console.log("Create export task.")
-    var params = {
-	timeFrom: "2019-08-01T00:00:00.000Z",
-	timeTo: "2019-08-26T23:59:59.999Z"
+  try {
+    let bodyParams = {
+        timeFrom: "2023-01-01T00:00:00.000Z",
+        timeTo: "2023-01-31T23:59:59.999Z"
     }
-    try {
-	var resp = await platform.post("/team-messaging/v1/data-export", params)
-	var jsonObj = await resp.json()
-	get_compliance_export_task(jsonObj.id)
-    } catch (e) {
-	console.log(e.message)
-    }
+    let endpoint = "/team-messaging/v1/data-export"
+  	var resp = await platform.post(endpoint, bodyParams)
+  	var jsonObj = await resp.json()
+  	get_compliance_export_task(jsonObj.id)
+  } catch (e) {
+	  console.log(e.message)
+  }
 }
 
+/*
+* Check the status of the task using the taskId.
+*/
 async function get_compliance_export_task(taskId) {
   console.log("Check export task status ...")
   try {
-    var resp = await platform.get(`/team-messaging/v1/data-export/${taskId}`)
+    let endpoint = `/team-messaging/v1/data-export/${taskId}`
+    var resp = await platform.get(endpoint)
     var jsonObj = await resp.json()
     if (jsonObj.status == "Completed") {
       for (var i = 0; i < jsonObj.datasets.length; i++) {
         var fileName = `rc-export-reports-${jsonObj.creationTime}_${i}.zip`
-        get_report_archived_content(jsonObj.datasets[i].uri, fileName)
+        get_report_archive_content(jsonObj.datasets[i].uri, fileName)
       }
     } else if (jsonObj.status == "Accepted" || jsonObj.status == "InProgress") {
       setTimeout(function() {
@@ -52,14 +63,14 @@ async function get_compliance_export_task(taskId) {
   }
 }
 
-async function get_message_store_report_archive_content(contentUri, fileName){
-  var arr = contentUri.split("//")
-  var index = arr[1].indexOf('/')
-  var domain = arr[1].substring(0, index)
-  var path = arr[1].substring(index, arr[1].length)
+/*
+* Download the task compressed file and save to a local storage.
+*/
+async function get_report_archive_content(contentUri, fileName){
+  var u = url.parse(contentUri)
   var tokenObj = await platform.auth().data()
   var accessToken = tokenObj.access_token
-  download(domain, path, accessToken, fileName, function(){
+  download(u.host, u.path, accessToken, fileName, function(){
     console.log("Save atttachment to the local machine.")
   })
 }

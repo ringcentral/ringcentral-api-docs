@@ -1,6 +1,6 @@
 # Updating a profile in the RingCentral App Gallery
 
-!!! tip "Submitting your App Gallery profile for the first time? Learn how to [submit a profile &raquo;](../app-gallery/)"
+!!! tip "Submitting your App Gallery profile for the first time? Learn how to [submit a profile &raquo;](../../getting-started/promote-app/)"
 
 If you have previously submitted an App Gallery profile, you can create a revision to submit for review. When making a revision to existing profile, you do not need to worry about overwriting your existing profile, as we review all changes prior to making them public.
 

@@ -75,7 +75,7 @@ The RingCentral Call Log is an authoritative record of all the calls that were c
 
 In addition to providing metadata about a call that took place on the network, the Call Log API also makes available to developers a URL from which the audio of a recorded call can be downloaded.
 
-* [Learn about reading data from the Call Log](./call-log/reading-call-log/)
+* [Learn about reading data from the Call Log](./call-log/quick-start/)
 * [Learn how to download recorded call data](./call-log/recordings/)
 
 ## How do I control my status and availability?

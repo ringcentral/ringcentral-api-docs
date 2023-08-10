@@ -1,6 +1,6 @@
 # Getting a list of dial-in numbers
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 When composing an invite to a meeting, it is often important to provide participants with dial-in information if they do not have immediate access to a computer. RingCentral provides dial-in information for countries around the world. These phone numbers do not change often, but if they do, this API will ensure you are always providing correct and current information. 
 

@@ -13,7 +13,7 @@ $rc = RingCentral.new(ENV['RC_CLIENT_ID'],
 
 $rc.authorize(jwt: ENV['RC_JWT'])
 
-resp = $rc.get('/restapi/v1.0/account/~/extension/~/call-log', {
+resp = $rc.get('/restapi/v1.0/account/~/call-log', {
     view: 'Detailed'
 })
 

@@ -1,6 +1,6 @@
 # Creating webinars using the API
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 Webinars can be created using the REST API, which can be helpful when integrating RingCentral Webinar with third-party systems like CRMs, and marketing tools in which campaigns are created an managed. For example, your company may have a standardized go-to-market process for introducing new products in which when a campaign is created in your CRM for a quarterly customer communication, you want to automatically create a webinar to correspond with that campaign.
 
@@ -32,7 +32,7 @@ If you are hosting an external or "marketing webinar," it is best to set `regist
 
 ## Creating a webinar session
 
-{! docs/webinar/session-limits.md !}
+{! mdx_includes/webinar-session-limits.md !}
 
 Once the webinar is created, it is time to schedule a webinar session. A webinar session is associated with a date and time, is what hosts, cohosts and panelists are invited to help facilitate, and is for which attendees will register. 
 

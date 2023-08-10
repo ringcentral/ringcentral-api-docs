@@ -21,7 +21,7 @@ async function create_meeting() {
             muteAudio: false,
             muteVideo: true
 	})
-	var jsonObj = await resp.json()
+	var json = await resp.json()
         console.log("Start Your Meeting: " + json.discovery.web)
     } catch (e) {
 	console.log(e.message)

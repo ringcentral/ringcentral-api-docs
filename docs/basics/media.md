@@ -68,17 +68,17 @@ Often a media asset you need to download requires authentication. Your app or sc
 
 #### Authorization header
 
-The first and recommended way to pass your authentication credentials to a media URL is through an HTTP Authorization header. Use the same access key credential used to call the API to retrieve protected media content as shown below:
+The first and recommended way to pass your authentication credentials to a media URL is through an HTTP Authorization header. Use the same access token credential used to call the API to retrieve protected media content as shown below:
 
 ```http
 GET https://some.server.ringcentral.com/path/to/protected/file
-Authorization: Bearer <your access key>
+Authorization: Bearer <your access token>
 ```
 
 If you are downloading via cURL, the command would be:
 
 ```bash
-curl -H "Authorization: Bearer <ACCESS TOKEN>" \
+curl -H "Authorization: Bearer <access token>" \
     https://some.server.ringcentral.com/path/to/protected/file
 ```
 

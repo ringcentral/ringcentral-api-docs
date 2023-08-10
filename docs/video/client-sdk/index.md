@@ -1,6 +1,6 @@
 # Introduction to the RingCentral Video Client SDKs
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 ??? info "RingCentral Video Client SDK will be a paid product"
     During the beta and/or during development of your application, the RingCentral Client SDK is free to use. However, once the product is GA, the RCV Client SDK will be a paid product. Developers will be charged on a participant minute basis. In addition, the RCV Client SDK makes use of RingCentral's Artificial Intelligence APIs which may have costs of their own. If you have any questions, please reach out to us via [rcv-partners@ringcentral.com](mailto:rcv-partners@ringcentral.com). 
@@ -113,11 +113,11 @@ The RingCentral Video Client SDK is currently in beta. The latest version suppor
       <tr>
         <th scope="row">Access to a live transcription of the meeting</th>
         <td class="text-success ps-5">✓</td>
-        <td>Coming soon to future beta build</td>
+        <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
         <th scope="row">Closed captioning</th>
-        <td>Coming soon to future beta build</td>
+        <td class="text-success ps-5">✓</td>
         <td class="text-success ps-5">✓</td>
       </tr>
       <tr>
@@ -131,5 +131,5 @@ The RingCentral Video Client SDK is currently in beta. The latest version suppor
 
 ## Known issues and limitations
 
-* RingCentral Video does not currently support mobile web browsers, including mobile Safari and Chrome. Therefore the Video Client Javascript SDK is not currently supported on mobile devices. However, apps built using the iOS and Android SDKs are supported. If you require mobile web support, please [cast your vote in our Ideas Portal](https://ideas.ringcentral.com/ideas/CUSTCOM-I-402).
+* RingCentral Video does not currently support mobile the mobile Saafari web browser. Therefore the Video Client Javascript SDK is not currently supported on iOS devices. However, apps built using the iOS and Android SDKs are supported. If you require mobile web support, please [cast your vote in our Ideas Portal](https://ideas.ringcentral.com/ideas/CUSTCOM-I-402).
 

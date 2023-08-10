@@ -1,7 +1,8 @@
-no_breadcrumb:true
 style: quick-start
 
-# PubNub Notifications JavaScript Quick Start
+# PubNub notifications Quick Start
+
+{! mdx_includes/pubnub-deprecation.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -40,7 +41,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../../getting-started/create-credential) for yourself
 
 ## Subscribe to a push notification
 
@@ -50,7 +51,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ```bash
     $ npm install @ringcentral/sdk --save
-	$ npm install @ringcentral/subscriptions --save
+	$ npm install @ringcentral/subscriptions-deprecated --save
 	$ npm install dotenv --save
     ```
 
@@ -210,6 +211,3 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ ruby pubnub_notification.rb
     ```
 
-## Graduate Your App
-
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

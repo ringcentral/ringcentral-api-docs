@@ -1,5 +1,7 @@
 # Analyzing and processing past webinars
 
+{! mdx_includes/webinar-beta-notice.md !}
+
 After a webinar is over, much of the real work can begin for companies looking to better understand how successful the webinar was at engaging attendees, driving the success of a campaign, or in helping to acquire new leads or customers. 
 
 ## Obtaining a list of attendees and absentees

@@ -1,11 +1,8 @@
-no_breadcrumb:true
 style: quick-start
 
-# Authorization flow authentication
+# Getting started using OAuth's auth code flow
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
-
-In this Quick Start, we are going to help you authorize a user to login with username and password to get an access token and a refresh token. Let's get started.
+Before you get started, make sure you are using the [best authentication method](../) for your application. OAuth's auth code flow is ideally suited for applications that need to collect RingCentral credentials for each user of that app. If you are just getting started on the platform, writing a script to be run via the command-line, or facilitating the connection between a server and RingCentral, we recommend you use our [JWT flow](../jwt/quick-start/).
 
 ## Create an app and obtain credentials
 
@@ -320,6 +317,3 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 <a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=authentication">Search the forums &raquo;</a>
 
-## Graduate Your App
-
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

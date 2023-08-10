@@ -1,6 +1,6 @@
 # Authenticating with the Client SDK
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 ## What is a Client ID and Client Secret used for?
 
@@ -33,7 +33,7 @@ Guest auth is accomplished by providing no credentials (apart from the app's Cli
 
 ### JWT credential
 
-A [JWT credential](../../../authentication/jwt/create-jwt/) can be input into the SDK to authenticate a user. JWT credentials are currently obtained through the RingCentral Developer Console and are associated with an individual user. JWT credentials are an ideal way to authenticate to the RingCentral REST API for scheduling meetings, but they do not necessarily offer the best user experience in client applications because the current process of obtaining a JWT through the Developer Console may intimidate a casual end-user. That being said, many developers consider them ideal to use during development because they are quick and easy for developers to generate, and it avoids having to implement a more complex authentication flow just to get started. 
+A [JWT credential](../../../getting-started/create-credential/) can be input into the SDK to authenticate a user. JWT credentials are currently obtained through the RingCentral Developer Console and are associated with an individual user. JWT credentials are an ideal way to authenticate to the RingCentral REST API for scheduling meetings, but they do not necessarily offer the best user experience in client applications because the current process of obtaining a JWT through the Developer Console may intimidate a casual end-user. That being said, many developers consider them ideal to use during development because they are quick and easy for developers to generate, and it avoids having to implement a more complex authentication flow just to get started. 
 
 The following code sample shows how JWT authentication is accomplished across our three SDKs.
 
