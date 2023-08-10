@@ -1,6 +1,22 @@
 # Speaker identification
 
-The Speaker Identification API is used in order to determine "who speaks when" for a given media file. It is intended to be used to identify speakers who have been previously [enrolled](../speaker-enrollment/). The Speaker Identification API segments an audio clip into a sequence of utterances, each corresponding to a unique speaker. It then attempts to determine the identity of each speaker based upon their voice print. In cases where the speaker is ambiguous or unknown, utterances are marked with a status of `UserNotIdentified`.
+The Speaker Identification API is used to determine who is speaking for a given media file. It is intended to be used to identify speakers who have been previously [enrolled](../speaker-enrollment/) with the AI API. The Speaker Identification API segments an audio clip into a sequence of utterances, each corresponding to a unique speaker. It then attempts to determine the identity of each speaker based upon their voice print. In cases where the speaker is ambiguous or unknown, utterances are marked with a status of `UserNotIdentified`.
+
+Another use case for using Speaker Identification API is with multi-stream audio files. Each individual on a multi-stream audio file is a different speaker, but you don't know which stream belongs to which speaker. In this case, you can send each individual stream to the Speaker Identification API, and let the API identify the speaker for you using the audio stream.
+
+## Synchronous vs asynchronous speaker identification
+
+Identifying a speaker only takes the first few minutes (approximately 1-2 minutes) of audio.  If you wish to identify the speaker, you can simply cut your audio down to 2 minutes and submit that to the synchronous API:
+
+```html
+GET /ai/audio/v1/speaker-identify
+```
+
+The asynchronous API, however, will not only identify the speaker, it will also utilize speaker diarization as well. This means you can use the asynchronous API to not only identify the speaker, but also see what they said. This output is similar to the diarization API with the added benefit of identifying the speaker. Since the entire media file is being analyzed, this API uses an asynchronous operation.
+
+```html
+GET /ai/audio/v1/async/speaker-identify
+```
 
 ## Identifying speakers
 
