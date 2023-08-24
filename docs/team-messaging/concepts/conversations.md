@@ -14,7 +14,7 @@ Conversations can be further disambiguated by their assigned type. Here are the 
 | Type | Description |
 |-|-|
 | `Personal` | A special chat that contains a single person. The personal chat can only be accessed by the sole member of the chat, making them in many ways private. |
-| `Everyone` | Perhaps consider the opposite of a personal chat, the "everyone" chat is a conversation whose members automatically contain every member of the organization. In this way, the "everyone" chat breaks some of the aforementioned rules, but is a conversation nonetheless. |
+| `Everyone` | *Deprecated* Perhaps considered the opposite of a personal chat, the "everyone" chat is a conversation whose members automatically contain every member of the organization. In this way, the "everyone" chat breaks some of the aforementioned rules, but is a conversation nonetheless. |
 | `Group` | A group chat is a chat between a fixed group of three to sixteen individuals. |
 | `Direct` | A direct chat is a chat between exactly two people. |
 
