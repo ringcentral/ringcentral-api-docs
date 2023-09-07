@@ -14,4 +14,5 @@ module.exports = {
   "DPW002": true,
   "DPW003": true,
   "DPW004": true,
+  "DPW005": true,
 };
