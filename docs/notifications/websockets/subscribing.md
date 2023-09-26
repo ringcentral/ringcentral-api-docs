@@ -2,7 +2,7 @@
 
 WebSockets provide a medium by which event notifications can be delivered to an application via a persistent, low-latency network connection. This allows applications to receive notifications of events of interest to them in near real-time. In the guide that follows, we will describe how developers can subscribe to events over WebSockets, and how to process events that are received. 
 
-If you are new to Web ockets, we recommend you to begin your learning journey with an [online tutorial](https://www.youtube.com/watch?v=8ARodQ4Wlf4) about the protocol and technology. 
+If you are new to Websockets, we recommend you to begin your learning journey with an [online tutorial](https://www.youtube.com/watch?v=8ARodQ4Wlf4) about the protocol and technology. 
 
 ## Assigning the WebSocketsSubscription app scope to your application
 
