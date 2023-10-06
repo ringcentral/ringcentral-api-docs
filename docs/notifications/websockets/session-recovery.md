@@ -8,7 +8,7 @@ To recover a session, the first thing a client must do is request a new WebSocke
 
 ```http
 POST /restapi/oauth/wstoken HTTP/1.1
-Authorization: Bearer <access key>
+Authorization: Bearer <access token>
 ```
 
 ## Reconnect to the WebSocket server

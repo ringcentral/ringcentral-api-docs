@@ -18,11 +18,11 @@ If you need to implement your own subscription layer for WebSockets, or if you s
 
 ### Obtaining a WebSocket access token and server URL
 
-A WebSocket access token is required in order to open up a connection with a RingCentral WebSockets server. To obtain a WebSocket access token, you must first obtain an API access key via one of our established authorization mechanisms (e.g. [OAuth](../../../authentication/auth-code-flow) or [JWT](../../../authentication/jwt-flow/). Using that access key, you will request a WebSockets access token and server URL through the following request.
+A WebSocket access token is required in order to open up a connection with a RingCentral WebSockets server. To obtain a WebSocket access token, you must first obtain an API access token via one of our established authorization mechanisms (e.g. [OAuth](../../../authentication/auth-code-flow) or [JWT](../../../authentication/jwt-flow/). Using that access token, you will request a WebSockets access token and server URL through the following request.
 
 ```http
 POST /restapi/oauth/wstoken HTTP/1.1
-Authorization: Bearer <access key>
+Authorization: Bearer <access token>
 ```
 
 If successful, RingCentral will respond with something similar to the following:
@@ -44,7 +44,7 @@ The WebSockets access token that is returned is good for a single-use only when 
 
 With an access token and server URL in hand, you can now connect to the WebSockets server to begin receiving events. We recommend utilizing a freely available third-party WebSockets library to aid in the processing of incoming events. 
 
-To connect to the WebSockets server, you will need to compose the server URL by appending the server URI with the access key in the following way:
+To connect to the WebSockets server, you will need to compose the server URL by appending the server URI with the access token in the following way:
 
 ```
 wss://servername.ringcentral.com/ws?access_token=U0pDMDFQMDdQQxxxxxxxxx9pSU9OemVzakpn

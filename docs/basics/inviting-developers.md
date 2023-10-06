@@ -49,3 +49,6 @@ Once a developer account has been added to the system after they login for the f
 | Developer       | This user is permitted to manage apps they create only, and manage their own personal JWT credentials. |
 | Audit-user      | This user is permitted to view apps and profiles only.  |
 
+### Become a Developer Admin
+
+Only Developer Admins have the ability to assign roles to other developers in their account. Therefore, to become a Developer Admin, please reach out to another admin in your account. You can see who is a Developer Admin in your account by clicking the "Organization" tab in the Developer Console. On that page you will see a list of all developers in your organization, along with their role. 
