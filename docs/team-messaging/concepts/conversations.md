@@ -14,7 +14,7 @@ Conversations can be further disambiguated by their assigned type. Here are the 
 | Type | Description |
 |-|-|
 | `Personal` | A special chat that contains a single person. The personal chat can only be accessed by the sole member of the chat, making them in many ways private. |
-| `Everyone` | Perhaps consider the opposite of a personal chat, the "everyone" chat is a conversation whose members automatically contain every member of the organization. In this way, the "everyone" chat breaks some of the aforementioned rules, but is a conversation nonetheless. |
+| `Everyone` | *Deprecated* Perhaps considered the opposite of a personal chat, the "everyone" chat is a conversation whose members automatically contain every member of the organization. In this way, the "everyone" chat breaks some of the aforementioned rules, but is a conversation nonetheless. |
 | `Group` | A group chat is a chat between a fixed group of three to sixteen individuals. |
 | `Direct` | A direct chat is a chat between exactly two people. |
 
@@ -22,11 +22,11 @@ Conversations can be further disambiguated by their assigned type. Here are the 
 
 ## Creating a conversation
 
-Conversations cannot be deleted or archived, so when [creating a conversation](https://developers.ringcentral.com/api-reference/Conversations/createGlipConversation) you specify the members of the conversation. If a chat does currently exist containing exclusively those members, then a new conversation will be created and returned. However, if a conversation with those members already exists, it will be returned instead. 
+Conversations cannot be deleted or archived, so when [creating a conversation](https://developers.ringcentral.com/api-reference/Conversations/createGlipConversationNew) you specify the members of the conversation. If a chat does currently exist containing exclusively those members, then a new conversation will be created and returned. However, if a conversation with those members already exists, it will be returned instead. 
 
 ## Finding the members of a conversation
 
-When calling any of the [conversation endpoints](https://developers.ringcentral.com/api-reference/Conversations/listGlipConversations) in the REST API, an array of members will be returned. The array will contain only the IDs of the members. To find the members' names, one can call the [persons endpoint](https://developers.ringcentral.com/api-reference/Glip-Profile/readGlipPerson).
+When calling any of the [conversation endpoints](https://developers.ringcentral.com/api-reference/Conversations/listGlipConversationsNew) in the REST API, an array of members will be returned. The array will contain only the IDs of the members. To find the members' names, one can call the [persons endpoint](https://developers.ringcentral.com/api-reference/Profile/readGlipPersonNew).
 
 **Example Conversations JSON**
 

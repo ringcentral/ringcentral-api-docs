@@ -39,8 +39,10 @@ async function read_extension_phone_number_detect_sms_feature(){
         for (var record of jsonObj.records){
             for (var feature of record.features){
                 if (feature == "SmsSender"){
-                    // If a user has multiple phone numbers, check and decide which number
-                    // to be used for sending SMS message.
+                    // If a user has multiple phone numbers, check and
+		    // decide which number to be used for sending
+		    // the SMS message. For simplicity, we pick the
+		    // first one we find. 
                     return send_sms(record.phoneNumber)
                 }
             }

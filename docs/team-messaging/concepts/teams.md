@@ -8,7 +8,11 @@ Teams can be either public or private. A public team is discoverable by everyone
 
 ## Creating Teams
 
-Create a team by posting to the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeam). You can specify the name, description, team members, and its visibility within the organization.
+Create a team by posting to the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). You can specify the name, description, its membership, and its visibility within the organization.
+
+```js
+{!> code-samples/team-messaging/create-team.js [ln:1-38]!}
+```
 
 When specifying the members of a team, one can provide a mix of either person IDs and/or email addresses. If the email address refers to someone outside the organization that person will be added to the team as a guest, and invoke an email onboarding flow for that user.
 
@@ -16,7 +20,7 @@ Please refer to the [Team Messaging Quick start](../../quick-start) for sample c
 
 ## Listing Teams
 
-A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/listGlipTeamsNew). Long lists can be [iterated over using page tokens](../../manual/pagination/).
+A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). Long lists can be [iterated over using page tokens](../../manual/pagination/).
 
 ## Sample Code: Listing Teams from an account
 
@@ -68,9 +72,8 @@ The following code sample shows how to list all created teams under and account 
 
 A public team is visible to all users under the same account, a user can join a public team to become a new team member and existing members from any team can leave the team.
 
-Joining a team and leaving a team can be done via the API:
-
-The [join team](https://developers.ringcentral.com/api-reference/Teams/joinGlipTeamNew) and [leave team](https://developers.ringcentral.com/api-reference/Teams/leaveGlipTeamNew) endpoints can be called.
+1. The [join team](https://developers.ringcentral.com/api-reference/Teams/joinGlipTeamNew) and [leave team](https://developers.ringcentral.com/api-reference/Teams/leaveGlipTeamNew) endpoints can be called.
+2. The [add team members](https://developers.ringcentral.com/api-reference/Teams/addGlipTeamMembersNew) and [remove team members](https://developers.ringcentral.com/api-reference/Teams/removeGlipTeamMembersNew) can be called.
 
 The join/leave endpoints work within the context of the currently authenticated user. Meaning if I authenticate to the API on behalf of user A, then calling these endpoints results exclusively in user A joining or leaving a team.
 

@@ -38,7 +38,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../../getting-started/create-credential) for yourself
      * `WEBHOOK_DELIVERY_ADDRESS` - the full address where notifications will be sent to. If you run the code on your local machine, you can use ngrok service to obtain a tunnel address to your localhost. E.g. https://1058-69-181-202-2.ngrok-free.app
 
 ## Subscribe for push notification
@@ -357,7 +357,7 @@ Select your preferred language below.
     Copy the forwarding address, e.g. https://1058-69-181-202-32.ngrok-free.app, and paste it to your .env file. Or paste it directly into the DELIVERY_ADDRESS variable in the code below.
 
     ```java
-    {!> code-samples/webhooks/WebHookNotification.java !}
+    {!> code-samples/webhooks/WebhookNotification.java !}
     ```
 
     Now first run the WebhookServer app, then run the WebHookNotification app from Eclipse.
@@ -366,7 +366,3 @@ Select your preferred language below.
 
 * Now you can send an SMS message to the extension's phone number to see how you'll receive the notification.
 * After testing your webhook subscription creation, feel free to edit the <tt>webhook-notification.xx</tt> file by comment out the `subscribe_for_notification()` function call and uncomment the next line `read_subscriptions()` to test reading and deleting subscriptions.
-
-## Graduate Your App
-
-Congratulations on creating your first RingCentral application. The last step is to graduate your application. We recommend [going through this process](../../../basics/production) for your first application so you can understand the steps to take in the future, but also to come to appreciate the care taken by RingCentral to ensure that only high-quality apps are allowed into our production environment.

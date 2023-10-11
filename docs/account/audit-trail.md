@@ -10,7 +10,7 @@ Audit Trail allows you to track configuration changes made to a RingCentral onli
 
 Administrators can make several account changes including managing phones & devices, users, meetings, and even billing. Since Audit Trail API tracks the same configuration changes as the admin UI, you can use the link below for a list of configuration changes that are tracked.
 
-* [Configuration Changes](https://support.ringcentral.com/article/Audit-Trail-Configuration-Changes-Tracked).
+* [Configuration Changes](https://support.ringcentral.com/article-v2/Audit-Trail-Configuration-Changes-Tracked.html).
 
 ## Tracking Changes in AWS or Splunk
 
@@ -33,7 +33,7 @@ Also, this API belongs to the Heavy usage plan and is rate limited by it.
 
 ## Sample code
 
-To get you started, here is some sample python code to retrieve audit logs from your account.  This sample code assumes you have built an `envjwt.py` file with your own environment variables
+To get you started, here is some sample python code to retrieve audit logs from your account.  This sample code assumes you have built an `.env` file with your own environment variables including the `RC_CLIENT_ID`, `RC_CLIENT_SECRET`, `RC_SERVER_URL`, and the `RC_JWT`.
 
 === "Python"
 

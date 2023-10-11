@@ -1,15 +1,14 @@
-no_breadcrumb:true
 style: quick-start
 
 # SMS Quick Start
 
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
+
 !!! info "Things to know before you begin"
-
-  * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html).
-	* Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant.
-	* When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/).
-
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+    
+    * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html)
+    * Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant
+    * When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/)
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
@@ -46,7 +45,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
      * `SMS_RECIPIENT` - for code testing purpose, we set the recipient's phone number to this environment variable. You can set the phone number via this variable, or you can set it directly on your code.
 
 ## Send an SMS

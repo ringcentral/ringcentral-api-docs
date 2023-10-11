@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Introduction to the RingCentral Webinar Platform
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">See the RingCentral Webinar API in action!</h3>

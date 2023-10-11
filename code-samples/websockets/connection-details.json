@@ -1,0 +1,23 @@
+[
+  {
+    "type": "ConnectionDetails",
+    "messageId": "156eec30-xxxx-xxxx-xxxx-005056bf7145",
+    "status": 200,
+    "wsc": {
+      "token": "RTFhRG5nfExxxxxxxxxxxcHE3bXkyRURQVQ",
+      "sequence": 1
+    },
+    "headers": {
+      "RCRequestId": "156eec30-xxxx-xxxx-xxxx-005056bf7145"
+    }
+  },
+  {
+    "creationTime": "2020-09-07T21:50:02.737+0000",
+    "maxConnectionsPerSession": 50,
+    "recoveryBufferSize": 100,
+    "recoveryTimeout": 180,
+    "idleTimeout": 1800,
+    "absoluteTimeout": 86400,
+    "maxActiveRequests": 10
+   }
+ ]

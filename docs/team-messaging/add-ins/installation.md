@@ -70,9 +70,9 @@ In the next step, RingCentral will render an iframe (570x260 pixels) loading the
 When an iframe is loaded, the developer must disambiguate between a user who is installing a new app, or editing an existing one. The best way to do this is to lookup the webhook URL passed to the service via the iframe in a local datastore. If the webhook URL has been installed previously, then the application should in subsequent steps update the existing webhook. If this is the first time this service is encountering the webhook, then it is safe to proceed to install the webhook. 
 
 ??? tip "Storing the webhook locally"
-    In the subsequent step entitled "Store access key" we recommend that developers store in their database a record of every webhook URL that is installed via this process. Associated with each webhook URL developers can also store:
+    In the subsequent step entitled "Store access token" we recommend that developers store in their database a record of every webhook URL that is installed via this process. Associated with each webhook URL developers can also store:
 	
-    * The access key generated through the OAuth flow.
+    * The access token generated through the OAuth flow.
 	* The identity of the user installing the application.
 	* Any subscription preferences associated with the webhook URL. 
 
@@ -94,9 +94,9 @@ The OAuth process can be launched through a javascript command facilitated by a 
 ??? hint "Check out the the Add-in App Helper on Github"
     The [RingCentral Add-in App Helper](https://github.com/ringcentral/ringcentral-notification-app-helper) is a Javascript library to help developers implement the necessary Javascript controls to manage their installation app. 
 
-### Store access key 
+### Store access token 
 
-It is recommended that the application store the access key generated through the OAuth flow and associate that access key with the incoing webhook passed to the service via the iframe. This will allow users to more easily edit the application after it is installed, as the underlying service will be able to more easily lookup the webhook URL, and reconnect the service in which the URL is ultimately installed.
+It is recommended that the application store the access token generated through the OAuth flow and associate that access token with the incoing webhook passed to the service via the iframe. This will allow users to more easily edit the application after it is installed, as the underlying service will be able to more easily lookup the webhook URL, and reconnect the service in which the URL is ultimately installed.
 
 ### Select subscription preferences
 

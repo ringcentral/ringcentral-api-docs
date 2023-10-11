@@ -1,30 +1,15 @@
-# Chosing the auth method that is best for my app
+# Choosing the best auth method for your app
 
-<div class="jumbotron pt-1">
-  <h3 class="display-5">Chomping at the bit and just want to get started?</h3>
-  <p class="lead">RingCentral supports a number of different authentication modes to satisfy the needs of the many different types of applications built on top of our platform, from mobile to desktop, from public to private, from bots to webapps.</p>
-  <p>The authentication mode we recommend developers use in production is a <a href="./quick-start/">3-legged auth flow</a> that grants applications access to a user's account without exchanging a username/password with a 3rd party. But the easiest and fastest way to get started is to use JWT:</p>
-  <a href="jwt/quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="jwt/quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="jwt/quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="jwt/quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-</div>
-
-Your application and its users must be authorized by RingCentral in order to eliminate any possibility of abuse. The RingCentral API uses the [OAuth 2.0 protocol](http://oauth.net/2/) for authentication and authorization, which is widely supported by the majority of cloud API providers.
-
-In general, the steps your app needs to take to use RingCentral APIs (including authorization) are as follows:
-
-1. Create an app, and obtain the app's credentials from your [Developer Console account](https://developer.ringcentral.com/my-account.html).
-
-2. Obtain an access token using either the [authorization code flow](./auth-code-flow) or the [JWT Flow](./jwt-flow).
-
-3. Use the access token in your HTTP Authorization header when calling a RingCentral API.
-
-4. Refresh your access token when necessary, as they can expire. 
+Every app needs to first authenticate itself and the user it will be acting on behalf of before calling the API. This process ensures that the application and the user has been authorized to perform the given action via the API. RingCentral supports multiple authentication methods to support a number of different scenarios and use cases. 
 
 ## What auth flow is right for my app?
 
-There are several authorization flows one can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. Here are some questions you need to ask yourself:
+There are two primary authorization flows a developer can use to obtain an access token to call the RingCentral API. Choosing the right one will help ensure the security of your customer's data and credentials. These two methods are:
+
+1. **OAuth**. Best for authenticating individual users an app may act on behalf of
+2. **JWT**. Best for authenticating a server connecting to the API
+
+Still unsure which method is right for you app? Here are some questions you can ask yourself.
 
 ### Does your app have a user interface, and will each of your users need to connect to RingCentral?
 
@@ -41,7 +26,10 @@ The following are examples of the kinds of apps these auth flows are ideal for:
 * An CRM app that initiates a phone call for one or more different users.
 * A scheduling assistant app that schedules meetings for one or more different users. 
 
-!!! hint "Use refresh tokens"
+??? hint "JWT is NOT recommended for individual user authentication"
+    Many developers are attracted to JWT for authentication because it is much simpler to implement, especially when you are first learning the platform. However, JWT is not designed to scale to support the need to authenticate a large number of users. JWT is ideally suited to authenticate a single "service user" (typically an admin) who will be acting on behalf of all users within an account. 
+
+??? hint "Use refresh tokens to keep sessions alive"
     When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](./refresh-tokens/) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
 
 ### Does your app lack a user interface, and/or does it act on behalf of all users within an organization?

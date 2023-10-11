@@ -18,6 +18,9 @@ When processing files asynchronously, it is important to correlate every request
 
 You should parse this response, and store the `jobId` associated with the media file being processed so that you can reliably associate the response that will be delivered in a `webhook` later to the file for which it pertains.
 
+!!! note "Job IDs expire after 1 week"
+    The job ID returned in the response above only lasts for one week. To know the exact expiration time for the job, please use the GET `jobs` API below and look for the `expirationTime`.
+
 ### Check on the status of your AI API job request
 
 Upon submitting your AI API job request, a `jobId` is sent in the response as mentioned above. With this `jobId`, you can check on the progress of your AI API job request as follows:

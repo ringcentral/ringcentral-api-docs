@@ -66,7 +66,7 @@ Bear in mind of course that each language will utilize different libraries and c
 The following code samples show how to send a simple single document fax.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start]((../../quick-start/)), you can just copy all the functions below and add them to the quick start project then call the `send_fax()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `send_fax()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"

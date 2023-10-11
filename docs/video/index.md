@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Introduction to the RingCentral Video Platform
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 The RingCentral Video platform is available to RingCentral MVP customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The video platform is made up of a number of products that can help developers:
 

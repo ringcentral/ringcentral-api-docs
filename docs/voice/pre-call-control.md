@@ -1,4 +1,4 @@
-# Pre-call Control
+# Pre-call control
 
 There are two phases within the life-cycle of a call on the network when the call can be intercepted and contolled in someway. You can intercept a call while it is in-flight and being routed on the network (a.k.a. "pre-call control") and when the call has been connected with a destination (a.k.a. "active-call control"). 
 
@@ -33,7 +33,7 @@ POST /restapi/v1.0/account/~/telephony/sessions/<telephonySessionId>/parties/<pa
 
 !!! tip "Tips"
     
-    * You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefExtensionForwardingNumbers.html) to have pre-configured Forwarding.
+    * You can configure the pre-set numbers on the list via [Forwarding Number List API](https://developers.ringcentral.com/api-reference/Call-Forwarding/listForwardingNumbers) to have pre-configured Forwarding.
     * You can forward calls to another extension in your RingCentral account by specifying that extension's Direct Phone Number.
 
 ### Forwarding a call to voicemail

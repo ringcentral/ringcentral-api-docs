@@ -1,25 +1,30 @@
-# Using refresh tokens
+# Using refresh tokens to generate new access tokens
 
-Developers should be aware that access tokens expire over time. As a result, your application will lose access to your customer's account data, and your user's will need to go through the authorization process again, unless you take measures to keep their access tokens live, by refreshing them via the [refresh token operation](https://developers.ringcentral.com/api-reference/Get-Token#section-refresh-token-flow).
+Developers should be aware that access tokens expire over time. As a result, your application will lose access to your customer's account data, and your users will need to go through the authorization process again, unless you take measures to keep their access tokens live, by refreshing them via the [refresh token operation](https://developers.ringcentral.com/api-reference/Get-Token#section-refresh-token-flow).
 
-Access and refresh tokens expire according to the following schedule:
+Access tokens and refresh tokens expire according to the following schedule:
 
 | Token | TTL |
 |-|-|
 | Access token | 1 hour |
 | Refresh token | 7 days |
 
-Key facts about refresh tokens:
+## Using refresh tokens
 
-* Refresh tokens are transmitted to developers alongside access tokens
+Here are a few things to keep in mind when using refresh tokens to generate new access tokens.
+
+* Refresh tokens are transmitted to developers with their corresponding access tokens
 * Refresh tokens can only be used once. 
 * A new refresh token is generated when access tokens are refreshed. 
+* Upon refreshing an access token, the previous access token is invalidated immediately. If the previous access token is used within ten seconds, the error "Access token corrupted" will be returned, and will eventually return the error "Access token not found."
+* If one uses the newly generated access token, the old refresh token will become invalid in approximately ten seconds. Within those ten seconds, one can refresh the access token multiple times, however, the same access token will be returned. After approximately ten seconds, attempts to re-use the refresh token will result in a "Token not found" error. 
+* If you don't use the newly generated access token, the old refresh token will remain valid for up to 60 minutes. You can issue a refresh request multiple times, but the same access token will be returned until the key is used. 
 
-!!! hint "How to keep access tokens fresh"
-    It is recommended that developers implement a separate service dedicated to the task of refreshing access tokens on a regular basis. Such a service would ensure that at no time will your application lose access to a user's account data, and require them to re-login. 
-
-!!! info "The JWT auth flow provides non-expiring auth credentials"
+!!! hint "The JWT auth flow provides non-expiring auth credentials"
     The [JWT auth flow](../jwt-flow/) is ideal for apps that lack a frontend user interface. Through the JWT auth flow, access tokens are still issued, but they are easily refreshed without the need for human interaction.
+
+!!! info "How to keep access tokens fresh"
+    It is recommended that developers implement a separate service dedicated to the task of refreshing access tokens on a regular basis. Such a service would ensure that at no time will your application lose access to a user's account data, and require them to re-login. 
 
 ### Refresh access token request
 
@@ -42,7 +47,7 @@ Key facts about refresh tokens:
 | Parameter       | Type   | Description |
 | --------------- | ------ | ----------- |
 | `grant_type`    | string | Must be equal to `refresh_token`. |
-| `refresh_token` | string | Required. The refresh token corresponding to the access key you want to refresh. |
+| `refresh_token` | string | Required. The refresh token corresponding to the access token you want to refresh. |
 | `client_id`     | string | Only required if the corresponding app type is "Client-side web app." |
 
 **Example request**
@@ -57,8 +62,6 @@ refresh_token=BCMDFUMDRKV1MwMXx5d5dwzLFL4ec6U1A0XMsUv935527jghj48
 ```
 
 ### Refresh access token response
-
-**Example response**
 
 ```http
 HTTP/1.1 200 OK
