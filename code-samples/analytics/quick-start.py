@@ -86,4 +86,4 @@ def boostrap_test_function():
 # End of Quick Start Code Section
 
 # must be on the last line!
-boostrap_test_function()
+#boostrap_test_function()

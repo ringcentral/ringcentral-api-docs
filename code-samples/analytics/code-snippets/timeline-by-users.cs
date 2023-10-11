@@ -10,7 +10,9 @@ namespace TimeLineByUsers {
     static RestClient restClient;
 
     static async Task Main(string[] args){
+      // Instantiate the SDK
       restClient = new RestClient("SANDBOX-APP-CLIENT-ID", "SANDBOX-APP-CLIENT-SECRET", "https://platform.devtest.ringcentral.com");
+      // Authenticate a user using a personal JWT token
       await restClient.Authorize("SANDBOX-JWT");
 
       await read_analytics_timeline_grouped_by_users();

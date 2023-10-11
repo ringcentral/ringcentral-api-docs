@@ -60,22 +60,24 @@ or
 
 ### Setting the timeframe of the request
 
-The `timeSettings/timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate endpoint along with providing data at different timeframe splits.
+The `timeSettings` object contains the following important elements:
 
-The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours.
+* The `timeZone` will be used to determine the `includeDays` and `includeHours` specified in the `advancedTimeSettings`
+* The `timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate endpoint along with providing data at different timeframe splits.
+* The `advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours.
 
-In the below example, under `advancedTimeSettings`, `timeZone` can be specified, `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer.
+In the below example, under `advancedTimeSettings`, the `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer.
 
 **Example**
 
 ```json
 "timeSettings": {
+  "timeZone": "America/Los_Angeles",
   "timeRange": {
     "timeFrom": "2023-01-01T00:00:00.877Z",
     "timeTo": "2023-01-31T04:01:33.877Z"
   },
   "advancedTimeSettings": {
-    "timeZone": "America/Los_Angeles",
     "includeDays": [
       "Sunday"
     ],

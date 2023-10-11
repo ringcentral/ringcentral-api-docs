@@ -286,12 +286,13 @@ Select your preferred language below.
     * Create a new Java project
     * Select the Gradle Project wizard
     * Enter project name "WebhookServer"
-    * Open the <tt>build.gradle</tt> file and add the jetty-all library to the project as shown below:
+    * Open the <tt>build.gradle</tt> file and add the dependencies to the project as shown below:
 
     ```json
     dependencies {
         // ...
         implementation 'org.eclipse.jetty.aggregate:jetty-all:9.4.51.v20230217'
+        implementation: 'javax.servlet:javax.servlet-api:4.0.1'
     }
     ```
     We use jetty-all version 9.4.x for our server. You can get a different version [here](https://mvnrepository.com/artifact/org.eclipse.jetty.aggregate/jetty-all) if you want to.

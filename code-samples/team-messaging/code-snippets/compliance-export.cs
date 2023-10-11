@@ -9,13 +9,13 @@ namespace Export_Compliance_Data
     static RestClient restClient;
     static async Task Main(string[] args)
     {
-      restClient = new RestClient( Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-                                   Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-                                   Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-
       try
       {
-        await restClient.Authorize(Environment.GetEnvironmentVariable("RC_JWT"));
+        // Instantiate the SDK
+        restClient = new RestClient( "SANDBOX-APP-CLIENTID", "SANDBOX-APP-CLIENTSECRET", "https://platform.devtest.ringcentral.com");
+
+        // Authenticate a user using a personal JWT token
+        await restClient.Authorize("SANDBOX_JWT");
         await create_compliance_export_task();
       }
       catch (Exception ex)
@@ -23,11 +23,14 @@ namespace Export_Compliance_Data
         Console.WriteLine(ex.Message);
       }
     }
+    /*
+    * Create a task to export the Team Messaging store for a period of time.
+    */
     static private async Task create_compliance_export_task()
     {
         var bodyParams = new CreateDataExportTaskRequest();
-        bodyParams.timeFrom = "2019-08-01T00:00:00.000Z";
-        bodyParams.timeTo = "2019-08-26T23:59:59.999Z";
+        bodyParams.timeFrom = "2023-01-01T00:00:00.000Z";
+        bodyParams.timeTo = "2023-01-31T23:59:59.999Z";
 
         var resp = await restClient.TeamMessaging().V1().DataExport().Post(bodyParams);
         Console.WriteLine("Create export task");
@@ -39,6 +42,7 @@ namespace Export_Compliance_Data
             try
             {
                 Thread.Sleep(5000);
+                // Check the status of the task using the taskId.
                 resp = await restClient.TeamMessaging().V1().DataExport(taskId).Get();
                 if (resp.status != "InProgress" ||  resp.status != "Accepted")
                 {
@@ -52,6 +56,9 @@ namespace Export_Compliance_Data
         }
         if (resp.status == "Completed")
         {
+            /*
+            * Download the task compressed file and save to a local storage.
+            */
             for (var i = 0; i < resp.datasets.Length; i++)
             {
                 var fileName = "glip-export-reports_" + resp.creationTime + "_" + i + ".zip";

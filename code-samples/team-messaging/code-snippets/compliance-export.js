@@ -1,19 +1,12 @@
-const RC = require('@ringcentral/sdk').SDK
-var fs    = require('fs')
-var https = require('https')
-var url = require('url')
-const path = require('path')
-// Remember to modify the path to where you saved your .env file!
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+var platform = require('./../quick-start.js').platform;
+create_compliance_export_task()
 
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
-});
-var platform = rcsdk.platform();
-platform.login({ 'jwt':  process.env.RC_JWT })
 
+
+
+
+
+// Next line must be at the 10th line!
 platform.on(platform.events.loginSuccess, () => {
     create_compliance_export_task()
 })
@@ -22,7 +15,7 @@ platform.on(platform.events.loginSuccess, () => {
 * Create a task to export the Team Messaging store for a period of time.
 */
 async function create_compliance_export_task() {
-    console.log("Create export task.")
+  console.log("Create export task.")
   try {
     let bodyParams = {
         timeFrom: "2023-01-01T00:00:00.000Z",
@@ -63,6 +56,11 @@ async function get_compliance_export_task(taskId) {
   }
 }
 
+
+const fs    = require('fs')
+const https = require('https')
+const url = require('url')
+const path = require('path')
 /*
 * Download the task compressed file and save to a local storage.
 */

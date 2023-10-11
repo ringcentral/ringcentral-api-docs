@@ -37,7 +37,7 @@ async function read_extension_phone_number_detect_sms_feature(){
         var resp = await platform.get(endpoint)
         var jsonObj = await resp.json()
         for (var record of jsonObj.records){
-            for (feature of record.features){
+            for (var feature of record.features){
                 if (feature == "SmsSender"){
                     // If a user has multiple phone numbers, check and decide which number
                     // to be used for sending SMS message.
@@ -93,7 +93,7 @@ async function check_message_status(messageId){
         let jsonObj = await resp.json()
         console.log("Message status: ", jsonObj.messageStatus)
         if (jsonObj.messageStatus == "Queued"){
-          await sleep (5000);
+          await sleep (2000);
           check_message_status(jsonObj.id);
         }
     } catch (e) {

@@ -1,18 +1,6 @@
-#!usr/bin/ruby
-
-# You get the environment parameters from your
-# application dashbord in your developer account
-# https://developers.ringcentral.com
-
-require 'ringcentral'
-require 'open-uri'
-require 'dotenv'
-# Remember to modify the path to where you installed the RingCentral SDK and saved your .env file!
-Dotenv.load("./../.env")
-
-$platform = RingCentral.new( ENV['RC_CLIENT_ID'], ENV['RC_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
-
-
+#
+# Create a task to export the Team Messaging store for a period of time.
+#
 def create_compliance_export_task()
     puts "Create export task."
     bodyParams = {
@@ -24,6 +12,9 @@ def create_compliance_export_task()
     get_compliance_export_task(response.body['id'])
 end
 
+#
+# Check the status of the task using the taskId.
+#
 def get_compliance_export_task(taskId)
     puts "Check export task status ..."
     endpoint = "/team-messaging/v1/data-export/" + taskId
@@ -43,15 +34,21 @@ def get_compliance_export_task(taskId)
     end
 end
 
+#
+# Download the task compressed file and save to a local storage.
+#
 def get_report_archived_content(contentUri, fileName)
     puts "Save report zip file to the local machine."
     uri = contentUri + "?access_token=" + $platform.token['access_token']
     IO.copy_stream(URI.open(uri), fileName)
 end
 
-begin
-  $platform.authorize(jwt: ENV['RC_JWT'])
-  create_compliance_export_task()
-rescue StandardError => e
-  puts e
+# Authenticate a user using a personal JWT token
+def login():
+  begin
+    $platform.authorize(jwt: "SANDBOX_JWT")
+    create_compliance_export_task()
+  rescue StandardError => e
+    puts e
+  end
 end

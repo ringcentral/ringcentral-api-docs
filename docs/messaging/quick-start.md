@@ -43,7 +43,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
      * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
@@ -158,6 +158,7 @@ Select your preferred language below.
     * Select Target Framework .NET Core 2.1 or higher version
     * Enter project name "Send_SMS"
     * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /Send_SMS/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file Program.cs
 

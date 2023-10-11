@@ -1,25 +1,7 @@
-#!/usr/bin/python
-
-# You get the environment parameters from your
-# application dashbord in your developer account
-# https://developers.ringcentral.com
-
-import os
-import sys
-import time
+import os, time
 import requests
-
-#from urllib.request import urlopen
 from ringcentral import SDK
 from ringcentral.http.api_exception import ApiException
-from dotenv import load_dotenv
-
-load_dotenv()
-
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
-             os.environ.get('RC_SERVER_URL') )
-platform = rcsdk.platform()
 
 #
 # Create a task to export the Team Messaging store for a period of time.
@@ -72,8 +54,10 @@ def get_report_archived_content(contentUri, fileName):
         print ("File has been downloaded successfully and saved in " + fileName)
 
 
-try:
-  platform.login( jwt=os.environ.get('RC_JWT') )
-  create_compliance_export_task()
-except ApiException as e:
-  sys.exit("Unable to authenticate to platform: " + str(e))
+# Authenticate a user using a personal JWT token
+def login():
+  try:
+    platform.login( jwt= "SANDBOX_JWT" )
+    create_compliance_export_task()
+  except Exception as e:
+    print ("Unable to authenticate to platform. Check credentials." + str(e))

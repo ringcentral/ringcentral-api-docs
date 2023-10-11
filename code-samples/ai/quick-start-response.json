@@ -1,70 +1,74 @@
 {
-    "status":"Success",
-    "response":{
-        "transcript":"Thunderstorms could produce large, hail isolated tornadoes and heavy rain.",
-        "confidence":0.87,
-        "words":[
+    "jobId": "96d7a8ae-15d5-11ee-a31e-0050568c51bb",
+    "api": "/ai/audio/v1/async/speech-to-text",
+    "creationTime": "2023-06-28T17:02:39.951Z",
+    "completionTime": "2023-06-28T17:03:55.188Z",
+    "expirationTime": "2023-07-05T17:02:39.951Z",
+    "status": "Success",
+    "response": {
+        "confidence": 0.89,
+        "transcript": "Thunderstorms could produce large hail, isolated tornadoes, and heavy rain.",
+        "words": [
             {
-                "word":"thunderstorms",
-                "start":1.74,
-                "end":2.46,
-                "confidence":0.819
+                "confidence": 0.95,
+                "end": 2.44,
+                "start": 1.72,
+                "word": "thunderstorms"
             },
             {
-                "word":"could",
-                "start":2.46,
-                "end":2.7,
-                "confidence":0.967
+                "confidence": 0.91,
+                "end": 2.68,
+                "start": 2.44,
+                "word": "could"
             },
             {
-                "word":"produce",
-                "start":2.7,
-                "end":3.1,
-                "confidence":0.982
+                "confidence": 0.83,
+                "end": 3.16,
+                "start": 2.68,
+                "word": "produce"
             },
             {
-                "word":"large",
-                "start":3.1,
-                "end":3.42,
-                "confidence":0.826
+                "confidence": 0.85,
+                "end": 3.4,
+                "start": 3.16,
+                "word": "large"
             },
             {
-                "word":"hail",
-                "start":3.58,
-                "end":3.9,
-                "confidence":0.888
+                "confidence": 0.85,
+                "end": 3.88,
+                "start": 3.64,
+                "word": "hail"
             },
             {
-                "word":"isolated",
-                "start":4.14,
-                "end":4.46,
-                "confidence":0.827
+                "confidence": 0.96,
+                "end": 4.52,
+                "start": 4.12,
+                "word": "isolated"
             },
             {
-                "word":"tornadoes",
-                "start":4.54,
-                "end":5.18,
-                "confidence":0.844
+                "confidence": 0.85,
+                "end": 5.16,
+                "start": 4.6,
+                "word": "tornadoes"
             },
             {
-                "word":"and",
-                "start":5.18,
-                "end":5.34,
-                "confidence":0.99
+                "confidence": 0.92,
+                "end": 5.32,
+                "start": 5.16,
+                "word": "and"
             },
             {
-                "word":"heavy",
-                "start":5.42,
-                "end":5.74,
-                "confidence":0.87
+                "confidence": 0.88,
+                "end": 5.8,
+                "start": 5.4,
+                "word": "heavy"
             },
             {
-                "word":"rain",
-                "start":5.82,
-                "end":5.9,
-                "confidence":0.902
+                "confidence": 0.85,
+                "end": 5.96,
+                "start": 5.88,
+                "word": "rain"
             }
-        ],
-        "audio_duration":7.096599
+        ]
     }
 }

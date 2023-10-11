@@ -20,3 +20,4 @@ code-samples/**/obj/*
 *.sln
 .idea/
 *.iml
+*.mp3
