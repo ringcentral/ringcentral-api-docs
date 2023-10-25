@@ -8,8 +8,8 @@ An authorization request URL will vary depending upon what environment you are a
 
 | Environment | Base URL | 
 |-|-|
-| Sandbox | `https://platform.ringcentral.com/restapi/oauth/authorize` | 
-| Production | `https://platform.devtest.ringcentral.com/restapi/oauth/authorize` | 
+| Sandbox | `https://platform.devtest.ringcentral.com/restapi/oauth/authorize` | 
+| Production | `https://platform.ringcentral.com/restapi/oauth/authorize` | 
 
 ### Authorization request parameters
 
