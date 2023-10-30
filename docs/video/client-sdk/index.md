@@ -12,6 +12,8 @@
   <li>Javascript</li>
   <li>Native iOS</li>
   <li>Native Android</li>
+  <li>React</li>
+  <li>React Native</li>
   </ul>
   <a href="./download/" class="btn btn-primary qs-link">Download the Video Client SDK</a>
 </div>
