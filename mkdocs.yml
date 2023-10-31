@@ -182,7 +182,8 @@ nav:
     - 'Bots':
       - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
       - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
-      - 'Installing/removing bots': 'team-messaging/bots/installing-bots.md'
+      - 'Installing bots': 'team-messaging/bots/installing-bots.md'
+      - 'Uninstalling bots': 'team-messaging/bots/uninstalling-bots.md'
 #      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
 #      - 'Local bot development': 'team-messaging/bots/node.md'
       - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
