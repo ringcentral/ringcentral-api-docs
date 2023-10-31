@@ -220,7 +220,7 @@ nav:
          - 'Javascript': 'https://github.com/ringcentral/ringcentral-videosdk-js-samples'
          - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
          - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
-	 - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
+         - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
     - 'Using RingCentral Embeddable': 'video/embeddable.md'
     - 'Meetings (legacy API)':
       - 'Overview': 'meetings/index.md'
