@@ -6,9 +6,9 @@ edit_uri: https://github.com/ringcentral/ringcentral-api-docsedit/main/docs/
 docs_dir: docs
 
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: main
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: main
   - bootstrap-tables
 #  - ringcentral-api-index:
 #      outfile: basics/api-index.md
