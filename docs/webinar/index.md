@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Introduction to the RingCentral Webinar Platform
 
-{! docs/webinar/beta-notice.md !}
+{! mdx_includes/webinar-beta-notice.md !}
 
 <div class="jumbotron pt-1">
   <h3 class="h3 display-5">See the RingCentral Webinar API in action!</h3>
@@ -24,7 +24,7 @@ Use the following quick steps to get started.
 
 Login to the [Developer Console](https://developers.ringcentral.com/login.html#/) and create an app with all the permissions you will need, or click the "Create Webinar App" button below. 
     
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Webinar&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
+<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=EditWebinars,ReadWebinars&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
 
 #### 2. Contact us to graduate your app to production
 

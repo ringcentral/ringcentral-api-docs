@@ -7,7 +7,7 @@ hide:
 
 # RingCentral MVP™ Developer Guide
 
-{! docs/carousel.md !}
+{! mdx_includes/carousel.md !}
 
 ## Popular use cases
 

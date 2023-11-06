@@ -1,6 +1,9 @@
-# Call Log data types
+# Understanding the call log data format
 
-Currently there are three major data types which are contained within the Call Log API resource (for the latest information, please check the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefCallLogInfo.html):
+??? note "Are you looking to get a list of currently active calls?"
+    A close cousin of the Call Log API is the [Active Call API](../../finding-active-calls/) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
+
+There are three major data types which are contained within the Call Log API resource:
 
 * Account and extension-level call log records
     * The **tome** of Call Log knowledge for your RingCentral Acccount
@@ -14,16 +17,13 @@ Currently there are three major data types which are contained within the Call L
 * Call recording content
     * Plug the contentUri into an HTML5 Audio element to quickly make a recording player
 
-!!! note "Active Calls"
-    A close cousin of the Call Log API is the [Active Call API](../../finding-active-calls/) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
-
 All of Call Log data types have two levels of access, Admin (aka: Account) and User (aka: Extension). Account-level access, is achieved by authenticating (obtaining an access_token) using RingCentral Admin user credentials. Account-level response data will include records across an account, as compared to User/Extension level response data which is scoped ONLY to the **currently authenticated user**.
 
 ## Call log records
 
 Developers should consider Call Logs to be the database of authority as it relates to actions (both inbound and outbound) for a RingCentral Account. The data contained can be queried in a variety of ways using filters as well as exposing deeper granualarity for all legs of a call (such as the case with a RingOut or forwarded calls).
 
-The session_id value should be used if you want to associate multiple Call Logs as part of a given single call.
+The `session_id` value should be used if you want to associate multiple Call Logs as part of a given single call.
 
 Call logs can be searched across an entire account by authenticating (obtaining an access_token) using Admin level credentials.
 
@@ -43,9 +43,9 @@ Developers can access the Call Logs associated with the currently authenticated 
 GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 ```
 
-## Filters
+## Filtering call log records
 
-Filters (query parameters) improve the value of Call Log data for developers. For a current list of the filter values available, please refer to the [API Reference](https://developers.ringcentral.com/api-docs/latest/index.html#!#RefGetExtensionCallLog). 
+Filters (query parameters) improve the value of Call Log data for developers. For a current list of the filter values available, please refer to the [API Reference](https://developers.ringcentral.com/api-reference/Call-Log/readUserCallLog). 
 
 Following standard RESTful API best practices, all filters are used as part of the query string since all Call Log routes are GET routes.
 

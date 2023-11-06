@@ -1,9 +1,6 @@
-# Obtaining Timeline Call Line of Business Data
+# Obtaining Timeline Call Business Analytics Data
 
-!!! warning "Analytics API - breaking change alert!"
-    Analytics API timeline path has changed to `POST /analytics/calls/v1/accounts/~/timeline/fetch`
-
-It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Performance Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times. 
+It is quite common to acquire and segment call data based on time related metrics for reporting and analysis. Call Timeline API provides data over multiple time intervals such as 'Hourly', 'Daily', 'Weekly' or 'Monthly'. This kind of information can provide key insights to the line of business managers, for instance, detect when peak call times are and if and when they should adjust their call staff shifts to manage those peak times.
 
 Example Use Cases:
 
@@ -65,7 +62,7 @@ or
 
 The `timeSettings/timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate endpoint along with providing data at different timeframe splits.
 
-The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours. 
+The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours.
 
 In the below example, under `advancedTimeSettings`, `timeZone` can be specified, `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add grouping as necessary to make sure that the data received is aggregated by counter & timer.
 
@@ -74,11 +71,11 @@ In the below example, under `advancedTimeSettings`, `timeZone` can be specified,
 ```json
 "timeSettings": {
   "timeRange": {
-    "timeFrom": "2021-10-02T00:00:00.877Z",
-    "timeTo": "2022-01-02T04:01:33.877Z"
+    "timeFrom": "2023-01-01T00:00:00.877Z",
+    "timeTo": "2023-01-31T04:01:33.877Z"
   },
   "advancedTimeSettings": {
-    "timeZone": "Europe/Moscow",
+    "timeZone": "America/Los_Angeles",
     "includeDays": [
       "Sunday"
     ],
@@ -96,7 +93,7 @@ In the below example, under `advancedTimeSettings`, `timeZone` can be specified,
 
 The `responseOptions` element allows users to specify call aggregation breakdown and its data aggregation types for API responses.
 
-The `counters` element provides aggregation on Call volume by specified metrics for set Time Interval split. The metrics can be provided in the counter section under the `responseOptions`. 
+The `counters` element provides aggregation on Call volume by specified metrics for set Time Interval split. The metrics can be provided in the counter section under the `responseOptions`.
 
 The `timers` element provides aggregation for time spent on the call.  The metrics can be provided in the timer section under `responseOptions` which will provide duration details by specified metrics for set Time Interval splits.
 
@@ -210,7 +207,7 @@ The `callFilters` element allows users to filter out the data and specify the gr
 Analytics can produce a lot of results so you may want to paginate your results to enable easier processing. Pagination is done with two additional query parameters: `page` and `perPage`. For timeline reports, you can also specify the `interval` as a query parameter.
 
 | Pagination (API) | Description |
-|-|-| 
+|-|-|
 | `page` | The page you wish to start with. For example, start on page 2. |
 | `perPage` | The number of results return on each page. For example, you want 10 results on the first page and an additional 10 on the second page. Note: timeline reports have a max limit of `20` per page. |
 
@@ -221,7 +218,7 @@ POST /analytics/calls/v1/accounts/~/timeline/fetch?interval=Week&page=2&perPage=
 Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ```
 
 ## Data dictionary
@@ -239,10 +236,105 @@ Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 | callsSegments | callsSegmentsDuration | <p> Aggregates the times spent by the caller in different stages of the call. These are the calls that came to the dimensions specified by GroupBy. The data received will be by time intervals split pre-applied (hour, day, week, month). </p> <ul><li><b>setup:</b> It is when the phone system is connecting to callee's device. This is when the caller is calling  via RC App and the system says "Please wait while I try to connect you" before the beeps start. </li> <li><b>ringing:</b> Duration for which calls spent ringing to the Extn/No & can be found under Timer. When selected under counter, it returns, the number of calls that had a ringing phase. </li> <li><b>ivrPrompts:</b> Duration for which calls are spent in IVR Prompt before reaching the Extn/No. When selected as “Calls” returns, the number of calls that had IVR Prompt phase. </li> <li><b>livetalk:</b> Duration for which callers were having a live talk with Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that had a Live Talk phase. </li> <li><b>holds:</b> Duration for which callers were put on hold by Extn/No & can be found under Timer. When selected under counter, it returns, number of calls that had a Hold phase. </li> <li><b>parks:</b> Duration for which callers spent in a parked state after being parked by Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that were parked by Extn/No. </li> <li><b>transfers:</b> Duration for which caller was being transferred by Extn/No & can be found under Timer. When selected under counter, it returns the number of calls that were transferred by Extn/No. </li> <li><b>vmGreeting:</b> Duration for which callers spent listening to VM greeting & can be found under Timer. When selected under counter, it returns the number of calls that had VM greeting phase. </li> <li><b>voicemail:</b> Duration for which callers spent in Voicemail & can be found under Timer. When selected under counter, it returns number of calls that had Voicemail Phase. </li></ul> |
 | callsByCompanyHours | callsDurationByCompanyHours | <p> Aggregates data by company "Business Hours" or "After Hours" as setup on the admin portal. </p> Counter will return aggregation of calls for Business Hours & After Hours by time intervals. Timer will return call duration aggregation for the same by time intervals. |
 | callsByQueueSla | callsDurationByQueueSla | <p> Provides the count of calls and their duration details for calls answered within SLA for Queues grouping only. Not applicable for the rest of the groupby available. </p><ul><li><b>inSla:</b> Calls answered within SLA. </li> <li><b>outOfSla:</b> Calls answered outside of SLA. </li></ul> Counter will return aggregation of calls for these metrics by time intervals. Timer will return call duration aggregation for the same by time intervals. |
-| 
+|
 
-## Full example of an Analytics Timeline Report
+## Full sample request for Analytics Timeline Report
 
 ```json
-{!> code-samples/analytics/timeline-request-body.json !} 
+{!> code-samples/analytics/aggregate-request-body.json !}
 ```
+
+The following code samples show how to read analytics timeline data.
+
+### Call the Analytics Timeline API - Grouped by users
+
+!!! note "Running the code"
+    * If you have tried the [SMS quick start](../../messaging/quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_users()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+
+=== "Javascript"
+
+    ```javascript
+    {!> code-samples/analytics/code-snippets-headers/header.js !}
+    {!> code-samples/analytics/code-snippets/timeline-by-users.js [ln:10-82] !}
+    ```
+
+=== "Python"
+
+    ```python
+    {!> code-samples/analytics/code-snippets/timeline-by-users.py !}
+    {!> code-samples/analytics/code-snippets-headers/footer.py !}
+    ```
+
+=== "PHP"
+
+    ```php
+    {!> code-samples/analytics/code-snippets-headers/header.php [ln:1-9]!}
+    {!> code-samples/analytics/code-snippets/timeline-by-users.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/analytics/code-snippets/timeline-by-users.rb !}
+    {!> code-samples/analytics/code-snippets-headers/footer.rb !}
+    ```
+
+=== "C#"
+
+    ```C#
+    {!> code-samples/analytics/code-snippets/timeline-by-users.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/analytics/code-snippets/timeline-by-users.java !}
+    ```
+
+### Call the Analytics Timeline API - Grouped by call queues
+
+!!! note "Running the code"
+    * If you have tried the [SMS quick start](../../messaging/quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_queues()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+
+
+=== "Javascript"
+
+    ```javascript
+    {!> code-samples/analytics/code-snippets-headers/header.js !}
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.js [ln:10-81] !}
+    ```
+
+=== "Python"
+
+    ```python
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.py !}
+    {!> code-samples/analytics/code-snippets-headers/footer.py !}
+    ```
+
+=== "PHP"
+
+    ```php
+    {!> code-samples/analytics/code-snippets-headers/header.php [ln:1-9]!}
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.rb !}
+    {!> code-samples/analytics/code-snippets-headers/footer.py !}
+    ```
+
+=== "C#"
+
+    ```C#
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/analytics/code-snippets/timeline-by-queues.java !}
+    ```

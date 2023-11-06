@@ -9,16 +9,15 @@ no_breadcrumb:true
   <p>New to RingCentral? If you have not completed a RingCentral <a href="../../">Quick Start Guide</a>, we recommend you start there. Then return here to begin your journey in building your app.</p>
 </div>
 
-## Setting up your "soft phone"
+## Setting up your phone for testing
 
-If you are building an application having to do with making, receiving, routing or managing phone calls we recommend you install RingCentral software-based phone app, a.k.a. a "soft phone." Our software phone comes with a number of features you will find useful during development and testing:
+If you are building an application having to do with making, receiving, routing or managing phone calls we recommend you login to the RingCentral [unified app sandbox](https://app.devtest.ringcentral.com/) via the web to:
 
-* Toggle between our sandbox and production environments.
 * Access voicemail.
 * Send and receive SMS.
 * View call log and history. 
 
-[Learn more about your "RingCentral soft phones" &raquo;](../your-rc-phone)
+[Learn more about sandbox &raquo;](../../getting-started/using-sandbox)
 
 ## Registering your first app
 
@@ -49,7 +48,7 @@ This field determines what development features will be made available to your a
 
 * **Server/No UI** - this is the only platform type that allows for password-based authentication.
 
-[Learn more about platform types in "Creating an Application" &raquo;](../create-app/)
+[Learn more about platform types in "Creating an Application" &raquo;](../../getting-started/register-app/)
 
 #### Permissions
 

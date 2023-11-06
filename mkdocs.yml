@@ -20,6 +20,9 @@ plugins:
 #      enable_creation_date: true
 #  - tags:
 #      tags_file: tags.md
+  - exclude:
+      regex:
+        - '^#.*'
 
 theme:
   name: material
@@ -140,28 +143,31 @@ nav:
 
 # ---- CORE APIs ----
 - 'Getting started':
-  - 'Making your first API call': 'basics/first-api-call.md'
-  - 'Creating an app': 'basics/create-app.md'
-  - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
-  - 'Setting up a .env file': 'foo.md'
-  - 'Developing in sandbox': 'basics/sandbox.md'
-  - 'Graduating to production': 'basics/production.md'
-  - 'Promoting your app in the gallery': 'basics/app-gallery.md'
+  - 'Your first API call': 'getting-started/index.md'
+  - 'Register an app': 'getting-started/register-app.md'
+  - 'Create an auth credential': 'getting-started/create-credential.md'
+  - 'Access sandbox': 'getting-started/using-sandbox.md'
+  - 'Build an app': 'getting-started/code-app.md'
+  - 'Sending SMS': 'getting-started/sms.md'
+  - 'Obtain production credentials': 'getting-started/graduate-app.md'
+  - 'Promote your app': 'getting-started/promote-app.md'
 
 - 'Basics':
   - 'Authentication':
     - 'Choosing the best auth': 'authentication/index.md'
     - 'JWT grant type':
       - 'Getting started': 'authentication/jwt/quick-start.md'
-      - 'Creating a JWT credential': 'authentication/jwt/create-jwt.md'
       - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
       - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
     - 'Auth code grant type':
       - 'Getting Started': 'authentication/quick-start.md'
+      - 'Generating an auth request': 'authentication/oauth-request.md'
+      - 'Keeping access tokens fresh': 'authentication/session-keep-alive.md'
       - 'Sample app (Javascript)': 'https://ringcentral-tutorials.github.io/authorization-code-flow-oauth-nodejs-demo/?distinctId=1589010021'
     - 'Using access tokens': 'authentication/tokens.md'
     - 'Using refresh tokens': 'authentication/refresh-tokens.md'
+    - 'App scopes': 'basics/permissions.md'
     - 'Technical deep-dives':
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
@@ -169,16 +175,23 @@ nav:
       - 'Password flow': 'authentication/password-flow.md'
   - 'Notifications and events':
     - 'Overview': 'notifications/index.md'
-    - 'Push notifications':
-      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
-      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
+    - 'Event filters': 'notifications/event-filters.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
-      - 'Creating Webhooks': 'notifications/webhooks/creating-webhooks.md'
-      - 'Available webhooks': 'notifications/webhooks/event-filters.md'
-      - 'Receiving Webhooks': 'notifications/webhooks/receiving.md'
+      - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
+      - 'Receiving webhooks': 'notifications/webhooks/receiving.md'
       - 'Configuring TLS/SSL': 'notifications/webhooks/configuring-tls-ssl.md'
       - 'Troubleshooting': 'notifications/webhooks/troubleshooting.md'
+    - 'WebSockets':
+      - 'Getting Started': 'notifications/websockets/quick-start.md'
+      - 'Subscribing via Web Sockets': 'notifications/websockets/subscribing.md'
+      - 'Receiving events': 'notifications/websockets/receiving.md'
+      - 'Session recovery': 'notifications/websockets/session-recovery.md'
+      - 'Keep-alives': 'notifications/websockets/heart-beats.md'
+      - 'Migration guide': 'notifications/websockets/migration.md'
+    - 'PubNub push notifications':
+      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
+      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
     - 'Sample applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
@@ -215,11 +228,9 @@ nav:
   - 'Applications':
       - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Create an application': 'basics/create-app.md'
-          - 'Develop in sandbox': 'basics/sandbox.md'
-          - 'Graduate to production': 'basics/production.md'
+          - 'Develop in sandbox': 'getting-started/using-sandbox.md'
       - 'App promotion':
-          - 'Submit to the App Gallery': 'basics/app-gallery.md'
+          - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
           - 'Updating a profile': 'basics/update-profile.md'
           - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
@@ -258,7 +269,7 @@ nav:
     - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
     - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
   - 'Call Logs':
-    - 'Overview': 'voice/call-log/reading-call-log.md'
+    - 'Overview': 'voice/call-log/index.md'
     - 'Call Log data types': 'voice/call-log/api.md'
     - 'Detailed Call Log Data': 'voice/call-log/details.md'
     - 'Data Archival': 'voice/call-log/archival.md'

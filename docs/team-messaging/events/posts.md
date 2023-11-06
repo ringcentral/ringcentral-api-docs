@@ -10,7 +10,7 @@ Each event type has a unique payload and structure depending upon the event type
 
 When [subscribing](../outgoing-webhooks/#subscribing-to-an-outgoing-event) to post events you will need to specify the following event filter:
 
-* `/restapi/v1.0/glip/posts`
+* `/team-messaging/v1/posts`
 
 Once a subscription has been setup, your application will begin receiving events at the designated URL. 
 

@@ -29,7 +29,7 @@ The Developer Guide is built on top of Mkdocs, a self-contained documentation se
 git clone https://github.com/ringcentral/ringcentral-api-docs.git
 cd ringcentral-api-docs
 pip install mkdocs
-pip install --upgrade mkdocs-ringcentral
+pip install -r requirements.txt
 mkdocs serve
 ```
 

@@ -1,9 +1,8 @@
-no_breadcrumb:true
 style: quick-start
 
 # Meetings Quick Start
 
-{! docs/meetings/deprecation-notice.md !}
+{! mdx_includes/rcm-deprecation-notice.md !}
 
 ??? check "Paid RingCentral account and Meetings app scope required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
@@ -46,7 +45,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
 
 ## Create a meeting
 

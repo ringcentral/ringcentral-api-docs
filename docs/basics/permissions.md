@@ -40,7 +40,8 @@ The following scopes are available:
 | **EditPaymentInfo**       | Viewing and updating account billing settings                  | Read and Update   |                      |
 | **EditPresence**          | Getting and modifying user presence information                | Read and Update   | **ReadPresence**     |
 | **EditReportingSettings** | Viewing and updating call reporting settings. *Available on request.* | Read and Update   |                      |
-| **EditWebinars**          |    | Special operation |                      |
+| **EditWebinars**          | Viewing and updating webinars and webinar sessions.            | Read and Update   |                      |
+| **EditUserCredentials**   | Editing and managing a user's login credentials including their password. *Available on request.*   | Read and Update |                      |
 | **Faxes**	                | Sending and receiving faxes                                    | Special operation | **ReadMessages**     |
 | **Glip**	                | Read and post message, read and manage chats                   | Read and Update   |                      |
 | **InternalMessages**      | Sending and receiving intra-company text messages, a.k.a. pager messages | Special operation | **ReadMessages**     |

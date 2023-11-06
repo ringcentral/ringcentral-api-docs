@@ -98,7 +98,7 @@ Upon successful API call completion, the response is a list of records. Each rec
 {
   records: [
   {
-    size: 14167,
+    size: 14168,
     uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-ed6a473f3aea40819d761242fa6fa331/archive/0'
   },
   {
@@ -135,41 +135,50 @@ The archived file at index one (archive/1) is a .zip file containing attachments
 
 The following code sample shows how to call the Message Store Export APIs to export the message store data and save it to a local machine.
 
+!!! note "Running the code"
+    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `create_message_store_report()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+    * Also make sure that your use the JWT token of an admin user in order have enough user permission to export the message store.
+
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/message-store-export.js !}
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-12] !}
+    {!> code-samples/messaging/code-snippets/message-store-export.js [ln:10-] !}
     ```
 
 === "Python"
 
     ```python
-    {!> code-samples/messaging/message-store-export.py !}
+    {!> code-samples/messaging/code-snippets/message-store-export.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5] !}
     ```
 
 === "PHP"
 
     ```php
-    {!> code-samples/messaging/message-store-export.php !}
-    ```
-
-=== "C#"
-
-    ```c#
-    {!> code-samples/messaging/message-store-export.cs !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/messaging/Export_MessageStore.java !}
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-15] !}
+    {!> code-samples/messaging/code-snippets/message-store-export.php [ln:2-] !}
     ```
 
 === "Ruby"
 
     ```ruby
-    {!> code-samples/messaging/message-store-export.rb !}
+    {!> code-samples/messaging/code-snippets/message-store-export.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
     ```    
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/messaging/code-snippets/message-store-export.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/messaging/code-snippets/message-store-export.java !}
+    ```
 
 ## Relevant APIs for Further Reading
 

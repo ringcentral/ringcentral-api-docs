@@ -18,6 +18,30 @@ When processing files asynchronously, it is important to correlate every request
 
 You should parse this response, and store the `jobId` associated with the media file being processed so that you can reliably associate the response that will be delivered in a `webhook` later to the file for which it pertains. 
 
+!!! note "Job IDs expire after 1 week"
+    The job ID returned in the response above only lasts for one week. To know the exact expiration time for the job, please use the GET `jobs` API below and look for the `expirationTime`.
+
+### Check on the status of your AI API job request
+
+Upon submitting your AI API job request, a `jobId` is sent in the response as mentioned above. With this `jobId`, you can check on the progress of your AI API job request as follows:
+
+```html
+GET /ai/status/v1/jobs/{jobId}
+```
+
+This will return a JSON response to show some details on your AI API job request:
+
+```json
+{
+    "jobId": "a919924e-ce4e-11ed-xxxx-0050568c48bc",
+    "creationTime": "2023-04-04T21:20:20.246Z",
+    "expirationTime": "2023-04-11T21:20:20.246Z",
+    "status": "InProgress"
+}
+```
+
+Once the AI API job request is completed, using this API command will return the results of your AI API request.
+
 ## Working with asynchronous responses in development
 
 ### Install and setup ngrok

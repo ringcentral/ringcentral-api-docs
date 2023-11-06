@@ -2,7 +2,7 @@ style: quick-start
 
 # RingCentral Video Client SDK Quick Start
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! mdx_includes/video-beta-notice.md !}
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system, developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and video.
 
@@ -34,15 +34,15 @@ When you are done, you will be taken to the app's dashboard. Make note of the ap
 
 ### Obtain a JWT credential
 
-Your application will need to be able to call the RingCentral API. The sample application you will be using in this quick start, will authenticate via JWT. [Create a JWT credential](../../../authentication/jwt/create-jwt), and copy it to your clipboard. 
+Your application will need to be able to call the RingCentral API. The sample application you will be using in this quick start, will authenticate via JWT. [Create a JWT credential](../../../getting-started/create-credential), and copy it to your clipboard. 
 
 !!! info "Using JWT credentials"
-    JWT credentials are associated with an individual and are created in the [Developer Console](https://developers.ringcentral.com/) in your Credetials area. The individual with whom the credential is associated will be the host for all the meetings initiated by this quick start guide. In real life, you would want to either prompt users to login using the OAuth auth code flow to obtain an access key for each of your users, or [schedule your meetings on behalf of others](../../api/meeting-delegates/) so that they are assigned as the host of the meetings being initiated. 
+    JWT credentials are associated with an individual and are created in the [Developer Console](https://developers.ringcentral.com/) in your Credetials area. The individual with whom the credential is associated will be the host for all the meetings initiated by this quick start guide. In real life, you would want to either prompt users to login using the OAuth auth code flow to obtain an access token for each of your users, or [schedule your meetings on behalf of others](../../api/meeting-delegates/) so that they are assigned as the host of the meetings being initiated. 
 
 ## Graduate your application to production
 
 !!! info "RingCentral Video does not have a developer sandbox"
-    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../../basics/sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
+    RingCentral Video is not currently available within the [RingCentral Developer Sandbox](../../../getting-started/using-sandbox/). As a result, all development will need to be done in production, which requires you to request the application you created above to be graduated manually. This can be done by [submitting a help ticket to our Developer Support team](https://developers.ringcentral.com/support/create-case).
 
 ## Create a meeting bridge
 
@@ -64,13 +64,13 @@ Then the web PIN is `0123456789`. Make note of this pin, as you will use it late
 
 === "Javascript"
    
-    {!> docs/video/client-sdk/quick-start-js.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-js.md !} 
 
 === "iOS"
    
-    {!> docs/video/client-sdk/quick-start-ios.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-ios.md !} 
 
 === "Android"
    
-    {!> docs/video/client-sdk/quick-start-android.md !} 
+    {!> mdx_includes/rcv-sdk-quick-start-android.md !} 
 

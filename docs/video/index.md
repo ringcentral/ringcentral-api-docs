@@ -2,7 +2,7 @@ no_breadcrumb:true
 
 # Introduction to the RingCentral Video Platform
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 The RingCentral Video platform is available to RingCentral MVP customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The video platform is made up of a number of products that can help developers:
 
@@ -25,7 +25,7 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
       <li><a href="./client-sdk/quick-start/#iOS" class="card-link">iOS</a></li>
       <li><a href="./client-sdk/quick-start/#Javascript" class="card-link">Javascript</a></li>
       </ul>
-	  <a class="btn btn-primary mb-3" href="https://forms.gle/H3QxfhqAhujkktXa6">Join the Client SDK beta &raquo;</a>
+	  <a class="btn btn-primary mb-3" href="https://forms.gle/H3QxfhqAhujkktXa6">Join the Client SDK beta &raquo;</a><br>
 	  <a class="btn-link mb-3" role="button" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
     </div>
   </div>

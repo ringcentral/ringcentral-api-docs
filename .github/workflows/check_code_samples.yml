@@ -1,8 +1,8 @@
 name: Check code samples
-on:
-  push:
-    branches: main
-#on: workflow_dispatch
+#on:
+#  push:
+#    branches: main
+on: workflow_dispatch
 
 jobs:
   code-sample-check:

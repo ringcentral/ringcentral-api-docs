@@ -16,7 +16,7 @@ When creating an app, first select the "Notification add-in" app type.
 
 ![Add-in app type](./addin-app-type.png)
 
-Creating a notification add-in is identical in most respects to [creating an app](../../../basics/create-app/) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
+Creating a notification add-in is identical in most respects to [creating an app](../../../getting-started/register-app/) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
 
 ### App preferences
 

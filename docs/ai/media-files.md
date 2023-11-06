@@ -11,19 +11,19 @@ The URLs referenced by the `contentUri` parameter must be public accessible to R
 
 ## How to analyze RingCentral call recordings and RingCentral meeting recordings
 
-RingCentral hosts all downloadable [media content](../../basics/media/) on a protected server, and requires developers to transmit a valid access key (or auth token) with their request in order to access the corresponding content. RingCentral makes it possible to access protected media content, like RingCentral [call recordings](../../voice/call-log/recordings/) and RingCentral Video [meeting recordings](../../video/api/meeting-history/) by appending the access key via the `access_token` querystring parameter. For example, let's look at how one would construct a URL that would allow the AI API to access a RingCentral call recording. 
+RingCentral hosts all downloadable [media content](../../basics/media/) on a protected server, and requires developers to transmit a valid access token with their request in order to access the corresponding content. RingCentral makes it possible to access protected media content, like RingCentral [call recordings](../../voice/call-log/recordings/) and RingCentral Video [meeting recordings](../../video/api/meeting-history/) by appending the access token via the `access_token` querystring parameter. For example, let's look at how one would construct a URL that would allow the AI API to access a RingCentral call recording. 
 
 ### Sample call log entry
 
-Here is an excerpt from a call to the [Call Log API](../../voice/call-log/reading-call-log/) and shows an entry that contains a reference to a recording of a phone call. 
+Here is an excerpt from a call to the [Call Log API](../../voice/call-log/) and shows an entry that contains a reference to a recording of a phone call. 
 
 ```json hl_lines="24"
 {!> code-samples/voice/call-log-sample.json !}
 ```
 
-### Obtaining an access key or token
+### Obtaining an access token
 
-To access a protected media file, you will first need to obtain an access key. Luckily the access key you will use is the same used to call the RingCentral API. You can obtain the access key easily via each of our SDKs.
+To access a protected media file, you will first need to obtain an access token. Luckily the access token you will use is the same used to call the RingCentral API. You can obtain the access token easily via each of our SDKs.
 
 === "Javascript"
 
@@ -49,10 +49,16 @@ To access a protected media file, you will first need to obtain an access key. L
     {!> code-samples/basics/access-key.rb !}
     ```
 
-### Appending the access key to the media file URL
+### Appending the access token to the media file URL
 
-Now, pass the access key to the media file's content URL in the following manner:
+Now, pass the access token to the media file's content URL in the following manner:
 
 ```
-https://media.ringcentral.com/restapi/..snip../recording/1662272004/content?access_token=<ACCESS KEY>
+https://media.ringcentral.com/restapi/..snip../recording/1662272004/content?access_token=<access token>
 ```
+!!! Important
+    To retrieve the recording and use the AI API to process the recording, you need to have the following app permissions:
+
+    For Call Recordings: **AI**, **Read Call Recording**
+
+    For Video Meeting Recordings: **AI**, **Video Internal**

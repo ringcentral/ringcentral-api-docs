@@ -1,6 +1,6 @@
 # Scheduling and creating a meeting bridge
 
-{! docs/video/beta-notice.md !}
+{! mdx_includes/video-beta-notice.md !}
 
 ## What is difference between a meeting and a bridge?
 
@@ -15,7 +15,7 @@ This means that when you "create a meeting," what you are really creating is a b
 The following Javascript code can be used to create a RingCentral Video meeting bridge. Our [Video Quick Start guide](../quick-start/) include a more complete code sample (with authentication for example) than the one shown below. The code sample below also showcases a wide array of configuration options, not all of which are required. 
 
 ```js
-{! code-samples/video/create-meeting.js [ln:25-52] !}
+{! code-samples/video/create-meeting.js [ln:22-49] !}
 ```
 
 #### Setting the bridge's type

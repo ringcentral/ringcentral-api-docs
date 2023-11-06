@@ -1,0 +1,17 @@
+{
+    "uri":"https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222",
+    "id":22222222,
+    "extensionNumber":"222",
+    "customFields":[
+        {
+            "id":"33333",
+            "displayName":"Salesforce User",
+            "value":"https://example.my.salesforce.com/003800000123456"
+        },
+        {
+            "id":"44444",
+            "displayName":"LinkedIn URL",
+            "value":"https://www.linkedin.com/in/example/"
+        }
+    ]
+}

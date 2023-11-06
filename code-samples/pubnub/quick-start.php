@@ -16,7 +16,7 @@ $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
 $platform = $rcsdk->platform();
 $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
 
-$subscription = $rcsdk->createSubscription();
+$subscription = $rcsdk->createSubscription('Pubnub');
 $subscription->addEvents(array('/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'));
 $subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) {
     print_r($e->payload()['body']);

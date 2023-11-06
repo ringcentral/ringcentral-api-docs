@@ -112,7 +112,7 @@ When successful, the response will contain the id (taskId) and the status of the
 
 !!! tip "Authentication and file downloads"
 
-    When an export task has completed successfully, make a GET request to the `uri` parameter returned in the response as described in the previous step, and pass your access key via an Authorization header or access_token query parameter as described in [Accessing protected content](../../../basics/media/) on *Working with media content*.
+    When an export task has completed successfully, make a GET request to the `uri` parameter returned in the response as described in the previous step, and pass your access token via an Authorization header or access_token query parameter as described in [Accessing protected content](../../../basics/media/) on *Working with media content*.
 
 ## Sample Code: Export Team Messaging Data
 

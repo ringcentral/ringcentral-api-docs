@@ -63,9 +63,9 @@ SMS differs from email in that the messages are very short. Do not make your SMS
 
     These arm bands will surely come in handy on your next run! Shop the deals now!
 
-    Today's Trending Products: this and that and the others ...
+    Today's Trending Products: this and that, and the others ...
 
-    Recommended For You: this and that and that one too ...
+    Recommended For You: this and that, and that one too ...
 
     Click https://www.easyshopping.com to shop now or refer friends https://www.easyshopping.com/invite?utm_campaign to earn up to $100!
 
@@ -79,13 +79,13 @@ If your customer replies 1, send the next message with current deals
 
     Thank you for your interest!
 
-    Today's Trending Products: this and that and the others ...
+    Today's Trending Products: this and that, and the others ...
 
 If your customer replies 2, send the next message with more information
 
     Thank you for your interest!
 
-    Recommended For You: this and that and that one too ...
+    Recommended For You: this and that, and that one too ...
 
     Visit https://www.easyshopping.com/deals to shop now or refer friends https://www.easyshopping.com/invite?utm_campaign to earn up to $100!
 

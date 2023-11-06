@@ -1,5 +1,5 @@
 const RC = require('@ringcentral/sdk').SDK
-const Subs = require('@ringcentral/subscriptions').Subscriptions
+const Subscriptions = require('@ringcentral/subscriptions-deprecated').Subscriptions
 require('dotenv').config();
 
 var rcsdk = new RC({
@@ -10,7 +10,7 @@ var rcsdk = new RC({
 var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
-var subscriptions = new Subs({ sdk: rcsdk });
+var subscriptions = new Subscriptions({ sdk: rcsdk });
 var subscription = subscriptions.createSubscription({
     pollInterval: 10 * 1000, renewHandicapMs: 2 * 60 * 1000
 });

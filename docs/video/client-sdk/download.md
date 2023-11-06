@@ -1,6 +1,6 @@
 # Download the RingCentral Video Client SDK
 
-!!! warning "The RingCentral Video REST API and Video SDKs are in beta"
+{! mdx_includes/video-beta-notice.md !}
 
 ## Request access
 
@@ -16,7 +16,7 @@ In order to use the Video Client SDK during the private beta, please make sure y
 2. Create a RingCentral account with access to video in production. 
      * If you are an existing RingCentral customer of one of our paid plans, then you can use your main account. 
      * If do not yet have a RingCentral account, or if you currently use our standard free developer account, you will need to create a [free RingCentral Video Pro account](https://www.ringcentral.com/office/plansandpricing.html#video).
-3. [Register your application](../../basics/create-app/) and make note of your app's Client ID. 
+3. [Register your application](../../../getting-started/register-app/) and make note of your app's Client ID. 
 4. [Contact support](https://developers.ringcentral.com/support/create-case) to request your application be graduated to production, and that the following app scopes be added to your app: `Video` and `Video Internal`. Please include your app's Client ID in your request. 
 
 ## Download
@@ -35,6 +35,14 @@ React UI components are also [available via npm](https://www.npmjs.com/package/@
 
 ```shell
 % npm install @ringcentral/video-sdk-react
+```
+
+#### React Native
+
+React Native components are also [available via npm](https://www.npmjs.com/package/@ringcentral/rcv-react-native-sdk), and can be installed via the command line as well.
+
+```shell
+% npm install @ringcentral/rcv-react-native-sdk
 ```
 
 ### Native iOS
