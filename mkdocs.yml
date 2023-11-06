@@ -352,7 +352,40 @@ nav:
 
   - 'Notifications and events':
     - 'Overview': 'notifications/index.md'
-    - 'Event filters': 'notifications/event-filters.md'
+    - 'Event filters':
+      - "Overview and index": 'notifications/event-filters/index.md'
+      - "Account events":
+        - "Company Directory Event": 'notifications/event-filters/company-directory.md'
+        - "Extension Favorites Event": 'notifications/event-filters/extension-favorites.md'
+        - "Extension Grant List Event": 'notifications/event-filters/extension-grant-list.md'
+        - "Extension Info Event": 'notifications/event-filters/extension-info.md'
+        - "Extension List Event": 'notifications/event-filters/extension-list.md'
+        - "Emergency Address Event": 'notifications/event-filters/emergency-address.md'
+        - "Contact Center Phone Number Event": 'notifications/event-filters/contact-center-phone-number.md'
+      - "Presence events":
+        - "Account Presence Event": 'notifications/event-filters/account-presence.md'
+        - "Detailed Extension Presence Event": 'notifications/event-filters/detailed-extension-presence.md'
+        - "Detailed Extension Presence with SIP Event": 'notifications/event-filters/detailed-extension-presence-with-sip.md'
+        - "Extension Presence Event": 'notifications/event-filters/extension-presence.md'
+        - "Extension Presence Line Event": 'notifications/event-filters/extension-presence-line.md'
+        - "Call Queue Member Presence Event": 'notifications/event-filters/call-queue-member-presence.md'
+        - "Extension DND Status Event": 'notifications/event-filters/extension-dnd-status.md'
+      - "Telephony events":
+        - "Account Telephony Sessions Event": 'notifications/event-filters/account-telephony-sessions.md'
+        - "Extension Telephony Sessions Event": 'notifications/event-filters/extension-telephony-sessions.md'
+      - "Message Store events":
+        - "Fax Message Event": 'notifications/event-filters/fax-message.md'
+        - "Instant Message Event": 'notifications/event-filters/instant-message.md'
+        - "Voicemail Message Event": 'notifications/event-filters/voicemail-message.md'
+        - "Message Event": 'notifications/event-filters/message.md'
+      - "High Volume SMS events":
+        - "Message Batch Event": 'notifications/event-filters/message-batch.md'
+        - "Specific Message Batch Event": 'notifications/event-filters/specific-message-batch.md'
+        - "Batch Messages Event": 'notifications/event-filters/batch-messages.md'
+        - "Batch Message Opt-Out Event": 'notifications/event-filters/batch-message-optout.md'
+      - "Team Messaging events":
+        - "Post Message Event": 'notifications/event-filters/post.md'
+        - "Chats Event": 'notifications/event-filters/chat.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
