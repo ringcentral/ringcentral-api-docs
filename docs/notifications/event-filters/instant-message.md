@@ -6,7 +6,7 @@ Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-
 
 The updated message info is accessible by calling the Get Message List method.
 
-## Instant Message Event
+## Event payload
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
@@ -57,39 +57,5 @@ The updated message info is accessible by calling the Get Message List method.
 ## Example
 
 ```json
-{
-    "uuid":"ed1cf00c-0420-4bf5-a0ae-e659bb9f77e0",
-    "event": "/restapi/v1.0/account/~/extension/823476228762/message-store/instant?type=SMS",
-    "subscriptionId": "dc853541-66ac-45d8-a289-1a239fd72888",
-    "ownerId": "823476228762",
-    "timestamp": "2013-06-14T12:00:00.000Z",
-    "body": {
-           "id" : "606090030016",
-           "to" : [ {
-              "phoneNumber" : "+16508974563",
-              "location" : "Moss Beach, CA",
-           } ],
-           "from" : {
-              "phoneNumber" : "+14157809227",
-              "name" : "John Smith"
-           },
-           "type" : "SMS",
-           "creationTime" : "2016-02-22T17:01:00.000Z",
-           "lastModifiedTime" : "2016-02-22T17:01:00.000Z",
-           "readStatus" : "Unread",
-           "priority" : "Normal",
-           "attachments" : [ {
-             "uri" : "/restapi/v1.0/account/~/extension/823476228762/message-store/2640223004/content/2640223004",
-             "id" : "606090030016",
-             "type" : "Text",
-             "contentType" : "text/plain",
-             "size": 4096
-             } ],
-           "direction" : "Inbound",
-           "availability" : "Alive",
-           "subject" : "Hi there",
-           "messageStatus" : "Received",
-           "conversationId" : "7876416245344257449"
-        }
-}
- ```
+{!> code-samples/events/voicemail-message.json !}
+```

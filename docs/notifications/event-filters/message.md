@@ -19,7 +19,7 @@ The updated message info is accessible by calling the Get Message List method.
 |----------------|-----------------------|
 | `ReadMessages` | Viewing user messages |
 
-## Message Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -39,29 +39,5 @@ The updated message info is accessible by calling the Get Message List method.
 ## Example
 
 ```json
-{
-   "timestamp": "2014-04-29T14:29:27.408+0000",
-   "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-   "event": "/restapi/v1.0/account/~/extension/406149828004/message-store",
-   "ownerId": "406149828004",
-   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
-   "body": {
-      "accountId": "406149828004",
-      "extensionId": "406149828004",
-      "lastUpdated": "2014-04-29T14:29:20.531+0000",
-      "changes": [
-                {
-                  "type": "Pager",
-                  "updatedCount": 1,
-                  "newCount": 0
-                }
-                {
-                  "type": "SMS",
-                  "updatedCount": 0,
-                  "newCount": 1
-                },
-                {...} ],
-            },
-
- }
- ```
+{!> code-samples/events/message.json !}
+```

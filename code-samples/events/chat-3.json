@@ -1,0 +1,21 @@
+{
+    "uuid": "4878974149435952286",
+    "event": "/team-messaging/v1/chats",
+    "timestamp": "2021-03-26T09:19:41.384Z",
+    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
+    "ownerId": "62534323",
+    "body": {
+      "id": "69508734982",
+      "name": "Team",
+      "description": null,
+      "type": "Team",
+      "status": "Active",
+      "members": [
+        "293401010179"
+      ],
+      "isPublic": false,
+      "creationTime": "2021-03-26T09:18:54.924Z",
+      "lastModifiedTime": "2021-03-26T09:19:41.302Z",
+      "eventType": "GroupLeft"
+    }
+  }

@@ -10,7 +10,7 @@ Event filter `/team-messaging/v1/posts` enables notifications in case of a team 
 |----------------|-----------------------|
 | `UnifiedAppDesktop`| Access to desktop RingCentral application |
 
-## Team Messaging Post Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -43,74 +43,17 @@ Event filter `/team-messaging/v1/posts` enables notifications in case of a team 
 ## Example #1: message posted
 
 ```json
-{
-    "uuid": "6452004109062593690",
-    "event": "/team-messaging/v1/posts",
-    "timestamp": "2021-03-26T09:18:41.460Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "26848769679364",
-      "groupId": "995723345922",
-      "type": "TextMessage",
-      "text": "Hello, World!",
-      "creatorId": "62534323",
-      "addedPersonIds": null,
-      "creationTime": "2021-03-26T09:18:41.105Z",
-      "lastModifiedTime": "2021-03-26T09:18:41.105Z",
-      "attachments": null,
-      "activity": null,
-      "title": null,
-      "iconUri": null,
-      "iconEmoji": null,
-      "mentions": null,
-      "eventType": "PostAdded"
-    }
-  }
-
+{!> code-samples/events/post-1.json !}
 ```
 
 ## Example #2: message updated
 
 ```json
-{
-    "uuid": "8508428295461025835",
-    "event": "/team-messaging/v1/posts",
-    "timestamp": "2021-03-26T09:21:11.894Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "26848795934724",
-      "groupId": "995723345922",
-      "type": "TextMessage",
-      "text": "Hello, World :)",
-      "creatorId": "62534323",
-      "addedPersonIds": null,
-      "creationTime": "2021-03-26T09:21:03.702Z",
-      "lastModifiedTime": "2021-03-26T09:21:11.866Z",
-      "attachments": null,
-      "activity": null,
-      "title": null,
-      "iconUri": null,
-      "iconEmoji": null,
-      "mentions": null,
-      "eventType": "PostChanged"
-    }
-  }
+{!> code-samples/events/post-2.json !}
 ```
 
 ## Example #3: message deleted
 
 ```json
-{
-    "uuid": "7095914832707027583",
-    "event": "/team-messaging/v1/posts",
-    "timestamp": "2021-03-26T09:20:47.090Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "26848769679364",
-      "eventType": "PostRemoved"
-    }
-  }
+{!> code-samples/events/post-3.json !}
 ```

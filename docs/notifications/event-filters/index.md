@@ -15,7 +15,7 @@ Every event transmitted to a client contains a common set of data elements, rega
 | `timestamp` | date-time | Datetime of sending a notification in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2018-03-10T18:07:52.534Z* |
 | `body` | | Notification payload body |
 
-## Events
+## Event filter index
 
 ### SMS Events
 

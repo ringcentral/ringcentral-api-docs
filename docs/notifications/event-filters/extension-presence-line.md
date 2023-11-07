@@ -10,7 +10,7 @@ Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 |----------------|-----------------------|
 | `ReadPresence` | Getting user presence information |
 
-## Presence Line Event
+## Event payload
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
@@ -27,22 +27,5 @@ Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 ## Example
 
 ```json
-{
-     "timestamp": "2014-04-29T13:23:12.468+0000",
-     "uuid": "a295fa1f-af6a-4518-b333-acf091bdd7ea",
-     "event": "/restapi/v1.0/account/~/extension/406149828004/presence/line",
-     "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
-     "ownerId": "406149828004",
-     "body": {
-        "extension":
-            [{
-            "id": "677628004765"
-              },
-             {
-            "id": "3"
-           }],
-
-         "sequence": 2698
-           }
-}
+{!> code-samples/events/extension-presence-line.json !}
 ```

@@ -12,7 +12,7 @@ The updated extension data is accessible by calling the [Get Extension Grant Lis
 |----------------|-----------------------|
 | `ReadAccounts` | Viewing user account info (including name, business name, address and phone number/account number) |
 
-## Extension Grant List Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -22,15 +22,6 @@ The updated extension data is accessible by calling the [Get Extension Grant Lis
 ## Example
 
 ```json
-{
-   "uuid":"ed1cf00c-0420-4bf5-a0ae-e659cc9f77e0",
-   "event":"/restapi/v1.0/account/~/extension/8475874957/grant",
-   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
-   "ownerId": "8475874957",
-   "timestamp": "2015-02-24T12:00:00.000Z",
-   "body":{
-        "extensionId": "8475874957"
-   }
-}
+{!> code-samples/events/extension-grant-list.json !}
 ```
 

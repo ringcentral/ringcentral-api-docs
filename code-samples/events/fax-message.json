@@ -1,0 +1,32 @@
+{
+  "uuid":"ed1cf00c-0420-4bf5-a0ae-e659bb9f77e0",
+  "event": "/restapi/v1.0/account/~/extension/823476228762/fax?direction=Inbound",
+  "subscriptionId": "dc853541-66ac-45d8-a289-1a239fd72888",
+  "ownerId": "823476228762",
+  "timestamp": "2018-02-28T10:06:15.000Z",
+  "body": {
+            "id": "404068973008",
+            "from": {
+                "phoneNumber": "+14029997777"
+            },
+            "type": "Fax",
+            "creationTime": "2018-02-28T05:11:37.000Z",
+            "readStatus": "Unread",
+            "priority": "Normal",
+            "attachments": [
+                {
+                    "id": "404068973008",
+                    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/404161512008/extension/404161514008/message-store/404068973008/content/404068973008",
+                    "type": "RenderedDocument",
+                    "contentType": "application/pdf"
+                }
+            ],
+            "direction": "Inbound",
+            "availability": "Alive",
+            "subject": "+17015402626",
+            "messageStatus": "Received",
+            "faxResolution": "High",
+            "faxPageCount": 2,
+            "lastModifiedTime": "2018-02-28T05:11:37.673Z"
+        }
+}

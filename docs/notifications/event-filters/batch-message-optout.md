@@ -20,7 +20,7 @@ Opt-out events are sent when a user connects to the RingCentral opt-out service 
 | `from`      | string | Notification is sent on outbound messages from a specific phone number in E.164 format |
 | `to`        | string | Notification is sent on inbound messages to a specific phone number in E.164 format |
 
-## Opt-Out Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -32,16 +32,5 @@ Opt-out events are sent when a user connects to the RingCentral opt-out service 
 ## Example
 
 ```json
-{
-  "uuid":"12345678901234567890",
-  "event":"/restapi/v1.0/account/11111111/a2p-sms/opt-outs",
-  "timestamp":"2020-10-01T00:00:00.000Z",
-  "subscriptionId":"11112222-3333-4444-5555-666677778888",
-  "ownerId": "22222222",
-  "body":{
-     "from":"+16505550100",
-     "to":"+12125550100",
-     "active":true
-  }
-}
+{!> code-samples/events/batch-message-optout.json !}
 ```

@@ -16,7 +16,7 @@ Please note: If you specify that `sipData=true` then `presence?detailedTelephony
 |----------------|-----------------------|
 | `ReadPresence` | Getting user presence information |
 
-## Detailed Presence with SIP Event
+## Event payload
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
@@ -65,66 +65,5 @@ Please note: If you specify that `sipData=true` then `presence?detailedTelephony
 ## Example
 
 ```json
-  {
-    "uuid": "4956997212540532738",
-    "event": "/restapi/v1.0/account/37439510/extension/297277020/presence?detailedTelephonyState=true&sipData=true",
-    "timestamp": "2019-07-09T16:17:38.286Z",
-    "subscriptionId": "dfbca25e-4e2b-4c60-aa8d-47a83716fe23",
-    "ownerId": "297277020",
-    "body": {
-      "extensionId": "297277020",
-      "telephonyStatus": "OnHold",
-      "activeCalls": [
-        {
-          "id": "1nf2mhj51dp3asb3l0r5",
-          "direction": "Outbound",
-          "queueCall": true,
-          "fromName": "Charlie Williams",
-          "from": "+16508370072",
-          "toName": "Alice Smith",
-          "to": "4591",
-          "telephonyStatus": "OnHold",
-          "sipData": {
-            "toTag": "7lcee2ho88",
-            "fromTag": "10.14.20.199-5070-63fbd8da20314c",
-            "remoteUri": "do-not-use-me-I-am-example",
-            "localUri": "do-not-use-me-I-am-example"
-          },
-          "sessionId": "118139132021",
-          "startTime": "2019-07-09T16:17:27.975Z",
-          "partyId": "p-9cdb248614c94aa7ba68135f6c07b808-1",
-          "telephonySessionId": "s-9cdb248614c94aa7ba68135f6c07b808"
-        },
-        {
-          "id": "s-e1e9696d863742758a18654dcc22a2fd",
-          "direction": "Inbound",
-          "queueCall": false,
-          "fromName": "Charlie Williams",
-          "from": "66666",
-          "toName": "Bob Brown",
-          "to": "66666",
-          "telephonyStatus": "Ringing",
-          "sipData": {
-            "toTag": "blf",
-            "fromTag": "p-e1e9696d863742758a18654dcc22a2fd-2",
-            "remoteUri": "do-not-use-me-I-am-example",
-            "localUri": "do-not-use-me-I-am-example"
-          },
-          "sessionId": "118139217021",
-          "startTime": "2019-07-09T16:17:37.705Z",
-          "partyId": "p-e1e9696d863742758a18654dcc22a2fd-2",
-          "telephonySessionId": "s-e1e9696d863742758a18654dcc22a2fd"
-        }
-      ],
-      "sequence": 2013,
-      "presenceStatus": "Busy",
-      "userStatus": "Available",
-      "dndStatus": "TakeAllCalls",
-      "meetingStatus": "Disconnected",
-      "allowSeeMyPresence": true,
-      "ringOnMonitoredCall": true,
-      "pickUpCallsOnHold": true,
-      "totalActiveCalls": 2
-    }
-  }
+{!> code-samples/events/detailed-extension-presence-with-sip.json !}
 ```

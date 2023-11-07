@@ -19,7 +19,7 @@ Event filter `/restapi/v1.0/account/{accountId}/a2p-sms/messages` enables notifi
 | `from`      | string | Notification is sent on outbound messages from a specific phone number in E.164 format |
 | `to`        | string | Notification is sent on inbound messages to a specific phone number in E.164 format |
 
-## Batch Messages Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -40,47 +40,11 @@ Event filter `/restapi/v1.0/account/{accountId}/a2p-sms/messages` enables notifi
 ## Example 1: Inbound Message
 
 ```json
-{
-  "uuid": "5496200236759723935",
-  "event": "/restapi/v1.0/account/405156321033/a2p-sms/messages?direction=Inbound&to=+12406680432",
-  "subscriptionId": "bce65879-8436-4b2b-a7ce-6ff15ed0ba20",
-  "ownerId": "405156321033",
-  "timestamp": "2021-05-26T04:16:43.533Z",
-  "body":{
-      "messageStatus": "Delivered",
-      "lastModifiedTime": "2021-05-26T04:16:42.985974Z",
-      "cost": 0.007,
-      "creationTime": "2021-05-26T04:16:42.985974Z",
-      "from": "+19287680662",
-      "id": "7119",
-      "to": ["+12406680432"],
-      "text": "Thank you for the message",
-      "segmentCount": 1,
-      "direction": "Inbound"
-  }
-}
+{!> code-samples/events/batch-messages-1.json !}
 ```
 
 ## Example 2: Outbound Message
 
 ```json
-{
-  "uuid": "3396141852418552739",
-  "event": "/restapi/v1.0/account/405150459033/a2p-sms/messages?direction=Outbound&from=+13102375087",
-  "subscriptionId": "417eaa6f-e2bd-4b37-adae-868de87d20e1",
-  "ownerId": "405150459033",
-  "timestamp": "2021-05-26T04:16:08.244Z",
-  "body":{
-      "messageStatus": "Delivered",
-      "lastModifiedTime": "2021-05-26T04:16:08.107007Z",
-      "cost": 0.007,
-      "creationTime": "2021-05-26T04:16:05.442760Z",
-      "from": "+13102375087",
-      "id": "7086",
-      "to": ["+14842910071"],
-      "text": "Thank you for the message",
-      "segmentCount": 1,
-      "direction": "Outbound"
-  }
-}
+{!> code-samples/events/batch-messages-2.json !}
 ```

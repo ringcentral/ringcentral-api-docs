@@ -10,7 +10,7 @@ Event filter `/team-messaging/v1/chats` enables notifications in case of a team 
 |----------------|-----------------------|
 | `UnifiedAppDesktop`| Access to desktop RingCentral application |
 
-## Team Messaging Chats Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -28,81 +28,18 @@ Event filter `/team-messaging/v1/chats` enables notifications in case of a team 
 ## Example #1: chat joined
 
 ```json
- {
-    "uuid": "3007219717146626347",
-    "event": "/team-messaging/v1/chats",
-    "timestamp": "2021-03-26T09:21:34.548Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "1055879168002",
-      "name": null,
-      "description": null,
-      "type": "Group",
-      "status": "Active",
-      "members": [
-        "62534323",
-        "2093617004",
-        "2071417012"
-      ],
-      "isPublic": null,
-      "creationTime": "2021-03-26T09:21:33.168Z",
-      "lastModifiedTime": "2021-03-26T09:21:33.168Z",
-      "eventType": "GroupJoined"
-    }
-  }
+{!> code-samples/events/chat-1.json !}
 ```
 
 
 ## Example #2: chat renamed
 
 ```json
- {
-    "uuid": "8657135170884424232",
-    "event": "/team-messaging/v1/chats",
-    "timestamp": "2021-03-26T09:22:12.366Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "47611420678",
-      "name": "Team #1",
-      "description": "Integration Team",
-      "type": "Team",
-      "status": "Active",
-      "members": [
-        "1813452005",
-        "62534323",
-        "2071417012"
-      ],
-      "isPublic": false,
-      "creationTime": "2020-06-19T16:57:47.664Z",
-      "lastModifiedTime": "2021-03-26T09:22:12.348Z",
-      "eventType": "GroupRenamed"
-}
+{!> code-samples/events/chat-2.json !}
 ```
 
 ## Example #3: user left chat
 
 ```json
-{
-    "uuid": "4878974149435952286",
-    "event": "/team-messaging/v1/chats",
-    "timestamp": "2021-03-26T09:19:41.384Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "69508734982",
-      "name": "Team",
-      "description": null,
-      "type": "Team",
-      "status": "Active",
-      "members": [
-        "293401010179"
-      ],
-      "isPublic": false,
-      "creationTime": "2021-03-26T09:18:54.924Z",
-      "lastModifiedTime": "2021-03-26T09:19:41.302Z",
-      "eventType": "GroupLeft"
-    }
-  }
+{!> code-samples/events/chat-3.json !}
 ```

@@ -21,7 +21,7 @@ The updated extension data is accessible by calling the methods [Get Extension L
 |----------------|-----------------------|
 | `ReadAccounts` | Viewing user account info (including name, business name, address and phone number/account number) |
 
-## Extension List Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -49,29 +49,6 @@ The updated extension data is accessible by calling the methods [Get Extension L
 ## Example
 
 ```json
-{
-   "timestamp": "2014-04-29T14:29:27.408+0000",
-   "subscriptionId": "a45645-0001-cc71-9de3-674476722",
-   "ownerId": "1500723004",
-   "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
-   "event": "/restapi/v1.0/account/~/extension",
-
-   "body": { "extensions":[
-         {
-            "extensionId": "74953947939",
-            "eventType": "Delete"
-          },
-         {
-            "extensionId": "8798797945",
-            "eventType": "Create"
-         },
-         {
-            "extensionId": "8475874957",
-            "eventType": "Update",
-            "hints": [ "ExtensionInfo", "CompanyNumbers"]
-         }
-      ]
-   }
-}
+{!> code-samples/events/extension-list.json !}
 ```
 

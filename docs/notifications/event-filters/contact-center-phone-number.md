@@ -13,7 +13,7 @@ Event filter `/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCe
 |----------------|-----------------------|
 | `ReadAccounts` | Viewing user account info (including name, business name, address and phone number/account number |
 
-## Contact Center Phone Number Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -46,28 +46,5 @@ Event filter `/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCe
 ## Example
 
 ```json
-{
-   "uuid": "ed1cf00c-0420-4bf5-a0ae-e659cc9f77e0",
-   "event": "/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCenterNumber",
-   "timestamp": "2013-06-14T12:00:00.000Z",
-   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
-   "ownerId": "8475874957",
-   "body": {
-      "eventType": "Created",
-      "phoneNumberInfo": {
-         "uri": "https://platform.ringcentral.com/restapi/v1.0/account/37439510/phone-number/987654321",
-         "id": "987654321",
-         "phoneNumber": "+12024999741",
-         "paymentType": "Local",
-         "location": "Washington, DC",
-         "type": "VoiceFax",
-         "usageType": "ContactCenterNumber",
-         "status": "Normal",
-         "contactCenterProvider": {
-            "id": "12345",
-            "name": "ProviderName"
-         }
-      }
-   }
-}
+{!> code-samples/events/contact-center-phone-number.json !}
 ```

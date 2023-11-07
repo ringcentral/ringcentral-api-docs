@@ -10,7 +10,7 @@ Event filter `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence` 
 |----------------|-----------------------|
 | `ReadPresence` | Getting user presence information |
 
-## Call Queue Member Presence Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -26,27 +26,5 @@ Event filter `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence` 
 ## Example
 
 ```json
-{ 
-    "uuid":"ed1cf00c-0420-4bf5-a0ae-e659cc9f77e0",
-    "event":"/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence",
-    "timestamp": "2019-06-14T12:00:00.000Z",
-    "subscriptionId":"3rtt23ryy-56665-t7r7-a0ae-748895yhhf94ujrr",
-    "ownerId": "1500723004",
-    "body":{
-        "records": [
-            {
-                "member": {
-                    "id": "411753183004"
-                },
-                "acceptCurrentQueueCalls": true
-            },
-            {
-                "member": {
-                    "id": "411753646416541"
-                },
-                "acceptCurrentQueueCalls": false
-            }
-        ]
-    }
-}
+{!> code-samples/events/call-queue-member-presence.json !}
 ```

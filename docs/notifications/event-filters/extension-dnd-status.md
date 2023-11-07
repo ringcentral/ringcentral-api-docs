@@ -10,7 +10,7 @@ Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 |----------------|-----------------------|
 | `ReadAccounts` | Viewing user account info (including name, business name, address and phone number/account number) |
 
-## DND Status Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -20,14 +20,5 @@ Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 ## Example
 
 ```json
-{
-    "uuid": "045b81dc-9f73-4864-84de-08aa6324a7f5",
-    "event": "/restapi/v1.0/account/6610372004/extension/6610372004/presence/dnd",
-    "timestamp": "2021-02-18T09:37:24.597Z",
-    "ownerId": "6610372004",
-    "body": {
-      "extensionId": "6610372004",
-      "dndStatus": "TakeAllCalls"
-    }
-}
+{!> code-samples/events/extension-dnd-status.json !}
 ```

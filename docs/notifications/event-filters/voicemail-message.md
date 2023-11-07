@@ -1,18 +1,12 @@
 # Voicemail Message Event
 
-*Since 1.0.36 (Release 10.2)*
+The voicemail message event is triggered when an extension receives a new voicemail message. 
 
-Event filter `/restapi/v1.0/account/{accountId}/extension/{extensionId}/voicemail` enables notifications in case of new voicemail message is received.
+* Filter:  `/restapi/v1.0/account/{accountId}/extension/{extensionId}/voicemail` 
+* Required permission: `ReadMessages`
+* Available since: 1.0.36 (Release 10.2) 
 
-The updated message info is accessible by calling the Get Message List method.
-
-**Required Permissions**
-
-| Permission     | Description           |
-|----------------|-----------------------|
-| `ReadMessages` | Viewing user messages |
-
-## Voicemail Message Event
+## Event payload
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -65,37 +59,5 @@ The updated message info is accessible by calling the Get Message List method.
 ## Example
 
 ```json
-{
-  "uuid": "ed1cf00c-0420-4bf5-a0ae-e659bb9f77e0",
-  "event": "/restapi/v1.0/account/~/extension/823476228762/voicemail",
-  "subscriptionId": "dc853541-66ac-45d8-a289-1a239fd72888",
-  "ownerId": "823476228762",
-  "timestamp": "2018-02-28T10:06:15.000Z",
-  "body": {
-    "id" : "82063400004",
-    "to" : [ {
-      "name" : "John Doe"
-    } ],
-    "from" : {
-      "phoneNumber" : "+18664320079",
-      "name" : "Jane Doe"
-    },
-    "type" : "VoiceMail",
-    "creationTime" : "2018-02-28T10:05:55.000Z",
-    "readStatus" : "Unread",
-    "priority" : "Normal",
-    "attachments" : [ {
-      "id" : "82063400004",
-      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/14833636004/extension/14833636004/message-store/82063400004/content/82063400004",
-      "type" : "AudioRecording",
-      "contentType" : "audio/x-wav",
-      "vmDuration" : 3
-    } ],
-    "direction" : "Inbound",
-    "availability" : "Alive",
-    "messageStatus" : "Received",
-    "lastModifiedTime" : "2018-02-28T10:06:05.000Z",
-    "vmTranscriptionStatus" : "Completed"
-  }
-}
+{!> code-samples/events/voicemail-message.json !}
 ```
