@@ -1,11 +1,11 @@
 {
-    "uuid": "7095914832707027583",
-    "event": "/team-messaging/v1/posts",
-    "timestamp": "2021-03-26T09:20:47.090Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "26848769679364",
-      "eventType": "PostRemoved"
-    }
+  "uuid": "7095914832707027583",
+  "event": "/team-messaging/v1/posts",
+  "timestamp": "2021-03-26T09:20:47.090Z",
+  "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
+  "ownerId": "62534323",
+  "body": {
+    "id": "26848769679364",
+    "eventType": "PostRemoved"
   }
+}

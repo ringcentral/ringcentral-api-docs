@@ -4,21 +4,17 @@
    "ownerId": "1500723004",
    "uuid": "b11c9430-9687-4498-b12b-3fcb470bfe04",
    "event": "/restapi/v1.0/account/~/extension",
-
-   "body": { "extensions":[
-         {
-            "extensionId": "74953947939",
-            "eventType": "Delete"
-          },
-         {
-            "extensionId": "8798797945",
-            "eventType": "Create"
-         },
-         {
-            "extensionId": "8475874957",
-            "eventType": "Update",
-            "hints": [ "ExtensionInfo", "CompanyNumbers"]
-         }
-      ]
+   "body": {
+      "extensions": [{
+         "extensionId": "74953947939",
+         "eventType": "Delete"
+      }, {
+         "extensionId": "8798797945",
+         "eventType": "Create"
+      }, {
+         "extensionId": "8475874957",
+         "eventType": "Update",
+         "hints": ["ExtensionInfo", "CompanyNumbers"]
+      }]
    }
 }

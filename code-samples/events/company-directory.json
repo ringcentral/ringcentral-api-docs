@@ -5,33 +5,31 @@
   "subscriptionId": "3rtt23ryy-56665-t7r7-a0ae-748895yhhf94ujrr",
   "body": {
     "contacts": [{
-        "eventType": "Update",
-        "id": "8798797945",
-        "type": "User",
-        "status": "Enabled",
-        "name": "John Smith",
-        "firstName": "John",
-        "lastName": "Smith",
-        "department": "Sales",
-        "email": "john.smith@example.com",
-        "extensionNumber": "103",
-        "account": {
-          "id": "12345"
-        },
-        "phoneNumbers": [{
-            "phoneNumber": "+12345672134",
-      "usageType": "DirectNumber",
-      "type": "VoiceFax"
-          }
-        ],
-        "profileImage": {
-          "etag": "a4cf0cfe3eff6c81b8c0bab7f3649502"
-        },
-  "site": {
-    "id": "12345678",
-          "name": "West branch"
-  }
+      "eventType": "Update",
+      "id": "8798797945",
+      "type": "User",
+      "status": "Enabled",
+      "name": "John Smith",
+      "firstName": "John",
+      "lastName": "Smith",
+      "department": "Sales",
+      "email": "john.smith@example.com",
+      "extensionNumber": "103",
+      "account": {
+        "id": "12345"
+      },
+      "phoneNumbers": [{
+        "phoneNumber": "+12345672134",
+        "usageType": "DirectNumber",
+        "type": "VoiceFax"
+      }],
+      "profileImage": {
+        "etag": "a4cf0cfe3eff6c81b8c0bab7f3649502"
+      },
+      "site": {
+        "id": "12345678",
+        "name": "West branch"
       }
-    ]
+    }]
   }
 }

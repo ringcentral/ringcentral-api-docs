@@ -4,16 +4,16 @@
   "subscriptionId": "bce65879-8436-4b2b-a7ce-6ff15ed0ba20",
   "ownerId": "405156321033",
   "timestamp": "2021-05-26T04:16:43.533Z",
-  "body":{
-      "messageStatus": "Delivered",
-      "lastModifiedTime": "2021-05-26T04:16:42.985974Z",
-      "cost": 0.007,
-      "creationTime": "2021-05-26T04:16:42.985974Z",
-      "from": "+19287680662",
-      "id": "7119",
-      "to": ["+12406680432"],
-      "text": "Thank you for the message",
-      "segmentCount": 1,
-      "direction": "Inbound"
+  "body": {
+    "messageStatus": "Delivered",
+    "lastModifiedTime": "2021-05-26T04:16:42.985974Z",
+    "cost": 0.007,
+    "creationTime": "2021-05-26T04:16:42.985974Z",
+    "from": "+19287680662",
+    "id": "7119",
+    "to": ["+12406680432"],
+    "text": "Thank you for the message",
+    "segmentCount": 1,
+    "direction": "Inbound"
   }
 }

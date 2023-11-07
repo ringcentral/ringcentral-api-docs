@@ -1,24 +1,24 @@
 {
-    "uuid": "6452004109062593690",
-    "event": "/team-messaging/v1/posts",
-    "timestamp": "2021-03-26T09:18:41.460Z",
-    "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
-    "ownerId": "62534323",
-    "body": {
-      "id": "26848769679364",
-      "groupId": "995723345922",
-      "type": "TextMessage",
-      "text": "Hello, World!",
-      "creatorId": "62534323",
-      "addedPersonIds": null,
-      "creationTime": "2021-03-26T09:18:41.105Z",
-      "lastModifiedTime": "2021-03-26T09:18:41.105Z",
-      "attachments": null,
-      "activity": null,
-      "title": null,
-      "iconUri": null,
-      "iconEmoji": null,
-      "mentions": null,
-      "eventType": "PostAdded"
-    }
+  "uuid": "6452004109062593690",
+  "event": "/team-messaging/v1/posts",
+  "timestamp": "2021-03-26T09:18:41.460Z",
+  "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
+  "ownerId": "62534323",
+  "body": {
+    "id": "26848769679364",
+    "groupId": "995723345922",
+    "type": "TextMessage",
+    "text": "Hello, World!",
+    "creatorId": "62534323",
+    "addedPersonIds": null,
+    "creationTime": "2021-03-26T09:18:41.105Z",
+    "lastModifiedTime": "2021-03-26T09:18:41.105Z",
+    "attachments": null,
+    "activity": null,
+    "title": null,
+    "iconUri": null,
+    "iconEmoji": null,
+    "mentions": null,
+    "eventType": "PostAdded"
   }
+}
