@@ -1,0 +1,44 @@
+ {
+   "uuid": "045b81dc-9f73-4864-84de-08aa6324a7f5",
+   "event": "/restapi/v1.0/account/~/extension/6610372004/presence?detailedTelephonyState=true",
+   "timestamp": "2016-02-18T09:37:24.597Z",
+   "subscriptionId": "9d38419f-645f-4ee3-a053-8cf1368c21c4",
+   "ownerId": "6610372004",
+   "body": {
+     "extensionId": "6610372004",
+     "telephonyStatus": "CallConnected",
+     "activeCalls": [{
+       "id": "39247ebfdc324e3b96d7519672aec3e4",
+       "direction": "Inbound",
+       "queueCall": true,
+       "from": "+18775380038",
+       "fromName": "John Wang",
+       "to": "+18445810019",
+       "telephonyStatus": "CallConnected",
+       "startTime": "2016-02-18T09:37:24.322Z",
+       "sessionId": "17133704004",
+       "partyId": "cs171843418296416309-2",
+       "telephonySessionId": "Y3MxNjk4ODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA"
+     }, {
+       "id": "39247ebfdc324e3b96d7519672aec3e5",
+       "direction": "Outbound",
+       "queueCall": false,
+       "from": "+18776480025",
+       "to": "+18445654321",
+       "startTime": "2016-02-18T09:37:24.322Z",
+       "telephonyStatus": "NoCall",
+       "sessionId": "17133804005",
+       "partyId": "cs671843418296416309-2",
+       "telephonySessionId": "Y3MxNjytruODA5MTYxMzUyOTU5OUAxMC4zMi40NS44NA"
+     }],
+     "sequence": 2698,
+     "presenceStatus": "Busy",
+     "userStatus": "Available",
+     "meetingStatus": "Disconnected",
+     "dndStatus": "TakeAllCalls",
+     "allowSeeMyPresence": true,
+     "ringOnMonitoredCall": false,
+     "pickUpCallsOnHold": false,
+     "totalActiveCalls": 2
+   }
+ }

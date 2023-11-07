@@ -1,0 +1,23 @@
+{
+  "uuid": "8657135170884424232",
+  "event": "/team-messaging/v1/chats",
+  "timestamp": "2021-03-26T09:22:12.366Z",
+  "subscriptionId": "de38e1ee-2497-41ed-8662-7fb3a1cfba8d",
+  "ownerId": "62534323",
+  "body": {
+    "id": "47611420678",
+    "name": "Team #1",
+    "description": "Integration Team",
+    "type": "Team",
+    "status": "Active",
+    "members": [
+      "1813452005",
+      "62534323",
+      "2071417012"
+    ],
+    "isPublic": false,
+    "creationTime": "2020-06-19T16:57:47.664Z",
+    "lastModifiedTime": "2021-03-26T09:22:12.348Z",
+    "eventType": "GroupRenamed"
+  }
+}

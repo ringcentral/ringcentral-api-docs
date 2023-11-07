@@ -1,0 +1,19 @@
+{
+  "uuid": "3396141852418552739",
+  "event": "/restapi/v1.0/account/405150459033/a2p-sms/messages?direction=Outbound&from=+13102375087",
+  "subscriptionId": "417eaa6f-e2bd-4b37-adae-868de87d20e1",
+  "ownerId": "405150459033",
+  "timestamp": "2021-05-26T04:16:08.244Z",
+  "body": {
+    "messageStatus": "Delivered",
+    "lastModifiedTime": "2021-05-26T04:16:08.107007Z",
+    "cost": 0.007,
+    "creationTime": "2021-05-26T04:16:05.442760Z",
+    "from": "+13102375087",
+    "id": "7086",
+    "to": ["+14842910071"],
+    "text": "Thank you for the message",
+    "segmentCount": 1,
+    "direction": "Outbound"
+  }
+}
