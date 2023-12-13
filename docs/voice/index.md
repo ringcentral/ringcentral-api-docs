@@ -34,7 +34,7 @@ Alternatively, developers can help users place calls via WebRTC or our [RingCent
 
 * [Learn how to use the RingOut API](./ringout/)
 * [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html)
-* [Initiate a RingOut call from your soft phone](https://support.ringcentral.com/s/article/85?language=en_US)
+* [Initiate a RingOut call from your soft phone](https://support.ringcentral.com/article-v2/3963.html?brand=RC_US&product=RingCentral_MVP&language=en_US)
 
 ### Intercept incoming calls
 
