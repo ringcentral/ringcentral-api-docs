@@ -40,11 +40,11 @@ theme:
     # - header.autohide
     - navigation.expand
     # - navigation.footer
+    - navigation.sections
     - navigation.indexes
     - navigation.path
     # - navigation.instant
     - navigation.prune
-    #- navigation.sections
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
