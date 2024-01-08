@@ -31,9 +31,8 @@ async function read_enrollments() {
     var jsonObj = await resp.json()
     console.log(jsonObj)
     for (var enrollment of jsonObj.records){
-      console.log(enrollment)
-      if (enrollment.enrollmentId == "1234566789"){
-        ;//await delete_enrollment(enrollment.enrollmentId)
+      if (enrollment.speakerId == "1234566789"){
+        await delete_enrollment(enrollment.speakerId)
       }
     }
   }catch (e){

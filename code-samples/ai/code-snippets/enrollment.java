@@ -21,7 +21,7 @@ public class SpeakserIdentificationEnrollment {
 
         // set your valid audio content file name and path
         var contentFile = "VALID_AUDIO_CONTENT_FILE";
-        obj.enrollment(contentFile);
+        obj.create_speaker_enrollment(contentFile);
 
       } catch (RestException e) {
         System.out.println(e.getMessage());
@@ -32,7 +32,7 @@ public class SpeakserIdentificationEnrollment {
     /*
     * Enroll speaker identification
     */
-    private void enrollment(String contenFile)
+    private void create_speaker_enrollment(String contenFile)
     {
       try {
         // use own extension id as a unique enrollment id

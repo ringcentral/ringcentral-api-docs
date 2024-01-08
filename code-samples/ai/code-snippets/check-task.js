@@ -1,5 +1,5 @@
 var platform = require('./../quick-start.js').platform;
-check_task_status("5b161b98-62c9-11ee-877c-0050568ca439")
+check_task_status("40ec5fa6-a5b9-11ee-8e20-0050568c77d0")
 
 
 
@@ -8,7 +8,7 @@ check_task_status("5b161b98-62c9-11ee-877c-0050568ca439")
 
 // Next line must be at the 10th line!
 platform.on(platform.events.loginSuccess, () => {
-    check_task_status("")
+    check_task_status("JOBID")
 })
 
 platform.on(platform.events.loginError, function(e){

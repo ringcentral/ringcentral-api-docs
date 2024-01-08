@@ -1,5 +1,5 @@
 <?php
-check_task_status("1cb4eb26-0159-11ee-b349-0050568c5fe3");
+check_task_status("JOBID");
 
 /*
 * Check speech to text job status

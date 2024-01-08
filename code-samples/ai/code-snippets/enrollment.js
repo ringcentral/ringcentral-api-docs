@@ -1,6 +1,6 @@
 var platform = require('./../quick-start.js').platform;
 var contentFile = process.env.ENROLLMENT_CONTENT_2
-enrollment(contentFile)
+createSpeakerEnrollment(contentFile)
 
 
 
@@ -10,7 +10,7 @@ enrollment(contentFile)
 platform.on(platform.events.loginSuccess, () => {
     // set your valid audio content file name and path
     let contentFile = "VALID_AUDIO_CONTENT_FILE"
-    enrollment(contentFile)
+    create_speaker_enrollment(contentFile)
 })
 
 platform.on(platform.events.loginError, function(e){
@@ -21,7 +21,7 @@ platform.on(platform.events.loginError, function(e){
 /*
 * Enroll a speaker id
 */
-async function enrollment(contentFile) {
+async function create_speaker_enrollment(contentFile) {
   try{
     // use own extension id as a unique enrollment id
     let tokens = await platform.auth().data()

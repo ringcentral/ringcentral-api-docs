@@ -42,9 +42,9 @@ namespace SpeakserIdentificationEnrollment {
         Console.WriteLine(JsonConvert.SerializeObject(resp));
         foreach (var record in resp.records)
         {
-          if (record.enrollmentId == "62288329016")
+          if (record.speakerId == "123456789")
           {
-            await delete_enrollment(record.enrollmentId);
+            await delete_enrollment(record.speakerId);
           }
         }
       }
@@ -54,11 +54,11 @@ namespace SpeakserIdentificationEnrollment {
       }
     }
     // Delet a speakers identification
-    static private async Task delete_enrollment(String enrollmentId)
+    static private async Task delete_enrollment(String speakerId)
     {
       try
       {
-        var resp = await restClient.Ai().Audio().V1().Enrollments(enrollmentId).Delete();
+        var resp = await restClient.Ai().Audio().V1().Enrollments(speakerId).Delete();
         Console.WriteLine("Deleted");
       }
       catch (Exception ex)

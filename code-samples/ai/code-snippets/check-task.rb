@@ -19,7 +19,7 @@ end
 def login()
   begin
     $platform.authorize( jwt: "PRODUCTION-JWT" )
-    check_task_status("jobId")
+    check_task_status("JOBID")
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials. " + e.to_s)
   end

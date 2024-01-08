@@ -31,9 +31,9 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
@@ -59,7 +59,7 @@ Select your preferred language below.
     Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly.
 
     ```javascript
-    {!> code-samples/voice/quick-start.js !}
+    {!> code-samples/voice/quick-start.js [ln:1-36]!}
     ```
 
     ### Run your code
@@ -81,10 +81,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.py
 
-    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```python
-    {!> code-samples/voice/quick-start.py !}
+    {!> code-samples/voice/quick-start.py [ln:1-41]!}
     ```
 
     ### Run your code
@@ -106,10 +106,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.php
 
-    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```php
-    {!> code-samples/voice/quick-start.php !}
+    {!> code-samples/voice/quick-start.php [ln:1-45]!}
     ```
 
     ### Run your code
@@ -130,10 +130,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.rb
 
-    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```ruby
-    {!> code-samples/voice/quick-start.rb !}
+    {!> code-samples/voice/quick-start.rb [ln:1-43]!}
     ```
 
     ### Run your code

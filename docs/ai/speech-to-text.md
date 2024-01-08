@@ -1,10 +1,8 @@
-# Text transcription
+# Speech to text transcription
 
-Speech-to-text or automatic speech recognition is the process of converting speech content into text contents. RingCentral uses advanced machine learning algorithms to transcribe speech to text and further process the text contents to provide rich transcription with punctuations and conversational utterances with functional properties such as speaker ids, timestamps of every spoken word.
+Speech-to-text is the process of converting speech content into text contents. RingCentral uses advanced machine learning algorithms to transcribe speech to text and further process the text contents to provide rich transcription with punctuations, number of speakers and conversational utterances with useful properties such as speaker id, timestamps of every utterance and of every spoken word.
 
-The Speech-to-Text API also supports speech identification if you have trained the voice recognition of the speakers using the [speaker enrollment](../speaker-enrollment/). Speaker identification relies upon the developer to provide the API with an array of enrollment ids (a.k.a speaker ids) of the potential speakers so that they can be identified.
-
-The Speech-to-Text API can be used in tandem with [speaker enrollment](../speaker-enrollment/) to help identify the speakers in a voice conversation. Speaker identification relies upon the developer to pass to the API a list of potential speakers so that they can be identified.
+The Speech-to-text API also supports speaker recognition if you have trained the voice signature of the speakers using the [Speaker id enrollment API](../speaker-enrollment/). Speaker recognition relies on the API `speakerIds` input as list of pre-enrolled speaker ids of the potential speakers in the conversation.
 
 !!! tip "English is currently the only supported language."
 
@@ -20,7 +18,7 @@ The Speech-to-Text API can be used in tandem with [speaker enrollment](../speake
 | `audioType`    | String | Type of the audio based on number of speakers. Optional. Permitted values: `CallCenter` (default), `Meeting`, `EarningsCalls`, `Interview`, `PressConference` |
 | `source`       | String | The source for the audio file: Webex, Zoom, GotoMeeting, Phone. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `speakerCount` | Number | Number of speakers in the file. Set to `-1` (default) if there are an unknown number of speakers. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`.      |
-| `enrollmentIds`   | List[String] | A list of speakers to be identified. See [speaker enrollment](../speaker-enrollment/) section for more details. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
+| `speakerIds`   | List[String] | A list of speakers to be identified. See [speaker enrollment](../speaker-enrollment/) section for more details. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `enableVoiceActivityDetection` | Boolean | Apply voice activity detection. Optional. Default of `False`. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `enablePunctuation`         | Boolean | Enables RingCentral's [Smart Punctuation API](../text-punctuation/). Optional. Default of `True`. |
 | `enableSpeakerDiarization`  | Boolean | Tags each word corresponding to the speaker. Optional. Default of `False`. |
@@ -33,13 +31,13 @@ The Speech-to-Text API can be used in tandem with [speaker enrollment](../speake
 
 * Setting the `source` parameter helps to optimize the diarization process by allowing a specialized acoustic model built specifically for the corresponding audio sources.
 
-* If you specify the `enrollmentIds` parameter, make sure that all the enrollment ids in the array exist. Otherwise, the API call will fail. As a good practice, you can always read the enrollment ids from your account and use the correct ids of the speakers, who you think that might speak in the audio file.
+* If you specify the `speakerIds` parameter, make sure that all the speaker ids in the array exist. Otherwise, the API call will fail. As a good practice, you can always read the speaker ids from your account and use the correct ids of the speakers, who you think that might speak in the audio file.
 
 ### Example code
 
 Try out the [AI Quick Start Guide](../quick-start/)
 
-### Example response
+### Sample response
 
 ```json
 {!> code-samples/ai/transcribe-response.json !}

@@ -8,9 +8,9 @@ import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class AnalyzeInteraction {
-    String NGROK = "http://4bb8-69-181-201-33.ngrok-free.app";
-    String WEBHOOK_URL = NGROK + "/webhook";
-    String CONTENT_URI = "https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3";
+    static String NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS";
+    static String WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
+    static String CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI";
 
     static RestClient restClient;
 
@@ -38,7 +38,7 @@ public class AnalyzeInteraction {
     {
       try {
     		var bodyParams = new InteractionInput()
-                  .contentUri(CONTENT_URI1)
+                  .contentUri(CONTENT_URI)
                   .encoding("Mpeg")
                   .languageCode("en-US")
                   .source("RingCentral")
@@ -48,11 +48,9 @@ public class AnalyzeInteraction {
                   .separateSpeakerPerChannel(false);
 
     		var queryParams = new CaiAnalyzeInteractionParameters().webhook(WEBHOOK_URL);
-
     		var resp = restClient.ai().insights().v1().async().analyzeInteraction().post(bodyParams, queryParams);
-    		@SuppressWarnings("serial")
-    		String jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
-    		System.out.println(jsonStr);
+        System.out.println("Job ID: " + resp.jobId);
+        System.out.println("Ready to receive response at: " + WEBHOOK_URL);
     	} catch (Exception ex) {
     		System.out.println("Unable to analyze interaction. " + ex.getMessage());
     	}

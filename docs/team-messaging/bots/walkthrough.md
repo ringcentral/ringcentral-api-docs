@@ -311,7 +311,7 @@ You will notice that the bot responds 'pong' to your message.
 In the final step, we will modify the sample application to respond to your sending of custom messages to the bot. Begin by editing either the `private-bot.js` or the `public-bot.js` file in your favorite editor. Uncomment the *else if* and *send_message* lines below. Then select your own custom command or "keyword" your bot will respond to, and then post a reply when that keyword is received.
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:124-142] !}
+{!> code-samples/team-messaging/private-bot.js [ln:124-145] !}
 ```
 
 ## Summary

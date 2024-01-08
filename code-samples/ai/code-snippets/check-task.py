@@ -19,6 +19,6 @@ def check_task_status(jobId):
 def login():
   try:
       platform.login( jwt= "PRODUCTION-JWT" )
-      check_task_status("jobId")
+      check_task_status("JOBID")
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

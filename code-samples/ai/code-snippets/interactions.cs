@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 namespace AnalyzeInteraction {
   class Program {
     static RestClient restClient;
-    static string NGROK = "YourNGRokAddress";
-    static string WEBHOOK_URL = NGROK + "/webhook";
-    static string CONTENT_URI = "https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3";
+    static string NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS";
+    static string WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
+    static string CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI";
 
     static async Task Main(string[] args){
       try
@@ -49,7 +49,8 @@ namespace AnalyzeInteraction {
         var queryParams = new CaiAnalyzeInteractionParameters() { webhook = WEBHOOK_URL };
 
         var resp = await restClient.Ai().Insights().V1().Async().AnalyzeInteraction().Post(bodyParams, queryParams);
-        Console.WriteLine(JsonConvert.SerializeObject(resp));
+        Console.WriteLine("Job ID: " + resp.jobId);
+        Console.WriteLine("Ready to receive response at: " + WEBHOOK_URL);
       }
       catch (Exception ex)
       {

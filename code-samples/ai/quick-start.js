@@ -75,34 +75,50 @@ async function boostrap_test_function(){
   // require ('./code-snippets/check-task.js')
   // return
 
+  // await sleep(2000)
+  // console.log("Test Speaker Identification")
+  // require ('./code-snippets/speaker-identification.js')
+  // return
+
+  // await sleep(2000)
+  // console.log("Test Speaker Diarization")
+  // require ('./code-snippets/speaker-diarization.js')
+  // return
+
   await sleep(2000)
   console.log("Test Analyze Interaction")
   require ('./code-snippets/interactions.js')
   return
-  //
+
+
   // await sleep(2000)
   // console.log("Test Enrollment Speaker Identification")
   // require ('./code-snippets/enrollment.js')
   // return
+  //
+  // await sleep(2000)
+  // console.log("Test Summarization")
+  // require ('./code-snippets/summarize.js')
+  // return
+  //
+  // await sleep(2000)
+  // console.log("Test Speaker Diarization")
+  // require ('./code-snippets/speaker-diarization.js')
+  // return
+  //
+  //
+  // await sleep(2000)
+  // console.log("Test Speaker Identification")
+  // require ('./code-snippets/speaker-identifier.js')
+  // return
 
-  await sleep(2000)
-  console.log("Test Summarization")
-  require ('./code-snippets/summarize.js')
-  return
+  // await sleep(2000)
+  // console.log("Test Enrollment Extra")
+  // require ('./code-snippets/enrollment-extra.js')
+  // return
 
-  await sleep(2000)
-  console.log("Test Speaker Diarization")
-  require ('./code-snippets/speaker-diarization.js')
-  return
-
-
-  await sleep(2000)
-  console.log("Test Speaker Identification")
-  require ('./code-snippets/speaker-identifier.js')
-  return
-
-  await sleep(2000)
-  console.log("Test Enrollment Extra")
-  require ('./code-snippets/enrollment-extra.js')
-  return
+  // await sleep(2000)
+  // console.log("Test Punctuation")
+  // require ('./code-snippets/punctuation.js')
+  // return
 }

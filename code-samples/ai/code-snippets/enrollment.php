@@ -2,12 +2,12 @@
 // For code sample testing purpuse, we set the file name in the environment.
 // Replace the $contentFile value with your valid audio file!
 $contentFile = $_ENV['ENROLLMENT_CONTENT_3'];
-enrollment($contentFile);
+create_speaker_enrollment($contentFile);
 
 /*
 * Enroll speaker identification
 */
-function enrollment($contentFile)
+function create_speaker_enrollment($contentFile)
 {
   global $platform;
   try{

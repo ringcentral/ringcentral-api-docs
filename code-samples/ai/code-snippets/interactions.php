@@ -1,7 +1,7 @@
 <?php
-$NGROK = "YOUR-WEBHOOk-ADDRESS";
-$WEBHOOK_URL = $NGROK . "/webhook";
-$CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3';
+$NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS";
+$WEBHOOK_URL = $NGROK_ADDRESS . "/webhook";
+$CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI";
 analyze_interaction();
 
 /*
@@ -27,23 +27,6 @@ function analyze_interaction()
     if ($resp->response()->getStatusCode() == 202) {
       print_r ("Job ID: " . $jsonObj->jobId . PHP_EOL);
       print_r("Ready to receive response at: " . $WEBHOOK_URL . PHP_EOL);
-      $fileName = "transcript-db.json";
-      $transcriptionObj = array();
-      try {
-        if (file_exists($fileName)) {
-          $transcriptionObj = json_decode(file_get_contents($fileName));
-        }
-        $newTrascription = array (
-          'jobId' => $jsonObj->jobId,
-          'response' => array()
-        );
-        array_push($transcriptionObj, $newTrascription);
-        file_put_contents($fileName, json_encode($transcriptionObj));
-      } catch(Exception $err) {
-        print_r ($err);
-      }
-    }else{
-
     }
   }catch (\RingCentral\SDK\Http\ApiException $e) {
     // Getting error messages using PHP native interface

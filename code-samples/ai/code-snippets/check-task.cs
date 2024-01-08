@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using RingCentral;
 using Newtonsoft.Json;
 
-namespace AnalyzeInteraction {
+namespace ReadAsyncTask {
   class Program {
     static RestClient restClient;
     static async Task Main(string[] args){
@@ -17,7 +17,7 @@ namespace AnalyzeInteraction {
         // Authenticate a user using a personal JWT token
         await restClient.Authorize("PRODUCTION-JWT");
 
-        await check_task_status("jobId");
+        await check_task_status("JOBID");
       }
       catch (Exception ex)
       {
@@ -33,11 +33,6 @@ namespace AnalyzeInteraction {
       {
         var resp = await restClient.Ai().Status().V1().Jobs(jobId).Get();
         Console.WriteLine(JsonConvert.SerializeObject(resp));
-        if (resp.completionTime == null)
-        {
-          await Task.Delay(50000);
-          await check_status(jobId);
-        }
       }
       catch (Exception ex)
       {

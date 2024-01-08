@@ -2,12 +2,12 @@
 
 The Artificial Intelligence conversation summarization API allows you to summarize the contents of speaker-tagged audio transcript by extracting what is determined to be the most relevant parts of the conversation. The API provides two types of summaries:
 
-- **Abstractive**. The summary generated is a unique construction that attempts to convey the meaning of the text. This is ideal for generating an abstract of the specified text. 
-- **Extractive**. The summary generated is a sequence of excerpts of the most relevant sentences. This is ideal for creating a list of highlights from a block of text. 
+- **Abstractive**. The summary generated is a unique construction that attempts to convey the meaning of the text. This is ideal for generating an abstract of the specified text.
+- **Extractive**. The summary generated is a sequence of excerpts of the most relevant sentences. This is ideal for creating a list of highlights from a block of text.
 
 The API also allows developers to optionally specify the start and end times, as well as a speaker ID in order to generate a summary from a portion of a larger previously diarized transcription, or to contrain the summary to a specific time period. '
 
-## Generating a summary from a block of text
+## Generating a summary from a block of text??
 
 ### Request parameters
 
@@ -25,35 +25,57 @@ The API also allows developers to optionally specify the start and end times, as
 | `start`     | Number | start time of the segment. Optional.                                                               |
 | `end`       | Number | start time of the segment. Optional.                                                               |
 
-### Example code
+### Sample code
 
-After you have setup a [simple web server to process the response](../asynchronous-responses/), copy and paste the code from below in a file. In the process, make sure to edit the variables found in ALL CAPS to ensure your code runs properly. 
+The following example code shows how to provide the utterances input to the API and get the summaries.
 
-=== "Javascript"
+Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+
+!!! note "Running the code"
+    * Edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * You can only run on your production account, this means that you have to use app credentials for production.
+
+=== "JavaScript"
 
     ```javascript
-    {!> code-samples/ai/summarize.js !}
-    ```
-
-    Run your sample code.
-
-    ```bash
-    $ node index.js
+    {!> code-samples/ai/code-snippets-headers/header.js [ln:1-12] !}
+    {!> code-samples/ai/code-snippets/summarize.js [ln:10-] !}
     ```
 
 === "Python"
 
     ```python
-    {!> code-samples/ai/summarize.py !}
+    {!> code-samples/ai/code-snippets/summarize.py !}
+    {!> code-samples/ai/code-snippets-headers/footer.py [ln:1-5] !}
     ```
 
-    Run your sample code.
-    
-    ```bash
-    $ python3 app.py
+=== "PHP"
+
+    ```php
+    {!> code-samples/ai/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/ai/code-snippets/summarize.php [ln:2-] !}
     ```
 
-### Example response
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/ai/code-snippets/summarize.rb !}
+    {!> code-samples/ai/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```    
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/ai/code-snippets/summarize.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/ai/code-snippets/summarize.java !}
+    ```
+
+### Sample response
 
 ```json
 {!> code-samples/ai/summarize-response.json !}

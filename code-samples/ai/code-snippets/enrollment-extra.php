@@ -1,6 +1,4 @@
 <?php
-read_enrollments();
-
 /*
 * Read speakers identification
 */

@@ -59,11 +59,11 @@ def boostrap_test_function():
     time.sleep (2)
     import importlib
 
-    time.sleep (2)
-    print ("Test analyze interaction API")
-    ms = importlib.import_module("code-snippets.interactions")
-    ms.platform = platform
-    ms.analyze_interaction()
+    #time.sleep (2)
+    # print ("Test analyze interaction API")
+    # ms = importlib.import_module("code-snippets.interactions")
+    # ms.platform = platform
+    # ms.analyze_interaction()
 
     # time.sleep (2)
     # print ("Test checking stt task status")
@@ -71,18 +71,42 @@ def boostrap_test_function():
     # ms.platform = platform
     # ms.check_task_status("cc131168-03a9-11ee-8c7a-0050568c5fe3")
 
-    print ("Test enrollment")
+    #print ("Test enrollment")
     # time.sleep (2)
     #ms = importlib.import_module("code-snippets.enrollment")
     #ms.platform = platform
     #contentFile = os.environ.get('ENROLLMENT_CONTENT_3')
     #ms.enrollment(contentFile)
 
-    print ("Test extra enrollment")
+    # print ("Test extra enrollment")
     # time.sleep (2)
     #ms = importlib.import_module("code-snippets.enrollment-extra")
     #ms.platform = platform
     #ms.read_enrollments()
+
+    # print ("Test speaker identification")
+    # time.sleep (2)
+    # ms = importlib.import_module("code-snippets.speaker-identification")
+    # ms.platform = platform
+    # ms.speakers_identification()
+
+    # print ("Test punctuation")
+    # time.sleep (2)
+    # ms = importlib.import_module("code-snippets.punctuation")
+    # ms.platform = platform
+    # ms.punctuation()
+
+    # print ("Test summarize")
+    # time.sleep (2)
+    # ms = importlib.import_module("code-snippets.summarize")
+    # ms.platform = platform
+    # ms.conversation_summary()
+
+    print ("Test speaker diarization")
+    time.sleep (2)
+    ms = importlib.import_module("code-snippets.speaker-diarization")
+    ms.platform = platform
+    ms.speakers_recognition()
 
 # must be on the last line!
 boostrap_test_function()

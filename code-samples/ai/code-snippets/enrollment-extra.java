@@ -40,8 +40,8 @@ public class SpeakserIdentificationEnrollment {
         var jsonStr = new Gson().toJson(resp, new TypeToken<Object>(){}.getType());
         System.out.println (jsonStr );
         for (var record : resp.records) {
-          if (record.enrollmentId.equals("123456789")) {
-            delete_enrollment(record.enrollmentId);
+          if (record.speakerId.equals("123456789")) {
+            delete_enrollment(record.speakerId);
           }
         }
       } catch (RestException ex) {
@@ -49,9 +49,9 @@ public class SpeakserIdentificationEnrollment {
       }
     }
     // Delete a speaker identification
-    private void delete_enrollment(String enrollmentId) throws RestException, IOException {
+    private void delete_enrollment(String speakerId) throws RestException, IOException {
       try {
-        var resp = restClient.ai().audio().v1().enrollments(enrollmentId).delete();
+        var resp = restClient.ai().audio().v1().enrollments(speakerId).delete();
         System.out.println("Deleted");
       } catch (RestException ex) {
         System.out.println("Unable to delete a speaker identification. " + ex.getMessage());

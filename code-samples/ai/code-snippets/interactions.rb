@@ -1,8 +1,8 @@
 require 'ringcentral'
 
-NGROK = "http://4bb8-69-181-201-33.ngrok-free.app"
-WEBHOOK_URL = NGROK + "/webhook";
-CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3'
+NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS"
+WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
+CONTENT_URI = 'PUBLICLY-ACCESSIBLE-CONTENT-URI'
 
 #
 # Transcribe a call recording and analyze interaction
@@ -28,32 +28,6 @@ def analyze_interaction()
       if resp.status == 202
           puts('Job ID: ' + body['jobId']);
           puts ('Ready to receive response at: ' + WEBHOOK_URL);
-          fileName = "transcript-db.json"
-          transcriptionObj = []
-          begin
-            if File.exist?(fileName) == true
-              #File.open(fileName, 'r') { |file| file.read("your text") }
-              transcriptDB = File.open(fileName, "r");
-              transcriptionObj = JSON.parse(transcriptDB.read())
-              transcriptDB.close()
-            else
-              transcriptDB = File.new(fileName, "w+");
-            end
-
-            newTranscription = {
-                 'jobId': body['jobId'],
-                 'response': {}
-            }
-            transcriptionObj.append(newTranscription)
-            transcriptDB = File.open(fileName, "w");
-            transcriptDB.write(JSON.generate(transcriptionObj))
-            transcriptDB.close()
-            puts ("Done")
-          rescue StandardError => e
-            puts (e)
-          end
-      else
-          puts ('An error occurred posting the request.')
       end
     rescue StandardError => e
       puts ("Unable to analyze interaction. " + e.to_s)

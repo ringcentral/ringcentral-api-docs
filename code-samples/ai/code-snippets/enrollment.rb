@@ -19,7 +19,7 @@ end
 #
 # Enroll speaker identification
 #
-def enrollment(contentFile)
+def create_speaker_enrollment(contentFile)
     begin
         # use own extension id as a unique enrollment id
         tokens = $platform.token
@@ -68,7 +68,7 @@ def login()
     $platform.authorize( jwt: "PRODUCTION-JWT" )
     # set your valid audio content file name and path
     contentFile = "VALID_AUDIO_CONTENT_FILE"
-    enrollment(contentFile)
+    create_speaker_enrollment(contentFile)
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials. " + e.to_s)
   end

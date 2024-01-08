@@ -19,7 +19,7 @@ namespace SpeakserIdentificationEnrollment {
 
         // set your valid audio content file name and path
         var contentFile = "VALID_AUDIO_CONTENT_FILE";
-        await enrollment(contentFile);
+        await create_speaker_enrollment(contentFile);
       }
       catch (Exception ex)
       {
@@ -29,7 +29,7 @@ namespace SpeakserIdentificationEnrollment {
     /*
     * Enroll speaker identification
     */
-    static private async Task enrollment(String contentFile)
+    static private async Task create_speaker_enrollment(String contentFile)
     {
       try
       {

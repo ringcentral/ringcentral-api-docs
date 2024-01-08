@@ -13,7 +13,7 @@ $platform = $rcsdk->platform();
 // Authenticate a user using a personal JWT token
 try {
   $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
-  speech_to_text();
+  //speech_to_text();
 } catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->getMessage() . PHP_EOL);
 }
@@ -57,21 +57,36 @@ function speech_to_text(){
  Code snippet section for boostrap testing purpose
 **********************************************************/
 $NGROK = $_ENV['NGROK_URL']; //"http://e255-45-62-187-76.ngrok-free.app";
-$WEBHOOK_URL = $NGROK . "/quick-start-server.php?webhook";
-$CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3';
-//boostrap_test_function();
+$WEBHOOK_URL = $NGROK . "/webhook"; //"/server.php?webhook";
+$CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Phong-Swetha-01.mp3'; //'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3';
+boostrap_test_function();
 function boostrap_test_function(){
+/*
   sleep(2);
   print_r ("Test analyze interactions". PHP_EOL);
   require_once (__DIR__ .'/code-snippets/interactions.php');
-/*
   sleep(2);
   print_r ("Test fetching stt task status". PHP_EOL);
   require_once (__DIR__ .'/code-snippets/check-task.php');
+*/
+  // sleep(2);
+  // print_r ("Test enroll speaker identification". PHP_EOL);
+  // require_once (__DIR__ .'/code-snippets/enrollment.php');
+
+  // sleep(2);
+  // print_r ("Test speaker identification". PHP_EOL);
+  // require_once (__DIR__ .'/code-snippets/speaker-identification.php');
+
+  // sleep(2);
+  // print_r ("Test speaker identification". PHP_EOL);
+  // require_once (__DIR__ .'/code-snippets/punctuation.php');
+
+  // sleep(2);
+  // print_r ("Test speaker identification". PHP_EOL);
+  // require_once (__DIR__ .'/code-snippets/summarize.php');
 
   sleep(2);
-  print_r ("Test enroll speaker identification". PHP_EOL);
-  require_once (__DIR__ .'/code-snippets/enrollment.php');
-*/
+  print_r ("Test speaker diarization". PHP_EOL);
+  require_once (__DIR__ .'/code-snippets/speaker-diarization.php');
 }
 ?>

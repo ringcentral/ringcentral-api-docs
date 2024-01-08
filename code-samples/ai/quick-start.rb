@@ -61,10 +61,25 @@ login()
 ########
 def boostrap_test_function()
 
-    sleep(2)
-    puts "Test analyze interaction"
-    require_relative './code-snippets/interactions'
-    analyze_interaction()
+    # sleep(2)
+    # puts "Test analyze interaction"
+    # require_relative './code-snippets/interactions'
+    # analyze_interaction()
+
+    # sleep(2)
+    # puts "Test identify spekears"
+    # require_relative './code-snippets/speaker-identification'
+    # identify_speakers()
+
+    # sleep(2)
+    # puts "Test punctuation"
+    # require_relative './code-snippets/punctuation'
+    # punctuation()
+
+    # sleep(2)
+    # puts "Test punctuation"
+    # require_relative './code-snippets/summarize'
+    # conversation_summary()
 
     # sleep(2)
     # puts "Test check task status"
@@ -76,6 +91,11 @@ def boostrap_test_function()
     # require_relative './code-snippets/enrollment'
     # contentFile = ENV['ENROLLMENT_CONTENT_4']
     # enrollment(contentFile)
+
+    sleep(2)
+    puts "Test speaker diarization"
+    require_relative './code-snippets/speaker-diarization'
+    speakers_recognition()
 end
 
 boostrap_test_function()

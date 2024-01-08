@@ -43,7 +43,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../authentication/jwt/create-jwt) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
      * `NGROK_URL` - set to your ngrok tunnel address taken from the ngrok setup steps below.
      * `CONTENT_URI` - set to a publicly accessible URL for your audio/video file you want to transcribe (a test default uri has been provided for you)
 
@@ -57,7 +57,7 @@ Download and install [ngrok](https://ngrok.com/download) if you haven't done so.
 
 ```bash
 $ ngrok http 3000
-  Forwarding https://xxx-yy-181-201-33.ngrok-free.app -> https://localhost:3000
+  Forwarding https://xxxx-yy-181-201-33.ngrok-free.app -> https://localhost:3000
 ```
 
 ### Create and start your server app
@@ -300,7 +300,7 @@ $ ngrok http 3000
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1 or a higher version
     * Enter project name "SpeechToTextQuickStart"
-    * Add the RingCentral.Net (6.0.0) SDK and DotEnv NuGet packages
+    * Add the RingCentral.Net (6.1.1) SDK and DotEnv NuGet packages
     * Save the .env file under your project folder. E.g. /SpeechToTextQuickStart/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file 'Program.cs' using the content below:
@@ -324,7 +324,7 @@ $ ngrok http 3000
     ```json
     dependencies {
         // ...
-        implementation 'com.ringcentral:ringcentral:3.0.0'
+        implementation 'com.ringcentral:ringcentral:3.1.1'
     }
     ```
     * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu

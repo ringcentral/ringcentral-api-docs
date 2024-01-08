@@ -2,7 +2,7 @@ const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
 
 // replace with your ngrok address below
-const WEBHOOK_URL = "YOUR NGROK HTTPS URL" + "/webhook"; 
+const WEBHOOK_URL = "YOUR NGROK HTTPS URL" + "/webhook";
 
 // Initialize the RingCentral SDK and Platform
 const rcsdk = new RC({
@@ -27,11 +27,13 @@ async function punctuateText() {
     try {
         let resp = await platform.post("/ai/text/v1/async/punctuate?webhook=" + WEBHOOK_URL, {
             texts: [
-                "so its more fluid than it is and you know its not the best kind of feedback right"
+                "so its more fluid than it is and you know its not the best kind of feedback right",
+                "and you know that the best way to ask for customer feedback is to reach out to each of your customer and interview them separately",
+                "however interviewing each individual customer to get their feedback is not scalable if you have thousands of customers to be interviewed"
             ]
         });
         console.log("Job is " + resp.statusText + " with HTTP status code " + resp.status);
-    } 
+    }
     catch (e) {
         console.log("An error occurred: " + e.message);
     }
