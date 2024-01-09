@@ -30,11 +30,6 @@ async function read_enrollments() {
     var resp = await platform.get(endpoint, queryParams)
     var jsonObj = await resp.json()
     console.log(jsonObj)
-    for (var enrollment of jsonObj.records){
-      if (enrollment.speakerId == "1234566789"){
-        await delete_enrollment(enrollment.speakerId)
-      }
-    }
   }catch (e){
     console.log("Unable to read speakers identification.", e.message)
   }

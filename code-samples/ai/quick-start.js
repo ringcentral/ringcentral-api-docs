@@ -16,7 +16,7 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
-    //speech_to_text()
+    speech_to_text()
 });
 
 platform.on(platform.events.loginError, function(e){

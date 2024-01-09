@@ -13,7 +13,7 @@ $platform = $rcsdk->platform();
 // Authenticate a user using a personal JWT token
 try {
   $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
-  //speech_to_text();
+  speech_to_text();
 } catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->getMessage() . PHP_EOL);
 }

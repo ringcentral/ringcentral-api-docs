@@ -30,7 +30,7 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 ## Request help from support
 
-Access to the RingCentral Artificial API currently requires help from support in order to grant the "AI" application scope to your application, and graduate it to production.
+Access to the RingCentral AI API currently requires help from support in order to grant the "AI" application scope to your application, and graduate it to production.
 
 <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 
@@ -200,7 +200,7 @@ $ ngrok http 3000
     Install RingCentral JS SDK & dotenv library
 
     ```bash
-    $ npm install @ringcentral/sdk dotnet
+    $ npm install @ringcentral/sdk dotenv
     ```
 
     #### Create and edit `speech-to-text.js`
@@ -208,7 +208,7 @@ $ ngrok http 3000
     Create a file called `speech-to-text.js` using the contents below.
 
     ```javascript
-    {!> code-samples/ai/quick-start.js [ln:1-55] !}
+    {!> code-samples/ai/quick-start.js [ln:1-54] !}
     ```
 
     #### Run your code

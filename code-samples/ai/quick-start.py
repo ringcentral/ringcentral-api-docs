@@ -40,7 +40,7 @@ platform = rcsdk.platform()
 def login():
     try:
       platform.login( jwt=os.environ.get('RC_JWT') )
-      #speech_to_text()
+      speech_to_text()
     except Exception as e:
       sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
 

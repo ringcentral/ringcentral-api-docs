@@ -44,7 +44,7 @@ $platform = RingCentral.new( ENV['RC_CLIENT_ID'], ENV['RC_CLIENT_SECRET'], ENV['
 def login()
   begin
     $platform.authorize(jwt: ENV['RC_JWT'])
-    #speech_to_text()
+    speech_to_text()
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
   end
