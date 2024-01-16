@@ -35,12 +35,12 @@ public class SpeechToTextQuickStart {
       try {
         var bodyParams = new AsrInput()
                  .contentUri(System.getenv("CONTENT_URI"))
-                 .encoding("Wav")
+                 .encoding("Mpeg")
                  .languageCode("en-US")
                  .source("RingCentral")
                  .audioType("CallCenter")
                  .enablePunctuation(true)
-                 .enableSpeakerDiarization(false);
+                 .enableSpeakerDiarization(true);
 
         var callbackAddress = System.getenv("NGROK_URL") + "/webhook";
         var queryParams = new CaiSpeechToTextParameters().webhook(callbackAddress);

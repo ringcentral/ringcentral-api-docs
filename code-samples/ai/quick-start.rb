@@ -11,12 +11,12 @@ Dotenv.load("./../.env")
 def speech_to_text()
     bodyParams = {
       'contentUri':               ENV['CONTENT_URI'],
-      'encoding':                 "Wav",
+      'encoding':                 "Mpeg",
       'languageCode':             "en-US",
       'source':                   "RingCentral",
       'audioType':                "CallCenter",
       'enablePunctuation':        true,
-      'enableSpeakerDiarization': false
+      'enableSpeakerDiarization': true
     }
     callbackAddress = ENV['NGROK_URL'] + "/webhook"
     endpoint = "/ai/audio/v1/async/speech-to-text" #?webhook=" + callbackAddress #CGI.escape(callbackAddress)

@@ -26,12 +26,12 @@ function speech_to_text(){
   try {
     $bodyParams = array (
       'contentUri' =>               $_ENV['CONTENT_URI'],
-      'encoding' =>                 "Wav",
+      'encoding' =>                 "Mpeg",
       'languageCode' =>             "en-US",
       'source' =>                   "RingCentral",
       'audioType' =>                "CallCenter",
       'enablePunctuation' =>        True,
-      'enableSpeakerDiarization' => False
+      'enableSpeakerDiarization' => True
     );
     $callbackAddress = $_ENV['NGROK_URL'] . "/server.php?webhook";
     $endpoint = "/ai/audio/v1/async/speech-to-text?webhook=" . urlencode($callbackAddress);

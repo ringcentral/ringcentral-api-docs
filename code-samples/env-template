@@ -36,8 +36,8 @@ FORWARDING_NUMBER = ''
 RC_REDIRECT_URL      = 'http://localhost:5000/oauth2callback'
 
 # Used throughout AI (Artificial Intelligence API)
-RC_MEDIA_URL = 'https://github.com/ringcentral/ringcentral-api-docs/blob/conv-ai-docs/resources/sample1.wav?raw=true'
-
+CONTENT_URI=https://github.com/ringcentral/ringcentral-api-docs/raw/main/resources/sample-calls.mp3
+NGROK_URL=''
 # Used in the Team Messaging bot code samples
 # The following URL is your bot webhook delivery address
 RC_BOT_WEBHOOK_URL = ''

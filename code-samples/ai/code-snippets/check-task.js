@@ -1,5 +1,5 @@
 var platform = require('./../quick-start.js').platform;
-check_task_status("40ec5fa6-a5b9-11ee-8e20-0050568c77d0")
+check_task_status("438f9c54-b497-11ee-b0b2-0050568cc878")
 
 
 

@@ -2,7 +2,7 @@ const fs = require ('fs')
 var platform = require('./../quick-start.js').platform;
 NGROK_ADDRESS = process.env.NGROK_URL // ""NGROK-TUNNEL-ADDRESS""
 WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
-CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Never%20Buy%20Sony%20Service.mp3'
+CONTENT_URI = 'https://github.com/ringcentral/ringcentral-api-docs/raw/main/resources/sample-calls.mp3' //'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Never%20Buy%20Sony%20Service.mp3'
 analyze_interaction()
 
 

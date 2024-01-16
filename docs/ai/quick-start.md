@@ -348,7 +348,7 @@ $ ngrok http 3000
 
 ## Wait for a response from RingCentral
 
-In time, when RingCentral has fully processed the request, a response will be posted to the server you created previously. The response should look similar to the following.
+When RingCentral has fully processed the request, a response will be posted to the server you created previously. The response should look similar to the following.
 
 ```bash
 {! code-samples/ai/quick-start-response.json !}

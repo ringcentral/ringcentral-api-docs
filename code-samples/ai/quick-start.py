@@ -11,12 +11,12 @@ def speech_to_text():
     try:
         bodyParams = {
           'contentUri':               os.environ.get('CONTENT_URI'),
-          'encoding':                 "Wav",
+          'encoding':                 "Mpeg",
           'languageCode':             "en-US",
           'source':                   "RingCentral",
           'audioType':                "CallCenter",
           'enablePunctuation':        True,
-          'enableSpeakerDiarization': False
+          'enableSpeakerDiarization': True
         }
         callbackAddress = os.environ.get('NGROK_URL') + "/webhook"
         endpoint = "/ai/audio/v1/async/speech-to-text?webhook=" + urllib.parse.quote(callbackAddress)

@@ -4,7 +4,7 @@ Speech-to-text is the process of converting speech content into text contents. R
 
 The Speech-to-text API also supports speaker recognition if you have trained the voice signature of the speakers using the [Speaker id enrollment API](../speaker-enrollment/). Speaker recognition relies on the API `speakerIds` input as list of pre-enrolled speaker ids of the potential speakers in the conversation.
 
-!!! tip "English is currently the only supported language."
+!!! Note "English is currently the only supported language."
 
 ## Transcribing speech to text in media files
 
@@ -39,8 +39,10 @@ Try out the [AI Quick Start Guide](../quick-start/)
 
 ### Sample response
 
+Please note that the response data differs based on the API input parameters. For instance, if the `enableSpeakerDiarization` flag is set to false, the response will not include the speaker id info and the utterances segment will be omitted. This will also speed up the transcription processing time. Therefore, if you need to transcribe a voicemail recording, you should set the `enableSpeakerDiarization` to false.
+
 ```json
-{!> code-samples/ai/transcribe-response.json !}
+{!> code-samples/ai/quick-start-response.json !}
 ```
 
 | Parameter      | Type   | Description                                                                                             |
@@ -49,7 +51,7 @@ Try out the [AI Quick Start Guide](../quick-start/)
 | `words`        | List   | List of word segments (see below).                                                                      |
 | `transcript`   | String | The entire transcript with/without punctuations according to the input.                                 |
 | `confidence`   | Number | Overall transcription confidence.                                                                       |
-
+| `utterances`   | list   | List of utterances                                                                                      |
 
 #### Word Segment
 
@@ -60,3 +62,24 @@ Try out the [AI Quick Start Guide](../quick-start/)
 | `end`        | Number | End time of the audio segment in seconds.                                                                                  |
 | `word`       | String | The word corresponding to the audio segment.                                                                               |
 | `confidence` | Number | Confidence score for the word.                                                                                             |
+
+#### Utterances Segment
+
+| Parameter    | Type   | Description                                                                                                                |
+| ----------   | ------ | ---------------------------------------------------                                                                        |
+| `speakerId`  | String | The speaker id for the corresponding audio segment. Optional. Field is set only when `enableSpeakerDiarization` is `true`. |
+| `start`      | Number | Start time of the audio segment in seconds.                                                                                |
+| `end`        | Number | End time of the audio segment in seconds.                                                                                  |
+| `text`       | String | The utterance.                                                                                                             |
+| `confidence` | Number | Confidence score for the word.                                                                                             |
+| `wordTimings`| List   | List of spoken words within this utterance                                                                                 |
+
+#### WordTimings Segment
+
+| Parameter    | Type   | Description                                                                                                                |
+| ----------   | ------ | ---------------------------------------------------                                                                        |
+| `speakerId`  | String | The speaker id for the corresponding audio segment. Optional. Field is set only when `enableSpeakerDiarization` is `true`. |
+| `confidence` | Number | Confidence score for the word. |
+| `start`      | Number | Start time of the audio segment in seconds.                                                                                |
+| `end`        | Number | End time of the audio segment in seconds.                                                                                  |
+| `word`       | String | The spoken word.                                                                                                           |
