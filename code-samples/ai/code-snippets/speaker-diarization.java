@@ -23,7 +23,7 @@ public class SpeakersDiarization {
         // Authenticate a user using a personal JWT token
         restClient.authorize("PRODUCTION-JWT");
 
-        obj.speakers_recognition();
+        obj.speakers_detection();
 
       } catch (RestException e) {
         System.out.println(e.getMessage());
@@ -32,9 +32,9 @@ public class SpeakersDiarization {
       }
     }
     /*
-    * Recognize speakers from a conversation
+    * Detect speakers from a conversation
     */
-    static private void speakers_recognition() throws RestException, IOException {
+    static private void speakers_detection() throws RestException, IOException {
       try {
         var bodyParams = new DiarizeInput()
         .contentUri(CONTENT_URI)

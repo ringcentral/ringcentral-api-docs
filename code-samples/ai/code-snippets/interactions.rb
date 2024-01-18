@@ -16,7 +16,7 @@ def analyze_interaction()
         'audioType': "CallCenter",
         'insights': [ "All" ],
         'enableVoiceActivityDetection': true,
-        'separateSpeakerPerChannel': false
+        'separateSpeakerPerChannel': true
     }
     queryParams = {
       'webhook': WEBHOOK_URL

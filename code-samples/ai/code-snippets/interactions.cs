@@ -44,7 +44,7 @@ namespace AnalyzeInteraction {
             audioType = "CallCenter",
             insights = new String[] { "All" },
             enableVoiceActivityDetection = true,
-            separateSpeakerPerChannel = false
+            separateSpeakerPerChannel = true
         };
         var queryParams = new CaiAnalyzeInteractionParameters() { webhook = WEBHOOK_URL };
 

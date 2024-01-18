@@ -18,7 +18,7 @@ def analyze_interaction():
           'audioType': "CallCenter",
           'insights': [ "All" ],
           'enableVoiceActivityDetection': True,
-          'separateSpeakerPerChannel': False
+          'separateSpeakerPerChannel': True
         }
         endpoint = f'/ai/insights/v1/async/analyze-interaction?webhook={urllib.parse.quote(WEBHOOK_URL)}'
         resp = platform.post(endpoint, bodyParams)

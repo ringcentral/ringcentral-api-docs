@@ -39,7 +39,7 @@ Try out the [AI Quick Start Guide](../quick-start/)
 
 ### Sample response
 
-Please note that the response data differs based on the API input parameters. For instance, if the `enableSpeakerDiarization` flag is set to false, the response will not include the speaker id info and the utterances segment will be omitted. This will also speed up the transcription processing time. Therefore, if you need to transcribe a voicemail recording, you should set the `enableSpeakerDiarization` to false.
+!!! Note "The response data differs based on the API input parameters. For instance, if the `enableSpeakerDiarization` flag is set to false, the response will not include the speaker id info and the utterances segment will be omitted. This will also speed up the transcription processing time. Therefore, if you need to transcribe a voicemail recording, you should set the `enableSpeakerDiarization` to false."
 
 ```json
 {!> code-samples/ai/quick-start-response.json !}

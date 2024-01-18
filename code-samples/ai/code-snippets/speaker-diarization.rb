@@ -1,13 +1,13 @@
 require 'ringcentral'
 
-NGROK_ADDRESS = "http://a44c-73-170-11-87.ngrok-free.app" #"NGROK-TUNNEL-ADDRESS"
+NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS"
 WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
-CONTENT_URI = "https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3" #"PUBLICLY-ACCESSIBLE-CONTENT-URI"
+CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI"
 
 #
-# Recognize speakers from a conversation
+# Detect speakers from a conversation
 #
-def speakers_recognition()
+def speakers_detection()
     bodyParams = {
       'contentUri': CONTENT_URI,
       'encoding': "Mpeg",
@@ -35,7 +35,7 @@ end
 def login()
   begin
     $platform.authorize( jwt: "PRODUCTION-JWT" )
-    speakers_recognition()
+    speakers_detection()
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials. " + e.to_s)
   end

@@ -21,7 +21,7 @@ namespace SpeakersDiarization {
         // Authenticate a user using a personal JWT token
         await restClient.Authorize("PRODUCTION-JWT");
 
-        await speakers_recognition();
+        await speakers_detection();
       }
       catch (Exception ex)
       {
@@ -29,9 +29,9 @@ namespace SpeakersDiarization {
       }
     }
     /*
-    * Recognize spoeakers from a conversation
+    * Detect spoeakers from a conversation
     */
-    static private async Task speakers_recognition()
+    static private async Task speakers_detection()
     {
       try
       {

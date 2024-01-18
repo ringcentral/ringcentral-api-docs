@@ -3,7 +3,7 @@ var platform = require('./../quick-start.js').platform;
 NGROK_ADDRESS = process.env.NGROK_URL // "http://d973-73-170-11-87.ngrok-free.app"
 WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
 CONTENT_URI = 'https://rclabs-addin-resources.s3.us-east-1.amazonaws.com/media/Sample%20Call%20Tech%20Support.mp3'
-speakers_recogition()
+speakers_detection()
 
 
 // Next line must be at the 10th line!
@@ -11,7 +11,7 @@ platform.on(platform.events.loginSuccess, () => {
     NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS"
     WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
     CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI"
-    speakers_recogition()
+    speakers_detection()
 })
 
 platform.on(platform.events.loginError, function(e){
@@ -20,9 +20,9 @@ platform.on(platform.events.loginError, function(e){
 });
 
 /*
-* Recognize speakers from a conversation
+* Detect speakers from a conversation
 */
-async function speakers_recogition() {
+async function speakers_detection() {
     try {
         let bodyParams = {
             contentUri:   CONTENT_URI,

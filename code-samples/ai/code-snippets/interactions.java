@@ -45,7 +45,7 @@ public class AnalyzeInteraction {
                   .audioType("CallCenter")
                   .insights(new String[] {"All"})
                   .enableVoiceActivityDetection(true)
-                  .separateSpeakerPerChannel(false);
+                  .separateSpeakerPerChannel(true);
 
     		var queryParams = new CaiAnalyzeInteractionParameters().webhook(WEBHOOK_URL);
     		var resp = restClient.ai().insights().v1().async().analyzeInteraction().post(bodyParams, queryParams);

@@ -19,7 +19,7 @@ function analyze_interaction()
         'audioType' =>  "CallCenter",
         'insights' => array ( "All" ),
         'enableVoiceActivityDetection' => True,
-        'separateSpeakerPerChannel' =>  False
+        'separateSpeakerPerChannel' =>  True
     );
     $endpoint = "/ai/insights/v1/async/analyze-interaction?webhook=" . urlencode($WEBHOOK_URL);
     $resp = $platform->post($endpoint, $bodyParams);

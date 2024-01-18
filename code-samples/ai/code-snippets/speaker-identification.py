@@ -3,7 +3,7 @@ import os,sys,urllib.parse,json
 
 NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS"
 WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
-CONTENT_URI = 'PUBLICLY-ACCESSIBLE-CONTENT-URI'
+CONTENT_URI = "PUBLICLY-ACCESSIBLE-CONTENT-URI"
 
 #
 # Identify speakers from a conversation

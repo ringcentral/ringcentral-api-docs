@@ -57,7 +57,6 @@ def read_enrolled_speakers()
     rescue StandardError => e
       puts  ("Unable to find enrolled speakers. " + e.to_s)
     end
-
     return enrolledSpeakerIds
 end
 

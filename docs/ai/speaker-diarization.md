@@ -31,7 +31,7 @@ For the best results we recommend following these guidelines.
 
 ## Sample code
 
-The following example code shows how to recognize speakers from a conversation in a media file.
+The following example code shows how to detect speakers from a conversation in a media file.
 
 Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
 

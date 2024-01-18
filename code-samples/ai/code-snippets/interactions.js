@@ -32,7 +32,7 @@ async function analyze_interaction() {
           audioType:                    "Meeting",
           insights:                     [ "All" ],
           enableVoiceActivityDetection: true,
-          separateSpeakerPerChannel:    false
+          separateSpeakerPerChannel:    true
       }
       let endpoint = `/ai/insights/v1/async/analyze-interaction?webhook=${WEBHOOK_URL}`
       let resp = await platform.post(endpoint, bodyParams);

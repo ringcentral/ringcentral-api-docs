@@ -1,7 +1,7 @@
 from ringcentral import SDK
 import os,sys,urllib.parse,json
 
-NGROK_ADDRESS = "http://a44c-73-170-11-87.ngrok-free.app" #"NGROK-TUNNEL-ADDRESS"
+NGROK_ADDRESS = "NGROK-TUNNEL-ADDRESS"
 WEBHOOK_URL = NGROK_ADDRESS + "/webhook";
 
 #
