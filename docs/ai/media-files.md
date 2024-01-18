@@ -59,6 +59,6 @@ https://media.ringcentral.com/restapi/..snip../recording/1662272004/content?acce
 !!! Important
     To retrieve the recording and use the AI API to process the recording, you need to have the following app permissions:
 
-    For Call Recordings: **AI**, **Read Call Recording**
+    For Call Recordings: **AI**, **Read Call Log**, **Read Call Recording**
 
     For Video Meeting Recordings: **AI**, **Video Internal**
