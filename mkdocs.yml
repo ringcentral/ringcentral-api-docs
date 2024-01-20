@@ -286,14 +286,22 @@ nav:
 - 'Secondary':
 
   - 'Using the API':
-      - 'Methods, endpoints and parameters': 'basics/uris.md'
+      - 'Running code samples': 'basics/code-samples.md'
       - 'Exploring the API': 'basics/explorer.md'
       - 'Callaborating with developers': 'basics/inviting-developers.md'
-      - 'Running code samples': 'basics/code-samples.md'
       - 'Media content': 'basics/media.md'
-      - 'URI schemes': 'basics/uri-schemes.md'
+      - 'App URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
-      - 'Errors': 'basics/errors.md'
+      - 'Localization': 'basics/localization.md'
+      - 'Requests and responses':
+        - 'Requests methods, endpoints and parameters': 'basics/uris.md'
+        - 'Response format': 'basics/formats/responses.md'
+        - 'Errors': 'basics/errors.md'
+        - 'Batch requests': 'basics/batch-requests.md'
+      - 'Data types and formats':
+        - 'Objects and data types': 'basics/formats/objects.md'
+        - 'Phone numbers': 'basics/formats/phone-numbers.md'
+        - 'Resource identification': 'basics/formats/resources.md'
       - 'API Change Log':
         - 'Preface': 'basics/changelog/index.md'
         - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
