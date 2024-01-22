@@ -131,6 +131,8 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+  - 'Social Messaging':
+    - 'Overview': 'social-messaging/index.md'
 
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
