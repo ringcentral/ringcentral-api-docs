@@ -288,7 +288,7 @@ nav:
   - 'Using the API':
       - 'Running code samples': 'basics/code-samples.md'
       - 'Exploring the API': 'basics/explorer.md'
-      - 'Callaborating with developers': 'basics/inviting-developers.md'
+      - 'Collaborating with developers': 'basics/inviting-developers.md'
       - 'Media content': 'basics/media.md'
       - 'App URI schemes': 'basics/uri-schemes.md'
       - 'Rate limits': 'basics/rate-limits.md'
