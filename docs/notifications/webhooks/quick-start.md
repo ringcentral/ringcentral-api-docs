@@ -21,7 +21,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 <li>Under "Auth" select "JWT auth flow"
 <li>Under "Security" add the following permissions:
   <ul>
-    <li>WebhookSubscriptions</li>
+    <li>WebSocket Subscriptions, Read Presence</li>
     <li>SMS</li>
   </ul>
 </li>

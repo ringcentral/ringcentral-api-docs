@@ -30,7 +30,10 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 ## Request help from support
 
-Access to the RingCentral AI API currently requires help from support in order to grant the "AI" application scope to your application, and graduate it to production.
+Access to the RingCentral Artificial API currently requires help from support in order to grant the "AI" application scope to your application. 
+
+!!! hint "Using the AI API in sandbox vs prodcution"
+    The AI API works in both sandbox and production, but sandbox has limitations such as only the first 10 minutes of the audio is processed. Since sandbox is used for testing and development purposes only, we do not expect developers to process large media files in sandbox.
 
 <a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
 

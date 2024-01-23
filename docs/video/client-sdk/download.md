@@ -37,6 +37,14 @@ React UI components are also [available via npm](https://www.npmjs.com/package/@
 % npm install @ringcentral/video-sdk-react
 ```
 
+#### React Native
+
+React Native components are also [available via npm](https://www.npmjs.com/package/@ringcentral/rcv-react-native-sdk), and can be installed via the command line as well.
+
+```shell
+% npm install @ringcentral/rcv-react-native-sdk
+```
+
 ### Native iOS
 
 The Video Client SDK for native iOS applications is available via CocoaPods. One can link their iOS project to the Client SDK bhy adding the following to their `Podfile`:

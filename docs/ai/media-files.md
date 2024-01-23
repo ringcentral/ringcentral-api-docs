@@ -71,6 +71,6 @@ The following example code shows how to obtain the access token using a RingCent
 !!! Important
     To retrieve the recording and use the AI API to process the recording, you need to have the following app permissions:
 
-    For Call Recordings: **AI**, **Read Call Recording**
+    For Call Recordings: **AI**, **Read Call Log**, **Read Call Recording**
 
     For Video Meeting Recordings: **AI**, **Video**

@@ -61,4 +61,4 @@ These APIs can be used to analyze various call-related metrics as stated below:
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
 
-The Call Log APIs are suitable for getting metadata of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we are working towards minimizing the gap during the beta stage of Analytics APIs.
+The Call Log APIs are suitable for getting metadata of individual calls. The Analytics APIs are suitable for aggregate call analysis. Call log and analytics APIs are two different systems using different data sources (call log uses an older source), 100% match is unlikely, however we continue to work towards minimizing the gap of Analytics APIs.
