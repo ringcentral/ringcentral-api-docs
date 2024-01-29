@@ -288,28 +288,36 @@ nav:
 - 'Secondary':
 
   - 'Using the API':
-      - 'Methods, endpoints and parameters': 'basics/uris.md'
-      - 'Exploring the API': 'basics/explorer.md'
-      - 'Callaborating with developers': 'basics/inviting-developers.md'
-      - 'Running code samples': 'basics/code-samples.md'
-      - 'Media content': 'basics/media.md'
-      - 'URI schemes': 'basics/uri-schemes.md'
+      - 'Requests and responses':
+        - 'Requests methods, endpoints and parameters': 'basics/uris.md'
+        - 'Response format': 'basics/formats/responses.md'
+        - 'Errors': 'basics/errors.md'
+        - 'Batch requests': 'basics/batch-requests.md'
+      - 'Data types and formats':
+        - 'Objects and data types': 'basics/formats/objects.md'
+        - 'Phone numbers': 'basics/formats/phone-numbers.md'
+        - 'Resource identification': 'basics/formats/resources.md'
       - 'Rate limits': 'basics/rate-limits.md'
-      - 'Errors': 'basics/errors.md'
-      - 'API Change Log':
-        - 'Preface': 'basics/changelog/index.md'
-        - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
-        - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
-        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
-        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
-        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
-        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
-        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
-        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
-        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
-        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
-        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
-      - 'API Quick Reference': 'basics/api-index.md'
+      - 'Working with media content': 'basics/media.md'
+      - 'Localization': 'basics/localization.md'
+      - 'App URI schemes': 'basics/uri-schemes.md'
+      - 'Running code samples': 'basics/code-samples.md'
+      - 'Exploring the API': 'basics/explorer.md'
+      - 'Collaborating with developers': 'basics/inviting-developers.md'
+#      - 'API Change Log':
+#        - 'Preface': 'basics/changelog/index.md'
+#        - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
+#        - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
+#        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+#        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
+#        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+#        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+#        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+#        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+#        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+#        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+#        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+#      - 'API Quick Reference': 'basics/api-index.md'
 
   - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
 
@@ -354,7 +362,40 @@ nav:
 
   - 'Notifications and events':
     - 'Overview': 'notifications/index.md'
-    - 'Event filters': 'notifications/event-filters.md'
+    - 'Event filters':
+      - "Overview and index": 'notifications/event-filters/index.md'
+      - "Account events":
+        - "Company Directory Event": 'notifications/event-filters/company-directory.md'
+        - "Extension Favorites Event": 'notifications/event-filters/extension-favorites.md'
+        - "Extension Grant List Event": 'notifications/event-filters/extension-grant-list.md'
+        - "Extension Info Event": 'notifications/event-filters/extension-info.md'
+        - "Extension List Event": 'notifications/event-filters/extension-list.md'
+        - "Emergency Address Event": 'notifications/event-filters/emergency-address.md'
+        - "Contact Center Phone Number Event": 'notifications/event-filters/contact-center-phone-number.md'
+      - "Presence events":
+        - "Account Presence Event": 'notifications/event-filters/account-presence.md'
+        - "Detailed Extension Presence Event": 'notifications/event-filters/detailed-extension-presence.md'
+        - "Detailed Extension Presence with SIP Event": 'notifications/event-filters/detailed-extension-presence-with-sip.md'
+        - "Extension Presence Event": 'notifications/event-filters/extension-presence.md'
+        - "Extension Presence Line Event": 'notifications/event-filters/extension-presence-line.md'
+        - "Call Queue Member Presence Event": 'notifications/event-filters/call-queue-member-presence.md'
+        - "Extension DND Status Event": 'notifications/event-filters/extension-dnd-status.md'
+      - "Telephony events":
+        - "Account Telephony Sessions Event": 'notifications/event-filters/account-telephony-sessions.md'
+        - "Extension Telephony Sessions Event": 'notifications/event-filters/extension-telephony-sessions.md'
+      - "Message Store events":
+        - "Fax Message Event": 'notifications/event-filters/fax-message.md'
+        - "Instant Message Event": 'notifications/event-filters/instant-message.md'
+        - "Voicemail Message Event": 'notifications/event-filters/voicemail-message.md'
+        - "Message Event": 'notifications/event-filters/message.md'
+      - "High Volume SMS events":
+        - "Message Batch Event": 'notifications/event-filters/message-batch.md'
+        - "Specific Message Batch Event": 'notifications/event-filters/specific-message-batch.md'
+        - "Batch Messages Event": 'notifications/event-filters/batch-messages.md'
+        - "Batch Message Opt-Out Event": 'notifications/event-filters/batch-message-optout.md'
+      - "Team Messaging events":
+        - "Post Message Event": 'notifications/event-filters/post.md'
+        - "Chats Event": 'notifications/event-filters/chat.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
