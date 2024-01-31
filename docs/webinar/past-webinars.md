@@ -8,7 +8,7 @@ After a webinar is over, much of the real work can begin for companies looking t
 
 A key facet of analyzing the success of any webinar lies in understand who was there, and who may still benefit from the webinar's content. To obtain a list of webinar attendees, one can use the [list session registrants](https://developers.ringcentral.com/api-reference/Registrants/rcwRegListRegistrants) operation. In the paginated list that is returned one can look at each individual registrant record, and if a `participantId` property is present and has a value, then that registrant attended the webinar. Consequently, if the `participantId` property is absent or lacks a value, then it is safe to conclude that the corresponding registrant did not attend the webinar. 
 
-Each attendee and absentee may need to be processed differently. For example, you may wish to look up a lead record and update the corresponding opportunity in your CRM (using the `externalId` property, see "[creating registrants](../registrants/)") for each attendee. Then for each absentee you may wish to send them an email inviting them to watch a recording of the webinar, or to invite them to an alternative session. 
+Each attendee and absentee may need to be processed differently. For example, you may wish to look up a lead record and update the corresponding opportunity in your CRM (using the `externalId` property, see "[creating registrants](registrants.md)") for each attendee. Then for each absentee you may wish to send them an email inviting them to watch a recording of the webinar, or to invite them to an alternative session. 
 
 ### Attendees of an all-hands webinar
 
@@ -29,6 +29,6 @@ After obtaining a list of webinar recordings, one can use the `recordingId` asso
 
 ### Sharing a recording with attendees
 
-If `recordingSharingEnabled` has been set to true when [creating or updating a webinar](../creation/), then you will find that a webinar session will also possess the `recodingSharedUri` property which will contain the URL at which attendees can view the session's recording. Shared recordings can also be set to expire, prevents attendees from watching a webinar recording after a certain time has elapsed. 
+If `recordingSharingEnabled` has been set to true when [creating or updating a webinar](creation.md), then you will find that a webinar session will also possess the `recodingSharedUri` property which will contain the URL at which attendees can view the session's recording. Shared recordings can also be set to expire, prevents attendees from watching a webinar recording after a certain time has elapsed. 
 
 If you wish to download and host the recording on your own website, hosts are free to do so. 

@@ -8,7 +8,7 @@ The registration process and the corresponding set of API endpoints exists to no
 
 Webinar registration and the use of related webinar registrant API endpoints is only intended for "marketing webinars" in which attendees are coming largely from outside your organization. If you are hosting an internal webinar, for example for a large all-hands company meeting, there is no need for attendees register beforehand. 
 
-One can disable/enable registration via the `registrationEnabled` webinar setting specified when the [webinar is created](../creation/).
+One can disable/enable registration via the `registrationEnabled` webinar setting specified when the [webinar is created](creation.md).
 
 ## Registering a person for a webinar
 
@@ -33,7 +33,7 @@ There are few constraints on the value of the `externalId` field, meaning it is 
 
 Then [reverse the process](https://measureschool.com/how-to-use-query-strings/) to access the individual values again. 
 
-See "Correlating a registrant with an external namespace" below, and our documentation on [analyzing past webinars](../past-webinars/). 
+See "Correlating a registrant with an external namespace" below, and our documentation on [analyzing past webinars](past-webinars.md). 
 
 ### Hosting a custom webinar registration page
 
@@ -99,7 +99,7 @@ Those hosting a marketing webinar often have the need to track who was invited, 
 
 Each registrant for a webinar will automatically be assigned a unique registrant `id`. When a registrant joins a webinar, they will automatically be assigned a `participantId` that is tied to that specific webinar. Using these two fields it becomes a relatively simple process to determine who attended and who didn't. If, for example, a registrant record has both an `id` and `participantId` then you can safely infer that the corresponding person attended the webinar. If on the other hand the registrant lacks a `participantId` then they never clicked their `joinUri` and thus never attended the webinar. 
 
-One can also track attendance by [subscribing to a webinar webhook](../events/) pertaining to a state change in a registrant's status. Doing so in this manner will give you greater visibility into the exact time that they registered, joined and left a webinar session. 
+One can also track attendance by [subscribing to a webinar webhook](events.md) pertaining to a state change in a registrant's status. Doing so in this manner will give you greater visibility into the exact time that they registered, joined and left a webinar session. 
 
 ### Tracking the source campaign of a registration
 

@@ -12,8 +12,8 @@ plugins:
   - exclude:
       regex:
         - '^#.*'
-  - ringcentral-api-index:
-      outfile: basics/api-index.md
+#  - ringcentral-api-index:
+#      outfile: basics/api-index.md
 
 theme:
   name: ringcentral
