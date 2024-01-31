@@ -19,6 +19,8 @@ theme:
   suppress_nextprev: true
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - markdown.extensions.admonition
   - pymdownx.details
   - pymdownx.keys
