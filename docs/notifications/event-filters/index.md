@@ -55,7 +55,7 @@ Every event transmitted to a client contains a common set of data elements, rega
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/telephony/sessions` | [Extension Telephony Sessions Event](./extension-telephony-sessions/) |
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/dnd` | [Extension DND Status Event](./extension-dnd-status/) |
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence` | [Extension Presence Event](./extension-presence/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Event](./extension-presence-line/) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Line Event](./extension-presence-line/) |
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line` | [Extension Presence Line Event](./extension-presence-line/) |
 
 ### Team messaging and chat events
