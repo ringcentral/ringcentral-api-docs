@@ -21,64 +21,64 @@ Every event transmitted to a client contains a common set of data elements, rega
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/instant?type=SMS` | [Inbound SMS Event](./instant-message/) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/batches` | [Message Batch Event](./message-batch/) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/batches/{batchId}` | [Specific Message Batch Event](./specific-message-batch/) |
-| `/restapi/v1.0/account/{accountId}/a2p-sms/messages` | [Batch Messages Event](./batch-messages/) |
-| `/restapi/v1.0/account/~/a2p-sms/opt-outs` | [Batch Message Opt-Out Event](./batch-message-optout/) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/instant?type=SMS` | [Inbound SMS Event](instant-message.md) |
+| `/restapi/v1.0/account/{accountId}/a2p-sms/batches` | [Message Batch Event](message-batch.md) |
+| `/restapi/v1.0/account/{accountId}/a2p-sms/batches/{batchId}` | [Specific Message Batch Event](specific-message-batch.md) |
+| `/restapi/v1.0/account/{accountId}/a2p-sms/messages` | [Batch Messages Event](batch-messages.md) |
+| `/restapi/v1.0/account/~/a2p-sms/opt-outs` | [Batch Message Opt-Out Event](batch-message-optout.md) |
 
 ### Fax, voicemail and other message events
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax?direction=Inbound` | [Inbound Fax Event](./fax-message/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store` | [Message Event](./message/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/voicemail` | [Voicemail Message Event](./voicemail-message/) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax?direction=Inbound` | [Inbound Fax Event](fax-message.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store` | [Message Event](message.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/voicemail` | [Voicemail Message Event](voicemail-message.md) |
 
 ### Contact Center events
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCenterNumber` | [Contact Center Phone Number Event](./contact-center-phone-number/) |
+| `/restapi/v1.0/account/{accountId}/phone-number?usageType=ContactCenterNumber` | [Contact Center Phone Number Event](contact-center-phone-number.md) |
 
 ### Telephony events
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/telephony/sessions` | [Account Telephony Sessions Event](./account-telephony-sessions/) |
+| `/restapi/v1.0/account/{accountId}/telephony/sessions` | [Account Telephony Sessions Event](account-telephony-sessions.md) |
 
 ### Presence events
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/presence` | [Account Presence Event](./account-presence/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/telephony/sessions` | [Extension Telephony Sessions Event](./extension-telephony-sessions/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/dnd` | [Extension DND Status Event](./extension-dnd-status/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence` | [Extension Presence Event](./extension-presence/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Line Event](./extension-presence-line/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line` | [Extension Presence Line Event](./extension-presence-line/) |
+| `/restapi/v1.0/account/{accountId}/presence` | [Account Presence Event](account-presence.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/telephony/sessions` | [Extension Telephony Sessions Event](extension-telephony-sessions.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/dnd` | [Extension DND Status Event](extension-dnd-status.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence` | [Extension Presence Event](extension-presence.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Line Event](extension-presence-line.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line` | [Extension Presence Line Event](extension-presence-line.md) |
 
 ### Team messaging and chat events
 
 | Filter | Description |
 |--------|-------------|
-| `/team-messaging/v1/posts`  | [Team Messaging Post Event](./post/) |
-| `/team-messaging/v1/groups` | [Team Messaging Groups Event](./chat/) |
+| `/team-messaging/v1/posts`  | [Team Messaging Post Event](post.md) |
+| `/team-messaging/v1/groups` | [Team Messaging Groups Event](chat.md) |
 
 ### Account events
 
 | Filter | Description |
 |--------|-------------|
-| `/restapi/v1.0/account/{accountId}/directory/entries` | [Company Directory Event](./company-directory/) |
-| `/restapi/v1.0/account/{accountId}/device/{deviceId}/emergency-address` | [Emergency Address Event](./emergency-address/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite` | [Extension Favorites Event](./extension-favorites/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant` | [Extension Grant List Event](./extension-grant-list/) |
-| `/restapi/v1.0/account/{accountId}/extension/{extensionId} ` | [Extension Info Event](./extension-info/) |
-| `/restapi/v1.0/account/{accountId}/extension` | [Extension List Event](./extension-list/) |
+| `/restapi/v1.0/account/{accountId}/directory/entries` | [Company Directory Event](company-directory.md) |
+| `/restapi/v1.0/account/{accountId}/device/{deviceId}/emergency-address` | [Emergency Address Event](emergency-address.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite` | [Extension Favorites Event](extension-favorites.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant` | [Extension Grant List Event](extension-grant-list.md) |
+| `/restapi/v1.0/account/{accountId}/extension/{extensionId} ` | [Extension Info Event](extension-info.md) |
+| `/restapi/v1.0/account/{accountId}/extension` | [Extension List Event](extension-list.md) |
 
 ### Webinar events
 
-!!! hint "Webinar events are subscribed to using a similar, but distinct API endpoint. See [our webinar documentation](../../webinar/events/) to learn more."
+!!! hint "Webinar events are subscribed to using a similar, but distinct API endpoint. See [our webinar documentation](../../webinar/events.md) to learn more."
 
 | Filter                                                  | Description                                                                            |
 |---------------------------------------------------------|----------------------------------------------------------------------------------------|

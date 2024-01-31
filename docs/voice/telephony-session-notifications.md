@@ -11,7 +11,7 @@ Telephony Session Notifications are a series of notifications or events a develo
 
 Detailed instructions on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
 
-Detailed instructions on how to subscribe to [RingCentral events](../../notifications) or notifications are available in the API reference.
+Detailed instructions on how to subscribe to [RingCentral events](../notifications/index.md) or notifications are available in the API reference.
 
 ## Popular use cases for Telephony Sessions
 
@@ -23,7 +23,7 @@ Developers can use the raw data from Telephony Session Notification events and b
 * Talk Time
 * Hold Time
 
-See the [Calculating Call Time Metrics guide](../calculating-call-time-metrics) on how to calculate these metrics using notifications.
+See the [Calculating Call Time Metrics guide](calculating-call-time-metrics.md) on how to calculate these metrics using notifications.
 
 ### Call Monitoring via Real-Time Streaming
 Telephony Session Notifications can be used to monitor calls at an Extension or an Account level to fulfill use cases like contact center agent assist using [Dual-Channel](https://developers.ringcentral.com/guide/voice/supervision) or [Single-Channel Call Monitoring](https://developers.ringcentral.com/guide/voice/supervision)
@@ -62,7 +62,7 @@ The two key elements for a Telephony Session Notification are:
 | Party Id | `party[0].id` | This entity uniquely identifies a specific party/endpoint  in the call session. Once a developer has the telephonySessionId and the Party Id (`id`) she can control a call using [Call Control APIs](https://developers.ringcentral.com/api-reference/Call-Control) |
 | Call Direction | `direction` |Outbound or Inbound depending on the party involved. |
 | Unique User(Extension) ID | `extensionId` |RingCentral extension Id for a RingCentral party. |
-| Event Time | `eventTime` |Time of the event. This can be used to calculate various [call time metrics](../calculating-call-time-metrics). |
+| Event Time | `eventTime` |Time of the event. This can be used to calculate various [call time metrics](calculating-call-time-metrics.md). |
 
 ### Sample Telephony Session Notification Event
 

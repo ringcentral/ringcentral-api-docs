@@ -2,13 +2,13 @@ style: quick-start
 
 # SMS Quick Start
 
-!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../getting-started/index.md)."
 
 !!! info "Things to know before you begin"
     
     * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html)
     * Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant
-    * When you are finished with this quick start, checkout our [SMS Best Practices Guide](../sms/best-practices/)
+    * When you are finished with this quick start, checkout our [SMS Best Practices Guide](sms/best-practices.md)
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
@@ -39,13 +39,13 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Download and edit a `.env` file
 
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
      * `SMS_RECIPIENT` - for code testing purpose, we set the recipient's phone number to this environment variable. You can set the phone number via this variable, or you can set it directly on your code.
 
 ## Send an SMS

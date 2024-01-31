@@ -21,7 +21,7 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 ## ChatBot Frameworks
 
-[Chatbot framework adapters](../team-messaging/manual/frameworks) are also available to build chatbots using Glip and SMS.
+[Chatbot framework adapters](team-messaging/manual/frameworks.md) are also available to build chatbots using Glip and SMS.
 
 ??? tldr "I can't find an SDK for my preferred language..."
     If you are unable to find a client SDK, you can create one using our [Open API / Swagger 2.0 API specification](https://netstorage.ringcentral.com/dpw/api-reference/specs/rc-platform.yml?v=2019110620191017-1140) using Swagger Codegen which supports the following languages:

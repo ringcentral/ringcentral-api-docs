@@ -65,7 +65,7 @@ Speaker identification itself is language-agnostic, but for all other APIs we cu
 
 ### What is speaker enrollment, and how does it work?
 
-[Speaker enrollment](./speaker-enrollment/) is the process by which identities are associated with a voice or accoustic signature. This ultimately allows for RingCentral to identify who is speaking, and pass that identity information on its reports. 
+[Speaker enrollment](speaker-enrollment.md) is the process by which identities are associated with a voice or accoustic signature. This ultimately allows for RingCentral to identify who is speaking, and pass that identity information on its reports. 
 
 ### Tips on how to get the best results from media files
 

@@ -4,14 +4,14 @@
 
 RingCentral is a platform that gives developers access to hundreds of thousands of customers across some of the largest brands in the world, including AT&T, Avaya, BT, Telus, Verizon, and more. This guide will help you reach these customers by promoting your app within each brand's dedicated App Gallery. Let's get started!
 
-!!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../../basics/update-profile/)"
+!!! tip "Need to update an existing App Gallery profile? Learn how to [submit a revision &raquo;](../basics/update-profile.md)"
 
 ??? info "How to customize your app for our partner ecosystem"
     To best position and market your product to our brand and distribution partners, learn about their brand guidelines, and how to compose connect buttons for them.
     
-    AT&T Office@Hand and Verizon have [additional technical requirements](../../basics/partners/segregated-environments/) developers should be aware of as well.
+    AT&T Office@Hand and Verizon have [additional technical requirements](../basics/partners/segregated-environments.md) developers should be aware of as well.
     
-    Read our [Partner compatibility guide](../../basics/partners/) to learn more.
+    Read our [Partner compatibility guide](../basics/partners/index.md) to learn more.
 
 ## Things to do before you submit your app profile to the app gallery
 
@@ -24,7 +24,7 @@ Developers are encouraged to begin producing their app profile as soon as they a
 
 Not all software developers are the ideal individual within an organization to compose and manage an app's profile which serves a marketing function in the RingCentral App Gallery. 
 
-Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../../basics/inviting-developers/).
+Anyone can be invited to join the Developer Console to edit an app's profile. To do so, consult our documentation on [collaborating with others in the Developer Console](../basics/inviting-developers.md).
 
 ## In what app galleries will my profile appear?
 
@@ -48,7 +48,7 @@ If you wish to only make your app available to specific partners, then expand "A
   <figcaption class="figure-caption text-center">Your app will be made available to select partners only</figcaption>
 </figure>
 
-!!! tip "Customize your profile for each partner using [variables](../../basics/app-gallery-variables/)"
+!!! tip "Customize your profile for each partner using [variables](../basics/app-gallery-variables.md)"
 
 ## How do I publish my profile in the App Gallery?
 
@@ -131,7 +131,7 @@ Will produce profiles with the following names:
 * "My app name for Avaya Cloud Office"
 * etc. 
 
-Learn more about these "[profile variables](../../basics/app-gallery-variables/)."
+Learn more about these "[profile variables](../basics/app-gallery-variables.md)."
 
 The detailed description of your integration tells customers what your integration does, what value and benefits it provides, and how it does it. It not only helps to market your integration, but also serves as your integration's documentation. Therefore, the more information you provide, the better. 
 
@@ -156,8 +156,8 @@ You can optionally link to other documents as you see fit. These could be whitep
 
 Finally, you can help RingCentral promote your app through the right channels by telling us where and how best to do that. Use the Promotion area to:
 
-* Which [partners and app galleries](../../basics/partners/) to promote your app within
-* If you app has implemented the [additional technical requirements](../../basics/partners/segregated-environments/) to be promoted to AT&T and Verizon customers, please let us know
+* Which [partners and app galleries](../basics/partners/index.md) to promote your app within
+* If you app has implemented the [additional technical requirements](../basics/partners/segregated-environments.md) to be promoted to AT&T and Verizon customers, please let us know
 * Any categories your app should be promoted within (select up to 3)
 * What products your integration is meant to specifically extend
 
@@ -180,10 +180,10 @@ Be sure to save your app profile often as you go, and to preview it to see what 
 Before your app can be listed in an app gallery, the RingCentral team will first review your app and will make recommendations to help you improve your app profile to better reach our customer base.
 
 ??? tip "You can only submit your application for approval, after the app has graduated."
-    The [graduation process](../graduate-app/) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
+    The [graduation process](graduate-app.md) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
 
 ??? warning "Please note special technical requirements for AT&T Office@Hand and Verizon"
-    To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../../basics/partners/segregated-environments/) to learn more. 
+    To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../basics/partners/segregated-environments.md) to learn more. 
 
 After you have entered all the information describing your brand new app, you can preview it by clicking the 'Save and preview' button.
 

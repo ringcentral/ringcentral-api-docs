@@ -8,7 +8,7 @@ RingCentral supports the OAuth 2.0 authorization code flow, one of the most comm
 
 <img src="../oauth-auth-token-flow.png" class="img-fluid">
 
-!!! hint "Developers are encouraged to implement the nearly identical [PKCE auth code flow](../auth-code-pkce-flow/) for better security."
+!!! hint "Developers are encouraged to implement the nearly identical [PKCE auth code flow](auth-code-pkce-flow.md) for better security."
 
 ### What are the benefits of using the authorization code flow?
 

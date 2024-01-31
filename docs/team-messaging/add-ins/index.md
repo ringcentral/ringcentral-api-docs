@@ -16,7 +16,7 @@ A bot is an add-in that provides RingCentral customers with a conversational int
 * Post adaptive cards to a chat via the REST API
 * Update adaptive cards previously posted via the REST API
 
-[Build a bot using a step-by-step walkthrough &raquo;](../bots/walkthrough/)
+[Build a bot using a step-by-step walkthrough &raquo;](../bots/walkthrough.md)
 
 ### Notification apps
 
@@ -29,13 +29,13 @@ A notification app is a type of add-in that helps build a communication bridge b
 ??? warning "Notification apps cannot yet update messages"
     Notification apps have the limitation currently in which they can only post messages, because the installation process of a notification app does not provide the app with an auth token. As a result, notification apps cannot currently update a message they post. If your use case requires this ability, we recommend building a bot. 
 
-[Create a notification app &raquo;](./creation/)
+[Create a notification app &raquo;](creation.md)
 
 ## Helping customer find and install add-ins
 
 RingCentral add-ins are discovered and installed via the [RingCentral App Gallery](https://www.ringcentral.com/apps/). The RingCentral App Gallery can be accessed via the web, or from within the RingCentral team messaging client in the "Apps" section. 
 
-To help RingCentral customers find and discover the add-in you build, be sure to [graduate your app](../../getting-started/graduate-app/), and then [create an App Gallery profile](../../getting-started/promote-app/). Once your profile is approved, RingCentral App Gallery editors will work to help your add-in get discovered by ensuring it is placed in the right categories and collections. 
+To help RingCentral customers find and discover the add-in you build, be sure to [graduate your app](../../getting-started/graduate-app.md), and then [create an App Gallery profile](../../getting-started/promote-app.md). Once your profile is approved, RingCentral App Gallery editors will work to help your add-in get discovered by ensuring it is placed in the right categories and collections. 
 
 ## Known issues
 

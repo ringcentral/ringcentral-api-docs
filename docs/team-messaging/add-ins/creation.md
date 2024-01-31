@@ -16,7 +16,7 @@ When creating an app, first select the "Notification add-in" app type.
 
 ![Add-in app type](./addin-app-type.png)
 
-Creating a notification add-in is identical in most respects to [creating an app](../../../getting-started/register-app/) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
+Creating a notification add-in is identical in most respects to [creating an app](../../getting-started/register-app.md) of any other type. Notification add-ins do however have a few additional fields that need to be populated by the developer in order to deliver their functionality as designed and intended. 
 
 ### App preferences
 
@@ -30,14 +30,14 @@ If your add-in will support interactive messages, specifically it will make use 
 
 ### Integrated installation
 
-The "Integrated installation in RingCentral app" is automatically enabled for RingCentral add-ins. At a minimum, you must provide manual installation instructions so that users know how to install your add-in properly. If the [installation process can be automated](../installation/), we recommend doing so. 
+The "Integrated installation in RingCentral app" is automatically enabled for RingCentral add-ins. At a minimum, you must provide manual installation instructions so that users know how to install your add-in properly. If the [installation process can be automated](installation.md), we recommend doing so. 
 
 ![Add-in app type](./install-options.png)
 
 Preferences include:
 
 * **Manual installation instructions** - this text will appear when a user elects to read the "manual installation instructions" associated with your app.
-* **Web-based installation** - if your app supports the customer's ability to setup/configure your app via the web, enter the URL to that flow in this field. See [Automating App Setup](../installation/).
+* **Web-based installation** - if your app supports the customer's ability to setup/configure your app via the web, enter the URL to that flow in this field. See [Automating App Setup](installation.md).
 
 #### Using `{{ WEBHOOK_URL }}` in your manual installation instructions
 

@@ -1,7 +1,7 @@
 # Team Messaging Compliance Export File Structure
 
 !!! note "Need help generating an export file?"
-    This document describes the structure of a Compliance Export. To generate this file please consult our documentation on the [Compliance Export API](../compliance-export/).
+    This document describes the structure of a Compliance Export. To generate this file please consult our documentation on the [Compliance Export API](compliance-export.md).
 
 When you download a compliance export, you will receive a zip file that contains a number of files and folders that contain all of the data associated with your data export.
 

@@ -38,7 +38,7 @@ Every RingCentral application is provisioned a client ID and secret for sandbox.
 
 ### Obtaining authentication credentials
 
-If you are using [JWT auth](../../authentication/jwt-flow/) be sure the JWT auth credential you are using is for the sandbox environment. If you are using the auth code or traditional OAuth flow, be sure the username and password used to login are ones that belong to your sandbox environment. For most people this is your email address and the sandbox password you selected for yourself when logging into the Developer Console for the first time. 
+If you are using [JWT auth](../authentication/jwt-flow.md) be sure the JWT auth credential you are using is for the sandbox environment. If you are using the auth code or traditional OAuth flow, be sure the username and password used to login are ones that belong to your sandbox environment. For most people this is your email address and the sandbox password you selected for yourself when logging into the Developer Console for the first time. 
 
 ### Directing API calls to sandbox server URLs
 
@@ -72,7 +72,7 @@ If you need to simulate two different users from two different organizations dur
 
 Developers may find that they are unable to send SMS using their sandbox account. All sandbox accounts have the ability to send SMS messages, but developers should familiarize themselves with how to work around certain limitations they may face.
 
-See "[Sending test SMS in the developer sandbox](../sms/)".
+See "[Sending test SMS in the developer sandbox](sms.md)".
 
 ## Using phones in sandbox
 
@@ -128,7 +128,7 @@ Once the new sandbox account has been created then you may need to update the co
 
 ## Next step: building your first application
 
-Having [registered an application](../register-app/), [obtained auth credentials](../create-credential/) and setup your sandbox environment, you are now able to code your first application. In the next section you will have the opportunity to choose from a number of quick start guides associated with a variety of APIs and developer products from RingCentral. 
+Having [registered an application](register-app.md), [obtained auth credentials](create-credential.md) and setup your sandbox environment, you are now able to code your first application. In the next section you will have the opportunity to choose from a number of quick start guides associated with a variety of APIs and developer products from RingCentral. 
 
 <a class="btn btn-lg btn-primary" href="../code-app/">Code your application</a>
   

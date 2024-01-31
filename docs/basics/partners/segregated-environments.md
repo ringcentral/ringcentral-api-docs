@@ -26,7 +26,7 @@ The following high-level technique provides a good framework for understanding h
 
 Many customers are not always cognizant of the fact that RingCentral is powering their carrier cloud communication. Therefore if they are presented with a prompt to "login to RingCentral" they may not understand that the prompt is intended for them. 
 
-As a result, we recommend developers who are directly targeting RingCentral partners to create prompts and design user interfaces that bear this in mind. One simple way to do this is to use one of the [login buttons we have provided developers](../../partners/auth/) that are partner-specific.
+As a result, we recommend developers who are directly targeting RingCentral partners to create prompts and design user interfaces that bear this in mind. One simple way to do this is to use one of the [login buttons we have provided developers](../partners/auth.md) that are partner-specific.
 
 ### Composing a login URL
 
@@ -37,7 +37,7 @@ When constructing the login URL used to initiate the 3-legged authorization flow
      * https://login.ringcentral.com
      * https://login.ringcentral.biz
 
-* To ensure the user sees the proper branding when logging in, developers should [pass the brand ID of the partner](../../partners/auth/) via the `brandId` query parameter. 
+* To ensure the user sees the proper branding when logging in, developers should [pass the brand ID of the partner](../partners/auth.md) via the `brandId` query parameter. 
 
 * We recommend developers pass the partner's brand ID via the `state` query parameter. The `state` parameter will be passed through to your OAuth Redirect URI verbatim and can be used to differentiate between users affiliated with our commerial and segregated environments. 
 

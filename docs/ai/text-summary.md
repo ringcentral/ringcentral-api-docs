@@ -27,7 +27,7 @@ The API also allows developers to optionally specify the start and end times, as
 
 ### Example code
 
-After you have setup a [simple web server to process the response](../asynchronous-responses/), copy and paste the code from below in a file. In the process, make sure to edit the variables found in ALL CAPS to ensure your code runs properly. 
+After you have setup a [simple web server to process the response](asynchronous-responses.md), copy and paste the code from below in a file. In the process, make sure to edit the variables found in ALL CAPS to ensure your code runs properly. 
 
 === "Javascript"
 

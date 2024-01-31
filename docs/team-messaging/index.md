@@ -37,7 +37,7 @@ Bots are automated agents that users can interact with in a coversational manner
 * deliver notifications to users privately
 * automate interactions with users in a conversational manner
 
-RingCentral [supports and offers a number of Bot frameworks](./manual/frameworks/) to help developers create bot applications. To get started creating a bot, we recommend using our [Javascript Bot Framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which enables developers to create a bot in 10 lines of code, like this "Ping Bot:"
+RingCentral [supports and offers a number of Bot frameworks](manual/frameworks.md) to help developers create bot applications. To get started creating a bot, we recommend using our [Javascript Bot Framework](https://ringcentral.github.io/ringcentral-chatbot-js/) which enables developers to create a bot in 10 lines of code, like this "Ping Bot:"
 
 ```js
 const createApp = require('ringcentral-chatbot/dist/apps').default

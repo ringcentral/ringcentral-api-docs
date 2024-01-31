@@ -6,11 +6,11 @@ If you are new to Websockets, we recommend you to begin your learning journey wi
 
 ## Assigning the WebSocketsSubscription app scope to your application
 
-Before any application that wishes to subscribe to an event via WebSockets, the app must first possess the `WebSocketsSubscription` [app scope](../../../basics/permissions/). This will allow associated apps to call the necessary endpoints to establish a connection to a RingCentral WebSockets server. 
+Before any application that wishes to subscribe to an event via WebSockets, the app must first possess the `WebSocketsSubscription` [app scope](../../basics/permissions.md). This will allow associated apps to call the necessary endpoints to establish a connection to a RingCentral WebSockets server. 
 
 ## Subscribing to events via an SDK
 
-If you are using one of [RingCentral's officially supported SDKs](../../../sdks/), then subscribing to events couldn't be easier as the SDKs manage much of the complexity for you. All you need to do is process events as they come in over the WebSocket. To learn how to subscribe to events using the SDKs, checkout our [WebSockets Quick Start guide](../quick-start/).
+If you are using one of [RingCentral's officially supported SDKs](../../sdks.md), then subscribing to events couldn't be easier as the SDKs manage much of the complexity for you. All you need to do is process events as they come in over the WebSocket. To learn how to subscribe to events using the SDKs, checkout our [WebSockets Quick Start guide](quick-start.md).
 
 ## Subscribing to events manually
 
@@ -18,7 +18,7 @@ If you need to implement your own subscription layer for WebSockets, or if you s
 
 ### Obtaining a WebSocket access token and server URL
 
-A WebSocket access token is required in order to open up a connection with a RingCentral WebSockets server. To obtain a WebSocket access token, you must first obtain an API access token via one of our established authorization mechanisms (e.g. [OAuth](../../../authentication/auth-code-flow) or [JWT](../../../authentication/jwt-flow/). Using that access token, you will request a WebSockets access token and server URL through the following request.
+A WebSocket access token is required in order to open up a connection with a RingCentral WebSockets server. To obtain a WebSocket access token, you must first obtain an API access token via one of our established authorization mechanisms (e.g. [OAuth](../../authentication/auth-code-flow.md) or [JWT](../../authentication/jwt-flow.md). Using that access token, you will request a WebSockets access token and server URL through the following request.
 
 ```http
 POST /restapi/oauth/wstoken HTTP/1.1
@@ -63,7 +63,7 @@ When a connection is successfully made, the WebSockets server will transmit a `C
 
 With a connection to the WebSockets server now established, you can transmit your own message to the server specifying the events you wish to subscribe to. Unlike a webhook subscription which is a persistent and managed by RingCentral servers, a WebSockets event subscription is only valid while the WebSocket connection and client is active. If for whatever reason you lose your connection to the WebSockets server and need to re-establish connectivity, you will need to resubscribe to the events you are in need of. 
 
-To subscribe to events, you will need to transmit a `ClientRequest` specifying the [event filters](../../event-filters/) you wish to subscribe to. For example, the following will subscribe to incoming SMS and incoming voicemail events. 
+To subscribe to events, you will need to transmit a `ClientRequest` specifying the [event filters](../event-filters/index.md) you wish to subscribe to. For example, the following will subscribe to incoming SMS and incoming voicemail events. 
 
 ```js
 {! code-samples/websockets/subscription-request.json !}

@@ -46,7 +46,7 @@ The first step of the installation flow is controlled entirely by RingCentral an
 
 ### Incoming webhook URL generation
 
-Once the user has selected to chat into which they want the app installed, RingCentral will generate an [incoming webhook](../../incoming-webhooks/webhook-creation/) associated with that chat. The generated URL will be transmitted to the application in the next step.
+Once the user has selected to chat into which they want the app installed, RingCentral will generate an [incoming webhook](../incoming-webhooks/webhook-creation.md) associated with that chat. The generated URL will be transmitted to the application in the next step.
 
 ### Load and display iframe
 

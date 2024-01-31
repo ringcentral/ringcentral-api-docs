@@ -4,7 +4,7 @@ The Web Socket protocol allows for clients to initate session recovery in the ev
 
 ## Obtain a new WebSocket access token
 
-To recover a session, the first thing a client must do is request a new WebSocket token, just as was done when the [connection was first established](../subscribing/). As a reminder, clients request a WebSocket access token by making the following request:
+To recover a session, the first thing a client must do is request a new WebSocket token, just as was done when the [connection was first established](subscribing.md). As a reminder, clients request a WebSocket access token by making the following request:
 
 ```http
 POST /restapi/oauth/wstoken HTTP/1.1

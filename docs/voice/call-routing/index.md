@@ -10,7 +10,7 @@ Calls that are placed into a RingCentral account can be managed and routed a num
 
 ### Business Hours
 
-Developers can designate a schedule for both users and companies to reflect when a user or company is able to receive calls. Once a set of business hours are defined, a [Call Handling Rule](./manual/answering-rules/) can be setup to determine what actions should be taken during business hours and outside of business hours.
+Developers can designate a schedule for both users and companies to reflect when a user or company is able to receive calls. Once a set of business hours are defined, a [Call Handling Rule](manual/answering-rules.md) can be setup to determine what actions should be taken during business hours and outside of business hours.
 
 * [Set up your business hours using the Admin Console](https://support.ringcentral.com/app/admin/desktop-web/setting-up-company-business-hours-ringcentral-app-desktop-web.html)
 
@@ -37,7 +37,7 @@ Call Flipping specifically applies to active calls, and allows a call to be inst
 
 A Call Queue is a group of users one can designate to share incoming calls. For example, you may wish to group all customer support representatives together so that a call can be routed to the first available person in that group. The Call Queue API allows developers to manage call queues by adding and removing extensions from a Call Queue to assist in routing calls quickly and efficiently to a human to answer.
 
-* [Read about the Call Queue API](./manual/call-queues/)
+* [Read about the Call Queue API](manual/call-queues.md)
 * [Learn how to create a Call Queue Group in the Admin Console](https://support.ringcentral.com/article/Create-Call-Queue.html?language=en_US)
 
 ### Call Routing and IVR

@@ -8,7 +8,7 @@ RingCentral works with a number of carriers, service providers, and partners to 
 * BT
 * and many more global and international brands
 
-From a technical perspective, apps built for RingCentral are inherently compatible with these other partners and brands. However, developers and marketing teams may wish to better understand and adhere to our best practices, including how to operate within our [segregated environments](../partners/segregated-environments/), in order to better market and sell into these customer segments. 
+From a technical perspective, apps built for RingCentral are inherently compatible with these other partners and brands. However, developers and marketing teams may wish to better understand and adhere to our best practices, including how to operate within our [segregated environments](segregated-environments.md), in order to better market and sell into these customer segments. 
 
 ## Benefits of working with RingCentral partners
 
@@ -34,10 +34,10 @@ The first step in making your application available to our partner's customers i
 
 Each of our brand partners has an app gallery in which are promoted all of the apps available to their customers. Learn how to create a profile for your app that can be listed in these galleries.
 
-Learn [how to get listed in our app gallery &raquo;](../../getting-started/promote-app/)
+Learn [how to get listed in our app gallery &raquo;](../../getting-started/promote-app.md)
 
 ## Understanding the additional requirements for AT&T Office@Hand and Verizon
 
-Some partners operate in a completely segregated environment and as a result require developers to adhere to [additional technical requirements](../partners/segregated-environments/) in order to maintain compatibility with those partners. 
+Some partners operate in a completely segregated environment and as a result require developers to adhere to [additional technical requirements](segregated-environments.md) in order to maintain compatibility with those partners. 
 
 

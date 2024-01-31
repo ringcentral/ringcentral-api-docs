@@ -1,6 +1,6 @@
 # Call Forwarding & Flipping
 
-Every RingCentral [extension](../extensions) may have a list of phone numbers to which calls can be forwarded. A "forwarding number" is any external (non-RingCentral) or internal phone number/extension used for redirecting incoming calls. They are also used when connecting calls via the [RingOut API](../../voice/ringout/). Each user is able to specify ten forwarding numbers under the following 3 predefined labels:
+Every RingCentral [extension](extensions.md) may have a list of phone numbers to which calls can be forwarded. A "forwarding number" is any external (non-RingCentral) or internal phone number/extension used for redirecting incoming calls. They are also used when connecting calls via the [RingOut API](../voice/ringout.md. Each user is able to specify ten forwarding numbers under the following 3 predefined labels:
 
 * 'Home'
 * 'Mobile'

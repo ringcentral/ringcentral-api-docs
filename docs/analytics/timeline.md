@@ -7,7 +7,7 @@ Example Use Cases:
 - Get average 'Call Handle Time' for all calls daily.
 - Calculate the 'Average Time to Answer' for all calls hourly.
 
-For more information, please refer to the [overview section](../).
+For more information, please refer to the [overview section](index.md).
 
 ## Composing a request using RingCentral API Reference
 
@@ -249,7 +249,7 @@ The following code samples show how to read analytics timeline data.
 ### Call the Analytics Timeline API - Grouped by users
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../messaging/quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_users()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../messaging/quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_users()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "Javascript"
@@ -295,7 +295,7 @@ The following code samples show how to read analytics timeline data.
 ### Call the Analytics Timeline API - Grouped by call queues
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../messaging/quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_queues()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../messaging/quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_analytics_timeline_grouped_by_queues()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 

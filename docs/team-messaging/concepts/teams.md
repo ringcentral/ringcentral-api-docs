@@ -1,6 +1,6 @@
 # Working with Groups and Teams in Team Messaging
 
-In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](../conversations/)").
+In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](conversations.md)").
 
 ## Team visibility
 
@@ -18,7 +18,7 @@ When specifying the members of a team, one can provide a mix of either person ID
 
 ## Listing Teams
 
-A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). Long lists can be [iterated over using page tokens](../../manual/pagination/).
+A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). Long lists can be [iterated over using page tokens](../manual/pagination.md).
 
 ```js
 {!> code-samples/team-messaging/get-chats-paginated.js [ln:1-47] !}
@@ -26,7 +26,7 @@ A list of teams can be retrieved by calling the [teams endpoint](https://develop
 
 ## Finding the members of a teams
 
-!!! warning "Unfortunately, there is not currently a way to retrieve the members of a team. The only way to find the members of a team is via the [Compliance Export](../../manual/compliance-export/)."
+!!! warning "Unfortunately, there is not currently a way to retrieve the members of a team. The only way to find the members of a team is via the [Compliance Export](../manual/compliance-export.md)."
 
 ## Joining and leaving teams
 

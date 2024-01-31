@@ -1,6 +1,6 @@
 # Speaker identification
 
-The Speaker Identification API is used to determine who is speaking for a given media file. It is intended to be used to identify speakers who have been previously [enrolled](../speaker-enrollment/) with the AI API. The Speaker Identification API segments an audio clip into a sequence of utterances, each corresponding to a unique speaker. It then attempts to determine the identity of each speaker based upon their voice print. In cases where the speaker is ambiguous or unknown, utterances are marked with a status of `UserNotIdentified`.
+The Speaker Identification API is used to determine who is speaking for a given media file. It is intended to be used to identify speakers who have been previously [enrolled](speaker-enrollment.md) with the AI API. The Speaker Identification API segments an audio clip into a sequence of utterances, each corresponding to a unique speaker. It then attempts to determine the identity of each speaker based upon their voice print. In cases where the speaker is ambiguous or unknown, utterances are marked with a status of `UserNotIdentified`.
 
 Another use case for using Speaker Identification API is with multi-stream audio files. Each individual on a multi-stream audio file is a different speaker, but you don't know which stream belongs to which speaker. In this case, you can send each individual stream to the Speaker Identification API, and let the API identify the speaker for you using the audio stream.
 
@@ -33,11 +33,11 @@ To identify speakers using the Speaker Identification API, one must formulate a 
 | `contentUri`   | String       | Publicly facing URL where the media file can be accessed. |
 | `source`       | String       | Source of the audio file, e.g.: `Phone`, `RingCentral`, `GoogleMeet`, `Zoom` etc |
 
-To properly identify speakers in a media file, speakers must have been [previously enrolled](../speaker-enrollment/) so that their voice print can be compared to the speakers in the audio file. It also relies on the developer having some knowledge of who the likely speakers are in the media file being processed, and providing a list of those speakers in their request.
+To properly identify speakers in a media file, speakers must have been [previously enrolled](speaker-enrollment.md) so that their voice print can be compared to the speakers in the audio file. It also relies on the developer having some knowledge of who the likely speakers are in the media file being processed, and providing a list of those speakers in their request.
 
 ### Sample code
 
-After you have setup a [simple web server to process the response](../asynchronous-responses/), copy and paste the code from below in `index.js` and makesure to edit the variables in ALL CAPS to ensure your code runs properly. 
+After you have setup a [simple web server to process the response](asynchronous-responses.md), copy and paste the code from below in `index.js` and makesure to edit the variables in ALL CAPS to ensure your code runs properly. 
 
 === "Javascript"
 

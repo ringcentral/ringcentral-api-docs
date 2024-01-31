@@ -9,7 +9,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
 Simple request to broadcast the same message to multiple recipients.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_a2psms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_a2psms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * High volume SMS is not supported on sandbox environment. If you copy/paste the functions below and call them in the quick start project, remember to change the environment to use your app and user credentials for production!
 
 === "HTTP"

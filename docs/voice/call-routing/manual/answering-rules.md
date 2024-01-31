@@ -79,5 +79,5 @@ The action that can taken on a call depends upon the type of the answering rule 
 
 To learn more about User and Company Answering Rules, see sample code, and to begin building your own rules via the Answering Rule API, please consult the following Developer Guide Resources:
 
-* [User Answering Rules &raquo;](../user-answering-rules/)
-* [Company Answering Rules &raquo;](../company-answering-rules/)
+* [User Answering Rules &raquo;](user-answering-rules.md)
+* [Company Answering Rules &raquo;](company-answering-rules.md)

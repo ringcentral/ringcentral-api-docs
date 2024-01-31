@@ -9,7 +9,7 @@ The following table provides a description of the various types of chats support
 | Term | Definition |
 |-|-|
 | Chat | A generalized term that encompasses all message exchanges. |
-| Conversation | A conversation is a chat that is defined exclusively by the members of the chat. [Conversations](../conversations/) obey a certan set of rules that set them apart from other kinds of chats. |
+| Conversation | A conversation is a chat that is defined exclusively by the members of the chat. [Conversations](conversations.md) obey a certan set of rules that set them apart from other kinds of chats. |
 | Group | A group is a kind of conversation that consists of 3 to 16 members. |
 | Team | A team is a named chat, usually associated with a topic of conversation, that consists of one or more members. Members can join and leave teams without disrupting the conversation. | 
 
@@ -27,4 +27,4 @@ The following code sample shows a simple way to retrieve a list of chats. As you
     {!> code-samples/team-messaging/get-chats.js !}
     ```
 
-!!! hint "The example above assumed only page of results will be returned. Learn about [pagination](../../manual/pagination/) to iterate over a large result set."
+!!! hint "The example above assumed only page of results will be returned. Learn about [pagination](../manual/pagination.md) to iterate over a large result set."

@@ -48,5 +48,5 @@ The response will include the file's ID and the URL at which the file can be acc
 
 **See Also**
 
-* [Working with Media Content](../../../basics/media/)
+* [Working with Media Content](../../basics/media.md)
 

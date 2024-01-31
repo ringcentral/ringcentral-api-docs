@@ -28,7 +28,7 @@ RingCentral supports a number of different types of messages that can be sent an
 RingCentral's APIs allow for developers to send and receive messages of all of the above types. 
 
 !!! note "Glip Messages"
-    Another type of message is a "Glip Message" which are transmitted via RingCentral's Team Messaging product called "Glip." These messages are not managed via our SMS and Fax messaging system and are discussed in more detail in [Glip section](../team-messaging/) of our Developer Guide.
+    Another type of message is a "Glip Message" which are transmitted via RingCentral's Team Messaging product called "Glip." These messages are not managed via our SMS and Fax messaging system and are discussed in more detail in [Glip section](../team-messaging/index.md) of our Developer Guide.
 
 ## How does one send or receive a message?
 
@@ -36,17 +36,17 @@ The SMS and Fax API allows developers to both send and receive messages of every
 
 **SMS**
 
-* [How to send an SMS](./sms/sending-sms)
-* [How to send an MMS message](./sms/sending-images)
+* [How to send an SMS](sms/sending-sms.md)
+* [How to send an MMS message](sms/sending-images.md)
 
 **Fax**
 
-* [How to send a fax](./fax/sending-faxes)
-* [How to receive a fax](./fax/receiving-faxes)
+* [How to send a fax](fax/sending-faxes.md)
+* [How to receive a fax](fax/receiving-faxes.md)
 
 **Pager Messages**
 
-* [How to send a pager message](./pager/sending-pager-messages)
+* [How to send a pager message](pager/sending-pager-messages.md)
 
 ## Where does one access or download past messages?
 

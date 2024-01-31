@@ -23,7 +23,7 @@
 
 Webhooks, and subscriptions in general, are created exclusively via the Subscription API. There is no web interface or developer console for creating/registering webhooks.
 
-* [See how to create a webhook using the Subscription API](./webhooks/creating-webhooks/)
+* [See how to create a webhook using the Subscription API](webhooks/creating-webhooks.md)
 
 ## When should I use a webhook vs a WebSocket?
 
@@ -35,8 +35,8 @@ RingCentral supports two primary means for delivering events/notifications: via 
 
 To learn more about these two event mediums, checkout the following resources:
 
-* [Learn about webhooks](./webhooks/creating-webhooks/)
-* [Learn about WebSockets](./websockets/subscribing/)
+* [Learn about webhooks](webhooks/creating-webhooks.md)
+* [Learn about WebSockets](websockets/subscribing.md)
 
 ## What events/notifications does RingCentral support?
 
