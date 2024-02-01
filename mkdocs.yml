@@ -229,34 +229,40 @@ nav:
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
   - 'Partner ecosystem':
-      - 'Overview': 'basics/partners/index.md'
-      - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
-      - 'Authentication guidance': 'basics/partners/auth.md'
-      - 'Technical requirements': 'basics/partners/segregated-environments.md'
-
-  - 'Methods, endpoints and parameters': 'basics/uris.md'
-  - 'Exploring the API': 'basics/explorer.md'
-  - 'Callaborating with developers': 'basics/inviting-developers.md'
-  - 'Running code samples': 'basics/code-samples.md'
-  - 'Media content': 'basics/media.md'
-  - 'App scopes/permissions': 'basics/permissions.md'
-  - 'URI schemes': 'basics/uri-schemes.md'
+    - 'Overview': 'basics/partners/index.md'
+    - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
+    - 'Authentication guidance': 'basics/partners/auth.md'
+    - 'Technical requirements': 'basics/partners/segregated-environments.md'
+  - 'Requests and responses':
+    - 'Requests methods, endpoints and parameters': 'basics/uris.md'
+    - 'Response format': 'basics/formats/responses.md'
+    - 'Errors': 'basics/errors.md'
+    - 'Batch requests': 'basics/batch-requests.md'
+  - 'Data types and formats':
+    - 'Objects and data types': 'basics/formats/objects.md'
+    - 'Phone numbers': 'basics/formats/phone-numbers.md'
+    - 'Resource identification': 'basics/formats/resources.md'
   - 'Rate limits': 'basics/rate-limits.md'
-  - 'Errors': 'basics/errors.md'
-  - 'API Change Log':
-    - 'Preface': 'basics/changelog/index.md'
-    - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
-    - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
-    - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
-    - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
-    - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
-    - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
-    - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
-    - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
-    - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
-    - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
-    - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
-  - 'API Quick Reference': 'basics/api-index.md'
+  - 'Working with media content': 'basics/media.md'
+  - 'Localization': 'basics/localization.md'
+  - 'App URI schemes': 'basics/uri-schemes.md'
+  - 'Running code samples': 'basics/code-samples.md'
+  - 'Exploring the API': 'basics/explorer.md'
+  - 'Collaborating with developers': 'basics/inviting-developers.md'
+
+#  - 'API Change Log':
+#    - 'Preface': 'basics/changelog/index.md'
+#    - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
+#    - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
+#    - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+#    - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
+#    - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+#    - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+#    - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+#    - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+#    - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+#    - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+#    - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
 
   - 'Applications':
       - 'Development lifecycle':
@@ -353,6 +359,9 @@ nav:
     - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
     - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+
+- 'Social Messaging':
+  - 'Overview': 'social-messaging/index.md'
 
 - 'Team Messaging':
   - 'Overview': 'team-messaging/index.md'
