@@ -29,9 +29,9 @@ Content-Type: application/json
 	
 	`Parameter [attachments[0].type] value is invalid.`
 	
-	To [post a card via the REST API](../../posting/cards/), please use the endpoints devoted to that task.
+	To [post a card via the REST API](../posting/cards.md), please use the endpoints devoted to that task.
 
-[Cards](../../adaptive-cards/) are the most common form of post for third-party integrations as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way. Cards are posted in a manner similar to simple messages as shown above, except that the card's contents are transmitted via an attachment. 
+[Cards](../adaptive-cards/index.md) are the most common form of post for third-party integrations as they provide a more practical way of transmitting lots of information to a reader in a screen efficient way. Cards are posted in a manner similar to simple messages as shown above, except that the card's contents are transmitted via an attachment. 
 
 The example below is a sligh modification to the example above. In it, we omit the message text, and transmit a single attachment. 
 

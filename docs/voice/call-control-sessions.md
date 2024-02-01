@@ -9,7 +9,7 @@ What a developer subscribes to depends largely upon the use case. For example, s
 
 ## Creating a Subscription
 
-Detailed instructions on [creating webhooks and subscriptions](../../notifications/) can be found elsewhere in the Developer Guide. As a convenience, here is how one would subscribe to receive both presence and telephony session events via a push notification.
+Detailed instructions on [creating webhooks and subscriptions](../notifications/index.md) can be found elsewhere in the Developer Guide. As a convenience, here is how one would subscribe to receive both presence and telephony session events via a push notification.
 
 ```
 POST /restapi/v1.0/subscription

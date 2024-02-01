@@ -1,6 +1,6 @@
 # Uninstalling a RingCentral Add-in
 
-At any time, a previously installed add-in or incoming webhook can be deleted or uninstalled by an end user. It is recommended that when this happens, applications handle any necessary garbage collection - specifically the removal of any webhook that was created during the installation process. One can do this by subscribing to [event notifications related to the corresponding incoming webhook](../../events/incoming-webhooks/).
+At any time, a previously installed add-in or incoming webhook can be deleted or uninstalled by an end user. It is recommended that when this happens, applications handle any necessary garbage collection - specifically the removal of any webhook that was created during the installation process. One can do this by subscribing to [event notifications related to the corresponding incoming webhook](../events/incoming-webhooks.md).
 
 Consider the following sequence:
 

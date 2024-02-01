@@ -8,7 +8,7 @@ A popular use case for RingCentral APIs is to calculate the amount of time spent
 
 ## Using Telephony Session Events to Calculate Metrics
 
-[Telephony Session Notifications](../telephony-session-notifications) are the recommended way to calculate call time metrics.
+[Telephony Session Notifications](telephony-session-notifications.md) are the recommended way to calculate call time metrics.
 
 When receiving a stream of events, it is important to note the following:
 
@@ -29,7 +29,7 @@ Use the standard subscription approach with either of the following event filter
 
 Detailed information on the [Notification types](https://developers.ringcentral.com/api-reference/Account-Presence-Event) are available in the API reference.
 
-Information [on subscribing to event notifications is available in the Developer Guide](../../notifications).
+Information [on subscribing to event notifications is available in the Developer Guide](../notifications/index.md).
 
 ## Call Time Metrics Calculations
 
@@ -50,7 +50,7 @@ Notes:
 1. the status code for "Unhold" is also `Answered`.
 1. use the `eventTime` values which are all RFC-3339 `date-time` values.
 
-See a list of all Status Codes in the [Telephony Sesion Notifcations overview page](../telephony-session-notifications).
+See a list of all Status Codes in the [Telephony Sesion Notifcations overview page](telephony-session-notifications.md).
 
 ## Example Events
 

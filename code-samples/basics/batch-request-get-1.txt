@@ -1,0 +1,75 @@
+HTTP/1.1 207 Multi-Status
+Content-Type: multipart/mixed; boundary=Boundary_20_32057915_1351669531796
+
+--Boundary_20_32057915_1351669531796
+Content-Type: application/json
+
+{
+"response" : [ {
+    "href" : "https://platform.ringcentral.com/account/154364008/extension/154364008/message-store/2447722008",
+    "status" : 200,
+    "responseDescription" : "OK"
+}, {
+    "href" : "https://platform.ringcentral.com/restapi/v1.0/account/154364008/extension/154364008/message-store/2416832008",
+    "status" : 200,
+    "responseDescription" : "OK"
+} ]
+}
+--Boundary_20_32057915_1351669531796
+Content-Type: application/json
+
+{
+"uri" : "https://platform.ringcentral.com/restapi/v1.0/account/154364008/extension/154364008/message-store/2447722008",
+"id" : 2447722008,
+"to" : [ {
+    "phoneNumber" : "18559100010"
+} ],
+"from" : {
+    "phoneNumber" : "18559100010"
+},
+"type" : "SMS",
+"creationTime" : "2012-10-29T15:36:04.000Z",
+"readStatus" : "Unread",
+"priority" : "Normal",
+"attachments" : [ {
+    "id" : 1,
+    "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/154364008/extension/154364008/message-store/2447722008/content/1",
+    "contentType" : "text/plain"
+} ],
+"direction" : "Inbound",
+"availability" : "Alive",
+"subject" : "verificationMessage",
+"messageStatus" : "Received",
+"conversationId" : 5717224681082742945,
+"lastModifiedTime" : "2012-10-29T15:36:04.000Z"
+}
+--Boundary_20_32057915_1351669531796
+Content-Type: application/json
+
+{
+"uri" : "https://platform.ringcentral.com/restapi/v1.0/account/154364008/extension/154364008/message-store/2416832008",
+"id" : 2416832008,
+"to" : [ {
+    "phoneNumber" : "18559100010"
+} ],
+"from" : {
+    "phoneNumber" : "16509101086"
+},
+"type" : "SMS",
+"creationTime" : "2012-10-29T13:09:54.000Z",
+"readStatus" : "Unread",
+"priority" : "Normal",
+"attachments" : [ {
+    "id" : 1,
+    "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/154364008/extension/154364008/message-store/2416832008/content/1",
+    "contentType" : "text/plain"
+} ],
+"direction" : "Inbound",
+"availability" : "Alive",
+"subject" : "Inbound SMS",
+"messageStatus" : "Received",
+"conversationId" : 141549019326272744,
+"lastModifiedTime" : "2012-10-29T13:09:54.000Z"
+}
+--Boundary_20_32057915_1351669531796--
+

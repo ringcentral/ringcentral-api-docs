@@ -23,7 +23,7 @@ The first step in a warm transfer is to put the customer on hold. But before tha
 !!! Note
     An alternative option is to listen to the [Extension Presence Event](https://developers.ringcentral.com/api-reference/Extension-Presence-Event), which will also allow you to retrieve the session ID and party ID.
 
-Follow the instructions for [setting up WebSockets](../../notifications/websockets/quick-start). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
+Follow the instructions for [setting up WebSockets](../notifications/websockets/quick-start.md). Here we will want to listen for Telephony Session Events so set an event filter for `/restapi/v1.0/account/~/extension/~/telephony/sessions`.
 
 ### Receive event for customer-to-operator call
 

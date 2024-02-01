@@ -7,7 +7,7 @@ tags:
 
 # RingOut Quick Start
 
-!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../getting-started/index.md)."
 
 In this quick start, we are going to help you connect two people in a live phone call using our RingOut API, which dials two phone numbers, and then connects the two people when they answer. Let's get started.
 
@@ -37,13 +37,13 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Download and edit a `.env` file
 	
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
      * `RINGOUT_SENDER` - set to a RingCentral phone number you wish to place the call from in this code sample
      * `RINGOUT_RECIPIENT` - set to a phone number you wish to call in this code sample
 

@@ -24,13 +24,13 @@
 
 RingCentral High Volume SMS supports the following key features:
 
-* [Sending at high volumes per phone number](./sending-highvolume-sms)
-* [Opt-in / Opt-out Handling](./opt-out)
-* [Event Notifications](./events)
-* [Detailed Error Codes](./handling-errors)
-* [Approved for high volume usage with mobile carriers](./toll-free-sms-vs-local-numbers/#carrier-approval)
-* [Support for local and toll-free numbers](./toll-free-sms-vs-local-numbers)
-* [Support for United States and Canada](./toll-free-sms-vs-local-numbers/#supported-countries)
+* [Sending at high volumes per phone number](sending-highvolume-sms.md)
+* [Opt-in / Opt-out Handling](opt-out.md)
+* [Event Notifications](events.md)
+* [Detailed Error Codes](handling-errors.md)
+* [Approved for high volume usage with mobile carriers](toll-free-sms-vs-local-numbers.md#carrier-approval)
+* [Support for local and toll-free numbers](toll-free-sms-vs-local-numbers.md)
+* [Support for United States and Canada](toll-free-sms-vs-local-numbers.md#supported-countries)
 
 !!! warning "Limitations of High Volume SMS"
     High Volume SMS does not currently support the following:
@@ -43,4 +43,4 @@ RingCentral High Volume SMS supports the following key features:
     * Scheduling SMS in advance
     * Developer sandbox (to test and use the HV SMS APIs, you would need to request your application to be moved to production directly)
 
-    If you need to send files, communicate with a group, or send to international destinations, please consider our [Enhanced Business SMS API](../../).
+    If you need to send files, communicate with a group, or send to international destinations, please consider our [Enhanced Business SMS API](../../index.md).

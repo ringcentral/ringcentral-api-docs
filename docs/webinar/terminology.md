@@ -8,7 +8,7 @@ The following glossary will help you better understand some of the nuances betwe
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Absentee    | An absentee refers to anyone who registered for a webinar, but did not attend.                                            |
 | Attendee    | An attendee refers to anyone who was present for a webinar, regardless of their role in the webinar.                                            |
-| Bridge      | A [bridge](../../video/api/create-meetings/) is a term from RingCentral Video and refers to a virtual meeting space in which webinar partipants gather to share their video and audio and broadcast it other webinar attendees.                                                                                         |
+| Bridge      | A [bridge](../video/api/create-meetings.md) is a term from RingCentral Video and refers to a virtual meeting space in which webinar partipants gather to share their video and audio and broadcast it other webinar attendees.                                                                                         |
 | Co-host     | A co-host of a webinar has limited authority over a webinar so that they can assist the host in moderation duties.                              |
 | Host        | The host of a webinar is the owner of the webinar and has full authority over the webinar.                                                      |
 | Invitee     | A host, cohost or panelist whom has been asked to help facilitate a webinar.                                                                    |

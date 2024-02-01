@@ -11,7 +11,7 @@ The emotions recognized by this API are based on the [Plutchik Wheel of Emotions
 * sadness 
 * neutrality
 
-If you are looking for emotion recognition on per-utterance, per-speaker basis, use the [Interaction Analytics API](../interaction-analytics/), as this API doesn't provide speech-to-text and speaker diarization capabilities. Instead, this API provides a pure time-sliced emotion detection capability for an audio/video recording.
+If you are looking for emotion recognition on per-utterance, per-speaker basis, use the [Interaction Analytics API](interaction-analytics.md), as this API doesn't provide speech-to-text and speaker diarization capabilities. Instead, this API provides a pure time-sliced emotion detection capability for an audio/video recording.
 
 ## Performing emotion analysis
 
@@ -28,7 +28,7 @@ If you are looking for emotion recognition on per-utterance, per-speaker basis, 
 
 ### Sample code
 
-After you have setup a [simple web server to process the response](../asynchronous-responses/), copy and paste the code from below in `index.js` and make sure to edit the variables in ALL CAPS to ensure your code runs properly. 
+After you have setup a [simple web server to process the response](asynchronous-responses.md), copy and paste the code from below in `index.js` and make sure to edit the variables in ALL CAPS to ensure your code runs properly. 
 
 === "Javascript"
 

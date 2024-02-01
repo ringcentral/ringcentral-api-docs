@@ -1,6 +1,6 @@
 # Subscribing to webinar webhooks and events
 
-Like other RingCentral products, [events are often emitted by the platform](../../notifications/) to signal to developers and their applications about key events that have been triggered by a user. Developers should be aware that while there exist many similarities between how one might create and receive a webinar event, and any other event on the platform, there are two distinct interfaces a develope must engage with. In other words, webinar has its own unique set of API endpoints for subscribing to events emitted by the webinar platform. 
+Like other RingCentral products, [events are often emitted by the platform](../notifications/index.md) to signal to developers and their applications about key events that have been triggered by a user. Developers should be aware that while there exist many similarities between how one might create and receive a webinar event, and any other event on the platform, there are two distinct interfaces a develope must engage with. In other words, webinar has its own unique set of API endpoints for subscribing to events emitted by the webinar platform. 
 
 ## Subscribing to a webinar webhook
 

@@ -20,14 +20,14 @@ In migrating away from PubNub, every developer will need to make as least some s
 
 Some developers choose not to use an SDK provided by RingCentral. If this is the case for you, then you will need to make a number of changes to switch to the WebSockets. We have two guides that walk through how we have implemented WebSockets to help you with this process:
 
-* [Subscribing to WebSockets](../subscribing/)
-* [Receiving events via WebSockets](../receiving/)
+* [Subscribing to WebSockets](subscribing.md)
+* [Receiving events via WebSockets](receiving.md)
 
 Even if you do not use a RingCentral SDK, we strongly recommend using a third-party library to help implement the WebSockets protocol.
 
 #### Upgrading your RingCentral SDK
 
-If you use a [RingCentral SDK](../../../sdks/), then you will need to update the most recent version of that SDK, and make a few changes to your source code. The following will provide the SDK-specific instructions to guide you in this process. 
+If you use a [RingCentral SDK](../../sdks.md), then you will need to update the most recent version of that SDK, and make a few changes to your source code. The following will provide the SDK-specific instructions to guide you in this process. 
 
 === "Javascript"
 

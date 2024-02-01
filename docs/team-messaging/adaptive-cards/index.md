@@ -58,18 +58,18 @@ Among the many benefits of Adaptive Cards, are the robust set of tools made avai
 
 And if you cannot find a pre-made template to suit your needs, an [Adaptive Card designer](https://adaptivecards.io/designer/) also exists to help you design a card to your exact specifications. This tool makes it possible for technical and non-technical people alike to create cards with ease, and does not require users to first understand the [Adaptive Card schema](https://adaptivecards.io/explorer/). Finally, using the design tool, you can also preview your cards and its interactive elements. 
 
-* Learn more about [Adaptive card layouts and design](./containers/)
+* Learn more about [Adaptive card layouts and design](containers.md)
 
 ## Build smart and interactive messages
 
 Adaptive Cards can also be embued with behaviors to make them more interactive and intelligent. Create cards with built-in forms. Have forms that react to user input, showing and hiding fields depending upon what is appropriate. Create cards that trigger events and actions like opening a web browser, submitting form contents, revealing other cards. 
 
-* Learn more about [Adaptive card actions and interactive elements](./actions/)
+* Learn more about [Adaptive card actions and interactive elements](actions.md)
 
 ## Use Adaptive Cards in all kinds of applications
 
 Adaptive Cards can be used in any number of different RingCentral applications, including:
 
-* [Bots](../bots/walkthrough)
-* [Add-ins](../add-ins/)
-* [REST API-based apps](../posting/)
+* [Bots](../bots/walkthrough.md)
+* [Add-ins](../add-ins/index.md)
+* [REST API-based apps](../posting/index.md)

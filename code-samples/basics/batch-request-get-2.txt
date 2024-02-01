@@ -1,0 +1,62 @@
+HTTP 207 Multi-Status
+Content-Type: application/vnd.ringcentral.multipart+json
+
+[
+  {
+    "resourceId": "972869004",
+    "status": 200,
+    "body": {
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306059004/extension/306061004/message-store/972869004",
+      "id": 972869004,
+      "to": [
+        {
+          "phoneNumber": "+17607822229",
+          "location": "Warner Springs, CA"
+        }
+      ],
+      "from": {
+        "phoneNumber": "+15013030165",
+        "name": "Message #1",
+        "location": "Benton, AR"
+      },
+      "type": "SMS",
+      "creationTime": "2018-12-24T07:39:12.000Z",
+      "readStatus": "Unread",
+      "priority": "Normal",
+      "attachments": [
+        {
+          "id": 972869004,
+          "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306059004/extension/306061004/message-store/972869004/content/972869004",
+          "type": "Text",
+          "contentType": "text/plain"
+        }
+      ],
+      "direction": "Outbound",
+      "availability": "Alive",
+      "subject": "SMS: direction=Inbox delivery=DELIVERED unread=true",
+      "messageStatus": "Queued",
+      "conversationId": 8234962969801172000,
+      "conversation": {
+        "id": "8234962969801171948",
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/conversation/8234962969801171948"
+      },
+      "lastModifiedTime": "2018-12-24T10:39:11.666Z"
+    }
+  },
+  {
+    "resourceId": "111",
+    "status": 404,
+    "body": {
+      "errorCode": "CMN-102",
+      "message": "Resource for parameter [messageId] is not found",
+      "errors": [
+        {
+          "errorCode": "CMN-102",
+          "message": "Resource for parameter [messageId] is not found",
+          "parameterName": "messageId"
+        }
+      ],
+      "parameterName": "messageId"
+    }
+  }
+]

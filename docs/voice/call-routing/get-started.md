@@ -1,6 +1,6 @@
 # Get Started with Call Routing
 
-To help you get started using the Call Routing API, the following code samples have been provided. These code samples perform the simple function of listing the call answering rules associated with the current user. This code sample is based on our [Voice quick start guides](../../quick-start). If you have not completed that guide, we recommend you do so first, as this is an abbreviated version of that guide.
+To help you get started using the Call Routing API, the following code samples have been provided. These code samples perform the simple function of listing the call answering rules associated with the current user. This code sample is based on our [Voice quick start guides](../quick-start.md). If you have not completed that guide, we recommend you do so first, as this is an abbreviated version of that guide.
 
 ## Create an app and obtain credentials
 

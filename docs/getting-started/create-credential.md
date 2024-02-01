@@ -4,11 +4,11 @@
 
 When you are first getting started it is common to build a private app that will be used only by you to try out the API. The most expedient and convenient way to connect such apps to the platform is to use a personal JWT authentication credential, which we will cover in detail below. 
 
-If your application is configured to use the [three-legged auth code flow](../../authentication/auth-code-flow/), then a JWT credential is not needed.
+If your application is configured to use the [three-legged auth code flow](../authentication/auth-code-flow.md), then a JWT credential is not needed.
 
 ## What is a JWT auth credential?
 
-The [JWT auth flow](../../authentication/jwt-flow/) is a easy-to-implement and secure way to authenticate a user on the RingCentral platform. At a protocol level, a JWT credential operates in the same way that a username and password do:
+The [JWT auth flow](../authentication/jwt-flow.md) is a easy-to-implement and secure way to authenticate a user on the RingCentral platform. At a protocol level, a JWT credential operates in the same way that a username and password do:
 
 * An app presents a JWT credential to the Auth API.
 * The Auth API responds with an access token.

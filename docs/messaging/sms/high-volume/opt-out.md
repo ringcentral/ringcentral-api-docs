@@ -14,7 +14,7 @@ When a recipient replies to an SMS message with any of the opt-out keywords like
 > SAMPLE AUTO REPLY MESSAGE: You replied with the word "stop" which blocks all texts from this number.
 > Text back "unstop" to start receiving messages again.
 
-If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident with "active" attribute as "true".
+If you have subscribed to [opt-out event notifications](events.md#opt-out-events), you will receive an event of this incident with "active" attribute as "true".
 
 !!! note "Some network operators may also send auto-replies to opt-out requests."
 
@@ -26,7 +26,7 @@ When a recipient replies to an SMS message with any of the opt-in keywords like 
 > SAMPLE AUTO REPLY MESSAGE: You have replied "unstop" and will begin receiving messages again from this number.
 > Text back "stop" to stop receiving messages again.
 
-If you have subscribed to [opt-out event notifications](../events/#opt-out-events), you will receive an event of this incident with "active" attribute as "false".
+If you have subscribed to [opt-out event notifications](events.md#opt-out-events), you will receive an event of this incident with "active" attribute as "false".
 
 !!! note "Some network operators may also send auto-replies to opt-in requests."
 

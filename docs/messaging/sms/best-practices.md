@@ -1,7 +1,7 @@
 # Best practices for sending SMS via an API
 
 !!! note "First time sending an SMS?"
-    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../../quick-start/) available in multiple languages, but be sure to read the following best practices as well.
+    If you are new to RingCentral and are trying to send an SMS for the first time, we recommend you try our [SMS Quick Start Guide](../quick-start.md) available in multiple languages, but be sure to read the following best practices as well.
 
 ## Familiarize yourself with RingCentral's messaging policies
 
@@ -15,7 +15,7 @@ If you are receiving errors from the RingCentral API when sending multiple messa
 * checking the `X-Rate-Limit-Remaining` header and waiting the number of seconds specified in thee `X-Rate-Limit-Window` header.
 * you can combine the above two approaches by checking `X-Rate-Limit-Remaining` and handling `429` errors.
 
-Learn more about [how to deal with rate limiting errors](../../../basics/rate-limits/). 
+Learn more about [how to deal with rate limiting errors](../../basics/rate-limits.md). 
 
 ## Use single-domain links when transmitting URLs
 

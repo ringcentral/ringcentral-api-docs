@@ -132,4 +132,4 @@ POST /restapi/v1.0/account/~/extension/~/emergency-locations
 Please see the [API Reference](https://developers.ringcentral.com/api-reference/Automatic-Location-Updates/createExtensionEmergencyLocation) for more details.
 
 !!! important "CMN-109 Error"
-    If you see an error message `CMN-109`, this indicates you are not able to set the Emergency Response Location (ERL) yet and must use the [update location by device](../emergency-locations/#method-1-update-location-by-device) API instead.
+    If you see an error message `CMN-109`, this indicates you are not able to set the Emergency Response Location (ERL) yet and must use the [update location by device](#method-1-update-location-by-device) API instead.

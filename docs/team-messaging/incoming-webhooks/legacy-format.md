@@ -1,9 +1,9 @@
 # RingCentral's legacy attachment formats
 
-Prior to [adaptive cards](../../adaptive-cards) RingCentral supported its own proprietary format for creating richly formatted cards. Overt time we developed two different schemas, creatively named "version 1" and "version 2." These formats are documented below.
+Prior to [adaptive cards](../adaptive-cards/index.md) RingCentral supported its own proprietary format for creating richly formatted cards. Overt time we developed two different schemas, creatively named "version 1" and "version 2." These formats are documented below.
 
 !!! tip "Adaptive Cards"
-    While RingCentral continues to support our proprietary format, we encourage developers to adopt the more robust and modern [Adaptive Cards framework](../../adaptive-cards/) for composing cards and messages.
+    While RingCentral continues to support our proprietary format, we encourage developers to adopt the more robust and modern [Adaptive Cards framework](../adaptive-cards/index.md) for composing cards and messages.
 	
 !!! note "What to be aware of when using message attachments"
     * All fields except `text` have a character limit of 300 bytes.

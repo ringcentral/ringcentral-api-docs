@@ -4,12 +4,12 @@ Active Calls provides developers with time-sensitive insights into what is (or h
 
 Active Calls are not **real-time**. There is some latency between the time when a call has terminated and when it shows up in the records returned, this latency differs but it is typically 3-10 seconds.
 
-Active Calls are intended to work as a tool for developers who need to lookup call log data to append notes, and sentiment for things such as CRM integrations. Active Calls are a handy tool for looking up this time-sensitive information, but this can also be confusing for developers expecting this Call Log data type to represent `real time` active calls. For `real-time` or `near real-time` call data developers will want to either use [Webhooks](../../notifications/webhooks/quick-start/) or [WebSockets](../../notifications/websockets/quick-start/).
+Active Calls are intended to work as a tool for developers who need to lookup call log data to append notes, and sentiment for things such as CRM integrations. Active Calls are a handy tool for looking up this time-sensitive information, but this can also be confusing for developers expecting this Call Log data type to represent `real time` active calls. For `real-time` or `near real-time` call data developers will want to either use [Webhooks](../notifications/webhooks/quick-start.md) or [WebSockets](../notifications/websockets/quick-start.md).
 
 Developers should consider Active Calls to be a time-sensitive cache, where the default period of time a call remains in this cache (after being ended) is approximately 120 seconds.
 
 !!! info "See Also: Call Log"
-    The Active Call API is a close cousin to the RingCentral [Call Log API](../call-log/) using identical data constructs and responses. The key and only difference being the following:
+    The Active Call API is a close cousin to the RingCentral [Call Log API](call-log/index.md) using identical data constructs and responses. The key and only difference being the following:
 
     * Active Call API returns a list of live calls in an account. These are calls that have been connected to an extension. It does not return calls currently being routed to an extension.
     * Active Call API connects to a different URL/endpoint.

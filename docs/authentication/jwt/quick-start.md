@@ -1,10 +1,10 @@
 # Getting started using JWT credentials
 
-Before you get started, make sure you are using the [best authentication method](../../) for your application. JWT is ideally suited for developers just getting started, and for server-to-server authentication. If you need to authenticate individual users, we strongly recommend the more common [OAuth flow](../quick-start/).
+Before you get started, make sure you are using the [best authentication method](../index.md) for your application. JWT is ideally suited for developers just getting started, and for server-to-server authentication. If you need to authenticate individual users, we strongly recommend the more common [OAuth flow](../quick-start.md).
 
 ## Create a JWT
 
-The key first step in getting started is to [generate the JWT token](../../../getting-started/create-credential/) you will be using to authenticate. 
+The key first step in getting started is to [generate the JWT token](../../getting-started/create-credential.md) you will be using to authenticate. 
 
 ## Create an app and obtain credentials
 
@@ -32,7 +32,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Download and edit a `.env` file
 	
-Follow the instructions found in our guide to [running Developer Guide code samples](../../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples.md). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.

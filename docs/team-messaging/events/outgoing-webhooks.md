@@ -6,7 +6,7 @@ In response to the actions taken by users within our product, the RingCentral pl
 2. Push notifications - direct event delivery to a specific client, e.g. a specific mobile phone or Javascript client.
 
 !!! info "Outgoing webhooks vs incoming webhooks"
-    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../../incoming-webhooks/webhook-creation) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
+    Outgoing webhooks refer the to events that the RingCentral system emits, whereas [incoming webhooks](../incoming-webhooks/webhook-creation.md) refer to a system by which third-parties can more easily post messages into a designated team or chat. 
 
 ## Outgoing event structure
 
@@ -42,7 +42,7 @@ Every event emitted by the RingCentral platform conforms to a simple structure, 
 
 ## Subscribing to an outgoing event
 
-RingCentral maintains a [generalized subscription framework](../../../notifications/) through which all outgoing events emitted by the platform can be subscribed to by a developer. This system allows developers to elect how they wish to receive an event, for example via a webhook, or via PubNub.
+RingCentral maintains a [generalized subscription framework](../../notifications/index.md) through which all outgoing events emitted by the platform can be subscribed to by a developer. This system allows developers to elect how they wish to receive an event, for example via a webhook, or via PubNub.
 
 In order to subscribe to an outgoing event, your application must have the "Webhook Subscription" scope associated with it. 
 
@@ -50,8 +50,8 @@ RingCentral allows developers to subscribe to specific events by specifying an "
 
 To get started, try one of our quick starts:
 
-* [Webhook subscription quick start](../../../notifications/webhooks/quick-start/)
-* [PubNub subscription quick start](../../../notifications/push-notifications/quick-start/)
+* [Webhook subscription quick start](../../notifications/webhooks/quick-start.md)
+* [PubNub subscription quick start](../../notifications/push-notifications/quick-start.md)
 
 ### Webhook Validation
 
@@ -86,6 +86,6 @@ Every webhook emitted by RingCentral can be accompanied by a private verificatio
 
 The payload of a webhook depends upon the event that triggered it. We support the following events:
 
-* [Post events](../posts/)
-* [Chat events](../groups/)
-* [Incoming webhook events](../incoming-webhooks/)
+* [Post events](posts.md)
+* [Chat events](groups.md)
+* [Incoming webhook events](incoming-webhooks.md)

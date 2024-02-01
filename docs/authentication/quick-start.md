@@ -2,7 +2,7 @@ style: quick-start
 
 # Getting started using OAuth's auth code flow
 
-Before you get started, make sure you are using the [best authentication method](../) for your application. OAuth's auth code flow is ideally suited for applications that need to collect RingCentral credentials for each user of that app. If you are just getting started on the platform, writing a script to be run via the command-line, or facilitating the connection between a server and RingCentral, we recommend you use our [JWT flow](../jwt/quick-start/).
+Before you get started, make sure you are using the [best authentication method](index.md) for your application. OAuth's auth code flow is ideally suited for applications that need to collect RingCentral credentials for each user of that app. If you are just getting started on the platform, writing a script to be run via the command-line, or facilitating the connection between a server and RingCentral, we recommend you use our [JWT flow](jwt/quick-start.md).
 
 ## Create an app and obtain credentials
 
@@ -32,7 +32,7 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ## Download and edit a `.env` file
 	
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.

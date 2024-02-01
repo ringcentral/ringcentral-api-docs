@@ -136,7 +136,7 @@ The archived file at index one (archive/1) is a .zip file containing attachments
 The following code sample shows how to call the Message Store Export APIs to export the message store data and save it to a local machine.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `create_message_store_report()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `create_message_store_report()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
     * Also make sure that your use the JWT token of an admin user in order have enough user permission to export the message store.
 

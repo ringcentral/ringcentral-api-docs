@@ -90,7 +90,7 @@ Message Store API Groups:
 * Get Message by ID: **Light**
 * Get Message Attachment: **Medium**
 
-[Read API Developer Guide - API Rate Limits](../../../basics/rate-limits/) to understand the rate limits for the Usage Plan assigned to your organization, and the limitations code must address.
+[Read API Developer Guide - API Rate Limits](../../basics/rate-limits.md) to understand the rate limits for the Usage Plan assigned to your organization, and the limitations code must address.
 
 ## Non-Progammatic Ways to Access Data used in Archival
 

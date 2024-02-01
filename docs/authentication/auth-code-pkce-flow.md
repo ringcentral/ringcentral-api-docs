@@ -1,6 +1,6 @@
 # Authorization code flow with Proof Key for Code Exchange
 
-The Authorization code flow with Proof Key for Code Exchange, or simply "Auth code flow with PKCE" is the recommended form of authenticating RingCentral users and exchanging tokens in client-side applications. It is considered a more secure version of the more widely used [Authorization code flow](../auth-code-flow). The flow is as follows:
+The Authorization code flow with Proof Key for Code Exchange, or simply "Auth code flow with PKCE" is the recommended form of authenticating RingCentral users and exchanging tokens in client-side applications. It is considered a more secure version of the more widely used [Authorization code flow](auth-code-flow.md). The flow is as follows:
 
 <img src="../oauth-auth-token-pkce-flow.png" class="img-fluid">
 
@@ -84,7 +84,7 @@ _drLS7o5FwkfUiBhlq2hwJnK_SC6yE7sKOde5O1fdzk
 
 ### Step 1. Compose a "request authorization" URL
 
-When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is same as URL from [Authorization Code Flow Step 1](../auth-code-flow#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in authorization URL:
+When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is same as URL from [Authorization Code Flow Step 1](auth-code-flow.md#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in authorization URL:
 
 {! docs/authentication/login-url-params.inc !} 
 | `code_challenge` | string | Required. Generated from code challenge.
@@ -112,7 +112,7 @@ We recommend developers use an SDK to generate a login URL to ensure it is compo
 
 ### Step 2. User login and consent
 
-This step is same as its counterpart in the [authorization code flow](../auth-code-flow#step-2-user-login-and-consent). After a user logs in and authorizes the application, RingCentral will redirect the user's browser to the `redirect_uri` provided in the login URL created above. At the same time, RingCentral will append the following query parameters to the redirect URI, which your application will need in subsequent steps. 
+This step is same as its counterpart in the [authorization code flow](auth-code-flow.md#step-2-user-login-and-consent). After a user logs in and authorizes the application, RingCentral will redirect the user's browser to the `redirect_uri` provided in the login URL created above. At the same time, RingCentral will append the following query parameters to the redirect URI, which your application will need in subsequent steps. 
 
 {! docs/authentication/auth-code-params.inc !} 
 	

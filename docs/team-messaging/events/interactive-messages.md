@@ -8,8 +8,8 @@ Interactive messaging events are also unique in that applications are expected t
 
 Currently, the only event RingCentral will transmit to your app is one relating to a user submitting a form contained by an adaptive card posted by the corresponding app. Forms are submitted via users clicking buttons associated with actions of type `Action.Submit`. 
 
-* See [Adaptive Cards](../../adaptive-cards/)
-* See [Creating an Add-in](../../add-ins/creation/)
+* See [Adaptive Cards](../adaptive-cards/index.md)
+* See [Creating an Add-in](../add-ins/creation.md)
 
 ## Responding to interactive message events
 
@@ -21,7 +21,7 @@ Finally, dialogs will appear only to the person who interacted with the card tha
 
 <img src="../modal.png" class="img-fluid" style="max-width: 500px" />
 
-Learn more about [Modal Dialogs &raquo;](../../adaptive-cards/modal-dialogs/)
+Learn more about [Modal Dialogs &raquo;](../adaptive-cards/modal-dialogs.md)
 
 <!--
 

@@ -3,12 +3,12 @@
 Interaction analytics is used to understand a conversation happening in a meeting between two or more people and extract from them more meaningful insights at scale. This API is a comprehensive in that in addition to its unique capabilities, it also bundles functionality found in our other APIs. In processing a media file, this API will provide multiple levels of insights, including:
 
 * Conversation insights
-    * [transcription](../speech-to-text/) with [smart punctuation](../text-punctuation/)
-    * [content summaries](../text-summary/)
+    * [transcription](speech-to-text.md) with [smart punctuation](text-punctuation.md)
+    * [content summaries](text-summary.md)
     * keywords and conversation metrics
 * Speaker-level insights
-    * [speaker diarization](../speaker-diarization/)
-    * [speaker identification](../speaker-identification/)
+    * [speaker diarization](speaker-diarization.md)
+    * [speaker identification](speaker-identification.md)
 * Utterance-level insights
     * emotion recognition
 
@@ -29,7 +29,7 @@ For the best results we recommend following these guidelines.
 
 * Setting the `source` parameter helps to optimize the diarization process by allowing a specialized acoustic model built specifically for the corresponding audio sources. 
 
-* For proper speaker indentification, make sure you have previously [enrolled all speakers in the media file](../speaker-enrollment/) and include them in the `speakerIds` parameter.
+* For proper speaker indentification, make sure you have previously [enrolled all speakers in the media file](speaker-enrollment.md) and include them in the `speakerIds` parameter.
 
 ### Request parameters
 
@@ -49,7 +49,7 @@ For the best results we recommend following these guidelines.
 
 ### Example code
 
-After you have setup a [simple web server to process the response](../asynchronous-responses/), copy and paste the code from below in `index.js` and make sure to edit the variables in ALL CAPS to ensure your code runs properly. 
+After you have setup a [simple web server to process the response](asynchronous-responses.md), copy and paste the code from below in `index.js` and make sure to edit the variables in ALL CAPS to ensure your code runs properly. 
 
 === "JavaScript"
 

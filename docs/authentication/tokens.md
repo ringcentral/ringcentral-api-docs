@@ -3,9 +3,9 @@
 !!! info "Need help authenticating your application?"
     This guide is intended to assist developers in using access tokens once they have been acquired by going through one of authorization flows:
           
-    * [Auth code flow](../auth-code-flow/)
-    * [Auth code with PKCE flow](../auth-code-pkce-flow/)
-    * [JWT flow](../jwt-flow)
+    * [Auth code flow](auth-code-flow.md)
+    * [Auth code with PKCE flow](auth-code-pkce-flow.md)
+    * [JWT flow](jwt-flow.md)
 
 Tokens are used to provide a context in each request for authorization or authentication. It is important to understand distinctions between token types:
 

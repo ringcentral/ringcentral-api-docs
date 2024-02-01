@@ -15,7 +15,7 @@ The code above will result in a chat message that appears as follows:
 <img src="./simple-text-message.png" class="img-fluid">
 
 !!! tip "Did you know that you can also post via an incoming webhook?"
-    [Incoming webhooks](../incoming-webhooks/webhook-creation/) provide an alternative conduit by which messages can be posted to a team. An incoming webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
+    [Incoming webhooks](../incoming-webhooks/webhook-creation.md) provide an alternative conduit by which messages can be posted to a team. An incoming webhook's URL can be input into a third-party service provider to allow them to post event messages into a team on your behalf.
 
 !!! warning "Posting limits imposed on REST API"
     Users are limited to posting 2,500 messages per day via the API. In this scenario, applications should receive a 500 error with the text, "You have exceeded your limits for this action."
@@ -35,4 +35,4 @@ The code sample below queries the Chats endpoint for the chat of type "Personal.
 ## Posting cards via the REST API
 
 !!! warning "You cannot post adaptive cards via an attachment"
-    There are dedicated endpoints for [posting adaptive cards to a team](./cards/). If you include an adaptive card as an attachment to a simple text message, you will receive an error. 
+    There are dedicated endpoints for [posting adaptive cards to a team](cards.md). If you include an adaptive card as an attachment to a simple text message, you will receive an error. 

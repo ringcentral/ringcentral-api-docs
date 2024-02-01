@@ -86,10 +86,11 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
+  - markdown.extensions.admonition
   - pymdownx.details
-#  - pymdownx.emoji:
-#      emoji_generator: !!python/name:materialx.emoji.to_svg
-#      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -151,7 +152,6 @@ nav:
   - 'Sending SMS': 'getting-started/sms.md'
   - 'Obtain production credentials': 'getting-started/graduate-app.md'
   - 'Promote your app': 'getting-started/promote-app.md'
-
 - 'Basics':
   - 'Authentication':
     - 'Choosing the best auth': 'authentication/index.md'

@@ -2,7 +2,7 @@ contributors: grokify
 
 # Configuring TLS / SSL
 
-A properly secured webhook is needed in to receive RingCentral webhook events with production data. Once TLS is configured, you can [create your production environment webhook](../creating-webhooks/).
+A properly secured webhook is needed in to receive RingCentral webhook events with production data. Once TLS is configured, you can [create your production environment webhook](creating-webhooks.md).
 
 This guide provides some quick information on how to configure TLS / SSL on a webserver and includes the following ssections:
 

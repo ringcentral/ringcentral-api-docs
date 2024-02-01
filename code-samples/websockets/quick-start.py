@@ -1,8 +1,8 @@
 # Need a .env file with following fields
-# RINGCENTRAL_SERVER_URL=
-# RINGCENTRAL_CLIENT_ID=
-# RINGCENTRAL_CLIENT_SECRET=
-# RINGCENTRAL_JWT_TOKEN=
+# RC_SERVER_URL=
+# RC_CLIENT_ID=
+# RC_CLIENT_SECRET=
+# RC_JWT=
 
 from ringcentral import SDK
 from dotenv import load_dotenv
@@ -26,12 +26,12 @@ def on_ws_created(web_socket_client):
 async def main():
     load_dotenv(override=True)
     sdk = SDK(
-        os.environ['RINGCENTRAL_CLIENT_ID'],
-        os.environ["RINGCENTRAL_CLIENT_SECRET"],
-        os.environ["RINGCENTRAL_SERVER_URL"],
+        os.environ['RC_CLIENT_ID'],
+        os.environ["RC_CLIENT_SECRET"],
+        os.environ["RC_SERVER_URL"],
     )
     platform = sdk.platform()
-    platform.login(jwt=os.environ["RINGCENTRAL_JWT_TOKEN"])
+    platform.login(jwt=os.environ["RC_JWT"])
 
     try:
         web_socket_client = sdk.create_web_socket_client()
