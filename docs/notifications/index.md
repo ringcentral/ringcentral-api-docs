@@ -1,15 +1,15 @@
 # Introduction to event notifications and subscriptions
 
-<div class="jumbotron pt-1">
+<div class="jumbotron pt-1" markdown>
   <h3 class="display-5">Getting started using webhooks and the Subscriptions API</h3>
   <p class="lead"></p>
   <p>We invite all developers to try out our Subscriptions API by writing a simple app to create a webhook subscription when an SMS is received at your phone number. Get started using a Quick Start in any of the following languages:</p>
-  <a href="webhooks/quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="webhooks/quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="webhooks/quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="webhooks/quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="webhooks/quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="webhooks/quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
+  [Javascript &raquo;](webhooks/quick-start.md#Javascript){class="btn btn-light qs-link"}
+  [PHP &raquo;](webhooks/quick-start.md#PHP){class="btn btn-light qs-link"}
+  [Python &raquo;](webhooks/quick-start.md#Python){class="btn btn-light qs-link"}
+  [Ruby &raquo;](webhooks/quick-start.md#Ruby){class="btn btn-light qs-link"}
+  [Java &raquo;](webhooks/quick-start.md#Java){class="btn btn-light qs-link"}
+  [C# &raquo;](webhooks/quick-start.md#C#){class="btn btn-light qs-link"}
 </div>
 
 ## What are events, notifications and subscriptions?

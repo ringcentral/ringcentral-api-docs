@@ -1,15 +1,15 @@
 # Introduction to RingCentral's Voice API
 
-<div class="jumbotron pt-1">
+<div class="jumbotron pt-1" markdown>
   <h3 class="h3 display-5">Getting Started with the Voice API</h3>
   <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
   <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>
-  <a href="quick-start/#C#" class="btn btn-light qs-link">C# &raquo;</a>
+  [Javascript &raquo;](quick-start.md#Javascript){class="btn btn-light qs-link"}
+  [PHP &raquo;](quick-start.md#PHP){class="btn btn-light qs-link"}
+  [Python &raquo;](quick-start.md#Python){class="btn btn-light qs-link"}
+  [Ruby &raquo;](quick-start.md#Ruby){class="btn btn-light qs-link"}
+  [Java &raquo;](quick-start.md#Java){class="btn btn-light qs-link"}
+  [C# &raquo;](quick-start.md#C#){class="btn btn-light qs-link"}
 </div>
 
 <p class="h2">Overview</p>

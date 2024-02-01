@@ -1,6 +1,6 @@
 # RingCentral Social Messaging Guide
 
-<div class="jumbotron pt-1">
+<div class="jumbotron pt-1" markdown>
   <h3 class="display-5">Welcome!</h3>
   <p class="lead">Here you have access to all the resources necessary to build an app successfully using Social Messaging API’s. Getting started is easy with resources and guides collected here to help developers use the Social Messaging APIs.</p>
   <!--<hr class="my-4">
@@ -14,7 +14,7 @@
   <hr class="my-4">
   <p>Developers interested in leveraging Social Messaging API’s for CX use cases can fill out the following form to sign up for accesss.</p>
 
-  <p><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdj2nC4VA2ppfdYJA4-BNAsgnElrU2eiNdhXeieZmvERpjPXA/viewform">Social Messaging Developer Signup Form &raquo;</a></p>
+  [Social Messaging Developer Signup Form &raquo;](https://docs.google.com/forms/d/e/1FAIpQLSdj2nC4VA2ppfdYJA4-BNAsgnElrU2eiNdhXeieZmvERpjPXA/viewform){class="btn btn-primary"}
 </div>
 
 ## Concepts
