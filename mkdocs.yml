@@ -407,7 +407,7 @@ nav:
       - 'Subscribing via Web Sockets': 'notifications/websockets/subscribing.md'
       - 'Receiving events': 'notifications/websockets/receiving.md'
       - 'Session recovery': 'notifications/websockets/session-recovery.md'
-      - 'Keep-alives': 'notifications/websockets/heart-beats.md'
+      - 'Heart beats and keep-alives': 'notifications/websockets/heart-beats.md'
       - 'Migration guide': 'notifications/websockets/migration.md'
     - 'PubNub push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'
