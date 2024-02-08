@@ -29,4 +29,4 @@ When making a call to a team messaging REST API that returns a list, the followi
 
 ## Example
 
-See the code sample in the [Listing Team section](../../concepts/teams) to learn how to use the pageToken to navigate a long list of teams.
+See the code sample in the [Listing Team section](../concepts/teams.md) to learn how to use the pageToken to navigate a long list of teams.

@@ -22,7 +22,7 @@ The Text Punctuation API takes a list of text blocks and augments them with prop
 
 The following example code shows how to provide the text paragraphs to the API and get the texts grammarly punctuated.
 
-Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+Follow the instructions on the [quick start](quick-start.md) section to setup and run your server code before running the sample code below.
 
 !!! note "Running the code"
     * Edit the variables in ALL CAPS with your app and user credentials before running the code.

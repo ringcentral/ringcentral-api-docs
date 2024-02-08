@@ -1,6 +1,6 @@
 # How to analyze media files using the AI API
 
-Most of RingCentral AI APIs such as the `/speech-to-text` and the `/analyze-interaction` endpoints take the input media content `contentUri` as a URI link to a media file resides at a remote server. These APIs all work in an [asynchronous manner](../asynchronous-responses/) and follow this basic flow:
+Most of RingCentral AI APIs such as the `/speech-to-text` and the `/analyze-interaction` endpoints take the input media content `contentUri` as a URI link to a media file resides at a remote server. These APIs all work in an [asynchronous manner](asynchronous-responses.md) and follow this basic flow:
 
 1. Developer calls an API endpoint passing a URI in the `contentUri` parameter
 2. RingCentral responds with a 20x status code to acknowledge receipt of request
@@ -11,11 +11,11 @@ The URI link referenced by the `contentUri` parameter must be publicly accessibl
 
 ## How to analyze RingCentral call recordings and meeting recordings
 
-RingCentral hosts all downloadable [media content](../../basics/media/) on a protected server, and requires developers to provide a valid access token in a request in order to access the content. RingCentral makes it possible to access protected media content, like RingCentral [call recordings](../../voice/call-log/recordings/) and RingCentral Video [meeting recordings](../../video/api/meeting-history/) by appending the access token via the `access_token` query parameter. For example, let's look at how one would construct a URL that would allow the AI API to access a RingCentral call recording.
+RingCentral hosts all downloadable [media content](../basics/media.md) on a protected server, and requires developers to provide a valid access token in a request in order to access the content. RingCentral makes it possible to access protected media content, like RingCentral [call recordings](../voice/call-log/recordings.md) and RingCentral Video [meeting recordings](../video/api/meeting-history.md) by appending the access token via the `access_token` query parameter. For example, let's look at how one would construct a URL that would allow the AI API to access a RingCentral call recording.
 
 ### Sample call log entry
 
-Here is an excerpt from a call to the [Call Log API](../../voice/call-log/) and shows an entry that contains a reference to a recording of a phone call.
+Here is an excerpt from a call to the [Call Log API](../voice/call-log/index.md) and shows an entry that contains a reference to a recording of a phone call.
 
 ```json hl_lines="24"
 {!> code-samples/voice/call-log-sample.json !}
