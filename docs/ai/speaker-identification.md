@@ -21,7 +21,7 @@ To properly identify speakers in a media file, speakers must have been [previous
 
 The following example code shows how to identify speakers from a conversation in a media file.
 
-Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+Follow the instructions on the [quick start](quick-start.md) section to setup and run your server code before running the sample code below.
 
 !!! note "Running the code"
     * Edit the variables in ALL CAPS with your app and user credentials before running the code.
