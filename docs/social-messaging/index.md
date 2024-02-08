@@ -1,8 +1,8 @@
-# RingCentral Social Messaging Guide
-
+# Introduction to the RingCentral Social Messaging APIs
+{! mdx_includes/social-messaging-beta-notice.md !}
 <div class="jumbotron pt-1" markdown>
-  <h3 class="display-5">Welcome!</h3>
-  <p class="lead">Here you have access to all the resources necessary to build an app successfully using Social Messaging API’s. Getting started is easy with resources and guides collected here to help developers use the Social Messaging APIs.</p>
+  <h3 class="display-5">Coming Soon!</h3>
+  <p class="lead">Soon, you will have access to all the resources necessary to build an app successfully using our Social Messaging API’s. As and when we release more APIs, we will augment this section with "Getting Started" guide, API descriptions and sample code.</p>
   <!--<hr class="my-4">
   <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
   <ul>
@@ -17,30 +17,43 @@
   [Social Messaging Developer Signup Form &raquo;](https://docs.google.com/forms/d/e/1FAIpQLSdj2nC4VA2ppfdYJA4-BNAsgnElrU2eiNdhXeieZmvERpjPXA/viewform){class="btn btn-primary"}
 </div>
 
-## Concepts
+## Getting Started
 
-To get started, let's walk through some initial concepts every Social Messaging Developer should know about to use our features.
+The RingCentral Social Messaging APIs are available to RingCentral MVP customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The social messaging platform is made up of a number of APIs that can open up following use cases:
+
+* MVP user/extension (With RingCentral Business phone number) wanting to build an app to support their end customers via WhatsApp channel.
+* MVP user/extension wanting to build an app to support their end customers over multiple channels like Facebook messanger, Apple business chat, etc with OmniChannel approach.
+* ISV partners wanting to build user experience application for RingCentral customers for multi-user Shared Inbox capabilities over social channels.
+
+Once you fill in the above access form -
+1. You will be contacted by RingCentral, and we will help set up your account for this Beta access.
+2. Once you have an application with necessary "social-messaging" permissions, and other setup on RingCentral side, you will receive a welcome email.
+3. In that email, you will get a link to create and configure your channels that you intend to use. For example, if you want to use WhatsApp as a channel, then it's in this step you will connect to you facebook account and to WhatsApp business profile with RingCentral business phone number.
+4. Once channel(s) are set up, you can start using the APIs.
+
+We will soon provide a dedicated "Getting Started" page to detail each and every step.
+
+## Overview
+
+Now let's walk through some initial concepts every Social Messaging Developer should know about to use our features.
 
 ### Sources/Channels
 
 A channel (or source) is referred to as a digital medium for customers to connect with enterprises. We currently support the following channels/sources through the API’s:
 
-* Facebook public and private
-* Twitter public and private
-* Instagram public and private
 * WhatsApp
-* LinkedIn
 * Apple Messages for Business (AMB)
-* YouTube
-* Engage Messaging
 * Google Messages for Business
+* Facebook 
+* Twitter 
+* Instagram 
+* LinkedIn
+* YouTube
 * Google Reviews
-* Email
 * Viber
 
 To get messages from these channels you would need to have an account which can be connected, authorized and set up to start getting messages.
 
-To configure a channel, one has to be provided with an Engage Digital account where they can use specific channel flows for setup and configuration.  Please use the signup button above to request an Engage Digital account for channel setup and configuration.
 
 ### Content
 
@@ -48,20 +61,20 @@ Content refers to messages that are sent/received on the configured channels. Co
 
 ### How to configure a channel
 
-Each channel like WhatsApp, Viber, and Facebook is a medium through which agents can communicate with customers.
-
-Please refer to the following [documentation](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) on how to setup and configure a channel.
+Each channel like WhatsApp, Viber, and Facebook is a medium through which agents can communicate with customers. Once your account and application is fully set up, you will receive an email with the link to configure channels for your account. At that time you can refer to the following [documentation](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) on how to setup and configure a channel.
 
 ### Webhooks
 
-Social Messaging provides a Webhook API to be notified when events occur. This API is near real time and provides an alternative to polling the REST API. The purpose is to be able to trigger event-based behavior. This way you will be able to build a gamification mechanism, live dashboard, synchronizing contents, etc. The current event type supported through Social Messaging webhook is as below
+Social Messaging provides a Webhook API to be notified when events occur. This API is near real time and provides an alternative to polling the REST API. The purpose is to be able to trigger event-based behavior. This way you will be able to build a shared inbox with multiple users, gamification mechanism, live dashboard, synchronizing contents, etc. The current event type supported through Social Messaging webhook is as below
 
 #### Resource Types
 
 |Type|Description|
 |-|-|
-|`content.imported`|When a new content has been imported from the source to Engage.|
-|||
+|`content.imported`|When a new content has been imported from the source/channel (e.g. WhatsApp) to your account.|
+
+
+This section will be expanded further with more events, and their usage.
 
 ## Content API
 
@@ -74,7 +87,7 @@ Be sure to set the proper [authorization header](https://developers.ringcentral.
 
 === "HTTP"
     ```html
-    GET https://platform.ringcentral.com/engage/advanced-messaging/v1/contents
+    GET https://platform.ringcentral.com/cx/social-messaging/v1/contents
     ```
 
 #### An Example with Facebook
@@ -87,7 +100,7 @@ There are several IDs in the GET `/content` API. Each has a different meaning. A
 |||
 
 !!! note "Intervention IDs"
-    Intervention IDs are only used on the Engage Digital platform. You will notice that if a user responds to a post/message, the intervention ID will be populated, but any post/reply from the API will not have an intervention ID.
+    Intervention IDs are only used on the RingCentral platform. You will notice that if a user responds to a post/message, the intervention ID will be populated, but any post/reply from the API will not have an intervention ID.
 
 ### Get Content from a Specific Channel
 
@@ -95,10 +108,10 @@ You can create multiple channels including, but not limited to, WhatsApp, Facebo
 
 === "HTTP"
     ```html
-    GET https://platform.ringcentral.com/engage/advanced-messaging/v1/contents?source=64c831b164ffc8574324139e
+    GET https://platform.ringcentral.com/cx/social-messaging/v1/contents?source=64c831b164ffc8574324139e
     ```
 
-These parameters go into the query string
+These parameters go into the query string. There are lot more parameters supported like sortedBy, etc and will be added to this documentation soon.
 
 ### Paginating Through Content
 
@@ -116,7 +129,7 @@ Then to move to the next page, use the `pageToken` to move to the next page of r
 
 Theses parameters belong in the query string, so the entire request URL with paginating to the second page with 10 objects per page would look like this:
 ```html
-  GET https://platform.ringcentral.com/engage/advanced-messaging/v1/contents?perPage=10&pageToken=eyJ2YWx1ZSI6MTY5MTUzMzQxOC4wLCJmaWV...QyYzA2YWFiYTEzMjAwMDczNDgyNjUifQ==
+  GET https://platform.ringcentral.com/cx/social-messaging/v1/contents?perPage=10&pageToken=eyJ2YWx1ZSI6MTY5MTUzMzQxOC4wLCJmaWV...QyYzA2YWFiYTEzMjAwMDczNDgyNjUifQ==
 ```
 
 ### Create Content
@@ -138,7 +151,7 @@ Be sure to set the proper [authorization header](https://developers.ringcentral.
 
 === "HTTP"
     ```html
-    POST https://platform.ringcentral.com/engage/advanced-messaging/v1/contents
+    POST https://platform.ringcentral.com/cx/social-messaging/v1/contents
     ```
 
 ## Identities API
@@ -147,7 +160,7 @@ A single end user can use many different channels. To identify the end user, we 
 
 === "HTTP"
     ```html
-    GET https://platform.ringcentral.com/engage/advanced-messaging//v1/identities/642d950e206a4e0007666f31
+    GET https://platform.ringcentral.com/cx/social-messaging/v1/identities/642d950e206a4e0007666f31
     ```
 
 
@@ -157,5 +170,5 @@ You can also get a list of all known identities by not specifying the ID:
 
 === "HTTP"
     ```html
-    GET https://platform.ringcentral.com/engage/advanced-messaging//v1/identities
+    GET https://platform.ringcentral.com/cx/social-messaging/v1/identities
     ```
