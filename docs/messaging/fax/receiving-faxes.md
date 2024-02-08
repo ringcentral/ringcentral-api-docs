@@ -38,4 +38,4 @@ Then when a new message is received/sent your server will get a request with a p
 {!> code-samples/messaging/receive-fax-event.json !} 
 ```
 
-As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also [Push Notifications](../../../notifications/) for more notification delivery options and [Message Sync](../../message-store/message-sync/) for fine-tuned synchronization.
+As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also [Push Notifications](../../notifications/index.md) for more notification delivery options and [Message Sync](../message-store/message-sync.md) for fine-tuned synchronization.

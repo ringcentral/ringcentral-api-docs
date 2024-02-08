@@ -1,10 +1,10 @@
 # Password auth flow
 
 !!! warning "Password grant type is deprecated"
-    Starting in 2023, RingCentral will begin a careful and deliberative process of removing support for the username/password auth flow on the Platform. As a result, all developers are strongly encouraged to migrate their applications to [JWT](../jwt-flow). 
+    Starting in 2023, RingCentral will begin a careful and deliberative process of removing support for the username/password auth flow on the Platform. As a result, all developers are strongly encouraged to migrate their applications to [JWT](jwt-flow.md). 
 
 !!! warning "Please use the JWT auth flow"
-    In January 2022, RingCentral released a more secure alternative to the password grant type called "JWT." We recommend all developers use the [JWT flow](../jwt-flow/) going forward as eventually the password auth flow will be deprecated.
+    In January 2022, RingCentral released a more secure alternative to the password grant type called "JWT." We recommend all developers use the [JWT flow](jwt-flow.md) going forward as eventually the password auth flow will be deprecated.
 
 The password-based authorization flow is among the simplest OAuth 2.0 authorization flows to implement. It is suitable mostly for apps that both lack a user interface, and/or that use a single set of credentials to act on behalf of everyone within an account. 
 
@@ -23,10 +23,10 @@ Below find the step-by-step instructions on how to perform two-legged authorizat
 The password auth flow is used most often by apps that lack a frontend user interface, such as a script, cronjob, etc. 
 
 !!! warning "We recommend using the JWT authorization flow"
-    The password grant flow for OAuth is discouraged as it requires developers to store username and password information on their servers, which if compromised, would give others full access to their account. A safer and recommended form of authentication is the [JWT auth flow](../jwt-flow).
+    The password grant flow for OAuth is discouraged as it requires developers to store username and password information on their servers, which if compromised, would give others full access to their account. A safer and recommended form of authentication is the [JWT auth flow](jwt-flow.md).
 
 !!! warning "Password auth flow does not work with Single Sign-On"
-    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. Instead, we recommend using the [JWT auth flow](../jwt-flow) which does not have this restriction.
+    If your organization utilizes and requires Single Sign-On for account access, e.g. Okta, then username and password based auth cannot be used for your application. Instead, we recommend using the [JWT auth flow](jwt-flow.md) which does not have this restriction.
 
 {! docs/authentication/jwt-vs-password.inc !} 
 

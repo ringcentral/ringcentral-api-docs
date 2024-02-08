@@ -29,7 +29,7 @@ To make editing and loading this adaptive card a little easier, we will place th
 
 ### Post the card
 
-To post the card, the app would utilize either the [REST API](../../posting/cards) to post the card. In the code excerpt below, the contents of the card are read off of the filesystem and processed through a templating system to replace variables found in the card template with values passed in at runtime. 
+To post the card, the app would utilize either the [REST API](../posting/cards.md) to post the card. In the code excerpt below, the contents of the card are read off of the filesystem and processed through a templating system to replace variables found in the card template with values passed in at runtime. 
 
 ```js
 {!> code-samples/team-messaging/post-card-using-template.js [ln:21-] !}

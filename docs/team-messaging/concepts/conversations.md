@@ -18,7 +18,7 @@ Conversations can be further disambiguated by their assigned type. Here are the 
 | `Group` | A group chat is a chat between a fixed group of three to sixteen individuals. |
 | `Direct` | A direct chat is a chat between exactly two people. |
 
-!!! hint "Group chats have a limit of 16 members. If you need to chat between more than 16 people, use a [team](../teams/)."
+!!! hint "Group chats have a limit of 16 members. If you need to chat between more than 16 people, use a [team](teams.md)."
 
 ## Creating a conversation
 

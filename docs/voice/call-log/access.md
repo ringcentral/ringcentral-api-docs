@@ -2,7 +2,7 @@
 
 Like every other RingCentral API resource, the [Call Log](https://developers.ringcentral.com/api-reference/Call-Log/readUserCallLog) API resource has specific limitiations in place for accessing Call Log data via our API.
 
-Developers can easily determine the permissions available for an access token by viewing the `scope` property while requesting an `access_token` from RingCentral OAuth endpoints (this works for either the [password flow](../../../authentication/password-flow/) or [auth code flow](../../../authentication/auth-code-flow/)). The `scope` property will be a string which can be split on whitespace " ". The following example shows how to use the [RingCentral JS SDK](https://github.com/ringcentral/ringcentral-js) to inspect for the required API Permissions prior to executing these requests (on an ROPC `Server-Only NO UI` Platform Type application).:
+Developers can easily determine the permissions available for an access token by viewing the `scope` property while requesting an `access_token` from RingCentral OAuth endpoints (this works for either the [password flow](../../authentication/password-flow.md) or [auth code flow](../../authentication/auth-code-flow.md)). The `scope` property will be a string which can be split on whitespace " ". The following example shows how to use the [RingCentral JS SDK](https://github.com/ringcentral/ringcentral-js) to inspect for the required API Permissions prior to executing these requests (on an ROPC `Server-Only NO UI` Platform Type application).:
 
 === "JavaScript"
 

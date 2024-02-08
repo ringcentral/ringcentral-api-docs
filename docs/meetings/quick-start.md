@@ -39,13 +39,13 @@ Access to the RingCentral Meetings API currently requires help from support in o
 
 ## Download and edit a `.env` file
 	
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 	
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 ## Create a meeting
 

@@ -22,7 +22,7 @@ The primary purpose of the Meetings API is to enable developers to create and sc
 2. [Get the Meeting Service Info](https://developers.ringcentral.com/api-reference/Meeting-Configuration/readMeetingServiceInfo) in order to compose an invitation with all the necessary connection information.
 3. Send your invitation to desired attendees.
 
-[Create a meeting using a Quick Start Guide &raquo;](./quick-start/)
+[Create a meeting using a Quick Start Guide &raquo;](quick-start.md)
 
 ## How do I invite people to attend a meeting?
 

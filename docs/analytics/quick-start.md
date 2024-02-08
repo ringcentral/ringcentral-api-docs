@@ -1,6 +1,6 @@
 # RingCentral Business Analytics APIs Quick Start
 
-!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../../getting-started/)."
+!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../getting-started/index.md)."
 
 In this quick start guide, we are going to access call performance data via using Java/C# or Node.JS based command line application.
 
@@ -8,12 +8,12 @@ In this quick start guide, we are going to access call performance data via usin
 
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Analytics&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Analytics App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+[Create Analytics App](https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Analytics&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){target="_new" class="btn btn-primary"}
+[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions}
 
-<div class="collapse" id="create-app-instructions">
+<div class="collapse" id="create-app-instructions" markdown>
 <ol>
-<li><a href="https://developer.ringcentral.com/login.html#/">Login or create an account</a> if you have not done so already.</li>
+<li>[Login or create an account](https://developer.ringcentral.com/login.html#/) if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "JWT auth flow"
@@ -28,13 +28,13 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 
 ## Download and edit a `.env` file
 
-Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples/). Or:
+Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential) for yourself
+     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 ## Call the Analytics API
 

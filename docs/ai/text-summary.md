@@ -29,7 +29,7 @@ The API also allows developers to optionally specify the start and end times, as
 
 The following example code shows how to provide the utterances input to the API and get the summaries.
 
-Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+Follow the instructions on the [quick start](quick-start.md) section to setup and run your server code before running the sample code below.
 
 !!! note "Running the code"
     * Edit the variables in ALL CAPS with your app and user credentials before running the code.

@@ -3,12 +3,12 @@
 Interaction analytics is used to understand a conversation happening in a meeting between two or more people and extract from them more meaningful insights at scale. This API is a comprehensive in that in addition to its unique capabilities, it also bundles functionality found in our other APIs. In processing a media file, this API will provide multiple levels of insights, including:
 
 * Conversation insights
-    * [transcription](../speech-to-text/) with [smart punctuation](../text-punctuation/)
-    * [content summaries](../text-summary/)
+    * [transcription](speech-to-text.md) with [smart punctuation](text-punctuation.md)
+    * [content summaries](text-summary.md)
     * keywords and conversation metrics
 * Speaker-level insights
-    * [speaker diarization](../speaker-diarization/)
-    * [speaker identification](../speaker-identification/)
+    * [speaker diarization](speaker-diarization.md)
+    * [speaker identification](speaker-identification.md)
 * Utterance-level insights
     * emotion recognition
 
@@ -52,7 +52,7 @@ For the best results we recommend following the guidelines below.
 
 The following code sample shows how to extract insights of a conversations from a call recording.
 
-Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+Follow the instructions on the [quick start](quick-start.md) section to setup and run your server code before running the sample code below.
 
 !!! note "Running the code"
     * Edit the variables in ALL CAPS with your app and user credentials before running the code.

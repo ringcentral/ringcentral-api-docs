@@ -4,16 +4,15 @@ no_breadcrumb:true
 
 {! mdx_includes/webinar-beta-notice.md !}
 
-<div class="jumbotron pt-1">
+<div class="jumbotron pt-1" markdown>
   <h3 class="h3 display-5">See the RingCentral Webinar API in action!</h3>
   <p class="lead">As ISV or Developer you can use the RingCentral Webinar APIs to create valued-added integrations that permit the exchange of data between RingCentral Webinar and third-party software. Once you create these integrations, RingCentral can showcase them in our App Gallery to customers and users, thereby driving more usage for your integrations.</p>
   <p class="lead">Using the RingCentral Webinar APIs, these integrations are super-easy to create. The APIs span core workflows for creating and managing webinars as well as exchanging registrant and attendee data for webinars.</p>
   <p>All developers are invited to create a simple app that creates a webinar using the RingCentral Webinar API. Once complete, developers will have all the basic building blocks in place to build more complex integrations. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-<!--  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>-->
+  [Javascript &raquo;](quick-start.md/#Javascript){class="btn btn-light qs-link"}
+  [PHP &raquo;](quick-start.md/#PHP){class="btn btn-light qs-link"}
+  [Python &raquo;](quick-start.md/#Python){class="btn btn-light qs-link"}
+  [Ruby &raquo;](quick-start.md/#Ruby){class="btn btn-light qs-link"}
 </div>
 
 ## Getting started using the Webinar API
@@ -24,19 +23,19 @@ Use the following quick steps to get started.
 
 Login to the [Developer Console](https://developers.ringcentral.com/login.html#/) and create an app with all the permissions you will need, or click the "Create Webinar App" button below. 
     
-<a target="_new" href="https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=EditWebinars,ReadWebinars&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webinar App</a>
+[Create Webinar App](https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=EditWebinars,ReadWebinars&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){class="btn btn-primary" target="_new"}
 
 #### 2. Contact us to graduate your app to production
 
 During our beta program, access to the API is carefully controlled, and there is also no developer sandbox support. Therefore, in order to develop an app, RingCentral will need to add a private application scope to your application, and manually provision production credentials to it. To initiate this process, all developers will need to provide us with their application's client ID so that we can facilitate this request. Please submit a request via the button below:
     
-<a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
+[Request app graduation](https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link){target="_new" class="btn btn-primary"}
 
 #### 3. Join the Webinar Partner Developer Program
 
 Partners wishing to build integrations to be used by RingCentral customers and are promoted within the RingCentral [App Gallery](https://ringcentral.com/apps/) should apply to the Webinar Partner Developer Program in order to receive additional benefits, including a free developer license to RingCentral Webinar. 
     
-<a target="_new" class="btn btn-primary" href="https://forms.gle/dMRNtnuFnonLQgsu7">Join the Webinar Partner Developer Program</a>
+[Join the Webinar Partner Developer Program](https://forms.gle/dMRNtnuFnonLQgsu7){target="_new" class="btn btn-primary"}
 
 ## What can I use the Webinar API for?
 

@@ -6,7 +6,7 @@ Company Answering Rules can be used to create and manage the logic for routing c
 * Department Groups
 * IVR Menu Extensions
 
-If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](../answering-rules/).
+If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](answering-rules.md).
 
 ## Creating a Company Custom Answering Rule
 

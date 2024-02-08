@@ -21,7 +21,7 @@ Here are a few things to keep in mind when using refresh tokens to generate new 
 * If you don't use the newly generated access token, the old refresh token will remain valid for up to 60 minutes. You can issue a refresh request multiple times, but the same access token will be returned until the key is used. 
 
 !!! hint "The JWT auth flow provides non-expiring auth credentials"
-    The [JWT auth flow](../jwt-flow/) is ideal for apps that lack a frontend user interface. Through the JWT auth flow, access tokens are still issued, but they are easily refreshed without the need for human interaction.
+    The [JWT auth flow](jwt-flow.md) is ideal for apps that lack a frontend user interface. Through the JWT auth flow, access tokens are still issued, but they are easily refreshed without the need for human interaction.
 
 !!! info "How to keep access tokens fresh"
     It is recommended that developers implement a separate service dedicated to the task of refreshing access tokens on a regular basis. Such a service would ensure that at no time will your application lose access to a user's account data, and require them to re-login. 

@@ -4,12 +4,12 @@ Modal dialogs are windows that developers can cause to be opened and that float 
 
 ## Responding to an interactive messaging event
 
-Dialogs can only be spawned (or opened) in response to an [interactive messaging event](../../events/interactive-messages/), or more specifically when a user clicks an adaptive card button with the action type of `Action.Submit`. Do remember that Dialogs cannot be opened via the REST API!
+Dialogs can only be spawned (or opened) in response to an [interactive messaging event](../events/interactive-messages.md), or more specifically when a user clicks an adaptive card button with the action type of `Action.Submit`. Do remember that Dialogs cannot be opened via the REST API!
 
 To spawn a dialog, have your application respond to a RingCentral outbound webhook with a `200` HTTP status code, return a Content-type of `application/json` and finally, set the contents of the response to one of the dialog payloads below.
 
 ??? info "Code walkthrough: open dialog"
-    The example Javascript below is an expansion to the [Walkthrough example ](../../bots/posting-cards/) to demonstrate a simple Add-in app which opens a dialog in response to a user's submit event.
+    The example Javascript below is an expansion to the [Walkthrough example ](../bots/posting-cards.md) to demonstrate a simple Add-in app which opens a dialog in response to a user's submit event.
 
     ```js
     {!> code-samples/team-messaging/open-dialog.js !}
@@ -80,7 +80,7 @@ The two key/value pairs will be:
 * `staticValue` = "foo"
 * `textField` = <determined by user>
 
-Consult our documentation on [input and interactivity](../actions/) to better understand the payload of an interactive messaging event and how to access the data that is transmitted to your add-in.
+Consult our documentation on [input and interactivity](actions.md) to better understand the payload of an interactive messaging event and how to access the data that is transmitted to your add-in.
 
 ## Dialog attributes
 

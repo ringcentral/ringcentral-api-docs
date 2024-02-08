@@ -6,7 +6,7 @@ Main company number and company number(s) may have SMS feature enabled. These ph
 
 ## Send an SMS
 
-Try out the [SMS Quick Start Guide](../../quick-start/)
+Try out the [SMS Quick Start Guide](../quick-start.md)
 
 !!! important "Sending text message on behalf of other users?"
     * Sending an SMS on behalf of a call queue is not supported currently. If you need to send SMS messages from a call queue direct number, you must create the call queue without having a call queue manager. The call queue must be set with unique email address and password and to send SMS from that call queue number, the app must be authenticated using the call queue's login credentials.

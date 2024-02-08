@@ -3,7 +3,7 @@
 ??? tip "Learn more about promoting your app in the App Gallery"
     The single best way you can help RingCentral customers discover your application is to promote it in the [RingCentral App Gallery](https://www.ringcentral.com/apps/). Doing so not only enables customers to find your app, but it is also an important step in our [Partner Program](https://www.ringcentral.com/partner/isv) that can further assist you in bringing your product to market.
 
-    [Read more about Promoting your app in the App Gallery &raquo;](../app-gallery/)
+    [Read more about Promoting your app in the App Gallery &raquo;](../getting-started/promote-app.md)
 
 To assist you in getting your RingCentral app listed successfully in the RingCentral App Gallery, the following checklist has been provided to ensure that your app meets a baselines set of standards and requirements.
 

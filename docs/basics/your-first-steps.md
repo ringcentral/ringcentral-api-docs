@@ -17,7 +17,7 @@ If you are building an application having to do with making, receiving, routing 
 * Send and receive SMS.
 * View call log and history. 
 
-[Learn more about sandbox &raquo;](../../getting-started/using-sandbox)
+[Learn more about sandbox &raquo;](../getting-started/using-sandbox.md)
 
 ## Registering your first app
 
@@ -48,30 +48,30 @@ This field determines what development features will be made available to your a
 
 * **Server/No UI** - this is the only platform type that allows for password-based authentication.
 
-[Learn more about platform types in "Creating an Application" &raquo;](../../getting-started/register-app/)
+[Learn more about platform types in "Creating an Application" &raquo;](../getting-started/register-app.md)
 
-#### Permissions
+#### Scopes, or app permissions
 
-The permissions you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check your app's permissions.
+The scopes you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check your app's permissions.
 
-Selecting permissions you may not actually need can impede access to production later as we require apps in production to exercise all permissions assigned to them. If for example you declare your app needs the "SMS" permission but do not actually send an SMS, then you will need to adjust your permissions before graduating your app to production.
+Selecting scopes you may not actually need can impede access to production later as we require apps in production to exercise all scopes assigned to them. If for example you declare your app needs the "SMS" scope but do not actually send an SMS, then you will need to adjust your scopes before graduating your app to production.
 
-[Learn more about Application Permissions &raquo;](../permissions/)
+[Learn more about application scopes &raquo;](permissions.md)
 
 ## Choosing the right authentication scheme
 
 **Does your app have a user interface, and will each of your users need to connect to RingCentral?**
 
-If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](../../authentication/auth-code-pkce-flow). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](../../authentication/auth-code-flow).
+If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](../authentication/auth-code-pkce-flow.md). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](../authentication/auth-code-flow.md).
 
 !!! hint "Use refresh tokens"
-    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](../../authentication/refresh-tokens/) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
+    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](../authentication/refresh-tokens.md) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
 
 **Does your app lack a user interface, and/or does it act on behalf of all users within an organization?**
 
-Apps that lack a user interface, or are run from the command line are typically utility apps that act on behalf of all users within an organization simultaneously. These apps often utilize a "service user" account that possesses administrative priveleges that allow it to act on behalf of all or any user in the organization. For these types of apps, we recommend the [JWT auth flow](../../authentication/jwt-flow/).
+Apps that lack a user interface, or are run from the command line are typically utility apps that act on behalf of all users within an organization simultaneously. These apps often utilize a "service user" account that possesses administrative priveleges that allow it to act on behalf of all or any user in the organization. For these types of apps, we recommend the [JWT auth flow](../authentication/jwt-flow.md).
 
-[Learn more about Authentication on RingCentral &raquo;](../../authentication/)
+[Learn more about Authentication on RingCentral &raquo;](../authentication/index.md)
 
 ## Bringing all your features together
 

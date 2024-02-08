@@ -6,7 +6,7 @@ The invitiation process for webinars facilitates the recruitment and signup of h
 
 ## Inviting people to attend a webinar
 
-Those people you hope will attend a webinar, and not help facilitate the webinar, must be invited or asked to attend via other means. This requires webinar hosts to perform their own independent outreach to attendees to [register for the webinar](../registrants/).
+Those people you hope will attend a webinar, and not help facilitate the webinar, must be invited or asked to attend via other means. This requires webinar hosts to perform their own independent outreach to attendees to [register for the webinar](registrants.md).
 
 ## Inviting hosts, cohosts and other active contributors 
 

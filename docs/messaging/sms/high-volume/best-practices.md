@@ -91,7 +91,7 @@ If your customer replies 2, send the next message with more information
 
 ## Do not send messages to opted-out recipients
 
-Regularly, [read opted-out](../opt-out#read-opted-out-phone-numbers) phone numbers and remove them from your recipient list. If you receive this error code `SMS-CAR-413` after sending a message to your recipient. Take serious action to remove the recipient number from your recipient list.
+Regularly, [read opted-out](opt-out.md#read-opted-out-phone-numbers) phone numbers and remove them from your recipient list. If you receive this error code `SMS-CAR-413` after sending a message to your recipient. Take serious action to remove the recipient number from your recipient list.
 
 Sending a text message to an opted-out recipient is violating the text messaging compliance laws, and consequently, a recipient's carrier will block your message. Keep sending text messages to an opted-out recipient may trigger the recipient's carrier to block your phone number permanently.
 
@@ -105,7 +105,7 @@ Numverify (free): https://numverify.com
 
 Ekata (250 free lookups): https://ekata.com
 
-However, not all invalid numbers are detectable until a wireless carrier reports it as invalid. Read your [message store](../message-store#read-high-volume-message-store), preferably after sending a batch of messages, and look for messages with the “SendingFailed” or “DeliveryFailed” status with these error codes `SMS-UP-410` , `SMS-CAR-411`, `SMS-CAR-412`, check the recipient number and remove it from your recipient list.
+However, not all invalid numbers are detectable until a wireless carrier reports it as invalid. Read your [message store](message-store.md#read-high-volume-message-store), preferably after sending a batch of messages, and look for messages with the “SendingFailed” or “DeliveryFailed” status with these error codes `SMS-UP-410` , `SMS-CAR-411`, `SMS-CAR-412`, check the recipient number and remove it from your recipient list.
 
 ## Use single domain links
 

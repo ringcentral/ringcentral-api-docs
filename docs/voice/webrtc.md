@@ -52,7 +52,7 @@ The library bases on RingCentral WebPhone Client library and Call Control RESTfu
 * [RingCentral Call JS Library on Github](https://github.com/ringcentral/ringcentral-call-js)
 * Provides easy to use framework
 * Uses the [RingCentral WebPhone SDK](https://github.com/ringcentral/ringcentral-web-phone)
-* Uses [Call Control API](../call-control/)
+* Uses [Call Control API](call-control.md)
 * Support to get and control calls in all devices
 
 ## Defining a WebRTC Application

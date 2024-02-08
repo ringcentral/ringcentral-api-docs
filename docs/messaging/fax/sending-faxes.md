@@ -2,7 +2,7 @@
 
 Faxes remain a key way in which many business and industries share and transmit documents, and is another type of message that can be sent using the RingCentral SMS and Fax API. Using this API, developers can send one or more documents at a time to a single recipient. This for example makes it possible for a developer to attach and transmit a cover page that is stored independently from the core document being transmitted.
 
-The Fax API is different from other RingCentral APIs in that it packages the message and each document as a separate MIME attachment. The root attachment is a JSON object which specifies the recipient(s) of the fax, the fax quality (resolution), the cover page text and other necessary parameters such as a predefined cover page. Subsequent attachments are the documents to be transmitted in sequence. The Fax API accepts both `multipart/form-data` and `multipart/mixed` [content-type headers](../fax-multipart-formats).
+The Fax API is different from other RingCentral APIs in that it packages the message and each document as a separate MIME attachment. The root attachment is a JSON object which specifies the recipient(s) of the fax, the fax quality (resolution), the cover page text and other necessary parameters such as a predefined cover page. Subsequent attachments are the documents to be transmitted in sequence. The Fax API accepts both `multipart/form-data` and `multipart/mixed` [content-type headers](fax-multipart-formats.md).
 
 To send a fax message using the Fax API, you cannot set the "from" phone number. Instead, the server will choose the preselected fax number from your extension outbound Fax settings in your [user extension service portal](https://service.ringcentral.com). Therefore, if you need to use your direct number to send Fax messages, login your service Web portal and change your outbound Fax settings.
 
@@ -66,7 +66,7 @@ Bear in mind of course that each language will utilize different libraries and c
 The following code samples show how to send a simple single document fax.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `send_fax()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `send_fax()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"

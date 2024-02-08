@@ -25,7 +25,7 @@ For simplicity, we are going to step you through using the RingCentral unified a
 
 If you have followed all the steps above, you should now have at least one (more if you have done this before) call with a recording listed in the [sandbox Admin Console's call log view](https://service.devtest.ringcentral.com/settings/calls.html#simple). If you do not see this record in the Sandbox Online Account Portal, wait a few minutes and check again...occasionally there is some latency.
 
-Next, use the [Call Log API](../) to obtain a list of calls in your account. 
+Next, use the [Call Log API](index.md) to obtain a list of calls in your account. 
 
 In the response from the Call Log API, any call with a recording will have a metadata `recording` property associated with it that looks similar to the following:
 

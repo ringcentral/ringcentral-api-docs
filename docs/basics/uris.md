@@ -1,8 +1,8 @@
-# Methods, Endpoints and Parameters of the RingCentral API
+# Methods, endpoints and parameters of the RingCentral API
 
 This guide describes the fundamentals of the RingCentral API and is a useful to developers wishing to understand its conventions and usage guidelines.
 
-## Resources and Parameters
+## Resources and parameters
 
 Every entity in the RingCentral API is represented with a certain resource identified by a specific URI. The structure of a URI is similar to that of a web page's URL. The URI syntax is represented by the following scheme:
 
@@ -21,18 +21,18 @@ Protocol, host and port together constitute the main entry point to access the A
 
 RingCentral production servers are accessible on `https://platform.ringcentral.com`. Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
 
-!!! info "FYI"
+!!! info "Different endpoints are required for the Developer Sandbox"
     If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via `https://platform.devtest.ringcentral.com` base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
 
-### Path Parameters: Account and Extension IDs
+### Path parameters: account and extension IDs
 
 All of RingCentral's  API resources are organized in a hierarchical manner. All resource paths start with `/restapi` followed by the version number of the API you are accessing. Let's consider a typical API resource URI:
 
-`https://platform.ringcentral.com/restapi/v1.0/account/**159048008**/extension/**171857008**/call-log?dateFrom=2012-08-26`
+`https://platform.ringcentral.com/restapi/v1.0/account/`**`159048008`**`/extension/`**`171857008`**`/call-log?dateFrom=2012-08-26`
 
 Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are `accountId` and `extensionId`. As you might expect, they identify the account and extension of a RingCentral user, accordingly, and are bolded in the example above. 
 
-!!! info "FYI"
+!!! tip "Extension numbers versus IDs"
     RingCentral users associate an account with the company main phone number and an extension with the short extension number, but both accountId and extensionId are internal identifiers.
 
 Developers often need to access a particular resource on behalf of the user whose credentials (phone number, extension number and password) were transmitted during the authentication phase. As a shortcut, one can use the tilde symbol (~) in place of the `accountId` and/or `extensionId` to access data that belongs to the account/extension of the entity one is currently authenticated as. Considering the example above, if the user successfully authenticated to work with account "159048008" and extension "171857008" the URI to retrieve the same resource may be written as follows:
@@ -102,7 +102,7 @@ Let's consider a simple example of a `GET` method — retrieving the version of 
 	}
 	```
 		
-!!! alert "FYI"
+!!! alert "Don't assume all methods are supported"
     Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.
 
 ### Method Tunneling
@@ -136,19 +136,6 @@ If both the override header and query parameter are specified in the HTTP reques
 
 !!! warning "Tunneling HTTP methods should be used only when no other workaround is available."
     Each HTTP method has its own characteristics, such as how it is cached -- which HTTP clients and intermediaries expect. When tunneling these methods through HTTP POST, those expectations can no longer be met.
-
-## Object Representation
-
-Whenever you need to send or retrieve a particular piece of data — for example, a call log record, information on an extension, etc. — it will be embedded in the HTTP request or response.
-
-The RingCentral API allows you to explicitly define a representation format by using the following HTTP headers:
-
-* The `Content-Type` header defines the MIME type of the request body. The server will expect the request body to contain data in the specified format.
-
-* The `Accept` header indicates the desired MIME type of the response body. The server will return response data in this format (if possible) and will set the `Content-Type` response header accordingly.
-
-!!! info "FYI"
-    The API server accepts and returns all string values in UTF-8 encoding and does not support other character sets. It is not required to explicitly specify charset in Content-Type and Accept HTTP headers. But a client has to implement proper encoding/decoding of character strings passed in HTTP requests/responses.
 
 ## User Agent Identification
 

@@ -14,7 +14,7 @@ Developers should be aware of certain challenges that may impede their ability t
 Here are two ways developers can work around this limitation to send SMS successfully via the API in sandbox:
 
 * create an additional free developer account using a unique email 
-* have the admin or operator in the account create and share a [JWT credential](../create-credential/) with all developers in the organization
+* have the admin or operator in the account create and share a [JWT credential](create-credential.md) with all developers in the organization
 
 ## Preparing your account to send SMS in production
 

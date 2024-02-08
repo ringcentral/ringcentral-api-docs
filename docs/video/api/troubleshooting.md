@@ -20,7 +20,7 @@ Then, that is an indication that you are using our standard free developer accou
 
 ### I receive a "403 Forbidden" error when creating a meeting
 
-A common cause for this message is when a developer is attempting to set the host of a meeting, but the designated host has not assigned the calling user to be a meeting delegate. To fix this problem, please consult our [create meeting](../create-meetings/) documentation. 
+A common cause for this message is when a developer is attempting to set the host of a meeting, but the designated host has not assigned the calling user to be a meeting delegate. To fix this problem, please consult our [create meeting](create-meetings.md) documentation. 
 
 ### I receive an error when calling the API in the sandbox environment...
 

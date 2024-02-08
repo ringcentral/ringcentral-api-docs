@@ -63,7 +63,7 @@ You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.co
 
     If you are using authentication based on JWT flow, you would need to fill in RINGCENTRAL_JWT only.
 
-    See the Developer Guide for information on several [authentication methods that your app can use](../../../authentication).
+    See the Developer Guide for information on several [authentication methods that your app can use](../../authentication/index.md).
 
 ### Making an API call
 

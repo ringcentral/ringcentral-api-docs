@@ -8,7 +8,7 @@ What follows are recommendations on how developers can keep access tokens fresh.
 
 ## Use refresh tokens
 
-[Refresh tokens](../refresh-tokens/) can be used by developers to obtain a newly-issed access token. Following the OAuth specification, this is how a previously issued access token can be replaced with a new key, which will be valid for another 24 hours. 
+[Refresh tokens](refresh-tokens.md) can be used by developers to obtain a newly-issed access token. Following the OAuth specification, this is how a previously issued access token can be replaced with a new key, which will be valid for another 24 hours. 
 
 ## Implement a separate process to keep tokens fresh
 
@@ -26,6 +26,6 @@ There is no one way to avoid a race condition such as this, but here are some co
 
 ## Consider using JWT auth
 
-RingCentral's [JWT authentication](../jwt/quick-start/) was designed in part to alleviate the overhead of having to implement separate processes to keep access tokens fresh. JWT tokens are persistent and can be used to easily obtain a new access token prior to an action needs to be performed. 
+RingCentral's [JWT authentication](jwt/quick-start.md) was designed in part to alleviate the overhead of having to implement separate processes to keep access tokens fresh. JWT tokens are persistent and can be used to easily obtain a new access token prior to an action needs to be performed. 
 
 That being said, JWT auth is intended to be used in server-to-server authentication use cases. If your application needs to maintain access tokens for multiple users, we recommend developers not use JWT auth, as doing so by-passes key security protocols to ensure users have full visibility into what actions an app is authorized to perform on their behalf. 

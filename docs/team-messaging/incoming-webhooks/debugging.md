@@ -8,7 +8,7 @@ Let's begin by creating the file `test.json` using the following contents:
 {!> code-samples/team-messaging/adaptive-cards/simple-card.json !}
 ```
 
-Then from the same directory in which you created the above file, run the following command -- being sure to use the [webhook URL you created on your own](../webhook-creation/). 
+Then from the same directory in which you created the above file, run the following command -- being sure to use the [webhook URL you created on your own](webhook-creation.md). 
 
 ```sh
 % curl -d @test.json -H 'Content-Type: application/json' \

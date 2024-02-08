@@ -10,7 +10,50 @@ Client app should rely on errorCcode and, in some cases, on additional fields li
 																			  
 Possible error codes for each API method are listed in method description under Error Codes header.
 
-## Authentication related error codes
+## Connection related errors
+
+There is always a possibility that a client application is not able to establish a connection with RingCentral service, including a connection timeout, or an SSL handshake failure. When connection errors are suspected, it is very important not to overwhelm the backend with unnecessary client requests so as not to exascerbate the potential problem. In such a circumstance, client applications should follow an "Exponential Backoff" approach:
+
+> The retries exponentially increase the waiting time up to a certain threshold. The idea is that if the server is down temporarily, it is not overwhelmed with requests hitting at the same time when it comes back up.
+
+Following this guideline, the following sequential retry delays are recommended for client applications in case of any connection failures:
+
+* 2 seconds
+* 3 seconds
+* 5 seconds
+* 8 seconds
+* 13 seconds
+* 21 seconds
+* 30 seconds
+
+Then, keep trying to connect every 30 seconds.
+
+## Authentication related errors
+
+Since the RingCentral API uses OAuth 2.0 for authorization, the server behavior is mostly governed by the OAuth specification ([RFC 6749](http://tools.ietf.org/html/rfc6749) and [RFC 6750](http://tools.ietf.org/html/rfc6750)).
+
+* Regardless of the number of threads which send API requests to the server, the application should perform OAuth authentication in a single thread, store and share tokens to be used in all regular API requests. Backend servers enforce some quotas for the number of authorization requests and number of active application sessions. If the quota is exceeded at any given time, the server starts to return `HTTP 429` on authorization requests.
+* Application must avoid frequent authentication attempts under the same user credentials. In order to extend session after access token expiration, it has to use token refreshment flow (if allowed)
+* Application should store `expires_in` and `refresh_token_expires_in` values along with access/refresh tokens and their issue time. This value is to be used to pre-check if the token is expired or about to expire before sending regular API requests in order to refresh tokens proactively. It is strongly recommended to avoid performing refreshment basing on `HTTP 401` errors which are returned by the server.
+* According to OAuth 2.0 standard some logical error codes are returned in error field of the response.
+
+### OAuth authorize errors
+
+For 3-legged OAuth flows in some cases `HTTP 400` may be returned on `/restapi/oauth/authorize` call. For example, it can happen when the client provides invalid redirect URI in the request. See [RFC 6749](http://tools.ietf.org/html/rfc6749) for details.
+
+### OAuth token errors
+
+As a general rule, if a request to /restapi/oauth/token API for access token fails client must NOT send other API requests until resolved. It should be properly orchestrated if client uses multiple threads which share the same tokens to send regular API requests.
+
+* `HTTP 400` – do not repeat request; if possible inform the user about failure and prompt for new credentials
+* `HTTP 429`, `HTTP 503` – retry in an indicated interval returned in Retry-After header.
+* `HTTP 4xx`, `HTTP 5xx` – do not repeat request, error in client or server code
+* `HTTP 400` – use cached credentials (if possible) to re-authenticate, or prompt user for new credentials.
+* `HTTP 408`, `HTTP 500`, client timeout – repeat 3 times with 10 seconds intervals, then try re-request tokens using cached credentials (if possible), or prompt user for new credentials (all dependent regular requests should be queued and wait for resolution)
+
+### OAuth revoke errors
+
+In case of any error on the request to `/restapi/oauth/revoke` API client should just ignore it and do not retry.
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -72,7 +115,7 @@ Possible error codes for each API method are listed in method description under 
 | 400                 | SUB-509    | findSubscription only works with PubNub transport type                                                                      |
 | 405                 | SUB-511    | Action not allowed for APNS subscription                                                                                    |
 
-## Gatewaty and general error codes
+## Gateway and general error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|

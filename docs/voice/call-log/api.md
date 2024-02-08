@@ -1,7 +1,7 @@
 # Understanding the call log data format
 
 ??? note "Are you looking to get a list of currently active calls?"
-    A close cousin of the Call Log API is the [Active Call API](../../finding-active-calls/) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
+    A close cousin of the Call Log API is the [Active Call API](../finding-active-calls.md) which utilizes identical data types. The Active Call API resides at a different endpoint however. Virtually all that applies to Call Log API applies to the Active Call API as well. 
 
 There are three major data types which are contained within the Call Log API resource:
 

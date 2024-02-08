@@ -1,8 +1,8 @@
 # Speech to text transcription
 
-Speech-to-text is the process of converting speech content into text contents. RingCentral uses advanced machine learning algorithms to transcribe speech to text and further process the text contents to provide rich transcription with punctuations, number of speakers and conversational utterances with useful properties such as speaker id, timestamps of every utterance and of every spoken word.
+Speech-to-text is the process of converting speech content into text. RingCentral uses advanced machine learning algorithms to transcribe speech to text and further process the text contents to provide rich transcription with punctuations, number of speakers and conversational utterances with useful properties such as speaker id, timestamps of every utterance and of every spoken word.
 
-The Speech-to-text API also supports speaker recognition if you have trained the voice signature of the speakers using the [Speaker id enrollment API](../speaker-enrollment/). Speaker recognition relies on the API `speakerIds` input as list of pre-enrolled speaker ids of the potential speakers in the conversation.
+The Speech-to-text API also supports speaker recognition if you have trained the voice signature of the speakers using the [Speaker id enrollment API](speaker-enrollment.md). Speaker recognition relies on the API `speakerIds` input as list of pre-enrolled speaker ids of the potential speakers in the conversation.
 
 !!! Note "English is currently the only supported language."
 
@@ -18,9 +18,9 @@ The Speech-to-text API also supports speaker recognition if you have trained the
 | `audioType`    | String | Type of the audio based on number of speakers. Optional. Permitted values: `CallCenter` (default), `Meeting`, `EarningsCalls`, `Interview`, `PressConference` |
 | `source`       | String | The source for the audio file: Webex, Zoom, GotoMeeting, Phone. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `speakerCount` | Number | Number of speakers in the file. Set to `-1` (default) if there are an unknown number of speakers. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`.      |
-| `speakerIds`   | List[String] | A list of speakers to be identified. See [speaker enrollment](../speaker-enrollment/) section for more details. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
+| `speakerIds`   | List[String] | A list of speakers to be identified. See [speaker enrollment](speaker-enrollment.md) section for more details. Optional. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `enableVoiceActivityDetection` | Boolean | Apply voice activity detection. Optional. Default of `False`. The value will be used if `enableSpeakerDiarization` is set to `True`. |
-| `enablePunctuation`         | Boolean | Enables RingCentral's [Smart Punctuation API](../text-punctuation/). Optional. Default of `True`. |
+| `enablePunctuation`         | Boolean | Enables RingCentral's [Smart Punctuation API](text-punctuation.md). Optional. Default of `True`. |
 | `enableSpeakerDiarization`  | Boolean | Tags each word corresponding to the speaker. Optional. Default of `False`. |
 | `separateSpeakerPerChannel` | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker. Optional. Default of `False`. The value will be used if `enableSpeakerDiarization` is set to `True`. |
 | `source`       | String | Source of the audio file eg: `Phone`, `RingCentral`, `GoogleMeet`, `Zoom` etc. Optional. |
@@ -35,7 +35,7 @@ The Speech-to-text API also supports speaker recognition if you have trained the
 
 ### Example code
 
-Try out the [AI Quick Start Guide](../quick-start/)
+Try out the [AI Quick Start Guide](quick-start.md)
 
 ### Sample response
 

@@ -1,6 +1,6 @@
 # Speaker diarization
 
-Speaker diarization is a process that partitions audio stream into homogenous segments according to the speaker entity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speakers ids accordingly. This API also supports speaker identification by speaker Id if the speaker identity was already enrolled using [Create Speaker Id Enrollment API](../speaker-enrollment/).
+Speaker diarization is the process that partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speakers ids accordingly. This API also supports speaker identification by speaker ID if the speaker was already enrolled using [Speaker Enrollment API](speaker-enrollment.md).
 
 ## Using the diarization API
 
@@ -12,7 +12,7 @@ For the best results we recommend following these guidelines.
 
 * Setting the `source` parameter helps to optimize the diarization process by allowing a specialized acoustic model built specifically for the corresponding audio sources.
 
-* For proper speaker indentification, make sure you have previously [enrolled all speakers in the media file](../speaker-enrollment/) and include them in the `speakerIds` parameter.
+* For proper speaker indentification, make sure you have previously [enrolled all speakers in the media file](speaker-enrollment.md) and include them in the `speakerIds` parameter.
 
 ### Request parameters
 

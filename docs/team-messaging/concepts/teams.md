@@ -1,6 +1,6 @@
 # Working with Groups and Teams in Team Messaging
 
-In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](../conversations/)").
+In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](conversations.md)").
 
 ## Team visibility
 
@@ -20,7 +20,7 @@ Please refer to the [Team Messaging Quick start](../../quick-start) for sample c
 
 ## Listing Teams
 
-A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). Long lists can be [iterated over using page tokens](../../manual/pagination/).
+A list of teams can be retrieved by calling the [teams endpoint](https://developers.ringcentral.com/api-reference/Teams/createGlipTeamNew). Long lists can be [iterated over using page tokens](../manual/pagination.md).
 
 ## Sample Code: Listing Teams from an account
 
@@ -66,7 +66,7 @@ The following code sample shows how to list all created teams under and account 
 
 ## Finding the members of a teams
 
-!!! warning "Unfortunately, there is not currently a way to retrieve the members of a team. The only way to find the members of a team is via the [Compliance Export](../../manual/compliance-export/)."
+!!! warning "Unfortunately, there is not currently a way to retrieve the members of a team. The only way to find the members of a team is via the [Compliance Export](../manual/compliance-export.md)."
 
 ## Joining and leaving teams
 

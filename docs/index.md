@@ -3,7 +3,7 @@ no_breadcrumb:true
 
 <!--
 !!! hint "[Join the RingCentral Video Client SDK beta](https://forms.gle/H3QxfhqAhujkktXa6)"
-    The RingCentral [Video Client SDK](./video/client-sdk/) is a product to help developers build fully customized and branded video experiences. Quickly deploy custom branded meetings for your company, ideal for healthcare providers and educators. 
+    The RingCentral [Video Client SDK](video/client-sdk/index.md) is a product to help developers build fully customized and branded video experiences. Quickly deploy custom branded meetings for your company, ideal for healthcare providers and educators. 
 -->
 
 # RingCentral MVP™ Developer Guide
@@ -12,7 +12,7 @@ no_breadcrumb:true
 
 ## Popular use cases
 
-<div class="row row-cols-1 row-cols-md-3 mb-3">
+<div class="row row-cols-1 row-cols-md-3 mb-3" markdown>
   <div class="col">
 
   <div class="card bg-light bg-gradient h-100">

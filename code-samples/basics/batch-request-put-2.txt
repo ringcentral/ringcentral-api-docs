@@ -1,0 +1,90 @@
+HTTP 207 Multi-Status
+Content-Type: application/vnd.ringcentral.multipart+json
+
+[
+  {
+    "resourceId": "972903004",
+    "status": 200,
+    "body": {
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306065004/extension/306067004/message-store/972903004",
+      "id": 972903004,
+      "to": [
+        {
+          "extensionNumber": "103",
+          "extensionId": "306068004"
+        }
+      ],
+      "from": {
+        "extensionNumber": "102",
+        "extensionId": "306067004",
+        "name": "Generated IM message"
+      },
+      "type": "Pager",
+      "creationTime": "2018-12-24T10:39:24.000Z",
+      "readStatus": "Read",
+      "priority": "Normal",
+      "attachments": [
+        {
+          "id": 972903004,
+          "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306065004/extension/306067004/message-store/972903004/content/972903004",
+          "type": "Text",
+          "contentType": "text/plain"
+        }
+      ],
+      "direction": "Outbound",
+      "availability": "Alive",
+      "subject": "IM: direction=Outbox unread=false",
+      "messageStatus": "Sent",
+      "conversationId": 6951365551500,
+      "conversation": {
+        "id": "6951365551500",
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/conversation/6951365551500"
+      },
+      "lastModifiedTime": "2018-12-24T10:39:31.873Z",
+      "pgToDepartment": false
+    }
+  },
+  {
+    "resourceId": "972901004",
+    "status": 200,
+    "body": {
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306065004/extension/306067004/message-store/972901004",
+      "id": 972901004,
+      "to": [
+        {
+          "extensionNumber": "103",
+          "extensionId": "306068004"
+        }
+      ],
+      "from": {
+        "extensionNumber": "102",
+        "extensionId": "306067004",
+        "name": "Generated IM message"
+      },
+      "type": "Pager",
+      "creationTime": "2018-12-24T10:39:24.000Z",
+      "readStatus": "Read",
+      "priority": "Normal",
+      "attachments": [
+        {
+          "id": 972901004,
+          "uri": "https://platform.ringcentral.com/restapi/v1.0/account/306065004/extension/306067004/message-store/972901004/content/972901004",
+          "type": "Text",
+          "contentType": "text/plain"
+        }
+      ],
+      "direction": "Outbound",
+      "availability": "Alive",
+      "subject": "IM: direction=Outbox unread=true",
+      "messageStatus": "Sent",
+      "conversationId": 6951365551500,
+      "conversation": {
+        "id": "6951365551500",
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/conversation/6951365551500"
+      },
+      "lastModifiedTime": "2018-12-24T10:39:31.879Z",
+      "pgToDepartment": false
+    }
+  }
+]
+

@@ -12,7 +12,7 @@ This means that when you "create a meeting," what you are really creating is a b
 
 ## How do you create a meeting bridge via the API?
 
-The following Javascript code can be used to create a RingCentral Video meeting bridge. Our [Video Quick Start guide](../quick-start/) include a more complete code sample (with authentication for example) than the one shown below. The code sample below also showcases a wide array of configuration options, not all of which are required. 
+The following Javascript code can be used to create a RingCentral Video meeting bridge. Our [Video Quick Start guide](quick-start.md) include a more complete code sample (with authentication for example) than the one shown below. The code sample below also showcases a wide array of configuration options, not all of which are required. 
 
 ```js
 {! code-samples/video/create-meeting.js [ln:22-49] !}
@@ -62,7 +62,7 @@ The `preferences` parameter takes a number of key/value pairs to govern the brid
 
 ### How do you schedule a meeting on behalf of someone else?
 
-See [scheduling on behalf of another](../meeting-delegates/).
+See [scheduling on behalf of another](meeting-delegates.md).
 
 ### Setting and retrieving the join URL
 

@@ -43,7 +43,7 @@ Once you have selected your app type, next you need to provide some basic meta d
 
 ### Will you be promoting your app?
 
-To better support our developers wishing to promote their application to our customers, we ask if you intend to [promote your app in our App Gallery](../promote-app/). *Your answer is for internal-use only.*
+To better support our developers wishing to promote their application to our customers, we ask if you intend to [promote your app in our App Gallery](promote-app.md). *Your answer is for internal-use only.*
 
 <img src="../../img/create-app-promote.png" class="img-fluid" style="max-width: 400px">
 
@@ -115,7 +115,7 @@ If you are creating a public application that you intend to market and promote t
 Select "make available only to specific carrier and brand partners" only if your app should be restricted to be used with one partner or another. 
 
 ??? tip "Maximizing the reach of your application"
-    RingCentral works with a number of partners who white-label the RingCentral platform for their respective markets. Our partners include BT, Telus, Avaya and AT&T. [Learn more about about building apps for these partners &raquo;](../../basics/partners/)
+    RingCentral works with a number of partners who white-label the RingCentral platform for their respective markets. Our partners include BT, Telus, Avaya and AT&T. [Learn more about about building apps for these partners &raquo;](../basics/partners/index.md)
 
 ## Enable app features
 
@@ -150,7 +150,7 @@ Upon clicking the "Create" button and successfully registering your application,
 The credentials you are initially provisioned are for our sandbox environment, in which developers are expected to develop and test their application before operating in production. 
 
 ??? hint "Obtaining app credentials for production"
-    When you are finished with development and are ready to make your application available in production, you will be required to [graduate](../graduate-app/) your application. 
+    When you are finished with development and are ready to make your application available in production, you will be required to [graduate](graduate-app.md) your application. 
 
 ## Next step: creating an authentication credential
 

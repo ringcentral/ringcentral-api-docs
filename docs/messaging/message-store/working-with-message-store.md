@@ -12,7 +12,7 @@ Messages within the Message Store can be managed in a variety of ways. One can:
 * Modify the read/unread status
 * View the delivery status
 
-[Learn more about modifying the Message Store &raquo;](../message-histories)
+[Learn more about modifying the Message Store &raquo;](message-histories.md)
 
 ## Message Data Structure
 
@@ -53,7 +53,7 @@ Below is an example JSON representation of a message that would be returned by t
 The following code sample shows how to call the Message Store to display a list of messages within it. To read messages from the Message Store, apps will need the "Read Messages" permission.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../quick-start/), you can just copy all the functions below and add them to the quick start project then call the `read_extension_message_store()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [SMS quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_extension_message_store()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"
