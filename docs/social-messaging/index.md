@@ -3,14 +3,6 @@
 <div class="jumbotron pt-1" markdown>
   <h3 class="display-5">Coming Soon!</h3>
   <p class="lead">Soon, you will have access to all the resources necessary to build an app successfully using our Social Messaging API’s. As and when we release more APIs, we will augment this section with "Getting Started" guide, API descriptions and sample code.</p>
-  <!--<hr class="my-4">
-  <p>The following Quick Start Guides have been created to assist developers in getting started in each of our major APIs:</p>
-  <ul>
-    <li><a href="./interactions/quick-start/">List Threads</a> using our <strong>Interaction API</strong>.</li> 
-    <li><a href="./routing/quick-start/">List Agent Tasks</a> using our <strong>Routing API</strong>.</li> 
-  </ul>
-  -->
-  <!--<p>Not a programmer? <a href="./basics/explorer/">Try out the API with no programming</a>.</p>-->
   <hr class="my-4">
   <p>Developers interested in leveraging Social Messaging API’s for CX use cases can fill out the following form to sign up for accesss.</p>
 
