@@ -12,6 +12,7 @@ plugins:
   - exclude:
       regex:
         - '^#.*'
+        - '.*\.#.*$'
 
 theme:
   name: ringcentral
