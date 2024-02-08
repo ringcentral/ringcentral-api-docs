@@ -118,32 +118,40 @@ When successful, the response will contain the id (taskId) and the status of the
 
 The following code sample shows how to call the Compliance Export API to export the team messaging data and save it to a local machine.
 
-=== "JavaScript" 
+!!! note "Running the code"
+    * If you have tried the [Team Messaging quick start](../../quick-start), you can just copy all the functions below and add them to the quick start project then call the `create_compliance_export_task()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+
+=== "JavaScript"
     ```javascript
-    {!> code-samples/team-messaging/compliance-export.js !}
+    {!> code-samples/team-messaging/code-snippets-headers/header.js !}
+    {!> code-samples/team-messaging/code-snippets/compliance-export.js [ln:10-] !}
     ```
-    
+
 === "Python"
     ```python
-    {!> code-samples/team-messaging/compliance-export.py !}
+    {!> code-samples/team-messaging/code-snippets/compliance-export.py !}
+    {!> code-samples/team-messaging/code-snippets-headers/footer.py !}
     ```
 
 === "PHP"
     ```php
-    {!> code-samples/team-messaging/compliance-export.php !}
-    ```
-
-=== "C#"
-    ```c#
-    {!> code-samples/team-messaging/compliance-export.cs !}
-    ```
-
-=== "Java"
-    ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/ComplianceDataExport.java !}
+    {!> code-samples/team-messaging/code-snippets-headers/header.php !}
+    {!> code-samples/team-messaging/code-snippets/compliance-export.php [ln:2-] !}
     ```
 
 === "Ruby"
     ```ruby
-    {!> code-samples/team-messaging/compliance-export.rb !}
+    {!> code-samples/team-messaging/code-snippets/compliance-export.rb !}
+    {!> code-samples/team-messaging/code-snippets-headers/footer.rb !}
+    ```
+
+=== "C#"
+    ```c#
+    {!> code-samples/team-messaging/code-snippets/compliance-export.cs !}
+    ```
+
+=== "Java"
+    ```java
+    {!> code-samples/team-messaging/code-snippets/compliance-export.java !}
     ```

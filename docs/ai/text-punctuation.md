@@ -1,6 +1,6 @@
-# Smart punctuation
+# Text punctuation
 
-The Smart Punctuation API takes a block of text and augments it with proper punctuation using artificial intelligence, and is specifically optimized in the processing of [speech recognition](speech-to-text.md) output. The API will augment text with the following punctuation:
+The Text Punctuation API takes a list of text blocks and augments them with proper punctuation using artificial intelligence. The same feature is applied to the [speech recognition API's](speech-to-text.md) output if the `enablePunctuation` flag is set. The API will augment text with the following punctuation:
 
 * Periods, full-stop: `.`
 * Commas: `,`
@@ -18,37 +18,58 @@ The Smart Punctuation API takes a block of text and augments it with proper punc
 | --------- | ----------- | ------------------------------- |
 | `texts`   | List        | List of unformatted text blobs. |
 
-### Example code
+### Sample code
 
-After you have setup a [simple web server to process the response](asynchronous-responses.md), copy and paste the code from below in a file. In the process, make sure to edit the variables found in ALL CAPS to ensure your code runs properly. 
+The following example code shows how to provide the text paragraphs to the API and get the texts grammarly punctuated.
 
-=== "Javascript"
+Follow the instructions on the [quick start](../quick-start#) section to setup and run your server code before running the sample code below.
+
+!!! note "Running the code"
+    * Edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * You can only run on your production account, this means that you have to use app credentials for production.
+
+=== "JavaScript"
 
     ```javascript
-    {!> code-samples/ai/punctuate.js !}
-    ```
-
-    Run your sample code.
-
-    ```bash
-    $ node index.js
+    {!> code-samples/ai/code-snippets-headers/header.js [ln:1-12] !}
+    {!> code-samples/ai/code-snippets/punctuation.js [ln:10-] !}
     ```
 
 === "Python"
 
     ```python
-    {!> code-samples/ai/punctuate.py !}
+    {!> code-samples/ai/code-snippets/punctuation.py !}
+    {!> code-samples/ai/code-snippets-headers/footer.py [ln:1-5] !}
     ```
 
-    Run your sample code.
-    
-    ```bash
-    $ python3 app.py
+=== "PHP"
+
+    ```php
+    {!> code-samples/ai/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/ai/code-snippets/punctuation.php [ln:2-] !}
     ```
 
-### Example response
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/ai/code-snippets/punctuation.rb !}
+    {!> code-samples/ai/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```    
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/ai/code-snippets/punctuation.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/ai/code-snippets/punctuation.java !}
+    ```
+
+### Sample response
 
 ```json
 {!> code-samples/ai/punctuate-response.json !}
 ```
-

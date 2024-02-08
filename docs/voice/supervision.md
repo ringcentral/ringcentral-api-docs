@@ -2,476 +2,300 @@
 
 [RingCentral Call Monitoring](https://www.ringcentral.com/office/features/call-monitoring/overview) allows a person to receive a real-time audio stream so they can listen in on a call. The primary use case is a supervisor wishing to monitor and provide feedback on an agent's performance.
 
-The Call Monitoring API allows a developer to connect to an active phone call and subscribe to an audio stream programatically. Some use cases for this API include:
+The Call Supervise API allows a developer to connect to an active phone call and subscribe to an audio stream programatically. Some use cases for this API include:
 
 * To provide a real-time transcription of a call.
 * To use NLP and AI to assist agents in helping resolve cases faster.
 
-Partners today have used this API to provide RingCentral customers with call assistants that provide their agents with real-time suggestions to help provide customers with rapid and accurate recommendations. This scenario is visualized below. Once the call is established, the Supervision API can be used to connect an app to a call by providing:
-
-* Call's `sessionId`
-* Agent's `extensionNumber`
-* Supervisor's `deviceId`
+Partners today have used this API to provide RingCentral customers with call assistants that provide their agents with real-time suggestions to help provide customers with rapid and accurate recommendations. This scenario is visualized below.
 
 <img class="img-fluid" src="../../img/supervisionapi_v3.png" style="max-width:600px;">
 
-## Prerequisites
+## Current Call Supervise API Capabilities
 
-Before you begin, please verify these prerequesites are met:
+* One supervisor can supervise multiple active calls at the same time.
+* An active call can be supervised only by one supervisor at a time.
+* A supervisor can only supervise an active call on one device.
+* A supervisor can supervise:
+	- All call parties on one audio stream.
+	- Each call party on a separate audio stream.
 
-1. You have set up a "Call Monitoring Group" with Agents and Supervisors in the [Admin Console](https://service.ringcentral.com) following the [Groups Overview](https://support.ringcentral.com/article/Department-Overview), or via the [RingCentral API](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroupMembers).
+## Setup and Manage Call Monitoring Groups
 
-2. The supervisor has been configured with a SIP device, such as VoIP phone or a SIP server, that is configured to auto-answer/respond to a SIP INVITE request.
+Due to the sensitive nature of call monitoring, permissions to be monitored and to monitor others must be specifically given to extensions within an account. To manage these permissions, you must first create a Call Monitoring Group, and then add users/extensions to that group designating:
 
-## Call Monitoring Groups
+* What extensions/agents can be monitored
+* What extensions/supervisors can monitor others
 
-Due to the sensitive nature of Call Monitoring, authorization to be monitored and to monitor others must be specifically given to extensions within an account. To manage these permissions, a developer first creates a Call Monitoring Group, and then adds users/extensions to that group designating:
+There are 2 options to create and manage call monitoring groups:
 
-* What extensions/individuals can be monitored
-* What extensions/individuals can monitor others
+1. Use the [Admin Console](https://service.ringcentral.com). Follow the [creating call monitoring groups steps](https://support.ringcentral.com/article-v2/Creating-Call-Monitoring-Groups.html?brand=RC_US&product=RingCentral_MVP&language=en_US)
+2. Use the [Call Monitoring API](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup).
 
-Once a Call Monitoring group has been configured, developers can use Telephony Session Events to receive events on calls and then use the Call Supervision API below to actively listen in on a particular call.
+### Create and manage call monitoring groups
 
-* [View Call Monitoring Groups documentation in the API Reference](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup)
-* [Learn how to setup call monitoring in the Admin Console](https://support.ringcentral.com/s/article/8050?language=en_US)
+This set of APIs allows you to programmatically create, modify or delete a call monitoring group.
 
-## Subscribing to Telephony Session Events
+| API Endpoint | Description |
+|-|-|
+| [`/restapi/v1.0/account/~/call-monitoring-groups`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/createCallMonitoringGroup) | Create an empty call monitoring group. This endpoint will return a unique `groupId`, which can be used in other endpoints that required the group Id. |
+| [`/restapi/v1.0/account/~/call-monitoring-groups/{groupId}/bulk-assign`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroupList) | Add, update and remove group members from a call monitoring group identified by the `groupId`. |
+| [`/restapi/v1.0/account/~/call-monitoring-groups/{groupId}`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/updateCallMonitoringGroup) | Update a call monitoring group name. |
+| [`/restapi/v1.0/account/~/call-monitoring-groups/{groupId}`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/deleteCallMonitoringGroup) | Delete a call monitoring group identified by the `groupId`. |
 
-A recommended way to receive real-time events for calls is to use [Telephony Session Notifications](telephony-session-notifications.md). You will need the call event's `telephonySessionId` to call the Supervision API.
+The process of a call monitoring group creation using APIs consists of 2 steps.
 
-You can subscribe at the account level for all extensions or specific extensions.
+1. Create a call monitoring group, where you specify the group name and get back the newly created group id.
+2. Add group members with permissions to the group identified by the `groupId` returned by the creation API in step 1.
 
-* [Account-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Account-Telephony-Sessions-Event)
-* [User-Level Telephony Session Events](https://developers.ringcentral.com/api-reference/Extension-Telephony-Sessions-Event)
+To create a list of group members to be added to a call monitoring group, you need to specify the extension id and the permissions of each member as a supervisor `Monitoring` or as an agent `Monitored` (remember that a member can be both as a supervisor and as an agent).
 
-### 1) Account-Level Subscription
+You can call the [company extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) to read the extensions and grab the extension id of an extension that you want to be a member of the call monitoring group.
 
-Subscribing for events at the account level is recommended when you are subscribing for many extensions. This approach makes it much simpler to handle the number, and dynamic nature, of monitored users.
+The example below shows you how to create a new call monitoring group and add a list of members to the group. It creates a list of members by reading the company user extensions and add all admin users as supervisors and other users as agents. In reality, you can decide the size of your call monitoring groups and define supervisors and agents based on your own logic.
 
-You will need to maintain a list of extensions you have permission to monitor and then make Supervision API calls for call for a monitored user.
+#### Sample codes
 
-Attempting to make Supervision Calls for users you do not have permissions for will result in errors. You can minimize errors but still capture callss from non-synced users by attempting to Supervise Calls for users that don't exist in your synced replica.
+!!! note "Running the code"
+    * Edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use the app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
-### 2) User-Level Subscription
+=== "JavaScript"
 
-Subscribing for events at the user level is recommended wish you have a limited number of extensions to monitor from a large set.
+    ```javascript
+    {!> code-samples/voice/code-snippets-headers/header.js !}
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.js [ln:10-] !}
+    ```
 
-In this case, retrieve the list of extensions to be monitored firts, and then maintain subscriptions for just those extensions.
+=== "Python"
 
-### Retrieving Extension You can Monitor
+    ```python
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.py !}
+    {!> code-samples/voice/code-snippets-headers/footer.py [ln:1-5] !}
+    ```
 
-You can retrieve a list of extensions your user can monitor by calling the Call Monitoring Groups API.
+=== "PHP"
 
-```
-GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
-```
-
-For each group in the response, call the Group Members API for the `groupId`:
-
-```
-GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
-```
-
-This API returns a list of members in the `records` property. Each member has a `permissions` property which can be set to `Monitoring - User` (for supervisor) or `Monitored - User` (for agent). Filter the groups for ones your user is has the `Monitoring -User` permisssion and then collect all the `Monitored - User` extension ids for your list.
-
-## Using the Call Supervision API
-
-The Call Supervision API is used to have RingCentral initiate a call out to a registered device such as a VoIP phone or SIP server as follows.
-
-### Request
-
-The following is an example request showing the required parameters to add a supervisor to an existing call session.
-
-=== "Raw"
-	```HTTP
-	POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise HTTP/1.1
-	Content-Type: application/json
-	Content-Length: ACTUAL_CONTENT_LENGTH_HERE
-	Authorization: <YOUR_ACCESS_TOKEN>
-
-	{  
-	   "mode": "Listen",
-	   "extensionNumber": "108",
-	   "deviceId": "60727004"
-	}
-	```
+    ```php
+    {!> code-samples/voice/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.php [ln:2-] !}
+    ```
 
 === "Ruby"
 
     ```ruby
-    {!> code-samples/voice/supervision.rb !}
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.rb !}
+    {!> code-samples/voice/code-snippets-headers/footer.rb [ln:1-4] !}
     ```    
 
+=== "C#"
 
-#### Parameters
+    ```c#
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.cs !}
+    ```
 
-| Parameter | Location | Required? | Description |
-|-|-|-|-|
-| `accountId` | path | required | This is the unique identifier for the account associated with the request. This can be the actual id or `~` for the current `accountId`. The default `~` value is acceptable in all uses for this API. |
-| `telephonySessionId` | path | required | This is the unique identifier for the call, including all parties. See the next section on how to get a list of current telephony sessions. |
-| `deviceId` | body | required | This is the `deviceId` of the Supervisor's SIP device. You can get the supervisor's deviceId using the Extension device info API `/restapi/v1.0/account/~/extension/~/device` |
-| `extensionNumber` | body | required | The extension number of the agent whose call you want to monitor. Note: In future we shall also support `extensionId`. |
-| `mode` | body (required) | Currently, the only method supported is `Listen`. |
+=== "Java"
 
-#### How to find the Session ID and Extension Number
+    ```java
+    {!> code-samples/voice/code-snippets/create-update-call-monitoring-group.java !}
+    ```
 
-The `telephonySessionId` and `extensionNumber` properties can be retrieved from any of the following:
+### Read call monitoring groups and group members
 
-* Call Session Notification events
-* Account-level Presence API
-* Extension-level Presence API.
+These APIs allows you to query all call monitoring groups under your RingCentral account and read the members of a particular call monitoring group. You can identify the agents and the supervisors by checking the permissions of each member as `Monitored` or `Monitoring` permission, respectively.
 
-The following example shows how to retrieve the `telephonySessionId` uses the account-level presence API. The agent extension is in the `extension.extensionNumber` property and the `telephonySessionId` is in the `activeCalls[0].telephonySessionId` property.
+| API Endpoint | Description |
+|-|-|
+| [`/restapi/v1.0/account/~/call-monitoring-groups`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroups) | List all created call monitoring groups. This endpoint returns just the group names and group ids. |
+| [`/restapi/v1.0/account/~/call-monitoring-groups/{groupId}/members`](https://developers.ringcentral.com/api-reference/Call-Monitoring-Groups/listCallMonitoringGroupMembers) | List members of a call monitoring group identified by the `groupId`. |
 
-=== "Response"
-	```json
-	{
-	   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016/presence",
-	   "extension":{
-	      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/62226587016",
-	      "id":62226587016,
-	      "extensionNumber":"108"
-	   },
-	   "presenceStatus":"Busy",
-	   "telephonyStatus":"CallConnected",
-	   "userStatus":"Available",
-	   "dndStatus":"TakeAllCalls",
-	   "meetingStatus":"Disconnected",
-	   "allowSeeMyPresence":true,
-	   "ringOnMonitoredCall":false,
-	   "pickUpCallsOnHold":false,
-	   "activeCalls":[
-	      {
-		 "id":"8bd930cab325416aa054238237eb8832",
-		 "direction":"Inbound",
-		 "fromName":"ROY,DIBYENDU",
-		 "from":"+14083388064",
-		 "toName":"Dibyendu Roy",
-		 "to":"+12055558673",
-		 "telephonyStatus":"CallConnected",
-		 "sipData":{
-		    "toTag":"qf-7.p-XGI9-o3D7bA3j7ihdOqfT0Z9D",
-		    "fromTag":"10.13.22.25-5070-742e2a888ab14be",
-		    "remoteUri":"do-not-use-me-I-am-useless",
-		    "localUri":"do-not-use-me-I-am-useless"
-		 },
-		 "sessionId":"183851523016",
-		 "startTime":"2019-03-26T22:16:29.629+0000",
-		 "partyId":"cs168629785304410134536-2",
-		 "telephonySessionId":"XXXXXXXXXX"
-	      }
-	   ]
-	}
-	```
+A call supervision application should use these APIs to detect the supervisors (monitoring extensions) and the agents (monitored extensions) and use the id of a supervisor to detect a supervisor device and use the id of the agents to fetch agents' active calls.
 
-=== "Request"
-	```http
-	GET /restapi/v1.0/account/{accountId}/presence/detailedTelephonyState=true&sipData=true
-	```
+The example blow shows you how to read all call monitoring groups under an account and list all the members of each group.
 
-#### How to find the Device ID
+#### Sample codes
 
-To retrieve the `deviceId` required by this API, call the `extension/device` endpoint on the supervisor's extension as follows:
+!!! note "Running the code"
+    * Edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use the app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
-=== "Response"
-	```json
-	{
-	   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/device/60727004",
-	   "id":"60727004",
-	   "type":"SoftPhone",
-	   "sku":"DV-1",
-	   "name":"Softphone - Digital Line",
-	   "serial":"LMRC8531",
-	   "computerName":"LMRC8531",
-	   "status":"Online",
-	   "extension":{
-	      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/809646016/extension/809646016",
-	      "id":809646016,
-	      "extensionNumber":"101"
-	   }
-	}
-	```
+=== "JavaScript"
 
-=== "Request"
-	```http
-	GET /restapi/v1.0/account/~/extension/{supervisorExtensionId}/device
-	```
+    ```javascript
+    {!> code-samples/voice/code-snippets-headers/header.js !}
+    {!> code-samples/voice/code-snippets/call-monitoring-group.js [ln:10-] !}
+    ```
 
-### Response
+=== "Python"
 
-If the request is success, two things will happen.
+    ```python
+    {!> code-samples/voice/code-snippets/call-monitoring-group.py !}
+    {!> code-samples/voice/code-snippets-headers/footer.py [ln:1-5] !}
+    ```
 
-1. First, the API will send a response to reflect that the supervisor has joined the agent extension with a seperate party `id`, e.g. `party-4` in this example.
-2. Next, RingCentral will then send a SIP INVITE request to the supervisor's device which will signal the device to join the existing customer-agent call session automatically with auto answer.
+=== "PHP"
 
-Once those two operations are complete, the human or app supervisor will be allowed to stream the audio. Let's look at these samples below.
+    ```php
+    {!> code-samples/voice/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/voice/code-snippets/call-monitoring-group.php [ln:2-] !}
+    ```
 
-#### JSON Response from API
+=== "Ruby"
 
-```json
+    ```ruby
+    {!> code-samples/voice/code-snippets/call-monitoring-group.rb !}
+    {!> code-samples/voice/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```    
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/voice/code-snippets/call-monitoring-group.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/voice/code-snippets/call-monitoring-group.java !}
+    ```
+
+## Using the Supervision API
+Once a Call Monitoring group has been configured, you can use one of the Call Supervision APIs below to supervise phone calls:
+
+* [Supervise Call Session](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallSession): This method allows a supervisor to listen to both caller and callee parties from a single audio stream. Thus, if you feed the audio data to a real-time transcription you will not be able to identify the speakers. But if you want to save the audio to a file, this will be simple as you can just write the audio data to a file.
+* [Supervise Call Party](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty): This method allows a supervisor to decide which call party to supervise. If you want to listen to both call parties from different audio streams, you will need to call the API twice with a correct party Id. Eventually, you will get 2 separate audio streams. Thus, you can feed the audio data to a real-time transcription per audio channel and this will help you to identify the speakers precisely. However, if you want to save both audio streams to a single file, you must implement extra code to merge two audio channels into one channel, or combine separate audio streams into a single multichannel before writing the audio data to a file.
+
+#### Path Parameters
+
+| Parameter | Description |
+|-|-|
+| `telephonySessionId` | The unique telephony session id of an active call. |
+| `partyId` | The unique id of a call party. This path parameter is required for the Supervise Call Party API. |
+
+Jump to this [section](#how-to-get-a-call-telephony-session-id-and-party-ids) for how to detect the `telephonySessionId` and the `partyId` of an active call.
+
+#### Required Body Parameters
+| Parameter | Description |
+|-|-|
+| `mode` | Currently, the only supported mode is `Listen`. |
+| `supervisorDeviceId` | The device Id of the supervisor's phone device. |
+| `agentExtensionId` | The extension id of the agent whose call you can monitor. Jump to this [section](#read-call-monitoring-groups-and-group-members). |
+
+#### How to find a supervisor device Id
+
+Provided that you have setup a phone device for a supervisor extension using the [account admin portal](https://service.devtest.ringcentral.com). You can learn how to [setup a third-party device for the RingCentral account](https://support.ringcentral.com/s/article/4966?language=en_US).
+
+To retrieve the supervisor's devices, authorize your app with the supervisor login credentials and call the [List Extension Devices](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices) API. Parse the device info object under the `records` list and grab the device id of a device you want to use for the call supervision.
+
+!!! Notes
+	* The device status must be "Online" in order to use it!
+	* Currently, the device Ids of the RC (Desktop and Web based) app and a WebRTC phone are dynamic and thus, they can not be detected by the API above!
+
+```json hl_lines="5"
 {
-    "direction": "Outbound",
-    "from": {
-        "deviceId": "60727004",
-        "extensionId": "809646016",
-        "name": "Supervisor ABC",
-        "phoneNumber": "101"
-    },
-    "id": "party-4",
-    "muted": false,
-    "owner": {
-        "accountId": "809646016",
-        "extensionId": "809646016"
-    },
-    "standAlone": false,
-    "status": {
-        "code": "Answered",
-        "reason": "Supervising"
-    },
-    "to": {
-        "extensionId": "62226587016",
-        "name": "Dibyendu Roy",
-        "phoneNumber": "108"
-    }
+"records": [
+		{
+		   "uri":"https://platform.ringcentral.com/restapi/v1.0/account/80964xxxx/device/60727004",
+		   "id":"60727004",
+		   "type":"SoftPhone",
+		   "sku":"DV-1",
+		   "name":"Softphone - Digital Line",
+		   "serial":"LMRC8531",
+		   "computerName":"LMRC8531",
+		   "status":"Online",
+		   "extension":{
+		      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/80964xxxx/extension/80964xxxx",
+		      "id":80964xxxx,
+		      "extensionNumber":"102"
+		   }
+		},
+		{ ... }
+	]
 }
 ```
 
-#### Sample SIP Invite sent to the Supervising Device
+If you want to build your own soft phone using the RingCentral soft phone SDK, jump to this [section](#create-a-soft-phone-and-obtain-its-device-id).
 
-Below is a sample SIP Invite which is delivered to the supervising device. You will notice in the lines 10 and 26highlighted below the following:
+#### How to get a call telephony session Id and party Ids
 
-* Line 10: `p-rc-api-ids` contains the supervisor's `party-id` and `session-id`
-* Line 26: `p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2` the party-id here is the monitored party-id.
+You will need the `telephonySessionId` and the `partyId` (in case of supervising a call party) of an active call. There are several methods to detect user extensions' active calls.
 
-```http hl_lines="10 26"
-|||INVITE sip:18005557562*102@192.168.42.15:62931;transport=TCP;ob SIP/2.0
-||||Via: SIP/2.0/TCP 10.62.192.70:5091;branch=z9hG4bK2fh25j30couuhqiscdi0.1
-||||Max-Forwards: 69
-||||User-Agent: RC_SIPWRP_25.111
-||||From: <sip:+16505550072@10.62.192.70>;tag=10.62.25.111-5070-6ce1264681244a
-||||To: <sip:18005557562*102-c4giuv3vhjebe@192.168.12.3;ob>
-||||Contact: <sip:+16508370072@10.62.192.70:5091;transport=tcp>
-||||Call-ID: 198dd3ed335a4cc7832979c3065bb2a7
-||||CSeq: 31268 INVITE
-||||p-rc-api-ids: party-id=cs171841903350030962-6;session-id=s-cs171841903350030962
-||||p-rc-api-monitoring-ids: session-id=s-cs171841903350030962; party-id=p-cs171841903350030962-2
-||||Alert-Info: Auto Answer
-||||Call-Info: <KyOAG0RTd5fP1WkxMAuXNw..>;purpose=info;Answer-After=0
-||||Allow: SUBSCRIBE, NOTIFY, REFER, INVITE, ACK, BYE, CANCEL, UPDATE, INFO
-||||Supported: replaces, timer, diversion
-||||Session-Expires: 14400;refresher=uac
-||||Min-SE: 90
-||||Content-Type: application/sdp
-||||Content-Length: 510
-||||P-Acme-VSA: 200:KyOAG0RTd5fP1WkxMAuXNw..
-||||v=0
-||||o=- 137800156 2016517757 IN IP4 10.62.192.70
-||||s=SmcSip
-||||c=IN IP4 10.62.192.70
-||||t=0 0
-||||m=audio 50400 RTP/AVP 111 9 0 18 96 8 109 101
-||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-7
-||||a=rtpmap:111 OPUS/48000/2
-||||a=fmtp:111 useinbandfec=1
-||||a=rtcp-fb:111 ccm tmmbr
-||||m=audio 50402 RTP/AVP 111 9 0 18 96 8 109 101
-||||i=Y3MxNzE4NDE5MDMzNTAwMzA5NjJAMTAuNjIuMjUuMTEx party-id=cs171841903350030962-8
-||||a=rtpmap:111 OPUS/48000/2
-||||a=fmtp:111 useinbandfec=1
-||||a=rtcp-fb:111 ccm tmmbr
-||||a=sendrecv
-```
+* Call the [List User Active Calls](https://developers.ringcentral.com/api-reference/Call-Log/listExtensionActiveCalls) API.
+* Call the [List Company Active Calls](https://developers.ringcentral.com/api-reference/Call-Log/listCompanyActiveCalls) API.
+* Subscribe for the [Presence Events Notifications](https://developers.ringcentral.com/api-reference/Presence-Events) with the filter `detailedTelephonyState=true`.
+* Subscribe for the [Telephony Session Events Notifications](https://developers.ringcentral.com/api-reference/Telephony-Events).
 
-#### How to verify the Supervisor has joined the session
+Out of all the methods mentioned above, the most effective way to detect active calls in real-time is to use the Telephony Session Events Notifications method. This method not only helps you effectively detect active calls of all monitored extensions specified in the call monitoring groups, but it also gives the call status that tells you when you can start to supervise an active call.
 
-To verify that the supervisor has joined the call use the account-level Presence API to see that an additional party has been added to the existing session. Then verify that the supervisor's party is in the `activeCalls` property. For example:
+To avoid receiving redundant telephony events for user extensions that are not under the "Can be monitored" list of a call monitoring group, you should subscribe for telephony session events for just the user extensions specified in the call monitoring group configurations. Attempting to make supervision calls for users you do not have the permission to supervise will result in errors.
 
-=== "Response"
-	```json
-	{
-	   "activeCalls":[
-	      {
-		 "id":"aa97ce30b90441158a421ca0e9c0a233",
-		 "direction":"Outbound",
-		 "fromName":"Supervisor ABC",
-		 "from":"101",
-		 "toName":"Agent",
-		 "to":"108",
-		 "telephonyStatus":"CallConnected",
-		 "sipData":{
-		    "toTag":"I2rPJdYwDjuEeOFJpT2pDszuCrepqQsL",
-		    "fromTag":"10.14.23.50-5070-a272ac7ba84b4a7",
-		    "remoteUri":"do-not-use-me-I-am-useless",
-		    "localUri":"do-not-use-me-I-am-useless"
-		 },
-		 "sessionId":"590506730017",
-		 "startTime":"2019-03-27T19:14:22.564+0000",
-		 "partyId":"party-4",
-		 "telephonySessionId":"XXXXXXXXXX"
-	      }
-	   ]
-	   ...
-	}
-	```
+The APIs listed above may not give you the other call party `partyId`. Thus, if you intend to supervise all call parties using the [Supervise Call Party API](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), you will need both caller's and callee's `partyId`. In that case, you can call the [Get Call Session Status API](https://developers.ringcentral.com/api-reference/Call-Control/readCallSessionStatus) to get each call party status and the `partyId`.
 
-=== "Request"
-	```http
-	GET /restapi/v1.0/account/{accountId}/presence?detailedTelephonyState=true&sipData=true
-	```
+### Call the Supervise Call Session API
+
+Assume that an agent has an active call and the `supervisorDeviceId` (e.g. the device id of the RingCentral soft-phone or a desk phone) and the `agentExtensionId` have been detected, the following example shows how to grab the call's `telephonySessionId` and call the supervise API to supervise a call session.
+
+#### Sample codes
+
+!!! note "Running the code"
+    * Edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you run on your production account, remember to use the app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/voice/code-snippets-headers/header.js !}
+    {!> code-samples/voice/code-snippets/call-supervision.js [ln:10-] !}
+    ```
+
+=== "Python"
+
+    ```python
+    {!> code-samples/voice/code-snippets/call-supervision.py !}
+    {!> code-samples/voice/code-snippets-headers/footer.py [ln:1-5] !}
+    ```
+
+=== "PHP"
+
+    ```php
+    {!> code-samples/voice/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/voice/code-snippets/call-supervision.php [ln:2-] !}
+    ```
+
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/voice/code-snippets/call-supervision.rb !}
+    {!> code-samples/voice/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```    
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/voice/code-snippets/call-supervision.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/voice/code-snippets/call-supervision.java !}
+    ```
+
+### Build you own soft-phone device
+
+You can build your own supervisor SIP phone, which will receive the call streaming audio data. Currently, we provide three soft-phone SDKs that help you to build your own SIP phone.
+
+- [RingCentral Softphone SDK for TypeScript](https://github.com/ringcentral/ringcentral-softphone-ts)
+- [RingCentral Softphone SDK for .NET](https://github.com/ringcentral/RingCentral.Softphone.Net)
+- [RingCentral Softphone SDK for JavaScript](https://github.com/ringcentral/ringcentral-softphone-js)
+
+Follow the instructions on each project to install the SDK and copy the sample code to implement your app.
 
 !!! note "FCC Compliance"
     If you intend to save the audio stream, please make sure you comply with the FCC guidelines by letting the customer know that the calls will be monitored. The following [video](https://vimeo.com/326948521) demonstrates a working example of the Supervision API using the concepts described here.
 
-## Sample Call Monitoring Application
-
-In this simple sample application, one challenge we will be illustrating a solution for is how to monitor the call on a RingCentral soft phone. Soft phones are challenging because they utilize dynamic device IDs, as opposed to a static device ID used by physical hard phones.
-
-In this example we will cover the following topics:
-
-1. Getting setup
-2. Obtaining the device ID of the supervisors soft phone
-3. Setting up the supervisors device for monitoring
-4. Detecting an incoming call
-5. Invoking the Call Supervision API
-
-### Setup
-
-This sample application is written in NodeJS. Let's make sure you have installed the necessary prerequisites.
-
-```js
-import RingCentral from '@ringcentral/sdk'
-import Subscriptions from '@ringcentral/subscriptions'
-import Speaker from 'speaker'
-import { nonstandard } from 'wrtc'
-import Softphone from 'ringcentral-softphone'
-import fs from 'fs'
-```
-
-### Obtain the soft phone's device ID
-
-A soft phone does not have a static device ID. Therefore, we must first use one of the following methods to obtain the supervisor's device ID.
-
-1. Get the devices attached to an extension using the [Get Devices API](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices).
-
-2. Use the SIP Registration API to get the device ID at the time of SIP registration. We have used the SDK that already incorporates this API call, so you don’t need to handle the request/response separately. The piece of code that does this for you is below
-
-Code for Softphone Registration using RingCentral SDK
-
-```js
-(async () => {
-    await rc.login({
-        username: process.env.RINGCENTRAL_USERNAME,
-        extension: process.env.RINGCENTRAL_EXTENSION,
-        password: process.env.RINGCENTRAL_PASSWORD
-    })
-    const softphone = new Softphone(rc)
-    await softphone.register()
-})
-```
-
-!!! tip "Getting the device ID of a hard phone"
-    Generally speaking, the process of using a hard phone, a.k.a. BYOD, is the same. However, an API call is not necessary to obtain the device ID of the supervisors phone. Learn how to [setup a third-party device on the RingCentral network](https://support.ringcentral.com/s/article/4966?language=en_US) and obtain a fixed device ID.
-
-### Prepare agent extension(s) for monitoring
-
-Let's assume you have a prepared list of extensions that you would like to monitor. We would like to be notified when a call begins on one of those extensions so that we can listen in. Let's setup some PubNub subscriptions to alert us when calls begin.
-
-```js
-const r = await rc.get('/restapi/v1.0/account/~/extension')
-const json = await r.json()
-const agentExt = json.records.filter(ext => ext.extensionNumber === process.env.RINGCENTRAL_AGENT_EXT)[0]
-const subscriptions = new Subscriptions({
-    sdk: rc
-})
-const subscription = subscriptions.createSubscription({
-    pollInterval: 10 * 1000,
-    renewHandicapMs: 2 * 60 * 1000
-})
-subscription.setEventFilters([`/restapi/v1.0/account/~/extension/${agentExt.id}/telephony/sessions`])
-```
-
-### Respond to an incoming call
-
-Now, when a customer calls the monitored agent/extension, our application will be alerted allowing us to trigger the Call Supervision API, which will in turn start streaming the live audio call between the agent and the customer.
-
-```js
-subscription.on(subscription.events.notification, async function (message) {
-    if (message.body.parties.some(p => p.status.code === 'Answered' && p.direction === 'Inbound')) {
-        await rc.post(`/restapi/v1.0/account/~/telephony/sessions/${message.body.telephonySessionId}/supervise`, {
-            mode: 'Listen',
-            supervisorDeviceId: softphone.device.id,
-            agentExtensionNumber: agentExt.extensionNumber
-        })
-    }
-})
-```
-
-When the Call Supervision API is invoked, the Supervisor's device (SoftPhone) accepts the SIP INVITE automatically (it was pre-configured to do that) and the agent-customer call audio is streamed in real-timne to the Supervisor's device.
-
-In the sample code below, we take the additional step of saving the call to an audio file (`call.raw`) onto the local filesystem.
-
-```js
-softphone.on('INVITE', sipMessage => {
-    softphone.answer(sipMessage)
-    softphone.once('track', e => {
-        const audioSink = new nonstandard.RTCAudioSink(e.track)
-        let speaker = null
-        let prevSampleRate = null
-        const audioFilePath = 'call.raw'
-        if (fs.existsSync(audioFilePath)) {
-            fs.unlinkSync(audioFilePath)
-        }
-        const writeStream = fs.createWriteStream(audioFilePath, { flags: 'a' })
-        audioSink.ondata = data => {
-            console.log('live audio data received, sample rate is ', data.sampleRate)
-            if (speaker === null) {
-                // wait until sample rate stable
-                if (data.sampleRate === prevSampleRate) {
-                    speaker = new Speaker({
-	                channels: data.channelCount,
-                        bitDepth: data.bitsPerSample,
-                        sampleRate: data.sampleRate,
-                        signed: true
-		    })
-                }
-                prevSampleRate = data.sampleRate
-            } else {
-                speaker.write(Buffer.from(data.samples.buffer))
-                writeStream.write(Buffer.from(data.samples.buffer))
-            }
-        }
-    }
-}
-```
-
-When the call is complete, you can play the file using the following command:
-
-`play -e signed -b 16 -r 8000 -c 1 call.raw`
-
-### How to monitor calls using dual channel audio
-
-The Supervision API allows for [dual channel call streaming](https://developers.ringcentral.com/api-reference/Call-Control/superviseCallParty), one channel for each of the two parties on the call. This capability is often desirable in call/contact center implementations that require access to high quality audio streams for use with voice recognition and speech transcription systems.
-
-This capability mirrors that of the Supervision API. However, instead of accessing a stream associated with the call session, a developer would call the API once for each party on the call to access their respective streams.
-
-=== "Raw"
-	```http
-	POST /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise HTTP/1.1
-	Content-Type: application/json
-	Content-Length: ACTUAL_CONTENT_LENGTH_HERE
-	Authorization: <YOUR_ACCESS_TOKEN>
-
-	{  
-	   "mode": "Listen",
-	   "agentExtensionId": "40001234567890",
-	   "supervisorDeviceId": "191888004"
-	}
-	```
-
-!!! note "Server-side vs client-side device monitoring"
-    If a RingCentral hard-phone or a WebRTC application is used as the monitoring device instead of a SIP server, then the agent's call is supervised first (streaming the agent audio stream). In other words, the device will receive the first SIP invite for the agent's party. The second SIP invite to monitor the customer party would not be automatically accepted by the SIP device. The first call will be put on hold and then the second call will start ringing. This is because this use case is designed for a server side device capable of accepting multiple parallel SIP invites.
-
 ### Additional Resources
 
 * Consult the [Call Supervision Demo/Sample App](https://github.com/tylerlong/ringcentral-call-supervise-demo) for an end-to-end example app that also allows you to listen to the live audio stream, as well as saving the audio to a local file.
-* Read [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) on our blog.
+* Read the [Automatically Supervise Your Call Agents](https://medium.com/ringcentral-developers/automatically-supervise-your-call-agents-78c0cd7caf7f) article.
+* Read the [Build Real-Time Phone Conversation Analytics](https://medium.com/ringcentral-developers/build-a-real-time-phone-conversation-analytics-455f1d7f0e23) article.

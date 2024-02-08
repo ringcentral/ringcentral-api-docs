@@ -59,7 +59,7 @@ Select your preferred language below.
     Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly.
 
     ```javascript
-    {!> code-samples/voice/quick-start.js !}
+    {!> code-samples/voice/quick-start.js [ln:1-36]!}
     ```
 
     ### Run your code
@@ -81,10 +81,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.py
 
-    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```python
-    {!> code-samples/voice/quick-start.py !}
+    {!> code-samples/voice/quick-start.py [ln:1-41]!}
     ```
 
     ### Run your code
@@ -106,10 +106,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.php
 
-    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```php
-    {!> code-samples/voice/quick-start.php !}
+    {!> code-samples/voice/quick-start.php [ln:1-45]!}
     ```
 
     ### Run your code
@@ -130,10 +130,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.rb
 
-    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```ruby
-    {!> code-samples/voice/quick-start.rb !}
+    {!> code-samples/voice/quick-start.rb [ln:1-43]!}
     ```
 
     ### Run your code

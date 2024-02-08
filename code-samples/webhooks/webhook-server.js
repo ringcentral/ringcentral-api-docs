@@ -1,5 +1,5 @@
 var http = require('http');
-PORT  = 5000
+PORT  = 3000
 
 var server = http.createServer(function(req, res) {
   if (req.method == 'POST') {

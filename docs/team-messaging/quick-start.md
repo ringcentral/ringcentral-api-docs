@@ -151,6 +151,7 @@ Select your preferred language below.
     * Select Target Framework .NET Core 2.1 or higher version
     * Enter project name "Create_Team"
     * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /Create_Team/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file Program.cs
 

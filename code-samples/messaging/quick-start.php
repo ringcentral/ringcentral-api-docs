@@ -1,5 +1,5 @@
 <?php
-// Remember to modify the path to where you installed the RingCentral SDK and saved your .env file!
+// Remember to modify the path ./../ pointing to the location where the RingCentral SDK was installed and the .env file was saved!
 require('./../vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();

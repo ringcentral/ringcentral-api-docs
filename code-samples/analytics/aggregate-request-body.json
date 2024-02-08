@@ -4,7 +4,7 @@
     "keys": []
   },
   "timeSettings": {
-    "timeZone": "US/Pacific",
+    "timeZone": "America/Los_Angeles",
     "timeRange": {
       "timeFrom": "2022-03-01T05:52:17.745Z",
       "timeTo": "2022-05-01T05:52:17.745Z"

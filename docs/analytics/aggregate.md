@@ -63,22 +63,24 @@ or
 
 ### Setting the timeframe of the request
 
-The `timeSettings` element allows users to specify the datetime range for which the calls will be aggregated. The call is considered to be within time range if it was started within that range. 
+The `timeSettings` object contains the following important elements:
 
-The `timeSettings/advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set timezone and working hours. 
+* The `timeZone` will be used to determine the `includeDays` and `includeHours` specified in the `advancedTimeSettings`
+* The `timeRange` element allows users to specify the datetime range for which the calls will be aggregated and will be provided in set time intervals (for example day, week etc). The call is considered to be within time range if it was started within that range. This is similar to aggregate endpoint along with providing data at different timeframe splits.
+* The `advancedTimeSettings` gives you even more flexibility in including and excluding data from generated reports, including the ability to include/exclude weekdays and set the timezone and working hours.
 
-In the below example, under `advancedTimeSettings`, `timeZone` can be specified, `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add `grouping` as necessary to make sure that the data received is aggregated by counter & timer.
+In the below example, under `advancedTimeSettings`, the `includeDays` will allow users to add weekdays of choice, and `includeHours` will allow users to filter data for custom hours (format hh:mm) for specified date-time range under `timeRange` section. Further, they can add `grouping` as necessary to make sure that the data received is aggregated by counter & timer.
 
 **Example**
 
 ```json
 "timeSettings": {
+  "timeZone": "America/Los_Angeles",
   "timeRange": {
     "timeFrom": "2021-10-02T00:00:00.877Z",
     "timeTo": "2022-01-02T04:01:33.877Z"
   },
   "advancedTimeSettings": {
-    "timeZone": "Europe/Moscow",
     "includeDays": [
       "Sunday"
     ],
@@ -152,7 +154,7 @@ The `timers` element provides aggregation for time spent on the call. The metric
   }
 }
 ```
-  
+
 ### Filtering your dataset even more
 
 The `callFilters` element allows users to filter out the data and specify the granular scope to call breakdown metrics for both `counter` and `timer` section. Detailed splits of these sections can be found in Data Dictionary below.
@@ -234,7 +236,7 @@ The `callFilters` element allows users to filter out the data and specify the gr
 Analytics can produce a lot of results so you may want to paginate your results to enable easier processing. Pagination is done with two additional query parameters: `page` and `perPage`
 
 | Pagination (API) | Description |
-|-|-| 
+|-|-|
 | `page` | The page you wish to start with. For example, start on page 2. |
 | `perPage` | The number of results return on each page. For example, you want 10 results on the first page and an additional 10 on the second page. Note: aggregate reports have a max limit of `200` per page. |
 
@@ -245,7 +247,7 @@ POST /analytics/calls/v1/accounts/~/aggregation/fetch?page=2&perPage=10
 Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ```
 
 ### Data Dictionary
@@ -268,5 +270,5 @@ Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ## Full sample request for Analytics Aggregate Report
 
 ```json
-{!> code-samples/analytics/aggregate-request-body.json !} 
+{!> code-samples/analytics/aggregate-request-body.json !}
 ```

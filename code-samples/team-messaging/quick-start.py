@@ -15,14 +15,14 @@ def create_team():
         # Get your user extension id by calling the /restapi/v1.0/account/~/extension endpoint!
         'members': [{'id': "590490017"}, {'id': "595861017"}],
         # You can also add members using their email address, especially for guest members who are not under your account company.
-        # members: [{'email': "member.1@gmail.com"}, { 'email': "member.2@gmail.com"}, {'id': "[extensionId]"}],
+        # 'members': [{'email': "member.1@gmail.com"}, { 'email': "member.2@gmail.com"}, {'id': "extensionId"}],
         'description': "Let's talk about Python"
     }
     endpoint = "/team-messaging/v1/teams"
     resp = platform.post(endpoint, bodyParams)
     print(resp.text())
-  except Exception as err:
-    print (err)
+  except Exception as e:
+    print ("Unable to create a new team. " + str(e))
 
 
 # Instantiate the SDK and get the platform instance
@@ -36,7 +36,6 @@ def login():
     try:
       platform.login( jwt=os.environ.get('RC_JWT') )
       create_team()
-      #read_user_extensions()
     except Exception as e:
       sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
 
@@ -54,12 +53,21 @@ def boostrap_test_function():
     #read_analytics_timeline_data(1)
     time.sleep (2)
     import importlib
-    # print ("Test reading timeline data grouped by queues")
-    # ms = importlib.import_module("code-snippets.timeline-by-queues")
+    # print ("Test creating compliance export task")
+    # ms = importlib.import_module("code-snippets.compliance-export")
     # ms.platform = platform
-    # ms.json = json
-    # ms.read_analytics_timeline_grouped_by_queues()
+    # ms.create_compliance_export_task()
 
+    # print ("Test listing teams")
+    # ms = importlib.import_module("code-snippets.list-teams")
+    # ms.platform = platform
+    # ms.list_teams("")
+    #
+    # time.sleep (2)
+    print ("Test adding new mebers to a team")
+    ms = importlib.import_module("code-snippets.add-team-members")
+    ms.platform = platform
+    ms.find_team("", "Python Team")
 
 # must be on the last line!
 boostrap_test_function()

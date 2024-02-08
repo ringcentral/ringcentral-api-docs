@@ -8,14 +8,21 @@ License: MIT
 */
 require('dotenv').config();
 
-var RC      = require('@ringcentral/sdk').SDK;
+var RingCentral = require('@ringcentral/sdk').SDK;
+
 var express = require('express');
 var bp      = require('body-parser')
 var fs      = require('fs');
 
 // read in config parameters from environment, or .env file
-const WEBHOOK_URL               = process.env.RC_BOT_WEBHOOK_URL
-const TOKEN_TEMP_FILE           = '.public-bot-auth';
+const PORT            = process.env.PORT;
+const RINGCENTRAL_CLIENT_ID       = process.env.RINGCENTRAL_CLIENT_ID_PUBLIC;
+const RINGCENTRAL_CLIENT_SECRET   = process.env.RINGCENTRAL_CLIENT_SECRET_PUBLIC;
+const RINGCENTRAL_SERVER_URL = process.env.RINGCENTRAL_SERVER_URL;
+const RINGCENTRAL_OAUTH_REDIRECT_URI = process.env.RINGCENTRAL_OAUTH_REDIRECT_URI
+const WEBHOOKS_DELIVERY_ADDRESS = process.env.WEBHOOKS_DELIVERY_ADDRESS
+
+const TOKEN_TEMP_FILE = '.public-bot-auth';
 const SUBSCRIPTION_ID_TEMP_FILE = '.public-bot-subscription';
 
 var app = express();
@@ -26,8 +33,8 @@ app.use( bp.urlencoded({
 }));
 
 // Start our server
-app.listen(process.env.PORT, function () {
-    console.log("Bot server listening on port " + process.env.PORT);
+app.listen(PORT, function () {
+    console.log("Bot server listening on port " + PORT);
     // Bot start/restart, check if there are saved tokens
     loadSavedTokens()
 });
@@ -39,11 +46,11 @@ app.get('/', function(req, res) {
 });
 
 // Instantiate the RingCentral JavaScript SDK
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET,
-    'redirectUri':  process.env.RC_REDIRECT_URL
+var rcsdk = new RingCentral({
+  server: RINGCENTRAL_SERVER_URL,
+  clientId: RINGCENTRAL_CLIENT_ID,
+  clientSecret: RINGCENTRAL_CLIENT_SECRET,
+  redirectUri: RINGCENTRAL_OAUTH_REDIRECT_URI
 });
 
 // Keep a list of account's access tokens in memory so we can use them to post messages
@@ -93,8 +100,8 @@ app.get('/oauth', async function (req, res) {
         var creatorId = req.query.creator_extension_id;
         try {
           var params = {
-              code        : req.query.code,
-              redirectUri : process.env.RC_REDIRECT_URL
+              code : req.query.code,
+              redirectUri : RINGCENTRAL_OAUTH_REDIRECT_URI
           }
           var platform = rcsdk.platform()
           var resp = await platform.login(params)
@@ -109,8 +116,8 @@ app.get('/oauth', async function (req, res) {
           // Bot access token is almost permanent. Thus, there is no refresh token associated with the access token!
           // However, before saving the access token for reuse, we assign fake refresh token values to satify
           // the SDK's tokens syntax.
-          tokens['refresh_token'] = 'xxx';
-          tokens['refresh_token_expires_in'] = 10000000000;
+        	tokens['refresh_token'] = 'xxx';
+        	tokens['refresh_token_expires_in'] = 10000000000;
 
           // Make an account token object for reuse
           var accountTokenObj = {
@@ -198,14 +205,14 @@ async function subscribeToEvents(p, accountTokenObj){
     console.log("Subscribing to posts and groups events")
     var requestData = {
         "eventFilters": [
-            "/restapi/v1.0/glip/posts", // Team Messaging post events.
-            "/restapi/v1.0/glip/groups", // Team Messaging group/chat events.
+            "/restapi/v1.0/glip/posts", // Team Messaging (a.k.a Glip) Events.
+            "/restapi/v1.0/glip/groups", // Team Messaging (a.k.a Glip) Events.
             "/restapi/v1.0/account/~/extension/~", // Subscribe for this event to detect when a bot is uninstalled
             "/restapi/v1.0/subscription/~?threshold=60&interval=15" // For subscription renewal
         ],
         "deliveryMode": {
             "transportType": "WebHook",
-            "address": WEBHOOK_URL
+            "address": WEBHOOKS_DELIVERY_ADDRESS
         },
         "expiresIn": 604799
     };
@@ -280,11 +287,11 @@ app.post('/user-submit', async function (req, res) {
 async function send_message( p, groupId, message ) {
     console.log("Posting response to group: " + groupId);
     try {
-      await p.post(`/team-messaging/v1/chats/${groupId}/posts`, {
+      await p.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
   	     "text": message
        })
-    }catch(e) {
-	    console.log(e)
+     }catch(e) {
+      console.log(e)
     }
 }
 
@@ -292,20 +299,20 @@ async function send_message( p, groupId, message ) {
 async function send_card( p, groupId, card ) {
     console.log("Posting a card to group: " + groupId);
     try {
-      var resp = await p.post(`/team-messaging/v1/chats/${groupId}/adaptive-cards`, card)
-	  }catch (e) {
-	    console.log(e)
-	  }
+      var resp = await p.post(`/restapi/v1.0/glip/chats/${groupId}/adaptive-cards`, card)
+    }catch (e) {
+      console.log(e)
+    }
 }
 
 // Update an adaptive card
 async function update_card( p, cardId, card ) {
     console.log("Updating card...");
     try {
-      var resp = await p.put(`/team-messaging/v1/adaptive-cards/${cardId}`, card)
+      var resp = await p.put(`/restapi/v1.0/glip/adaptive-cards/${cardId}`, card)
     }catch (e) {
-	    console.log(e.message)
-	  }
+      console.log(e.message)
+    }
 }
 
 function make_hello_world_card(name) {

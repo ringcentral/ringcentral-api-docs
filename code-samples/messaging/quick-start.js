@@ -95,7 +95,7 @@ async function check_message_status(messageId){
         let jsonObj = await resp.json()
         console.log("Message status: ", jsonObj.messageStatus)
         if (jsonObj.messageStatus == "Queued"){
-          await sleep (5000);
+          await sleep (2000);
           check_message_status(jsonObj.id);
         }
     } catch (e) {

@@ -46,7 +46,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ npm init
     ```
 
-    ### Install RingCentral Node.JS SDK & DOTENV Module
+    ### Install RingCentral JS SDK & dotenv library
 
     ```bash
     $ npm install @ringcentral/sdk dotenv
@@ -70,7 +70,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 === "Python"
 
-    ### Install RingCentral Python SDK
+    ### Install RingCentral Python SDK and the dotnet library
 
     ```bash
     $ pip install ringcentral python-dotenv
@@ -149,10 +149,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Select Target Framework .NET Core 2.1 or a higher version
     * Enter project name "AnalyticsQuickStart"
     * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /AnalyticsQuickStart/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file 'Program.cs'
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```c#
     {!> code-samples/analytics/Program.cs !}

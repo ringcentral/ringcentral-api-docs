@@ -1,64 +1,267 @@
 {
+    "jobId": "6e2799b4-a987-11ee-8f0b-0050568ccbb4",
+    "api": "/ai/audio/v1/async/speech-to-text",
+    "creationTime": "2024-01-02T15:56:03.147Z",
+    "completionTime": "2024-01-02T15:56:16.861Z",
+    "expirationTime": "2024-01-09T15:56:03.147Z",
     "status": "Success",
     "response": {
-        "transcript": "Could produce large hail isolated tornadoes and heavy rain.",
-        "confidence": 0.87,
+        "confidence": 0.86,
+        "speakerCount": 2,
+        "transcript": "Good evening, thank you for calling electronics or this is Rachel. How may I assist you? Hi, Rachel. I would like to know how to use this car Bluetooth headset I recently purchased from your store ...",
         "words": [
             {
-                "word": "could",
-                "start": 2.4,
-                "end": 2.8,
-                "confidence": 0.804
+                "confidence": 0.85,
+                "end": 3.8,
+                "speakerId": "0",
+                "start": 3.72,
+                "word": "good"
             },
             {
-                "word": "produce",
-                "start": 2.8,
-                "end": 3.12,
-                "confidence": 0.965
+                "confidence": 0.85,
+                "end": 4.28,
+                "speakerId": "0",
+                "start": 3.96,
+                "word": "evening"
             },
             {
-                "word": "large",
-                "start": 3.12,
-                "end": 3.44,
-                "confidence": 0.859
+                "confidence": 0.85,
+                "end": 4.52,
+                "speakerId": "0",
+                "start": 4.44,
+                "word": "thank"
             },
             {
-                "word": "hail",
-                "start": 3.6,
-                "end": 3.92,
-                "confidence": 0.812
+                "confidence": 0.85,
+                "end": 4.76,
+                "speakerId": "0",
+                "start": 4.6,
+                "word": "you"
             },
             {
-                "word": "isolated",
-                "start": 4.16,
-                "end": 4.48,
-                "confidence": 0.841
+                "confidence": 0.85,
+                "end": 4.84,
+                "speakerId": "0",
+                "start": 4.76,
+                "word": "for"
             },
             {
-                "word": "tornadoes",
-                "start": 4.56,
-                "end": 5.2,
-                "confidence": 0.897
+                "confidence": 0.85,
+                "end": 5.32,
+                "speakerId": "0",
+                "start": 5,
+                "word": "calling"
             },
             {
-                "word": "and",
-                "start": 5.2,
-                "end": 5.36,
-                "confidence": 0.979
+                "confidence": 0.85,
+                "end": 6.04,
+                "speakerId": "0",
+                "start": 5.4,
+                "word": "electronics"
             },
             {
-                "word": "heavy",
-                "start": 5.44,
-                "end": 5.76,
-                "confidence": 0.867
+                "confidence": 0.85,
+                "end": 6.28,
+                "speakerId": "0",
+                "start": 6.12,
+                "word": "or"
             },
             {
-                "word": "rain",
-                "start": 5.84,
-                "end": 5.92,
-                "confidence": 0.904
-            }
-        ],
-        "audio_duration": 7.096599
+                "confidence": 0.85,
+                "end": 6.84,
+                "speakerId": "0",
+                "start": 6.76,
+                "word": "this"
+            },
+            {
+                "confidence": 0.85,
+                "end": 7,
+                "speakerId": "0",
+                "start": 6.92,
+                "word": "is"
+            },
+            {
+                "confidence": 0.85,
+                "end": 7.56,
+                "speakerId": "0",
+                "start": 7.16,
+                "word": "rachel"
+            },
+            {
+                "confidence": 0.85,
+                "end": 7.8,
+                "speakerId": "0",
+                "start": 7.72,
+                "word": "how"
+            },
+            {
+                "confidence": 0.85,
+                "end": 7.96,
+                "speakerId": "0",
+                "start": 7.88,
+                "word": "may"
+            },
+            {
+                "confidence": 0.85,
+                "end": 8.12,
+                "speakerId": "0",
+                "start": 8.04,
+                "word": "i"
+            },
+            {
+                "confidence": 0.85,
+                "end": 8.52,
+                "speakerId": "0",
+                "start": 8.12,
+                "word": "assist"
+            },
+            {
+                "confidence": 0.85,
+                "end": 8.96,
+                "speakerId": "0",
+                "start": 8.52,
+                "word": "you"
+            },
+            {
+                "confidence": 0.85,
+                "end": 9.24,
+                "speakerId": "1",
+                "start": 8.96,
+                "word": "hi"
+            },
+            {
+                "confidence": 0.85,
+                "end": 9.8,
+                "speakerId": "1",
+                "start": 9.4,
+                "word": "rachel"
+            },
+            {
+                "confidence": 0.85,
+                "end": 9.88,
+                "speakerId": "1",
+                "start": 9.8,
+                "word": "i"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.04,
+                "speakerId": "1",
+                "start": 9.96,
+                "word": "would"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.28,
+                "speakerId": "1",
+                "start": 10.2,
+                "word": "like"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.44,
+                "speakerId": "1",
+                "start": 10.28,
+                "word": "to"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.52,
+                "speakerId": "1",
+                "start": 10.44,
+                "word": "know"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.68,
+                "speakerId": "1",
+                "start": 10.6,
+                "word": "how"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.84,
+                "speakerId": "1",
+                "start": 10.68,
+                "word": "to"
+            },
+            {
+                "confidence": 0.85,
+                "end": 10.92,
+                "speakerId": "1",
+                "start": 10.84,
+                "word": "use"
+            },
+            {
+                "confidence": 0.85,
+                "end": 11.08,
+                "speakerId": "1",
+                "start": 11,
+                "word": "this"
+            },
+            {
+                "confidence": 0.85,
+                "end": 11.16,
+                "speakerId": "1",
+                "start": 11.08,
+                "word": "car"
+            },
+            {
+                "confidence": 0.85,
+                "end": 12.04,
+                "speakerId": "1",
+                "start": 11.32,
+                "word": "bluetooth"
+            },
+            {
+                "confidence": 0.85,
+                "end": 12.52,
+                "speakerId": "1",
+                "start": 12.04,
+                "word": "headset"
+            },
+            {
+                "confidence": 0.85,
+                "end": 12.6,
+                "speakerId": "1",
+                "start": 12.52,
+                "word": "i"
+            },
+            {
+                "confidence": 0.85,
+                "end": 12.84,
+                "speakerId": "1",
+                "start": 12.6,
+                "word": "recently"
+            },
+            {
+                "confidence": 0.85,
+                "end": 13.32,
+                "speakerId": "1",
+                "start": 12.92,
+                "word": "purchased"
+            },
+            {
+                "confidence": 0.85,
+                "end": 13.48,
+                "speakerId": "1",
+                "start": 13.4,
+                "word": "from"
+            },
+            {
+                "confidence": 0.85,
+                "end": 13.64,
+                "speakerId": "1",
+                "start": 13.56,
+                "word": "your"
+            },
+            {
+                "confidence": 0.85,
+                "end": 14.280000000000001,
+                "speakerId": "1",
+                "start": 13.72,
+                "word": "store"
+            },...
+        ]
     }
 }
