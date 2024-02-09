@@ -141,13 +141,73 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 === "C#"
 
-    !!! warning "C# and .NET SDKs are not currently available"
-	    If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+    ### Create a Visual Studio project
 
-=== "Java" 
+    * Choose Console Application .Net Core -> App
+    * Select Target Framework .NET Core 2.1 or higher version
+    * Enter project name "Send_SMS"
+    * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /Send_SMS/bin/Debug/netcoreapp2.2/.env
 
-    !!! warning "A Java SDK is not currently available"
-        If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+    ### Edit the file Program.cs
+
+    ```c#
+    {!> code-samples/video/meetings.cs !}
+    ```
+	
+	### Run Your App
+
+    You are almost done. Now run your app from Visual Studio.
+
+=== "Java"
+
+    ### Create a Java project (using Eclipse IDE)
+
+    * Create a new Java project
+    * Select the Gradle Project wizard
+    * Enter project name "SendSMS"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+
+        ```json
+        dependencies {
+            // ...
+            compile 'com.ringcentral:ringcentral:3.0.0'
+        }
+        ```
+
+    * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
+        - RC_CLIENT_ID
+        - RC_CLIENT_SECRET
+        - RC_SERVER_URL
+        - RC_JWT
+
+    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
+    ### Create a new Java Class
+
+    Select "File -> New -> Class" to create a new Java class named "CreateMeeting"
+
+    ```java
+    package CreateMeeting;
+
+    public class CreateMeeting {
+
+      public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+      }
+    }
+    ```
+
+    ### Edit the file "CreateMeeting.java".
+
+    ```java
+    {!> code-samples/video/meetings.java !}
+    ```
+
+    ### Run Your App
+
+    You are almost done. Now run your app from Eclipse.
 
 ## Need help?
 

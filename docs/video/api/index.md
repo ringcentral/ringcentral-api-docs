@@ -2,15 +2,16 @@
 
 {! mdx_includes/video-beta-notice.md !}
 
-<div class="jumbotron pt-1">
+<div class="jumbotron pt-1" markdown>
   <h3 class="h3 display-5">See the RingCentral Video REST API in action!</h3>
   <p class="lead">The RingCentral Video API gives developers the ability to create and schedule meetings, as well as to access meeting history and recordings.</p>
   <p>We invite all developers to check out the RingCentral Video API by looking at a simple app to schedule a meeting in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
-  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Javascript &raquo;</a>
-  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
-<!--  <a href="quick-start/#Java" class="btn btn-light qs-link">Java &raquo;</a>-->
+  [Javascript &raquo;](quick-start.md#Javascript){class="btn btn-light qs-link"}
+  [PHP &raquo;](quick-start.md#PHP){class="btn btn-light qs-link"}
+  [Python &raquo;](quick-start.md#Python){class="btn btn-light qs-link"}
+  [Ruby &raquo;](quick-start.md#Ruby){class="btn btn-light qs-link"}
+  [Java &raquo;](quick-start.md#Java){class="btn btn-light qs-link"}
+  [C# &raquo;](quick-start.md#C#){class="btn btn-light qs-link"}
   <a href="https://god.postman.co/run-collection/e021788b7335a0ba15ec?action=collection%2Fimport#?env%5BRC%20PasswordFlow%20(Sharable)%5D=W3sia2V5IjoiUkNfU0VSVkVSX0hPU1ROQU1FIiwidmFsdWUiOiJwbGF0Zm9ybS5yaW5nY2VudHJhbC5jb20iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6InBsYXRmb3JtLnJpbmdjZW50cmFsLmNvbSIsInNlc3Npb25JbmRleCI6MH0seyJrZXkiOiJSQ19BUFBfS0VZIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6MX0seyJrZXkiOiJSQ19BUFBfU0VDUkVUIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Mn0seyJrZXkiOiJSQ19VU0VSTkFNRSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjN9LHsia2V5IjoiUkNfRVhURU5TSU9OIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6NH0seyJrZXkiOiJSQ19QQVNTV09SRCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjV9LHsia2V5IjoibXlfYWNjZXNzX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJiYXNpY19hdXRoX2hlYWRlciIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiIiLCJzZXNzaW9uSW5kZXgiOjd9XQ==" class="btn btn-light qs-link">Postman &raquo;</a>
 </div>
 
