@@ -9,7 +9,7 @@ To use a JWT, the app you wish to present your JWT credentials to must first be 
 5. Under the "Auth" section of the subsequent screen, select "JWT auth flow."
 6. Save and create the app.
 
-<img src="../../jwt-auth-config.png" class="img-fluid" style="max-width:500px">
+![Auth config](../jwt-auth-config.png){class="img-fluid" style="max-width:500px"}
 
 ## How do I create a JWT for an app?
 
@@ -17,4 +17,4 @@ A common misunderstanding is that one needs to generate a JWT for an app. That i
 
 Therefore, to [create a JWT](../../getting-started/create-credential.md) start by logging into the Developer Console, clicking your name in the upper-righthand corner, and selecting "Credentials."
 
-<img src="../../jwt-credentials-menu.png" class="img-fluid" style="max-width:300px">
+![JWT credentials menu](../jwt-credentials-menu.png){class="img-fluid" style="max-width:300px"}

@@ -4,7 +4,7 @@
 
 Adaptive Cards allows developers to implement richly formatted and interactive messages in team messaging, including form elements, buttons, and more.
 
-<div class="row">
+<div class="row" markdown>
   <div class="col">
     <figure class="figure">
       <img class="img-fluid figure-img" src="./basic-columns.png">

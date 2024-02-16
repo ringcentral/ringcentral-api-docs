@@ -14,7 +14,7 @@ This authorization flow presumes you are in possession of a user's login credent
     
 2.  Once the credentials are successfully verified, the platform responds with the access and refresh tokens.
 
-<img src="../oauth-password-flow.png" class="img-fluid">
+![Password Flow](oauth-password-flow.png){class=".img-fluid" style="max-width: 600px"}}
 
 Below find the step-by-step instructions on how to perform two-legged authorization using the RingCentral API.
 

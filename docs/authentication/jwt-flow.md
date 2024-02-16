@@ -11,7 +11,7 @@ RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) f
 
 At a high-level, the JWT auth flow is as follows:
 
-<img src="../oauth-password-flow.png" class="img-fluid">
+![JWT code Flow](oauth-password-flow.png){class=".img-fluid" style="max-width: 600px"}}
 
 For a deeper dive of this flow, see "Technical discussion" below. 
 

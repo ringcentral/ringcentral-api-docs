@@ -60,7 +60,7 @@ As an Account Admin, go to the [RingCentral Service Web](https://service.ringcen
 
 You can find user settings under **Users** tab->**Select a username**->**User Detail** Row->**General** tab.
 
-<img class="img-fluid" width="428" src="../img/address-book-dir-ctrl-filter.png">
+![Address book filter](../img/address-book-dir-ctrl-filter.png){class="img-fluid" style="max-width:428px"}
 
 ### Not Activated Account Filtering
 
