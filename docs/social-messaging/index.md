@@ -11,10 +11,10 @@
 
 ## Getting Started
 
-The RingCentral Social Messaging APIs are available to RingCentral MVP customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The social messaging platform is made up of a number of APIs that can open up following use cases:
+Our Social Messaging APIs are available to RingEX customers, ISVs building apps for RingCentral customers, and third-party developers building apps designed for their customers. The social messaging platform is made up of a number of APIs that can open up following use cases:
 
-* MVP user/extension (With RingCentral Business phone number) wanting to build an app to support their end customers via WhatsApp channel.
-* MVP user/extension wanting to build an app to support their end customers over multiple channels like Facebook messanger, Apple business chat, etc with OmniChannel approach.
+* RingEX user/extension (with a RingCentral business phone number) wanting to build an app to support their end customers via WhatsApp channel.
+* RingEx user/extension wanting to build an app to support their end customers over multiple channels like Facebook messanger, Apple business chat, etc with OmniChannel approach.
 * ISV partners wanting to build user experience application for RingCentral customers for multi-user Shared Inbox capabilities over social channels.
 
 Once you fill in the above access form -
