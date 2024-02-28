@@ -11,11 +11,11 @@ In this quick start, we are going to help you create your first "Speech to Text"
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create AI App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 [Create AI App](https://developer.ringcentral.com/new-app?name=AI+Quick+Start+App&desc=A+simple+app+to+demo+using+AI+APIs+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=AI&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){class="btn btn-primary" target="_new"}
-[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions"}
+[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions"}
 
 <div class="collapse" id="create-app-instructions" markdown>
 <ol>
-<li>[Login or create an account](https://developer.ringcentral.com/login.html#/") if you have not done so already.</li>
+<li><a href="https://developer.ringcentral.com/login.html">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Auth" select "JWT auth flow."
