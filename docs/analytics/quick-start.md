@@ -13,7 +13,7 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 
 <div class="collapse" id="create-app-instructions" markdown>
 <ol>
-<li>[Login or create an account](https://developer.ringcentral.com/login.html#/) if you have not done so already.</li>
+<li><a href="https://developer.ringcentral.com/login.html">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "JWT auth flow"
