@@ -17,7 +17,7 @@ In order to use the Video Client SDK during the private beta, please make sure y
      * If you are an existing RingCentral customer of one of our paid plans, then you can use your main account. 
      * If do not yet have a RingCentral account, or if you currently use our standard free developer account, you will need to create a [free RingCentral Video Pro account](https://www.ringcentral.com/office/plansandpricing.html#video).
 3. [Register your application](../../getting-started/register-app.md) and make note of your app's Client ID. 
-4. [Contact support](https://developers.ringcentral.com/support/create-case) to request your application be graduated to production, and that the following app scopes be added to your app: `Video` and `Video Internal`. Please include your app's Client ID in your request. 
+4. [Contact support](https://developers.ringcentral.com/support/create-case) to request the following app scopes be added to your app: `Video` and `Video Internal`. Please include your app's Client ID in your request. 
 
 ## Download
 

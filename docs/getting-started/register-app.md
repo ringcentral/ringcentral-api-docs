@@ -21,7 +21,7 @@ RingCentral allows developers to create a number of different types of apps. Eac
 
 * **Bot Add-in** - this special kind of app known as a "bot" is used within RingCentral's team messaging product
 
-* **Notification Add-in** - notification apps are a kind of add-in that routes event notifications from third-party systems into RingCentral's unified desktop application
+* **Notification Add-in** (deprecated) - notification apps are a kind of add-in that routes event notifications from third-party systems into RingCentral's unified desktop application. This feature however is deprecated, and many developers may no longer have access to this application type. 
 
 <br clear="all">
 
@@ -145,12 +145,7 @@ To maximize the number of people who will successfully install and use your appl
 
 ## Obtaining your app's credentials
 
-Upon clicking the "Create" button and successfully registering your application, your app will be provisioned sandbox app credentials in the form of a Client ID and Client Secret. You will use these credentials during the authorization process so that RingCentral can identify the app making API calls. 
-
-The credentials you are initially provisioned are for our sandbox environment, in which developers are expected to develop and test their application before operating in production. 
-
-??? hint "Obtaining app credentials for production"
-    When you are finished with development and are ready to make your application available in production, you will be required to [graduate](graduate-app.md) your application. 
+Upon clicking the "Create" button and successfully registering your application, your app will be provisioned sandbox and production app credentials in the form of a Client ID and Client Secret. You will use these credentials during the authorization process so that RingCentral can identify the app making API calls. 
 
 ## Next step: creating an authentication credential
 

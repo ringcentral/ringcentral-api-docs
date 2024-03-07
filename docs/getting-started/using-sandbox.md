@@ -6,7 +6,7 @@ RingCentral provides developers with both a sandbox and production environment. 
 
 ## What is the developer sandbox?
 
-The RingCentral developer sandbox environment is completely separate and segregated environment from production, in which customers access our SLA-backed and highly available communication platform. We maintain two separate environments so that developers can better manage the following:
+The RingCentral developer sandbox environment is completely separate and segregated environment from production, in which customers access our SLA-backed and highly available communication platform. We maintain two separate environments so that developers and customers can obtain the benefits below.
 
 #### Benefits of the RingCentral developer sandbox
 
@@ -14,8 +14,6 @@ The RingCentral developer sandbox environment is completely separate and segrega
 * **Enhanced change control**. Developers are free to create and develop applications in sandbox without fear of interfering with applications safely running in our production environment. This is especially important for our HIPAA-compliant customers.
 * **Cost savings**. API calls to our sandbox environment are not metered, or count against any allottments your account may be limited by.
 * **Improved compliance**. By requiring developers to apply for access to production, we can put in place steps to reduce the risk of developers unknowingly violating our company's EULA or TOS.
-
-Finally, to protect the integrity of our highly-available and SLA-backed production environment, we require all apps to undergo a variety of tests and reviews in sandbox before being granted access to production. Therefore, developing your app in our sandbox environment is also a strict requirement for gaining access to production. 
 
 ??? hint "Understanding basic sandbox terminology"
     * The "sandbox environment" refers to the entire sandbox ecosystem in which developers from different companies are all developing their own applications.

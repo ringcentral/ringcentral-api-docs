@@ -24,7 +24,7 @@ In order to send SMS messages in our production environment, companies must firs
 2. **Register your campaign**. Once your brand has been successfully created, the next step is to register a campaign through which SMS messages will be sent.
 3. **Assign phone numbers to a campaign**. The last step is to assign phone numbers to the campaigns for which they are associated. This step will also enable your phone number to be used for SMS in production.
 
-**Completing the entire TCR process can take up to 25 days.** Therefore, we recommend starting the TCR registration process as soon as possible, so that when the time comes to graduate your application to production and begin sending SMS, everything will already be setup for you. 
+**Completing the entire TCR process can take up to 25 days.** Therefore, we recommend starting the TCR registration process as soon as possible, so that when the time comes to finalize and release your product, everything will already be setup for you. 
 
 ??? tip "Only Super Admins can register with TCR"
     Be aware that only users with the Super Admin role have the ability to go through the TCR process. Therefore, some developers may need to reach out to their system administrator to ensure this process is followed properly. 
@@ -71,8 +71,9 @@ Many customers register their brand via our Admin Console, but then forget to re
 2. Register your campaigns
 3. Assign phone numbers
 
-## Next step: graduating your application to production
+## Final step: promote your app in the RingCentral App Gallery
 
-Once the TCR process is complete, which can for some take up to 25 days, your application will be ready to operate and send SMS messages in our production environment by going through a process we call "graduation." This process is how a developer obtains credentials for our production environment. This is among the final steps before you can officially use an application using real production data.
+For those developers and partners who are building an application that is intended to be used by RingCentral customers, you have one more step: to add your application to the RingCentral App Gallery so that it can be promoted to the RingCentral customer base. 
 
-<a class="btn btn-lg btn-primary" href="../graduate-app/">Graduate your application</a>
+<a class="btn btn-lg btn-primary" href="../promote-app/">Promote your application in the App Gallery</a>
+

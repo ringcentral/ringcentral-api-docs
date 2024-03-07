@@ -15,10 +15,7 @@ RingCentral is a platform that gives developers access to hundreds of thousands 
 
 ## Things to do before you submit your app profile to the app gallery
 
-Developers are encouraged to begin producing their app profile as soon as they are able. However, a profile cannot be submitted for approval until the following prerequisites are met:
-
-* The app has been graduated to production. 
-* All required data has been provided about the app. 
+Developers are encouraged to begin producing their app profile as soon as they are able. However, a profile cannot be submitted for approval until all required fields and data has been provided about the app. 
 
 ## How do I invite someone from my marketing team to create a profile?
 
@@ -178,9 +175,6 @@ Be sure to save your app profile often as you go, and to preview it to see what 
 ### Submit your application for review
 
 Before your app can be listed in an app gallery, the RingCentral team will first review your app and will make recommendations to help you improve your app profile to better reach our customer base.
-
-??? tip "You can only submit your application for approval, after the app has graduated."
-    The [graduation process](graduate-app.md) ensures that only high-quality and reliable applications are permitted access to our production environment. While you are free to compose your app gallery profile at any time, you will be required to go through our graduation process before you are allowed to publish your app profile to any app gallery.
 
 ??? warning "Please note special technical requirements for AT&T Office@Hand and Verizon"
     To make your application available to AT&T Office@Hand and Verizon customers, developers will have to make special accommodations. Please read about the [technical requirements for apps operating in our segregated environment](../basics/partners/segregated-environments.md) to learn more. 

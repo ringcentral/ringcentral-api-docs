@@ -35,9 +35,6 @@ Access to the RingCentral Artificial API currently requires help from support in
 !!! hint "Using the AI API in sandbox vs prodcution"
     The AI API works in both sandbox and production, but sandbox has limitations such as only the first 10 minutes of the audio is processed. Since sandbox is used for testing and development purposes only, we do not expect developers to process large media files in sandbox.
 
-[Request app graduation](https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link){target="_new" class="btn btn-primary"}
-
-
 ## Download and edit a `.env` file
 	
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:

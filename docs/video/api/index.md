@@ -29,9 +29,6 @@ Login to the [Developer Console](https://developers.ringcentral.com/login.html#/
     
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+video+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
 
-#### 3. Contact us to graduate your app to production
-
-During our beta program, access to the API is carefully controlled, and there is also no developer sandbox support. Therefore, in order to develop an app, RingCentral will need to add a private application scope to your application, and manually provision production credentials to it. To initiate this process, all developers will need to provide us with their application's client ID so that we can facilitate this request. Please submit a request via the button below:
-    
-<a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
+!!! hint "Please use production credentials to call the Video API"
+    RingCentral Video is not currently available in sandbox. To successfully call the API, please do development directly in our production environment. 
 
