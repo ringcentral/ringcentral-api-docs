@@ -25,8 +25,7 @@ The RingCentral Video platform is available to RingCentral MVP customers, ISVs b
       <li><a href="./client-sdk/quick-start/#iOS" class="card-link">iOS</a></li>
       <li><a href="./client-sdk/quick-start/#Javascript" class="card-link">Javascript</a></li>
       </ul>
-	  <a class="btn btn-primary mb-3" href="https://forms.gle/H3QxfhqAhujkktXa6">Join the Client SDK beta &raquo;</a><br>
-	  <a class="btn-link mb-3" role="button" href="./client-sdk/">Learn more about the Client SDK &raquo;</a>
+	  <a class="btn btn-primary mb-3" href="./client-sdk/quick-start">Get started &raquo;</a>
     </div>
   </div>
   
