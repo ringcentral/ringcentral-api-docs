@@ -17,7 +17,7 @@ After you login you will be taken to the Apps Console where all of your apps are
 
 RingCentral allows developers to create a number of different types of apps. Each type may expose different configuration options and/or capabilities specific to that app. The two app types we currently support are:
 
-* **REST API App** - this is by far the most common type of app created by developers as it gives developers generalized access to our wide selection of APIs available across our MVP product-line (voice, SMS, meetings, team messaging, call logging, call control, etc.)
+* **REST API App** - this is by far the most common type of app created by developers as it gives developers generalized access to our wide selection of APIs available across our RingEX product-line (voice, SMS, meetings, team messaging, call logging, call control, etc.)
 
 * **Bot Add-in** - this special kind of app known as a "bot" is used within RingCentral's team messaging product
 

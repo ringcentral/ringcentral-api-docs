@@ -319,8 +319,6 @@ nav:
 #        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
 #      - 'API Quick Reference': 'basics/api-index.md'
 
-  - 'API Reference': 'https://developers.ringcentral.com/api-reference/'
-
   - 'Applications':
       - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'

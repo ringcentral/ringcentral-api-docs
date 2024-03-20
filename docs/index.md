@@ -1,7 +1,7 @@
 contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie-chen
 no_breadcrumb:true
 
-# RingCentral MVP™ Developer Guide
+# RingCentral RingEX™ Developer Guide
 
 !!! hint "It just got easier to build on RingCentral!"
     In our ongoing efforts to improve the developer experience at RingCentral, we have taken the step to eliminate the graduation process in order to gain access to production. With this change, all apps in good standing have been granted production credentials, and all newly created apps will be granted production credentials by default. Learn more in our Developer Community. 

@@ -1,4 +1,4 @@
-# RingCentral MVP™ SDKs
+# RingCentral RingEX™ SDKs
 
 The following SDKs provide developers with libraries that make interfacing with RingCentral APIs easier in your language of choice. RingCentral currently provides the following official SDKs:
 
