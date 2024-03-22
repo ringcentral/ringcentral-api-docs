@@ -11,7 +11,7 @@ For more information, please refer to the [overview section](index.md).
 
 ## Composing a request using RingCentral API Reference
 
-One can use our [interactive API Reference](https://developers.ringcentral.com/api-reference/Line-Of-Business-Analytics/performanceReportCallsTimeline) to not only create an API Request but also run it interactively and see the response.
+One can use our [interactive API Reference](https://developers.ringcentral.com/api-reference/Business-Analytics/performanceReportCallsTimeline) to not only create an API Request but also run it interactively and see the response.
 
 ## API Definition Guide
 
