@@ -1,6 +1,6 @@
 # Object representation and serialization
 
-Whenever you need to send or retrieve a particular piece of data, for example a call log record, information on an extension, etc., the data will be embedded in the HTTP request or response body. In all but one circumstance, objects will be represented using JSON and should use the `application/json` MIME type. The one and only exception to this is during authentication when data is encoded as HTML form data, as required by the OAuth 2.0 specification. 
+Whenever you need to send or retrieve a particular piece of data, for example a call log record, information on an extension, etc., the data will be embedded in the HTTP request or response body. In the majority of cases, objects will be represented using JSON and should use the `application/json` MIME type. 
 
 ## HTTP headers
 
@@ -25,9 +25,11 @@ The table below describes the data types which are used in the RingCentral API.
 | Data Type     | Description |
 | ------------- | ----------- |
 | `string`      | General string value |
-| `enumeration` | Predefined string constants/List of predefined string constants |
-| `integer`     | 32-bit or 64-bit integer value |
-| `datetime`    | Timestamp in XML schema-compatible format, in accordance with <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format including timezone. |
+| `string` with `enum` qualifier | Predefined string constants/List of predefined string constants |
+| `integer` (with possible `int32` or `int64` format qualifiers)    | 32-bit or 64-bit integer value |
+| `number` (with possible `float` or `double` format qualifiers)    | Floating point number value with single or double precision |
+| `boolean`   | Boolean value which can be either `true` or `false`  |
+| `date-time`    | Timestamp in XML schema-compatible format, in accordance with <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format including timezone. |
 
 ### Example date and time formats
 
