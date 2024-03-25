@@ -31,9 +31,9 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
@@ -51,13 +51,19 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 === "Python"
 
     ```python
-    {!> code-samples/voice/call-log.py !}
+    {!> code-samples/voice/call-log.py [ln:1-38] !}
     ```
-    
+
 === "PHP"
 
     ```php
-    {!> code-samples/voice/call-log.php !}
+    {!> code-samples/voice/call-log.php [ln:1-42] !}
+    ```
+
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/voice/call-log.rb [ln:1-40] !}
     ```
 
 === "C#"
@@ -69,12 +75,5 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 === "Java"
 
     ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/ReadCallLog.java !}
+    {!> code-samples/voice/ReadUserCallLog.java !}
     ```
-
-=== "Ruby"
-
-    ```ruby
-    {!> code-samples/voice/call-log.rb !}
-
-
