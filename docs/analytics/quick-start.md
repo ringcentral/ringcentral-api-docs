@@ -9,11 +9,11 @@ In this quick start guide, we are going to access call performance data via usin
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 [Create Analytics App](https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Analytics&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){target="_new" class="btn btn-primary"}
-[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions}
+[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions"}
 
 <div class="collapse" id="create-app-instructions" markdown>
 <ol>
-<li>[Login or create an account](https://developer.ringcentral.com/login.html#/) if you have not done so already.</li>
+<li><a href="https://developer.ringcentral.com/login.html">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "JWT auth flow"

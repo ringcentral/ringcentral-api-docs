@@ -1,4 +1,4 @@
-# Using Postman to Test Enhanced Business SMS APIs
+# Using Postman to test Enhanced Business SMS APIs
 
 For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for Enhanced Business SMS. If you use Postman, the we recommend using the collection as it provides authorization handling using Postman variables and environments as recommended by Postman.
 
@@ -13,16 +13,16 @@ This document describes how to install and use the Postman 2.1 Collection.
 
 This Postman spec is designed for following environment:
 
-* Current RingCentral MVP account located at: https://www.ringcentral.com. 
-* RingCentral app created at https://developers.ringcentral.com with Password-based or JWT auth flow enabled.
+* Current RingCentral RingEX account located at: https://www.ringcentral.com. 
+* RingCentral app created at https://developers.ringcentral.com with JWT auth flow enabled.
 
 ## Using Postman
 
 Using Postman once you have your pre-requisites consists of a few steps:
 
 1. Importing the Postman Collection
-2. Creating/Configuring Your Postman Environment
-3. Authenticating and Authorizing the user.
+2. Creating/configuring Your Postman environment
+3. Authenticating and authorizing the user.
 4. Making an API call
 
 
@@ -46,12 +46,12 @@ The Postman Collection uses environment variables for authentication and authori
 5. Click the "Add" button to finish adding this environment.
 You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_environment.postman_environment.json) export as reference. 
 
-<img class="img-fluid" width="100%" src="../../../img/postman_ringcentral_environment.png">
+![Postman](../../img/postman_ringcentral_environment.png){.img-fluid}
 
 | Variable | Description |
 |------|-------------|
-| **`RINGCENTRAL_SERVER_URL`** | RingCentral's API Url which would be https://platform.ringcentral.com for Production and https://platform.devtest.ringcentral.com for Sandbox|
-| **`RINGCENTRAL_CLIENT_ID`** | Application's Client ID|
+| **`RINGCENTRAL_SERVER_URL`** | RingCentral's API URL which would be https://platform.ringcentral.com for Production and https://platform.devtest.ringcentral.com for Sandbox|
+| **`RINGCENTRAL_CLIENT_ID`** | Application's Client ID |
 | **`RINGCENTRAL_CLIENT_SECRET`** | Application's Client Secret |
 | **`RINGCENTRAL_JWT`** | RingCentral user's JWT token from User's Profile -> Credentials |
 
@@ -69,4 +69,4 @@ Follow this up by trying "Send MMS" API.
 
 ## Feedback
 
-If you have any feedback on using the Postman collection, please [post to the RingCentral MVP docs GitHub repo](https://github.com/ringcentral/ringcentral-api-docs/issues).
+If you have any feedback on using the Postman collection, please [post to the RingEX docs repository](https://github.com/ringcentral/ringcentral-api-docs/issues).

@@ -10,7 +10,7 @@ Since REST APIs are built on top of HTTP protocol, they [reuse some concepts and
 
 Most of the HTTP 2xx status codes (200, 201, 202, 204, 206) indicate that the action requested by the client was received, understood, accepted and processed successfully.
 
-`HTTP 207 Multi-status` code can be returned for some API requests which means that response consists of multiple parts returned as a "multipart/mixed" body (see also [RFC 2046](https://tools.ietf.org/html/rfc2046)). In this case, the first part of this multipart response contains JSON array with real status codes corresponding to each part of a response, see [Batch Requests](#Batch-Requests) section below.
+`HTTP 207 Multi-status` code can be returned for some API requests which means that response consists of multiple parts returned as a "multipart/mixed" body (see also [RFC 2046](https://tools.ietf.org/html/rfc2046)). In this case, the first part of this multipart response contains JSON array with real status codes corresponding to each part of a response, see [Batch Requests](../batch-requests.md) section below.
 
 ## HTTP 3xx  – Redirection
 
@@ -36,7 +36,7 @@ The 4xx class of status code is intended for cases in which the client seems to 
 This means that the client exceeded some quota or rate limit defined for all or for certain types of API requests.
 The client may retry the original request after getting this HTTP code not earlier than in a number of seconds returned in `Retry-After` header (see [RFC 6585](https://tools.ietf.org/html/rfc6585#section-4)).
 
-Additional information about throttling limits is returned in `X-RateLimit-XXX` response headers, see [Usage Plan Groups](#Usage-Plan-Groups).
+Additional information about throttling limits is returned in `X-RateLimit-XXX` response headers. Learn more in our [rate limit](../rate-limits.md) documentation.
 
 ### HTTP 401 – Unauthorized
 

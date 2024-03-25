@@ -22,8 +22,8 @@ RingCentral has forged strategic relationships with a number of service provider
 
 ### Brand and localization
 
-| Service Name       | Brand Id | Provider | Primary Color | Languages  | Geographies | Logo                                                                               |
-|--------------------|----------|----------|---------------|------------|-------------|------------------------------------------------------------------------------------|
+| Service Name       | Brand Id | Provider | Primary Color | Languages  | Geographies | Logo                               |
+|--------------------|----------|----------|---------------|------------|-------------|------------------------------------|
 | AT&T Office@Hand   | `3420`   | AT&T     | #0A6EBE       | US English, UK English, Canadian French, French French, German, Italian, Spanish, and Dutch | United States, UK, Canada and 11 EU countries, including Netherlands, Ireland, Spain, Switzerland, Sweden, Austria, Belgium, Denmark, Germany, France and Italy. | <img alt="Office@Hand Logo" src="../logo_att.svg" style="max-width: 200px">        |
 | Avaya Cloud Office | `6010`   | Avaya    | #DA291C       | US English | United States  | <img alt="Avaya Cloud Office Logo" src="../logo_aco.jpg" width="200"> |
 | BT Cloud Work      | `7710`   | BT       | #5514B4       | UK English | United Kingdom | <img alt="BT Cloud Work Logo" src="../logo_bt.svg" style="max-width: 200px">       |
@@ -36,8 +36,7 @@ RingCentral has forged strategic relationships with a number of service provider
 
 ### SMS limitations
 
-The following service providers do not support the sending and receiving of SMS text messages to/from national and international DID numbers. Text messaging is support\
-ed only using pager messaging to connect extension numbers within an account.
+The following service providers do not support the sending and receiving of SMS text messages to/from national and international DID numbers. Text messaging is supported only using pager messaging to connect extension numbers within an account.
 
 * Avaya Cloud Office
 * BT Cloud Work

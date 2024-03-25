@@ -138,10 +138,10 @@ If your application will be sending SMS messages then you will be required to me
 
 <a class="btn btn-lg btn-primary" href="../sms/">Setup your account to send SMS</a>
 
-## Next step: graduating your application to production
+## Final step: promote your app in the RingCentral App Gallery
 
-Now that you have successfully called the API via an application that you have built, you can begin a process we call "graduation" which is how a developer obtains credentials for our production environment. This is among the final steps before you can officially use an application using real production data.
+For those developers and partners who are building an application that is intended to be used by RingCentral customers, you have one more step: to add your application to the RingCentral App Gallery so that it can be promoted to the RingCentral customer base. 
 
-<a class="btn btn-lg btn-primary" href="../graduate-app/">Graduate your application</a>
+<a class="btn btn-lg btn-primary" href="../promote-app/">Promote your application in the App Gallery</a>
 
 

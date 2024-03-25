@@ -6,7 +6,7 @@ RingCentral supports the OAuth 2.0 authorization code flow, one of the most comm
 2. A grant is exchanged for an access token via an API call.
 3. The access token is used to call the API to access a protected resource.
 
-<img src="../oauth-auth-token-flow.png" class="img-fluid">
+![Auth code Flow](oauth-auth-token-flow.png){class=".img-fluid" style="max-width: 600px"}}
 
 !!! hint "Developers are encouraged to implement the nearly identical [PKCE auth code flow](auth-code-pkce-flow.md) for better security."
 
@@ -60,7 +60,7 @@ On this step your app’s user is redirected by the browser to a RingCentral aut
 
 Once they have logged in, RingCentral will prompt the user with an "Access Request" in which the permissions the app is requesting is disclosed. 
 
-<img src="../user-consent.png" class="img-fluid" style="max-width: 500px">
+![User Consent](user-consent.png){class="img-fluid" style="max-width: 500px"}
 
 When the user clicks "Authorize," the user is then redirected to the `redirect_uri` that was passed in via the login URL constructed above. At the same time, RingCentral will add the following query parameters to the redirect URI, which your application will need in subsequent steps. 
 

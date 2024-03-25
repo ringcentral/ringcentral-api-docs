@@ -52,9 +52,7 @@ This field determines what development features will be made available to your a
 
 #### Scopes, or app permissions
 
-The scopes you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check your app's permissions.
-
-Selecting scopes you may not actually need can impede access to production later as we require apps in production to exercise all scopes assigned to them. If for example you declare your app needs the "SMS" scope but do not actually send an SMS, then you will need to adjust your scopes before graduating your app to production.
+The scopes you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check the scopes you selected for your app.
 
 [Learn more about application scopes &raquo;](permissions.md)
 

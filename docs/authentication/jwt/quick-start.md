@@ -11,7 +11,7 @@ The key first step in getting started is to [generate the JWT token](../../getti
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create User Login App" button below. Enter a name and description if you want to change them, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=JWT+Quick+Start+App&desc=A+simple+app+to+demo+authorizing+user+on+RingCentral&public=false&type=JWT&carriers=7710,7310,3420&permissions=ReadAccounts&grant-type=jwt&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create JWT App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>

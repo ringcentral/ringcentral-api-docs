@@ -1,8 +1,8 @@
 no_breadcrumb: true
 
-# RingCentral MVP™ API Changelog
+# RingCentral RingEX™ API Changelog
 
-Welcome to the RingCentral API changelog, which provides developers with a detailed list of all changes made to the API over time. This resource will help developers to:
+Welcome to the RingEX API changelog, which provides developers with a detailed list of all changes made to the API over time. This resource will help developers to:
 
 * understand how changes may have potentially impacted their code
 * learn about new APIs they might want to begin using

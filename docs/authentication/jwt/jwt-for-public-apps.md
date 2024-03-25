@@ -21,7 +21,7 @@ Application providers can provide customers with access to the applicatons they 
 
 If successful, the customer would see something like the following for the JWT they created.
 
-<img src="../../jwt-auth-app-access.png" class="img-fluid" style="max-width:500px">
+![JWT auth access](../jwt-auth-app-access.png){class="img-fluid" style="max-width:500px"}
 
 So how does this work exactly? 
 

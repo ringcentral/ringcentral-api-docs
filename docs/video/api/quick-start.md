@@ -11,7 +11,7 @@ In this quick start, we are going to help you create your first meeting on the p
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Video App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Video&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -25,12 +25,6 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Request help from support
-
-Access to the RingCentral Video API currently requires help from support in order to grant the "Video" application scope to your application, and graduate it to production. 
-
-<a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
-
 ## Download and edit a `.env` file
 	
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples.md). Or:
@@ -40,6 +34,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
      * `RC_CLIENT_ID` - set to the Client ID of the app you created above
      * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
      * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
+
+!!! hint "Please use production credentials to call the Video API"
+    RingCentral Video is not currently available in sandbox. To successfully call the API, please do development directly in our production environment. 
 
 ## Create a meeting bridge
 

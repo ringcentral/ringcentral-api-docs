@@ -35,7 +35,7 @@ A notification app is a type of add-in that helps build a communication bridge b
 
 RingCentral add-ins are discovered and installed via the [RingCentral App Gallery](https://www.ringcentral.com/apps/). The RingCentral App Gallery can be accessed via the web, or from within the RingCentral team messaging client in the "Apps" section. 
 
-To help RingCentral customers find and discover the add-in you build, be sure to [graduate your app](../../getting-started/graduate-app.md), and then [create an App Gallery profile](../../getting-started/promote-app.md). Once your profile is approved, RingCentral App Gallery editors will work to help your add-in get discovered by ensuring it is placed in the right categories and collections. 
+To help RingCentral customers find and discover the add-in you build, be sure to [create an App Gallery profile](../../getting-started/promote-app.md). Once your profile is approved, RingCentral App Gallery editors will work to help your add-in get discovered by ensuring it is placed in the right categories and collections. 
 
 ## Known issues
 

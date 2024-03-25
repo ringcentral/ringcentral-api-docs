@@ -9,7 +9,7 @@ Before you get started, make sure you are using the [best authentication method]
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create User Login App" button below. Enter a name and description if you want to change them, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Authorization+Flow+Quick+Start+App&desc=A+simple+app+to+demo+authorizing+user+on+RingCentral&public=false&type=ServerWeb&carriers=7710,7310,3420&permissions=ReadAccounts,ReadCallLog&redirectUri=http://localhost:5000/oauth2callback&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create User Login App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -29,6 +29,13 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 </div>
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
+
+??? hint "Setting the redirect URI for your app"
+    If you are setting up your application manually, be sure to set your redirect URL to the following:
+    
+        http://localhost:5000/oauth2callback
+    
+    ![Redirect URI](redirect_uri.png){.img-fluid}
 
 ## Download and edit a `.env` file
 	
