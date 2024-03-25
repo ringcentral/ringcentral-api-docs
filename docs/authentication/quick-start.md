@@ -30,6 +30,13 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
+??? hint "Setting the redirect URI for your app"
+    If you are setting up your application manually, be sure to set your redirect URL to the following:
+    
+        http://localhost:5000/oauth2callback
+    
+    ![Redirect URI](redirect_uri.png){.img-fluid}
+
 ## Download and edit a `.env` file
 	
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
