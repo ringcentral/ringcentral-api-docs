@@ -20,16 +20,16 @@ The `Accept` header indicates the desired MIME type of the response body. The se
 
 ## Data Types
 
-The table below describes the data types which are used in the RingCentral API.
+The table below describes the data types which are used in the RingCentral API. Each of the types below can also appear as an array item type for array attributes/parameters.
 
-| Data Type     | Description |
-| ------------- | ----------- |
-| `string`      | General string value |
-| `string` with `enum` qualifier | Predefined string constants/List of predefined string constants |
-| `integer` (with possible `int32` or `int64` format qualifiers)    | 32-bit or 64-bit integer value |
-| `number` (with possible `float` or `double` format qualifiers)    | Floating point number value with single or double precision |
-| `boolean`   | Boolean value which can be either `true` or `false`  |
-| `date-time`    | Timestamp in XML schema-compatible format, in accordance with <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format including timezone. |
+| Data Type                                                      | Description |
+| -------------------------------------------------------------- | ----------- |
+| `string`                                                       | General string value |
+| `string` with `enum` qualifier                                 | Enumeration, the string that can only have one of the predefined constant values |
+| `integer` (with possible `int32` or `int64` format qualifiers) | 32-bit or 64-bit integer value |
+| `number` (with possible `float` or `double` format qualifiers) | Floating point number value with single or double precision |
+| `boolean`                                                      | Boolean value which can be either `true` or `false`  |
+| `string` with `date-time` format qualifier                     | Timestamp in XML schema-compatible format, in accordance with <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format including timezone. |
 
 ### Example date and time formats
 
