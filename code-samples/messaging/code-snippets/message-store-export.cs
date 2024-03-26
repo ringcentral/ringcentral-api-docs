@@ -64,7 +64,7 @@ namespace Export_MessageStore
         static private async Task get_message_store_report_archive(String taskId)
         {
             Console.WriteLine("Getting report uri ...");
-            var resp = await restClient.Restapi().Account().MessageStoreReport(taskId).Archive().List();
+            var resp = await restClient.Restapi().Account().MessageStoreReport(taskId).Archive().Get();
             DateTime value = DateTime.Now;
             var dateStr = value.ToString("yyyy-MM-dd-HH_mm");
             for (var i = 0; i < resp.records.Length; i++)

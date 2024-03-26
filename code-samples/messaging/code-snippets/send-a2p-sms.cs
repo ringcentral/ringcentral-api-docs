@@ -20,7 +20,7 @@ namespace Send_HighVolume_SMS
 
             // Authenticate a user using a personal JWT token
             await restClient.Authorize("PRODUCTION_JWT");
-            await send_fax();
+            await read_extension_phone_number_detect_a2psms_feature();
           }
           catch (Exception ex)
           {

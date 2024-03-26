@@ -133,6 +133,7 @@ nav:
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
   - 'Social Messaging':
     - 'Overview': 'social-messaging/index.md'
+    - 'Getting started': 'social-messaging/quick-start.md'
 
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
