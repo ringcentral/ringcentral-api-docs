@@ -57,7 +57,7 @@ These APIs can be used to analyze various call-related metrics as stated below:
 - The APIs provide data from the current date and time to the past 184 days for which you can set custom date and time ranges
 
 
-### How is LOB Analytics API different than Call Log API?
+### How is Business Analytics API different than Call Log API?
 
 !!! info "Please beware of the known discrepancies between Call Log and Analytics APIs"
 
