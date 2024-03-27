@@ -1,17 +1,19 @@
 # Introduction to the RingCentral Social Messaging APIs
 
+{! mdx_includes/social-messaging-beta-notice.md !}
+
 ## Overview
 
-RingCentral Social Messaging is an integrated social networking platform that consolidates various popular social media sites such as WhatsApp, Facebook, LinkedIn, and others into a centralized social messaging hub. Its primary aim is to offer RingCentral business customers an outstanding social media marketing solution.
+RingCentral Social Messaging is an integrated social networking platform that consolidates various popular social/business messaging apps like WhatsApp, Apple messages for business, etc and social media websites such as Facebook, Instagram, Twitter and others into a centralized social messaging hub. Its primary aim is to offer RingCentral business customers an outstanding social media marketing solution.
 
-Any RingCentral customer with RingCX (formerly known as Engage Digital) and MVP accounts will gain access to the Social Messaging platform through APIs. This enables RingCentral customers to either develop stand-alone applications or seamlessly integrate the social messaging service into their existing products, thereby enhancing user experience and productivity.
+Any RingCentral [RingEX customer](https://www.ringcentral.com/office/plansandpricing.html) can access the Social Messaging platform through our open APIs. This enables RingCentral customers to either develop stand-alone applications or seamlessly integrate the social messaging service into their existing products, thereby enhancing user experience and productivity.
 
-The Social Messaging API set is a part of the RingCentral API platform. Thus, building a social messaging application that would invoke the APIs will require an application registration on the RingCentral developer portal. If you're unfamiliar with RingCentral application development, please consult [the developer guide](https://developers.ringcentral.com/guide/applications) for assistance and guidance. To access the social messaging features via APIs, the application must be assigned the 'social-messaging' app scope, along with any other app scopes required to access other the MVP platform features.
+The Social Messaging API set is a part of the RingCentral API platform. Thus, building a social messaging application that would invoke the APIs will require an application registration on the RingCentral developer portal. If you're unfamiliar with RingCentral application development, please consult [the developer guide](https://developers.ringcentral.com/guide/applications) for assistance and guidance. To access the social messaging features via APIs, the application must be assigned the 'social-messaging' app scope, along with any other app scopes required to access other the RingEX platform features.
 
 With access to the Social Messaging APIs, developers can:
 
-* Build an application that allows an MVP user (a user extension with a RingCentral MVP license is required) to send and receive messages via a single or multiple connected channels.
-* Build an application that allows multiple MVP users to share an inbox (shared inbox) that all can send and receive messages over social channels using the same phone number.
+* Build an application that allows an RingEX user (a user extension with a RingCentral RingEX license) to send and receive messages via a single or multiple connected channels.
+* Build an application that allows multiple RingEX users to share an inbox (shared inbox) that all can send and receive messages over social channels using the same phone number.
 * Build an application that reads the messaging contents from connected channels for compliance or archiving purpose or even for content analytics.
 
 !!! Note
@@ -19,17 +21,15 @@ With access to the Social Messaging APIs, developers can:
 
     [Social Messaging Developer Signup Form &raquo;](https://docs.google.com/forms/d/e/1FAIpQLSdj2nC4VA2ppfdYJA4-BNAsgnElrU2eiNdhXeieZmvERpjPXA/viewform){class="btn btn-primary"}
 
-{! mdx_includes/social-messaging-beta-notice.md !}
 
 ## Accounts settings
 
-In order to access the RingCentral Social Messaging APIs, a RingCentral customer needs to have both RingCentral RingCX Digital and MVP accounts.
-
-To start using the Social Messaging platform, a customer needs to login their RingCX admin portal to setup agents (users) and social media channels.
+In order to use RingCentral Social Messaging APIs, outside of creating an application with right scope, a RingCentral customer needs to setup agents and channels.
+For importing agents and connecting/setting up channels, your will be provided with a RingEX channel configuration portal. That portal link will look like https://sm-admin-xxxxxxxxxx.digital.ringcentral.com/ , and customer needs to login with their RingEX credentials to setup agents (users) and social media channels.
 
 ## Agents and Roles
 
-An agent is a user extension (with an MVP license) under the RingCentral MVP account, who is setup to access the RingCX Digital account. Each agent is designated with a specific role, delineating the operational scopes they are authorized to perform within the RingCX account.
+An agent (in social messaging world) is a user extension (with an RingEX license) under the RingCentral RingEX account. Each agent is designated with a specific role, delineating the operational scopes they are authorized to perform within their account.
 
 <img src="agents-role.png" class="img-fluid" alt>
 
@@ -52,7 +52,7 @@ RingCentral Social Messaging platform currently allows you to create channels co
 * Google Reviews
 * Viber
 
-To create a channel from your RingCX account, follow the [instructions](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) on this page to setup and configure the channel.
+To create/connect a channel on your account, follow the [instructions](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) on this page to setup and configure the channel.
 
 <img src="channels.png" class="img-fluid" alt>
 
@@ -60,7 +60,7 @@ To create a channel from your RingCX account, follow the [instructions](https://
 
 Under the RingCentral Social Messaging platform, a channel is identified by a unique `sourceId`. The source Id can be specified in an API to operate on that particular channel. For example when listing contents from a particular channel, the `sourceId` of that channel can be set in the API query parameters.
 
-Currently, there is no API to list all connected channels under a RingCX account. In order to identify a channel, developers will need to login the RingCX admin portal, open a channel and grab the `sourceId` as shown below.
+Currently, there is no API to list all connected channels under a RingEX account. In order to identify a channel, developers will need to login the RingEX channel configuration portal, open a channel and grab the `sourceId` as shown below.
 
 <img src="channel-id.png" class="img-fluid">
 
@@ -89,7 +89,7 @@ There are 2 types of identity, customer (your contact) identity and agent identi
 
 A customer identity is a unique user (your contact) from a connected channel who can send and receive messages via that social media channel. A customer identity will be created and listed in your [account identities list](#identity-api) when the user sends a message to that connected channel.
 
-An agent identity is a representative of a group of agents who are assigned to handle content messages in a channel. An agent can be added to or removed from an agent identity using the RingCX admin portal as shown below:
+An agent identity is a representative of a group of agents who are assigned to handle content messages in a channel. An agent can be added to or removed from an agent identity using the RingEX channel configuration portal as shown below:
 
 <img src="edit-agent-identity.png" class="img-fluid">
 
@@ -123,7 +123,7 @@ This API reads contents ordered by creation time (default to descending). If the
 
 The response is a flat list of contents (not nested). This means that an initiated message and the replied messages are listed as separated messages. To chain those messages for creating a conversation, you must rely on the content's `threadId` values. If you want to precisely match an agent reply message to a customer message, you must match the content message `id` of a customer message and the `inReplyToContentId` of an agent message.
 
-For a busy RingCX account with multiple connected channels where there are thousands of messages in each channel. It's recommended to use one or more filters in the table below to optimize response and list only the contents of interest.
+For a busy RingEX account with multiple connected channels where there are thousands of messages in each channel. It's recommended to use one or more filters in the table below to optimize response and list only the contents of interest.
 
 You can set the max number of content messages per page to limit the size of the response and use the next page token (if available) to read more content messages.
 
@@ -214,7 +214,7 @@ The Social Messaging event notification supports the following event types:
 
 | Type | Description |
 | - | - |
-|`/cx/social-messaging/v1/contents/Imported`| Get notify when a new content has been imported from a channel (e.g. WhatsApp) to your RingCX Digital inbox.|
+|`/cx/social-messaging/v1/contents/Imported`| Get notify when a new content has been imported from a channel (e.g. WhatsApp) to your RingEX Digital inbox.|
 |`/cx/social-messaging/v1/contents/Exported`| Get notify when an agent reply content message has been dispatched to a channel (e.g. FaceBook).|
 |`/cx/social-messaging/v1/contents/DiscussionInitiated`| Get notify when an agent has posted a new content to a connected channel (e.g. FaceBook).|
 
@@ -223,11 +223,11 @@ The Social Messaging event notification supports the following event types:
 
 ### Identities API
 
-The Identity APIs facilitate the reading of customer and agent identities from a RingCX Digital account.
+The Identity APIs facilitate the reading of customer and agent identities from a RingEX Digital account.
 
 | API Endpoint      | Method   | Description                                        |
 | -------------- | ------ | ------------------------------------------------------- |
-| `/cx/social-messaging/v1/identities` | GET | List all identities from your RingCX account. |
+| `/cx/social-messaging/v1/identities` | GET | List all identities from your RingEX account. |
 | `/cx/social-messaging/v1/identities/[identityId]`   | GET | Read an identity info identified by the identity Id.  |
 
 The APIs typically provide essential information about an identity, including the `displayName`, `creationTime`, and `id`. However, additional detailed information such as `emailAddress`, `phoneNumber`, `avatarUri`, and `gender` may not always be available, depending on the social media channel type or relevance.
