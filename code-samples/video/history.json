@@ -58,7 +58,8 @@
 						 "stage menu", "specific status"]
         }]
     }],
+    "chatUrl": "https://media.ringcentral.com/rcvideo/v1/chats/7tSq3xxx8RfkFjEw==",
     "paging": {
-        "currentPageToken": "ewogICJ0IiA6IDE1ODA5MzAxxxxIKfQ=="
+        "currentPageToken": "ewogICJ0xxxxxIDE1ODA5MzAxxxxIKfQ=="
     }
 }
