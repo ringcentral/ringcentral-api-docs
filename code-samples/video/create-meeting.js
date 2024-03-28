@@ -44,7 +44,18 @@ async function create_meeting() {
               "joinBeforeHost": true,
               "screenSharing": true,
               "recordingsMode": "User",
-              "transcriptionsMode": "User"
+              "transcriptionsMode": "User",
+              "recordings": {
+                  "everyoneCanControl": {
+                      "enabled": true,
+                      "locked": false
+                  },
+                  "autoShared": {
+                      "enabled": true,
+                      "locked": false
+                  }
+              },
+              "allowEveryoneTranscribeMeetings": true
           }
       })
       var jsonObj = await resp.json()

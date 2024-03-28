@@ -58,6 +58,8 @@ The `preferences` parameter takes a number of key/value pairs to govern the brid
 | `joinBeforeHost`               | boolean | Set to true to allow participants to join before host arrives.             |
 | `screenSharing`                | boolean | Set to true if participants are allowed to share their screen.            |
 | `recordingsMode`               | string  | Set to "Auto" to automatically record meeting. Set to "ForceAuto" if an admin has overridden recording preference and requires recordings to be made. Set to "User" to allow users to toggle recordings on and off.            |
+| `recordings.everyoneCanControl` | object | Determines if meetings in the bridge can be recorded, and who can turn on/off recordings. |
+| `recordings.autoShared` | object | Determines if the recordings in the bridge can be shared. |
 | `transcriptionsMode`           | string  | Set to "Auto" to automatically transcribe meeting. Set to "ForceAuto" if an admin has overridden transcription preference and requires transcriptions to be made. Set to "User" to allow users to toggle transcriptions on and off.            |
 
 ### How do you schedule a meeting on behalf of someone else?
