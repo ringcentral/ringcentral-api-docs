@@ -29,7 +29,7 @@ For importing agents and connecting/setting up channels, your will be provided w
 
 ## Agents and Roles
 
-An agent (in social messaging world) is a user extension (with an RingEX license) under the RingCentral RingEX account. Each agent is designated with a specific role, delineating the operational scopes they are authorized to perform within their account.
+An agent (in social messaging world) is a user extension (with a digital line) under the RingCentral RingEX account. Each agent is designated with a specific role, delineating the operational scopes they are authorized to perform within their account.
 
 <img src="agents-role.png" class="img-fluid" alt>
 
@@ -214,7 +214,7 @@ The Social Messaging event notification supports the following event types:
 
 | Type | Description |
 | - | - |
-|`/cx/social-messaging/v1/contents/Imported`| Get notify when a new content has been imported from a channel (e.g. WhatsApp) to your RingEX Digital inbox.|
+|`/cx/social-messaging/v1/contents/Imported`| Get notify when a new content has been imported from a channel (e.g. WhatsApp) to your RingEX account.|
 |`/cx/social-messaging/v1/contents/Exported`| Get notify when an agent reply content message has been dispatched to a channel (e.g. FaceBook).|
 |`/cx/social-messaging/v1/contents/DiscussionInitiated`| Get notify when an agent has posted a new content to a connected channel (e.g. FaceBook).|
 
@@ -223,7 +223,7 @@ The Social Messaging event notification supports the following event types:
 
 ### Identities API
 
-The Identity APIs facilitate the reading of customer and agent identities from a RingEX Digital account.
+The Identity APIs facilitate the reading of customer and agent identities from a RingEX account.
 
 | API Endpoint      | Method   | Description                                        |
 | -------------- | ------ | ------------------------------------------------------- |
