@@ -12,7 +12,7 @@ The Social Messaging API set is a part of the RingCentral API platform. Thus, bu
 
 With access to the Social Messaging APIs, developers can:
 
-* Build an application that allows an RingEX user (a user extension with a RingCentral RingEX license) to send and receive messages via a single or multiple connected channels.
+* Build an application that allows an RingEX user (a user extension with a Digital Line) to send and receive messages via a single or multiple connected channels.
 * Build an application that allows multiple RingEX users to share an inbox (shared inbox) that all can send and receive messages over social channels using the same phone number.
 * Build an application that reads the messaging contents from connected channels for compliance or archiving purpose or even for content analytics.
 
