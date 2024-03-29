@@ -11,16 +11,16 @@ namespace Read_User_CallLog
   class Program
   {
     static RestClient restClient;
-  	static void Main(string[] args)
-  	{
+    static void Main(string[] args)
+    {
       try
       {
         DotEnv.Load();
         // Instantiate the SDK
         restClient = new RestClient(
-            Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-            Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-            Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+        Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
+        Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+        Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 
         // Authenticate a user using a personal JWT token
         await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
@@ -31,12 +31,12 @@ namespace Read_User_CallLog
       {
         Console.WriteLine(ex.Message);
       }
-  	}
+    }
     /*
     * Read user call log between a period of time
     */
-  	static private async Task read_user_calllog()
-  	{
+    static private async Task read_user_calllog()
+    {
       try
       {
         var queryParams = new ReadUserCallLogParameters();
@@ -54,6 +54,6 @@ namespace Read_User_CallLog
       {
         Console.WriteLine("Cannot read user call log data. " + ex.Message);
       }
-  	}
+    }
   }
 }
