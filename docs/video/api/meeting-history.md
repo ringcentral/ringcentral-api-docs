@@ -18,9 +18,13 @@ The typical response to retrieve meeting histories will look something like the 
     {!> code-samples/video/history.json !}
 ```
 
-## Retrieving meeting history within a time range
+## Searching meeting history 
 
-One may specify a `startTime` and `endTime` parameter expressed in Unix EPOCH time to constrain search results to a time range. 
+One can search one's meeting history using one or more of the following:
+
+* **Date range**. Specify a `startTime` and `endTime` parameter expressed in Unix EPOCH time to constrain search results to a time range. 
+* **Keyword**. Specify a `text` parameter to search meeting names by the provided keyword or phrase.
+* **Type**. Specify the type of meeting to search by. Supported values are `None` (default), `All`, `My`, `Deleted`, `Shared`. 
 
 ## Accessing the history of a single meeting
 
