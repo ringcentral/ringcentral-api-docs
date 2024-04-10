@@ -10,7 +10,7 @@ const rcsdk = new RC({
 const platform = rcsdk.platform();
 
 platform.login({
-    'jwt':  process.env.RC_JWT 
+    'jwt':  process.env.RC_JWT
 }).then(() => {
     let userObject = {
         "contact": {
@@ -22,7 +22,7 @@ platform.login({
         "status": "Enabled",
         "type": "User"
     }
-    
+
     platform.post("/restapi/v1.0/account/~/extension", userObject)
 }).then((resp) => {
     return resp.json();
