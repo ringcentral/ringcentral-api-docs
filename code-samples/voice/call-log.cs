@@ -11,7 +11,7 @@ namespace Read_User_CallLog
   class Program
   {
     static RestClient restClient;
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
       try
       {
