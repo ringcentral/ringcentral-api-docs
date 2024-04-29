@@ -15,7 +15,7 @@ class MainController < ActionController::Base
                          ENV['RC_SERVER_URL'] )
 
   def login
-    base_url = $rc.authorize_uri(REDIRECT_URL, "initialState")
+    base_url = $rc.authorize_uri(REDIRECT_URL)
     @authorize_uri = base_url
   end
 
