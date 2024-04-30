@@ -19,6 +19,6 @@ function get_personal_meeting_url(){
   global $platform;
   $resp = $platform->get("/rcvideo/v2/account/~/extension/~/bridges/default");
   $jsonObj = $resp->json();
-  print("Your personal meeting URL is: " . $resp->json()->web->discovery . PHP_EOL);
+  print("Your personal meeting URL is: " . $resp->json()->discovery->web . PHP_EOL);
 }
 ?>

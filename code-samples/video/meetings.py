@@ -25,6 +25,6 @@ params = {
 }
 try:
     resp = platform.post('/rcvideo/v2/account/~/extension/~/bridges', params)
-    print("Start your meeting: " + resp.web.discovery)
+    print("Start your meeting: " + resp.json().discovery.web)
 except Exception as err:
     print("Exception: " + err.message)

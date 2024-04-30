@@ -19,7 +19,7 @@ $params = array(
 
 try {
   $resp = $platform->post('/rcvideo/v2/account/~/extension/~/bridges', $params);
-  print_r ('Start Your Meeting: ' . $resp->json()->web->discovery . "\n");
+  print_r ('Start Your Meeting: ' . $resp->json()->discovery->web . "\n");
 } catch (Exception $e) {
   print_r ("An error occurred: " . $e->getMessage() . "\n");
 }

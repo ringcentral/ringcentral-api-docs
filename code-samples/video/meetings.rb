@@ -13,7 +13,7 @@ $rc = RingCentral.new(ENV['RC_CLIENT_ID'],
 
 $rc.authorize(jwt: ENV['RC_JWT'])
 
-resp = rc.post('/rcvideo/v2/account/~/extension/~/bridges', payload: {
+resp = $rc.post('/rcvideo/v2/account/~/extension/~/bridges', payload: {
     'name': 'Test Meeting'
 })
 

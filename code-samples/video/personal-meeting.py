@@ -22,6 +22,6 @@ except Exception as e:
 
 try:
     resp = platform.get('/rcvideo/v2/account/~/extension/~/bridges/default')
-    print("Your personal meeting URL is: " + resp.web.discovery)
+    print("Your personal meeting URL is: " + resp.json().discovery.web)
 except Exception as err:
     print("Exception: " + err.message)
