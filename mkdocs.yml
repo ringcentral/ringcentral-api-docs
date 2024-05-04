@@ -273,6 +273,7 @@ nav:
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
     - 'Users and extensions': 'account/extensions.md'
+    - 'Address Book': 'address-book/index.md'
     - 'Creating users': 'account/creating-users.md'
     - 'Phone numbers': 'account/phone-numbers.md'
     - 'Call forwarding/flipping': 'account/call-forwarding-flipping.md'
@@ -281,8 +282,6 @@ nav:
     - 'Presence': 'account/presence.md'
     - 'Audit trail': 'account/audit-trail.md'
     - 'Emergency locations' : 'provisioning/location/emergency-locations.md'
-    - 'Address Book':
-      - 'Overview': 'address-book/index.md'
 
 
   # ---- SECONDARY APIs ----
