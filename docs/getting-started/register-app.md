@@ -1,4 +1,4 @@
-# Registering an application
+# Registering an application and obtaining app credentials
 
 {! mdx_includes/first-api-call-reminder.md !}
 
