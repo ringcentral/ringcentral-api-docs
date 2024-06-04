@@ -22,15 +22,13 @@ public class CreateMeeting {
     }
     
     public void createMeeting() throws IOException, RestException {
-        CreateMeetingRequest createMeetingRequest = new CreateMeetingRequest()
-            .name("Test Meeting")
-            .allowJoinBeforeHost(true)
-            .muteAudio(false)
-            .muteVideo(true);
-        CreateMeetingResponse createMeetingResponse =
-            restClient.post("/rcvideo/v2/account//extension//bridges",createMeetingRequest);
-        String meetingUrl = createMeetingResponse.getDiscovery().getWeb();
-        System.out.println("Start Your Meeting: " + meetingUrl);
+        CreateBridgeRequest createBridgeRequest = new CreateBridgeRequest()
+	    .name("Test Meeting")
+	    .preferences(new BridgePreferences()
+			 .joinBeforeHost(true)
+			 .join(new BridgeJoinPreferences().audioMuted(false).videoMuted(true)));
+        var res = restClient.rcvideo().v2().account("~").extension("~").bridges().post(createBridgeRequest);
+        System.out.println("Start Your Meeting: " + res.discovery.web);
     }
     
 }
