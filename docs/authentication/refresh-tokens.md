@@ -45,7 +45,7 @@ Here are a few things to keep in mind when using refresh tokens to generate new 
 | Header           | Value                                                      |
 | ---------------- | ---------------------------------------------------------- |
 | `Content-type`   | `application/x-www-form-urlencoded`                        |
-| `Authorization`  | Only required if app type is "Client-side web app." Must be equal to `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+| `Authorization`  | Only required if app type is not "Client-side web app." Must be equal to `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
 
 **POST Parameters**
 
