@@ -6,7 +6,7 @@ style: quick-start
 
 !!! hint "Enabling the phone numbers in your account for SMS"
     As a participating [TCR CSP](https://www.campaignregistry.com/), RingCentral is dedicated to providing the highest quality of service, while working to eliminate spam, phishing, and fraudulent messages. To help ensure these goals are met, RingCentral requires customers to follow the [TCR process](https://support.ringcentral.com/article-v2/Setting-up-TCR-registration-assigning-numbers-to-SMS-campaigns.html?brand=RingCentral&product=MVP&language=en_US&pills-nav=brand) to enable their account to send SMS. To learn more, read our [TCR FAQ](https://support.ringcentral.com/article-v2/TCR-business-registration-FAQ.html?brand=RingCentral&product=MVP&language=en_US).
-	
+
     In addition, reading our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) may also help you in staying compliant.
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
@@ -64,7 +64,7 @@ Select your preferred language below.
     Create a file called `sms.js`.
 
     ```javascript
-    {!> code-samples/messaging/quick-start.js [ln:1-107] !}
+    {!> code-samples/messaging/quick-start.js [ln:1-109] !}
     ```
 
     ### Run your code
@@ -137,7 +137,7 @@ Select your preferred language below.
     Create a file called `sms.rb`.
 
     ```ruby
-    {!> code-samples/messaging/quick-start.rb [ln:1-87]!}
+    {!> code-samples/messaging/quick-start.rb [ln:1-86]!}
     ```
 
     ### Run your code

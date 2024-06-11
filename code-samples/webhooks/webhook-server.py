@@ -19,7 +19,7 @@ class S(BaseHTTPRequestHandler):
             print ("Ignore this")
 
 
-def run(server_class = HTTPServer, handler_class = S, port=3000):
+def run(server_class = HTTPServer, handler_class = S, port=5000):
     server_address = ('localhost', port)
     httpd = server_class(server_address, handler_class)
     print ('Starting server...')

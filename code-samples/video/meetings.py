@@ -1,30 +1,36 @@
-#!/usr/bin/python
-
-# You get the environment parameters from your 
-# application dashbord in your developer account 
-# https://developers.ringcentral.com
-
-import os
-import sys
- 
+import os, sys
 from dotenv import load_dotenv
 from ringcentral import SDK
+
 load_dotenv()
 
+# Create an instant RCV meeting
+def create_meeting():
+  try:
+    bodyParams = {
+         'name' : "Test meeting",
+         'type' : "Instant"
+    }
+    endpoint = "/rcvideo/v2/account/~/extension/~/bridges"
+    resp = platform.post(endpoint, bodyParams)
+    jsonObj = resp.json()
+    print ("Start Your Meeting: " + jsonObj.discovery.web)
+  except Exception as e:
+    print (e)
+
+# Instantiate the SDK and get the platform instance
 rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
              os.environ.get('RC_CLIENT_SECRET'),
              os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
-try:
-  platform.login( jwt=os.environ.get('RC_JWT') )
-except Exception as e:
-  sys.exit("Unable to authenticate to platform: " + str(e))
 
-params = {
-    'name': 'Test Meeting'
-}
-try:
-    resp = platform.post('/rcvideo/v2/account/~/extension/~/bridges', params)
-    print("Start your meeting: " + resp.json().discovery.web)
-except Exception as err:
-    print("Exception: " + err.message)
+
+# Authenticate a user using a personal JWT token
+def login():
+    try:
+      platform.login( jwt=os.environ.get('RC_JWT') )
+      create_meeting()
+    except Exception as e:
+      sys.exit("Unable to authenticate this user. Check credentials." + str(e))
+
+login()
