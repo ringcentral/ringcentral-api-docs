@@ -10,32 +10,22 @@ RingCentral platform provides APIs to manage SMS templates for 2 scopes, company
 
 Company SMS templates can be created, listed, modified and deleted only by users who have the "Edit Company SMS Templates" user permission, this user permission normally included in the default super admin user role. If you want to grant the "Edit Company SMS Templates" permission to other user roles, make sure that the permission is selected for that role.
 
-| API Endpoint      | Method   | Description                                        |
-| -------------- | ------ | ------------------------------------------------------- |
-| /restapi/v1.0/account/~/message-store-templates | POST | Create a new company SMS template. |
-| /restapi/v1.0/account/~/message-store-templates | GET | List all company SMS templates.  |
-| /restapi/v1.0/account/~/message-store-templates/[templateId] | PUT | Update a company SMS template identified by a template id. E.g. change the template text. |
-| /restapi/v1.0/account/~/message-store-templates/[templateId] | DELETE | Delete a company SMS template identified by a template id. |
-| /restapi/v1.0/account/~/message-store-templates/[templateId] | GET | Read a single company SMS template identified by a template id. |
-
 Company SMS templates can be created for different sites under an account. Each account can have maximum up to 50 predefined company SMS templates. This number includes those templates created for any site under the same account.
+
+The company SMS template name must be unique across all sites. If the same name is reused, the template creation API will fail.
+
+Browse the [Company SMS template APIs reference](https://developers.ringcentral.com/api-reference/SMS-Templates/createCompanyMessageTemplate) to try online.
 
 ## User SMS templates
 
 User SMS templates are personal resource. They can be created, listed, managed and accessed by a user who have the "Business SMS" user permission. And the templates are only accessible by that user.
 
-| API Endpoint      | Method   | Description                                        |
-| -------------- | ------ | ------------------------------------------------------- |
-| /restapi/v1.0/account/~/extension/[extensionId]/message-store-templates | POST | Create a new personal SMS template. |
-| /restapi/v1.0/account/~/extension/[extensionId]/message-store-templates | GET | List all personal SMS templates.  |
-| /restapi/v1.0/account/~/extension/[extensionId]/message-store-templates/[templateId] | PUT | Update a personal SMS template identified by a template id. E.g. change the template text. |
-| /restapi/v1.0/account/~/extension/[extensionId]/message-store-templates/[templateId] | DELETE | Delete a personal SMS template identified by a template id. |
-| /restapi/v1.0/account/~/extension/[extensionId]/message-store-templates/[templateId] | GET | Read a single personal SMS template identified by a template id. |
-
-Each user can create maximum up to 25 predefined user SMS templates.
+Each user can create maximum up to 25 predefined user SMS templates. A user SMS template name must be unique. If the same name is reused, the template creation API will fail.
 
 !!! note
     Any user with the "Business SMS" user permission can also read the company SMS templates using the user SMS template API by setting the "scope" query parameter to "all" or "company".
+
+Browse the [User SMS template APIs reference](https://developers.ringcentral.com/api-reference/SMS-Templates/createUserMessageTemplate) to try online.
 
 ### Example of a use case of a user SMS template
 
@@ -50,7 +40,7 @@ Imagine if you are a community manager and you need to send an SMS message every
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/code-snippets-headers/header.js !}
+    {!> code-samples/messaging/code-snippets-headers/header-prod.js [ln:1-13]!}
     {!> code-samples/messaging/code-snippets/create-user-sms-template.js [ln:10-] !}
     ```
 
@@ -58,13 +48,13 @@ Imagine if you are a community manager and you need to send an SMS message every
 
     ```python
     {!> code-samples/messaging/code-snippets/create-user-sms-template.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer.py!}
+    {!> code-samples/messaging/code-snippets-headers/footer-prod.py [ln:1-5] !}
     ```
 
 === "PHP"
 
     ```php
-    {!> code-samples/messaging/code-snippets-headers/header.php !}
+    {!> code-samples/messaging/code-snippets-headers/header-prod.php [ln:1-15]!}
     {!> code-samples/messaging/code-snippets/create-user-sms-template.php [ln:2-]!}
     ```
 
@@ -72,5 +62,5 @@ Imagine if you are a community manager and you need to send an SMS message every
 
     ```ruby
     {!> code-samples/messaging/code-snippets/create-user-sms-template.rb !}
-    {!> code-samples/messaging/code-snippets-headers/footer.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer-prod.rb [ln:1-4] !}
     ```

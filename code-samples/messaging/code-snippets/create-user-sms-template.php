@@ -1,5 +1,5 @@
 <?php
-list_user_sms_template();
+create_user_sms_template();
 
 /*
   Create a personal reusable SMS template
