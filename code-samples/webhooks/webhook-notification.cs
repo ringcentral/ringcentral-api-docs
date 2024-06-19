@@ -2,6 +2,8 @@ using System;
 using System.Threading.Tasks;
 using RingCentral;
 using dotenv.net;
+using System.Text.Json;
+
 
 namespace setup_webhook
 {
@@ -26,10 +28,11 @@ namespace setup_webhook
                     Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
                     Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 
+
                 // Authenticate a user using a personal JWT token
                 await restClient.Authorize(Environment.GetEnvironmentVariable("RC_JWT"));
                 await subscribe_for_notification();
-                //await read_subscriptions();
+                //  await read_subscriptions();
             }
             catch (Exception ex)
             {
@@ -45,7 +48,7 @@ namespace setup_webhook
             {
                 var bodyParams = new CreateSubscriptionRequest();
                 bodyParams.eventFilters = new[] { "/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS" };
-                bodyParams.deliveryMode = new NotificationDeliveryMode()
+                bodyParams.deliveryMode = new NotificationDeliveryModeRequest()
                 {
                     transportType = "WebHook",
                     address = DELIVERY_ADDRESS
@@ -77,7 +80,7 @@ namespace setup_webhook
                 {
                     foreach (var record in resp.records)
                     {
-                        Console.WriteLine(JsonConvert.SerializeObject(record));
+                        Console.WriteLine(JsonSerializer.Serialize(record));
                         await delete_subscription(record.id);
                     }
                 }

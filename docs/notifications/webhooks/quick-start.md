@@ -215,6 +215,8 @@ Select your preferred language below.
 
     We use .NET core which is cross-platform. You can get it [here](https://dotnet.microsoft.com/download).
 
+    The instructions below work with .NET version 6 or later.
+
     ### Create a webhook demo solution
 
     ```bash
@@ -223,7 +225,7 @@ Select your preferred language below.
     dotnet new sln
     ```
 
-    #### Create WebHook Server project
+    #### Create WebHook Server project inside webhook-demo directory
 
     ```
     mkdir webhook-server
@@ -231,7 +233,7 @@ Select your preferred language below.
     dotnet new web
     ```
 
-    Edit `Startup.cs` and override its content with code below:
+    Edit `Program.cs` and overwrite its content with the code below. Create `Program.cs` if it does not already exist:
 
     ```c#
     {!> code-samples/webhooks/webhook-server.cs !}
