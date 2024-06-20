@@ -4,33 +4,34 @@ using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Primitives;
 
-namespace webhooks
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container if needed
+builder.Services.AddRouting(); // Example: if you need routing services
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
 {
-    public class Startup
+    app.UseDeveloperExceptionPage();
+}
+
+app.Run(async (context) =>
+{
+    context.Request.Headers.TryGetValue("Validation-Token", out StringValues validationToken);
+    context.Response.Headers.Add("Validation-Token", validationToken);
+
+    if (context.Request.Path == "/webhook" && context.Request.Method == "POST")
     {
-        public void ConfigureServices(IServiceCollection services)
+        using (StreamReader reader = new StreamReader(context.Request.Body, Encoding.UTF8))
         {
-        }
-
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-
-            app.Run( async (context) =>
-                {
-                    context.Request.Headers.TryGetValue("Validation-Token", out StringValues validationToken);
-                    context.Response.Headers.Add("Validation-Token", validationToken);
-                    if (context.Request.Path == "/webhook" && context.Request.Method == "POST")
-                    {
-                        using (StreamReader reader = new StreamReader(context.Request.Body, Encoding.UTF8))
-                        {
-                            var eventPayload = await reader.ReadToEndAsync();
-                            Console.WriteLine(eventPayload);
-                        }
-                    }
-                });
+            var eventPayload = await reader.ReadToEndAsync();
+            Console.WriteLine(eventPayload);
         }
     }
-}
+});
+
+app.Run();
