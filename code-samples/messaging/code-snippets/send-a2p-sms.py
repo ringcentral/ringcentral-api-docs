@@ -93,7 +93,7 @@ def check_batch_status(batchId):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "PRODUCTION_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       read_extension_phone_number_detect_a2psms_feature()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

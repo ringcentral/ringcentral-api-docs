@@ -30,7 +30,7 @@ def speakers_detection():
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "PRODUCTION-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       speakers_detection()
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

@@ -34,14 +34,14 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
 
 ## Subscribe to a push notification
 
@@ -60,7 +60,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Create a file called <tt>pubnub-notification.js</tt>. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```javascript
-    {!> code-samples/pubnub/quick-start.js !} 
+    {!> code-samples/pubnub/quick-start.js !}
     ```
 
     ### Run your code
@@ -84,7 +84,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Create a file called <tt>pubnub_notification.py</tt> using the contents below.
 
     ```python
-    {!> code-samples/pubnub/quick-start.py !} 
+    {!> code-samples/pubnub/quick-start.py !}
     ```
 
     ### Run your code
@@ -135,7 +135,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```c#
-    {!> code-samples/pubnub/quick-start.cs !} 
+    {!> code-samples/pubnub/quick-start.cs !}
     ```
 
     ### Run your app
@@ -180,7 +180,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```java
-    {!> code-samples/java-samples/src/main/java/com/ringcentral/PubNubQuickStart.java !} 
+    {!> code-samples/java-samples/src/main/java/com/ringcentral/PubNubQuickStart.java !}
     ```
 
     ### Run your app
@@ -200,7 +200,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     Create a file called <tt>pubnub_notification.rb</tt> using the contents below.
 
     ```ruby
-    {!> code-samples/pubnub/quick-start.rb !} 
+    {!> code-samples/pubnub/quick-start.rb !}
     ```
 
     ### Run your code
@@ -210,4 +210,3 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     ```bash
     $ ruby pubnub_notification.rb
     ```
-

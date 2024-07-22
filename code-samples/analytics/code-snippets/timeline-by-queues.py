@@ -73,7 +73,7 @@ def read_call_queues():
 # Authenticate a user using a personal JWT token
 def login():
   try:
-    platform.login( jwt= "SANDBOX_JWT" )
+    platform.login( jwt= "RC_USER_JWT" )
     read_analytics_timeline_grouped_by_queues()
   except Exception as e:
     print ("Unable to authenticate to platform. Check credentials." + str(e))

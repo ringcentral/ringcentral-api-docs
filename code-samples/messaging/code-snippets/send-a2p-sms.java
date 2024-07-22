@@ -15,11 +15,11 @@ public class Send_HighVolume_SMS {
 
     public static void main(String[] args) {
       // Instantiate the SDK
-      restClient = new RestClient( "PRODUCTION-APP-CLIENTID", "PRODUCTION-APP-CLIENTSECRET", "https://platform.ringcentral.com");
+      restClient = new RestClient( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
       var obj = new Send_HighVolume_SMS();
       try {
         // Authenticate a user using a personal JWT token
-        restClient.authorize( "PRODUCTION_JWT" );
+        restClient.authorize( "RC_USER_JWT" );
         obj.read_extension_phone_number_detect_a2psms_feature();
       } catch (RestException | IOException e) {
         e.printStackTrace();

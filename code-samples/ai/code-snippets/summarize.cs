@@ -15,10 +15,10 @@ namespace SummarizeConversation {
       try
       {
         // Instantiate the SDK
-        restClient = new RestClient("PRODUCTION-APP-CLIENT-ID", "PRODUCTION-APP-CLIENT-SECRET", "https://platform.ringcentral.com");
+        restClient = new RestClient("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
 
         // Authenticate a user using a personal JWT token
-        await restClient.Authorize("PRODUCTION-JWT");
+        await restClient.Authorize("RC_USER_JWT");
 
         await conversation_summary();
       }

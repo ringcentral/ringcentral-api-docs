@@ -46,7 +46,7 @@ end
 # Authenticate a user using a personal JWT token
 def login():
   begin
-    $platform.authorize(jwt: "SANDBOX_JWT")
+    $platform.authorize(jwt: "RC_USER_JWT")
     create_compliance_export_task()
   rescue StandardError => e
     puts e

@@ -39,12 +39,12 @@ def list_contents(pageToken)
 end
 
 # Instantiate the SDK and get the platform instance
-$platform = RingCentral.new( ENV['RC_CLIENT_ID'], ENV['RC_CLIENT_SECRET'], "https://platform.ringcentral.com" )
+$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'], "https://platform.ringcentral.com" )
 
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize(jwt: ENV['RC_JWT'])
+    $platform.authorize(jwt: ENV['RC_USER_JWT'])
     list_contents("")
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials." + e.to_s)

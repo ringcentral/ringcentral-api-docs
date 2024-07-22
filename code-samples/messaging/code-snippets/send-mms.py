@@ -68,7 +68,7 @@ def check_mms_message_status(messageId):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "SANDBOX_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       read_extension_phone_number_detect_mms_feature()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

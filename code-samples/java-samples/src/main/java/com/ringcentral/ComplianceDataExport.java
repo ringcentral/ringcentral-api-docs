@@ -12,11 +12,11 @@ public class ComplianceDataExport {
 
     public static void main(String[] args) {
 	var obj = new ComplianceDataExport();
-	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			     System.getenv("RC_CLIENT_SECRET"),
+	rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			     System.getenv("RC_APP_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_JWT") );
+	    rc.authorize( System.getenv("RC_USER_JWT") );
 	    obj.create_compliance_export_task();
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();
@@ -26,7 +26,7 @@ public class ComplianceDataExport {
 	var parameters = new CreateDataExportTaskRequest();
 	parameters.timeFrom = "2019-08-01T00:00:00.000Z";
 	parameters.timeTo = "2019-08-26T23:59:59.999Z";
-	
+
 	var resp = rc.restapi().glip().dataExport().post(parameters);
 	var taskId = resp.id;
 	System.out.println("Created export task. Task ID: " + taskId);

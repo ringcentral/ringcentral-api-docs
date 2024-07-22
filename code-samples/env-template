@@ -1,15 +1,16 @@
 # Create an app in the RingCentral Developer Console. Make sure the app has all permissions enabled.
 # Enter in the credentials for this app into the fields below.
 
-# Sandbox
-RC_SERVER_URL        = 'https://platform.devtest.ringcentral.com'
+# Test on localhost when needed. Can be any open port
+PORT                  = 3000
+
 # Production
-#RC_SERVER_URL        = 'https://platform.ringcentral.com'
-RC_CLIENT_ID         = ''
-RC_CLIENT_SECRET     = ''
+RC_SERVER_URL        = 'https://platform.ringcentral.com'
+RC_APP_CLIENT_ID         = ''
+RC_APP_CLIENT_SECRET     = ''
 
 # This credential is used for JWT-grant types
-RC_JWT               = ''
+RC_USER_JWT               = ''
 
 # Used in messaging/quick-start.*
 # For code testing purpose, we set the SMS recipient's phone number to this environment variable.
@@ -22,8 +23,12 @@ SMS_RECIPIENT        = ''
 FAX_RECIPIENT        = ''
 
 # Used in voice/quick-start.*
-# For code testing purpose, we set the callee's phone number in this environment variable.
 # You can set the phone number via this variable, or you can set it directly on your code.
+
+# For code testing purpose, we set the caller's phone number in this environment variable.
+RINGOUT_CALLER      = ''
+
+# For code testing purpose, we set the callee's phone number in this environment variable.
 RINGOUT_RECIPIENT    = ''
 
 # Used in voice/call-forwarding.*
@@ -31,7 +36,7 @@ RINGOUT_RECIPIENT    = ''
 # You can set the phone number via this variable, or you can set it directly on your code.
 FORWARDING_NUMBER = ''
 
-# Used in code flow authenticatin Quick Start
+# Used in code flow authentication Quick Start
 # The following URL cannot be blank when running the code flow authentication Quick Start.
 RC_REDIRECT_URL      = 'http://localhost:5000/oauth2callback'
 
@@ -42,6 +47,6 @@ NGROK_URL=''
 # The following URL is your bot webhook delivery address
 RC_BOT_WEBHOOK_URL = ''
 
-# Used in the Webhook notification code samples
+# Used in the WebHook notification code samples
 # The following URL is your webhook delivery address
 WEBHOOK_DELIVERY_ADDRESS = ''

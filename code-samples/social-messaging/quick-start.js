@@ -6,13 +6,13 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 // Initialize the RingCentral SDK and Platform
 const rcsdk = new RC({
     'server':       "https://platform.ringcentral.com",
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+    'clientId':     process.env.RC_APP_CLIENT_ID,
+    'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
 
 /* Authenticate a user using a personal JWT token */
-platform.login({ 'jwt':  process.env.RC_JWT })
+platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     list_contents("")

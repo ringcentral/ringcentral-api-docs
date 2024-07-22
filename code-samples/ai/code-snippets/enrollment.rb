@@ -65,7 +65,7 @@ end
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize( jwt: "PRODUCTION-JWT" )
+    $platform.authorize( jwt: "RC_USER_JWT" )
     # set your valid audio content file name and path
     contentFile = "VALID_AUDIO_CONTENT_FILE"
     create_speaker_enrollment(contentFile)

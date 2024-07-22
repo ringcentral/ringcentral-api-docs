@@ -1,5 +1,5 @@
 /*
-This is a sample bot application for RingCentral. Learn more about this 
+This is a sample bot application for RingCentral. Learn more about this
 app by following the instructions found at the URL below:
 https://developers.ringcentral.com/guide/team-messaging/bots/walkthrough/
 
@@ -19,11 +19,11 @@ const TOKEN_TEMP_FILE = '.bot-auth';
 
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+    'clientId':     process.env.RC_APP_CLIENT_ID,
+    'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({ 'jwt':  process.env.RC_JWT })
+platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 var app = express();
 var subscription, rcsdk, subscriptionId, bot_token;
@@ -61,7 +61,7 @@ if (fs.existsSync( TOKEN_TEMP_FILE )) {
 // This server stores that key in memory. As a result, if the server is
 // restarted, you will need to remove and reinstall the not in order to obtain
 // a fresh API token. In a more advanced implementation, the acess key would
-// be persisted so that it can easily be re-used if the server is restarted. 
+// be persisted so that it can easily be re-used if the server is restarted.
 app.get('/oauth', function (req, res) {
     console.log("Public bot being installed");
     if (!req.query.code){
@@ -85,7 +85,7 @@ app.get('/oauth', function (req, res) {
 // Handle authorization for public bots
 //
 // When a private bot is installed, RingCentral transmits a permanent access key
-// to the bot via an HTTP POST. 
+// to the bot via an HTTP POST.
 //
 // Then the bot subscribes to webhooks so that it can respond to message
 // events.
@@ -93,7 +93,7 @@ app.get('/oauth', function (req, res) {
 // This server stores that key in memory. As a result, if the server is
 // restarted, you will need to remove and reinstall the not in order to obtain
 // a fresh API token. In a more advanced implementation, the acess key would
-// be persisted so that it can easily be re-used if the server is restarted. 
+// be persisted so that it can easily be re-used if the server is restarted.
 app.post('/oauth', function (req, res) {
     res.status(200);
     if (req.body.access_token) {
@@ -109,10 +109,10 @@ app.post('/oauth', function (req, res) {
 	data.refresh_token = 'xxx';
 	data.refresh_token_expires_in = 10000000000;
 	platform.auth().setData(data);
-	
+
 	console.log( "Stashing access key: " + req.body.access_token )
 	fs.writeFileSync( TOKEN_TEMP_FILE, JSON.stringify( data ) )
-	
+
 	try {
             subscribeToEvents();
 	} catch(e) {
@@ -124,7 +124,7 @@ app.post('/oauth', function (req, res) {
 
 // Callback method received after subscribing to webhook
 // This method handles webhook notifications and will be invoked when a user
-// types a message to your bot. 
+// types a message to your bot.
 app.post('/callback', function (req, res) {
     var validationToken = req.get('Validation-Token');
     var body = [];
@@ -257,7 +257,7 @@ function hello_world_card() {
 		"title": "Say Hello"
             }
 	]
-	
+
     }
     return HELLO_CARD
 }

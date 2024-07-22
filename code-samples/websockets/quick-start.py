@@ -1,8 +1,8 @@
 # Need a .env file with following fields
 # RC_SERVER_URL=
-# RC_CLIENT_ID=
-# RC_CLIENT_SECRET=
-# RC_JWT=
+# RC_APP_CLIENT_ID=
+# RC_APP_CLIENT_SECRET=
+# RC_USER_JWT=
 
 from ringcentral import SDK
 from dotenv import load_dotenv
@@ -26,12 +26,12 @@ def on_ws_created(web_socket_client):
 async def main():
     load_dotenv(override=True)
     sdk = SDK(
-        os.environ['RC_CLIENT_ID'],
-        os.environ["RC_CLIENT_SECRET"],
+        os.environ['RC_APP_CLIENT_ID'],
+        os.environ["RC_APP_CLIENT_SECRET"],
         os.environ["RC_SERVER_URL"],
     )
     platform = sdk.platform()
-    platform.login(jwt=os.environ["RC_JWT"])
+    platform.login(jwt=os.environ["RC_USER_JWT"])
 
     try:
         web_socket_client = sdk.create_web_socket_client()
@@ -39,7 +39,7 @@ async def main():
         web_socket_client.on(WebSocketEvents.subscriptionCreated, on_sub_created)
         web_socket_client.on(WebSocketEvents.receiveSubscriptionNotification, on_notification)
         await asyncio.gather(
-            web_socket_client.create_new_connection(), 
+            web_socket_client.create_new_connection(),
             web_socket_client.create_subscription(["/restapi/v1.0/account/~/extension/~/presence"])
         )
     except KeyboardInterrupt:

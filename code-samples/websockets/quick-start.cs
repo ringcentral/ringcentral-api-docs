@@ -6,8 +6,8 @@ using RingCentral.Net.WebSocket;
 
 var envVars = DotEnv.Read();
 
-var rc = new RestClient(envVars["RINGCENTRAL_CLIENT_ID"], envVars["RINGCENTRAL_CLIENT_SECRET"], envVars["RINGCENTRAL_SERVER_URL"]);
-await rc.Authorize(envVars["RINGCENTRAL_JWT_TOKEN"]);
+var rc = new RestClient(envVars["RC_APP_CLIENT_ID"], envVars["RC_APP_CLIENT_SECRET"], envVars["RC_SERVER_URL"]);
+await rc.Authorize(envVars["RC_USER_JWT"]);
 Console.WriteLine(rc.token.access_token);
 
 var wsExtension = new WebSocketExtension(new WebSocketOptions

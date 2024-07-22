@@ -40,7 +40,7 @@ Imagine if you are a community manager and you need to send an SMS message every
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/code-snippets-headers/header-prod.js [ln:1-13]!}
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13]!}
     {!> code-samples/messaging/code-snippets/create-user-sms-template.js [ln:10-] !}
     ```
 
@@ -48,13 +48,13 @@ Imagine if you are a community manager and you need to send an SMS message every
 
     ```python
     {!> code-samples/messaging/code-snippets/create-user-sms-template.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer-prod.py [ln:1-5] !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5] !}
     ```
 
 === "PHP"
 
     ```php
-    {!> code-samples/messaging/code-snippets-headers/header-prod.php [ln:1-15]!}
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-15]!}
     {!> code-samples/messaging/code-snippets/create-user-sms-template.php [ln:2-]!}
     ```
 
@@ -62,5 +62,5 @@ Imagine if you are a community manager and you need to send an SMS message every
 
     ```ruby
     {!> code-samples/messaging/code-snippets/create-user-sms-template.rb !}
-    {!> code-samples/messaging/code-snippets-headers/footer-prod.rb [ln:1-4] !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
     ```

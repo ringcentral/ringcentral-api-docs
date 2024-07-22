@@ -20,11 +20,11 @@ public class AuthorizationFlow extends AbstractHandler {
   static RestClient rc;
   private static String TOKEN_KEY = "rc-token";
   // Make sure this is the same URL as the one i
-  private static String REDIRECT_URI = System.getenv("RC_REDIRECT_URL"); 
+  private static String REDIRECT_URI = System.getenv("RC_REDIRECT_URL");
 
   public static void main(String[] args) throws Exception {
-    rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			 System.getenv("RC_CLIENT_SECRET"),
+    rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			 System.getenv("RC_APP_CLIENT_SECRET"),
 			 System.getenv("RC_SERVER_URL") );
     try {
       Server server = new Server(5000);

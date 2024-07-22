@@ -14,16 +14,10 @@ async function initializePhoneEngine(rcsdk){
       console.log("Supervisor Ready!")
 
       softphone.on('INVITE', sipMessage => {
-        // This is for production
-        /*
         var headers = sipMessage.headers['p-rc-api-ids'].split(";")
         if (sipMessage.headers['p-rc-api-monitoring-ids']){
           headers = sipMessage.headers['p-rc-api-monitoring-ids'].split(";")
         }
-        */
-
-        // This is for sandbox
-        var headers = sipMessage.headers['p-rc-api-ids'].split(";")
 
         var partyId = headers[0].split("=")[1]
         var channelIndex = 0
@@ -109,18 +103,11 @@ async function initializePhoneEngine(rcsdk){
         this.softphone.on('INVITE', sipMessage => {
           console.log("SIP Invite")
 
-          //console.log(sipMessage.headers)
-          /* This is for production */
           var headers = sipMessage.headers['p-rc-api-ids'].split(";")
           if (sipMessage.headers['p-rc-api-monitoring-ids']){
             console.log("p-rc-api-monitoring-ids ", sipMessage.headers['p-rc-api-monitoring-ids'])
             headers = sipMessage.headers['p-rc-api-monitoring-ids'].split(";")
           }
-
-          /* This is for sandbox */
-          //console.log("Call Id", sipMessage.headers['Call-Id'])
-          //console.log("p-rc-api-ids " + sipMessage.headers['p-rc-api-ids'])
-          //var headers = sipMessage.headers['p-rc-api-ids'].split(";")
 
           var partyId = headers[0].split("=")[1]
           var channelIndex = 0

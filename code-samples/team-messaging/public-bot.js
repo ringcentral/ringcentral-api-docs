@@ -47,10 +47,10 @@ app.get('/', function(req, res) {
 
 // Instantiate the RingCentral JavaScript SDK
 var rcsdk = new RingCentral({
-  server: RINGCENTRAL_SERVER_URL,
-  clientId: RINGCENTRAL_CLIENT_ID,
-  clientSecret: RINGCENTRAL_CLIENT_SECRET,
-  redirectUri: RINGCENTRAL_OAUTH_REDIRECT_URI
+  server: process.env.RC_SERVER_URL,
+  clientId: process.env.RC_APP_CLIENT_ID,
+  clientSecret: process.env.RC_APP_CLIENT_SECRET,
+  redirectUri: process.env.RC_REDIRECT_URI
 });
 
 // Keep a list of account's access tokens in memory so we can use them to post messages
@@ -101,7 +101,7 @@ app.get('/oauth', async function (req, res) {
         try {
           var params = {
               code : req.query.code,
-              redirectUri : RINGCENTRAL_OAUTH_REDIRECT_URI
+              redirectUri : process.env.RC_REDIRECT_URL
           }
           var platform = rcsdk.platform()
           var resp = await platform.login(params)
@@ -212,7 +212,7 @@ async function subscribeToEvents(p, accountTokenObj){
         ],
         "deliveryMode": {
             "transportType": "WebHook",
-            "address": WEBHOOKS_DELIVERY_ADDRESS
+            "address": process.env.WEBHOOK_DELIVERY_ADDRESS
         },
         "expiresIn": 604799
     };

@@ -17,12 +17,12 @@ namespace my_project
             services.AddMvc().AddSessionStateTempDataProvider();
             services.AddSession();
         }
-        
+
         private static string Html(string body)
         {
             return $@"<!doctype html><html><body>{body}</body></html>";
         }
-        
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
@@ -30,8 +30,8 @@ namespace my_project
             app.Run(async (context) =>
             {
                 restClient = new RestClient(
-                    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-                    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+                    Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+                    Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
                     Environment.GetEnvironmentVariable("RC_SERVER_URL"));
                 var tokenString = context.Session.GetString(SESSION_TOKEN_KEY);
                 if (tokenString != null)
@@ -45,7 +45,7 @@ namespace my_project
                         Html($"<h2>RingCentral Authorization Code Flow Authentication</h2><a href=\"{oauthUri}\">Login RingCentral Account</a>"));
                     return;
                 }
-                
+
                 switch (context.Request.Path)
                 {
                     case "/":
@@ -80,7 +80,7 @@ namespace my_project
                                 result = await restClient.Get<string>("/restapi/v1.0/account/~/call-log");
                                 break;
                         }
-                        
+
                         await context.Response.WriteAsync(Html($"<pre>{result}</pre>"));
                         break;
                     case "/logout":

@@ -32,7 +32,7 @@ def list_identities(pageToken):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "RC_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       list_identities("")
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

@@ -73,7 +73,7 @@ def delete_call_monitoring_group(groupId):
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "SANDBOX-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       create_call_monitoring_group("Demo Group - Python")
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

@@ -26,17 +26,17 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 !!! hint "Please use production credentials to call the Webinar API"
-    RingCentral Webinar is not currently available in sandbox. To successfully call the API, please do development directly in our production environment. 
+    RingCentral Webinar is not currently available in sandbox. To successfully call the API, please do development directly in our production environment.
 
 ## Create a webinar
 
@@ -99,7 +99,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit webinar.php
 
-    Create a file called `webinar.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. 
+    Create a file called `webinar.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```php
     {!> code-samples/webinar/quick-start.php !}
@@ -141,7 +141,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     !!! warning "C# and .NET SDKs are not currently available"
 	    If you are looking to call RingCentral Webinar APIs using Java or C#, RingCentral Webinar APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
 
-=== "Java" 
+=== "Java"
 
     !!! warning "A Java SDK is not currently available"
         If you are looking to call RingCentral Webinar APIs using Java or C#, RingCentral Webinar APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
@@ -151,4 +151,3 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
 <a target="_new" href="https://forums.developers.ringcentral.com/search.html?c=11&includeChildren=false&f=&type=question+OR+kbentry+OR+answer+OR+topic&redirect=search%2Fsearch&sort=relevance&q=meetings">Search the forums &raquo;</a>
-

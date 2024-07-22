@@ -13,13 +13,13 @@ public class WebSocketQuickStart {
     static RestClient rc;
     public static void main(String[] args) throws RestException, IOException, InterruptedException {
       RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
+            System.getenv("RC_APP_CLIENT_ID"),
+            System.getenv("RC_APP_CLIENT_SECRET"),
+            System.getenv("RC_SERVER_URL")
         );
 
         rc.authorize(
-            System.getenv("RINGCENTRAL_JWT_TOKEN")
+            System.getenv("RC_USER_JWT")
         );
         final String[] message = {null};
         Subscription subscription = new Subscription(rc,

@@ -33,7 +33,7 @@ def list_teams(pageToken):
 # Authenticate a user using a personal JWT token
 def login():
   try:
-    platform.login( jwt= "SANDBOX_JWT" )
+    platform.login( jwt= "RC_USER_JWT" )
     read_teams("")
   except Exception as e:
     print ("Unable to authenticate to platform. Check credentials." + str(e))

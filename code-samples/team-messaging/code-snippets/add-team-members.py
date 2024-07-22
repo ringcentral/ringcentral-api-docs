@@ -55,7 +55,7 @@ def add_new_members(teamId):
 # Authenticate a user using a personal JWT token
 def login():
   try:
-    platform.login( jwt= "SANDBOX_JWT" )
+    platform.login( jwt= "RC_USER_JWT" )
     find_team("", "Python Team")
   except Exception as e:
     print ("Unable to authenticate to platform. Check credentials." + str(e))

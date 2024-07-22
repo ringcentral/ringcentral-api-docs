@@ -12,11 +12,11 @@ public class SubscribeForWebHookNotification
     public static void main(String[] args) throws IOException, RestException
     {
         String DELIVERY_ADDRESS = "<https://xxxxxxxxx.ngrok.io>";
-	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			     System.getenv("RC_CLIENT_SECRET"),
+	rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			     System.getenv("RC_APP_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_JWT") );
+	    rc.authorize( System.getenv("RC_USER_JWT") );
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();
 	}

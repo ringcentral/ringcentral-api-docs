@@ -14,10 +14,10 @@ public class CallMonitoringGroup {
     var obj = new CallMonitoringGroup();
     try {
       // Instantiate the SDK
-      restClient = new RestClient("SANDBOX-APP-CLIENT-ID", "SANDBOX-APP-CLIENT-SECRET", "https://platform.devtest.ringcentral.com");
+      restClient = new RestClient("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
 
       // Authenticate a user using a personal JWT token
-      restClient.authorize("SANDBOX-JWT");
+      restClient.authorize("RC_USER_JWT");
 
       obj.read_call_monitoring_groups();
 

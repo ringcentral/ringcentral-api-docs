@@ -11,25 +11,25 @@ import java.text.SimpleDateFormat;
 
 public class Export_MessageStore {
     static RestClient rc;
-    
+
     public static void main(String[] args) {
 	var obj = new Export_MessageStore();
-	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			     System.getenv("RC_CLIENT_SECRET"),
+	rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			     System.getenv("RC_APP_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_JWT") );
+	    rc.authorize( System.getenv("RC_USER_JWT") );
 	    obj.export_message_store();
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();
 	}
     }
-    
+
     public static void export_message_store() throws RestException, IOException {
 	var parameters = new CreateMessageStoreReportRequest();
 	parameters.dateFrom = "2019-01-01T00:00:00.000Z";
 	parameters.dateTo = "2019-03-31T23:59:59.999Z";
-	
+
 	var response =  rc.restapi().account().messageStoreReport().post(parameters);
 	var taskId = response.id;
 	boolean polling = true;

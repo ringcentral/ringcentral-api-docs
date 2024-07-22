@@ -68,7 +68,7 @@ def get_message_store_report_archive_content(contentUri, fileName):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "SANDBOX_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       create_message_store_report()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

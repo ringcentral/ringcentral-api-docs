@@ -70,12 +70,12 @@ def delete_subscription(subscriptionId)
 end
 
 # Instantiate the SDK and get the platform instance
-$platform = RingCentral.new( ENV['RC_CLIENT_ID'], ENV['RC_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
+$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
 
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize(jwt: ENV['RC_JWT'])
+    $platform.authorize(jwt: ENV['RC_USER_JWT'])
     subscribe_for_notification()
     #read_subscriptions()
   rescue StandardError => e

@@ -56,7 +56,7 @@ def read_enrolled_speakers():
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "PRODUCTION-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       speakers_identification()
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

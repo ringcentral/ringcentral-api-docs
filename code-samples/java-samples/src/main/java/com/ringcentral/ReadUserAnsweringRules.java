@@ -6,14 +6,14 @@ import java.io.IOException;
 
 public class ReadUserAnsweringRules {
     static RestClient rc;
-    
+
     public static void main(String[] args) {
         var obj = new ReadUserAnsweringRules();
-	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			     System.getenv("RC_CLIENT_SECRET"),
+	rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			     System.getenv("RC_APP_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_JWT") );
+	    rc.authorize( System.getenv("RC_USER_JWT") );
 	    obj.get_user_call_answering_rules();
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();
@@ -24,7 +24,7 @@ public class ReadUserAnsweringRules {
 	var parameters         = new ListAnsweringRulesParameters();
 	parameters.view        = "Detailed";
 	parameters.enabledOnly = false;
-	
+
 	UserAnsweringRuleList response = rc.restapi().account().extension().answeringRule().list(parameters);
 	for (var record : response.records) {
 	    var rule = rc.restapi().account().extension().answeringRule(record.id).get();

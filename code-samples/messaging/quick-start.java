@@ -14,10 +14,10 @@ public class SendSMS {
       var obj = new SendSMS();
       try {
         // Instantiate the SDK
-        restClient = new RestClient(System.getenv("RC_CLIENT_ID"), System.getenv("RC_CLIENT_SECRET"), System.getenv("RC_SERVER_URL"));
+        restClient = new RestClient(System.getenv("RC_APP_CLIENT_ID"), System.getenv("RC_APP_CLIENT_SECRET"), System.getenv("RC_SERVER_URL"));
 
         // Authenticate a user using a personal JWT token
-        restClient.authorize(System.getenv("RC_JWT"));
+        restClient.authorize(System.getenv("RC_USER_JWT"));
 
         // For the purpose of testing the code, we put the SMS recipient number in the environment variable.
         // Feel free to set the SMS recipient directly.

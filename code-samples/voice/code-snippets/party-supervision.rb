@@ -62,7 +62,7 @@ end
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize( jwt: "SANDBOX-JWT" )
+    $platform.authorize( jwt: "RC_USER_JWT" )
     supervisorDeviceId = "Test-Supervisor-DeviceId"
     agentExtensionId = "Test-Agent-ExtensionId"
     read_agent_active_calls(agentExtensionId, supervisorDeviceId)
