@@ -33,7 +33,7 @@ def list_user_sms_template():
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "PRODUCTION_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       create_user_sms_template()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

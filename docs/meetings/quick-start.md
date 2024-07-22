@@ -6,7 +6,7 @@ style: quick-start
 
 ??? check "Paid RingCentral account and Meetings app scope required"
      In order to use this API, developers must have a paid RingCentral account. This API is not available to free developer accounts.
-	 In addition, applications that call this API require the "Meetings" application scope. To have this scope added to your application, please [contact developer support](https://developers.ringcentral.com/support/create-case). 
+	 In addition, applications that call this API require the "Meetings" application scope. To have this scope added to your application, please [contact developer support](https://developers.ringcentral.com/support/create-case).
 
 Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
 
@@ -38,14 +38,14 @@ Access to the RingCentral Meetings API currently requires help from support in o
 <a target="_new" class="btn btn-primary" href="https://developers.ringcentral.com/support/create-case">Contact support to request the Meetings scope</a>
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 ## Create a meeting
 

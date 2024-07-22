@@ -13,11 +13,11 @@ class Program
     static void Main(string[] args)
     {
 	restClient = new RestClient(
-	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+	    Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+	    Environment.GetEnvironmentVariable("RC__APP_CLIENT_SECRET"),
 	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 	restClient.Authorize(
-	    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
+	    Environment.GetEnvironmentVariable("RC_USER_JWT")).Wait();
         pubnub_notification().Wait();
     }
     static private async Task pubnub_notification()

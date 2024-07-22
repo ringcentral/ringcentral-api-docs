@@ -12,10 +12,10 @@ namespace Read_MessageStore
           try
           {
             // Instantiate the SDK
-            restClient = new RestClient( "SANDBOX-APP-CLIENTID", "SANDBOX-APP-CLIENTSECRET", "https://platform.devtest.ringcentral.com");
+            restClient = new RestClient( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
             // Authenticate a user using a personal JWT token
-            await restClient.Authorize("SANDBOX_JWT");
-            
+            await restClient.Authorize("RC_USER_JWT");
+
             await read_extension_message_store();
           }
           catch (Exception ex)

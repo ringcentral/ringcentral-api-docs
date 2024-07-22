@@ -25,15 +25,15 @@ def call_ring_out():
         print ("Unable to place a ring-out call. " + str(e))
 
 # Instantiate the SDK and get the platform instance
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
+rcsdk = SDK( os.environ.get('RC_APP_CLIENT_ID'),
+             os.environ.get('RC_APP_CLIENT_SECRET'),
              os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
 
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt=os.environ.get('RC_JWT') )
+      platform.login( jwt=os.environ.get('RC_USER_JWT') )
       #call_ring_out()
     except Exception as e:
       sys.exit("Unable to authenticate to platform. Check credentials." + str(e))

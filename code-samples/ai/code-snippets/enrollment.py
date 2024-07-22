@@ -63,7 +63,7 @@ def create_speaker_enrollment(contentFile):
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "PRODUCTION-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       # et your valid audio content file name and path
       contentFile = "VALID_AUDIO_CONTENT_FILE"
       create_speaker_enrollment(contentFile)

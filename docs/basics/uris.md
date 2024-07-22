@@ -21,16 +21,13 @@ Protocol, host and port together constitute the main entry point to access the A
 
 RingCentral production servers are accessible on `https://platform.ringcentral.com`. Please note that for security reasons connection is allowed using only HTTPS protocol to the default HTTPS port 443, so the port can be omitted in the URI.
 
-!!! info "Different endpoints are required for the Developer Sandbox"
-    If you plan to work with non-production servers you may be required to use other entry points. For example, RingCentral Sandbox environment is accessible via `https://platform.devtest.ringcentral.com` base URI. If you are not sure what URI you should use for your environment, please contact RingCentral Technical Support to get proper connection settings.
-
 ### Path parameters: account and extension IDs
 
 All of RingCentral's  API resources are organized in a hierarchical manner. All resource paths start with `/restapi` followed by the version number of the API you are accessing. Let's consider a typical API resource URI:
 
 `https://platform.ringcentral.com/restapi/v1.0/account/`**`159048008`**`/extension/`**`171857008`**`/call-log?dateFrom=2012-08-26`
 
-Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are `accountId` and `extensionId`. As you might expect, they identify the account and extension of a RingCentral user, accordingly, and are bolded in the example above. 
+Path parameters are commonly used in the RingCentral API to identify a particular entity belonging to a given type by its unique key. Since most of the API resources represent some objects which are owned by particular a RingCentral account (company) or user, two basic path parameters are `accountId` and `extensionId`. As you might expect, they identify the account and extension of a RingCentral user, accordingly, and are bolded in the example above.
 
 !!! tip "Extension numbers versus IDs"
     RingCentral users associate an account with the company main phone number and an extension with the short extension number, but both accountId and extensionId are internal identifiers.
@@ -70,7 +67,7 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 | `GET` | Retrieves the object represented by the resource that is specified in the request body. It may be the call log information for an extension, the address book with contacts, etc. |
 | `POST` | Creates a new object represented by the resource that is specified in the request. In the response body the server sends the representation of the created object, as if there is an immediate `GET` request for it.
 | `PUT` | Modifies an already existing object represented by the resource that is specified in the request body, by replacing the existing resource with the resource defined in the request body. If the object was successfully modified, the server responds with the representation of the changed resource in the response body. The request body may contain only the modified properties of the resource. The response returns the entire resource representation with all of the properties, as in case of the `GET` request. |
-| `PATCH` | Modifies an already existing object represented by the resource that is specified in the request body by modifying only those properties contained within the request body. Any property not explicitly referenced in the request body will be left unaltered. In this way, patching a resource is similar to a partial update of that resource. | 
+| `PATCH` | Modifies an already existing object represented by the resource that is specified in the request body by modifying only those properties contained within the request body. Any property not explicitly referenced in the request body will be left unaltered. In this way, patching a resource is similar to a partial update of that resource. |
 | `DELETE` | Removes the object represented by the resource that is specified in the request body. |
 
 ### Example
@@ -78,7 +75,7 @@ In the RingCentral API, as in any REST API, the resources are accessible by stan
 Let's consider a simple example of a `GET` method — retrieving the version of the RingCentral REST API.
 
 === "Request"
-	```http 
+	```http
 	GET /restapi/v1.0 HTTP/1.1
 	Accept: application/json
 	Authorization: Bearer UExxxxxxxxMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
@@ -101,7 +98,7 @@ Let's consider a simple example of a `GET` method — retrieving the version of 
 	  "serverRevision" : "294476"
 	}
 	```
-		
+
 !!! alert "Don't assume all methods are supported"
     Most RingCentral API resources do not support all of the four methods. In order to find out which resources support a particular method, please refer to the API Reference.
 
@@ -116,7 +113,7 @@ Using `X-HTTP-Method-Override` the client instructs the server to override the a
 ```http
 DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
 ```
-                 
+
 Can be alternatively sent as:
 
 ```http
@@ -131,7 +128,7 @@ In really unfortunate circumstances some clients do not even support HTTP header
 ```
 POST /restapi/v1.0/account/~/extension/~/message-store/4084362008?_method=DELETE HTTP/1.1
 ```
-                 
+
 If both the override header and query parameter are specified in the HTTP request and contain different values, the server returns `HTTP 400 Bad Request` error.
 
 !!! warning "Tunneling HTTP methods should be used only when no other workaround is available."

@@ -17,10 +17,10 @@ public class SummarizeConversation {
       var obj = new SummarizeConversation();
       try {
         // Instantiate the SDK
-        restClient = new RestClient("PRODUCTION-APP-CLIENT-ID", "PRODUCTION-APP-CLIENT-SECRET", "https://platform.ringcentral.com");
+        restClient = new RestClient("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
 
         // Authenticate a user using a personal JWT token
-        restClient.authorize("PRODUCTION-JWT");
+        restClient.authorize("RC_USER_JWT");
 
         obj.conversation_summary();
       } catch (RestException e) {

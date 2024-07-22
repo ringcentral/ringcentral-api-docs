@@ -34,15 +34,15 @@ def list_contents(pageToken):
         print ("Unable to call list contents API. " + str(e))
 
 # Instantiate the SDK and get the platform instance
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
+rcsdk = SDK( os.environ.get('RC_APP_CLIENT_ID'),
+             os.environ.get('RC_APP_CLIENT_SECRET'),
              "https://platform.ringcentral.com" )
 platform = rcsdk.platform()
 
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt=os.environ.get('RC_JWT') )
+      platform.login( jwt=os.environ.get('RC_USER_JWT') )
       list_contents("")
     except Exception as e:
       sys.exit("Unable to authenticate to platform. Check credentials." + str(e))

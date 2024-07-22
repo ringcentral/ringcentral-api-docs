@@ -33,7 +33,7 @@ end
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize( jwt: "PRODUCTION_JWT" )
+    $platform.authorize( jwt: "RC_USER_JWT" )
     create_user_sms_template()
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials." + e.to_s)

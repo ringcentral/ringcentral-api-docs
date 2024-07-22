@@ -9,14 +9,14 @@ $dotenv->load();
 $DELIVERY_ADDRESS= $_ENV['WEBHOOK_DELIVERY_ADDRESS'] . "/webhook-server.php?webhook";
 
 # Instantiate the SDK and get the platform instance
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
+                                  $_ENV['RC_APP_CLIENT_SECRET'],
                                   $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
 // Authenticate a user using a personal JWT token
 try {
-  $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
+  $platform->login( [ "jwt" => $_ENV['RC_USER_JWT'] ] );
   subscribe_for_notification();
   //read_subscriptions();
 } catch (\RingCentral\SDK\Http\ApiException $e) {

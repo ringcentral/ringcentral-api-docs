@@ -11,11 +11,11 @@ namespace Get_User_Call_Answering_Rules
     static async Task Main(string[] args)
     {
       restClient = new RestClient(
-      Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-      Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+      Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+      Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
       Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-      await restClient.Authorize(Environment.GetEnvironmentVariable("RC_JWT"));
-      
+      await restClient.Authorize(Environment.GetEnvironmentVariable("RC_USER_JWT"));
+
       await get_user_call_answering_rules();
     }
 

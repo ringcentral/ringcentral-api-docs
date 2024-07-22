@@ -14,11 +14,11 @@ public class Export_MessageStore {
 
     public static void main(String[] args) {
         // Instantiate the SDK
-        restClient = new RestClient( "SANDBOX-APP-CLIENTID", "SANDBOX-APP-CLIENTSECRET", "https://platform.devtest.ringcentral.com");
+        restClient = new RestClient( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
         var obj = new Export_MessageStore();
         try {
           // Authenticate a user using a personal JWT token
-          restClient.authorize( "SANDBOX_JWT" );
+          restClient.authorize( "RC_USER_JWT" );
           obj.create_message_store_report();
         } catch (RestException | IOException e) {
           e.printStackTrace();

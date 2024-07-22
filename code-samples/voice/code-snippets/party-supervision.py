@@ -38,7 +38,7 @@ def submit_call_supervise_request(telephonySessionId, agentExtensionId, supervis
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "SANDBOX-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
 
       supervisorDeviceId = "Test-Supervisor-DeviceId"
       agentExtensionId = "Test-Agent-ExtensionId"

@@ -18,7 +18,7 @@ def check_task_status(jobId):
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "PRODUCTION-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       check_task_status("JOBID")
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

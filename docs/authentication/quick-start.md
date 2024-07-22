@@ -32,15 +32,15 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 
 ??? hint "Setting the redirect URI for your app"
     If you are setting up your application manually, be sure to set your redirect URL to the following:
-    
+
         http://localhost:5000/oauth2callback
-    
+
     ![Redirect URI](redirect_uri.png){.img-fluid}
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
 
@@ -65,7 +65,7 @@ Select your preferred language below.
     Create a file called `index.js` using the contents below.
 
     ```javascript
-    {!> code-samples/auth/quick-start/javascript/index.js !} 
+    {!> code-samples/auth/quick-start/javascript/index.js !}
     ```
 
     ### Create a __views__ folder and create an index.ejs and a test.ejs files under the views folder
@@ -73,13 +73,13 @@ Select your preferred language below.
     Create a file called <tt>index.ejs</tt>. In this file, we'll implement the login page.
 
     ``` html
-    {!> code-samples/auth/quick-start/javascript/index.ejs !} 
+    {!> code-samples/auth/quick-start/javascript/index.ejs !}
     ```
 
     Create a file called <tt>test.ejs</tt>. In this file, we'll add a few API call test cases and a logout button.
 
     ``` html
-    {!> code-samples/auth/quick-start/javascript/test.ejs !} 
+    {!> code-samples/auth/quick-start/javascript/test.ejs !}
     ```
 
     ### Run your code
@@ -251,8 +251,8 @@ Select your preferred language below.
 
     ### Run your code
 
-    You are almost done. Now run your app using gradle `gradle run` command. 
-    Open a Web browser and enter localhost:5000, you should see 'Login with RingCentral' link, click on that and follow the login process using your sandbox credentials to access the secure page where you can call RingCentral APIs. 
+    You are almost done. Now run your app using gradle `gradle run` command.
+    Open a Web browser and enter localhost:5000, you should see 'Login with RingCentral' link, click on that and follow the login process using your user login credentials (username and password) to access the secure page where you can call RingCentral APIs. 
 
 === "Ruby"
 
@@ -281,7 +281,7 @@ Select your preferred language below.
 
     Browse the the "config" folder and edit the file <tt>routes.rb</tt>
 
-    ```ruby 
+    ```ruby
     {!> code-samples/auth/quick-start/ruby/routes.rb !}
     ```
 
@@ -323,4 +323,3 @@ Select your preferred language below.
 Having difficulty? Feeling frustrated? Receiving an error you don't understand? Our community is here to help and may already have found an answer. Search our community forums, and if you don't find an answer please ask!
 
 <a target="_new" href="https://community.ringcentral.com/search.html?c=8&includeChildren=false&f=&type=question&redirect=search%2Fsearch&sort=relevance&q=authentication">Search the forums &raquo;</a>
-

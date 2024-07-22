@@ -4,7 +4,7 @@ api.post('/hook', function (req, res) {
  var bodyCrypted = require('crypto')
      .createHmac(
          'sha1',
-         SHARED_SECRET 
+         SHARED_SECRET
      )
      .update(JSON.stringify(req.body))
      .digest()
@@ -16,5 +16,5 @@ api.post('/hook', function (req, res) {
  }
 
  console.log('Webhook received')
- // code continues 
+ // code continues
 })

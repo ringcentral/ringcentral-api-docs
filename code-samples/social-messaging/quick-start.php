@@ -5,14 +5,14 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . './../');
 $dotenv->load();
 
 # Instantiate the SDK and get the platform instance
-$rcsdk = new RingCentral\SDK\SDK( "https://platform.ringcentral.com",
-                                  $_ENV['RC_CLIENT_SECRET'],
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
+                                  $_ENV['RC_APP_CLIENT_SECRET'],
                                   $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
 // Authenticate a user using a personal JWT token
 try {
-  $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
+  $platform->login( [ "jwt" => $_ENV['RC_USER_JWT'] ] );
   list_contents("");
 } catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->getMessage() . PHP_EOL);

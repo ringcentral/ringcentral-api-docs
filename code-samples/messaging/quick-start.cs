@@ -16,11 +16,11 @@ namespace Send_SMS
             DotEnv.Load();
             // Instantiate the SDK
             restClient = new RestClient(
-                Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-                Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+                Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+                Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
                 Environment.GetEnvironmentVariable("RC_SERVER_URL"));
             // Authenticate a user using a personal JWT token
-            await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
+            await restClient.Authorize( Environment.GetEnvironmentVariable("RC_USER_JWT") );
 
             // For the purpose of testing the code, we put the SMS recipient number in the environment variable.
             // Feel free to set the SMS recipient directly.

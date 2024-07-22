@@ -19,7 +19,7 @@ def detect_sms_feature():
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "SANDBOX_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       detect_sms_feature()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

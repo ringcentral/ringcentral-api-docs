@@ -47,7 +47,7 @@ def check_fax_message_status(messageId):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt=os.environ.get('RC_JWT') )
+      platform.login( jwt=os.environ.get('RC_USER_JWT') )
       send_fax()
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

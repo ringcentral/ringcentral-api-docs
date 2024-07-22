@@ -10,10 +10,10 @@ namespace Read_User_ActiveCalls
     static async Task Main(string[] args)
     {
       restClient = new RestClient(
-      Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-      Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+      Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+      Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
       Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-      await restClient.Authorize(Environment.GetEnvironmentVariable("RC_JWT"));
+      await restClient.Authorize(Environment.GetEnvironmentVariable("RC_USER_JWT"));
       await read_user_active_calls();
     }
     static private async Task read_user_active_calls()

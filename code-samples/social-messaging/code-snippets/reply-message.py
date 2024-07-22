@@ -21,7 +21,7 @@ def reply_message(messageId):
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt= "RC_JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       reply_message("A-Valid-Message-Id")
     except Exception as e:
       print ("Unable to authenticate to platform. Check credentials." + str(e))

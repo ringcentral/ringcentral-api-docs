@@ -85,7 +85,7 @@ end
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize( jwt: "SANDBOX-JWT" )
+    $platform.authorize( jwt: "RC_USER_JWT" )
     create_call_monitoring_group("Demo Group - Ruby")
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials. " + e.to_s)

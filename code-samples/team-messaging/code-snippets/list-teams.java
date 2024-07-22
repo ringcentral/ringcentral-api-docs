@@ -14,10 +14,10 @@ public class ListTeams {
       var obj = new ListTeams();
       try {
         // Instantiate the SDK
-        restClient = new RestClient("SANDBOX-APP-CLIENT-ID", "SANDBOX-APP-CLIENT-SECRET", "https://platform.devtest.ringcentral.com");
+        restClient = new RestClient("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
 
         // Authenticate a user using a personal JWT token
-        restClient.authorize("SANDBOX-JWT");
+        restClient.authorize("RC_USER_JWT");
         obj.list_teams();
       } catch (RestException e) {
         System.out.println(e.getMessage());

@@ -185,7 +185,7 @@ def conversation_summary():
 # Authenticate a user using a personal JWT token
 def login():
   try:
-      platform.login( jwt= "PRODUCTION-JWT" )
+      platform.login( jwt= "RC_USER_JWT" )
       conversation_summary()
   except Exception as e:
       print ("Unable to authenticate to platform. Check credentials. " + str(e))

@@ -31,7 +31,7 @@ end
 # Authenticate a user using a personal JWT token
 def login()
   begin
-      $platform.login( jwt= "PRODUCTION-JWT" )
+      $platform.login( jwt= "RC_USER_JWT" )
       punctuation()
   rescue StandardError => e
       puts ("Unable to authenticate to platform. Check credentials. " + e.to_s)

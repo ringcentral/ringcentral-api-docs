@@ -11,8 +11,8 @@ $REDIRECT_URL = $_ENV['RC_REDIRECT_URL'];
 $LOCAL_SERVER = 'http://localhost:5000';
 
 
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
+                                  $_ENV['RC_APP_CLIENT_SECRET'],
                                   $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 

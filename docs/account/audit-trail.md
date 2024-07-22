@@ -20,7 +20,7 @@ Tracking these changes is important for compliance reasons and there are times w
 
 ## Limitations
 
-The Audit Trail API was not designed to hold a lot of data nor be called frequently. For this reason, limitations have been put on the Audit Trail API. 
+The Audit Trail API was not designed to hold a lot of data nor be called frequently. For this reason, limitations have been put on the Audit Trail API.
 
 For each account:
 
@@ -33,10 +33,10 @@ Also, this API belongs to the Heavy usage plan and is rate limited by it.
 
 ## Sample code
 
-To get you started, here is some sample python code to retrieve audit logs from your account.  This sample code assumes you have built an `.env` file with your own environment variables including the `RC_CLIENT_ID`, `RC_CLIENT_SECRET`, `RC_SERVER_URL`, and the `RC_JWT`.
+To get you started, here is some sample python code to retrieve audit logs from your account.  This sample code assumes you have built an `.env` file with your own environment variables including the `RC_APP_CLIENT_ID`, `RC_APP_CLIENT_SECRET`, `RC_SERVER_URL`, and the `RC_USER_JWT`.
 
 === "Python"
 
 ``` python
-{!> code-samples/account/audit-trail.py !} 
+{!> code-samples/account/audit-trail.py !}
 ```
