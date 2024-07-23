@@ -1,4 +1,4 @@
-# RingCentral API rate limits
+# RingCentral API Rate Limits
 
 ## What is a rate limit?
 
@@ -8,9 +8,9 @@ A "rate limit" is a policy that affects the frequency an API can be called. They
 
 Every RingCentral API is assigned to a different "API Group" which determines the default rate limit that an application will be subject to when called that API. This allows each API to be assigned a rate limit based upon the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. 
 
-The four basic rate limit groups are below. Please note that the rate limits and throttle intervals are provided as an example only, as they can be customized and therefore may vary from app to app.
+The four basic rate limit groups are below. Please note that the given rate limits and throttle intervals are default and provided as an example only, since they can be customized and therefore may vary from app to app.
 
-| API Group | Rate Limit | Throttle Interval | 
+| Usage Plan Group | Rate Limit | Penalty Interval | 
 |-|-|-|
 | Light | 50 requests/minute | 60 seconds |
 | Medium | 40 requests/minute | 60 seconds |
@@ -18,23 +18,29 @@ The four basic rate limit groups are below. Please note that the rate limits and
 | Auth | 5 requests/minute | 60 seconds |
 
 Rate limits can be customized and vary in the following ways:
-* Rate limits can be assigned to different time intervals, e.g. n calls per minute, per hour, per 5 minutes, etc. 
-* API Groups may also support multiple limits per group, based upon the unique needs and the APIs called by an app.
+* Rate limits can be assigned to different time intervals, e.g. *n* calls per minute, per hour, per 5 minutes, etc. 
+* Usage plan API groups may also support multiple limits per group, based upon the unique needs and the APIs called by an app.
 
 ## How do I determine the rate limit associated with an API?
 
-Every API endpoint is assigned to a different "API group." The API group for every API is disclosed on its corresponding page in the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "API Group."
+Every API endpoint is assigned to a different Usage Plan group, which is disclosed on the API's corresponding page in the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "Usage Plan Group".
 
 !!! hint "Your exact rate limit may vary"
     Bear in mind that your rate limit may be different from the default values above if you have applied for and been granted a modification to your application's needs. See "What are your app rate limits" below.
 
 ## What are the specific rate limits associated with my app?
 
-In addition to our default limits, RingCentral administrators have the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits." That will show you a page similar to the following:
+In addition to our default limits, RingCentral administrators have the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits". That will show you a page similar to the following:
 
 <img src="../../img/rate_limits.png" class="img-fluid" width="50%">
 
-Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute. If you exceed these limitations the server returns the `429 Too Many Requests` HTTP error code. It means that the client is throttled by the server due to high request rate. The retry period (in seconds) after which more requests can be sent, is specified in `Retry-After` response header.
+Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute.
+
+## What not to do if my app exceeds the limits and gets the error code - 429 Too Many Requests
+
+If you exceed these limitations the server returns the `429 Too Many Requests` HTTP error code. It means that the client is throttled by the server due to high request rate. 
+The retry period in seconds, after which more requests can be sent, is specified in `Retry-After` response header.
+Please make sure your app **does not** send any requests within the penalty interval (60 seconds), or it may stuck in 429 trap forever, since every new request during the penalty interval will restart it.
 
 ## How do I detect and respond to my app being throttled?
 
@@ -96,7 +102,7 @@ Consider the following use cases in which you might hit a rate limit.
 
 * If you encounter a HTTP Response Header `X-Rate-Limit-Remaining` that reaches 0 then wait the number of seconds defined in `X-Rate-Limit-Window` HTTP Response Header.
 
-* If you encounter a HTTP Response Status code of 429 wait the number of seconds defined in the `Retry-After` HTTP Response header.
+* If you encounter a HTTP Response Status code of 429 please wait the number of seconds defined in the `Retry-After` HTTP Response header.
 
 If `X-Rate-Limit-Remaining` is working properly, your app should never encounter a 429 error, which is desirable. In other words, if you build your app to be aware of this HTTP header and to respond accordingly, you can prevent your app from being impacted, or at least alert personnel about the issue. 
 
