@@ -36,7 +36,7 @@ In addition to our default limits, RingCentral administrators have the ability t
 
 Within the above presented limits your client application is allowed to send 10 heavy, 40 medium, 50 light and 5 authorization requests per user (RC extension) per minute.
 
-## What not to do if my app exceeds the limits and gets the error code - 429 Too Many Requests
+### What not to do if my app exceeds the limits and gets the error code - 429 Too Many Requests
 
 If you exceed these limitations the server returns the `429 Too Many Requests` HTTP error code. It means that the client is throttled by the server due to high request rate. 
 The retry period in seconds, after which more requests can be sent, is specified in `Retry-After` response header.
