@@ -200,7 +200,7 @@ Select your preferred language below.
 
 ### Check the newly created team
 
-Login to your account at https://app.devtest.ringcentral.com (use https://app.ringcentral.com if you test on your production) to see the newly created team.
+Login to your account at https://app.ringcentral.com to see the newly created team.
 
 
 ## Need Help?

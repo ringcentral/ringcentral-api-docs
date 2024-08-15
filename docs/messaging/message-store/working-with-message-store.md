@@ -100,9 +100,9 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
 
 ```json hl_lines="6 7 8 9 10 11 12 13 15 23 25"
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
+  "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?messageType=SMS&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100",
   "records" : [ {
-    "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004",
+    "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004",
     "id" : 6424569004,
     "to" : [ {
       "phoneNumber" : "+13125559821"
@@ -117,7 +117,7 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
     "priority" : "Normal",
     "attachments" : [ {
       "id" : 6424569004,
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004/content/6424569004",
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store/6424569004/content/6424569004",
       "type" : "Text",
       "contentType" : "text/plain"
     } ],
@@ -128,7 +128,7 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
     "conversationId" : 8031152018338945839,
     "conversation" : {
       "id" : "8031152018338945839",
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/conversation/8031152018338945839"
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/conversation/8031152018338945839"
     },
     "lastModifiedTime" : "2019-05-22T17:07:28.091Z"
   } ],
@@ -142,10 +142,10 @@ This example response shows the `to`, `from`, `type`, `readStatus`, `direction` 
   },
   "navigation" : {
     "firstPage" : {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
     },
     "lastPage" : {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/message-store?readStatus=Unread&availability=Alive&dateFrom=2019-05-21T17:54:00.000Z&page=1&perPage=100"
     }
   }
 }

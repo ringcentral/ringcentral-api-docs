@@ -55,7 +55,7 @@ Upon successful API call completion, the response contains the id (taskId) and t
 
 ```json hl_lines="3 4"
 {
-  uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
+  uri: 'https://platform.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   id: '178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   status: 'Accepted',
   startTime: '2019-07-31T20:01:58Z',
@@ -79,7 +79,7 @@ If the report is ready, the task status is marked as “Completed”.
 Upon successful API call completion, the response contains the id (taskId) and the status of the newly created task.
 ```json hl_lines="3 4"
 {
-  uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
+  uri: 'https://platform.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   id: '178009004-178009004-25464a39df3f4b4390801d80e5e13a01',
   status: 'Completed',
   startTime: '2019-07-31T20:01:58Z',
@@ -99,11 +99,11 @@ Upon successful API call completion, the response is a list of records. Each rec
   records: [
   {
     size: 14168,
-    uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-ed6a473f3aea40819d761242fa6fa331/archive/0'
+    uri: 'https://platform.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-ed6a473f3aea40819d761242fa6fa331/archive/0'
   },
   {
     size: 2152395,
-    uri: 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-ed6a473f3aea40819d761242fa6fa331/archive/1'
+    uri: 'https://platform.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/178009004-178009004-ed6a473f3aea40819d761242fa6fa331/archive/1'
   } ]
 }
 ```
@@ -113,7 +113,7 @@ Upon successful API call completion, the response is a list of records. Each rec
 The archival files are .zip compression files. To download the file, append a valid access token to the URI and make an HTTP GET request to the URI.
 
 ```http
-GET https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/[taskId]]/archive/0
+GET https://platform.ringcentral.com/restapi/v1.0/account/178009004/message-store-report/[taskId]]/archive/0
 Authorization: Bearer [access_token]
 ```
 

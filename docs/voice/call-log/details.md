@@ -4,7 +4,7 @@ In this tutorial, you will learn how to navigate and make use of more detailed a
 
 ## Create Test Data
 
-1. There are a few ways you can do this, but the easiest way is to login to the RingCentral [unified app sandbox](https://app.devtest.ringcentral.com/) via the web and to place and receive calls from that phone.
+1. There are a few ways you can do this, but the easiest way is to login to the RingCentral [unified app](https://app.ringcentral.com/) via the web and to place and receive calls from that phone.
 
 2. Make sure to record one of these calls by pressing the `Record` button in the soft phone and ensuring the call lasts for at least 30-60 seconds, then click the `Record` button again to stop the recording.
 
@@ -83,7 +83,7 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
             }
         },
         {
-            "uri": "https://platform.devtest.ringcentral.com/restapi/..snip..?view=Simple",
+            "uri": "https://platform.ringcentral.com/restapi/..snip..?view=Simple",
             "id": "ASaoLzRiqjLaFYU",
             "sessionId": "13914782004",
             "startTime": "2016-06-06T18:07:41.000Z",
@@ -140,7 +140,7 @@ Fetch the list of "Detailed" call logs so we can inspect the Detailed records. W
 
 ```http
 GET /restapi/v1.0/account/~/extension/~/call-log?view=Detailed HTTP/1.1
-Host: platform.devtest.ringcentral.com
+Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 

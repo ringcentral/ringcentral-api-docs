@@ -69,15 +69,8 @@ Click "Add app." If the app was found, a table will appear showing the current l
 
 Click "Create" or "Save."
 
-## Using JWT in sandbox versus production
+## Next step: building your first application
 
-JWT credentials are bound to the environment specified when they were created. A JWT configured for sandbox cannot be used to authenticate in production, and vice versa. 
+Having [registered an application](register-app.md) and [obtained auth credentials](create-credential.md) you are now able to code your first application. In the next section you will have the opportunity to choose from a number of quick start guides associated with a variety of APIs and developer products from RingCentral. 
 
-Furthermore, JWT credentials are owned by a specific individual. So, if a user does not have an account in their sandbox environment, they will be unable to generate a JWT in sandbox. To fix this problem, navigate to your [sandbox accounts page](https://developers.ringcentral.com/console/sandbox) and look for the section entitled, "Your login credentials." Click the create sandbox account link as instructed to create an account for yourself within the sandbox environment.
-
-## Next step: developing and testing your application in the sandbox environment
-
-With a JWT credential in hand, you now have all that you need to begin coding your application and conducting API calls in our sandbox environment. Keep reading to learn more about how to best use sandbox to develop and test your application. 
-
-<a class="btn btn-lg btn-primary" href="../using-sandbox/">Learning how to access sandbox</a>
-
+<a class="btn btn-lg btn-primary" href="../code-app/">Code your application</a>

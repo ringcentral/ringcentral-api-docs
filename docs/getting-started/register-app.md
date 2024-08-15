@@ -145,7 +145,7 @@ To maximize the number of people who will successfully install and use your appl
 
 ## Obtaining your app's credentials
 
-Upon clicking the "Create" button and successfully registering your application, your app will be provisioned sandbox and production app credentials in the form of a Client ID and Client Secret. You will use these credentials during the authorization process so that RingCentral can identify the app making API calls. 
+Upon clicking the "Create" button and successfully registering your application, your app will be provisioned app credentials in the form of a Client ID and Client Secret. You will use these credentials during the authorization process so that RingCentral can identify the app making API calls. 
 
 ## Next step: creating an authentication credential
 
