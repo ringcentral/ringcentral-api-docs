@@ -155,7 +155,7 @@ Select your preferred language below.
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1 or higher version
     * Enter project name "Send_SMS"
-    * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Add NuGet package RingCentral.Net (6.2.0) SDK
     * Save the .env file under your project folder. E.g. /Send_SMS/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file Program.cs
@@ -181,7 +181,7 @@ Select your preferred language below.
         ```json
         dependencies {
             // ...
-            compile 'com.ringcentral:ringcentral:3.0.0'
+            compile 'com.ringcentral:ringcentral:3.2.0'
         }
         ```
 
