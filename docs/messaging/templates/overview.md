@@ -35,7 +35,8 @@ Imagine if you are a community manager and you need to send an SMS message every
 
 !!! note "Running the code"
     * If you have tried the [SMS quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `create_user_sms_template()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
-    * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
+    * The C# code requires the .NET SDK version 6.2.0 (or newer if available).
+    * The Java code requires the Java SDK version 3.2.0 (or newer if available).
 
 === "JavaScript"
 
@@ -63,4 +64,16 @@ Imagine if you are a community manager and you need to send an SMS message every
     ```ruby
     {!> code-samples/messaging/code-snippets/create-user-sms-template.rb !}
     {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```
+
+=== "C#"
+
+    ```c#
+    {!> code-samples/messaging/code-snippets/create-user-sms-template.cs !}
+    ```
+
+=== "Java"
+
+    ```java
+    {!> code-samples/messaging/code-snippets/create-user-sms-template.java !}
     ```
