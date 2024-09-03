@@ -359,7 +359,7 @@ nav:
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
 
-  - 'Notifications and events':
+  - 'Events and notifications':
     - 'Overview': 'notifications/index.md'
     - 'Event filters':
       - "Overview and index": 'notifications/event-filters/index.md'
