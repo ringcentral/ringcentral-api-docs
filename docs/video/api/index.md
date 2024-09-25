@@ -29,6 +29,3 @@ Login to the [Developer Console](https://developers.ringcentral.com/login.html#/
     
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+video+meeting+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
 
-!!! hint "Please use production credentials to call the Video API"
-    RingCentral Video is not currently available in sandbox. To successfully call the API, please do development directly in our production environment. 
-

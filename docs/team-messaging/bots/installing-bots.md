@@ -30,11 +30,13 @@ Once the bot is installed, any user within your organization will be able add th
 
 !!! hint "Private bots can only be installed via the Developer Console"
 
-During development, or if you have built a private bot (one that is only accessible to members of your account), you can install bots via the RingCentral Developer Console. To do, find the bot you wish to install, and click its "Bot" tab. There, under General Settings, you will see options to install the bot in sandbox or production. Click the "Add to RingCentral" button to initiate the bot installation process. 
+During development, or if you have built a private bot (one that is only accessible to members of your account), you can install bots via the RingCentral Developer Console. To do, find the bot you wish to install. From the app's dashboard, click the "Install" button found under the "Credentials" section. 
 
 <img src="../install-bot-dev-console.png" class="img-fluid" style="max-width:500px">
 
 To remove the bot, click the "Remove bot" button after it has been installed. 
+
+<!--
 
 ## Installing a bot from a third-party website
 
@@ -54,5 +56,5 @@ Then take the code that was generated for you and paste on your website. Feel fr
    src="https://netstorage.ringcentral.com/dpw/common/ringcentral_app_logo.svg"></a>
 ```
 
-
+-->
 

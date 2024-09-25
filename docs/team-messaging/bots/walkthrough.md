@@ -103,11 +103,11 @@ $ npm start private
 
 ## Step 4. Add the bot to your RingCentral account
 
-Return to the Developer Console and navigate to the "Bot" tab for the app you recently created. Click on the "Add to RingCentral" button.
+Return to the Developer Console and navigate to the dashboard for the app you recently created. Click on the "Install" found under the Credentials section.
 
 <img class="img-fluid" src="../../manual/add-to-ringcentral.png" style="max-width: 600px">
 
-This will install the bot into your developer sandbox account. The RingCentral bot installation process first creates a special virtual user within your account, a.k.a. a "bot extension." Then RingCentral will attempt to generate an access token for this bot extension.
+This will install the bot into your account. The RingCentral bot installation process first creates a special virtual user within your account, a.k.a. a "bot extension." Then RingCentral will attempt to generate an access token for this bot extension.
 
   - If the bot app is a **private app**, the access token will be generated and sent to the bot server via an HTTP POST request to the specified OAuth redirect URI.
 
@@ -224,7 +224,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
 
 ## Step 5. Send your first message to the bot
 
-Now, login to the [RingCentral app sandbox](https://app.devtest.ringcentral.com/) using your sandbox user credentials and start a chat with the bot you installed.
+Now, login to the [RingCentral app](https://app.ringcentral.com/) using your user credentials and start a chat with the bot you installed.
 
 <img src="../../manual/bot-start-chat.png" class="img-fluid">
 

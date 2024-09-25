@@ -10,9 +10,9 @@ Below is a sample response from the Presence API to illustrate the visibility it
 
 ```json hl_lines="10"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004/presence",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004/presence",
   "extension": {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004",
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/248xxx004/extension/248xxx004",
     "id": 248111004,
     "extensionNumber": "101"
   },

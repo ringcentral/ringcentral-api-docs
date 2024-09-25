@@ -47,7 +47,6 @@ nav:
     - 'Your first API call': 'getting-started/index.md'
     - 'Register an app': 'getting-started/register-app.md'
     - 'Create an auth credential': 'getting-started/create-credential.md'
-    - 'Access sandbox': 'getting-started/using-sandbox.md'
     - 'Build an app': 'getting-started/code-app.md'
     - 'Sending SMS': 'getting-started/sms.md'
     - 'Promote your app': 'getting-started/promote-app.md'
@@ -323,7 +322,7 @@ nav:
   - 'Applications':
       - 'Development lifecycle':
           - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Develop in sandbox': 'getting-started/using-sandbox.md'
+          - 'Developing in sandbox': 'basics/using-sandbox.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'

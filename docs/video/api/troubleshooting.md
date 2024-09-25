@@ -22,10 +22,6 @@ Then, that is an indication that you are using our standard free developer accou
 
 A common cause for this message is when a developer is attempting to set the host of a meeting, but the designated host has not assigned the calling user to be a meeting delegate. To fix this problem, please consult our [create meeting](create-meetings.md) documentation. 
 
-### I receive an error when calling the API in the sandbox environment...
-
-The RingCentral Video API is not currently available in our sandbox. We ask developers to do their development in production. To gain access to production, please contact [rcv-partners@ringcentral.com](mailto:rcv-partners@ringcentral.com) for assistance. Please include the Client ID of the app you need promoted to production so that the team can assist you more quickly.
-
 ### I keep receiving the error "The call has ended" and the meeting ends if no one else joins
 
 When you create a meeting, be sure to specify the meeting type of "0" (which corresponds to a "meeting" type). The default value is "1" or "call" which creates a meeting bridge that is more transient and will disconnect users if no one arrives in the room, or answers the call so to speak.

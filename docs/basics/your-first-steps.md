@@ -17,8 +17,6 @@ If you are building an application having to do with making, receiving, routing 
 * Send and receive SMS.
 * View call log and history.
 
-[Learn more about sandbox &raquo;](../getting-started/using-sandbox.md)
-
 ## Registering your first app
 
 The app you created when completing the Quick Start is highly constrained and probably not sufficient for an app you intend to create for others. We recommend you create a new app moving forward.
@@ -38,7 +36,7 @@ Your choice is important because some authentication schemes are restricted to o
 
 #### Platform Type
 
-This field determines what development features will be made available to your app, and may impact what other options are visible in the app creation process. For example, apps of the "Server/Bot" type will be provisioned access to the Glip Sandbox environment, and be given special controls for installing and uninstalling your bot within Glip. Here are the most common types of apps created:
+This field determines what development features will be made available to your app, and may impact what other options are visible in the app creation process. For example, apps of the "Server/Bot" type will be given special controls for installing and uninstalling your bot within Glip. Here are the most common types of apps created:
 
 * **Server/Web** (most common) - if you are building a web-based app, need to receive webhooks, and/or connect to another user's account, select this option.
 

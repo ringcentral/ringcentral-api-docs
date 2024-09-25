@@ -28,6 +28,15 @@ In order to successfully direct API calls to the sandbox environment, developers
 * Present sandbox authentication credentials 
 * Direct API calls to sandbox servers
 
+!!! warning "Not all APIs are available in sandbox"
+    The following APIs are not currently available in the sandbox environment:
+	
+	* RingCentral Events
+	* RingCentral Webinar
+	* RingCentral Video and Video Client SDK
+	* RingSense
+	* SMS
+
 ### Finding your sandbox app credentials
 
 Every RingCentral application is provisioned a client ID and secret for sandbox. These credentials can be found in the Developer Console, under the "Credentials" tab of any given app. 
@@ -37,6 +46,11 @@ Every RingCentral application is provisioned a client ID and secret for sandbox.
 ### Obtaining authentication credentials
 
 If you are using [JWT auth](../authentication/jwt-flow.md) be sure the JWT auth credential you are using is for the sandbox environment. If you are using the auth code or traditional OAuth flow, be sure the username and password used to login are ones that belong to your sandbox environment. For most people this is your email address and the sandbox password you selected for yourself when logging into the Developer Console for the first time. 
+
+!!! tip "Using JWT in sandbox versus production"
+    JWT credentials are bound to the environment specified when they were created. A JWT configured for sandbox cannot be used to authenticate in production, and vice versa. 
+	
+    Furthermore, JWT credentials are owned by a specific individual. So, if a user does not have an account in their sandbox environment, they will be unable to generate a JWT in sandbox. To fix this problem, navigate to your [sandbox accounts page](https://developers.ringcentral.com/console/sandbox) and look for the section entitled, "Your login credentials." Click the create sandbox account link as instructed to create an account for yourself within the sandbox environment.
 
 ### Directing API calls to sandbox server URLs
 
@@ -123,11 +137,4 @@ A more sustainable and recommended practice however is to routinely test your ap
 If you find yourself in the circumstance where your sandbox account has been deactivated, you can easily create a new one by following the prompts inside of the Developer Console. 
 
 Once the new sandbox account has been created then you may need to update the configuration of any apps that connect to your sandbox account, as your authentication credentials may have changed. 
-
-## Next step: building your first application
-
-Having [registered an application](register-app.md), [obtained auth credentials](create-credential.md) and setup your sandbox environment, you are now able to code your first application. In the next section you will have the opportunity to choose from a number of quick start guides associated with a variety of APIs and developer products from RingCentral. 
-
-<a class="btn btn-lg btn-primary" href="../code-app/">Code your application</a>
-  
 
