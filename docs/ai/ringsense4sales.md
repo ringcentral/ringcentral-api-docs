@@ -51,16 +51,16 @@ You can read the RingSense for Sales data of a voice call recording or of a vide
 |-----------|------|-------------|
 | `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. For video calls, the title of the meeting|
 | `domains` | String | Name of the call method. `pbx` for voice calls and `rcv` for video meetings |
-| `sourceRecordId` | String | For voice calls, the value is the call recording id (can be retrieved from the call log). For video calls, the value is a unique id of the RingSense recording item.  |
-| `sourceSessionId` | String | For voice calls, the value is the call telephony session id. For video calls, the value is a unique id of the RingSense recording item.  |
+| `sourceRecordId` | String | For voice calls, the value is the call recording id (can be retrieved from the call log). For video calls, the value is a unique id of the RingSense for Sales recording item.  |
+| `sourceSessionId` | String | For voice calls, the value is the call telephony session id. For video calls, the value is a unique id of the RingSense for Sales recording item.  |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
 | `ownerExtensionId` | String | The extension id of the voice call or the meeting who recorded the session.  |
-| `recordingDurationMs` | Integer | The duration of the voice call or the video meeting recording.  |
+| `recordingDurationMs` | Integer | The length of the voice call or the video meeting recording.  |
 | `recordingStartTime` | String | The date and time when the recording started.  |
 | `creationTime` | String | The date and time when the conversational insights are created. |
 | `lastModifiedTime` | String | The date and time when the conversational insights are last modified. |
-| `speakerInfo` | List | Contains detectable call participant objects  |
-| `insights` | JSON object | Contains detectable call insights data objects |
+| `speakerInfo` | List | Contains identified call participant objects  |
+| `insights` | JSON object | Contains call conversational insights data objects |
 
 ### SpeakerInfo
 
@@ -68,7 +68,7 @@ The `speakerInfo` is a list of objects, with each object contains the following 
 
 | Parameter     | Type     | Description                                            |
 | ------------- | ------   | ------------------------------------------------------ |
-| `speakerId`   | String   | System given speaker identifier.             |
+| `speakerId`   | String   | System given speaker identifier. For voice calls, the id is the call party id assigned by the telephony system.  |
 | `name`        | String   | The name of a participant. If the speaker is an agent (a user under the account), the name is the full name of the user extension. If the speaker is a call party outside of the account, the name is the specified name of the contact associated with the agent company or personal contacts. |
 | `accountId`   | String   | The id of the RingCentral account. If the speaker is a call party outside of the account, this value is `null`  |
 | `extensionId` | String   | The id of the user extension. If the speaker is a call party outside of the account, this value is `null`      |
