@@ -2,7 +2,7 @@
 
 {! mdx_includes/ringsense-beta-notice.md !}
 
-RingCentral RingSense for Sales provides in-depth conversational insights from your voice calls and video meetings, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following::
+RingCentral RingSense for Sales provides in-depth conversational insights from your voice calls and video meetings, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following:
 
 * `Transcript` - Transcription objects with identified speakers and the timestamps of their utterances.
 * `Summary` - Summary objects with AI-generated summary paragraphs and the timestamps of the conversations.
@@ -32,6 +32,8 @@ To get RingSense for Sales event notification for voice call recordings, subscri
 To get RingSense for Sales event notification for video meeting recordings, subscribe for this event:
 
 `/ai/ringsense/v1/public/accounts/~/domains/rcv/insights`
+
+Remember, the notification event is triggered only if a voice call or video meeting was recorded by a user who holds a RingSense for Sales license.
 
 ### Read RingSense for Sales data
 
