@@ -33,7 +33,7 @@ To get RingSense for Sales event notification for video meeting recordings, subs
 
 `/ai/ringsense/v1/public/accounts/~/domains/rcv/insights`
 
-Remember, the notification event is triggered only if a voice call or video meeting was recorded by a user who holds a RingSense for Sales license.
+Remember, the notification events are triggered only if voice calls or video meetings were recorded by users who hold a RingSense for Sales license.
 
 ### Read RingSense for Sales data
 
