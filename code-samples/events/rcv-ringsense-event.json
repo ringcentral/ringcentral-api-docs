@@ -1,0 +1,132 @@
+{
+    "title": "RingCentral Video meeting",
+    "domain": "rcv",
+    "sourceRecordId": "93af2df8-5507-4423-82df-f24bc6b100d5!us-15-cmh06@us-15",
+    "sourceSessionId": "93af2df8-5507-4423-82df-f24bc6b100d5!us-15-cmh06@us-15",
+    "creationTime": "2024-09-04T21:20:35.047Z",
+    "lastModifiedTime": "2024-09-04T21:20:35.036Z",
+    "speakerInfo": [
+      {
+        "speakerId": "f130_28008",
+        "name": "John Smith",
+        "accountId": "809646016",
+        "extensionId": "62288329016"
+      },
+      {
+        "speakerId": "f130_28007",
+        "name": "Tracy Debolah",
+        "accountId": null,
+        "extensionId": null
+      }
+    ],
+    "insights": {
+      "Transcript": [
+        {
+          "end": 14.52,
+          "text": "Okay, I record this meeting so we will have the RingSense meeting insights.",
+          "start": 2.2,
+          "speakerId": "f130_28008"
+        },
+        ...
+        {
+          "end": 40.44,
+          "text": "And I have some action items for myself.",
+          "start": 36.6,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 46.12,
+          "text": "As I have to complete the test.",
+          "start": 42.52,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 53.32,
+          "text": "And test it with my own code.",
+          "start": 48.76,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 62.04,
+          "text": "And then I will write a developer guide.",
+          "start": 56.04,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 64.92,
+          "text": "For this API.",
+          "start": 63.96,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 81.16,
+          "text": "And me, as a caller, I will double check when the code is ready, the dev guide is ready.",
+          "start": 69.4,
+          "speakerId": "f130_28008"
+        },
+        {
+          "end": 99.56,
+          "text": "I will review the writing edit and then make it published. So that is my task, and these need to be completed by the end of September.",
+          "start": 82.92,
+          "speakerId": "f130_28008"
+        },
+        {
+          "end": 117.8,
+          "text": "I agree with you. That should be enough time for both of us to complete the task.",
+          "start": 107.8,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 123.32,
+          "text": "So I think now you can leave and end the meeting.",
+          "start": 119.32,
+          "speakerId": "f130_28007"
+        },
+        {
+          "end": 125.88,
+          "text": "Goodbye.",
+          "start": 125.4,
+          "speakerId": "f130_28007"
+        }
+      ],
+      "Summary": [
+        {
+          "start": 0,
+          "end": 1,
+          "value": "The call is about discussing the tasks and timeline for completing a project."
+        }
+      ],
+      "NextSteps": [
+        {
+          "start": 42.52,
+          "end": 53.32,
+          "value": "Complete the test with own code for the API.",
+          "speakerId": "f130_28007"
+        },
+        {
+          "start": 56.04,
+          "end": 64.92,
+          "value": "Write a developer guide for the API.",
+          "speakerId": "f130_28007"
+        },
+        {
+          "start": 69.4,
+          "end": 99.56,
+          "value": "Double check when the code is ready and the developer guide is ready.",
+          "speakerId": "f130_28008"
+        },
+        {
+          "start": 82.92,
+          "end": 99.56,
+          "value": "Review the writing of the developer guide and edit it before publication.",
+          "speakerId": "f130_28008"
+        },
+        {
+          "start": 82.92,
+          "end": 99.56,
+          "value": "Publish the developer guide after review and editing.",
+          "speakerId": "f130_28008"
+        }
+      ]
+    }
+}
