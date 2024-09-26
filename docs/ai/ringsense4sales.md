@@ -78,7 +78,6 @@ The `speakerInfo` is a list of objects, with each object contains the following 
 | `accountId`   | String   | The ID of the RingCentral account. If the speaker is a call party outside of the account, this value is `null`.  |
 | `extensionId` | String   | The ID of the user extension. If the speaker is a call party outside of the account, this value is `null`.      |
 
-
 ### Insights
 
 The `insights` is an object that may contain the following objects:
@@ -89,3 +88,5 @@ The `insights` is an object that may contain the following objects:
 | `Summary`     | List   | A list of JSON objects. Each object contains the summary value and related metadata.    |
 | `HighLights`  | List   | A list of JSON objects. Each object contains the highlight value and related metadata.  |
 | `NextSteps`   | List   | A list of JSON objects. Each object contains the next step value and related metadata.  |
+
+When processing the insights objects—such as reconstructing conversations using the utterances in the Transcript objects, you can match the speaker ID from a transcript object with the corresponding speaker ID in the `speakerInfo` object. This allows you to display the speaker's name (if available) alongside the utterance text.
