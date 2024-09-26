@@ -11,15 +11,18 @@ This event is triggered whenever there is a new voice call or video call analysi
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
-| `eventType` | string | Internal identifier of an extension |
-| `title` | string | Telephony presence status. Returned if telephony status is changed. See Telephony Status Values |
-| `domain` | integer | Order number of a notification to state the chronology |
-| `sourceRecordId` | 'Offline' or 'Busy' or 'Available' | Aggregated presence status, calculated from a number of sources |
-| `sourceSessionId` | 'Offline' or 'Busy' or 'Available' | User-defined presence status (as previously published by the user) |
-| `creationTime` | string | If 'True' enables other extensions to see the extension presence status |
-| `lastModifiedTime` | string | If 'True' enables to ring extension phone, if any user monitored by this extension is ringing |
-| `speakerInfo` | JSON object | Meetings presence status |
-| `insights` | JSON object | Extended DnD (Do not Disturb) status |
+| `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. For video calls, the title of the meeting. |
+| `domains` | String | Name of the call method. `pbx` for voice calls and `rcv` for video meetings. |
+| `sourceRecordId` | String | For voice calls, the value is the call recording ID (can be retrieved from the call log). For video calls, the value is a unique ID of the RingSense for Sales recording item.  |
+| `sourceSessionId` | String | For voice calls, the value is the call telephony session id. For video calls, the value is a unique ID of the RingSense for Sales recording item.  |
+| `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
+| `ownerExtensionId` | String | The extension ID of the voice call or the meeting who recorded the session.  |
+| `recordingDurationMs` | Integer | The length of the voice call or the video meeting recording.  |
+| `recordingStartTime` | String | The date and time when the recording started.  |
+| `creationTime` | String | The date and time when the conversational insights are created. |
+| `lastModifiedTime` | String | The date and time when the conversational insights are last modified. |
+| `speakerInfo` | List | Contains identified call participant objects.  |
+| `insights` | JSON object | Contains call conversational insights data objects. |
 
 ## Examples
 
