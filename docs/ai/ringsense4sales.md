@@ -12,7 +12,7 @@ RingCentral RingSense for Sales transcribes your voice calls and provides in-dep
 !!! important Requirements
     * A RingSense for Sales license must be purchased and assigned to a user extension.
     * The license is transferable from one user extension to another user extension.
-    * RingSense for Sales data retention follows the RingCentral account's data retention policies.
+    * RingSense for Sales data Retention is defined in your RingSense settings. By default the data is retained for 1 year.
 
 To learn more about RingSense for Sales and how to enable the service for a RingCentral RingEX account, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
 
