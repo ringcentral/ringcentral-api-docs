@@ -1,19 +1,23 @@
 {
-    "title": "RingCentral Video meeting",
-    "domain": "rcv",
-    "sourceRecordId": "93af2df8-5507-4423-82df-f24bc6b100d5!xxx",
-    "sourceSessionId": "93af2df8-5507-4423-82df-f24bc6b100d5!xxx",
-    "creationTime": "2024-09-04T21:20:35.047Z",
-    "lastModifiedTime": "2024-09-04T21:20:35.036Z",
+    "title": "Call from John Smith to Tracy Debolah",
+    "domain": "pbx",
+    "sourceSessionId": "s-a0e7b361acc0az191bec7e275z7cae070000",
+    "sourceRecordId": "2728084995017",
+    "callDirection": "Outbound",
+    "ownerExtensionId": "6228832XXXX",
+    "recordingDurationMs": 125963,
+    "recordingStartTime": "2024-09-04T20:44:16.390Z",
+    "creationTime": "2024-09-04T21:15:43.597Z",
+    "lastModifiedTime": "2024-09-04T21:15:43.591Z",
     "speakerInfo": [
       {
-        "speakerId": "f130_28008",
+        "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1",
         "name": "John Smith",
         "accountId": "809646XXX",
         "extensionId": "6228832XXXX"
       },
       {
-        "speakerId": "f130_28007",
+        "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-2",
         "name": "Tracy Debolah",
         "accountId": null,
         "extensionId": null
@@ -25,27 +29,27 @@
           "end": 14.52,
           "text": "Okay, I record this meeting so we will have the RingSense meeting insights.",
           "start": 2.2,
-          "speakerId": "f130_28008"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         },
         ...
         {
           "end": 40.44,
           "text": "And I have some action items for myself.",
           "start": 36.6,
-          "speakerId": "f130_28007"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         },
         {
           "end": 46.12,
           "text": "As I have to complete the test.",
           "start": 42.52,
-          "speakerId": "f130_28007"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         },
         ...
         {
           "end": 125.88,
           "text": "Goodbye.",
           "start": 125.4,
-          "speakerId": "f130_28007"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         }
       ],
       "Summary": [
@@ -60,20 +64,20 @@
           "start": 42.52,
           "end": 53.32,
           "value": "Complete the test with own code for the API.",
-          "speakerId": "f130_28007"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         },
         {
           "start": 56.04,
           "end": 64.92,
           "value": "Write a developer guide for the API.",
-          "speakerId": "f130_28007"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-2"
         },
         ...
         {
           "start": 82.92,
           "end": 99.56,
           "value": "Publish the developer guide after review and editing.",
-          "speakerId": "f130_28008"
+          "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         }
       ]
     }

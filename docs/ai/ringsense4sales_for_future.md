@@ -2,7 +2,7 @@
 
 {! mdx_includes/ringsense-beta-notice.md !}
 
-RingCentral RingSense for Sales transcribes your voice calls and provides in-depth conversational insights, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following:
+RingCentral RingSense for Sales transcribes your voice calls and video meetings and provides in-depth conversational insights, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following:
 
 * `Transcript` - Transcription objects with identified speakers and the timestamps of their utterances.
 * `Summary` - Summary objects with AI-generated summary paragraphs and the timestamps of the conversations.
@@ -20,29 +20,31 @@ To learn more about RingSense for Sales and how to enable the service for a Ring
 
 The RingSense for Sales API allows you to programmatically access RingSense for Sales data from your account.
 
-!!! notes
-    * Currently the API does not support video meeting recordings.
-
 The API functions at the account level and requires the "ReadCompanyCallRecording" user permission. This means that any user extension with this permission can access RingSense for Sales data for any user holding a RingSense for Sales license.
 
 There are two methods to access RingSense for Sales data: through push notifications (recommended method) or via a REST API call.
 
 ### RingSense for Sales event notification
 
-You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](https://developers.ringcentral.com/guide/notifications). The RingSense for Sales data is included in the event payload together with the event metadata.
+You can get notified when a new voice call or a new video meeting recording analysis is completed via [RingCentral push notification  service](https://developers.ringcentral.com/guide/notifications). The RingSense for Sales data is included in the event payload together with the event metadata.
 
 To get RingSense for Sales event notification for voice call recordings, subscribe for this event:
 
 `/ai/ringsense/v1/public/accounts/~/domains/pbx/insights`
 
-Remember, the notification events are triggered only if a voice call was recorded by users who hold a RingSense for Sales license.
+To get RingSense for Sales event notification for video meeting recordings, subscribe for this event:
+
+`/ai/ringsense/v1/public/accounts/~/domains/rcv/insights`
+
+Remember, the notification events are triggered only if voice calls or video meetings were recorded by users who hold a RingSense for Sales license.
 
 ### Read RingSense for Sales data
 
-You can read the RingSense for Sales data of a voice call recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense for Sales event payload.
+You can read the RingSense for Sales data of a voice call recording or of a video meeting recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense for Sales event payload.
 
 !!! notes
     * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](https://developers.ringcentral.com/guide/voice/call-log/details).
+    * Unfortunately, currently there is no API to detect the `sourceRecordId` of a video meeting recording.
 
 ## Example of API Response
 
@@ -52,13 +54,13 @@ You can read the RingSense for Sales data of a voice call recording if you know 
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
-| `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. |
-| `domains` | String | Name of the communication method. Currently only for voice calls ('pbx') are supported. |
-| `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
-| `sourceSessionId` | String | The value is the call telephony session id. |
+| `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. For video calls, the title of the meeting. |
+| `domains` | String | Name of the call method. `pbx` for voice calls and `rcv` for video meetings. |
+| `sourceRecordId` | String | For voice calls, the value is the call recording ID (can be retrieved from the call log). For video calls, the value is a unique ID of the RingSense for Sales recording item.  |
+| `sourceSessionId` | String | For voice calls, the value is the call telephony session id. For video calls, the value is a unique ID of the RingSense for Sales recording item.  |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
-| `ownerExtensionId` | String | The extension ID of the user who holds the RingSense for Sales license.  |
-| `recordingDurationMs` | Integer | The length of the voice call recording.  |
+| `ownerExtensionId` | String | The extension ID of the voice call or the meeting who recorded the session.  |
+| `recordingDurationMs` | Integer | The length of the voice call or the video meeting recording.  |
 | `recordingStartTime` | String | The date and time when the recording started.  |
 | `creationTime` | String | The date and time when the conversational insights are created. |
 | `lastModifiedTime` | String | The date and time when the conversational insights are last modified. |
