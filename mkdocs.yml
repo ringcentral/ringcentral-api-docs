@@ -132,10 +132,6 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-  - 'Social Messaging':
-    - 'Overview': 'social-messaging/index.md'
-    - 'Getting started': 'social-messaging/quick-start.md'
-
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
@@ -271,7 +267,7 @@ nav:
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'
 
-    - 'RingSense for Sales': 'ai/ringsense4sales.md'
+    - 'RingSense for Sales': 'ai/ringsenseforsales.md'
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
@@ -397,7 +393,7 @@ nav:
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
       - "RingSense for Sales events":
-        - "Insights events": 'notifications/event-filters/ringsense4sales.md'
+        - "Insights events": 'notifications/event-filters/ringsenseforsales.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'

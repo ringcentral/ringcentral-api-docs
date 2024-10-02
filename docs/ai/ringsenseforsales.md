@@ -29,11 +29,9 @@ There are two methods to access RingSense for Sales data: through push notificat
 
 ### RingSense for Sales event notification
 
-You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](https://developers.ringcentral.com/guide/notifications). The RingSense for Sales data is included in the event payload together with the event metadata.
+You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](../notifications/index.md). The RingSense for Sales data is included in the event payload together with the event metadata.
 
-To get RingSense for Sales event notification for voice call recordings, subscribe for this event:
-
-`/ai/ringsense/v1/public/accounts/~/domains/pbx/insights`
+To get RingSense for Sales event notification for voice call recordings, [subscribe for this event](../notifications/event-filters/ringsenseforsales.md).
 
 Remember, the notification events are triggered only if a voice call was recorded by users who hold a RingSense for Sales license.
 
@@ -42,18 +40,18 @@ Remember, the notification events are triggered only if a voice call was recorde
 You can read the RingSense for Sales data of a voice call recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense for Sales event payload.
 
 !!! notes
-    * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](https://developers.ringcentral.com/guide/voice/call-log/details).
+    * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](../voice/call-log/details.md).
 
 ## Example of API Response
 
 ```json
-{!> code-samples/events/rcv-ringsense-event.json !}
+{!> code-samples/ai/ringsense/ringsense-data.json !}
 ```
 
 | Parameter	| Type | Description |
 |-----------|------|-------------|
 | `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. |
-| `domains` | String | Name of the communication method. Currently only for voice calls ('pbx') are supported. |
+| `domain` | String | Name of the communication medium. Currently only for voice calls ('pbx') are supported. |
 | `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
 | `sourceSessionId` | String | The value is the call telephony session id. |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
