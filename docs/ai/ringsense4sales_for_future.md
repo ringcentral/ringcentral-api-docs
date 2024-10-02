@@ -43,13 +43,13 @@ Remember, the notification events are triggered only if voice calls or video mee
 You can read the RingSense for Sales data of a voice call recording or of a video meeting recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense for Sales event payload.
 
 !!! notes
-    * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](https://developers.ringcentral.com/guide/voice/call-log/details).
+    * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](../voice/call-log/details.md).
     * Unfortunately, currently there is no API to detect the `sourceRecordId` of a video meeting recording.
 
 ## Example of API Response
 
 ```json
-{!> code-samples/events/rcv-ringsense-event.json !}
+{!> code-samples/ai/ringsense/ringsense-data.json !}
 ```
 
 | Parameter	| Type | Description |
