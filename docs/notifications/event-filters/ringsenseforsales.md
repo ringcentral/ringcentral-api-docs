@@ -11,7 +11,7 @@ This event is triggered whenever a new voice call analysis is completed by RingS
 | Parameter	| Type | Description |
 |-----------|------|-------------|
 | `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. |
-| `domains` | String | Name of the communication method. Currently only for voice calls ('pbx') are supported. |
+| `domain` | String | Name of the communication method. Currently only for voice calls ('pbx') are supported. |
 | `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
 | `sourceSessionId` | String | The value is the call telephony session id. |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
@@ -26,5 +26,5 @@ This event is triggered whenever a new voice call analysis is completed by RingS
 ## Examples
 
 ```json
-{!> code-samples/events/rcv-ringsense-event.json !}
+{!> code-samples/events/ringsense-event.json !}
 ```
