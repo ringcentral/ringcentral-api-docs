@@ -1,6 +1,6 @@
-# RingSense for Sales AI Event
+# RingSense Event
 
-This event is triggered whenever a new voice call analysis is completed by RingSense for Sales.
+This event is triggered whenever a new voice call analysis is completed by RingSense.
 
 * Filter:  `/ai/ringsense/v1/public/accounts/~/domains/pbx/insights`
 * Required app scope: `RingSense`
@@ -15,7 +15,7 @@ This event is triggered whenever a new voice call analysis is completed by RingS
 | `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
 | `sourceSessionId` | String | The value is the call telephony session id. |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
-| `ownerExtensionId` | String | The extension ID of the user who holds the RingSense for Sales license.  |
+| `ownerExtensionId` | String | The extension ID of the user who holds the RingSense license.  |
 | `recordingDurationMs` | Integer | The length of the voice call recording.  |
 | `recordingStartTime` | String | The date and time when the recording started.  |
 | `creationTime` | String | The date and time when the conversational insights are created. |
