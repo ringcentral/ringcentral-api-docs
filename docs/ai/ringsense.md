@@ -1,8 +1,8 @@
-# RingSense for Sales
+# RingSense
 
 {! mdx_includes/ringsense-beta-notice.md !}
 
-RingCentral RingSense for Sales transcribes your voice calls and provides in-depth conversational insights, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following:
+RingCentral RingSense transcribes your voice calls and provides in-depth conversational insights, offering detailed analytics derived from post-call analysis of recorded sessions. Based on the richness of the conversation content, the insights may include the following:
 
 * `Transcript` - Transcription objects with identified speakers and the timestamps of their utterances.
 * `Summary` - Summary objects with AI-generated summary paragraphs and the timestamps of the conversations.
@@ -10,34 +10,34 @@ RingCentral RingSense for Sales transcribes your voice calls and provides in-dep
 * `NextSteps` - Next steps objects contain AI-generated action items for the call participants.
 
 !!! important Requirements
-    * A RingSense for Sales license must be purchased and assigned to a user extension.
+    * A RingSense license must be purchased and assigned to a user extension.
     * The license is transferable from one user extension to another user extension.
-    * RingSense for Sales data Retention is defined in your RingSense settings. By default the data is retained for 1 year.
+    * RingSense data retention is defined in your RingSense settings. By default the data is retained for 1 year.
 
-To learn more about RingSense for Sales and how to enable the service for a RingCentral RingEX account, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
+To learn more about RingSense and how to enable the service for a RingCentral RingEX account, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
 
-## RingSense for Sales API
+## RingSense API
 
-The RingSense for Sales API allows you to programmatically access RingSense for Sales data from your account.
+The RingSense API allows you to programmatically access RingSense data from your account.
 
 !!! notes
     * Currently the API does not support video meeting recordings.
 
-The API functions at the account level and requires the "ReadCompanyCallRecording" user permission. This means that any user extension with this permission can access RingSense for Sales data for any user holding a RingSense for Sales license.
+The API functions at the account level and requires the "ReadCompanyCallRecording" user permission. This means that any user extension with this permission can access RingSense data for any user holding a RingSense license.
 
-There are two methods to access RingSense for Sales data: through push notifications (recommended method) or via a REST API call.
+There are two methods to access RingSense data: through push notifications (recommended method) or via a REST API call.
 
-### RingSense for Sales event notification
+### RingSense event notification
 
-You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](../notifications/index.md). The RingSense for Sales data is included in the event payload together with the event metadata.
+You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](../notifications/index.md). The RingSense data is included in the event payload together with the event metadata.
 
-To get RingSense for Sales event notification for voice call recordings, [subscribe for this event](../notifications/event-filters/ringsenseforsales.md).
+To receive RingSense event notification for voice call recordings, [subscribe for this event](../notifications/event-filters/ringsense-event-filter.md).
 
-Remember, the notification events are triggered only if a voice call was recorded by users who hold a RingSense for Sales license.
+Remember, the notification events are triggered only if a voice call was recorded by users who hold a RingSense license.
 
-### Read RingSense for Sales data
+### Read RingSense data
 
-You can read the RingSense for Sales data of a voice call recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense for Sales event payload.
+You can read the RingSense data of a voice call recording if you know the `sourceRecordId`. The `sourceRecordId` value of a recording is included in the RingSense event payload.
 
 !!! notes
     * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](../voice/call-log/details.md).
@@ -55,7 +55,7 @@ You can read the RingSense for Sales data of a voice call recording if you know 
 | `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
 | `sourceSessionId` | String | The value is the call telephony session id. |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
-| `ownerExtensionId` | String | The extension ID of the user who holds the RingSense for Sales license.  |
+| `ownerExtensionId` | String | The extension ID of the user who holds the RingSense license.  |
 | `recordingDurationMs` | Integer | The length of the voice call recording.  |
 | `recordingStartTime` | String | The date and time when the recording started.  |
 | `creationTime` | String | The date and time when the conversational insights are created. |
@@ -85,4 +85,4 @@ The `insights` is an object that may contain the following objects:
 | `HighLights`  | List   | A list of JSON objects. Each object contains the highlight value and related metadata.  |
 | `NextSteps`   | List   | A list of JSON objects. Each object contains the next step value and related metadata.  |
 
-When processing the insights objects—such as reconstructing conversations using the utterances in the Transcript objects, you can match the speaker ID from a transcript object with the corresponding speaker ID in the `speakerInfo` object. This allows you to display the speaker's name (if available) alongside the utterance text.
+When processing the insights objects—such as reconstructing conversations using the utterances in the `Transcript` objects, you can match the speaker ID from a transcript object with the corresponding speaker ID in the `speakerInfo` object. This allows you to display the speaker's name (if available) alongside the utterance text.

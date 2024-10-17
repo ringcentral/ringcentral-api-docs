@@ -267,7 +267,7 @@ nav:
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'
 
-    - 'RingSense for Sales': 'ai/ringsenseforsales.md'
+    - 'RingSense': 'ai/ringsense.md'
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
@@ -392,8 +392,8 @@ nav:
       - "Team Messaging events":
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
-      - "RingSense for Sales events":
-        - "Insights events": 'notifications/event-filters/ringsenseforsales.md'
+      - "RingSense":
+        - "Insights events": 'notifications/event-filters/ringsense-event-filter.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
