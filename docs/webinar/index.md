@@ -9,10 +9,10 @@ no_breadcrumb:true
   <p class="lead">As ISV or Developer you can use the RingCentral Webinar APIs to create valued-added integrations that permit the exchange of data between RingCentral Webinar and third-party software. Once you create these integrations, RingCentral can showcase them in our App Gallery to customers and users, thereby driving more usage for your integrations.</p>
   <p class="lead">Using the RingCentral Webinar APIs, these integrations are super-easy to create. The APIs span core workflows for creating and managing webinars as well as exchanging registrant and attendee data for webinars.</p>
   <p>All developers are invited to create a simple app that creates a webinar using the RingCentral Webinar API. Once complete, developers will have all the basic building blocks in place to build more complex integrations. Get started using a Quick Start in any of the following languages:</p>
-  [Javascript &raquo;](quick-start.md/#Javascript){class="btn btn-light qs-link"}
-  [PHP &raquo;](quick-start.md/#PHP){class="btn btn-light qs-link"}
-  [Python &raquo;](quick-start.md/#Python){class="btn btn-light qs-link"}
-  [Ruby &raquo;](quick-start.md/#Ruby){class="btn btn-light qs-link"}
+  [Javascript &raquo;](quick-start.md#Javascript){class="btn btn-light qs-link"}
+  [PHP &raquo;](quick-start.md#PHP){class="btn btn-light qs-link"}
+  [Python &raquo;](quick-start.md#Python){class="btn btn-light qs-link"}
+  [Ruby &raquo;](quick-start.md#Ruby){class="btn btn-light qs-link"}
 </div>
 
 ## Getting started using the Webinar API
