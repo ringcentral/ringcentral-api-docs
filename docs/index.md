@@ -1,6 +1,9 @@
+---
 contributors: CraigCo,PacoVu,tylerlong,embbnux,grokify,Leonard-Wang-2000,dibyenduroy,howie-chen
-no_breadcrumb:true
-
+hide:
+  - navigation
+  - path
+---
 # RingCentral RingEX™ Developer Guide
 
 !!! warning "Important announcement regarding the RingCentral sandbox"
