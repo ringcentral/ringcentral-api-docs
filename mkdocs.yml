@@ -1,340 +1,155 @@
-site_name: Developing with RingCentral
+site_name: RingCentral Developer Guide
 site_url: https://github.com/ringcentral/ringcentral-api-docs
-repo_url: https://github.com/ringcentral/ringcentral-api-docs
-edit_uri: tree/master/docs
+#repo_url: https://github.com/ringcentral/ringcentral-api-docs
+repo_name: ringcentral/ringcentral-api-docs
+edit_uri: https://github.com/ringcentral/ringcentral-api-docsedit/main/docs/
 docs_dir: docs
 
 plugins:
-  - git-committers:
-      repository: ringcentral/ringcentral-api-docs
-      branch: main
-  - bootstrap-tables
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: main
+#  - bootstrap-tables
+#  - ringcentral-api-index:
+#      outfile: basics/api-index.md
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+#  - minify:
+#      minify_html: true
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#  - tags:
+#      tags_file: tags.md
   - exclude:
       regex:
         - '^#.*'
         - '.*\.#.*$'
 
 theme:
-  name: ringcentral
-  fluid_layout: True
-  suppress_nextprev: true
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  logo: img/rcdev-logo-white.svg
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    # - navigation.footer
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    # - navigation.instant
+    - navigation.prune
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: custom
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
 
+# Extensions
 markdown_extensions:
+  - abbr
+  - admonition
   - attr_list
+  - def_list
+  - footnotes
   - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
   - markdown.extensions.admonition
   - pymdownx.details
-  - pymdownx.keys
-  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.highlight:
-      linenums_style: pymdownx-inline
-#      linenums: true
-  - pymdownx.superfences
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
   - mdx_include
+  - tables
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ringcentral
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ringcentraldevs
+
+#markdown_extensions:
+#  - markdown.extensions.admonition
+#  - pymdownx.details
+#  - pymdownx.keys
+#  - pymdownx.tabbed
+#  - pymdownx.highlight:
+#      linenums_style: pymdownx-inline
+#  - pymdownx.superfences
+#  - mdx_include
 
 extra_css:
 - extra.css
 
-copyright: "1999-2020 RingCentral, Inc. All rights reserved."
+copyright: "1999-2023 RingCentral, Inc. All rights reserved."
 
 #google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
 
 nav:
-
-# ---- CORE APIs ----
-- 'Primary':
-  - 'Getting Started':
-    - 'Your first API call': 'getting-started/index.md'
-    - 'Register an app': 'getting-started/register-app.md'
-    - 'Create an auth credential': 'getting-started/create-credential.md'
-    - 'Build an app': 'getting-started/code-app.md'
-    - 'Sending SMS': 'getting-started/sms.md'
-    - 'Promote your app': 'getting-started/promote-app.md'
-  - 'Voice':
-    - 'Overview': 'voice/index.md'
-    - 'Getting Started': 'voice/quick-start.md'
-    - 'Placing Calls':
-      - 'RingOut': 'voice/ringout.md'
-      - 'WebRTC': 'voice/webrtc.md'
-      - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'Call Routing':
-      - 'Overview': 'voice/call-routing/index.md'
-      - 'Get Started': 'voice/call-routing/get-started.md'
-      - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
-      - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
-      - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
-      - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
-      - 'Call Queue Presence': 'voice/call-routing/manual/call-queues-presence.md'
-      - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
-    - 'Call Control':
-      - 'Overview': 'voice/call-control.md'
-      - 'Finding active calls': 'voice/finding-active-calls.md'
-      - 'Detecting state changes': 'voice/call-control-sessions.md'
-      - 'Pre-call Control': 'voice/pre-call-control.md'
-      - 'Active-call Control': 'voice/active-call-control.md'
-      - 'Call Monitoring': 'voice/supervision.md'
-      - 'Conference call': 'voice/conference.md'
-      - 'Warm Transfer': 'voice/warm-transfer.md'
-      - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
-      - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
-    - 'Call Logs':
-      - 'Overview': 'voice/call-log/index.md'
-      - 'Getting started': 'voice/call-log/quick-start.md'
-      - 'Call Log data types': 'voice/call-log/api.md'
-      - 'Detailed Call Log Data': 'voice/call-log/details.md'
-      - 'Data Archival': 'voice/call-log/archival.md'
-      - 'Call Recordings': 'voice/call-log/recordings.md'
-      - 'Synchronization': 'voice/call-log/sync.md'
-      - 'Best Practices': 'voice/call-log/best-practices.md'
-      - 'Access Control': 'voice/call-log/access.md'
-    - 'Call Analytics':
-      - 'Calculating Call Metrics': 'voice/calculating-call-time-metrics.md'
-    - 'Sample Applications':
-      - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
-      - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
-      - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
-      - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
-  - 'SMS and Fax':
-    - 'Overview': 'messaging/index.md'
-    - 'Getting Started': 'messaging/quick-start.md'
-    - 'Enhanced Business SMS':
-      - 'Best Practices': 'messaging/sms/best-practices.md'
-      - 'Sending an SMS': 'messaging/sms/sending-sms.md'
-      - 'Sending an MMS': 'messaging/sms/sending-images.md'
-      #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
-      - 'Postman': 'messaging/sms/postman.md'
-    - 'High Volume SMS':
-      - 'Overview': 'messaging/sms/high-volume/index.md'
-      - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
-      - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
-      - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
-      - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
-      - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
-      - 'Event Notifications': 'messaging/sms/high-volume/events.md'
-      - 'Errors Handling': 'messaging/sms/high-volume/handling-errors.md'
-    - 'Fax':
-      - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
-      - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
-      - 'Receiving Faxes': 'messaging/fax/receiving-faxes.md'
-      - 'Forwarding and Resending Faxes': 'messaging/fax/resending-faxes.md'
-    - 'Pager Messages':
-      - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
-    - 'Message Store':
-      - 'Sending Messages': 'messaging/message-store/messaging.md'
-      - 'Working with Message Store': 'messaging/message-store/working-with-message-store.md'
-      - 'Message Synchronization': 'messaging/message-store/message-sync.md'
-      - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
-      - 'Message Store Export': 'messaging/message-store/message-exports-report.md'
-    - 'Message Templates':
-      - 'Overview': 'messaging/templates/overview.md'
-    - 'Sample Applications':
-      - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/'
-      - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
-      - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
-      - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-  - 'Team Messaging':
-    - 'Overview': 'team-messaging/index.md'
-    - 'Getting Started': 'team-messaging/quick-start.md'
-    - 'Core concepts':
-      - 'Chats': 'team-messaging/concepts/chats.md'
-      - 'Conversations': 'team-messaging/concepts/conversations.md'
-      - 'Teams': 'team-messaging/concepts/teams.md'
-    - 'Team Messaging API Basics':
-      - 'Pagination': 'team-messaging/manual/pagination.md'
-#      - 'Permissions': 'team-messaging/manual/permissions.md'
-      - 'Mentions': 'team-messaging/manual/mentions.md'
-      - 'Composing deep links': 'team-messaging/manual/links.md'
-    - 'Team Messaging events':
-      - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
-      - 'Post events': 'team-messaging/events/posts.md'
-      - 'Chat events': 'team-messaging/events/groups.md'
-      - 'Incoming webhook events': 'team-messaging/events/incoming-webhooks.md'
-      - 'Interactive messaging events': 'team-messaging/events/interactive-messages.md'
-    - 'Incoming webhooks':
-      - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
-      - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
-      - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
-      - 'Legacy message format': 'team-messaging/incoming-webhooks/legacy-format.md'
-
-    - 'Posting via REST API':
-      - 'Posting messages': 'team-messaging/posting/index.md'
-      - 'Posting cards': 'team-messaging/posting/cards.md'
-      - 'Posting notes': 'team-messaging/posting/notes.md'
-      - 'Posting tasks': 'team-messaging/posting/tasks.md'
-      - 'Uploading files': 'team-messaging/posting/file-uploads.md'
-
-    - 'Adaptive cards':
-      - 'Introduction': 'team-messaging/adaptive-cards/index.md'
-      - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
-      - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
-      - 'Modal dialogs': 'team-messaging/adaptive-cards/modal-dialogs.md'
-      - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
-
-    - 'RingCentral add-ins':
-      - 'Introduction': 'team-messaging/add-ins/index.md'
-      - 'Developer tools': 'team-messaging/add-ins/tools.md'
-
-    - 'Notification apps':
-      - 'Creating a notification app': 'team-messaging/add-ins/creation.md'
-      - 'Integrated installation': 'team-messaging/add-ins/installation.md'
-      - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
-
-    - 'Bots':
-      - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
-      - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
-      - 'Installing bots': 'team-messaging/bots/installing-bots.md'
-      - 'Uninstalling bots': 'team-messaging/bots/uninstalling-bots.md'
-#      - 'Subscribing to bot events': 'team-messaging/bots/events.md'
-#      - 'Local bot development': 'team-messaging/bots/node.md'
-      - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
-      - 'Sample IBM Watson bot': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
-      - 'Sample Voicemail bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
-
-    - 'Data archival':
-      - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
-      - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
-
-  - 'Video':
-    - 'Overview': 'video/index.md'
-    - 'Video REST API':
-      - 'Overview': 'video/api/index.md'
-      - 'Getting Started': 'video/api/quick-start.md'
-      - 'Creating meeting bridges': 'video/api/create-meetings.md'
-      - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
-      - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
-      - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
-      - 'Past meetings and recordings': 'video/api/meeting-history.md'
-      - 'Selecting meetings service': 'video/api/meeting-config.md'
-      - 'Troubleshooting': 'video/api/troubleshooting.md'
-    - 'Video Client SDK':
-      - 'Overview': 'video/client-sdk/index.md'
-      - 'Download': 'video/client-sdk/download.md'
-      - 'Getting Started': 'video/client-sdk/quick-start.md'
-      - 'Authentication': 'video/client-sdk/authentication.md'
-      - 'API Reference':
-         - 'Android': 'https://ringcentral.github.io/ringcentral-videosdk-android/'
-         - 'iOS': 'https://ringcentral.github.io/ringcentral-videosdk-ios/'
-         - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
-         - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
-         - 'React Native': 'https://ringcentral.github.io/ringcentral-videosdk-react-native/'
-      - 'Sample apps':
-         - 'Javascript': 'https://github.com/ringcentral/ringcentral-videosdk-js-samples'
-         - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
-         - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
-         - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
-    - 'Using RingCentral Embeddable': 'video/embeddable.md'
-    - 'Meetings (legacy API)':
-      - 'Overview': 'meetings/index.md'
-      - 'Getting Started': 'meetings/quick-start.md'
-
-  - 'Webinar':
-    - 'Overview': 'webinar/index.md'
-    - 'Getting Started': 'webinar/quick-start.md'
-    - 'Core concepts':
-      - 'Use cases': 'webinar/use-cases.md'
-      - 'Sessions': 'webinar/sessions.md'
-      - 'Roles': 'webinar/roles.md'
-      - 'Terminology': 'webinar/terminology.md'
-    - 'Creating webinars': 'webinar/creation.md'
-    - 'Inviting hosts and cohosts': 'webinar/invitees.md'
-    - 'Registering attendees': 'webinar/registrants.md'
-    - 'Analyzing past webinars': 'webinar/past-webinars.md'
-    - 'Events and notifications': 'webinar/events.md'
-#    - 'Webinar recordings': 'webinar/recordings.md'
-
-  - 'Analytics':
-    - 'Overview': 'analytics/index.md'
-    - 'Getting Started': 'analytics/quick-start.md'
-    - 'Aggregate Data': 'analytics/aggregate.md'
-    - 'Timeline Data': 'analytics/timeline.md'
-
-  - 'Artificial Intelligence':
-    - 'Overview': 'ai/index.md'
-    - 'Getting started': 'ai/quick-start.md'
-    - 'Developer basics':
-      - 'Asynchronous responses': 'ai/asynchronous-responses.md'
-      - 'Accessing media files': 'ai/media-files.md'
-      - 'Sample media files': 'ai/sample-files.md'
-    - 'Audio analysis':
-      - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
-      - 'Interaction analytics': 'ai/interaction-analytics.md'
-    - 'Speaker analysis':
-      - 'Speaker enrollment': 'ai/speaker-enrollment.md'
-      - 'Speaker identification': 'ai/speaker-identification.md'
-      - 'Speaker diarization': 'ai/speaker-diarization.md'
-#      - 'Emotion recognition': 'ai/emotion-recognition.md'
-    - 'Text analysis':
-      - 'Conversation summaries': 'ai/text-summary.md'
-      - 'Smart punctuation': 'ai/text-punctuation.md'
-
-    - 'RingSense': 'ai/ringsense.md'
-
-  - 'Accounts and Users':
-    - 'Overview': 'account/index.md'
-    - 'Users and extensions': 'account/extensions.md'
-    - 'Address Book': 'address-book/index.md'
-    - 'Creating users': 'account/creating-users.md'
-    - 'Phone numbers': 'account/phone-numbers.md'
-    - 'Call forwarding/flipping': 'account/call-forwarding-flipping.md'
-    - 'User feature flags': 'account/feature-flags.md'
-    - 'Custom fields': 'account/custom-fields.md'
-    - 'Presence': 'account/presence.md'
-    - 'Audit trail': 'account/audit-trail.md'
-    - 'Emergency locations' : 'provisioning/location/emergency-locations.md'
-
-
-  # ---- SECONDARY APIs ----
-- 'Secondary':
-
-  - 'Using the API':
-      - 'Requests and responses':
-        - 'Requests methods, endpoints and parameters': 'basics/uris.md'
-        - 'Response format': 'basics/formats/responses.md'
-        - 'Errors': 'basics/errors.md'
-        - 'Batch requests': 'basics/batch-requests.md'
-      - 'Data types and formats':
-        - 'Objects and data types': 'basics/formats/objects.md'
-        - 'Phone numbers': 'basics/formats/phone-numbers.md'
-        - 'Resource identification': 'basics/formats/resources.md'
-      - 'Rate limits': 'basics/rate-limits.md'
-      - 'Working with media content': 'basics/media.md'
-      - 'Localization': 'basics/localization.md'
-      - 'App URI schemes': 'basics/uri-schemes.md'
-      - 'Running code samples': 'basics/code-samples.md'
-      - 'Exploring the API': 'basics/explorer.md'
-      - 'Collaborating with developers': 'basics/inviting-developers.md'
-      - 'API Change Log':
-        - 'Preface': 'basics/changelog/index.md'
-        - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
-        - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
-        - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
-        - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
-        - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
-        - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
-        - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
-        - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
-        - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
-        - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
-        - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
-
-  - 'Applications':
-      - 'Development lifecycle':
-          - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Developing in sandbox': 'basics/using-sandbox.md'
-      - 'App promotion':
-          - 'Submit to the App Gallery': 'getting-started/promote-app.md'
-          - 'Using profile variables': 'basics/app-gallery-variables.md'
-          - 'Updating a profile': 'basics/update-profile.md'
-          - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
-      - 'Application management':
-          - 'Using Lead Forms': 'basics/lead-forms.md'
-          - 'Install App Buttons': 'basics/install-app-button.md'
-      - 'Partner ecosystem':
-          - 'Overview': 'basics/partners/index.md'
-          - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
-          - 'Authentication guidance': 'basics/partners/auth.md'
-          - 'Technical requirements': 'basics/partners/segregated-environments.md'
-
+- 'Getting Started':
+  - 'Your first API call': 'getting-started/index.md'
+  - 'Register an app': 'getting-started/register-app.md'
+  - 'Create an auth credential': 'getting-started/create-credential.md'
+  - 'Build an app': 'getting-started/code-app.md'
+  - 'Sending SMS': 'getting-started/sms.md'
+  - 'Promote your app': 'getting-started/promote-app.md'
+- 'Basics':
   - 'Authentication':
     - 'Choosing the best auth': 'authentication/index.md'
     - 'JWT grant type':
@@ -355,7 +170,6 @@ nav:
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
-
   - 'Events and notifications':
     - 'Overview': 'notifications/index.md'
     - 'Event filters':
@@ -413,6 +227,288 @@ nav:
     - 'Sample applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+  - 'Partner ecosystem':
+    - 'Overview': 'basics/partners/index.md'
+    - 'Brand guidelines': 'basics/partners/brand-guidelines.md'
+    - 'Authentication guidance': 'basics/partners/auth.md'
+    - 'Technical requirements': 'basics/partners/segregated-environments.md'
+  - 'Requests and responses':
+    - 'Requests methods, endpoints and parameters': 'basics/uris.md'
+    - 'Response format': 'basics/formats/responses.md'
+    - 'Errors': 'basics/errors.md'
+    - 'Batch requests': 'basics/batch-requests.md'
+  - 'Data types and formats':
+    - 'Objects and data types': 'basics/formats/objects.md'
+    - 'Phone numbers': 'basics/formats/phone-numbers.md'
+    - 'Resource identification': 'basics/formats/resources.md'
+  - 'Rate limits': 'basics/rate-limits.md'
+  - 'Working with media content': 'basics/media.md'
+  - 'Localization': 'basics/localization.md'
+  - 'App URI schemes': 'basics/uri-schemes.md'
+  - 'Running code samples': 'basics/code-samples.md'
+  - 'Exploring the API': 'basics/explorer.md'
+  - 'Collaborating with developers': 'basics/inviting-developers.md'
+
+#  - 'API Change Log':
+#    - 'Preface': 'basics/changelog/index.md'
+#    - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
+#    - 'v.1.0.50 (Mar 2022)': 'basics/changelog/1_0_50.md'
+#    - 'v.1.0.49 (Nov 2021)': 'basics/changelog/1_0_49.md'
+#    - 'v.1.0.48 (Aug 2021)': 'basics/changelog/1_0_48.md'
+#    - 'v.1.0.47 (May 2021)': 'basics/changelog/1_0_47.md'
+#    - 'v.1.0.46 (Feb 2021)': 'basics/changelog/1_0_46.md'
+#    - 'v.1.0.45 (Nov 2020)': 'basics/changelog/1_0_45.md'
+#    - 'v.1.0.44 (Aug 2020)': 'basics/changelog/1_0_44.md'
+#    - 'v.1.0.43 (May 2020)': 'basics/changelog/1_0_43.md'
+#    - 'v.1.0.42 (Feb 2020)': 'basics/changelog/1_0_42.md'
+#    - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
+
+  - 'Applications':
+      - 'Development lifecycle':
+          - 'Tips for your first app': 'basics/your-first-steps.md'
+          - 'Develop in sandbox': 'getting-started/using-sandbox.md'
+      - 'App promotion':
+          - 'Submit to the App Gallery': 'getting-started/promote-app.md'
+          - 'Using profile variables': 'basics/app-gallery-variables.md'
+          - 'Updating a profile': 'basics/update-profile.md'
+          - 'Checklist and best practices': 'basics/app-gallery-checklist.md'
+      - 'Application management':
+          - 'Using Lead Forms': 'basics/lead-forms.md'
+          - 'Install App Buttons': 'basics/install-app-button.md'
 
   - 'Downloads and SDKs': sdks.md
   - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'
+
+- 'Phone':
+  - 'Overview': 'voice/index.md'
+  - 'Getting Started': 'voice/quick-start.md'
+  - 'Placing Calls':
+    - 'RingOut': 'voice/ringout.md'
+    - 'WebRTC': 'voice/webrtc.md'
+    - 'URI Scheme': 'voice/uri-scheme.md'
+  - 'Call Routing':
+    - 'Overview': 'voice/call-routing/index.md'
+    - 'Get Started': 'voice/call-routing/get-started.md'
+    - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
+    - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
+    - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
+    - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
+    - 'Call Queue Presence': 'voice/call-routing/manual/call-queues-presence.md'
+    - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
+  - 'Call Control':
+    - 'Overview': 'voice/call-control.md'
+    - 'Finding active calls': 'voice/finding-active-calls.md'
+    - 'Detecting state changes': 'voice/call-control-sessions.md'
+    - 'Pre-call Control': 'voice/pre-call-control.md'
+    - 'Active-call Control': 'voice/active-call-control.md'
+    - 'Call Monitoring': 'voice/supervision.md'
+    - 'Conference call': 'voice/conference.md'
+    - 'Warm Transfer': 'voice/warm-transfer.md'
+    - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
+    - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
+  - 'Call Logs':
+    - 'Overview': 'voice/call-log/index.md'
+    - 'Getting started': 'voice/call-log/quick-start.md'
+    - 'Call Log data types': 'voice/call-log/api.md'
+    - 'Detailed Call Log Data': 'voice/call-log/details.md'
+    - 'Data Archival': 'voice/call-log/archival.md'
+    - 'Call Recordings': 'voice/call-log/recordings.md'
+    - 'Synchronization': 'voice/call-log/sync.md'
+    - 'Best Practices': 'voice/call-log/best-practices.md'
+    - 'Access Control': 'voice/call-log/access.md'
+  - 'Call Analytics':
+    - 'Calculating Call Metrics': 'voice/calculating-call-time-metrics.md'
+  - 'Sample Applications':
+    - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
+    - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
+    - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
+    - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+- 'SMS and Fax':
+  - 'Overview': 'messaging/index.md'
+  - 'Getting Started': 'messaging/quick-start.md'
+  - 'Enhanced Business SMS':
+    - 'Best Practices': 'messaging/sms/best-practices.md'
+    - 'Sending an SMS': 'messaging/sms/sending-sms.md'
+    - 'Sending an MMS': 'messaging/sms/sending-images.md'
+    #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
+    - 'Postman': 'messaging/sms/postman.md'
+  - 'High Volume SMS':
+    - 'Overview': 'messaging/sms/high-volume/index.md'
+    - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
+    - 'Sending High Volume SMS': 'messaging/sms/high-volume/sending-highvolume-sms.md'
+    - 'Reading High Volume Message Store': 'messaging/sms/high-volume/message-store.md'
+    - 'Toll-Free vs. Local Numbers': 'messaging/sms/high-volume/toll-free-sms-vs-local-numbers.md'
+    - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
+    - 'Event Notifications': 'messaging/sms/high-volume/events.md'
+    - 'Errors Handling': 'messaging/sms/high-volume/handling-errors.md'
+  - 'Fax':
+    - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
+    - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
+    - 'Receiving Faxes': 'messaging/fax/receiving-faxes.md'
+    - 'Forwarding and Resending Faxes': 'messaging/fax/resending-faxes.md'
+  - 'Pager Messages':
+    - 'Sending Pager Messages': 'messaging/pager/sending-pager-messages.md'
+  - 'Message Store':
+    - 'Sending Messages': 'messaging/message-store/messaging.md'
+    - 'Working with Message Store': 'messaging/message-store/working-with-message-store.md'
+    - 'Message Synchronization': 'messaging/message-store/message-sync.md'
+    - 'Modifying Message Histories': 'messaging/message-store/message-histories.md'
+    - 'Message Store Export': 'messaging/message-store/message-exports-report.md'
+  - 'Message Templates':
+    - 'Overview': 'messaging/templates/overview.md'
+  - 'Sample Applications':
+    - 'SMS Sample App Walkthrough': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-demo/'
+    - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
+    - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
+    - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+- 'Chat':
+  - 'Overview': 'team-messaging/index.md'
+  - 'Getting Started': 'team-messaging/quick-start.md'
+  - 'Core concepts':
+    - 'Chats': 'team-messaging/concepts/chats.md'
+    - 'Conversations': 'team-messaging/concepts/conversations.md'
+    - 'Teams': 'team-messaging/concepts/teams.md'
+  - 'Team Messaging API Basics':
+    - 'Pagination': 'team-messaging/manual/pagination.md'
+#    - 'Permissions': 'team-messaging/manual/permissions.md'
+    - 'Mentions': 'team-messaging/manual/mentions.md'
+    - 'Composing deep links': 'team-messaging/manual/links.md'
+  - 'Team Messaging events':
+    - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
+    - 'Post events': 'team-messaging/events/posts.md'
+    - 'Chat events': 'team-messaging/events/groups.md'
+    - 'Incoming webhook events': 'team-messaging/events/incoming-webhooks.md'
+    - 'Interactive messaging events': 'team-messaging/events/interactive-messages.md'
+  - 'Incoming webhooks':
+    - 'Creating incoming webhooks': 'team-messaging/incoming-webhooks/webhook-creation.md'
+    - 'Posting messages and cards': 'team-messaging/incoming-webhooks/posting.md'
+    - 'Debugging using cURL': 'team-messaging/incoming-webhooks/debugging.md'
+    - 'Legacy message format': 'team-messaging/incoming-webhooks/legacy-format.md'
+
+  - 'Posting via REST API':
+    - 'Posting messages': 'team-messaging/posting/index.md'
+    - 'Posting cards': 'team-messaging/posting/cards.md'
+    - 'Posting notes': 'team-messaging/posting/notes.md'
+    - 'Posting tasks': 'team-messaging/posting/tasks.md'
+    - 'Uploading files': 'team-messaging/posting/file-uploads.md'
+
+  - 'Adaptive cards':
+    - 'Introduction': 'team-messaging/adaptive-cards/index.md'
+    - 'Card layout and design': 'team-messaging/adaptive-cards/containers.md'
+    - 'Input and interactivity': 'team-messaging/adaptive-cards/actions.md'
+    - 'Modal dialogs': 'team-messaging/adaptive-cards/modal-dialogs.md'
+    - 'Troubleshooting': 'team-messaging/adaptive-cards/troubleshooting.md'
+
+  - 'RingCentral add-ins':
+    - 'Introduction': 'team-messaging/add-ins/index.md'
+    - 'Developer tools': 'team-messaging/add-ins/tools.md'
+
+  - 'Notification apps':
+    - 'Creating a notification app': 'team-messaging/add-ins/creation.md'
+    - 'Integrated installation': 'team-messaging/add-ins/installation.md'
+    - 'Uninstalling': 'team-messaging/add-ins/uninstall.md'
+
+  - 'Bots':
+    - 'Development walkthrough': 'team-messaging/bots/walkthrough.md'
+    - 'Posting cards with bots': 'team-messaging/bots/posting-cards.md'
+    - 'Installing bots': 'team-messaging/bots/installing-bots.md'
+    - 'Uninstalling bots': 'team-messaging/bots/uninstalling-bots.md'
+#    - 'Subscribing to bot events': 'team-messaging/bots/events.md'
+#    - 'Local bot development': 'team-messaging/bots/node.md'
+    - 'Bot frameworks': 'team-messaging/manual/frameworks.md'
+    - 'Sample IBM Watson bot': 'https://ringcentral-tutorials.github.io/botkit-watson-bot-nodejs-demo/'
+    - 'Sample Voicemail bot': 'https://ringcentral-tutorials.github.io/ringcentral-ai-bot/'
+
+  - 'Data archival':
+    - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
+    - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
+
+- 'Meetings':
+  - 'Overview': 'video/index.md'
+  - 'Video REST API':
+    - 'Overview': 'video/api/index.md'
+    - 'Getting Started': 'video/api/quick-start.md'
+    - 'Creating meeting bridges': 'video/api/create-meetings.md'
+    - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
+    - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
+    - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
+    - 'Past meetings and recordings': 'video/api/meeting-history.md'
+    - 'Selecting meetings service': 'video/api/meeting-config.md'
+    - 'Troubleshooting': 'video/api/troubleshooting.md'
+  - 'Video Client SDK':
+    - 'Overview': 'video/client-sdk/index.md'
+    - 'Download': 'video/client-sdk/download.md'
+    - 'Getting Started': 'video/client-sdk/quick-start.md'
+    - 'Authentication': 'video/client-sdk/authentication.md'
+    - 'API Reference':
+       - 'Android': 'https://ringcentral.github.io/ringcentral-videosdk-android/'
+       - 'iOS': 'https://ringcentral.github.io/ringcentral-videosdk-ios/'
+       - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
+       - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
+       - 'React Native': 'https://ringcentral.github.io/ringcentral-videosdk-react-native/'
+    - 'Sample apps':
+       - 'Javascript': 'https://github.com/ringcentral/ringcentral-videosdk-js-samples'
+       - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
+       - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
+       - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
+  - 'Using RingCentral Embeddable': 'video/embeddable.md'
+  - 'Meetings (legacy API)':
+    - 'Overview': 'meetings/index.md'
+    - 'Getting Started': 'meetings/quick-start.md'
+
+- 'Webinar':
+  - 'Overview': 'webinar/index.md'
+  - 'Getting Started': 'webinar/quick-start.md'
+  - 'Core concepts':
+    - 'Use cases': 'webinar/use-cases.md'
+    - 'Sessions': 'webinar/sessions.md'
+    - 'Roles': 'webinar/roles.md'
+    - 'Terminology': 'webinar/terminology.md'
+  - 'Creating webinars': 'webinar/creation.md'
+  - 'Inviting hosts and cohosts': 'webinar/invitees.md'
+  - 'Registering attendees': 'webinar/registrants.md'
+  - 'Analyzing past webinars': 'webinar/past-webinars.md'
+  - 'Events and notifications': 'webinar/events.md'
+#  - 'Webinar recordings': 'webinar/recordings.md'
+
+  - 'AI':
+    - 'Overview': 'ai/index.md'
+    - 'Getting started': 'ai/quick-start.md'
+    - 'Developer basics':
+      - 'Asynchronous responses': 'ai/asynchronous-responses.md'
+      - 'Accessing media files': 'ai/media-files.md'
+      - 'Sample media files': 'ai/sample-files.md'
+    - 'Audio analysis':
+      - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
+      - 'Interaction analytics': 'ai/interaction-analytics.md'
+    - 'Speaker analysis':
+      - 'Speaker enrollment': 'ai/speaker-enrollment.md'
+      - 'Speaker identification': 'ai/speaker-identification.md'
+      - 'Speaker diarization': 'ai/speaker-diarization.md'
+#      - 'Emotion recognition': 'ai/emotion-recognition.md'
+    - 'Text analysis':
+      - 'Conversation summaries': 'ai/text-summary.md'
+      - 'Smart punctuation': 'ai/text-punctuation.md'
+
+    - 'RingSense': 'ai/ringsense.md'
+
+- 'More APIs':
+  - 'Analytics':
+    - 'Overview': 'analytics/index.md'
+    - 'Getting Started': 'analytics/quick-start.md'
+    - 'Aggregate Data': 'analytics/aggregate.md'
+    - 'Timeline Data': 'analytics/timeline.md'
+
+  - 'Accounts and Users':
+    - 'Overview': 'account/index.md'
+    - 'Users and extensions': 'account/extensions.md'
+    - 'Address Book': 'address-book/index.md'
+    - 'Creating users': 'account/creating-users.md'
+    - 'Phone numbers': 'account/phone-numbers.md'
+    - 'Call forwarding/flipping': 'account/call-forwarding-flipping.md'
+    - 'User feature flags': 'account/feature-flags.md'
+    - 'Custom fields': 'account/custom-fields.md'
+    - 'Presence': 'account/presence.md'
+    - 'Audit trail': 'account/audit-trail.md'
+    - 'Emergency locations' : 'provisioning/location/emergency-locations.md'
+
