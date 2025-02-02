@@ -280,7 +280,7 @@ nav:
   - 'Downloads and SDKs': sdks.md
   - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'
 
-- 'Voice':
+- 'Phone':
   - 'Overview': 'voice/index.md'
   - 'Getting Started': 'voice/quick-start.md'
   - 'Placing Calls':
@@ -360,10 +360,7 @@ nav:
     - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
     - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
 
-- 'Social Messaging':
-  - 'Overview': 'social-messaging/index.md'
-
-- 'Team Messaging':
+- 'Team Chat':
   - 'Overview': 'team-messaging/index.md'
   - 'Getting Started': 'team-messaging/quick-start.md'
   - 'Core concepts':
@@ -424,7 +421,7 @@ nav:
     - 'Compliance Export': 'team-messaging/manual/compliance-export.md'
     - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
 
-- 'Video':
+- 'Meetings':
   - 'Overview': 'video/index.md'
   - 'Video REST API':
     - 'Overview': 'video/api/index.md'
@@ -447,7 +444,7 @@ nav:
        - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
        - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
   - 'Using RingCentral Embeddable': 'video/embeddable.md'
-  - 'Meetings (legacy API)':
+  - 'Legacy Meetings API':
     - 'Overview': 'meetings/index.md'
     - 'Getting Started': 'meetings/quick-start.md'
 
@@ -490,7 +487,8 @@ nav:
     - 'Getting Started': 'analytics/quick-start.md'
     - 'Aggregate Data': 'analytics/aggregate.md'
     - 'Timeline Data': 'analytics/timeline.md'  
-
+  - 'Social Messaging':
+    - 'Overview': 'social-messaging/index.md'
   - 'Webinar':
     - 'Overview': 'webinar/index.md'
     - 'Getting Started': 'webinar/quick-start.md'
