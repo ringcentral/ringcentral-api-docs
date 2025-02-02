@@ -9,8 +9,7 @@ The High Volume SMS API provides a very flexible way to send multiple SMS messag
 Simple request to broadcast the same message to multiple recipients.
 
 !!! note "Running the code"
-    * If you have tried the [SMS quick start](../../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_a2psms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
-    * High volume SMS is not supported on sandbox environment. If you copy/paste the functions below and call them in the quick start project, remember to change the environment to use your app and user credentials for production!
+    If you have tried the [SMS quick start](../../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `read_extension_phone_number_detect_a2psms_feature()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
 
 === "HTTP"
 
@@ -32,26 +31,26 @@ Simple request to broadcast the same message to multiple recipients.
 === "JavaScript"
 
     ```javascript
-    {!> code-samples/messaging/code-snippets-headers/header-prod.js !}
+    {!> code-samples/messaging/code-snippets-headers/header.js !}
     {!> code-samples/messaging/code-snippets/send-a2p-sms.js [ln:10-] !}
     ```
 
 === "Python"
     ```python
     {!> code-samples/messaging/code-snippets/send-a2p-sms.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer-prod.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py !}
     ```
 
 === "PHP"
     ```php
-    {!> code-samples/messaging/code-snippets-headers/header-prod.php !}
+    {!> code-samples/messaging/code-snippets-headers/header.php !}
     {!> code-samples/messaging/code-snippets/send-a2p-sms.php [ln:2-]!}
     ```
 
 === "Ruby"
     ```ruby
     {!> code-samples/messaging/code-snippets/send-a2p-sms.rb !}
-    {!> code-samples/messaging/code-snippets-headers/footer-prod.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb !}
     ```
 
 === "C#"

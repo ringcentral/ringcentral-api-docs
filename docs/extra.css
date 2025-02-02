@@ -29,7 +29,7 @@ typeset code {
     padding-bottom: 0;
 }
 
-.api-index [data-toggle="collapse"]:after {
+.api-index [data-bs-toggle="collapse"]:after {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 0.8rem;
@@ -42,7 +42,7 @@ typeset code {
     transform: rotate(90deg) ;
     transition: all linear 0.25s;
 }   
-.api-index [data-toggle="collapse"].collapsed:after {
+.api-index [data-bs-toggle="collapse"].collapsed:after {
     transform: rotate(0deg) ;
 }
 

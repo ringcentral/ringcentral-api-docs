@@ -4,8 +4,7 @@ hide:
   - navigation
   - path
 ---
-
-# RingCentral MVP™ Developer Guide
+# RingCentral RingEX™ Developer Guide
 
 {! mdx_includes/carousel.md !}
 

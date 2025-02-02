@@ -22,17 +22,17 @@ def create_team()
     resp = $platform.post(endpoint, payload: bodyParams)
     puts resp.body
   rescue StandardError => e
-    puts (e)
+    puts ("Unable to create a new team. " + e.to_s)
   end
 end
 
 # Instantiate the SDK and get the platform instance
-$platform = RingCentral.new( ENV['RC_CLIENT_ID'], ENV['RC_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
+$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_IDCLIENT_SECRET'], ENV['RC_SERVER_URL'] )
 
 # Authenticate a user using a personal JWT token
 def login()
   begin
-    $platform.authorize(jwt: ENV['RC_JWT'])
+    $platform.authorize(jwt: ENV['RC_USER_JWT'])
     create_team()
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
@@ -51,10 +51,19 @@ login()
 def boostrap_test_function()
 
     # sleep(2)
-    # puts "Test sending mms"
-    # require_relative './code-snippets/send-mms'
-    # read_extension_phone_number_detect_mms_feature()
+    # puts "Test creating compliance export task"
+    # require_relative './code-snippets/compliance-export'
+    # create_compliance_export_task()
 
+    # sleep(2)
+    # puts "Test reading teams"
+    # require_relative './code-snippets/list-teams'
+    # list_teams("")
+
+    sleep(2)
+    puts "Test adding new team members"
+    require_relative './code-snippets/add-team-members'
+    find_team("", "Ruby Team")
 end
 
 boostrap_test_function()

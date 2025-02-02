@@ -128,7 +128,7 @@ This example response shows the `SmsSender`, `MmsSender` and `InternationalSmsSe
       ],
       "status":"Normal",
       "country":{
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/country/1",
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/country/1",
         "id":"1",
         "name":"United States"
       }

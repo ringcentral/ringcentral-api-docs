@@ -10,13 +10,13 @@ const RECIPIENT    = process.env.SMS_RECIPIENT
 // Instantiate the SDK and get the platform instance
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+    'clientId':     process.env.RC_APP_CLIENT_ID,
+    'clientSecret': process.env.RC_APP_CLIENT__SECRET
 });
 var platform = rcsdk.platform();
 
 /* Authenticate a user using a personal JWT token */
-platform.login({ 'jwt':  process.env.RC_JWT })
+platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, function(e){
     read_extension_phone_number_detect_sms_feature()
@@ -42,7 +42,7 @@ async function read_extension_phone_number_detect_sms_feature(){
                     // If a user has multiple phone numbers, check and
 		    // decide which number to be used for sending
 		    // the SMS message. For simplicity, we pick the
-		    // first one we find. 
+		    // first one we find.
                     return send_sms(record.phoneNumber)
                 }
             }
@@ -95,7 +95,7 @@ async function check_message_status(messageId){
         let jsonObj = await resp.json()
         console.log("Message status: ", jsonObj.messageStatus)
         if (jsonObj.messageStatus == "Queued"){
-          await sleep (5000);
+          await sleep (2000);
           check_message_status(jsonObj.id);
         }
     } catch (e) {

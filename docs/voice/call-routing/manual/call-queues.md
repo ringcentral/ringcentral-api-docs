@@ -101,15 +101,15 @@ Required permission(s): ReadAccounts
 **Sample Response**
 ```json
 {
-  "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&perPage=100",
+  "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/11111111/department/22223333/members?page=1&perPage=100",
   "records" : [
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/11112222",
       "id" : 11112222,
       "extensionNumber" : "101"
     },
     {
-      "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333",
+      "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/11113333",
       "id" : 11113333,
       "extensionNumber" : "102"
     }

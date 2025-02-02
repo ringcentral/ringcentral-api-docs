@@ -9,11 +9,10 @@ tags:
 
 !!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../getting-started/index.md)."
 
-!!! info "Things to know before you begin"
-    
-    * SMS prices [changed in 2022](https://support.ringcentral.com/article/Enhanced-Business-SMS-new-Price-Changes.html)
-    * Our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) will help you stay compliant
-    * When you are finished with this quick start, checkout our [SMS Best Practices Guide](sms/best-practices.md)
+!!! hint "Enabling the phone numbers in your account for SMS"
+    As a participating [TCR CSP](https://www.campaignregistry.com/), RingCentral is dedicated to providing the highest quality of service, while working to eliminate spam, phishing, and fraudulent messages. To help ensure these goals are met, RingCentral requires customers to follow the [TCR process](https://support.ringcentral.com/article-v2/Setting-up-TCR-registration-assigning-numbers-to-SMS-campaigns.html?brand=RingCentral&product=MVP&language=en_US&pills-nav=brand) to enable their account to send SMS. To learn more, read our [TCR FAQ](https://support.ringcentral.com/article-v2/TCR-business-registration-FAQ.html?brand=RingCentral&product=MVP&language=en_US).
+
+    In addition, reading our [SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) may also help you in staying compliant.
 
 In this Quick Start, we are going to help you send your first SMS on the platform in just a few minutes. Let's get started.
 
@@ -22,7 +21,7 @@ In this Quick Start, we are going to help you send your first SMS on the platfor
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create SMS App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=SMS+Quick+Start+App&desc=A+simple+app+to+demo+sending+an+SMS+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadAccounts&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create SMS App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -47,10 +46,10 @@ When you are done, you will be taken to the app's dashboard. Make note of the Cl
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
-2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above..
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
      * `SMS_RECIPIENT` - for code testing purpose, we set the recipient's phone number to this environment variable. You can set the phone number via this variable, or you can set it directly on your code.
 
 ## Send an SMS
@@ -70,7 +69,7 @@ Select your preferred language below.
     Create a file called `sms.js`.
 
     ```javascript
-    {!> code-samples/messaging/quick-start.js [ln:1-107] !}
+    {!> code-samples/messaging/quick-start.js [ln:1-109] !}
     ```
 
     ### Run your code
@@ -143,7 +142,7 @@ Select your preferred language below.
     Create a file called `sms.rb`.
 
     ```ruby
-    {!> code-samples/messaging/quick-start.rb [ln:1-87]!}
+    {!> code-samples/messaging/quick-start.rb [ln:1-86]!}
     ```
 
     ### Run your code
@@ -161,7 +160,8 @@ Select your preferred language below.
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1 or higher version
     * Enter project name "Send_SMS"
-    * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Add NuGet package RingCentral.Net (6.2.0) SDK
+    * Save the .env file under your project folder. E.g. /Send_SMS/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file Program.cs
 
@@ -186,15 +186,15 @@ Select your preferred language below.
         ```json
         dependencies {
             // ...
-            compile 'com.ringcentral:ringcentral:3.0.0'
+            compile 'com.ringcentral:ringcentral:3.2.0'
         }
         ```
 
     * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
-        - RC_CLIENT_ID
-        - RC_CLIENT_SECRET
+        - RC_APP_CLIENT_ID
+        - RC_APP_CLIENT_SECRET
         - RC_SERVER_URL
-        - RC_JWT
+        - RC_USER_JWT
         - SMS-RECIPIENT
 
     * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu

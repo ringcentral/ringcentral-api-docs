@@ -1,21 +1,26 @@
-const RC = require('@ringcentral/sdk').SDK
-require('dotenv').config();
+const RC_SDK = require('@ringcentral/sdk').SDK
+const path = require('path')
+// Remember to modify the path of your .env file location!
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const CALLER       = process.env.RINGOUT_CALLER
 const RECIPIENT    = process.env.RINGOUT_RECIPIENT
 
-var rcsdk = new RC({
+var rcsdk = new RC_SDK({
     'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+    'clientId':     process.env.RC_APP_CLIENT_ID,
+    'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({ 'jwt':  process.env.RC_JWT })
+platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
   call_ringout()
 })
 
+/*
+* Place a ring-out call
+*/
 async function call_ringout() {
   try {
     var resp = await platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
@@ -26,6 +31,72 @@ async function call_ringout() {
     var jsonObj = await resp.json()
     console.log("Call placed. Call status: " + jsonObj.status.callStatus)
   } catch (e) {
-    console.log(e.message)
+    console.log("Unable to place a ring-out call.", e.message)
   }
+}
+// End of Quick Start Code Section
+
+/**********************************************************
+***********************************************************
+ TEST SECTION - THESE FUNTIONS ARE NOT SHOWN IN DEV GUIDE
+***********************************************************
+ Code snippet section for boostrap testing purpose
+**********************************************************/
+const sleep = async (ms) => {
+  await new Promise(r => setTimeout(r, ms));
+}
+
+exports.platform = platform;
+
+boostrap_test_function()
+async function boostrap_test_function(){
+  console.log("boostrap_test_function")
+
+  // await sleep(2000)
+  // console.log("Test create a call monitoring group")
+  // require ('./code-snippets/create-update-call-monitoring-group.js')
+  // return
+  //
+  // await sleep(2000)
+  // console.log("Test List Call Monitoring Groups")
+  // require ('./code-snippets/call-monitoring-group.js')
+  // return
+
+  await sleep(2000)
+  console.log("Test Supervise Call Session")
+  require ('./code-snippets/call-supervision.js')
+  return
+
+/*
+  await sleep(2000)
+  console.log("Test Enrollment Speaker Identification")
+  require ('./code-snippets/enrollment.js')
+  return
+
+  await sleep(2000)
+  console.log("Test Summarization")
+  require ('./code-snippets/summarize.js')
+  return
+
+  await sleep(2000)
+  console.log("Test Speaker Diarization")
+  require ('./code-snippets/speaker-diarization.js')
+  return
+
+
+  await sleep(2000)
+  console.log("Test Speaker Identification")
+  require ('./code-snippets/speaker-identifier.js')
+  return
+
+  await sleep(2000)
+  console.log("Test Enrollment Extra")
+  require ('./code-snippets/enrollment-extra.js')
+  return
+
+  await sleep(2000)
+  console.log("Test Punctuation")
+  require ('./code-snippets/punctuation.js')
+  return
+*/
 }

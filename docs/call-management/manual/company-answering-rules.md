@@ -248,7 +248,7 @@ Upon successful API call completion, the response contains the id (`ruleId`) and
 
 ```json hl_lines="3", linenums="1"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009114/extension/178009114/answering-rule/227207004",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/178009114/extension/178009114/answering-rule/227207004",
   "id": "227207004",
   "type": "Custom",
   "name": "My weekly meetings",
@@ -268,17 +268,17 @@ Upon successful API call completion, the response contains a list of all existin
 
 ```json hl_lines="6 13", linenums="1"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/answering-rule?page=1&perPage=100",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/answering-rule?page=1&perPage=100",
   "records": [
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/answering-rule/33333333",
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/answering-rule/33333333",
       "id": "33333333",
       "type": "Custom",
       "name": "Company Custom Rule 1",
       "enabled": true,
     },
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/answering-rule/business-hours-rule",
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/answering-rule/business-hours-rule",
       "id": "business-hours-rule",
       "type": "BusinessHours",
       "enabled": true

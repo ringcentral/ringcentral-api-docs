@@ -13,7 +13,7 @@ In this Quick Start, we are going to help you create a new RingCentral team in j
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Team App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Team+Messaging+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+Team+messaging+team&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Team+Messaging&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Team App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -38,9 +38,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 ## Create a Team
 
@@ -151,6 +151,7 @@ Select your preferred language below.
     * Select Target Framework .NET Core 2.1 or higher version
     * Enter project name "Create_Team"
     * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /Create_Team/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file Program.cs
 
@@ -179,10 +180,10 @@ Select your preferred language below.
     ```
 
     * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
-        - RC_CLIENT_ID
-        - RC_CLIENT_SECRET
+        - RC_APP_CLIENT_ID
+        - RC_APP_CLIENT_SECRET
         - RC_SERVER_URL
-        - RC_JWT
+        - RC_USER_JWT
 
     * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
 
@@ -199,7 +200,7 @@ Select your preferred language below.
 
 ### Check the newly created team
 
-Login to your account at https://app.devtest.ringcentral.com (use https://app.ringcentral.com if you test on your production) to see the newly created team.
+Login to your account at https://app.ringcentral.com to see the newly created team.
 
 
 ## Need Help?

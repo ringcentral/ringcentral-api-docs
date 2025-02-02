@@ -6,11 +6,15 @@ https://developers.ringcentral.com/guide/team-messaging/bots/walkthrough/
 Copyright: 2021 - RingCentral, Inc.
 License: MIT
 */
-const RC = require('@ringcentral/sdk').SDK;
 require('dotenv').config();
+
+var RingCentral = require('@ringcentral/sdk').SDK;
+
 var express = require('express');
 var bp      = require('body-parser')
 var fs      = require('fs');
+
+const PORT            = process.env.PORT;
 
 const TOKEN_TEMP_FILE = '.private-bot-auth';
 const SUBSCRIPTION_ID_TEMP_FILE = '.private-bot-subscription';
@@ -35,12 +39,13 @@ app.get('/', function(req, res) {
 });
 
 // Instantiate the RingCentral JavaScript SDK
-var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET,
-    'redirectUri':  process.env.RC_REDIRECT_URL
+var rcsdk = new RingCentral({
+  server: process.env.RC_SERVER_URL,
+  clientId: process.env.RC_APP_CLIENT_ID,
+  clientSecret: process.env.RC_APP_CLIENT_SECRET,
+  redirectUri: process.env.RC_REDIRECT_URI
 });
+
 var platform = rcsdk.platform();
 
 // Bot starts/restarts => check if there is a saved token
@@ -159,14 +164,14 @@ async function subscribeToEvents(){
   console.log("Subscribing to posts and groups events")
   var requestData = {
     eventFilters: [
-      "/restapi/v1.0/glip/posts", // Team Messaging post events.
-      "/restapi/v1.0/glip/groups", // Team Messaging team/group events.
+      "/restapi/v1.0/glip/posts", // Team Messaging (a.k.a Glip) events.
+      "/restapi/v1.0/glip/groups", // Team Messaging (a.k.a Glip) events.
       "/restapi/v1.0/account/~/extension/~", // Subscribe for this event to detect when a bot is uninstalled
       "/restapi/v1.0/subscription/~?threshold=60&interval=15" // For subscription renewal
     ],
     deliveryMode: {
       transportType: "WebHook",
-      address: process.env.RC_BOT_WEBHOOK_URL
+      address: process.env.WEBHOOK_DELIVERY_ADDRESS
     },
     expiresIn: 604799
   };
@@ -234,7 +239,7 @@ app.post('/user-submit', function (req, res) {
 async function send_message( groupId, message ) {
     console.log("Posting response to group: " + groupId);
     try {
-      await platform.post(`/team-messaging/v1/chats/${groupId}/posts`, {
+      await platform.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
   	     "text": message
        })
     }catch(e) {
@@ -246,20 +251,20 @@ async function send_message( groupId, message ) {
 async function send_card( groupId, card ) {
     console.log("Posting a card to group: " + groupId);
     try {
-      var resp = await platform.post(`/team-messaging/v1/chats/${groupId}/adaptive-cards`, card)
-	  }catch (e) {
-	    console.log(e)
-	  }
+      var resp = await platform.post(`/restapi/v1.0/glip/chats/${groupId}/adaptive-cards`, card)
+    }catch (e) {
+      console.log(e)
+    }
 }
 
 // Update an adaptive card
 async function update_card( cardId, card ) {
     console.log("Updating card...");
     try {
-      var resp = await platform.put(`/team-messaging/v1/adaptive-cards/${cardId}`, card)
+      var resp = await platform.put(`/restapi/v1.0/glip/adaptive-cards/${cardId}`, card)
     }catch (e) {
-	    console.log(e.message)
-	  }
+      console.log(e.message)
+    }
 }
 
 function make_hello_world_card(name) {

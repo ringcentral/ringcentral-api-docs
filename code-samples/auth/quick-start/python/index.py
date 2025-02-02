@@ -7,8 +7,8 @@ load_dotenv()
 
 REDIRECT_URL = os.environ.get('RC_REDIRECT_URL')
 
-rcsdk = SDK( os.environ.get('RC_CLIENT_ID'),
-             os.environ.get('RC_CLIENT_SECRET'),
+rcsdk = SDK( os.environ.get('RC_APP_CLIENT_ID'),
+             os.environ.get('RC_APP_CLIENT_SECRET'),
              os.environ.get('RC_SERVER_URL') )
 platform = rcsdk.platform()
 
@@ -22,7 +22,7 @@ def login():
     params = (
         ('response_type', 'code'),
         ('redirect_uri', REDIRECT_URL),
-        ('client_id', os.environ.get('RC_CLIENT_ID')),
+        ('client_id', os.environ.get('RC_APP_CLIENT_ID')),
         ('state', 'initialState')
     )
     auth_url = base_url + '?' + urllib.parse.urlencode(params)
@@ -71,6 +71,6 @@ def logout():
 def main():
     logging.info("Being run from the command line. Exiting safely.")
     sys.exit(0)
-    
+
 if __name__ == "__main__":
     main()

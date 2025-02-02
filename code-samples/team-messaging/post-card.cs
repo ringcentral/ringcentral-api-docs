@@ -6,21 +6,21 @@ using Newtonsoft.Json;
 
 namespace Create_Team
 {
-class Program
-{
+  class Program
+  {
     static RestClient restClient;
-    static void Main(string[] args)
-    {
-	restClient = new RestClient(
-	    Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-	    Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
-	    Environment.GetEnvironmentVariable("RC_SERVER_URL"));
-	restClient.Authorize(
-	    Environment.GetEnvironmentVariable("RC_JWT")).Wait();
-        create_team().Wait();
-    }
-    static private async Task create_team()
-    {
+    static async Task Main(string[] args){
+      {
+        restClient = new RestClient(
+        Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+        Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
+        Environment.GetEnvironmentVariable("RC_SERVER_URL"));
+        await restClient.Authorize(
+        Environment.GetEnvironmentVariable("RC_USER_JWT"));
+        await create_team().Wait();
+      }
+      static private async Task create_team()
+      {
         var parameters = new GlipPostTeamBody();
         parameters.@public = true;
         parameters.name = "Fun team";
@@ -35,6 +35,6 @@ class Program
         var response = await restClient.Restapi().Glip().Teams().Post(parameters);
         var jsonStr = JsonConvert.SerializeObject(response);
         Console.WriteLine(jsonStr);
+      }
     }
-}
-}
+  }

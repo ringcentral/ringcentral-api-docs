@@ -13,17 +13,15 @@ namespace AnalyticsQuickStart {
     static async Task Main(string[] args){
       try
       {
-        const string envFileName = ".env";
-        // Remember to modify the path of your .env file location!
-        String root = Directory.GetCurrentDirectory();
-        DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { Path.Combine(root, envFileName) }));
-
+        DotEnv.Load();
+        // Instantiate the SDK
         restClient = new RestClient(
-            Environment.GetEnvironmentVariable("RC_CLIENT_ID"),
-            Environment.GetEnvironmentVariable("RC_CLIENT_SECRET"),
+            Environment.GetEnvironmentVariable("RC_APP_CLIENT_ID"),
+            Environment.GetEnvironmentVariable("RC_APP_CLIENT_SECRET"),
             Environment.GetEnvironmentVariable("RC_SERVER_URL"));
 
-        await restClient.Authorize( Environment.GetEnvironmentVariable("RC_JWT") );
+        // Authenticate a user using a personal JWT token
+        await restClient.Authorize( Environment.GetEnvironmentVariable("RC_USER_JWT") );
 
         await read_analytics_aggregate_data();
       }

@@ -9,11 +9,11 @@ In this quick start guide, we are going to access call performance data via usin
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Call Performance Analytics App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 [Create Analytics App](https://developer.ringcentral.com/new-app?name=Analytics+Quick+Start+App&desc=A+simple+app+to+demo+accessing+call+performance+metrics+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Analytics&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){target="_new" class="btn btn-primary"}
-[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions}
+[Show detailed instructions](#create-app-instructions){class="btn-link btn-collapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="create-app-instructions"}
 
 <div class="collapse" id="create-app-instructions" markdown>
 <ol>
-<li>[Login or create an account](https://developer.ringcentral.com/login.html#/) if you have not done so already.</li>
+<li><a href="https://developer.ringcentral.com/login.html">Login or create an account</a> if you have not done so already.</li>
 <li>Go to Console/Apps and click 'Create App' button.</li>
 <li>Select "REST API App" under "What type of app are you creating?" Click "Next."</li>
 <li>Under "Authentication" select "JWT auth flow"
@@ -32,9 +32,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
 
 ## Call the Analytics API
 
@@ -46,7 +46,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     $ npm init
     ```
 
-    ### Install RingCentral Node.JS SDK & DOTENV Module
+    ### Install RingCentral JS SDK & dotenv library
 
     ```bash
     $ npm install @ringcentral/sdk dotenv
@@ -70,7 +70,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 === "Python"
 
-    ### Install RingCentral Python SDK
+    ### Install RingCentral Python SDK and the dotnet library
 
     ```bash
     $ pip install ringcentral python-dotenv
@@ -149,10 +149,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     * Select Target Framework .NET Core 2.1 or a higher version
     * Enter project name "AnalyticsQuickStart"
     * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /AnalyticsQuickStart/bin/Debug/netcoreapp2.2/.env
 
     ### Edit the file 'Program.cs'
-
-    Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```c#
     {!> code-samples/analytics/Program.cs !}
@@ -179,10 +178,10 @@ Follow the instructions found in our guide to [running Developer Guide code samp
     ```
 
     * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
-        - RC_CLIENT_ID
-        - RC_CLIENT_SECRET
+        - RC_APP_CLIENT_ID
+        - RC_APP_CLIENT_SECRET
         - RC_SERVER_URL
-        - RC_JWT
+        - RC_USER_JWT
 
     * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
 

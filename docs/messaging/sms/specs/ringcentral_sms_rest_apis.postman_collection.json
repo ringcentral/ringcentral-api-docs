@@ -100,7 +100,7 @@
 								"token"
 							]
 						},
-						"description": "Fetch access_token from DevTest environment as Admin"
+						"description": "Fetch access_token as Admin"
 					},
 					"response": []
 				},
@@ -184,7 +184,7 @@
 								"token"
 							]
 						},
-						"description": "Fetch access_token from DevTest environment as Admin"
+						"description": "Fetch access_token as Admin"
 					},
 					"response": []
 				}

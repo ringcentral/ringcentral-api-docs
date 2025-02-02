@@ -1,21 +1,111 @@
 {
+    "jobId": "80800e1a-a663-11ee-b548-0050568ccd07",
+    "api": "/ai/insights/v1/async/analyze-interaction",
+    "creationTime": "2023-12-29T16:01:18.558Z",
+    "completionTime": "2023-12-29T16:01:29.217Z",
+    "expirationTime": "2024-01-05T16:01:18.558Z",
     "status": "Success",
     "response": {
         "utteranceInsights": [
             {
-                "start": 2.52,
-                "end": 6.53,
-                "text": "Could produce large hail isolated tornadoes and heavy rain.",
-                "confidence": 0.93,
+                "start": 3.72,
+                "end": 7.56,
+                "text": "Good evening, thank you for calling electronics or this is Rachel.",
+                "confidence": 0.85,
+                "speakerId": "0",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Neutral",
+                        "confidence": 0.54
+                    }
+                ]
+            },
+            {
+                "start": 7.56,
+                "end": 8.96,
+                "text": "How may I assist you?",
+                "confidence": 0.85,
+                "speakerId": "0",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Fear",
+                        "confidence": 0.71
+                    }
+                ]
+            },
+            {
+                "start": 8.96,
+                "end": 9.8,
+                "text": "Hi, Rachel.",
+                "confidence": 0.85,
                 "speakerId": "1",
                 "insights": [
                     {
                         "name": "Emotion",
                         "value": "Neutral",
-                        "confidence": 0.7
+                        "confidence": 0.79
                     }
                 ]
-            }
+            },
+            {
+                "start": 9.8,
+                "end": 11.16,
+                "text": "I would like to know how to use this car.",
+                "confidence": 0.85,
+                "speakerId": "1",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Neutral",
+                        "confidence": 0.4
+                    }
+                ]
+            },
+            {
+                "start": 11.16,
+                "end": 14.28,
+                "text": "Bluetooth headset I recently purchased from your store.",
+                "confidence": 0.85,
+                "speakerId": "1",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Neutral",
+                        "confidence": 0.46
+                    }
+                ]
+            },
+            {
+                "start": 14.28,
+                "end": 21.36,
+                "text": "Sure, ma'am, I can help you out with that, but before anything else, I have your name so that I can address you properly.",
+                "confidence": 0.87,
+                "speakerId": "0",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Neutral",
+                        "confidence": 0.91
+                    }
+                ]
+            },
+            {
+                "start": 21.36,
+                "end": 23.58,
+                "text": "Yes, this is Meredith Blake.",
+                "confidence": 0.87,
+                "speakerId": "1",
+                "insights": [
+                    {
+                        "name": "Emotion",
+                        "value": "Neutral",
+                        "confidence": 0.91
+                    }
+                ]
+            },
+            ...
         ],
         "speakerInsights": {
             "speakerCount": 2,
@@ -25,11 +115,26 @@
                     "values": [
                         {
                             "speakerId": "0",
-                            "value": 86.64
+                            "value": 93.11
                         },
                         {
                             "speakerId": "1",
-                            "value": 62.69
+                            "value": 93.65
+                        }
+                    ]
+                },
+                {
+                    "name": "Pace",
+                    "values": [
+                        {
+                            "speakerId": "0",
+                            "value": "medium",
+                            "wpm": 152.9
+                        },
+                        {
+                            "speakerId": "1",
+                            "value": "fast",
+                            "wpm": 196.9
                         }
                     ]
                 },
@@ -38,11 +143,11 @@
                     "values": [
                         {
                             "speakerId": "0",
-                            "value": "32:68"
+                            "value": "58:42"
                         },
                         {
                             "speakerId": "1",
-                            "value": "68:32"
+                            "value": "42:58"
                         }
                     ]
                 },
@@ -51,13 +156,32 @@
                     "values": [
                         {
                             "speakerId": "0",
-                            "value": 0,
-                            "questions": []
+                            "value": 5,
+                            "questions": [
+                                {
+                                    "text": "Good evening, thank you for calling electronics or this is Rachel. How may I assist you?",
+                                    "start": 3.72,
+                                    "end": 8.96
+                                },
+                                {
+                                    "text": "Okay, thank you for that, Mrs. Plague, what exactly do you want done with your headset?",
+                                    "start": 23.9,
+                                    "end": 29.72
+                                },
+                                ...
+                            ]
                         },
                         {
                             "speakerId": "1",
-                            "value": 0,
-                            "questions": []
+                            "value": 3,
+                            "questions": [
+                                {
+                                    "text": "Well, we have already done that. I only ask a simple question. Why can't you seem to get that?",
+                                    "start": 102.22,
+                                    "end": 107.7
+                                },
+                                ...
+                            ]
                         }
                     ]
                 }
@@ -66,35 +190,83 @@
         "conversationalInsights": [
             {
                 "name": "KeyPhrases",
-                "values": []
+                "values": [
+                    {
+                        "start": 11.55,
+                        "end": 11.94,
+                        "value": "headset",
+                        "confidence": 0.92
+                    },
+                    {
+                        "start": 13.89,
+                        "end": 14.28,
+                        "value": "store",
+                        "confidence": 0.94
+                    },
+                    {
+                        "start": 29.36,
+                        "end": 29.72,
+                        "value": "headset",
+                        "confidence": 0.86
+                    },
+                    {
+                        "start": 34.32,
+                        "end": 34.72,
+                        "value": "headset",
+                        "confidence": 0.91
+                    },
+                    {
+                        "start": 38.68,
+                        "end": 39.08,
+                        "value": "phone",
+                        "confidence": 0.86
+                    },
+                    {
+                        "start": 43.77,
+                        "end": 44.24,
+                        "value": "iphone",
+                        "confidence": 0.89
+                    },
+                    ...
+                ]
             },
             {
                 "name": "ExtractiveSummary",
+                "values": []
+            },
+            {
+                "name": "Topics",
                 "values": [
                     {
-                        "value": "Could produce large hail isolated tornadoes and heavy rain.",
-                        "start": 2.52,
-                        "end": 6.53,
-                        "speakerId": "1",
-                        "confidence": 0.51
+                        "value": "car bluetooth headset",
+                        "start": 9.8,
+                        "end": 114.2,
+                        "confidence": 0.92
                     }
                 ]
             },
             {
-                "name": "Topics",
-                "values": []
-            },
-            {
-                "name": "Tasks",
-                "values": []
-            },
-            {
                 "name": "AbstractiveSummaryLong",
-                "values": []
+                "values": [
+                    {
+                        "value": "First speaker helps second speaker use a car bluetooth headset from the store and asks speaker 1 to switch off the device with speaker's phone.",
+                        "start": 3.72,
+                        "end": 114.2,
+                        "confidence": 0.4,
+                        "groupId": "0"
+                    }
+                ]
             },
             {
                 "name": "AbstractiveSummaryShort",
-                "values": []
+                "values": [
+                    {
+                        "value": "First speaker helps second speaker use a car bluetooth headset from the store and asks speaker 1 to switch off the device with speaker's phone.",
+                        "start": 3.72,
+                        "end": 114.2,
+                        "confidence": 0.4
+                    }
+                ]
             }
         ]
     }

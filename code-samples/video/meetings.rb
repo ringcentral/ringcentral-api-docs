@@ -1,21 +1,34 @@
-#!usr/bin/ruby
-
-# You get the environment parameters from your 
-# application dashbord in your developer account 
-# https://developers.ringcentral.com
-
 require 'ringcentral'
-require 'dotenv/load'
+require 'dotenv'
+# Remember to modify the path to where you saved your .env file!
+Dotenv.load("./../.env")
 
-$rc = RingCentral.new(ENV['RC_CLIENT_ID'],
-                      ENV['RC_CLIENRT_SECRET'],
-                      ENV['RC_SERVER_URL'])
+# Create an instant RCV MyMeeting
+def create_meeting()
+  begin
+    bodyParams = {
+          name: "Test meeting",
+          type: "Instant"
+      }
+    endpoint =  "/rcvideo/v2/account/~/extension/~/bridges"
+    resp = $platform.post(endpoint, payload: bodyParams)
+    puts "Start your meeting: " + resp.body['discovery']['web']
+  rescue StandardError => e
+    puts (e)
+  end
+end
 
-$rc.authorize(jwt: ENV['RC_JWT'])
+# Instantiate the SDK and get the platform instance
+$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
 
-resp = rc.post('/rcvideo/v2/account/~/extension/~/bridges', payload: {
-    'name': 'Test Meeting'
-})
+# Authenticate a user using a personal JWT token
+def login()
+  begin
+    $platform.authorize(jwt: ENV['RC_USER_JWT'])
+    create_meeting()
+  rescue StandardError => e
+    puts ("Unable to authenticate this user. Check credentials." + e.to_s)
+  end
+end
 
-puts "Start your meeting: " + resp.body['discovery']['web']
-
+login()

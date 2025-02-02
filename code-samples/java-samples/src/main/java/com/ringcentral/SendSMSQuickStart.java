@@ -10,11 +10,11 @@ public class SendSMSQuickStart {
 
     public static void main(String[] args) {
         var obj = new SendSMSQuickStart();
-	rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-			     System.getenv("RC_CLIENT_SECRET"),
+	rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+			     System.getenv("RC_APP_CLIENT_SECRET"),
 			     System.getenv("RC_SERVER_URL") );
 	try {
-	    rc.authorize( System.getenv("RC_JWT") );
+	    rc.authorize( System.getenv("RC_USER_JWT") );
 	    obj.read_extension_phone_number();
 	} catch (RestException | IOException e) {
 	    e.printStackTrace();
@@ -40,7 +40,7 @@ public class SendSMSQuickStart {
 	    new MessageStoreCallerInfoRequest().phoneNumber(SMS_RECIPIENT)
 	};
         postParameters.text = "Hello World from Java";
-	
+
         var response = rc.restapi().account().extension().sms().post(postParameters);
         System.out.println("SMS sent. Message status: " + response.messageStatus);
     }

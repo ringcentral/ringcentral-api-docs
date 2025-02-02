@@ -1,19 +1,18 @@
 <?php
-// Remember to modify the path to where you installed the RingCentral SDK and saved your .env file!
+// Remember to modify the path ./../ pointing to the location where the RingCentral SDK was installed and the .env file was saved!
 require('./../vendor/autoload.php');
-// Remember to modify the path of your .env file location!
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . './../');
 $dotenv->load();
 
 # Instantiate the SDK and get the platform instance
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
+                                  $_ENV['RC_APP_CLIENT_SECRET'],
                                   $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
 // Authenticate a user using a personal JWT token
 try {
-  $platform->login( [ "jwt" => $_ENV['RC_JWT'] ] );
+  $platform->login( [ "jwt" => $_ENV['RC_USER_JWT'] ] );
   read_analytics_aggregate_data();
 } catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
@@ -74,3 +73,4 @@ function boostrap_test_function(){
   require_once (__DIR__ .'/code-snippets/timeline-by-users.php');
 
 }
+?>

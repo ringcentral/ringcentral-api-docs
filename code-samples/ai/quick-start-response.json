@@ -1,70 +1,84 @@
 {
-    "status":"Success",
-    "response":{
-        "transcript":"Thunderstorms could produce large, hail isolated tornadoes and heavy rain.",
-        "confidence":0.87,
-        "words":[
+    "jobId": "c8b1bd02-af17-11ee-93fb-0050568c76a9",
+    "api": "/ai/audio/v1/async/speech-to-text",
+    "creationTime": "2024-01-09T17:51:58.422Z",
+    "completionTime": "2024-01-09T17:56:26.126Z",
+    "expirationTime": "2024-01-16T17:51:58.422Z",
+    "status": "Success",
+    "response": {
+        "confidence": 0.9,
+        "transcript": "This call is now being recorded. Parker Scarves, how may I help you? I bought a scarf on line for my whites. And it turns out they shipped the wrong color. Oh, I am so sorry, sir. I get it for birthday, which is tonight. And now I am not a 100 % sure what I need to do. Okay, let me see if I can help you. Do you have the item number of the Parker scars? I do not I do not think so. It is called a New Yorker, I think. Excellent, okay. What color did you want The New Yorker in blue, the 1 they shipped was light blue. I wanted the darker 1. Did you want Navy Blue or Royal Blue? What is the difference there? The royal blue is a bit brighter. That is the 1 I want, okay? What zip code are you located in? 1946. It appears that we do not I am sorry that we do have that item in stock at Karen's boutique at the Hunter Mall. Is that close by? It is it is primary office. Okay, what is your name, sir? Charlie Johnson, Charlie Johnson, is that J O H N S O N? Yes, Ma'am and Mr Johnson, do you have the Parker scarf in light blue with you now? I do, they shipped it to my office. It just came in not that long ago, okay? What I will do is make arrangements with Karen's to take for you to exchange the Parker scarf at no additional cost. And in addition, I was able to look up your order in our system. And I am going to send out a special gift to you to make up for the inconvenience. Excellent, thank you so much, you are welcome and thank you for calling Parker scarf, and I hope your wife enjoys your birthday gift. Thank you. Thank you very much. You are very welcome. Goodbye, bye bye.",
+        "utterances": [
             {
-                "word":"thunderstorms",
-                "start":1.74,
-                "end":2.46,
-                "confidence":0.819
+                "confidence": 0.87,
+                "end": 4.800000000000001,
+                "speakerId": "0",
+                "start": 0.16,
+                "text": "This call is now being recorded. Parker Scarves. How may I help you?",
+                "wordTimings": [
+                    {
+                        "confidence": 0.87,
+                        "end": 0.24,
+                        "speakerId": "0",
+                        "start": 0.16,
+                        "word": "this"
+                    },
+                    {
+                        "confidence": 0.87,
+                        "end": 0.48,
+                        "speakerId": "0",
+                        "start": 0.4,
+                        "word": "call"
+                    },
+                    {
+                        "confidence": 0.87,
+                        "end": 0.72,
+                        "speakerId": "0",
+                        "start": 0.64,
+                        "word": "is"
+                    },
+                    ...
+                ]
             },
             {
-                "word":"could",
-                "start":2.46,
-                "end":2.7,
-                "confidence":0.967
+                "confidence": 0.87,
+                "end": 9.78,
+                "speakerId": "1",
+                "start": 4.800000000000001,
+                "text": "I bought a scarf on line for my whites, and it turns out they shipped the wrong color.",
+                "wordTimings": [
+                    {
+                        "confidence": 0.87,
+                        "end": 5.36,
+                        "speakerId": "1",
+                        "start": 4.800000000000001,
+                        "word": "i"
+                    },
+                    ...
+                ]
             },
-            {
-                "word":"produce",
-                "start":2.7,
-                "end":3.1,
-                "confidence":0.982
-            },
-            {
-                "word":"large",
-                "start":3.1,
-                "end":3.42,
-                "confidence":0.826
-            },
-            {
-                "word":"hail",
-                "start":3.58,
-                "end":3.9,
-                "confidence":0.888
-            },
-            {
-                "word":"isolated",
-                "start":4.14,
-                "end":4.46,
-                "confidence":0.827
-            },
-            {
-                "word":"tornadoes",
-                "start":4.54,
-                "end":5.18,
-                "confidence":0.844
-            },
-            {
-                "word":"and",
-                "start":5.18,
-                "end":5.34,
-                "confidence":0.99
-            },
-            {
-                "word":"heavy",
-                "start":5.42,
-                "end":5.74,
-                "confidence":0.87
-            },
-            {
-                "word":"rain",
-                "start":5.82,
-                "end":5.9,
-                "confidence":0.902
-            }
+            ...
         ],
-        "audio_duration":7.096599
+        "words": [
+            {
+                "confidence": 0.87,
+                "end": 0.24,
+                "start": 0,
+                "word": "this"
+            },
+            {
+                "confidence": 0.87,
+                "end": 0.48,
+                "start": 0.4,
+                "word": "call"
+            },
+            {
+                "confidence": 0.87,
+                "end": 0.72,
+                "start": 0.64,
+                "word": "is"
+            },
+            ...
+        ]
     }
 }

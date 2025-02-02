@@ -19,6 +19,8 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 | `rcapp://r/dialer?number=<phone number>` | Open the dialpad in the RingCentral App, with a number pre-populated. |
 | `rcapp://chat/r?groupid=<chat id>` | Open RingCentral App to a specific chat, e.g. team, group chat or private chat. | 
 | `rcapp://r/fax/<recipient number>` | Initiate sending a fax to a phone number. |
+| `rcapp://r/sms?type=new` | Open RingCentral App to a new SMS message. |
+| `rcapp://r/sms?type=new&number=<phone number>` | Open RingCentral App to a new SMS message with a number prepopulated. |
 | `rcvdt://join/<meeting id>?pw=<meeting password>` | Open RingCentral Video desktop to join a meeting. |
 
 <!---

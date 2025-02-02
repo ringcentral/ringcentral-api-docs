@@ -13,8 +13,11 @@ public class TimeLineByQueues {
     public static void main(String[] args) {
       var obj = new TimeLineByQueues();
       try {
-        restClient = new RestClient("SANDBOX-APP-CLIENT-ID", "SANDBOX-APP-CLIENT-SECRET", "https://platform.devtest.ringcentral.com");
-        restClient.authorize("SANDBOX-JWT");
+        // Instantiate the SDK
+        restClient = new RestClient("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
+
+        // Authenticate a user using a personal JWT token
+        restClient.authorize("RC_USER_JWT");
         obj.read_analytics_timeline_grouped_by_queues();
       } catch (RestException e) {
         System.out.println(e.getMessage());

@@ -16,7 +16,7 @@ In this quick start, we are going to help you connect two people in a live phone
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create RingOut App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=RingOut+Quick+Start+App&desc=A+simple+app+to+demo+placing+a+call+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=RingOut&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create RingOut App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -36,15 +36,15 @@ The first thing we need to do is create an app in the RingCentral Developer Cons
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
-     * `RINGOUT_SENDER` - set to a RingCentral phone number you wish to place the call from in this code sample
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../getting-started/create-credential.md) for yourself
+     * `RINGOUT_CALLER` - set to a RingCentral phone number you wish to place the call from in this code sample
      * `RINGOUT_RECIPIENT` - set to a phone number you wish to call in this code sample
 
 ## Place a Call
@@ -64,7 +64,7 @@ Select your preferred language below.
     Create a file called `ringout.js`. Be sure the values in your `.env` file have been set properly.
 
     ```javascript
-    {!> code-samples/voice/quick-start.js !}
+    {!> code-samples/voice/quick-start.js [ln:1-36]!}
     ```
 
     ### Run your code
@@ -86,10 +86,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.py
 
-    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.py`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```python
-    {!> code-samples/voice/quick-start.py !}
+    {!> code-samples/voice/quick-start.py [ln:1-41]!}
     ```
 
     ### Run your code
@@ -111,10 +111,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.php
 
-    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.php`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```php
-    {!> code-samples/voice/quick-start.php !}
+    {!> code-samples/voice/quick-start.php [ln:1-45]!}
     ```
 
     ### Run your code
@@ -135,10 +135,10 @@ Select your preferred language below.
 
     ### Create and edit ringout.rb
 
-    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable. 
+    Create a file called `ringout.rb`. Be sure the values in your `.env` file have been set properly, including the `RINGOUT_RECIPIENT` variable.
 
     ```ruby
-    {!> code-samples/voice/quick-start.rb !}
+    {!> code-samples/voice/quick-start.rb [ln:1-43]!}
     ```
 
     ### Run your code

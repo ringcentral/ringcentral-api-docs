@@ -18,6 +18,14 @@ The typical response to retrieve meeting histories will look something like the 
     {!> code-samples/video/history.json !}
 ```
 
+## Searching meeting history 
+
+One can search one's meeting history using one or more of the following:
+
+* **Date range**. Specify a `startTime` and `endTime` parameter expressed in Unix EPOCH time to constrain search results to a time range. 
+* **Keyword**. Specify a `text` parameter to search meeting names by the provided keyword or phrase.
+* **Type**. Specify the type of meeting to search by. Supported values are `None` (default), `All`, `My`, `Deleted`, `Shared`. 
+
 ## Accessing the history of a single meeting
 
 If you know the meeting ID, a single meeting can be retrieved by passing it into the Meeting History endpoint as shown below. This is a good way to poll a single meeting while you wait for a recording to be ready, or for the meeting to end. 

@@ -4,7 +4,6 @@ Listed below is a catalog of URI schemes for linking directly into RingCentral a
 
 | Env | Base URL |
 |-|-|
-| Sandbox | `https://app.devtest.ringcentral.com/` |
 | Production | `https://app.ringcentral.com/` |
 
 ## Chat invites

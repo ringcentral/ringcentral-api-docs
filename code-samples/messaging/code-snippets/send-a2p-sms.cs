@@ -16,11 +16,11 @@ namespace Send_HighVolume_SMS
           try
           {
             // Instantiate the SDK
-            restClient = new RestClient( "PRODUCTION-APP-CLIENTID", "PRODUCTION-APP-CLIENTSECRET", "https://platform.ringcentral.com");
+            restClient = new RestClient( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com");
 
             // Authenticate a user using a personal JWT token
-            await restClient.Authorize("PRODUCTION_JWT");
-            await send_fax();
+            await restClient.Authorize("RC_USER_JWT");
+            await read_extension_phone_number_detect_a2psms_feature();
           }
           catch (Exception ex)
           {

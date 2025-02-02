@@ -9,6 +9,11 @@ Access tokens and refresh tokens expire according to the following schedule:
 | Access token | 1 hour |
 | Refresh token | 7 days |
 
+??? hint "Make sure your app is configured to issue refresh tokens"
+    Before you proceed, make sure your application's settings has the "Issue refresh tokens" option enabled. By default, apps do not issue refresh tokens, so if you observe that a refresh token was not issued to you, edit your app's settings and look for the following:
+    
+    ![Issue refresh token option'](refresh_token_form.png)
+
 ## Using refresh tokens
 
 Here are a few things to keep in mind when using refresh tokens to generate new access tokens.
@@ -40,7 +45,7 @@ Here are a few things to keep in mind when using refresh tokens to generate new 
 | Header           | Value                                                      |
 | ---------------- | ---------------------------------------------------------- |
 | `Content-type`   | `application/x-www-form-urlencoded`                        |
-| `Authorization`  | Only required if app type is "Client-side web app." Must be equal to `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
+| `Authorization`  | Only required if app type is not "Client-side web app." Must be equal to `Basic ` + base64_encoded( Client ID + ":" Client Secret ) |
 
 **POST Parameters**
 

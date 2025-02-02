@@ -12,16 +12,16 @@ public class Read_MessageStore {
 	    e.printStackTrace();
 	}
     }
-    
+
     public static void read_user_message_store() throws RestException, IOException {
-	RestClient rc = new RestClient( System.getenv("RC_CLIENT_ID"),
-				        System.getenv("RC_CLIENT_SECRET"),
+	RestClient rc = new RestClient( System.getenv("RC_APP_CLIENT_ID"),
+				        System.getenv("RC_APP_CLIENT_SECRET"),
 				        System.getenv("RC_SERVER_URL") );
-	rc.authorize( System.getenv("RC_JWT") );
-	
+	rc.authorize( System.getenv("RC_USER_JWT") );
+
 	ListMessagesParameters parameters = new ListMessagesParameters();
 	parameters.messageType = new String[] {"SMS"};
-	
+
 	GetMessageList response = rc.restapi().account().extension()
 	    .messageStore().list(parameters);
 	for (int i = 0; i < response.records.length; i++) {

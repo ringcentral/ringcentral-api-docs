@@ -11,7 +11,7 @@ In this quick start, we are going to help you create your first meeting on the p
 The first thing we need to do is create an app in the RingCentral Developer Portal. This can be done quickly by clicking the "Create Video App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Video+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+meeting+on+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=Video&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Video App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -25,21 +25,15 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 
 When you are done, you will be taken to the app's dashboard. Make note of the Client ID and Client Secret. We will be using those momentarily.
 
-## Request help from support
-
-Access to the RingCentral Video API currently requires help from support in order to grant the "Video" application scope to your application, and graduate it to production. 
-
-<a target="_new" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfwFYQLx2wTidwcGt3ZEkfnwvUIcrIdshEcH2EYQwTbZUeWyA/viewform?usp=sf_link">Request app graduation</a>
-
 ## Download and edit a `.env` file
-	
+
 Follow the instructions found in our guide to [running Developer Guide code samples](../../basics/code-samples.md). Or:
-	
+
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above, paying close attention to the following:
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
 
 ## Create a meeting bridge
 
@@ -102,7 +96,7 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     ### Create and edit meetings.php
 
-    Create a file called `meetings.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials. 
+    Create a file called `meetings.php`. Be sure to edit the variables in ALL CAPS with your app and user credentials.
 
     ```php
     {!> code-samples/video/meetings.php !}
@@ -141,13 +135,73 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 === "C#"
 
-    !!! warning "C# and .NET SDKs are not currently available"
-	    If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+    ### Create a Visual Studio project
 
-=== "Java" 
+    * Choose Console Application .Net Core -> App
+    * Select Target Framework .NET Core 2.1 or higher version
+    * Enter project name "Send_SMS"
+    * Add NuGet package RingCentral.Net (6.0.0) SDK
+    * Save the .env file under your project folder. E.g. /Send_SMS/bin/Debug/netcoreapp2.2/.env
 
-    !!! warning "A Java SDK is not currently available"
-        If you are looking to call RingCentral Video APIs using Java or C#, RingCentral Video APIs can't be invoked using RingCentral's Java or C# SDK at the moment. You can however call the APIs directly from those programming lanugaes using a REST based helper library if needed.
+    ### Edit the file Program.cs
+
+    ```c#
+    {!> code-samples/video/meetings.cs !}
+    ```
+
+	### Run Your App
+
+    You are almost done. Now run your app from Visual Studio.
+
+=== "Java"
+
+    ### Create a Java project (using Eclipse IDE)
+
+    * Create a new Java project
+    * Select the Gradle Project wizard
+    * Enter project name "SendSMS"
+    * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
+
+        ```json
+        dependencies {
+            // ...
+            compile 'com.ringcentral:ringcentral:3.0.0'
+        }
+        ```
+
+    * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
+        - RC_APP_CLIENT_ID
+        - RC_APP_CLIENT_SECRET
+        - RC_SERVER_URL
+        - RC_USER_JWT
+
+    * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
+
+    ### Create a new Java Class
+
+    Select "File -> New -> Class" to create a new Java class named "CreateMeeting"
+
+    ```java
+    package CreateMeeting;
+
+    public class CreateMeeting {
+
+      public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+      }
+    }
+    ```
+
+    ### Edit the file "CreateMeeting.java".
+
+    ```java
+    {!> code-samples/video/meetings.java !}
+    ```
+
+    ### Run Your App
+
+    You are almost done. Now run your app from Eclipse.
 
 ## Need help?
 
@@ -160,4 +214,3 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCentral application. Have a look at our private sample (please provide us your GitHub username to allow access to this repo) [Node.JS application](https://github.com/ringcentral/ringcentral-video-js-demo) for reference purpose.
 
 <a class="btn btn-success btn-lg" href="https://ringcentral-ringcentral-video-api-docs.readthedocs-hosted.com/en/latest/sample-app">Take your next step &raquo;</a>
-

@@ -1,22 +1,19 @@
 const RC = require('@ringcentral/sdk').SDK
 require('dotenv').config();
 
-const CALLER       = process.env.RINGOUT_CALLER
-const RECIPIENT    = process.env.RINGOUT_RECIPIENT
-
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
-    'clientId':     process.env.RC_CLIENT_ID,
-    'clientSecret': process.env.RC_CLIENT_SECRET
+    'clientId':     process.env.RC_APP_CLIENT_ID,
+    'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
-platform.login({ 'jwt':  process.env.RC_JWT })
+platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
-  call_ringout()
+  get_user_conferencing_info()
 })
 
-async function call_ringout() {
+async function get_user_conferencing_info() {
     try {
 	var resp = await platform.get('/restapi/v1.0/account/~/extension/~/conferencing')
 	var jsonObj = await resp.json()
@@ -25,4 +22,3 @@ async function call_ringout() {
 	console.log(e.message)
     }
 }
-

@@ -15,7 +15,7 @@ When you create a webhook subscription, RingCentral will transmit a test request
 4. The web server must respond with a valid `Validation-Token` header
 
 !!! info "TLS and SSL requirements"
-    TLS/SSL is only required in production. It is not required in our Developer Sandbox environment. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS/SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](configuring-tls-ssl.md)
+    TLS/SSL is only required in production. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS/SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](configuring-tls-ssl.md)
 
 ### Validating webhook URLs upon subscription creation
 
@@ -73,4 +73,4 @@ To see a list of all the webhook and event subscriptions that are currently acti
 ## Troubleshooting
 
 !!! info "SUB-525 Webhook server response is invalid"
-    When conducting a token validation request from RingCentral, be sure to transmit the HTTP header of "Content-type: application/json", even if your response's body is empty. [Learn more](https://community.ringcentral.com/questions/1097/sub-525-sandbox-webhook-subscription-failure.html#reply_19553895)
+    When conducting a token validation request from RingCentral, be sure to transmit the HTTP header of "Content-type: application/json", even if your response's body is empty. 

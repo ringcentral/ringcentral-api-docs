@@ -23,6 +23,7 @@ plugins:
   - exclude:
       regex:
         - '^#.*'
+        - '.*\.#.*$'
 
 theme:
   name: material
@@ -173,7 +174,7 @@ nav:
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
-  - 'Notifications and events':
+  - 'Events and notifications':
     - 'Overview': 'notifications/index.md'
     - 'Event filters':
       - "Overview and index": 'notifications/event-filters/index.md'
@@ -209,6 +210,8 @@ nav:
       - "Team Messaging events":
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
+      - "RingSense":
+        - "Insights events": 'notifications/event-filters/ringsense-event-filter.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
@@ -220,7 +223,7 @@ nav:
       - 'Subscribing via Web Sockets': 'notifications/websockets/subscribing.md'
       - 'Receiving events': 'notifications/websockets/receiving.md'
       - 'Session recovery': 'notifications/websockets/session-recovery.md'
-      - 'Keep-alives': 'notifications/websockets/heart-beats.md'
+      - 'Heart beats and keep-alives': 'notifications/websockets/heart-beats.md'
       - 'Migration guide': 'notifications/websockets/migration.md'
     - 'PubNub push notifications':
       - 'Getting Started': 'notifications/push-notifications/quick-start.md'

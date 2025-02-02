@@ -9,8 +9,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 session_start();
 
-$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_CLIENT_ID'],
-                                  $_ENV['RC_CLIENT_SECRET'],
+$rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
+                                  $_ENV['RC_APP_CLIENT_SECRET'],
                                   $_ENV['RC_SERVER_URL'] );
 $platform = $rcsdk->platform();
 
@@ -88,7 +88,7 @@ if ( $platform->loggedIn() ) {
 </html>
 <?php
 } else {
-  function base64url_encode($plainText) {          
+  function base64url_encode($plainText) {
     $base64 = base64_encode($plainText);
     $base64 = trim($base64, "=");
     $base64url = strtr($base64, '+/', '-_');
@@ -105,7 +105,7 @@ if ( $platform->loggedIn() ) {
     $options['code_challenge_method'] = 'S256';
     // store the verifier in the session, it will be used when processing the redirect
     $_SESSION['sessionCodeVerifier'] = $verifier;
-  }  
+  }
   $url = $platform->authUrl( $options );
 ?>
 <html>
@@ -119,5 +119,5 @@ if ( $platform->loggedIn() ) {
   </body>
 </html>
 <?php
-} 
+}
 ?>

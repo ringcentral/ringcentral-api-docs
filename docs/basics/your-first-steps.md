@@ -11,13 +11,11 @@ no_breadcrumb:true
 
 ## Setting up your phone for testing
 
-If you are building an application having to do with making, receiving, routing or managing phone calls we recommend you login to the RingCentral [unified app sandbox](https://app.devtest.ringcentral.com/) via the web to:
+If you are building an application having to do with making, receiving, routing or managing phone calls we recommend you login to the RingCentral [unified app](https://app.ringcentral.com/) via the web to:
 
 * Access voicemail.
 * Send and receive SMS.
-* View call log and history. 
-
-[Learn more about sandbox &raquo;](../getting-started/using-sandbox.md)
+* View call log and history.
 
 ## Registering your first app
 
@@ -27,22 +25,22 @@ The choices you make when creating an app are important because they impact what
 
 #### Application Type
 
-This field determines who will be permitted to use your app, and whether your app can be listed in the RingCentral App Gallery. 
+This field determines who will be permitted to use your app, and whether your app can be listed in the RingCentral App Gallery.
 
 * If you intend others outside of your own company to use your app, then please select an "Application Type" of "Public."
-* If the app you are building will only be used by your fellow co-workers, then please select an "Application Type" of "Private." 
+* If the app you are building will only be used by your fellow co-workers, then please select an "Application Type" of "Private."
 
-Your choice is important because some authentication schemes are restricted to only specific application types. 
+Your choice is important because some authentication schemes are restricted to only specific application types.
 
 !!! danger "You cannot edit Application Type after your app has been created"
 
 #### Platform Type
 
-This field determines what development features will be made available to your app, and may impact what other options are visible in the app creation process. For example, apps of the "Server/Bot" type will be provisioned access to the Glip Sandbox environment, and be given special controls for installing and uninstalling your bot within Glip. Here are the most common types of apps created:
+This field determines what development features will be made available to your app, and may impact what other options are visible in the app creation process. For example, apps of the "Server/Bot" type will be given special controls for installing and uninstalling your bot within Glip. Here are the most common types of apps created:
 
-* **Server/Web** (most common) - if you are building a web-based app, need to receive webhooks, and/or connect to another user's account, select this option. 
+* **Server/Web** (most common) - if you are building a web-based app, need to receive webhooks, and/or connect to another user's account, select this option.
 
-* **Web Browser (Javascript)** - if you are building an app using the [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html), select this option. 
+* **Web Browser (Javascript)** - if you are building an app using the [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html), select this option.
 
 * **Server/Bot** - if you are building an app for Glip, this is the option for you.
 
@@ -52,9 +50,7 @@ This field determines what development features will be made available to your a
 
 #### Scopes, or app permissions
 
-The scopes you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check your app's permissions.
-
-Selecting scopes you may not actually need can impede access to production later as we require apps in production to exercise all scopes assigned to them. If for example you declare your app needs the "SMS" scope but do not actually send an SMS, then you will need to adjust your scopes before graduating your app to production.
+The scopes you select for your app will determine which APIs you can call and interact with. If you experience any authentication errors during development, you might want to check the scopes you selected for your app.
 
 [Learn more about application scopes &raquo;](permissions.md)
 
@@ -65,7 +61,7 @@ Selecting scopes you may not actually need can impede access to production later
 If the users of your app will need to independently log into RingCentral, then the best auth method for you is the [Auth Code with PKCE Flow](../authentication/auth-code-pkce-flow.md). However, some apps may elect to use the simpler, older and less secure [Auth Code Flow](../authentication/auth-code-flow.md).
 
 !!! hint "Use refresh tokens"
-    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](../authentication/refresh-tokens.md) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface. 
+    When the auth code flow is used to obtain an access token for a specific user, it is highly recommended that you also implement the [refresh flow](../authentication/refresh-tokens.md) in order to keep access tokens fresh and valid. If you do not, they will eventually expire, and your users will be required to re-authenticate via a user interface.
 
 **Does your app lack a user interface, and/or does it act on behalf of all users within an organization?**
 

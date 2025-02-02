@@ -4,7 +4,7 @@
 
 Adaptive Cards allows developers to implement richly formatted and interactive messages in team messaging, including form elements, buttons, and more.
 
-<div class="row">
+<div class="row" markdown>
   <div class="col">
     <figure class="figure">
       <img class="img-fluid figure-img" src="./basic-columns.png">
@@ -27,7 +27,7 @@ Adaptive Cards allows developers to implement richly formatted and interactive m
 
 RingCentral implements the [Adaptive Card framework](https://adaptivecards.io) version 1.3. Originally developed by Microsoft, this open source framework aids developers with the design and development of richly formatted and interactive messages common to team chat and messaging services.
 
-This means that if you have developed integrations for Microsoft Teams, the level of effort associated with adapting your integration for RingCentral MVP is greatly reduced. 
+This means that if you have developed integrations for Microsoft Teams, the level of effort associated with adapting your integration for RingCentral is greatly reduced. 
 
 ## Use great design tools to design your cards
 

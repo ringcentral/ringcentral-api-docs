@@ -11,7 +11,7 @@ In this Quick Start, we are going to help you create a Webhook push notification
 The first thing we need to do is create an app in the RingCentral Developer Console. This can be done quickly by clicking the "Create Notifications App" button below. Just click the button, enter a name and description if you choose, and click the "Create" button. If you do not yet have a RingCentral account, you will be prompted to create one.
 
 <a target="_new" href="https://developer.ringcentral.com/new-app?name=Webhook+Notifications+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webhook+notification+RingCentral&grantType=PersonalJWT&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SubscriptionWebhook,SMS&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart" class="btn btn-primary">Create Webhook App</a>
-<a class="btn-link btn-collapse" data-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
+<a class="btn-link btn-collapse" data-bs-toggle="collapse" href="#create-app-instructions" role="button" aria-expanded="false" aria-controls="create-app-instructions">Show detailed instructions</a>
 
 <div class="collapse" id="create-app-instructions">
 <ol>
@@ -36,9 +36,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
 1. Download our [env-template](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/main/code-samples/env-template) and save it as a file named `.env`.
 2. Edit your newly downloaded `.env` file, setting its variables with the proper values for the app you created above.
-     * `RC_CLIENT_ID` - set to the Client ID of the app you created above
-     * `RC_CLIENT_SECRET` - set to the Client Secret of the app you created above
-     * `RC_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
+     * `RC_APP_CLIENT_ID` - set to the Client ID of the app you created above
+     * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
+     * `RC_USER_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
      * `WEBHOOK_DELIVERY_ADDRESS` - the full address where notifications will be sent to. If you run the code on your local machine, you can use ngrok service to obtain a tunnel address to your localhost. E.g. https://1058-69-181-202-2.ngrok-free.app
 
 ## Subscribe for push notification
@@ -215,6 +215,8 @@ Select your preferred language below.
 
     We use .NET core which is cross-platform. You can get it [here](https://dotnet.microsoft.com/download).
 
+    The instructions below work with .NET version 6 or later.
+
     ### Create a webhook demo solution
 
     ```bash
@@ -223,7 +225,7 @@ Select your preferred language below.
     dotnet new sln
     ```
 
-    #### Create WebHook Server project
+    #### Create WebHook Server project inside webhook-demo directory
 
     ```
     mkdir webhook-server
@@ -231,7 +233,7 @@ Select your preferred language below.
     dotnet new web
     ```
 
-    Edit `Startup.cs` and override its content with code below:
+    Edit `Program.cs` and overwrite its content with the code below. Create `Program.cs` if it does not already exist:
 
     ```c#
     {!> code-samples/webhooks/webhook-server.cs !}
@@ -286,12 +288,13 @@ Select your preferred language below.
     * Create a new Java project
     * Select the Gradle Project wizard
     * Enter project name "WebhookServer"
-    * Open the <tt>build.gradle</tt> file and add the jetty-all library to the project as shown below:
+    * Open the <tt>build.gradle</tt> file and add the dependencies to the project as shown below:
 
     ```json
     dependencies {
         // ...
         implementation 'org.eclipse.jetty.aggregate:jetty-all:9.4.51.v20230217'
+        implementation: 'javax.servlet:javax.servlet-api:4.0.1'
     }
     ```
     We use jetty-all version 9.4.x for our server. You can get a different version [here](https://mvnrepository.com/artifact/org.eclipse.jetty.aggregate/jetty-all) if you want to.
@@ -321,10 +324,10 @@ Select your preferred language below.
     ```
 
     * On Eclipse menu, select "Run" and choose the "Run Configurations" and in the dialog, select your project and select the "Environments" tab then enter the following variables:
-        - RC_CLIENT_ID
-        - RC_CLIENT_SECRET
+        - RC_APP_CLIENT_ID
+        - RC_APP_CLIENT_SECRET
         - RC_SERVER_URL
-        - RC_JWT
+        - RC_USER_JWT
         - WEBHOOK_DELIVERY_ADDRESS
 
     * Right-click the project in the Package Explorer and choose "Refresh Gradle Project" under the "Gradle" sub-menu
