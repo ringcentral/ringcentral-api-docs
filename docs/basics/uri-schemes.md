@@ -5,7 +5,8 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 | Scheme | Application | Usage |
 |-|-|-|
 | `tel://` | RingCentral Phone | Use this scheme with a phone number to initiate a phone call on the desktop/web. **Deprecated** |
-| `rcapp://` | RingCentral App | Launch the RingCentral desktop or mobile app, depending upon context. |
+| `rcmobile://` | RingCentral Mobile Phone | Use this scheme with a phone number to initiate a phone call on a mobile device. | 
+| `rcapp://` | RingCentral App | Launch the RingCentral App. |
 
 ## RingCentral App schemes
 
@@ -16,14 +17,11 @@ Periodically developers need to launch RingCentral apps in order to place calls,
 | `rcapp://r/call?number=<phone number>` | Place a phone call with RingCentral App. |
 | `rcapp://r/dialer` | Open the dialpad in the RingCentral App. | 
 | `rcapp://r/dialer?number=<phone number>` | Open the dialpad in the RingCentral App, with a number pre-populated. |
+| `rcapp://chat/r?groupid=<chat id>` | Open RingCentral App to a specific chat, e.g. team, group chat or private chat. | 
 | `rcapp://r/fax/<recipient number>` | Initiate sending a fax to a phone number. |
 | `rcapp://r/sms?type=new` | Open RingCentral App to a new SMS message. |
 | `rcapp://r/sms?type=new&number=<phone number>` | Open RingCentral App to a new SMS message with a number prepopulated. |
-| `rcapp://chat/r?groupid=<chat id>` | Open RingCentral App to a specific chat, e.g. team, group chat or private chat. | 
-| `rcapp://message/[all|direct|teams|text|favorites]` | Open RingCentral team messaging to a given set of chats. |
-| `rcapp://message?action=create` | Open RingCentral App to create a new chat message. |
 | `rcvdt://join/<meeting id>?pw=<meeting password>` | Open RingCentral Video desktop to join a meeting. |
-
 
 <!---
 | `rcapp://phone/sms?action=create[&number=<number>][&content=<content>]` | Compose an SMS message. | 
