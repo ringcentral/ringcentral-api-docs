@@ -24,13 +24,16 @@ typeset code {
     border-radius: 20px;
     background-image: url(img/hero-bg.png);
 }
+.qs-hero h3:first-child {
+    margin-bottom: 0;
+}
 .qs-hero p:nth-of-type(1) {
     font-size: 1rem;
 }
 .qs-hero h2 {
     font-weight: 900;
     font-size: 1.8rem;
-    margin-top: 1.3rem;
+    margin-top: 0.2rem;
 }
 .qs-hero h3 {
     text-transform: uppercase;

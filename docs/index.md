@@ -22,6 +22,8 @@ hide:
 </div>
 </div>
 
+Welcome to the RingCentral Developer Guide for RingEX. This guide, when used in combination with the [RingCentral API Reference](https://developers.ringcentral.com/api-reference/), provides the guidance and resources you need at every stage of your development journey. Whether you’re just getting started with the basics, looking to integrate core features quickly, or ready to build powerful add-ins and leverage advanced SDKs, this guide has you covered. Our goal is to help you navigate the RingCentral platform with ease, empowering you to create seamless, innovative communication experiences within your applications.
+
 ## Popular use cases
 
 Explore these use cases for the RingCentral platform and API to learn how it can help your business. 
