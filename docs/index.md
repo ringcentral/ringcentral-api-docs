@@ -9,7 +9,7 @@ hide:
 <div class="qs-hero" markdown>
 <div class="carousel container">
   <h3>Developer Product Spotlight</h3>
-  <h2>Embed a phone and log calls seamlessly in your CRM</h2>
+  <h2>Log calls seamlessly in your CRM with App Connect</h2>
   <div class="row">
     <div class="column">
       <img src="./img/app-connect-logging.png" class="d-block mx-lg-auto img-fluid" alt="RingCentral App Connect call logging" loading="lazy">
