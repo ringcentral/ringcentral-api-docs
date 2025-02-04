@@ -1,26 +1,37 @@
+---
+title: RingCentral Voice API
+---
 # Introduction to RingCentral's Voice API
 
-<div class="jumbotron pt-1" markdown>
-  <h3 class="h3 display-5">Getting Started with the Voice API</h3>
-  <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
-  <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
-  [Javascript &raquo;](quick-start.md#Javascript){class="btn btn-light qs-link"}
-  [PHP &raquo;](quick-start.md#PHP){class="btn btn-light qs-link"}
-  [Python &raquo;](quick-start.md#Python){class="btn btn-light qs-link"}
-  [Ruby &raquo;](quick-start.md#Ruby){class="btn btn-light qs-link"}
-  [Java &raquo;](quick-start.md#Java){class="btn btn-light qs-link"}
-  [C# &raquo;](quick-start.md#C#){class="btn btn-light qs-link"}
+<div class="qs-hero" markdown>
+## Get started by placing a RingOut call
+
+The RingCentral Voice API enables developers to place and manage calls seamlessly within their applications. In addition to call management, it provides access to the RingCentral Call Log, an authoritative source for an organization’s call history, recordings, and more.
+
+### Ready to explore?
+Try out our Call Management API by building a simple app that places a call using the RingOut API. You can get started quickly with a Quick Start guide available in multiple programming languages:
+
+<div class="grid cards" markdown>
+
+- :material-language-javascript: [__JavaScript__](quick-start.md#Javascript)
+- :material-language-php: [__PHP__](quick-start.md#PHP)
+- :material-language-python: [__Python__](quick-start.md#Python) 
+- :material-language-ruby: [__Ruby__](quick-start.md#Ruby)
+- :material-language-java: [__Java__](quick-start.md#Java) 
+- :material-language-csharp: [__.NET__](quick-start.md#C#)
+
+</div>
 </div>
 
-<p class="h2">Overview</p>
+## Overview
 
-Before you dive into the Voice API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings on one another. They are:
+Before diving into the Voice API, it’s helpful to see how it fits within the broader RingCentral API ecosystem. Think of these APIs as interconnected tools, each playing a unique role in managing an organization’s telephony network:
 
-1. **Provisioning API** - Provisioning is the process by which a network is setup with all of the extensions and phones that comprise an organization's telephony network.
+* **Provisioning API**: Handles the setup of an organization’s telephony infrastructure, including extensions, devices, and phone configurations. It lays the foundation for a functional network.
+* **Call Management API**: Governs how incoming calls are routed through the network. It applies rules and logic to ensure calls reach the right individuals or agents efficiently.
+* **Voice API**: Once a call is successfully connected via the Call Management API, the Voice API takes over. It enables developers to manage live calls, including actions like placing, controlling, and monitoring them.
 
-2. **Call Management API** - Call Management refers to the process and ecosystem of rules that govern how incoming calls are routed through to the network so that can be connected with an individual/agents.
-
-3. **Voice API** - Finally, the Voice API is what is used to manage calls once the Call Management layer has successfully connected a caller and a recipient. 
+Understanding how these APIs work together will give you a stronger foundation as you begin working with the Voice API.
 
 ## What can you do with the Voice API?
 

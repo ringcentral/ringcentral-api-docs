@@ -1,11 +1,52 @@
 :root {
     --md-primary-fg-color: #002755;
 }
+.md-typeset a {
+    color: rgb(6, 111, 172);
+}
 
 typeset code {
     word-break: none;
 }
+/*
 .md-header__topic { display: none; }
+*/
+.md-header a.md-logo {
+    display: none !important;
+}
+
+.md-header__title {
+    margin-left: 0.5rem !important;
+}
+
+.qs-hero {
+    padding: 1px 40px;
+    border-radius: 20px;
+    background-image: url(img/hero-bg.png);
+}
+.qs-hero p:nth-of-type(1) {
+    font-size: 1rem;
+}
+.qs-hero h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-top: 1.3rem;
+}
+.qs-hero h3 {
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+.qs-hero .grid li {
+    background: white;
+    font-size: 0.9rem;
+}
+.qs-hero .grid li .twemoji {
+    font-size: 1rem;
+}
+
+#making-your-first-api-call-on-ringcentral + p {
+    font-size: 1.0rem;
+}
 
 .help .material-icons { font-size: .9rem }
 #content table img {
@@ -16,6 +57,70 @@ typeset code {
     border-left: 5px solid #EEE;
     margin-left: 10px;
 }
+
+.banner {
+    height: 55px;       /* Height of the banner */
+    position: sticky;   /* Follows as you scroll */
+    top: 0;             /* Absolute top of page */
+    left: 0;
+    width: 100%;
+    z-index: 100;       /* Tells the renderer "this is important", otherwise Admonition and Code Blocks will render into it */
+    background-color: black;
+    color: white;
+    font-size: 0.75rem;
+}
+.md-header {
+    top: 55px;          /* This setting prevents the Material header from imposing into the space of the banner! */
+}
+.banner .md-tabs__list li:first-child { padding-left: 0 }
+.banner .main-nav-areas a,
+.banner .main-nav-ctas a {
+    color: white
+}
+.banner .main-nav-areas ol,
+.banner .main-nav-areas ol li,
+.banner .main-nav-areas ul,
+.banner .main-nav-areas ul li {
+    margin-left : 0; padding: 0;
+}
+.banner .main-nav-areas ol li,
+.banner .main-nav-areas ul li {
+    margin-right: 20px
+}
+.banner .main-nav-areas {
+    width: 65%;
+    float: left;
+}
+.banner .main-nav-ctas {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+.banner .main-nav-ctas ul li,
+.banner .main-nav-areas ul li {
+    list-style: none;
+    float: left
+}
+.banner .main-nav-areas a.selected {
+    font-weight: 900
+}
+
+.carousel .column {
+  float: left;
+  width: 50%;
+}
+
+.carousel .column:first-child + .column {
+    padding-left: 40px;
+}
+
+/* Clear floats after the columns */
+.carousel .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .api-index td.endpoint {
     border-top: 0;
     padding-top: 0;

@@ -1,20 +1,26 @@
-# Making your first API call on RingCentral
+# Making your first REST API call on RingCentral
 
-Congratulations on taking your first steps towards building an application or integration with the RingCentral Developer Platform. There are a number of things you will need to become familiar with in order to build with us. To help you get started successfully, we have provided developers with a guides getting started experience. If you are new to the platform, or have not yet built an application yourself, we recommend you get started here. 
+Congratulations on starting your journey with the RingCentral Developer Platform!
 
-<a class="btn btn-primary btn-lg" href="https://developers.ringcentral.com/console/hello-world">Launch the Getting Started experience!</a>
+As you begin building your application or integration, there are a few key concepts and tools you’ll want to get familiar with. To set you up for success, we’ve created a comprehensive Getting Started Guide designed specifically for developers like you.
 
-## What you will learn in the getting started experience
+If you’re new to the platform or have never built a RingCentral application before, we highly recommend starting here. It’s the fastest way to learn the essentials and make your first API call with confidence.
 
-The RingCentral getting started experience will help developers successfully do the following:
+[Try the Getting Started Experience](https://developers.ringcentral.com/console/hello-world){ .md-button .md-button--primary }
 
-* **Register an application** to obtain app credentials
-* **Generate an auth credential** to login into the API and make API calls
-* **Call the API** using simple sample apps
+## What You’ll Learn in the Getting Started Guide
 
-## When you are finished...
+The RingCentral Getting Started Guide is designed to help developers build a strong foundation. By the end of this experience, you’ll be able to:
 
-Once you have successfully called the RingCentral API using the sample app we have provided, return to this guide to continue your learning journey on the platform. In the sections that follow, we will take a deeper dive into all of the fundamentals of the RingCentral platform to help you get up and running builing your first custom app on the platform. We will begin that journey by learning how to register an app to obtain credentials for that app.
+* **Register an Application**: Obtain the necessary app credentials to interact with the RingCentral API.
+* **Generate Authentication Credentials**: Learn how to authenticate and securely log in to make API calls.
+* **Make Your First API Call**: Use simple sample apps to send real API requests and see how everything works in action.
 
-<a class="btn btn-secondary" href="./register-app/">Register an application</a>
+## What’s Next?
+
+Once you’ve successfully made your first API call with our sample app, return to this guide to continue your developer journey.
+
+In the next sections, we’ll take a deeper dive into the core fundamentals of the RingCentral platform, guiding you through the process of building your first custom app. We’ll start by exploring how to register an app and obtain credentials—the first step in creating your own integration.
+
+[Up next: Register an application](register-app.md){ .md-button }
 

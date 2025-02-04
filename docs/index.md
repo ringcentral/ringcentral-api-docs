@@ -6,256 +6,157 @@ hide:
 ---
 # RingCentral RingEX™ Developer Guide
 
-!!! warning "Important announcement regarding the RingCentral sandbox"
-    In our ongoing effort to simplify the RingCentral Developer experience, we are in the process of [phasing out the sandbox environment](https://community.ringcentral.com/developer-platform-apis-integrations-5/streamlining-the-application-development-process-at-ringcentral-and-bidding-farewell-to-sandbox-9605). During the process and to support developers who need to migrate away, [sandbox](basics/using-sandbox.md) will remain available. 
-
-{! mdx_includes/carousel.md !}
+<div class="qs-hero" markdown>
+<div class="carousel container">
+  <h3>Developer Product Spotlight</h3>
+  <h2>Embed a phone and log calls seamlessly in your CRM</h2>
+  <div class="row">
+    <div class="column">
+      <img src="./img/app-connect-logging.png" class="d-block mx-lg-auto img-fluid" alt="RingCentral App Connect call logging" loading="lazy">
+    </div>
+    <div class="column">
+      <p>RingCentral <a href="https://ringcentral.github.io/rc-unified-crm-extension/">App Connect</a>, powered by <a href="https://ringcentral.github.io/ringcentral-embeddable/">Embeddable 2.0</a>, is an all-in-one CRM integration solution. It embeds a full-featured communications client into almost any app, reliably logging all communications. Developers can easily integrate with both SaaS products and proprietary CRMs using a simple framework.</p>
+      <a class="md-button md-button--primary" href="https://ringcentral.github.io/rc-unified-crm-extension/">Get started</a>
+    </div>
+  </div>
+</div>
+</div>
 
 ## Popular use cases
 
-<div class="row row-cols-1 row-cols-md-3 mb-3" markdown>
-  <div class="col">
+Explore these use cases for the RingCentral platform and API to learn how it can help your business. 
 
-  <div class="card bg-light bg-gradient h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Send and receive SMS messages</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">Stay connected and engaged with customers at scale through messaging automation.</h6>
-      <p class="card-text">Use RingCentral to send and receive SMS, and access your SMS message history.</p>
-      <ul class="pl-0 ml-4 pb-2">
-        <li><a href="./messaging/sms/sending-sms/" class="card-link">Send an SMS</a></li>
-        <li><a href="./messaging/sms/sending-images/" class="card-link">Send images over SMS</a></li>
-        <li><a href="./messaging/sms/high-volume/sending-highvolume-sms" class="card-link">Send High Volume SMS</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="grid cards" markdown>
 
-  </div>
-  <div class="col">
+-   :material-run-fast:{ .lg .middle } __Call our REST API in 5 minutes__
 
-  <div class="card bg-light bg-gradient h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Synchronize call history</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">Download and process your entire company's call history for compliance and analytics.</h6>
-      <p class="card-text">Learn how to access your company's communication history:</p>
-      <ul class="pl-0 ml-4 pb-2">
-        <li><a href="./voice/call-log/details" class="card-link">Trace calls flowing across the network</a></li>
-        <li><a href="./voice/call-log/recordings" class="card-link">Access call recordings</a></li>
-        <li><a href="./voice/call-log/archival" class="card-link">Archive call histories</a></li>
-      </ul>
-    </div>
-  </div>
+    ---
 
-  </div>
-  <div class="col">
+    Get up and running quickly using this simple, guided quick start. 
 
-  <div class="card bg-light bg-gradient h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h3 card-title">Analyze call and meeting recordings</h5>
-      <h6 class="h4 card-subtitle mt-0 mb-2">Archive and extract key data and insights from call recordings</h6>
-      <p class="card-text">RingCentral securely stores all media you generate and makes it available to you through an API.</p>
-      <ul class="pl-0 ml-4 pb-2">
-        <li><a href="./voice/call-log/recordings/" class="card-link">Access call recordings</a></li>
-        <li><a href="./video/api/meeting-history/" class="card-link">Access meeting recordings</a></li>
-        <li><a href="./messaging/message-store/working-with-message-store/" class="card-link">Access voicemails</a></li>
-      </ul>
-    </div>
-  </div>
+    [:octicons-arrow-right-24: Try the Getting Started experience](#)
 
-  </div>
-</div>
+-   :material-cloud-circle:{ .lg .middle } __Integrate with any CRM__
 
-## Check out these popular developer topics
+    ---
 
-<div class="row row-cols-1 row-cols-md-2 mb-3">
-  <div class="col">
+    Use App Connect's innovative developer framework to quickly integrate with any CRM. 
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Authentication</h5>
-      <p class="card-text">Every app needs to authenticate to the RingCentral platform. Learn what auth method is best for your app.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./authentication/jwt/quick-start/" class="card-link">JWT is great for server-to-server apps</a></li>
-      <li><a href="./authentication/quick-start/" class="card-link">OAuth is ideal for apps with a user interface</a></li>
-      <li><a href="./authentication/refresh-tokens/" class="card-link">Refresh tokens keep sessions active</a></li>
-      </ul>
-    </div>
-  </div>
+    [:octicons-arrow-right-24: App Connect](#)
 
-  </div>
-  <div class="col">
+-   :fontawesome-solid-comment-sms:{ .lg .middle } __Send and Receive SMS__
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Webhooks and events</h5>
-      <p class="card-text">Get notified when key events occur so that your app can respond to events in real-time.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./notifications/webhooks/creating-webhooks/" class="card-link">Create a webhook</a></li>
-      <li><a href="./notifications/push-notifications/pubnub/" class="card-link">Push notifications are great for pure client-side apps</a></li>
-      <li><a href="https://developers.ringcentral.com/api-reference/Account-Presence-Event" class="card-link">See a list of events you can subscribe to</a></li>
-      </ul>
-    </div>
-  </div>
+    ---
 
-  </div>
+    Stay connected and engaged with customers at scale through messaging automation.
+
+    [:octicons-arrow-right-24: Send SMS](messaging/sms/sending-sms.md) [:octicons-arrow-right-24: Send images](messaging/sms/sending-images.d)
+
+-   :material-history:{ .lg .middle } __Download and process call logs__
+
+    ---
+
+    Access the most thorough and detailed call logging API in the industry. 
+
+    [:octicons-arrow-right-24: Process call logs](voice/call-log/index.md)
+
+
+-   :material-transcribe:{ .lg .middle } __Access call transcripts__
+
+    ---
+
+    Access call transcripts, AI generate summaries, extracted action items, and more. 
+
+    [:octicons-arrow-right-24: Access AI artifacts](ai/ringsense/index.md)
+
+-   :fontawesome-regular-file-code:{ .lg .middle } __Embed RingCentral in any web app__
+
+    ---
+
+    Use RingCentral's Javascript phone to embed a feature-rich web phone and SMS client anywhere. 
+
+    [:octicons-arrow-right-24: RingCentral Embeddable](#)
+
+-   :material-application-braces:{ .lg .middle } __Build a RingCentral Add-in__
+
+    ---
+
+    Integrate third-party apps directly inside of RingCentral, a click away from every customer. 
+
+    [:octicons-arrow-right-24: Adaptive Cards](team-messaging/add-ins/adaptive-cards.md)
+
+-   :material-fax:{ .lg .middle } __Yes, fax is still a thing__
+
+    ---
+
+    In fact it is *huge*. Some of the largest industries still rely heavily on fax.
+
+    [:octicons-arrow-right-24: Learn how process faxes](messaging/fax/sending-faxes.md)
+
+-   :material-key:{ .lg .middle } __Choose the right auth type__
+
+    ---
+
+    Get help finding the right form of authentication is right for your app. 
+
+    [:octicons-arrow-right-24: Access tokens](#) [:octicons-arrow-right-24: JWT](#) [:octicons-arrow-right-24: Help decide](#) 
+
+-   :fontawesome-solid-bolt-lightning:{ .lg .middle } __Subscribe to realtime events__
+
+    ---
+
+    Receive events via webhook or web socket from all over the RingCentral ecosystem. 
+
+    [:octicons-arrow-right-24: Webhooks](#) [:octicons-arrow-right-24: Web socket](#) [:octicons-arrow-right-24: All events](#)
+
 </div>
 
 ## Explore our APIs
 
-<div class="row row-cols-1 row-cols-md-4 mb-3">
-  <div class="col">
+<div class="grid" markdown>
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Artificial intelligence</h5>
-      <p class="card-text">Generate transcripts and extract conversion insights from any media file.</p>
-      <ul class="pl-0 ml-4">
-        <li><a href="./ai/speech-to-text/" class="card-link">Create a transcript</a></li>
-        <li><a href="./ai/speaker-diarization/" class="card-link">Know who spoke and when</a></li>
-        <li><a href="./ai/text-summary/" class="card-link">Generate a summary of a conversation</a></li>
-      </ul>
-    </div>
-  </div>
+:octicons-organization-24: [__Account Management__](account/index.md)
+{ .card }
 
-  </div>
-  <div class="col">
+:material-contacts: __Address Book__ 
+{ .card }
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Team messaging</h5>
-      <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./team-messaging/add-ins/creation/" class="card-link">Build an add-in</a></li>
-      <li><a href="./team-messaging/adaptive-cards/" class="card-link">Learn about Adaptive Cards</a></li>
-      </ul>
-    </div>
-  </div>
+:octicons-graph-24: __Analytics__ 
+{ .card }
 
-  </div>
-  <div class="col">
+:fontawesome-solid-wand-magic-sparkles: __Artificial Intelligence__ 
+{ .card }
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Voice and telephony</h5>
-      <p class="card-text">Use RingCentral to enable a "click-to-dial" experience, and to manage calls in progress.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./voice/ringout/" class="card-link">Place a call with RingOut</a></li>
-      <li><a href="./voice/call-control/" class="card-link">Manipulate active calls</a></li>
-      <li><a href="./voice/call-log/recordings/" class="card-link">Access call recordings</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  </div>
-  <div class="col">
-  
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Fax</h5>
-      <p class="card-text">Use RingCentral to manage the faxes your company sends and receives.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./messaging/fax/sending-faxes/" class="card-link">Send a fax</a></li>
-      <li><a href="./messaging/fax/receiving-faxes/" class="card-link">Receive a fax</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  </div>
-</div>
+:octicons-key-24: __Authentication__ 
+{ .card }
 
-<div class="row row-cols-1 row-cols-md-4 mb-3">
-  <div class="col">
+:material-chat: __Chat__ 
+{ .card }
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Meetings and video</h5>
-      <p class="card-text">Schedule meetings and access meeting history and recordings.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./meetings/quick-start/" class="card-link">Schedule a meeting</a></li>
-      <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="card-link">Access meeting recordings</a></li>
-      </ul>
-    </div>
-  </div>
+:fontawesome-solid-bolt-lightning: __Events and Notifications__ 
+{ .card }
 
-  </div>
-  <div class="col">
+:material-phone: __Phone__ 
+{ .card }
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Analytics</h5>
-      <p class="card-text">Extract meaning insights into one's usage of the RingCentral communications platform.</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./analytics/aggregate" class="card-link">See the number of calls made, and time spent on the phone</a></li>
-      <li><a href="./analytics/timeline" class="card-link">See call analytics broken down by time</a></li>
-      </ul>
-    </div>
-  </div>
+:fontawesome-solid-video: __Meetings__ 
+{ .card }
 
-  </div>
-  <div class="col">
+:fontawesome-solid-comment-sms: __SMS & Fax__ 
+{ .card }
 
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Webinar</h5>
-      <p class="card-text">Automate webinar messaging and integrate with your CRM.</p>
-      <ul class="pl-0 ml-4">
-        <li><a href="./webinar/quick-start/" class="card-link">Get started</a></li>
-      </ul>
-    </div>
-  </div>
+:fontawesome-brands-css3: __Webinars__
+{ .card }
 
-  </div>
-  <div class="col">
-  
-  <div class="card h-100">
-    <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Call handling</h5>
-      <p class="card-text">Manage active calls as they are happening in real-time</p>
-      <ul class="pl-0 ml-4">
-      <li><a href="./voice/call-routing" class="card-link">Route calls to the right place</a></li>
-      <li><a href="./voice/call-routing/manual/call-queues" class="card-link">Manage call queues</a></li>
-      <li><a href="./voice/call-control" class="card-link">Manipulate active calls</a></li>
-      <li><a href="./voice/supervision" class="card-link">Supervise calls</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  </div>
 </div>
 
 ## Getting Help
 
 If on your way to building your first RingCentral application you encounter difficulty or need help, we are here to assist. Here are our most popular support resources available to you:
 
-* [Developer Forums](https://devcommunity.ringcentral.com/) - post a question to our support community.
+* [Developer Community](https://community.ringcentral.com/developer-platform-apis-integrations-5) - post a question to our support community.
 * [StackOverflow](http://stackoverflow.com/questions/tagged/ringcentral) - seek help from one of the Internet's most popular Q&A sites for developers.
-* [Live Chat](https://developer.ringcentral.com/community.html) - post your question to our public Glip Team for live, real-time support during business hours.
-
-## Resources
-
-<div class="row row-cols-1 row-cols-md-2 mb-3">
-  <div class="col">
-
-  <div class="card h-100">
-    <div class="card-body">
-      <h5 class="h5 card-title">API Reference</h5>
-      <p class="card-text">Consult our exhaustive API Reference Guide, and make API call using ZERO CODE.</p>
-      <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
-    </div>
-  </div>
-  
-  </div>
-  <div class="col">
-  
-  <div class="card h-100">
-    <div class="card-body">
-      <h5 class="h5 card-title">SDKs</h5>
-      <p class="card-text">We offer development libraries in a number of languages (C#, Java, Python, PHP, Javascript and more) to made building apps easier.</p>
-      <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
-    </div>
-  </div>
-  
-  </div>
-</div>
+* [Ticket-based support](https://developers.ringcentral.com/support/) - for support that requires the exchange of private information, file a help ticket
 
 ## About RingCentral
 
