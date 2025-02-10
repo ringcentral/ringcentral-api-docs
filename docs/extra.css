@@ -22,7 +22,7 @@ typeset code {
 .qs-hero {
     padding: 1px 40px;
     border-radius: 20px;
-    background-image: url(img/hero-bg-01.png);
+    background-image: url(img/hero-bg-03.png);
 }
 .qs-hero h3:first-child {
     margin-bottom: 0;
