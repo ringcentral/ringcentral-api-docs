@@ -13,12 +13,12 @@ Try out our Call Management API by building a simple app that places a call usin
 
 <div class="grid cards" markdown>
 
-- :material-language-javascript: [__JavaScript__](quick-start.md#Javascript)
-- :material-language-php: [__PHP__](quick-start.md#PHP)
-- :material-language-python: [__Python__](quick-start.md#Python) 
-- :material-language-ruby: [__Ruby__](quick-start.md#Ruby)
-- :material-language-java: [__Java__](quick-start.md#Java) 
-- :material-language-csharp: [__.NET__](quick-start.md#C#)
+- :material-language-javascript: [__JavaScript__](quick-start.md#javascript)
+- :material-language-php: [__PHP__](quick-start.md#php)
+- :material-language-python: [__Python__](quick-start.md#python) 
+- :material-language-ruby: [__Ruby__](quick-start.md#ruby)
+- :material-language-java: [__Java__](quick-start.md#java) 
+- :material-language-csharp: [__.NET__](quick-start.md#c)
 
 </div>
 </div>

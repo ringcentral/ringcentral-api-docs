@@ -22,7 +22,7 @@ typeset code {
 .qs-hero {
     padding: 1px 40px;
     border-radius: 20px;
-    background-image: url(img/hero-bg.png);
+    background-image: url(img/hero-bg-01.png);
 }
 .qs-hero h3:first-child {
     margin-bottom: 0;
@@ -33,6 +33,9 @@ typeset code {
 .qs-hero h2 {
     font-weight: 900;
     font-size: 1.8rem;
+    margin-top: 1rem;
+}
+.qs-hero #developer-product-spotlight + h2 {
     margin-top: 0.2rem;
 }
 .qs-hero h3 {

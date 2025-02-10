@@ -52,7 +52,7 @@ Explore these use cases for the RingCentral platform and API to learn how it can
 
     Stay connected and engaged with customers at scale through messaging automation.
 
-    [:octicons-arrow-right-24: Send SMS](messaging/sms/sending-sms.md) [:octicons-arrow-right-24: Send images](messaging/sms/sending-images.d)
+    [:octicons-arrow-right-24: Send SMS](messaging/sms/sending-sms.md) [:octicons-arrow-right-24: Send images](messaging/sms/sending-images.md)
 
 -   :material-history:{ .lg .middle } __Download and process call logs__
 
@@ -69,7 +69,7 @@ Explore these use cases for the RingCentral platform and API to learn how it can
 
     Access call transcripts, AI generate summaries, extracted action items, and more. 
 
-    [:octicons-arrow-right-24: Access AI artifacts](ai/ringsense/index.md)
+    [:octicons-arrow-right-24: Access AI artifacts](ai/ringsense.md)
 
 -   :fontawesome-regular-file-code:{ .lg .middle } __Embed RingCentral in any web app__
 
@@ -85,8 +85,9 @@ Explore these use cases for the RingCentral platform and API to learn how it can
 
     Integrate third-party apps directly inside of RingCentral, a click away from every customer. 
 
-    [:octicons-arrow-right-24: Adaptive Cards](team-messaging/add-ins/adaptive-cards.md)
+    [:octicons-arrow-right-24: Adaptive Cards](team-messaging/adaptive-cards/index.md)
 
+<!--
 -   :material-fax:{ .lg .middle } __Yes, fax is still a thing__
 
     ---
@@ -94,7 +95,7 @@ Explore these use cases for the RingCentral platform and API to learn how it can
     In fact it is *huge*. Some of the largest industries still rely heavily on fax.
 
     [:octicons-arrow-right-24: Learn how process faxes](messaging/fax/sending-faxes.md)
-
+-->
 -   :material-key:{ .lg .middle } __Choose the right auth type__
 
     ---
@@ -120,34 +121,40 @@ Explore these use cases for the RingCentral platform and API to learn how it can
 :octicons-organization-24: [__Account Management__](account/index.md)
 { .card }
 
-:material-contacts: __Address Book__ 
+:material-contacts: [__Address Book__](address-book/index.md)
 { .card }
 
-:octicons-graph-24: __Analytics__ 
+:octicons-graph-24: [__Analytics__](analytics/index.md)
 { .card }
 
-:fontawesome-solid-wand-magic-sparkles: __Artificial Intelligence__ 
+:fontawesome-solid-wand-magic-sparkles: [__Artificial Intelligence__](ai/index.md)
 { .card }
 
-:octicons-key-24: __Authentication__ 
+:material-chat: [__Chat__](team-messaging/index.md)
 { .card }
 
-:material-chat: __Chat__ 
+:material-phone: [__Phone__](voice/index.md)
 { .card }
 
-:fontawesome-solid-bolt-lightning: __Events and Notifications__ 
+:fontawesome-solid-video: [__Meetings__](video/index.md)
 { .card }
 
-:material-phone: __Phone__ 
+:fontawesome-solid-comment-sms: [__SMS & Fax__](messaging/index.md)
 { .card }
 
-:fontawesome-solid-video: __Meetings__ 
+:fontawesome-brands-css3: [__Webinars__](webinar/index.md)
 { .card }
 
-:fontawesome-solid-comment-sms: __SMS & Fax__ 
+</div>
+
+## Learn the fundamentals
+
+<div class="grid" markdown>
+
+:octicons-key-24: [__Authentication__](authentication/index.md)
 { .card }
 
-:fontawesome-brands-css3: __Webinars__
+:fontawesome-solid-bolt-lightning: [__Events and Notifications__](notifications/index.md)
 { .card }
 
 </div>
