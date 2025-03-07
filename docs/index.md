@@ -3,9 +3,6 @@ no_breadcrumb:true
 
 # RingCentral RingEX™ Developer Guide
 
-!!! warning "Important announcement regarding the RingCentral sandbox"
-    In our ongoing effort to simplify the RingCentral Developer experience, we are in the process of [phasing out the sandbox environment](https://community.ringcentral.com/developer-platform-apis-integrations-5/streamlining-the-application-development-process-at-ringcentral-and-bidding-farewell-to-sandbox-9605). During the process and to support developers who need to migrate away, [sandbox](basics/using-sandbox.md) will remain available. 
-
 {! mdx_includes/carousel.md !}
 
 ## Popular use cases
