@@ -15,12 +15,13 @@ There are the following types of rate limits.
 
  ## What happens if my app exceeds the limits, and how should I handle it?
 
-If you exceed any of the rate limits, the API request is rejected by the server with the `HTTP 429 Too Many Requests` status code. This means that the server throttles the client due to a high request rate. 
+If you exceed any of the rate limits, the server rejects API requests with the `HTTP 429 Too Many Requests` status code. This means that the server throttles the client due to a high request rate. 
 
 In most cases, the `Retry-After` response header is returned, and its value contains the recommended retry interval in seconds.
-The practical recommendations for handling HTTP 429 errors can be found in TBD
+If `Retry-After` is not returned, retry not earlier than after 30 seconds.
+The examples of error codes returned in HTTP 429 response can be found in [Rate-limit related error codes](../errors.md#rate-limit-related-error-codes)
 
-For user-level limit violations, the response also contains special `X-Rate-Limit-XXX` headers that would help handle this situation — they are described in detail below. If you do not see such headers in the response, it means that your app hit some other type of rate limit. Please contact RingCentral developer support if you need to better understand the situation.
+For user-level limit violations, the response also contains special `X-Rate-Limit-XXX` headers that would help handle this situation (see [Rate limit response headers](#rate-limit-response-headers)). If you do not see such headers in the response, it means that your app hit some other type of rate limit. Please contact RingCentral developer support if you need to better understand the situation.
 
 ## User-level limits
 
@@ -109,15 +110,3 @@ If your app sends API requests within a single thread (e.g. downloads message at
 
 If your logic that relies on `X-Rate-Limit-Remaining` works properly, your app should never encounter 429 errors due to violating user-level rate limits. In other words, if you build your app to be aware of this HTTP header and respond accordingly, you can prevent your app from being impacted, or at least alert personnel about the issue. 
 
-#### Server is overloaded
-
-If you encounter a HTTP Response Header 503, wait a default amount of time and retry once. Have your app support the following configuration options: 
-
-* Default retry time
-* Max number of retries
-
-The Amazon Web Services SDK implements a feature called [exponential backoff](https://docs.aws.amazon.com/general/latest/gr/api-retries.html), excerpted below:
-
-> In addition to simple retries, each AWS SDK implements an exponential backoff algorithm for better flow control. The idea behind exponential backoff is to use progressively longer waits between retries for consecutive error responses. You should implement a maximum delay interval, as well as a maximum number of retries. The maximum delay interval and maximum number of retries are not necessarily fixed values, and should be set based on the operation being performed, as well as other local factors, such as network latency.
-> 
-> Most exponential backoff algorithms use jitter (randomized delay) to prevent successive collisions. Because you aren't trying to avoid such collisions in these cases, you don't need to use this random number. However, if you use concurrent clients, jitter can help your requests succeed faster. For more information, see the blog post for Exponential Backoff and Jitter.
