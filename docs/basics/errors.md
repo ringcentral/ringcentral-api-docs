@@ -10,25 +10,19 @@ Client apps should rely on the `errorCode` and, in some cases, on additional fie
 																			  
 The API reference lists some of the error codes that may be returned for a particular API operation.
 
-## Connection related errors
+## Connectivity errors
 
-There is always a possibility that a client application is not able to establish a connection with RingCentral service, including a connection timeout, or an SSL handshake failure. When connection errors occur, it is very important not to overwhelm the backend with unnecessary client retries because it can make the problem more serious. In such a circumstance, client applications should follow an "Exponential Backoff" approach:
+There is always a possibility that a client application is not able to connect with RingCentral service due to the following reasons:
 
-> The retries exponentially increase the waiting time up to a certain threshold. The idea is that if the server is down temporarily, it is not overwhelmed with requests hitting at the same time when it comes back up.
+* HTTP connection timeout 
+* HTTP request timeout
+* TLS handshake error
 
-Following this guideline, the following sequential retry delays are recommended for client applications in case of any connection failures:
+These situations are usually temporary. The application should use [Exponential Backoff](#exponential-backoff) approach to retry.
 
-* 2 seconds
-* 3 seconds
-* 5 seconds
-* 8 seconds
-* 13 seconds
-* 21 seconds
-* 30 seconds
+## General 5xx server errors
 
-Then, keep trying to connect every 30 seconds. 
-
-The same exponential backoff approach is recommended to be used in the case of HTTP 5xx errors, but the `Retry-After` header value should always be obeyed if provided.
+These situations are usually temporary. The application should use [Exponential Backoff](#exponential-backoff) approach to retry.
 
 ## Authentication related errors
 
@@ -36,12 +30,12 @@ Since the RingCentral API uses OAuth 2.0 for authorization, the server behavior 
 
 * Regardless of the number of threads that send API requests to the server, the application should perform OAuth authentication in a single thread, then store and share tokens to be used in all regular API requests. Backend servers enforce some quotas for the number of authorization requests and number of active application sessions. If the quota is exceeded at any given time, the server starts to return `HTTP 429` on authorization requests.
 * Applications must avoid frequent authentication attempts under the same user credentials. In order to extend the session after access token expiration, the token refreshment flow should be used if allowed
-* Applications should store `expires_in` and `refresh_token_expires_in` values along with access/refresh tokens and their issue time. This value is to be used to pre-check if the token is expired or about to expire before sending regular API requests in order to refresh tokens proactively. It is strongly recommended to avoid refreshing tokens based on `HTTP 401` errors returned by the server: this just doubles the number of requests required to get new access token.
+* Applications should store `expires_in` and `refresh_token_expires_in` values along with access/refresh tokens and their issue time. This value is to be used to pre-check if the token is expired or about to expire before sending regular API requests in order to refresh tokens proactively. It is strongly recommended to avoid refreshing tokens based on `HTTP 401` errors returned by the server: this just doubles the number of requests required to get a new access token.
 * According to the OAuth 2.0 standard, some standard OAuth error codes are returned in the response complemented with RingCentral-specific error codes.
 
 ### OAuth authorization errors
 
-For 3-legged OAuth flows in some cases `HTTP 400` may be returned on `/restapi/oauth/authorize` call. For example, it can happen when the client provides invalid redirect URI in the request. See [RFC 6749](http://tools.ietf.org/html/rfc6749) for details.
+For 3-legged OAuth flows, in some cases, `HTTP 400` may be returned on the `/restapi/oauth/authorize` call. This can happen when the client provides an invalid redirect URI in the request. See [RFC 6749](http://tools.ietf.org/html/rfc6749) for details.
 
 ### OAuth token errors
 
@@ -53,9 +47,9 @@ As a general rule, if a request to the `/restapi/oauth/token` API for access tok
 * `HTTP 400` – use cached credentials (if possible) to re-authenticate or prompt the user for new credentials.
 * `HTTP 408`, `HTTP 500`, client timeout – repeat 3 times with 10 seconds intervals, then try re-request tokens using cached credentials (if possible), or prompt the user for new credentials (all dependent regular requests should be queued and wait for resolution)
 
-### OAuth revoke errors
+### OAuth revokation errors
 
-If there is an error in the request to the `/restapi/OAuth/revoke` API, the client should ignore it and not retry.
+If the request to the `/restapi/OAuth/revoke` API ends with an error, the client should ignore it and not retry.
 
 ### Authentication/authorization error codes
 
@@ -99,8 +93,10 @@ If there is an error in the request to the `/restapi/OAuth/revoke` API, the clie
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
 | 429                 | CMN-301    | Request rate exceeded                                                                                                       |
-| 429                 | CMN-302    | Unknown application. Rate limits undefined                                                                                  |
+| 429                 | CMN-302    | Request rate exceeded                                                                                                       |
 | 429                 | CMN-303    | Can not resolve API plan. Rate limits undefined                                                                             |
+| 429                 | CMN-304    | Duplicate concurrent request. Try again later                                                                               |
+| 429                 | CMN-310    | Global request rate exceeded                                                                               |
 
 ## Notification subscription related error codes
 
@@ -152,6 +148,7 @@ If there is an error in the request to the `/restapi/OAuth/revoke` API, the clie
 | 400                 | CLG-105    | Parameter [syncToken] is invalid [Sync token expired, call log was reset]                                                   |
 | 400                 | CLG-110    | Parameter [sessionId] is not allowed for usage along with parameter [${parameterName}]                                      |
 
+
 ## Messaging API error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
@@ -185,3 +182,47 @@ If there is an error in the request to the `/restapi/OAuth/revoke` API, the clie
 | 400                 | MSG-350    | No content disposition                                                                                                      |
 | 400                 | MSG-351    | No file name in content disposition                                                                                         |
 | 500                 | MSG-352    | Message content is null                                                                                                     |
+
+## Exponential Backoff
+
+The Exponential Backoff approach helps to avoid overwhelming backend servers with excessive request retries, making ongoing incidents more severe, and preventing clients from being penalized for making an excessive number of requests.
+The basic idea is that the client retries with exponentially increased intervals up to a certain threshold: if the server is down temporarily, it will not be overwhelmed with all the requests hitting it at the same time when it comes back up.
+
+When the app experiences an error that is caused by a server issue and retries are allowed, the following strategy is recommended.
+
+- Your app should have the following configuration options:
+  - Initial retry interval (e.g. 2 seconds)
+  - Maximum number of retries (e.g. 5)
+  - Optional maximum retry interval (e.g. 60 seconds)
+
+- In case of an error that may be handled by retries:
+  - If a `Retry-After` header was provided in response, retry after the provided interval.
+  - Otherwise
+    - The first retry should occur after the configured initial retry interval
+    - The wait interval for each next retry should be calculated as 2 * previous-retry-interval
+    - Repeat until the maximum number of retries is reached, OR
+    - Once the maximum retry interval is reached, repeat with the last interval until the maximum number of retries 
+
+The example of exponential backoff retry intervals with 2 seconds / 8 retries configuration:
+
+* 2 seconds
+* 4 seconds
+* 8 seconds
+* 16 seconds
+* 32 seconds
+* 64 seconds
+* 128 seconds
+* 256 seconds
+
+The example of exponential backoff retry intervals with 2 seconds / 50 retries / 60 seconds max configuration:
+
+* 2 seconds
+* 4 seconds
+* 8 seconds
+* 16 seconds
+* 32 seconds
+* 64 seconds
+* 64 seconds
+* 64 seconds
+* ... (until 50 attempts reached)
+
