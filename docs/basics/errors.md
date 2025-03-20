@@ -1,18 +1,18 @@
 # RingCentral API Error Codes
 
-The API uses specific error codes to make error processing for client applications more simple and effective. The body of HTTP response should be always logged and analyzed. It is sometimes impossible to understand the reason for the issue by only HTTP status code. Error code from the body should be also taken into consideration.
+The API uses specific error codes to make error processing for client applications more simple and effective. The body of the HTTP response should be always logged and analyzed. Sometimes it is impossible to understand the cause of the issue by only HTTP status code. The error code from the response body should be also taken into consideration.
 
-Client app should rely on errorCcode and, in some cases, on additional fields like parameterName, not on error message because of it can be changed in next versions of the API and localized according to Accept-Language header if the language is supported by RingCentral service. Response body with error message can contain several error messages and has the following structure:
+Client apps should rely on the `errorCode` and, in some cases, on additional fields like `parameterName,` not on the error message (because it may change in the next versions of the API or be localized). Response body with error message can contain several error messages and has the following structure:
 
 ```javascript
 {! code-samples/basics/sample-error.json !} 
 ```
 																			  
-Possible error codes for each API method are listed in method description under Error Codes header.
+The API reference lists some of the error codes that may be returned for a particular API operation.
 
 ## Connection related errors
 
-There is always a possibility that a client application is not able to establish a connection with RingCentral service, including a connection timeout, or an SSL handshake failure. When connection errors are suspected, it is very important not to overwhelm the backend with unnecessary client requests so as not to exascerbate the potential problem. In such a circumstance, client applications should follow an "Exponential Backoff" approach:
+There is always a possibility that a client application is not able to establish a connection with RingCentral service, including a connection timeout, or an SSL handshake failure. When connection errors occur, it is very important not to overwhelm the backend with unnecessary client retries because it can make the problem more serious. In such a circumstance, client applications should follow an "Exponential Backoff" approach:
 
 > The retries exponentially increase the waiting time up to a certain threshold. The idea is that if the server is down temporarily, it is not overwhelmed with requests hitting at the same time when it comes back up.
 
@@ -26,34 +26,38 @@ Following this guideline, the following sequential retry delays are recommended 
 * 21 seconds
 * 30 seconds
 
-Then, keep trying to connect every 30 seconds.
+Then, keep trying to connect every 30 seconds. 
+
+The same exponential backoff approach is recommended to be used in the case of HTTP 5xx errors, but the `Retry-After` header value should always be obeyed if provided.
 
 ## Authentication related errors
 
 Since the RingCentral API uses OAuth 2.0 for authorization, the server behavior is mostly governed by the OAuth specification ([RFC 6749](http://tools.ietf.org/html/rfc6749) and [RFC 6750](http://tools.ietf.org/html/rfc6750)).
 
-* Regardless of the number of threads which send API requests to the server, the application should perform OAuth authentication in a single thread, store and share tokens to be used in all regular API requests. Backend servers enforce some quotas for the number of authorization requests and number of active application sessions. If the quota is exceeded at any given time, the server starts to return `HTTP 429` on authorization requests.
-* Application must avoid frequent authentication attempts under the same user credentials. In order to extend session after access token expiration, it has to use token refreshment flow (if allowed)
-* Application should store `expires_in` and `refresh_token_expires_in` values along with access/refresh tokens and their issue time. This value is to be used to pre-check if the token is expired or about to expire before sending regular API requests in order to refresh tokens proactively. It is strongly recommended to avoid performing refreshment basing on `HTTP 401` errors which are returned by the server.
-* According to OAuth 2.0 standard some logical error codes are returned in error field of the response.
+* Regardless of the number of threads that send API requests to the server, the application should perform OAuth authentication in a single thread, then store and share tokens to be used in all regular API requests. Backend servers enforce some quotas for the number of authorization requests and number of active application sessions. If the quota is exceeded at any given time, the server starts to return `HTTP 429` on authorization requests.
+* Applications must avoid frequent authentication attempts under the same user credentials. In order to extend the session after access token expiration, the token refreshment flow should be used if allowed
+* Applications should store `expires_in` and `refresh_token_expires_in` values along with access/refresh tokens and their issue time. This value is to be used to pre-check if the token is expired or about to expire before sending regular API requests in order to refresh tokens proactively. It is strongly recommended to avoid refreshing tokens based on `HTTP 401` errors returned by the server: this just doubles the number of requests required to get new access token.
+* According to the OAuth 2.0 standard, some standard OAuth error codes are returned in the response complemented with RingCentral-specific error codes.
 
-### OAuth authorize errors
+### OAuth authorization errors
 
 For 3-legged OAuth flows in some cases `HTTP 400` may be returned on `/restapi/oauth/authorize` call. For example, it can happen when the client provides invalid redirect URI in the request. See [RFC 6749](http://tools.ietf.org/html/rfc6749) for details.
 
 ### OAuth token errors
 
-As a general rule, if a request to /restapi/oauth/token API for access token fails client must NOT send other API requests until resolved. It should be properly orchestrated if client uses multiple threads which share the same tokens to send regular API requests.
+As a general rule, if a request to the `/restapi/oauth/token` API for access token fails client must NOT send other API requests until resolved. It has to be properly orchestrated if a client uses multiple threads that share the same tokens to send regular API requests.
 
-* `HTTP 400` – do not repeat request; if possible inform the user about failure and prompt for new credentials
-* `HTTP 429`, `HTTP 503` – retry in an indicated interval returned in Retry-After header.
+* `HTTP 400` – do not repeat request; if possible inform the user about the failure and prompt for new credentials
+* `HTTP 429`, `HTTP 503` – retry in an indicated interval returned in the `Retry-After` header.
 * `HTTP 4xx`, `HTTP 5xx` – do not repeat request, error in client or server code
-* `HTTP 400` – use cached credentials (if possible) to re-authenticate, or prompt user for new credentials.
-* `HTTP 408`, `HTTP 500`, client timeout – repeat 3 times with 10 seconds intervals, then try re-request tokens using cached credentials (if possible), or prompt user for new credentials (all dependent regular requests should be queued and wait for resolution)
+* `HTTP 400` – use cached credentials (if possible) to re-authenticate or prompt the user for new credentials.
+* `HTTP 408`, `HTTP 500`, client timeout – repeat 3 times with 10 seconds intervals, then try re-request tokens using cached credentials (if possible), or prompt the user for new credentials (all dependent regular requests should be queued and wait for resolution)
 
 ### OAuth revoke errors
 
-In case of any error on the request to `/restapi/oauth/revoke` API client should just ignore it and do not retry.
+If there is an error in the request to the `/restapi/OAuth/revoke` API, the client should ignore it and not retry.
+
+### Authentication/authorization error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -98,7 +102,7 @@ In case of any error on the request to `/restapi/oauth/revoke` API client should
 | 429                 | CMN-302    | Unknown application. Rate limits undefined                                                                                  |
 | 429                 | CMN-303    | Can not resolve API plan. Rate limits undefined                                                                             |
 
-## Webhook and event subscription related error codes
+## Notification subscription related error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +119,7 @@ In case of any error on the request to `/restapi/oauth/revoke` API client should
 | 400                 | SUB-509    | findSubscription only works with PubNub transport type                                                                      |
 | 405                 | SUB-511    | Action not allowed for APNS subscription                                                                                    |
 
-## Gateway and general error codes
+## General API error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -148,7 +152,7 @@ In case of any error on the request to `/restapi/oauth/revoke` API client should
 | 400                 | CLG-105    | Parameter [syncToken] is invalid [Sync token expired, call log was reset]                                                   |
 | 400                 | CLG-110    | Parameter [sessionId] is not allowed for usage along with parameter [${parameterName}]                                      |
 
-## Application-specific error codes
+## Messaging API error codes
 
 | HTTP Status Code(s) | Error Code | Message                                                                                                                     |
 |---------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
