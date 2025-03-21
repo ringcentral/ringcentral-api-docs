@@ -22,7 +22,9 @@ These situations are usually temporary. The application should use [Exponential 
 
 ## General 5xx server errors
 
-These situations are usually temporary. The application should use [Exponential Backoff](#exponential-backoff) approach to retry.
+Clients may receive HTTP 5xx errors (typically, 500/502/503/504) when a server cannot handle a request due to some server-side issue.
+Such situations are usually temporary and applications may retry as suggested in [Exponential Backoff](#exponential-backoff).
+If retries don't help in your case please contact RingCentral developers support.
 
 ## Authentication related errors
 
