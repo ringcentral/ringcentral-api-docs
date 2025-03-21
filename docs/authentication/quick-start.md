@@ -1,8 +1,8 @@
 style: quick-start
 
-# Getting started using OAuth's auth code flow
+# Getting started using OAuth authorization code flow
 
-Before you get started, make sure you are using the [best authentication method](index.md) for your application. OAuth's auth code flow is ideally suited for applications that need to collect RingCentral credentials for each user of that app. If you are just getting started on the platform, writing a script to be run via the command-line, or facilitating the connection between a server and RingCentral, we recommend you use our [JWT flow](jwt/quick-start.md).
+Before you get started, make sure you are using the [best authentication method](index.md) for your application. Authorization code flow is ideally suited for applications that need to collect RingCentral credentials for each user of the app. If you are just getting started on the platform, writing a script to be run via the command line, or facilitating the connection between a server and RingCentral, we recommend you use our [JWT flow](jwt/quick-start.md).
 
 ## Create an app and obtain credentials
 
