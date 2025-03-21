@@ -318,9 +318,7 @@ nav:
         - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
 
   - 'Applications':
-      - 'Development lifecycle':
-          - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Developing in sandbox': 'basics/using-sandbox.md'
+      - 'Tips for your first app': 'basics/your-first-steps.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
