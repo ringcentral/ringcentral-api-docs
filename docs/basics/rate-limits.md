@@ -18,7 +18,7 @@ There are the following types of rate limits.
 If you exceed any of the rate limits, the server rejects API requests with the `HTTP 429 Too Many Requests` status code. This means that the server throttles the client due to a high request rate. 
 
 In most cases, the `Retry-After` response header is returned, and its value contains the recommended retry interval in seconds.
-If `Retry-After` is not returned, retry not earlier than after 30 seconds.
+If `Retry-After` is not returned, the original request should be retried in 30 seconds or later.
 The examples of error codes returned in HTTP 429 response can be found in [Rate-limit related error codes](../errors.md#rate-limit-related-error-codes)
 
 For user-level limit violations, the response also contains special `X-Rate-Limit-XXX` headers that would help handle this situation (see [Rate limit response headers](#rate-limit-response-headers)). If you do not see such headers in the response, it means that your app hit some other type of rate limit. Please contact RingCentral developer support if you need to better understand the situation.
@@ -29,30 +29,33 @@ User-level rate limits apply to each user using an application. For example, if 
 
 ### How are user-level limits calculated?
 
-Every RingCentral API is assigned to a different "API Group" which determines the default rate limit that an application will be subject to when called that API. This allows each API to be assigned a rate limit based on the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. 
+Every RingCentral API is assigned to a different "usage plan Group" which determines the default rate limit that an application will be subject to when called that API. This allows each API to be assigned a rate limit based on the most common usage patterns associated with that API. This also allows RingCentral to better manage and distribute potential load across the platform to better secure and protect it. The group associated with a particular API method can be found in the [API Reference](https://developers.ringcentral.com/api-reference) under the "Usage Plan Group" heading.
 
-The four basic rate limit groups are described below. Please note that the given rate limits and throttle intervals are provided as an example only - they can be customized and vary among apps.
+The four basic usage plan groups are described below. Please note that the rate limits and penalty intervals given are provided as an example only — they can be customized and vary among apps.
 
-| Usage Plan Group | Rate Limit                   | Penalty Interval |
-|------------------|------------------------------|------------------|
-| Light            | 50 requests/extension/minute | 60 seconds       |
-| Medium           | 40 requests/extension/minute | 60 seconds       |
-| Heavy            | 10 requests/extension/minute | 60 seconds       |
-| Auth             | 5 requests/extension/minute  | 60 seconds       |
+| Usage Plan Group | Rate Limit (default)    | Penalty Interval (default) |
+|------------------|-------------------------|----------------------------|
+| Light            | 50 requests/user/minute | 60 seconds                 |
+| Medium           | 40 requests/user/minute | 60 seconds                 |
+| Heavy            | 10 requests/user/minute | 60 seconds                 |
+| Auth             | 5 requests/user/minute  | 60 seconds                 |
 
-Rate limits can be customized in the following ways:
+The rate limits are applied as follows:
 
-* Rate limits can be defined for different time intervals, e.g. *N* calls per minute, per 5 minutes, per hour, etc. 
-* Usage plan API groups may also support multiple limits per group, based on the unique needs and the APIs called by an app.
+- Server counts all requests associated with the same group that are sent by the app on behalf of a particular user during a sliding time window
+  - For example, if your app sends requests that use 5 different API methods, but all of them are associated with the "Light" group, they will be counted together against the corresponding group bucket.
+  - API methods belonging to different groups are counted separately, e.g., the app can exceed a rate limit for "Light" calls but still have a remaining quota for "Medium" calls.
 
-Please make sure your app **does not** send any requests within the penalty interval after it reaches the rate limit. Otherwise, it may stuck in the 429 trap forever, since every new request during the penalty interval will restart it.
+- Once the rate limit is reached, the server applies a penalty by rejecting any requests (within the corresponding group) from the same user and app sent during penalty interval. With each new request the penalty interval is reset.
+  - It's better to ensure your app **does not** send any requests within the penalty interval after it reaches the rate limit. Otherwise, it may stuck in the 429 trap forever, since every new request during the penalty interval restarts the penalty. 
 
-### How do I determine the user-level rate limit associated with an API?
+Rate limits for your app can be customized in the following ways:
 
-Every API endpoint is assigned to a different Usage Plan group, which is disclosed on the API's corresponding page in the [API Reference](https://developers.ringcentral.com/api-reference) under the heading of "Usage Plan Group".
+* The rate limit itself can be changed, e.g. to allow 100 requests per minute instead of 50.
+* The time window size can be changed, e.g. to count requests per 5-minute intervals instead of 1-minute.
+* The penalty interval can be adjusted.
 
-!!! hint "Your exact rate limit may vary"
-    Bear in mind that your rate limit may be different from the default values above if you have applied for and been granted a modification to your application's needs. See "What are your app rate limits" below.
+Usually, the runtime information about rate limit settings is communicated back to the app via heders: see [Rate limit response headers](#rate-limit-response-headers).
 
 ### What are the specific user-level rate limits associated with my app?
 
@@ -74,7 +77,7 @@ The runtime state of user-level rate limits is communicated via specific HTTP re
 | `X-Rate-Limit-Window`    | Time interval in seconds for the given request rate limit                       |
 
 !!! warning "`X-Rate-Limit-Group` header values subject to change"
-    Developers should be aware that the API group names may vary from app to app, and therefore developers should not create logic in their products that assumes the API group will be exclusively "Light," "Medium," "Heavy," or "Auth."
+    Developers should be aware that the API group names may change in the future. The developers should not create logic in their products that assumes the API group will be exclusively "Light," "Medium," "Heavy," or "Auth."
 
 #### Example
 
