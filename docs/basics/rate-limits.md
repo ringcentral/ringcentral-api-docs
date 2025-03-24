@@ -41,7 +41,15 @@ The four basic usage plan groups are described below. Please note that the rate 
 | Heavy            | 10 requests/user/minute | 60 seconds                 |
 | Auth             | 5 requests/user/minute  | 60 seconds                 |
 
-The rate limits are applied as follows:
+## What do I do if my app receives the "429 Too Many Requests" error?
+
+If you exceed these limitations then the server will return the `429 Too Many Requests` HTTP error code. This means that the client has been throttled by the server due to high request rate. 
+The retry period in seconds, after which more requests can be sent, is specified in `Retry-After` response header.
+
+!!! tip "Do not send any requests within the penalty interval"
+    Every time you send a request that is caught by our rate limiting system, we reset the clock on your penalty window. Therefore, it is possible that your app could find itself trapped in an unending 429 trap, unless you code your app such that it allows the penalty window to fully elapse before sending another request. 
+
+Rate limits are applied as follows:
 
 - Server counts all requests associated with the same group that are sent by the app on behalf of a particular user during a sliding time window
   - For example, if your app sends requests that use 5 different API methods, but all of them are associated with the "Light" group, they will be counted together against the corresponding group bucket.
