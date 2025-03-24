@@ -41,7 +41,7 @@ The four basic usage plan groups are described below. Please note that the rate 
 | Heavy            | 10 requests/user/minute | 60 seconds                 |
 | Auth             | 5 requests/user/minute  | 60 seconds                 |
 
-## What do I do if my app receives the "429 Too Many Requests" error?
+### What do I do if my app receives the "429 Too Many Requests" error?
 
 If you exceed these limitations then the server will return the `429 Too Many Requests` HTTP error code. This means that the client has been throttled by the server due to high request rate. 
 The retry period in seconds, after which more requests can be sent, is specified in `Retry-After` response header.
