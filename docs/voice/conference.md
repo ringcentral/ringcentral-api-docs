@@ -135,14 +135,14 @@ You find call parties by looking for active calls. The `presence` APIs allow you
       "extension": {
         "extensionNumber": "102",
         "id": 684351005,
-        "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}"
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}"
       },
       "meetingStatus": "Disconnected",
       "pickUpCallsOnHold": false,
       "presenceStatus": "Busy",
       "ringOnMonitoredCall": false,
       "telephonyStatus": "CallConnected",
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence",
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence",
       "userStatus": "Available"
     }
     ```

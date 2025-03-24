@@ -4,7 +4,6 @@ As you develop applications and integrations with the Call Log resource, there a
 
 * Throttling Call Log Requests Properly
 * HIPAA Considerations while Developing with Call Log
-* Generating Call Log data in your Sandbox Account
 
 Each of the above items has different impact depending upon the current needs of the developer.
 
@@ -48,8 +47,3 @@ For Example: Thinking about making an application which allows the ability to em
 Be mindful of how multiple customer types will use your application or integration and keep HIPAA-Compliance as a "top-of-mind" aspect to your development.
 
 
-### Generating Call Log data in your Sandbox Account
-
-Through our Call Log tutorials, we have shown developers how to use the RingCentral Soft Phone to create call log data and call recording data. Sometimes you need much more for testing or development.
-
-For those cases, our Developer Relations team has created the following repository on Github in PHP for [Generating Call Recording Data in your Sandbox account](https://github.com/anilkumarbp/RingCentral-Call-Generator-Recordings-Downloader). This is good for generating 100-200 call logs and recordings, but is not recommended for more than 200 because it will max out your minutes available in the Sandbox account.

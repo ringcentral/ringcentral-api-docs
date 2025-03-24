@@ -89,10 +89,10 @@ Required permission(s): ReadExtensions
 Upon successful API call completion, the response contains a list of predefined forwarding numbers
 ```json hl_lines="6 17 25"
 {
-  "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number?page=1&perPage=100",
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number?page=1&perPage=100",
   "records":[
     {
-      "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/592178004",
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/592178004",
       "id":"592178004",
       "phoneNumber":"+14135554674",
       "label":"RingCentral for Desktop",
@@ -103,7 +103,7 @@ Upon successful API call completion, the response contains a list of predefined 
         "id":"801553370004"
         }
     },{
-      "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711909004",
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711909004",
       "id":"711909004",
       "phoneNumber":"+16505550930",
       "label":"Mobile",
@@ -111,7 +111,7 @@ Upon successful API call completion, the response contains a list of predefined 
       "flipNumber":"2",
       "type":"Mobile"
     },{
-      "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711910004",
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/forwarding-number/711910004",
       "id":"711910004",
       "phoneNumber":"+16505555476",
       "label":"Work",
@@ -137,7 +137,7 @@ Required permission(s): ReadExtensions
 Upon successful API call completion, the response contains a detailed information of a forwarding number
 ```json
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178003454/extension/178003454/forwarding-number/712613004",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/178003454/extension/178003454/forwarding-number/712613004",
   "id": "712613004",
   "phoneNumber": "+14085554388",
   "label": "RingCentral for Desktop",

@@ -1,6 +1,6 @@
-# JWT authorization code flow
+# JWT authentication flow
 
-!!! hint "New to JWT authentication? Checkout our [getting started guide](jwt/quick-start.md)."
+!!! hint "New to JWT authentication? Check out our [getting started guide](jwt/quick-start.md)."
 
 RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) for using JSON Web Tokens ("JWT", pronounced "JAW-t") in an OAuth authorization flow. A JWT credential can be generated within the [RingCentral Developer Console](https://developers.ringcentral.com/my-account.html), and be used in place of a username and password when establishing an authenticated connection to RingCentral servers to call the API. Using a JWT in this way has the following benefits:
 
@@ -9,11 +9,11 @@ RingCentral supports [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523) f
 * Credentials can be easily revoked by the owner or administrator
 * Credentials can be restricted to specific applications
 
-At a high-level, the JWT auth flow is as follows:
+At a high level, the JWT auth flow is as follows:
 
 ![JWT code Flow](oauth-password-flow.png){class=".img-fluid" style="max-width: 600px"}}
 
-For a deeper dive of this flow, see "Technical discussion" below.
+For a deeper dive into this flow, see "Technical discussion" below.
 
 ### When should I use a JWT for authentication?
 
@@ -45,7 +45,7 @@ JWT authentication and password-based authentication modes are almost identical.
 2. The platform responds with an access token.
 3. The developer utilizes the access token in subsequent requests to the API.
 
-The key to groking how RingCentral uses JWTs is in understanding that JWTs are not used directly to call the API. Instead, a JWT is used in the process of obtaining an access token which is itself then used to call the API.
+The key to grokking how RingCentral uses JWTs is in understanding that JWTs are not used directly to call the API. Instead, a JWT is a credential that is used to obtain an OAuth access token which is then used to call the API.
 
 To learn more, see "Technical discussion" below.
 
@@ -60,7 +60,7 @@ In other words, JWTs are a way developers can obtain more reliable access to a u
 
 ## Technical discussion
 
-JSON web tokens, or JWTs are a form of user credential that can be presented in RingCentral's OAuth flow to obtain an access token. There is only one call to make in JWT authentication: the call to request an access token. This call is described below.
+JSON web tokens, or JWTs, are a form of user credential that can be presented in RingCentral's OAuth flow to obtain an access token. In JWT authentication, there is only one call to make: the call to request an access token. This call is described below.
 
 **Auth URLs**
 

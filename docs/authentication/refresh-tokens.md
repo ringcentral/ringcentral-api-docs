@@ -1,16 +1,16 @@
 # Using refresh tokens to generate new access tokens
 
-Developers should be aware that access tokens expire over time. As a result, your application will lose access to your customer's account data, and your users will need to go through the authorization process again, unless you take measures to keep their access tokens live, by refreshing them via the [refresh token operation](https://developers.ringcentral.com/api-reference/Get-Token#section-refresh-token-flow).
+Developers should be aware that access tokens expire over time. As a result, your application will lose access to your customer's account data, and your users will need to go through the authorization process again unless you take measures to keep their access tokens live by refreshing them via the [refresh token operation](https://developers.ringcentral.com/api-reference/Get-Token#section-refresh-token-flow).
 
-Access tokens and refresh tokens expire according to the following schedule:
+Access tokens and refresh tokens usually expire according to the following schedule:
 
-| Token | TTL |
+| Token | Time to live |
 |-|-|
 | Access token | 1 hour |
 | Refresh token | 7 days |
 
 ??? hint "Make sure your app is configured to issue refresh tokens"
-    Before you proceed, make sure your application's settings has the "Issue refresh tokens" option enabled. By default, apps do not issue refresh tokens, so if you observe that a refresh token was not issued to you, edit your app's settings and look for the following:
+    Before you proceed, make sure your application's settings have the "Issue refresh tokens" option enabled. By default, refresh tokens are not issued, so if you observe that a refresh token was not returned along with access token, edit your app's settings and look for the following:
     
     ![Issue refresh token option'](refresh_token_form.png)
 
@@ -18,18 +18,19 @@ Access tokens and refresh tokens expire according to the following schedule:
 
 Here are a few things to keep in mind when using refresh tokens to generate new access tokens.
 
-* Refresh tokens are transmitted to developers with their corresponding access tokens
+* Refresh tokens are transmitted to developers with their corresponding access tokens.
 * Refresh tokens can only be used once. 
-* A new refresh token is generated when access tokens are refreshed. 
-* Upon refreshing an access token, the previous access token is invalidated immediately. If the previous access token is used within ten seconds, the error "Access token corrupted" will be returned, and will eventually return the error "Access token not found."
-* If one uses the newly generated access token, the old refresh token will become invalid in approximately ten seconds. Within those ten seconds, one can refresh the access token multiple times, however, the same access token will be returned. After approximately ten seconds, attempts to re-use the refresh token will result in a "Token not found" error. 
-* If you don't use the newly generated access token, the old refresh token will remain valid for up to 60 minutes. You can issue a refresh request multiple times, but the same access token will be returned until the key is used. 
+* A new refresh token is usually generated when the access token is refreshed. 
+* Upon refreshing an access token, the previous access token is invalidated immediately. If the previous access token is used after successful refreshment, the API responds with an HTTP 401 status code that indicates authorization failure (specific error code may vary).
+* If the app uses the newly generated access token, the previous refresh token will become invalid in approximately ten seconds. Within those ten seconds, one can refresh the access token multiple times, however, the same access token will be returned. After approximately ten seconds, attempts to re-use the refresh token will result in an error. 
+* If the app doesn't use the newly generated access token, the old refresh token remains valid for up to 60 minutes. The app can send a refreshment request with the same refresh token multiple times, but the same access token will be returned (until it is used for the first time). 
 
 !!! hint "The JWT auth flow provides non-expiring auth credentials"
-    The [JWT auth flow](jwt-flow.md) is ideal for apps that lack a frontend user interface. Through the JWT auth flow, access tokens are still issued, but they are easily refreshed without the need for human interaction.
+    The [JWT auth flow](jwt-flow.md) is ideal for apps that lack a front-end user interface. Through the JWT auth flow, access tokens are still issued, but they are easily refreshed without the need for human interaction.
 
 !!! info "How to keep access tokens fresh"
-    It is recommended that developers implement a separate service dedicated to the task of refreshing access tokens on a regular basis. Such a service would ensure that at no time will your application lose access to a user's account data, and require them to re-login. 
+    - It is recommended to use the access token creation time and the `expires_in` value returned to store expiration time along with the access token. Before each use of access token the app should analyze if it is close to expiration and issue a refreshment request.
+    - For multithreaded apps that use the same access token in multiple threads, it is recommended to implement a separate service dedicated to refreshing access tokens to prevent race conditions. This service can use the same approach to refresh tokens that are close to their expiration to ensure that your application never loses access to a user's account data and requires them to re-login. 
 
 ### Refresh access token request
 
@@ -37,8 +38,8 @@ Here are a few things to keep in mind when using refresh tokens to generate new 
 
     Pay close attention to the following for REST API apps with the app type of "Client-side web app":
 	
-	* An Authorization header is not transmitted in the refresh token request in order to keep the app's client secret hidden from the request/response
-	* The app's `client_id` should be transmitted in the refresh token request.
+	* An `Authorization` header is not transmitted in the refresh token request in order to keep the app's client secret hidden from the request/response
+	* The app's `client_id` should be transmitted in the refresh token request body.
 
 **HTTP Headers**
 

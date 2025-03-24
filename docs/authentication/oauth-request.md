@@ -1,10 +1,10 @@
 # Generating an authorization request
 
-The OAuth auth token flow is often initiated by sending a user to a URL to login to the remote service, authorize the application, and return the user to the remote service to complete the handshake and authorization process. The following document describes how to construct this authorization URL in order to begin the OAuth flow.
+The OAuth authorization code flow is often initiated by sending a user to a URL to log into the remote service, authorize the application, and return the user to the remote service to complete the handshake and authorization process. The following document describes how to construct this authorization URL in order to begin the authorization code flow.
 
 ## Building the Authorization Request URL
 
-An authorization request URL will vary depending upon what environment you are are building your app with in.
+An authorization request URL will vary depending on what environment you are building your app within.
 
 | Environment | Base URL |
 |-|-|
@@ -12,7 +12,7 @@ An authorization request URL will vary depending upon what environment you are a
 
 ### Authorization request parameters
 
-The parameters that are attached to the URL you build are determined by the [OAuth 2.0 specification](https://datatracker.ietf.org/doc/html/rfc6749) itself, but guidance is provided below on what the value of these parameters should be for RingCentral.
+The parameters attached to the URL you build are determined by the [OAuth 2.0 specification](https://datatracker.ietf.org/doc/html/rfc6749) itself, but guidance is provided below on what the value of these parameters should be for RingCentral.
 
 | Parameter | Discussion |
 |-|-|

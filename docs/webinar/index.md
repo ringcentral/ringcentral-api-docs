@@ -25,11 +25,7 @@ Login to the [Developer Console](https://developers.ringcentral.com/login.html#/
     
 [Create Webinar App](https://developer.ringcentral.com/new-app?name=Webinar+Quick+Start+App&desc=A+simple+app+to+demo+creating+a+webinar+on+RingCentral&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=EditWebinars,ReadWebinars&grantType=PersonalJWT&redirectUri=&utm_source=devguide&utm_medium=button&utm_campaign=quickstart){class="btn btn-primary" target="_new"}
 
-#### 2. Do your development in production
-
-RingCentral Webinar is not currently available in our developer sandbox. Therefore, in order to develop an app, please perform all development directly in our production environment.
-
-#### 3. Join the Webinar Partner Developer Program
+#### 2. Join the Webinar Partner Developer Program
 
 Partners wishing to build integrations to be used by RingCentral customers and are promoted within the RingCentral [App Gallery](https://ringcentral.com/apps/) should apply to the Webinar Partner Developer Program in order to receive additional benefits, including a free developer license to RingCentral Webinar. 
     

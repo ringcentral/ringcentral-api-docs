@@ -37,8 +37,8 @@
       "pageEnd" : 99
     },
     "navigation" : {
-      "nextPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=2&perPage=100" },
-      "firstPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=1&perPage=100" },
-"lastPage" : { "uri" : "https://platform.devtest.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=3&perPage=100" }
+      "nextPage" : { "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=2&perPage=100" },
+      "firstPage" : { "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=1&perPage=100" },
+"lastPage" : { "uri" : "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/message-store?messageType=Fax&availability=Alive&dateFrom=2018-10-07T08:56:00.000Z&page=3&perPage=100" }
     }
 }

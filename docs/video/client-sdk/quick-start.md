@@ -54,9 +54,6 @@ Then the web PIN is `0123456789`. Make note of this pin, as you will use it late
 
 ## Run the sample application
 
-!!! hint "Please use production credentials to call the Video API"
-    RingCentral Video is not currently available in sandbox. To successfully call the API, please do development directly in our production environment. 
-
 === "Javascript"
    
     {!> mdx_includes/rcv-sdk-quick-start-js.md !} 

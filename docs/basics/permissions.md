@@ -1,6 +1,6 @@
 # Application permissions and scopes
 
-In order to work with particular RingCentral API resources the application should have the corresponding scopes associated with it, also referred to as application "permissions." Required scopes are generally declared at the stage of application registration and confirmed by the user during the authorization stage of connecting to that application.
+In order to work with particular RingCentral API resources, the application should have the corresponding scopes associated with it, also referred to as application "permissions." Required scopes are generally declared at the application registration stage and confirmed by the user during the authorization stage of connecting to that application.
 
 Adding and removing scopes is accomplished in the Developer Console by editing the application's settings. 
 

@@ -8,7 +8,6 @@ Congratulations on taking your first steps towards building an application or in
 
 The RingCentral getting started experience will help developers successfully do the following:
 
-* **Setup a sandbox account** for testing and development
 * **Register an application** to obtain app credentials
 * **Generate an auth credential** to login into the API and make API calls
 * **Call the API** using simple sample apps

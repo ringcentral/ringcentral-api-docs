@@ -111,6 +111,7 @@ Below are the individual specifications for each file contained in the export.
       "lastModifiedTime": datetime,
       "creator": { "id": string },
       "chatId": string,
+      "chainId": string,
       "text": string,
       "attachments": [{
           "id": string,

@@ -262,7 +262,7 @@ Upon successful API call completion, the response contains the id (`ruleId`) and
 
 ```json hl_lines="3", linenums="1"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/178002314/extension/178009114/answering-rule/227207004",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/178002314/extension/178009114/answering-rule/227207004",
   "id": "227207004",
   "type": "Custom",
   "name": "My weekly meetings",
@@ -281,17 +281,17 @@ Required permission(s): ReadExtensions
 Upon successful API call completion, the response contains a list of all existing user answering rules (including the default rules).
 ```json hl_lines="6 13", linenums="1"
 {
-  "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&perPage=100",
+  "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule?page=1&perPage=100",
   "records": [
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/33333333",
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/33333333",
       "id": "33333333",
       "type": "Custom",
       "name": "My Custom Rule 1",
       "enabled": true
     },
     {
-      "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
+      "uri": "https://platform.ringcentral.com/restapi/v1.0/account/11111111/extension/22222222/answering-rule/business-hours-rule",
       "id": "business-hours-rule",
       "type": "BusinessHours",
       "enabled": true
@@ -451,7 +451,7 @@ Required permission(s): EditExtensions
       {
         "id":"65792",
         "name":"Default",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/65792"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/65792"
       },
       "type":"Voicemail"
     },{
@@ -459,7 +459,7 @@ Required permission(s): EditExtensions
       {
         "id":"66301",
         "name":"None",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/66301"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/66301"
       },
       "type":"Introductory"
     },{
@@ -467,7 +467,7 @@ Required permission(s): EditExtensions
       {
         "id":"66310",
         "name":"Acoustic",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/66310"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/66310"
       },
       "type":"ConnectingAudio"
     },{
@@ -475,7 +475,7 @@ Required permission(s): EditExtensions
       {
         "id":"66560",
         "name":"Default",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/66560"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/66560"
       },
       "type":"Announcement"
     },{
@@ -483,7 +483,7 @@ Required permission(s): EditExtensions
       {
         "id":"66816",
         "name":"Default",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/66816"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/66816"
       },
       "type":"Unavailable"
     },{
@@ -491,7 +491,7 @@ Required permission(s): EditExtensions
       {
         "id":"68867",
         "name":"Default",
-        "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/dictionary/greeting/68867"
+        "uri":"https://platform.ringcentral.com/restapi/v1.0/dictionary/greeting/68867"
       },
       "type":"ConnectingMessage"
     }],
@@ -507,14 +507,14 @@ Required permission(s): EditExtensions
   },
   "screening":"Off",
   "type":"Custom",
-  "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/answering-rule/227258004",
+  "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004/answering-rule/227258004",
   "voicemail":
   {
     "enabled":true,
     "recipient":
     {
       "id":"178009004",
-      "uri":"https://platform.devtest.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004"
+      "uri":"https://platform.ringcentral.com/restapi/v1.0/account/178009004/extension/178009004"
     }
   }
 }

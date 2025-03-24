@@ -29,7 +29,7 @@
             "sid": "35195775561837",
             "srvLvl": "-149699523",
             "srvLvlExt": "406",
-            "to": "#374005@sip.devtest.ringcentral.com:5060"
+            "to": "#374005@sip.ringcentral.com:5060"
           },
           "rcc": false
         },

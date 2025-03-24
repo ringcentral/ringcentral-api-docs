@@ -14,10 +14,10 @@ RingCentral supports the OAuth 2.0 authorization code flow, one of the most comm
 
 The auth code flow works to:
 
-* Keep a user's personal login credentials secure, and out of the hands of a third-party.
+* Keep a user's personal login credentials secure, and out of the hands of a third party.
 * Disclose what permissions an app requires.
 * Prompt users to explicitly authorize an app to access their data.
-* Provide developers with a token that can used to by their applications to act on another user's behalf. 
+* Provide developers with a token that can be used by their applications to act on another user's behalf. 
 
 ### When should I use the authorization code flow?
 
@@ -32,7 +32,7 @@ The auth code flow is the most common form of OAuth used on the Internet, and is
 
 ### Step 1. Compose a "request authorization" URL
 
-The authorization process is initiated by an end user clicking a URL composed by the application requesting access to theirRingCentral account. This URL will contain the following query parameters: 
+The authorization process is initiated by an end user clicking a URL composed by the application requesting access to their RingCentral account. This URL will contain the following query parameters: 
 
 {! docs/authentication/login-url-params.inc !} 
 
@@ -56,9 +56,9 @@ We recommend developers use an SDK to generate a login URL to ensure it is compo
 
 ### Step 2. User login and consent
 
-On this step your app’s user is redirected by the browser to a RingCentral authorization page, where the user is first asked to login if they have not already.
+At this step, your app’s user is redirected by the browser to a RingCentral authorization page, where they are first asked to log in (if they have not already).
 
-Once they have logged in, RingCentral will prompt the user with an "Access Request" in which the permissions the app is requesting is disclosed. 
+Once users have logged in, RingCentral prompts them with an "Access Request," which discloses the permissions the app is requesting. 
 
 ![User Consent](user-consent.png){class="img-fluid" style="max-width: 500px"}
 
@@ -75,13 +75,13 @@ HTTP/1.1 302 Found
 Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&state=xyz&expires_in=60
 ```
 
-### Step 3. Exchange auth code for access token
+### Step 3. Exchange authorization code for an access token
      
-The 'code' your application receives at your Redirect URI is a temporary authorization code that is used to obtain an access token to call the API. If the token is not redeemed in the alotted time, the user will need to go through the login and authorization process again. This is the final step in the process before your app can call the RingCentral API. 
+The 'code' your application receives at your Redirect URI is a temporary authorization grant used to obtain an access token to call the API. If the token is not redeemed in the allotted time, the user will need to go through the login and authorization process again. This is the final step before your app can call the RingCentral API. 
 
 To exchange an auth code for an access token, developers will call the RingCentral API accordingly:
 
-#### Auth token request
+#### Access token request
 
 **HTTP Headers**
 
@@ -108,9 +108,9 @@ code=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0M
   &redirect_uri=https%3A%2F%2Fmyapp.acme.com%2Foauth2redirect
 ```
 
-#### Auth token response
+#### Access token response
 
-The server responds with an access token which can presented in subsequent requests in the HTTP Authorization header to authenticate API Calls. The response will contain the following parameters: 
+The server responds with an access token which can presented in subsequent requests in the HTTP `Authorization` header to authorize API Calls. The response will contain the following parameters: 
 
 {! docs/authentication/auth-token-response.inc !} 
 
@@ -134,7 +134,7 @@ Content-Type: application/json
 
 ### Step 4. Make your API calls
 
-With an access token in hand, you can now call the API to access the authorizing user's account. The access token is transmitted to the API via the HTTP Authorization header as shown below.
+With an access token in hand, you can now call the API to access the authorizing user's account. The access token is transmitted to the API via the HTTP `Authorization` header as shown below.
 
 ```http
 POST /restapi/oauth/token HTTP/1.1 

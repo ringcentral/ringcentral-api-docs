@@ -5,7 +5,7 @@
 Welcome to part two of our bot development guide. In part one, we take developers through the [basic architectural building blocks of a simple bot add-in](walkthrough.md). We demonstrate:
 
 * How to create a bot
-* How to install and test a bot in sandbox
+* How to install and test a bot
 * How to subscribe to post and chat events
 * How to post and respond to simple text messages
 

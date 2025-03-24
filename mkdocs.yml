@@ -47,7 +47,6 @@ nav:
     - 'Your first API call': 'getting-started/index.md'
     - 'Register an app': 'getting-started/register-app.md'
     - 'Create an auth credential': 'getting-started/create-credential.md'
-    - 'Access sandbox': 'getting-started/using-sandbox.md'
     - 'Build an app': 'getting-started/code-app.md'
     - 'Sending SMS': 'getting-started/sms.md'
     - 'Promote your app': 'getting-started/promote-app.md'
@@ -133,10 +132,6 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-  - 'Social Messaging':
-    - 'Overview': 'social-messaging/index.md'
-    - 'Getting started': 'social-messaging/quick-start.md'
-
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
@@ -272,6 +267,8 @@ nav:
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'
 
+    - 'RingSense': 'ai/ringsense.md'
+
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
     - 'Users and extensions': 'account/extensions.md'
@@ -321,9 +318,7 @@ nav:
         - 'v.1.0.41 (Dec 2019)': 'basics/changelog/1_0_41.md'
 
   - 'Applications':
-      - 'Development lifecycle':
-          - 'Tips for your first app': 'basics/your-first-steps.md'
-          - 'Develop in sandbox': 'getting-started/using-sandbox.md'
+      - 'Tips for your first app': 'basics/your-first-steps.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
@@ -359,7 +354,7 @@ nav:
       - 'JWT flow': 'authentication/jwt-flow.md'
       - 'Password flow': 'authentication/password-flow.md'
 
-  - 'Notifications and events':
+  - 'Events and notifications':
     - 'Overview': 'notifications/index.md'
     - 'Event filters':
       - "Overview and index": 'notifications/event-filters/index.md'
@@ -395,6 +390,8 @@ nav:
       - "Team Messaging events":
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
+      - "RingSense":
+        - "Insights events": 'notifications/event-filters/ringsense-event-filter.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'
