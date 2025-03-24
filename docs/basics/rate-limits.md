@@ -18,8 +18,9 @@ There are the following types of rate limits.
 If you exceed any of the rate limits, the server rejects API requests with the `HTTP 429 Too Many Requests` status code. This means that the server throttles the client due to a high request rate. 
 
 In most cases, the `Retry-After` response header is returned, and its value contains the recommended retry interval in seconds.
-If `Retry-After` is not returned, the original request should be retried in 30 seconds or later.
-The examples of error codes returned in HTTP 429 response can be found in [Rate-limit related error codes](../errors.md#rate-limit-related-error-codes)
+If `Retry-After` is not returned, the original request should be retried in 30 seconds or later. 
+
+!!! info "Examples of error codes returned in HTTP 429 response can be found in [rate-limit related error codes](errors.md#rate-limit-related-error-codes) documentation"
 
 For user-level limit violations, the response also contains special `X-Rate-Limit-XXX` headers that would help handle this situation (see [Rate limit response headers](#rate-limit-response-headers)). If you do not see such headers in the response, it means that your app hit some other type of rate limit. Please contact RingCentral developer support if you need to better understand the situation.
 
