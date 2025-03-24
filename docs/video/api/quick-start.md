@@ -35,9 +35,6 @@ Follow the instructions found in our guide to [running Developer Guide code samp
      * `RC_APP_CLIENT_SECRET` - set to the Client Secret of the app you created above
      * `RC_USER_JWT` - set to the [JWT credential you created](../../getting-started/create-credential.md) for yourself
 
-!!! hint "Please use production credentials to call the Video API"
-    RingCentral Video is not currently available in sandbox. To successfully call the API, please do development directly in our production environment.
-
 ## Create a meeting bridge
 
 === "Javascript"

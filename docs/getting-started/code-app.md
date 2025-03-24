@@ -6,7 +6,6 @@ In previous sections of this getting started guide you completed key steps that 
 
 * [Registering an application](register-app.md) to obtain a client ID and client secret
 * [Creating a JWT auth credential](create-credential.md) to facilitate authentication
-* [Setting up a sandbox account](using-sandbox.md) to which you can direct API calls
 
 With these key steps now behind you, the real work of actually building and coding an application can begin. 
 

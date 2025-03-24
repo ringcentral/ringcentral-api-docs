@@ -15,15 +15,15 @@ As you can see from the diagram above, the two protocols are nearly identical, w
 
 ### Step 0. Generate code verifier and code challenge
 
-Before we initiate an authorization request to RingCentral, we need to generate two strings: a code verifier and a code challenge. The code verifier in particular should be a cryptographically-random string, without the '+', '/', and '=' characters. 
+Before we initiate an authorization request to RingCentral, we need to generate two strings: a code verifier and a code challenge. The code verifier, in particular, should be a cryptographically random string without the '+', '/', and '=' characters. 
 
-The code challenge is then derived from code challenge string generated above. For devices that can perform a SHA256 hash, the code challenge is a base 64, URL-encoded string of the SHA-256 hash of the code verifier. Clients that do not have the ability to perform a SHA-256 hash are permitted to use the plain code verifier string as the challenge.
+The code challenge is then derived from the code verifier string generated above. For devices that can perform a SHA256 hash, the code challenge is a Base64, URL-encoded string of the SHA-256 hash of the code verifier. Clients that do not have the ability to perform a SHA-256 hash are permitted to use the plain code verifier string as the challenge.
 
 The code below shows how to generate these two strings:
 
 === "Javascript"
 
-    Javascript developers can install the `crypto` modile like so:
+    Javascript developers can install the `crypto` module like so:
 	
     ```bash
     $ npm install crypto
@@ -84,11 +84,11 @@ _drLS7o5FwkfUiBhlq2hwJnK_SC6yE7sKOde5O1fdzk
 
 ### Step 1. Compose a "request authorization" URL
 
-When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is same as URL from [Authorization Code Flow Step 1](auth-code-flow.md#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in authorization URL:
+When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is the same as the URL from [Authorization Code Flow Step 1](auth-code-flow.md#step-1-request-authorization-code), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in the authorization URL:
 
 {! docs/authentication/login-url-params.inc !} 
 | `code_challenge` | string | Required. Generated from code challenge.
-| `code_challenge_method` | string | Required. The code challenge method, either plain or S256, depending on whether the challenge is the plain verifier string or the SHA256 hash of the string. If this parameter is omitted, the server assumes plain.
+| `code_challenge_method` | string | Required. The code challenge method, either plain or S256, depends on whether the challenge is the plain verifier string or the SHA256 hash of the string. If this parameter is omitted, the server assumes plain.
 
 #### Example Login URL
 
@@ -125,7 +125,7 @@ Location: https://myapp.example.com/oauth2Callback?code=SplxlOBeZQQYbYS6WxSbIA&s
 
 ### Step 3. Exchange auth code for access token
 
-The 'code' your application receives at your Redirect URI is a temporary authorization code that is used to obtain an access token to call the API. If the token is not redeemed in the alotted time, the user will need to go through the login and authorization process again. This is the final step in the process before your app can call the RingCentral API. 
+The 'code' your application receives at your Redirect URI is a temporary authorization code used to obtain an access token to call the API. If the token is not redeemed in the allotted time, the user will need to go through the login and authorization process again. This is the final step before your app can call the RingCentral API. 
 
 To exchange an auth code for an access token, developers will call the RingCentral API similarly to how it is done in the authorization code flow, but with the following key differences:
 

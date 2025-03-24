@@ -41,6 +41,5 @@ RingCentral High Volume SMS supports the following key features:
     * SMS originating from numbers outside of the US and Canada
     * Sending SMSes between US and Canada from 10DLC numbers is not supported (It's supported for Toll Free numbers)
     * Scheduling SMS in advance
-    * Developer sandbox (to test and use the HV SMS APIs, you would need to request your application to be moved to production directly)
 
     If you need to send files, communicate with a group, or send to international destinations, please consider our [Enhanced Business SMS API](../../index.md).

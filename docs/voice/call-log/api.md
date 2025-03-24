@@ -74,7 +74,7 @@ There are two response formats you can receive which are indicated by the `view`
 
 ```json
 {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Simple",
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Simple",
     "id": "CALL_LOG_RECORD_ID",
     "sessionId": "SESSION_ID",
     "startTime": "2016-06-06T18:26:52.000Z",
@@ -100,7 +100,7 @@ Note: The following response data is for the exact same type of Simple Call Log 
 
 ```json
 {
-    "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Detailed",
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/call-log/CALL_LOG_RECORD_ID?view=Detailed",
     "id": "CALL_LOG_RECORD_ID",
     "sessionId": "SESSION_ID",
     "startTime": "2016-06-06T18:26:52.000Z",
@@ -157,7 +157,7 @@ Note: The following response data is for the exact same type of Simple Call Log 
             "transport": "PSTN",
             "legType": "Accept",
             "extension": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/extension/EXTENSION_ID",
+                "uri": "https://platform.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/extension/EXTENSION_ID",
                 "id": EXTENSION_ID
             }
         },
@@ -180,7 +180,7 @@ Note: The following response data is for the exact same type of Simple Call Log 
             "transport": "PSTN",
             "legType": "FindMe",
             "extension": {
-                "uri": "https://platform.devtest.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/extension/EXTENSION_ID",
+                "uri": "https://platform.ringcentral.com/restapi/v1.0/account/ACCOUNT_ID/extension/EXTENSION_ID",
                 "id": EXTENSION_ID
             }
         }

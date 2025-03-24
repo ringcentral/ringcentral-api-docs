@@ -48,12 +48,12 @@ You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.co
 
 ![Postman](../../img/postman_ringcentral_environment.png){.img-fluid}
 
-| Variable | Description |
-|------|-------------|
-| **`RINGCENTRAL_SERVER_URL`** | RingCentral's API URL which would be https://platform.ringcentral.com for Production and https://platform.devtest.ringcentral.com for Sandbox|
-| **`RINGCENTRAL_CLIENT_ID`** | Application's Client ID |
-| **`RINGCENTRAL_CLIENT_SECRET`** | Application's Client Secret |
-| **`RINGCENTRAL_JWT`** | RingCentral user's JWT token from User's Profile -> Credentials |
+| Variable                        | Description                                                           |
+|---------------------------------|-----------------------------------------------------------------------|
+| **`RINGCENTRAL_SERVER_URL`**    | RingCentral's API URL which would be https://platform.ringcentral.com |
+| **`RINGCENTRAL_CLIENT_ID`**     | Application's Client ID                                               |
+| **`RINGCENTRAL_CLIENT_SECRET`** | Application's Client Secret                                           |
+| **`RINGCENTRAL_JWT`**           | RingCentral user's JWT token from User's Profile -> Credentials       |
 
 ### Making an API call
 

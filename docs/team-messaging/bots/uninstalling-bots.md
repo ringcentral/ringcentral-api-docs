@@ -10,8 +10,3 @@ Users that have the "Remove bots" permission assigned to them via their role in 
 
 <img src="../bot-perms.png" class="img-fluid">
 
-## Uninstalling bots from Developer Sandbox
-
-Developers may have the need to remove a bot they have previously installed into their sandbox environment. This is done via the Developer Console. Navigate to your app, select the "Bot" tab, and click the Remove button. 
-
-<img src="../install-bot-dev-console.png" class="img-fluid" style="max-width:500px">

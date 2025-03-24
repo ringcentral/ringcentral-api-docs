@@ -183,7 +183,7 @@ Jump to this [section](#how-to-get-a-call-telephony-session-id-and-party-ids) fo
 
 #### How to find a supervisor device Id
 
-Provided that you have setup a phone device for a supervisor extension using the [account admin portal](https://service.devtest.ringcentral.com). You can learn how to [setup a third-party device for the RingCentral account](https://support.ringcentral.com/s/article/4966?language=en_US).
+Provided that you have setup a phone device for a supervisor extension using the [account admin portal](https://service.ringcentral.com). You can learn how to [setup a third-party device for the RingCentral account](https://support.ringcentral.com/s/article/4966?language=en_US).
 
 To retrieve the supervisor's devices, authorize your app with the supervisor login credentials and call the [List Extension Devices](https://developers.ringcentral.com/api-reference/Devices/listExtensionDevices) API. Parse the device info object under the `records` list and grab the device id of a device you want to use for the call supervision.
 
