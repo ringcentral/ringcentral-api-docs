@@ -296,13 +296,13 @@ nav:
         - 'Objects and data types': 'basics/formats/objects.md'
         - 'Phone numbers': 'basics/formats/phone-numbers.md'
         - 'Resource identification': 'basics/formats/resources.md'
+      - 'Inviting developers': 'basics/inviting-developers.md'
       - 'Rate limits': 'basics/rate-limits.md'
       - 'Working with media content': 'basics/media.md'
       - 'Localization': 'basics/localization.md'
       - 'App URI schemes': 'basics/uri-schemes.md'
       - 'Running code samples': 'basics/code-samples.md'
       - 'Exploring the API': 'basics/explorer.md'
-      - 'Collaborating with developers': 'basics/inviting-developers.md'
       - 'API Change Log':
         - 'Preface': 'basics/changelog/index.md'
         - 'v.1.0.51 (Apr 2022)': 'basics/changelog/1_0_51.md'
@@ -319,6 +319,8 @@ nav:
 
   - 'Applications':
       - 'Tips for your first app': 'basics/your-first-steps.md'
+      - 'App scopes': 'basics/permissions.md'
+      - 'Rate limits': 'basics/rate-limits.md'
       - 'App promotion':
           - 'Submit to the App Gallery': 'getting-started/promote-app.md'
           - 'Using profile variables': 'basics/app-gallery-variables.md'
@@ -338,6 +340,7 @@ nav:
     - 'JWT grant type':
       - 'Getting started': 'authentication/jwt/quick-start.md'
       - 'Configuring an app for JWT': 'authentication/jwt/config-app.md'
+      - 'Create a JWT credential': 'getting-started/create-credential.md'
       - 'Using JWT for public apps': 'authentication/jwt/jwt-for-public-apps.md'
       - 'Troubleshooting': 'authentication/jwt/troubleshooting.md'
     - 'Auth code grant type':

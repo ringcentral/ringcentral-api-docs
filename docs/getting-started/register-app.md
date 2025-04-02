@@ -78,6 +78,8 @@ Begin by selecting the application scopes your app will utilize. This effectivel
 
 !!! tip "For security, request *only* permissions your application requires."
 
+Learn more about [application scopes](../../basics/permissions/).
+
 #### Adding scopes that require approval
 
 Some app scopes may include the text "requires approval." These app scopes require approval because they will allow your application to perform sensitive operations. You are free to add these scopes to your app, and if you do, you will be required to provide an explanation and justification as to why your app requires the request functionality. Then, when you register your application, a support ticket will be filed automatically with the developer support team so that they can review and process your request. 
