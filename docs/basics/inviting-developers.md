@@ -4,27 +4,7 @@ Depending on the app you are building, or the size of your company, you may need
 
 ## How to add a user to your Developer Console account?
 
-### Free developer accounts
-
-If you are using a free developer account, then you can invite a new developer to your account by following these steps:
-
-1. Login to the RingCentral Developer Console. 
-   
-2. Click the "Organization" tab in the left-hand menu.
-   
-<img class="img-fluid" src="../collab-free-dev-list.png">
-
-3. Click the "Invite new developer" button and fill out the form. 
-   
-     <img class="img-fluid" src="../collab-invite-dev.png">
-
-When complete, the developer you invited will receive an email asking them to accept the invitation. When they accept, they will select a password for themselves and automatically be added to your account. 
-
-### Paying-customer developer accounts
-
-If you are a paying customer, then there is a slightly different process since access to the Developer Console is based on your own company's roles, permissions and policies. Here is what you need to do to grant a coworker of yours access to the Developer Console. 
-
-First, the developer you wish to invite needs to be registered as a user in your account via the RingCentral Admin Console. This can be done by navigating to the "Users" tab, and clicking the "Add User" button as shown below. 
+The developer you wish to invite needs to be registered as a user in your account via the RingCentral Admin Console. This can be done by navigating to the "Users" tab, and clicking the "Add User" button as shown below. 
 
 <img class="img-fluid" src="../collab-invite-user.png">
 
