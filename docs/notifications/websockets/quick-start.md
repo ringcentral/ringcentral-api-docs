@@ -77,9 +77,9 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     * Choose Console Application .Net Core -> App
     * Select Target Framework .NET Core 2.1
-    * Enter project name "PubNub_Notifications"
-    * Add NuGet package RingCentral.Net (4.1.0) SDK
-    * Add NuGet package RingCentral.Net.PubNubPCL (1.3.1) SDK
+    * Enter project name "WebSocket_Notifications"
+    * Add NuGet package RingCentral.Net (6.3.1 or latest version) SDK
+    * Add NuGet package RingCentral.Net.WebSocket (2.3.4 or latest version) SDK
 
     ### Edit the file Program.cs
 
@@ -99,14 +99,14 @@ Follow the instructions found in our guide to [running Developer Guide code samp
 
     * Create a new Java project
     * Select the Gradle Project wizard
-    * Enter project name "PubNub_Notifications"
+    * Enter project name "WebSocket_Notifications"
     * Open the <tt>build.gradle</tt> file and add the RingCentral Java SDK to the project as shown below:
 
     ```json hl_lines="3 4",linenums="1"
     dependencies {
         // ...
-        compile 'com.ringcentral:ringcentral:1.4.0'
-        compile 'com.ringcentral:ringcentral-pubnub:1.0.0'
+        compile 'com.ringcentral:ringcentral:3.2.6'
+        compile 'com.ringcentral:ringcentral-websocket:0.2.1'
     }
     ```
 
