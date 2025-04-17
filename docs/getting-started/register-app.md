@@ -78,7 +78,7 @@ Begin by selecting the application scopes your app will utilize. This effectivel
 
 !!! tip "For security, request *only* permissions your application requires."
 
-Learn more about [application scopes](../../basics/permissions/).
+Learn more about [application scopes](../basics/permissions.md).
 
 #### Adding scopes that require approval
 

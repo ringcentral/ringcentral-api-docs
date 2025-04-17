@@ -408,9 +408,6 @@ nav:
       - 'Session recovery': 'notifications/websockets/session-recovery.md'
       - 'Heart beats and keep-alives': 'notifications/websockets/heart-beats.md'
       - 'Migration guide': 'notifications/websockets/migration.md'
-    - 'PubNub push notifications':
-      - 'Getting Started': 'notifications/push-notifications/quick-start.md'
-      - 'Using PubNub': 'notifications/push-notifications/pubnub.md'
     - 'Sample applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
