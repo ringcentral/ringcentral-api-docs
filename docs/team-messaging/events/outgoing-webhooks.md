@@ -51,7 +51,6 @@ RingCentral allows developers to subscribe to specific events by specifying an "
 To get started, try one of our quick starts:
 
 * [Webhook subscription quick start](../../notifications/webhooks/quick-start.md)
-* [PubNub subscription quick start](../../notifications/push-notifications/quick-start.md)
 
 ### Webhook Validation
 
