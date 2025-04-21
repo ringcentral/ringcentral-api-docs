@@ -114,7 +114,6 @@ If the request to the `/restapi/OAuth/revoke` API ends with an error, the client
 | 403                 | SUB-505    | Subscriptions limit exceeded                                                                                                |
 | 404                 | SUB-507    | Subscription with key [${subscriptionKey}] and assigned session [${session}] was expired                                    |
 | 400                 | SUB-508    | Invalid event filters: [${filters}]                                                                                         |
-| 400                 | SUB-509    | findSubscription only works with PubNub transport type                                                                      |
 | 405                 | SUB-511    | Action not allowed for APNS subscription                                                                                    |
 
 ## General API error codes

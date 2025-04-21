@@ -84,7 +84,7 @@ no_breadcrumb:true
       <p class="card-text">Get notified when key events occur so that your app can respond to events in real-time.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./notifications/webhooks/creating-webhooks/" class="card-link">Create a webhook</a></li>
-      <li><a href="./notifications/push-notifications/pubnub/" class="card-link">Push notifications are great for pure client-side apps</a></li>
+      <li><a href="./notifications/websockets/quick-start/" class="card-link">Web Sockets are great for pure client-side apps</a></li>
       <li><a href="https://developers.ringcentral.com/api-reference/Account-Presence-Event" class="card-link">See a list of events you can subscribe to</a></li>
       </ul>
     </div>

@@ -361,7 +361,6 @@ nav:
       - 'Auth code flow': 'authentication/auth-code-flow.md'
       - 'Auth code flow with PKCE': 'authentication/auth-code-pkce-flow.md'
       - 'JWT flow': 'authentication/jwt-flow.md'
-      - 'Password flow': 'authentication/password-flow.md'
 
   - 'Events and notifications':
     - 'Overview': 'notifications/index.md'
@@ -413,7 +412,6 @@ nav:
       - 'Receiving events': 'notifications/websockets/receiving.md'
       - 'Session recovery': 'notifications/websockets/session-recovery.md'
       - 'Heart beats and keep-alives': 'notifications/websockets/heart-beats.md'
-      - 'Migration guide': 'notifications/websockets/migration.md'
     - 'Sample applications':
       - 'Create SMS Push Notification': 'https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/'
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'

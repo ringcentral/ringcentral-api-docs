@@ -99,7 +99,7 @@ Telephony Session Notifications are detailed telephony event notifications that 
 
 - Does the Telephony Session Notification emit the events in the same sequence as seen by the sequence number?</h6>
 
-      It might be the case that sometimes later sequence numbers are emitted first for example an event with a sequence number of 5 can be received before sequence 2 or 3, this can happen due to delay or differences in timing by the Webhook or PubNub event delivery services.
+      It might be the case that sometimes later sequence numbers are emitted first for example an event with a sequence number of 5 can be received before sequence 2 or 3, this can happen due to delay or differences in timing by the Webhook or Web Socket event delivery services.
 
 - Can the Telephony Session Notification be used to subscribe for specific extensions?
   

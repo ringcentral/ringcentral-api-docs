@@ -68,7 +68,7 @@ The renew a webhook, you can also make a `POST` request to the [subscription ren
 
 ## Retrieve a list of active webhook subscriptions
 
-To see a list of all the webhook and event subscriptions that are currently active, make a `GET` request to the [subscription endpoint](https://developers.ringcentral.com/api-reference/Subscriptions/listSubscriptions). This will return a list of all subscriptions, including webhooks and PubNub push notifications.
+To see a list of all the webhook and event subscriptions that are currently active, make a `GET` request to the [subscription endpoint](https://developers.ringcentral.com/api-reference/Subscriptions/listSubscriptions). This will return a list of all subscriptions, including webhooks and Web Socket push notifications.
 
 ## Troubleshooting
 

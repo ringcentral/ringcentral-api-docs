@@ -42,7 +42,7 @@ Every event emitted by the RingCentral platform conforms to a simple structure, 
 
 ## Subscribing to an outgoing event
 
-RingCentral maintains a [generalized subscription framework](../../notifications/index.md) through which all outgoing events emitted by the platform can be subscribed to by a developer. This system allows developers to elect how they wish to receive an event, for example via a webhook, or via PubNub.
+RingCentral maintains a [generalized subscription framework](../../notifications/index.md) through which all outgoing events emitted by the platform can be subscribed to by a developer. This system allows developers to elect how they wish to receive an event, for example via a webhook, or via Web Socket.
 
 In order to subscribe to an outgoing event, your application must have the "Webhook Subscription" scope associated with it. 
 

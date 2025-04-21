@@ -20,7 +20,7 @@ POST /restapi/v1.0/subscription
     "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true"
   ],
   "deliveryMode": {
-    "transportType": "PubNub"
+    "transportType": "Webhook"
   }
 }
 ```
