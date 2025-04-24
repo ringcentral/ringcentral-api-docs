@@ -7,6 +7,7 @@ The RingCentral Video API makes it possible to fetch the meeting history across 
 * a recording if one is available
 * the meeting's public chat (private chat is NOT available through the API)
 * a list of partipants
+* other pertinent meeting metadata
 
 The sample code below will help you construct a call to access this meeting history for the currently logged-in user.. 
 
@@ -34,23 +35,26 @@ One can search one's meeting history using one or more of the following:
 
 ## Accessing the meeting history across an entire account
 
-```js
-platform.get('/rcvideo/v1/history/account/~/meetings')
-.then(function (resp) {
-    console.log( resp.json() )
-});
-```
+For some use cases it is advantageous to be able to query all the meetings that have occurred across any entire account. When iterating over this list of meetings be aware of the following:
+
+* Only admins are permitted to access this API and the meeting details of meetings they did not personally attend
+* Only completed meetings will be returned in this list. 
+
+=== "Javascript"
+
+    ```js
+    {!> code-samples/video/meetings-account.js !}
+    ```
 
 ## Accessing the history of a single meeting
 
 If you know the meeting ID, a single meeting can be retrieved by passing it into the Meeting History endpoint as shown below. This is a good way to poll a single meeting while you wait for a recording to be ready, or for the meeting to end. 
 
-```js
-platform.get('/rcvideo/v1/history/meetings/0fd2ae49-xxxx-7461!us-11-pdx10@us-11')
-.then(function (resp) {
-    console.log( resp.json() )
-});
-```
+=== "Javascript"
+
+    ```js
+    {!> code-samples/video/meetings-single.js !}
+    ```
 
 ## Accessing meeting recordings
 
