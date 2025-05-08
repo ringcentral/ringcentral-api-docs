@@ -11,7 +11,7 @@ const RECIPIENT    = process.env.SMS_RECIPIENT
 var rcsdk = new RC({
     'server':       process.env.RC_SERVER_URL,
     'clientId':     process.env.RC_APP_CLIENT_ID,
-    'clientSecret': process.env.RC_APP_CLIENT__SECRET
+    'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
 var platform = rcsdk.platform();
 
