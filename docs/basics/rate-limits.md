@@ -68,7 +68,7 @@ Usually, the runtime information about rate limit settings is communicated back 
 
 ### What are the specific user-level rate limits associated with my app?
 
-In addition to our default limits, RingCentral administrators have the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits". That will show you a page similar to the following:
+In addition to our default limits, the RingCentral developer support organization has the ability to modify rate limits on an app-by-app basis in order to better service the unique needs of our developers. You can view your app's specific rate limits by logging into the Developer Console, loading your app's dashboard, and clicking "Rate Limits". That will show you a page similar to the following:
 
 <img src="../../img/rate_limits.png" class="img-fluid" width="50%">
 
