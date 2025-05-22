@@ -4,6 +4,15 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 ## Official SDKs
 
+### Specialized SDKs
+
+* [**App Connect**](https://ringcentral.github.io/rc-unified-crm-extension/). App Connect is a developer framework designed around helping connect to CRMs for the primary purpose of logging phone calls. 
+* [**Cloud Phone SDK**](https://ringcentral.github.io/ringcentral-softphone-ts/). This SDK is optimized for interacting with a single phone call's audio stream, for either call recording or streaming audio into a call. 
+* [**Embeddable**](https://ringcentral.github.io/ringcentral-embeddable/). Embeddable is a read-made, extensible javascript phone that you can embed into any web site. It is a client app built using the Web Phone SDK. 
+* [**Web Phone SDK**](https://ringcentral.github.io/ringcentral-web-phone/). This SDK provides the foundation for building custom phone clients using Javascipt. It handles basic SIP commands to making and receiving calls, along with access to the events you need to power a client experience. 
+
+### REST APIs
+
 * [RingCentral.Net](https://github.com/ringcentral/RingCentral.Net) - .NET library
 * [ringcentral-java](https://github.com/ringcentral/ringcentral-java) - Java library
 * [ringcentral-js](https://github.com/ringcentral/ringcentral-js) - JavaScript library
