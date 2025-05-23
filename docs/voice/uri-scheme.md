@@ -41,3 +41,7 @@ Many browsers will support the native `rcmobile` and `tel` URI Schemes via a sta
 var w = (window.parent)?window.parent:window;
 w.location.assign('rcmobile://call?number=16501112222');
 ```
+
+## Learn more
+
+Access a full list of [URI and URI schemes](../basics/uri-schemes.md)

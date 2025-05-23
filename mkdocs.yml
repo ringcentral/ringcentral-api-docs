@@ -149,7 +149,7 @@ nav:
       - 'Pagination': 'team-messaging/manual/pagination.md'
 #      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Mentions': 'team-messaging/manual/mentions.md'
-      - 'Composing deep links': 'team-messaging/manual/links.md'
+      - 'Composing deep links': 'basics/uri-schemes.md'
     - 'Team Messaging events':
       - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
       - 'Post events': 'team-messaging/events/posts.md'
