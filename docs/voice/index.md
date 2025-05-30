@@ -14,7 +14,7 @@
 
 <p class="h2">Overview</p>
 
-Before you dive into the Voice API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings on one another. They are:
+Before you dive into the Voice API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings of one another. They are:
 
 1. **Provisioning API** - Provisioning is the process by which a network is setup with all of the extensions and phones that comprise an organization's telephony network.
 
