@@ -15,7 +15,7 @@ platform.on(platform.events.loginSuccess, () => {
 
 async function get_personal_meeting_id() {
     console.log("Getting personal chat")
-    var endpoint = "/restapi/v1.0/glip/chats"
+    var endpoint = "/team-messaging/v1/chats"
     var params = {
 	type: 'Personal'
     }

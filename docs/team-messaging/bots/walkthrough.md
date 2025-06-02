@@ -124,7 +124,7 @@ A public bot access token is per user (customer) account, this means that every 
 ??? info "Code walkthrough: bot authorization"
     Sample code of a private bot auth handler:
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:78-122] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:72-116] !}
     ```
   	Sample code of a public bot auth handler:
     ```js
@@ -137,12 +137,12 @@ After getting an access token, the bot must subscribe to Team Messaging event no
     #### Private bots
 	Calling the function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:116-118] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:110-112] !}
     ```
 
 	The function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:168-196] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:162-190] !}
     ```
 
     #### Public bots
@@ -153,7 +153,7 @@ After getting an access token, the bot must subscribe to Team Messaging event no
 
 	The function to subscribe to events
     ```js
-    {!> code-samples/team-messaging/public-bot.js [ln:207-237] !}
+    {!> code-samples/team-messaging/public-bot.js [ln:203-233] !}
     ```
 
 ??? tldr "Discussion: observe the console of your local bot server"
@@ -238,13 +238,13 @@ You will notice that the bot responds 'pong' to your message.
     The sample code below shows a private bot receiving a user's message and responding to the user with a message.
 
     ```js
-    {!> code-samples/team-messaging/private-bot.js [ln:124-127,135-142,166,244-253] !}
+    {!> code-samples/team-messaging/private-bot.js [ln:118-121,129-140,160,238-248] !}
     ```
 
     The sample code below shows a public bot receiving a user's message and responding to the user with a message. A key difference between a public and private bot is that a public bot needs to load the correct access token corresponding to the account they will need to post a message back to. If the wrong access token is used, then you will receive an error.
 
     ```js
-    {!> code-samples/team-messaging/public-bot.js [ln:143-146,160-172,201,286-296] !}
+    {!> code-samples/team-messaging/public-bot.js [ln:143-146,160-176,201,286-296] !}
     ```
 
 ??? tldr "Discussion: observe your bot sending and receiving messages"
@@ -311,7 +311,7 @@ You will notice that the bot responds 'pong' to your message.
 In the final step, we will modify the sample application to respond to your sending of custom messages to the bot. Begin by editing either the `private-bot.js` or the `public-bot.js` file in your favorite editor. Uncomment the *else if* and *send_message* lines below. Then select your own custom command or "keyword" your bot will respond to, and then post a reply when that keyword is received.
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:124-145] !}
+{!> code-samples/team-messaging/private-bot.js [ln:137-139] !}
 ```
 
 ## Summary

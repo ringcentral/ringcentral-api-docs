@@ -16,16 +16,16 @@ platform.on(platform.events.loginSuccess, function(){
 async function create_team(){
   try {
     let bodyParams = {
-      "name": "The second Death Star",
-      "description": "Another Death Star!? Are you kidding?",
-      "public": true,
-      "members": [
-          { "id": 1 },
-          { "email": "luke.skywalker@rebelalliance.org" },
-          { "email": "han.solo@rebelalliance.org" }
-      ]
-    }
-    let endpoint = "/restapi/v1.0/glip/teams"
+        name: "The second Death Star",
+        description: "Another Death Star!? Are you kidding?",
+        public: true,
+        members: [
+            { id: 1 },
+            { email: "luke.skywalker@rebelalliance.org" },
+            { email: "han.solo@rebelalliance.org" }
+        ]
+      }
+    let endpoint = "/team-messaging/v1/teams"
     let resp = await platform.post(endpoint, bodyParams)
     let jsonObj = await resp.json()
     console.log(`Team id ${jsonObj.id} created.`)

@@ -79,6 +79,22 @@
           "value": "Publish the developer guide after review and editing.",
           "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         }
-      ]
-    }
+      ],
+      "AIScore": [
+        {
+          "value": "8"
+        }
+      ],
+      "BulletedSummary": [
+      {
+        "value": "Agent confirmed they were recording the call for sentiment analysis purposes."
+      },
+      ...
+    ],
+    "CallNotes": [
+      {
+        "value": "Call notes.\nAgent expressed frustration over internal communication issues and ..."
+      }
+    ]
+  }
 }

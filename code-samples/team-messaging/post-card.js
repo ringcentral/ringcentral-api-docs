@@ -16,27 +16,27 @@ platform.on(platform.events.loginSuccess, () => {
 })
 
 async function post_card( group ) {
-    try {
-	var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/adaptive-cards', {
-	    "type": "AdaptiveCard",
-	    "body": [
-		{
-		    "type": "TextBlock",
-		    "size": "Medium",
-		    "weight": "Bolder",
-		    "text": "Adaptive Card example"
-		},
-		{
-		    "type": "Image",
-		    "url": "https://bit.ly/3nwZbRM"
-		}
-	    ],
-	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-	    "version": "1.3"
-	});
-	var jsonObj = await resp.json()
-	console.log( JSON.stringify(jsonObj) )
-    } catch (e) {
-	console.log(e)
-    }
+  try {
+    var resp = await platform.post(`/team-messaging/v1/chats/${group}/adaptive-cards`, {
+      "type": "AdaptiveCard",
+      "body": [
+        {
+          "type": "TextBlock",
+          "size": "Medium",
+          "weight": "Bolder",
+          "text": "Adaptive Card example"
+        },
+        {
+          "type": "Image",
+          "url": "https://bit.ly/3nwZbRM"
+        }
+      ],
+      "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+      "version": "1.3"
+    });
+    var jsonObj = await resp.json()
+    console.log( JSON.stringify(jsonObj) )
+  } catch (e) {
+    console.log(e)
+  }
 }

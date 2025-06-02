@@ -23,30 +23,30 @@ Bots post adaptive cards to a chat via the REST API, for which a different set o
 
 Sample code of a private bot:
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:256-264] !}
+{!> code-samples/team-messaging/private-bot.js [ln:250-258] !}
 ```
 
 Sample code of a public bot:
 ```js
-{!> code-samples/team-messaging/public-bot.js [ln:297-306] !}
+{!> code-samples/team-messaging/public-bot.js [ln:298-306] !}
 ```
 
 Next, we want to update the bot to respond to a new command. When a user types "hello" to the bot, the bot will respond by posting a card. Let's update our callback handler accordingly:
 
 Sample code of a private bot:
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:124-127,146-148,166] !}
+{!> code-samples/team-messaging/private-bot.js [ln:118-121,140-143,160,250-258] !}
 ```
 
 Sample code of a public bot:
 ```js
-{!> code-samples/team-messaging/public-bot.js [ln:143-146,176-178,201] !}
+{!> code-samples/team-messaging/public-bot.js [ln:143-146,176-178,201,298-306] !}
 ```
 
 Finally, create a helper function to return the JSON for an adaptive card:
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:276-333] !}
+{!> code-samples/team-messaging/private-bot.js [ln:270-327] !}
 ```
 
 With the above changes made to your bot app, you will be able to post an adaptive card instead of just a text message.
@@ -68,7 +68,7 @@ Next, we go back to our code to add an express handler for receiving adaptive ca
 **Sample code of a private bot**
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:230-242] !}
+{!> code-samples/team-messaging/private-bot.js [ln:224-236] !}
 ```
 
 **Sample code of a public bot**
@@ -86,14 +86,14 @@ In this example, we demonstrate both how to send a response by posting a new car
 You will observe that the card we posted contains two buttons, one to instruct the server to post a response as a new card, and one to instruct the server to update the existing card specified in the `data.path` value. When we receive a *user-submit* event, we will detect the `data.path` value and decide to post back accordingly.
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:298-318] !}
+{!> code-samples/team-messaging/private-bot.js [ln:270-327] !}
 ```
 
 ## Send response in a new card
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:230-231,234-236,242] !}
-{!> code-samples/team-messaging/private-bot.js [ln:334-354] !}
+{!> code-samples/team-messaging/private-bot.js [ln:224-231,234-236] !}
+{!> code-samples/team-messaging/private-bot.js [ln:249-258] !}
 ```
 
 <img class="img-fluid" src="../../manual/bot-send-card.png" >
@@ -101,8 +101,8 @@ You will observe that the card we posted contains two buttons, one to instruct t
 ## Update a card with the response
 
 ```js
-{!> code-samples/team-messaging/private-bot.js [ln:230-231,237-240,242] !}
-{!> code-samples/team-messaging/private-bot.js [ln:265-274] !}
+{!> code-samples/team-messaging/private-bot.js [ln:224-227,231-236] !}
+{!> code-samples/team-messaging/private-bot.js [ln:259-268] !}
 ```
 
 <img class="img-fluid" src="../../manual/bot-update-card.png" >

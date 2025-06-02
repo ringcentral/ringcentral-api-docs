@@ -13,7 +13,7 @@ $platform = $rcsdk->platform();
 // Authenticate a user using a personal JWT token
 try {
   $platform->login( [ "jwt" => $_ENV['RC_USER_JWT'] ] );
-  //call_ring_out();
+  call_ring_out();
 } catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->getMessage() . PHP_EOL);
 }
@@ -62,6 +62,11 @@ function boostrap_test_function(){
   // sleep(2);
   // print_r ("Test list call monitoring group". PHP_EOL);
   //require_once (__DIR__ .'/code-snippets/call-monitoring-group.php');
-  require_once (__DIR__ .'/code-snippets/call-supervision.php');
+  // require_once (__DIR__ .'/code-snippets/call-supervision.php');
+
+  // require_once (__DIR__ .'/code-snippets/change-fac-state-call-terminating-rules.php');
+  // require_once (__DIR__ .'/code-snippets/set-fac-state-schedule.php');
+
+  require_once (__DIR__ .'/code-snippets/create-interaction-rule.php');
 }
 ?>

@@ -125,7 +125,7 @@ app.post('/webhook-callback', async function (req, res) {
     res.setHeader('Validation-Token', validationToken);
   } else if (req.body.event == "/restapi/v1.0/subscription/~?threshold=60&interval=15") {
     console.log("Renewing subscription ID: " + req.body.subscriptionId);
-    renewSubscription(req.body.subscriptionId);
+    //renewSubscription(req.body.subscriptionId);
   } else if (req.body.body.eventType == "PostAdded") {
     var body = req.body.body
     console.log("Received user's message: " + body.text);
@@ -164,8 +164,8 @@ async function subscribeToEvents(){
   console.log("Subscribing to posts and groups events")
   var requestData = {
     eventFilters: [
-      "/restapi/v1.0/glip/posts", // Team Messaging (a.k.a Glip) events.
-      "/restapi/v1.0/glip/groups", // Team Messaging (a.k.a Glip) events.
+      "/team-messaging/v1/posts", // Team Messaging (a.k.a Glip) events.
+      "/team-messaging/v1/chats", // Team Messaging (a.k.a Glip) events.
       "/restapi/v1.0/account/~/extension/~", // Subscribe for this event to detect when a bot is uninstalled
       "/restapi/v1.0/subscription/~?threshold=60&interval=15" // For subscription renewal
     ],
@@ -239,7 +239,7 @@ app.post('/user-submit', function (req, res) {
 async function send_message( groupId, message ) {
     console.log("Posting response to group: " + groupId);
     try {
-      await platform.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
+      await platform.post(`/team-messaging/v1/chats/${groupId}/posts`, {
   	     "text": message
        })
     }catch(e) {
@@ -251,7 +251,7 @@ async function send_message( groupId, message ) {
 async function send_card( groupId, card ) {
     console.log("Posting a card to group: " + groupId);
     try {
-      var resp = await platform.post(`/restapi/v1.0/glip/chats/${groupId}/adaptive-cards`, card)
+      var resp = await platform.post(`/team-messaging/v1/chats/${groupId}/adaptive-cards`, card)
     }catch (e) {
       console.log(e)
     }
@@ -261,7 +261,7 @@ async function send_card( groupId, card ) {
 async function update_card( cardId, card ) {
     console.log("Updating card...");
     try {
-      var resp = await platform.put(`/restapi/v1.0/glip/adaptive-cards/${cardId}`, card)
+      var resp = await platform.put(`/team-messaging/v1/adaptive-cards/${cardId}`, card)
     }catch (e) {
       console.log(e.message)
     }

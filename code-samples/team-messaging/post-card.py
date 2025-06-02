@@ -22,7 +22,7 @@ try:
 except Exception as e:
   sys.exit("Unable to authenticate to platform: " + str(e))
 
-endpoint = "/restapi/v1.0/glip/chats/" + CHAT_ID + '/adaptive-cards'
+endpoint = "/team-messaging/v1/chats/" + CHAT_ID + '/adaptive-cards'
 card = {
     "type": "AdaptiveCard",
     "body": [

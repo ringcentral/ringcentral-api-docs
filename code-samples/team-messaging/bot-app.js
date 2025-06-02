@@ -153,7 +153,7 @@ app.post('/callback', function(req, res) {
 // Post a message to a chat
 function send_message(msg, group) {
     console.log("Posting response to group: " + group);
-    platform.post('/restapi/v1.0/glip/chats/' + group + '/posts', {
+    platform.post('/team-messaging/v1/chats/' + group + '/posts', {
         "text": msg
     }).catch(function(e) {
         console.log(e)
@@ -165,8 +165,8 @@ function subscribeToEvents(token) {
     console.log("Subscribing to post and group events")
     var requestData = {
         "eventFilters": [
-            "/restapi/v1.0/glip/posts",
-            "/restapi/v1.0/glip/groups",
+            "/team-messaging/v1/posts",
+            "/team-messaging/v1/chats",
             "/restapi/v1.0/subscription/~?threshold=60&interval=15"
         ],
         "deliveryMode": {

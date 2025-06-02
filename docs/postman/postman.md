@@ -1,4 +1,4 @@
-# Using Postman to test Enhanced Business SMS APIs
+# Using Postman to test RingEX APIs
 
 For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for Enhanced Business SMS. If you use Postman, the we recommend using the collection as it provides authorization handling using Postman variables and environments as recommended by Postman.
 
@@ -13,7 +13,7 @@ This document describes how to install and use the Postman 2.1 Collection.
 
 This Postman spec is designed for following environment:
 
-* Current RingCentral RingEX account located at: https://www.ringcentral.com. 
+* Current RingCentral RingEX account located at: https://www.ringcentral.com.
 * RingCentral app created at https://developers.ringcentral.com with JWT auth flow enabled.
 
 ## Using Postman
@@ -44,7 +44,7 @@ The Postman Collection uses environment variables for authentication and authori
 3. Choose a name of your choice.
 4. Enter your enviroment variables as described below.
 5. Click the "Add" button to finish adding this environment.
-You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_environment.postman_environment.json) export as reference. 
+You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_environment.postman_environment.json) export as reference.
 
 ![Postman](../../img/postman_ringcentral_environment.png){.img-fluid}
 
