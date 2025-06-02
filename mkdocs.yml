@@ -63,11 +63,19 @@ nav:
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'Call Routing':
+    - 'User Call Handling':
+      - 'Overview': 'voice/call-routing/user-call-handling/index.md'
+      # - 'State-based Triggers': 'voice/call-routing/user-call-handling/states.md'
+      - 'State-based Rules': 'voice/call-routing/user-call-handling/states-and-rules.md'
+      - 'Interaction Rules': 'voice/call-routing/user-call-handling/interaction-rules.md'
+      # - 'Call Handling Rules': 'voice/call-routing/user-call-handling/call-handling-rules.md'
+      - 'Legacy Answering Rules': 'voice/call-routing/user-call-handling/legacy-user-call-handling.md'
+      - 'Migration Guidance': 'voice/call-routing/user-call-handling/migration-guide.md'
+    - 'Company Call Handling':
+    # - 'Call Handling':
       - 'Overview': 'voice/call-routing/index.md'
-      - 'Get Started': 'voice/call-routing/get-started.md'
-      - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
-      - 'User Answering Rules': 'voice/call-routing/manual/user-answering-rules.md'
+      # - 'Get Started': 'voice/call-routing/get-started.md'
+      # - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
       - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
       - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
       - 'Call Queue Presence': 'voice/call-routing/manual/call-queues-presence.md'
@@ -105,10 +113,13 @@ nav:
     - 'Getting Started': 'messaging/quick-start.md'
     - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
+      - 'SMS Enablement & Configuration': 'messaging/sms/sms-requirements.md'
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
-      - 'Postman': 'messaging/sms/postman.md'
+      #- 'Postman': 'messaging/sms/postman.md'
+    - 'SMS Consent':
+      - 'Consent management': 'messaging/sms/messaging-consent-management.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
@@ -417,4 +428,7 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
 
   - 'Downloads and SDKs': sdks.md
+
+  - 'Postman': postman/postman.md
+
   - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'

@@ -34,7 +34,7 @@ The following SDKs provide developers with libraries that make interfacing with 
 
 ??? tldr "I can't find an SDK for my preferred language..."
     If you are unable to find a client SDK, you can create one using our [Open API / Swagger 2.0 API specification](https://netstorage.ringcentral.com/dpw/api-reference/specs/rc-platform.yml?v=2019110620191017-1140) using Swagger Codegen which supports the following languages:
-    
+
     ActionScript, Ada, Apex, Bash, C# (.net 2.0, 3.5 or later), C++ (cpprest, Qt5, Tizen), Clojure, Dart, Elixir, Elm, Eiffel, Erlang, Go, Groovy, Haskell (http-client, Servant ), Java (Jersey1.x, Jersey2.x, OkHttp, Retrofit1.x, Retrofit2.x, Feign, RestTemplate, RESTEasy, Vertx, Google API Client Library for Java, Rest-assured), Kotlin, Lua, Node.js (ES5, ES6, AngularJS with Google Closure Compiler annotations ), Objective-C, Perl, PHP, PowerShell, Python, R, Ruby, Rust (rust, rust-server), Scala (akka, http4s, swagger-async-httpclient ), Swift (2.x, 3.x, 4.x), Typescript (Angular1.x, Angular2.x, Fetch, jQuery, Node )
 
 ## Community SDKs and Sample Apps

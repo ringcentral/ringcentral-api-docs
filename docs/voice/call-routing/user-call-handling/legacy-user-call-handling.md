@@ -1,4 +1,58 @@
-# User Answering Rules
+# User Answering Rules (Legacy)
+
+!!! important
+    - This developer guide explains how to use the User Answering Rule API for RingCentral accounts that have not yet been upgraded to the [Enhanced User Call Handling](../user-call-handling/index.md) features.
+
+    - If your RingCentral account has been upgraded to support enhanced user call handling, [click here](../user-call-handling/index.md) to learn about the new User Call Handling APIs.
+
+    - If you have already implemented user answering rules using the legacy API and your account has since been upgraded, please refer to the [migration guide](../user-call-handling/migration-guide.md) to update your code accordingly.
+
+
+If you are not sure about if your account has been upgraded or not, call the following API to detect.
+
+```http
+GET `/restapi/v1.0/account/~/extension/~/features?featureId=NewCallHandlingAndForwarding`
+
+HTTP 200 OK
+```
+
+Response from an upgraded account
+
+```json
+{
+  "records": [
+    {
+      "id": "NewCallHandlingAndForwarding",
+      "available": true,
+      "params": [
+        {
+          "name": "isNewBackendAvailable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Response from a legacy account
+
+```json
+{
+  "records": [
+    {
+      "id": "NewCallHandlingAndForwarding",
+      "available": true,
+      "params": [
+        {
+          "name": "isNewBackendAvailable",
+          "value": "false"
+        }
+      ]
+    }
+  ]
+}
+```
 
 User Answering Rules can be used to create and manage the logic for routing incoming calls to a particular user/extension. If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](answering-rules.md).
 
@@ -41,7 +95,7 @@ The following parameters are used for specifying call handling conditions.
 | `UnconditionalForwarding` | Forward an incoming call immediately to a specified number. |
 | `TakeMessagesOnly` | Play back a voicemail greeting then forward an incoming call to a voice mailbox. |
 | `PlayAnnouncementOnly` | Play back a pre-recorded announcement then hang up. |
-| `TransferToExtension` | Forward an incoming call (dialed to a [Call Queue](call-queues.md) extension) to a specific extension. |
+| `TransferToExtension` | Forward an incoming call to a specific extension. |
 | `AgentQueue` | Forward an incoming call (dialed to a [Call Queue](call-queues.md) extension) to one or more specified agents. |
 
 !!! info "Required Fields"
@@ -82,7 +136,7 @@ The following code sample shows how to create a user custom answering rule that 
     ```c#
     {!> code-samples/voice/user-answering-rules.cs !}
     ```
-    
+
 === "Java"
 
     ```java

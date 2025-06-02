@@ -15,19 +15,21 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
-  call_ringout()
+  call_ring_out()
 })
 
 /*
 * Place a ring-out call
 */
-async function call_ringout() {
+async function call_ring_out() {
   try {
-    var resp = await platform.post('/restapi/v1.0/account/~/extension/~/ring-out', {
-      'from': { 'phoneNumber': CALLER },
-      'to': { 'phoneNumber': RECIPIENT },
-      'playPrompt': false
-    })
+    let bodyParams = {
+      from: { phoneNumber: CALLER },
+      to: { phoneNumber: RECIPIENT },
+      playPrompt: false
+    }
+    let endpoint = '/restapi/v1.0/account/~/extension/~/ring-out'
+    var resp = await platform.post(endpoint, bodyParams)
     var jsonObj = await resp.json()
     console.log("Call placed. Call status: " + jsonObj.status.callStatus)
   } catch (e) {
@@ -62,10 +64,10 @@ async function boostrap_test_function(){
   // require ('./code-snippets/call-monitoring-group.js')
   // return
 
-  await sleep(2000)
-  console.log("Test Supervise Call Session")
-  require ('./code-snippets/call-supervision.js')
-  return
+  // await sleep(2000)
+  // console.log("Test Supervise Call Session")
+  // require ('./code-snippets/call-supervision.js')
+  // return
 
 /*
   await sleep(2000)
@@ -99,4 +101,24 @@ async function boostrap_test_function(){
   require ('./code-snippets/punctuation.js')
   return
 */
+
+  // await sleep(2000)
+  // console.log("Test Call Handling V2")
+  // require ('./code-snippets/change-fac-state-call-terminating-rules.js')
+  // return
+
+  // await sleep(2000)
+  // console.log("Test Call Handling V2")
+  // require ('./code-snippets/set-fac-state-schedule.js')
+  // return
+
+  // await sleep(2000)
+  // console.log("Test Interaction Rule V2")
+  // require ('./code-snippets/create-interaction-rule.js')
+  // return
+
+  await sleep(2000)
+  console.log("Test Interaction Rule V2")
+  require ('./code-snippets/create-company-answering-rule.js')
+  return
 }

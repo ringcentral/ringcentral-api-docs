@@ -19,17 +19,16 @@ const { Template } = require('adaptivecards-templating');
 const cardTemplate = require('callNotesCard.json');
 
 async function post_card( group ) {
-    try {
-        var cardData = {
-            'callerPhoneNumber' : '510-555-2823'
-        }
-        const template = new Template(cardTemplate);
-        const card = template.expand({ $root: cardData });
-        var resp = await platform.post('/restapi/v1.0/glip/chats/'+group+'/adaptive-cards',
-                                       card);
-        var jsonObj = await resp.json()
-        console.log( JSON.stringify(jsonObj) )
-    } catch (e) {
-        console.log(e)
+  try {
+    var cardData = {
+      'callerPhoneNumber' : '510-555-2823'
     }
+    const template = new Template(cardTemplate);
+    const card = template.expand({ $root: cardData });
+    var resp = await platform.post(`/team-messaging/v1/chats/${group}/adaptive-cards`, card);
+    var jsonObj = await resp.json()
+    console.log( JSON.stringify(jsonObj) )
+  } catch (e) {
+    console.log(e)
+  }
 }

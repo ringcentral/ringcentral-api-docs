@@ -16,14 +16,14 @@ platform.on(platform.events.loginSuccess, () => {
 })
 
 async function post_note( group ) {
-    try {
-	var resp = await platform.post('/team-messaging/v1/chats/'+group+'/notes', {
-	    "title": "This is a note",
-	    "body": "<strong>heading</strong><br><br>Any HTML can be entered here."
-	});
-	var jsonObj = await resp.json()
-	console.log( JSON.stringify(jsonObj) )
-    } catch (e) {
-	console.log(e)
-    }
+  try {
+    var resp = await platform.post('/team-messaging/v1/chats/'+group+'/notes', {
+      "title": "This is a note",
+      "body": "<strong>heading</strong><br><br>Any HTML can be entered here."
+    });
+    var jsonObj = await resp.json()
+    console.log( JSON.stringify(jsonObj) )
+  } catch (e) {
+    console.log(e)
+  }
 }

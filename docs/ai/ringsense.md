@@ -85,5 +85,8 @@ The `insights` is an object that may contain the following objects:
 | `Summary`     | List   | A list of JSON objects. Each object contains the summary value and related metadata.    |
 | `HighLights`  | List   | A list of JSON objects. Each object contains the highlight value and related metadata.  |
 | `NextSteps`   | List   | A list of JSON objects. Each object contains the next step value and related metadata.  |
+| `AIScore`     | List   | A list of JSON objects. Each object contains the call score value.  |
+| `BulletedSummary`   | List   | A list of JSON objects. Each object contains the bullet point summary.  |
+| `CallNotes`   | List   | A list of JSON objects. Each object contains the taken notes from the call conversation. Each bulleted summary is separated by a new line "\n".  |
 
 When processing the insights objects—such as reconstructing conversations using the utterances in the `Transcript` objects, you can match the speaker ID from a transcript object with the corresponding speaker ID in the `speakerInfo` object. This allows you to display the speaker's name (if available) alongside the utterance text.

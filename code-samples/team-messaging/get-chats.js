@@ -10,7 +10,7 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
-    platform.get("/restapi/v1.0/glip/chats", {
+    platform.get("/team-messaging/v1/chats", {
         "recordCount": 20
     })
         .then(function(resp) {

@@ -34,7 +34,7 @@ platform = rcsdk.platform()
 def login():
     try:
       platform.login( jwt=os.environ.get('RC_USER_JWT') )
-      #call_ring_out()
+      call_ring_out()
     except Exception as e:
       sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
 
@@ -64,15 +64,15 @@ def boostrap_test_function():
     # ms = importlib.import_module("code-snippets.call-monitoring-group")
     # ms.platform = platform
     # ms.read_call_monitoring_groups()
-
-    time.sleep (2)
-    print ("Test supervise call session")
-    ms = importlib.import_module("code-snippets.call-supervision")
-    ms.platform = platform
-    supervisorDeviceId = "802636634016"
-    agentExtensionId = "62295327016"
-
-    ms.read_agent_active_calls(agentExtensionId, supervisorDeviceId)
+    #
+    # time.sleep (2)
+    # print ("Test supervise call session")
+    # ms = importlib.import_module("code-snippets.call-supervision")
+    # ms.platform = platform
+    # supervisorDeviceId = "802636634016"
+    # agentExtensionId = "62295327016"
+    #
+    # ms.read_agent_active_calls(agentExtensionId, supervisorDeviceId)
 
     #print ("")
     # time.sleep (2)
@@ -87,5 +87,16 @@ def boostrap_test_function():
     #ms.platform = platform
     #ms.read_enrollments()
 
+    # ms = importlib.import_module("code-snippets.change-fac-state-call-terminating-rules")
+    # ms.platform = platform
+    # ms.read_user_fac_state_rules()
+
+    # ms = importlib.import_module("code-snippets.set-fac-state-schedule")
+    # ms.platform = platform
+    # ms.set_user_fac_state_schedule()
+
+    ms = importlib.import_module("code-snippets.create-interaction-rule")
+    ms.platform = platform
+    ms.create_user_interaction_rule()
 # must be on the last line!
 boostrap_test_function()

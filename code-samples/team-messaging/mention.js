@@ -10,13 +10,21 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
-    try {
-        var personId = "1234";
-        var groupId = "5678";
-        await platform.post(`/restapi/v1.0/glip/chats/${groupId}/posts`, {
-            "text": `Here is a mention: ![:Person](${personId})`
-        })
-    } catch(e) {
-        console.log(e)
-    }
+    post_mention()
 })
+
+async function post_mention(){
+  try {
+    let personId = "1234";
+    let groupId = "5678";
+    let endpoint = `/team-messaging/v1/chats/${groupId}/posts`
+    let bodyParams = {
+          text: `Here is a mention: ![:Person](${personId})`
+        }
+    let resp = await platform.post(endpoint, bodyParams)
+    let jsonObj = await resp.json()
+    console.log(jsonObj)
+  } catch(e) {
+    console.log(e.message)
+  }
+}

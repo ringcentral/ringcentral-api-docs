@@ -1,0 +1,374 @@
+# User Call Handling States
+
+User call handling states are predefined system conditions that determine how incoming calls are routed based on a user’s availability and configured preferences. Each user extension has four primary conditional states:
+
+- Forward-All-Calls
+- Do-Not-Disturb (DND)
+- Work-Hours
+- After-Hours (applicable when Work-Hours are not set to 24/7)
+
+These states can be configured with schedule-based conditions to ensure that calls are handled appropriately throughout the day.
+
+The call handling states hierarchy is described in the following diagram:
+
+<img class="img-fluid" src="../../../../img/standard-states.png" style="max-width:600px;">
+Extension call forwarding hierarchy
+
+The 'after-hours' state is automatically created when the 'work-hours' state schedule is configured for specific days and times. And when the 'work-hours' state is rescheduled to 24/7, the system will automatically delete the 'after-hours' state.
+
+Additionally, when a user extension is added to a call queue, the system automatically generates the ‘agent’ state, which manages how they receive calls from the call queue based on their availability. By default, the agent state inherits the schedule conditions and the ring settings from the user’s ‘work-hours’ state.
+
+<img class="img-fluid" src="../../../../img/agent-state.png" style="max-width:600px;">
+  Extension queue call handling hierarchy
+
+To retrieve a user's state scheduling conditions, use the API below:
+
+``` HTTP
+GET /restapi/v2/accounts/~/extensions/~/comm-handling/states
+```
+
+## Forward-All-Calls State
+
+The **‘forward-all-calls’** state is the top priority for handling incoming calls. This state is suitable for a user's long term unavailability such as when a user is on vacation or when a user knows in advance when he or she will be unavailable and when he or she will become available to handle incoming calls.
+
+If a user’s ‘forward-all-calls’ state is active,
+
+ - all direct incoming calls to the user will be dispatched according to the predefined dispatching rule of the state.
+ - all call queue calls will not be routed to the user. Instead, the system will route the call to the next agent on the call queue.
+
+The default state schedule condition is daily 24 hours.
+
+```json
+"state": {
+    "id": "forward-all-calls",
+    "enabled": false,
+    "displayName": "Forward all calls",
+    "conditions": [ {
+      "schedule": {
+        "triggers": [ {
+          "triggerType": "Daily",
+          "startTime": "00:00:00",
+          "endTime": "23:59:59"
+        } ]
+      },
+      "type": "Schedule"
+    } ]
+  }
+```
+
+The schedule condition can be set for a specific time period, defined by the 'startDateTime' and 'endDateTime' values.
+
+```json
+"state" : {
+    "id" : "forward-all-calls",
+    "enabled": true,
+    "displayName" : "Forward all calls",
+    "conditions" : [ {
+      "schedule" : {
+        "triggers" : [ {
+          "triggerType" : "Range",
+          "ranges" : [ {
+            "startDateTime" : "2025-01-06T11:00:00",
+            "endDateTime" : "2025-01-07T11:00:00"
+          } ]
+        } ]
+      },
+      "type" : "Schedule"
+    } ]
+  }
+```
+
+To set a schedule for the ‘forward-all-calls’ state, call the following API  with appropriate parameters
+
+``` http
+PATCH  /restapi/v2/accounts/~/extensions/~/comm-handling/states/forward-all-calls
+```
+
+!!! notes
+    - Only one schedule can be set at a time.
+    - Only “Daily” or “Range” trigger types are allowed.
+    - You must set the “enabled” flag to true when you schedule for a specific time period.
+    - When the ‘range’ scheduled time expires, the ‘enabled’ flag will remain true. It’s the developer’s responsibility to check the schedule conditions to indicate to the user if the schedule is active or not. Do not just rely solely on the ‘enabled’ flag value.
+
+## Do-not-Disturb State
+
+The Do-Not-Disturb (‘dnd’) state has the second-highest priority for handling incoming calls, following the "Forward All Calls" state. This call-handling state is linked to the user's presence statuses, `dndStatus` and `dndStatusPersonal`.
+
+When the ‘dnd’ state is enabled, the system updates both `dndStatus` and `dndStatusPersonal` to "DoNotAcceptAnyCalls". When the ‘dnd’state is disabled, `dndStatusPersonal` reverts to "TakeAllCalls", while `dndStatus` reverts to either "TakeAllCalls" or "DoNotAcceptDepartmentCalls" if it was previously set to that status before the ‘dnd’ state was activated.
+
+|User’s ‘dnd’ state | User’s ‘dnd’ presence|
+|||
+|`enabled` = true | `dndStatus` = 'DoNotAcceptAnyCalls' <br>`dndStatusPersonal` = 'DoNotAcceptAnyCalls'|
+|`enabled` = false | `dndStatus` = 'DoNotAcceptDepartmentCalls’ **Or** 'TakeAllCalls' <br>`dndStatusPersonal` = 'TakeAllCalls'|
+
+This state is ideal for situations where a user needs to be temporarily unavailable without a predetermined duration. It provides flexibility in managing call availability without requiring a defined time frame..
+
+Example Use Case:
+
+A customer support agent steps away from their desk unexpectedly to handle an urgent personal matter. Since they are unsure how long they will be unavailable, they activate the "Do not disturb" state. This ensures that incoming calls are automatically redirected according to predefined rules, preventing missed calls or disruptions while they are away.
+
+When a user's 'dnd’ state is active:
+  - All direct incoming calls to the user will be handled based on the state's predefined dispatching rules.
+  - Calls from a call queue will not be routed to the user. Instead, the system will redirect the call to the next available agent in the queue.
+
+The default state schedule condition is set to 24 hours a day, every day, and cannot be modified. This means that this state does not support the scheduling condition at all. It’s either on or off.
+
+``` json
+"state": {
+    "id": "dnd",
+    "displayName": "Do not disturb",
+    "enabled": false,
+    "conditions": [ {
+      "schedule": {
+        "triggers": [ {
+          "triggerType": "Daily",
+          "startTime": "00:00:00",
+          "endTime": "23:59:59"
+        } ]
+      },
+      "type": "Schedule"
+    } ]
+  }
+```
+
+The ‘dnd’ state activeness is associated with the user’s “Do not Disturb” presence status. This means that the ‘dnd’ state can be controlled by both the [/presence](https://developers.ringcentral.com/guide/account/presence) and the API below:
+
+``` http
+PATCH `/restapi/v2/accounts/~/extensions/~/comm-handling/states/dnd`
+
+body { enabled: true }
+```
+
+## Work-hours State
+
+The impact of the "work-hours" state is determined by predefined schedule conditions. By default, the schedule is set to 24/7, meaning the user is always available unless customized settings specify otherwise.
+
+Example Use Case:
+
+A sales representative works a standard 9 AM to 5 PM schedule. To ensure calls are only routed to them during working hours, they configure the "work-hours" state to align with their schedule. Outside these hours, the system automatically switches to the "after-hours" state, redirecting calls to voicemail or another designated contact.
+
+Default ‘work-hours’ state schedule:
+
+``` json
+{
+    "id" : "work-hours",
+    "enabled": true,
+    "displayName" : "Work Hours",
+    "conditions" : [ {
+      "type" : "Schedule",
+      "schedule" : {
+        "triggers" : [ {
+          "triggerType" : "Daily",
+          "startTime" : "00:00:00",
+          "endTime" : "23:59:59"
+        } ]
+      }
+    } ]
+}
+```
+
+The schedule conditions can be configured to recur on specific weekdays and time periods, defined by the 'weekday', 'startTime', and 'endTime' values.
+
+To set a schedule for the ‘work-hours’’ state, call the following API with appropriate body parameters:
+
+``` json
+PATCH  /restapi/v2/accounts/~/extensions/~/comm-handling/states/work-hours
+
+body {
+  "conditions": [
+    {
+      "type": "Schedule",
+      "schedule": {
+        "triggers": [
+          {
+            "triggerType": "Weekly",
+            "ranges": {
+              "monday": [{
+                 "startTime": "09:00:00",
+                 "endTime": "16:00:00"
+              }],
+              "tuesday": [ {
+                 "startTime": "12:00:00",
+                 "endTime": "18:00:00"
+              }],
+              "wednesday": [{
+                 "startTime": "08:00:00",
+                 "endTime": "16:00:00"
+              }],
+              "thursday": [{
+                 "startTime": "08:00:00",
+                 "endTime": "16:00:00"
+              }],
+              "friday": [{
+                  "startTime": "08:00:00",
+                  "endTime": "12:00:00"
+              }]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+!!! notes
+    - The ‘enabled’ flag is always set to true by the system. Thus, it’s not necessary to be specified in the API body params.
+    - The trigger type can only be either ‘Daily’ or ‘Weekly’ type.
+
+## After-Hours State
+
+The "after-hours" state is automatically created by the system when the "work-hours" state is not set to a 24/7 schedule.
+
+The schedule for the "after-hours" state is the inverse of the "work-hours" schedule. For example, if work hours are set from Monday to Friday, 8 AM to 4 PM, then after-hours will be from 4 PM to 8 AM on weekdays and from 12:00 AM to 11:59 PM on weekends.
+
+The ‘after-hours’ state schedule data:
+```json
+{
+  "id": "after-hours",
+  "enabled": true,
+  "displayName": "After Hours",
+  "conditions": []
+}
+```
+
+!!! notes
+    - The ‘enabled’ flag is always set to true by the system.
+    - The schedule conditions are always an empty array and cannot be modified by users.
+    - Thus, updating the 'After-Hours' state schedule is not necessary and so it's not supported!
+
+## Agent State
+
+The ‘agent’ state is automatically created by the system when a user extension is added to a call queue.
+
+This state is used to define the agent's availability for receiving incoming calls from call queues. By default, the ‘agent’ state inherits the schedule conditions and ring settings from the user’s ‘work-hours’ state. In this case, the type of the conditions is set to “State”, and the stateId references ‘work-hours’.
+
+Typical ‘agent’ state schedule:
+
+```json
+{
+  "id": "agent",
+  "enabled": true,
+  "displayName": "Agent",
+  "conditions": [
+    {
+      "stateId": "work-hours",
+      "type": "State",
+      "state": {
+        "id": "work-hours",
+        "displayName": "Work Hours",
+        "conditions": [
+          {
+            "schedule": {
+              "triggers": [
+                {
+                  "triggerType": "Daily",
+                  "startTime": "00:00:00",
+                  "endTime": "23:59:59"
+                }
+              ]
+            },
+            "type": "Schedule"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+!!! important
+    When the “Agent” state type is set to “State” any changes made to the “Work-Hours” state schedule and ring settings will automatically update the “Agent” state configurations.
+
+To make the “Agent” state schedule independent of the “Work-Hours” state, you can change the Agent state type to “Schedule” and customize the schedule and the ring settings as needed.
+
+```json
+{
+  "id": "agent",
+  "enabled": true,
+  "displayName": "Agent",
+  "conditions": [
+    {
+      "type": "Schedule",
+      "schedule": {
+        "triggers": [{
+          "triggerType": "Weekly",
+          "ranges": {
+            "thursday": [{
+              "startTime": "18:00:00",
+              "endTime": "23:59:59"
+            }],
+            "friday": [{
+              "startTime": "00:00:00",
+              "endTime": "06:00:00"
+            }]
+           }
+         }]
+       }
+     }
+   ]
+}
+```
+
+## Example of Setting the Forward-All-Calls State Schedule
+
+The following example code demonstrates how to configure the schedule for the 'forward-all-calls' state using a specific date and time range.
+
+!!! note "Running the code"
+    If you have tried the RingOut quick start, you can just copy all the functions below and add them to the quick start project then call the set_user_fac_state_schedule() function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/voice/code-snippets-headers/header.js !}
+    {!> code-samples/voice/code-snippets/set-fac-state-schedule.js [ln:10-] !}
+    ```
+
+=== "PHP"
+
+    ```php
+    {!> code-samples/voice/code-snippets-headers/header.php [ln:1-9] !}
+    {!> code-samples/voice/code-snippets/set-fac-state-schedule.php [ln:2-] !}
+    ```
+
+=== "Python"
+
+    ```python
+    {!> code-samples/voice/code-snippets/set-fac-state-schedule.py !}
+    {!> code-samples/voice/code-snippets-headers/footer.py !}
+    ```
+
+=== "Ruby"
+
+    ```ruby
+    {!> code-samples/voice/code-snippets/set-fac-state-schedule.rb !}
+    {!> code-samples/voice/code-snippets-headers/footer.rb !}
+    ```
+
+### Sample response
+
+```json
+{
+    "id": "forward-all-calls",
+    "enabled": true,
+    "displayName": "Forward all calls",
+    "conditions": [
+        {
+            "type": "Schedule",
+            "schedule": {
+                "triggers": [
+                    {
+                        "triggerType": "Range",
+                        "ranges": [
+                            {
+                                "startDateTime": "2025-07-04T00:00:00",
+                                "endDateTime": "2025-07-05T08:00:00"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+```

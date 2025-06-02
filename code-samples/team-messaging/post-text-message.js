@@ -10,26 +10,34 @@ var platform = rcsdk.platform();
 platform.login({ 'jwt':  process.env.RC_USER_JWT })
 
 platform.on(platform.events.loginSuccess, () => {
-    var endpoint = "/team-messaging/v1/chats"
-    platform.get(endpoint, { type: 'Personal' } )
-	.then(function(resp){
-	    var json = resp.json()
-	    var chat_id = json['records'][0]['id']
-	    console.log("Personal chat ID: " + chat_id)
-	    post_text_message( chat_id )
-	})
+  get_personal_chat_id()
 })
 
-function post_text_message(chat_id) {
-    platform.post('/team-messaging/v1/chats/'+chat_id+'/posts', {
-	text: "Hello World"
-    })
-	.then(function(resp){
-            var json = resp.json()
-            var id = json['id']
-            console.log("Posted message successfully, id: " + id)
-	})
-	.catch(function(e){
-            console.log(e)
-	})
+async function get_personal_chat_id(){
+  try {
+    var endpoint = "/team-messaging/v1/chats"
+    let resp = await platform.get(endpoint, { type: 'Personal' } )
+    let jsonObj =  await resp.json()
+    if (jsonObj.records.length > 0){
+      let chatId = jsonObj.records[0].id
+      console.log("Personal chat ID: " + chatId)
+      await post_text_message( chatId )
+    }
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function post_text_message(chatId) {
+  try {
+    let endpoint = `/team-messaging/v1/chats/${chatId}/posts`
+    let bodyParams = {
+      text: "Hello World"
+    }
+    let resp = await platform.post(endpoint, bodyParams)
+  	let jsonObj = await resp.json()
+    console.log("Posted message successfully, id: " + jsonObj.id)
+  }catch(e){
+    console.log(e.message)
+	}
 }

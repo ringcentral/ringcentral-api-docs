@@ -34,7 +34,7 @@ $platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'
 def login()
   begin
     $platform.authorize(jwt: ENV['RC_USER_JWT'])
-    #call_ring_out()
+    call_ring_out()
   rescue StandardError => e
     puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
   end
@@ -62,11 +62,23 @@ def boostrap_test_function()
     # read_call_monitoring_groups()
 
     sleep(2)
-    puts "Test supervise call session"
-    require_relative './code-snippets/call-supervision'
-    supervisorDeviceId = "802636634016"
-    agentExtensionId = "62295327016"
-    read_agent_active_calls(agentExtensionId, supervisorDeviceId)
+    # puts "Test supervise call session"
+    # require_relative './code-snippets/call-supervision'
+    # supervisorDeviceId = "802636634016"
+    # agentExtensionId = "62295327016"
+    # read_agent_active_calls(agentExtensionId, supervisorDeviceId)
+
+    # puts "Test FAC Call handling"
+    # require_relative './code-snippets/change-fac-state-call-terminating-rules'
+    # read_user_fac_state_rules()
+
+    # puts "Test FAC Call handling"
+    # require_relative './code-snippets/set-fac-state-schedule'
+    # set_user_fac_state_schedule()
+
+    puts "Test FAC Call handling"
+    require_relative './code-snippets/create-interaction-rule'
+    create_user_interaction_rule()
 end
 
 boostrap_test_function()
