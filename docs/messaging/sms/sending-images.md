@@ -13,19 +13,28 @@ RingCentral platform supported MMS content types
 | | image/tiff | .tiff/.tif |
 | | image/svg+xml | .svg |
 | `Video` | video/3gpp | .3gp |
-| | video/mp4 | .mp4 |
-| | video/mpeg | .mpeg |
-| | video/msvideo | .avi |
+| | video/mp4 | .mp4/.m4v |
+| | video/mpeg | .mpeg/.mpg |
+| | video/avi | .avi |
 | | video/x-flv | .flv |
-| | video/x-ms-asf | .wmv |
-| | video/quicktime | .mov |
+| | video/x-ms-wmv | .wmv |
+| | video/quicktime | .mov/.qt |
+| | video/webm | .webm |
 | `Audio` | audio/mpeg | .mp3 |
+| | audio/mp4 | .m4a |
+| | audio/ogg | .oga |
+| | audio/wav | .wav |
+| | audio/arm | .arm |
+| | audio/3gpp | .3gp |
 | `V-Card` | text/vcard | .vcf/.vcard |
 | `Compressed file` | application/zip | .zip |
 | | application/gzip | .gzip |
 | `Document` | application/rtf | .rtf |
+| | application/pdf | .pdf |
 | | text/html | .html |
 | | text/plain | .txt |
+| | text/csv | .csv |
+| | text/calendar | .ics |
 
 !!! warning "Attachment Limitations"
     * There is a combined limit of 1.5MB for all attachments per message.
