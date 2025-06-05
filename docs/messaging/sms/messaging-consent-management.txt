@@ -135,6 +135,8 @@ var bodyParams = {
     }
 ```
 
+In addition to reading opted-out phone numbers, you can [subscribe for the opt-out event notification](https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription) to be notified when a customer opts out by sending a `STOP` message to your business phone number.
+
 Example event payload
 
 ```json
@@ -259,3 +261,5 @@ Below is a sample response returned by the API:
 	}
 }
 ```
+
+In addition to reading opted-in phone numbers, you can [subscribe for the opt-out event notification](https://developers.ringcentral.com/api-reference/Subscriptions/createSubscription) to be notified when a customer opts in by sending a `START` message to your business phone number.
