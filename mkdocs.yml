@@ -213,7 +213,7 @@ nav:
 
   - 'Video':
     - 'Overview': 'video/index.md'
-    - 'Video REST API':
+    - 'REST API':
       - 'Overview': 'video/api/index.md'
       - 'Getting Started': 'video/api/quick-start.md'
       - 'Creating meeting bridges': 'video/api/create-meetings.md'
