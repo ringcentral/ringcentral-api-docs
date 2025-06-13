@@ -1,41 +1,40 @@
-# Company Call Handling
+# Site Call Handling
 
-Company call handling is a set of configurations that determine how incoming calls to a company phone number (including call queue's and IVR's direct numbers) are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
+If you are a company with operational functions spread across many sites, you need to be able to set individualized call handling rules according to their different time zones, company hours, language preferences, and more.
 
-Company call handling rules can be defined separately based on the following conditions:
+Site call handling is a set of configurations that determine how incoming calls to a site direct phone number (including calls via the site number i.e. MainCompanyNumber*SiteNumber) are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
 
-- Business Hours rule – Defines how calls are managed during the company’s regular operating hours.
+Site call handling rules can be defined separately based on the following conditions:
+
+- Business Hours rule – Defines how calls are managed during the site's regular operating hours.
 - After Hours rule – Applies when the business is closed (if business hours are not set to 24/7).
 - Custom Schedules and Conditions rule  – Allows for special rules based on specific criteria, such as caller ID, called number, or custom time schedules (e.g., holidays or special events).
 
-Each type of rule can be assigned to the following type of extensions:
+If a site has a custom rule that is configured and enabled, any incoming call directly to site will first be evaluated against the conditions defined in that rule. If all the conditions are met, the call will be routed according to the dispatching settings specified in the rule.
 
-* Sites
-* Call Queues
+When multiple custom rules are active, the system will evaluate each rule in order. The first rule whose conditions match will determine how the call is handled. If none of the active custom rules match the incoming call, the system will fall back to evaluating the call against the Business Hours or After Hours rule, depending on the current date and time.
 
-Company call handling rule can be set to route incoming calls to the following destinations:
+Site call handling rule can be configured to route incoming calls to the following destinations:
 
-- Company greeting
-- IVR menu
-- A specific user extension
-- A call queue extension
+- IVR menu - Any IVR menu within the account
+- User extension - A specific user extension
+- Call queue - A call queue extension
 - Voicemail - Must be a Message-only extension
 - Announcement - Must be an Announcement-only extension
 - Shared line - Must be a share line extension
 - Limited extension - Must be a limited extension
-- Site
 
-## Update Company Business Hour and After Hour Call Handling Rules
+## Update Site Business Hour and After Hour Call Handling Rules
 
 By default, the system automatically creates a Business Hours rule and, if business hours are not set to 24/7, an After Hours rule. These rules are assigned the IDs `business-hours-rule` and `after-hours-rule`, respectively.
 
 Developers can only update these rules configurations by making a PUT request to the following API endpoint, replacing [ruleId] with the appropriate rule identifier:
 
 ```http
-PUT /restapi/v1.0/account/~/answering-rule/[ruleId]
+PUT /restapi/v1.0/account/~/extension/[SiteExtensionId]/answering-rule/[ruleId]
 ```
 
-## Creating a Company Custom Call Handling Rule
+## Creating a Site Custom Call Handling Rule
 
 Be mindful of the following when constructing a request to create a company custom answering rule:
 
@@ -48,15 +47,13 @@ Be mindful of the following when constructing a request to create a company cust
 
 Finally, make a POST request to the following endpoint:
 
-`/restapi/v1.0/account/{accountId}/extension/{SiteExtensionId|CallQueueExtensionId}/answering-rule`
+`/restapi/v1.0/account/~/extension/[SiteExtensionId]/answering-rule`
 
 ### Call Handling Actions
 
 | Action | Description |
 |-|-|
-| `Operator` | Play company greeting and forward to an operator extension. |
-| `Disconnect` | Play back company greeting then hangup. |
-| `Bypass` | Skip company greeting and forward to a selected extension. |
+| `TransferToExtension` | Transfer the incoming call to an extension. Applied for IVR menu extension, call queue extension, user extension, , message-only extension, announcement-only extension, limited extension, shared line group. |
 
 ### Call Handling Conditions
 
@@ -74,7 +71,7 @@ The following parameters are used for specifying call handling conditions.
 
 ## Sample code
 
-### Create a Company Custom Answering Rule
+### Create a Site Custom Answering Rule
 
 The following code sample shows how to create a company custom answering rule that will route all incoming calls to a voice mailbox during a a New Year day.
 
@@ -82,7 +79,7 @@ The following code sample shows how to create a company custom answering rule th
 
     ```javascript
     {!> code-samples/voice/company-answering-rules.js !}
-    ```    
+    ```
 
 === "Python"
 

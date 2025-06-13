@@ -1,6 +1,6 @@
 # Call Queue Call Handling
 
-Call queue call handling is a set of configurations that determine how incoming calls to a a call queue are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
+Call queue call handling is a set of configurations that determine how incoming calls to a call queue are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
 
 Call queue call handling rules can be defined separately based on the following conditions:
 
@@ -8,17 +8,60 @@ Call queue call handling rules can be defined separately based on the following 
 - After Hours rule – Applies when the business is closed (if business hours are not set to 24/7).
 - Custom Schedules and Conditions rule  – Allows for special rules based on specific criteria, such as caller ID, called number, or custom time schedules (e.g., holidays or special events).
 
-Call queue call handling rule can be set to route incoming calls to the following destinations:
+If a call queue has a custom rule that is configured and enabled, any incoming call to the queue will first be evaluated against the conditions defined in that rule. If all the conditions are met, the call will be routed according to the dispatching settings specified in the rule.
 
-- IVR menu
-- A specific user extension
-- A call queue extension
-- Voicemail - Must be a Message-only extension
-- Announcement - Must be an Announcement-only extension
-- Shared line - Must be a share line extension
-- Limited extension - Must be a limited extension
+When multiple custom rules are active, the system will evaluate each rule in order. The first rule whose conditions match will determine how the call is handled. If none of the active custom rules match the incoming call, the system will fall back to evaluating the call against the Business Hours or After Hours rule, depending on the current date and time.
 
-## Update Company Business Hour and After Hour Call Handling Rules
+Call queue call handling configurations are set differently for different types of rules.
+
+## Business Hours rule
+
+The Business Hours call handling configurations are complex. They include a set of configurations for ringing its members and other call queue SLA features such as the waiting time, agent time out or action when the queue is full etcetera.
+
+**Answering configurations**
+
+Answering configurations consist of settings that determine how the call queue dispatches incoming calls to its members
+
+- 
+
+
+**Forwarding configurations**
+
+When the queue is full
+
+  - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+  - Announcement - Prerecorded message
+  - Forward to extension - Any type of extension (IVR menu, call queue, user)
+  - Forward to external number - Any phone number
+
+When the maximum wait time is reached
+
+  - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+  - Forward to extension - Any type of extension (IVR menu, call queue, user)
+  - Forward to external number - Any phone number
+
+
+## After Hours rule
+
+The After Hours rule can be configured to forward incoming calls to the following destinations:
+
+- Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+- Announcement - Prerecorded message
+- Forward to extension - Any type of extension (IVR menu, call queue, user)
+- Forward to external number - Any phone number
+
+## Custom rule
+
+- Ring call queue members
+- Send to voicemail
+- Play an Announcement
+- Forward to extension
+- Forward to external number
+
+ can be set to route incoming calls to the following destinations:
+
+
+## Update Call Queue Business Hour and After Hour Call Handling Rules
 
 By default, the system automatically creates a Business Hours rule and, if business hours are not set to 24/7, an After Hours rule. These rules are assigned the IDs `business-hours-rule` and `after-hours-rule`, respectively.
 
@@ -41,15 +84,18 @@ Be mindful of the following when constructing a request to create a company cust
 
 Finally, make a POST request to the following endpoint:
 
-`/restapi/v1.0/account/{accountId}/extension/{SiteExtensionId|CallQueueExtensionId}/answering-rule`
+`/restapi/v1.0/account/~/extension/[CallQueueExtensionId]/answering-rule`
 
 ### Call Handling Actions
 
 | Action | Description |
 |-|-|
-| `Operator` | Play company greeting and forward to an operator extension. |
-| `Disconnect` | Play back company greeting then hangup. |
-| `Bypass` | Skip company greeting and forward to a selected extension. |
+| `ForwardCalls` | Forward calls to an external number. |
+| `UnconditionalForwarding` | Forward calls to an external number. |
+| `AgentQueue` |  |
+| `TransferToExtension` |  |
+| `TakeMessageOnly` |  |
+| `PlayAnnouncementOnly` |  |
 
 ### Call Handling Conditions
 
