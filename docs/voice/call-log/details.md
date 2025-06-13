@@ -19,25 +19,27 @@ GET /restapi/v1.0/account/~/extension/~/call-log HTTP/1.1
 Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ```
 
 We should now have a list of call records. If you followed steps 1 through 3 above you should see these records specifically. You should observe:
 
 * The legs for multi-legged calls are missing.
-* We can see the three different recordings, but one of these calls was made to a call group from an outside line. 
+* We can see the three different recordings, but one of these calls was made to a call group from an outside line.
 
 ```json
 {
     "uri": "https://platform.ringcentral.com/restapi/..snip..&page=1&perPage=100",
     "records": [
         {
-            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaxDDkSZ5s42MA?view=Simple",
-            "id": "ASaxDDkSZ5s42MA",
-            "sessionId": "13916417004",
-            "startTime": "2016-06-06T23:07:20.000Z",
-            "duration": 55,
+            "uri": "https://platform.ringcentral.com/restapi/..snip../VgLcd1KWffJVzUA?view=Simple",
+            "id": "VgLcd1KWffJVzUA",
+            "sessionId": "1039811321016",
+            "startTime": "2023-04-10T23:58:47.594Z",
+            "duration": 194,
+            "durationMs": 194060,
             "type": "Voice",
+            "internalType": "TollFreeNumber",
             "direction": "Inbound",
             "action": "Phone Call",
             "result": "Accepted",
@@ -54,14 +56,21 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
                 "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1662272004",
                 "id": "1662272004",
                 "type": "OnDemand",
-                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../recording/1662272004/content"
+                "contentUri": "https://media.ringcentral.com/restapi/..snip../recording/1662272004/content"
+            },
+            "telephonySessionId": "s-a0d178729c49dz1876d9b9d11z19269ec0000",
+            "transport": "PSTN",
+            "lastModifiedTime": "2023-04-11T00:06:42.028Z",
+            "billing": {
+              "costIncluded": 0.137,
+              "costPurchased": 0
             }
         },
         {
             "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoSC9FIMaOF24?view=Simple",
             "id": "ASaoSC9FIMaOF24",
             "sessionId": "13914800004",
-            "startTime": "2016-06-06T18:12:30.000Z",
+            "startTime": "2023-04-11T07:26:35.028Z",
             "duration": 55,
             "type": "Voice",
             "direction": "Outbound",
@@ -79,32 +88,14 @@ We should now have a list of call records. If you followed steps 1 through 3 abo
                 "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
                 "id": "1659910004",
                 "type": "OnDemand",
-                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../1659910004/content"
-            }
-        },
-        {
-            "uri": "https://platform.ringcentral.com/restapi/..snip..?view=Simple",
-            "id": "ASaoLzRiqjLaFYU",
-            "sessionId": "13914782004",
-            "startTime": "2016-06-06T18:07:41.000Z",
-            "duration": 64,
-            "type": "Voice",
-            "direction": "Outbound",
-            "action": "VoIP Call",
-            "result": "Call connected",
-            "to": {
-                "phoneNumber": "+14155555908",
-                "location": "San Francisco (South), CA"
+                "contentUri": "https://media.ringcentral.com/restapi/..snip../1659910004/content"
             },
-            "from": {
-                "phoneNumber": "+16505556100",
-                "name": "SDK Engineer Candidate"
-            },
-            "recording": {
-                "uri": "https://platform.ringcentral.com/restapi/..snip../1659903004",
-                "id": "1659903004",
-                "type": "OnDemand",
-                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
+            "telephonySessionId": "s-b3d178769c49dz1876d9b9d11z19289ec0000",
+            "transport": "PSTN",
+            "lastModifiedTime": "2023-04-11T07:27:30.028Z",
+            "billing": {
+              "costIncluded": 0.097,
+              "costPurchased": 0
             }
         }
     ],
@@ -131,7 +122,7 @@ GET /restapi/v1.0/account/~/extension/~/call-log?dateFrom=DATE&dateTo=DATE HTTP/
 Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ```
 
 ## Retrieve Detailed Call Log Data
@@ -143,7 +134,7 @@ GET /restapi/v1.0/account/~/extension/~/call-log?view=Detailed HTTP/1.1
 Host: platform.ringcentral.com
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN 
+Authorization: Bearer REPLACE_WITH_YOUR_VALID_ACCESS_TOKEN
 ```
 
 If everything worked, we should receive an HTTP 200 response with the JSON body which contain the `legs` property. Specifically, for the most recent item in the list which was used to make an inbound call to a Call Group, we can see the second leg being connected from the outside line to the Call Group main number:
@@ -153,15 +144,17 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
     "uri": "https://platform.ringcentral.com/restapi/..snip../call-log?..snip..&perPage=100",
     "records": [
         {
-            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaxDDkSZ5s42MA?view=Detailed",
-            "id": "ASaxDDkSZ5s42MA",
-            "sessionId": "13916417004",
-            "startTime": "2016-06-06T23:07:20.000Z",
-            "duration": 55,
-            "type": "Voice",
-            "direction": "Inbound",
-            "action": "Phone Call",
-            "result": "Accepted",
+          "uri": "https://platform.ringcentral.com/restapi/..snip../VgLcd1KWffJVzUA?view=Simple",
+          "id": "VgLcd1KWffJVzUA",
+          "sessionId": "1039811321016",
+          "startTime": "2023-04-10T23:58:47.594Z",
+          "duration": 194,
+          "durationMs": 194060,
+          "type": "Voice",
+          "internalType": "TollFreeNumber",
+          "direction": "Inbound",
+          "action": "Phone Call",
+          "result": "Accepted",
             "to": {
                 "phoneNumber": "+15625555778",
                 "name": "SDK Engineer Candidate"
@@ -177,11 +170,16 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                 "type": "OnDemand",
                 "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
             },
+            "telephonySessionId": "s-a0d178729c49dz1876d9b9d11z19269ec0000",
             "transport": "PSTN",
-            "lastModifiedTime": "2016-06-06T23:08:23.336Z",
+            "lastModifiedTime": "2023-04-11T00:06:42.028Z",
+            "billing": {
+              "costIncluded": 0.137,
+              "costPurchased": 0
+            },
             "legs": [
                 {
-                    "startTime": "2016-06-06T23:07:20.000Z",
+                    "startTime": "2023-04-10T23:58:47.594Z",
                     "duration": 55,
                     "type": "Voice",
                     "direction": "Inbound",
@@ -202,6 +200,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "type": "OnDemand",
                         "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
+                    "telephonySessionId": "s-a0d178729c49dz1876d9b9d11z19269ec0000",
                     "transport": "PSTN",
                     "legType": "Accept",
                     "extension": {
@@ -210,7 +209,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                     }
                 },
                 {
-                    "startTime": "2016-06-06T23:07:20.000Z",
+                    "startTime": "2023-04-10T23:58:47.594Z",
                     "duration": 55,
                     "type": "Voice",
                     "direction": "Outbound",
@@ -230,6 +229,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
                         "type": "OnDemand",
                         "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
                     },
+                    "telephonySessionId": "s-a0d178729c49dz1876d9b9d11z19269ec0000",
                     "transport": "VoIP",
                     "legType": "PstnToSip",
                     "extension": {
@@ -242,116 +242,7 @@ If everything worked, we should receive an HTTP 200 response with the JSON body 
         {
             "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoSC9FIMaOF24?view=Detailed",
             "id": "ASaoSC9FIMaOF24",
-            "sessionId": "13914800004",
-            "startTime": "2016-06-06T18:12:30.000Z",
-            "duration": 55,
-            "type": "Voice",
-            "direction": "Outbound",
-            "action": "VoIP Call",
-            "result": "Call connected",
-            "to": {
-                "phoneNumber": "+14155555908",
-                "location": "San Francisco (South), CA"
-            },
-            "from": {
-                "phoneNumber": "+16505556100",
-                "name": "SDK Engineer Candidate"
-            },
-            "recording": {
-                "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
-                "id": "1659910004",
-                "type": "OnDemand",
-                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
-            },
-            "transport": "VoIP",
-            "lastModifiedTime": "2016-06-06T18:13:43.335Z",
-            "legs": [
-                {
-                    "startTime": "2016-06-06T18:12:30.000Z",
-                    "duration": 55,
-                    "type": "Voice",
-                    "direction": "Outbound",
-                    "action": "VoIP Call",
-                    "result": "Call connected",
-                    "to": {
-                        "phoneNumber": "+14155555908",
-                        "location": "San Francisco (South), CA"
-                    },
-                    "from": {
-                        "phoneNumber": "+16505556100",
-                        "name": "SDK Engineer Candidate"
-                    },
-                    "recording": {
-                        "uri": "https://platform.ringcentral.com/restapi/..snip../1659910004",
-                        "id": "1659910004",
-                        "type": "OnDemand",
-                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
-                    },
-                    "transport": "VoIP",
-                    "legType": "SipToPstnUnmetered",
-                    "extension": {
-                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
-                        "id": 664573005
-                    }
-                }
-            ]
-        },
-        {
-            "uri": "https://platform.ringcentral.com/restapi/..snip../ASaoLzRiqjLaFYU?view=Detailed",
-            "id": "ASaoLzRiqjLaFYU",
-            "sessionId": "13914782004",
-            "startTime": "2016-06-06T18:07:41.000Z",
-            "duration": 64,
-            "type": "Voice",
-            "direction": "Outbound",
-            "action": "VoIP Call",
-            "result": "Call connected",
-            "to": {
-                "phoneNumber": "+14155555908",
-                "location": "San Francisco (South), CA"
-            },
-            "from": {
-                "phoneNumber": "+16505556100",
-                "name": "SDK Engineer Candidate"
-            },
-            "recording": {
-                "uri": "https://platform.ringcentral.com/restapi/..snip../recording/1659903004",
-                "id": "1659903004",
-                "type": "OnDemand",
-                "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
-            },
-            "transport": "VoIP",
-            "lastModifiedTime": "2016-06-06T18:09:03.334Z",
-            "legs": [
-                {
-                    "startTime": "2016-06-06T18:07:41.000Z",
-                    "duration": 64,
-                    "type": "Voice",
-                    "direction": "Outbound",
-                    "action": "VoIP Call",
-                    "result": "Call connected",
-                    "to": {
-                        "phoneNumber": "+14155555908",
-                        "location": "San Francisco (South), CA"
-                    },
-                    "from": {
-                        "phoneNumber": "+16505556100",
-                        "name": "SDK Engineer Candidate"
-                    },
-                    "recording": {
-                        "uri": "https://platform.ringcentral.com/restapi/..snip../1659903004",
-                        "id": "1659903004",
-                        "type": "OnDemand",
-                        "contentUri": "https://media.ringcentral.com:443/restapi/..snip../content"
-                    },
-                    "transport": "VoIP",
-                    "legType": "SipToPstnUnmetered",
-                    "extension": {
-                        "uri": "https://platform.ringcentral.com/restapi/..snip../664573005",
-                        "id": 664573005
-                    }
-                }
-            ]
+            ...
         }
     ],
     "paging": {

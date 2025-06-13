@@ -8,6 +8,10 @@ Company call handling rules can be defined separately based on the following con
 - After Hours rule – Applies when the business is closed (if business hours are not set to 24/7).
 - Custom Schedules and Conditions rule  – Allows for special rules based on specific criteria, such as caller ID, called number, or custom time schedules (e.g., holidays or special events).
 
+If a company custom rule is configured and enabled, any incoming call directly to a company phone number will first be evaluated against the conditions defined in that rule. If all the conditions are met, the call will be routed according to the dispatching settings specified in the rule.
+
+When multiple custom rules are active, the system will evaluate each rule in order. The first rule whose conditions match will determine how the call is handled. If none of the active custom rules match the incoming call, the system will fall back to evaluating the call against the Business Hours or After Hours rule, depending on the current date and time.
+
 Company call handling rule can be set to route incoming calls to the following destinations:
 
 - Company greeting
