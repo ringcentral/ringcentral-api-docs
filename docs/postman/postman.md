@@ -46,7 +46,7 @@ The Postman Collection uses environment variables for authentication and authori
 5. Click the "Add" button to finish adding this environment.
 You can also use this [Postman 2.1 Environment](https://raw.githubusercontent.com/ringcentral/ringcentral-api-docs/master/docs/messaging/sms/specs/ringcentral_environment.postman_environment.json) export as reference.
 
-![Postman](../../img/postman_ringcentral_environment.png){.img-fluid}
+![Postman](../img/postman_ringcentral_environment.png){.img-fluid}
 
 | Variable                        | Description                                                           |
 |---------------------------------|-----------------------------------------------------------------------|
