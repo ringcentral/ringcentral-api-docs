@@ -40,7 +40,7 @@ Required permission(s): EditExtensions
 
 ### Sample code to create a forwarding number object
 
-The following code sample shows how to create a forwarding number object. The `id` value from the response can be used to specify a rule when [creating a custom answering rule](user-answering-rules.md).
+The following code sample shows how to create a forwarding number object. The `id` value from the response can be used to specify a rule when [creating a custom answering rule](../user-call-handling/legacy-user-call-handling.md).
 
 === "JavaScript"
 
@@ -65,7 +65,7 @@ The following code sample shows how to create a forwarding number object. The `i
     ```c#
     {!> code-samples/voice/call-forwarding.cs !}
     ```
-    
+
 === "Java"
 
     ```java

@@ -1,9 +1,9 @@
 # Answering Rules Overview
 
-Answering Rules APIs can be used to create and manage logic for routing incoming calls throughout your RingCentral account. For example, the following are all answering rules you can construct using the Answering Rule API. 
+Answering Rules APIs can be used to create and manage logic for routing incoming calls throughout your RingCentral account. For example, the following are all answering rules you can construct using the Answering Rule API.
 
 * If an incoming call is received outside business hours, route the call to my voicemail.
-* If an incoming call is received outside of business hours, but the phone number is that of a VIP customer, route the call to my mobile phone. 
+* If an incoming call is received outside of business hours, but the phone number is that of a VIP customer, route the call to my mobile phone.
 * A call comes in on a day you are off from work, you want all incoming calls to your work phone number to be re-routed automatically to one of your co-workers to handle the calls.
 
 ## Answering Rule Structure
@@ -21,9 +21,9 @@ Here is an example Answering Rule flow:
 
 The Answering Rules API has endpoints for creating two different core rule types:
 
-* **User Rules** - these rules are applied to incoming call to a specific user or extension. 
+* **User Rules** - these rules are applied to incoming call to a specific user or extension.
 
-* **Company Rules** - these rules are applied to incoming calls to extensions that are not owned by a specific user, for example IVR extensions, call queues, departments, etc. 
+* **Company Rules** - these rules are applied to incoming calls to extensions that are not owned by a specific user, for example IVR extensions, call queues, departments, etc.
 
 Finally, both User and company rules can each be of the following sub-types:
 
@@ -46,7 +46,7 @@ Answering Rules can be constructed around the following conditions/criteria:
 
 ### Rule Actions
 
-The action that can taken on a call depends upon the type of the answering rule being created. 
+The action that can taken on a call depends upon the type of the answering rule being created.
 
 #### Actions for User Answering Rules
 
@@ -58,7 +58,7 @@ The action that can taken on a call depends upon the type of the answering rule 
 * **Send to Agent Queue**: forward an incoming call (dialed to a Call Queue extension) to one or more specified agents.
 
 !!! info "Important Notes about User Answering Rules"
-    
+
     * Each user has 2 default answering rules for business hours and after business hours. The default rules can be read and updated with new schedule. They cannot be used with callers' or callees' conditions.
     * The default After Hours rule exists only if the user business hours is set different than 24 hours.
     * An answering rule can be turned on or off by changing the `enabled` parameter to True or False, respectively.
@@ -79,5 +79,5 @@ The action that can taken on a call depends upon the type of the answering rule 
 
 To learn more about User and Company Answering Rules, see sample code, and to begin building your own rules via the Answering Rule API, please consult the following Developer Guide Resources:
 
-* [User Answering Rules &raquo;](user-answering-rules.md)
+* [User Answering Rules &raquo;](../user-call-handling/index.md)
 * [Company Answering Rules &raquo;](company-answering-rules.md)

@@ -54,7 +54,7 @@ Response from a legacy account
 }
 ```
 
-User Answering Rules can be used to create and manage the logic for routing incoming calls to a particular user/extension. If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](answering-rules.md).
+User Answering Rules can be used to create and manage the logic for routing incoming calls to a particular user/extension. If you are unfamiliar with answering rules, we recommend you read our [Answering Rules Overview](../manual/answering-rules.md).
 
 ## Create a User Custom Answering Rule
 
@@ -96,10 +96,10 @@ The following parameters are used for specifying call handling conditions.
 | `TakeMessagesOnly` | Play back a voicemail greeting then forward an incoming call to a voice mailbox. |
 | `PlayAnnouncementOnly` | Play back a pre-recorded announcement then hang up. |
 | `TransferToExtension` | Forward an incoming call to a specific extension. |
-| `AgentQueue` | Forward an incoming call (dialed to a [Call Queue](call-queues.md) extension) to one or more specified agents. |
+| `AgentQueue` | Forward an incoming call (dialed to a [Call Queue](../manual/call-queues.md) extension) to one or more specified agents. |
 
 !!! info "Required Fields"
-    If `ForwardCalls` is specified for `callHandlingAction`, the `forwarding` parameter object is required. You can use the [call forwarding APIs](call-forwarding.md) to create or retrieve call forwarding information then use the the `uri`, `id` to specify the `forwardingNumbers` parameter under the `rules` object.
+    If `ForwardCalls` is specified for `callHandlingAction`, the `forwarding` parameter object is required. You can use the [call forwarding APIs](../manual/call-forwarding.md) to create or retrieve call forwarding information then use the the `uri`, `id` to specify the `forwardingNumbers` parameter under the `rules` object.
 
     If "TransferToExtension" is specified for `callHandlingAction`, the `transfer` parameter object is required.
 
