@@ -1,3 +1,18 @@
+img.mw-100 { max-width: 100px; }
+img.mw-200 { max-width: 200px; }
+img.mw-250 { max-width: 250px; }
+img.mw-300 { max-width: 300px; }
+img.mw-400 { max-width: 400px; }
+img.mw-500 { max-width: 500px; }
+img.mw-600 { max-width: 600px; }
+
+.ml-10 { margin-left: 10px; }
+.ml-20 { margin-left: 20px; }
+.ml-30 { margin-left: 30px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
 .help .material-icons { font-size: .9rem }
 #content table img {
     max-width: 100%;
@@ -153,11 +168,19 @@
 #sidebar-nav #nav-item-applications:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/applications-hover.svg');
 }
+#sidebar-nav #nav-item-telephony,
 #sidebar-nav #nav-item-voice {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_voice.svg?v=2020032620200227-0720')
 }
+#sidebar-nav #nav-item-telephony:hover,
 #sidebar-nav #nav-item-voice:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/voice-hover.svg?v=20200326');
+}
+#sidebar-nav #nav-item-call-history {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/default.svg');
+}
+#sidebar-nav #nav-item-call-history:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/guide/nav-icons/default-hover.svg');
 }
 #sidebar-nav #nav-item-sms-and-fax {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging.svg?v=2020032620200227-0720');

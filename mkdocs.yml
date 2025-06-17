@@ -41,9 +41,7 @@ markdown_extensions:
 extra_css:
 - extra.css
 
-copyright: "1999-2020 RingCentral, Inc. All rights reserved."
-
-#google_analytics: ['UA-57519112-1', 'developers.ringcentral.com']
+copyright: "1999-2025 RingCentral, Inc. All rights reserved."
 
 nav:
 
@@ -56,58 +54,65 @@ nav:
     - 'Build an app': 'getting-started/code-app.md'
     - 'Sending SMS': 'getting-started/sms.md'
     - 'Promote your app': 'getting-started/promote-app.md'
-  - 'Voice':
+  - 'Telephony':
     - 'Overview': 'voice/index.md'
     - 'Getting Started': 'voice/quick-start.md'
-    - 'Placing Calls':
+    - 'Placing calls':
       - 'RingOut': 'voice/ringout.md'
       - 'WebRTC': 'voice/webrtc.md'
       - 'URI Scheme': 'voice/uri-scheme.md'
-    - 'User Call Handling':
+    - 'Call handling':
       - 'Overview': 'voice/call-routing/user-call-handling/index.md'
-      # - 'State-based Triggers': 'voice/call-routing/user-call-handling/states.md'
-      - 'State-based Rules': 'voice/call-routing/user-call-handling/states-and-rules.md'
-      - 'Interaction Rules': 'voice/call-routing/user-call-handling/interaction-rules.md'
-      # - 'Call Handling Rules': 'voice/call-routing/user-call-handling/call-handling-rules.md'
-      - 'Legacy Answering Rules': 'voice/call-routing/user-call-handling/legacy-user-call-handling.md'
+      - 'Company rules': 'voice/call-routing/company-rules.md'
+      - 'Forward-all-calls rules': 'voice/call-routing/user-call-handling/forward-all-calls-rules.md'
+      - 'Do-not-disturb rules': 'voice/call-routing/user-call-handling/dnd-rules.md'
+      - 'Custom rules': 'voice/call-routing/user-call-handling/interaction-rules.md'
+      - 'Work hour-based rules': 'voice/call-routing/user-call-handling/work-hour-rules.md'
+      - 'State-based rules': 'voice/call-routing/user-call-handling/states-and-rules.md'
+    - 'Call handling (legacy)':
+      - 'Answering Rules': 'voice/call-routing/user-call-handling/legacy-user-call-handling.md'
       - 'Migration Guidance': 'voice/call-routing/user-call-handling/migration-guide.md'
-    - 'Company Call Handling':
-    # - 'Call Handling':
-      - 'Overview': 'voice/call-routing/index.md'
-      # - 'Get Started': 'voice/call-routing/get-started.md'
-      # - 'Answering Rules Overview': 'voice/call-routing/manual/answering-rules.md'
-      - 'Company Answering Rules': 'voice/call-routing/manual/company-answering-rules.md'
-      - 'Call Queues': 'voice/call-routing/manual/call-queues.md'
-      - 'Call Queue Presence': 'voice/call-routing/manual/call-queues-presence.md'
-      - 'Call Forwarding/Flipping': 'voice/call-routing/manual/call-forwarding.md'
-    - 'Call Control':
+      - 'Call Forwarding': 'voice/call-routing/manual/call-forwarding.md'
+    - 'Call queues':
+      - 'Call queues': 'voice/call-routing/manual/call-queues.md'
+      - 'Call queue presence': 'voice/call-routing/manual/call-queues-presence.md'
+    - 'Call control':
       - 'Overview': 'voice/call-control.md'
       - 'Finding active calls': 'voice/finding-active-calls.md'
+      - 'Pre-call control': 'voice/pre-call-control.md'
+      - 'Active-call control': 'voice/active-call-control.md'
       - 'Detecting state changes': 'voice/call-control-sessions.md'
-      - 'Pre-call Control': 'voice/pre-call-control.md'
-      - 'Active-call Control': 'voice/active-call-control.md'
-      - 'Call Monitoring': 'voice/supervision.md'
       - 'Conference call': 'voice/conference.md'
-      - 'Warm Transfer': 'voice/warm-transfer.md'
-      - 'Telephony Session Notifications': 'voice/telephony-session-notifications.md'
+      - 'Warm transfer': 'voice/warm-transfer.md'
+      - 'Telephony session events': 'voice/telephony-session-notifications.md'
       - 'Call Control SDK': 'https://github.com/ringcentral/ringcentral-call-control-js'
-    - 'Call Logs':
-      - 'Overview': 'voice/call-log/index.md'
-      - 'Getting started': 'voice/call-log/quick-start.md'
-      - 'Call Log data types': 'voice/call-log/api.md'
-      - 'Detailed Call Log Data': 'voice/call-log/details.md'
-      - 'Data Archival': 'voice/call-log/archival.md'
-      - 'Call Recordings': 'voice/call-log/recordings.md'
-      - 'Synchronization': 'voice/call-log/sync.md'
-      - 'Best Practices': 'voice/call-log/best-practices.md'
-      - 'Access Control': 'voice/call-log/access.md'
-    - 'Call Analytics':
-      - 'Calculating Call Metrics': 'voice/calculating-call-time-metrics.md'
-    - 'Sample Applications':
+    - 'Call supervision':
+      - 'Finding active calls': 'voice/finding-active-calls.md'
+      - 'Call monitoring': 'voice/supervision.md'
+    - 'Sample applications':
       - 'Building a Web Phone with WebRTC': 'https://ringcentral-tutorials.github.io/getting-started-with-webrtc-js-demo/'
+  - 'Call history':
+    - 'Overview': 'voice/call-log/index.md'
+    - 'Getting started': 'voice/call-log/quick-start.md'
+    - 'Call logs':
+      - 'Call log data types': 'voice/call-log/api.md'
+      - 'Detailed call log data': 'voice/call-log/details.md'
+      - 'Data archival': 'voice/call-log/archival.md'
+      - 'Call recordings': 'voice/call-log/recordings.md'
+      - 'Synchronization': 'voice/call-log/sync.md'
+      - 'Best practices': 'voice/call-log/best-practices.md'
+      - 'Access control': 'voice/call-log/access.md'
+      - 'Calculating call metrics': 'voice/calculating-call-time-metrics.md'
+    - 'Analytics':
+      - 'Overview': 'analytics/index.md'
+      - 'Getting Started': 'analytics/quick-start.md'
+      - 'Aggregate Data': 'analytics/aggregate.md'
+      - 'Timeline Data': 'analytics/timeline.md'
+    - 'Sample Applications':
       - 'Call Log Analytics for iOS': 'https://ringcentral-tutorials.github.io/calllog-analytics-swift-demo/'
       - 'Call Log Visualizations': 'https://ringcentral-tutorials.github.io/calllog-visualization-nodejs-demo/'
       - 'Call Recording Push Notification': 'https://ringcentral-tutorials.github.io/callrecording-notification-node/'
+  
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
@@ -239,28 +244,21 @@ nav:
          - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
          - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
          - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
+    - 'Webinar':
+      - 'Overview': 'webinar/index.md'
+      - 'Getting Started': 'webinar/quick-start.md'
+      - 'Core concepts':
+        - 'Use cases': 'webinar/use-cases.md'
+        - 'Sessions': 'webinar/sessions.md'
+        - 'Roles': 'webinar/roles.md'
+        - 'Terminology': 'webinar/terminology.md'
+      - 'Creating webinars': 'webinar/creation.md'
+      - 'Inviting hosts and cohosts': 'webinar/invitees.md'
+      - 'Registering attendees': 'webinar/registrants.md'
+      - 'Analyzing past webinars': 'webinar/past-webinars.md'
+      - 'Events and notifications': 'webinar/events.md'
+#      - 'Webinar recordings': 'webinar/recordings.md'
     - 'Using RingCentral Embeddable': 'video/embeddable.md'
-
-  - 'Webinar':
-    - 'Overview': 'webinar/index.md'
-    - 'Getting Started': 'webinar/quick-start.md'
-    - 'Core concepts':
-      - 'Use cases': 'webinar/use-cases.md'
-      - 'Sessions': 'webinar/sessions.md'
-      - 'Roles': 'webinar/roles.md'
-      - 'Terminology': 'webinar/terminology.md'
-    - 'Creating webinars': 'webinar/creation.md'
-    - 'Inviting hosts and cohosts': 'webinar/invitees.md'
-    - 'Registering attendees': 'webinar/registrants.md'
-    - 'Analyzing past webinars': 'webinar/past-webinars.md'
-    - 'Events and notifications': 'webinar/events.md'
-#    - 'Webinar recordings': 'webinar/recordings.md'
-
-  - 'Analytics':
-    - 'Overview': 'analytics/index.md'
-    - 'Getting Started': 'analytics/quick-start.md'
-    - 'Aggregate Data': 'analytics/aggregate.md'
-    - 'Timeline Data': 'analytics/timeline.md'
 
   - 'Artificial Intelligence':
     - 'Overview': 'ai/index.md'

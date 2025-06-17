@@ -1,164 +1,163 @@
-# User Interaction Call Handling Rules
+# Custom call handling rules
 
-Interaction user call handling rules are custom rules that allow users to define how incoming calls should be managed under specific conditions or scenarios. These rules offer flexibility beyond the state rules, enabling users to tailor call behavior to meet unique needs.
+Every user has the ability to configure custom call handling rules that are evaluated after any [forward-all-calls](forward-all-calls-rules.md) and [do-not-disturb](dnd-rules.md). These rules allow users to define how incoming calls should be managed under specific conditions or scenarios unique to them. Custom rules offer greater flexibility beyond other state-based rules like [forward-all-calls](forward-all-calls-rules.md), [do not disturb](dnd-rules.md) and [work hour-based](work-hour-rules.md) rules with regards to the conditions that trigger them. 
 
-For example, a user might want to create a custom rule to handle calls during annual public holidays. Instead of following the default call handling flow, the rule could automatically route incoming calls to voicemail, play a holiday-specific greeting, or forward calls to an alternate number. This ensures that callers receive appropriate handling and information, even when the user is unavailable due to special circumstances.
+Consider the following example in which a user wants to handle calls specially during annual public holidays. Instead of following the default call handling flow, the rule could automatically route incoming calls to voicemail, play a holiday-specific greeting, or forward calls to an alternate number. This ensures that callers receive appropriate handling and information, even when the user is unavailable due to special circumstances.
 
-If a user has a custom rule, incoming calls to the user will be routed using the following logic:
+## Rule conditions
 
-<img class="img-fluid" src="../../../../img/call-routing-with-interaction-rule.png" style="max-width:600px;">
+Each custom call handling rule must have associated with it one or more conditions, **all of which must evaluate to true** in order for the rule to be executed. Listed below are the current list of supported custom rule conditions. 
 
-User call handling hierarchy with custom rule(s)
+For a complete reference for all supported custom rule conditions, please visit our [API Reference](https://developers.ringcentral.com/api-reference/Interaction-Rules/createVoiceInteractionRule).
 
-A user interaction rule can be triggered by the following conditions:
+### Caller ID
 
-- Caller Ids: An array of phone numbers that incoming calls are dialed from
-- Called Numbers: An array of phone numbers that an incoming call is dialed to
-- Schedule:
-    - Range: A period of time specified by date and time range
-    - Weekly: Repeatedly for certain week day
-- State
-    - Work-Hours: Match the work-hours schedule
-    - After-Hours: Match the after-hours schedule
+An array of phone numbers that incoming calls are dialed from.
 
-A custom rule is executed only in case all its conditions match the incoming call. This means that the condition evaluation is an AND operator.
+```js
+{
+  "conditions": [{
+	  "type":"Interaction",
+	  "from":[
+	    { "phoneNumber":"+18005551212", "name":"John Doe" }
+	  ]
+  }]
+}
+```
 
-!!! note
-    When using the `State` trigger to match the `work-hours` or `after-hours` schedule, you must also include either a Caller ID or a Called Number condition, or both conditions to ensure proper rule evaluation.
+### Called numbers
 
-If a user has multiple interaction rules, the interaction rules priority will be calculated based on the following logics:
+An array of phone numbers that an incoming call is dialed to.
 
-|Schedule Condition|Caller ID Condition|Called Number Condition|Priority|
-|||||
-|Set up|Set up|Set up|10|
-|Not Set|Set up|Set up|9|
-|Set up|Set up|Not Set|8|
-|Set up|Not Set|Set up|7|
-|Not Set|Set up|Not Set|6|
-|Not Set|Not Set|Set up|5|
-|Set up|Not Set|Not Set|4|
+```js
+{
+  "conditions": [{
+      "type":"Interaction",
+      "to":[
+         { "phoneNumber":"+18005551212", "name":"John Doe" }
+	  ]
+  }]
+}
+```
 
-An interaction rule can also be applied to incoming calls received through a call queue, provided the feature is enabled on the account and the `queueCallsIncluded` flag is set to true. In this case, calls received via the call queue are evaluated against the custom rule conditions. If none of the conditions are met, the call is routed to the "Agent" state.
+### Schedule: date range
 
-## Example use case
+A period of time specified by date and time range.
+
+```js
+{
+    "conditions": [{
+        "type": "Schedule",
+        "schedule": {
+            "startDateTime": "2001-02-01T08:00:00.000Z",
+            "endDateTime": "2001-02-01T08:00:00.000Z",
+            "triggers": [{
+                "triggerType": "Daily",
+                "startTime": "09:00:00",
+                "endTime": "10:00:00"
+            }]
+        }
+    }]
+}
+```
+
+### Schedule: weekly
+
+Repeatedly for certain week day.
+
+```js
+{
+    "conditions": [{
+        "type": "Schedule",
+        "schedule": {
+            "triggers": [{
+                "triggerType": "Weekly",
+                "ranges": {
+                    "tuesday": [{
+                        "startTime": "9:00:00",
+                        "endTime": "10:30:00"
+                    }]
+                }
+            }]
+        }
+    }]
+}
+```
+
+### State: work hours 
+
+Match the work-hours schedule
+
+```js
+{
+    "conditions": [{
+        "type": "State",
+        "state": {
+            "id": "work-hours"
+        }
+    }]
+}
+```
+
+### State: after-hours
+
+Match the after-hours schedule
+
+```js
+{
+    "conditions": [{
+        "type": "State",
+        "state": {
+            "id": "after-hours"
+        }
+    }]
+}
+```
+
+!!! warning "`State` trigger requires additional condition"
+    When using the `State` trigger to match the `work-hours` or `after-hours` schedule, you must also include a caller ID and/or a called number condition to ensure proper rule evaluation.
+
+### Condition priorties
+
+If a user has multiple optional rules, the rule's priority will be calculated as follows (order of execution is from highest to lowest)::
+
+| Priority | Schedule Condition? | Caller ID Condition? | Called Number Condition? |
+|----------|---------------------|----------------------|--------------------------|
+| 10       | Yes                 | Yes                  | Yes                      |
+| 9        | No                  | Yes                  | Yes                      |
+| 8        | Yes                 | Yes                  | No                       |
+| 7        | Yes                 | No                   | Yes                      |
+| 6        | No                  | Yes                  | No                       |
+| 5        | No                  | No                   | Yes                      |
+| 4        | Yes                 | No                   | No                       |
+
+## Rule dispatching actions
+
+| Action type                | Description                                                                                                        |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------|
+| `Play Connecting Message`  | Plays a "you are connecting to" message to the caller                                                              |
+| `Play Connection Prompt`   | Plays a "would you like to connect to" prompt to the caller                                                        |
+| `Play Welcome Prompt`      | Plays either a custom or preset greeting to the caller                                                             |
+| `Screening Action`         | This forces the call to first be screened by the recipient before answering.                                       |
+| `Ring Group Action`        | This routes the call into an ad-hoc [ring group][1]                                                                |
+| `Ring Always Group Action` |                                                                                                                    |
+| `Terminating Action`       | This allows a user to forward the call to an extension, phone number, voicemail endpoint or announcement endpoint  |
+
+Each dispatching action has its own unique inputs and parameters. Please consult the [API reference](https://developers.ringcentral.com/api-reference/Interaction-Rules/createVoiceInteractionRule) to explore the latest action types and their inputs.
+
+[1]: https://support.ringcentral.com/article-v2/Set-up-Ring-Group.html?brand=RC_US&product=RingEX&language=en_US
+
+## Receiving calls from call queues
+
+An interaction rule can also be applied to incoming calls received through a call queue, provided the feature is enabled on the account and the `queueCallsIncluded` flag is set to true. In this case, calls received via the call queue are evaluated against the custom rule conditions. If none of the conditions are met, the call is passed on to the [Agent](agent-rules.md) rule.
+
+## Example
 
 The following example demonstrates how to implement an interaction rule to handle incoming calls from VIP customers during after-hours.
 Alex works in customer support. His regular working hours are weekdays from 8:00 AM to 4:00 PM. He has an After-Hours rule configured to route all incoming calls to his voicemail outside of those hours. However, Alex is eligible for a performance bonus if he supports VIP customers during his off-hours. To take advantage of this, he decides to receive calls from VIP customers on his personal mobile number: +1 (408) 232-4343.
 Let’s help Alex create a custom interaction rule to meet this requirement.
 
-Assume that Alex has exported a list of 5 VIP customers from his company’s CRM into the following contact list:
-
-```JavaScript
-let vipCustomerContacts = [
-		{
-			phoneNumber: "+16501111111",
-      name: "Kristina Grant"
-		},{
-			phoneNumber: "+16502222222",
-      name: "Sandra Bell"
-		},{
-			phoneNumber: "+16503333333",
-      name: "David Peterson"
-		},{
-			phoneNumber: "+16504444444",
-      name: "Lena Shanon"
-		},{
-			phoneNumber: "+16505555555",
-      name: "Christine Lee"
-		}
-	]
-```
-
-Now we specify the parameters for the custom rule as shown below:
-
-```JavaScript
-let bodyParams = {
-      conditions: [
-        {
-          type: "Interaction",
-          from: vipCustomerContacts, // Assigned with the list of VIP customer contacts
-          to: []
-        },
-        {
-          type: "State",
-          state: { id: "after-hours" } // Match the after-hours schedule
-        }
-      ],
-      dispatching: {
-        actions: [
-          {
-            type: "RingGroupAction",
-            enabled: true,
-            targets: [
-              {
-                type: "AllMobileRingTarget",
-                name: "My mobile apps"
-              }
-            ],
-            duration: 40
-          },
-          {
-            type: "RingGroupAction",
-            enabled: true,
-            targets: [
-              {
-                type: "AllDesktopRingTarget",
-                name: "My desktop"
-              }
-            ],
-            duration: 50
-          },
-          {
-            type: "TerminatingAction",
-            targets: [
-              {
-                type: "VoiceMailTerminatingTarget",
-                name: "Voicemail",
-                prompt: {
-                  greeting: {
-                    effectiveGreetingType: "Preset",
-                    preset: {
-                      id: "590080"
-                    }
-                  }
-                }
-              },
-              {
-                type: "PlayAnnouncementTerminatingTarget",
-                name: "PlayAnnouncement",
-                prompt: {
-                  greeting: {
-                    effectiveGreetingType: "Preset",
-                    preset: {
-                      id: "66816"
-                    }
-                  }
-                },
-                dispatchingType: "Ringing"
-              },
-              {
-                type: "PhoneNumberTerminatingTarget",
-                destination: {
-                  phoneNumber: "+14082324343" // Incoming calls are routed to Alex's personal phone number
-                },
-                dispatchingType: "Terminating"
-              }
-            ],
-            ringingTargetType: "PlayAnnouncementTerminatingTarget",
-            terminatingTargetType: "PhoneNumberTerminatingTarget" // Indicating that incoming calls are terminated and forwarded to a phone number.
-          }
-        ],
-        type: "Terminate"
-      },
-      enabled: true,
-      displayName: "VIP Calls After-Hours"
-}
-```
-
-With the `bodyParams` above, we can call the API to create a new custom rule for Alex
-
-!!! note "Running the code"
-    If you have tried the RingOut quick start, you can just copy all the functions below and add them to the quick start project then call the `create_user_interation_rule()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+!!! info "In the following sample code, we populate a **static list** of VIP phone numbers. It is assumed that in a real-world implementation that list would be **populated dynamically**."
 
 === "JavaScript"
 

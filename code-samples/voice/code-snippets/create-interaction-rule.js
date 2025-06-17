@@ -21,24 +21,22 @@ platform.on(platform.events.loginError, function(e){
 */
 async function create_user_interaction_rule() {
   try {
-    let vipCustomerContacts = [
-    		{
-    			phoneNumber: "+16501111111",
-          name: "Kristina Grant"
-    		},{
-    			phoneNumber: "+16502222222",
-          name: "Sandra Bell"
-    		},{
-    			phoneNumber: "+16503333333",
-          name: "David Peterson"
-    		},{
-    			phoneNumber: "+16504444444",
-          name: "Lena Shanon"
-    		},{
-    			phoneNumber: "+16505555555",
-          name: "Christine Lee"
-    		}
-    	]
+      let vipCustomerContacts = [{
+    	  "phoneNumber": "+16501111111",
+          "name": "Kristina Grant"
+      },{
+    	  "phoneNumber": "+16502222222",
+          "name": "Sandra Bell"
+      },{
+    	  "phoneNumber": "+16503333333",
+          "name": "David Peterson"
+      },{
+    	  "phoneNumber": "+16504444444",
+          "name": "Lena Shanon"
+      },{
+    	  "phoneNumber": "+16505555555",
+          "name": "Christine Lee"
+      }]
 
     let bodyParams = {
           conditions: [

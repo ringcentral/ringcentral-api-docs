@@ -1,32 +1,87 @@
-# User Call Handling
+# Call handling rules
 
-User call handling refers to a set of configurations and rules that control how incoming phone calls are managed for a specific user extension within a RingCentral RingEX account. These settings determine how calls are routed based on conditions such as time of day, day of the week, user availability, and custom-defined scenarios.
+Call handling refers to how incoming phone calls are processed within a RingCentral RingEX account to ensure they are routed to the appropriate extension or deliver an appropriate experience to the person making the call. Call handling is governed by a set of rules. Each rule contains a condition and an action to be followed when the condition is met. Below, you will learn how call handling works at a high-level, and in subsequent sections we will dive into the different elements to govern the routing and handling of call in more detail. 
 
-When the user is available, the system can apply:
+## Use case: VIP call routing
 
-- Greeting – Plays a customizable welcome message when a call is received.
+To better understand the purpose of call routing, and to better help you imagine scenarios within your own company where call handling could be applied, let's look at an example use case involving AcmeTech, a hypothetical company that provides IT services to a range of clients. AcmeTech uses a CRM to manage customer information, including contract tiers, issue histories, account managers, and support SLAs. The company wants to ensure that VIP customers (those with premium support contracts) always receive expedited service when they call, even outside of regular business hours.
 
-- Connecting Audio – Plays music or a message while the call is being connected.
+To achieve this, AcmeTech’s developers create an integration between their CRM and the RingCentral platform using our Call Handling APIs that does the following:
 
-- Simultaneous or Sequential Ringing – Rings multiple devices either simultaneously or in a fixed order (e.g., desk phone, mobile app, desktop app) to help ensure the user doesn’t miss a call.
+1. **Generates a list of VIPs from the CRM**. The CRM automatically generates a list of phone numbers associated with VIP customers. This list is kept up to date in real-time or on a scheduled basis.
 
-When the user is unavailable, the system can automatically perform one of the following actions:
+2. **Updates call handling rules**. Using the Call Handling APIs, the integration updates call handling rules for key support agents and managers in the following ways:
+    - The rule is engaged if the call is received after work hours. 
+    - The system matches the caller's phone number to numbers on the VIP list.
+    - If the caller is a VIP, the rule forwards the call to the appropriate agent’s mobile device or backup support contact.
+    - Finally, if the call is not answered within a specified duration, it is routed to a voicemail with a custom greeting or escalated to another team.
 
-- Call Forwarding – Redirects the call to another phone number or another user extension, such as a co-worker or a call queue.
+#### Benefits
 
-- Voicemail – Sends the call to the user's voicemail with a preset or custom greeting.
+This use case illustrates how call handling rules can help AcmeTech achieve the following:
 
-- Announcement Playback – Plays a pre-recorded message and then ends the call.
+* **Improved Responsiveness:** VIP and high-priority clients receive faster and more personalized responses.
+* **Automation:** Reduces the need for manual call handling configuration, saving time and ensuring consistency.
+* **Scalability:** New users and call handling scenarios can be programmatically added or modified as business needs evolve.
 
-This functionality allows users to tailor their call handling experience, ensuring that important calls are managed efficiently and in alignment with business workflows or personal preferences.
+## Creating call handling rules using Admin Console
 
-RingCentral users can set their call handling configuration via their RingCentral account's [admin portal](https://service.ringcentral.com). Or from the [RingCentral app](https://app.ringcentral.com) at "Settings" -> "Phone" -> "Incoming call rules" page.
+To begin, let's see how one can manage and setup call handling rules using the RingCentral Admin Console. This is a good place to start because the user interface provides an easy way to experiment with different configurations, and is ideal for most use cases. We will later discuss how rules can be constructed programmatically via an API, which is appropriate for use cases that require automated rule setting, or automated user provisioning. 
 
-<img class="img-fluid" src="../../../img/call-handling-sw.png" style="max-width:800px;">
+One can access their personal call handling from the [Admin Console](https://service.ringcentral.com) under the personal settings under "Phone." 
+
+!!! info "Users can also access call handling rules from the [RingCentral desktop app](https://app.ringcentral.com) under Settings > Phone > Incoming call rules"
+
+![Where to find call handling in Admin Console](../../../img/call-handling-sw.png){ .img-fluid .mw-600 }
 
 User can add and change call handling rules from their admin portal:
 
-<img class="img-fluid" src="../../../img/call-handling-sw-rules.png" style="max-width:800px;">
+![Call handling rules in Admin Console](../../../img/call-handling-sw-rules.png){ .img-fluid .mw-600 }
+
+## Call handling rule types
+
+Given that any account could have a number of different and often competing rules in effect, rules are divided into different categories, with each category or type having a different priority or precedence. Rules are evaluated in the following order. The first rule whose conditions match the incoming call will be executed. 
+
+When it comes to the API, each rule is expressed using a relatively unique syntax, which you will learn about with each rule. 
+
+1. [Company rules](../company-rules.md)
+2. [Forward-all-calls rules](forward-all-calls-rules.md)
+3. [Do-not-disturb rules](dnd-rules.md)
+4. [Custom, or interaction-based rules](custom-rules.md)
+5. [Work-hour and after-hour rules](work-hour-rules.md)
+7. [Agent rules](agent-rules.md)
+
+## Dispatching methods
+
+* Forward call
+* Play announcement
+* Send to voicemail
+
+## Call handling conditions
+
+* the number being called
+* the person making the call
+* time of day
+* day of the week
+* user availability
+
+## Call handling actions
+
+
+
+When the user is available, the system can apply:
+
+- **Greeting** – Plays a customizable welcome message when a call is received.
+- **Connecting Audio** – Plays music or a message while the call is being connected.
+- **Simultaneous or Sequential Ringing** – Rings multiple devices either simultaneously or in a fixed order (e.g., desk phone, mobile app, desktop app) to help ensure the user doesn’t miss a call.
+
+When the user is unavailable, the system can automatically perform one of the following actions:
+
+- **Call Forwarding** – Redirects the call to another phone number or another user extension, such as a co-worker or a call queue.
+- **Voicemail** – Sends the call to the user's voicemail with a preset or custom greeting.
+- **Announcement Playback** – Plays a pre-recorded message and then ends the call.
+
+This functionality allows users to tailor their call handling experience, ensuring that important calls are managed efficiently and in alignment with business workflows or personal preferences.
 
 ## User Call Handling Configuration Types
 
@@ -72,27 +127,3 @@ The User Call Handling APIs in RingCentral give developers powerful capabilities
 
 For example, a developer could configure a rule that forwards calls from VIP clients during after-hours to a mobile device, while routing all other calls to voicemail. This type of automation can significantly enhance responsiveness and customer service—particularly for use cases such as after-hours support, holiday call routing, or dynamic team scheduling.
 
-**Use Case: Priority Routing for VIP Customers**
-
-Let’s consider a mid-sized company, “AcmeTech,” that provides IT services to a range of clients. AcmeTech uses a CRM to manage customer information, including contract tiers, issue histories, account managers, and support SLAs. The company wants to ensure that VIP customers (those with premium support contracts) always receive expedited service when they call, even outside of regular business hours.
-
-To achieve this, AcmeTech’s developers create an integration between their CRM and the RingCentral platform using the User Call Handling APIs. Here’s how it works:
-
-1. CRM-Driven VIP List Generation – The CRM automatically generates a list of VIP customer phone numbers. This list is kept up to date in real-time or on a scheduled basis.
-
-2. Programmatic Call Handling Rule Creation – Using the User Call Handling APIs, the integration creates or updates call handling rules for key support agents or managers. For example, if a VIP customer calls outside of business hours:
-
-    - The system matches the incoming number with the VIP list.
-    - The rule then forwards the call to the agent’s mobile device or backup support contact.
-    - If the call is not answered within a specified duration, it may be routed to voicemail with a custom greeting or escalated to another team.
-
-### Benefits
-
-  - **Improved Responsiveness:** VIP and high-priority clients receive faster and more personalized responses.
-  - **Automated Workflows:** Reduces the need for manual call handling configuration, saving time and ensuring consistency.
-  - **Customer Context:** Incoming calls are enriched with CRM data, allowing agents to respond more effectively.
-  - **Scalability:** New users and call handling scenarios can be programmatically added or modified as business needs evolve.
-
-### Conclusion
-
-This scenario demonstrates how the User Call Handling APIs, when paired with a CRM system, enable businesses to deliver smarter, data-driven communication workflows. By customizing the way calls are handled based on CRM insights, organizations can boost customer satisfaction, improve operational efficiency, and maintain a competitive edge in customer and agent experience.

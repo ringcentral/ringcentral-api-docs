@@ -1,10 +1,12 @@
-# Call Forwarding and Call Flipping
+# Call Forwarding
 
-Call Forwarding allows incoming phone calls to be directed to another phone number. This is handy when recipients have multiple phone numbers and/or a physical phone at which they can be reached. There are two primary ways calls are directed to other phones/numbers:
+Call Forwarding allows incoming phone calls to be directed to another phone number. This is handy when recipients have multiple phone numbers and/or a physical phone at which they can be reached. 
 
-* **Call Forwarding** applies to incoming calls, and allows those calls to ring at one or more numbers sequentially or simultaneously.
-
-* **Call Flipping** applies to active calls, and allows a speaker to instantly transfer an active call to another phone or device without having to terminate the call.
+!!! info "Call forwarding vs. call flipping"
+    There are two primary ways calls are directed to other phones/numbers:
+	
+	* **Call Forwarding** applies to incoming calls, and allows those calls to ring at one or more numbers sequentially or simultaneously.
+    * **Call Flipping** applies to active calls, and allows a speaker to instantly transfer an active call to another phone or device without having to terminate the call.
 
 ## Phone Types
 
