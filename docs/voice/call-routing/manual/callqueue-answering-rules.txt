@@ -20,9 +20,11 @@ The Business Hours call handling configurations are complex. They include a set 
 
 **Answering configurations**
 
-Answering configurations consist of settings that determine how the call queue dispatches incoming calls to its members
+Answering configurations define how a call queue distributes incoming calls to its members. There are three available call distribution modes:
 
-- 
+  - Simultaneous – All available members' phones ring at the same time. The first member to answer handles the call.
+  - Fixed Order – Calls are routed to members one at a time in a predefined sequence. If the first member doesn’t answer within the set timeout, the system tries the next member in the list, and so on.
+  - Longest Idle – The call is directed to the member who has been idle (i.e., available without taking a call) for the longest period.
 
 
 **Forwarding configurations**
