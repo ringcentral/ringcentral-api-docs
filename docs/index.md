@@ -138,10 +138,10 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
-  
+
   </div>
   <div class="col">
-  
+
   <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Fax</h5>
@@ -152,7 +152,7 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
-  
+
   </div>
 </div>
 
@@ -199,7 +199,7 @@ no_breadcrumb:true
 
   </div>
   <div class="col">
-  
+
   <div class="card h-100">
     <div class="card-body pt-0 pb-0">
       <h5 class="h5 card-title">Call handling</h5>
@@ -212,7 +212,7 @@ no_breadcrumb:true
       </ul>
     </div>
   </div>
-  
+
   </div>
 </div>
 
@@ -236,10 +236,10 @@ If on your way to building your first RingCentral application you encounter diff
       <a href="https://developer.ringcentral.com/api-reference" class="btn btn-primary">Learn more</a>
     </div>
   </div>
-  
+
   </div>
   <div class="col">
-  
+
   <div class="card h-100">
     <div class="card-body">
       <h5 class="h5 card-title">SDKs</h5>
@@ -247,7 +247,7 @@ If on your way to building your first RingCentral application you encounter diff
       <a href="https://developer.ringcentral.com/library/sdks.html" class="btn btn-primary">Learn more</a>
     </div>
   </div>
-  
+
   </div>
 </div>
 

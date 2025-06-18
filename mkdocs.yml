@@ -223,7 +223,7 @@ nav:
       - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
       - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
       - 'Past meetings and recordings': 'video/api/meeting-history.md'
-      # - 'Selecting meetings service': 'video/api/meeting-config.md'
+      - 'Selecting meetings service': 'video/api/meeting-config.md'
       - 'Troubleshooting': 'video/api/troubleshooting.md'
     - 'Video Client SDK':
       - 'Overview': 'video/client-sdk/index.md'
