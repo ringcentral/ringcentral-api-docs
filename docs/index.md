@@ -164,8 +164,8 @@ no_breadcrumb:true
       <h5 class="h5 card-title">Meetings and video</h5>
       <p class="card-text">Schedule meetings and access meeting history and recordings.</p>
       <ul class="pl-0 ml-4">
-      <li><a href="./meetings/quick-start/" class="card-link">Schedule a meeting</a></li>
-      <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/listAccountMeetingRecordings" class="card-link">Access meeting recordings</a></li>
+      <li><a href="./video/api/quick-start/" class="card-link">Schedule a meeting</a></li>
+      <li><a href="https://developers.ringcentral.com/api-reference/Meeting-Recordings/getAccountRecordings" class="card-link">Access meeting recordings</a></li>
       </ul>
     </div>
   </div>
