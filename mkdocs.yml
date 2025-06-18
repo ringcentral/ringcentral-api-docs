@@ -67,6 +67,7 @@ nav:
       - 'Forward-all-calls rules': 'voice/call-routing/user-call-handling/forward-all-calls-rules.md'
       - 'Do-not-disturb rules': 'voice/call-routing/user-call-handling/dnd-rules.md'
       - 'Custom rules': 'voice/call-routing/user-call-handling/interaction-rules.md'
+      - 'Agent rules': 'voice/call-routing/user-call-handling/agent-rules.md'
       - 'Work hour-based rules': 'voice/call-routing/user-call-handling/work-hour-rules.md'
       - 'State-based rules': 'voice/call-routing/user-call-handling/states-and-rules.md'
     - 'Call handling (legacy)':

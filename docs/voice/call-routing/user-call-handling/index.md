@@ -48,8 +48,8 @@ When it comes to the API, each rule is expressed using a relatively unique synta
 2. [Forward-all-calls rules](forward-all-calls-rules.md)
 3. [Do-not-disturb rules](dnd-rules.md)
 4. [Custom, or interaction-based rules](custom-rules.md)
-5. [Work-hour and after-hour rules](work-hour-rules.md)
 7. [Agent rules](agent-rules.md)
+6. [Work-hour and after-hour rules](work-hour-rules.md)
 
 ## Dispatching methods
 
