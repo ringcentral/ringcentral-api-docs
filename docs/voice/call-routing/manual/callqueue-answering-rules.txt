@@ -2,7 +2,7 @@
 
 Call queue call handling is a set of configurations that determine how incoming calls to a call queue are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
 
-<img class="img-fluid" src="../../../../img/callqueue-callhandling.png" style="max-width:800px;">
+<img class="img-fluid" src="../../../../img/callqueue-callhandling.png">
 
 Call queue call handling rules can be defined separately based on the following conditions:
 
@@ -18,6 +18,8 @@ Call queue call handling configurations are set differently for different types 
 
 ## Business Hours rule
 
+The Business Hours rule defines how incoming calls are handled during the organization's regular working hours. This rule ensures calls are routed to the available members (agents) when they are expected to be on duty. This rule typically aligns with the operating hours of the company or a specific branch office, helping to maintain a consistent and responsive customer experience.
+
 The Business Hours call handling configurations are complex. They include a set of configurations for ringing its members and other call queue features such as the waiting time, agent time out or the forwarding actions when the incoming call is not answered.
 
 **Answering configurations**
@@ -31,41 +33,45 @@ Answering configurations define how a call queue distributes incoming calls to i
 **Forwarding configurations**
 
 1. When the queue is full
-    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
-    - Announcement - Prerecorded message
-    - Forward to extension - Any type of extension (IVR menu, call queue, user)
+    - Send to Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+    - Play Announcement - Play a prerecorded message
+    - Forward to extension - Any type of extension (IVR menu, call queue, user etc.)
     - Forward to external number (Unconditional Forwarding) - Any phone number
 
 2. When the maximum wait time is reached
-    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
-    - Forward to extension - Any type of extension (IVR menu, call queue, user)
+    - Send to Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+    - Forward to extension - Any type of extension (IVR menu, call queue, user etc.)
     - Forward to external number (Unconditional Forwarding) - Any phone number
 
 3. When no one answers
     - WaitPrimaryMembers - Keep waiting for the queue's members to answer the incoming call.
     - WaitPrimaryAndOverflowMembers - Rings members from the overflow group (other call queue) if overflow group was selected.
-    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail.
-    - Forward to extension - Any type of extension (IVR menu, call queue, user).
+    - Send to Voicemail - Can be the call queue's own voicemail or another extension's voicemail.
+    - Forward to extension - Any type of extension (IVR menu, call queue, user etc.).
     - Forward to external number (Unconditional Forwarding) - Any phone number.
 
 ## After Hours rule
 
+The After Hours rule manages call behavior outside of regular business hours. When the office is closed, this rule reroutes calls to voicemail, plays a recorded message, or forwards them to an alternate destination such as another call queue or a mobile number. It ensures that callers are still acknowledged and provided with relevant information or next steps, even when call queue members are unavailable.
+
 The After Hours rule can be configured to forward incoming calls to the following destinations:
 
-- Voicemail - Can be the call queue's own voicemail or another extension's voicemail
-- Announcement - Prerecorded message
+- Send to Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+- Play Announcement - Play a prerecorded message
 - Forward to extension - Any type of extension (IVR menu, call queue, user)
-- Forward to external number - Any phone number
+- Forward to external number (Unconditional Forwarding) - Any phone number
 
 ## Custom rule
 
-- Ring call queue members
-- Send to voicemail
-- Play an Announcement
-- Forward to extension
-- Forward to external number
+Custom rules allow for flexible and tailored call handling based on specific conditions such as holidays, lunch breaks, special campaigns, or unexpected closures. These rules can override both business and after-hours rules to support unique scheduling or routing needs.
 
- Can be set to route incoming calls to the following destinations:
+A custom rule can be configured to forward incoming calls to the following destinations:
+
+- Ring call queue members
+- Send to Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+- Play Announcement - Play a prerecorded message
+- Forward to extension - Any type of extension (IVR menu, call queue, user etc.)
+- Forward to external number (Unconditional Forwarding) - Any phone number
 
 
 ## Update Call Queue Business Hour and After Hour Call Handling Rules
@@ -128,7 +134,7 @@ The following code sample shows how to create a company custom answering rule th
 
     ```javascript
     {!> code-samples/voice/company-answering-rules.js !}
-    ```    
+    ```
 
 === "Python"
 
