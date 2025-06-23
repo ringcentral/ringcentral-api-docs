@@ -4,14 +4,14 @@ State-based call handling is a structured approach to managing incoming calls ba
 
 The call handling hierarchy is described in the following diagram:
 
-<img class="img-fluid" src="../../../../img/standard-states.png" style="max-width:600px;">
-  User state-based call handling hierarchy
+<img class="img-fluid" src="../../../../img/standard-states.png">
+<br>User state-based call handling hierarchy
 
 The 'after-hours' state is automatically created when the 'work-hours' state schedule is configured for specific days and times. And when the 'work-hours' state is rescheduled to 24/7, the system will automatically delete the 'after-hours' state.
 
 Additionally, when a user extension is added to a call queue, the system automatically generates the ‘agent’ state, which manages how they receive calls from the queue based on their availability. By default, the agent state inherits the schedule conditions and the ring settings from the user’s ‘work-hours’ state.
 
-<img class="img-fluid" src="../../../../img/agent-state.png" style="max-width:600px;">
+<img class="img-fluid" src="../../../../img/agent-state.png">
 
 To retrieve a user's state scheduling conditions, use the API below:
 

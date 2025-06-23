@@ -6,9 +6,8 @@ For example, a user might want to create a custom rule to handle calls during an
 
 If a user has a custom rule, incoming calls to the user will be routed using the following logic:
 
-<img class="img-fluid" src="../../../../img/call-routing-with-interaction-rule.png" style="max-width:600px;">
-
-User call handling hierarchy with custom rule(s)
+<img class="img-fluid" src="../../../../img/call-routing-with-interaction-rule.png">
+<br>User call handling hierarchy with custom rule(s)
 
 A user interaction rule can be triggered by the following conditions:
 

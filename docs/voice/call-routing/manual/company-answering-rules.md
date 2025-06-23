@@ -2,7 +2,7 @@
 
 Company call handling is a set of configurations that determine how incoming calls to a company phone number are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
 
-<img class="img-fluid" src="../../../../img/company-callhandling.png" style="max-width:1000px;">
+<img class="img-fluid" src="../../../../img/company-callhandling.png">
 
 Company call handling rules can be defined separately based on the following conditions:
 

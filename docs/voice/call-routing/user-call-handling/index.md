@@ -22,11 +22,11 @@ This functionality allows users to tailor their call handling experience, ensuri
 
 RingCentral users can set their call handling configuration via their RingCentral account's [admin portal](https://service.ringcentral.com). Or from the [RingCentral app](https://app.ringcentral.com) at "Settings" -> "Phone" -> "Incoming call rules" page.
 
-<img class="img-fluid" src="../../../img/call-handling-sw.png" style="max-width:800px;">
+<img class="img-fluid" src="../../../img/call-handling-sw.png">
 
 User can add and change call handling rules from their admin portal:
 
-<img class="img-fluid" src="../../../img/call-handling-sw-rules.png" style="max-width:800px;">
+<img class="img-fluid" src="../../../img/call-handling-sw-rules.png">
 
 ## User Call Handling Configuration Types
 
