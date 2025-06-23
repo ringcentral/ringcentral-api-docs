@@ -428,6 +428,6 @@ nav:
 
   - 'Downloads and SDKs': sdks.md
 
-  - 'Postman': postman/postman.md
+  # - 'Postman': postman/postman.md
 
   - 'RingCentral Labs': 'https://www.ringcentral.com/apps/p/ringcentral-labs'

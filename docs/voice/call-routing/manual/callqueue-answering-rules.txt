@@ -2,6 +2,8 @@
 
 Call queue call handling is a set of configurations that determine how incoming calls to a call queue are routed and managed. These configurations can be tailored for different scenarios to ensure efficient call distribution and a consistent caller experience.
 
+<img class="img-fluid" src="../../../../img/callqueue-callhandling.png" style="max-width:800px;">
+
 Call queue call handling rules can be defined separately based on the following conditions:
 
 - Business Hours rule – Defines how calls are managed during the preset operating hours.
@@ -16,7 +18,7 @@ Call queue call handling configurations are set differently for different types 
 
 ## Business Hours rule
 
-The Business Hours call handling configurations are complex. They include a set of configurations for ringing its members and other call queue SLA features such as the waiting time, agent time out or action when the queue is full etcetera.
+The Business Hours call handling configurations are complex. They include a set of configurations for ringing its members and other call queue features such as the waiting time, agent time out or the forwarding actions when the incoming call is not answered.
 
 **Answering configurations**
 
@@ -26,22 +28,25 @@ Answering configurations define how a call queue distributes incoming calls to i
   - Fixed Order – Calls are routed to members one at a time in a predefined sequence. If the first member doesn’t answer within the set timeout, the system tries the next member in the list, and so on.
   - Longest Idle – The call is directed to the member who has been idle (i.e., available without taking a call) for the longest period.
 
-
 **Forwarding configurations**
 
-When the queue is full
+1. When the queue is full
+    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+    - Announcement - Prerecorded message
+    - Forward to extension - Any type of extension (IVR menu, call queue, user)
+    - Forward to external number (Unconditional Forwarding) - Any phone number
 
-  - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
-  - Announcement - Prerecorded message
-  - Forward to extension - Any type of extension (IVR menu, call queue, user)
-  - Forward to external number - Any phone number
+2. When the maximum wait time is reached
+    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
+    - Forward to extension - Any type of extension (IVR menu, call queue, user)
+    - Forward to external number (Unconditional Forwarding) - Any phone number
 
-When the maximum wait time is reached
-
-  - Voicemail - Can be the call queue's own voicemail or another extension's voicemail
-  - Forward to extension - Any type of extension (IVR menu, call queue, user)
-  - Forward to external number - Any phone number
-
+3. When no one answers
+    - WaitPrimaryMembers - Keep waiting for the queue's members to answer the incoming call.
+    - WaitPrimaryAndOverflowMembers - Rings members from the overflow group (other call queue) if overflow group was selected.
+    - Voicemail - Can be the call queue's own voicemail or another extension's voicemail.
+    - Forward to extension - Any type of extension (IVR menu, call queue, user).
+    - Forward to external number (Unconditional Forwarding) - Any phone number.
 
 ## After Hours rule
 
@@ -60,7 +65,7 @@ The After Hours rule can be configured to forward incoming calls to the followin
 - Forward to extension
 - Forward to external number
 
- can be set to route incoming calls to the following destinations:
+ Can be set to route incoming calls to the following destinations:
 
 
 ## Update Call Queue Business Hour and After Hour Call Handling Rules
@@ -73,7 +78,7 @@ Developers can only update these rules configurations by making a PUT request to
 PUT /restapi/v1.0/account/~/answering-rule/[ruleId]
 ```
 
-## Creating a Company Custom Call Handling Rule
+## Creating a Call queue Custom Call Handling Rule
 
 Be mindful of the following when constructing a request to create a company custom answering rule:
 
