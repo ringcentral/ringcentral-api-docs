@@ -15,9 +15,7 @@ Additionally, when a user extension is added to a call queue, the system automat
 
 To retrieve a user's state scheduling conditions, use the API below:
 
-``` HTTP
-GET /restapi/v2/accounts/~/extensions/~/comm-handling/states
-```
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/states](https://developers.ringcentral.com/api-reference/States/listCicStates)
 
 ## User Call Handling Rules
 
@@ -96,14 +94,13 @@ The schedule condition can be set for a specific time period, defined by the 'st
   }
 ```
 
-To read the ‘forward-all-calls’ state's schedule and rule, call the following API:
+To read the ‘forward-all-calls’ state's schedule, call the following API:
 
-GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/forward-all-calls](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/states/forward-all-calls](https://developers.ringcentral.com/api-reference/States/readCicState)
 
 To set a schedule for the ‘forward-all-calls’ state, call the following API  with appropriate parameters
 
-PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/states/forward-all-calls](https://developers.ringcentral.com.com/api-reference/States/updateCicState)
-
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/states/forward-all-calls](https://developers.ringcentral.com/api-reference/States/updateCicState)
 
 !!! notes
     - Only one schedule can be set at a time.
@@ -111,9 +108,13 @@ PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/states/forward-all-cal
     - You must set the “enabled” flag to true when you schedule for a specific time period.
     - When the ‘range’ scheduled time expires, the ‘enabled’ flag will remain true. It’s the developer’s responsibility to check the schedule conditions to indicate to the user if the schedule is active or not. Do not just rely solely on the ‘enabled’ flag value.
 
+To read the ‘forward-all-calls’ state's schedule and rule, call the following API:
+
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/forward-all-calls](https://developers.ringcentral.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
+
 To change the 'forward-all-call' rule configurations, call the following API with appropriate parameters:
 
-PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/forward-all-calls](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/forward-all-calls](https://developers.ringcentral.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
 
 The "Forward-All-Calls" state can only be configured with a **terminating rule**, which determines how incoming calls are dispatched. The available dispatching methods include:
 
@@ -162,10 +163,14 @@ The default state schedule condition is set to 24 hours a day, every day, and ca
   }
 ```
 
-The ‘dnd’ state activeness is associated with the user’s “Do not Disturb” presence status. This means that the ‘dnd’ state can be controlled by both the [/presence](https://developers.ringcentral.com/guide/account/presence) and the API below:
+The ‘dnd’ state activeness is associated with the user’s “Do not Disturb” presence status. This means that the ‘dnd’ state can be controlled by either the [/presence](https://developers.ringcentral.com/guide/account/presence) or the API below:
 
-``` http
-PATCH `/restapi/v2/accounts/~/extensions/~/comm-handling/states/dnd`
+PATCH [/restapi/v2/accounts/~/extensions/~/comm-handling/states/dnd](https://developers.ringcentral.com/api-reference/States/updateCicState)
+
+For example:
+
+``` json
+PATCH /restapi/v2/accounts/~/extensions/~/comm-handling/states/dnd
 
 body { "enabled": true }
 ```
@@ -178,12 +183,11 @@ The "Do Not Disturb" state can only be configured with a **terminating rule**, w
 
 The 'dnd' state's rules can be retrieved by calling the following API:
 
-GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/dnd](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
-
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/dnd](https://developers.ringcentral.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
 
 To change the 'dnd' state rule configurations, call the following API with appropriate parameters:
 
-PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/dnd](https://developers.ringcentral.com.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/dnd](https://developers.ringcentral.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
 
 ### Work-hours State and Rules
 
@@ -215,7 +219,15 @@ Default ‘work-hours’ state schedule:
 
 The schedule conditions can be configured to recur on specific weekdays and time periods, defined by the 'weekday', 'startTime', and 'endTime' values.
 
-To set a schedule for the ‘work-hours’’ state, call the following API with appropriate body parameters. E.g.
+To read the ‘work-hours’ state's schedule, call the following API:
+
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/states/work-hours](https://developers.ringcentral.com/api-reference/States/readCicState)
+
+To set a schedule for the ‘work-hours’ state, call the following API  with appropriate parameters
+
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/states/work-hours](https://developers.ringcentral.com/api-reference/States/updateCicState)
+
+For example:
 
 ``` json
 PATCH  /restapi/v2/accounts/~/extensions/~/comm-handling/states/work-hours
@@ -275,11 +287,11 @@ The 'work-hours state can have one of the following terminating methods:
 
 The ‘work-hours’ state rule configurations can be retrieved by calling the following API:
 
-GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/work-hours](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/work-hours](https://developers.ringcentral.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
 
 To change the rule configurations, call the following API:
 
-PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/work-hours](https://developers.ringcentral.com.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/work-hours](https://developers.ringcentral.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
 
 ### After-Hours State and Rules
 
@@ -322,12 +334,11 @@ The 'after-hours state can have one of the following terminating methods:
 
 The ‘after-hours’ state rule configurations can be retrieved by calling the following API;
 
-GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/after-hours](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
-
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/after-hours](https://developers.ringcentral.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
 
 To change the rule configurations, call the following API:
 
-PATCH [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/after-hours](https://developers.ringcentral.com.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
+PATCH [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/after-hours](https://developers.ringcentral.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
 
 ### Agent State and Rule
 
@@ -402,21 +413,28 @@ To make the “Agent” state schedule independent of the “Work-Hours” state
 }
 ```
 
+To read the ‘agent’ state's schedule, call the following API:
+
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/states/agent](https://developers.ringcentral.com/api-reference/States/readCicState)
+
+To set a schedule for the ‘agent’ state, call the following API  with appropriate schedule parameters
+
+PATCH  [/restapi/v2/accounts/~/extensions/~/comm-handling/states/agent](https://developers.ringcentral.com/api-reference/States/updateCicState)
+
+The ‘agent’ state rule configurations can be retrieved by calling the following API:
+
+GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/agent](https://developers.ringcentral.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
+
+To change the rule configurations, call the following API:
+
+PATCH [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/agent](https://developers.ringcentral.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
+
 The 'agent' state can have the following call handling rules:
 
   - Ring settings
 
 !!! note
     The “Agent” state does not include the call terminating methods. If an agent is unavailable, the call is automatically routed to the next available agent according to the call queue's call handling settings.
-
-The ‘agent’ state rule configurations can be retrieved by calling the following API:
-
-GET [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/agent](https://developers.ringcentral.com.com/api-reference/State-based-Rules/readVoiceStateBasedRule)
-
-
-To change the rule configurations, call the following API:
-
-PATCH [/restapi/v2/accounts/~/extensions/~/comm-handling/voice/state-rules/agent](https://developers.ringcentral.com.com/api-reference/State-based-Rules/updateVoiceStateBasedRule)
 
 ## Update State Call Handling Rules
 
