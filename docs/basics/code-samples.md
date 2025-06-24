@@ -9,7 +9,7 @@
 
 All code samples within the RingCentral Developer Guide utilize JWT authentication, which requires developers to first create a JWT credential. A JWT auth works similarly to username and password auth by following the same basic sequence of calls:
 
-* Developer presents JWT credential to `/restapi/oath/token`
+* Developer presents JWT credential to `/restapi/oauth/token`
 * RingCentral responds with an access token
 * Developer presents access token in HTTP Authorization header to call the API
 
