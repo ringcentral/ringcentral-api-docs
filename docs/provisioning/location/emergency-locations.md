@@ -2,6 +2,9 @@
 
 In North America, a system is used to automatically provide the caller's location to 911 dispatchers. The 911 dispatcher's comupter receives information from the telephone company about the physical address or geographic coordinates of the caller. This information is used to dispatch police, fire, medical and other services as needed.  There are two methods to update emergency locations at RingCentral. Method 1 outlines how emergency locations are set today. However, the process for setting emergency locations is changing and method 2 should be used in the future once the feature is enabled. Keep reading to find out more.
 
+!!! note "What to know when connected via a VPN"
+     RingCentral prompts you to select a location for yourself whenever it detects you are coming from a different IP address. If you are connecting via a VPN, your IP address will often change every time you connect to a network. As a result, you may be prompted more often when you connect via a VPN. 
+
 ## Method 1: Update Location by Device
 
 Setting the emergency address allows you to enter your physical location with a discrete address. This method is via update device.
