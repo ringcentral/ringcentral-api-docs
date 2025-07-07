@@ -15,7 +15,6 @@ RingCentral RingSense transcribes your voice calls and provides in-depth convers
     * A RingSense license must be purchased and assigned to a user extension.
     * The license is transferable from one user extension to another user extension.
     * RingSense data retention is defined in your RingSense settings. By default the data is retained for 1 year.
-    * You must request access to RingSense APIs via this [form](https://forms.gle/m1djAo6w6bajXQmS9).
 
 To learn more about RingSense and how to enable the service for a RingCentral RingEX account, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
 
