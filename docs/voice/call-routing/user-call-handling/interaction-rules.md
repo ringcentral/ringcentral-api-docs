@@ -9,7 +9,7 @@ If a user has a custom rule, incoming calls to the user will be routed using the
 <img class="img-fluid" src="../../../../img/call-routing-with-interaction-rule.png">
 <br>User call handling hierarchy with custom rule(s)
 
-A user interaction rule can be triggered by the following conditions:
+A user interaction rule can be set with one or more trigger conditions below:
 
 - Caller Ids: An array of phone numbers that incoming calls are dialed from
 - Called Numbers: An array of phone numbers that an incoming call is dialed to
@@ -47,22 +47,22 @@ Let’s help Alex create a custom interaction rule to meet this requirement.
 
 Assume that Alex has exported a list of 5 VIP customers from his company’s CRM into the following contact list:
 
-```JavaScript
+```javascript
 let vipCustomerContacts = [
 		{
-			phoneNumber: "+16501111111",
+      phoneNumber: "+16501111111",
       name: "Kristina Grant"
 		},{
-			phoneNumber: "+16502222222",
+      phoneNumber: "+16502222222",
       name: "Sandra Bell"
 		},{
-			phoneNumber: "+16503333333",
+      phoneNumber: "+16503333333",
       name: "David Peterson"
 		},{
-			phoneNumber: "+16504444444",
+      phoneNumber: "+16504444444",
       name: "Lena Shanon"
 		},{
-			phoneNumber: "+16505555555",
+      phoneNumber: "+16505555555",
       name: "Christine Lee"
 		}
 	]
@@ -70,7 +70,7 @@ let vipCustomerContacts = [
 
 Now we specify the parameters for the custom rule as shown below:
 
-```JavaScript
+```javascript
 let bodyParams = {
       conditions: [
         {

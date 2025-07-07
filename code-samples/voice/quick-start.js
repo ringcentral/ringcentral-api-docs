@@ -117,8 +117,13 @@ async function boostrap_test_function(){
   // require ('./code-snippets/create-interaction-rule.js')
   // return
 
+  // await sleep(2000)
+  // console.log("Test Company Custom Rule")
+  // require ('./code-snippets/create-company-answering-rule.js')
+  // return
+
   await sleep(2000)
-  console.log("Test Interaction Rule V2")
-  require ('./code-snippets/create-company-answering-rule.js')
+  console.log("Test Call queue Custome Rule")
+  require ('./code-snippets/callqueue-answering-rule.js')
   return
 }

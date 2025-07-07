@@ -124,7 +124,7 @@ To list all company answering rules make a GET request to the following endpoint
 
 `/restapi/v1.0/account/~/answering-rule`
 
-Required permission(s): ReadAccounts
+Required app scope(s): ReadAccounts
 
 Upon successful API call completion, the response contains a list of all existing answering rules (including the default rules).
 
@@ -162,7 +162,7 @@ To fetch the details associated with an individual company answering rule, make 
 
     The `ruleId` of the default Business Hours and After Hours rule is `business-hours-rule` and `after-hours-rule`, respectively.
 
-Required permission(s): ReadAccounts
+Required app scope(s): ReadAccounts
 
 Upon successful API call completion, the response contain detailed information of a rule.
 
@@ -280,4 +280,4 @@ To delete a company answering rule, make a DELETE request to the following endpo
 !!! note
     A valid `ruleId` can be retrieved using the previous API to read all user answering rules.
 
-    The default Business Hours and After Hours rule cannot be deleted!
+    The default Business Hours and After Hours rule cannot be deleted! However, if you change the site's business hours to 24/7, the system will automatically remove the After Hours rule.
