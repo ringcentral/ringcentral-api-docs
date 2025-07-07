@@ -67,6 +67,8 @@ function boostrap_test_function(){
   // require_once (__DIR__ .'/code-snippets/change-fac-state-call-terminating-rules.php');
   // require_once (__DIR__ .'/code-snippets/set-fac-state-schedule.php');
 
-  require_once (__DIR__ .'/code-snippets/create-interaction-rule.php');
+  // require_once (__DIR__ .'/code-snippets/create-interaction-rule.php');
+
+  require_once (__DIR__ .'/code-snippets/callqueue-answering-rule.php');
 }
 ?>

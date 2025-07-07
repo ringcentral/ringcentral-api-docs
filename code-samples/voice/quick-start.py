@@ -95,8 +95,12 @@ def boostrap_test_function():
     # ms.platform = platform
     # ms.set_user_fac_state_schedule()
 
-    ms = importlib.import_module("code-snippets.create-interaction-rule")
+    # ms = importlib.import_module("code-snippets.create-interaction-rule")
+    # ms.platform = platform
+    # ms.create_user_interaction_rule()
+
+    ms = importlib.import_module("code-snippets.callqueue-answering-rule")
     ms.platform = platform
-    ms.create_user_interaction_rule()
+    ms.create_callqueue_custom_answering_rule("62498880016", "62576913016")
 # must be on the last line!
 boostrap_test_function()

@@ -76,9 +76,13 @@ def boostrap_test_function()
     # require_relative './code-snippets/set-fac-state-schedule'
     # set_user_fac_state_schedule()
 
-    puts "Test FAC Call handling"
-    require_relative './code-snippets/create-interaction-rule'
-    create_user_interaction_rule()
+    # puts "Test FAC Call handling"
+    # require_relative './code-snippets/create-interaction-rule'
+    # create_user_interaction_rule()
+
+    puts "Test Call queue Call handling"
+    require_relative './code-snippets/callqueue-answering-rule'
+    create_callqueue_custom_answering_rule("62498880016", "62576913016")
 end
 
 boostrap_test_function()
