@@ -51,4 +51,32 @@ You can now use the `contentUri` (notice that the subdomain is different in some
 
 If you would like, you can use HTML5 supported browsers and the `<audio>` tag in a web page, and set the `src` property of the `<audio>` tag to the `recordings[item].contentUri` value (make sure to include the access_token query parameter with a valid access_token), and play back the recording in the browser.
 
+## Creating a single recording for all legs of a call
+
+In complex telephony scenarios, especially those involving call transfers, a single conversation can often be comprised of multiple distinct call legs. Each leg might generate its own separate recording, leading to a fragmented view of the overall interaction. This chapter outlines a robust solution for developers to reconstruct these disparate recordings into a single, cohesive audio file, providing a complete end-to-end capture of the entire conversation.
+
+To achieve a seamless, end-to-end call recording, follow these steps, leveraging RingCentral's API:
+
+### Subscribe to telephony session events
+
+The first critical step is to be notified when a call session concludes. This ensures that all recordings pertaining to a specific call are finalized and available for retrieval.
+
+Use the following event filter:
+* `/restapi/v1.0/account/~/extension/~/telephony/sessions`
+
+The resulting webhook notification will provide you with real-time updates when a telephony session transitions to a completed state. The notification payload will contain essential information, including the `telephonySessionId`, which is crucial for the subsequent steps.
+
+### Fetch all call recordings for the session
+
+Once you have the `telephonySessionId`, you can query the RingCentral Call Log API to retrieve all associated recordings via the following [read company call log endpoint](https://developers.ringcentral.com/api-reference/Call-Log/readCompanyCallLog). Be sure to use the `recordingType=All` query parameter to filter out all calls that lack a recording. 
+
+### Filter and sort recordings by telephony session ID
+
+After receiving the results from the read company call log API, you'll need to process the data to isolate and order the relevant recordings. Iterate through the returned call log entries. For each entry, check if its telephonySessionId matches the one obtained in the step above. Discard any entries that do not match.
+
+Once filtered, sort the remaining call log entries chronologically. Each call log entry will typically include timestamps (e.g., startTime) that can be used for accurate sequencing. This step is vital to ensure that the appended recordings play back in the correct order of the conversation.
+
+### Append recordings to create a single cohesive file
+
+The final step involves programmatically combining the individual recording segments into a single audio file. For each sorted call log entry, retrieve the associated recording file (you'll typically find a contentUri or similar URL within the call log entry that points to the recording). Download each recording segment and then append them sequentially.
 
