@@ -96,6 +96,7 @@ nav:
     - 'Call Logs':
       - 'Overview': 'voice/call-log/index.md'
       - 'Getting started': 'voice/call-log/quick-start.md'
+      - 'Call states': 'voice/call-log/states.md'
       - 'Call Log data types': 'voice/call-log/api.md'
       - 'Detailed Call Log Data': 'voice/call-log/details.md'
       - 'Data Archival': 'voice/call-log/archival.md'
