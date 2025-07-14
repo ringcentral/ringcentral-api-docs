@@ -24,7 +24,7 @@ The `type` parameter can take one of three values and impacts the longevity and 
 
 | Type | Description | 
 |-|-|
-| `Instant` | A value of "Instant" means the bridge will be used only once and deleted after the meeting ends. This is the default value. |
+| `Instant` | A value of "Instant" means the bridge will be retained for three days and then deleted. This is the default value. |
 | `Scheduled` | A value of "Scheduled" means that the birdge will persist for a long time and can be used more than once. Bridges of type "Scheduled" will be deleted after a prolonged period of inactivity. |
 | `PMI` | A value of "PMI" will result in the bridge utilizing the associated user's personal bridge ID. |
 
