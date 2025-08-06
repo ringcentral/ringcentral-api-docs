@@ -50,12 +50,9 @@
                 "fileSize": 66484597
             },
             "status": "Processed",
-            "longSummary": "",
-            "shortSummary": "The participants are looking for an opportunity \
-			       in aha that is associated with an account.",
             "keywords": ["multiple deals", "potential revenue", "logic", 
-			             "sales force", "opportunity", "account", "customer",
-						 "stage menu", "specific status"]
+               "sales force", "opportunity", "account", "customer",
+               "stage menu", "specific status"]
         }]
     }],
     "chatUrl": "https://media.ringcentral.com/rcvideo/v1/chats/7tSq3xxx8RfkFjEw==",

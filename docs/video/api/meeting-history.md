@@ -58,7 +58,7 @@ If you know the meeting ID, a single meeting can be retrieved by passing it into
 
 ## Accessing meeting recordings
 
-When a meeting is recorded, it automatically enables AI subroutines to help summarize meeting content within the meeting history. Associated with each recording record returned by the History API is a `metadata` element that contains a `shortSummary` and `keywords`. These values are generated for you to help you understand the content of the meeting. 
+When a meeting is recorded, it automatically enables AI subroutines to help summarize meeting content within the meeting history. Associated with each recording record returned by the History API is a `metadata` element that contains more information about the meeting. These values are generated for you to help you understand the content of the meeting. 
 
 ```json
 "recordings": [
@@ -73,9 +73,6 @@ When a meeting is recorded, it automatically enables AI subroutines to help summ
         "fileSize": 66484597
     },
     "status": "Processed",
-    "longSummary": "",
-    "shortSummary": "The participants are looking for an opportunity in aha \
-	                 that is associated with an account.",
     "keywords": ["multiple deals", "potential revenue", "logic", "sales force",
 	             "opportunity", "account", "customer", "stage menu", 
 				 "specific status"]
