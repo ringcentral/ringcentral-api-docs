@@ -8,11 +8,16 @@ To create a webhook, you will first need a server that listens on a specific URL
 
 When you create a webhook subscription, RingCentral will transmit a test request to the designated URL in an attempt to verify all of the following prior to creating the subscription and transmitting events. 
 
-1. The URL must accessible by RingCentral and not behind a firewall
+1. The URL must be accessible by RingCentral and not behind a firewall
 2. The web server supports TLS 1.2 or higher (see note below about TLS support)
 3. The web server must respond within 3000 milliseconds 
 4. The web server must respond with an HTTP status code of 200 OK
-4. The web server must respond with a valid `Validation-Token` header
+5. The web server must respond with a valid `Validation-Token` header
+6. The web server must **not** respond with a response larger than 1024 bytes. 
+   Please note: If the response exceeds this limitation then this error code 
+   {“errorCode”: ”SUB-525", ”message”: ”WebHook server response is invalid”} 
+   will be returned when setting up the WebHook. And the response size contains
+   both the body and the headers.
 
 !!! info "TLS and SSL requirements"
     TLS/SSL is only required in production. For development purposes, you can use localhost along with a service like [ngrok](https://ngrok.com/), which provides both TLS/SSL and unencrypted tunnels. For information on TLS, see [Configuring TLS/SSL](configuring-tls-ssl.md)
