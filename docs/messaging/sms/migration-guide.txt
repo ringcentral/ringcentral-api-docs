@@ -1,0 +1,323 @@
+# SMS APIs Migration Guide
+
+The enhancement of SMS messaging features in RingCentral RingEX has led to significant changes in the corresponding APIs. As part of this upgrade, we have introduced a new set of SMS APIs (referred to as V2) to replace the legacy version (v1.0). This marks a major transition aimed at providing more robust and simplified SMS capabilities.
+
+## Key improvements
+
+- There is no separate provisioning process for standard SMS (a.k.a enhanced business SMS) and high-volume SMS (a.k.a A2P SMS) phone numbers. Any phone number enabled for SMS can be used to send both individual messages and bulk messages (batch).
+- A unified message store that holds both individual and batch messages.
+- Messaging status and error code for every message
+- Rich API response with message cost, status and error code
+
+
+### Endpoints comparison
+
+#### Standard (Enhanced Business) SMS API
+
+|Feature|V1.0 API|V2 API|
+||||
+|Send batches|N/A|POST `/restapi/v2/accounts/~/extensions/~/sms/batches`|
+|Send individual message|POST `/restapi/v1.0/account/~/extension/~/sms`|POST `/restapi/v2/accounts/~/extensions/~/sms/messages`|
+|List messages|GET `/restapi/v1.0/account/~/extension/~/message-store`|GET `/restapi/v2/accounts/~/extensions/~/sms/messages`|
+|Get message|GET `/restapi/v1.0/account/~/extension/~/message-store/[messageId]`|GET `/restapi/v2/accounts/~/extensions/~/sms/messages/[messageId]`|
+
+#### High Volume (A2P) SMS API
+
+|Feature|V1.0 API|V2 API|
+||||
+|Send batches|POST `/restapi/v1.0/account/~/a2p-sms/batches`|POST `/restapi/v2/accounts/~/extensions/~/sms/batches`|
+|Send individual message|N/A|POST `/restapi/v2/accounts/~/extensions/~/sms/messages`|
+|List batches|GET `/restapi/v1.0/account/~/a2p-sms/batches`|GET `/restapi/v2/accounts/~/extensions/~/sms/batches`|
+|Get batch|GET `/restapi/v1.0/account/~/a2p-sms/batches/[batchId]`|GET `/restapi/v2/accounts/~/extensions/~/sms/batches/[batchId]`|
+|List messages|GET `/restapi/v1.0/account/~/a2p-sms/messages`|GET `/restapi/v2/accounts/~/extensions/~/sms/messages`|
+|Get message|GET `/restapi/v1.0/account/~/a2p-sms/messages/[messageId]`|GET `/restapi/v2/accounts/~/extensions/~/sms/messages/[messageId]`|
+|List messages status|GET `/restapi/v1.0/account/~/a2p-sms/status`|GET `/restapi/v2/accounts/~/extensions/~/sms/status-summary`|
+
+
+## Porting from high volume SMS APIs
+
+If you have implemented an application to send batch messages using the high volume SMS API, update your code as shown in the sample below:
+
+### Send batches
+
+Old codes
+
+```javascript
+async function send_batch_sms() {
+    try{
+        let bodyParams = {
+            from: "From-Phone-Number",
+            text: "Hello Team",
+            messages: [
+                { to: [ "Recipient-1-Phone-Number" ] },
+                { to: [ "Recipient-2-Phone-Number" ] },
+                { to: [ "Recipient-N-Phone-Number" ] }
+            ]
+        }
+        let endpoint = "/restapi/v1.0/account/~/a2p-sms/batches"
+        var resp = await platform.post(endpoint, bodyParams)
+        var jsonObj = await resp.json()
+    }catch(e){
+        console.log(e.message)
+    }
+}
+```
+
+New codes
+
+```javascript
+async function send_batch_sms() {
+    try{
+        let bodyParams = {
+            from: { phoneNumber: "From-Phone-Number" },
+            text: "Hello Team",
+            messages: [
+                { to: [ { phoneNumber: "Recipient-1-Phone-Number" } ] },
+                { to: [ { phoneNumber: "Recipient-2-Phone-Number" } ] },
+                { to: [ { phoneNumber: "Recipient-N-Phone-Number" } ] }
+            ]
+        }
+        let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+        var resp = await platform.post(endpoint, bodyParams)
+        var jsonObj = await resp.json()
+    }catch(e){
+        console.log(e.message)
+    }
+}
+```
+
+### List batches
+
+Old codes
+
+```javascript
+async function list_batches() {
+    try{
+      var queryParams = {
+        dateFrom: '2025-01-01T00:00:00.000Z',
+        dateTo: '2025-03-31T23:59:59.999Z'
+      }
+      var resp = await platform.get('/restapi/v1.0/account/~/a2p-sms/batches', queryParams)
+      var jsonObj = await resp.json()
+      console.log(jsonObj)
+    }catch(e){
+      console.log(e.message)
+    }
+}
+```
+
+New codes
+
+```javascript
+async function list_batches() {
+    try{
+      let queryParams = {
+        timeFrom: "2025-01-01T00:00:00.000Z",
+        timeTo: "2025-03-31T23:59:59.999Z"
+      }
+      var resp = await platform.get(`/restapi/v2/accounts/~/extensions/~/sms/batches`, queryParams)
+      var jsonObj = await resp.json()
+    }catch(e){
+      console.log(e.message)
+    }
+}
+```
+
+### Receive batch events
+
+TBW
+
+## Porting from standard SMS APIs
+
+If you have implemented an application to send single messages using the standard SMS API, update your code as shown in the sample below:
+
+### Send a message
+
+Old codes
+
+```javascript
+async function send_sms(){
+    try {
+        let bodyParams = {
+            from: { phoneNumber: "From-Phone-Number" },
+            to: [ { phoneNumber: "Recipient-Phone-Number"} ],
+            text: 'Hello World!'
+        }
+        let endpoint = "/restapi/v1.0/account/~/extension/~/sms"
+        var resp = await platform.post(endpoint, bodyParams)
+    } catch(e) {
+        console.log(e.message)
+    }
+}
+```
+
+New codes
+
+```javascript
+async function send_sms(){
+    try {
+        let bodyParams = {
+            from: { phoneNumber: "From-Phone-Number" },
+            to: [ { phoneNumber: "Recipient-Phone-Number" } ],
+            text: 'Hello World!'
+        }
+        let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages"
+        var resp = await platform.post(endpoint, bodyParams)
+    } catch(e) {
+        console.log(e.message)
+    }
+}
+```
+
+### Receive batch events
+
+TBW
+```javascript
+async function send_sms_batch_customized_message(){
+  try{
+    let bodyParams = {
+             from: { phoneNumber: fromNumber},
+             text: "In RingCentral, each account has a main company phone number.",
+             messages: [
+               {
+                 to: [ {phoneNumber: "12092484775"}],
+               },
+               {
+                 to: [ {phoneNumber: "16505130930"} /*, {phoneNumber: "16502245476"}, {phoneNumber: "17702885697"}*/ ],
+                 text: "En RingCentral, cada cuenta tiene un número de teléfono principal de la empresa."
+               },
+               {
+                 to: [ {phoneNumber: "16502245476"} ],
+                 text: "在 RingCentral 中，每个帐户都有一个主要的公司电话号码。"
+               }
+             ]
+        }
+    var resp = await platform.post('/restapi/v2/accounts/~/extensions/~/sms/batches', bodyParams)
+    var jsonObj = await resp.json()
+    console.log("Resp: ", JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+
+async function send_sms_batch_with_group_messaging(){
+  try{
+    let bodyParams = {
+             from: { phoneNumber: "From-Phone-Number"},
+             text: "",
+             messages: [
+               {
+                 to: [ {phoneNumber: "Recipient-1"}, {phoneNumber: "Recipient-2"}, {phoneNumber: "Recipient-3"}],
+                 text: "Discuss with your group and complete the group work before 1:00PM"
+               },
+               {
+                 to: [ {phoneNumber: "Recipient-A"}, {phoneNumber: "Recipient-B"}, {phoneNumber: "Recipient-C"} ],
+                 text: "Discuss with your group and complete the group work before 2:00PM"
+               },
+               {
+                 to: [ {phoneNumber: "Recipient-X"}, {phoneNumber: "Recipient-Y"} ],
+                 text: "Discuss with your group and complete the group work before 6:00PM"
+               }
+             ]
+        }
+    let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+    var resp = await platform.post(endpoint, bodyParams)
+    var jsonObj = await resp.json()
+    console.log("Resp: ", JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+
+async function get_sms_batch_info(){
+  try{
+    var batchId = "254f810f-5062-44c2-8c7c-1ef3512d6d24"
+    let endpoint = `/restapi/v2/accounts/~/extensions/~/sms/batches/${batchId}`
+    var resp = await platform.get(endpoint)
+    var jsonObj = await resp.json()
+    console.log("Batch info:", JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+
+async function list_sms_batches(){
+  try{
+    let queryParams = {
+      timeFrom: "2025-08-01T06:00:00.000",
+      timeTo: "2025-08-12T10:00:00.000",
+      from: ["12092520012","12095094019"],
+      perPage: 100
+    }
+    let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+    var resp = await platform.get(endpoint, queryParams)
+    var jsonObj = await resp.json()
+    console.log("Batches info:", JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+```json
+Batch info: {
+    "id": "254f810f-5062-44c2-8c7c-1ef3512d6d24",
+    "from": {
+        "phoneNumber": "+16501112345"
+    },
+    "batchSize": 458,
+    "processedCount": 458,
+    "lastModifiedTime": "2025-08-20T16:02:50.571192Z",
+    "status": "Completed",
+    "creationTime": "2025-08-20T16:01:46.592472Z",
+    "cost": 3.893
+}
+
+Batches info: {
+    "records": [
+        {
+            "id": "f81f208b-00e6-4c1b-887a-67c9aacecxxx",
+            "from": {
+                "phoneNumber": "+1209509XXXX"
+            },
+            "batchSize": 100,
+            "processedCount": 100,
+            "lastModifiedTime": "2025-08-02T15:23:51.916606Z",
+            "status": "Completed",
+            "creationTime": "2025-08-02T15:23:09.496363Z",
+            "cost": 0.85
+        },
+        {
+            "id": "f81b3888-373c-4adf-8799-3ca0f0f76xxx",
+            "from": {
+                "phoneNumber": "+1209509XXXX"
+            },
+            "batchSize": 10,
+            "processedCount": 10,
+            "lastModifiedTime": "2025-08-04T20:22:41.376491Z",
+            "status": "Completed",
+            "creationTime": "2025-08-04T20:22:06.115663Z",
+            "cost": 0.085
+        },
+        ...
+      ],
+          "paging": {
+              "pageToken": "RjpmODFmMjA4Yi0wMGU2LTRjMWItODg3YS02N2M5YWFjZWNhZDQ=",
+              "perPage": 78,
+              "firstPageToken": "RjpmODFmMjA4Yi0wMGU2LTRjMWItODg3YS02N2M5YWFjZWNhZDQ="
+          }
+      }
+.
+Batch resp:  {
+    "id": "5a552551-d3aa-47e2-b102-c73cd6650234",
+    "from": {
+        "phoneNumber": "+1209509XXXX"
+    },
+    "batchSize": 300,
+    "processedCount": 0,
+    "lastModifiedTime": "2025-08-20T17:55:07.240338790Z",
+    "status": "Processing",
+    "creationTime": "2025-08-20T17:55:07.240338790Z",
+    "cost": 0
+}
+```

@@ -71,7 +71,7 @@ def check_message_status(messageId)
 end
 
 # Instantiate the SDK and get the platform instance
-$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'], ENV['RC_SERVER_URL'] )
+$platform = RingCentral.new( ENV['RC_APP_CLIENT_ID'], ENV['RC_APP_CLIENT_SECRET'], "https://platform.ringcentral.com" )
 
 # Authenticate a user using a personal JWT token
 def login()
@@ -119,10 +119,21 @@ def boostrap_test_function()
     # require_relative './code-snippets/message-store-export'
     # create_message_store_report()
 
+    # sleep(2)
+    # puts "Test sending batch sms"
+    # require_relative './code-snippets/send-a2p-sms'
+    # read_extension_phone_number_detect_a2psms_feature()
+
     sleep(2)
-    puts "Test sending batch sms"
-    require_relative './code-snippets/send-a2p-sms'
-    read_extension_phone_number_detect_a2psms_feature()
+    puts "Test receive reply sms"
+    require_relative './code-snippets/receive-reply-sms'
+    subscribe_for_instant_messages_notification()
+    # download_mms_attachment("")
+
+    # sleep(2)
+    # puts "Test download MMS attachments"
+    # require_relative './code-snippets/receive-reply-sms'
+    # download_mms_attachment("")
 end
 
 boostrap_test_function()

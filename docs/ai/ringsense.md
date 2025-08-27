@@ -22,10 +22,7 @@ To learn more about RingSense and how to enable the service for a RingCentral Ri
 
 The RingSense API allows you to programmatically access RingSense data from your account.
 
-!!! notes
-    * Currently the API does not support video meeting recordings.
-
-The API functions at the account level and requires the "RingSense for Sales - Access Insights" user permission. This means that any user extension with this permission can access RingSense data for any user holding a RingSense license.
+The API operates at the account level and requires the "RingSense for Sales - Access Insights" user permission. This means that any user extension with this permission can access RingSense data for any user holding a RingSense license.
 
 ### How to check if an extension has the permission to access RingSense data via API?
 
@@ -71,31 +68,32 @@ There are two methods to access RingSense data: through push notifications (reco
 
 ### RingSense event notification
 
-You can get notified when a new voice call recording analysis is completed via [RingCentral push notification  service](../notifications/index.md). The RingSense data is included in the event payload together with the event metadata.
+You can receive notifications when RingSense finishes conversational analysis through the [RingCentral push notification service](../notifications/index.md). The event payload includes the RingSense data along with the event metadata.
 
-To receive RingSense event notification for voice call recordings, [subscribe for this event](../notifications/event-filters/ringsense-event-filter.md).
+To receive RingSense notification events, [subscribe for one or more event filters](../notifications/event-filters/ringsense-event-filter.md).
 
-Remember, the notification events are triggered only if a voice call was recorded by users who hold a RingSense license.
+Remember, RingSense notification events are generated only when a voice call or video meeting is recorded by a user with an active RingSense license.
 
 ### Read RingSense data
 
-You can read the RingSense data of a recorded voice call if you know the `sourceRecordId` or the `sourceSessionId`. Both `sourceRecordId` and `sourceSessionId` values are included in the RingSense event payload.
+You can read the RingSense data of a recorded voice call or video meeting if you know the `sourceRecordId` or the `sourceSessionId`. Both `sourceRecordId` and `sourceSessionId` values are included in the RingSense event payload.
 
 !!! notes
     * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](../voice/call-log/details.md).
     * The `sourceSessionId` of a voice call recording is the telephony session ID of a recorded call. You can get the telephony session ID of a call from the [call log data](../voice/call-log/details.md).
+    * The `sourceRecordId` and the `sourceSessionId` of a video call recording are identical. You can get the ID of a video call by using the [List User Video Meeting](https://developers.ringcentral.com/api-reference/Meetings-History/listVideoMeetings) API. However, you should check if the video call was recorded or not to decide whether you can read the RingSense data of that video call.
 
 Read RingSense data using a recording Id:
 
-GET `/ai/ringsense/v1/public/accounts/~/domains/pbx/records/[sourceRecordId]/insights`
+GET `/ai/ringsense/v1/public/accounts/~/domains/[Domain-Name]/records/[sourceRecordId]/insights`
 
 This endpoint retrieves the RingSense data for a specific call recording, identified by the `sourceRecordId`.
 
 Read RingSense data using a telephony session Id:
 
-GET `/ai/ringsense/v1/public/accounts/~/domains/pbx/sessions/[sourceSessionId]/insights`
+GET `/ai/ringsense/v1/public/accounts/~/domains/[Domain-Name]/sessions/[sourceSessionId]/insights`
 
-This endpoint returns the RingSense data for all call recordings associated with the specified telephony session. Multiple call recordings can exist for a single session in scenarios such as call transfers between agents, where each leg of the call is recorded separately. The RingSense data for each individual recording will be included in the `records` array in the API response.
+This endpoint is useful for RingEX voice call as it returns the RingSense data for all call recordings associated with the specified telephony session. Multiple call recordings can exist for a single session in scenarios such as call transfers between agents, where each leg of the call is recorded separately. The RingSense data for each individual recording will be included in the `records` array in the API response.
 
 ## Example of API Response
 
@@ -106,16 +104,16 @@ This endpoint returns the RingSense data for all call recordings associated with
 | Parameter	| Type | Description |
 |-----------|------|-------------|
 | `title` | string | For voice calls, the system uses the the caller and callee name to compose the title. |
-| `domain` | String | Name of the communication medium. Currently only for voice calls ('pbx') are supported. |
-| `sourceRecordId` | String | The value is the call recording ID (can be retrieved from the call log).  |
-| `sourceSessionId` | String | The value is the call telephony session id. |
+| `domain` | String | Name of the communication medium. |
+| `sourceRecordId` | String | The identifier of the call or meeting recording. |
+| `sourceSessionId` | String | For a PBX voice call, this is the telephony session id of the call. For a video meeting, the value is the same as the `sourceRecordId` |
 | `callDirection` | String | For voice calls only. The value is either `Inbound` or `Outbound`.  |
 | `ownerExtensionId` | String | The extension ID of the user who holds the RingSense license.  |
-| `recordingDurationMs` | Integer | The length of the voice call recording.  |
+| `recordingDurationMs` | Integer | The length of the voice call or the meeting recording.  |
 | `recordingStartTime` | String | The date and time when the recording started.  |
 | `creationTime` | String | The date and time when the conversational insights are created. |
 | `lastModifiedTime` | String | The date and time when the conversational insights are last modified. |
-| `speakerInfo` | List | Contains identified call participant objects.  |
+| `speakerInfo` | List | A list of call or meeting participant details. |
 | `insights` | JSON object | Contains call conversational insights data objects. |
 
 ### SpeakerInfo
@@ -144,3 +142,15 @@ The `insights` is an object that may contain the following objects:
 | `CallNotes`   | List   | A JSON objects contains the taken notes from the call conversation. Each call note is separated by a new line "\n".  |
 
 When processing the insights objects—such as reconstructing conversations using the utterances in the `Transcript` objects, you can match the speaker ID from a transcript object with the corresponding speaker ID in the `speakerInfo` object. This allows you to display the speaker's name (if available) alongside the utterance text.
+
+!!! Notes
+    The `CallNotes` data object is available only for RingEX voice call. It requires the "AI Notes" is turned on during the call and also the RingSense admin setting is set to allow RingSense to import the AI notes.
+
+**AI notes is turned on during a call**
+
+<img class="img-fluid" src="../../img/ai-notes.png">
+<br><br>
+**RingSense admin setting options**
+
+You can access the RingSense admin option via the [RingSense app](https://ringsense.ringcentral.com/adminsettings/integrations)
+<img class="img-fluid" src="../../img/ringsense-admin.png">

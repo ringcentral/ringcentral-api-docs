@@ -9,7 +9,7 @@ const RECIPIENT    = process.env.SMS_RECIPIENT
 
 // Instantiate the SDK and get the platform instance
 var rcsdk = new RC({
-    'server':       process.env.RC_SERVER_URL,
+    'server':       "https://platform.ringcentral.com",
     'clientId':     process.env.RC_APP_CLIENT_ID,
     'clientSecret': process.env.RC_APP_CLIENT_SECRET
 });
@@ -111,13 +111,21 @@ const sleep = async (ms) => {
 /**********************************************************
  Code snippet section for boostrap testing purpose
 **********************************************************/
+
+const Subscriptions = require('/Users/phongvu/.nvm/versions/node/v23.11.0/lib/node_modules/@ringcentral/subscriptions').Subscriptions;
+const subscriptions = new Subscriptions({
+   sdk: rcsdk
+});
+var subscription = subscriptions.createSubscription();
+
 // For option 1
 const RECIPIENT2    = process.env.SMS_RECIPIENT2
 exports.platform = platform;
 exports.RECIPIENT = RECIPIENT;
 exports.RECIPIENT2 = RECIPIENT2;
-
-//boostrap_test_function()
+exports.subscription = subscription
+exports.RC_USER_JWT = process.env.RC_USER_JWT
+boostrap_test_function()
 
 async function boostrap_test_function(){
 /*
@@ -145,7 +153,15 @@ async function boostrap_test_function(){
   console.log("Test sending HV SMS")
   require ('./code-snippets/send-a2p-sms.js')
 */
+  // await sleep(2000)
+  // console.log("Test access HV message store")
+  // require ('./code-snippets/a2p-message-store.js')
+
   await sleep(2000)
-  console.log("Test access HV message store")
-  require ('./code-snippets/a2p-message-store.js')
+  console.log("Test receive reply message")
+  require ('./code-snippets/receive-reply-sms.js')
+
+  // await sleep(2000)
+  // console.log("Test download mms attachment")
+  // require ('./code-snippets/download-mms-attachment.js')
 }

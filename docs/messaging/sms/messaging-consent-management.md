@@ -157,6 +157,9 @@ Example event payload
   }
 }
 ```
+<br/>
+In addition to reading opted-out phone numbers, you can [subscribe for the opt-out event notification](https://developers.ringcentral.com/api-reference/SMS-Consent-Change-Event) to be notified when a customer opts out by sending a `STOP` message to your business phone number.
+
 
 #### Export SMS opt status from your RingCentral Account
 
@@ -259,3 +262,5 @@ Below is a sample response returned by the API:
 	}
 }
 ```
+<br/>
+In addition to reading opted-in phone numbers, you can [subscribe for the opt-out event notification](https://developers.ringcentral.com/api-reference/SMS-Consent-Change-Event) to be notified when a customer opts in by sending a `START` message to your business phone number.
