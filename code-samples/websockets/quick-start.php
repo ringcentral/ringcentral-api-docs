@@ -3,8 +3,8 @@
    application dashbord in your developer account
    https://developers.ringcentral.com */
 
-require('vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+require('./../vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 use RingCentral\SDK\WebSocket\WebSocket;

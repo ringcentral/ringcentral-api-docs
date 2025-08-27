@@ -11,7 +11,7 @@ $RECIPIENT    = $_ENV['SMS_RECIPIENT'];
 # Instantiate the SDK and get the platform instance
 $rcsdk = new RingCentral\SDK\SDK( $_ENV['RC_APP_CLIENT_ID'],
                                   $_ENV['RC_APP_CLIENT_SECRET'],
-                                  $_ENV['RC_SERVER_URL'] );
+                                  "https://platform.ringcentral.com" );
 $platform = $rcsdk->platform();
 
 // Authenticate a user using a personal JWT token
@@ -101,6 +101,7 @@ function check_message_status($messageId){
  Code snippet section for boostrap testing purpose
 **********************************************************/
 $RECIPIENT2    = $_ENV['SMS_RECIPIENT2'];
+
 boostrap_test_function();
 function boostrap_test_function(){
   /*
@@ -126,8 +127,16 @@ function boostrap_test_function(){
   include_once (__DIR__ .'/code-snippets/message-store-export.php');
   */
 
-  print_r ("Test sending a2p SMS". PHP_EOL);
+  // print_r ("Test sending a2p SMS". PHP_EOL);
+  // sleep(2);
+  // include_once (__DIR__ .'/code-snippets/send-a2p-sms.php');
+
+  // print_r ("Test receive reply SMS". PHP_EOL);
+  // sleep(2);
+  // include_once (__DIR__ .'/code-snippets/receive-reply-sms.php');
+
+  print_r ("Test download MMS attachment". PHP_EOL);
   sleep(2);
-  include_once (__DIR__ .'/code-snippets/send-a2p-sms.php');
+  include_once (__DIR__ .'/code-snippets/download-mms-attachment.php');
 }
 ?>

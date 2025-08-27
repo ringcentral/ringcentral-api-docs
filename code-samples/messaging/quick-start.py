@@ -61,7 +61,7 @@ def check_message_status(messageId):
 # Instantiate the SDK and get the platform instance
 rcsdk = SDK( os.environ.get('RC_APP_CLIENT_ID'),
              os.environ.get('RC_APP_CLIENT_SECRET'),
-             os.environ.get('RC_SERVER_URL') )
+             "https://platform.ringcentral.com" )
 platform = rcsdk.platform()
 
 # For the purpose of testing the code, we put the SMS recipient number in the environment variable.
@@ -86,6 +86,7 @@ login()
 # Code snippet section for boostrap testing purpose
 ########
 RECIPIENT2    = os.environ.get('SMS_RECIPIENT2')
+
 def boostrap_test_function():
   import importlib
 
@@ -128,12 +129,21 @@ def boostrap_test_function():
   # ms.platform = platform
   # ms.create_message_store_report()
 
+  # time.sleep(2)
+  # print ("Test sending a2p sms batch")
+  # ms = importlib.import_module("code-snippets.send-a2p-sms")
+  # ms.platform = platform
+  # ms.RECIPIENT = RECIPIENT
+  # ms.RECIPIENT2 = RECIPIENT2
+  # ms.read_extension_phone_number_detect_a2psms_feature()
+
+
   time.sleep(2)
-  print ("Test sending a2p sms batch")
-  ms = importlib.import_module("code-snippets.send-a2p-sms")
+  print ("Test receive reply sms")
+  ms = importlib.import_module("code-snippets.receive-reply-sms")
   ms.platform = platform
-  ms.RECIPIENT = RECIPIENT
-  ms.RECIPIENT2 = RECIPIENT2
-  ms.read_extension_phone_number_detect_a2psms_feature()
+  ms.rcsdk = rcsdk
+  ms.login()
+
 ########
 boostrap_test_function()

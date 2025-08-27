@@ -1,6 +1,10 @@
 <?php
 require('vendor/autoload.php');
 
+use RingCentral\SDK\WebSocket\WebSocket;
+use RingCentral\SDK\WebSocket\Subscription;
+use RingCentral\SDK\WebSocket\Events\NotificationEvent;
+
 // Instantiate the SDK and get the platform instance
 $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
 $platform = $rcsdk->platform();
@@ -11,7 +15,4 @@ try {
 }catch (\RingCentral\SDK\Http\ApiException $e) {
   exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
 }
-
-// For the purpose of testing the code, we put the recipient number in the variable.
-// Feel free to set the recipient number directly.
-$RECIPIENT = "RECIPIENT-PHONE-NUMBER";
+?>
