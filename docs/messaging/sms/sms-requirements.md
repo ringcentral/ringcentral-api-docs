@@ -1,10 +1,12 @@
+# Requirements for SMS Enabling
+
 ## Enabling SMS on RingCentral Phone Numbers
 
 By default, RingCentral phone numbers—whether assigned directly to an extension or purchased separately—do not have SMS functionality enabled.
 
 To enable SMS functionality, follow the appropriate steps based on the type of phone number:
 
-#### Local (Domestic) Numbers
+### Local (Domestic) Numbers
 
 If you are enabling SMS functionality on local phone numbers in the U.S. or Canada:
 
@@ -14,7 +16,7 @@ If you are enabling SMS functionality on local phone numbers in the U.S. or Cana
 
 [Learn more about registering your business to send text messages](https://support.ringcentral.com/article-v2/Setting-up-TCR-registration-assigning-numbers-to-SMS-campaigns.html?brand=RingCentral&product=RingEX&language=en_US).
 
-#### Toll-Free Numbers
+### Toll-Free Numbers
 
 If you're enabling SMS functionality on toll-free numbers:
 
