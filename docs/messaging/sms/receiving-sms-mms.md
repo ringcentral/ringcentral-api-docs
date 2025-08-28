@@ -1,4 +1,4 @@
-### Receiving SMS and MMS messages
+# Receiving SMS and MMS messages
 
 Inbound SMS and MMS messages can be received instantly using the [RingCentral push notification](../../notifications/index.md) frameworks.
 
@@ -20,7 +20,7 @@ When subscribing to instant SMS events, your application must:
     * A super admin user can subscribe to instant SMS events to receive inbound text messages on behalf of one or more user extensions. In this scenario, the application must be authenticated as the super admin user. The `eventFilters` list can include multiple entries, each corresponding to a specific user identified by their extension ID.<br>
     [<br> "`/restapi/v1.0/account/~/extension/[extension01Id]/message-store/instant?type=SMS`",<br> "`/restapi/v1.0/account/~/extension/[extension02Id]/message-store/instant?type=SMS`",<br> "`/restapi/v1.0/account/~/extension/[extensionNId]/message-store/instant?type=SMS`"<br>]
 
-#### Sample of a typical event payload of an inbound text message
+### Sample of a typical event payload of an inbound text message
 
 The following is a sample SMS event notification payload. The essential data fields `from.phoneNumber`, `to.phoneNumber`, and subject are highlighted, where `subject` contains the actual text message content.
 
@@ -79,7 +79,7 @@ The following is a sample SMS event notification payload. The essential data fie
 }
 ```
 
-#### Use Case Example: Auto-Reply for Vacation Messages
+## Use Case Example: Auto-Reply for Vacation Messages
 
 A financial advisor wants to maintain personalized communication with clients through SMS using their assigned direct number (+1-555-987-XXXX). While on vacation, the advisor wants to automatically respond to any incoming text messages with an out-of-office notice indicating their unavailability and return date.
 
@@ -89,7 +89,7 @@ To accomplish this, the application will leverage the RingCentral REST API and P
 2. Subscribe to instant SMS event notifications for the advisor’s phone number.
 3. Implement logic to send an automatic reply when a new message is received.
 
-#### Sample code
+### Sample code
 
 === "JavaScript"
 
@@ -175,11 +175,11 @@ To accomplish this, the application will leverage the RingCentral REST API and P
 * **One-Time Reply:** Optionally, store the client’s number in memory or a database to avoid sending multiple vacation replies to the same contact.
 * **Webhook for Reliability:** Consider using [Webhook notifications](../../notifications/webhooks/quick-start.md) instead of WebSocket notifications for long-running processes for better stability.
 
-### Parsing MMS Messages and Downloading Attachments
+## Parsing MMS Messages and Downloading Attachments
 
 MMS message event notifications work the same way as SMS message notifications. The key difference lies in the event payload: MMS notifications include one or more `MmsAttachment` type attachments. To download an MMS attachment, use the `uri` value from the `attachment` object along with the user’s valid access_token.
 
-#### Sample payload for a typical inbound MMS message event
+### Sample payload for a typical inbound MMS message event
 
 Here is an example of a typical inbound MMS message event payload. The essential data fields `from.phoneNumber`, `to.phoneNumber`, and the MMS attachment object are highlighted. The `uri` field within any attachment object of type "**MmsAttachment**" provides the link to the actual binary content.
 
@@ -228,7 +228,7 @@ Here is an example of a typical inbound MMS message event payload. The essential
 }
 ```
 
-#### Sample code to download an MMS attachment
+### Sample code to download an MMS attachment
 
 Let's edit the [example code above](#sample-code) to add a function to download an MMS message's attachments.
 
