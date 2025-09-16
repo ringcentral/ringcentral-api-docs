@@ -257,6 +257,22 @@ async function list_sms_batches(){
     console.log(await e.response.json())
   }
 }
+
+async function list_sms_messages(){
+  try{
+    let queryParams = {
+      timeFrom: "2025-08-01T06:00:00.000",
+      timeTo: "2025-08-20T10:00:00.000",
+      view: "Detailed",
+      perPage: 500
+    }
+    var resp = await platform.get(`/restapi/v2/accounts/~/extensions/~/sms/messages`, queryParams)
+    var jsonObj = await resp.json()
+    console.log("Response:", JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
 ```
 
 ```json
@@ -320,4 +336,89 @@ Batch resp:  {
     "creationTime": "2025-08-20T17:55:07.240338790Z",
     "cost": 0
 }
+
+{
+  "records": [
+    {
+      "id": "1754099979",
+      "from": {
+        "phoneNumber": "+1650513XXXX"
+      },
+      "to": [
+        {
+          "phoneNumber": "+1209509XXXX",
+          "messageStatus": "Delivered"
+        }
+      ],
+      "text": "Ok, I got it",
+      "direction": "Inbound",
+      "attachments": [
+        {
+          "contentType": "text/plain",
+          "uri": "https://media.ringcentral.com/restapi/v2/accounts/80..."
+        }
+      ],
+      "creationTime": "2025-09-03T20:32:21.755761Z",
+      "lastModifiedTime": "2025-09-03T20:32:21.817861Z",
+      "segmentCount": 1,
+      "cost": 0.0085
+    },
+    {
+      "id": "1745996625",
+      "batchId": "4a9e8d5d-c487-4852-aa87-bb84b91f47af",
+      "from": {
+        "phoneNumber": "+1209509XXXX"
+      },
+      "to": [
+        {
+          "phoneNumber": "+1650513XXXX",
+          "messageStatus": "Delivered"
+        }
+      ],
+      "text": "Reply one more time and check BT",
+      "direction": "Outbound",
+      "attachments": [
+        {
+          "contentType": "text/plain",
+          "uri": "https://media.ringcentral.com/restapi/v2/accounts/80..."
+        }
+      ],
+      "creationTime": "2025-09-02T20:25:25.590257Z",
+      "lastModifiedTime": "2025-09-02T20:25:27.490660Z",
+      "segmentCount": 1,
+      "cost": 0.0085
+    },
+    {
+      "id": "1675453848",
+      "batchId": "0021abcd-231d-4abe-b4f7-1d25f32dd7d8",
+      "from": {
+        "phoneNumber": "+1209509XXXX"
+      },
+      "to": [
+        {
+          "phoneNumber": "+16505130930",
+          "messageStatus": "SendingFailed",
+          "errorCode": "SMS-RC-413"
+        }
+      ],
+      "text": "In RingCentral, each account has a phone number ",
+      "direction": "Outbound",
+      "attachments": [
+        {
+          "contentType": "text/plain",
+          "uri": "https://media.ringcentral.com/restapi/v2/accounts/80..."
+        }
+      ],
+      "creationTime": "2025-08-20T20:21:18.864802Z",
+      "lastModifiedTime": "2025-08-20T20:21:19.086114Z"
+    }
+  ],
+  "paging": {
+    "pageToken": "RjoxNzU0MDk5XXXX",
+    "perPage": 20,
+    "firstPageToken": "RjoxNzU0MDk5XXXX",
+    "nextPageToken": "TjoxNjc1NDUzODQ4OlJqb3hOelUwTURrNU9UXXXX"
+  }
+}
+
 ```

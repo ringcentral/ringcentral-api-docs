@@ -13,13 +13,6 @@
                 "text": "Good evening, thank you for calling electronics or this is Rachel.",
                 "confidence": 0.85,
                 "speakerId": "0",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.54
-                    }
-                ]
             },
             {
                 "start": 7.56,
@@ -27,13 +20,6 @@
                 "text": "How may I assist you?",
                 "confidence": 0.85,
                 "speakerId": "0",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Fear",
-                        "confidence": 0.71
-                    }
-                ]
             },
             {
                 "start": 8.96,
@@ -41,13 +27,6 @@
                 "text": "Hi, Rachel.",
                 "confidence": 0.85,
                 "speakerId": "1",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.79
-                    }
-                ]
             },
             {
                 "start": 9.8,
@@ -55,13 +34,6 @@
                 "text": "I would like to know how to use this car.",
                 "confidence": 0.85,
                 "speakerId": "1",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.4
-                    }
-                ]
             },
             {
                 "start": 11.16,
@@ -69,13 +41,6 @@
                 "text": "Bluetooth headset I recently purchased from your store.",
                 "confidence": 0.85,
                 "speakerId": "1",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.46
-                    }
-                ]
             },
             {
                 "start": 14.28,
@@ -83,13 +48,6 @@
                 "text": "Sure, ma'am, I can help you out with that, but before anything else, I have your name so that I can address you properly.",
                 "confidence": 0.87,
                 "speakerId": "0",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.91
-                    }
-                ]
             },
             {
                 "start": 21.36,
@@ -97,32 +55,12 @@
                 "text": "Yes, this is Meredith Blake.",
                 "confidence": 0.87,
                 "speakerId": "1",
-                "insights": [
-                    {
-                        "name": "Emotion",
-                        "value": "Neutral",
-                        "confidence": 0.91
-                    }
-                ]
             },
             ...
         ],
         "speakerInsights": {
             "speakerCount": 2,
             "insights": [
-                {
-                    "name": "Energy",
-                    "values": [
-                        {
-                            "speakerId": "0",
-                            "value": 93.11
-                        },
-                        {
-                            "speakerId": "1",
-                            "value": 93.65
-                        }
-                    ]
-                },
                 {
                     "name": "Pace",
                     "values": [

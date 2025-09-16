@@ -9,11 +9,14 @@ Interaction analytics is used to understand a conversation happening in a meetin
 * Speaker-level insights
     * [speaker diarization](speaker-diarization.md)
     * [speaker identification](speaker-identification.md)
+* Utterance-level insights
+    * emotion recognition
 
 Let's say we want to analyze a meeting between a sales representative and a customer, and that meeting lasted for twenty minutes. Here are some of the insights we can extract using this API:
 
 * Speaker talking time, e.g. a sales representative spoke for ten minutes, and the customer spoke for eight minutes.
 * Speaker pace, which is measured by an average number of words spoken per minute.
+* Speaker emotions, which was the tone or emotional context of every utterance.
 * Auto-generated meeting summary
 
 ## Extracting interaction analytics
@@ -42,7 +45,7 @@ For the best results we recommend following the guidelines below.
 | `enableVoiceActivityDetection` | Boolean  | Apply voice activity detection. Optional. Default of `False`. |
 | `contentUri`   | String | Publicly facing url. |
 | `source`       | String | Source of the audio file eg: `Phone`, `RingCentral`, `GoogleMeet`, `Zoom` etc. Optional. |
-| `insights`     | List[String] | List of insights to be returned. Specify `['All']` to extract all insight analytics. Permitted Values: `All`, `KeyPhrases`, `AbstractiveSummaryLong`, `AbstractiveSummaryShort`, `ExtractiveSummary`, `TalkToListenRatio`, `Pace`, `QuestionsAsked`, `Topics`. |
+| `insights`     | List[String] | List of insights to be returned. Specify `['All']` to extract all insight analytics. Permitted Values: `All`, `KeyPhrases`, `Emotion`, `AbstractiveSummaryLong`, `AbstractiveSummaryShort`, `ExtractiveSummary`, `TalkToListenRatio`, `Pace`, `QuestionsAsked`, `Topics`. |
 | `speechContexts` | List[Phrase Object] | Indicates the words/phrases that will be used for boosting the transcript. This can help to boost accuracy for cases like Person Names, Company names etc. |
 
 ## Sample code to extract insights of a conversation
@@ -82,7 +85,7 @@ Follow the instructions on the [quick start](quick-start.md) section to setup an
     ```ruby
     {!> code-samples/ai/code-snippets/interactions.rb !}
     {!> code-samples/ai/code-snippets-headers/footer.rb [ln:1-4] !}
-    ```    
+    ```
 
 === "C#"
 
@@ -123,6 +126,17 @@ The `utteranceInsights` is a list of objects, with each object contains the foll
 | `text`        | String                        | The transcription output corresponding to the segment (a.k.a an utterance). |
 | `confidence`  | Number                        | The confidence score for the transcribed segment.      |
 | `speakerId`   | String                        | The speaker id for the corresponding audio segment.    |
+| `insights`    | List[Utterance-Insights-Unit] | List of insights from the utterance text.              |
+
+#### Utterance-Insights-Unit
+
+Currently, only the `Emotion` insight is supported
+
+| Parameter     | Type        | Description                                                                                  |
+| ------------- | ------      | ------------------------------------------------------                                       |
+| `name`        | String Enum | Currently supported insight: [ Emotion ].                                                    |
+| `value`       | String      | Possible values: Anger, Anticipation, Disgust, Fear, Joy, Sadness, Surprise, Trust, Neutral. |
+| `confidence`  | Number      | Confidence Score. Optional.                                                                  |
 
 ### Speaker-Insights-Object
 
@@ -234,6 +248,6 @@ The `speakerInsights` object contain the number of speakers which was detected
     | `end`        | Number | End time of the audio segment in seconds.                 |
     | `confidence` | Number | The confidence score for the computed insight.            |
 
-!!! notes
+!!! note "**NOTES:** "
     * In case of `ExtractiveSummary`, the start and end times refer to the exact time of the segment.
     * In case of `AbstractiveSummaryLong` and `AbstractiveSummaryShort` the start and end time refer to the time of text blob which is abstracted.

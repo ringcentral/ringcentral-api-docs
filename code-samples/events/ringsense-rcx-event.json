@@ -1,0 +1,208 @@
+{
+  "uuid": "6120151141282634963",
+  "event": "/ai/ringsense/v1/public/accounts/48154XXXX/domains/rcx/insights",
+  "timestamp": "2025-09-12T16:36:29.815Z",
+  "subscriptionId": "e3f8bd46-b498-4076-bb12-a3d228d52593",
+  "ownerId": "6328932XXXX",
+  "body": {
+    "eventType": "Create",
+    "title": "Inbound call with +1650222XXXX",
+    "rsRecordUri": "https://ringsense.ringcentral.com/calls/cfddf168-4749-4926-baf0-c2a2054eb91c",
+    "domain": "rcx",
+    "sourceSessionId": "s-v-a3ebb45eb0714dd7a78f80295fe9f64f-1757694452944",
+    "sourceRecordId": "p-v-a3ebb45eb0714dd7a78f80295fe9f64f-1757694452944-0093ec0eaf0a4",
+    "callDirection": "Inbound",
+    "ownerExtensionId": "6328932XXXX",
+    "recordingDurationMs": 219063,
+    "recordingStartTime": "2025-09-12T16:27:34.611Z",
+    "creationTime": "2025-09-12T16:36:29.706Z",
+    "lastModifiedTime": "2025-09-12T16:36:29.706Z",
+    "speakerInfo": [
+      {
+        "speakerId": "3304627",
+        "name": "Leon Brown",
+        "accountId": "48154XXXX",
+        "extensionId": "6328932XXXX",
+        "phoneNumber": "+1619314XXXX"
+      },
+      {
+        "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960",
+        "name": "Customer",
+        "accountId": null,
+        "extensionId": null,
+        "phoneNumber": "+1650222XXXX"
+      }
+    ],
+    "insights": {
+      "Transcript": [
+        {
+          "end": 14.68,
+          "text": "Hello. Can you hear me?",
+          "start": 4.52,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 32.28,
+          "text": "Yes, I can hear you.",
+          "start": 30.84,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 47.4,
+          "text": "Ok, my name is Leon Brown, how can I help you?",
+          "start": 38.92,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 64.04,
+          "text": "Hi Leon. My name is Clair and I have a problem with accessing RingSense data.",
+          "start": 61.32,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 66.12,
+          "text": "I can't really find the data from the application.",
+          "start": 64.84,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 68.2,
+          "text": "Can you help me?",
+          "start": 67,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 79.64,
+          "text": "Oh sure, can I have your RingCentral account ID and the phone number?",
+          "start": 69.08,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 83.48,
+          "text": "Yes, the account ID is",
+          "start": 81.16,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 87.24,
+          "text": "5259301.",
+          "start": 84.2,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 96.08,
+          "text": "And the phone number is 6501023143.",
+          "start": 89.8,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 108,
+          "text": "Thank you. Give me a minute.",
+          "start": 103.56,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 113.32,
+          "text": "Have a look at your account settings. I will be back very quick.",
+          "start": 108,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 117.16,
+          "text": "Oh, thank you.",
+          "start": 115.8,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 140.88,
+          "text": "Okay, I found a wrong setting. You have a RingSense license but it is assigned to a different user.",
+          "start": 130.6,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 159.4,
+          "text": "With a different phone number, which is 650-113-4629. The extension name is Jane Smith.",
+          "start": 140.88,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 182.56,
+          "text": "So that's why you cannot get the RingSense data or insights for recorded calls from this current user. If you expect to get RingSense for this user, you have to reassign the RingSense license to this user.",
+          "start": 159.4,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 192.76,
+          "text": "Or you will get the RingSense data for the other user extension which is the extension with the agent SNP.",
+          "start": 182.56,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 205.8,
+          "text": "Oh, sure. Thank you so much. I think that was the mistake from the IT. I'm going to change it. I'm going to talk to them first, and I'm going to change it. Okay? Thank you very much.",
+          "start": 194.76,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 211.16,
+          "text": "Anything else I can help you with?",
+          "start": 207,
+          "speakerId": "3304627"
+        },
+        {
+          "end": 214.04,
+          "text": "Well, that's it. Have a good day.",
+          "start": 211.64,
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        },
+        {
+          "end": 217.8,
+          "text": "You too. Have a good day. Bye bye.",
+          "start": 215.08,
+          "speakerId": "3304627"
+        }
+      ],
+      "Summary": [
+        {
+          "start": 0,
+          "end": 1,
+          "value": "During the call, a customer sought help with accessing RingSense insights on their account."
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "value": "Leon Brown (RingCentral Agent) discovered a settings issue related to license assignment and advised the customer on the necessary steps to resolve it."
+        }
+      ],
+      "NextSteps": [
+        {
+          "start": 194.76,
+          "end": 205.8,
+          "value": "Customer needs to contact their IT department to reassign the RingSense license to the correct user associated with their account.",
+          "speakerId": "da06ad67-178f-4e26-822e-8b5f0b04a960"
+        }
+      ],
+      "AIScore": [
+        {
+          "value": "7"
+        }
+      ],
+      "QnA": [
+        {
+          "start": 123.64,
+          "end": 127.24,
+          "value": "Hey, I found the issue. Are you still there?",
+          "speakerId": "3304627"
+        }
+      ],
+      "BulletedSummary": [
+        {
+          "value": "A customer inquired about accessing insights from RingCentral, providing their account ID and phone number for assistance."
+        },
+        {
+          "value": "Leon Brown (RingCentral Agent) identified a license assignment issue causing the customer to miss RingSense data, and the customer agreed to rectify it with their IT team."
+        }
+      ]
+    }
+  }
+}
