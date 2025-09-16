@@ -27,19 +27,19 @@ The two-legged RingOut call can be created via the following request:
 === "Javascript"
 
 	```javascript
-    {!> code-samples/voice/quick-start.js !}
+    {!> code-samples/voice/quick-start.js [ln:1-38]!}
 	```
 
 === "Python"
 
 	```python
-    {!> code-samples/voice/quick-start.py !}
+    {!> code-samples/voice/quick-start.py [ln:1-41]!}
 	```
 
 === "PHP"
 
 	```php
-    {!> code-samples/voice/quick-start.php !}
+    {!> code-samples/voice/quick-start.php [ln:1-45]!}
 	```
 
 === "C#"
@@ -57,7 +57,7 @@ The two-legged RingOut call can be created via the following request:
 === "Ruby"
 
 	```ruby
-    {!> code-samples/voice/quick-start.rb !}
+    {!> code-samples/voice/quick-start.rb [ln:1-43]!}
 	```
 
 ## Request parameters
@@ -146,5 +146,8 @@ Deleting the RingOut is only available when the RingOut has been initiated and t
 
 ## Setting the caller ID for RingOut calls
 
-RingCentral allows users to select which number to use for their caller ID name (`CNAM`) value when making calls. However, this can only be done through the RingCentral administrative console, and cannot be set at runtime or programmatically. To set the CallerId for the RingOut API, set the "RingOut from Web" value as available in the Online Account Portal. More information on this can be found in [KB Article #3471](https://support.ringcentral.com/s/article/Outbound-Caller-ID-Overview).
+The `/ring-out` API allows developers to specify the caller ID in the API request body. To do this, developers should first identify the [user's phone numbers](https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers) that support the `CallerId` feature, and then select one of those numbers to use as the caller ID.
 
+If the `callerId` parameter is not specified, the API will use the default caller ID which is normally the main company phone number. The default caller ID for a ring out call can be changed from the [RingCentral admin portal](https://service.ringcentral.com)
+
+<img src="../../img/ringout-callerid.png" class="img-fluid">

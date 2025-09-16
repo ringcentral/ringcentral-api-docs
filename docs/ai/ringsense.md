@@ -16,7 +16,15 @@ RingCentral RingSense transcribes your voice calls and provides in-depth convers
     * The license is transferable from one user extension to another user extension.
     * RingSense data retention is defined in your RingSense settings. By default the data is retained for 1 year.
 
-To learn more about RingSense and how to enable the service for a RingCentral RingEX account, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
+To learn more about RingSense, please refer to this [online article](https://www.ringcentral.com/ringsense-for-sales.html).
+
+
+
+- For instructions on enabling RingSense for a RingCentral RingCX account, please refer to this [online article](https://support.ringcentral.com/article-v2/Getting-started-with-RingSense-for-RingCX.html?brand=RingCentral&product=RingCX&language=en_US)
+
+- For instructions on enabling RingSense for a MS Teams account, please refer to this [online article](https://support.ringcentral.com/article-v2/Setting-up-integrations-in-RingSense.html?brand=RingCentral&product=RingSense&language=en_US#MS-teams)
+
+- For instructions on enabling RingSense for a NICE CXone account, please refer to this [online article](https://support.ringcentral.com/article-v2/Setting-up-integrations-in-RingSense.html?brand=RingCentral&product=RingSense&language=en_US#cc-userhub)
 
 ## RingSense API
 
@@ -63,7 +71,7 @@ If the user has the permission, the response will contain the info below:
   }
 }
 ```
-
+<br>
 There are two methods to access RingSense data: through push notifications (recommended method) or via a REST API call.
 
 ### RingSense event notification
@@ -82,6 +90,7 @@ You can read the RingSense data of a recorded voice call or video meeting if you
     * The `sourceRecordId` of a voice call recording is the recording ID of a recorded call. You can get the recording ID of a call from the [call log data](../voice/call-log/details.md).
     * The `sourceSessionId` of a voice call recording is the telephony session ID of a recorded call. You can get the telephony session ID of a call from the [call log data](../voice/call-log/details.md).
     * The `sourceRecordId` and the `sourceSessionId` of a video call recording are identical. You can get the ID of a video call by using the [List User Video Meeting](https://developers.ringcentral.com/api-reference/Meetings-History/listVideoMeetings) API. However, you should check if the video call was recorded or not to decide whether you can read the RingSense data of that video call.
+    * Currently, there is no API available to detect the `sourceRecordId` or `sourceSessionId` for phone calls or video conferences originating from RingCX, NICE CXone, or Microsoft Teams domains. Therefore, you must rely on RingSense event notifications from those domains to obtain insights for such conversations.
 
 Read RingSense data using a recording Id:
 
@@ -98,7 +107,7 @@ This endpoint is useful for RingEX voice call as it returns the RingSense data f
 ## Example of API Response
 
 ```json
-{!> code-samples/ai/ringsense/ringsense-data.json !}
+{!> code-samples/ai/ringsense/ringsense-pbx-sample-data.json !}
 ```
 
 | Parameter	| Type | Description |
@@ -146,11 +155,10 @@ When processing the insights objects—such as reconstructing conversations usin
 !!! Notes
     The `CallNotes` data object is available only for RingEX voice call. It requires the "AI Notes" is turned on during the call and also the RingSense admin setting is set to allow RingSense to import the AI notes.
 
-**AI notes is turned on during a call**
+    - **AI notes is turned on during a call**: You can start and stop the "AI Notes" during a call.
 
-<img class="img-fluid" src="../../img/ai-notes.png">
-<br><br>
-**RingSense admin setting options**
+    <img class="img-fluid" src="../../img/ai-notes.png">
+    <br><br>
 
-You can access the RingSense admin option via the [RingSense app](https://ringsense.ringcentral.com/adminsettings/integrations)
-<img class="img-fluid" src="../../img/ringsense-admin.png">
+    - **RingSense admin setting options**: You can access the RingSense admin option via the [RingSense app](https://ringsense.ringcentral.com/adminsettings/integrations)
+    <img class="img-fluid" src="../../img/ringsense-admin.png">

@@ -1,21 +1,35 @@
-# Handling SMS Errors
+# Handling SMS Messaging Errors
 
-Sending SMS messages can fail for many reasons. Successfully calling the SMS API to send an individual message or a batch does not guarantee that the message will actually be delivered to the recipient(s).
+SMS message delivery can fail for a variety of reasons, such as invalid phone numbers, carrier filtering, network issues, or recipient device problems. Successfully invoking the SMS API—whether to send a single message or a batch of messages—only confirms that the request was accepted by the system. It does not guarantee that the messages will be delivered to the intended recipient(s). Delivery status should always be verified through the message record updates provided by the API.
 
-In the case the API could successfully push a message to the queue for sending out, the API will create a message record and adds
+If the API successfully pushes a message to the sending queue, it creates a corresponding message record and stores it in the message store database. This record serves as a persistent log, allowing developers to track the message’s lifecycle, query its status, and retrieve its content when needed.
 
-An "SMS-XX-???" error code is returned in the API response, only if the API call that attempts to send a message was successful, but the SMS sending or delivering failed eventually. In many cases, the API that sends a message will validate the 'from' and the 'to' phone number or the message content to prevent sending failure. In the case the API could validate and reject sending the message, it will fail the API call with an error and will not log that message into the message store.
+- When a message is sent and successfully delivered, its record is updated with the status "Delivered", as shown in the example below:
 
-After sending a batch,
-SMS API returns error codes in case it failed sending or delivery a message. The `errorCode` field will be added to the message metadata with the error code corresponding to the reason of the failure.
+    ``` json hl_lines="4"
+    "to": [
+            {
+              "phoneNumber": "+1650513XXXX",
+              "messageStatus": "Delivered"
+            }
+          ],
+    ```
 
-## Error Code Structure
+- If a message fails to send, its record is updated with the corresponding status and error code, as shown in the example below:
 
-Error codes consist of a prefix and a numeric value. The prefix identifies the source reporting the error, while the numeric portion represents the specific error code. For example, in `SMS-CAR-411`, the prefix is `SMS-CAR-` and the numeric code is `411`
+    ``` json hl_lines="4 5"
+    "to": [
+            {
+              "phoneNumber": "+1209248XXXX",
+              "messageStatus": "SendingFailed",
+              "errorCode": "SMS-RC-413"
+            }
+          ],
+    ```
 
-### Error Reporting Prefix
+## SMS Error Code Structure
 
-For SMS, there are 3 sources that can return an error:
+SMS error codes consist of a prefix and a numeric value. The prefix identifies the source reporting the error, while the numeric portion represents the specific error code. For example, in `SMS-CAR-411`, the prefix is `SMS-CAR-` and the numeric code is `411`. There are 3 sources that can return an error:
 
 | Source | Error Code Prefix | Description |
 |-|-|-|
@@ -27,27 +41,11 @@ For SMS, there are 3 sources that can return an error:
 
 Commonly encountered errors fall into categories:
 
-1. Sending to invalid numbers such as landline numbers or other numbers that cannot support texting.
+1. Sending to invalid numbers such as landline numbers or other numbers that cannot support SMS messaging.
 2. Being rejected as spam.
 3. Not enough credits.
 4. Number is blocked due to compliance violation.
 5. Recipient opted out.
-
-### Invalid Number
-
-When you receive an error that indicates a number is invalid or unavailable (e.g. `SMS-UP-410`, `SMS-UP-411`, `SMS-UP-412`, `SMS-UP-413`), you should make a note of it and consider stopping messages to that number. You can also ask your user to confirm the validity of their number (via SMS) before resuming messages.
-
-A common reason for this is texting to landline numbers that do not have texting capability. An API service like [NumVerify](https://numverify.com/) can be used to check whether a number is a landline number (without texting capability) or a mobile number (likely with texting capability).
-
-### Spam
-
-If are receiving a lot of spam rejections, your users may be indicating this is spam or the carrier may be using spam detection algorithms. In this case, you should consider changing your message so it is not recognized as spam. After you change your message, you may want to consider provisioning a new phone number with the updated messages as your existing number may be blacklisted.
-
-Different recipient wireless carriers will have different spam policies so it may be worthwhile to check errors against recipient carrier. An API service like [NumVerify](https://numverify.com/) can also be used to identify the recipient's wireless carrier.
-
-## Expected Errors
-
-Some information is provided for informational purposes and while it may be classified as an error, may be expected from  carriers. For example, it may not possible to get delivery status from carriers as reported by `SMS-CAR-104` and `SMS-CAR-199`. When checking for delivery success and failure, you may want to verify receipt of the SMS message before classifying these as non-delivered.s
 
 ## Error Code List
 
@@ -55,22 +53,22 @@ Some information is provided for informational purposes and while it may be clas
 
 | Code | Description | Remedy |
 |-|-|-|
-| `SMS-RC-410` | Destination number unsupported. | |
+| `SMS-RC-410` | Destination number unsupported. | Check the recipient's phone number. Make sure the number is valid and not a landline phone number. |
 | `SMS-RC-413` | Destination subscriber opted out. | Check your number's opted out list and contact your recipient by other communication means to get their consents for receiving SMS messages from your number.
-| `SMS-RC-430` |This message has been filtered and blocked by a RingCentral's message filtering system for spam. | Make sure it complies with our [content policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) and try again. |
-| `SMS-RC-500` | General/Unknown internal RC error. | |
-| `SMS-RC-501` | RingCentral is sending an invalid upstream API call. | Please raise a support ticket with RingCentral developer support.|			
-| `SMS-RC-503` | RingCentral provisioning error. Phone number is incorrectly provisioned by RingCentral in upstream. | |
-| `SMS-RC-504` | RC provisioning error. Invalid SMS provider configuration. | Please contact your account admin. |
+| `SMS-RC-430` |This message has been filtered and blocked by a RingCentral's message filtering system for spam. | Modify the message and make sure the content complies with our [content policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) and try again. |
+| `SMS-RC-500` | General/Unknown internal RC error. | Submit a support ticket with [RingCentral developer support](https://developers.ringcentral.com/support/create-case).|
+| `SMS-RC-501` | RingCentral is sending an invalid upstream API call. | Submit a support ticket with [RingCentral developer support](https://developers.ringcentral.com/support/create-case).|
+| `SMS-RC-503` | RingCentral provisioning error. Phone number is incorrectly provisioned by RingCentral in upstream. | Submit a support ticket with [RingCentral customer support](https://support.ringcentral.com/contact-support.html)|
+| `SMS-RC-504` | RC provisioning error. Invalid SMS provider configuration. | Contact your account administrator. |
 
 ### Error returned by RingCentral SMS Upstream (Gateway)
 
 | Code | Description | Remedy |
 |-|-|-|
-| `SMS-UP-410` | Destination number invalid, unallocated, or does not support this kind of messaging. | Check the number and try again. |
+| `SMS-UP-410` | Destination number invalid, unallocated, or does not support this kind of messaging. | Check the recipient's phone number. Make sure the number is valid and not a landline phone number. |
 | `SMS-UP-413` | Destination subscriber opted out. | Check your number's opted out list and contact your recipient by other communication means to get their consents for receiving SMS messages from your number. |
-| `SMS-UP-414` | This phone number is not set up to send text messages. | Contact your admin. |
-| `SMS-UP-430` | Your message wasn't delivered because it may contain spam content. | Make sure it complies with our [content policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) and try again. |
+| `SMS-UP-414` | This phone number is not set up to send text messages. | Contact your account administrator. |
+| `SMS-UP-430` | Your message wasn't delivered because it may contain spam content. | Modify the message and make sure the content complies with our [content policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) and try again. |
 | `SMS-UP-431` | This number has been flagged for potential spam. You can no longer send messages from this number. | Contact your admin. |
 | `SMS-UP-432` | Content length exceeded maximum supported request size. | Check the length of the message and reduce it to less than 1000 characters. |
 | `SMS-UP-433` | Your message couldn’t be delivered as written. Please revise it and try again. | |
@@ -81,8 +79,8 @@ Some information is provided for informational purposes and while it may be clas
 | Code | Description | Remedy |
 |-|-|-|
 | `SMS-CAR-104` | Carrier has not reported delivery status. | Check the message status again after an hour. |
-| `SMS-CAR-199` | Carrier reports unknown message status. | |
-| `SMS-CAR-400` | Carrier does not support this kind of messaging. | Check the recipient number's carrier. |
+| `SMS-CAR-199` | Carrier reports unknown message status. | N/A |
+| `SMS-CAR-400` | Carrier does not support this kind of messaging. | Contact the recipient via voice and . |
 | `SMS-CAR-410` | Message was expired/canceled before reaching SMSC. |  |
 | `SMS-CAR-411` | Destination number invalid, unallocated, or does not support this kind of messaging. | Check the recipient's phone number. |
 | `SMS-CAR-412` | Destination subscriber unavailable. Check the recipient number's carrier. |
@@ -94,7 +92,7 @@ Some information is provided for informational purposes and while it may be clas
 | `SMS-CAR-433` | Message is malformed for the carrier. | |
 | `SMS-CAR-434` | Rejected as media size is too large. | Reduce the size of attachments. |
 | `SMS-CAR-435` | Rejected due to shortened url. | Please obtain your own dedicated domain if shortened links are needed for SMS. |
-| `SMS-CAR-450` | P2P messaging volume violation. | Please contact RingCentral support to review your account settings and ensure you are utilizing the appropriate A2P provisioning for high volume traffic |
+| `SMS-CAR-450` | P2P messaging volume violation. | Please contact RingCentral support to review your account settings and ensure you are utilizing the appropriate A2P provisioning for high volume traffic. |
 | `SMS-CAR-451` | AT&T rejected this SMS as you have sent over the daily limit for your 10DLC Campaign. | |
 | `SMS-CAR-452` | Carriers rejected this SMS as you have sent over the allotted limit. | |
 | `SMS-CAR-460` | Destination rejected short code messaging. Currently not applicable for RingCentral. | |
