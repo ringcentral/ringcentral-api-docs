@@ -17,7 +17,7 @@ def read_extension_phone_number_detect_sms_feature()
       for feature in record['features'] do
         if feature == "SmsSender"
           # If user has multiple phone numbers, check and decide which number
-          # to be used for sending SMS message.
+          # to be used for sending SMS message.  For simplicity, we pick the first one we find.
           return send_sms(record['phoneNumber'])
         end
       end

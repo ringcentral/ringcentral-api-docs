@@ -42,7 +42,7 @@ public class SendSMS {
             for(var feature : record.features) {
               if (feature.equalsIgnoreCase("SmsSender")) {
                 // If a user has multiple phone numbers, check and decide which number
-                // to be used for sending SMS message.
+                // to be used for sending SMS message. For simplicity, we pick the first one we find.
                 send_sms(record.phoneNumber);
                 return;
               }

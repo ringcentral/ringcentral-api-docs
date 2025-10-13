@@ -80,9 +80,13 @@ def boostrap_test_function()
     # require_relative './code-snippets/create-interaction-rule'
     # create_user_interaction_rule()
 
-    puts "Test Call queue Call handling"
-    require_relative './code-snippets/callqueue-answering-rule'
-    create_callqueue_custom_answering_rule("62498880016", "62576913016")
+    # puts "Test Call queue Call handling"
+    # require_relative './code-snippets/callqueue-answering-rule'
+    # create_callqueue_custom_answering_rule("62498880016", "62576913016")
+
+    puts "Test FAC Call handling"
+    require_relative './code-snippets/update-wh-state-call-forwarding-targets'
+    read_user_workhours_state_rules()
 end
 
-boostrap_test_function()
+# boostrap_test_function()

@@ -18,8 +18,8 @@ def read_analytics_aggregate_data():
           # Change the "timeFrom" value accordingly so that it does not exceed 184 days from the current datetime
           # The specified time is UTC time. If you want the timeFrom and timeTo your local time, you have to convert
           # your local time to UTC time!
-          'timeFrom': "2023-01-01T00:00:00.000Z",
-          'timeTo': "2023-02-15T23:59:59.999Z"
+          'timeFrom': "2025-04-01T00:00:00.000Z",
+          'timeTo': "2025-09-15T23:59:59.999Z"
         }
       },
       'responseOptions':{
@@ -51,10 +51,10 @@ platform = rcsdk.platform()
 # Authenticate a user using a personal JWT token
 def login():
     try:
-      platform.login( jwt=os.environ.get('RC_USER_JWT') )
-      read_analytics_aggregate_data()
+        platform.login( jwt=os.environ.get('RC_USER_JWT') )
+        read_analytics_aggregate_data()
     except Exception as e:
-      sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
+        sys.exit("Unable to authenticate to platform. Check credentials." + str(e))
 
 login()
 ##############################

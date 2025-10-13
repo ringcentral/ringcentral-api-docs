@@ -8,7 +8,6 @@ Interaction analytics is used to understand a conversation happening in a meetin
     * keywords and conversation metrics
 * Speaker-level insights
     * [speaker diarization](speaker-diarization.md)
-    * [speaker identification](speaker-identification.md)
 
 Let's say we want to analyze a meeting between a sales representative and a customer, and that meeting lasted for twenty minutes. Here are some of the insights we can extract using this API:
 
@@ -26,8 +25,6 @@ For the best results we recommend following the guidelines below.
 
 * Setting the `source` parameter helps to optimize the diarization process by allowing a specialized acoustic model built specifically for the corresponding audio sources.
 
-* If you specify the `speakerIds` parameter, make sure that all the speaker ids in the array exist. Otherwise, the API call will fail. As a good practice, you can always read the speaker ids from your account and use the correct ids of the speakers, who you think that might speak in the audio file.
-
 ### Request body parameters
 
 | Parameter      | Type   | Description                                             |
@@ -38,7 +35,6 @@ For the best results we recommend following the guidelines below.
 | `separateSpeakerPerChannel` | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker. Optional. Default of `False`. |
 | `speakerCount` | Number | Number of speakers in the file. Optional.         |
 | `audioType`    | String | Type of the audio based on number of speakers. Optional. Permitted values: `CallCenter`, `Meeting`, `EarningsCalls`, `Interview`, `PressConference`, `Voicemail` |
-| `speakerIds`   | List[String] | Optional set of speakers to be identified from the audio. Optional.  |
 | `enableVoiceActivityDetection` | Boolean  | Apply voice activity detection. Optional. Default of `False`. |
 | `contentUri`   | String | Publicly facing url. |
 | `source`       | String | Source of the audio file eg: `Phone`, `RingCentral`, `GoogleMeet`, `Zoom` etc. Optional. |

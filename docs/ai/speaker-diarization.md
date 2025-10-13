@@ -1,6 +1,6 @@
 # Speaker diarization
 
-Speaker diarization is the process that partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speakers ids accordingly. This API also supports speaker identification by speaker ID if the speaker was already enrolled using [Speaker Enrollment API](speaker-enrollment.md).
+Speaker diarization is the process that partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speakers ids accordingly.
 
 ## Using the diarization API
 
@@ -12,8 +12,6 @@ For the best results we recommend following these guidelines.
 
 * Setting the `source` parameter helps to optimize the diarization process by allowing a specialized acoustic model built specifically for the corresponding audio sources.
 
-* For proper speaker indentification, make sure you have previously [enrolled all speakers in the media file](speaker-enrollment.md) and include them in the `speakerIds` parameter.
-
 ### Request parameters
 
 | Parameter      | Type   | Description                                              |
@@ -23,7 +21,6 @@ For the best results we recommend following these guidelines.
 | `separateSpeakerPerChannel` | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker. Optional. Default of False. |
 | `speakerCount` | Number | Number of speakers in the file. Optional.         |
 | `audioType`    | String | Type of the audio based on number of speakers. Optional. Permitted values: `CallCenter` (default), `Meeting`, `EarningsCalls`, `Interview`, `PressConference` |
-| `speakerIds`   | List[String] | Optional set of speakers to be identified from the call. Optional. |
 | `contentUri`   | String | Publicly facing url. |
 | `source`       | String | Source of the audio file eg: `Phone`, `RingCentral`, `GoogleMeet`, `Zoom` etc. Optional. |
 | `enableVoiceActivityDetection`  | Boolean | Apply voice activity detection. Optional. Default of False. |

@@ -14,7 +14,7 @@ def read_extension_phone_number_detect_sms_feature():
       for feature in record.features:
         if feature == "SmsSender":
           # If user has multiple phone numbers, check and decide which number
-          # to be used for sending SMS message.
+          # to be used for sending SMS message. For simplicity, we pick the first one we find.
           return send_sms(record.phoneNumber)
     if count(jsonObj.records) == 0:
       print("This user does not own a phone number!");
@@ -146,4 +146,4 @@ def boostrap_test_function():
   ms.login()
 
 ########
-boostrap_test_function()
+# boostrap_test_function()

@@ -40,9 +40,9 @@ async function read_extension_phone_number_detect_sms_feature(){
             for (var feature of record.features){
                 if (feature == "SmsSender"){
                     // If a user has multiple phone numbers, check and
-		    // decide which number to be used for sending
-		    // the SMS message. For simplicity, we pick the
-		    // first one we find.
+                    // decide which number to be used for sending
+                    // the SMS message. For simplicity, we pick the
+                    // first one we find.
                     return send_sms(record.phoneNumber)
                 }
             }
@@ -112,7 +112,7 @@ const sleep = async (ms) => {
  Code snippet section for boostrap testing purpose
 **********************************************************/
 
-const Subscriptions = require('/Users/phongvu/.nvm/versions/node/v23.11.0/lib/node_modules/@ringcentral/subscriptions').Subscriptions;
+const Subscriptions = require('@ringcentral/subscriptions').Subscriptions;
 const subscriptions = new Subscriptions({
    sdk: rcsdk
 });
@@ -125,7 +125,7 @@ exports.RECIPIENT = RECIPIENT;
 exports.RECIPIENT2 = RECIPIENT2;
 exports.subscription = subscription
 exports.RC_USER_JWT = process.env.RC_USER_JWT
-boostrap_test_function()
+// boostrap_test_function()
 
 async function boostrap_test_function(){
 /*

@@ -99,8 +99,12 @@ def boostrap_test_function():
     # ms.platform = platform
     # ms.create_user_interaction_rule()
 
-    ms = importlib.import_module("code-snippets.callqueue-answering-rule")
+    # ms = importlib.import_module("code-snippets.callqueue-answering-rule")
+    # ms.platform = platform
+    # ms.create_callqueue_custom_answering_rule("62498880016", "62576913016")
+
+    ms = importlib.import_module("code-snippets.update-wh-state-call-forwarding-targets")
     ms.platform = platform
-    ms.create_callqueue_custom_answering_rule("62498880016", "62576913016")
+    ms.read_user_workhours_state_rules()
 # must be on the last line!
-boostrap_test_function()
+# boostrap_test_function()
