@@ -49,7 +49,7 @@ function call_ring_out(){
 /**********************************************************
  Code snippet section for boostrap testing purpose
 **********************************************************/
-boostrap_test_function();
+// boostrap_test_function();
 function boostrap_test_function(){
 
   sleep(2);
@@ -69,6 +69,7 @@ function boostrap_test_function(){
 
   // require_once (__DIR__ .'/code-snippets/create-interaction-rule.php');
 
-  require_once (__DIR__ .'/code-snippets/callqueue-answering-rule.php');
+  // require_once (__DIR__ .'/code-snippets/callqueue-answering-rule.php');
+  require_once (__DIR__ .'/code-snippets/update-wh-state-call-forwarding-targets.php');
 }
 ?>

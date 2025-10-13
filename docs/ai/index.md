@@ -25,7 +25,6 @@ In addition to converting speech-to-text, the Artificial Intelligence API also h
 * Create a list of questions asked by speakers
 * Perform emotional analysis of each speaker in a conversation
 * Detect multiple speakers from a single audio channel source
-* Perform speaker speech training for speaker recognition
 
 ## Key Artificial Intelligence API concepts
 
@@ -53,11 +52,7 @@ RingCentral supports various audio formats for ease of integration. We support a
 
 ### Supported languages for media input
 
-Only the English language is supported during the beta. 
-
-### What is speaker enrollment, and how does it work?
-
-[Speaker enrollment](speaker-enrollment.md) is the process by which identities are associated with a voice or accoustic signature. This ultimately allows for RingCentral to identify who is speaking, and pass that identity information on its reports. 
+Only the English language is supported during the beta.
 
 ### Tips on how to get the best results from media files
 

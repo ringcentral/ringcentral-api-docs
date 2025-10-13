@@ -69,6 +69,7 @@ nav:
       - 'State-based Rules': 'voice/call-routing/user-call-handling/states-and-rules.md'
       - 'Interaction Rules': 'voice/call-routing/user-call-handling/interaction-rules.md'
       - 'Call Handling Configurations': 'voice/call-routing/user-call-handling/call-handling-rules.md'
+      - 'Call Forwarding Targets': 'voice/call-routing/user-call-handling/user-call-forwarding-targets.md'
       - 'Legacy Answering Rules': 'voice/call-routing/user-call-handling/legacy-user-call-handling.md'
       - 'Migration Guidance': 'voice/call-routing/user-call-handling/migration-guide.md'
     - 'Company Call Handling':
@@ -119,7 +120,7 @@ nav:
       - 'Sending an SMS': 'messaging/sms/sending-sms.md'
       - 'Sending an MMS': 'messaging/sms/sending-images.md'
       - 'Receiving SMS/MMS': 'messaging/sms/receiving-sms-mms.md'
-      # - 'Error Handling': 'messaging/sms/sms-errors.md'
+      - 'Error Handling': 'messaging/sms/sms-errors.md'
       #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
       # - 'Migration Guide': 'messaging/sms/migration-guide.md'
     - 'SMS Consent':
@@ -277,8 +278,8 @@ nav:
       - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
       - 'Interaction analytics': 'ai/interaction-analytics.md'
     - 'Speaker analysis':
-      - 'Speaker enrollment': 'ai/speaker-enrollment.md'
-      - 'Speaker identification': 'ai/speaker-identification.md'
+      # - 'Speaker enrollment': 'ai/speaker-enrollment.md'
+      # - 'Speaker identification': 'ai/speaker-identification.md'
       - 'Speaker diarization': 'ai/speaker-diarization.md'
 #      - 'Emotion recognition': 'ai/emotion-recognition.md'
     - 'Text analysis':

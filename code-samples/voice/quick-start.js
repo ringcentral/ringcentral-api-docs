@@ -50,7 +50,7 @@ const sleep = async (ms) => {
 
 exports.platform = platform;
 
-boostrap_test_function()
+// boostrap_test_function()
 async function boostrap_test_function(){
   console.log("boostrap_test_function")
 
@@ -122,8 +122,13 @@ async function boostrap_test_function(){
   // require ('./code-snippets/create-company-answering-rule.js')
   // return
 
+  // await sleep(2000)
+  // console.log("Test Call queue Custome Rule")
+  // require ('./code-snippets/callqueue-answering-rule.js')
+  // return
+
   await sleep(2000)
-  console.log("Test Call queue Custome Rule")
-  require ('./code-snippets/callqueue-answering-rule.js')
+  console.log("Test Call Handling V2")
+  require ('./code-snippets/update-wh-state-call-forwarding-targets.js')
   return
 }
