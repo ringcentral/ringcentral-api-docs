@@ -218,34 +218,16 @@ nav:
       - 'Export File Structure': 'team-messaging/manual/compliance-export-structure.md'
 
   - 'Video':
-    - 'Overview': 'video/index.md'
-    - 'REST API':
-      - 'Overview': 'video/api/index.md'
-      - 'Getting Started': 'video/api/quick-start.md'
-      - 'Creating meeting bridges': 'video/api/create-meetings.md'
-      - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
-      - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
-      - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
-      - 'Past meetings and recordings': 'video/api/meeting-history.md'
-      - 'Selecting meetings service': 'video/api/meeting-config.md'
-      - 'Troubleshooting': 'video/api/troubleshooting.md'
-    - 'Video Client SDK':
-      - 'Overview': 'video/client-sdk/index.md'
-      - 'Download': 'video/client-sdk/download.md'
-      - 'Getting Started': 'video/client-sdk/quick-start.md'
-      - 'Authentication': 'video/client-sdk/authentication.md'
-      - 'API Reference':
-         - 'Android': 'https://ringcentral.github.io/ringcentral-videosdk-android/'
-         - 'iOS': 'https://ringcentral.github.io/ringcentral-videosdk-ios/'
-         - 'Javascript': 'https://ringcentral.github.io/ringcentral-videosdk-js/'
-         - 'React UI': 'https://ringcentral.github.io/ringcentral-videosdk-react/'
-         - 'React Native': 'https://ringcentral.github.io/ringcentral-videosdk-react-native/'
-      - 'Sample apps':
-         - 'Javascript': 'https://github.com/ringcentral/ringcentral-videosdk-js-samples'
-         - 'Android': 'https://github.com/ringcentral/ringcentral-videosdk-android-samples'
-         - 'iOS': 'https://github.com/ringcentral/ringcentral-videosdk-ios-samples'
-         - 'React Native': 'https://github.com/ringcentral/ringcentral-videosdk-react-native-samples'
-    - 'Using RingCentral Embeddable': 'video/embeddable.md'
+    - 'Overview': 'video/api/index.md'
+    - 'Getting Started': 'video/api/quick-start.md'
+    - 'Creating meeting bridges': 'video/api/create-meetings.md'
+    - 'Scheduling on behalf of': 'video/api/meeting-delegates.md'
+    - 'Creating a "personal" meeting': 'video/api/personal-meetings.md'
+    - 'Get PSTN dial-in numbers': 'video/api/dialing-in.md'
+    - 'Past meetings and recordings': 'video/api/meeting-history.md'
+    - 'Selecting meetings service': 'video/api/meeting-config.md'
+    - 'Troubleshooting': 'video/api/troubleshooting.md'
+#    - 'Using RingCentral Embeddable': 'video/embeddable.md'
 
   - 'Webinar':
     - 'Overview': 'webinar/index.md'
