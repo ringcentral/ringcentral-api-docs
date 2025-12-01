@@ -86,7 +86,7 @@ The RingCentral REST APIs let developers do the following vis-a-vis personal con
 
 * List personal contacts
 * Create or update a personal contact
-* Create contacts in a barch
+* Create contacts in a batch
 * Retrieve a personal contact
 * List and manage favorite contacts
 
