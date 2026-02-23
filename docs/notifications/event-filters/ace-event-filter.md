@@ -14,11 +14,11 @@
 ## Example of a RingEX voice call RingSense event
 
 ```json
-{!> code-samples/events/ringsense-pbx-event.json !}
+{!> code-samples/events/ace-pbx-event.json !}
 ```
 
 ## Example of a RingCX voice call RingSense event
 
 ```json
-{!> code-samples/events/ringsense-rcx-event.json !}
+{!> code-samples/events/ace-rcx-event.json !}
 ```
