@@ -1,4 +1,4 @@
-### Extension Telephony Sessions Event
+# Extension Telephony Sessions Event
 
 *Since 1.0.36 (Release 10.2)*
 
