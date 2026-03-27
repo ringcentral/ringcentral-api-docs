@@ -51,7 +51,8 @@ var bodyParams = {
             from: "+14085556789", // Your Business Phone Number
             to: "+16501112345", // You Customer Phone Number
             optStatus: "OptOut",
-            source: 'Api'
+            coverage: "phoneNumber"
+            source: "Api"
           }
         ]
       }
@@ -68,6 +69,7 @@ var bodyParams = {
             from: "*", // From all your business phone numbers within your RingCentral account
             to: "+16501112345", // You-Customer-Phone-Number
             optStatus: "OptOut",
+            coverage: "phoneNumber",
             source: 'Api'
           }
         ]

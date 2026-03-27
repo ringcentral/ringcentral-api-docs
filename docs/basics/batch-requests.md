@@ -6,7 +6,7 @@ One of the commonly used REST practices is the support of bulk operations to ret
     The `207 Multi-Status` code is not returned in response body in case of error accessing the endpoint. For example, if the requested endpoint does not exist at all, `404 Not Found` status code is returned. If there is a server error, `5xx` status code is returned.
     In bulk `DELETE` operations (if all resources are deleted successfully) the server returns the `204 No content` instead of multi status (since all parts would be identical in this case). In case of at least one failure the server returns the `207 Multi-Status`.
 
-Apart from the top-level special status code in case of success, a multipart response object contains status codes in each part, representing a particular requested resource. This status specifies an individual result for each requested resource out of the batch. Let's consider the examples of bulk request below.
+Apart from the top-level special status code in case of success, a multipart response object contains status codes in each part, representing a particular requested resource. This status specifies an individual result for each requested resource out of the bulk request. Let's consider the examples of bulk request below.
 
 ## Bulk request for `GET` method
 

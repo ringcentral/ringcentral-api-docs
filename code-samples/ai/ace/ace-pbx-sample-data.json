@@ -1,10 +1,4 @@
 {
-  "uuid": "4130446572007716222",
-  "event": "/ai/ringsense/v1/public/accounts/80964XXXX/domains/pbx/insights",
-  "timestamp": "2024-09-04T21:16:16.390Z",
-  "subscriptionId": "90e18302-3155-42ca-ba01-b05e8f863f24",
-  "ownerId": "6228832XXXX",
-  "body": {
     "title": "Call from John Smith to Tracy Debolah",
     "domain": "pbx",
     "sourceSessionId": "s-a0e7b361acc0az191bec7e275z7cae070000",
@@ -85,7 +79,27 @@
           "value": "Publish the developer guide after review and editing.",
           "speakerId": "p-a0e7b361acc0az191bec7e275z7cae070000-1"
         }
-      ]
-    }
+      ],
+      "AIScore": [
+        {
+          "value": "8"
+        }
+      ],
+      "Sentiment": [
+        {
+          "value": "Positive"
+        }
+      ],
+      "BulletedSummary": [
+      {
+        "value": "Agent confirmed they were recording the call for sentiment analysis purposes."
+      },
+      ...
+    ],
+    "CallNotes": [
+      {
+        "value": "Call notes.\nAgent expressed frustration over internal communication issues and ..."
+      }
+    ]
   }
 }

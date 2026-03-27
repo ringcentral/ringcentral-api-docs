@@ -115,6 +115,13 @@ nav:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
+    # - 'SMS Batch Messaging':
+    #   - 'Overview': 'messaging/sms/v2/index.md'
+    #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
+    #   - 'Sending Message Batch': 'messaging/sms/v2/sending-batch-sms.md'
+    #   - 'Reading Message Store': 'messaging/sms/v2/message-store.md'
+    #   - 'Event Notifications': 'messaging/sms/v2/events.md'
+    #   - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
     - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'SMS Enablement & Configuration': 'messaging/sms/sms-requirements.md'
@@ -269,7 +276,7 @@ nav:
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'
 
-    - 'RingSense': 'ai/ringsense.md'
+    - 'AI Conversation Expert': 'ai/ace.md'
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'
@@ -395,7 +402,7 @@ nav:
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
       - "RingSense":
-        - "Insights events": 'notifications/event-filters/ringsense-event-filter.md'
+        - "Insights events": 'notifications/event-filters/ace-event-filter.md'
     - 'Webhooks':
       - 'Getting Started': 'notifications/webhooks/quick-start.md'
       - 'Subscribing to webhooks': 'notifications/webhooks/creating-webhooks.md'

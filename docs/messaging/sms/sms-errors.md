@@ -66,6 +66,7 @@ Commonly encountered errors fall into categories:
 
 | Code | Description | Remedy |
 | :---- | :---- | :---- |
+| `SMS-RC-403`  |  Message rejected due to exceeding daily/monthly limits. | Contact your account administrator. |
 | `SMS-RC-410`  |  Destination number unsupported. | Check the recipient's phone number. Make sure the number is valid and not a landline phone number. |
 | `SMS-RC-413`  |  The destination subscriber opted out. |  Check your number’s opt-out list. If a recipient has opted out, contact them through another channel to obtain consent for SMS messages. To opt back in, the recipient must reply **START** to your RingCentral number. |
 | `SMS-RC-430`  | This message has been filtered and blocked by RingCentral's message filtering system for spam. | Modify the message and make sure the content complies with our [content policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html) and try again. |
