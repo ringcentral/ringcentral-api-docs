@@ -293,7 +293,7 @@ nav:
         - 'Requests methods, endpoints and parameters': 'basics/uris.md'
         - 'Response format': 'basics/formats/responses.md'
         - 'Errors': 'basics/errors.md'
-        - 'Batch requests': 'basics/batch-requests.md'
+        - 'Bulk requests': 'basics/batch-requests.md'
       - 'Data types and formats':
         - 'Objects and data types': 'basics/formats/objects.md'
         - 'Phone numbers': 'basics/formats/phone-numbers.md'

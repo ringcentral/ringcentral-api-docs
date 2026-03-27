@@ -59,7 +59,7 @@ See the [API Reference](https://developers.ringcentral.com/api-reference/Message
 
 * /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
-Then iterate the records returned from the message-store list to return individual message record(s) by the given message ID(s). The length of inbound messages is unlimited and batch requests are supported.
+Then iterate the records returned from the message-store list to return individual message record(s) by the given message ID(s). The length of inbound messages is unlimited and bulk requests are supported.
 
 * /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
