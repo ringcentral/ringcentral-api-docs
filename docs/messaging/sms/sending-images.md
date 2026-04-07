@@ -22,16 +22,15 @@ RingCentral platform supported MMS content types
 | | video/quicktime | .mov/.qt |
 | | video/webm | .webm |
 | | video/ogg  | .ogg |
-| | video/3gpp | .3gp |
 | `Audio` | audio/mpeg | .mp3 |
 | | audio/mp4 | .m4a |
 | | audio/ogg | .oga |
 | | audio/wav | .wav |
-| | audio/arm | .arm |
+| | audio/amr | .amr |
 | | audio/3gpp | .3gp |
 | `V-Card` | text/vcard | .vcf/.vcard |
 | `Compressed file` | application/zip | .zip |
-| | application/gzip | .gzip |
+| | application/gzip | .gzip/.gz |
 | `Document` | application/rtf | .rtf |
 | | application/pdf | .pdf |
 | | text/html | .html |
