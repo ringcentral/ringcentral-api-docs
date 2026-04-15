@@ -3,7 +3,7 @@
 The Call Control API is a REST-based interface, allowing developers to customize and integrate your phone system everywhere. It will help you build creative solutions based on our phone service and improve customer communications experience. The Call Control API makes it easy to make, retrieve, control and monitor calls.
 
 !!! check "Important prerequisite"
-    The Call Control API requires the "Advanced User" permission. This permission must be enabled for your account by a RingCentral account manager or administrator. 
+    The Call Control API requires the "Call Control" app scope. This scope can be added to your application with the assistance of our developer support team. You can request it by editing your application, looking for "Call Control (requires permission)" and adding it to your app. This will trigger a support request automatically for someone to review your request.
 
 ## Using the Call Control API
 
