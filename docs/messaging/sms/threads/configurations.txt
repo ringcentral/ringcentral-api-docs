@@ -1,0 +1,345 @@
+# SMS Thread Messaging Configurations
+
+Before implementing a thread messaging application, developers should get familiar with the thread messaging configurations, detect supported common resources and the phone numbers that are assigned to the resources as well as the SMS recipients who eventually can send and receive SMS messages on behalf of the common resource.
+
+## Identify common resources
+
+A common resource represents a shared entity whose phone number can be used for SMS thread messaging. A common resource can be either a call queue or a site (the main site or any sub-site if the account has the multi-site feature enabled).
+
+To identify these resources, developers must retrieve their corresponding extension records using the appropriate APIs below:
+
+* **Call queues**: To retrieve the account’s call queue resources, call the [List Call Queues API](https://developers.ringcentral.com/api-reference/Call-Queues/listCallQueues).
+
+* **Sites**: To retrieve the account’s site resources, call the [List Sites API](https://developers.ringcentral.com/api-reference/Multi-Site/listSites).
+
+    !!! important
+        For the main site (Company site), developers must call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=CompanyExtension` to detect the resource Id and necessary info. The List Sites API returns only sub-sites if any are available.
+
+* **IVR menus**: To retrieve the account’s IVR menu resources, call the [List IVR Menus API](https://developers.ringcentral.com/api-reference/IVR/readIVRMenuList).
+
+Alternatively, developers can call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=Department&type=Site&type=IvrMenu&type=CompanyExtension` to detect the resource Id and necessary info.
+
+The API returns a list of extension objects representing the requested resources. Each object contains key information about the resource, including the extension ID and name.
+
+The extension ID uniquely identifies the common resource and can be used when calling other related APIs described later in this document. The name can be used to display a user-friendly label in your application interface when presenting the resource to users.
+
+## Multiple SMS recipients configuration
+
+If an account has thread messaging enabled, each common resource provides a configuration option for assigning multiple SMS recipients. This allows multiple user extensions to be designated as SMS recipients (throughout this document, assigned SMS recipients are referred to as SMS handlers), enabling them to send and receive SMS messages using the common resource numbers in a collaborative, thread-based workflow.
+
+### Call queue SMS recipients configuration
+
+<img class="img-fluid" src="../../../../img/callqueue-sms-recipients-configs.png">
+
+Example of a call queue SMS recipients configuration via the [account admin portal](https://service.ringcentral.com).
+
+
+### Site SMS recipients configuration
+
+<img class="img-fluid" src="../../../../img/site-sms-recipients-configs.png">
+
+Example of a site SMS recipients configuration via the [account admin portal](https://service.ringcentral.com).
+
+### Detect SMS recipients assigned to a common resource
+
+To programmatically detect the user extensions that are assigned to handle SMS for a common resource, get the [common resource extension Id](#identify-common-resources) and specify it in the path of the endpoint below, then call the endpoint and review the API response.
+
+```http
+GET /restapi/v1.0/account/~/extension/{CommonResourceExtId}/sms-recipients
+```
+
+Sample response:
+
+```json
+{
+    "smsRecipients": [
+        {
+            "id": "710403052",
+            "extensionNumber": "104",
+            "name": "Sam R",
+            "assignable": true,
+            "hasLicense": true
+        },
+        {
+            "id": "696667052",
+            "extensionNumber": "102",
+            "name": "Beth S",
+            "assignable": true,
+            "hasLicense": true
+        },
+        {
+            "id": "696676052",
+            "extensionNumber": "103",
+            "name": "Federick J",
+            "assignable": true,
+            "hasLicense": true
+        }
+    ]
+}
+
+```
+
+### Update SMS recipients of a common resource
+
+To programmatically assign new SMS handlers, or to remove existing SMS handlers from a common resource, developers can get the [common resource extension Id](#identify-common-resources) and specify it in the path of the endpoint below, then call the endpoint with the body params as shown in the example below.
+
+```http
+bodyParams = {
+  addedExtensionIds: ["123456789", "987654321"],
+  removedExtensionIds: [...]
+}
+POST /restapi/v1.0/account/~/extension/{CommonResourceExtId}/sms-recipients/bulk-assign
+```
+
+!!! note
+    Detect user extension Ids by calling the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=User`
+
+## Detect shared phone numbers from common resources
+
+Phone numbers can be assigned to a common resource as its direct phone numbers. If these numbers are provisioned for SMS and associated with a valid SMS TCR campaign, all SMS recipients assigned to the common resource can use them to send and receive SMS messages.
+
+!!! note
+    If a phone number is assigned as a direct number to an IVR menu, it is considered to belong to the site to which the IVR menu is assigned.
+
+An example of an account's phone numbers assignment shown in the account admin portal. You can find the name of the resource from the "Assigned to" column, and the type of the resource from the "Type" column.
+
+<img class="img-fluid" src="../../../../img/common-resources-numbers.png">
+<br>
+
+### Detect main-site (Company) shared phone numbers
+
+The main site's shared phone numbers are the following numbers:
+
+- The account main company number.
+- Any phone number assigned to the main site auto-receptionist.
+- Any phone number assigned to an IVR menu under the main site.
+
+An example of a main site IVR menu direct number
+
+<img class="img-fluid" src="../../../../img/main-site-ivr-number.png">
+<br>
+
+To programmatically detect the main site (Company site) common phone numbers, developers can call the [List Account Phone Numbers](https://developers.ringcentral.com/api-reference/Phone-Numbers/listAccountPhoneNumbersV2) with the query parameter `usageType=MainCompanyNumber&usageType=CompanyNumber`
+
+The sample code below demonstrates how to retrieve shared phone numbers from the main site.
+
+```JavaScript
+async function read_main_site_phone_numbers(ivrMenus){
+  try{
+    let queryParams = {
+      usageType: ["MainCompanyNumber", "CompanyNumber"]
+    }
+    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let resp = await platform.get(endpoint, queryParams)
+    let jsonObj = await resp.json()
+    console.log("Main-site shared numbers:", JSON.stringify(jsonObj.records, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```
+
+In addition, the main site may have IVR menus with their own direct phone numbers. To programmatically identify these shared phone numbers, developers can call the List IVR Menus API and determine which IVR menus are assigned to the main site. Then, use the IVR menu extension ID to locate the associated phone numbers from the list returned by the List Account Phone Numbers API.
+
+The sample code below demonstrates how to retrieve shared phone numbers from IVR menus assigned to the main site.
+
+```JavaScript
+async function list_main_site_ivr_menus(){
+  try{
+    let endpoint = `/restapi/v1.0/account/~/ivr-menus`
+    let resp = await platform.get(endpoint)
+    let jsonObj = await resp.json()
+    let ivrMenus = []
+    for (var record of jsonObj.records) {
+      if (record.site.id == 'main-site') {
+        let item = {
+            name: record.name,
+            id: record.id,
+            phoneNumbers: []
+        }
+        ivrMenus.push(item)
+      }
+    }
+    await read_ivr_menu_phone_numbers(ivrMenus)
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function read_ivr_menu_phone_numbers(ivrMenus){
+  try{
+    let queryParams = {
+      usageType: ["DirectNumber"]
+    }
+    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let resp = await platform.get(endpoint, queryParams)
+    let jsonObj = await resp.json()
+    for (var record of jsonObj.records){
+      for (var menu of ivrMenus){
+        if (menu.id == record.extension.id)
+          menu.phoneNumbers.push(record.phoneNumber)
+      }
+    }
+    console.log("Main-site shared numbers", JSON.stringify(ivrMenus, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```
+
+### Detect sub-site shared phone numbers
+
+A sub-site exists if an account has the multi-site feature enabled. The sub-site's shared phone numbers are the following numbers:
+
+- The sub-site direct phone number(s).
+- Any phone number assigned to an IVR menu under the sub site.
+
+An example of a sub-site's IVR menu direct number
+
+<img class="img-fluid" src="../../../../img/sub-site-ivr-number.png">
+<br>
+
+The sample code below demonstrates how to retrieve direct phone numbers from sub sites.
+
+```JavaScript
+async function read_sub_sites(){
+  try{
+    let endpoint = `/restapi/v1.0/account/~/sites`
+    let resp = await platform.get(endpoint)
+    let jsonObj = await resp.json()
+    let subSites = []
+    for (var record of jsonObj.records){
+      if (record.id != 'main-site') {
+        let item = {
+          name: record.name,
+          id: record.id,
+          phoneNumbers: []
+        }
+        subSites.push(item)
+      }
+    }
+    await read_sub_site_phone_numbers(subSites)
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function read_sub_site_phone_numbers(subSites){
+  try{
+    let queryParams = {
+      usageType: ["DirectNumber"]
+    }
+    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let resp = await platform.get(endpoint, queryParams)
+    let jsonObj = await resp.json()
+    for (var record of jsonObj.records){
+      for (var site of subSites){
+        if (site.id == record.extension.id)
+          site.phoneNumbers.push(record.phoneNumber)
+      }
+    }
+    console.log("Sub-site shared numbers", JSON.stringify(subSites, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```
+
+The sample code below demonstrates how to retrieve shared phone numbers from IVR menus assigned to the sub sites.
+
+```JavaScript
+async function list_sub_site_ivr_menus(){
+  try{
+    let endpoint = `/restapi/v1.0/account/~/ivr-menus`
+    let resp = await platform.get(endpoint)
+    let jsonObj = await resp.json()
+    let ivrMenus = []
+    for (var record of jsonObj.records) {
+      if (record.site.id != 'main-site') {
+        let item = {
+            name: record.name,
+            id: record.id,
+            phoneNumbers: []
+        }
+        ivrMenus.push(item)
+      }
+    }
+    await read_ivr_menu_phone_numbers(ivrMenus)
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function read_ivr_menu_phone_numbers(ivrMenus){
+  try{
+    let queryParams = {
+      usageType: ["DirectNumber"]
+    }
+    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let resp = await platform.get(endpoint, queryParams)
+    let jsonObj = await resp.json()
+    for (var record of jsonObj.records){
+      for (var menu of ivrMenus){
+        if (menu.id == record.extension.id)
+          menu.phoneNumbers.push(record.phoneNumber)
+      }
+    }
+    console.log("Sub-site shared numbers", JSON.stringify(ivrMenus, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```
+
+### Detect call queue shared phone numbers
+
+A call queue's shared phone numbers are the direct number(s) assigned to a call queue:
+
+An example of a call queue's direct number
+
+<img class="img-fluid" src="../../../../img/call-queue-number.png">
+<br>
+
+The sample code below demonstrates how to retrieve direct phone numbers from call queues.
+
+```JavaScript
+async function read_call_queues(){
+  try{
+    let endpoint = `/restapi/v1.0/account/~/call-queues`
+    let resp = await platform.get(endpoint)
+    let jsonObj = await resp.json()
+    let callqueues = []
+    for (var record of jsonObj.records){
+      let item = {
+        name: record.name,
+        id: record.id,
+        phoneNumbers: []
+      }
+      callqueues.push(item)
+    }
+    await read_call_queue_phone_numbers(callqueues)
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function read_call_queue_phone_numbers(callqueues){
+  try{
+    let queryParams = {
+      usageType: ["DirectNumber"]
+    }
+    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let resp = await platform.get(endpoint, queryParams)
+    let jsonObj = await resp.json()
+    for (var record of jsonObj.records){
+      for (var callqueue of callqueues){
+        if (callqueue.id == record.extension.id)
+          callqueue.phoneNumbers.push(record.phoneNumber)
+      }
+    }
+    console.log("Call queue shared numbers", JSON.stringify(callqueues, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```

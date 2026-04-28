@@ -1,5 +1,7 @@
 # Extract interaction analytics from a media file
 
+!!! important "`Deprecated`"
+
 Interaction analytics is used to understand a conversation happening in a meeting between two or more people and extract from them more meaningful insights at scale. This API is a comprehensive in that in addition to its unique capabilities, it also bundles functionality found in our other APIs. In processing a media file, this API will provide multiple levels of insights, including:
 
 * Conversation insights

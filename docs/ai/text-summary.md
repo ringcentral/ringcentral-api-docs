@@ -1,5 +1,7 @@
 # Conversation summaries
 
+!!! important "`Deprecated`"
+
 The Artificial Intelligence conversation summarization API allows you to summarize the contents of speaker-tagged audio transcript by extracting what is determined to be the most relevant parts of the conversation. The API provides two types of summaries:
 
 - **Abstractive**. The summary generated is a unique construction that attempts to convey the meaning of the text. This is ideal for generating an abstract of the specified text.

@@ -1,5 +1,7 @@
 # Speech to text transcription
 
+!!! important "`Deprecated`"
+
 Speech-to-text is the process of converting speech content into text. RingCentral uses advanced machine learning algorithms to transcribe speech to text and further process the text contents to provide rich transcription with punctuations, number of speakers and conversational utterances with useful properties such as speaker id, timestamps of every utterance and of every spoken word.
 
 !!! Note "English is currently the only supported language."

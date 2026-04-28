@@ -1,0 +1,118 @@
+# Thread messaging message store
+
+## List messages
+
+Any SMS handler can view all messages in the thread messaging store for the common resources they belong to, regardless of whether they are assigned to a specific thread. This enables handlers to access not only their own conversations but also those assigned to teammates, improving visibility, collaboration, and overall continuity of service.
+
+The list message threads API supports multiple filters which can be used to optimize the response which returns only interested messages. For example, a handler can set the “threadStatus”=”Open” to list only messages from open threads, or set the “ownerExtensionIds” to a common resource ID (e.g. a call queue extension ID) to list only messages created for that common resource. This is useful when a handler is a member of multiple common resources.
+
+The `/restapi/v1.0/account/~/message-threads/messages` API currently supports the following essential filters:
+
+| Filter name | type | Description | Note |
+| :---- | :---- | :---- | :---- |
+| `threadStatus` | String | Filters threads based on their status: **Open** or **Resolved**. If no status is specified, all threads (both Open and Resolved) will be listed by default. |  |
+| `ownerExtensionIds` | Array of string | Filters messages based on one or several common resources identified by the common resource IDs. If not specified, return messages from all common resources the current authenticated user is a SMS handler.  |  |
+| `availability` | enum | Can be specified to "Alive" and/or "Deleted". |  |
+| `messageIds` | Array of string | Return messages matches the specified message Ids. If not specified, returning all messages from common resources the current authenticated user is a SMS handler. |  |
+| `creationTimeFrom` | string | Start date/time for resulting messages created after the specified date/time. In UCT time. | If not specified, the default value is the last 24 hours. |
+| `creationTimeTo` | string | End date/time for resulting messages created before the specified date/time. In UCT time. | If not specified, the default value is the current time. |
+
+### Sample response
+
+```json
+[
+  {
+    "id": "2904652345",
+    "threadId": "ebf18942-9cd4-4980-9fa3-e1ddfec7c45a",
+    "availability": "Alive",
+    "creationTime": "2026-02-12T21:06:33.706Z",
+    "lastModifiedTime": "2026-02-12T21:10:05.921Z",
+    "direction": "Outbound",
+    "messageStatus": "Delivered",
+    "text": "Hi Bill, your order was shipped and here is the tracking number #1000203330.",
+    "author": {
+      "extensionId": "62295327016",
+      "name": "Jenn G",
+      "extensionType": "User"
+    }
+  },
+  {
+    "id": "2901714323",
+    "threadId": "ebf18942-9cd4-4980-9fa3-e1ddfec7c45a",
+    "availability": "Alive",
+    "creationTime": "2026-02-12T17:19:56.266Z",
+    "lastModifiedTime": "2026-02-12T17:19:56.266Z",
+    "direction": "Inbound",
+    "messageStatus": "Received",
+    "text": "My order number is 123456, can you let me know the order status?"
+  }
+]
+```
+
+A thread message does not include the pair of sender and recipient phone numbers. Developers should use the `threadId` in each message record to connect messages in a thread to create a conversation. To detect the pair of phone numbers, developers should call the [Read Message Thread API](../thread-handling/#read-a-message-thread).
+
+## Delete a message
+
+TBD. Not implemented
+
+## Sync thread entries (messages)
+
+Inbound and outbound messages are grouped into message threads based on a combination of the service and the customer phone number. The **Sync Thread Entries** API allows SMS handlers to retrieve and monitor message records within these threads, ensuring that applications remain up to date with the latest inbound and outbound message activity.
+
+The Sync API supports two synchronization modes, defined by the **`syncType`** parameter: **FSync** (full synchronization) and **ISync** (incremental synchronization).
+
+- The **FSync** mode returns all message records that belong to currently active and open thread(s), providing an initial snapshot of thread messages.  
+- The **ISync** mode returns only those message records whose properties have changed since the initial FSync call or the most recent ISync call, enabling efficient and incremental tracking of message updates.
+
+When calling the API in **FSync** mode, developers can optionally specify the **`scope`** parameter to control which thread entries are included in the response, depending on the desired use case:
+
+* `scope="Accessible"` — Returns entries from all threads accessible to the current SMS handler.  
+* `scope="Unassigned"` — Returns entries from accessible threads that are currently unassigned.  
+* `scope="AssignedToMe"` — Returns entries from threads assigned to the current SMS handler.  
+* `scope="AssignedToMeAndUnassigned"` — Returns entries from threads assigned to the current SMS handler or currently unassigned.  
+* `scope="Explicit"` — Returns entries from specific threads identified by the threadIds parameter. When using this scope, a list of thread IDs must be provided.
+
+!!! note
+
+    The **scope** parameter is supported only when calling the API in FSync mode. For ISync calls, the scope is already embedded in the sync token returned by the previous synchronization request.
+
+To use the Sync API effectively, developers should first call the API with syncType=FSync to retrieve the initial set of message records. The response includes a sync token, which must be saved by the application. In subsequent calls, developers use this sync token with syncType=ISync to retrieve only new message records and the message records that have changed since the last synchronization.
+
+```JavaScript
+let entriesSyncToken = ""
+async function full_sync_thread_messages(){
+  try{
+    let queryParams = {
+      scope: "Accessible",
+      syncType: "FSync"
+    }
+    let endpoint = '/restapi/v1.0/account/~/message-threads/entries/sync'
+    var resp = await platform.get(endpoint, queryParams)
+    var jsonObj = await resp.json()
+    console.log("Full sync message data: ", JSON.stringify(jsonObj, null, 4))
+    entriesSyncToken = jsonObj.syncInfo.syncToken
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function incremental_sync_thread_messages(){
+  if (entriesSyncToken == ""){
+    await full_sync_thread_messages()
+    return
+  }
+  try{
+    let queryParams = {
+      syncType: "ISync",
+      syncToken: entriesSyncToken
+    }
+    let endpoint = '/restapi/v1.0/account/~/message-threads/entries/sync'
+    var resp = await platform.get(endpoint, queryParams)
+    var jsonObj = await resp.json()
+    console.log("Incremental message sync data: ", JSON.stringify(jsonObj, null, 4))
+    entriesSyncToken = jsonObj.syncInfo.syncToken
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```

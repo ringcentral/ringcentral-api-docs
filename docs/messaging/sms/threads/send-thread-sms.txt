@@ -1,0 +1,213 @@
+# Send Thread Messages
+
+Any SMS handler of a common resource can initiate a new message to a customer using a shared phone number associated with the resource. However, if an open thread already exists for that pair of phone numbers, only the thread’s current assignee can send reply messages. This ensures consistent ownership and prevents conflicting responses within an active conversation.
+
+Before learning how to send thread messages using the [`/restapi/v1.0/account/~/message-threads/messages`]() endpoint, developers should first understand how to identify [shared phone numbers](../configurations/#detect-shared-phone-numbers-from-common-resources) and the [SMS handlers](../configurations/#multiple-sms-recipients-configuration) assigned to common resources.
+
+To send thread messages, your application must:
+
+- Authenticate the user extension who is one of the SMS handlers.
+- Retrieve the list of phone numbers assigned to the authenticated user by calling the `/restapi/v1.0/account/~/extension/~/phone-number` endpoint and select a shared phone number from the API's response. Remember to detect if the "SmsSender" feature is attached to the selected shared phone number.
+
+??? info "Sample data"
+    Example info of a main company phone number assigned to a SMS handler.
+
+    ```json
+    {
+      "features": [
+        "CallerId",
+        "SmsSender" // Indicates that the number has the SMS feature
+      ],
+      "id": 656379052,
+      "phoneNumber": "+1408412XXXX",
+      "usageType": "MainCompanyNumber", // This is the account main company number
+      "status": "Normal",
+      "country": {
+        ...
+      },
+      "primary": false,
+      "callerIdName": "..."
+    }
+    ```
+
+    Example info of a company phone number assigned to a SMS hander.
+
+    ```json
+    {
+      "features": [
+        "CallerId",
+        "SmsSender" // Indicates that the number has the SMS feature
+      ],
+      "id": 656614052,
+      "phoneNumber": "+1619837XXXX",
+      "usageType": "CompanyNumber", // This is a company number which normally assigned to the auto-receptionist
+      "status": "Normal",
+      "country": {
+        ...
+      },
+      "primary": false,
+      "callerIdName": "..."
+    }
+    ```
+
+    Example info of a call queue direct phone number assigned to a SMS hander.
+
+    ```json
+    {
+      "features": [
+        "CallerId",
+        "SmsSender" // Indicates that the number has the SMS feature
+      ],
+      "id": 121366771234,
+      "phoneNumber": "+1555987XXXX", // The phone number
+      "usageType": "DirectNumber",
+     // Indicates that the phone number above belongs to the common resource below
+      "extension": {
+        "uri": "...",
+        "id": 62284871234, // The Id of the common resource
+        "extensionNumber": "11601",
+        "name": "My Call Queue",
+        // Call queue extension
+        "type": "Department"
+      },
+      ...
+    }
+    ```
+
+    Example info of an IVR direct phone number assigned to a SMS hander.
+
+    ```json
+    {
+      "features": [
+        "CallerId",
+        "SmsSender" // Indicates that the number has the SMS feature
+      ],
+      "id": 657014052,
+      "phoneNumber": "+1657276XXXX",
+      "usageType": "DirectNumber",
+      // Indicates that the phone number above belongs to the common resource below
+      "extension": {
+        "uri": "...",
+        "id": 497134052, // The Id of the common resource
+        "extensionNumber": "1002",
+        "name": "IVR Menu 1002",
+        // IVR menu extension
+        "type": "IvrMenu"
+      },
+      ...
+    }
+    ```
+
+    Example info of a site's direct phone number assigned to a SMS hander.
+
+    ```json
+    {
+      "features": [
+        "CallerId",
+        "SmsSender" // Indicates that the number has the SMS feature
+      ],
+      "id": 657031052,
+      "phoneNumber": "+1657505XXXX",
+      "usageType": "DirectNumber",
+      // Indicates that the phone number above belongs to the common resource below
+      "extension": {
+        "uri": "...",
+        "id": 497128052, // The Id of the common resource
+        "extensionNumber": "30001",
+        "name": "Site 01",
+        // Site extension
+        "type": "Site"
+      },
+      ...
+    }
+    ```
+
+
+- Use the selected shared phone number to send a message.
+
+    !!! note
+        * Currently, only text content is supported in thread messaging. Multimedia content will be supported in future releases.  
+        * Thread messaging does not support group messaging. This means that each thread is formed by a pair of 2 phone numbers.
+
+## Use cases and sample codes
+
+!!! note "Running the code"
+    The sample code below is written using the official [RingCentral SDKs](https://developers.ringcentral.com/guide/sdks). Before running the examples, make sure to install the appropriate SDK for your programming language.
+
+    If you have tried the [SMS quick start](../../quick-start.md), you can just copy all the functions in the example and add them to the quick start project then call the `read_extension_phone_number_detect_sms_feature()` function. Otherwise, edit the following variables with your app and user credentials before running the code.
+
+    - `RC_APP_CLIENT_ID`
+    - `RC_APP_CLIENT_SECRET`
+    - `RC_USER_JWT`
+
+    Also, make sure to use valid recipient phone numbers in the sample `bodyParams`
+
+### Use Case
+
+A financial advising team wants to maintain direct communication with clients through SMS. There are 4 advisors in the team and each advisor manages a specific group of clients based on category or service tier. All advisors are required to use the same call queue direct number (+1-555-987-XXXX) to send appointment reminders, respond to inquiries, and share updates on financial plans. The call queue's name is "Financial Advising Queue".
+
+### Sample code
+
+The sample code below detects the call queue’s direct phone number, checks whether the number has the SmsSender feature, and sends a message.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-thread-sms.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/send-thread-sms.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-thread-sms.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/send-thread-sms.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```
+
+### Sample response
+
+The code samples above would all produce a response that would appear similar to the one below.
+
+```json
+{
+    "id": "2904652647",
+    "threadId": "805808d1-31d2-4f01-867b-a5cff52d00ea",
+    "recordType": "AliveMessage",
+    "lastModifiedTime": "2026-03-12T21:06:33.706Z",
+    "availability": "Alive",
+    "creationTime": "2026-03-12T21:06:33.706Z",
+    "direction": "Outbound",
+    "messageStatus": "Queued",
+    "text": "Hi Tom ...",
+    "author": {
+        "extensionId": "6229532XXXX",
+        "name": "Wayne T",
+        "extensionType": "User"
+    }
+}
+```
+
+If an open thread already exists for the pair of phone numbers and the new sender is a different SMS handler, the API call will fail with an error similar to the one below:
+
+```json
+{
+  "errors": [
+    {
+      "errorCode": "MSG-427",
+      "message": "The thread is not assigned to extension [59587XXXX] at the moment.",
+      "extensionId": "59587XXXX"
+    }
+  ]
+}
+```

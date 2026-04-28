@@ -118,10 +118,20 @@ nav:
     # - 'SMS Batch Messaging':
     #   - 'Overview': 'messaging/sms/v2/index.md'
     #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
-    #   - 'Sending Message Batch': 'messaging/sms/v2/sending-batch-sms.md'
-    #   - 'Reading Message Store': 'messaging/sms/v2/message-store.md'
+    #   - 'Send Message Batches': 'messaging/sms/v2/send-sms-batches.md'
+    #   - 'Read Message Store': 'messaging/sms/v2/message-store.md'
     #   - 'Event Notifications': 'messaging/sms/v2/events.md'
     #   - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
+    # - 'SMS Thread Messaging':
+    #   - 'Overview': 'messaging/sms/threads/index.md'
+    #   - 'Configurations': messaging/sms/threads/configurations.md
+    #   - 'Send Thread Messages': 'messaging/sms/threads/send-thread-sms.md'
+    #   - 'Threads Handling': 'messaging/sms/threads/threads-handling.md'
+    #   - 'Messages Handling': 'messaging/sms/threads/messages-handling.md'
+    #   - 'Notes Handling': 'messaging/sms/threads/notes-handling.md'
+    #   - 'Event Notifications': 'messaging/sms/threads/events.md'
+    #   - 'Migration instruction': 'messaging/sms/threads/migration.md'
+      # - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
     - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'SMS Enablement & Configuration': 'messaging/sms/sms-requirements.md'
@@ -259,24 +269,23 @@ nav:
 
   - 'Artificial Intelligence':
     - 'Overview': 'ai/index.md'
-    - 'Getting started': 'ai/quick-start.md'
-    - 'Developer basics':
+    - 'AI Conversation Expert': 'ai/ace.md'
+    # - 'Getting started': 'ai/quick-start.md'
+    - 'Developer basics - (Deprecated)':
       - 'Asynchronous responses': 'ai/asynchronous-responses.md'
       - 'Accessing media files': 'ai/media-files.md'
       - 'Sample media files': 'ai/sample-files.md'
-    - 'Audio analysis':
+    - 'Audio analysis - (Deprecated)':
       - 'Transcribing speech-to-text': 'ai/speech-to-text.md'
       - 'Interaction analytics': 'ai/interaction-analytics.md'
-    - 'Speaker analysis':
+    - 'Speaker analysis - (Deprecated)':
       # - 'Speaker enrollment': 'ai/speaker-enrollment.md'
       # - 'Speaker identification': 'ai/speaker-identification.md'
       - 'Speaker diarization': 'ai/speaker-diarization.md'
 #      - 'Emotion recognition': 'ai/emotion-recognition.md'
-    - 'Text analysis':
+    - 'Text analysis - (Deprecated)':
       - 'Conversation summaries': 'ai/text-summary.md'
       - 'Smart punctuation': 'ai/text-punctuation.md'
-
-    - 'AI Conversation Expert': 'ai/ace.md'
 
   - 'Accounts and Users':
     - 'Overview': 'account/index.md'

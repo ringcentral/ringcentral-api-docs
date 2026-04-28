@@ -1,0 +1,972 @@
+# Batch messaging message store
+
+Each user extension can access its own message store to retrieve SMS and MMS message records, as well as batch message records associated with its direct phone number(s).
+
+The message store provides access to both individual message details and batch messaging history, allowing developers to track message status, review delivery results, and manage message-related data for each user extension.
+
+Use the APIs in the table below to access your batch messaging message store.
+
+| API Endpoint | Description |
+|-|-|
+| [`/restapi/v2/accounts/~/extensions/~/sms/messages`](#read-batch-message-store) | Read the entire message store. |
+| [`/restapi/v2/accounts/~/extensions/~/sms/batches`](#list-batches) | List all batches with essential info from the entire message store. |
+| [`/restapi/v2/accounts/~/extensions/~/sms/batches/{batchId}`](#read-individual-batch) | Read a single batch basic info identified by the batch Id. |
+| [`/restapi/v2/accounts/~/extensions/~/sms/status-summary`](#read-message-statuses) | Read aggregated message statuses from the message store. |
+| [`/restapi/v2/accounts/~/extensions/~/sms/messages/{messageId}`](#read-individual-message) | Read a single message identified by the message Id. |
+
+## Read batch message store
+
+You can read the entire batch messaging message store then iterate through the `records` array in the response to parse each message's metadata. Use the `nextPageToken` to read the next page if the total number of records is greater than the maximum number of items per page.
+
+To avoid loading the entire message store, which could be extremely large, you can use the following query parameters to control and limit the number of messages in a response. To read messages per batch, you can use the [List Batches](#list-batches) API to retrieve a list of batch Ids, then use a batch Id as a filter to read messages from that batch.
+
+!!! important
+    - Message records created by the enhanced business SMS and the high volume SMS API are replicated and stored in the batch messaging message store since November 2024. The message id of these replicated messages records are different from the original message store!
+    - Outbound messages sent from a call queue's direct number using the batch messaging API are recorded in the batch messaging message store of the SMS handler extension of the call queue, who sent the messages.
+    - Inbound messages sent to a call queue's direct number are recorded in the batch messaging message store under the call queue extension's message store. Any SMS handler assigned to a call queue SMS recipient can access the call queue extension's message store.
+
+
+### Query parameters
+
+| Filter | Description |
+|-|-|
+| `view` | Read the message store in "Simple" or "Detailed" mode. Detailed view will return the text message for each message item. The default value is "Simple". |
+| `batchId`| Return only messages belong to a single batch identified by the batch id. |
+| `timeFrom `| Return messages created after the start date and time, for example 2025-11-10T08:00:00.000Z. The default value is timeTo minus 24 hours. |
+| `timeTo`| Return messages created before the end date time, for example 2025-11-11T08:00:00.000Z. The default value is current time. |
+| `phoneNumber`| Return only messages which contain the specified phone numbers in either the "from" or the "to" field. Multiple phone numbers (up to 15) are accepted.|
+| `direction` | Return messages with the specified direction. If not specified, both inbound and outbound messages are returned. Multiple values are accepted. |
+| `perPage` | Indicate the page size (number of items). The default value is 1000. |
+| `pageToken` | Return messages from a specified page. Note! Use a valid page token from the paging object. |
+
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v2/accounts/~/extensions/~/sms/messages?view=Simple&timeFrom=2026-01-01T00:00:00.000Z&timeTo=2026-01-31T23:59:59.999Z&phoneNumber=%2b16505550100
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const RingCentral = require('@ringcentral/sdk').SDK
+
+    // Instantiate the SDK and get the platform instance
+    var rcsdk = new RC({
+        clientId: "RC_APP_CLIENT_ID",
+        clientSecret: "RC_APP_CLIENT_SECRET",
+        server: "https://platform.ringcentral.com"
+    });
+  	var platform = rcsdk.platform();
+
+    /* Authenticate a user using a personal JWT token */
+    platform.login({ jwt: "RC_USER_JWT" })
+
+    platform.on(platform.events.loginSuccess, async function(response){
+      read_extension_sms_message_store()
+    });
+
+    platform.on(platform.events.loginError, function(e){
+        console.log("Unable to authenticate to platform. Check credentials.", e.message)
+        process.exit(1)
+    });
+
+    async function read_extension_sms_message_store(){
+      try{
+        let queryParams = {
+          view: "Simple",
+          timeFrom: "2026-01-01T00:00:00.000Z",
+          timeTo: "2026-01-31T23:59:59.999Z",
+          phoneNumber: ["+16505550100"]
+        }
+        let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages"
+        var resp = await platform.get(endpoint, queryParams)
+        var jsonObj = await resp.json()
+        console.log(JSON.stringify(jsonObj, null, 4))
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+    ```
+
+=== "Python"
+    ```python
+    from ringcentral import SDK
+
+    def read_extension_sms_message_store():
+        try:
+        queryParams = {
+          'view': "Simple",
+          'timeFrom': "2026-01-01T00:00:00.000Z",
+          'timeTo': "2026-01-31T23:59:59.999Z",
+          'phoneNumber': ["+16505550100"]
+        }
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages"
+      	resp = platform.get(endpoint, queryParams)
+        jsonObj = resp.json_dict()
+        print(json.dumps(jsonObj, indent=2, sort_keys=True))
+    except Exception as e:
+        print (e)
+
+    # Authenticate a user using a personal JWT token
+    def login():
+        try:
+          platform.login( jwt= "RC_USER_JWT" )
+          read_extension_sms_message_store()
+        except Exception as e:
+          print ("Unable to authenticate to platform. Check credentials." + str(e))
+
+    # Instantiate the SDK and get the platform instance
+    rcsdk = SDK("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com")
+    platform = rcsdk.platform()
+
+    login()
+    ```
+
+=== "PHP"
+    ```php
+    <?php
+    require('vendor/autoload.php');
+
+    // Instantiate the SDK and get the platform instance
+    $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
+    $platform = $rcsdk->platform();
+
+    /* Authenticate a user using a personal JWT token */
+    try {
+      $platform->login(["jwt" => "RC_USER_JWT"]);
+    }catch (\RingCentral\SDK\Http\ApiException $e) {
+      exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
+    }
+    read_extension_sms_message_store();
+
+    function read_extension_sms_message_store(){
+      global $platform;
+      try {
+        $queryParams = array(
+          'view' => "Simple",
+          'timeFrom' => "2026-01-01T00:00:00.000Z",
+          'timeTo' => "2026-01-31T23:59:59.999Z",
+          'phoneNumber' => array("+16505550100")
+        );
+        $endpoint = "/restapi/v1.0/account/~/a2p-sms/messages";
+      	$resp = $platform->get($endpoint, $queryParams);
+        $jsonObj = $resp->json();
+        print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
+      } catch (\RingCentral\SDK\Http\ApiException $e) {
+        exit("Message: " . $e->message . PHP_EOL);
+      }
+    }
+    ?>
+    ```
+
+=== "Ruby"
+    ```ruby
+    require 'ringcentral'
+
+    def read_extension_sms_message_store()
+      begin
+        queryParams = {
+           view: 'Simple',
+           timeFrom: "2026-01-10T00:00:00.000Z",
+           timeTo: "2026-01-15T23:59:59.999Z",
+           phoneNumber: ["+16505550100"]
+        }
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages"
+        resp = $platform.get(endpoint, queryParams)
+        puts JSON.pretty_generate(JSON.parse(resp.body.to_json))
+      rescue StandardError => e
+        puts (e)
+      end
+    end
+
+    # Authenticate a user using a personal JWT token
+    def login()
+      begin
+        $platform.authorize( jwt: "RC_USER_JWT" )
+        read_extension_sms_message_store()
+      rescue StandardError => e
+        puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
+      end
+    end
+
+    # Instantiate the SDK and get the platform instance
+    $platform = RingCentral.new( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" )
+
+    login()
+    ```
+
+### Response
+
+```json
+{
+  "records": [
+    {
+      "id": "52511",
+      "from": "+16505550100",
+      "to": [ "+16501112222" ],
+      "creationTime": "2026-01-14T21:47:51.436491Z",
+      "lastModifiedTime": "2026-01-14T21:47:53.032416Z",
+      "messageStatus": "Delivered",
+      "cost": 0.0085,
+      "segmentCount": 1
+    },{
+      "id": "52494",
+      "from": "+16505550100",
+      "to": [ "+16502223333" ],
+      "creationTime": "2026-01-14T20:21:23.979729Z",
+      "lastModifiedTime": "2026-01-14T20:21:25.254851Z",
+      "messageStatus": "Delivered",
+      "cost": 0.0085,
+      "segmentCount": 1
+    },{
+      "id": "52485",
+      "from": "+16505550100",
+      "to": [ "+16503334444" ],
+      "creationTime": "20261-11-14T20:19:56.505461Z",
+      "lastModifiedTime": "2026-01-14T22:20:01.728022Z",
+      "messageStatus": "DeliveryFailed",
+      "errorCode": "SMS-CAR-104",
+      "cost": 0.0085,
+      "segmentCount": 1
+    },{
+      "id": "52484",
+      "from": "+16505550100",
+      "to": [ "+16504445555" ],
+      "creationTime": "2026-01-14T20:19:18.415601Z",
+      "lastModifiedTime": "2026-01-14T20:19:18.668841Z",
+      "messageStatus": "SendingFailed"
+    }
+  ],
+  "paging": {
+    "pageToken": "pgt1",
+    "perPage": 3,
+    "firstPageToken": "fpgt1",
+    "previousPageToken": "lpgt1",
+    "nextPageToken": "npgt1"
+  }
+}
+```
+
+## List Batches
+
+You can read batches and parse the response to get a batch id and other basic info such as the status, the number of recipients, the creation date and time etcetera. You can use the following query parameters to control and limit the number of batches in a response.
+
+### Query parameters
+
+| Filter | Description |
+|-|-|
+| `timeFrom` | Return batches created after the start date and time, for example 2026-11-10T08:00:00.000Z. The default value is timeTo minus 24 hours. |
+| `timeTo` | Return batches created before the end date time, for example 2026-11-11T08:00:00.000Z. The default value is current time. |
+| `from` | Return only batches sent from the specified phone number. |
+| `status` | The status of a batch. Can be _Processing_ or _Completed_. |
+| `perPage` | Indicate the page size (number of items). The default value is 1000. |
+| `pageToken` | Return batches from a specified page. Note! Use a valid page token from the paging object. |
+
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v2/accounts/~/extensions/~/sms/batches?timeFrom=2026-06-20T00:00:00.000Z&timeTo=2026-06-21T23:59:59.999Z
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const RingCentral = require('@ringcentral/sdk').SDK
+
+    // Instantiate the SDK and get the platform instance
+    var rcsdk = new RC({
+        clientId: "RC_APP_CLIENT_ID",
+        clientSecret: "RC_APP_CLIENT_SECRET",
+        server: "https://platform.ringcentral.com"
+    });
+  	var platform = rcsdk.platform();
+
+    /* Authenticate a user using a personal JWT token */
+    platform.login({ jwt: "RC_USER_JWT" })
+
+    platform.on(platform.events.loginSuccess, async function(response){
+      list_batches()
+    });
+
+    platform.on(platform.events.loginError, function(e){
+        console.log("Unable to authenticate to platform. Check credentials.", e.message)
+        process.exit(1)
+    });
+
+    async function list_batches(){
+      try{
+        let queryParams = {
+          timeFrom: '2026-01-20T00:00:00.000Z',
+          timeTo: '2026-01-21T23:59:59.999Z'
+        }
+        let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+        var resp = await platform.get(endpoint, queryParams)
+        var jsonObj = await resp.json()
+        console.log(JSON.stringify(jsonObj, null, 4))
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+    ```
+
+=== "Python"
+    ```python
+    from ringcentral import SDK
+
+    def list_batches():
+        try:
+            queryParams = {
+                'timeFrom': '2026-01-20T00:00:00.000Z',
+                'timeTo': '2026-01-21T23:59:59.999Z'
+              }
+            endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+          	resp = platform.get(endpoint, queryParams)
+            jsonObj = resp.json_dict()
+            print(json.dumps(jsonObj, indent=2, sort_keys=True))
+        except Exception as e:
+            print (e)
+
+    # Authenticate a user using a personal JWT token
+    def login():
+        try:
+          platform.login( jwt= "RC_USER_JWT" )
+          list_batches()
+        except Exception as e:
+          print ("Unable to authenticate to platform. Check credentials." + str(e))
+
+    # Instantiate the SDK and get the platform instance
+    rcsdk = SDK("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com")
+    platform = rcsdk.platform()
+
+    login()    
+    ```
+
+=== "PHP"
+    ```php
+    <?php
+    require('vendor/autoload.php');
+
+    // Instantiate the SDK and get the platform instance
+    $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
+    $platform = $rcsdk->platform();
+
+    /* Authenticate a user using a personal JWT token */
+    try {
+      $platform->login(["jwt" => "RC_USER_JWT"]);
+    }catch (\RingCentral\SDK\Http\ApiException $e) {
+      exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
+    }
+
+    list_batches();
+
+    function list_batches(){
+      global $platform;
+      try {
+        $queryParams = array(
+          'timeFrom' => "2026-01-20T00:00:00.000Z",
+          'timeTo' => "2026-01-21T23:59:59.999Z"
+        );
+        $endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches";
+      	$resp = $platform->get($endpoint, $queryParams);
+        $jsonObj = $resp->json();
+        print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
+      } catch (\RingCentral\SDK\Http\ApiException $e) {
+        exit("Message: " . $e->message . PHP_EOL);
+      }
+    }
+    ?>
+    ```
+
+=== "Ruby"
+    ```ruby
+    require 'ringcentral'
+
+    def list_batches()
+      begin
+        queryParams = {
+           timeFrom: "2026-01-20T00:00:00.000Z",
+           timeTo: "2026-01-21T23:59:59.999Z"
+        }
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches"
+        resp = $platform.get(endpoint, queryParams)
+        puts JSON.pretty_generate(JSON.parse(resp.body.to_json))
+      rescue StandardError => e
+        puts (e)
+      end
+    end
+
+    # Authenticate a user using a personal JWT token
+    def login()
+      begin
+        $platform.authorize( jwt: "RC_USER_JWT" )
+        list_batches()
+      rescue StandardError => e
+        puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
+      end
+    end
+
+    # Instantiate the SDK and get the platform instance
+    $platform = RingCentral.new( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" )
+
+    login()
+    ```
+
+### Response
+
+```json
+{
+  "records": [
+    {
+      "id": 'b4e00b67-969f-4db4-a22d-e3ef3cec7c11',
+      "from": {
+          "phoneNumber": "+16505550100"
+      },
+      "batchSize": 100,
+      "processedCount": 100,
+      "status": 'Completed',
+      "creationTime": '2026-01-21T10:31:59.818028Z',
+      "lastModifiedTime": '2026-01-21T10:32:00.870634Z',
+      "rejected": [],
+      "cost": 0.85
+    },
+    {
+      "id": '95bc9e86-e93a-48a0-a8c0-2e6fff6d52b8',
+      "from": {
+          "phoneNumber": "+16505550100"
+      },
+      "batchSize": 50,
+      "processedCount": 50,
+      "status": 'Completed',
+      "creationTime": '2026-01-21T09:31:59.775224Z',
+      "lastModifiedTime": '2026-01-21T09:32:00.810797Z',
+      "rejected": [],
+      "cost": 0.425
+    }
+  ]
+}
+```
+
+## Read Individual Batch
+
+You can read a single batch with essential info such as the status, the number of recipients, the number of processed messages etcetera. This is helpful for reading and updating a batch progress in real-time if you send a large batch which would take several hours to be completed.
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v2/accounts/~/extensions/~/sms/batches/b4e00b67-969f-4db4-a22d-e3ef3cecxxxx
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const RingCentral = require('@ringcentral/sdk').SDK
+
+    // Instantiate the SDK and get the platform instance
+    var rcsdk = new RC({
+        server: "https://platform.ringcentral.com",
+        clientId: "RC_APP_CLIENT_ID",
+        clientSecret: "RC_APP_CLIENT_SECRET"
+    });
+  	var platform = rcsdk.platform();
+
+    /* Authenticate a user using a personal JWT token */
+    platform.login({ jwt: "RC_USER_JWT" })
+
+    platform.on(platform.events.loginSuccess, async function(response){
+      let batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+      read_individual_batch(batchId)
+    });
+
+    platform.on(platform.events.loginError, function(e){
+        console.log("Unable to authenticate to platform. Check credentials.", e.message)
+        process.exit(1)
+    });
+
+    async function read_individual_batch(batchId){
+      try{
+        let endpoint = `/restapi/v2/accounts/~/extensions/~/sms/batches/${batchId}`
+        var resp = await platform.get('/restapi/v2/accounts/~/extensions/~/sms/batches/b4e00b67-969f-4db4-a22d-e3ef3cecxxxx')
+        var jsonObj = await resp.json()
+        console.log(JSON.stringify(jsonObj, null, 4))
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+    ```
+
+=== "Python"
+    ```python
+    from ringcentral import SDK
+
+    def read_individual_batch(batchId):
+        try:
+            endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches/" + batchId
+          	resp = platform.get(endpoint)
+            jsonObj = resp.json_dict()
+            print(json.dumps(jsonObj, indent=2, sort_keys=True))
+        except Exception as e:
+            print (e)
+
+    # Authenticate a user using a personal JWT token
+    def login():
+        try:
+          platform.login( jwt= "RC_USER_JWT" )
+          batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+          read_individual_batch(batchId)
+        except Exception as e:
+          print ("Unable to authenticate to platform. Check credentials." + str(e))
+
+    # Instantiate the SDK and get the platform instance
+    rcsdk = SDK("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com")
+    platform = rcsdk.platform()
+
+    login()
+    ```
+
+=== "PHP"
+    ```php
+    <?php
+    require('vendor/autoload.php');
+
+    // Instantiate the SDK and get the platform instance
+    $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
+    $platform = $rcsdk->platform();
+
+    /* Authenticate a user using a personal JWT token */
+    try {
+      $platform->login(["jwt" => "RC_USER_JWT"]);
+    }catch (\RingCentral\SDK\Http\ApiException $e) {
+      exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
+    }
+
+    $batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx";
+    read_individual_batch($batchId);
+
+    function read_individual_batch($batchId){
+      global $platform;
+      try {
+        $endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches/".$batchId;
+        $resp = $platform->get($endpoint);
+        $jsonObj = $resp->json();
+        print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
+      } catch (\RingCentral\SDK\Http\ApiException $e) {
+        exit("Message: " . $e->message . PHP_EOL);
+      }
+    }
+    ?>
+    ```
+
+=== "Ruby"
+    ```ruby
+    require 'ringcentral'
+
+    def read_individual_batch(batchId)
+      begin
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/batches/" + batchId
+        resp = $platform.get(endpoint)
+        puts JSON.pretty_generate(JSON.parse(resp.body.to_json))
+      rescue StandardError => e
+        puts (e)
+      end
+    end
+
+    # Authenticate a user using a personal JWT token
+    def login()
+      begin
+        $platform.authorize( jwt: "RC_USER_JWT" )
+        batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+        read_individual_batch(batchId)
+      rescue StandardError => e
+        puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
+      end
+    end
+
+    # Instantiate the SDK and get the platform instance
+    $platform = RingCentral.new( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" )
+
+    login()
+    ```
+
+### Response
+
+```json
+{
+  "id": 'b4e00b67-969f-4db4-a22d-e3ef3cecxxxx',
+  "from": {
+        "phoneNumber": "+16505550100"
+  },
+  "batchSize": 100,
+  "processedCount": 100,
+  "status": 'Completed',
+  "creationTime": '2026-06-21T10:31:59.818028Z',
+  "lastModifiedTime": '2026-06-21T10:32:00.870634Z',
+  "rejected": [],
+  "cost": 0.85
+}
+```
+
+## Read Message Statuses
+
+To get a quick report on message statuses in a batch or within a period of time, you can call this endpoint to get the aggregated message statuses and error codes (if any). If you need to detect each individual message status, use this [endpoint](#read-batch-message-store) instead.
+
+### Query parameters
+
+| Filter | Description |
+|-|-|
+| `batchId`| Return aggregated message statuses of messages belong to a single batch identified by the batch Id. If a batch Id is specified, the `timeFrom` and `timeTo` query params will be ignored if they are specified in the API request! |
+| `timeFrom `| Return aggregated message statuses of messages created after the start date and time, for example 2026-11-10T08:00:00.000Z. The default value is timeTo minus 24 hours. |
+| `timeTo`| Return aggregated message statues of messages created before the end date time, for example 2026-11-11T08:00:00.000Z. The default value is current time. |
+| `phoneNumber`| Return aggregated message statuses of messages which contain the specified phone numbers in either the "from" or the "to" field. Multiple phone numbers are accepted. E.g. phoneNumber: ['16501112222','16502223333']|
+| `direction` | Return aggregated message statuses of messages with the specified direction. If not specified, both inbound and outbound messages are returned. Multiple values are accepted.|
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v2/accounts/~/extensions/~/sms/status-summary?batchId=8ba42748-0e48-4459-8262-342a7483xxxx
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const RingCentral = require('@ringcentral/sdk').SDK
+
+    // Instantiate the SDK and get the platform instance
+    var rcsdk = new RC({
+        clientId: "RC_APP_CLIENT_ID",
+        clientSecret: "RC_APP_CLIENT_SECRET",
+        server: "https://platform.ringcentral.com"
+    });
+  	var platform = rcsdk.platform();
+
+    /* Authenticate a user using a personal JWT token */
+    platform.login({ jwt: "RC_USER_JWT" })
+
+    platform.on(platform.events.loginSuccess, async function(response){
+      let batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+      read_batch_summary(batchId)
+    });
+
+    platform.on(platform.events.loginError, function(e){
+        console.log("Unable to authenticate to platform. Check credentials.", e.message)
+        process.exit(1)
+    });
+
+    async function read_batch_summary(batchId){
+      try{
+        let queryParams = {
+          batchId: batchId
+        }
+        let endpoint = "/restapi/v2/accounts/~/extensions/~/sms/status-summary"
+        var resp = await platform.get(endpoint, queryParams)
+        var jsonObj = await resp.json()
+        console.log(JSON.stringify(jsonObj))
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+    ```
+
+=== "Python"
+    ```python
+    from ringcentral import SDK
+
+    def read_batch_summary(batchId):
+        try:
+            queryParams = {
+              'batchId': batchId
+            }
+            endpoint = "/restapi/v2/accounts/~/extensions/~/sms/status-summary"
+          	resp = platform.get(endpoint, queryParams)
+            jsonObj = resp.json_dict()
+            print(json.dumps(jsonObj, indent=2, sort_keys=True))
+        except Exception as e:
+            print (e)
+
+    # Authenticate a user using a personal JWT token
+    def login():
+        try:
+          platform.login( jwt= "RC_USER_JWT" )
+          batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+          read_batch_summary(batchId)
+        except Exception as e:
+          print ("Unable to authenticate to platform. Check credentials." + str(e))
+
+    # Instantiate the SDK and get the platform instance
+    rcsdk = SDK("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com")
+    platform = rcsdk.platform()
+
+    login()
+    ```
+
+=== "PHP"
+    ```php
+    <?php
+    require('vendor/autoload.php');
+
+    // Instantiate the SDK and get the platform instance
+    $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
+    $platform = $rcsdk->platform();
+
+    /* Authenticate a user using a personal JWT token */
+    try {
+      $platform->login(["jwt" => "RC_USER_JWT"]);
+    }catch (\RingCentral\SDK\Http\ApiException $e) {
+      exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
+    }
+
+    $batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx";
+    read_batch_summary($batchId);
+
+    function read_batch_summary($batchId){
+      global $platform;
+      try {
+        $queryParams = array(
+          'batchId' => $batchId
+        );
+        $endpoint = "/restapi/v2/accounts/~/extensions/~/sms/status-summary";
+        $resp = $platform->get($endpoint, $queryParams);
+        $jsonObj = $resp->json();
+        print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
+      } catch (\RingCentral\SDK\Http\ApiException $e) {
+        exit("Message: " . $e->message . PHP_EOL);
+      }
+    }
+    ?>
+    ```
+
+=== "Ruby"
+    ```ruby
+    require 'ringcentral'
+
+    def read_batch_summary(batchId)
+      begin
+        queryParams = {
+           batchId: batchId
+        }
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/status-summary"
+        resp = $platform.get(endpoint, queryParams)
+        puts JSON.pretty_generate(JSON.parse(resp.body.to_json))
+      rescue StandardError => e
+        puts (e)
+      end
+    end
+
+    # Authenticate a user using a personal JWT token
+    def login()
+      begin
+        $platform.authorize( jwt: "RC_USER_JWT" )
+        batchId = "b4e00b67-969f-4db4-a22d-e3ef3cecxxxx"
+        read_batch_summary(batchId)
+      rescue StandardError => e
+        puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
+      end
+    end
+
+    # Instantiate the SDK and get the platform instance
+    $platform = RingCentral.new( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" )
+
+    login()
+    ```
+
+### Response
+
+```json
+{
+  "queued": {
+    "count": 0,
+    "cost": 0
+  },
+  "delivered": {
+    "count": 2,
+    "cost": 0.014
+  },
+  "deliveryFailed": {
+    "count": 0,
+    "cost": 0,
+    "errorCodeCounts": {}
+  },
+  "sent": {
+    "count": 0,
+    "cost": 0
+  },
+  "sendingFailed": {
+    "count": 0,
+    "cost": 0,
+    "errorCodeCounts": {}
+  }
+}
+```
+
+## Read Individual Message
+
+You can read individual message details from the batch message store using a message Id. Message ids can be retrieved from the response of this [endpoint](#read-batch-message-store)
+
+### Sample codes
+
+=== "HTTP"
+    ```http
+    GET /restapi/v2/accounts/~/extensions/~/sms/messages/{messageId}
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const RingCentral = require('@ringcentral/sdk').SDK
+
+    // Instantiate the SDK and get the platform instance
+    var rcsdk = new RC({
+        clientId: "RC_APP_CLIENT_ID",
+        clientSecret: "RC_APP_CLIENT_SECRET",
+        server: "https://platform.ringcentral.com"
+    });
+  	var platform = rcsdk.platform();
+
+    /* Authenticate a user using a personal JWT token */
+    platform.login({ jwt: "RC_USER_JWT" })
+
+    platform.on(platform.events.loginSuccess, async function(response){
+      let messageId = "52511"
+      read_individual_message(messageId)
+    });
+
+    platform.on(platform.events.loginError, function(e){
+        console.log("Unable to authenticate to platform. Check credentials.", e.message)
+        process.exit(1)
+    });
+
+    async function read_individual_message(messageId){
+      try{
+        let endpoint = `/restapi/v2/accounts/~/extensions/~/sms/messages/${messageId}`
+        var resp = await platform.get(endpoint)
+        var jsonObj = await resp.json()
+        console.log(JSON.stringify(jsonObj))
+      }catch(e){
+        console.log(e.message)
+      }
+    }
+    ```
+
+=== "Python"
+    ```python
+    from ringcentral import SDK
+
+    def read_individual_message(messageId):
+        try:
+            endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages/" + messageId
+          	resp = platform.get(endpoint)
+            jsonObj = resp.json_dict()
+            print(json.dumps(jsonObj, indent=2, sort_keys=True))
+        except Exception as e:
+            print (e)
+
+    # Authenticate a user using a personal JWT token
+    def login():
+        try:
+          platform.login( jwt= "RC_USER_JWT" )
+          messageId = "52511"
+          read_individual_message(messageId)
+        except Exception as e:
+          print ("Unable to authenticate to platform. Check credentials." + str(e))
+
+    # Instantiate the SDK and get the platform instance
+    rcsdk = SDK("RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com")
+    platform = rcsdk.platform()
+
+    login()    
+    ```
+
+=== "PHP"
+    ```php
+    <?php
+    require('vendor/autoload.php');
+
+    // Instantiate the SDK and get the platform instance
+    $rcsdk = new RingCentral\SDK\SDK( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" );
+    $platform = $rcsdk->platform();
+
+    /* Authenticate a user using a personal JWT token */
+    try {
+      $platform->login(["jwt" => "RC_USER_JWT"]);
+    }catch (\RingCentral\SDK\Http\ApiException $e) {
+      exit("Unable to authenticate to platform. Check credentials. " . $e->message . PHP_EOL);
+    }
+
+    $messageId = "52511";
+    read_individual_message($messageId);
+
+    function read_individual_message($messageId){
+      global $platform;
+      try {
+        $endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages/".$messageId;
+        $resp = $platform->get($endpoint);
+        $jsonObj = $resp->json();
+        print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
+      } catch (\RingCentral\SDK\Http\ApiException $e) {
+        exit("Message: " . $e->message . PHP_EOL);
+      }
+    }
+    ?>
+    ```
+
+=== "Ruby"
+    ```ruby
+    require 'ringcentral'
+
+    def read_individual_message(messageId)
+      begin
+        endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages/" + messageId
+        resp = $platform.get(endpoint)
+        puts JSON.pretty_generate(JSON.parse(resp.body.to_json))
+      rescue StandardError => e
+        puts (e)
+      end
+    end
+
+    # Authenticate a user using a personal JWT token
+    def login()
+      begin
+        $platform.authorize( jwt: "RC_USER_JWT" )
+        messageId = "52511"
+        read_individual_message(messageId)
+      rescue StandardError => e
+        puts ("Unable to authenticate to platform. Check credentials." + e.to_s)
+      end
+    end
+
+    # Instantiate the SDK and get the platform instance
+    $platform = RingCentral.new( "RC_APP_CLIENT_ID", "RC_APP_CLIENT_SECRET", "https://platform.ringcentral.com" )
+
+    login()
+    ```
+
+### Response
+
+```json
+{
+  {
+    "id": "52511",
+    "from": {
+        "phoneNumber": "+16505550100"
+    },
+    "to": [
+        {
+            "phoneNumber": "+14155550100",
+            "messageStatus": "Delivered"
+        }
+    ],
+    "text": "Hello Team",
+    "attachments": [
+        {
+            "contentType": "text/plain",
+            "contentUri": "https://media.ringcentral.com/restapi/v2/accounts/../sms/messages/2708025823/content/2708025823",
+            "id": "2708025823"
+        }
+    ],
+    "createdAt": "2025-10-14T21:47:51.436491Z",
+    "lastUpdatedAt": "2025-10-14T21:47:53.032416Z",
+    "cost": 0.0085,
+    "segmentCount": 1
+  }
+}
+```

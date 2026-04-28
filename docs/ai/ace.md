@@ -18,9 +18,7 @@ RingCentral AI Conversation Expert transcribes your voice calls or video meeting
 To learn more about AI Conversation Expert, please refer to this [online article](https://www.ringcentral.com/ringsense.html).
 
 - For instructions on enabling AI Conversation Expert for a RingCentral RingCX account, please refer to this [online article](https://support.ringcentral.com/article-v2/Getting-started-with-RingSense-for-RingCX.html?brand=RingCentral&product=RingCX&language=en_US)
-
 - For instructions on enabling AI Conversation Expert for a MS Teams account, please refer to this [online article](https://support.ringcentral.com/article-v2/integrating-microsoft-teams-ai-conversation-expert-integration.html?brand=RingCentral&product=RingEX&language=en_US)
-
 - For instructions on enabling AI Conversation Expert for a NICE CXone account, please refer to this [online article](https://support.ringcentral.com/article-v2/integrating-nice-cxone-with-ai-conversation-expert.html?brand=RingCentral&product=RingEX&language=en_US)
 
 ## AI Conversation Expert API
@@ -100,6 +98,15 @@ Read ACE data using a telephony session Id:
 GET `/ai/ringsense/v1/public/accounts/~/domains/[Domain-Name]/sessions/[sourceSessionId]/insights`
 
 This endpoint is useful for RingEX voice calls as it returns the ACE data for all call recordings associated with the specified telephony session. Multiple call recordings can exist for a single session in scenarios such as call transfers between agents, where each leg of the call is recorded separately. The ACE data for each individual recording will be included in the `records` array in the API response.
+
+Supported domains:
+
+  * `pbx` - Voice calls via RingEX
+  * `rcv` - Video calls via RingEX
+  * `rcx` - Voice calls via RingCX
+  * `nice-incontact` - Voice calls via RingCentral Nice CXone integration
+  * `ms-teams` - Video conferences via MS Teams
+
 
 ## Example of API Response
 

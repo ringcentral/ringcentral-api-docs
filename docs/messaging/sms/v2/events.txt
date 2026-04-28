@@ -1,0 +1,143 @@
+# Batch messaging event notifications
+
+Push notifications can be configured at multiple levels to keep your application informed about SMS activity, ranging from batch-level events to individual message-level updates.
+
+At the batch level, you can subscribe to batch status notifications to receive a single event when batch processing is fully completed. This allows your application to determine when the batch is completed, without the need for continuous polling.
+
+At the individual message level, you can subscribe to outbound and inbound SMS notifications to track message creation, delivery progress, and incoming replies. This provides granular visibility into message lifecycle events for each recipient within a batch.
+
+By combining batch-level and message-level subscriptions, developers can build robust monitoring workflows, trigger downstream processing (such as logging, analytics, or customer updates), and maintain accurate message state synchronization in their applications while minimizing unnecessary API requests.
+
+## Batch message status events
+
+Batch level push notifications provide updates on batch status. A batch could have two states "Processing" and "Completed". The following event filters are supported
+
+| Event Filter | Description |
+|-|-|
+| `/restapi/v2/accounts/~/extensions/~/sms/batches` | Notification on any message batch sent from any phone number owned by the extension. |
+| `/restapi/v2/accounts/~/extensions/~/sms/batches?from={e164PhoneNumber}` | Notification on any message batch sent from only the specified phone number. The specified phone number must be in E.164 format, e.g. `+16505550100` |
+
+## Inbound message events
+
+Notify incoming messages on a phone number. The following event filters are supported.
+
+| Event Filter | Description |
+|-|-|
+| `/restapi/v2/accounts/~/extensions/~/sms/messages?direction=Inbound` | Notification on inbound messages to any phone number owned by the extension. |
+| `/restapi/v2/accounts/~/extensions/~/sms/messages?direction=Inbound&to={e164PhoneNumber}` | Notification on inbound messages to only the specified phone number owned by the extension. The specified phone number must be in E.164 format, e.g. `+16505550100`|
+
+## Outbound message events
+
+Notify the delivery status of outbound messages. The following event filters are supported.
+
+| Event Filter | Description |
+|-|-|
+| `/restapi/v2/accounts/~/extensions/~/sms/messages?direction=Outbound` | Notification on outbound messages from any phone number owned by the extension.|
+| `/restapi/v2/accounts/~/extensions/~/sms/messages?direction=Outbound&from={e164PhoneNumber}` | Notification on outbound messages from only the specified phone numbers owned by the extension. The specific phone number must be in E.164 format, e.g. `+16505550100` |
+
+### Example of event payloads
+
+=== "Batch message event"
+
+    When subscribed to batch status notifications, your application will receive a single event payload similar to the example below once the batch processing has fully completed.
+
+    ```json
+    {
+      "uuid": "4666493794326649214",
+      "event": "/restapi/v2/accounts/80964XXXX/extensions/6298939XXXX/sms/batches",
+      "timestamp": "2026-01-30T23:46:00.132Z",
+      "subscriptionId": "5cdd3d16-d8d4-4770-99f0-f8fd36461e28",
+      "ownerId": "6298939XXXX",
+      "body": {
+        "id": "07b3293b-c611-447b-bc57-70580b5c064e",
+        "from": {
+          "phoneNumber": "+1209252XXXX"
+        },
+        "batchSize": 100,
+        "processedCount": 100,
+        "lastModifiedTime": "2026-01-30T23:45:59.958327Z",
+        "status": "Completed",
+        "creationTime": "2026-01-30T23:45:56.527676Z",
+        "cost": 0.85
+      }
+    }
+    ```
+
+=== "Inbound message Event"
+
+    When subscribed to inbound SMS message notifications, your application will receive an event payload similar to the example below each time an inbound SMS message is delivered to your phone number.
+
+    ```json
+    {
+      "uuid": "8321759680460866325",
+      "event": "/restapi/v2/accounts/80964XXXX/extensions/6298939XXXX/sms/messages?direction=Inbound",
+      "timestamp": "2026-02-24T18:44:13.019Z",
+      "subscriptionId": "40a513b7-0903-4739-b202-c6af9172b820",
+      "ownerId": "6298939XXXX",
+      "body": {
+        "id": "2791268747",
+        "from": {
+          "phoneNumber": "+1650224XXXX"
+        },
+        "to": [
+          {
+            "phoneNumber": "+1209252XXXX",
+            "messageStatus": "Delivered"
+          }
+        ],
+        "text": "Thank you for your quick response.",
+        "direction": "Inbound",
+        "attachments": [
+          {
+            "contentType": "text/plain",
+            "contentUri": "/restapi/v2/accounts/80964XXXX/extensions/6298939XXXX/sms/messages/2791268747/content/2791268747",
+            "id": "2791268747"
+          }
+        ],
+        "creationTime": "2026-02-24T18:44:12.961560383Z",
+        "lastModifiedTime": "2026-02-24T18:44:12.961560383Z",
+        "segmentCount": 1,
+        "cost": 0.0085
+      }
+    }
+    ```
+
+=== "Outbound message Event"
+
+    When subscribed to outbound SMS message notifications, your application will receive an event payload similar to the example below each time a user extension sends an SMS message from their phone number.
+
+    ```json
+    {
+      "uuid": "1380296515508829924",
+      "event": "/restapi/v2/accounts/80964XXXX/extensions/6298939XXXX/sms/messages?direction=Outbound",
+      "timestamp": "2026-02-24T18:51:16.608Z",
+      "subscriptionId": "40a513b7-0903-4739-b202-c6af9172b820",
+      "ownerId": "62989398016",
+      "body": {
+        "id": "2791365253",
+        "batchId": "6c359632-e379-48de-b96c-d51c8e69f1c2",
+        "from": {
+          "phoneNumber": "+1209509XXXX"
+        },
+        "to": [
+          {
+            "phoneNumber": "+1650224XXXX",
+            "messageStatus": "Delivered"
+          }
+        ],
+        "text": "You are welcome.",
+        "direction": "Outbound",
+        "attachments": [
+          {
+            "contentType": "text/plain",
+            "contentUri": "/restapi/v2/accounts/80964XXXX/extensions/6298939XXXX/sms/messages/2791365253/content/2791365253",
+            "id": "2791365253"
+          }
+        ],
+        "creationTime": "2026-02-24T18:51:14.741860Z",
+        "lastModifiedTime": "2026-02-24T18:51:16.597115Z",
+        "segmentCount": 1,
+        "cost": 0.0085
+      }
+    }
+    ```

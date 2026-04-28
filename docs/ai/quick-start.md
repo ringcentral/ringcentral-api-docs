@@ -1,8 +1,7 @@
 # Artificial Intelligence API Quick Start Guide
 
-{! mdx_includes/ai-beta-notice.md !}
-
-!!! hint "**Calling the RingCentral API for the first time?** We recommend you try out [getting started experience](../getting-started/index.md)."
+!!! important
+    AI APIs are deprecated. The instructions below apply only to existing apps that have already been granted the AI app scope!
 
 In this quick start, we are going to help you create your first "Speech to Text" application on the RingCentral platform in just a few minutes. Let's get started.
 
@@ -27,10 +26,6 @@ The first thing we need to do is create an app in the RingCentral Developer Port
 <li>Under "Security" select "This app is private and will only be callable using credentials from the same RingCentral account."</li>
 </ol>
 </div>
-
-## Request help from support
-
-Access to the RingCentral Artificial API currently requires help from support in order to grant the "AI" application scope to your application.
 
 ## Download and edit a `.env` file
 

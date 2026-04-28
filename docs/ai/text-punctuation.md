@@ -1,5 +1,7 @@
 # Text punctuation
 
+!!! important "`Deprecated`"
+
 The Text Punctuation API takes a list of text blocks and augments them with proper punctuation using artificial intelligence. The same feature is applied to the [speech recognition API's](speech-to-text.md) output if the `enablePunctuation` flag is set. The API will augment text with the following punctuation:
 
 * Periods, full-stop: `.`
