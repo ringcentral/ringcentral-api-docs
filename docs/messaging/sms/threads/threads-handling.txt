@@ -1,0 +1,316 @@
+# Message Thread
+
+A message thread represents a text conversation between a specific pair of phone numbers—typically between a **service number** and a **customer number**. Threading improves readability, traceability, and context retention, especially in environments where SMS messages are shared among multiple handlers through collaboration tools such as a **shared inbox**.
+
+## Message thread properties
+
+A message thread is a thread record which contains metadata of a thread. A message thread has the following key attributes:
+
+| Attribute | type | Description | Note |
+| :---- | :---- | :---- | :---- |
+| `id` | string | A unique id assigned to a new thread by the system. |  |
+| `status` | string | The status of a thread indicates whether the thread is open or resolved. |  |
+| `ownerParty` | object | Contains the phone number that belongs to the common resource. E.g. a call queue’s direct number. |  |
+| `guestParty` | object | Contains the external phone number. E.g. a customer’s mobile phone number. |  |
+| `owner` | object | Contains information of the resource. E.g. the name, the type and the identifier of a call queue. |  |
+| `assignee` | object | Contains information of the assigned SMS handler. | When an SMS handler starts a new thread, that SMS handler is automatically assigned as the assignee. Exists only after a new thread is assigned with an assignee and when the thread status is “Open” Removed from the thread when the thread status is resolved. |
+| `label` | string | The last text message in the message thread. |  |
+| `statusReason` | string | The reason why the thread is resolved. **Manual** if the assignee resolved the thread, or **ThreadExpired** if the thread expired according to the thread time-to-live. See more reasons from the API reference. | Exists only when the thread is resolved. Omitted if the thread was deleted before it was resolved. |
+| `availability` | string | Indicates the thread and its associated messages are available or deleted. |  |
+| `creationTime` | string | The creation time of the thread in UCT time. |  |
+| `lastModifiedTime` | string | The time when the thread was last updated. E.g. assigning, reassigning, or changing the thread status. |  |
+
+## Message thread lifecycle
+
+Each message thread includes a **thread status** that indicates whether the thread is *Open* or *Resolved*.
+
+A new thread is created under any of the following conditions:
+
+* The first time an assigned SMS handler initiates a conversation by sending a message from a common resource number to a customer number.  
+* The first time a customer sends a message to a common resource number.  
+* An assigned SMS handler sends a message from a common resource number to a customer number when no **open** thread currently exists for that phone-number pair.  
+* A customer sends a message to a common resource number when no **open** thread currently exists for that phone-number pair.
+
+A thread is resolved under any of the following conditions:
+
+* The thread’s assignee deliberately marks the thread as **Resolved**.  
+* No new activity—either inbound or outbound messages—occurs for 72 hours. In this case, the system automatically marks the thread as **Resolved**.
+
+!!! important
+    Currently, once a thread is resolved, it cannot be reopened.
+
+## List message threads
+
+Any SMS handler assigned to a common resource can view all message threads associated with that resource, regardless of whether they are the thread’s assignee. This allows handlers to see not only their own conversations but also those assigned to their teammates, improving visibility, collaboration, and overall continuity of service.
+
+The list message threads API supports multiple filters which can be used to optimize the response which returns only interested threads. For example, an SMS handler can set the “threadStatus”=”Open” to list only open threads, or set the “ownerExtensionIds” to a common resource ID (e.g. a call queue extension ID) to list only threads created for that common resource. This is useful when the SMS handler is a member of multiple common resources.
+
+The `/restapi/v1.0/account/~/message-threads` API currently supports the following essential filters:
+
+| Filter name | type | Description | Note |
+| :---- | :---- | :---- | :---- |
+| `threadStatus` | String | Filters threads based on their status: **Open** or **Resolved**. If no status is specified, all threads (both Open and Resolved) will be listed by default. |  |
+| `ownerExtensionIds` | Array of string | Filters threads based on one or several common resources identified by the common resource IDs. If not specified, all threads from all common resources the authenticated user is assigned to handle SMS. |  |
+| `creationTimeFrom` | string | Start date/time for resulting message threads or messages. |  |
+| `creationTimeTo` | string | End date/time for resulting message threads or messages. |  |
+| `ownerPhoneNumber` | string | The shared phone number (in E.164 format) of a common resource. E.g. a call queue’s direct number. |  |
+| `guestPhoneNumber` | string | The recipient phone number in E.164 format. E.g. a customer’s mobile number. |  |
+
+### Sample code
+
+```JavaScript
+async function list_threads(){
+  try{
+    let queryParams = {
+      creationTimeFrom: "2026-02-01T06:00:00.000",
+      creationTimeTo: "2026-02-17T10:00:00.000",
+      perPage: 100
+    }
+    let endpoint = `/restapi/v1.0/account/~/message-threads`
+    var resp = await platform.get(endpoint, queryParams)
+    var jsonObj = await resp.json()
+    console.log(JSON.stringify(jsonObj.records, null, 4))  
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+### Sample response
+
+```json
+[
+  {
+    "id": "07d6d352-2c96-40b8-a704-2505fdbdfa0a",
+    "status": "Open",
+    "availability": "Alive",
+    "ownerParty": {
+      "phoneNumber": "+1209248XXXX"
+    },
+    "guestParty": {
+      "phoneNumber": "+1650224XXXX"
+    },
+    "owner": {
+      "extensionId": "6249888XXXX",
+      "name": "Billing Queue",
+      "extensionType": "Department"
+    },
+    "creationTime": "2026-02-17T17:12:39.676Z",
+    "lastModifiedTime": "2026-02-17T17:12:39.676Z"
+  },
+  {
+    "id": "805808d1-31d2-4f01-867b-a5cff52d96ea",
+    "status": "Resolved",
+    "availability": "Alive",
+    "ownerParty": {
+      "phoneNumber": "+1209248XXXX"
+    },
+    "guestParty": {
+      "phoneNumber": "+1408321XXXX"
+    },
+    "owner": {
+      "extensionId": "6249888XXXX",
+      "name": "Billing Queue",
+      "extensionType": "Department"
+    },
+    "label": "You can close this case.",
+    "statusReason": "Manual",
+    "creationTime": "2026-02-17T17:12:39.676Z",
+    "lastModifiedTime": "2026-02-17T17:50:27.600Z"
+  },
+  {
+    "id": "ebf18942-9cd4-4980-9fa3-e1ddfec7c45a",
+    "status": "Resolved",
+    "availability": "Alive",
+    "ownerParty": {
+      "phoneNumber": "+1209248XXXX"
+    },
+    "guestParty": {
+      "phoneNumber": "+1650513XXXX"
+    },
+    "owner": {
+      "extensionId": "6249888XXXX",
+      "name": "Billing Queue",
+      "extensionType": "Department"
+    },
+    "label": "Thank you",
+    "statusReason": "ThreadExpired",
+    "creationTime": "2026-02-12T17:19:56.260Z",
+    "lastModifiedTime": "2026-02-16T07:29:31.319Z"
+  }
+]
+```
+
+## Read a message thread
+
+Any SMS handler assigned to a common resource can view a single message thread associated with that resource using the read message thread API with the `threadId` specified in the API path
+
+`/restapi/v1.0/account/~/message-threads/07d6d352-2c96-40b8-a704-2505fdbdfa0a`
+
+### Sample code
+
+```JavaScript
+async function list_threads(){
+  try{
+
+    let endpoint = '/restapi/v1.0/account/~/message-threads/07d6d352-2c96-40b8-a704-2505fdbdfa0a'
+    var resp = await platform.get(endpoint)
+    var jsonObj = await resp.json()
+    console.log(JSON.stringify(jsonObj, null, 4))  
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+### Sample response
+
+```json {hl_lines="5-10"}
+  {
+    "id": "07d6d352-2c96-40b8-a704-2505fdbdfa0a",
+    "status": "Open",
+    "availability": "Alive",
+    "ownerParty": {
+      "phoneNumber": "+1209248XXXX"
+    },
+    "guestParty": {
+      "phoneNumber": "+1650224XXXX"
+    },
+    "owner": {
+      "extensionId": "6249888XXXX",
+      "name": "Billing Queue",
+      "extensionType": "Department"
+    },
+    "creationTime": "2026-02-17T17:12:39.676Z",
+    "lastModifiedTime": "2026-02-17T17:12:39.676Z"
+  }
+```
+
+## Assign a message thread
+
+Each message thread must have an **assignee**, who must be one of the SMS handlers configured for the common resource. While a thread is in the **open** state, only the thread’s assignee is permitted to send SMS messages to the customer associated with that thread.
+
+When an SMS handler sends a new outbound SMS message to a customer and no open thread exists for that pair of phone numbers, the system automatically creates a new thread and assigns it to the sending handler.
+
+When a new inbound SMS message is received from a customer to a common resource number and no open thread exists for that phone-number pair, the system creates a new thread without an assignee. In this case, any SMS handler for the common resource may assign the thread to themselves or to another handler.
+
+Open threads can be reassigned at any time. The current assignee may reassign the thread to another handler, and any other SMS handler may also reassign an assigned thread to themselves.
+
+To assign or reassign a thread, retrieve the extension ID of the new assignee, verify that the extension is configured as an SMS handler for the common resource number, and then call the following API with appropriate parameters:
+
+```JavaScript
+async function assign_thread(extensionId, threadId){
+  try{
+    let bodyParams = {
+      assignee: {
+        extensionId: extensionId
+      }
+    }
+    let endpoint = `/restapi/v1.0/account/~/message-threads/${threadId}/assign`
+    var resp = await platform.post(endpoint, bodyParams)
+    var jsonObj = await resp.json()
+    console.log(SON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+!!! note
+
+    After a thread is resolved, the system will remove the assignee object from the thread!
+
+## Resolve a message thread
+
+When the SMS interaction between a handler and a customer is complete, the handler can close the conversation by marking the thread status as **Resolved**. Once a thread is resolved, any subsequent inbound or outbound SMS message between the same pair of phone numbers will automatically create a **new thread**.
+
+To resolve a thread, detect the thread ID then call the following API with the specified thread ID in the path:
+
+`POST /restapi/v1.0/account/~/message-threads/{threadId}/resolve`
+
+```JavaScript
+async function resolve_thread(threadId){
+  try{
+    var resp = await platform.post(`/restapi/v1.0/account/~/message-threads/${threadId}/resolve`)
+    var jsonObj = await resp.json()
+    console.log(JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+!!! note
+    Any SMS handler configured for the common resource can resolve a thread, even if that handler is not the thread’s current assignee.
+
+## Delete a message thread
+
+Any SMS handler assigned to a common resource can delete a message thread under that common resource, regardless of the thread assignee or the status of the thread. Therefore, when delete a thread, make sure that the authenticated user should be aware of the activity
+
+To delete a thread, call the following API with the specified thread ID in the path:
+
+`DELETE /restapi/v1.0/account/~/message-threads/{threadId}/delete`
+
+```JavaScript
+async function delete_thread(threadId){
+  try{
+    var resp = await platform.delete(`/restapi/v1.0/account/~/message-threads/${threadId}`)
+    console.log("Thread deleted")
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+When a thread is deleted, all messages associated with that thread will be deleted.
+
+## Sync message threads
+
+A message thread has a defined lifecycle, and its properties—such as status, assignee, or last activity—may change over time. The Sync Message Threads API allows SMS handlers to retrieve and monitor thread records so their applications can stay up to date with the latest thread state changes.
+
+The Sync API supports two synchronization modes, specified by the syncType parameter: FSync (full sync) and ISync (incremental sync).
+
+- The FSync mode returns all message thread records that are currently active and open, providing an initial snapshot of the thread state.   
+- The ISync mode returns only those thread records whose properties have changed since the initial FSync call or the most recent ISync call, enabling efficient tracking of updates.
+
+To use the Sync API effectively, developers should first call the API with syncType=FSync to retrieve the initial set of thread records. The response includes a sync token, which must be saved by the application. In subsequent calls, developers use this sync token with syncType=ISync to retrieve only the thread records that have changed since the last synchronization.
+
+This approach eliminates the need to repeatedly query individual thread IDs or specify time ranges for updates, allowing applications to efficiently monitor thread lifecycle changes while minimizing API usage and improving performance.
+
+```JavaScript
+let syncToken = ""
+async function full_sync_message_threads(){
+  try{
+    let queryParams = {
+      syncType: "FSync"
+    }
+    var resp = await platform.get('/restapi/v1.0/account/~/message-threads/sync', queryParams)
+    var jsonObj = await resp.json()
+    console.log("Full sync data: ", JSON.stringify(jsonObj, null, 4))
+    syncToken = jsonObj.syncInfo.syncToken
+  }catch(e){
+    console.log(e.message)
+  }
+}
+
+async function incremental_sync_message_threads(){
+  if (syncToken == ""){
+    full_sync_message_threads()
+    return
+  }
+  try{
+    let queryParams = {
+      syncType: "ISync",
+      syncToken: syncToken
+    }
+
+    let endpoint = '/restapi/v1.0/account/~/message-threads/sync'
+    var resp = await platform.get(endpoint, queryParams)
+    var jsonObj = await resp.json()
+    syncToken = jsonObj.syncInfo.syncToken
+    console.log("Incremental sync data: ",JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```

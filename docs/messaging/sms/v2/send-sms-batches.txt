@@ -1,0 +1,257 @@
+# Send message batches
+
+The SMS batch messaging `/batches` API allows you to send text messages to multiple recipients in a single API request, rather than making repeated calls to send messages one by one. With a single request, you can send the same message—or personalized messages—to multiple recipients quickly and efficiently. This makes the API well suited for use cases such as announcements, reminders, promotions, or alerts that need to reach a large audience as fast as possible.
+
+The `/batches` API operates asynchronously. When you submit a batch messaging request, the system immediately returns a response containing the batch metadata (such as the batch ID) and sets the initial batch status to **Processing**.
+
+Message delivery is then handled in the background. The total processing time depends on several factors, including:
+
+- The number of recipients in the batch
+- Current upstream messaging load and queuing conditions
+- Carrier throughput limits for the sender's number (if there are thousands of recipients from the same carrier)
+- Campaign tier and messaging restrictions
+
+Because both sending (from the upstream provider to carriers) and delivery (from carriers to recipients) are asynchronous, you should not assume that messages are sent immediately after receiving the API response.
+
+To detect the batch completion, you can use one of the following approaches:
+
+1. Poll the [batch status endpoint](message-store.md/#read-individual-batch): Periodically query the batch status using the batch ID returned in the initial response.
+
+2. Subscribe to [batch status event notifications](events.md/#message-batch-events) (Recommended): Subscribe to event notifications to receive a batch completion event.
+
+Design your integration to handle the asynchronous workflow appropriately and to process the final batch status upon completion.
+
+!!! note
+    SMS messages sent from the `/batches` API will not be shown in the RingCentral RC app!
+
+## Batch messaging compliance and campaign tier validation
+
+The `/batches` API can be used with any phone number owned by the authenticated application user. However, each phone number may be associated with a different TCR campaign ID. Some campaign IDs may be registered under a low-volume tier, which imposes daily message limits for that specific phone number.
+
+Before sending batch messages—especially to a large audience—developers should implement logic to verify the capabilities of the selected phone number. This includes checking the [assigned TCR campaign](../sms-requirements.md/#checking-phone-number-sms-configuration), its registration tier, applicable daily throughput limits, and the approved use cases associated with that campaign.
+
+Performing these validations in advance helps ensure successful batch delivery, prevents exceeding SMS volume limits, and reduces the risk of sending content that does not align with the campaign’s registered use case. Proper validation also minimizes message failures and helps maintain compliance with messaging regulations.
+
+!!! note
+    There is no limit to number of recipients in a batch. However, the maximum size of each batch is about 50MB.
+
+## Who can send batch messages
+
+SMS batch messages can only be sent from phone numbers that are owned by the authenticated user extension. To learn more about ownership, refer to [this developer guide](https://developers.ringcentral.com/guide/messaging/sms/sms-requirements#understanding-phone-number-ownership-and-feature-assignment-in-ringcentral).
+
+When using the `/restapi/v2/accounts/~/extensions/~/sms/batches` endpoint to send batch messages, your application must:
+
+1. Authenticate a user extension.
+2. Retrieve the list of phone numbers assigned to the authenticated user by calling the `/restapi/v1.0/account/~/extension/~/phone-number` endpoint.
+3. Check that the selected number has SMS capabilities. This can be verified by checking the features field in the phone number metadata (should include "SmsSender").
+4. Send the batch message using the phone number that meets the above criteria.
+
+!!! important "Sending batch messages on behalf of other users?"
+    * Even a super admin user cannot send a batch message on behalf of other user extensions!
+    * If a phone number is assigned to an account-level common resource (for example, a call queue), all user extensions designated as SMS recipients for that number are permitted to send batch messages from that phone number. However, that batch messages are not synchronized with the thread messaging message store and therefore will not be visible in the RC app’s Shared Inbox.
+
+## Use cases and sample codes
+
+!!! note "Running the code"
+    The sample code below is written using the official [RingCentral SDKs](https://developers.ringcentral.com/guide/sdks). Before running the examples, make sure to install the appropriate SDK for your programming language.
+
+    If you have tried the [SMS quick start](../../quick-start.md), you can just copy all the functions in the example and add them to the quick start project then call the `read_extension_phone_number_detect_sms_feature()` function. Otherwise, edit the following variables with your app and user credentials before running the code.
+
+    - `RC_APP_CLIENT_ID`
+    - `RC_APP_CLIENT_SECRET`
+    - `RC_USER_JWT`
+
+    Also, make sure to use valid recipient phone numbers in the sample `bodyParams`
+
+
+### Use Case 1: Holiday hours notification
+
+A business sends a holiday hours text message to inform customers of special operating hours during a holiday period. For example, the shop sends a short SMS announcing that it will remain open from 10:00 AM to 6:00 PM, helping customers plan their visits in advance.
+
+This message is sent as a one-way informational notification to a group of customers and does not require a reply. By proactively communicating holiday hours, the business improves customer awareness, reduces confusion, and encourages in-store visits during the holiday.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-batches-sms.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/send-batches-sms.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-batches-sms.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/send-batches-sms.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```
+
+### Use Case 2: Daily appointment reminder notifications
+
+A clinic assistant sends daily appointment reminder messages to multiple patients who have upcoming doctor visits. Each message includes personalized details such as the patient’s name, appointment date and time, and the doctor’s name or clinic location.
+
+Using the messaging system, the assistant or application sends these reminders in bulk to ensure patients are informed ahead of their scheduled visits. Patients may reply to confirm, reschedule, or ask follow-up questions, allowing the clinic to reduce no-shows, improve scheduling efficiency, and enhance the overall patient experience.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13]!}
+    {!> code-samples/messaging/code-snippets/send-batches-personalized-sms.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/send-batches-personalized-sms.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13]!}
+    {!> code-samples/messaging/code-snippets/send-batches-personalized-sms.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/send-batches-personalized-sms.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4]!}
+    ```
+
+### Use Case 3: Group messaging for team assignments
+
+A teacher needs to send messages to multiple groups of students to coordinate work on team assignments. Each group receives specific instructions, deadlines, or resources relevant to their assigned project or role.
+
+Using group messaging, the teacher can send targeted messages to each student group, ensuring that the right information is delivered to the appropriate team. Students can reply within their group to ask questions, share updates, and collaborate more effectively. This approach helps streamline communication, keeps teams aligned, and supports timely completion of assignments.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js !}
+    {!> code-samples/messaging/code-snippets/send-batches-group-sms.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/send-batches-group-sms.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py !}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php !}
+    {!> code-samples/messaging/code-snippets/send-batches-group-sms.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/send-batches-group-sms.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb !}
+    ```
+
+### Use Case 4: Retailer SMS promotion campaign with new product image
+
+A retail clothing brand is launching a new seasonal jacket and wants to promote it to customers who have opted in to receive marketing messages. To maximize engagement, the retailer decides to send an SMS campaign that includes an image of the new product.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-batches-mms.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/send-batches-mms.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/send-batches-mms.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/send-batches-mms.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```
+
+### Response
+
+The code samples above would all produce a response that would appear similar to the one below.
+
+```json
+{
+  "id": "5a552551-d3aa-47e2-b102-c73cd6650234",
+  "from": {
+      "phoneNumber": "+1209509XXXX"
+  },
+  "batchSize": 300,
+  "processedCount": 0,
+  "lastModifiedTime": "2026-02-20T17:55:07.240338790Z",
+  "status": "Processing",
+  "creationTime": "2026-02-20T17:55:07.240338790Z",
+  "cost": 0,
+  "rejected": []
+}
+```
+
+!!!Note
+    The `rejected` field is a list of invalid numbers (if any). Each item in the `rejected` array is an object containing the index position (starting from 1) of the recipient's phone number in the "messages" array, an error code and a short description of the rejected reason. E.g.:
+    ```
+    [{"index":2,"to":["+4088070206"],"errorCode":"SMS-RC-410","description":"The recipient number is invalid"}]
+    ```
+    If your batch contains invalid phone numbers, you will receive the `rejected` list with content only from the response returned by sending a batch. Otherwise, the `rejected` field is omitted.
+
+    Reading the batch status will always return the response with the `rejected` field omitted.
+
+### RingCentral platform supported MMS content types
+
+| Category | MIME | File Extension |
+|-|-|-|
+| `Image` | image/jpeg | .jpeg/.jpg |
+| | image/png | .png |
+| | image/bmp | .bmp |
+| | image/gif | .gif |
+| | image/tiff | .tiff/.tif |
+| | image/svg+xml | .svg |
+| | image/webp | .webp |
+| `Video` | video/3gpp | .3gp |
+| | video/mp4 | .mp4/.m4v |
+| | video/mpeg | .mpeg/.mpg |
+| | video/avi | .avi |
+| | video/x-flv | .flv |
+| | video/x-ms-wmv | .wmv |
+| | video/quicktime | .mov/.qt |
+| | video/webm | .webm |
+| | video/ogg  | .ogg |
+| | video/3gpp | .3gp |
+| `Audio` | audio/mpeg | .mp3 |
+| | audio/mp4 | .m4a |
+| | audio/ogg | .oga |
+| | audio/wav | .wav |
+| | audio/arm | .arm |
+| | audio/3gpp | .3gp |
+| `V-Card` | text/vcard | .vcf/.vcard |
+| `Compressed file` | application/zip | .zip |
+| | application/gzip | .gzip |
+| `Document` | application/rtf | .rtf |
+| | application/pdf | .pdf |
+| | text/html | .html |
+| | text/plain | .txt |
+| | text/csv | .csv |
+| | text/calendar | .ics |
+
+!!! warning "Attachment Limitations"
+    * There is a combined limit of 1.5MB for all attachments per message.
+    * There is a limit of 10 attachments per message.

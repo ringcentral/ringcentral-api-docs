@@ -1,5 +1,7 @@
 # How to analyze media files using the AI API
 
+!!! important "`Deprecated`"
+
 Most of RingCentral AI APIs such as the `/speech-to-text` and the `/analyze-interaction` endpoints take the input media content `contentUri` as a URI link to a media file resides at a remote server. These APIs all work in an [asynchronous manner](asynchronous-responses.md) and follow this basic flow:
 
 1. Developer calls an API endpoint passing a URI in the `contentUri` parameter

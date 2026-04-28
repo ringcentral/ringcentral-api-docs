@@ -1,0 +1,156 @@
+# Migration Guide
+
+Once a RingCentral account is enabled for the Thread Messaging feature, the SMS messaging behavior for common resources with direct phone numbers will change.
+
+## Key changes to SMS operations
+
+1. Multiple SMS handlers supported
+    - SMS recipient configuration can now include multiple handlers (user extensions). This allows several users to send and receive SMS messages associated with the same common resource number.
+2. Existing message records
+    - All historical inbound and outbound SMS messages for call queue direct numbers remain available in the v1.0 SMS message store.
+    - Only the user extensions who are granted with the “callQueueSmsRecipient” feature can access these messages.
+3. Continued support for v1.0 SMS APIs (for legacy and will be deprecated)
+    - Sending new messages from common resource numbers using the v1.0 SMS API (/sms or /mms) will continue to function. However, message records created by v1.0 APIs will only be stored in the v1.0 message store.
+    - Only the user extensions who are granted with the “callQueueSmsRecipient” feature can send, receive and access the messages belonging to the common resource number.
+4. Inbound Messages with Thread Messaging
+    - All new inbound SMS messages to the common resource numbers will be stored in the Message Threads message store and the v2.0 message store.
+5. Outbound Messages via Message Threads API
+    - New SMS messages sent or replied from these direct numbers using the Message Threads API will also be stored in the Message Thread message store.
+
+## Summary
+
+After Thread Messaging is enabled:
+
+* You can manage multiple SMS handlers for call queue direct numbers (a.k.a shared inbox).  
+* Legacy and new SMS APIs remain functional for sending outbound SMS messages from call queue direct numbers. You can use this feature for sending out notifications without the need of recipient’s response to your message.  
+* The Message Threads store becomes the default for all new inbound and threaded outbound messages.  
+* Migration can be performed gradually without interrupting existing SMS workflows.
+
+| Actions/Message record | V1.0 Message Store | Message Threads Store |
+| | | |
+| Sent by v1.0 API | stored | X |
+| Sent by TM API | X | stored |
+| Sent from RC app (Call queue legacy tab) | stored | X |
+| Sent from RC app (Shared tab) | X | stored |
+| Reply to CQ number | X | stored |
+
+## Example migration from SMS API v1.0 to the message thread API
+
+The sample code is in Node JS and demonstrates how to use the RingCentral JS SDK to call RingCentral APIs.
+
+Assumed that the authenticated user extension is one of the call queue SMS recipients.
+
+Send SMS messages from a call queue direct number to a customer number.
+
+### V1.0 SMS API
+
+Sample code
+
+```JavaScript
+async function send_sms(fromNumber, toNumber, message){
+  try{
+    let endpoint = '/restapi/v1.0/account/~/extension/~/sms'
+    let bodyParams = {
+         from: {phoneNumber: fromNumber}, //call queue phone number
+             to: [{phoneNumber: toNumber}], // customer phone number
+             text: message, // The text message
+        }
+    var resp = await platform.post(endpoint, bodyParams)
+    var jsonObj = await resp.json()
+    console.log(JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+Sample response
+
+```json
+{
+    "uri": "https://platform.ringcentral.com/restapi/v1.0/account/xxx/extension/yyy/message-store/xx4017",
+    "id": xx4017,
+    "to": [
+        {
+            "phoneNumber": "+1650513XXXX",
+            "location": "San Mateo, CA"
+        }
+    ],
+    "from": {
+        "phoneNumber": "+1209248XXXX",
+        "name": "Demo queue ",
+        "location": "Modesto, CA"
+    },
+    "type": "SMS",
+    "creationTime": "2026-01-07T18:36:20.000Z",
+    "readStatus": "Read",
+    "priority": "Normal",
+    "attachments": [
+        {
+            "id": 3259919924017,
+            "uri": "https://media.ringcentral.com/restapi/v1.0/account/xxx/extension/yyy/message-store/xx4017/content/xx4017",
+            "type": "Text",
+            "contentType": "text/plain"
+        }
+    ],
+    "direction": "Outbound",
+    "availability": "Alive",
+    "subject": "Send from v1. 01/07",
+    "messageStatus": "Queued",
+    "smsSendingAttemptsCount": 1,
+    "conversationId": 6288356833283647000,
+    "conversation": {
+        "id": "6288356833283647895",
+        "uri": "https://platform.ringcentral.com/restapi/v1.0/conversation/6288356833283647895"
+    },
+    "lastModifiedTime": "2026-01-07T18:36:20.977Z",
+    "owner": {
+        "extensionId": "6249888xxxx",
+        "name": "Demo queue",
+        "extensionType": "Department"
+    }
+}
+```
+
+### Message Threads API
+
+Sample code
+
+```JavaScript
+async function send_sms(fromNumber, toNumber, message){
+  try{
+    let endpoint = '/restapi/v1.0/account/~/message-threads/messages'
+    let bodyParams = {
+         from: {phoneNumber: fromNumber}, //call queue phone number
+             to: [{phoneNumber: toNumber}], // customer phone number
+             text: message // The text message
+        }
+    var resp = await platform.post(endpoint, bodyParams)
+    var jsonObj = await resp.json()
+    console.log(JSON.stringify(jsonObj, null, 4))
+  }catch(e){
+    console.log(await e.response.json())
+  }
+}
+```
+
+Sample response
+
+```json
+{
+    "id": "2486798578",
+    "threadId": "6966d6f7-9621-4613-9786-63b0e9e19dd9",
+    "recordType": "AliveMessage",
+    "lastModifiedTime": "2026-01-07T18:37:15.773Z",
+    "availability": "Alive",
+    "creationTime": "2026-01-07T18:37:15.773Z",
+    "direction": "Outbound",
+    "messageStatus": "Queued",
+    "text": "Sent by TM API. 01/07",
+    "author": {
+        "extensionId": "62989398016",
+        "name": "Agent 913",
+        "extensionType": "User"
+    }
+}
+```

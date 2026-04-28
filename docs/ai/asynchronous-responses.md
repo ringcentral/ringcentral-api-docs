@@ -1,5 +1,7 @@
 # Handling asynchronous responses from the Artificial Intelligence API
 
+!!! important "`Deprecated`"
+
 The Artificial Intelligence API operates in an asynchronous manner. Meaning the results of its operations are not returned in the HTTP response associated with the HTTP request performing the operation. Instead, developers specify a URL in their request, and when the operation completes, the response payload will be posted to the specified URL.
 
 Th asynchronous nature of the Artificial Intelligence API requires developers to setup a simple web server in order to process results and run sample code found in this Developer Guide. Below, you will find simple web servers in a variety of languages to help you in this process.
