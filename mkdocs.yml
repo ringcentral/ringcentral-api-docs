@@ -143,6 +143,15 @@ nav:
       # - 'Migration Guide': 'messaging/sms/migration-guide.md'
     - 'SMS Consent':
       - 'Consent management': 'messaging/sms/messaging-consent-management.md'
+    - 'Global Business SMS':
+      - 'Overview': 'messaging/sms/global-business/index.md'
+      - 'Development Libraries': 'messaging/sms/global-business/development-libraries.md'
+      - 'SMS Message': 'messaging/sms/global-business/sms-message.md'
+      - 'Sender Name': 'messaging/sms/global-business/sender-name.md'
+      - 'Delivery Report': 'messaging/sms/global-business/delivery-report.md'
+      - 'Inbound Messages': 'messaging/sms/global-business/inbound-messages.md'
+      - 'Scheduled Messages': 'messaging/sms/global-business/scheduled-messages.md'
+      - 'Requests and Authentication': 'messaging/sms/global-business/requests-and-authentication.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
