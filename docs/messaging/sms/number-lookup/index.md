@@ -12,6 +12,8 @@ REST API to find out statuses and network info of phone numbers.
 
 This tutorial will guide you through the setup of the Number Lookup API.
 
+!!! info "Independent Account Required: To use the capabilities detailed below, you will need to sign up for a separate account directly via the Messente team. [Contact Messente to Sign-up →](https://messente.com/talk-to-sales)"
+
 1. Log in to your Messente account*.
 2. Obtain your Messente API username and API password from [API Settings page](https://dashboard.messente.com/api-settings).
 3. Start using the API.
