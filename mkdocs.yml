@@ -115,6 +115,7 @@ nav:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
+    - 'Global Business SMS Overview': 'messaging/sms/global-business/index.md'
     # - 'SMS Batch Messaging':
     #   - 'Overview': 'messaging/sms/v2/index.md'
     #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
@@ -144,7 +145,7 @@ nav:
     - 'SMS Consent':
       - 'Consent management': 'messaging/sms/messaging-consent-management.md'
     - 'Global Business SMS':
-      - 'Overview': 'messaging/sms/global-business/index.md'
+      - 'Overview': 'messaging/sms/global-business/overview.md'
       - 'Development Libraries': 'messaging/sms/global-business/development-libraries.md'
       - 'SMS Message': 'messaging/sms/global-business/sms-message.md'
       - 'Sender Name': 'messaging/sms/global-business/sender-name.md'
@@ -152,6 +153,8 @@ nav:
       - 'Inbound Messages': 'messaging/sms/global-business/inbound-messages.md'
       - 'Scheduled Messages': 'messaging/sms/global-business/scheduled-messages.md'
       - 'Requests and Authentication': 'messaging/sms/global-business/requests-and-authentication.md'
+    - 'Number Lookup':
+      - 'Overview': 'messaging/sms/number-lookup/index.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'

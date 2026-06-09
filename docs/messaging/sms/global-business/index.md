@@ -1,323 +1,51 @@
-# Overview
 
-Follow the guide to add SMS messages to your application in minutes.
+# Introduction to Global Business SMS
+
+
+Welcome to the RingCentral developer community! As part of our commitment to expanding our global communications suite, **Messente is now a RingCentral company**.
+
+While we work behind the scenes to deeply integrate Messente’s infrastructure into the core RingCentral developer platform, developers can immediately leverage Messente’s powerful Omnichannel messaging APIs to scale their global user engagement.
+
+!!! info "Independent Account Required: To use the capabilities detailed below, you will need to sign up for a separate account directly via the Messente team. [Contact Messente to Sign-up →](https://messente.com/talk-to-sales)"
+
+
+## What You Can Build
+Messente specializes in high-volume, global bulk messaging with smart routing across 190+ countries. Using the Messente Omnichannel API, you can send notifications, verification codes (2FA), and marketing campaigns across multiple conversational platforms using a single, unified payload.
+
+| Channel | Core Capabilities | Best For |
+| :--- | :--- | :--- |
+| **SMS** | Global reach, carrier-level routing, fallback protection. | 2FA codes, critical alerts, urgent notifications. |
+| **WhatsApp** | Rich media (images, PDFs), interactive buttons, verified business profiles. | Customer support, delivery tracking, rich marketing. |
+| **RCS** | Branded carousels, suggested actions, high-engagement native Android messaging. | Interactive product showcases, deep link click-throughs. |
+| **Viber** | Long-form text (up to 1,000 characters), images, CTA buttons, cost-effective routing. | European and Asian market campaigns, transactional receipts. |
 
 ---
 
-Sending a message using the API is a three-step process.
+## Key Features for Developers
 
-1. [Sign up](https://dashboard.messente.com/register) to Messente and [receive your API keys](https://dashboard.messente.com/api-settings) (no credit card required).
-2. Verify your phone number as sender ID or request a [branded Sender name](sender-name.md).
-3. Using the API keys, make an API request with the desired message and recipient.
+* **Smart Fallback Routing:** If a rich message (like WhatsApp or Viber) fails to deliver due to connectivity or app availability, the API can automatically fall back to standard SMS within seconds to guarantee delivery.
+* **Global Compliance Built-In:** Built-in tools to manage sender IDs, templates, and local country regulations automatically, ensuring high deliverability rates.
+* **Unified Analytics:** Track delivery statuses, open rates, and conversion metrics across all channels via webhooks or the Messente dashboard.
+* **Number lookup:** Check number validity and identify mobile vs. landline phones.
 
-!!! tip 
-    Upon sign up we will add you some free credits so you can test out the service immediately. With it you can send a few test messages.
+---
 
-!!! warning "API key required"
-    Follow this guide to send a message, once you have [received your API keys](https://dashboard.messente.com/api-settings).
+## Ready to Explore?
 
-## Install a library
+To begin testing or moving your high-volume messaging workloads to Messente, please reach out to their team to get your API keys and sandbox environment provisioned.
 
-The fastest way to get started with the API is to use our official libraries.
+### Implementation Flow
 
-Select your preferred programming language and follow the instructions.
+1. **Request an Account**
+   Visit [Messente](https://messente.com/) and register for a business account
 
-=== "Python"
+2. **Explore the API Reference** *(Authentication & Endpoints)*
+   Review the specialized [Messente Omnichannel Documentation](https://messente.com/documentation/) for authentication protocols and base URLs.
 
-    ### With PIP
+3. **Configure Webhooks** *(Real-time Delivery Status)*
+   Set up your server endpoints to listen for live delivery receipts (DLRs) and incoming user replies.
 
-    To install the API client library, simply execute:
+---
 
-    ```bash
-    pip install messente-api
-    ```
-
-    ### Or with Setuptools
-
-    To install the API client library, simply execute:
-
-    ```bash
-    python setup.py install --user
-    ```
-
-    then import the package:
-
-    ```python
-    import messente_api
-    ```
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-python) and [PyPI](https://pypi.org/project/messente-api) pages.
-
-=== "Node"
-
-    ### Install with npm
-
-    ```bash
-    npm i messente_api
-    ```
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-node) and [npm](https://www.npmjs.com/package/messente_api) pages.
-
-=== "PHP"
-
-    ### Install with composer
-
-    ```bash
-    composer require messente/messente-api-php
-    ```
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-php) and [packagist](https://packagist.org/packages/messente/messente-api-php) pages.
-
-=== "Java"
-
-    ### Maven users
-
-    Allow fetching messente-api from jcenter by placing a settings.xml file to ~/.m2 maven folder containing the following:
-
-    ```xml
-    <?xml version="1.0" encoding="UTF-8" ?>
-    <settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"
-              xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <profiles>
-        <profile>
-          <id>bintray</id>
-          <repositories>
-            <repository>
-              <id>central</id>
-              <name>bintray</name>
-              <url>https://jcenter.bintray.com</url>
-              <snapshots>
-                <enabled>false</enabled>
-              </snapshots>
-            </repository>
-          </repositories>
-        </profile>
-      </profiles>
-      <activeProfiles>
-        <activeProfile>bintray</activeProfile>
-      </activeProfiles>
-    </settings>
-    ```
-
-    To install the API client library to your local Maven repository, add the dependency to your project's POM:
-
-    ```xml
-    <dependency>
-      <groupId>com.messente.api</groupId>
-      <artifactId>messente-api</artifactId>
-      <version>4.2.0</version>
-    </dependency>
-    ```
-
-    Now, you can install the library by running:
-
-    ```bash
-    mvn clean install
-    ```
-
-    ### Gradle users
-
-    Add jcenter repository to your project's build file:
-
-    ```groovy
-    repositories { jcenter() }
-    ```
-
-    Also add the dependency to your project's build file:
-
-    ```groovy
-    dependencies { implementation 'com.messente.api:messente-api' }
-    ```
-
-    ### Others
-
-    Firstly, generate the JAR by executing:
-
-    ```bash
-    mvn package -Dmaven.javadoc.skip=true
-    ```
-
-    Then manually install the following JARs:
-
-    * target/messente-api-$VERSION_NUMBER.jar
-    * target/messente-api-$VERSION_NUMBER-sources.jar
-    * target/lib/*.jar
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-java) and [Bintray](https://bintray.com/messente/messente-api/messente-api) pages.
-
-=== "Ruby"
-
-    ### Install using gem
-
-    ```bash
-    gem install messente_api
-    ```
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-ruby) page and [RubyGems](https://rubygems.org/gems/messente_api) pages.
-
-=== ".NET"
-
-    ### Install using NuGet
-
-    ```powershell
-    Install-Package com.Messente.Api
-    ```
-
-    Take a look at the library's [GitHub](https://github.com/messente/messente-api-csharp) and [NuGet](https://www.nuget.org/packages/com.Messente.Api) pages.
-
-[Let us know if your preferred language is not in the list](https://messente.com/contact)
-
-!!! warning
-    These libraries only contain Omnichannel and Phonebook API features. For other Messente features, you need to install different set of libraries. [Libraries page](https://messente.com/documentation/tools/libraries/) contains the list of all our SDKs.
-
-## Send a single SMS
-
-Use the following example to send an SMS using Omnichannel API.
-
-=== "Python"
-
-    ```python
-    {!> code-samples/messaging/global-business/send-single-sms.py !}
-    ```
-
-=== "Node"
-
-    ```javascript
-    {!> code-samples/messaging/global-business/send-single-sms.js !}
-    ```
-
-=== "PHP"
-
-    ```php
-    {!> code-samples/messaging/global-business/send-single-sms.php !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/messaging/global-business/send-single-sms.java !}
-    ```
-
-=== "Ruby"
-
-    ```ruby
-    {!> code-samples/messaging/global-business/send-single-sms.rb !}
-    ```
-
-=== ".NET"
-
-    ```csharp
-    {!> code-samples/messaging/global-business/send-single-sms.cs !}
-    ```
-
-=== "cURL"
-
-    ```bash
-    {!> code-samples/messaging/global-business/send-single-sms.sh !}
-    ```
-
-[Detailed API Reference on sending an SMS](https://messente.com/documentation/messente-api/omnimessage/)
-
-## Get delivery reports
-
-Messente tracks your sent message and reports [status updates](delivery-report.md) back to you.
-
-To be able to view the status, you must add a callback URL to the message. Messente will use this URL to make HTTP POST requests, if there is a status update.
-
-Here is a code snippet for you to test it out quickly.
-
-=== "Python"
-
-    ```python
-    {!> code-samples/messaging/global-business/get-dlr.py !}
-    ```
-
-=== "Node"
-
-    ```javascript
-    {!> code-samples/messaging/global-business/get-dlr.js !}
-    ```
-
-=== "PHP"
-
-    ```php
-    {!> code-samples/messaging/global-business/get-dlr.php !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/messaging/global-business/get-dlr.java !}
-    ```
-
-=== "Ruby"
-
-    ```ruby
-    {!> code-samples/messaging/global-business/get-dlr.rb !}
-    ```
-
-=== ".NET"
-
-    ```csharp
-    {!> code-samples/messaging/global-business/get-dlr.cs !}
-    ```
-
-=== "cURL"
-
-    ```bash
-    {!> code-samples/messaging/global-business/get-dlr.sh !}
-    ```
-
-[Learn more about the delivery status](delivery-report.md)
-
-## Send an SMS with Omnichannel API
-
-You can also use the Omnichannel API to send an SMS message directly.
-
-=== "Python"
-
-    ```python
-    {!> code-samples/messaging/global-business/send-fallback.py !}
-    ```
-
-=== "Node"
-
-    ```javascript
-    {!> code-samples/messaging/global-business/send-fallback.js !}
-    ```
-
-=== "PHP"
-
-    ```php
-    {!> code-samples/messaging/global-business/send-fallback.php !}
-    ```
-
-=== "Java"
-
-    ```java
-    {!> code-samples/messaging/global-business/send-fallback.java !}
-    ```
-
-=== "Ruby"
-
-    ```ruby
-    {!> code-samples/messaging/global-business/send-fallback.rb !}
-    ```
-
-=== ".NET"
-
-    ```csharp
-    {!> code-samples/messaging/global-business/send-fallback.cs !}
-    ```
-
-=== "cURL"
-
-    ```bash
-    {!> code-samples/messaging/global-business/send-fallback.sh !}
-    ```
-
-## Next steps
-
-Integrating SMS to your application should never take more than a day.
-Now that you have things set up it's time to get yourself a proper [sender name](sender-name.md).
+### Behind the Scenes: What's Next?
+We are actively designing a unified developer experience where you will eventually be able to manage your RingCentral UCaaS/CCaaS APIs and Messente bulk messaging tools from a single login, contract, and credential set. Stay tuned to our developer newsletter for integration timelines!
