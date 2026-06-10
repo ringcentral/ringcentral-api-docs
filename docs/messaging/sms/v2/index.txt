@@ -2,7 +2,7 @@
 
 !!! info "Developers should familiarize themselves with [RingCentral's SMS content and messaging policies](https://www.ringcentral.com/legal/sms-mms-content-policies.html)"
 
-Batch messaging (also known as broadcast messaging) is designed for sending SMS or MMS messages to multiple recipients in a single request. It is typically used for one-way communication where the sender delivers a consistent message to a large audience, such as announcements, alerts, reminders, or marketing promotions.
+Batch messaging (also known as bulk messaging) is designed for sending SMS or MMS messages to multiple recipients in a single request. It is typically used for one-way communication where the sender delivers a consistent message to a large audience, such as announcements, alerts, reminders, or marketing promotions.
 
 RingCentral batch messaging API is optimized for high throughput and scalability, allowing developers to efficiently send messages to hundreds or thousands of recipients in a single API call.
 Because batch messaging is often subject to carrier and TCR compliance rules, message content must align with an approved campaign use case and adhere to daily throughput limits based on the campaign’s registration tier.

@@ -155,6 +155,13 @@ nav:
       - 'Requests and Authentication': 'messaging/sms/global-business/requests-and-authentication.md'
     - 'Number Lookup':
       - 'Overview': 'messaging/sms/number-lookup/index.md'
+    # - 'Message Batches':
+    #   - 'Overview': 'messaging/sms/v2/index.md'
+    #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
+    #   - 'Send Message Batches': 'messaging/sms/v2/send-sms-batches.md'
+    #   - 'Read Message Store': 'messaging/sms/v2/message-store.md'
+    #   - 'Event Notifications': 'messaging/sms/v2/events.md'
+    #   - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
     - 'High Volume SMS':
       - 'Overview': 'messaging/sms/high-volume/index.md'
       - 'Best Practices': 'messaging/sms/high-volume/best-practices.md'
@@ -164,6 +171,18 @@ nav:
       - 'Opt-in / Opt-out': 'messaging/sms/high-volume/opt-out.md'
       - 'Event Notifications': 'messaging/sms/high-volume/events.md'
       - 'Errors Handling': 'messaging/sms/high-volume/handling-errors.md'
+    - 'Message Threads':
+      - 'Overview': 'messaging/sms/threads/index.md'
+      - 'Configurations': messaging/sms/threads/configurations.md
+      - 'Send Thread Messages': 'messaging/sms/threads/send-thread-sms.md'
+      - 'Threads Handling': 'messaging/sms/threads/threads-handling.md'
+      - 'Messages Handling': 'messaging/sms/threads/messages-handling.md'
+      - 'Notes Handling': 'messaging/sms/threads/notes-handling.md'
+      - 'Event Notifications': 'messaging/sms/threads/events.md'
+      # - 'Migration instruction': 'messaging/sms/threads/migration.md'
+      # - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
+    - 'SMS Consent':
+      - 'Consent management': 'messaging/sms/messaging-consent-management.md'
     - 'Fax':
       - 'Sending Faxes': 'messaging/fax/sending-faxes.md'
       - 'Multipart Formats': 'messaging/fax/fax-multipart-formats.md'
@@ -419,6 +438,8 @@ nav:
         - "Specific Message Batch Event": 'notifications/event-filters/specific-message-batch.md'
         - "Batch Messages Event": 'notifications/event-filters/batch-messages.md'
         - "Batch Message Opt-Out Event": 'notifications/event-filters/batch-message-optout.md'
+      - "Message Threads events":
+        - "Message Thread events": 'notifications/event-filters/thread-messaging-events.md'
       - "Team Messaging events":
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'

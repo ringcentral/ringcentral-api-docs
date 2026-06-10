@@ -10,7 +10,7 @@ def read_shared_phone_number_detect_sms_feature():
         jsonObj = resp.json_dict()
         for record in jsonObj['records']:
             # Find the "Financial Advising Queue" call queue's direct phone number
-            if 'extension' in record and record['extension']['name'] == "Phong's Queue":
+            if 'extension' in record and record['extension']['name'] == "Financial Advising Queue":
                 for feature in record['features']:
                     if feature == "SmsSender":
                         send_thread_message(record.phoneNumber)

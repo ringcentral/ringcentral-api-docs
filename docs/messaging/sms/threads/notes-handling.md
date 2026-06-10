@@ -22,7 +22,7 @@ These APIs allow users to create, retrieve, update, and manage internal thread n
 
 ## Create notes
 
-To add a note to a thread, get the thread Id, then call the [Create New Note API]() as shown in the JavaScript sample code below:
+To add a note to a thread, get the thread Id, then call the [Create New Note API](https://developers.ringcentral.com/api-reference/Message-Threads/mthCreateNote) as shown in the JavaScript sample code below:
 
 ### Sample code
 
@@ -69,7 +69,7 @@ async function create_note(){
 
 Any SMS handler can retrieve notes from all message threads associated with the common resources to which the handler is assigned.
 
-When listing notes, developers can call the [List Notes API]() and use query parameters to filter the results based on specific criteria, such as common resource(s) identified by the `ownerExtensionIds`, target thread(s) identified by the `threadIds` or specific note(s) identified by the `noteIds` filters. This allows applications to retrieve only the notes relevant to a particular workflow or user experience.
+When listing notes, developers can call the [List Notes API](https://developers.ringcentral.com/api-reference/Message-Threads/mthListNotes) and use query parameters to filter the results based on specific criteria, such as common resource(s) identified by the `ownerExtensionIds`, target thread(s) identified by the `threadIds` or specific note(s) identified by the `noteIds` filters. This allows applications to retrieve only the notes relevant to a particular workflow or user experience.
 
 ### Sample code
 

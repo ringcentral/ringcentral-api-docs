@@ -21,9 +21,9 @@ Once a RingCentral account is enabled for the Thread Messaging feature, the SMS 
 
 After Thread Messaging is enabled:
 
-* You can manage multiple SMS handlers for call queue direct numbers (a.k.a shared inbox).  
-* Legacy and new SMS APIs remain functional for sending outbound SMS messages from call queue direct numbers. You can use this feature for sending out notifications without the need of recipient’s response to your message.  
-* The Message Threads store becomes the default for all new inbound and threaded outbound messages.  
+* You can manage multiple SMS handlers for call queue direct numbers (a.k.a shared inbox).
+* Legacy and new SMS APIs remain functional for sending outbound SMS messages from call queue direct numbers. You can use this feature for sending out notifications without the need of recipient’s response to your message.
+* The Message Threads store becomes the default for all new inbound and threaded outbound messages.
 * Migration can be performed gradually without interrupting existing SMS workflows.
 
 | Actions/Message record | V1.0 Message Store | Message Threads Store |

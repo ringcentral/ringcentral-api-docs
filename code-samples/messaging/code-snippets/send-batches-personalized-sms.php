@@ -31,7 +31,7 @@ function read_extension_phone_number_detect_sms_feature(){
  Send a batch from a user own phone number to multiple recipient with personalized message
 */
 function send_personalized_sms($fromNumber) {
-  global $platform, $RECIPIENT;
+  global $platform;
   try {
     $bodyParams = [
         "from" => [

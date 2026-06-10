@@ -138,12 +138,18 @@ def boostrap_test_function():
   # ms.read_extension_phone_number_detect_a2psms_feature()
 
 
+  # time.sleep(2)
+  # print ("Test receive reply sms")
+  # ms = importlib.import_module("code-snippets.receive-reply-sms")
+  # ms.platform = platform
+  # ms.rcsdk = rcsdk
+  # ms.login()
+
   time.sleep(2)
-  print ("Test receive reply sms")
-  ms = importlib.import_module("code-snippets.receive-reply-sms")
+  print ("Test download thread messaging mms attachments")
+  ms = importlib.import_module("code-snippets.download-thread-msg-attachments")
   ms.platform = platform
   ms.rcsdk = rcsdk
-  ms.login()
-
+  ms.list_messages()
 ########
 # boostrap_test_function()

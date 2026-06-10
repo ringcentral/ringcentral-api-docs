@@ -124,16 +124,20 @@ def boostrap_test_function()
     # require_relative './code-snippets/send-a2p-sms'
     # read_extension_phone_number_detect_a2psms_feature()
 
-    sleep(2)
-    puts "Test receive reply sms"
-    require_relative './code-snippets/receive-reply-sms'
-    subscribe_for_instant_messages_notification()
-    # download_mms_attachment("")
+    # sleep(2)
+    # puts "Test receive reply sms"
+    # require_relative './code-snippets/receive-reply-sms'
+    # subscribe_for_instant_messages_notification()
 
     # sleep(2)
     # puts "Test download MMS attachments"
     # require_relative './code-snippets/receive-reply-sms'
     # download_mms_attachment("")
+
+    sleep(2)
+    puts "Test download thread messaging MMS attachments"
+    require_relative './code-snippets/download-thread-msg-attachments'
+    list_messages()
 end
 
-boostrap_test_function()
+# boostrap_test_function()

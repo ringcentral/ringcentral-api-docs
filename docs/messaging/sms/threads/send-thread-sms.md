@@ -2,12 +2,12 @@
 
 Any SMS handler of a common resource can initiate a new message to a customer using a shared phone number associated with the resource. However, if an open thread already exists for that pair of phone numbers, only the thread’s current assignee can send reply messages. This ensures consistent ownership and prevents conflicting responses within an active conversation.
 
-Before learning how to send thread messages using the [`/restapi/v1.0/account/~/message-threads/messages`]() endpoint, developers should first understand how to identify [shared phone numbers](../configurations/#detect-shared-phone-numbers-from-common-resources) and the [SMS handlers](../configurations/#multiple-sms-recipients-configuration) assigned to common resources.
+Before learning how to send thread messages using the [`/restapi/v1.0/account/~/message-threads/messages`](https://developers.ringcentral.com/api-reference/Message-Threads/mthSendMessage) endpoint, developers should first understand how to identify [shared phone numbers](../configurations/#detect-shared-phone-numbers-from-common-resources) and the [SMS handlers](../configurations/#multiple-sms-recipients-configuration) assigned to common resources.
 
 To send thread messages, your application must:
 
 - Authenticate the user extension who is one of the SMS handlers.
-- Retrieve the list of phone numbers assigned to the authenticated user by calling the `/restapi/v1.0/account/~/extension/~/phone-number` endpoint and select a shared phone number from the API's response. Remember to detect if the "SmsSender" feature is attached to the selected shared phone number.
+- Retrieve the list of phone numbers assigned to the authenticated user by calling the [`/restapi/v1.0/account/~/extension/~/phone-number`](https://developers.ringcentral.com/api-reference/Phone-Numbers/listExtensionPhoneNumbers) endpoint and select a shared phone number from the API's response. Remember to detect if the "SmsSender" (and "MmsSender") feature is attached to the selected shared phone number.
 
 ??? info "Sample data"
     Example info of a main company phone number assigned to a SMS handler.
@@ -16,7 +16,8 @@ To send thread messages, your application must:
     {
       "features": [
         "CallerId",
-        "SmsSender" // Indicates that the number has the SMS feature
+        "SmsSender", // Indicates that the number has the SMS feature
+        "MmsSender" // Indicates that the number has the MMS feature
       ],
       "id": 656379052,
       "phoneNumber": "+1408412XXXX",
@@ -36,7 +37,8 @@ To send thread messages, your application must:
     {
       "features": [
         "CallerId",
-        "SmsSender" // Indicates that the number has the SMS feature
+        "SmsSender", // Indicates that the number has the SMS feature
+        "MmsSender" // Indicates that the number has the MMS feature
       ],
       "id": 656614052,
       "phoneNumber": "+1619837XXXX",
@@ -56,7 +58,8 @@ To send thread messages, your application must:
     {
       "features": [
         "CallerId",
-        "SmsSender" // Indicates that the number has the SMS feature
+        "SmsSender", // Indicates that the number has the SMS feature
+        "MmsSender" // Indicates that the number has the MMS feature
       ],
       "id": 121366771234,
       "phoneNumber": "+1555987XXXX", // The phone number
@@ -80,7 +83,8 @@ To send thread messages, your application must:
     {
       "features": [
         "CallerId",
-        "SmsSender" // Indicates that the number has the SMS feature
+        "SmsSender", // Indicates that the number has the SMS feature
+        "MmsSender" // Indicates that the number has the MMS feature
       ],
       "id": 657014052,
       "phoneNumber": "+1657276XXXX",
@@ -104,7 +108,8 @@ To send thread messages, your application must:
     {
       "features": [
         "CallerId",
-        "SmsSender" // Indicates that the number has the SMS feature
+        "SmsSender", // Indicates that the number has the SMS feature
+        "MmsSender" // Indicates that the number has the MMS feature
       ],
       "id": 657031052,
       "phoneNumber": "+1657505XXXX",
@@ -124,10 +129,6 @@ To send thread messages, your application must:
 
 
 - Use the selected shared phone number to send a message.
-
-    !!! note
-        * Currently, only text content is supported in thread messaging. Multimedia content will be supported in future releases.  
-        * Thread messaging does not support group messaging. This means that each thread is formed by a pair of 2 phone numbers.
 
 ## Use cases and sample codes
 

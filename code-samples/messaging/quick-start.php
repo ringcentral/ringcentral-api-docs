@@ -102,7 +102,7 @@ function check_message_status($messageId){
 **********************************************************/
 $RECIPIENT2    = $_ENV['SMS_RECIPIENT2'];
 
-boostrap_test_function();
+// boostrap_test_function();
 function boostrap_test_function(){
   /*
   print_r ("Test reading number features". PHP_EOL);
@@ -135,8 +135,12 @@ function boostrap_test_function(){
   // sleep(2);
   // include_once (__DIR__ .'/code-snippets/receive-reply-sms.php');
 
-  print_r ("Test download MMS attachment". PHP_EOL);
+  // print_r ("Test download MMS attachment". PHP_EOL);
+  // sleep(2);
+  // include_once (__DIR__ .'/code-snippets/download-mms-attachment.php');
+
+  print_r ("Test download thread message MMS attachment". PHP_EOL);
   sleep(2);
-  include_once (__DIR__ .'/code-snippets/download-mms-attachment.php');
+  include_once (__DIR__ .'/code-snippets/download-thread-msg-attachments.php');
 }
 ?>

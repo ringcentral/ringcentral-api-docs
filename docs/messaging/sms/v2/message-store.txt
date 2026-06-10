@@ -1,6 +1,6 @@
 # Batch messaging message store
 
-Each user extension can access its own message store to retrieve SMS and MMS message records, as well as batch message records associated with its direct phone number(s).
+Each user extension can access its own message store to retrieve SMS and MMS message records, as well as message batch records associated with its direct phone number(s).
 
 The message store provides access to both individual message details and batch messaging history, allowing developers to track message status, review delivery results, and manage message-related data for each user extension.
 
@@ -14,7 +14,7 @@ Use the APIs in the table below to access your batch messaging message store.
 | [`/restapi/v2/accounts/~/extensions/~/sms/status-summary`](#read-message-statuses) | Read aggregated message statuses from the message store. |
 | [`/restapi/v2/accounts/~/extensions/~/sms/messages/{messageId}`](#read-individual-message) | Read a single message identified by the message Id. |
 
-## Read batch message store
+## Read batches message store
 
 You can read the entire batch messaging message store then iterate through the `records` array in the response to parse each message's metadata. Use the `nextPageToken` to read the next page if the total number of records is greater than the maximum number of items per page.
 
@@ -149,7 +149,7 @@ To avoid loading the entire message store, which could be extremely large, you c
           'timeTo' => "2026-01-31T23:59:59.999Z",
           'phoneNumber' => array("+16505550100")
         );
-        $endpoint = "/restapi/v1.0/account/~/a2p-sms/messages";
+        $endpoint = "/restapi/v2/accounts/~/extensions/~/sms/messages";
       	$resp = $platform->get($endpoint, $queryParams);
         $jsonObj = $resp->json();
         print_r (json_encode($jsonObj, JSON_PRETTY_PRINT) . PHP_EOL);
@@ -801,7 +801,7 @@ To get a quick report on message statuses in a batch or within a period of time,
 
 ## Read Individual Message
 
-You can read individual message details from the batch message store using a message Id. Message ids can be retrieved from the response of this [endpoint](#read-batch-message-store)
+You can read individual message details from the batches message store using a message Id. Message ids can be retrieved from the response of this [endpoint](#read-batch-message-store)
 
 ### Sample codes
 

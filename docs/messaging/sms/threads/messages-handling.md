@@ -6,7 +6,7 @@ Any SMS handler can view all messages in the thread messaging store for the comm
 
 The list message threads API supports multiple filters which can be used to optimize the response which returns only interested messages. For example, a handler can set the “threadStatus”=”Open” to list only messages from open threads, or set the “ownerExtensionIds” to a common resource ID (e.g. a call queue extension ID) to list only messages created for that common resource. This is useful when a handler is a member of multiple common resources.
 
-The `/restapi/v1.0/account/~/message-threads/messages` API currently supports the following essential filters:
+The [`/restapi/v1.0/account/~/message-threads/messages`](https://developers.ringcentral.com/api-reference/Message-Threads/mthListMessages) API currently supports the following essential filters:
 
 | Filter name | type | Description | Note |
 | :---- | :---- | :---- | :---- |
@@ -49,11 +49,32 @@ The `/restapi/v1.0/account/~/message-threads/messages` API currently supports th
 ]
 ```
 
-A thread message does not include the pair of sender and recipient phone numbers. Developers should use the `threadId` in each message record to connect messages in a thread to create a conversation. To detect the pair of phone numbers, developers should call the [Read Message Thread API](../thread-handling/#read-a-message-thread).
+A thread message does not include the pair of sender and recipient phone numbers. Developers should use the `threadId` in each message record to connect messages in a thread to create a conversation. To detect the pair of phone numbers, developers should call the [Read Message Thread API](../threads-handling/#read-a-message-thread).
 
-## Delete a message
+## Delete messages
 
-TBD. Not implemented
+Any SMS handler can delete a message in the thread messaging store for the common resources they belong to, regardless of whether they are assigned to a specific thread. This provides flexibility in message management, allowing handlers to perform cleanup or moderation actions across shared resources without requiring explicit thread ownership.
+
+To delete multiple messages in a single API call, developers can specify a list of message IDs to be deleted. Batching deletions this way reduces the number of API calls required and improves overall performance, making it especially useful when managing high volumes of messages.
+
+It is the developer's responsibility to restrict message deletion if the application requires that only the assignee can delete messages from their threads. This access control logic must be implemented at the application level, as the API does not enforce ownership-based deletion restrictions by default. Developers should validate the requesting user's identity and thread assignment before invoking the delete operation.
+
+### Sample code
+
+```JavaScript
+async function delete_messages(){
+  try{
+    let bodyParams = {
+      ids: ["4344768583", "4353120793"]
+    }
+    let endpoint = "/restapi/v1.0/account/~/message-threads/messages"
+    await platform.delete(endpoint, bodyParams)
+    console.log("Message(s) deleted")
+  }catch(e){
+    console.log(e.message)
+  }
+}
+```
 
 ## Sync thread entries (messages)
 
@@ -116,3 +137,68 @@ async function incremental_sync_thread_messages(){
   }
 }
 ```
+
+## Render and download message attachments
+
+If a message contains attachment(s), the attachment's metadata is included in the message object under the `attachments` array as shown in the sample message below:
+
+```json
+{
+  "id": "4345841054",
+  "threadId": "cb1bbb90-8091-4dce-a70d-5491c109546f",
+  "availability": "Alive",
+  "creationTime": "2026-05-18T19:24:30.975Z",
+  "lastModifiedTime": "2026-05-18T19:34:33.902Z",
+  "direction": "Inbound",
+  "messageStatus": "Received",
+  "text": "Here is the image of the damaged part.",
+  "attachments": [
+    {
+      "size": 65012,
+      "contentType": "image/png",
+      "id": "488010059",
+      "contentUri": "https://media.ringcentral.com/restapi/v1.0/account/80964XXXX/message-threads/messages/4345841054/content/488010059",
+      "filename": "image-001.png"
+    }
+  ]
+}
+```
+<br>
+To render attachment(s) directly in a web application UI from the remote server, developers can use the `contentUri` value and include the user’s valid access token when requesting the resource.
+
+For example, to display the image from the sample attachment above, retrieve the user’s access token, construct the authenticated content URI, and assign it to the image element’s src attribute.
+
+```http
+<img src='https://media.ringcentral.com/restapi/v1.0/account/80964XXXX/message-threads/messages/4345841054/content/488010059?access_token=valid-user-access-token'></img>
+```
+<br>
+To download attachments and save them locally, developers can send an HTTP GET request to the content URI to retrieve the binary content and save it to a file.
+
+### Sample code
+
+The sample code below download a message attachment(s) and save to a local file.
+
+=== "JavaScript"
+
+    ```javascript
+    {!> code-samples/messaging/code-snippets-headers/header.js [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/download-thread-msg-attachments.js [ln:10-] !}
+    ```
+
+=== "Python"
+    ```python
+    {!> code-samples/messaging/code-snippets/download-thread-msg-attachments.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    ```
+
+=== "PHP"
+    ```php
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13] !}
+    {!> code-samples/messaging/code-snippets/download-thread-msg-attachments.php [ln:2-]!}
+    ```
+
+=== "Ruby"
+    ```ruby
+    {!> code-samples/messaging/code-snippets/download-thread-msg-attachments.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4] !}
+    ```

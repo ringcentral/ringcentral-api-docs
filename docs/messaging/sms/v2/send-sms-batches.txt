@@ -28,27 +28,27 @@ Design your integration to handle the asynchronous workflow appropriately and to
 
 The `/batches` API can be used with any phone number owned by the authenticated application user. However, each phone number may be associated with a different TCR campaign ID. Some campaign IDs may be registered under a low-volume tier, which imposes daily message limits for that specific phone number.
 
-Before sending batch messages—especially to a large audience—developers should implement logic to verify the capabilities of the selected phone number. This includes checking the [assigned TCR campaign](../sms-requirements.md/#checking-phone-number-sms-configuration), its registration tier, applicable daily throughput limits, and the approved use cases associated with that campaign.
+Before sending message batches—especially to a large audience—developers should implement logic to verify the capabilities of the selected phone number. This includes checking the [assigned TCR campaign](../sms-requirements.md/#checking-phone-number-sms-configuration), its registration tier, applicable daily throughput limits, and the approved use cases associated with that campaign.
 
 Performing these validations in advance helps ensure successful batch delivery, prevents exceeding SMS volume limits, and reduces the risk of sending content that does not align with the campaign’s registered use case. Proper validation also minimizes message failures and helps maintain compliance with messaging regulations.
 
 !!! note
     There is no limit to number of recipients in a batch. However, the maximum size of each batch is about 50MB.
 
-## Who can send batch messages
+## Who can send message batches
 
-SMS batch messages can only be sent from phone numbers that are owned by the authenticated user extension. To learn more about ownership, refer to [this developer guide](https://developers.ringcentral.com/guide/messaging/sms/sms-requirements#understanding-phone-number-ownership-and-feature-assignment-in-ringcentral).
+SMS message batches can only be sent from phone numbers that are owned by the authenticated user extension. To learn more about ownership, refer to [this developer guide](https://developers.ringcentral.com/guide/messaging/sms/sms-requirements#understanding-phone-number-ownership-and-feature-assignment-in-ringcentral).
 
-When using the `/restapi/v2/accounts/~/extensions/~/sms/batches` endpoint to send batch messages, your application must:
+When using the `/restapi/v2/accounts/~/extensions/~/sms/batches` endpoint to send message batches, your application must:
 
 1. Authenticate a user extension.
 2. Retrieve the list of phone numbers assigned to the authenticated user by calling the `/restapi/v1.0/account/~/extension/~/phone-number` endpoint.
 3. Check that the selected number has SMS capabilities. This can be verified by checking the features field in the phone number metadata (should include "SmsSender").
 4. Send the batch message using the phone number that meets the above criteria.
 
-!!! important "Sending batch messages on behalf of other users?"
+!!! important "Sending message batches on behalf of other users?"
     * Even a super admin user cannot send a batch message on behalf of other user extensions!
-    * If a phone number is assigned to an account-level common resource (for example, a call queue), all user extensions designated as SMS recipients for that number are permitted to send batch messages from that phone number. However, that batch messages are not synchronized with the thread messaging message store and therefore will not be visible in the RC app’s Shared Inbox.
+    * If a phone number is assigned to an account-level common resource (for example, a call queue), all user extensions designated as SMS recipients for that number are permitted to send a message batch from that phone number. However, that message batch is not synchronized with the thread messaging message store and therefore will not be visible in the RC app’s Shared Inbox.
 
 ## Use cases and sample codes
 
@@ -111,7 +111,7 @@ Using the messaging system, the assistant or application sends these reminders i
 === "Python"
     ```python
     {!> code-samples/messaging/code-snippets/send-batches-personalized-sms.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5]!}
     ```
 
 === "PHP"
@@ -142,19 +142,19 @@ Using group messaging, the teacher can send targeted messages to each student gr
 === "Python"
     ```python
     {!> code-samples/messaging/code-snippets/send-batches-group-sms.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer.py !}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5]!}
     ```
 
 === "PHP"
     ```php
-    {!> code-samples/messaging/code-snippets-headers/header.php !}
+    {!> code-samples/messaging/code-snippets-headers/header.php [ln:1-13]!}
     {!> code-samples/messaging/code-snippets/send-batches-group-sms.php [ln:2-]!}
     ```
 
 === "Ruby"
     ```ruby
     {!> code-samples/messaging/code-snippets/send-batches-group-sms.rb !}
-    {!> code-samples/messaging/code-snippets-headers/footer.rb !}
+    {!> code-samples/messaging/code-snippets-headers/footer.rb [ln:1-4]!}
     ```
 
 ### Use Case 4: Retailer SMS promotion campaign with new product image
@@ -171,7 +171,7 @@ A retail clothing brand is launching a new seasonal jacket and wants to promote 
 === "Python"
     ```python
     {!> code-samples/messaging/code-snippets/send-batches-mms.py !}
-    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-6]!}
+    {!> code-samples/messaging/code-snippets-headers/footer.py [ln:1-5]!}
     ```
 
 === "PHP"

@@ -45,7 +45,7 @@ Any SMS handler assigned to a common resource can view all message threads assoc
 
 The list message threads API supports multiple filters which can be used to optimize the response which returns only interested threads. For example, an SMS handler can set the “threadStatus”=”Open” to list only open threads, or set the “ownerExtensionIds” to a common resource ID (e.g. a call queue extension ID) to list only threads created for that common resource. This is useful when the SMS handler is a member of multiple common resources.
 
-The `/restapi/v1.0/account/~/message-threads` API currently supports the following essential filters:
+The [`/restapi/v1.0/account/~/message-threads`](https://developers.ringcentral.com/api-reference/Message-Threads/mthListThreads) API currently supports the following essential filters:
 
 | Filter name | type | Description | Note |
 | :---- | :---- | :---- | :---- |
@@ -261,7 +261,7 @@ async function delete_thread(threadId){
   }
 }
 ```
-
+<br>
 When a thread is deleted, all messages associated with that thread will be deleted.
 
 ## Sync message threads

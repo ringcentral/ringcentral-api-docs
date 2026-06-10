@@ -157,11 +157,15 @@ async function boostrap_test_function(){
   // console.log("Test access HV message store")
   // require ('./code-snippets/a2p-message-store.js')
 
-  await sleep(2000)
-  console.log("Test receive reply message")
-  require ('./code-snippets/receive-reply-sms.js')
+  // await sleep(2000)
+  // console.log("Test receive reply message")
+  // require ('./code-snippets/receive-reply-sms.js')
 
   // await sleep(2000)
   // console.log("Test download mms attachment")
   // require ('./code-snippets/download-mms-attachment.js')
+
+  await sleep(2000)
+  console.log("Test list and download thread messaging mms attachment")
+  require ('./code-snippets/download-thread-msg-attachments.js')
 }

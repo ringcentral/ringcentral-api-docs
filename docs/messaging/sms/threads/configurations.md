@@ -13,11 +13,10 @@ To identify these resources, developers must retrieve their corresponding extens
 * **Sites**: To retrieve the account’s site resources, call the [List Sites API](https://developers.ringcentral.com/api-reference/Multi-Site/listSites).
 
     !!! important
-        For the main site (Company site), developers must call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=CompanyExtension` to detect the resource Id and necessary info. The List Sites API returns only sub-sites if any are available.
+        - For the main site (Company site), developers must call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=CompanyExtension` to detect the resource Id and necessary info. The List Sites API returns only sub-sites if any are available.
+        - IVR menus are considered common resources, but they do not have their own SMS recipient configuration. Instead, the SMS recipients for an IVR menu’s direct phone numbers are inherited from the site to which the IVR menu is assigned.
 
-* **IVR menus**: To retrieve the account’s IVR menu resources, call the [List IVR Menus API](https://developers.ringcentral.com/api-reference/IVR/readIVRMenuList).
-
-Alternatively, developers can call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=Department&type=Site&type=IvrMenu&type=CompanyExtension` to detect the resource Id and necessary info.
+Alternatively, developers can call the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=Department&type=Site&type=CompanyExtension` to detect the resource Id and necessary info.
 
 The API returns a list of extension objects representing the requested resources. Each object contains key information about the resource, including the extension ID and name.
 
@@ -91,7 +90,7 @@ bodyParams = {
 POST /restapi/v1.0/account/~/extension/{CommonResourceExtId}/sms-recipients/bulk-assign
 ```
 
-!!! note
+!!! hint
     Detect user extension Ids by calling the [List Extensions API](https://developers.ringcentral.com/api-reference/Extensions/listExtensions) with the query parameter `type=User`
 
 ## Detect shared phone numbers from common resources
@@ -106,25 +105,27 @@ An example of an account's phone numbers assignment shown in the account admin p
 <img class="img-fluid" src="../../../../img/common-resources-numbers.png">
 <br>
 
-### Detect main-site (Company) shared phone numbers
+### Detect main site (Company site) shared phone numbers
 
 The main site's shared phone numbers are the following numbers:
 
 - The account main company number.
 - Any phone number assigned to the main site auto-receptionist.
-- Any phone number assigned to an IVR menu under the main site.
+- Any phone number assigned to an IVR menu associated with the main site.
 
 An example of a main site IVR menu direct number
 
 <img class="img-fluid" src="../../../../img/main-site-ivr-number.png">
 <br>
 
-To programmatically detect the main site (Company site) common phone numbers, developers can call the [List Account Phone Numbers](https://developers.ringcentral.com/api-reference/Phone-Numbers/listAccountPhoneNumbersV2) with the query parameter `usageType=MainCompanyNumber&usageType=CompanyNumber`
+To programmatically detect the main site (Company site) shared phone numbers, developers can call the [List Account Phone Numbers](https://developers.ringcentral.com/api-reference/Phone-Numbers/listAccountPhoneNumbersV2) with the query parameter `usageType=MainCompanyNumber&usageType=CompanyNumber`
 
-The sample code below demonstrates how to retrieve shared phone numbers from the main site.
+In addition, the main site may have associated IVR menus that have their own direct phone numbers. To identify these shared phone numbers programmatically, developers can call the List IVR Menus API to find the IVR menus associated with the main site, and then use the IVR menu extension IDs to retrieve their direct phone numbers from the List Account Phone Numbers API.
+
+The sample code below demonstrates how to retrieve the direct phone numbers assigned to the main site (i.e. the company number(s) and the main company number), as well as the direct phone numbers assigned to IVR menus associated with the main site.
 
 ```JavaScript
-async function read_main_site_phone_numbers(ivrMenus){
+async function read_main_site_phone_numbers(){
   try{
     let queryParams = {
       usageType: ["MainCompanyNumber", "CompanyNumber"]
@@ -132,41 +133,50 @@ async function read_main_site_phone_numbers(ivrMenus){
     let endpoint = `/restapi/v2/accounts/~/phone-numbers`
     let resp = await platform.get(endpoint, queryParams)
     let jsonObj = await resp.json()
-    console.log("Main-site shared numbers:", JSON.stringify(jsonObj.records, null, 4))
+    let mainSiteSharedPhoneNumbers = {
+      name: "Main site",
+      ivrMenus: [],
+      phoneNumbers: []
+    }
+    for (let record of jsonObj.records){
+      if (record.type == "FaxOnly") continue
+
+      let item = {
+        type: record.usageType,
+        phoneNumber: record.phoneNumber
+      }
+      mainSiteSharedPhoneNumbers.phoneNumbers.push(item)
+    }
+    await read_main_site_ivr_menus(mainSiteSharedPhoneNumbers)
   }catch(e){
     console.log(e.message)
   }
 }
-```
 
-In addition, the main site may have IVR menus with their own direct phone numbers. To programmatically identify these shared phone numbers, developers can call the List IVR Menus API and determine which IVR menus are assigned to the main site. Then, use the IVR menu extension ID to locate the associated phone numbers from the list returned by the List Account Phone Numbers API.
-
-The sample code below demonstrates how to retrieve shared phone numbers from IVR menus assigned to the main site.
-
-```JavaScript
-async function list_main_site_ivr_menus(){
+async function read_main_site_ivr_menus(mainSiteSharedPhoneNumbers){
   try{
-    let endpoint = `/restapi/v1.0/account/~/ivr-menus`
-    let resp = await platform.get(endpoint)
+    let queryParams = {
+      type: ["IvrMenu"]
+    }
+    let endpoint = '/restapi/v1.0/account/~/extension'
+    let resp = await platform.get(endpoint, queryParams)
     let jsonObj = await resp.json()
-    let ivrMenus = []
     for (var record of jsonObj.records) {
-      if (record.site.id == 'main-site') {
+      if (record.site.name == 'Main Site') {
         let item = {
             name: record.name,
-            id: record.id,
-            phoneNumbers: []
+            id: record.id
         }
-        ivrMenus.push(item)
+        mainSiteSharedPhoneNumbers.ivrMenus.push(item)
       }
     }
-    await read_ivr_menu_phone_numbers(ivrMenus)
+    await read_ivr_menu_phone_numbers(mainSiteSharedPhoneNumbers)
   }catch(e){
     console.log(e.message)
   }
 }
 
-async function read_ivr_menu_phone_numbers(ivrMenus){
+async function read_ivr_menu_phone_numbers(mainSiteSharedPhoneNumbers){
   try{
     let queryParams = {
       usageType: ["DirectNumber"]
@@ -175,12 +185,18 @@ async function read_ivr_menu_phone_numbers(ivrMenus){
     let resp = await platform.get(endpoint, queryParams)
     let jsonObj = await resp.json()
     for (var record of jsonObj.records){
-      for (var menu of ivrMenus){
-        if (menu.id == record.extension.id)
-          menu.phoneNumbers.push(record.phoneNumber)
+      for (var menu of mainSiteSharedPhoneNumbers.ivrMenus){
+        if (menu.id == record.extension.id){
+          let item = {
+            type: "IvrMenuDirecNumber",
+            phoneNumber: record.phoneNumber
+          }
+          mainSiteSharedPhoneNumbers.phoneNumbers.push(item)
+          break
+        }
       }
     }
-    console.log("Main-site shared numbers", JSON.stringify(ivrMenus, null, 4))
+    console.log("Main site shared numbers", JSON.stringify(mainSiteSharedPhoneNumbers, null, 4))
   }catch(e){
     console.log(e.message)
   }
@@ -199,7 +215,7 @@ An example of a sub-site's IVR menu direct number
 <img class="img-fluid" src="../../../../img/sub-site-ivr-number.png">
 <br>
 
-The sample code below demonstrates how to retrieve direct phone numbers from sub sites.
+The sample code below demonstrates how to retrieve direct phone numbers assigned to all sub-sites, as well as direct phone numbers assigned to IVR menus associated with each site.
 
 ```JavaScript
 async function read_sub_sites(){
@@ -213,78 +229,77 @@ async function read_sub_sites(){
         let item = {
           name: record.name,
           id: record.id,
+          ivrMenus: [],
           phoneNumbers: []
         }
         subSites.push(item)
       }
     }
-    await read_sub_site_phone_numbers(subSites)
+    await list_subsite_ivr_menus(subSites)
   }catch(e){
     console.log(e.message)
   }
 }
 
-async function read_sub_site_phone_numbers(subSites){
+async function list_subsite_ivr_menus(subSites){
   try{
     let queryParams = {
-      usageType: ["DirectNumber"]
+      type: ["IvrMenu"]
     }
-    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
+    let endpoint = '/restapi/v1.0/account/~/extension'
     let resp = await platform.get(endpoint, queryParams)
-    let jsonObj = await resp.json()
-    for (var record of jsonObj.records){
-      for (var site of subSites){
-        if (site.id == record.extension.id)
-          site.phoneNumbers.push(record.phoneNumber)
-      }
-    }
-    console.log("Sub-site shared numbers", JSON.stringify(subSites, null, 4))
-  }catch(e){
-    console.log(e.message)
-  }
-}
-```
-
-The sample code below demonstrates how to retrieve shared phone numbers from IVR menus assigned to the sub sites.
-
-```JavaScript
-async function list_sub_site_ivr_menus(){
-  try{
-    let endpoint = `/restapi/v1.0/account/~/ivr-menus`
-    let resp = await platform.get(endpoint)
     let jsonObj = await resp.json()
     let ivrMenus = []
     for (var record of jsonObj.records) {
-      if (record.site.id != 'main-site') {
-        let item = {
-            name: record.name,
-            id: record.id,
-            phoneNumbers: []
+      if (record.site.hasOwnProperty("id")) {
+        let site = subSites.find(s => s.id == record.site.id)
+        let menu = {
+          name: record.name,
+          id: record.id
         }
-        ivrMenus.push(item)
+        site.ivrMenus.push(menu)
       }
     }
-    await read_ivr_menu_phone_numbers(ivrMenus)
+    await read_sub_site_direct_phone_numbers(subSites)
   }catch(e){
     console.log(e.message)
   }
 }
 
-async function read_ivr_menu_phone_numbers(ivrMenus){
+async function read_sub_site_direct_phone_numbers(subSites){
   try{
     let queryParams = {
       usageType: ["DirectNumber"]
     }
-    let endpoint = `/restapi/v2/accounts/~/phone-numbers`
-    let resp = await platform.get(endpoint, queryParams)
-    let jsonObj = await resp.json()
-    for (var record of jsonObj.records){
-      for (var menu of ivrMenus){
-        if (menu.id == record.extension.id)
-          menu.phoneNumbers.push(record.phoneNumber)
+    const forLoop = async _ => {
+      for (let site of subSites){
+        let endpoint = `/restapi/v1.0/account/~/extension/${site.id}/phone-number`
+        let resp = await platform.get(endpoint, queryParams)
+        let jsonObj = await resp.json()
+        for (let record of jsonObj.records){
+          if (!record.extension){
+            // site direct number record
+            let item = {
+              type: "SiteDirectNumber",
+              phoneNumber: record.phoneNumber
+            }
+            site.phoneNumbers.push(item)
+          }else{
+            // IVR menu number record
+            let menu = site.ivrMenus.find(m => m.id == record.extension.id)
+            if (menu){
+              let item = {
+                type: "IvrMenuDirecNumber",
+                phoneNumber: record.phoneNumber
+              }
+              site.phoneNumbers.push(item)
+            }
+          }
+        }
       }
     }
-    console.log("Sub-site shared numbers", JSON.stringify(ivrMenus, null, 4))
+    await forLoop()
+    console.log("Sub site(s) shared numbers:", JSON.stringify(subSites, null, 4))
   }catch(e){
     console.log(e.message)
   }
