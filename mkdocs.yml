@@ -58,7 +58,7 @@ nav:
     - 'Build an app': 'getting-started/code-app.md'
     - 'Sending SMS': 'getting-started/sms.md'
     - 'Promote your app': 'getting-started/promote-app.md'
-  - 'Voice':
+  - 'Phone':
     - 'Overview': 'voice/index.md'
     - 'Getting Started': 'voice/quick-start.md'
     - 'Placing Calls':
@@ -174,19 +174,19 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
-  - 'Team Messaging':
+  - 'Chat':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'
     - 'Core concepts':
       - 'Chats': 'team-messaging/concepts/chats.md'
       - 'Conversations': 'team-messaging/concepts/conversations.md'
       - 'Teams': 'team-messaging/concepts/teams.md'
-    - 'Team Messaging API Basics':
+    - 'Chat API Basics':
       - 'Pagination': 'team-messaging/manual/pagination.md'
 #      - 'Permissions': 'team-messaging/manual/permissions.md'
       - 'Mentions': 'team-messaging/manual/mentions.md'
       - 'Composing deep links': 'basics/uri-schemes.md'
-    - 'Team Messaging events':
+    - 'Chat events':
       - 'Subscribing to webhooks': 'team-messaging/events/outgoing-webhooks.md'
       - 'Post events': 'team-messaging/events/posts.md'
       - 'Chat events': 'team-messaging/events/groups.md'
@@ -413,7 +413,7 @@ nav:
         - "Batch Message Opt-Out Event": 'notifications/event-filters/batch-message-optout.md'
       - "Message Threads events":
         - "Message Thread events": 'notifications/event-filters/thread-messaging-events.md'
-      - "Team Messaging events":
+      - "Chat events":
         - "Post Message Event": 'notifications/event-filters/post.md'
         - "Chats Event": 'notifications/event-filters/chat.md'
       - "RingSense":
