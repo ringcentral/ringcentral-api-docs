@@ -49,7 +49,7 @@ This deep link opens a specific team chat identified by `abc123` in the RingCent
 | `https://app.ringcentral.com/message/{messageId}`      | Opens a specific message thread.                                                                   |
 | `https://app.ringcentral.com/chat/{chatId}`            | Opens a chat with a user or team.                                                                  |
 | `https://app.ringcentral.com/message?teamId={teamId}&messageId={messageId}` | Opens a message within a specific team chat.                                   |
-| `https://app.ringcentral.com/tasks/{taskId}`           | Opens a task in Team Messaging.                                                                    |
+| `https://app.ringcentral.com/tasks/{taskId}`           | Opens a task in Chat.                                                                    |
 | `https://app.ringcentral.com/files/{fileId}`           | Opens a shared file.                                                                               |
 | `https://app.ringcentral.com/events/{eventId}`         | Opens a calendar event.                                                                            |
 | `/r/call?number={phoneNumber}`                         | Initiates a call in-app from RingCentral desktop.                                                  |

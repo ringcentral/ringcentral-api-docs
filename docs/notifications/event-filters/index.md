@@ -58,12 +58,12 @@ Every event transmitted to a client contains a common set of data elements, rega
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line/presence` | [Extension Presence Line Event](extension-presence-line.md) |
 | `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence/line` | [Extension Presence Line Event](extension-presence-line.md) |
 
-### Team messaging and chat events
+### Chat events
 
 | Filter | Description |
 |--------|-------------|
-| `/team-messaging/v1/posts`  | [Team Messaging Post Event](post.md) |
-| `/team-messaging/v1/groups` | [Team Messaging Groups Event](chat.md) |
+| `/team-messaging/v1/posts`  | [Chat Post Event](post.md) |
+| `/team-messaging/v1/groups` | [Chat Groups Event](chat.md) |
 
 ### Account events
 

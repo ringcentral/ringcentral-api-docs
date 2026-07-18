@@ -1,8 +1,8 @@
-# Team Messaging Post Event
+# Chat Post Event
 
 *Since 1.0.32 (Release 9.3)*
 
-Event filter `/team-messaging/v1/posts` enables notifications in case of a team messaging post change (creation, update, removal).
+Event filter `/team-messaging/v1/posts` enables notifications in case of a chat post change (creation, update, removal).
 
 **Required Permissions**
 

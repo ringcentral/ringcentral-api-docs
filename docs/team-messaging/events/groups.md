@@ -1,4 +1,4 @@
-# Chat events for Team Messaging
+# Group chat events
 
 Chat events, also known as "group" events, are triggered when some aspect of a chat (a conversation or team) has changed. There are four types of chat events:
 

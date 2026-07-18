@@ -4,7 +4,7 @@ no_breadcrumb:true
 
 <div class="jumbotron pt-1" markdown>
   <h3 class="h3 display-5">Getting Started with Analytics APIs</h3>
-  <p class="lead">The RingCentral Business Analytics APIs gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's voice and telephony service.</p>
+  <p class="lead">The RingCentral Business Analytics APIs gives developers access to the data and metrics necessary to help their organizations obtain a deeper understanding of how their team uses RingCentral's phone and telephony service.</p>
   <p>We invite all developers to try out our Analytics API by writing a simple app to access key call performance metrics in almost no time at all. Get started using a quick start guide in any of the following languages:</p>
   [Javascript &raquo;](quick-start.md){class="btn btn-light qs-link"}
   [PHP &raquo;](quick-start.md){class="btn btn-light qs-link"}

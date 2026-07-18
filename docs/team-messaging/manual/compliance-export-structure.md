@@ -1,4 +1,4 @@
-# Team Messaging Compliance Export File Structure
+# Chat Compliance Export File Structure
 
 !!! note "Need help generating an export file?"
     This document describes the structure of a Compliance Export. To generate this file please consult our documentation on the [Compliance Export API](compliance-export.md).

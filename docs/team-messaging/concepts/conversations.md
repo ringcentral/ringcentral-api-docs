@@ -1,4 +1,4 @@
-# Working with Conversations in Team Messaging
+# Working with Conversations in Chat
 
 A conversation in RingCentral parlance is a kind of chat between a fixed group of individuals. Conversations exhibit the following special qualities that set them apart from other types of chats:
 

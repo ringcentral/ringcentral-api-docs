@@ -1,10 +1,10 @@
 # Using Bot Frameworks
 
-Messaging is a core component of RingCentral’s communication and collaboration platform, offered as both Team Messaging and SMS. RingCentral’s APIs open up powerful ways to enhance the messaging experience by enabling conversational bot applications that can chat directly with your users.
+Messaging is a core component of RingCentral’s communication and collaboration platform, offered as both Chat and SMS. RingCentral’s APIs open up powerful ways to enhance the messaging experience by enabling conversational bot applications that can chat directly with your users.
 
-To speed up development, in addition to the core REST APIs, a number of RingCentral and community libraries are available to assist with creating bots for both team messaging and SMS applications:
+To speed up development, in addition to the core REST APIs, a number of RingCentral and community libraries are available to assist with creating bots for both chat and SMS applications:
 
-## Team Messaging Bot Frameworks 
+## Chat Bot Frameworks 
 
 ### Official RingCentral Frameworks
 
@@ -13,7 +13,7 @@ To speed up development, in addition to the core REST APIs, a number of RingCent
 ### Other Bot Frameworks
 
 !!! tip "What is "Glip?""
-    You may notice in some projects reference to the name "Glip," the former name of RingCentral Team Messaging.
+    You may notice in some projects reference to the name "Glip," the former name of RingCentral Chat.
 
 * [Botkit Adapter](https://github.com/pkvenu/botkit)
 * [Errbot Adapter](https://github.com/ringcentral/ringcentral-glip-errbot)

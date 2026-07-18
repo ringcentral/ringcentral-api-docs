@@ -1,6 +1,6 @@
-# Working with Groups and Teams in Team Messaging
+# Working with Groups and Teams in Chat
 
-In RingCentral's team messaging product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](conversations.md)").
+In RingCentral's chat product a "team" is a special kind of chat that is defined by the name or topic of discussion rather than the members of the chat (as is the case with "[conversations](conversations.md)").
 
 ## Team visibility
 
@@ -16,7 +16,7 @@ Create a team by posting to the [teams endpoint](https://developers.ringcentral.
 
 When specifying the members of a team, one can provide a mix of either person IDs and/or email addresses. If the email address refers to someone outside the organization that person will be added to the team as a guest, and invoke an email onboarding flow for that user.
 
-Please refer to the [Team Messaging Quick start](../quick-start.md) for sample code
+Please refer to the [Chat Quick start](../quick-start.md) for sample code
 
 ## Listing Teams
 
@@ -27,7 +27,7 @@ A list of teams can be retrieved by calling the [teams endpoint](https://develop
 The following code sample shows how to list all created teams under and account print out the team name and creation date and time.
 
 !!! note "Running the code"
-    * If you have tried the [Team Messaging quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `list_teams("")` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [Chat quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `list_teams("")` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"
@@ -89,7 +89,7 @@ The [add team members](https://developers.ringcentral.com/api-reference/Teams/ad
 The following code sample shows how to find a team id using a team name and add more members to the team.
 
 !!! note "Running the code"
-    * If you have tried the [Team Messaging quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `find_team("", ...)` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [Chat quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `find_team("", ...)` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"

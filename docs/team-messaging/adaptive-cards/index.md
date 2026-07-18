@@ -1,8 +1,8 @@
 # Adaptive Cards
 
-<h2 class="h4 pb-2 lh-lg">Allow users to interact directly with messages to get more work done without leaving RingCentral team messaging.</h2>
+<h2 class="h4 pb-2 lh-lg">Allow users to interact directly with messages to get more work done without leaving RingCentral chat.</h2>
 
-Adaptive Cards allows developers to implement richly formatted and interactive messages in team messaging, including form elements, buttons, and more.
+Adaptive Cards allows developers to implement richly formatted and interactive messages in chat, including form elements, buttons, and more.
 
 <div class="row" markdown>
   <div class="col">

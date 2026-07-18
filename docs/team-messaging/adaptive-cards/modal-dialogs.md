@@ -1,6 +1,6 @@
-# Spawning modal dialogs in Team Messaging
+# Spawning modal dialogs in Chat
 
-Modal dialogs are windows that developers can cause to be opened and that float above a conversation. While a modal dialog is open, users cannot interact with any part of the team messaging interface. Dialogs can be forcibly closed by the end user, or be closed naturally following a successful interaction with a dialog's contents.
+Modal dialogs are windows that developers can cause to be opened and that float above a conversation. While a modal dialog is open, users cannot interact with any part of the chat interface. Dialogs can be forcibly closed by the end user, or be closed naturally following a successful interaction with a dialog's contents.
 
 ## Responding to an interactive messaging event
 

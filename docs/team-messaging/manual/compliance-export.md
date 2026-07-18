@@ -1,4 +1,4 @@
-# RingCentral Team Messaging Compliance Exports
+# RingCentral Chat Compliance Exports
 
 Compliance Exports is a special capability specifically built for companies and regulated industries, such as financial services and health care, with compliance requirements for using electronic communication in the workplace. This feature is also a fail-safe way of preserving business communications for compliance and legal discovery or internal review.
 
@@ -22,9 +22,9 @@ The RingCentral App provides admins with a way of modifying your account's data 
 
 <img class="img-fluid" src="../manage-data-retention-1.png">
 
-## Team Messaging Data Export Process
+## Chat Data Export Process
 
-Team Messaging Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
+Chat Exports can take some time to compile and make available for download. Therefore, the process is an asynchronous one that follows this simple 3-step flow:
 
 1. Developer creates an "Export Report" task.
 2. Developer polls to check the status of the created "Export Report" task.
@@ -114,12 +114,12 @@ When successful, the response will contain the id (taskId) and the status of the
 
     When an export task has completed successfully, make a GET request to the `uri` parameter returned in the response as described in the previous step, and pass your access token via an Authorization header or access_token query parameter as described in [Accessing protected content](../../basics/media.md) on *Working with media content*.
 
-## Sample Code: Export Team Messaging Data
+## Sample Code: Export Chat Data
 
-The following code sample shows how to call the Compliance Export API to export the team messaging data and save it to a local machine.
+The following code sample shows how to call the Compliance Export API to export the chat data and save it to a local machine.
 
 !!! note "Running the code"
-    * If you have tried the [Team Messaging quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `create_compliance_export_task()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
+    * If you have tried the [Chat quick start](../quick-start.md), you can just copy all the functions below and add them to the quick start project then call the `create_compliance_export_task()` function. Otherwise, edit the variables in ALL CAPS with your app and user credentials before running the code.
     * If you run on your production account, remember to use app credentials for production and change the RingCentral server URL to "https://platform.ringcentral.com"
 
 === "JavaScript"

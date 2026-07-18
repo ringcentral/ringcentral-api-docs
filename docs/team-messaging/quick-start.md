@@ -2,9 +2,9 @@ no_breadcrumb:true
 style: quick-start
 contributors: ylecuyer
 
-# Create Team Messaging Team Quick Start
+# Create Chat Team Quick Start
 
-Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, voice, fax, chat and meetings.
+Welcome to the RingCentral Platform. RingCentral is the leading unified communications platform. From one system developers can integrate with, or build products around all the ways people communicate today: SMS, phone, fax, chat and meetings.
 
 In this Quick Start, we are going to help you create a new RingCentral team in just a few minutes. Let's get started.
 

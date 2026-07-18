@@ -1,6 +1,6 @@
 # Building a RingCentral bot from scratch
 
-A RingCentral Team Messaging bot provides a conversational interface for performing common tasks. In this guide, you will learn how to build a simple ping-pong bot from scratch, giving you a closer look at the bot design pattern.
+A RingCentral Chat bot provides a conversational interface for performing common tasks. In this guide, you will learn how to build a simple ping-pong bot from scratch, giving you a closer look at the bot design pattern.
 
 !!! tip "Try the [RingCentral bot framework](https://ringcentral.github.io/ringcentral-chatbot-js/) to get up and running faster and with less code."
 
@@ -113,7 +113,7 @@ This will install the bot into your account. The RingCentral bot installation pr
 
   - If the bot app is a **public app**, an authorization code will be generated and sent to the bot server via an HTTP GET request to the specified OAuth redirect URI. The bot server will need to send a request to exchange the authorization code for an access token.
 
-Both private and public bots will need the access token to subscribe to Team Messaging event notifications, and also to call the Team Messaging API to post messages.
+Both private and public bots will need the access token to subscribe to Chat event notifications, and also to call the Chat API to post messages.
 
 <img src="../../manual/bot-authorization.png" class="img-fluid" style="max-width: 400px">
 
@@ -131,7 +131,7 @@ A public bot access token is per user (customer) account, this means that every 
     --8<-- "code-samples/team-messaging/public-bot.js:80:141"
     ```
 
-After getting an access token, the bot must subscribe to Team Messaging event notifications in order to receive messages and important events from users and from RingCentral servers.
+After getting an access token, the bot must subscribe to Chat event notifications in order to receive messages and important events from users and from RingCentral servers.
 
 ??? info "Code walkthrough: subscribing to bot events"
     #### Private bots

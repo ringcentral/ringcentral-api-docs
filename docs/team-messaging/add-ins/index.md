@@ -2,7 +2,7 @@
 
 !!! info "The RingCentral Add-in Framework is currently in beta"
 
-A RingCentral add-in is type of add-in that integrates functionality directly into a RingCentral client, like our [Team Messaging and Video client](https://www.ringcentral.com/apps/rc-app). There are currently two types of add-ins we currently support. 
+A RingCentral add-in is type of add-in that integrates functionality directly into a RingCentral client, like our [Chat and Video client](https://www.ringcentral.com/apps/rc-app). There are currently two types of add-ins we currently support. 
 
 ### Bots
 
@@ -33,7 +33,7 @@ A notification app is a type of add-in that helps build a communication bridge b
 
 ## Helping customer find and install add-ins
 
-RingCentral add-ins are discovered and installed via the [RingCentral App Gallery](https://www.ringcentral.com/apps/). The RingCentral App Gallery can be accessed via the web, or from within the RingCentral team messaging client in the "Apps" section. 
+RingCentral add-ins are discovered and installed via the [RingCentral App Gallery](https://www.ringcentral.com/apps/). The RingCentral App Gallery can be accessed via the web, or from within the RingCentral chat client in the "Apps" section. 
 
 To help RingCentral customers find and discover the add-in you build, be sure to [create an App Gallery profile](../../getting-started/promote-app.md). Once your profile is approved, RingCentral App Gallery editors will work to help your add-in get discovered by ensuring it is placed in the right categories and collections. 
 

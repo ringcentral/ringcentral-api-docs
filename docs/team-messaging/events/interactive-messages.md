@@ -1,4 +1,4 @@
-# Interactive messaging events for Team Messaging
+# Interactive messaging events for Chat
 
 Unlike other outbound events sent by RingCentral, events related to interactive messages do not require the application to explicitly subscribe for a particular set of events. Instead, you will provide an "Outbound webhook URL" when you create your application, to which RingCentral will automatically deliver any event relating to an interactive message posted by that app. 
 
@@ -68,7 +68,7 @@ You can verify that RingCentral is the sender of an event by generating your own
 
 Some actions that a user intiates may produce the need to update the contents of the original message. Consider for example that a message is delivered to a software engineering team about a new software defect. One of the team members clicks a button to "claim" the issue - signaling to the rest of the team that they will fix the issue. When the message is first posted it shows the assignee as "Unassigned." After the user clicks the "Claim" button, the app wants to update the content of the message to show that the assignee is now "Chewbacca."
 
-To accomplish this, use the Team Messaging REST API to fetch the contents of the corresponding post. This is done via the [Get Post](https://developers.ringcentral.com/api-reference/Posts/readGlipPost) endpoint. Then use the [Update Post](https://developers.ringcentral.com/api-reference/Posts/patchGlipPost) endpoint to modify the contents of the post/message. 
+To accomplish this, use the Chat REST API to fetch the contents of the corresponding post. This is done via the [Get Post](https://developers.ringcentral.com/api-reference/Posts/readGlipPost) endpoint. Then use the [Update Post](https://developers.ringcentral.com/api-reference/Posts/patchGlipPost) endpoint to modify the contents of the post/message. 
 
 ## Event schema
 

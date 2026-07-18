@@ -1,6 +1,6 @@
-# REST API Pagination in Team Messaging
+# REST API Pagination in Chat
 
-If when calling the team messaging API to fetch a list of items, two elements are always returned:
+If when calling the chat API to fetch a list of items, two elements are always returned:
 
 * The `records` element is an array of items to be iterated over.
 * The `navigation` element contains page tokens to assist developers in iterating forward and backward through the total record set.
@@ -20,7 +20,7 @@ If the result set has been filtered in some way by a query parameter, it is not 
 
 ## Pagination query parameters
 
-When making a call to a team messaging REST API that returns a list, the following query parameters can be used.
+When making a call to a chat REST API that returns a list, the following query parameters can be used.
 
 | Parameter | Description |
 |-|-|

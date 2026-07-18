@@ -1,6 +1,6 @@
 # Installing and uninstalling bots
 
-A bot is a type of add-in that provides team messaging users with a conversational interface for completing various tasks. A bot is installed once per account or organization, and once installed, any user is free to add or remove the bot from a conversation. This guide will walk you through the process of installing a bot. 
+A bot is a type of add-in that provides chat users with a conversational interface for completing various tasks. A bot is installed once per account or organization, and once installed, any user is free to add or remove the bot from a conversation. This guide will walk you through the process of installing a bot. 
 
 ## Needed permissions
 

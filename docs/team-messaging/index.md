@@ -1,9 +1,9 @@
-# Introduction to Team Messaging Integrations
+# Introduction to Chat Integrations
 
 <div class="jumbotron pt-1" markdown>
-  <h2 class="h3 display-5">Getting Started with the Team Messaging API</h2>
-  <p class="lead">RingCentral Team Messaging is a team collaboration solution that helps organize and centralize team communication. It is an exciting platform to develop for given the wide range of use cases, and integration possibilities.</p>
-  <p>We invite all developers to try out our Team Messaging API by writing a simple app to create a team in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
+  <h2 class="h3 display-5">Getting Started with the Chat API</h2>
+  <p class="lead">RingCentral Chat is a team collaboration solution that helps organize and centralize team communication. It is an exciting platform to develop for given the wide range of use cases, and integration possibilities.</p>
+  <p>We invite all developers to try out our Chat API by writing a simple app to create a team in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   [Javascript &raquo;](quick-start.md){class="btn btn-light qs-link"}
   [PHP &raquo;](quick-start.md){class="btn btn-light qs-link"}
   [Python &raquo;](quick-start.md){class="btn btn-light qs-link"}
@@ -12,7 +12,7 @@
   [C# &raquo;](quick-start.md){class="btn btn-light qs-link"}
 </div>
 
-## What can you build using the Team Messaging API?
+## What can you build using the Chat API?
 
 ### Create interactive messages
 
@@ -54,7 +54,7 @@ app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT)
 
 ### Integrate with project management
 
-RingCentral Team Messaging can also be used to help with project management. In Team Messaging you can create:
+RingCentral Chat can also be used to help with project management. In Chat you can create:
 
 * **Tasks** - manage task/to-do lists, assign tasks to others, be notified when tasks are completed
 * **Events** - create and share calendar events, project due-dates, co-worker vacations and more

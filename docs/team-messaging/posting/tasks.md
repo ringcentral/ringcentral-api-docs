@@ -1,6 +1,6 @@
 # Postings tasks
 
-Using tasks in RingCentral, teams can better assign action items following a meeting, keep track of personal to-do lists, or even sychronize project management tasks from external systems. Simply put, at the end of the day all of our lives can be boiled down to a set of tasks we are responsible for, and tasks in RingCentral team messaging cam help us keep track of it all. 
+Using tasks in RingCentral, teams can better assign action items following a meeting, keep track of personal to-do lists, or even sychronize project management tasks from external systems. Simply put, at the end of the day all of our lives can be boiled down to a set of tasks we are responsible for, and tasks in RingCentral chat cam help us keep track of it all. 
 
 Using the RingCentral API, the creation and management of tasks can be completely automated. 
 

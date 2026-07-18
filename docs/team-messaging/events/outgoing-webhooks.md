@@ -1,4 +1,4 @@
-# Team Messaging events
+# Chat events
 
 In response to the actions taken by users within our product, the RingCentral platform emits events to notify interested applications and services so that they can take the necessary action in response to those events. A common term to refer to these events is "webhook" which refers to a specific method of delivery. RingCentral actually supports multiple modes of event transmission:
 

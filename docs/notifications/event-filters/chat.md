@@ -1,8 +1,8 @@
-# Team Messaging Chats Event
+# Chat Event
 
 *Since 1.0.32 (Release 9.3)*
 
-Event filter `/team-messaging/v1/chats` enables notifications in case of a team messaging chat change (creation, update, removal).
+Event filter `/team-messaging/v1/chats` enables notifications in case of a team chat change (creation, update, removal).
 
 **Required Permissions**
 

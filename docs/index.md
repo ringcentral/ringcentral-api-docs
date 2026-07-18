@@ -115,7 +115,7 @@ no_breadcrumb:true
 
   <div class="card h-100">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Team messaging</h5>
+      <h5 class="h5 card-title">Chat</h5>
       <p class="card-text">Use RingCentral to post interactive messages so users can get more work done without leaving RingCentral.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./team-messaging/add-ins/creation/" class="card-link">Build an add-in</a></li>
@@ -129,7 +129,7 @@ no_breadcrumb:true
 
   <div class="card h-100">
     <div class="card-body pt-0 pb-0">
-      <h5 class="h5 card-title">Voice and telephony</h5>
+      <h5 class="h5 card-title">Phone and telephony</h5>
       <p class="card-text">Use RingCentral to enable a "click-to-dial" experience, and to manage calls in progress.</p>
       <ul class="pl-0 ml-4">
       <li><a href="./voice/ringout/" class="card-link">Place a call with RingOut</a></li>
@@ -253,4 +253,4 @@ If on your way to building your first RingCentral application you encounter diff
 
 ## About RingCentral
 
-RingCentral is a leading provider of global enterprise cloud communications and collaboration solutions. More flexible and cost-effective than legacy on-premises systems, RingCentral empowers modern mobile and distributed workforces to communicate, collaborate, and connect from any location, on any device and via any mode. RingCentral provides unified voice, video, team messaging and collaboration, conferencing, online meetings, digital customer engagement and integrated contact center solutions for enterprises globally. RingCentral’s open platform integrates with leading business apps and enables customers to easily customize business workflows.
+RingCentral is a leading provider of global enterprise cloud communications and collaboration solutions. More flexible and cost-effective than legacy on-premises systems, RingCentral empowers modern mobile and distributed workforces to communicate, collaborate, and connect from any location, on any device and via any mode. RingCentral provides unified phone, video, chat and collaboration, conferencing, online meetings, digital customer engagement and integrated contact center solutions for enterprises globally. RingCentral’s open platform integrates with leading business apps and enables customers to easily customize business workflows.

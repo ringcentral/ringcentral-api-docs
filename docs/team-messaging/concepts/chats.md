@@ -1,10 +1,10 @@
-# Working with Chats in Team Messaging
+# Working with Chats
 
-RingCentral's team messaging product enables individuals within an organization to exchange messages with one another. The general term we use to describe these message exchanges is a "chat." However, there are many terms within the API which bare a striking resemblance semantically to a "chat," so before you dig too deep into the API it is recommended you get a firm grasp of these basic terms to help disambiguate the various types of chats that exist.
+RingCentral's team chat product enables individuals within an organization to exchange messages with one another. The general term we use to describe these message exchanges is a "chat." However, there are many terms within the API which bare a striking resemblance semantically to a "chat," so before you dig too deep into the API it is recommended you get a firm grasp of these basic terms to help disambiguate the various types of chats that exist.
 
-## Team messaging terminology
+## Chat terminology
 
-The following table provides a description of the various types of chats supported within RingCentral's team messaging product. 
+The following table provides a description of the various types of chats supported within RingCentral's chat product. 
 
 | Term | Definition |
 |-|-|

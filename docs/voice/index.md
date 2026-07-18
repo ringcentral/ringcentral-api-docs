@@ -1,8 +1,8 @@
-# Introduction to RingCentral's Voice API
+# Introduction to RingCentral's Phone API
 
 <div class="jumbotron pt-1" markdown>
-  <h3 class="h3 display-5">Getting Started with the Voice API</h3>
-  <p class="lead">The RingCentral Voice API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Voice API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
+  <h3 class="h3 display-5">Getting Started with the Phone API</h3>
+  <p class="lead">The RingCentral Phone API is used by developers to place calls, and to manage calls that are in-progress on the network. Futhermore, the Phone API also gives developers access to the RingCentral Call Log - an authoritative source of an organization's call history, call recordings and more.</p>
   <p>We invite all developers to try out our Call Management API by writing a simple app that will place a call using the RingOut API. Get started using a Quick Start in any of the following languages:</p>
   [Javascript &raquo;](quick-start.md){class="btn btn-light qs-link"}
   [PHP &raquo;](quick-start.md){class="btn btn-light qs-link"}
@@ -14,21 +14,21 @@
 
 <p class="h2">Overview</p>
 
-Before you dive into the Voice API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings on one another. They are:
+Before you dive into the Phone API, it can be helpful to understand how it fits into a larger picture of APIs. There are three RingCentral APIs that in some respects are all siblings on one another. They are:
 
 1. **Provisioning API** - Provisioning is the process by which a network is setup with all of the extensions and phones that comprise an organization's telephony network.
 
 2. **Call Management API** - Call Management refers to the process and ecosystem of rules that govern how incoming calls are routed through to the network so that can be connected with an individual/agents.
 
-3. **Voice API** - Finally, the Voice API is what is used to manage calls once the Call Management layer has successfully connected a caller and a recipient. 
+3. **Phone API** - Finally, the Phone API is what is used to manage calls once the Call Management layer has successfully connected a caller and a recipient. 
 
-## What can you do with the Voice API?
+## What can you do with the Phone API?
 
-The RingCentral Voice API is the primary way developers interface with, manage, and manipulate active calls on the network. Below are the major functional areas of this API. 
+The RingCentral Phone API is the primary way developers interface with, manage, and manipulate active calls on the network. Below are the major functional areas of this API. 
 
 ### Make a phone call
 
-RingCentral's [Call Management API](call-routing/index.md) provides a number of a facilities for controlling and routing incoming calls. The Voice API provides developers with some means for placing calls programmatically - mainly RingOut.
+RingCentral's [Call Management API](call-routing/index.md) provides a number of a facilities for controlling and routing incoming calls. The Phone API provides developers with some means for placing calls programmatically - mainly RingOut.
 
 Alternatively, developers can help users place calls via WebRTC or our [RingCentral Embeddable](https://developers.ringcentral.com/embeddable-voice.html) product. 
 
@@ -38,7 +38,7 @@ Alternatively, developers can help users place calls via WebRTC or our [RingCent
 
 ### Intercept incoming calls
 
-Before a call is connected with a user/extension, and while it is ringing, the Voice API gives the developer one last chance to route the call in someway. These ways are:
+Before a call is connected with a user/extension, and while it is ringing, the Phone API gives the developer one last chance to route the call in someway. These ways are:
 
 * Forward call to another extension
 * Forward call to voicemail
@@ -48,7 +48,7 @@ Before a call is connected with a user/extension, and while it is ringing, the V
 
 ### Manipulate and control active phone calls
 
-Once a call has been connected to an extension or user, the Voice API allows a developer to manipulate that call while it is progress. The Voice API enables developers to do the following to active calls:
+Once a call has been connected to an extension or user, the Phone API allows a developer to manipulate that call while it is progress. The Phone API enables developers to do the following to active calls:
 
 * Stop/start call recording
 * Mute/unmute a participant
@@ -80,7 +80,7 @@ In addition to providing metadata about a call that took place on the network, t
 
 ## How do I control my status and availability?
 
-Finally, the Voice API gives developers access to the availability, or "presence" of a user within the network through the [Presence API](../account/presence.md). The Presence API shows the following for each user one inquires about:
+Finally, the Phone API gives developers access to the availability, or "presence" of a user within the network through the [Presence API](../account/presence.md). The Presence API shows the following for each user one inquires about:
 
 * Is the user on a call?
 * Is the user in a meeting?

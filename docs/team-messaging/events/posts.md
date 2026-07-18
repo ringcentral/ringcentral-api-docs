@@ -1,6 +1,6 @@
-# Post events for Team Messaging
+# Post events for Chat
 
-Post events are triggered within the context of team messaging whenever some facet of a post is affected. There are three types of post events:
+Post events are triggered within the context of chat whenever some facet of a post is affected. There are three types of post events:
 
 * Post created
 * Post removed
@@ -34,7 +34,7 @@ When you receive a PostAdded event, here are some tips to help you when creating
 
 ### Replying to a post added event
 
-Bots can post a message in response to a PostAdded event simply by calling the [Team Messaging Post API](../posting/index.md). For example:
+Bots can post a message in response to a PostAdded event simply by calling the [Chat Post API](../posting/index.md). For example:
 
 ```http
 POST /team-messaging/v1/groups/<groupId>/posts

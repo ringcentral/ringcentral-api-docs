@@ -22,13 +22,13 @@ RingCentral supports a number of different types of messages that can be sent an
 |-|-|
 | **SMS** | SMS includes both text messages, and multimedia messages (MMS). They are sent over cell networks, but can also be delivered to customers directly via their RingCentral Soft Phone. |
 | **Fax** | Fax messages are a means of transmitting documents in such a way that they can be easily printed by a fax machine over phone lines. RingCentral's Fax API allows one to completely digitize how faxes are sent and/or received. |
-| **Voicemail** | A core part of RingCentral's Voice platform is the ability to define extensions at which caler's can leave recorded messages. These extensions can be for an individual or a group of people. |
+| **Voicemail** | A core part of RingCentral's Phone platform is the ability to define extensions at which caler's can leave recorded messages. These extensions can be for an individual or a group of people. |
 | **Pager Messages** | Pager messages allow individuals to send one-way announcements from a desk phone or mobile phone. They are often used in retail or warehouse environments, such as, "clean up on aisle 5." | 
 
 RingCentral's APIs allow for developers to send and receive messages of all of the above types. 
 
 !!! note "Glip Messages"
-    Another type of message is a "Glip Message" which are transmitted via RingCentral's Team Messaging product called "Glip." These messages are not managed via our SMS and Fax messaging system and are discussed in more detail in [Glip section](../team-messaging/index.md) of our Developer Guide.
+    Another type of message is a "Glip Message" which are transmitted via RingCentral's Chat product called "Glip." These messages are not managed via our SMS and Fax messaging system and are discussed in more detail in [Glip section](../team-messaging/index.md) of our Developer Guide.
 
 ## How does one send or receive a message?
 

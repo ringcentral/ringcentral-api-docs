@@ -1,6 +1,6 @@
 # Posting thread messages via the API
 
-Team Messaging posts can be grouped into threads. A threaded reply is still a post in the same chat, but the post response includes thread metadata that lets your app find the parent post and retrieve the other posts in the thread.
+Chat posts can be grouped into threads. A threaded reply is still a post in the same chat, but the post response includes thread metadata that lets your app find the parent post and retrieve the other posts in the thread.
 
 Use threaded posts when a bot or app needs to keep follow-up messages attached to a specific conversation inside a chat.
 
@@ -48,7 +48,7 @@ Call [List Thread Posts](https://developers.ringcentral.com/api-reference/Posts/
 GET /team-messaging/v1/chats/{chatId}/threads/{threadId}/posts?recordCount=30
 ```
 
-The response uses the same Team Messaging pagination model as other list endpoints. If the response contains `navigation.nextPageToken` or `navigation.prevPageToken`, pass the token as the `pageToken` query parameter in the next request.
+The response uses the same Chat pagination model as other list endpoints. If the response contains `navigation.nextPageToken` or `navigation.prevPageToken`, pass the token as the `pageToken` query parameter in the next request.
 
 ```http
 GET /team-messaging/v1/chats/{chatId}/threads/{threadId}/posts?pageToken={pageToken}
