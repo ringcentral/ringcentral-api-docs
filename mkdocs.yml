@@ -302,7 +302,10 @@ nav:
     - 'Custom fields': 'account/custom-fields.md'
     - 'Presence': 'account/presence.md'
     - 'Audit trail': 'account/audit-trail.md'
-    - 'Emergency locations' : 'provisioning/location/emergency-locations.md'
+    - 'Emergency locations': 'provisioning/location/emergency-locations.md'
+    - 'Devices':
+      - 'Overview': 'provisioning/devices/index.md'
+      - 'Detect User Devices': 'provisioning/devices/user-devices.md'
 
 
   # ---- SECONDARY APIs ----
