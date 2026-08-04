@@ -306,7 +306,7 @@ nav:
     - 'Devices':
       - 'Overview': 'provisioning/devices/index.md'
       - 'Detect User Devices': 'provisioning/devices/user-devices.md'
-
+      - 'Migration': 'provisioning/devices/migration.md'
 
   # ---- SECONDARY APIs ----
 - 'Secondary':
