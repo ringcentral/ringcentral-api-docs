@@ -174,6 +174,17 @@ nav:
       - 'A2P SMS Messaging': 'https://ringcentral-tutorials.github.io/a2p-sms-messaging-nodejs-demo/'
       - 'Two-factor Authentication': 'https://ringcentral-tutorials.github.io/sms-2fa-nodejs-demo/'
       - 'Custom Fax Cover Pages': 'https://ringcentral-tutorials.github.io/fax-cover-page-nodejs-demo/'
+  - 'Global Business SMS':
+    - 'Overview': 'global SMS/index.md'
+    - 'Getting Started': 'global SMS/overview.md'
+    - 'Sender name': 'global SMS/sender-name.md'
+    - 'Requests & Authentication': 'global SMS/requests-and-authentication.md'
+    - 'Development Libraries': 'global SMS/development-libraries.md'
+    - 'SMS Message': 'global SMS/sms-message.md'
+    - 'Delivery Report': 'global SMS/delivery-report.md'
+    - 'Scheduled Messages': 'global SMS/scheduled-messages.md'
+    - 'Inbound Messages': 'global SMS/inbound-messages.md'
+    - 'Number Lookup': 'global SMS/number-lookup.md'
   - 'Team Messaging':
     - 'Overview': 'team-messaging/index.md'
     - 'Getting Started': 'team-messaging/quick-start.md'

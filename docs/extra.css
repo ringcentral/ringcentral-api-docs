@@ -165,6 +165,12 @@
 #sidebar-nav #nav-item-sms-and-fax:hover {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging_hover.svg');
 }
+#sidebar-nav #nav-item-global-business-sms {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging.svg?v=2020032620200227-0720');
+}
+#sidebar-nav #nav-item-global-business-sms:hover {
+    background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_messaging_hover.svg');
+}
 #sidebar-nav #nav-item-team-messaging {
     background-image: url('https://netstorage.ringcentral.com/dpw/api-reference/icons/group_icon_glip.svg?v=2020032620200227-0720');
 }
