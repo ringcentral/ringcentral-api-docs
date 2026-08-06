@@ -4,7 +4,7 @@
 
 ## What is difference between a meeting and a bridge?
 
-Some may notice that the name of the endpoint to create a meeting makes reference to a "bridge." A meeting bridge is, for all intents and purposes, a virtual meeting room. These virtual meeting rooms, just like a meeting rooms in real-life, can be re-used for different meetings and different groups of people. Unlike a physical meetings room, however, a bridge can also be used once and then thrown away for maximum security and privacy. 
+Some may notice that the name of the endpoint to create a meeting makes reference to a "bridge." A meeting bridge is, for all intents and purposes, a virtual meeting room. These virtual meeting rooms, just like a meeting room in real-life, can be re-used for different meetings and different groups of people. Unlike a physical meetings room, however, a bridge can also be used once and then thrown away for maximum security and privacy. 
 
 A "meeting" on the other hand is created the moment a person connects to a bridge. That same meeting ends when the last person disconnects from the bridge, and the virtual meeting room is once again empty. 
 
