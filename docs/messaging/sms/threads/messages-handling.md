@@ -12,8 +12,9 @@ The [`/restapi/v1.0/account/~/message-threads/messages`](https://developers.ring
 | :---- | :---- | :---- | :---- |
 | `threadStatus` | String | Filters threads based on their status: **Open** or **Resolved**. If no status is specified, all threads (both Open and Resolved) will be listed by default. |  |
 | `ownerExtensionIds` | Array of string | Filters messages based on one or several common resources identified by the common resource IDs. If not specified, return messages from all common resources the current authenticated user is a SMS handler.  |  |
-| `availability` | enum | Can be specified to "Alive" and/or "Deleted". |  |
+| `availability` | Enum | Can be specified to "Alive" and/or "Deleted". |  |
 | `messageIds` | Array of string | Return messages matches the specified message Ids. If not specified, returning all messages from common resources the current authenticated user is a SMS handler. |  |
+| `threadIds` | Array of string | Returns messages from the specified threads only. |  |
 | `creationTimeFrom` | string | Start date/time for resulting messages created after the specified date/time. In UCT time. | If not specified, the default value is the last 24 hours. |
 | `creationTimeTo` | string | End date/time for resulting messages created before the specified date/time. In UCT time. | If not specified, the default value is the current time. |
 
