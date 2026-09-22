@@ -56,7 +56,7 @@ Among the many benefits of Adaptive Cards, are the robust set of tools made avai
 
 ...with many more to choose from.
 
-And if you cannot find a pre-made template to suit your needs, an [Adaptive Card designer](https://adaptivecards.io/designer/) also exists to help you design a card to your exact specifications. This tool makes it possible for technical and non-technical people alike to create cards with ease, and does not require users to first understand the [Adaptive Card schema](https://adaptivecards.io/explorer/). Finally, using the design tool, you can also preview your cards and its interactive elements. 
+And if you cannot find a pre-made template to suit your needs, an [Adaptive Card designer](https://adaptivecards.microsoft.com/designer) also exists to help you design a card to your exact specifications. This tool makes it possible for technical and non-technical people alike to create cards with ease, and does not require users to first understand the [Adaptive Card schema](https://learn.microsoft.com/en-us/adaptive-cards/authoring-cards/card-schema). Finally, using the design tool, you can also preview your cards and its interactive elements. 
 
 * Learn more about [Adaptive card layouts and design](containers.md)
 
