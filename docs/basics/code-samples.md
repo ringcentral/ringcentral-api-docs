@@ -22,7 +22,7 @@ Each code sample found within this Developer Guide is designed to use the variab
 To begin, copy the contents of the file below and save it to your local development machine in a file named `.env`. Be sure to place that file within the same directory you will be running your test scripts from. Finally, edit the `.env` file to set the values of its variables accordingly.
 
 ```sh
---8<-- "code-samples/env-template" 
+--8<-- "code-samples/env-template"
 ```
 
 Finally, run your code sample from the command line as you would normally. The script should read in the values from this file, and set all the local configuration properties accordingly.

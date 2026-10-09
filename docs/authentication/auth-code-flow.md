@@ -34,7 +34,7 @@ The auth code flow is the most common form of OAuth used on the Internet, and is
 
 The authorization process is initiated by an end user clicking a URL composed by the application requesting access to their RingCentral account. This URL will contain the following query parameters: 
 
---8<-- "docs/authentication/login-url-params.inc" 
+--8<-- "docs/authentication/login-url-params.inc"
 
 **Example Login URL**
 
@@ -51,7 +51,7 @@ We recommend developers use an SDK to generate a login URL to ensure it is compo
 === "Javascript" 
 
     ```javascript
-    --8<-- "code-samples/auth/login-url.js" 
+    --8<-- "code-samples/auth/login-url.js"
     ```
 
 ### Step 2. User login and consent
@@ -64,7 +64,7 @@ Once users have logged in, RingCentral prompts them with an "Access Request," wh
 
 When the user clicks "Authorize," the user is then redirected to the `redirect_uri` that was passed in via the login URL constructed above. At the same time, RingCentral will add the following query parameters to the redirect URI, which your application will need in subsequent steps. 
 
---8<-- "docs/authentication/auth-code-params.inc" 
+--8<-- "docs/authentication/auth-code-params.inc"
 
 !!! warning "For security purposes, the `redirect_uri` must exactly match at least one of the Redirect URIs provided by the developer when the app was created."
 
@@ -92,7 +92,7 @@ To exchange an auth code for an access token, developers will call the RingCentr
 
 **POST Parameters**
 
---8<-- "docs/authentication/auth-token-params.inc" 
+--8<-- "docs/authentication/auth-token-params.inc"
 
 **Sample Request**
 
@@ -112,7 +112,7 @@ code=U0pDMTFQMDFQQVMwMXxBQUJfTVpHWk5lM29zNVFmWnNHQ01MSmJuMHJmNGlRcnRaeEptTWlPS0M
 
 The server responds with an access token which can presented in subsequent requests in the HTTP `Authorization` header to authorize API Calls. The response will contain the following parameters: 
 
---8<-- "docs/authentication/auth-token-response.inc" 
+--8<-- "docs/authentication/auth-token-response.inc"
 
     
 **Sample Response**

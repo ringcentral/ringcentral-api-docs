@@ -30,7 +30,7 @@ A user's extension ID is globally unique identifier for the user across all of R
 In order for an account to be fully activated, a user must select a password for themselves. This is commonly accomplished through the user onboarding process that is initiated via a welcome email that is automatically sent to the user's specified email address. However, the API can be used to bypass this process by explicitly setting the user's password and their status to `Enabled` when the user is created, or by [updating the user record](https://developers.ringcentral.com/api-reference/User-Settings/updateExtension). For example, the following shows the user object one would transmit to setup a fully enabled user in a single transaction.
 
 ```javascript
---8<-- "code-samples/account/create-user-with-password.json" 
+--8<-- "code-samples/account/create-user-with-password.json"
 ```
 
 ### Setting a profile image
@@ -48,12 +48,12 @@ You may also see a representation of the user's name in the top-level `name` fie
 === "Javascript"
 
     ```javascript
-    --8<-- "code-samples/account/create-user.js" 
+    --8<-- "code-samples/account/create-user.js"
     ```
 
 ### Example user object
 
 ```javascript
---8<-- "code-samples/account/user-object.json" 
+--8<-- "code-samples/account/user-object.json"
 ```
 

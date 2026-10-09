@@ -9,7 +9,7 @@ GET  /restapi/v1.0/account/~/extension/~/message-store?direction=Inbound&message
 The API response will contain a list of fax messages paginated by 100 (records per page) received yesterday. Each fax can be retrieved as a single PDF file attachment that includes all pages sent by the sender:
 
 ```json
---8<-- "code-samples/messaging/receive-fax-payload.json" 
+--8<-- "code-samples/messaging/receive-fax-payload.json"
 ```
 
 Adjusting `dateFrom` and `dateTo` parameters you may get the messages for desired date range:
@@ -35,7 +35,7 @@ If you'd like to track all new messages (including fax) in your app, you can use
 Then when a new message is received/sent your server will get a request with a payload like:
 
 ```json
---8<-- "code-samples/messaging/receive-fax-event.json" 
+--8<-- "code-samples/messaging/receive-fax-event.json"
 ```
 
 As a reaction to this request, your server may poll the message store as described above to get the new message (messages) metadata. See also [Push Notifications](../../notifications/index.md) for more notification delivery options and [Message Sync](../message-store/message-sync.md) for fine-tuned synchronization.

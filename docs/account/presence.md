@@ -31,37 +31,37 @@ Below is a sample response from the Presence API to illustrate the visibility it
 === "JavaScript"
 
     ```js
-    --8<-- "code-samples/account/presence.js" 
+    --8<-- "code-samples/account/presence.js"
     ```
 
 === "Python"
 
     ```python
-    --8<-- "code-samples/account/presence.py" 
+    --8<-- "code-samples/account/presence.py"
     ```
 
 === "PHP"
 	
     ```php
-    --8<-- "code-samples/account/presence.php" 
+    --8<-- "code-samples/account/presence.php"
     ```
 
 === "C#"
 
     ```c#
-    --8<-- "code-samples/account/presence.cs" 
+    --8<-- "code-samples/account/presence.cs"
     ```
 
 === "Java"
 
     ```java
-    --8<-- "code-samples/account/presence.java" 
+    --8<-- "code-samples/account/presence.java"
     ```
 
 === "Ruby"
 
     ```ruby
-    --8<-- "code-samples/account/presence.rb" 
+    --8<-- "code-samples/account/presence.rb"
     ```
 
 ## Required Permissions

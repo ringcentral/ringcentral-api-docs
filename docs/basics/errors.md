@@ -5,7 +5,7 @@ The API uses specific error codes to make error processing for client applicatio
 Client apps should rely on the `errorCode` and, in some cases, on additional fields like `parameterName,` not on the error message (because it may change in the next versions of the API or be localized). Response body with error message can contain several error messages and has the following structure:
 
 ```javascript
---8<-- "code-samples/basics/sample-error.json" 
+--8<-- "code-samples/basics/sample-error.json"
 ```
 																			  
 The API reference lists some of the error codes that may be returned for a particular API operation.

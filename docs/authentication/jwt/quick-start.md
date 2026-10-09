@@ -55,7 +55,7 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     Create a file called `index.js` using the contents below.
 
     ```js
-    --8<-- "code-samples/auth/jwt.js" 
+    --8<-- "code-samples/auth/jwt.js"
 	```
 
 === "Python"
@@ -72,7 +72,7 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     Create a file called <tt>index.py</tt> using the contents below.
 
     ```python
-    --8<-- "code-samples/auth/jwt.py" 
+    --8<-- "code-samples/auth/jwt.py"
     ```
 
 === "PHP"
@@ -89,7 +89,7 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     Create a file called <tt>index.php</tt>. In this file we'll implement the login page.
 
     ```php
-    --8<-- "code-samples/auth/jwt.php" 
+    --8<-- "code-samples/auth/jwt.php"
     ```
 
 === "Ruby"
@@ -106,7 +106,7 @@ The JWT auth flow is made a lot simpler when a RingCentral SDK is used.
     ### Create an index.rb
 
     ```ruby
-    --8<-- "code-samples/auth/jwt.rb" 
+    --8<-- "code-samples/auth/jwt.rb"
     ```
 
 === "C#"
