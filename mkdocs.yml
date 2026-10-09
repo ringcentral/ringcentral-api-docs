@@ -117,6 +117,24 @@ nav:
   - 'SMS and Fax':
     - 'Overview': 'messaging/index.md'
     - 'Getting Started': 'messaging/quick-start.md'
+    - 'Global Business SMS Overview': 'messaging/sms/global-business/index.md'
+    # - 'SMS Batch Messaging':
+    #   - 'Overview': 'messaging/sms/v2/index.md'
+    #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
+    #   - 'Send Message Batches': 'messaging/sms/v2/send-sms-batches.md'
+    #   - 'Read Message Store': 'messaging/sms/v2/message-store.md'
+    #   - 'Event Notifications': 'messaging/sms/v2/events.md'
+    #   - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
+    # - 'SMS Thread Messaging':
+    #   - 'Overview': 'messaging/sms/threads/index.md'
+    #   - 'Configurations': messaging/sms/threads/configurations.md
+    #   - 'Send Thread Messages': 'messaging/sms/threads/send-thread-sms.md'
+    #   - 'Threads Handling': 'messaging/sms/threads/threads-handling.md'
+    #   - 'Messages Handling': 'messaging/sms/threads/messages-handling.md'
+    #   - 'Notes Handling': 'messaging/sms/threads/notes-handling.md'
+    #   - 'Event Notifications': 'messaging/sms/threads/events.md'
+    #   - 'Migration instruction': 'messaging/sms/threads/migration.md'
+      # - 'Errors Handling': 'messaging/sms/v2/handling-errors.md'
     - 'Enhanced Business SMS':
       - 'Best Practices': 'messaging/sms/best-practices.md'
       - 'SMS Enablement & Configuration': 'messaging/sms/sms-requirements.md'
@@ -126,6 +144,19 @@ nav:
       - 'Error Handling': 'messaging/sms/sms-errors.md'
       #- 'Valid SMS Numbers': 'messaging/sms/valid-sms-numbers.md' # Explained and demonstrated in Send SMS MMS example codes
       # - 'Migration Guide': 'messaging/sms/migration-guide.md'
+    - 'SMS Consent':
+      - 'Consent management': 'messaging/sms/messaging-consent-management.md'
+    - 'Global Business SMS':
+      - 'Overview': 'messaging/sms/global-business/overview.md'
+      - 'Development Libraries': 'messaging/sms/global-business/development-libraries.md'
+      - 'SMS Message': 'messaging/sms/global-business/sms-message.md'
+      - 'Sender Name': 'messaging/sms/global-business/sender-name.md'
+      - 'Delivery Report': 'messaging/sms/global-business/delivery-report.md'
+      - 'Inbound Messages': 'messaging/sms/global-business/inbound-messages.md'
+      - 'Scheduled Messages': 'messaging/sms/global-business/scheduled-messages.md'
+      - 'Requests and Authentication': 'messaging/sms/global-business/requests-and-authentication.md'
+    - 'Number Lookup':
+      - 'Overview': 'messaging/sms/number-lookup/index.md'
     # - 'Message Batches':
     #   - 'Overview': 'messaging/sms/v2/index.md'
     #   - 'Best Practices': 'messaging/sms/v2/best-practices.md'
