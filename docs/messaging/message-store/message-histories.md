@@ -23,5 +23,5 @@ One or more messages can be deleted as well. Deleting messages is a two-step pro
 === "JavaScript"
 
     ```javascript
-    --8<-- "code-samples/messaging/message-history-delete.js" 
+    --8<-- "code-samples/messaging/message-history-delete.js"
     ```

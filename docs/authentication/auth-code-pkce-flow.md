@@ -32,7 +32,7 @@ The code below shows how to generate these two strings:
     Then your code will look like this:
     
     ```javascript
-    --8<-- "code-samples/auth/login-url-pkce.js:2:22" 	
+    --8<-- "code-samples/auth/login-url-pkce.js:2:22"
     ```
 
 === "Python" 
@@ -46,13 +46,13 @@ The code below shows how to generate these two strings:
 	Then in their code it is really simple:
     
 	```python
-    --8<-- "code-samples/auth/pkce.py" 	
+    --8<-- "code-samples/auth/pkce.py"
 	```
 
 === "PHP"
 
     ```php
-    --8<-- "code-samples/auth/pkce.php" 	
+    --8<-- "code-samples/auth/pkce.php"
     ```
 
 === "Ruby"
@@ -66,7 +66,7 @@ The code below shows how to generate these two strings:
     Then in their code:
 	
     ```ruby
-    --8<-- "code-samples/auth/pkce.rb" 	
+    --8<-- "code-samples/auth/pkce.rb"
     ```
 
 #### Example code verifier and challenge strings
@@ -86,7 +86,7 @@ _drLS7o5FwkfUiBhlq2hwJnK_SC6yE7sKOde5O1fdzk
 
 When your application needs to access a user's data, redirect the user to the RingCentral API server. The authorization URL is the same as the URL from [Authorization Code Flow Step 1](auth-code-flow.md#step-1-compose-a-request-authorization-url), and PKCE flow will need additional parameters `code_challenge` and `code_challenge_method` in the authorization URL:
 
---8<-- "docs/authentication/login-url-params.inc" 
+--8<-- "docs/authentication/login-url-params.inc"
 | `code_challenge` | string | Required. Generated from code challenge.
 | `code_challenge_method` | string | Required. The code challenge method, either plain or S256, depends on whether the challenge is the plain verifier string or the SHA256 hash of the string. If this parameter is omitted, the server assumes plain.
 
@@ -107,14 +107,14 @@ We recommend developers use an SDK to generate a login URL to ensure it is compo
 === "Javascript" 
 
     ```javascript
-    --8<-- "code-samples/auth/login-url-pkce.js" 
+    --8<-- "code-samples/auth/login-url-pkce.js"
     ```
 
 ### Step 2. User login and consent
 
 This step is same as its counterpart in the [authorization code flow](auth-code-flow.md#step-2-user-login-and-consent). After a user logs in and authorizes the application, RingCentral will redirect the user's browser to the `redirect_uri` provided in the login URL created above. At the same time, RingCentral will append the following query parameters to the redirect URI, which your application will need in subsequent steps. 
 
---8<-- "docs/authentication/auth-code-params.inc" 
+--8<-- "docs/authentication/auth-code-params.inc"
 	
 #### Example OAuth redirect
 	
@@ -142,7 +142,7 @@ To exchange an auth code for an access token, developers will call the RingCentr
 
 **POST Parameters**
 
---8<-- "docs/authentication/auth-token-params.inc" 
+--8<-- "docs/authentication/auth-token-params.inc"
 | `code_verifier`         | string   | Required. Code verifier generated in Step 0. |
 
 **Sample Request**
@@ -163,7 +163,7 @@ code=U0pDMTFQMDFQQVMwM
 
 The server responds with an access token which can presented in subsequent requests in the HTTP Authorization header to authenticate API Calls. The response will contain the following parameters: 
 
---8<-- "docs/authentication/auth-token-response.inc" 
+--8<-- "docs/authentication/auth-token-response.inc"
 
 **Sample Response**
 

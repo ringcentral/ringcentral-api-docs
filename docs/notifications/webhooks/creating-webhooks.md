@@ -31,13 +31,13 @@ Below is an example of how validation tokens should be echoed in a trivial PHP a
 === "PHP"
 
     ```php
-    --8<-- "code-samples/webhooks/verification.php" 
+    --8<-- "code-samples/webhooks/verification.php"
     ```
 
 === "Ruby"
 
     ```ruby
-    --8<-- "code-samples/webhooks/verification.rb" 
+    --8<-- "code-samples/webhooks/verification.rb"
     ```
 
 ## Subscribing to events via a webhook
@@ -47,7 +47,7 @@ Webhook subscriptions are created using our [Subscription API](https://developer
 Our API Reference is the definitive source for all the required fields in creating a subscription. The following sample request should however help you better understand at a high-level how a webhook subscription is created. 
 
 ```json
---8<-- "code-samples/webhooks/create-webhook-request.json" 
+--8<-- "code-samples/webhooks/create-webhook-request.json"
 ```
 
 ## Renewing webhooks that are about to expire
